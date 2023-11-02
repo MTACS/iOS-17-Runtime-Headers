@@ -1,0 +1,4 @@
+
+@interface MKFTimerTriggerDatabaseID : MKFTriggerDatabaseID
+
+@end

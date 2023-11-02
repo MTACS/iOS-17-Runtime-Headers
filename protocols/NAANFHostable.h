@@ -1,0 +1,4 @@
+
+@protocol NAANFHostable <SXHostable>
+
+@end

@@ -1,0 +1,91 @@
+
+@interface AKRemoteDevice : NSObject <NSSecureCoding> {
+    NSDictionary * _additionalInfo;
+    NSString * _backingColorCode;
+    NSString * _buildNumber;
+    NSString * _colorCode;
+    NSString * _coverGlassColorCode;
+    NSString * _enclosureColorCode;
+    NSString * _housingColorCode;
+    bool  _inCircle;
+    NSDate * _lastCacheUpdatedDate;
+    NSDate * _lastUpdatedDate;
+    NSString * _machineId;
+    NSString * _model;
+    NSString * _name;
+    NSString * _operatingSystemName;
+    NSString * _operatingSystemVersion;
+    NSString * _pushToken;
+    NSString * _serialNumber;
+    NSString * _services;
+    bool  _trusted;
+}
+
+@property (nonatomic, copy) NSDictionary *additionalInfo;
+@property (nonatomic, copy) NSString *backingColorCode;
+@property (nonatomic, copy) NSString *buildNumber;
+@property (nonatomic, copy) NSString *colorCode;
+@property (nonatomic, copy) NSString *coverGlassColorCode;
+@property (nonatomic, copy) NSString *enclosureColorCode;
+@property (nonatomic, copy) NSString *housingColorCode;
+@property (nonatomic) bool inCircle;
+@property (nonatomic, copy) NSDate *lastCacheUpdatedDate;
+@property (nonatomic, copy) NSDate *lastUpdatedDate;
+@property (nonatomic, copy) NSString *machineId;
+@property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *operatingSystemName;
+@property (nonatomic, copy) NSString *operatingSystemVersion;
+@property (nonatomic, copy) NSString *pushToken;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic, copy) NSString *services;
+@property (nonatomic) bool trusted;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)_initWithInfo:(id)arg1;
+- (id)additionalInfo;
+- (id)backingColorCode;
+- (id)buildNumber;
+- (id)colorCode;
+- (id)coverGlassColorCode;
+- (id)description;
+- (id)enclosureColorCode;
+- (void)encodeWithCoder:(id)arg1;
+- (id)housingColorCode;
+- (bool)inCircle;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithInfo:(id)arg1;
+- (id)lastCacheUpdatedDate;
+- (id)lastUpdatedDate;
+- (id)machineId;
+- (id)model;
+- (id)name;
+- (id)operatingSystemName;
+- (id)operatingSystemVersion;
+- (id)pushToken;
+- (id)serialNumber;
+- (id)services;
+- (void)setAdditionalInfo:(id)arg1;
+- (void)setBackingColorCode:(id)arg1;
+- (void)setBuildNumber:(id)arg1;
+- (void)setColorCode:(id)arg1;
+- (void)setCoverGlassColorCode:(id)arg1;
+- (void)setEnclosureColorCode:(id)arg1;
+- (void)setHousingColorCode:(id)arg1;
+- (void)setInCircle:(bool)arg1;
+- (void)setLastCacheUpdatedDate:(id)arg1;
+- (void)setLastUpdatedDate:(id)arg1;
+- (void)setMachineId:(id)arg1;
+- (void)setModel:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setOperatingSystemName:(id)arg1;
+- (void)setOperatingSystemVersion:(id)arg1;
+- (void)setPushToken:(id)arg1;
+- (void)setSerialNumber:(id)arg1;
+- (void)setServices:(id)arg1;
+- (void)setTrusted:(bool)arg1;
+- (bool)trusted;
+
+@end

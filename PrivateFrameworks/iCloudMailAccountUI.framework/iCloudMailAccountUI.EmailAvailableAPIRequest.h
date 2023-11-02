@@ -1,0 +1,4 @@
+
+@interface iCloudMailAccountUI.EmailAvailableAPIRequest : _TtGC19iCloudMailAccountUI9MSRequestVS_25EmailAvailableAPIResponse_
+
+@end

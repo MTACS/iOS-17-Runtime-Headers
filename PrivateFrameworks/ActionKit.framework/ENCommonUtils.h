@@ -1,0 +1,4 @@
+
+@interface ENCommonUtils : NSObject
+
+@end

@@ -1,0 +1,85 @@
+
+@interface MMCSOperationMetric : NSObject <MMCSOperationMetric> {
+    unsigned long long  _bytesDownloaded;
+    unsigned long long  _bytesFulfilledByPeers;
+    unsigned long long  _bytesFulfilledLocally;
+    unsigned long long  _bytesResumed;
+    unsigned long long  _bytesUploaded;
+    NSMutableDictionary * _chunkCountByChunkProfile;
+    unsigned long long  _connections;
+    unsigned long long  _connectionsCreated;
+    double  _duration;
+    double  _executing;
+    NSMutableDictionary * _fileCountByChunkProfile;
+    double  _queueing;
+    NSMutableArray * _ranges;
+    NSMutableSet * _requestUUIDs;
+    NSDate * _startDate;
+    NSMutableDictionary * _totalBytesByChunkProfile;
+}
+
+@property unsigned long long bytesDownloaded;
+@property unsigned long long bytesFulfilledByPeers;
+@property unsigned long long bytesFulfilledLocally;
+@property unsigned long long bytesResumed;
+@property unsigned long long bytesUploaded;
+@property (readonly) NSMutableDictionary *chunkCountByChunkProfile;
+@property unsigned long long connections;
+@property unsigned long long connectionsCreated;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property double duration;
+@property double executing;
+@property (readonly) NSMutableDictionary *fileCountByChunkProfile;
+@property (readonly) unsigned long long hash;
+@property double queueing;
+@property (nonatomic, retain) NSMutableArray *ranges;
+@property (readonly) NSArray *rangesCopy;
+@property (readonly) NSMutableSet *requestUUIDs;
+@property (nonatomic, retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (readonly) NSMutableDictionary *totalBytesByChunkProfile;
+
+- (void).cxx_destruct;
+- (double)absoluteStart;
+- (double)absoluteStop;
+- (void)addRange:(id)arg1;
+- (unsigned long long)bytesDownloaded;
+- (unsigned long long)bytesFulfilledByPeers;
+- (unsigned long long)bytesFulfilledLocally;
+- (unsigned long long)bytesResumed;
+- (unsigned long long)bytesUploaded;
+- (id)chunkCountByChunkProfile;
+- (long long)compareExecutingStartTime:(id)arg1;
+- (long long)compareStartTime:(id)arg1;
+- (unsigned long long)connections;
+- (unsigned long long)connectionsCreated;
+- (id)describeRanges;
+- (id)description;
+- (double)duration;
+- (double)executing;
+- (id)fileCountByChunkProfile;
+- (id)initWithDate:(id)arg1;
+- (id)newRangeWithOperationState:(unsigned long long)arg1 startDate:(id)arg2 duration:(double)arg3;
+- (double)other;
+- (double)queueing;
+- (id)ranges;
+- (void)rangesCompleted;
+- (id)rangesCopy;
+- (id)requestUUIDs;
+- (void)setBytesDownloaded:(unsigned long long)arg1;
+- (void)setBytesFulfilledByPeers:(unsigned long long)arg1;
+- (void)setBytesFulfilledLocally:(unsigned long long)arg1;
+- (void)setBytesResumed:(unsigned long long)arg1;
+- (void)setBytesUploaded:(unsigned long long)arg1;
+- (void)setConnections:(unsigned long long)arg1;
+- (void)setConnectionsCreated:(unsigned long long)arg1;
+- (void)setDuration:(double)arg1;
+- (void)setExecuting:(double)arg1;
+- (void)setQueueing:(double)arg1;
+- (void)setRanges:(id)arg1;
+- (void)setStartDate:(id)arg1;
+- (id)startDate;
+- (id)totalBytesByChunkProfile;
+
+@end

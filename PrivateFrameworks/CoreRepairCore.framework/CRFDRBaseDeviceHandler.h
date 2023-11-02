@@ -1,0 +1,93 @@
+
+@interface CRFDRBaseDeviceHandler : NSObject {
+    NSString * _KBBSerialNumber;
+    NSString * _KGBSerialNumber;
+    NSString * _kbbCGSN;
+    NSString * _kbbSealDate;
+    NSString * _previousCGSN;
+    NSString * _sealDate;
+    bool  allowFactoryReset;
+    NSArray * currentDataClasses;
+    NSArray * currentDataInstances;
+    NSDictionary * currentProperties;
+    bool  isServicePart;
+    NSMutableArray * warnings;
+}
+
+@property (nonatomic, retain) NSString *KBBSerialNumber;
+@property (nonatomic, retain) NSString *KGBSerialNumber;
+@property bool allowFactoryReset;
+@property (nonatomic, retain) NSArray *currentDataClasses;
+@property (nonatomic, retain) NSArray *currentDataInstances;
+@property (nonatomic, retain) NSDictionary *currentProperties;
+@property bool isServicePart;
+@property (nonatomic, retain) NSString *kbbCGSN;
+@property (nonatomic, retain) NSString *kbbSealDate;
+@property (nonatomic, retain) NSString *previousCGSN;
+@property (nonatomic, retain) NSString *sealDate;
+@property (nonatomic, retain) NSMutableArray *warnings;
+
++ (id)_getDataClassUsingComponentAuthName:(id)arg1;
++ (id)_populateSealingMapForCurrentDevice;
++ (id)_populateSealingMapProperties;
++ (id)copySealingManifestDataInstanceForComponent:(id)arg1;
++ (id)getDeviceHandlerForProductType:(int)arg1;
++ (id)getPropertyArrayFrom:(id)arg1;
++ (id)getRegisterChangeDictUsingComponentAuthName:(id)arg1;
++ (id)getSealingMap;
++ (void)initSealingMap;
++ (bool)isFDRDataClassSupported:(id)arg1;
++ (bool)isFDRPropertySupported:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)KBBSerialNumber;
+- (id)KGBSerialNumber;
+- (bool)_addDataClassAndInstanceToMutableDictionary:(id)arg1 dataClass:(id)arg2 withError:(id*)arg3;
+- (bool)_addPropertyToMutableDictionary:(id)arg1 property:(id)arg2 withError:(id*)arg3;
+- (bool)allowFactoryReset;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentDataClasses;
+- (id)currentDataInstances;
+- (id)currentProperties;
+- (id)getClaimDataClassesAndInstancesWithPartSPC:(id)arg1 withError:(id*)arg2;
+- (id)getCurrentManifestDataClassesAndInstancesWithPartSPC:(id)arg1 fdr:(struct __AMFDR { }*)arg2 currentClasses:(id*)arg3 currentInstances:(id*)arg4 currentProperties:(id*)arg5 fdrError:(id*)arg6;
+- (id)getDataClassesAndInstancesOfKBBWith:(struct __AMFDR { }*)arg1 propertiesDict:(id*)arg2 fdrError:(id*)arg3;
+- (id)getExcludedPropertiesForFactoryReset;
+- (id)getExpectedPatchInfo:(id)arg1;
+- (bool)getMakeDataClassesAndInstancesWithPartSPC:(id)arg1 fdrRemote:(struct __AMFDR { }*)arg2 propertiesFromParam:(id)arg3 makeClasses:(id*)arg4 makeInstances:(id*)arg5 makePropertiesDict:(id*)arg6 fdrError:(id*)arg7;
+- (bool)getMinimalManifestsClassesAndInstancesWithPartSPC:(id)arg1 fdrLocal:(struct __AMFDR { }*)arg2 fdrRemote:(struct __AMFDR { }*)arg3 minimalSealingDataInstances:(id*)arg4 minimalSealedDataClasses:(id*)arg5 minimalSealedDataInstances:(id*)arg6 error:(id*)arg7;
+- (bool)getPatchExpectedDataWithPartSPC:(id)arg1 amfdr:(struct __AMFDR { }*)arg2 expectedClasses:(id*)arg3 expectedInstances:(id*)arg4 expectedValues:(id*)arg5 expectedDatas:(id*)arg6 validClasses:(id)arg7 validInstances:(id)arg8 error:(id*)arg9;
+- (id)getPatchInfoPerSPC;
+- (id)getSealDateFromSealingManifestData:(id)arg1;
+- (id)getUpdateDataClassesAndInstancesWithPartSPC:(id)arg1 withError:(id*)arg2;
+- (id)init;
+- (bool)isDeviceStagedSealed;
+- (bool)isServicePart;
+- (id)kbbCGSN;
+- (id)kbbSealDate;
+- (long long)performPostSealingStage:(id)arg1;
+- (id)previousCGSN;
+- (id)sealDate;
+- (void)setAllowFactoryReset:(bool)arg1;
+- (void)setCurrentDataClasses:(id)arg1;
+- (void)setCurrentDataInstances:(id)arg1;
+- (void)setCurrentProperties:(id)arg1;
+- (void)setIsServicePart:(bool)arg1;
+- (void)setKBBSerialNumber:(id)arg1;
+- (void)setKGBSerialNumber:(id)arg1;
+- (void)setKbbCGSN:(id)arg1;
+- (void)setKbbSealDate:(id)arg1;
+- (void)setPreviousCGSN:(id)arg1;
+- (void)setSealDate:(id)arg1;
+- (void)setWarnings:(id)arg1;
+- (id)spcInPartSPC:(id)arg1 withDataClass:(id)arg2;
+- (bool)storeWarningStrings:(id)arg1;
+- (bool)supportPatch;
+- (double)timeIntervalSinceLastSealing:(id)arg1;
+- (bool)validateAndSetSerialNumbersUsingPartSPC:(id)arg1 KGBSerialNumber:(id)arg2 KBBSerialNumber:(id)arg3 withError:(id*)arg4;
+- (long long)validateDisplaySwapped:(id)arg1 lessThan:(id)arg2;
+- (bool)validatePatchWithPartSPC:(id)arg1 originalClasses:(id)arg2 originalInstances:(id)arg3 originalValues:(id)arg4 validClasses:(id)arg5 validInstances:(id)arg6;
+- (bool)validateSwappedForDays:(long long)arg1 currentSN:(id)arg2 previousSN:(id)arg3 sealDate:(id)arg4;
+- (id)warnings;
+
+@end

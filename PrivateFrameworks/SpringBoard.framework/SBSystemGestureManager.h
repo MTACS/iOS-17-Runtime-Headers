@@ -1,0 +1,94 @@
+
+@interface SBSystemGestureManager : NSObject <BSDescriptionProviding, BSInvalidatable, UIGestureRecognizerDelegate, UIPointerInteractionDelegate> {
+    FBSDisplayIdentity * _displayIdentity;
+    NSMutableDictionary * _gestureToType;
+    NSSet * _gestureTypesAllowedWhileDisableAssertionsExist;
+    NSMutableSet * _gesturesDisabledAssertions;
+    NSSet * _gesturesPreventedByStylus;
+    SBIndirectTouchLifecycleMonitor * _indirectTouchLifecycleMonitor;
+    bool  _isInvalidated;
+    unsigned int  _lastSystemGestureWindowContextId;
+    <BSInvalidatable> * _pointerEventRoutingAssertion;
+    NSMapTable * _recognizingTouchGestures;
+    UIGestureRecognizer * _stylusPriorityRecognizer;
+    <BSInvalidatable> * _systemGestureEventDeferringRule;
+    _UISystemGestureManager * _systemGestureManager;
+    <BSInvalidatable> * _systemGesturesAllowedToken;
+    bool  _systemGesturesDisabledForAccessibility;
+    <BSInvalidatable> * _systemPointerContextIDAssertion;
+    UIPointerInteraction * _systemPointerInteraction;
+    <SBSystemUIPointerInteractionDelegate> * _systemPointerInteractionDelegate;
+    NSMutableSet * _touchGestures;
+    NSMutableDictionary * _typeToGesture;
+    NSMutableDictionary * _typeToState;
+}
+
+@property (getter=isAnyTouchGestureRunning, nonatomic, readonly) bool anyTouchGestureRunning;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSSet *gesturesPreventedByStylus;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SBIndirectTouchLifecycleMonitor *indirectTouchLifecycleMonitor;
+@property (readonly) Class superclass;
+@property (nonatomic) _UISystemGestureManager *systemGestureManager;
+@property (getter=areSystemGesturesDisabledForAccessibility, nonatomic) bool systemGesturesDisabledForAccessibility;
+@property (nonatomic) <SBSystemUIPointerInteractionDelegate> *systemPointerInteractionDelegate;
+@property (getter=isValid, nonatomic, readonly) bool valid;
+
++ (bool)_isDeviceHardwareButtonGestureType:(unsigned long long)arg1;
++ (id)deviceHardwareButtonGestureTypes;
++ (id)mainDisplayManager;
+
+- (void).cxx_destruct;
+- (void)_configureForNewSystemGestureWindowIfNecessary;
+- (void)_disableSystemGesture:(id)arg1 withType:(unsigned long long)arg2;
+- (void)_enableSystemGesture:(id)arg1 withType:(unsigned long long)arg2;
+- (void)_evaluateEnablement;
+- (id)_initWithDisplayIdentity:(id)arg1;
+- (bool)_isGestureWithTypeAllowed:(unsigned long long)arg1;
+- (bool)_isTouchGestureWithType:(unsigned long long)arg1;
+- (long long)_recognitionEventForTouchGestureType:(unsigned long long)arg1;
+- (bool)_shouldEnableSystemGestureWithType:(unsigned long long)arg1;
+- (void)_systemGestureChanged:(id)arg1;
+- (id)acquireSystemGestureDisableAssertionForReason:(id)arg1 exceptSystemGestureTypes:(id)arg2;
+- (id)acquireSystemGestureDisableAssertionForReason:(id)arg1 forSystemGestureTypes:(id)arg2;
+- (void)addGestureRecognizer:(id)arg1 withType:(unsigned long long)arg2;
+- (bool)areSystemGesturesDisabledForAccessibility;
+- (void)cancelGestureRecognizerOfType:(unsigned long long)arg1 reason:(id)arg2;
+- (id)debugDescription;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)gestureRecognizerOfType:(unsigned long long)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (void)gestureRecognizerOfType:(unsigned long long)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
+- (id)gesturesPreventedByStylus;
+- (void)ignoreScreenEdgeTouchWithIdentifier:(unsigned int)arg1;
+- (id)indirectTouchLifecycleMonitor;
+- (id)init;
+- (void)invalidate;
+- (bool)isAnyTouchGestureRunning;
+- (bool)isGestureWithTypeAllowed:(unsigned long long)arg1;
+- (bool)isSystemGestureRecognizer:(id)arg1;
+- (bool)isValid;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (void)pointerInteraction:(id)arg1 willEnterRegion:(id)arg2 animator:(id)arg3;
+- (void)pointerInteraction:(id)arg1 willExitRegion:(id)arg2 animator:(id)arg3;
+- (void)removeGestureRecognizer:(id)arg1;
+- (void)setGesturesPreventedByStylus:(id)arg1;
+- (void)setIndirectTouchLifecycleMonitor:(id)arg1;
+- (void)setSystemGestureManager:(id)arg1;
+- (void)setSystemGesturesDisabledForAccessibility:(bool)arg1;
+- (void)setSystemPointerInteractionDelegate:(id)arg1;
+- (bool)shouldEnableSystemGestureWithType:(unsigned long long)arg1;
+- (bool)shouldSystemGestureReceiveTouchWithLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (id)systemGestureManager;
+- (id)systemPointerInteractionDelegate;
+- (unsigned long long)typeOfSystemGesture:(id)arg1;
+- (id)windowForSystemGestures;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKFShortcutActionPrivateExtensions
+
+@end

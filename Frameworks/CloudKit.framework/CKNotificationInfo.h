@@ -1,0 +1,90 @@
+
+@interface CKNotificationInfo : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _alertActionLocalizationKey;
+    NSString * _alertBody;
+    NSString * _alertLaunchImage;
+    NSArray * _alertLocalizationArgs;
+    NSString * _alertLocalizationKey;
+    NSString * _category;
+    NSString * _collapseIDKey;
+    NSArray * _desiredKeys;
+    bool  _shouldBadge;
+    bool  _shouldSendContentAvailable;
+    bool  _shouldSendMutableContent;
+    NSString * _soundName;
+    NSString * _subtitle;
+    NSArray * _subtitleLocalizationArgs;
+    NSString * _subtitleLocalizationKey;
+    NSString * _title;
+    NSArray * _titleLocalizationArgs;
+    NSString * _titleLocalizationKey;
+}
+
+@property (copy) NSString *alertActionLocalizationKey;
+@property (copy) NSString *alertBody;
+@property (copy) NSString *alertLaunchImage;
+@property (copy) NSArray *alertLocalizationArgs;
+@property (copy) NSString *alertLocalizationKey;
+@property (copy) NSString *category;
+@property (copy) NSString *collapseIDKey;
+@property (copy) NSArray *desiredKeys;
+@property bool shouldBadge;
+@property bool shouldSendContentAvailable;
+@property bool shouldSendMutableContent;
+@property (copy) NSString *soundName;
+@property (copy) NSString *subtitle;
+@property (copy) NSArray *subtitleLocalizationArgs;
+@property (copy) NSString *subtitleLocalizationKey;
+@property (copy) NSString *title;
+@property (copy) NSArray *titleLocalizationArgs;
+@property (copy) NSString *titleLocalizationKey;
+
++ (void)initialize;
++ (id)notificationInfo;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)alertActionLocalizationKey;
+- (id)alertBody;
+- (id)alertLaunchImage;
+- (id)alertLocalizationArgs;
+- (id)alertLocalizationKey;
+- (id)category;
+- (id)collapseIDKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)debugDescription;
+- (id)desiredKeys;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setAlertActionLocalizationKey:(id)arg1;
+- (void)setAlertBody:(id)arg1;
+- (void)setAlertLaunchImage:(id)arg1;
+- (void)setAlertLocalizationArgs:(id)arg1;
+- (void)setAlertLocalizationKey:(id)arg1;
+- (void)setCategory:(id)arg1;
+- (void)setCollapseIDKey:(id)arg1;
+- (void)setDesiredKeys:(id)arg1;
+- (void)setShouldBadge:(bool)arg1;
+- (void)setShouldSendContentAvailable:(bool)arg1;
+- (void)setShouldSendMutableContent:(bool)arg1;
+- (void)setSoundName:(id)arg1;
+- (void)setSubtitle:(id)arg1;
+- (void)setSubtitleLocalizationArgs:(id)arg1;
+- (void)setSubtitleLocalizationKey:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setTitleLocalizationArgs:(id)arg1;
+- (void)setTitleLocalizationKey:(id)arg1;
+- (bool)shouldBadge;
+- (bool)shouldSendContentAvailable;
+- (bool)shouldSendMutableContent;
+- (id)soundName;
+- (id)subtitle;
+- (id)subtitleLocalizationArgs;
+- (id)subtitleLocalizationKey;
+- (id)title;
+- (id)titleLocalizationArgs;
+- (id)titleLocalizationKey;
+
+@end

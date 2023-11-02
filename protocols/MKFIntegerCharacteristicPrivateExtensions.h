@@ -1,0 +1,4 @@
+
+@protocol MKFIntegerCharacteristicPrivateExtensions
+
+@end

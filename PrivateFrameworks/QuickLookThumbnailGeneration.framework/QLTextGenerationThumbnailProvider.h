@@ -1,0 +1,4 @@
+
+@interface QLTextGenerationThumbnailProvider : QLThumbnailProvider
+
+@end

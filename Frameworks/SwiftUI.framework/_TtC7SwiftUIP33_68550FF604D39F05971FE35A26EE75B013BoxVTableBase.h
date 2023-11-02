@@ -1,0 +1,4 @@
+
+@interface _TtC7SwiftUIP33_68550FF604D39F05971FE35A26EE75B013BoxVTableBase : _TtCs12_SwiftObject
+
+@end

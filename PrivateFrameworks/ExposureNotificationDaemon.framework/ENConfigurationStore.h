@@ -1,0 +1,98 @@
+
+@interface ENConfigurationStore : NSObject {
+    bool  _developerServerConfiguration;
+    NSString * _directoryPath;
+    NSString * _regionIdentifierOverride;
+    NSObject<OS_dispatch_queue> * _storeQueue;
+}
+
+@property (nonatomic) bool developerServerConfiguration;
+@property (nonatomic, readonly, copy) NSString *directoryPath;
+@property (nonatomic, copy) NSString *regionIdentifierOverride;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *storeQueue;
+
++ (id)legacyAppCacheURL;
+
+- (void).cxx_destruct;
+- (id)_agencyConfigurationForRegion:(id)arg1;
+- (id)_allCachedServerResponseConfigurationsWithPrefix:(id)arg1;
+- (id)_configurationForRegion:(id)arg1;
+- (id)_directoryURLForCachedConfigurations;
+- (void)_enumerateCachedServerResponseConfigurationsWithDirectoryURL:(id)arg1 prefix:(id)arg2 handler:(id /* block */)arg3;
+- (id)_existingConfigurationForRegion:(id)arg1;
+- (id)_existingConfigurationForRegionPath:(id)arg1;
+- (id)_localeForRegion:(id)arg1;
+- (id)_localeIdentifiersForRegion:(id)arg1;
+- (id)_regionHashForRegion:(id)arg1;
+- (bool)_removeSubdivisionListForRegion:(id)arg1 error:(id*)arg2;
+- (bool)_saveCountrySubdivisionList:(id)arg1 country:(id)arg2 error:(id*)arg3;
+- (bool)_saveRegionConfiguration:(id)arg1 error:(id*)arg2;
+- (bool)_saveRegionHash:(id)arg1 region:(id)arg2 error:(id*)arg3;
+- (bool)_saveServerConfigurationResponse:(id)arg1 error:(id*)arg2;
+- (id)_serverConfigurationForRegion:(id)arg1;
+- (id)_serverConfigurationResponseForFileURL:(id)arg1;
+- (id)_serverConfigurationResponseForRegion:(id)arg1;
+- (id)_subdivisionListForRegion:(id)arg1;
+- (id)agencyConfigurationForRegion:(id)arg1;
+- (void)allAgencyServerRegionConfigurationsWithCompletion:(id /* block */)arg1;
+- (id)allCachedCountries;
+- (void)allCachedCountryCodesServerResponseWithDirectoryURL:(id)arg1 handler:(id /* block */)arg2;
+- (id)allCachedRegions;
+- (void)allCachedServerResponseConfigurationsWithCompletion:(id /* block */)arg1;
+- (void)allCachedServerResponseConfigurationsWithCountryCode:(id)arg1 completion:(id /* block */)arg2;
+- (id)allRegionConfigurations;
+- (void)allRegionConfigurationsWithCompletion:(id /* block */)arg1;
+- (id)allRegionServerConfigurations;
+- (id)allRegionServerConfigurationsForCountryCode:(id)arg1;
+- (void)allRegionServerConfigurationsWithCompletion:(id /* block */)arg1;
+- (id)cachedAppConfiguationForBundleID:(id)arg1 forRegionID:(id)arg2;
+- (void)clearTemporaryCountrySubdivisionList;
+- (void)clearTemporaryServerConfigurations;
+- (id)configurationCacheURL;
+- (id)configurationForRegion:(id)arg1;
+- (id)developerConfigurationsURL;
+- (bool)developerServerConfiguration;
+- (id)developerSubdivisionListCacheURL;
+- (id)directoryPath;
+- (id)downloadConfigurationForRegion:(id)arg1;
+- (void)enumerateCachedRegionServerConfigurationsWithCountryCode:(id)arg1 handler:(id /* block */)arg2;
+- (void)enumerateCachedRegionServerConfigurationsWithHandler:(id /* block */)arg1;
+- (id)fileURLForCountryRegionHash:(id)arg1;
+- (id)fileURLforCountrySubdivisionList:(id)arg1;
+- (id)fileURLforRegionConfiguration:(id)arg1;
+- (id)fileURLforRegionServerConfiguration:(id)arg1;
+- (id)init;
+- (id)initWithDirectoryPath:(id)arg1;
+- (id)legacyAppConfiguationForMobileCountryCode:(id)arg1;
+- (id)localeForRegion:(id)arg1;
+- (id)localeIdentifiersForRegion:(id)arg1;
+- (void)prefsChanged;
+- (id)regionCacheURL;
+- (id)regionFromServerResponse:(id)arg1;
+- (id)regionHashForRegion:(id)arg1;
+- (id)regionIdentifierOverride;
+- (bool)regionSupportsSubdivisions:(id)arg1;
+- (bool)removeConfigurationsForRegion:(id)arg1 includingSubdivisions:(bool)arg2 error:(id*)arg3;
+- (bool)removeConfigurationsForRegionCode:(id)arg1 error:(id*)arg2;
+- (bool)removeSubdivisionListForRegion:(id)arg1 error:(id*)arg2;
+- (void)resetStore;
+- (bool)saveCountrySubdivisionList:(id)arg1 region:(id)arg2 error:(id*)arg3;
+- (bool)saveRegionConfiguration:(id)arg1 error:(id*)arg2;
+- (bool)saveRegionHash:(id)arg1 region:(id)arg2 error:(id*)arg3;
+- (bool)saveServerConfigurationResponse:(id)arg1 error:(id*)arg2;
+- (bool)saveTemporaryCountrySubdivisionList:(id)arg1 region:(id)arg2 error:(id*)arg3;
+- (bool)saveTemporaryServerConfigurations:(id)arg1 error:(id*)arg2;
+- (id)serverConfigurationCacheURL;
+- (id)serverConfigurationForRegion:(id)arg1;
+- (id)serverConfigurationResponseForRegion:(id)arg1;
+- (id)serverExposureConfigurationForRegion:(id)arg1;
+- (id)serverSubdivisionListCacheURL;
+- (void)setDeveloperServerConfiguration:(bool)arg1;
+- (void)setRegionIdentifierOverride:(id)arg1;
+- (void)setStoreQueue:(id)arg1;
+- (id)storeQueue;
+- (id)subdivisionListCacheURL;
+- (id)subdivisionListForRegion:(id)arg1;
+- (id)systemConfigurationCacheURL;
+
+@end

@@ -1,0 +1,27 @@
+
+@interface SUUIGiftConfirmLabeledValue : UIView {
+    SUUIGiftDashView * _dashView;
+    UILabel * _labelLabel;
+    long long  _style;
+    UILabel * _subtitleLabel;
+    UILabel * _valueLabel;
+}
+
+@property (nonatomic, readonly) long long giftConfirmLabelStyle;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *subtitleLabel;
+@property (nonatomic, copy) NSString *value;
+
+- (void).cxx_destruct;
+- (long long)giftConfirmLabelStyle;
+- (id)initWithGiftConfirmLabelStyle:(long long)arg1;
+- (id)label;
+- (void)layoutSubviews;
+- (void)setLabel:(id)arg1;
+- (void)setSubtitleLabel:(id)arg1;
+- (void)setValue:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)subtitleLabel;
+- (id)value;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CPLResourceIdentityImplementation : CPLResourceIdentity
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKModuleViewControllerProtocol <NSObject>
+
+@end

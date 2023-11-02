@@ -1,0 +1,96 @@
+
+@interface TIKeyboardCandidateSingle : TIKeyboardCandidate {
+    NSString * _altDSID;
+    NSString * _applicationBundleId;
+    NSString * _applicationKey;
+    NSString * _candidate;
+    long long  _cursorMovement;
+    bool  _extensionCandidate;
+    NSString * _input;
+    unsigned long long  _learningFlagsMask;
+    NSString * _lexiconLocale;
+    NSString * _rawInput;
+    unsigned int  _sourceMask;
+    NSUUID * _stickerIdentifier;
+}
+
+@property (nonatomic, copy) NSString *altDSID;
+@property (nonatomic, copy) NSString *applicationBundleId;
+@property (nonatomic, copy) NSString *applicationKey;
+@property (nonatomic, copy) NSString *candidate;
+@property (nonatomic) long long cursorMovement;
+@property (getter=isExtensionCandidate, nonatomic) bool extensionCandidate;
+@property (nonatomic, copy) NSString *input;
+@property (nonatomic, copy) NSNumber *learningFlags;
+@property (nonatomic) unsigned long long learningFlagsMask;
+@property (nonatomic, copy) NSString *lexiconLocale;
+@property (nonatomic, copy) NSString *rawInput;
+@property (nonatomic, copy) NSUUID *stickerIdentifier;
+
++ (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2;
++ (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2 cursorMovement:(long long)arg3;
++ (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2 customInfoType:(unsigned long long)arg3;
++ (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2 extensionCandidate:(bool)arg3;
++ (id)candidateWithUnchangedInput:(id)arg1;
++ (id)candidateWithUnchangedInput:(id)arg1 learningFlagsMask:(unsigned long long)arg2;
++ (id)secureCandidateForInput:(id)arg1 slotID:(unsigned int)arg2;
++ (id)secureCandidateForInput:(id)arg1 slotID:(unsigned int)arg2 customInfoType:(unsigned long long)arg3;
++ (id)secureCandidateForInput:(id)arg1 slotID:(unsigned int)arg2 customInfoType:(unsigned long long)arg3 applicationKey:(id)arg4 applicationBundleId:(id)arg5 altDSID:(id)arg6;
++ (id)secureCandidateForInput:(id)arg1 slotID:(unsigned int)arg2 customInfoType:(unsigned long long)arg3 stickerIdentifier:(id)arg4;
++ (bool)supportsSecureCoding;
++ (int)type;
+
+- (void).cxx_destruct;
+- (id)altDSID;
+- (id)applicationBundleId;
+- (id)applicationKey;
+- (id)candidate;
+- (id)candidateByReplacingWithCandidate:(id)arg1;
+- (id)candidateByReplacingWithCandidate:(id)arg1 input:(id)arg2;
+- (id)candidateByReplacingWithCandidate:(id)arg1 input:(id)arg2 rawInput:(id)arg3;
+- (id)candidateByReplacingWithSourceMask:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)cursorMovement;
+- (id)debugDescription;
+- (id)description;
+- (void)encodeWithCandidateResultSetCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCandidate:(id)arg1;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 rawInput:(id)arg3;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 rawInput:(id)arg3 extensionCandidate:(bool)arg4;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 rawInput:(id)arg3 extensionCandidate:(bool)arg4 sourceMask:(unsigned int)arg5 learningFlagsMask:(unsigned long long)arg6;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 rawInput:(id)arg3 learningFlagsMask:(unsigned long long)arg4;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 rawInput:(id)arg3 sourceMask:(unsigned int)arg4;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 rawInput:(id)arg3 sourceMask:(unsigned int)arg4 learningFlagsMask:(unsigned long long)arg5;
+- (id)initWithCandidateResultSetCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithResponseCandidate:(id)arg1;
+- (id)initWithUnchangedInput:(id)arg1;
+- (id)initWithUnchangedInput:(id)arg1 learningFlagsMask:(unsigned long long)arg2;
+- (id)input;
+- (bool)isAutocorrectionIgnoringCaseAndDiacriticsAndSupplementalItemPrefix;
+- (bool)isAutocorrectionIgnoringCaseAndSupplementalItemPrefix;
+- (bool)isExtensionCandidate;
+- (bool)isHideMyEmailType;
+- (id)learningFlags;
+- (unsigned long long)learningFlagsMask;
+- (id)lexiconLocale;
+- (id)rawInput;
+- (void)setAltDSID:(id)arg1;
+- (void)setApplicationBundleId:(id)arg1;
+- (void)setApplicationKey:(id)arg1;
+- (void)setCandidate:(id)arg1;
+- (void)setCursorMovement:(long long)arg1;
+- (void)setExtensionCandidate:(bool)arg1;
+- (void)setInput:(id)arg1;
+- (void)setLearningFlags:(id)arg1;
+- (void)setLearningFlagsMask:(unsigned long long)arg1;
+- (void)setLexiconLocale:(id)arg1;
+- (void)setRawInput:(id)arg1;
+- (void)setSourceMask:(unsigned int)arg1;
+- (void)setStickerIdentifier:(id)arg1;
+- (unsigned int)sourceMask;
+- (id)stickerIdentifier;
+
+@end

@@ -1,0 +1,81 @@
+
+@interface MFPlaybackStackControllerImplementation : NSObject <MFPlaybackStackController, MFQueueManagement> {
+    void delegate;
+    void internalStack;
+    void signpostSubscription;
+}
+
+@property (nonatomic, readonly) <MFQueuePlayerItem> *currentItem;
+@property (nonatomic, readonly) long long currentItemTransition;
+@property (nonatomic, readonly) <MFQueuePlayerItem> *currentQueueItem;
+@property (nonatomic, readonly) long long currentState;
+@property (nonatomic, readonly) double currentTime;
+@property (nonatomic) <MFPlaybackStackControllerDelegate> *delegate;
+@property (nonatomic, readonly) float effectiveRate;
+@property (nonatomic, readonly) long long interruptedState;
+@property (nonatomic, readonly) bool isModeManagedSession;
+@property (nonatomic, readonly) bool isModeShared;
+@property (nonatomic, readonly) bool isModeSolo;
+@property (nonatomic, readonly) NSString *modeDescription;
+@property (nonatomic, readonly) NSArray *nextItems;
+@property (nonatomic, readonly) float rate;
+@property (nonatomic, readonly) NSDictionary *stateDictionary;
+@property (nonatomic, readonly) float targetRate;
+@property (nonatomic, readonly) NSNumber *targetTime;
+@property (nonatomic, readonly) long long timeControlStatus;
+@property (nonatomic, readonly) AVPlayerViewController *videoViewController;
+
+- (void).cxx_destruct;
+- (void)activateAudioSessionWithCompletion:(id /* block */)arg1;
+- (void)beginScanningWithDirection:(long long)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)beginSeekingWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)clearPlaybackQueue;
+- (id)currentItem;
+- (long long)currentItemTransition;
+- (id)currentQueueItem;
+- (long long)currentState;
+- (double)currentTime;
+- (void)deactivateAudioSessionIfIdle:(long long)arg1;
+- (id)delegate;
+- (float)effectiveRate;
+- (void)endScanningWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)endSeekingWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (id)init;
+- (id)initWithPlayerID:(id)arg1 engineID:(id)arg2 queueController:(id)arg3 assetLoader:(id)arg4 errorController:(id)arg5 externalPlaybackController:(id)arg6 leaseController:(id)arg7 defaults:(id)arg8 queue:(id)arg9;
+- (long long)interruptedState;
+- (bool)isModeManagedSession;
+- (bool)isModeShared;
+- (bool)isModeSolo;
+- (void)jumpTo:(double)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
+- (id)modeDescription;
+- (id)nextItems;
+- (void)pauseForLeasePreventionWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)pauseWithFadeOut:(double)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)pauseWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)playWithRate:(float)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
+- (float)rate;
+- (void)reloadCurrentItemWithReason:(long long)arg1 completion:(id /* block */)arg2;
+- (void)reloadItemsKeepingCurrentItem:(bool)arg1 allowReuse:(bool)arg2;
+- (void)resetWithReason:(id)arg1;
+- (void)restoreQueue:(id /* block */)arg1;
+- (void)seekTo:(double)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)setDelegate:(id)arg1;
+- (void)setInhibitSpeechDetection:(bool)arg1;
+- (void)setQueueWithInitialItem:(id)arg1 andPlay:(bool)arg2 identifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)setRate:(float)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)setRelativeVolume:(float)arg1;
+- (void)setSpatializationFormat:(long long)arg1;
+- (void)setupForManagedSessionWithAudioSession:(id)arg1;
+- (void)setupForNewQueueWithSessionID:(id)arg1;
+- (void)setupForShared;
+- (void)setupForSolo;
+- (bool)shouldSkipJumpToItemStart:(long long)arg1;
+- (id)stateDictionary;
+- (float)targetRate;
+- (id)targetTime;
+- (void)teardownForQueueWithSessionID:(id)arg1;
+- (long long)timeControlStatus;
+- (void)updateAudioSessionWithConfiguration:(id)arg1;
+- (id)videoViewController;
+
+@end

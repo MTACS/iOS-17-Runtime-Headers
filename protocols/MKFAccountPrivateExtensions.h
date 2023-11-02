@@ -1,0 +1,4 @@
+
+@protocol MKFAccountPrivateExtensions
+
+@end

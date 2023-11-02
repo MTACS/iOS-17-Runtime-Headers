@@ -1,0 +1,4 @@
+
+@interface SBUIPresentableSupportsCancellingSystemDragAction : BSAction
+
+@end

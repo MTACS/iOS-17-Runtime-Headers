@@ -1,0 +1,4 @@
+
+@interface MTRTestClusterClusterTestEmitTestEventRequestParams : MTRUnitTestingClusterTestEmitTestEventRequestParams
+
+@end

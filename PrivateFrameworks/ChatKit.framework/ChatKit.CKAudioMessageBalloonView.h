@@ -1,0 +1,83 @@
+
+@interface ChatKit.CKAudioMessageBalloonView : CKColoredBalloonView <CKAudioBalloonView, CKBalloonVibrancy> {
+    void $__lazy_storage_$_horizontalStackView;
+    void $__lazy_storage_$_playPauseButton;
+    void $__lazy_storage_$_speedLabel;
+    void $__lazy_storage_$_timeLabel;
+    void $__lazy_storage_$_transcriptionLabel;
+    void $__lazy_storage_$_verticalStackView;
+    void $__lazy_storage_$_waveformView;
+    void chatItem;
+    void duration;
+    void initialTimeBeforePan;
+    void isFromMe;
+    void isPlayed;
+    void isPlaying;
+    void mediaObject;
+    void panGestureRecognizer;
+    void playbackSpeed;
+    void serviceIsSMS;
+    void time;
+    void waveformContentMode;
+}
+
+@property (nonatomic, retain) CKAudioMessageChatItem *chatItem;
+@property (nonatomic) double duration;
+@property (nonatomic) double initialTimeBeforePan;
+@property (nonatomic, readonly) bool isAudioMessage;
+@property (nonatomic, retain) CKAudioMediaObject *mediaObject;
+@property (nonatomic) double playbackSpeed;
+@property (nonatomic) bool played;
+@property (nonatomic) bool playing;
+@property (nonatomic) bool serviceIsSMS;
+@property (nonatomic) double time;
+@property (nonatomic) long long waveformContentMode;
+@property (nonatomic, retain) _TtC7ChatKit20AudioMessageWaveform *waveformView;
+
+- (void).cxx_destruct;
+- (void)addOverlaySubview:(id)arg1;
+- (id)chatItem;
+- (void)configureForComposition:(id)arg1;
+- (void)configureForMediaObject:(id)arg1 previewWidth:(double)arg2 orientation:(BOOL)arg3;
+- (void)configureForMessagePart:(id)arg1;
+- (double)duration;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)initialTimeBeforePan;
+- (bool)isAudioMessage;
+- (bool)isPlayed;
+- (bool)isPlaying;
+- (void)layoutSubviews;
+- (id)mediaObject;
+- (id)nonVibrantSubViews;
+- (id)playPauseButtonColorFor:(BOOL)arg1;
+- (double)playbackSpeed;
+- (id)playbackSpeedMenu;
+- (void)prepareForDisplay;
+- (void)prepareForReuse;
+- (bool)serviceIsSMS;
+- (void)setChatItem:(id)arg1;
+- (void)setDuration:(double)arg1;
+- (void)setInitialTimeBeforePan:(double)arg1;
+- (void)setMediaObject:(id)arg1;
+- (void)setPlaybackSpeed:(double)arg1;
+- (void)setPlayed:(bool)arg1;
+- (void)setPlaying:(bool)arg1;
+- (void)setServiceIsSMS:(bool)arg1;
+- (void)setTime:(double)arg1;
+- (void)setWaveform:(id)arg1;
+- (void)setWaveformContentMode:(long long)arg1;
+- (void)setWaveformView:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (id)speedLabelColorFor:(BOOL)arg1;
+- (void)tapGestureRecognized:(id)arg1;
+- (double)time;
+- (id)timeLabelColorFor:(BOOL)arg1;
+- (id)transcriptionLabelColorFor:(BOOL)arg1;
+- (void)vibrantContainerWillReparentNonVibrantSubviews:(id)arg1;
+- (id)waveformColorWithIsFromMe:(bool)arg1 isPlayed:(bool)arg2;
+- (long long)waveformContentMode;
+- (void)waveformProgressViewPanning:(id)arg1;
+- (id)waveformView;
+
+@end

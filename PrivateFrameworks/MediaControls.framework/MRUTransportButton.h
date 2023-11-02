@@ -1,0 +1,80 @@
+
+@interface MRUTransportButton : MPButton <MRUVisualStylingProviderObserver> {
+    UIView * _backgroundView;
+    double  _cursorScale;
+    bool  _dimmed;
+    NSString * _identifier;
+    double  _packageScale;
+    unsigned long long  _packageState;
+    MRUCAPackageView * _packageView;
+    UIImage * _pendingImage;
+    long long  _pointerStyle;
+    bool  _showHighlightCircle;
+    MRUVisualStylingProvider * _stylingProvider;
+    MRUTransportControlItem * _transportControlItem;
+}
+
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic) double cursorScale;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDimmed, nonatomic) bool dimmed;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) double packageScale;
+@property (nonatomic) unsigned long long packageState;
+@property (nonatomic, retain) MRUCAPackageView *packageView;
+@property (nonatomic, retain) UIImage *pendingImage;
+@property (nonatomic) long long pointerStyle;
+@property (nonatomic) bool showHighlightCircle;
+@property (nonatomic, retain) MRUVisualStylingProvider *stylingProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) MRUTransportControlItem *transportControlItem;
+
+- (void).cxx_destruct;
+- (bool)acuis_wantsPriorityOverTargetOfGestureRecognizer:(id)arg1;
+- (id)backgroundView;
+- (void)clearPackage;
+- (double)cursorScale;
+- (void)didSelect:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)identifier;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDimmed;
+- (void)layoutSubviews;
+- (double)packageScale;
+- (unsigned long long)packageState;
+- (id)packageView;
+- (id)pendingImage;
+- (long long)pointerStyle;
+- (id)pointerStyleWithProposedEffect:(id)arg1 proposedShape:(id)arg2;
+- (void)setAsset:(id)arg1;
+- (void)setAsset:(id)arg1 animated:(bool)arg2;
+- (void)setBackgroundView:(id)arg1;
+- (void)setCursorScale:(double)arg1;
+- (void)setDimmed:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setImage:(id)arg1 forState:(unsigned long long)arg2 animated:(bool)arg3;
+- (void)setPackageGlyphState:(id)arg1;
+- (void)setPackageScale:(double)arg1;
+- (void)setPackageState:(unsigned long long)arg1;
+- (void)setPackageView:(id)arg1;
+- (void)setPendingImage:(id)arg1;
+- (void)setPointerStyle:(long long)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setShowHighlightCircle:(bool)arg1;
+- (void)setStylingProvider:(id)arg1;
+- (void)setTransportControlItem:(id)arg1;
+- (bool)showHighlightCircle;
+- (id)stylingProvider;
+- (id)transportControlItem;
+- (void)updateBackgroundView;
+- (void)updateContentView;
+- (void)updateHighlighted;
+- (void)updateVisualStyling;
+- (void)visualStylingProviderDidChange:(id)arg1;
+
+@end

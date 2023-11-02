@@ -1,0 +1,4 @@
+
+@protocol DDRemoteActionHostProtocol <NSObject>
+
+@end

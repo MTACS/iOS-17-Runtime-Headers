@@ -1,0 +1,4 @@
+
+@interface _TtC9QuickLookP33_C668E722A6B4EFF9FCB4CE704398EF6719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

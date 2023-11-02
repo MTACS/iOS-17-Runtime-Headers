@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmAmusementPark : PhotosGraph.PhotosChallengeEvaluableMeaningAlgorithm
+
+@end

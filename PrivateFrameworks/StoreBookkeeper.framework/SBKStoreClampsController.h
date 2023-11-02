@@ -1,0 +1,83 @@
+
+@interface SBKStoreClampsController : NSObject <NSSecureCoding> {
+    double  _accountIdentifierCheckTimestamp;
+    double  _authenticationNeededTimestamp;
+    double  _backOffUntil;
+    double  _networkingBlockedUntil;
+    double  _nextUserCancelBackOffInterval;
+    NSData * _pendingUserDefaultArchivedData;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _transactionClamps;
+    double  _userAcceptedSyncTimestamp;
+    double  _userCancelledSignInBackOffUntil;
+}
+
+@property (nonatomic) double accountIdentifierCheckTimestamp;
+@property (nonatomic) double authenticationNeededTimestamp;
+@property (nonatomic) double backOffUntil;
+@property (nonatomic) double networkingBlockedUntil;
+@property (nonatomic) double nextUserCancelBackOffInterval;
+@property (nonatomic, retain) NSData *pendingUserDefaultArchivedData;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSDictionary *transactionClamps;
+@property (nonatomic) double userAcceptedSyncTimestamp;
+@property (nonatomic) double userCancelledSignInBackOffUntil;
+
++ (id)sharedClampsController;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (bool)_canScheduleTransactionBasedOfNetworkingBlocked:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOnAccountIdentifierCheck:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOnBackOff:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOnType:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOnUserCancelledSignIn:(id)arg1 error:(id*)arg2;
+- (id)_keyForTransaction:(id)arg1;
+- (double)_rightNow;
+- (void)accessTransactionClampsWithBlock:(id /* block */)arg1;
+- (double)accountIdentifierCheckTimestamp;
+- (double)authenticationNeededTimestamp;
+- (void)backOffForTimeInterval:(double)arg1;
+- (double)backOffUntil;
+- (bool)canScheduleTransaction:(id)arg1 error:(id*)arg2;
+- (void)clearAccountIdentifierCheckTimestamp;
+- (void)clearAuthenticationRequest;
+- (void)clearBackOff;
+- (void)clearNetworkingBlocked;
+- (void)clearTimestampForTransaction:(id)arg1;
+- (void)clearUserAcceptedSyncTimestamp;
+- (void)clearUserCancelledSignIn;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasAuthenticatedTooRecentlyForTransaction:(id)arg1 error:(id*)arg2;
+- (bool)hasUserRecentlyAcceptedSync;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)isNetworkingBlocked;
+- (double)networkingBlockedUntil;
+- (double)nextUserCancelBackOffInterval;
+- (id)pendingUserDefaultArchivedData;
+- (id)queue;
+- (void)reset;
+- (void)saveToUserDefaults;
+- (void)setAccountIdentifierCheckTimestamp;
+- (void)setAccountIdentifierCheckTimestamp:(double)arg1;
+- (void)setAuthenticationNeededTimestamp:(double)arg1;
+- (void)setAuthenticationRequest;
+- (void)setBackOffUntil:(double)arg1;
+- (void)setNetworkingBlocked;
+- (void)setNetworkingBlockedUntil:(double)arg1;
+- (void)setNextUserCancelBackOffInterval:(double)arg1;
+- (void)setPendingUserDefaultArchivedData:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setTimestampForTransaction:(id)arg1;
+- (void)setTransactionClamps:(id)arg1;
+- (void)setUserAcceptedSyncTimestamp;
+- (void)setUserAcceptedSyncTimestamp:(double)arg1;
+- (void)setUserCancelledSignIn;
+- (void)setUserCancelledSignInBackOffUntil:(double)arg1;
+- (id)transactionClamps;
+- (double)userAcceptedSyncTimestamp;
+- (double)userCancelledSignInBackOffUntil;
+
+@end

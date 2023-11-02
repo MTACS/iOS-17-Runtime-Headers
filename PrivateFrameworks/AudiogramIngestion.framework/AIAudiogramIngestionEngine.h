@@ -1,0 +1,86 @@
+
+@interface AIAudiogramIngestionEngine : NSObject <AIAudiogramAssetManagerDelegate> {
+    NSObject<OS_dispatch_queue> * _analysisQueue;
+    AIAudiogramAssetManager * _assetManager;
+    <AIAudiogramIngestionEngineDelegate> * _delegate;
+    bool  _isRetrievingLatestModel;
+    bool  _isRetrievingLatestModelSilently;
+    VNCoreMLModel * _model;
+    float  _modelLabelConfidenceThreshold;
+    NSString * _modelLabelGraph;
+    NSString * _modelLabelLeftEarSymbol;
+    NSString * _modelLabelRightEarSymbol;
+}
+
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *analysisQueue;
+@property (nonatomic, retain) AIAudiogramAssetManager *assetManager;
+@property (nonatomic) <AIAudiogramIngestionEngineDelegate> *delegate;
+@property (nonatomic) bool isRetrievingLatestModel;
+@property (nonatomic) bool isRetrievingLatestModelSilently;
+@property (nonatomic, retain) VNCoreMLModel *model;
+@property (nonatomic) float modelLabelConfidenceThreshold;
+@property (nonatomic, retain) NSString *modelLabelGraph;
+@property (nonatomic, retain) NSString *modelLabelLeftEarSymbol;
+@property (nonatomic, retain) NSString *modelLabelRightEarSymbol;
+
+- (void).cxx_destruct;
+- (id)_audiogramFromSymbols:(id)arg1 onAudiogramMap:(id)arg2;
+- (id)_audiogramFromSymbols:(id)arg1 recognizedText:(id)arg2;
+- (id)_audiogramMapFromRecognizedText:(id)arg1;
+- (id)_combineAudiograms:(id)arg1;
+- (id)_cropEdgesFromImage:(id)arg1 graphRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 symbolsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (id)_cropResultsFromImage:(id)arg1 observations:(id)arg2;
+- (id)_formatNumbersFromRecognizedText:(id)arg1;
+- (id)_groupNumbersByAxisFromRecognizedText:(id)arg1;
+- (bool)_isValidObject:(id)arg1 toObject:(id)arg2 withValueDifference:(double)arg3 stepDistance:(double)arg4 forAxis:(unsigned long long)arg5;
+- (void)_loadModelFromAssetPath:(id)arg1 assetProperties:(id)arg2;
+- (double)_meanFromNumbers:(id)arg1;
+- (id)_observationsFromCIImage:(id)arg1;
+- (unsigned int)_propertyOrientationFromOrientation:(long long)arg1;
+- (id)_rectsOfGraphFromImage:(id)arg1 objectData:(id)arg2;
+- (id)_rectsOfSymbolsFromImage:(id)arg1 objectData:(id)arg2;
+- (id)_removeDuplicateSetsFromTextSets:(id)arg1;
+- (void)_retrieveModel;
+- (void)_setAudiogramAxisError:(unsigned long long)arg1 onError:(id*)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_shrinkRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 width:(double)arg2 height:(double)arg3 insideBounds:(struct CGSize { double x1; double x2; })arg4;
+- (id)_sortAndRemoveInvalidAxisValues:(id)arg1 forAxis:(unsigned long long)arg2 error:(id*)arg3;
+- (double)_stddevFromNumbers:(id)arg1;
+- (void)_stopRetrievingLatestModel;
+- (id)_textFromAudiogramImage:(id)arg1 regionOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)_validMapForPointPairs:(id)arg1 stepDistance:(double)arg2 forValueDifference:(double)arg3 forAxis:(unsigned long long)arg4;
+- (id)_validPointsFromMap:(id)arg1 forValues:(id)arg2;
+- (id)_valueDifferencesForValues:(id)arg1 stepDistance:(double)arg2 forAxis:(unsigned long long)arg3;
+- (double)_zScoreFromNumber:(double)arg1 mean:(double)arg2 stddev:(double)arg3;
+- (id)analysisQueue;
+- (id)assetManager;
+- (id)audiogramFromImage:(id)arg1;
+- (id)audiogramFromImages:(id)arg1;
+- (void)audiogramFromImages:(id)arg1 completion:(id /* block */)arg2;
+- (id)delegate;
+- (id)init;
+- (id)initWithDelegate:(id)arg1;
+- (bool)isAvailable;
+- (bool)isRetrievingLatestModel;
+- (bool)isRetrievingLatestModelSilently;
+- (id)model;
+- (void)modelDidUpdate:(id)arg1 assetProperties:(id)arg2 assetVersion:(unsigned long long)arg3 withError:(id)arg4;
+- (void)modelDownloadProgressDidUpdate:(float)arg1;
+- (float)modelLabelConfidenceThreshold;
+- (id)modelLabelGraph;
+- (id)modelLabelLeftEarSymbol;
+- (id)modelLabelRightEarSymbol;
+- (void)setAnalysisQueue:(id)arg1;
+- (void)setAssetManager:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setIsRetrievingLatestModel:(bool)arg1;
+- (void)setIsRetrievingLatestModelSilently:(bool)arg1;
+- (void)setModel:(id)arg1;
+- (void)setModelLabelConfidenceThreshold:(float)arg1;
+- (void)setModelLabelGraph:(id)arg1;
+- (void)setModelLabelLeftEarSymbol:(id)arg1;
+- (void)setModelLabelRightEarSymbol:(id)arg1;
+- (void)startRetrievingLatestModel;
+- (void)startRetrievingLatestModelSilently;
+- (void)useCustomModelFromURL:(id)arg1 modelProperties:(id)arg2;
+
+@end

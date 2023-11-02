@@ -1,0 +1,4 @@
+
+@interface RemindersUICore.TTRShowGroupWithSectionsTipKitDataModelSource : RemindersUICore.TTRTipKitDataModelSourceBase
+
+@end

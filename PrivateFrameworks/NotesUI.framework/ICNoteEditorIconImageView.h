@@ -1,0 +1,4 @@
+
+@interface ICNoteEditorIconImageView : UIImageView
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKFCameraReachabilityBulletinRegistrationPrivateExtensions
+
+@end

@@ -1,0 +1,4 @@
+
+@interface DMFFetchGlobalRestrictionsResultObject : DMFFetchRestrictionsResultObject
+
+@end

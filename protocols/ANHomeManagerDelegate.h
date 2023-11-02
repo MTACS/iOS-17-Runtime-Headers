@@ -1,0 +1,4 @@
+
+@protocol ANHomeManagerDelegate <DICHomeManagerDelegate>
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol GCIPCOutgoingConnection <GCIPCConnection>
+
+@end

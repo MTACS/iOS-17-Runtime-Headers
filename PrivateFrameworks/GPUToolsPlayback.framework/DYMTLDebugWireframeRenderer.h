@@ -1,0 +1,44 @@
+
+@interface DYMTLDebugWireframeRenderer : NSObject {
+    <MTLCommandBufferSPI> * _originalCommandBuffer;
+    unsigned long long  _originalCommandEncoderId;
+    <DYMTLStatefulRenderCommandEncoder> * _originalEncoder;
+    <DYMTLStatefulParallelRenderCommandEncoder> * _originalParallelEncoder;
+    <MTLComputePipelineState> * _outlineComputePipelineState;
+    <MTLFunction> * _outlinePostProcessFunction;
+    <MTLTexture> * _outlineTexture;
+    MTLTextureDescriptor * _outlineTextureDescriptor;
+    DYMTLCommonDebugFunctionPlayer * _player;
+    <DYMTLStatefulRenderCommandEncoder> * _savedVertexState;
+    MTLRenderPassColorAttachmentDescriptor * _solidRenderPassColorAttachmentDescriptor;
+    MTLRenderPassDescriptor * _solidRenderPassDescriptor;
+    <MTLTexture> * _solidTexture;
+    bool  _supports_tessellation;
+    <MTLFunction> * _wireframeCreationFragmentFunction;
+    <MTLLibrary> * _wireframeLibrary;
+    MTLRenderPassColorAttachmentDescriptor * _wireframeRenderPassColorAttachmentDescriptor;
+    MTLRenderPassDescriptor * _wireframeRenderPassDescriptor;
+    <MTLRenderPipelineState> * _wireframeRenderPipelineState;
+    <MTLTexture> * _wireframeTexture;
+    MTLTextureDescriptor * _wireframeTextureDescriptor;
+}
+
+@property (nonatomic, readonly) <MTLTexture> *outlineTexture;
+@property (nonatomic, readonly) <MTLTexture> *solidTexture;
+@property (nonatomic, readonly) <MTLTexture> *wireframeTexture;
+
+- (void).cxx_destruct;
+- (bool)_currentRenderPipelineHasBufferOrTextureReadWrite:(id)arg1 encoder:(id)arg2;
+- (long long)_prepareWireframeTextureWithEncoder:(id)arg1 commandBuffer:(id)arg2 pipelineState:(id)arg3 parallelEncoder:(id)arg4 renderPassDescriptor:(struct DYMTLRenderPassDescriptor { unsigned long long x1; unsigned long long x2; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_3_1_1; unsigned long long x_3_1_2; unsigned long long x_3_1_3; unsigned long long x_3_1_4; unsigned long long x_3_1_5; unsigned long long x_3_1_6; unsigned long long x_3_1_7; unsigned long long x_3_1_8; unsigned long long x_3_1_9; unsigned long long x_3_1_10; unsigned long long x_3_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_3_1_12; bool x_3_1_13; unsigned long long x_3_1_14; unsigned long long x_3_1_15; } x3[8]; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_4_1_1; unsigned long long x_4_1_2; unsigned long long x_4_1_3; unsigned long long x_4_1_4; unsigned long long x_4_1_5; unsigned long long x_4_1_6; unsigned long long x_4_1_7; unsigned long long x_4_1_8; unsigned long long x_4_1_9; unsigned long long x_4_1_10; unsigned long long x_4_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_4_1_12; bool x_4_1_13; unsigned long long x_4_1_14; unsigned long long x_4_1_15; } x4; }*)arg5;
+- (void)_updateTextureDescriptor:(id)arg1 usingEncoder:(id)arg2 renderPassDescriptor:(struct DYMTLRenderPassDescriptor { unsigned long long x1; unsigned long long x2; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_3_1_1; unsigned long long x_3_1_2; unsigned long long x_3_1_3; unsigned long long x_3_1_4; unsigned long long x_3_1_5; unsigned long long x_3_1_6; unsigned long long x_3_1_7; unsigned long long x_3_1_8; unsigned long long x_3_1_9; unsigned long long x_3_1_10; unsigned long long x_3_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_3_1_12; bool x_3_1_13; unsigned long long x_3_1_14; unsigned long long x_3_1_15; } x3[8]; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_4_1_1; unsigned long long x_4_1_2; unsigned long long x_4_1_3; unsigned long long x_4_1_4; unsigned long long x_4_1_5; unsigned long long x_4_1_6; unsigned long long x_4_1_7; unsigned long long x_4_1_8; unsigned long long x_4_1_9; unsigned long long x_4_1_10; unsigned long long x_4_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_4_1_12; bool x_4_1_13; unsigned long long x_4_1_14; unsigned long long x_4_1_15; } x4; }*)arg3;
+- (void)createOutlineTexture;
+- (bool)createSolidRenderCommandEncoder:(struct DYMTLRenderPassDescriptor { unsigned long long x1; unsigned long long x2; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_3_1_1; unsigned long long x_3_1_2; unsigned long long x_3_1_3; unsigned long long x_3_1_4; unsigned long long x_3_1_5; unsigned long long x_3_1_6; unsigned long long x_3_1_7; unsigned long long x_3_1_8; unsigned long long x_3_1_9; unsigned long long x_3_1_10; unsigned long long x_3_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_3_1_12; bool x_3_1_13; unsigned long long x_3_1_14; unsigned long long x_3_1_15; } x3[8]; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_4_1_1; unsigned long long x_4_1_2; unsigned long long x_4_1_3; unsigned long long x_4_1_4; unsigned long long x_4_1_5; unsigned long long x_4_1_6; unsigned long long x_4_1_7; unsigned long long x_4_1_8; unsigned long long x_4_1_9; unsigned long long x_4_1_10; unsigned long long x_4_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_4_1_12; bool x_4_1_13; unsigned long long x_4_1_14; unsigned long long x_4_1_15; } x4; }*)arg1 commandBufferId:(unsigned long long)arg2 commandEncoderId:(unsigned long long)arg3 parallelEncoderId:(unsigned long long)arg4;
+- (bool)createWireframeRenderCommandEncoder:(struct DYMTLRenderPassDescriptor { unsigned long long x1; unsigned long long x2; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_3_1_1; unsigned long long x_3_1_2; unsigned long long x_3_1_3; unsigned long long x_3_1_4; unsigned long long x_3_1_5; unsigned long long x_3_1_6; unsigned long long x_3_1_7; unsigned long long x_3_1_8; unsigned long long x_3_1_9; unsigned long long x_3_1_10; unsigned long long x_3_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_3_1_12; bool x_3_1_13; unsigned long long x_3_1_14; unsigned long long x_3_1_15; } x3[8]; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_4_1_1; unsigned long long x_4_1_2; unsigned long long x_4_1_3; unsigned long long x_4_1_4; unsigned long long x_4_1_5; unsigned long long x_4_1_6; unsigned long long x_4_1_7; unsigned long long x_4_1_8; unsigned long long x_4_1_9; unsigned long long x_4_1_10; unsigned long long x_4_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_4_1_12; bool x_4_1_13; unsigned long long x_4_1_14; unsigned long long x_4_1_15; } x4; }*)arg1;
+- (bool)currentRenderPipelineHasBufferOrTextureReadWrite:(unsigned long long)arg1;
+- (id)initWithDebugFunctionPlayer:(id)arg1;
+- (id)outlineTexture;
+- (long long)prepareWireframeTextureWithCommandBufferId:(unsigned long long)arg1 commandEncoderId:(unsigned long long)arg2 parallelEncoderId:(unsigned long long)arg3 pipelineId:(unsigned long long)arg4 renderPassDescriptor:(struct DYMTLRenderPassDescriptor { unsigned long long x1; unsigned long long x2; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_3_1_1; unsigned long long x_3_1_2; unsigned long long x_3_1_3; unsigned long long x_3_1_4; unsigned long long x_3_1_5; unsigned long long x_3_1_6; unsigned long long x_3_1_7; unsigned long long x_3_1_8; unsigned long long x_3_1_9; unsigned long long x_3_1_10; unsigned long long x_3_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_3_1_12; bool x_3_1_13; unsigned long long x_3_1_14; unsigned long long x_3_1_15; } x3[8]; struct DYMTLRenderPassAttachmentDescriptor { unsigned long long x_4_1_1; unsigned long long x_4_1_2; unsigned long long x_4_1_3; unsigned long long x_4_1_4; unsigned long long x_4_1_5; unsigned long long x_4_1_6; unsigned long long x_4_1_7; unsigned long long x_4_1_8; unsigned long long x_4_1_9; unsigned long long x_4_1_10; unsigned long long x_4_1_11; struct DYMTLClearValue { union { struct { double x_1_4_1; double x_1_4_2; double x_1_4_3; double x_1_4_4; } x_1_3_1; double x_1_3_2[4]; } x_12_2_1; } x_4_1_12; bool x_4_1_13; unsigned long long x_4_1_14; unsigned long long x_4_1_15; } x4; }*)arg5;
+- (id)solidTexture;
+- (id)wireframeTexture;
+
+@end

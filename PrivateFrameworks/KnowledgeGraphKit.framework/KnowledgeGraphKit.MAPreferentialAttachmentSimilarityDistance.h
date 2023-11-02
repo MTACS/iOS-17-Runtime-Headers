@@ -1,0 +1,4 @@
+
+@interface KnowledgeGraphKit.MAPreferentialAttachmentSimilarityDistance : KnowledgeGraphKit.MASimilarityDistance
+
+@end

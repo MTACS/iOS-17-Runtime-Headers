@@ -1,0 +1,4 @@
+
+@protocol HFSymptomsHandlerObserver <HMSymptomsHandlerDelegate>
+
+@end

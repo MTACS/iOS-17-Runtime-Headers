@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.AsyncDefaultEagerResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

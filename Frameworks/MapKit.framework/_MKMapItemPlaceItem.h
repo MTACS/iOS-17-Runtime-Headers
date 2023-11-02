@@ -1,0 +1,37 @@
+
+@interface _MKMapItemPlaceItem : NSObject <_MKPlaceItem> {
+    bool  _isIntermediateMapItem;
+    MKMapItem * _mapItem;
+    unsigned long long  _options;
+}
+
+@property (nonatomic, readonly) EKCalendarItem *calendarItem;
+@property (nonatomic, readonly) CNContact *contact;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasContactOnly;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isContactPersisted;
+@property (nonatomic, readonly) bool isIntermediateMapItem;
+@property (nonatomic, readonly) MKMapItem *mapItem;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) unsigned long long options;
+@property (nonatomic, readonly) bool representsPerson;
+@property (readonly) Class superclass;
+
++ (id)placeItemWithMapItem:(id)arg1 options:(unsigned long long)arg2;
++ (id)placeItemWithMapItem:(id)arg1 options:(unsigned long long)arg2 isIntermediateMapItem:(bool)arg3;
+
+- (void).cxx_destruct;
+- (id)calendarItem;
+- (id)contact;
+- (bool)hasContactOnly;
+- (bool)isContactPersisted;
+- (bool)isIntermediateMapItem;
+- (id)mapItem;
+- (id)name;
+- (unsigned long long)options;
+- (bool)representsPerson;
+- (void)setIsSuggestedFavorite:(bool)arg1;
+
+@end

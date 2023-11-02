@@ -1,0 +1,107 @@
+
+@interface NTKAnalogVideoFaceView : NTKAnalogFaceView <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate, NTKEditOptionTransitioningViewDelegate, NTKVideoPlayerViewFaceDelegate> {
+    UIView * _backgroundContainerView;
+    UIColor * _complicationColor;
+    NTKFaceViewTapControl * _faceTapControl;
+    NTKColorCircularUtilitarianFaceViewComplicationFactory * _faceViewComplicationFactory;
+    long long  _previousDataMode;
+    NTKEditOptionTransitioningView * _transitioningView;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _videoDialSize;
+    NTKVideoPlayerView * _videoPlayerView;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NTKFaceViewTapControl *faceTapControl;
+@property (nonatomic, retain) NTKColorCircularUtilitarianFaceViewComplicationFactory *faceViewComplicationFactory;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGSize { double x1; double x2; } videoDialSize;
+@property (nonatomic, retain) NTKVideoPlayerView *videoPlayerView;
+
++ (bool)isRichComplicationsEnabled;
++ (long long)uiSensitivity;
+
+- (void).cxx_destruct;
+- (void)_applyBreathingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (void)_applyDataMode;
+- (void)_applyFrozen;
+- (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (void)_applyRubberBandingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (void)_applySlow;
+- (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
+- (void)_cleanupAfterEditing;
+- (void)_cleanupAfterOrb:(bool)arg1;
+- (void)_cleanupAfterTransitionComplicationSlot:(id)arg1 selectedComplication:(id)arg2;
+- (void)_cleanupAfterTransitionToOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (double)_complicationAlphaForEditMode:(long long)arg1;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
+- (id)_complicationsCompanionForegroundColor;
+- (id)_complicationsEditingColor;
+- (id)_complicationsForegroundColor;
+- (id)_complicationsPlatterColor;
+- (id)_complicationsTapColor;
+- (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
+- (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
+- (void)_configureTimeView:(id)arg1;
+- (double)_contentAlphaForEditMode:(long long)arg1;
+- (struct CGPoint { double x1; double x2; })_contentCenterOffset;
+- (void)_curvedComplicationCircleRadius:(double*)arg1 centerAngle:(double*)arg2 maxAngularWidth:(double*)arg3 circleCenter:(struct CGPoint { double x1; double x2; }*)arg4 interior:(bool*)arg5 forSlot:(id)arg6;
+- (void)_customizeVideoPlayerOnSetup;
+- (id)_detachedComplicationDisplays;
+- (void)_faceLibraryDismissed;
+- (void)_faceViewWasTapped;
+- (bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
+- (double)_handAlphaForEditMode:(long long)arg1;
+- (void)_handleEitherScreenWake;
+- (void)_handleOrdinaryScreenWake;
+- (void)_handleWristRaiseScreenWake;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_insetsForDialSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForComplicationSlot:(id)arg1 selected:(bool)arg2;
+- (long long)_keylineStyleForComplicationSlot:(id)arg1;
+- (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
+- (void)_loadLayoutRules;
+- (void)_loadSnapshotContentViews;
+- (double)_minimumBreathingScaleForComplicationSlot:(id)arg1;
+- (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
+- (void)_prepareForEditing;
+- (void)_prepareForOrb;
+- (void)_setVideoPlayerDataSource:(id)arg1;
+- (void)_setupTransitioningViewIfNeeded:(bool)arg1;
+- (bool)_shouldAnimateComplicationsOnTap;
+- (id)_slotForUtilitySlot:(long long)arg1;
+- (bool)_slotSupportsCurvedText:(id)arg1;
+- (bool)_supportsUnadornedSnapshot;
+- (id)_tapHighlightImage;
+- (void)_tearDownTransitioningView:(bool)arg1;
+- (void)_transformVideoPlayerView:(unsigned long long)arg1;
+- (void)_unloadSnapshotContentViews;
+- (long long)_utilitySlotForSlot:(id)arg1;
+- (void)customizeFaceViewForListing:(id)arg1 changeEvent:(unsigned long long)arg2 animated:(bool)arg3;
+- (id)faceTapControl;
+- (id)faceViewComplicationFactory;
+- (void)faceViewWasTapped:(id)arg1;
+- (id)imageForEditOption:(id)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
+- (double)keylineStyleForComplicationSlot:(id)arg1;
+- (void)layoutSubviews;
+- (void)screenDidTurnOffAnimated:(bool)arg1;
+- (void)setDataMode:(long long)arg1;
+- (void)setFaceTapControl:(id)arg1;
+- (void)setFaceViewComplicationFactory:(id)arg1;
+- (void)setNormalComplicationDisplayWrapper:(id)arg1 forSlot:(id)arg2;
+- (void)setVideoDialSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setVideoPlayerView:(id)arg1;
+- (void)setupVideoPlayerView;
+- (bool)shouldFadeIncomingView;
+- (bool)slotUsesCurvedText:(id)arg1;
+- (struct CGSize { double x1; double x2; })videoDialSize;
+- (void)videoDidBeginPlayingQueuedVideo;
+- (void)videoDidFinishPlayingToEnd;
+- (id)videoPlayerView;
+
+@end

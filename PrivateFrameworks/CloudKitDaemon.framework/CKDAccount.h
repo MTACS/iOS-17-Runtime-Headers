@@ -1,0 +1,92 @@
+
+@interface CKDAccount : NSObject {
+    NSObject<OS_dispatch_queue> * _authTokenCallbackQueue;
+    CKDBackingAccount * _backingAccount;
+    bool  _haveWarnedAboutServerPreferredPushEnvironment;
+    NSString * _lastFailediCloudAuthToken;
+}
+
+@property (readonly) NSString *accountID;
+@property (readonly) long long accountType;
+@property (readonly) NSString *altDSID;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *authTokenCallbackQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *authTokenQueue;
+@property (nonatomic, readonly) CKDBackingAccount *backingAccount;
+@property (readonly) NSString *displayedHostname;
+@property (readonly) NSString *dsid;
+@property (readonly) NSString *formattedUsername;
+@property (readonly) NSPersonNameComponents *fullName;
+@property (nonatomic) bool haveWarnedAboutServerPreferredPushEnvironment;
+@property (readonly) bool isCarryAccount;
+@property (readonly) bool isPrimaryAccount;
+@property (readonly) bool isPrimaryEmailVerified;
+@property (nonatomic, readonly) bool isValidTestAccount;
+@property (nonatomic, copy) NSString *lastFailediCloudAuthToken;
+@property (readonly) NSString *personaIdentifier;
+@property (readonly) NSString *primaryEmail;
+@property (readonly) NSURL *privateCloudDBURL;
+@property (readonly) NSURL *privateCodeServiceURL;
+@property (readonly) NSURL *privateDeviceServiceURL;
+@property (readonly) NSURL *privateMetricsServiceURL;
+@property (readonly) NSURL *privateShareServiceURL;
+@property (nonatomic, readonly) NSString *serverPreferredPushEnvironment;
+@property (readonly) NSString *sharingURLHostname;
+@property (readonly) NSString *username;
+
++ (id)globalAuthTokenQueue;
+
+- (void).cxx_destruct;
+- (id)_lockedCloudKitAuthTokenWithContainer:(id)arg1 error:(id*)arg2;
+- (void)_lockedRenewTokenWithReason:(id)arg1 shouldForce:(bool)arg2 container:(id)arg3 tokenFetchBlock:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (id)_lockediCloudAuthTokenWithContainer:(id)arg1 error:(id*)arg2;
+- (bool)_userCloudDBURLisInCarryPartition;
+- (id)accountID;
+- (long long)accountType;
+- (id)altDSID;
+- (id)authTokenCallbackQueue;
+- (id)authTokenQueue;
+- (id)backingAccount;
+- (void)cloudKitAuthTokenWithContainer:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)cloudKitAuthTokenWithContainer:(id)arg1 error:(id*)arg2;
+- (id)description;
+- (id)displayedHostname;
+- (id)dsid;
+- (id)formattedUsername;
+- (id)fullName;
+- (bool)haveWarnedAboutServerPreferredPushEnvironment;
+- (void)iCloudAuthTokenWithContainer:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)iCloudAuthTokenWithContainer:(id)arg1 error:(id*)arg2;
+- (id)initAnonymousAccount;
+- (id)initExplicitCredentialsAccountWithAccountOverrideInfo:(id)arg1;
+- (id)initInternal;
+- (id)initMockAccountWithTestAccount:(id)arg1 testDevice:(id)arg2;
+- (id)initPrimaryAccount;
+- (id)initWithAccountID:(id)arg1;
+- (id)initWithAltDSID:(id)arg1;
+- (bool)isCarryAccount;
+- (bool)isDataclassEnabled:(id)arg1;
+- (bool)isDataclassEnabledForCellular:(id)arg1;
+- (bool)isPrimaryAccount;
+- (bool)isPrimaryEmailVerified;
+- (bool)isValidTestAccount;
+- (id)lastFailediCloudAuthToken;
+- (long long)lastKnownDeviceCount;
+- (id)personaIdentifier;
+- (id)primaryEmail;
+- (id)privateCloudDBURL;
+- (id)privateCodeServiceURL;
+- (id)privateDeviceServiceURL;
+- (id)privateMetricsServiceURL;
+- (id)privateShareServiceURL;
+- (void)renewCloudKitAuthTokenWithReason:(id)arg1 shouldForce:(bool)arg2 container:(id)arg3 failedToken:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)renewiCloudAuthTokenWithReason:(id)arg1 shouldForce:(bool)arg2 container:(id)arg3 failedToken:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)serverPreferredPushEnvironment;
+- (void)setAuthTokenCallbackQueue:(id)arg1;
+- (void)setHaveWarnedAboutServerPreferredPushEnvironment:(bool)arg1;
+- (void)setLastFailediCloudAuthToken:(id)arg1;
+- (id)sharingURLHostname;
+- (void)updateAccountPropertiesAndSaveAccountWithCompletionHandler:(id /* block */)arg1;
+- (id)username;
+- (void)validateVettingToken:(id)arg1 vettingEmail:(id)arg2 vettingPhone:(id)arg3 container:(id)arg4 completionHandler:(id /* block */)arg5;
+
+@end

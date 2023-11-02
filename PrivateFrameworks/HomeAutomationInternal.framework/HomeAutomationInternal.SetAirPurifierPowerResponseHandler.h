@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.SetAirPurifierPowerResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

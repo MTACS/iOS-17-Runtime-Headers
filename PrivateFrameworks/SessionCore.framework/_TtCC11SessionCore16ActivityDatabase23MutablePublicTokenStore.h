@@ -1,0 +1,4 @@
+
+@interface _TtCC11SessionCore16ActivityDatabase23MutablePublicTokenStore : _TtCC11SessionCore16ActivityDatabase16PublicTokenStore
+
+@end

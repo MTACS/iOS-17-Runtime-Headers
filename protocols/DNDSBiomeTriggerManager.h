@@ -1,0 +1,4 @@
+
+@protocol DNDSBiomeTriggerManager <NSObject>
+
+@end

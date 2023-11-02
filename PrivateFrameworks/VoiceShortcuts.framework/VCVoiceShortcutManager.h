@@ -1,0 +1,81 @@
+
+@interface VCVoiceShortcutManager : NSObject <HMHomeManagerDelegate> {
+    WFTopHitsAppShortcutsUpdater * _appShortcutsUpdater;
+    WFContextualActionSpotlightSyncService * _contextualActionSyncService;
+    <WFDatabaseProvider> * _databaseProvider;
+    HMHomeManager * _homeManager;
+}
+
+@property (nonatomic, retain) WFTopHitsAppShortcutsUpdater *appShortcutsUpdater;
+@property (nonatomic, retain) WFContextualActionSpotlightSyncService *contextualActionSyncService;
+@property (nonatomic, readonly) WFDatabase *database;
+@property (nonatomic, readonly) <WFDatabaseProvider> *databaseProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HMHomeManager *homeManager;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)actionWithAppBundleIdentifier:(id)arg1 appIntentIdentifier:(id)arg2 serializedParameters:(id)arg3;
+- (id)actionWithSerializedParameters:(id)arg1 actionMetadata:(id)arg2;
+- (void)addVoiceShortcut:(id)arg1 phrase:(id)arg2 accessSpecifier:(id)arg3 completion:(id /* block */)arg4;
+- (id)appShortcutsUpdater;
+- (void)applicationWasUnregistered:(id)arg1;
+- (void)archiveAction:(id)arg1 withActionMetadata:(id)arg2 completion:(id /* block */)arg3;
+- (id)contextualActionSyncService;
+- (void)createShortcutWithRecordData:(id)arg1 name:(id)arg2 shortcutSource:(id)arg3 accessSpecifier:(id)arg4 completion:(id /* block */)arg5;
+- (void)createSleepWorkflow:(id)arg1 completion:(id /* block */)arg2;
+- (id)database;
+- (id)databaseProvider;
+- (void)deleteSleepWorkflowWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)deleteStaleSuggestions;
+- (void)deleteSuggestionsFromApps:(id)arg1;
+- (void)deleteVoiceShortcutWithIdentifier:(id)arg1 name:(id)arg2 accessSpecifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)drawGlyphs:(id)arg1 withBackgroundColorValues:(id)arg2 padding:(double)arg3 rounded:(bool)arg4 intoContext:(id)arg5;
+- (void)getInactiveAppsWithAccessSpecifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)getLinkActionWithAppBundleIdentifier:(id)arg1 appIntentIdentifier:(id)arg2 expandingParameterName:(id)arg3 limit:(long long)arg4 completion:(id /* block */)arg5;
+- (void)getLinkActionWithAppBundleIdentifier:(id)arg1 appIntentIdentifier:(id)arg2 serializedParameterStates:(id)arg3 completion:(id /* block */)arg4;
+- (void)getMigratedAppIntentWithINIntent:(id)arg1 completion:(id /* block */)arg2;
+- (void)getNumberOfVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)getResultsForQuery:(id)arg1 resultClass:(Class)arg2 completion:(id /* block */)arg3;
+- (void)getSerializedParametersForLinkAction:(id)arg1 actionMetadata:(id)arg2 completion:(id /* block */)arg3;
+- (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)getSiriAutoShortcutsEnablementForBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)getSleepActionSuggestionsForAllAppsFilteringBySleep:(bool)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)getSleepActionSuggestionsForAllAppsWithOptions:(unsigned long long)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)getSleepActionSuggestionsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 options:(unsigned long long)arg3 completion:(id /* block */)arg4;
+- (void)getSleepActionSuggestionsForAppWithBundleIdentifier:(id)arg1 shouldFilterBySleep:(bool)arg2 accessSpecifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)getSpotlightAutoShortcutsEnablementForBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)getValueForDescriptor:(id)arg1 resultClass:(Class)arg2 completion:(id /* block */)arg3;
+- (void)getVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)getVoiceShortcutWithPhrase:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)getVoiceShortcutsForAppsWithBundleIdentifiers:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)getVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(id /* block */)arg2;
+- (id)homeManager;
+- (id)initWithDatabaseProvider:(id)arg1 eventHandler:(id)arg2 appShortcutsUpdater:(id)arg3 contextualActionSyncService:(id)arg4;
+- (void)isAutoShortcutDisabledForBundleIdentifier:(id)arg1 autoShortcutIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (bool)isPhraseUsable:(id)arg1 inDatabase:(id)arg2 error:(id*)arg3;
+- (void)logHomescreenFastPathRunEventForShortcutWithWebClip:(id)arg1;
+- (bool)lsDatabaseChangedSinceLastCheck;
+- (bool)phraseHasHomeKitConflict:(id)arg1;
+- (void)removeAllSerializedParametersForQueryName:(id)arg1 completion:(id /* block */)arg2;
+- (void)requestDataMigrationWithCompletion:(id /* block */)arg1;
+- (void)requestShortcutsSpotlightFullReindex;
+- (void)serializedParametersForAppEntityIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)setAppShortcutsUpdater:(id)arg1;
+- (void)setAutoShortcutDisabledForBundleIdentifier:(id)arg1 autoShortcutDisabled:(bool)arg2 autoShortcutIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)setContextualActionSyncService:(id)arg1;
+- (void)setPerWorkflowStateData:(id)arg1 forSmartPromptWithActionUUID:(id)arg2 reference:(id)arg3;
+- (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2 accessSpecifier:(id)arg3;
+- (void)setSiriAutoShortcutsEnablement:(bool)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)setSpotlightAutoShortcutsEnablement:(bool)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)storeSerializedParameters:(id)arg1 forAppEntityIdentifier:(id)arg2 queryName:(id)arg3 completion:(id /* block */)arg4;
+- (void)triggerFullContextualActionReindexWithCompletion:(id /* block */)arg1;
+- (void)unarchiveActionFromData:(id)arg1 withActionMetadata:(id)arg2 completion:(id /* block */)arg3;
+- (void)updateAppShortcutsWithCompletion:(id /* block */)arg1;
+- (void)updateLSDatabaseAnchors;
+- (void)updateVoiceShortcutWithIdentifier:(id)arg1 phrase:(id)arg2 shortcut:(id)arg3 accessSpecifier:(id)arg4 completion:(id /* block */)arg5;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CNManualObservable : CNPublishingSubject
+
+@end

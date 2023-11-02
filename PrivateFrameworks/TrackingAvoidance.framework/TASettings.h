@@ -1,0 +1,96 @@
+
+@interface TASettings : NSObject {
+    bool  _aisFetchEnabled;
+    TAAnalyticsManagerSettings * _analyticsManagerSettings;
+    TADeviceRecordSettings * _deviceRecordSettings;
+    TAEventBufferSettings * _eventBufferSettings;
+    TAFilterGeneralSettings * _filterGeneralSettings;
+    TAFilterLeavingLOISettings * _filterLeavingLOISettings;
+    TAFilterSingleVisitSettings * _filterSingleVisitSettings;
+    TAFilterVisitsSettings * _filterVisitsSettings;
+    unsigned long long  _maximumDailyScans;
+    unsigned long long  _notificationThrottleHours;
+    unsigned long long  _notificationThrottleMaxPerPeriod;
+    bool  _peopleDensityEnabled;
+    double  _persistenceInterval;
+    TAPersistenceManagerSettings * _persistenceManagerSettings;
+    TAScanRequestSettings * _scanRequestSettings;
+    TATrackingAvoidanceServiceSettings * _serviceSettings;
+    unsigned long long  _settingsVersion;
+    bool  _trackingAvoidanceEnabled;
+    TAVisitStateSettings * _visitStateSettings;
+}
+
+@property (nonatomic) bool aisFetchEnabled;
+@property (nonatomic, retain) TAAnalyticsManagerSettings *analyticsManagerSettings;
+@property (nonatomic, retain) TADeviceRecordSettings *deviceRecordSettings;
+@property (nonatomic, retain) TAEventBufferSettings *eventBufferSettings;
+@property (nonatomic, retain) TAFilterGeneralSettings *filterGeneralSettings;
+@property (nonatomic, retain) TAFilterLeavingLOISettings *filterLeavingLOISettings;
+@property (nonatomic, retain) TAFilterSingleVisitSettings *filterSingleVisitSettings;
+@property (nonatomic, retain) TAFilterVisitsSettings *filterVisitsSettings;
+@property (nonatomic) unsigned long long maximumDailyScans;
+@property (nonatomic) unsigned long long notificationThrottleHours;
+@property (nonatomic) unsigned long long notificationThrottleMaxPerPeriod;
+@property (nonatomic) bool peopleDensityEnabled;
+@property (nonatomic) double persistenceInterval;
+@property (nonatomic, retain) TAPersistenceManagerSettings *persistenceManagerSettings;
+@property (nonatomic, retain) TAScanRequestSettings *scanRequestSettings;
+@property (nonatomic, retain) TATrackingAvoidanceServiceSettings *serviceSettings;
+@property (nonatomic) unsigned long long settingsVersion;
+@property (nonatomic) bool trackingAvoidanceEnabled;
+@property (nonatomic, retain) TAVisitStateSettings *visitStateSettings;
+
++ (id)convertEnabledLoiTypesValueContentToNSNumberType:(id)arg1;
++ (id)getArraySettingsKeys;
++ (id)getBooleanSettingsKeys;
++ (id)getDoubleSettingsKeys;
++ (id)getIntegerSettingsKeys;
++ (id)getStringSettingsKeys;
++ (id)getUnsignedIntegerSettingsKeys;
+
+- (void).cxx_destruct;
+- (bool)aisFetchEnabled;
+- (id)analyticsManagerSettings;
+- (id)description;
+- (id)deviceRecordSettings;
+- (id)eventBufferSettings;
+- (id)filterGeneralSettings;
+- (id)filterLeavingLOISettings;
+- (id)filterSingleVisitSettings;
+- (id)filterVisitsSettings;
+- (id)init;
+- (id)initWithSettings:(id)arg1;
+- (unsigned long long)maximumDailyScans;
+- (unsigned long long)notificationThrottleHours;
+- (unsigned long long)notificationThrottleMaxPerPeriod;
+- (bool)peopleDensityEnabled;
+- (double)persistenceInterval;
+- (id)persistenceManagerSettings;
+- (id)scanRequestSettings;
+- (id)serviceSettings;
+- (void)setAisFetchEnabled:(bool)arg1;
+- (void)setAnalyticsManagerSettings:(id)arg1;
+- (void)setDeviceRecordSettings:(id)arg1;
+- (void)setEventBufferSettings:(id)arg1;
+- (void)setFilterGeneralSettings:(id)arg1;
+- (void)setFilterLeavingLOISettings:(id)arg1;
+- (void)setFilterSingleVisitSettings:(id)arg1;
+- (void)setFilterVisitsSettings:(id)arg1;
+- (void)setMaximumDailyScans:(unsigned long long)arg1;
+- (void)setNotificationThrottleHours:(unsigned long long)arg1;
+- (void)setNotificationThrottleMaxPerPeriod:(unsigned long long)arg1;
+- (void)setPeopleDensityEnabled:(bool)arg1;
+- (void)setPersistenceInterval:(double)arg1;
+- (void)setPersistenceManagerSettings:(id)arg1;
+- (void)setScanRequestSettings:(id)arg1;
+- (void)setServiceSettings:(id)arg1;
+- (void)setSettings:(id)arg1;
+- (void)setSettingsVersion:(unsigned long long)arg1;
+- (void)setTrackingAvoidanceEnabled:(bool)arg1;
+- (void)setVisitStateSettings:(id)arg1;
+- (unsigned long long)settingsVersion;
+- (bool)trackingAvoidanceEnabled;
+- (id)visitStateSettings;
+
+@end

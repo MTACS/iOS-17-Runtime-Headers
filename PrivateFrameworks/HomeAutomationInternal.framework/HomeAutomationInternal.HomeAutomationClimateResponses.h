@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.HomeAutomationClimateResponses : HomeAutomationInternal.HomeAutomationNumericEntityResponses
+
+@end

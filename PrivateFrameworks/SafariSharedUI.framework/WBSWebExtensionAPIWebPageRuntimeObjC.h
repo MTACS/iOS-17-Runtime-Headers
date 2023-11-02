@@ -1,0 +1,4 @@
+
+@interface WBSWebExtensionAPIWebPageRuntimeObjC : WBSWebExtensionAPIRuntimeBase
+
+@end

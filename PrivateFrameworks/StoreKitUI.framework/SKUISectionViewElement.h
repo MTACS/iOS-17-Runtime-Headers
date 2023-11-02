@@ -1,0 +1,4 @@
+
+@interface SKUISectionViewElement : SKUIViewElement
+
+@end

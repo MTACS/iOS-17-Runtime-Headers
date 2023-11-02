@@ -1,0 +1,84 @@
+
+@interface APPCMetricsView : UIView <APPCMetricRegister> {
+    void $__lazy_storage_$_debugViewEnabled;
+    void $__lazy_storage_$_debugVisibilityColorsEnabled;
+    void adContentPosition;
+    void contentView;
+    void context;
+    void currentOrientation;
+    void currentlyViewable;
+    void debugOverlay;
+    void debugView;
+    void forcedReadiness;
+    void frameObserver;
+    void identifier;
+    void impressionSent;
+    void interactionPresentationDelegate;
+    void isBackgrounded;
+    void isCollapsedInternal;
+    void lastCollapsedState;
+    void lastTimeVisibilityCheckFrame;
+    void needToSendOnScreen;
+    void offsetObserver;
+    void policyCheckCompleted;
+    void promotedContent;
+    void promotedContentInfo;
+    void readinessObserver;
+    void ready;
+    void readyDelegate;
+    void reportedVisibilityThresholds;
+    void slotPosition;
+    void startsCollapsed;
+    void timingTracking;
+    void viewCollapsedState;
+    void visibilityChecker;
+    void visibilityCheckingView;
+    void visibleThresholds;
+    void visibleThresholdsLock;
+    void wasTapped;
+}
+
+@property (nonatomic, readonly) <APPCDiagnosticMetricsHelping> *diagnosticMetricHelper;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
+@property (nonatomic) <APPCMetricsInteractionPresentationDelegate> *interactionPresentationDelegate;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } metricsViewEdgeInsets;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } privacyMarkerFrame;
+@property (nonatomic, readonly) APPrivacyMarker *privacyMarkerView;
+@property (nonatomic, retain) APPCPromotedContentInfo *promotedContentInfo;
+@property (nonatomic) bool ready;
+@property (nonatomic) <APPCMetricsViewReadyDelegate> *readyDelegate;
+
+- (void).cxx_destruct;
+- (void)appBackgrounded:(id)arg1;
+- (void)appForegrounded:(id)arg1;
+- (void)appWillResignActive:(id)arg1;
+- (void)collapse;
+- (void)dealloc;
+- (id)diagnosticMetricHelper;
+- (void)didMoveToSuperview;
+- (void)didMoveToWindow;
+- (void)expand;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)interactionPresentationDelegate;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })metricsViewEdgeInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })privacyMarkerFrame;
+- (id)privacyMarkerView;
+- (id)promotedContentInfo;
+- (bool)ready;
+- (id)readyDelegate;
+- (void)registerHandlerForAllMetricsWithClosure:(id /* block */)arg1;
+- (void)removeHandler;
+- (bool)safeCollapseAndReturnError:(id*)arg1;
+- (bool)safeExpandAndReturnError:(id*)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setInteractionPresentationDelegate:(id)arg1;
+- (void)setPromotedContentInfo:(id)arg1;
+- (void)setReady:(bool)arg1;
+- (void)setReadyDelegate:(id)arg1;
+- (void)unloadAdViewIfRequired;
+- (void)willEnterforeground;
+- (void)willMoveToSuperview:(id)arg1;
+
+@end

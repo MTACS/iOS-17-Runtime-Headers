@@ -1,0 +1,91 @@
+
+@interface EDAMSyncChunkFilter : FATObject {
+    NSNumber * _inAccountUserId;
+    NSNumber * _includeExpunged;
+    NSNumber * _includeLinkedAccounts;
+    NSNumber * _includeLinkedNotebooks;
+    NSNumber * _includeNoteApplicationDataFullMap;
+    NSNumber * _includeNoteAttributes;
+    NSNumber * _includeNoteResourceApplicationDataFullMap;
+    NSNumber * _includeNoteResources;
+    NSNumber * _includeNotebooks;
+    NSNumber * _includeNotes;
+    NSNumber * _includeNotesSharedWithMe;
+    NSNumber * _includePreferences;
+    NSNumber * _includeResourceApplicationDataFullMap;
+    NSNumber * _includeResources;
+    NSNumber * _includeSearches;
+    NSNumber * _includeSharedNotes;
+    NSNumber * _includeTags;
+    NSSet * _notebookGuids;
+    NSNumber * _omitSharedNotebooks;
+    NSString * _requireNoteContentClass;
+}
+
+@property (nonatomic, retain) NSNumber *inAccountUserId;
+@property (nonatomic, retain) NSNumber *includeExpunged;
+@property (nonatomic, retain) NSNumber *includeLinkedAccounts;
+@property (nonatomic, retain) NSNumber *includeLinkedNotebooks;
+@property (nonatomic, retain) NSNumber *includeNoteApplicationDataFullMap;
+@property (nonatomic, retain) NSNumber *includeNoteAttributes;
+@property (nonatomic, retain) NSNumber *includeNoteResourceApplicationDataFullMap;
+@property (nonatomic, retain) NSNumber *includeNoteResources;
+@property (nonatomic, retain) NSNumber *includeNotebooks;
+@property (nonatomic, retain) NSNumber *includeNotes;
+@property (nonatomic, retain) NSNumber *includeNotesSharedWithMe;
+@property (nonatomic, retain) NSNumber *includePreferences;
+@property (nonatomic, retain) NSNumber *includeResourceApplicationDataFullMap;
+@property (nonatomic, retain) NSNumber *includeResources;
+@property (nonatomic, retain) NSNumber *includeSearches;
+@property (nonatomic, retain) NSNumber *includeSharedNotes;
+@property (nonatomic, retain) NSNumber *includeTags;
+@property (nonatomic, retain) NSSet *notebookGuids;
+@property (nonatomic, retain) NSNumber *omitSharedNotebooks;
+@property (nonatomic, retain) NSString *requireNoteContentClass;
+
++ (id)structFields;
++ (id)structName;
+
+- (void).cxx_destruct;
+- (id)inAccountUserId;
+- (id)includeExpunged;
+- (id)includeLinkedAccounts;
+- (id)includeLinkedNotebooks;
+- (id)includeNoteApplicationDataFullMap;
+- (id)includeNoteAttributes;
+- (id)includeNoteResourceApplicationDataFullMap;
+- (id)includeNoteResources;
+- (id)includeNotebooks;
+- (id)includeNotes;
+- (id)includeNotesSharedWithMe;
+- (id)includePreferences;
+- (id)includeResourceApplicationDataFullMap;
+- (id)includeResources;
+- (id)includeSearches;
+- (id)includeSharedNotes;
+- (id)includeTags;
+- (id)notebookGuids;
+- (id)omitSharedNotebooks;
+- (id)requireNoteContentClass;
+- (void)setInAccountUserId:(id)arg1;
+- (void)setIncludeExpunged:(id)arg1;
+- (void)setIncludeLinkedAccounts:(id)arg1;
+- (void)setIncludeLinkedNotebooks:(id)arg1;
+- (void)setIncludeNoteApplicationDataFullMap:(id)arg1;
+- (void)setIncludeNoteAttributes:(id)arg1;
+- (void)setIncludeNoteResourceApplicationDataFullMap:(id)arg1;
+- (void)setIncludeNoteResources:(id)arg1;
+- (void)setIncludeNotebooks:(id)arg1;
+- (void)setIncludeNotes:(id)arg1;
+- (void)setIncludeNotesSharedWithMe:(id)arg1;
+- (void)setIncludePreferences:(id)arg1;
+- (void)setIncludeResourceApplicationDataFullMap:(id)arg1;
+- (void)setIncludeResources:(id)arg1;
+- (void)setIncludeSearches:(id)arg1;
+- (void)setIncludeSharedNotes:(id)arg1;
+- (void)setIncludeTags:(id)arg1;
+- (void)setNotebookGuids:(id)arg1;
+- (void)setOmitSharedNotebooks:(id)arg1;
+- (void)setRequireNoteContentClass:(id)arg1;
+
+@end

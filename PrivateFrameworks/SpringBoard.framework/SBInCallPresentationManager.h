@@ -1,0 +1,95 @@
+
+@interface SBInCallPresentationManager : NSObject <FBSceneManagerObserver, SBApplicationHosting, SBFBacklightEnvironmentSceneProviding, SBInCallPresentationRequestServerDelegate, SBInCallPresentationSessionDelegate, SBSceneManagerObserver> {
+    SBApplicationController * _applicationController;
+    NSMutableSet * _bundleIdentifiersOfObservedApplications;
+    NSMutableDictionary * _clientIdentifierToPresentationSession;
+    <SBInCallPresentationManagerDelegate> * _delegate;
+    SBExpanseBannerAuthority * _expanseBannerAuthority;
+    SBInCallBannerAuthority * _inCallBannerAuthority;
+    SBHideSharePlayContentFromSharedScreenController * _lazy_hideSharePlayContentFromSharedScreenController;
+    BSCompoundAssertion * _nonModalSuppressionAssertions;
+    NSMutableSet * _observedSceneManagers;
+    NSMutableArray * _pendingInvalidationSessions;
+    SBInCallPresentationRequestServer * _presentationRequestServer;
+    bool  _supportsHandlingUILockForWindowedAccessoryAttach;
+    SBWindowSceneManager * _windowSceneManager;
+}
+
+@property (nonatomic, readonly) SBInCallPresentationSession *_lastPresentationSession;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBInCallPresentationManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool disallowsLockHardwareButtonDoublePress;
+@property (nonatomic, readonly) bool hasFullscreenActiveCallInSwitcher;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SBHideSharePlayContentFromSharedScreenController *hideSharePlayContentFromSharedScreenController;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsHandlingDeviceLock;
+@property (nonatomic, readonly) bool supportsHandlingUILockForWindowedAccessoryAttach;
+@property (nonatomic, readonly) SBWindowSceneManager *windowSceneManager;
+
++ (bool)isSpecializedAPISupported;
+
+- (void).cxx_destruct;
+- (void)_applicationDidExit:(id)arg1;
+- (void)_dismissAllPresentations;
+- (void)_dismissAllPresentationsForApplication:(id)arg1;
+- (void)_dismissClientWithIdentifier:(id)arg1 animated:(bool)arg2 analyticsSource:(id)arg3 reason:(id)arg4 completion:(id /* block */)arg5;
+- (void)_evaluateNonModalSuppressionAssertions;
+- (bool)_hasPendingDismissalOfSceneHandleWithPersistenceIdentifier:(id)arg1;
+- (id)_hostedPresentationSessions;
+- (bool)_isManagingSceneOrSceneHandleWithPersistenceIdentifier:(id)arg1;
+- (id)_lastPresentationSession;
+- (id)_newClientPresentationSessionWithSceneHandle:(id)arg1;
+- (void)_ringerButtonDown:(id)arg1;
+- (void)_runZombieChecksForScene:(id)arg1;
+- (void)_runZombieChecksForSceneHandle:(id)arg1;
+- (id)_sessionForSceneWithIdentifier:(id)arg1;
+- (bool)_shouldSuppressNonModalCalls;
+- (id)acquireNonModalSuppressionAssertionForReason:(id)arg1;
+- (bool)canHandleOpenApplicationRequestForApplication:(id)arg1;
+- (bool)canHostAnApp;
+- (void)conformsToSBApplicationHosting;
+- (id)delegate;
+- (bool)disablesSystemVolumeHUDForCategory:(id)arg1;
+- (bool)disallowsLockHardwareButtonDoublePress;
+- (void)ensureSwitcherInclusionForRestoringFromPIPForSceneWithPersistenceIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)handleAccessoryAttachWithCompletion:(id /* block */)arg1;
+- (void)handleDeviceLockFromSource:(int)arg1;
+- (bool)handleHeadsetButtonPress:(bool)arg1;
+- (void)handleOpenApplicationRequest:(id)arg1 clientWorkspace:(id)arg2 actions:(id)arg3 origin:(id)arg4 options:(id)arg5 withResult:(id /* block */)arg6;
+- (void)handlePresentationForActivityContinuationIdentifier:(id)arg1;
+- (bool)hasFullscreenActiveCallInSwitcher;
+- (bool)hasOverrideAppSceneEntityForLaunchingApplication:(id)arg1;
+- (id)hideSharePlayContentFromSharedScreenController;
+- (id)hostedAppSceneHandle;
+- (id)hostedAppSceneHandles;
+- (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
+- (id)inCallClientPresentationSession:(id)arg1 acquireHideSharePlayContentFromClonedDisplaysAssertionForReason:(id)arg2;
+- (void)inCallClientPresentationSession:(id)arg1 callConnectedStatusChangedForPresentableViewController:(id)arg2;
+- (bool)inCallClientPresentationSession:(id)arg1 canRestoreToPreviousEntity:(id)arg2;
+- (void)inCallClientPresentationSession:(id)arg1 handleDestroySceneActionWithReason:(long long)arg2 analyticsSource:(id)arg3 completion:(id /* block */)arg4;
+- (bool)inCallClientPresentationSessionAmbientPresentationActive:(id)arg1;
+- (long long)inCallClientPresentationSessionInterfaceOrientationForBannerPresentation:(id)arg1;
+- (long long)inCallClientPresentationSessionInterfaceOrientationForTransientOverlayPresentation:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })inCallClientPresentationSessionResolvedPIPDodgingInsets:(id)arg1;
+- (void)inCallClientPresentationSessionSceneWasDestroyed:(id)arg1;
+- (void)inCallPresentationRequestServer:(id)arg1 clientWithIdentifier:(id)arg2 requestsPresentationWithConfiguration:(id)arg3 completion:(id /* block */)arg4;
+- (void)inCallPresentationRequestServer:(id)arg1 clientWithIdentifierDidInvalidate:(id)arg2;
+- (id)initWithWindowSceneManager:(id)arg1 applicationController:(id)arg2 bannerManager:(id)arg3;
+- (bool)isHostingAnApp;
+- (id)overrideAppSceneEntityForLaunchingApplication:(id)arg1;
+- (void)reactivateInCallForReason:(long long)arg1;
+- (void)sceneManager:(id)arg1 didAddExternalForegroundApplicationSceneHandle:(id)arg2;
+- (void)sceneManager:(id)arg1 didAddScene:(id)arg2;
+- (void)sceneManager:(id)arg1 willMoveScene:(id)arg2 toSceneManager:(id)arg3;
+- (void)sceneManagerDidInvalidate:(id)arg1;
+- (id)scenesForBacklightSession;
+- (id)sessionForSceneIdentifier:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (bool)supportsBecomingVisibleWhenUnlockingFromSource:(int)arg1 wakingDisplay:(bool)arg2;
+- (bool)supportsHandlingDeviceLock;
+- (bool)supportsHandlingUILockForWindowedAccessoryAttach;
+- (id)windowSceneManager;
+
+@end

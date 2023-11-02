@@ -1,0 +1,4 @@
+
+@interface MKFActionDatabaseID : MKFModelDatabaseID
+
+@end

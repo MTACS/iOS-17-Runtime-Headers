@@ -1,0 +1,4 @@
+
+@interface ConversationKit.ConversationControlsAudioRouteMenuButtonProvider : ConversationKit.ConversationControlsMenuButtonProvider
+
+@end

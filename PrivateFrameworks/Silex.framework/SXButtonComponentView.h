@@ -1,0 +1,45 @@
+
+@interface SXButtonComponentView : SXComponentView <SXTextViewDelegate> {
+    SXTextView * _textView;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _typographicBounds;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SXTextView *textView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } typographicBounds;
+
+- (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })absoluteTextViewFrame;
+- (bool)accessibilityActivate;
+- (id)accessibilityContextualLabelForTextView:(id)arg1;
+- (id)accessibilityCustomRotorMembershipForTextView:(id)arg1;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
+- (id)accessibilityUserInputLabels;
+- (id)accessibilityValue;
+- (id)componentIdentifierForTextView:(id)arg1;
+- (void)didMoveToSuperview;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; bool x3; })arg1;
+- (void)provideInfosLayoutTo:(id)arg1;
+- (void)receivedInfo:(id)arg1 fromLayoutingPhaseWithIdentifier:(id)arg2;
+- (void)setAbsoluteFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPresentationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTypographicBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)textRulesForTextView:(id)arg1;
+- (id)textView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })typographicBounds;
+
+@end

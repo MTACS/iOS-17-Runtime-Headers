@@ -1,0 +1,81 @@
+
+@interface SBHWidgetIntroductionFeatureIntroductionItem : SBHFeatureIntroductionItem <SBHFeatureIntroductionProviding> {
+    NSMutableArray * _defaultWidgetsBumpedIconUsageRanking;
+    NSMutableDictionary * _defaultWidgetsIconsRestoringRecord;
+    NSMutableArray * _defaultWidgetsIconsRestoringRecordOriginalIndex;
+    bool  _forceShowWidgetIntroduction;
+    SBHomeScreenDefaults * _homeScreenDefaults;
+    SBHIconManager * _iconManager;
+    bool  _isVerticalWidgetIntroduction;
+    SBModalWidgetIntroductionViewController * _modalIntroductionViewController;
+    NSDictionary * _originalIconStateBeforeWidgetDiscoverability;
+    bool  _shouldDisplayWidgetIntroduction;
+    bool  _stopUpdatingDefaultWidgetsBumpedIconRecord;
+    SBHTrialClientManager * _trialClientManager;
+    bool  _widgetDiscoverabilityIsRunning;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSMutableArray *defaultWidgetsBumpedIconUsageRanking;
+@property (nonatomic, retain) NSMutableDictionary *defaultWidgetsIconsRestoringRecord;
+@property (nonatomic, retain) NSMutableArray *defaultWidgetsIconsRestoringRecordOriginalIndex;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *featureIntroductionIdentifier;
+@property (nonatomic) bool forceShowWidgetIntroduction;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SBHomeScreenDefaults *homeScreenDefaults;
+@property (nonatomic) SBHIconManager *iconManager;
+@property (nonatomic) bool isVerticalWidgetIntroduction;
+@property (nonatomic, retain) SBModalWidgetIntroductionViewController *modalIntroductionViewController;
+@property (nonatomic, copy) NSDictionary *originalIconStateBeforeWidgetDiscoverability;
+@property (nonatomic) bool shouldDisplayWidgetIntroduction;
+@property (nonatomic) bool stopUpdatingDefaultWidgetsBumpedIconRecord;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SBHTrialClientManager *trialClientManager;
+@property (nonatomic) bool widgetDiscoverabilityIsRunning;
+
+- (void).cxx_destruct;
+- (void)animateModalWidgetDiscoverabilityIntroductionWhenNeededWithPresentCompletion:(id /* block */)arg1 dismissCompletion:(id /* block */)arg2;
+- (id)defaultWidgetsBumpedIconUsageRanking;
+- (id)defaultWidgetsIconsRestoringRecord;
+- (id)defaultWidgetsIconsRestoringRecordKeyForIcon:(id)arg1;
+- (id)defaultWidgetsIconsRestoringRecordOriginalIndex;
+- (bool)deviceTypeSupportModalWidgetIntroduction;
+- (void)displayFeatureIntroductionAtLocations:(unsigned long long)arg1 presentCompletion:(id /* block */)arg2 dismissCompletion:(id /* block */)arg3;
+- (id)featureIntroductionIdentifier;
+- (bool)forceShowWidgetIntroduction;
+- (id)homeScreenDefaults;
+- (id)iconManager;
+- (void)immediateDownloadSpringBoardHomeTrialSettingsWhenNeeded;
+- (id)init;
+- (bool)isVerticalWidgetIntroduction;
+- (id)modalIntroductionViewController;
+- (id)originalIconStateBeforeWidgetDiscoverability;
+- (bool)overrideShouldAddDefaultWidgetsToHomeScreenWhenNeeded;
+- (void)prewarmModalWidgetIntroductionViewController;
+- (id)prewarmModalWidgetIntroductionWithCompletion:(id /* block */)arg1;
+- (void)resetDefaultWidgetsUndoInfo;
+- (void)setDefaultWidgetsBumpedIconUsageRanking:(id)arg1;
+- (void)setDefaultWidgetsIconsRestoringRecord:(id)arg1;
+- (void)setDefaultWidgetsIconsRestoringRecordOriginalIndex:(id)arg1;
+- (void)setForceShowWidgetIntroduction:(bool)arg1;
+- (void)setIconManager:(id)arg1;
+- (void)setIsVerticalWidgetIntroduction:(bool)arg1;
+- (void)setModalIntroductionViewController:(id)arg1;
+- (void)setOriginalIconStateBeforeWidgetDiscoverability:(id)arg1;
+- (void)setShouldDisplayWidgetIntroduction:(bool)arg1;
+- (void)setStopUpdatingDefaultWidgetsBumpedIconRecord:(bool)arg1;
+- (void)setTrialClientManager:(id)arg1;
+- (void)setWidgetDiscoverabilityIsRunning:(bool)arg1;
+- (void)setupFeatureIntroductionAtLocations:(unsigned long long)arg1;
+- (bool)shouldDeferAlertsAtLocations:(unsigned long long)arg1;
+- (bool)shouldDisplayFeatureIntroductionAtLocations:(unsigned long long)arg1;
+- (bool)shouldDisplayWidgetIntroduction;
+- (bool)shouldPauseUserInteractionAtLocations:(unsigned long long)arg1;
+- (bool)shouldSetupFeatureIntroductionAtLocations:(unsigned long long)arg1;
+- (bool)stopUpdatingDefaultWidgetsBumpedIconRecord;
+- (id)trialClientManager;
+- (bool)widgetDiscoverabilityIsRunning;
+- (bool)widgetDiscoverabilityServerSideEnabled;
+
+@end

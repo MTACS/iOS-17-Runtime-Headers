@@ -1,0 +1,11 @@
+
+@protocol MEMailComposeAppExtensionsRequestDispatcher <NSObject>
+
+@required
+
+- (void)appExtensionViewControllerForExtensionIdentifier:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSViewController *, NSError *, void*
+- (void)dispatchEmailAddressTokenIconRequestsForMailMessage:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: MEMessage *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
+- (void)getAdditionalHeadersForMessage:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: MEMessage *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
+- (void)performSendValidationForMessage:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: MEMessage *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+
+@end

@@ -1,0 +1,87 @@
+
+@interface HUAnnouncementPlaybackView : UIView {
+    NSDictionary * _announcementInfo;
+    NSURL * _announcementURL;
+    HFAudioPlayer * _audioPlayer;
+    NSMutableArray * _audioWaveLayers;
+    CNAvatarView * _avatarView;
+    NSLayoutConstraint * _centerXConstraint;
+    NSLayoutConstraint * _centerYConstraint;
+    unsigned long long  _currentWaveLayerIndex;
+    bool  _fullyPlayed;
+    UIImageView * _genericAvatarView;
+    NSLayoutConstraint * _heightConstraint;
+    HUIconView * _iconView;
+    bool  _isSiriEndpointAccessory;
+    double  _playbackFractionComplete;
+    int  _productType;
+    NSLayoutConstraint * _widthConstraint;
+}
+
+@property (nonatomic, retain) NSDictionary *announcementInfo;
+@property (nonatomic, retain) NSURL *announcementURL;
+@property (nonatomic, retain) HFAudioPlayer *audioPlayer;
+@property (nonatomic, retain) NSMutableArray *audioWaveLayers;
+@property (nonatomic, retain) CNAvatarView *avatarView;
+@property (nonatomic, retain) NSLayoutConstraint *centerXConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *centerYConstraint;
+@property (nonatomic) unsigned long long currentWaveLayerIndex;
+@property (nonatomic) bool fullyPlayed;
+@property (nonatomic, retain) UIImageView *genericAvatarView;
+@property (nonatomic, retain) NSLayoutConstraint *heightConstraint;
+@property (nonatomic, retain) HUIconView *iconView;
+@property (nonatomic) bool isSiriEndpointAccessory;
+@property (nonatomic) double playbackFractionComplete;
+@property (nonatomic) int productType;
+@property (nonatomic, retain) NSLayoutConstraint *widthConstraint;
+
+- (void).cxx_destruct;
+- (void)_animateLayerWaveAtIndex:(unsigned long long)arg1 forAveragePower:(double)arg2;
+- (void)_configureAnnounceSender:(id)arg1;
+- (void)_generateRippleForAveragePower:(double)arg1;
+- (id)_imageOrViewForServiceType:(id)arg1;
+- (bool)_isProductTypeHomePod;
+- (id)_requiredKeyDescriptors;
+- (void)_setupAudioWaveLayers;
+- (void)_updateIconViewForServiceType:(id)arg1;
+- (id)announcementInfo;
+- (id)announcementURL;
+- (id)audioPlayer;
+- (id)audioWaveLayers;
+- (id)avatarView;
+- (id)centerXConstraint;
+- (id)centerYConstraint;
+- (unsigned long long)currentWaveLayerIndex;
+- (id)description;
+- (void)didUpdateAveragePower:(double)arg1;
+- (bool)fullyPlayed;
+- (id)genericAvatarView;
+- (id)heightConstraint;
+- (id)iconView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isSiriEndpointAccessory;
+- (void)pausePlaybackAnimation;
+- (double)playbackFractionComplete;
+- (void)playbackStopped;
+- (int)productType;
+- (void)resumePlaybackAnimation;
+- (void)setAnnouncementInfo:(id)arg1;
+- (void)setAnnouncementURL:(id)arg1;
+- (void)setAudioPlayer:(id)arg1;
+- (void)setAudioWaveLayers:(id)arg1;
+- (void)setAvatarView:(id)arg1;
+- (void)setCenterXConstraint:(id)arg1;
+- (void)setCenterYConstraint:(id)arg1;
+- (void)setCurrentWaveLayerIndex:(unsigned long long)arg1;
+- (void)setFullyPlayed:(bool)arg1;
+- (void)setGenericAvatarView:(id)arg1;
+- (void)setHeightConstraint:(id)arg1;
+- (void)setIconView:(id)arg1;
+- (void)setIsSiriEndpointAccessory:(bool)arg1;
+- (void)setPlaybackFractionComplete:(double)arg1;
+- (void)setProductType:(int)arg1;
+- (void)setWidthConstraint:(id)arg1;
+- (void)updateConstraints;
+- (id)widthConstraint;
+
+@end

@@ -1,0 +1,80 @@
+
+@interface WebFrameView : WAKView <WebCoreFrameView> {
+    WebFrameViewPrivate * _private;
+}
+
+@property (nonatomic) bool allowsScrolling;
+@property (nonatomic, readonly) WAKView<WebDocumentView> *documentView;
+@property (nonatomic, readonly) bool documentViewShouldHandlePrint;
+@property (nonatomic, readonly) WebFrame *webFrame;
+
++ (bool)_canShowMIMETypeAsHTML:(id)arg1;
++ (Class)_viewClassForMIMEType:(id)arg1 allowingPlugins:(bool)arg2;
++ (id)_viewTypesAllowImageTypeOmission:(bool)arg1;
+
+- (float)_area;
+- (id)_contentView;
+- (Class)_customScrollViewClass;
+- (bool)_firstResponderIsFormControl;
+- (void)_forwardMouseEvent:(id)arg1;
+- (void)_frameSizeChanged;
+- (void)_goBack;
+- (void)_goForward;
+- (bool)_hasScrollBars;
+- (float)_horizontalKeyboardScrollDistance;
+- (float)_horizontalPageScrollDistance;
+- (void)_install;
+- (bool)_isFlippedDocument;
+- (bool)_isScrollable;
+- (bool)_isVerticalDocument;
+- (id)_largestChildWithScrollBars;
+- (id)_largestScrollableChild;
+- (id)_makeDocumentViewForDataSource:(id)arg1;
+- (bool)_pageHorizontally:(bool)arg1;
+- (bool)_pageInBlockProgressionDirection:(bool)arg1;
+- (bool)_pageVertically:(bool)arg1;
+- (bool)_scrollHorizontallyBy:(float)arg1;
+- (bool)_scrollLineHorizontally:(bool)arg1;
+- (bool)_scrollLineVertically:(bool)arg1;
+- (bool)_scrollOverflowInDirection:(unsigned char)arg1 granularity:(unsigned char)arg2;
+- (bool)_scrollToBeginningOfDocument;
+- (bool)_scrollToEndOfDocument;
+- (bool)_scrollVerticallyBy:(float)arg1;
+- (id)_scrollView;
+- (void)_setDocumentView:(id)arg1;
+- (void)_setWebFrame:(id)arg1;
+- (float)_verticalKeyboardScrollDistance;
+- (float)_verticalPageScrollDistance;
+- (Class)_viewClassForMIMEType:(id)arg1;
+- (id)_webView;
+- (struct NakedPtr<WebCore::LocalFrame> { struct LocalFrame {} *x1; })_web_frame;
+- (id)_webcore_effectiveFirstResponder;
+- (bool)acceptsFirstResponder;
+- (bool)allowsScrolling;
+- (bool)becomeFirstResponder;
+- (void)dealloc;
+- (id)documentView;
+- (bool)documentViewShouldHandlePrint;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)frameSizeChanged;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isOpaque;
+- (void)keyDown:(id)arg1;
+- (void)mouseDown:(id)arg1;
+- (void)mouseUp:(id)arg1;
+- (void)printDocumentView;
+- (void)scrollLineDown:(id)arg1;
+- (void)scrollLineUp:(id)arg1;
+- (void)scrollPageDown:(id)arg1;
+- (void)scrollPageUp:(id)arg1;
+- (void)scrollToBeginningOfDocument:(id)arg1;
+- (void)scrollToEndOfDocument:(id)arg1;
+- (bool)scrollView:(id)arg1 shouldScrollToPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)setAllowsScrolling:(bool)arg1;
+- (void)setFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNextKeyView:(id)arg1;
+- (void)viewDidMoveToWindow;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
+- (id)webFrame;
+
+@end

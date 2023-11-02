@@ -1,0 +1,29 @@
+
+@interface ICStoreArtworkSizeInfo : NSObject {
+    bool  _hasMaxSupportedSize;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxSupportedSize;
+    NSArray * _supportedSizes;
+    long long  _type;
+}
+
+@property (nonatomic) bool hasMaxSupportedSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } maxSupportedSize;
+@property (nonatomic, copy) NSArray *supportedSizes;
+@property (nonatomic) long long type;
+
+- (void).cxx_destruct;
+- (bool)hasMaxSupportedSize;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })maxSupportedSize;
+- (void)setHasMaxSupportedSize:(bool)arg1;
+- (void)setMaxSupportedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSupportedSizes:(id)arg1;
+- (void)setType:(long long)arg1;
+- (id)supportedSizes;
+- (long long)type;
+
+@end

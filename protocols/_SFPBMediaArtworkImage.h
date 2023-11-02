@@ -1,0 +1,18 @@
+
+@protocol _SFPBMediaArtworkImage <NSObject>
+
+@required
+
+- (id)initWithDictionary:(NSDictionary *)arg1;
+- (id)initWithJSON:(NSData *)arg1;
+- (NSData *)jsonData;
+- (int)mediaEntityType;
+- (NSString *)persistentID;
+- (void)setMediaEntityType:(int)arg1;
+- (void)setPersistentID:(NSString *)arg1;
+- (void)setSpotlightIdentifier:(NSString *)arg1;
+- (void)setUniversalLibraryID:(NSString *)arg1;
+- (NSString *)spotlightIdentifier;
+- (NSString *)universalLibraryID;
+
+@end

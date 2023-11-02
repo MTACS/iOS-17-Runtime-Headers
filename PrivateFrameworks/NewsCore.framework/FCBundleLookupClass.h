@@ -1,0 +1,4 @@
+
+@interface FCBundleLookupClass : NSObject
+
+@end

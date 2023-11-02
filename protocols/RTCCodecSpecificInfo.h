@@ -1,0 +1,4 @@
+
+@protocol RTCCodecSpecificInfo <NSObject>
+
+@end

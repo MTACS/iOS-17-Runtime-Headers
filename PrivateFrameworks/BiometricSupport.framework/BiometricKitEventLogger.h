@@ -1,0 +1,23 @@
+
+@interface BiometricKitEventLogger : NSObject {
+    unsigned int  _eventList;
+    int  _eventListLength;
+    BKEvent * _lastSmartKeyboardEvent;
+    NSObject<OS_dispatch_queue> * _queue;
+    bool  _startEventFound;
+    bool  _terminalFlushPending;
+    NSObject<OS_dispatch_source> * _timer;
+}
+
++ (id)logger;
+
+- (void).cxx_destruct;
+- (void)appendEvent:(id)arg1;
+- (void)appendEventValue:(unsigned int)arg1 isMetadata:(bool)arg2;
+- (void)flushEvents;
+- (id)init;
+- (void)logDeviceMetadata;
+- (void)logEventOrCode:(unsigned long long)arg1;
+- (void)logSmartKeyboardStatus;
+
+@end

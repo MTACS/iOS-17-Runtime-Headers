@@ -1,0 +1,4 @@
+
+@interface PKInstantFundsOutFeeSummaryItem : PKPaymentSummaryItem
+
+@end

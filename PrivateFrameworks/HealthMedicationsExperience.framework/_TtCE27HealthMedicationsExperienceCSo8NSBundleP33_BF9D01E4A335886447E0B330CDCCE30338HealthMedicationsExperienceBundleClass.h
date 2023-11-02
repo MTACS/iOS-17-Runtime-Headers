@@ -1,0 +1,4 @@
+
+@interface _TtCE27HealthMedicationsExperienceCSo8NSBundleP33_BF9D01E4A335886447E0B330CDCCE30338HealthMedicationsExperienceBundleClass : _TtCs12_SwiftObject
+
+@end

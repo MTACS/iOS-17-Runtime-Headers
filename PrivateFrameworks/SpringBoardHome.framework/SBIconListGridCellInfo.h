@@ -1,0 +1,96 @@
+
+@interface SBIconListGridCellInfo : NSObject <BSDescriptionProviding, NSCopying> {
+    unsigned short * _extraGridCellIndexes;
+    unsigned long long  _extraGridCellIndexesSize;
+    unsigned short * _extraIconIndexes;
+    unsigned long long  _extraIconIndexesSize;
+    unsigned long long  _firstEmptyGridCellIndex;
+    unsigned long long  _firstTrailingEmptyGridCellIndex;
+    struct SBHIconGridSize { 
+        unsigned short columns; 
+        unsigned short rows; 
+    }  _gridSize;
+    unsigned short  _indexes;
+    NSIndexSet * _indexesOfOutOfBoundsIcons;
+    unsigned long long  _lastUsedGridCellIndex;
+    unsigned long long  _maxGridCellIndex;
+    NSMutableIndexSet * _outOfBoundsIconIndexes;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned long long firstEmptyGridCellIndex;
+@property (nonatomic) unsigned long long firstTrailingEmptyGridCellIndex;
+@property (nonatomic) struct SBHIconGridSize { unsigned short x1; unsigned short x2; } gridSize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSIndexSet *indexesOfOutOfBoundsIcons;
+@property (nonatomic) unsigned long long lastUsedGridCellIndex;
+@property (nonatomic, readonly, copy) NSString *layoutDescription;
+@property (getter=isLayoutOutOfBounds, nonatomic, readonly) bool layoutOutOfBounds;
+@property (nonatomic, readonly) unsigned long long numberOfUsedColumns;
+@property (nonatomic, readonly) unsigned long long numberOfUsedRows;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct SBHIconGridSize { unsigned short x1; unsigned short x2; } usedGridSize;
+
+- (void).cxx_destruct;
+- (void)addEmptyColumns:(unsigned long long)arg1;
+- (void)addEmptyRows:(unsigned long long)arg1;
+- (struct SBIconApproximateLayoutPosition { unsigned long long x1; unsigned long long x2; })approximateLayoutPositionForCoordinate:(struct SBIconCoordinate { long long x1; long long x2; })arg1;
+- (struct SBIconApproximateLayoutPosition { unsigned long long x1; unsigned long long x2; })approximateLayoutPositionForGridCellIndex:(unsigned long long)arg1;
+- (void)clearAllIconAndGridCellIndexes;
+- (struct SBIconCoordinate { long long x1; long long x2; })coordinateForGridCellIndex:(unsigned long long)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)countOfIconsOfSize:(struct SBHIconGridSize { unsigned short x1; unsigned short x2; })arg1;
+- (void)dealloc;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (void)enumerateOutOfBoundsIconIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned long long)arg2 usingBlock:(id /* block */)arg3;
+- (unsigned long long)firstEmptyGridCellIndex;
+- (unsigned long long)firstTrailingEmptyGridCellIndex;
+- (unsigned long long)getIconIndexes:(unsigned long long*)arg1 inGridRange:(struct SBHIconGridRange { unsigned long long x1; struct SBHIconGridSize { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
+- (unsigned long long)getUniqueIconIndexes:(unsigned long long*)arg1 inGridRange:(struct SBHIconGridRange { unsigned long long x1; struct SBHIconGridSize { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
+- (unsigned long long)gridCellIndexForCoordinate:(struct SBIconCoordinate { long long x1; long long x2; })arg1;
+- (unsigned long long)gridCellIndexForIconIndex:(unsigned long long)arg1;
+- (struct SBHIconGridRange { unsigned long long x1; struct SBHIconGridSize { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })gridRangeForGridCellIndex:(unsigned long long)arg1;
+- (struct SBHIconGridSize { unsigned short x1; unsigned short x2; })gridSize;
+- (struct SBHIconGridSize { unsigned short x1; unsigned short x2; })gridSizeForGridCellIndex:(unsigned long long)arg1;
+- (unsigned long long)hash;
+- (unsigned long long)iconIndexForCoordinate:(struct SBIconCoordinate { long long x1; long long x2; })arg1;
+- (unsigned long long)iconIndexForGridCellIndex:(unsigned long long)arg1;
+- (unsigned long long)indexOfFirstEmptyGridCellRangeOfSize:(struct SBHIconGridSize { unsigned short x1; unsigned short x2; })arg1;
+- (unsigned long long)indexOfFirstGridCellRangeOfSize:(struct SBHIconGridSize { unsigned short x1; unsigned short x2; })arg1 inGridCellIndexRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 passingTest:(id /* block */)arg3;
+- (unsigned long long)indexOfFirstGridCellRangeOfSize:(struct SBHIconGridSize { unsigned short x1; unsigned short x2; })arg1 inGridRange:(struct SBHIconGridRange { unsigned long long x1; struct SBHIconGridSize { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 passingTest:(id /* block */)arg3;
+- (unsigned long long)indexOfFirstUsedGridCellInGridRange:(struct SBHIconGridRange { unsigned long long x1; struct SBHIconGridSize { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (unsigned long long)indexOfOutOfBoundsIconInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)indexesOfOutOfBoundsIconInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)indexesOfOutOfBoundsIcons;
+- (id)init;
+- (bool)isEqual:(id)arg1;
+- (bool)isLayoutOutOfBounds;
+- (bool)isOutOfBoundsAtIconIndex:(unsigned long long)arg1;
+- (unsigned long long)lastUsedGridCellIndex;
+- (id)layoutDescription;
+- (void)markIconIndexAsFixed:(unsigned long long)arg1;
+- (void)markIconIndexAsOutOfBounds:(unsigned long long)arg1;
+- (unsigned long long)maxGridCellIndexForIconIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfUsedColumns;
+- (unsigned long long)numberOfUsedGridCellsInColumn:(unsigned long long)arg1;
+- (unsigned long long)numberOfUsedGridCellsInColumn:(unsigned long long)arg1 rowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)numberOfUsedGridCellsInGridRange:(struct SBHIconGridRange { unsigned long long x1; struct SBHIconGridSize { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (unsigned long long)numberOfUsedGridCellsInRow:(unsigned long long)arg1;
+- (unsigned long long)numberOfUsedGridCellsInRow:(unsigned long long)arg1 columnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)numberOfUsedRows;
+- (void)setFirstEmptyGridCellIndex:(unsigned long long)arg1;
+- (void)setFirstTrailingEmptyGridCellIndex:(unsigned long long)arg1;
+- (void)setGridCellIndex:(unsigned long long)arg1 forIconIndex:(unsigned long long)arg2;
+- (void)setGridSize:(struct SBHIconGridSize { unsigned short x1; unsigned short x2; })arg1;
+- (void)setIconIndex:(unsigned long long)arg1 forGridCellIndex:(unsigned long long)arg2;
+- (void)setIconIndex:(unsigned long long)arg1 inGridRange:(struct SBHIconGridRange { unsigned long long x1; struct SBHIconGridSize { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
+- (void)setIconIndexes:(unsigned long long*)arg1 inGridRange:(struct SBHIconGridRange { unsigned long long x1; struct SBHIconGridSize { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
+- (void)setLastUsedGridCellIndex:(unsigned long long)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (struct SBHIconGridSize { unsigned short x1; unsigned short x2; })usedGridSize;
+
+@end

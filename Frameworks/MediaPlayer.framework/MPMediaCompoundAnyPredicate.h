@@ -1,0 +1,4 @@
+
+@interface MPMediaCompoundAnyPredicate : MPMediaCompoundPredicate
+
+@end

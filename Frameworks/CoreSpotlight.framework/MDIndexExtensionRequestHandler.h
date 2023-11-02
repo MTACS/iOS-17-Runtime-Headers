@@ -1,0 +1,4 @@
+
+@interface MDIndexExtensionRequestHandler : CSIndexExtensionRequestHandler
+
+@end

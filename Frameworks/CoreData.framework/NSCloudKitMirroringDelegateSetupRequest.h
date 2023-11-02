@@ -1,0 +1,4 @@
+
+@interface NSCloudKitMirroringDelegateSetupRequest : NSCloudKitMirroringRequest
+
+@end

@@ -1,0 +1,30 @@
+
+@protocol EDFormulaBuilding <NSObject>
+
+@required
+
+- (bool)addArrayWithCol:(int)arg1 andRow:(int)arg2;
+- (bool)addInfixOperator:(int)arg1 atIndex:(unsigned int)arg2 factor:(double)arg3;
+- (char *)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2;
+- (char *)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2 numArgs:(int)arg3;
+- (bool)convertLastRefsToArea;
+- (bool)convertToIntersect:(unsigned int)arg1;
+- (bool)convertToList:(unsigned int)arg1;
+- (bool)convertToList:(unsigned int)arg1 withFinalParen:(bool)arg2;
+- (bool)fixTableOfConstantsRefs;
+- (bool)insertExternalName:(unsigned long long)arg1 withLink:(unsigned long long)arg2 atIndex:(unsigned int)arg3;
+- (bool)insertName:(unsigned long long)arg1 atIndex:(unsigned int)arg2;
+- (bool)isSupportedFormula;
+- (EDLinkReference *)lastTokenRefOrArea3dLinkRefIsValid:(bool*)arg1 withEDLinks:(EDLinksCollection *)arg2;
+- (void)markLastTokenAsDuration;
+- (void)markLastTokenAsSpanningRefVertically:(bool)arg1 withMin:(unsigned short)arg2 andMax:(unsigned short)arg3;
+- (void)removeTokenAtIndex:(unsigned long long)arg1;
+- (char *)setExtendedDataForLastTokenAtIndex:(unsigned int)arg1 length:(unsigned int)arg2;
+- (void)setWarning:(int)arg1;
+- (bool)shrinkSpanningRefAtArgIndex:(unsigned int)arg1;
+- (int)tokenTypeAtIndex:(unsigned long long)arg1;
+- (bool)uppercaseArgAtIndex:(unsigned int)arg1;
+- (int)warningType;
+- (bool)wrapArgumentsWithOperator:(int)arg1 argumentCount:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+
+@end

@@ -1,0 +1,39 @@
+
+@interface _CPClientTimingFeedback : PBCodable <NSSecureCoding, _CPClientTimingFeedback, _CPProcessableFeedback> {
+    NSString * _eventName;
+    NSString * _input;
+    unsigned long long  _nanosecondInterval;
+    unsigned long long  _queryId;
+    unsigned long long  _timestamp;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *eventName;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *input;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) unsigned long long nanosecondInterval;
+@property (nonatomic) unsigned long long queryId;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long timestamp;
+
+- (void).cxx_destruct;
+- (id)eventName;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithFacade:(id)arg1;
+- (id)input;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)nanosecondInterval;
+- (unsigned long long)queryId;
+- (bool)readFrom:(id)arg1;
+- (void)setEventName:(id)arg1;
+- (void)setInput:(id)arg1;
+- (void)setNanosecondInterval:(unsigned long long)arg1;
+- (void)setQueryId:(unsigned long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
+- (void)writeTo:(id)arg1;
+
+@end

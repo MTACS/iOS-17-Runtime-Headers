@@ -1,0 +1,86 @@
+
+@interface VCAudioPayloadConfig : NSObject {
+    unsigned int  _bitrate;
+    unsigned int  _blockSize;
+    unsigned int  _bundleHeaderBytes;
+    unsigned int  _codecSampleRate;
+    unsigned int  _codecSamplesPerFrame;
+    unsigned short  _evsChannelAwareIndicator;
+    unsigned short  _evsChannelAwareOffset;
+    bool  _evsHeaderFullOnly;
+    unsigned int  _evsSIDPeriod;
+    bool  _forcingBitrate;
+    int  _format;
+    unsigned int  _inputSampleRate;
+    unsigned int  _inputSamplesPerFrame;
+    unsigned int  _internalBundleFactor;
+    bool  _isDTXEnabled;
+    bool  _isOpusInBandFecEnabled;
+    int  _payload;
+    bool  _payloadOctetAligned;
+    NSArray * _supportedBandwidths;
+    NSArray * _supportedBitrates;
+    bool  _useSBR;
+}
+
+@property (nonatomic, readonly) unsigned int bitrate;
+@property (nonatomic, readonly) unsigned int blockSize;
+@property (nonatomic, readonly) unsigned int bundleHeaderBytes;
+@property (nonatomic, readonly) unsigned int codecSampleRate;
+@property (nonatomic, readonly) unsigned short evsChannelAwareIndicator;
+@property (nonatomic, readonly) unsigned short evsChannelAwareOffset;
+@property (nonatomic, readonly) bool evsHeaderFullOnly;
+@property (nonatomic, readonly) unsigned int evsSIDPeriod;
+@property (nonatomic, readonly) unsigned int flags;
+@property (nonatomic, readonly) bool forcingBitrate;
+@property (nonatomic, readonly) int format;
+@property (nonatomic, readonly) unsigned int inputSampleRate;
+@property (nonatomic, readonly) unsigned int internalBundleFactor;
+@property (nonatomic, readonly) bool isDTXEnabled;
+@property (nonatomic, readonly) bool isOpusInBandFecEnabled;
+@property (nonatomic, readonly) int payload;
+@property (nonatomic, readonly) bool payloadOctetAligned;
+@property (nonatomic, readonly) unsigned int samplesPerFrame;
+@property (nonatomic, readonly) NSArray *supportedBandwidths;
+@property (nonatomic, readonly) NSArray *supportedBitrates;
+
+- (unsigned int)aacBitrate;
+- (unsigned int)anetecBitrate;
+- (unsigned int)bitrate;
+- (unsigned int)blockSize;
+- (unsigned int)bundleHeaderBytes;
+- (id)className;
+- (unsigned int)codecSampleRate;
+- (bool)configure:(id)arg1;
+- (void)createSupportedBitrates;
+- (void)createSupportedBitratesForAACELD;
+- (void)createSupportedBitratesForAACELD48;
+- (void)createSupportedBitratesForAMR16k;
+- (void)createSupportedBitratesForAMR8k;
+- (void)createSupportedBitratesForANETEC;
+- (void)createSupportedBitratesForEVS;
+- (void)createSupportedBitratesForOpus;
+- (void)dealloc;
+- (id)description;
+- (unsigned short)evsChannelAwareIndicator;
+- (unsigned short)evsChannelAwareOffset;
+- (bool)evsHeaderFullOnly;
+- (unsigned int)evsSIDPeriod;
+- (unsigned int)flags;
+- (bool)forcingBitrate;
+- (int)format;
+- (id)initWithConfigDict:(id)arg1;
+- (unsigned int)inputSampleRate;
+- (unsigned int)internalBundleFactor;
+- (bool)isDTXEnabled;
+- (bool)isOpusInBandFecEnabled;
+- (int)payload;
+- (bool)payloadOctetAligned;
+- (float)qualityForBitRate:(unsigned int)arg1;
+- (unsigned int)samplesPerFrame;
+- (void)setUseSBR:(bool)arg1;
+- (void)setupEncodeProperties:(id)arg1;
+- (id)supportedBandwidths;
+- (id)supportedBitrates;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol JetEngine.AnyAMSBagValue
+
+@end

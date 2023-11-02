@@ -1,0 +1,4 @@
+
+@protocol DeviceActivity.DeviceActivityMonitorHost
+
+@end

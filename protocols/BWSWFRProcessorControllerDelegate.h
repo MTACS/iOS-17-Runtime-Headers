@@ -1,0 +1,4 @@
+
+@protocol BWSWFRProcessorControllerDelegate <BWStillImageProcessorControllerDelegate>
+
+@end

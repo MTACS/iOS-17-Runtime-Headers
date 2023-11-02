@@ -1,0 +1,4 @@
+
+@protocol MTLoadUrlMeasurementData <MTPerfBaseMeasurementData>
+
+@end

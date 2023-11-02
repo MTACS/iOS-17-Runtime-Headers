@@ -1,0 +1,86 @@
+
+@interface LTMIBPParams : NSObject <LTMIBPParams> {
+    bool  _calcGlobalHistOnROI;
+    bool  _computeCurvesWoFaceBoost;
+    bool  _computeHDRCurves;
+    bool  _digitalFlash;
+    bool  _enableAntiAliasing;
+    bool  _enableHighlightCompression;
+    bool  _forceDisableHR;
+    bool  _forceDisableLTMFaceBoost;
+    bool  _forceDisableLTMFaceExposureRatio;
+    <MTLTexture> * _inChromaTex;
+    <MTLTexture> * _inLumaTex;
+    NSDictionary * _inMetaData;
+    <MTLTexture> * _inRGBAFloatTex;
+    <MTLTexture> * _inRGBImageUInt16Tex;
+    unsigned short  _ispDGainThreshold;
+    int  _optimizationLevel;
+    NSDictionary * _outMetaData;
+    NSDictionary * _validBufferRect;
+}
+
+@property (nonatomic) bool calcGlobalHistOnROI;
+@property (nonatomic) bool computeCurvesWoFaceBoost;
+@property (nonatomic) bool computeHDRCurves;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool digitalFlash;
+@property (nonatomic) bool enableAntiAliasing;
+@property (nonatomic) bool enableHighlightCompression;
+@property (nonatomic) bool forceDisableHR;
+@property (nonatomic) bool forceDisableLTMFaceBoost;
+@property (nonatomic) bool forceDisableLTMFaceExposureRatio;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <MTLTexture> *inChromaTex;
+@property (nonatomic, retain) <MTLTexture> *inLumaTex;
+@property (nonatomic, retain) NSDictionary *inMetaData;
+@property (nonatomic, retain) <MTLTexture> *inRGBAFloatTex;
+@property (nonatomic, retain) <MTLTexture> *inRGBImageUInt16Tex;
+@property (nonatomic) unsigned short ispDGainThreshold;
+@property (nonatomic) int optimizationLevel;
+@property (nonatomic, retain) NSDictionary *outMetaData;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *validBufferRect;
+
+- (void).cxx_destruct;
+- (bool)calcGlobalHistOnROI;
+- (bool)computeCurvesWoFaceBoost;
+- (bool)computeHDRCurves;
+- (bool)digitalFlash;
+- (bool)enableAntiAliasing;
+- (bool)enableHighlightCompression;
+- (bool)forceDisableHR;
+- (bool)forceDisableLTMFaceBoost;
+- (bool)forceDisableLTMFaceExposureRatio;
+- (id)inChromaTex;
+- (id)inLumaTex;
+- (id)inMetaData;
+- (id)inRGBAFloatTex;
+- (id)inRGBImageUInt16Tex;
+- (id)init;
+- (unsigned short)ispDGainThreshold;
+- (int)optimizationLevel;
+- (id)outMetaData;
+- (void)reset;
+- (void)setCalcGlobalHistOnROI:(bool)arg1;
+- (void)setComputeCurvesWoFaceBoost:(bool)arg1;
+- (void)setComputeHDRCurves:(bool)arg1;
+- (void)setDigitalFlash:(bool)arg1;
+- (void)setEnableAntiAliasing:(bool)arg1;
+- (void)setEnableHighlightCompression:(bool)arg1;
+- (void)setForceDisableHR:(bool)arg1;
+- (void)setForceDisableLTMFaceBoost:(bool)arg1;
+- (void)setForceDisableLTMFaceExposureRatio:(bool)arg1;
+- (void)setInChromaTex:(id)arg1;
+- (void)setInLumaTex:(id)arg1;
+- (void)setInMetaData:(id)arg1;
+- (void)setInRGBAFloatTex:(id)arg1;
+- (void)setInRGBImageUInt16Tex:(id)arg1;
+- (void)setIspDGainThreshold:(unsigned short)arg1;
+- (void)setOptimizationLevel:(int)arg1;
+- (void)setOutMetaData:(id)arg1;
+- (void)setValidBufferRect:(id)arg1;
+- (id)validBufferRect;
+
+@end

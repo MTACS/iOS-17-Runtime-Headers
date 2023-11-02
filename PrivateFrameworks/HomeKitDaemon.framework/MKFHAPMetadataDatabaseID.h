@@ -1,0 +1,4 @@
+
+@interface MKFHAPMetadataDatabaseID : MKFModelDatabaseID
+
+@end

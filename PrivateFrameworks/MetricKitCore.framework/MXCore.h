@@ -1,0 +1,97 @@
+
+@interface MXCore : NSObject <MXCoreHandlerDelegate, MXXPCServer, NSXPCListenerDelegate> {
+    NSObject<OS_os_log> * _MXCoreLogHandle;
+    NSObject<OS_os_log> * _MXCoreXcodeSupportLogHandle;
+    <MXBundleUtilProtocol> * _bundleUtil;
+    MXCleanUtil * _cleanUtil;
+    <MXClientUtilProtocol> * _clientUtil;
+    NSString * _currentDataActivityDate;
+    <MXDeliveryDataCacherProtocol> * _deliveryDataCacher;
+    <MXDeliveryPathUtilProtocol> * _deliveryPathUtil;
+    MXCoreHandler * _handler;
+    NSObject<OS_dispatch_queue> * _iVarQueue;
+    NSObject<OS_dispatch_queue> * _requestQueue;
+    MXSource * _source;
+    NSXPCListener * _xpcListener;
+}
+
+@property (retain) NSObject<OS_os_log> *MXCoreLogHandle;
+@property (retain) NSObject<OS_os_log> *MXCoreXcodeSupportLogHandle;
+@property (retain) <MXBundleUtilProtocol> *bundleUtil;
+@property (retain) MXCleanUtil *cleanUtil;
+@property (nonatomic, retain) <MXClientUtilProtocol> *clientUtil;
+@property (nonatomic, retain) NSString *currentDataActivityDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain) <MXDeliveryDataCacherProtocol> *deliveryDataCacher;
+@property (retain) <MXDeliveryPathUtilProtocol> *deliveryPathUtil;
+@property (readonly, copy) NSString *description;
+@property (readonly, retain) MXCoreHandler *handler;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *iVarQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *requestQueue;
+@property (retain) MXSource *source;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSXPCListener *xpcListener;
+
++ (id)sharedCore;
+
+- (void).cxx_destruct;
+- (id)MXCoreLogHandle;
+- (id)MXCoreXcodeSupportLogHandle;
+- (bool)_canSetupXpcListenerForSourceData;
+- (void)_deliverDummyPayloadForXcodeClient:(id)arg1;
+- (id)_getDailyActivityCriteria;
+- (id)_getDummyDiagnosticPayloadForClient:(id)arg1 dateString:(id)arg2;
+- (id)_getDummyPayloadForClient:(id)arg1 dateString:(id)arg2;
+- (void)_initIvar;
+- (void)_initLogHandle;
+- (void)_initQueue;
+- (void)_performDataActivity;
+- (void)_registerClient;
+- (void)_registerClientAndTeam;
+- (void)_registerXpcActivityForCore;
+- (void)_scheduleDataActivity;
+- (void)_setupDailyActivityCriteriaForDataActivity:(id)arg1;
+- (void)_setupExportedInterfaceForConnection:(id)arg1;
+- (void)_setupHandlersForConnection:(id)arg1;
+- (void)_setupRemoteInterfaceForConnection:(id)arg1;
+- (bool)_shouldDeliverToClientForBundleID:(id)arg1;
+- (void)_startListenClientXPC;
+- (void)_writeDiagnosticReport:(id)arg1 atAppContainerPath:(id)arg2 forClient:(id)arg3 withError:(id*)arg4;
+- (id)bundleUtil;
+- (id)cleanUtil;
+- (void)clientDidRegisterForBundleID:(id)arg1;
+- (void)clientIsAvailableForPreparingDataActivity;
+- (void)clientIsNotAvailable;
+- (id)clientUtil;
+- (id)currentDataActivityDate;
+- (void)deliverDummyPayloadForXcodeClient:(id)arg1;
+- (id)deliveryDataCacher;
+- (id)deliveryPathUtil;
+- (id)handler;
+- (id)iVarQueue;
+- (id)init;
+- (bool)isAppExtension:(id)arg1;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)metricIsAvailableFromSourceDirectoryForSavingToDeliveryDirectoryWithClientMetrics:(id)arg1;
+- (void)performDataActivity;
+- (void)registerClient;
+- (id)requestQueue;
+- (void)retrieveDiagnostics;
+- (void)retrieveMetrics;
+- (void)setBundleUtil:(id)arg1;
+- (void)setCleanUtil:(id)arg1;
+- (void)setClientUtil:(id)arg1;
+- (void)setCurrentDataActivityDate:(id)arg1;
+- (void)setDeliveryDataCacher:(id)arg1;
+- (void)setDeliveryPathUtil:(id)arg1;
+- (void)setIVarQueue:(id)arg1;
+- (void)setMXCoreLogHandle:(id)arg1;
+- (void)setMXCoreXcodeSupportLogHandle:(id)arg1;
+- (void)setRequestQueue:(id)arg1;
+- (void)setSource:(id)arg1;
+- (void)setXpcListener:(id)arg1;
+- (id)source;
+- (id)xpcListener;
+
+@end

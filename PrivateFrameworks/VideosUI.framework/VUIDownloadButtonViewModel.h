@@ -1,0 +1,91 @@
+
+@interface VUIDownloadButtonViewModel : NSObject {
+    NSString * _accessibilityIdentifier;
+    NSObject<VUIMediaEntityAssetController> * _assetController;
+    NSDate * _availabilityEndDate;
+    NSDate * _downloadExpirationDate;
+    bool  _downloadFailedDueToError;
+    double  _downloadProgress;
+    unsigned long long  _downloadState;
+    NSString * _downloadStateStringValue;
+    NSArray * _downloadStateToString;
+    VUIMediaEntity * _mediaEntity;
+    bool  _renewsOfflineKeysAutomatically;
+    VUIVideosPlayable * _videosPlayable;
+}
+
+@property (nonatomic, retain) NSString *accessibilityIdentifier;
+@property (nonatomic, readonly) bool allowsManualDownloadRenewal;
+@property (nonatomic, retain) NSObject<VUIMediaEntityAssetController> *assetController;
+@property (nonatomic, retain) NSDate *availabilityEndDate;
+@property (nonatomic, readonly) NSString *brandID;
+@property (nonatomic, readonly) NSString *brandName;
+@property (nonatomic, retain) NSDate *downloadExpirationDate;
+@property (nonatomic) bool downloadFailedDueToError;
+@property (nonatomic) double downloadProgress;
+@property (nonatomic) unsigned long long downloadState;
+@property (nonatomic, retain) NSString *downloadStateStringValue;
+@property (nonatomic, retain) NSArray *downloadStateToString;
+@property (nonatomic, readonly) bool isExpired;
+@property (nonatomic, readonly) bool isExpiringSoon;
+@property (nonatomic, retain) VUIMediaEntity *mediaEntity;
+@property (nonatomic) bool renewsOfflineKeysAutomatically;
+@property (nonatomic, retain) VUIVideosPlayable *videosPlayable;
+
++ (bool)shouldShowExpiredImageWithDownloadState:(unsigned long long)arg1 isExpired:(bool)arg2 isExpiringSoon:(bool)arg3 hasFailed:(bool)arg4;
++ (id)viewModelWithAssetController:(id)arg1;
++ (id)viewModelWithMPMediaItem:(id)arg1;
++ (id)viewModelWithMPMediaItemCollection:(id)arg1;
++ (id)viewModelWithVideoManagedObject:(id)arg1;
++ (id)viewModelWithVideosPlayable:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_assetControllerStateDidChange:(id)arg1;
+- (id)_createDownloadStateToStringArrayMap;
+- (unsigned long long)_downloadStateFromAssetsControllerStatus:(unsigned long long)arg1;
+- (void)_getAssetControllerCreatingMediaItem:(bool)arg1 completion:(id /* block */)arg2;
+- (void)_updateDownloadStateFromAssetControllerState:(id)arg1;
+- (id)accessibilityIdentifier;
+- (bool)allowsManualDownloadRenewal;
+- (id)assetController;
+- (id)availabilityEndDate;
+- (id)brandID;
+- (id)brandName;
+- (void)dealloc;
+- (void)deleteDownload;
+- (id)downloadExpirationDate;
+- (bool)downloadFailedDueToError;
+- (double)downloadProgress;
+- (unsigned long long)downloadState;
+- (id)downloadStateStringValue;
+- (id)downloadStateToString;
+- (void)fetchNewKeysForDownloadedVideo;
+- (id)initWithAssetController:(id)arg1;
+- (id)initWithMPMediaItem:(id)arg1;
+- (id)initWithMPMediaItemCollection:(id)arg1;
+- (id)initWithVideoManagedObject:(id)arg1;
+- (id)initWithVideosPlayable:(id)arg1;
+- (bool)isExpired;
+- (bool)isExpiringSoon;
+- (id)mediaEntity;
+- (void)pauseDownload;
+- (void)preflightPresentingViewController:(id)arg1 completion:(id /* block */)arg2;
+- (bool)renewsOfflineKeysAutomatically;
+- (void)resumeDownload;
+- (void)setAccessibilityIdentifier:(id)arg1;
+- (void)setAssetController:(id)arg1;
+- (void)setAvailabilityEndDate:(id)arg1;
+- (void)setDownloadExpirationDate:(id)arg1;
+- (void)setDownloadFailedDueToError:(bool)arg1;
+- (void)setDownloadProgress:(double)arg1;
+- (void)setDownloadState:(unsigned long long)arg1;
+- (void)setDownloadStateStringValue:(id)arg1;
+- (void)setDownloadStateToString:(id)arg1;
+- (void)setMediaEntity:(id)arg1;
+- (void)setRenewsOfflineKeysAutomatically:(bool)arg1;
+- (void)setVideosPlayable:(id)arg1;
+- (void)startDownloadAllowingCellular:(bool)arg1 shouldMarkAsDeletedOnCancellationOrFailure:(bool)arg2 quality:(long long)arg3 preferEnhancedDownload:(bool)arg4;
+- (void)stopDownload;
+- (id)videosPlayable;
+
+@end

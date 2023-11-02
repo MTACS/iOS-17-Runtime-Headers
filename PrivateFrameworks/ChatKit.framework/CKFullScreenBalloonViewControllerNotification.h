@@ -1,0 +1,4 @@
+
+@interface CKFullScreenBalloonViewControllerNotification : CKFullScreenBalloonViewControllerPhone
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol IKJSBlob <JSExport>
+
+@end

@@ -1,0 +1,91 @@
+
+@interface CLSSocialServiceContacts : CLSSocialService {
+    NSMutableArray * _allPersons;
+    CNContactStore * _contactStore;
+    <CLSSocialServiceContactsDelegate> * _delegate;
+    NSObject<OS_os_log> * _log;
+    CNContact * _meContact;
+    CLSPersonIdentity * _mePerson;
+    GDVisualIdentifierViewPerson * _meViewPerson;
+    NSMutableSet * _nonFoundFullNames;
+    NSMutableSet * _nonFoundHandles;
+    NSMutableDictionary * _personByFullName;
+    NSMutableDictionary * _personByHandle;
+    NSMutableDictionary * _personsForCNIdentifiers;
+    NSMutableDictionary * _personsForGDIdentifiers;
+    NSMutableDictionary * _personsForLocalIdentifier;
+    NSMutableDictionary * _personsInContactStoreForCNIdentifiers;
+    <SGSuggestionsServiceContactsProtocol> * _suggestionsService;
+    <GDVisualIdentifierView> * _visualIdentifierView;
+}
+
+@property (nonatomic) <CLSSocialServiceContactsDelegate> *delegate;
+@property (nonatomic, retain) NSMutableSet *nonFoundFullNames;
+@property (nonatomic, retain) NSMutableSet *nonFoundHandles;
+@property (nonatomic, retain) NSMutableDictionary *personByFullName;
+@property (nonatomic, retain) NSMutableDictionary *personByHandle;
+
++ (bool)canAccessContactsStore;
++ (id)defaultKeysToFetch;
+
+- (void).cxx_destruct;
+- (id)__newPersonWithContact:(id)arg1 viewPerson:(id)arg2;
+- (void)_addAddressesToPerson:(id)arg1 withContact:(id)arg2;
+- (void)_addDelegateAddressesToPerson:(id)arg1 ofType:(unsigned long long)arg2;
+- (void)_addMissingPropertiesToPerson:(id)arg1 withViewPerson:(id)arg2;
+- (unsigned long long)_ageCategoryFromFaceAgeType:(unsigned short)arg1;
+- (id)_allPersons;
+- (id)_cnPostalAddressForGDLocationAddress:(id)arg1;
+- (float)_confidenceInPersonRecord:(id)arg1 viewPerson:(id)arg2 forName:(id)arg3 components:(id)arg4;
+- (id)_firstNameForPersonRecord:(id)arg1;
+- (id)_fullNameWithContact:(id)arg1;
+- (float)_fuzzyMatchingScoreBetweenNameComponents:(id)arg1 andNameComponents:(id)arg2;
+- (id)_initializeVisualIdentifierView;
+- (id)_lastNameForPersonRecord:(id)arg1;
+- (id)_maidenNameForPersonRecord:(id)arg1;
+- (id)_nicknameForPersonRecord:(id)arg1;
+- (id)_personResultsForPersonLocalIdentifier:(id)arg1 isLackingFaces:(out bool*)arg2 inPhotoLibrary:(id)arg3;
+- (id)_personResultsForfullName:(id)arg1;
+- (id)_personWithContact:(id)arg1 viewPerson:(id)arg2 createPersonIfNeeded:(bool)arg3;
+- (id)_personWithContactIdentifier:(id)arg1;
+- (id)_personsMatchingPredicate:(id)arg1;
+- (unsigned long long)_relationshipForContact:(id)arg1;
+- (unsigned long long)_relationshipForLabel:(id)arg1;
+- (unsigned long long)_sexFromFaceBiologicalSex:(unsigned short)arg1;
+- (id)contactsByIdentifierForIdentifiers:(id)arg1;
+- (id)contactsForIdentifiers:(id)arg1;
+- (id)delegate;
+- (void)enumerateAllPersonsUsingBlock:(id /* block */)arg1;
+- (void)enumeratePersonsAndPotentialBirthdayDateForContactIdentifiers:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumeratePersonsAndRelationshipUsingBlock:(id /* block */)arg1;
+- (void)enumeratePersonsForFullName:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumeratePersonsForIdentifiers:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)inferredDeviceOwnerForPhotoLibrary:(id)arg1 ignoreContactLinking:(bool)arg2;
+- (id)initWithProxyAtURL:(id)arg1 andIntent:(unsigned long long)arg2;
+- (void)invalidateCacheForPersonInContactStoreWithContactIdentifiers:(id)arg1;
+- (void)invalidateCacheForPersonWithContactIdentifiers:(id)arg1;
+- (void)invalidateCacheForPersonWithLocalIdentifiers:(id)arg1;
+- (void)invalidateMePerson;
+- (void)invalidateMemoryCaches;
+- (id)matchingDictionaryForContactIdentifier:(id)arg1;
+- (id)mePerson;
+- (id)nonFoundFullNames;
+- (id)nonFoundHandles;
+- (id)personByFullName;
+- (id)personByHandle;
+- (id)personForIdentifier:(id)arg1;
+- (id)personForPersonHandle:(id)arg1;
+- (id)personLocalIdentifierMatchingContactPictureForContactIdentifier:(id)arg1;
+- (id)personResultsForName:(id)arg1 inPhotoLibrary:(id)arg2;
+- (id)personsInContactStoreForContactIdentifiers:(id)arg1 needsRefetching:(bool)arg2 progressBlock:(id /* block */)arg3;
+- (id)potentialBirthdayDateForCNIdentifier:(id)arg1 fullName:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setNonFoundFullNames:(id)arg1;
+- (void)setNonFoundHandles:(id)arg1;
+- (void)setPersonByFullName:(id)arg1;
+- (void)setPersonByHandle:(id)arg1;
+- (id)suggestionsService;
+- (void)updateProxy;
+- (id)visionCacheStorageDirectoryURLForPhotoLibrary:(id)arg1;
+
+@end

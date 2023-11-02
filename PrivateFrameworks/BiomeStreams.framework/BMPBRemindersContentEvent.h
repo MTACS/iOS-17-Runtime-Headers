@@ -1,0 +1,95 @@
+
+@interface BMPBRemindersContentEvent : PBCodable <NSCopying> {
+    double  _absoluteTimestamp;
+    double  _completionDateTimestamp;
+    NSString * _contentProtection;
+    NSString * _domainId;
+    double  _dueDateTimestamp;
+    struct { 
+        unsigned int absoluteTimestamp : 1; 
+        unsigned int completionDateTimestamp : 1; 
+        unsigned int dueDateTimestamp : 1; 
+        unsigned int priority : 1; 
+        unsigned int isAllDay : 1; 
+    }  _has;
+    bool  _isAllDay;
+    NSString * _notes;
+    NSString * _personaId;
+    int  _priority;
+    NSString * _title;
+    NSString * _uniqueId;
+}
+
+@property (nonatomic) double absoluteTimestamp;
+@property (nonatomic) double completionDateTimestamp;
+@property (nonatomic, retain) NSString *contentProtection;
+@property (nonatomic, retain) NSString *domainId;
+@property (nonatomic) double dueDateTimestamp;
+@property (nonatomic) bool hasAbsoluteTimestamp;
+@property (nonatomic) bool hasCompletionDateTimestamp;
+@property (nonatomic, readonly) bool hasContentProtection;
+@property (nonatomic, readonly) bool hasDomainId;
+@property (nonatomic) bool hasDueDateTimestamp;
+@property (nonatomic) bool hasIsAllDay;
+@property (nonatomic, readonly) bool hasNotes;
+@property (nonatomic, readonly) bool hasPersonaId;
+@property (nonatomic) bool hasPriority;
+@property (nonatomic, readonly) bool hasTitle;
+@property (nonatomic, readonly) bool hasUniqueId;
+@property (nonatomic) bool isAllDay;
+@property (nonatomic, retain) NSString *notes;
+@property (nonatomic, retain) NSString *personaId;
+@property (nonatomic) int priority;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *uniqueId;
+
+- (void).cxx_destruct;
+- (double)absoluteTimestamp;
+- (double)completionDateTimestamp;
+- (id)contentProtection;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)domainId;
+- (double)dueDateTimestamp;
+- (bool)hasAbsoluteTimestamp;
+- (bool)hasCompletionDateTimestamp;
+- (bool)hasContentProtection;
+- (bool)hasDomainId;
+- (bool)hasDueDateTimestamp;
+- (bool)hasIsAllDay;
+- (bool)hasNotes;
+- (bool)hasPersonaId;
+- (bool)hasPriority;
+- (bool)hasTitle;
+- (bool)hasUniqueId;
+- (unsigned long long)hash;
+- (bool)isAllDay;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)notes;
+- (id)personaId;
+- (int)priority;
+- (bool)readFrom:(id)arg1;
+- (void)setAbsoluteTimestamp:(double)arg1;
+- (void)setCompletionDateTimestamp:(double)arg1;
+- (void)setContentProtection:(id)arg1;
+- (void)setDomainId:(id)arg1;
+- (void)setDueDateTimestamp:(double)arg1;
+- (void)setHasAbsoluteTimestamp:(bool)arg1;
+- (void)setHasCompletionDateTimestamp:(bool)arg1;
+- (void)setHasDueDateTimestamp:(bool)arg1;
+- (void)setHasIsAllDay:(bool)arg1;
+- (void)setHasPriority:(bool)arg1;
+- (void)setIsAllDay:(bool)arg1;
+- (void)setNotes:(id)arg1;
+- (void)setPersonaId:(id)arg1;
+- (void)setPriority:(int)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setUniqueId:(id)arg1;
+- (id)title;
+- (id)uniqueId;
+- (void)writeTo:(id)arg1;
+
+@end

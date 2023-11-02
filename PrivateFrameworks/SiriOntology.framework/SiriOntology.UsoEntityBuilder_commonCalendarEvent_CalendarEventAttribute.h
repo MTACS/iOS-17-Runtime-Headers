@@ -1,0 +1,4 @@
+
+@interface SiriOntology.UsoEntityBuilder_commonCalendarEvent_CalendarEventAttribute : SiriOntology.UsoEntityBuilderGlobalArgs
+
+@end

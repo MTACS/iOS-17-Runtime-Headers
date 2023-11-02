@@ -1,0 +1,83 @@
+
+@interface ASFriendListManager : NSObject <ASActivitySharingManagerReadyObserver, ASCompetitionManagerObserver, ASContactsManagerObserver, CHFitnessAppBadgeCountProvider> {
+    ASAchievementManager * _achievementManager;
+    ASActivityDataManager * _activityDataManager;
+    int  _activitySharingHasFriendsChangedToken;
+    bool  _competitionDataAvailable;
+    ASCompetitionManager * _competitionManager;
+    ASContactsManager * _contactsManager;
+    ASDatabaseClient * _databaseClient;
+    NSObject<OS_dispatch_queue> * _friendListQueue;
+    NSSet * _friends;
+    bool  _hasFriendsToShareWith;
+    bool  _isWatch;
+    NSDate * _lastReportedFriendsDate;
+    long long  _lastReportedNumberOfFriends;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSHashTable * _observers;
+    ASPeriodicUpdateManager * _periodicUpdateManager;
+    ASRelationshipManager * _relationshipManager;
+}
+
+@property (nonatomic) ASAchievementManager *achievementManager;
+@property (nonatomic) ASActivityDataManager *activityDataManager;
+@property (nonatomic, readonly) unsigned long long badgeCount;
+@property (nonatomic) ASCompetitionManager *competitionManager;
+@property (nonatomic) ASContactsManager *contactsManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSSet *friends;
+@property (readonly) bool hasFriendsToShareWith;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isWatch;
+@property (nonatomic) ASPeriodicUpdateManager *periodicUpdateManager;
+@property (nonatomic) ASRelationshipManager *relationshipManager;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_allContactsPreferringPlaceholderContacts;
+- (void)_handleHasFriendsChanged;
+- (void)_queue_friendListDidUpdate;
+- (id)_queue_friendWithUUID:(id)arg1;
+- (bool)_queue_hasFriendsToShareWith;
+- (bool)_queue_hasFriendsToShareWithForContacts:(id)arg1 defaultsKey:(id)arg2;
+- (void)_queue_notifyObserversOfCompetitionsLoaded;
+- (void)_queue_notifyObserversOfFriendListChanges;
+- (void)_queue_updateFriendList;
+- (id)achievementManager;
+- (id)activityDataManager;
+- (void)activitySharingManagerReady:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (unsigned long long)badgeCount;
+- (void)clearFriendListWithCompletion:(id /* block */)arg1;
+- (id)competitionManager;
+- (void)competitionManager:(id)arg1 didUpdateCompetitionsForFriendsWithUUIDs:(id)arg2;
+- (void)competitionManagerDidLoadCachedCompetitions:(id)arg1;
+- (id)contactsManager;
+- (void)contactsManagerDidUpdateContacts:(id)arg1;
+- (void)dealloc;
+- (void)endObserving;
+- (void)fetchCodableFriendWithRemoteUUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchfriendDataWithRemoteUUID:(id)arg1 completion:(id /* block */)arg2;
+- (id)friendWithUUID:(id)arg1;
+- (id)friends;
+- (bool)hasFriendsToShareWith;
+- (id)initWithDatabaseClient:(id)arg1 isWatch:(bool)arg2;
+- (void)initializeFriendListAndBeginObserving;
+- (bool)isWatch;
+- (id)periodicUpdateManager;
+- (void)queryAppBadgeCountWithCompletion:(id /* block */)arg1;
+- (id)relationshipManager;
+- (void)removeObserver:(id)arg1;
+- (void)setAchievementManager:(id)arg1;
+- (void)setActivityDataManager:(id)arg1;
+- (void)setCompetitionManager:(id)arg1;
+- (void)setContactsManager:(id)arg1;
+- (void)setIsWatch:(bool)arg1;
+- (void)setPeriodicUpdateManager:(id)arg1;
+- (void)setRelationshipManager:(id)arg1;
+- (void)updateFitnessAppBadgeCount;
+- (void)updateFriendListWithDeletedWorkoutEvents:(id)arg1;
+- (void)updateFriendListWithNewSnapshots:(id)arg1 achievements:(id)arg2 workouts:(id)arg3;
+
+@end

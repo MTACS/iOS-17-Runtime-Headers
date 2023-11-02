@@ -1,0 +1,4 @@
+
+@interface CNImmediateSchedulerCancelationToken : CNCancelationToken
+
+@end

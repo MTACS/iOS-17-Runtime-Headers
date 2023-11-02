@@ -1,0 +1,4 @@
+
+@interface RSDoorWindowPostProcessor : NSObject
+
+@end

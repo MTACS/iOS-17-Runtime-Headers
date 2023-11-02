@@ -1,0 +1,46 @@
+
+@interface CRBoxLayer : CAReplicatorLayer {
+    CATextLayer * _codeLayer;
+    NSMutableArray * _completionBlocks;
+    bool  _customInit;
+    double  _demoSpeed;
+    double  _frameRatio;
+    CAShapeLayer * _reticleLayer;
+}
+
+@property (retain) CATextLayer *codeLayer;
+@property (retain) NSMutableArray *completionBlocks;
+@property bool customInit;
+@property double demoSpeed;
+@property (nonatomic) double frameRatio;
+@property (retain) CAShapeLayer *reticleLayer;
+
++ (id)layer;
+
+- (void).cxx_destruct;
+- (void)addCompletionBlock:(id /* block */)arg1;
+- (void)animateConceal;
+- (void)animatePulseColor:(id)arg1;
+- (void)animateReveal;
+- (void)animateToPosition:(struct CGPoint { double x1; double x2; })arg1 transform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg2 opacity:(double)arg3 type:(long long)arg4;
+- (id)codeLayer;
+- (id)completionBlocks;
+- (bool)customInit;
+- (void)dealloc;
+- (double)demoSpeed;
+- (double)frameRatio;
+- (id)init;
+- (id)initWithCodeFrameRatio:(double)arg1;
+- (void)layoutSublayers;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)positionForCodeBoxPoints:(id)arg1;
+- (id)reticleLayer;
+- (void)setCodeLayer:(id)arg1;
+- (void)setCompletionBlocks:(id)arg1;
+- (void)setCustomInit:(bool)arg1;
+- (void)setDemoSpeed:(double)arg1;
+- (void)setFrameRatio:(double)arg1;
+- (void)setReticleLayer:(id)arg1;
+- (void)setString:(id)arg1 mirrored:(bool)arg2 inverted:(bool)arg3;
+
+@end

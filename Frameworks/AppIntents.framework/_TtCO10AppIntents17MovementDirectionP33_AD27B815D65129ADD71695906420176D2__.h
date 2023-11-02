@@ -1,0 +1,4 @@
+
+@interface _TtCO10AppIntents17MovementDirectionP33_AD27B815D65129ADD71695906420176D2__ : _TtCs12_SwiftObject
+
+@end

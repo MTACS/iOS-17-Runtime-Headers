@@ -1,0 +1,4 @@
+
+@protocol SiriSharedUICompactAdditionalContentViewDelegate
+
+@end

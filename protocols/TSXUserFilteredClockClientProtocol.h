@@ -1,0 +1,4 @@
+
+@protocol TSXUserFilteredClockClientProtocol <TSXKernelClockClientProtocol>
+
+@end

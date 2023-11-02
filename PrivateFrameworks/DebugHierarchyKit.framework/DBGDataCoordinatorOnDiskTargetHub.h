@@ -1,0 +1,4 @@
+
+@interface DBGDataCoordinatorOnDiskTargetHub : DBGDataCoordinatorTargetHub
+
+@end

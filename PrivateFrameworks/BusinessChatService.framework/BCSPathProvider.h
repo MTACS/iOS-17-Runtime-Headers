@@ -1,0 +1,4 @@
+
+@interface BCSPathProvider : NSObject
+
+@end

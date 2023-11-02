@@ -1,0 +1,4 @@
+
+@protocol PXGViewDecorationSource <PXGViewSource>
+
+@end

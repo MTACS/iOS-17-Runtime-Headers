@@ -1,0 +1,134 @@
+
+@interface PKSearchResultsViewController : UICollectionViewController <CNAvatarViewDelegate, PKAccountServiceObserver, PKForegroundActiveArbiterObserver, PKPaymentDataProviderDelegate, PKSearchServiceObserver, PKWorldRegionUpdaterObserver, UICollectionViewDelegateFlowLayout, UISearchResultsUpdating> {
+    PKAccountService * _accountService;
+    NSDictionary * _accountUserCollectionsPerIdentifier;
+    NSDictionary * _accountsPerIdentifier;
+    bool  _atNaturalRestingBounds;
+    NSArray * _categories;
+    NSString * _currentQueryIdentifier;
+    PKSearchResults * _currentResults;
+    PKFamilyMemberCollection * _familyCollection;
+    struct { 
+        bool foreground; 
+        bool foregroundActive; 
+    }  _foregroundActiveState;
+    bool  _fullResultsNotAvailable;
+    bool  _hasLoadedRequiredData;
+    bool  _hasReceivedResults;
+    bool  _hasSearchableContent;
+    bool  _isScrolling;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _keyboardFrame;
+    bool  _keyboardVisible;
+    NSMutableOrderedSet * _lastQueries;
+    NSMutableDictionary * _lastResultsPerQueryIdentifier;
+    NSArray * _locations;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lockQuery;
+    NSArray * _merchants;
+    UILabel * _noResultsBodyLabel;
+    UILabel * _noResultsTitleLabel;
+    PKPassLibrary * _passLibrary;
+    NSMutableDictionary * _passesForResults;
+    <PKPaymentDataProvider> * _paymentDataProvider;
+    id /* block */  _pendingPreflightCompletion;
+    NSArray * _people;
+    NSDictionary * _physicalCardsPerIdentifier;
+    unsigned long long  _presentationCounter;
+    PKSearchQuery * _queryForCurrentResults;
+    bool  _queryHasNoResults;
+    bool  _queryInProgress;
+    bool  _queryIsReplay;
+    NSObject<OS_dispatch_queue> * _queuePrepareResults;
+    PKWorldRegionUpdater * _regionUpdater;
+    PKDashboardTitleHeaderView * _sampleHeaderView;
+    PKSearchSuggestionCollectionViewCell * _sampleSuggestionCell;
+    PKSearchService * _searchService;
+    FHSearchSuggestionController * _searchSuggestionController;
+    PKTransactionHistoryViewController * _seeAllHistoryVC;
+    unsigned long long  _seeAllPresentationCounter;
+    NSObject<OS_dispatch_source> * _seeAllPresentationTimer;
+    NSArray * _suggestions;
+    PKTransactionGroupThumbnailPresenter * _thumbnailPresenter;
+    PKTransactionGroupItemPresenter * _transactionGroupPresenter;
+    PKDashboardPaymentTransactionItemPresenter * _transactionPresenter;
+    PKTransactionSourceCollection * _transactionSourceCollection;
+    NSArray * _transactionTags;
+    NSArray * _transactions;
+    bool  _usingThumbnailLayout;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_applyMaskToCell:(id)arg1 firstInSection:(bool)arg2 lastInSection:(bool)arg3;
+- (void)_configureHeaderView:(id)arg1 inSection:(unsigned long long)arg2;
+- (void)_configureSuggestionCell:(id)arg1 withSuggestion:(id)arg2;
+- (id)_historyViewControllerForQuery:(id)arg1 groups:(id)arg2 headerGroup:(id)arg3;
+- (void)_initiateSeeAllPresentationForQuery:(id)arg1;
+- (bool)_isQueryIdentifierMatchingCurrentQuery:(id)arg1;
+- (long long)_numberOfItemsInSection:(long long)arg1;
+- (id)_queryWithIdentifier:(id)arg1;
+- (id)_resultsLayout;
+- (void)_saveResults:(id)arg1 forQuery:(id)arg2;
+- (void)_scrollViewStoppedScrolling;
+- (id)_searchController;
+- (void)_seeAllHeaderGroupForQuery:(id)arg1 groups:(id)arg2 transactions:(id)arg3 completion:(id /* block */)arg4;
+- (double)_thumbnailInset;
+- (id)_thumbnailLayout;
+- (double)_thumbnailSpacing;
+- (void)_udpateOrPresentSeeAllViewControllerForQuery:(id)arg1 groups:(id)arg2 transactions:(id)arg3;
+- (void)_updateAccountsWithCompletion:(id /* block */)arg1;
+- (void)_updateContentUnavailableConfigurationUsingState:(id)arg1;
+- (bool)_updateGroup:(id)arg1 withRegion:(id)arg2;
+- (void)_updateLayoutForKeyboardAction:(id /* block */)arg1;
+- (void)_updateUIIfPossibleWithResults:(id)arg1 query:(id)arg2 completion:(id /* block */)arg3;
+- (void)_updateUIWithResults:(id)arg1 forQuery:(id)arg2 completion:(id /* block */)arg3;
+- (void)accountAdded:(id)arg1;
+- (void)accountChanged:(id)arg1;
+- (void)accountRemoved:(id)arg1;
+- (void)accountUsersChanged:(id)arg1 forAccountIdentifier:(id)arg2;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
+- (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (void)didUpdateFamilyMembers:(id)arg1;
+- (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(struct { bool x1; bool x2; })arg2;
+- (id)initWithPaymentDataProvider:(id)arg1 transactionSourceCollection:(id)arg2 familyCollection:(id)arg3;
+- (void)invalidateSearchResults;
+- (void)keyboardWillChange:(id)arg1;
+- (void)keyboardWillHide:(id)arg1;
+- (void)keyboardWillShow:(id)arg1;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)preflightWithCompletion:(id /* block */)arg1;
+- (id)presentingViewControllerForAvatarView:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)searchDidCompleteWithError:(id)arg1 results:(id)arg2 forIdentifier:(id)arg3;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateSearchResultsForSearchController:(id)arg1;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)worldRegionUpdated:(id)arg1 updatedRegion:(id)arg2;
+
+@end

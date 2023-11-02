@@ -1,0 +1,98 @@
+
+@interface VCCamera : NSObject <NSCopying> {
+    void _focalLength;
+    NSData * _forwardGeometricDistortionPolynomial;
+    int  _geometricDistortionCalibrationMaxRadius;
+    void _geometricDistortionCenter;
+    bool  _hasGeometricDistortionCalibration;
+    NSData * _inverseGeometricDistortionPolynomial;
+    struct { 
+        /* Warning: Unrecognized filer type: '"' using 'void*' */ void*referenceSensorSize; 
+    }  _model;
+    unsigned int  _modelState;
+    float  _pixelSize;
+    NSString * _portType;
+    void _principalPoint;
+    void _rotation;
+    int  _sensorID;
+    void _sensorSize;
+    float  _stereographicFisheyeStrength;
+    void _translation;
+    float  _zoomFactor;
+}
+
+@property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } extrinsicMatrix;
+@property (nonatomic) void focalLength;
+@property (nonatomic, retain) NSData *forwardGeometricDistortionPolynomial;
+@property (nonatomic) float fov;
+@property (nonatomic) int geometricDistortionCalibrationMaxRadius;
+@property (nonatomic) void geometricDistortionCenter;
+@property (nonatomic) bool hasGeometricDistortionCalibration;
+@property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; } intrinsicMatrix;
+@property (nonatomic, retain) NSData *inverseGeometricDistortionPolynomial;
+@property (nonatomic, readonly) struct { struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_1_1[3]; } x1; float x2; struct { void*x_3_1_1[4]; } x3; bool x4; int x5; struct { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; float x_6_1_5; float x_6_1_6; float x_6_1_7; float x_6_1_8; } x6; int x7; struct { float x_8_1_1; float x_8_1_2; float x_8_1_3; float x_8_1_4; float x_8_1_5; float x_8_1_6; float x_8_1_7; float x_8_1_8; } x8; float x9; }*model;
+@property (nonatomic) float pixelSize;
+@property (nonatomic, retain) NSString *portType;
+@property (nonatomic) void principalPoint;
+@property (nonatomic) void rotation;
+@property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; } rotationMatrix;
+@property (nonatomic) int sensorID;
+@property (nonatomic) void sensorSize;
+@property (nonatomic) float stereographicFisheyeStrength;
+@property (nonatomic) void translation;
+@property (nonatomic) float zoomFOV;
+@property (nonatomic) float zoomFactor;
+
+- (void).cxx_destruct;
+- (void)_updateModel;
+- (void)_updateModelDistortionProperties;
+- (void)_updateModelExtrinsicProperties;
+- (void)_updateModelFisheyeProperties;
+- (void)_updateModelIntrinsicProperties;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)debugDescription;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })extrinsicMatrix;
+- (void)focalLength;
+- (id)forwardGeometricDistortionPolynomial;
+- (float)fov;
+- (int)geometricDistortionCalibrationMaxRadius;
+- (void)geometricDistortionCenter;
+- (bool)hasGeometricDistortionCalibration;
+- (id)init;
+- (id)initWithDictionary:(id)arg1;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })intrinsicMatrix;
+- (id)inverseGeometricDistortionPolynomial;
+- (struct { struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_1_1[3]; } x1; float x2; struct { void*x_3_1_1[4]; } x3; bool x4; int x5; struct { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; float x_6_1_5; float x_6_1_6; float x_6_1_7; float x_6_1_8; } x6; int x7; struct { float x_8_1_1; float x_8_1_2; float x_8_1_3; float x_8_1_4; float x_8_1_5; float x_8_1_6; float x_8_1_7; float x_8_1_8; } x8; float x9; }*)model;
+- (float)pixelSize;
+- (id)portType;
+- (void)principalPoint;
+- (void)rotation;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })rotationMatrix;
+- (int)sensorID;
+- (void)sensorSize;
+- (void)setFocalLength;
+- (void)setForwardGeometricDistortionPolynomial:(id)arg1;
+- (void)setFov:(float)arg1;
+- (void)setGeometricDistortionCalibrationMaxRadius:(int)arg1;
+- (void)setGeometricDistortionCenter;
+- (void)setHasGeometricDistortionCalibration:(bool)arg1;
+- (void)setInverseGeometricDistortionPolynomial:(id)arg1;
+- (void)setPixelSize:(float)arg1;
+- (void)setPortType:(id)arg1;
+- (void)setPrincipalPoint;
+- (void)setRotation;
+- (void)setSensorID:(int)arg1;
+- (void)setSensorSize;
+- (void)setStereographicFisheyeStrength:(float)arg1;
+- (void)setTranslation;
+- (void)setZoomFOV:(float)arg1;
+- (void)setZoomFactor:(float)arg1;
+- (float)stereographicFisheyeStrength;
+- (void)translation;
+- (int)updateWithCalibration:(id)arg1;
+- (float)zoomFOV;
+- (float)zoomFactor;
+
+@end

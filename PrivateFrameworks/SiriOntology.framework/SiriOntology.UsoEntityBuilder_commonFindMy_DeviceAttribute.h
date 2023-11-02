@@ -1,0 +1,4 @@
+
+@interface SiriOntology.UsoEntityBuilder_commonFindMy_DeviceAttribute : SiriOntology.UsoEntityBuilderGlobalArgs
+
+@end

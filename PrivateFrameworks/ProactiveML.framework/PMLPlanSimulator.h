@@ -1,0 +1,17 @@
+
+@interface PMLPlanSimulator : NSObject {
+    _PASRng * _rng;
+    PMLSessionDescriptor * _sessionDescriptor;
+    NSArray * _stores;
+}
+
++ (id)simulatorWithDbPaths:(id)arg1 sessionDescriptor:(id)arg2 sessionsInBatch:(unsigned long long)arg3 maxSessionsLimit:(unsigned long long)arg4 seed:(unsigned long long)arg5;
+
+- (void).cxx_destruct;
+- (id)_randomStore;
+- (id)_randomStores:(unsigned long long)arg1;
+- (id)init;
+- (id)initWithStores:(id)arg1 sessionDescriptor:(id)arg2 seed:(unsigned long long)arg3;
+- (id)runParallelPlansWithPlanId:(id)arg1 tracker:(id)arg2 noiseScaleFactors:(struct { float x1; float x2; })arg3 noiseMinimumMagnitude:(float)arg4 weights:(id)arg5 serverIteration:(unsigned long long)arg6 useIntercept:(bool)arg7 noiseMechanism:(long long)arg8 usingRandomlySelected:(unsigned long long)arg9;
+
+@end

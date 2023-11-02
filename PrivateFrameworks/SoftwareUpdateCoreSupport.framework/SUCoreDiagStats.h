@@ -1,0 +1,96 @@
+
+@interface SUCoreDiagStats : NSObject <NSSecureCoding> {
+    long long  _anomalyAllIndications;
+    long long  _anomalyCount;
+    long long  _anomalyIndicationsCount;
+    long long  _beginCount;
+    long long  _endFailAllIndications;
+    long long  _endFailCount;
+    long long  _endFailIndicationsCount;
+    long long  _endSuccessCount;
+    long long  _errorAllIndications;
+    long long  _errorCount;
+    long long  _errorIndicationsCount;
+    long long  _failureAllIndications;
+    long long  _failureCount;
+    long long  _failureIndicationsCount;
+    long long  _faultAllIndications;
+    long long  _faultCount;
+    long long  _faultIndicationsCount;
+    long long  _stateEventCount;
+}
+
+@property (nonatomic) long long anomalyAllIndications;
+@property (nonatomic) long long anomalyCount;
+@property (nonatomic) long long anomalyIndicationsCount;
+@property (nonatomic) long long beginCount;
+@property (nonatomic) long long endFailAllIndications;
+@property (nonatomic) long long endFailCount;
+@property (nonatomic) long long endFailIndicationsCount;
+@property (nonatomic) long long endSuccessCount;
+@property (nonatomic) long long errorAllIndications;
+@property (nonatomic) long long errorCount;
+@property (nonatomic) long long errorIndicationsCount;
+@property (nonatomic) long long failureAllIndications;
+@property (nonatomic) long long failureCount;
+@property (nonatomic) long long failureIndicationsCount;
+@property (nonatomic) long long faultAllIndications;
+@property (nonatomic) long long faultCount;
+@property (nonatomic) long long faultIndicationsCount;
+@property (nonatomic) long long stateEventCount;
+
++ (bool)supportsSecureCoding;
+
+- (long long)allIndications;
+- (long long)anomalyAllIndications;
+- (long long)anomalyCount;
+- (long long)anomalyIndicationsCount;
+- (long long)beginCount;
+- (void)combineStartingFrom:(id)arg1 endingWith:(id)arg2;
+- (void)combineWithStats:(id)arg1;
+- (id)copy;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)encounteredProblems;
+- (long long)endFailAllIndications;
+- (long long)endFailCount;
+- (long long)endFailIndicationsCount;
+- (long long)endSuccessCount;
+- (long long)errorAllIndications;
+- (long long)errorCount;
+- (long long)errorIndicationsCount;
+- (long long)failureAllIndications;
+- (long long)failureCount;
+- (long long)failureIndicationsCount;
+- (long long)faultAllIndications;
+- (long long)faultCount;
+- (long long)faultIndicationsCount;
+- (id)init;
+- (id)initByCombining:(id)arg1 withAdditonal:(id)arg2;
+- (id)initByCombining:(id)arg1 withBeginCount:(long long)arg2 withEndSuccessCount:(long long)arg3 withEndFailCount:(long long)arg4 withEndFailIndicationsCount:(long long)arg5 withEndFailAllIndications:(long long)arg6 withErrorCount:(long long)arg7 withErrorIndicationsCount:(long long)arg8 withErrorAllIndications:(long long)arg9 withAnomalyCount:(long long)arg10 withAnomalyIndicationsCount:(long long)arg11 withAnomalyAllIndications:(long long)arg12 withFailureCount:(long long)arg13 withFailureIndicationsCount:(long long)arg14 withFailureAllIndications:(long long)arg15 withFaultCount:(long long)arg16 withFaultIndicationsCount:(long long)arg17 withFaultAllIndications:(long long)arg18 withStateEventCount:(long long)arg19;
+- (id)initIgnoringSuccessRelated;
+- (id)initWithBeginCount:(long long)arg1 withEndSuccessCount:(long long)arg2 withEndFailCount:(long long)arg3 withEndFailIndicationsCount:(long long)arg4 withEndFailAllIndications:(long long)arg5 withErrorCount:(long long)arg6 withErrorIndicationsCount:(long long)arg7 withErrorAllIndications:(long long)arg8 withAnomalyCount:(long long)arg9 withAnomalyIndicationsCount:(long long)arg10 withAnomalyAllIndications:(long long)arg11 withFailureCount:(long long)arg12 withFailureIndicationsCount:(long long)arg13 withFailureAllIndications:(long long)arg14 withFaultCount:(long long)arg15 withFaultIndicationsCount:(long long)arg16 withFaultAllIndications:(long long)arg17 withStateEventCount:(long long)arg18;
+- (id)initWithCoder:(id)arg1;
+- (void)setAnomalyAllIndications:(long long)arg1;
+- (void)setAnomalyCount:(long long)arg1;
+- (void)setAnomalyIndicationsCount:(long long)arg1;
+- (void)setBeginCount:(long long)arg1;
+- (void)setEndFailAllIndications:(long long)arg1;
+- (void)setEndFailCount:(long long)arg1;
+- (void)setEndFailIndicationsCount:(long long)arg1;
+- (void)setEndSuccessCount:(long long)arg1;
+- (void)setErrorAllIndications:(long long)arg1;
+- (void)setErrorCount:(long long)arg1;
+- (void)setErrorIndicationsCount:(long long)arg1;
+- (void)setFailureAllIndications:(long long)arg1;
+- (void)setFailureCount:(long long)arg1;
+- (void)setFailureIndicationsCount:(long long)arg1;
+- (void)setFaultAllIndications:(long long)arg1;
+- (void)setFaultCount:(long long)arg1;
+- (void)setFaultIndicationsCount:(long long)arg1;
+- (void)setStateEventCount:(long long)arg1;
+- (long long)stateEventCount;
+- (id)summary;
+- (id)summaryOfProblems;
+
+@end

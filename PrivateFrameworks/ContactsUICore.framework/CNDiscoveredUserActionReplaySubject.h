@@ -1,0 +1,4 @@
+
+@interface CNDiscoveredUserActionReplaySubject : CNReplaySubject
+
+@end

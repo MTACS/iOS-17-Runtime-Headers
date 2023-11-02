@@ -1,0 +1,94 @@
+
+@interface BMTextUnderstandingPoemAnalytics : BMEventBase <BMStoreData> {
+    bool  _accepted;
+    BMTextUnderstandingPoemAnalyticsFeatures * _features;
+    bool  _hasAccepted;
+    bool  _hasNamed;
+    bool  _hasOnboarding;
+    bool  _hasPrediction;
+    bool  _hasPredictionConfidence;
+    bool  _hasRejected;
+    bool  _hasShadowMatch;
+    bool  _hasThreshold;
+    NSString * _nameMegadomeIdentifier;
+    int  _nameSource;
+    bool  _named;
+    bool  _onboarding;
+    bool  _prediction;
+    double  _predictionConfidence;
+    bool  _rejected;
+    bool  _shadowMatch;
+    double  _threshold;
+    NSString * _visualIdentifier;
+}
+
+@property (nonatomic, readonly) bool accepted;
+@property (nonatomic, readonly) unsigned int dataVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BMTextUnderstandingPoemAnalyticsFeatures *features;
+@property (nonatomic) bool hasAccepted;
+@property (nonatomic) bool hasNamed;
+@property (nonatomic) bool hasOnboarding;
+@property (nonatomic) bool hasPrediction;
+@property (nonatomic) bool hasPredictionConfidence;
+@property (nonatomic) bool hasRejected;
+@property (nonatomic) bool hasShadowMatch;
+@property (nonatomic) bool hasThreshold;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *nameMegadomeIdentifier;
+@property (nonatomic, readonly) int nameSource;
+@property (nonatomic, readonly) bool named;
+@property (nonatomic, readonly) bool onboarding;
+@property (nonatomic, readonly) bool prediction;
+@property (nonatomic, readonly) double predictionConfidence;
+@property (nonatomic, readonly) bool rejected;
+@property (nonatomic, readonly) bool shadowMatch;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) double threshold;
+@property (nonatomic, readonly) NSString *visualIdentifier;
+
++ (id)columns;
++ (id)eventWithData:(id)arg1 dataVersion:(unsigned int)arg2;
++ (id)validKeyPaths;
+
+- (void).cxx_destruct;
+- (bool)accepted;
+- (unsigned int)dataVersion;
+- (id)description;
+- (id)features;
+- (bool)hasAccepted;
+- (bool)hasNamed;
+- (bool)hasOnboarding;
+- (bool)hasPrediction;
+- (bool)hasPredictionConfidence;
+- (bool)hasRejected;
+- (bool)hasShadowMatch;
+- (bool)hasThreshold;
+- (id)initByReadFrom:(id)arg1;
+- (id)initWithJSONDictionary:(id)arg1 error:(id*)arg2;
+- (id)initWithVisualIdentifier:(id)arg1 prediction:(id)arg2 named:(id)arg3 shadowMatch:(id)arg4 threshold:(id)arg5 predictionConfidence:(id)arg6 onboarding:(id)arg7 nameMegadomeIdentifier:(id)arg8 nameSource:(int)arg9 features:(id)arg10 accepted:(id)arg11 rejected:(id)arg12;
+- (bool)isEqual:(id)arg1;
+- (id)jsonDictionary;
+- (id)nameMegadomeIdentifier;
+- (int)nameSource;
+- (bool)named;
+- (bool)onboarding;
+- (bool)prediction;
+- (double)predictionConfidence;
+- (bool)rejected;
+- (id)serialize;
+- (void)setHasAccepted:(bool)arg1;
+- (void)setHasNamed:(bool)arg1;
+- (void)setHasOnboarding:(bool)arg1;
+- (void)setHasPrediction:(bool)arg1;
+- (void)setHasPredictionConfidence:(bool)arg1;
+- (void)setHasRejected:(bool)arg1;
+- (void)setHasShadowMatch:(bool)arg1;
+- (void)setHasThreshold:(bool)arg1;
+- (bool)shadowMatch;
+- (double)threshold;
+- (id)visualIdentifier;
+- (void)writeTo:(id)arg1;
+
+@end

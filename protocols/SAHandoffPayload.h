@@ -1,0 +1,4 @@
+
+@protocol SAHandoffPayload <SAAceSerializable>
+
+@end

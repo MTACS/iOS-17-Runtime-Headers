@@ -1,0 +1,21 @@
+
+@interface MCDeviceCapabilities : NSObject {
+    bool  _hasSEP;
+    bool  _supportsBlockLevelEncryption;
+    bool  _supportsFileLevelEncryption;
+}
+
+@property (nonatomic, readonly) bool hasSEP;
+@property (nonatomic, readonly) bool supportsBlockLevelEncryption;
+@property (nonatomic, readonly) bool supportsFileLevelEncryption;
+
++ (id)currentDevice;
+
+- (bool)_mediaDiskIsEncrypted;
+- (bool)hasSEP;
+- (id)init;
+- (bool)supportsBlockLevelEncryption;
+- (bool)supportsFileLevelEncryption;
+- (bool)validateCapabilitiesRequiredByRestrictions:(id)arg1 localizedIncompatibilityMessage:(id)arg2 outError:(id*)arg3;
+
+@end

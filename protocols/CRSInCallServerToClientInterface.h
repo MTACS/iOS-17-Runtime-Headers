@@ -1,0 +1,4 @@
+
+@protocol CRSInCallServerToClientInterface <NSObject>
+
+@end

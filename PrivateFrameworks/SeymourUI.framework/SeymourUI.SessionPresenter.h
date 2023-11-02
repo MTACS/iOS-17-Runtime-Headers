@@ -1,0 +1,63 @@
+
+@interface SeymourUI.SessionPresenter : _TtCs12_SwiftObject {
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _showEstimatedCaloriePrompt;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  activityTypeBehavior;
+    void allowDistributedSessionBrokering;
+    void assetClient;
+    void audioFocusPresenter;
+    void audioHintPresenter;
+    void audioSessionCoordinator;
+    void backgroundPresenter;
+    void brokerDistributedSessionRetryTimer;
+    void bufferPresenter;
+    void castingPresenter;
+    void catalogClient;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  catalogWorkout;
+    void contentAvailabilityClient;
+    void continueOnWatchPresenter;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  countdown;
+    void display;
+    void displayPreferencesPresenter;
+    void estimatedMetricsPromptVisible;
+    void eventHub;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  gymKitConnection;
+    void healthStore;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  initiatedGroupActivity;
+    void instructionsPresenter;
+    void introSequencePresenter;
+    void isPictureInPictureAllowed;
+    void mediaPlayerPresenter;
+    void mediaTagStringBuilder;
+    void multiUserClient;
+    void onSessionCreationError;
+    void ongoingWorkoutDetectedPresenter;
+    void orientationObserver;
+    void overlayPresenter;
+    void platform;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  playback;
+    void presentationCoordinator;
+    void privacyPreferenceClient;
+    void remoteBrowsingSource;
+    void routePickerPresenter;
+    void sessionClient;
+    void sessionEventPublisher;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  sessionOrigin;
+    void sessionPowerLog;
+    void standaloneWorkoutTimeProvider;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  startDate;
+    void startTime;
+    void state;
+    void subscriptionToken;
+    void summaryPresenter;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  termination;
+    void timeline;
+    void timerProvider;
+    void unitPreferencesProvider;
+    void watchDiscoveryPresenter;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  workout;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  workoutDeviceConnection;
+    void workoutPlanArchiver;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  workoutSessionConfiguration;
+}
+
+@end

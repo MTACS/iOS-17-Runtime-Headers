@@ -1,0 +1,37 @@
+
+@interface DOMEvent : DOMObject
+
+@property (readonly) bool bubbles;
+@property bool cancelBubble;
+@property (readonly) bool cancelable;
+@property (readonly) <DOMEventTarget> *currentTarget;
+@property (readonly) unsigned short eventPhase;
+@property bool returnValue;
+@property (readonly) <DOMEventTarget> *srcElement;
+@property (readonly) <DOMEventTarget> *target;
+@property (readonly) unsigned long long timeStamp;
+@property (readonly, copy) NSString *type;
+
+- (bool)bubbles;
+- (bool)cancelBubble;
+- (bool)cancelable;
+- (bool)composed;
+- (id)currentTarget;
+- (void)dealloc;
+- (bool)defaultPrevented;
+- (unsigned short)eventPhase;
+- (void)initEvent:(id)arg1 :(bool)arg2 :(bool)arg3;
+- (void)initEvent:(id)arg1 canBubbleArg:(bool)arg2 cancelableArg:(bool)arg3;
+- (bool)isTrusted;
+- (void)preventDefault;
+- (bool)returnValue;
+- (void)setCancelBubble:(bool)arg1;
+- (void)setReturnValue:(bool)arg1;
+- (id)srcElement;
+- (void)stopImmediatePropagation;
+- (void)stopPropagation;
+- (id)target;
+- (unsigned long long)timeStamp;
+- (id)type;
+
+@end

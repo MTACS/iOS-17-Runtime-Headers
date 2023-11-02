@@ -1,0 +1,180 @@
+
+@interface FBSDisplayConfiguration : NSObject <BSDescriptionProviding, BSXPCCoding, NSCopying, NSSecureCoding> {
+    NSSet * _availableModes;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _bounds;
+    CADisplay * _caDisplay;
+    bool  _cloningSupported;
+    FBSDisplayMode * _currentMode;
+    NSString * _deviceName;
+    NSString * _hardwareIdentifier;
+    FBSDisplayIdentity * _identity;
+    CADisplay * _immutableCADisplay;
+    double  _latency;
+    NSString * _name;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _nativeBounds;
+    bool  _noEqual_comparable;
+    FBSDisplayConfiguration * _noEqual_originatingConfiguration;
+    unsigned int  _noEqual_seed;
+    NSSet * _otherModes;
+    long long  _overscanCompensation;
+    bool  _overscanned;
+    int  _pid;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _pixelSize;
+    FBSDisplayMode * _preferredMode;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _safeOverscanRatio;
+    long long  _tags;
+}
+
+@property (getter=isUIKitMainLike, nonatomic, readonly) bool UIKitMainLike;
+@property (nonatomic, readonly, copy) NSSet *availableModes;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (getter=isCarDisplay, nonatomic, readonly) bool carDisplay;
+@property (getter=isCarInstrumentsDisplay, nonatomic, readonly) bool carInstrumentsDisplay;
+@property (getter=isCloningSupported, nonatomic, readonly) bool cloningSupported;
+@property (nonatomic, readonly) long long colorGamut;
+@property (nonatomic, readonly, copy) FBSDisplayMode *currentMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSString *deviceName;
+@property (getter=isExternal, nonatomic, readonly) bool external;
+@property (nonatomic, readonly, copy) NSString *hardwareIdentifier;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) FBSDisplayIdentity *identity;
+@property (nonatomic, readonly) double latency;
+@property (getter=isMainDisplay, nonatomic, readonly) bool mainDisplay;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) double nativeOrientation;
+@property (nonatomic, readonly, copy) FBSDisplayConfiguration *originatingConfiguration;
+@property (nonatomic, readonly) long long overscanCompensation;
+@property (getter=isOverscanned, nonatomic, readonly) bool overscanned;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } pixelSize;
+@property (nonatomic, readonly) double pointScale;
+@property (nonatomic, readonly, copy) FBSDisplayMode *preferredMode;
+@property (nonatomic, readonly) double refreshRate;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } renderingCenter;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } safeOverscanRatio;
+@property (nonatomic, readonly, copy) NSString *sb_referenceModeObserverUniqueIdentifier;
+@property (nonatomic, readonly) unsigned int seed;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long tags;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)CADisplay;
+- (id)_initWithIdentity:(id)arg1 hardwareIdentifier:(id)arg2 name:(id)arg3 deviceName:(id)arg4 seed:(unsigned int)arg5 comparable:(bool)arg6 tags:(long long)arg7 currentMode:(id)arg8 preferredMode:(id)arg9 otherModes:(id)arg10 cloningSupported:(bool)arg11 overscanned:(bool)arg12 overscanCompensation:(long long)arg13 safeOverscanRatio:(struct CGSize { double x1; double x2; })arg14 pixelSize:(struct CGSize { double x1; double x2; })arg15 nativeBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg16 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg17 latency:(double)arg18 originatingConfiguration:(id)arg19 validityCheck:(long long)arg20;
+- (id)_initWithImmutableDisplay:(id)arg1 originalDisplay:(id)arg2 assertIfInvalid:(bool)arg3;
+- (id)_nameForDisplayType;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_nativeBounds;
+- (long long)_nativeRotation;
+- (id)availableModes;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (id)caDisplay;
+- (long long)colorGamut;
+- (id)copyForSecureRendering;
+- (id)copyWithOverrideBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)copyWithOverrideMode:(id)arg1;
+- (id)copyWithOverrideMode:(id)arg1 pixelSize:(struct CGSize { double x1; double x2; })arg2 nativeBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (id)copyWithUniqueIdentifier:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentMode;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)deviceName;
+- (unsigned int)displayID;
+- (void)encodeWithCoder:(id)arg1;
+- (void)encodeWithXPCDictionary:(id)arg1;
+- (bool)expectsSecureRendering;
+- (id)hardwareIdentifier;
+- (unsigned long long)hash;
+- (id)identity;
+- (id)immutableCADisplay;
+- (id)init;
+- (id)initWithCADisplay:(id)arg1;
+- (id)initWithCADisplay:(id)arg1 isMainDisplay:(bool)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithXPCDictionary:(id)arg1;
+- (bool)isCarDisplay;
+- (bool)isCarInstrumentsDisplay;
+- (bool)isCloningSupported;
+- (bool)isConnected;
+- (bool)isEqual:(id)arg1;
+- (bool)isExternal;
+- (bool)isHiddenDisplay;
+- (bool)isMainDisplay;
+- (bool)isMainRootDisplay;
+- (bool)isOverscanned;
+- (bool)isUIKitMainLike;
+- (double)latency;
+- (id)laterConfiguration:(id)arg1;
+- (id)name;
+- (struct CGPoint { double x1; double x2; })nativeCenter;
+- (double)nativeOrientation;
+- (double)orientation;
+- (id)originatingConfiguration;
+- (long long)overscanCompensation;
+- (struct CGSize { double x1; double x2; })pixelSize;
+- (double)pointScale;
+- (id)preferredMode;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })referenceBounds;
+- (double)refreshRate;
+- (struct CGPoint { double x1; double x2; })renderingCenter;
+- (struct CGSize { double x1; double x2; })safeOverscanRatio;
+- (double)scale;
+- (unsigned int)seed;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (bool)supportsExtendedColor;
+- (long long)tags;
+- (long long)type;
+- (id)uniqueID;
+- (id)uniqueIdentifier;
+- (bool)wantsConnectionDebouncing;
+
+// Image: /System/Library/PrivateFrameworks/ExpansionBoard.framework/ExpansionBoard
+
+- (id)_flbLoggingDescription;
+
+// Image: /System/Library/PrivateFrameworks/PosterBoardUIServices.framework/PosterBoardUIServices
+
++ (id)pruis_displayConfigurationForHardwareIdentifier:(id)arg1;
++ (id)pruis_displayConfigurationForScreen:(id)arg1;
++ (id)pruis_hardwareIdentifierForRequest:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PosterKit.framework/PosterKit
+
+- (id)pr_displayConfigurationIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoard.framework/SpringBoard
+
+- (id)_sbLoggingDescription;
+- (id)sb_referenceModeObserverUniqueIdentifier;
+
+@end

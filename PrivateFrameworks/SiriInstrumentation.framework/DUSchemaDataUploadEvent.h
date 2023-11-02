@@ -1,0 +1,4 @@
+
+@interface DUSchemaDataUploadEvent : DUSchemaDUEvent
+
+@end

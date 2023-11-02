@@ -1,0 +1,4 @@
+
+@protocol FBSSettings <FBSSceneExtensible>
+
+@end

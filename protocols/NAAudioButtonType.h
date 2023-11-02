@@ -1,0 +1,4 @@
+
+@protocol NAAudioButtonType
+
+@end

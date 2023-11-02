@@ -1,0 +1,93 @@
+
+@interface DRSDampeningManager : NSObject {
+    DRSDampeningConfiguration * _defaultSignatureConfiguration;
+    DRSDampeningEnforcementSettings * _enforcementSettings;
+    NSPersistentContainer * _persistentContainer;
+    NSDictionary * _resourceDampeningConfigDict;
+    NSMutableDictionary * _teamDampeningConfigDict;
+    unsigned long long  _totalCap;
+    NSObject<OS_dispatch_queue> * _workQueue;
+}
+
+@property (nonatomic, retain) DRSDampeningConfiguration *defaultSignatureConfiguration;
+@property (nonatomic, readonly) DRSDampeningEnforcementSettings *enforcementSettings;
+@property (nonatomic, retain) NSPersistentContainer *persistentContainer;
+@property (nonatomic, readonly) NSDictionary *resourceDampeningConfigDict;
+@property (nonatomic, readonly) NSMutableDictionary *teamDampeningConfigDict;
+@property (nonatomic) unsigned long long totalCap;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
+
++ (id)_ON_MOC_QUEUE_existingMOFromContext:(id)arg1 errorOut:(id*)arg2;
++ (id)_RMETeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_abcTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_coreAnimationTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_coreAudioTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_defaultTailspinConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_drmTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_entityName;
++ (id)_hangTracerTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_mailTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_memoryToolsTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_nandGBBTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_nandTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_nonWatchOShangTracerTeamConfiguration:(bool)arg1 isSeed:(bool)arg2;
++ (id)_ppsTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_rapidTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_sentryTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_spindumpTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_watchOS_hangTracerTeamConfiguration:(bool)arg1 isSeed:(bool)arg2;
++ (id)_watchdogdTeamConfiguration:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)_workflowResponsivenessDampeningConfiguration:(bool)arg1;
++ (id)dampeningManagerFromPersistentContainer:(id)arg1 deleteBadState:(bool)arg2 errorOut:(id*)arg3;
++ (id)defaultResourceConfigurations:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)defaultResourceConfigurationsForCurrentDevice;
++ (id)defaultTeamConfigurationForTeam:(id)arg1 isInternal:(bool)arg2 isSeed:(bool)arg3 isCarrier:(bool)arg4 platform:(unsigned char)arg5;
++ (id)defaultTeamConfigurationForTeamForCurrentDevice:(id)arg1 teamConfigurationDirectory:(id)arg2;
++ (id)defaultTeamConfigurations:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
++ (id)defaultTeamConfigurations:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4 plistDirectoryPath:(id)arg5 errorOut:(id*)arg6;
++ (id)defaultTeamConfigurationsForCurrentDevice:(id)arg1;
++ (unsigned long long)defaultTotalCapForCurrentDevice;
++ (unsigned long long)defaultTotalCapForIsInternal:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3;
++ (bool)passesAcceptanceRate:(double)arg1;
++ (bool)removeExistingDampeningManagerStateFromManagedObjectContext:(id)arg1 errorOut:(id*)arg2;
+
+- (void).cxx_destruct;
+- (double)_24HoursHysteresis;
+- (id)_ON_MOC_QUEUE_initWith:(id)arg1 persistentContainer:(id)arg2;
+- (id)_ON_MOC_QUEUE_moRepresentationInContext:(id)arg1;
+- (bool)_hasRequestsRecordCountGreaterThanOrEqualToThreshold:(unsigned long long)arg1 matchingPredicate:(id)arg2 inContext:(id)arg3 filterToObjectsMatchingClassOfRequest:(id)arg4;
+- (bool)_passesResourceCap:(id)arg1 config:(id)arg2 managedObjectContext:(id)arg3;
+- (bool)_passesResourceHysteresis:(id)arg1 config:(id)arg2 managedObjectContext:(id)arg3;
+- (bool)_passesResourceRandomDownsampling:(id)arg1 config:(id)arg2;
+- (bool)_passesSignatureCap:(id)arg1 config:(id)arg2 managedObjectContext:(id)arg3;
+- (bool)_passesSignatureHysteresis:(id)arg1 config:(id)arg2 managedObjectContext:(id)arg3;
+- (bool)_passesSignatureRandomDownsampling:(id)arg1 config:(id)arg2;
+- (bool)_passesTotalCap:(id)arg1 managedObjectContext:(id)arg2;
+- (id)_predicateForUndampenedRequestsMatchingSignatureOfRequest:(id)arg1 afterDate:(id)arg2;
+- (bool)_request:(id)arg1 passesHysteresis:(double)arg2 countCap:(unsigned long long)arg3 usesSignature:(bool)arg4 usesRequestClass:(bool)arg5 managedObjectContext:(id)arg6;
+- (id)_resourceConfigurationForRequest:(id)arg1;
+- (id)dampeningConfigurationForRequestSignature:(id)arg1;
+- (id)dampeningConfigurationForResource:(id)arg1;
+- (id)dampeningConfigurationForTeamID:(id)arg1 issueCategory:(id)arg2;
+- (unsigned long long)dampeningOutcomeForRequest:(id)arg1;
+- (id)debugDescription;
+- (id)defaultSignatureConfiguration;
+- (id)enforcementSettings;
+- (id)initWithIsInternal:(bool)arg1 isSeed:(bool)arg2 isCarrier:(bool)arg3 platform:(unsigned char)arg4;
+- (id)initWithPersistentContainer:(id)arg1 enforcementSettings:(id)arg2 defaultSignatureConfiguration:(id)arg3 totalCap:(unsigned long long)arg4 teamDampeningConfigDict:(id)arg5 resourceDampeningConfigDict:(id)arg6;
+- (id)initWithPersistentContainer:(id)arg1 teamConfigurationDirectory:(id)arg2;
+- (bool)isEqualToDampeningManager:(id)arg1;
+- (id)jsonCompatibleDictRepresentation;
+- (id)persistentContainer;
+- (id)resourceDampeningConfigDict;
+- (bool)saveToPersistentContainerWithErrorOut:(id*)arg1;
+- (void)setDefaultSignatureConfiguration:(id)arg1;
+- (void)setPersistentContainer:(id)arg1;
+- (void)setTotalCap:(unsigned long long)arg1;
+- (void)setWorkQueue:(id)arg1;
+- (id)teamDampeningConfigDict;
+- (unsigned long long)totalCap;
+- (id)workQueue;
+- (bool)writeConfigurationPlistsToDirectory:(id)arg1 createDirIfMissing:(bool)arg2 errorOut:(id*)arg3;
+
+@end

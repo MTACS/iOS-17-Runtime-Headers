@@ -1,0 +1,88 @@
+
+@interface VUIDownloadDataSource : VUIMediaEntitiesDataSource <SSDownloadManagerObserver, VUIDownloadManagerDelegate> {
+    NSArray * _activelyDownloadingAdamIds;
+    NSArray * _activelyDownloadingMediaItems;
+    <VUIDownloadDataSourceDelegate> * _downloadDelegate;
+    NSArray * _downloadEntities;
+    NSMutableDictionary * _episodesDownloadingForShow;
+    NSMutableDictionary * _groupingByShowIdentifier;
+    bool  _hasFetchedAllDownloadEntities;
+    bool  _hasFetchedAllDownloadedEntities;
+    NSTimer * _libraryContentsChangeDebounceTimer;
+    NSArray * _localMediaItems;
+    VUIMediaLibrary * _mediaLibrary;
+    bool  _performingRentalExpirationFetch;
+    SSDownloadManager * _sDownloadManager;
+}
+
+@property (nonatomic, retain) NSArray *activelyDownloadingAdamIds;
+@property (nonatomic, retain) NSArray *activelyDownloadingMediaItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <VUIDownloadDataSourceDelegate> *downloadDelegate;
+@property (nonatomic, retain) NSArray *downloadEntities;
+@property (nonatomic, retain) NSMutableDictionary *episodesDownloadingForShow;
+@property (nonatomic, retain) NSMutableDictionary *groupingByShowIdentifier;
+@property (nonatomic) bool hasFetchedAllDownloadEntities;
+@property (nonatomic) bool hasFetchedAllDownloadedEntities;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSTimer *libraryContentsChangeDebounceTimer;
+@property (nonatomic, retain) NSArray *localMediaItems;
+@property (nonatomic, readonly) VUIMediaLibrary *mediaLibrary;
+@property (nonatomic) bool performingRentalExpirationFetch;
+@property (nonatomic, retain) SSDownloadManager *sDownloadManager;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_coalesceActiveDownloadEntitiesAndDownloadedEntities;
+- (id)_createDownloadEntitiesFromLatestDownloads:(id)arg1;
+- (id)_createGroupingByShowIdentifierWithLatestMediaEntityGroups:(id)arg1;
+- (id)_deDupedMediaEntities:(id)arg1;
+- (bool)_doesEpisodeSet:(id)arg1 containMediaEntity:(id)arg2;
+- (void)_downloadedMediaEntitiesDidUpdate:(id)arg1 grouping:(id)arg2;
+- (void)_downloadingMediaEntitiesDidUpdate:(id)arg1;
+- (bool)_downloadsDidChange:(id)arg1;
+- (void)_getActivelyDownloadingAdamIDsWithCompletion:(id /* block */)arg1;
+- (id)_getDownloadEntityInDownloadEntities:(id)arg1 containingMediaEntity:(id)arg2;
+- (void)_handleDownloadingStateDidChange;
+- (void)_handleMediaLibraryContentsDidChangeNotification:(id)arg1;
+- (void)_loadActiveDownloads;
+- (void)_loadDownloadedEntities;
+- (id)_mediaEntitiesForAdamIDs:(id)arg1;
+- (void)_notifyDelegatesDownloadsFetchCompletedWithChanges:(bool)arg1;
+- (void)_rentalsDidExpire:(id)arg1;
+- (id)_upsertDownloadEntities:(id)arg1 withEpisodesDownloadingForShow:(id)arg2;
+- (void)_upsertEpisodesDownloadingForShowWithMediaEntity:(id)arg1;
+- (id)activelyDownloadingAdamIds;
+- (id)activelyDownloadingMediaItems;
+- (void)dealloc;
+- (id)downloadDelegate;
+- (id)downloadEntities;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (id)episodesDownloadingForShow;
+- (id)groupingByShowIdentifier;
+- (bool)hasFetchedAllDownloadEntities;
+- (bool)hasFetchedAllDownloadedEntities;
+- (id)initWithMediaLibrary:(id)arg1 fetchRequest:(id)arg2;
+- (id)libraryContentsChangeDebounceTimer;
+- (void)loadDownloadData;
+- (id)localMediaItems;
+- (id)mediaLibrary;
+- (bool)performingRentalExpirationFetch;
+- (id)sDownloadManager;
+- (void)setActivelyDownloadingAdamIds:(id)arg1;
+- (void)setActivelyDownloadingMediaItems:(id)arg1;
+- (void)setDownloadDelegate:(id)arg1;
+- (void)setDownloadEntities:(id)arg1;
+- (void)setEpisodesDownloadingForShow:(id)arg1;
+- (void)setGroupingByShowIdentifier:(id)arg1;
+- (void)setHasFetchedAllDownloadEntities:(bool)arg1;
+- (void)setHasFetchedAllDownloadedEntities:(bool)arg1;
+- (void)setLibraryContentsChangeDebounceTimer:(id)arg1;
+- (void)setLocalMediaItems:(id)arg1;
+- (void)setPerformingRentalExpirationFetch:(bool)arg1;
+- (void)setSDownloadManager:(id)arg1;
+- (void)startFetch;
+
+@end

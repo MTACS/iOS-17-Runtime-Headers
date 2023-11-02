@@ -1,0 +1,38 @@
+
+@interface AVTPresetResourceLoader : NSObject {
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    AVTUIEnvironment * _environment;
+    <AVTImageCache> * _inMemoryImageCache;
+    <AVTUILogger> * _logger;
+    AVTInMemoryResourceCache * _presetCache;
+    <AVTTaskScheduler> * _renderingScheduler;
+    NSObject<OS_dispatch_queue> * _workQueue;
+}
+
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, readonly) AVTUIEnvironment *environment;
+@property (nonatomic, readonly) <AVTImageCache> *inMemoryImageCache;
+@property (nonatomic, readonly) <AVTUILogger> *logger;
+@property (nonatomic, readonly) AVTInMemoryResourceCache *presetCache;
+@property (nonatomic, readonly) <AVTTaskScheduler> *renderingScheduler;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
+
+- (void).cxx_destruct;
+- (id)callbackQueue;
+- (id)environment;
+- (id)inMemoryImageCache;
+- (id)initWithEnvironment:(id)arg1 renderingScheduler:(id)arg2 callbackQueue:(id)arg3;
+- (id)initWithPresetCache:(id)arg1 renderingScheduler:(id)arg2 callbackQueue:(id)arg3 environment:(id)arg4;
+- (id)logger;
+- (void)performPresetLoadingForPresetResources:(id)arg1 task:(id)arg2;
+- (void)performPresetResourcesPreloadingTask:(id)arg1;
+- (void)performSectionItemPreloadingTask:(id)arg1;
+- (id)preLoadResourcesForPresetResourcesProvider:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)preLoadResourcesForSectionItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)presetCache;
+- (id)renderingScheduler;
+- (void)startPresetPreloadingTask:(id)arg1;
+- (void)startSectionItemPreloadingTask:(id)arg1;
+- (id)workQueue;
+
+@end

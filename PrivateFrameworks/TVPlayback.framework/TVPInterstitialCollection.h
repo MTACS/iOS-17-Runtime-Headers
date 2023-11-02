@@ -1,0 +1,25 @@
+
+@interface TVPInterstitialCollection : NSObject {
+    id  _backingData;
+    NSArray * _interstitials;
+    NSArray * _interstitialsWithAdjacentsMerged;
+}
+
+@property (nonatomic, retain) id backingData;
+@property (nonatomic, retain) NSArray *interstitials;
+@property (nonatomic, retain) NSArray *interstitialsWithAdjacentsMerged;
+
+- (void).cxx_destruct;
+- (id)backingData;
+- (id)initWithInterstitials:(id)arg1;
+- (id)interstitialForTime:(double)arg1;
+- (id)interstitials;
+- (id)interstitialsWithAdjacentsMerged;
+- (id)mergedInterstitialForTime:(double)arg1;
+- (void)setBackingData:(id)arg1;
+- (void)setInterstitials:(id)arg1;
+- (void)setInterstitialsWithAdjacentsMerged:(id)arg1;
+- (double)timeAdjustedByIncludingInterstitials:(double)arg1;
+- (double)timeAdjustedByRemovingInterstitials:(double)arg1;
+
+@end

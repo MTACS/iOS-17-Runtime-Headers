@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmBeaching : PhotosGraph.PhotosChallengeEvaluableMeaningAlgorithm
+
+@end

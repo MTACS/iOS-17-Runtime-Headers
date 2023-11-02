@@ -1,0 +1,62 @@
+
+@interface CKVerticalTiledLayoutGenerator : CKTiledLayoutGenerator {
+    struct { 
+        long long index; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } imageSize; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } minimumSize; 
+        bool hasCaption; 
+        bool isBatchStart; 
+    }  _enqueuedCaptionTileInfo;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _origin;
+    double  _referenceWidth;
+    bool  _shouldDisplayCaptionsBelowBatches;
+}
+
+@property (nonatomic) double referenceWidth;
+@property (nonatomic) bool shouldDisplayCaptionsBelowBatches;
+
+- (bool)_addRowWithContiguousTiles:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2;
+- (bool)_addRowWithTiles:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 imageFrames:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 count:(long long)arg3;
+- (bool)_addSpecialSequenceBlock:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_dequeueCaption;
+- (void)_enqueueCaptionWithTileInfo:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; })arg1;
+- (void)_enumerateRowFramesWithContiguousTiles:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2 useMagneticGuidelines:(bool)arg3 block:(id /* block */)arg4;
+- (bool)_hasEnqueuedCaption;
+- (bool)_hasLeftSuboptimalRow;
+- (bool)_isAtEndOfRow;
+- (bool)_parseSingleTile;
+- (bool)_parseSpecialSequence;
+- (bool)_parseSpecialSubsequenceWithRowRequired:(bool)arg1 rowParsed:(bool*)arg2;
+- (bool)_parseSpecialTileTriplet;
+- (bool)_parseTilePair;
+- (bool)_parseTileRequiringFullWidth;
+- (bool)_parseTileTriplet;
+- (bool)_scanNonPanoramaSequence:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2;
+- (bool)_scanSpecialSequenceBlock:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanSpecialSequenceRow:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long*)arg2;
+- (bool)_scanTilePair:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTileRequiringFullWidth:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTileRequiringNewRow:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTileTriplet:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTripletWithLargeLead:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTripletWithRearrangment:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (void)_willAddRowWithFirstTileInfo:(struct { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; })arg1;
+- (void)didParseTiles;
+- (bool)parseNextTiles;
+- (double)referenceDistanceForMagneticGuidelines;
+- (double)referenceWidth;
+- (void)setReferenceWidth:(double)arg1;
+- (void)setShouldDisplayCaptionsBelowBatches:(bool)arg1;
+- (bool)shouldDisplayCaptionsBelowBatches;
+- (void)willParseTiles;
+
+@end

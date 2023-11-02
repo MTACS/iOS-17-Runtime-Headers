@@ -1,0 +1,23 @@
+
+@interface MBDeviceTransferConnectionInfo : NSObject <NSCopying, NSSecureCoding> {
+    long long  _connectionState;
+    long long  _connectionType;
+}
+
+@property (nonatomic) long long connectionState;
+@property (nonatomic) long long connectionType;
+
++ (long long)connectionTypeFromLinkType:(int)arg1;
++ (bool)supportsSecureCoding;
+
+- (long long)connectionState;
+- (long long)connectionType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (void)setConnectionState:(long long)arg1;
+- (void)setConnectionType:(long long)arg1;
+
+@end

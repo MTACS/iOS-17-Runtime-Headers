@@ -1,0 +1,4 @@
+
+@protocol ARData <NSObject>
+
+@end

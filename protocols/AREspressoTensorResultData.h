@@ -1,0 +1,4 @@
+
+@protocol AREspressoTensorResultData <ARResultData>
+
+@end

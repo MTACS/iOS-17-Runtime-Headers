@@ -1,0 +1,4 @@
+
+@protocol OKWidgetMediaViewProxyExports <JSExport>
+
+@end

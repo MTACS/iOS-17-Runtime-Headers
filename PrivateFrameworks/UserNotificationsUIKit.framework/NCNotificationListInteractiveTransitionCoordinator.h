@@ -1,0 +1,85 @@
+
+@interface NCNotificationListInteractiveTransitionCoordinator : NSObject <UIGestureRecognizerDelegate> {
+    unsigned long long  _currentListDisplayStyleSetting;
+    <NCNotificationListInteractiveTransitionCoordinatorDelegate> * _delegate;
+    UIImpactFeedbackGenerator * _feedbackGenerator;
+    bool  _hapticPrepared;
+    NCNotificationListView * _interactiveListView;
+    UIPanGestureRecognizer * _interactiveTransitionPanGestureRecognizer;
+    UIPinchGestureRecognizer * _interactiveTransitionPinchGestureRecognizer;
+    NCNotificationListView * _parentListView;
+    NCNotificationListView * _revealListView;
+    bool  _shouldPerformInteractiveCollapseTransition;
+    bool  _shouldPerformInteractiveExpandTransition;
+}
+
+@property (nonatomic) unsigned long long currentListDisplayStyleSetting;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NCNotificationListInteractiveTransitionCoordinatorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIImpactFeedbackGenerator *feedbackGenerator;
+@property (getter=isHapticPrepared, nonatomic) bool hapticPrepared;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) NCNotificationListView *interactiveListView;
+@property (nonatomic, retain) UIPanGestureRecognizer *interactiveTransitionPanGestureRecognizer;
+@property (nonatomic, retain) UIPinchGestureRecognizer *interactiveTransitionPinchGestureRecognizer;
+@property (getter=isPanGestureRecognizerActive, nonatomic, readonly) bool panGestureRecognizerActive;
+@property (nonatomic) NCNotificationListView *parentListView;
+@property (getter=isPerformingExclusiveScrollInteractiveTranslation, nonatomic, readonly) bool performingExclusiveScrollInteractiveTranslation;
+@property (nonatomic) NCNotificationListView *revealListView;
+@property (nonatomic) bool shouldPerformInteractiveCollapseTransition;
+@property (nonatomic) bool shouldPerformInteractiveExpandTransition;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (double)_bottomPositionForInteractiveListView;
+- (unsigned long long)_countForInteractiveListView;
+- (void)_gestureRecognizerDidRecognize:(id)arg1;
+- (unsigned long long)_indexForInteractiveListView;
+- (double)_interactionTranslationFocalPointYForGestureRecognizer:(id)arg1;
+- (double)_interactionTranslationPercentageForGestureRecognizer:(id)arg1;
+- (long long)_interactionTranslationReasonForGestureRecognizer:(id)arg1;
+- (double)_interactionTranslationVelocityForGestureRecognizer:(id)arg1;
+- (bool)_isCurrentDigestVisible;
+- (bool)_isHiddenListRevealed;
+- (bool)_isPersistentSettingTransitionForGestureRecognizer:(id)arg1;
+- (bool)_isScrollingListContent;
+- (void)_migrateProminentNotificationsForHiddenSetting;
+- (void)_performHapticForListDisplayStyleTransition;
+- (void)_prepareHapticForListDisplayStyleTransition;
+- (void)_releaseHapticForListDisplayStyleTransition;
+- (bool)_shouldAllowExpandInteractiveTranslation;
+- (id)_stringForReason:(long long)arg1;
+- (void)_updateListDisplayStyleSetting:(unsigned long long)arg1 isPersistentSetting:(bool)arg2 hideRevealedList:(bool)arg3;
+- (void)_updateNotificationListForInteractionTranslationPercentage:(double)arg1 interactionTranslationVelocity:(double)arg2 interactionTranslationFocalPointY:(double)arg3 isPersistentSetting:(bool)arg4 isIntentionalInteraction:(bool)arg5 forReason:(long long)arg6;
+- (unsigned long long)currentListDisplayStyleSetting;
+- (id)delegate;
+- (id)feedbackGenerator;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)initWithParentListView:(id)arg1 interactiveListView:(id)arg2 revealListView:(id)arg3;
+- (id)interactiveListView;
+- (id)interactiveTransitionPanGestureRecognizer;
+- (id)interactiveTransitionPinchGestureRecognizer;
+- (void)interactiveTranslationDidEnd;
+- (void)interactiveTranslationWillBegin;
+- (bool)isHapticPrepared;
+- (bool)isPanGestureRecognizerActive;
+- (bool)isPerformingExclusiveScrollInteractiveTranslation;
+- (id)parentListView;
+- (id)revealListView;
+- (void)setCurrentListDisplayStyleSetting:(unsigned long long)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFeedbackGenerator:(id)arg1;
+- (void)setHapticPrepared:(bool)arg1;
+- (void)setInteractiveListView:(id)arg1;
+- (void)setInteractiveTransitionPanGestureRecognizer:(id)arg1;
+- (void)setInteractiveTransitionPinchGestureRecognizer:(id)arg1;
+- (void)setParentListView:(id)arg1;
+- (void)setRevealListView:(id)arg1;
+- (void)setShouldPerformInteractiveCollapseTransition:(bool)arg1;
+- (void)setShouldPerformInteractiveExpandTransition:(bool)arg1;
+- (bool)shouldPerformInteractiveCollapseTransition;
+- (bool)shouldPerformInteractiveExpandTransition;
+- (void)updateScrollInteractiveTranslation;
+
+@end

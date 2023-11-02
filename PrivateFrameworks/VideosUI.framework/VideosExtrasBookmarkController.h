@@ -1,0 +1,25 @@
+
+@interface VideosExtrasBookmarkController : NSObject {
+    SBCPlaybackPositionDomain * _domain;
+    NSMutableDictionary * _entities;
+    SBCPlaybackPositionValueService * _extrasService;
+    double  _minimumBookmarkUpdateInterval;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _updateTimeForEntities;
+}
+
+@property (nonatomic) double minimumBookmarkUpdateInterval;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (void)_loadAllBookmarksWithRemainingIdentifiers:(id)arg1 bookmarkTimes:(id)arg2 completionBlock:(id /* block */)arg3;
+- (id)init;
+- (double)minimumBookmarkUpdateInterval;
+- (void)pullBookmarksForAssets:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)pullBookmarksForIdentifiers:(id)arg1 completionBlock:(id /* block */)arg2;
+- (bool)pushBookmarkForAsset:(id)arg1 bookmarkTime:(double)arg2 playedToNominalLength:(bool)arg3;
+- (bool)pushBookmarkForIdentifier:(id)arg1 bookmarkTime:(double)arg2 playedToNominalLength:(bool)arg3;
+- (void)setMinimumBookmarkUpdateInterval:(double)arg1;
+
+@end

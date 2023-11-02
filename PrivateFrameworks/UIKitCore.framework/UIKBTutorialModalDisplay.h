@@ -1,0 +1,85 @@
+
+@interface UIKBTutorialModalDisplay : UIView {
+    NSArray * _adjustableConstraints;
+    long long  _appearance;
+    UIVisualEffectView * _backgroundBlurView;
+    UIButton * _button;
+    UIView * _containerView;
+    NSLayoutConstraint * _containerViewTopConstraits;
+    UIView * _mediaView;
+    UIKBTutorialModalDisplayStyling * _styling;
+    NSLayoutConstraint * _widthAdjustmentConstraint;
+}
+
+@property (nonatomic, retain) NSArray *adjustableConstraints;
+@property (nonatomic) long long appearance;
+@property (nonatomic, retain) UIVisualEffectView *backgroundBlurView;
+@property (nonatomic, retain) UIButton *button;
+@property (nonatomic, readonly) NSString *buttonTitle;
+@property (nonatomic, retain) UIView *containerView;
+@property (nonatomic, retain) NSLayoutConstraint *containerViewTopConstraits;
+@property (nonatomic, readonly) NSString *largeTitle;
+@property (nonatomic, readonly) UIFont *largeTitleFont;
+@property (nonatomic, readonly) NSArray *mediaContents;
+@property (nonatomic, readonly) double mediaLayoutWidthAdjustment;
+@property (nonatomic, retain) UIView *mediaView;
+@property (nonatomic, readonly) double pagingInterval;
+@property (nonatomic, readonly) bool presentsFullScreen;
+@property (nonatomic, retain) UIKBTutorialModalDisplayStyling *styling;
+@property (nonatomic, readonly) NSArray *textBodyDescriptions;
+@property (nonatomic, readonly) UIFont *textBodyFont;
+@property (nonatomic, readonly) long long textBodyMaxLines;
+@property (nonatomic, readonly) NSArray *textTitleDescriptions;
+@property (nonatomic, readonly) UIFont *textTitleFont;
+@property (nonatomic, retain) NSLayoutConstraint *widthAdjustmentConstraint;
+
+- (void).cxx_destruct;
+- (id)adjustableConstraints;
+- (long long)appearance;
+- (id)backgroundBlurView;
+- (id)button;
+- (id)buttonTitle;
+- (void)configBackgroundBlur;
+- (void)configContainerView;
+- (id)constructMediaView;
+- (double)containerBottomPadding;
+- (void)containerForAlertPresentation;
+- (void)containerForFullScreenView;
+- (void)containerForKeyboardView;
+- (double)containerTopPadding;
+- (id)containerView;
+- (id)containerViewTopConstraits;
+- (void)extraButtonTapAction;
+- (id)initWithKeyboardAppearance:(long long)arg1;
+- (bool)isPortrait;
+- (id)largeTitle;
+- (id)largeTitleFont;
+- (void)layoutSubviews;
+- (id)mediaContents;
+- (double)mediaLayoutWidthAdjustment;
+- (id)mediaView;
+- (double)pagingInterval;
+- (bool)presentsFullScreen;
+- (void)restartPagingAnimation;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
+- (void)setAdjustableConstraints:(id)arg1;
+- (void)setAppearance:(long long)arg1;
+- (void)setBackgroundBlurView:(id)arg1;
+- (void)setButton:(id)arg1;
+- (void)setContainerView:(id)arg1;
+- (void)setContainerViewTopConstraits:(id)arg1;
+- (void)setMediaView:(id)arg1;
+- (void)setStyling:(id)arg1;
+- (void)setWidthAdjustmentConstraint:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeForTutorialPageView;
+- (id)styling;
+- (void)tapInsideButton:(id)arg1;
+- (id)textBodyDescriptions;
+- (id)textBodyFont;
+- (long long)textBodyMaxLines;
+- (id)textTitleDescriptions;
+- (id)textTitleFont;
+- (void)updateMediaViewTextAndPlacement;
+- (id)widthAdjustmentConstraint;
+
+@end

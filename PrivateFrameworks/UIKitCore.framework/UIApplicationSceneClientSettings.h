@@ -1,0 +1,121 @@
+
+@interface UIApplicationSceneClientSettings : FBSSceneClientSettings <UIApplicationSceneClientSettings>
+
+@property (nonatomic, readonly) unsigned long long _debugValidationOrientationMask;
+@property (nonatomic, readonly) NSData *activationConditionsData;
+@property (nonatomic, readonly) NSArray *audioCategoriesDisablingVolumeHUD;
+@property (nonatomic, readonly) long long backgroundStyle;
+@property (nonatomic, readonly) double brightnessLevel;
+@property (nonatomic, readonly, copy) NSString *canvasTitle;
+@property (nonatomic, readonly) long long compatibilityMode;
+@property (nonatomic, readonly) bool containsSearchView;
+@property (nonatomic, readonly) double controlCenterAmbiguousActivationMargin;
+@property (nonatomic, readonly) long long controlCenterRevealMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) double defaultPNGExpirationTime;
+@property (nonatomic, readonly, copy) NSString *defaultPNGName;
+@property (nonatomic, readonly) bool defaultStatusBarHidden;
+@property (nonatomic, readonly) long long defaultStatusBarStyle;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool deviceOrientationEventsEnabled;
+@property (nonatomic, readonly) bool disablesMirroring;
+@property (nonatomic, readonly) bool discardSessionOnUserDisconnect;
+@property (nonatomic, readonly, copy) FBSDisplayConfigurationRequest *displayConfigurationRequest;
+@property (nonatomic, readonly) long long editingInteractionConfiguration;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool homeIndicatorAutoHidden;
+@property (nonatomic, readonly) bool idleModeVisualEffectsEnabled;
+@property (nonatomic, readonly) bool idleTimerDisabled;
+@property (nonatomic, readonly) long long interfaceOrientation;
+@property (nonatomic, readonly) bool interfaceOrientationChangesDisabled;
+@property (nonatomic, readonly) NSArray *multitaskingDragExclusionRects;
+@property (nonatomic, readonly) long long notificationCenterRevealMode;
+@property (nonatomic, readonly, copy) _UIPhysicalButtonConfigurationSet *physicalButtonConfigurations;
+@property (nonatomic, readonly) long long playbackControlsState;
+@property (nonatomic, readonly) long long preferredPointerLockStatus;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } primaryWindowOverlayInsets;
+@property (nonatomic, readonly) unsigned long long proximityDetectionModes;
+@property (getter=isReachabilitySupported, nonatomic, readonly) bool reachabilitySupported;
+@property (nonatomic, readonly, copy) FBSDisplayMode *requestedDisplayMode;
+@property (nonatomic, readonly) long long sceneActivationBias;
+@property (nonatomic, readonly) unsigned long long screenEdgesDeferringSystemGestures;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } screenFocusedFrame;
+@property (nonatomic, readonly) double statusBarAlpha;
+@property (nonatomic, readonly) unsigned int statusBarContextID;
+@property (getter=isStatusBarForegroundTransparent, nonatomic, readonly) bool statusBarForegroundTransparent;
+@property (nonatomic, readonly) bool statusBarHidden;
+@property (nonatomic, readonly) long long statusBarModernStyle;
+@property (nonatomic, readonly, copy) NSDictionary *statusBarPartStyles;
+@property (nonatomic, readonly) long long statusBarStyle;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long supportedInterfaceOrientations;
+@property (nonatomic, readonly) bool systemInputActive;
+@property (nonatomic, readonly) long long userInterfaceStyle;
+@property (nonatomic, readonly) unsigned long long visibleMiniAlertCount;
+@property (nonatomic, readonly) bool wantsExclusiveForeground;
+@property (nonatomic, readonly) long long whitePointAdaptivityStyle;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (unsigned long long)_debugValidationOrientationMask;
+- (id)activationConditionsData;
+- (id)audioCategoriesDisablingVolumeHUD;
+- (long long)backgroundStyle;
+- (double)brightnessLevel;
+- (id)canvasTitle;
+- (long long)compatibilityMode;
+- (bool)containsSearchView;
+- (double)controlCenterAmbiguousActivationMargin;
+- (long long)controlCenterRevealMode;
+- (double)defaultPNGExpirationTime;
+- (id)defaultPNGName;
+- (bool)defaultStatusBarHidden;
+- (long long)defaultStatusBarStyle;
+- (bool)deviceOrientationEventsEnabled;
+- (bool)disablesMirroring;
+- (bool)discardSessionOnUserDisconnect;
+- (id)displayConfigurationRequest;
+- (long long)editingInteractionConfiguration;
+- (bool)homeIndicatorAutoHidden;
+- (bool)idleModeVisualEffectsEnabled;
+- (bool)idleTimerDisabled;
+- (long long)interfaceOrientation;
+- (bool)interfaceOrientationChangesDisabled;
+- (bool)isReachabilitySupported;
+- (bool)isStatusBarForegroundTransparent;
+- (bool)isUISubclass;
+- (id)keyDescriptionForOtherSetting:(unsigned long long)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (id)multitaskingDragExclusionRects;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (long long)notificationCenterRevealMode;
+- (id)physicalButtonConfigurations;
+- (long long)playbackControlsState;
+- (long long)preferredPointerLockStatus;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })primaryWindowOverlayInsets;
+- (unsigned long long)proximityDetectionModes;
+- (id)requestedDisplayMode;
+- (long long)sceneActivationBias;
+- (unsigned long long)screenEdgesDeferringSystemGestures;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenFocusedFrame;
+- (bool)settings:(id)arg1 appendDescriptionToBuilder:(id)arg2 forFlag:(long long)arg3 object:(id)arg4 ofSetting:(unsigned long long)arg5;
+- (double)statusBarAlpha;
+- (unsigned int)statusBarContextID;
+- (bool)statusBarHidden;
+- (long long)statusBarModernStyle;
+- (id)statusBarPartStyles;
+- (long long)statusBarStyle;
+- (unsigned long long)supportedInterfaceOrientations;
+- (bool)systemInputActive;
+- (long long)userInterfaceStyle;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofOtherSetting:(unsigned long long)arg3;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (unsigned long long)visibleMiniAlertCount;
+- (bool)wantsExclusiveForeground;
+- (long long)whitePointAdaptivityStyle;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoard.framework/SpringBoard
+
+- (long long)sb_effectiveInterfaceOrientation;
+
+@end

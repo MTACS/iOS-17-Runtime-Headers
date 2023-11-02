@@ -1,0 +1,4 @@
+
+@interface _TtC12GRDBInternalP33_DD489258FC95DF274B95472AEFF9136818FetchRequestEraser : _TtCs12_SwiftObject
+
+@end

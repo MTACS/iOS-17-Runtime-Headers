@@ -1,0 +1,4 @@
+
+@interface _TtC28HealthExposureNotificationUIP33_29D2D0D91CF67C3B468D75D7650B196519ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

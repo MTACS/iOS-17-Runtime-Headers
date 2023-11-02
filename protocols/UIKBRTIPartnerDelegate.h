@@ -1,0 +1,108 @@
+
+@protocol UIKBRTIPartnerDelegate <UIKeyboardImplStateProtocol, UITextInputSuggestionDelegate>
+
+@required
+
+- (void)_handleWebKeyEvent:(UIPhysicalKeyboardEvent *)arg1 withEventType:(unsigned long long)arg2 withInputString:(NSString *)arg3 withInputStringIgnoringModifiers:(NSString *)arg4;
+- (void)_updateCanSuggestSupplementalItemsForCurrentSelection;
+- (void)acceptAutocorrection;
+- (void)acceptAutocorrectionWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)acceptAutocorrectionWithCompletionHandler:(void *)arg1 requestedByRemoteInputDestination:(void *)arg2; // needs 2 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*, bool
+- (void)acceptInlineCompletionWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)acceptingCandidateWithTrigger:(NSString *)arg1;
+- (void)applyAssistantItem:(RTIAssistantItem *)arg1;
+- (unsigned int)assertIntermediateText:(TIKeyboardIntermediateText *)arg1;
+- (bool)assertTextForRemoteDocument:(NSString *)arg1 withSelectionDelta:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 updatingSelection:(bool)arg3;
+- (UIResponder<UIWKInteractionViewProtocol> *)asynchronousInputDelegate;
+- (void)beginAcceptingInlineCompletionByDirectTap;
+- (bool)canSuggestSupplementalItemsForCurrentSelection;
+- (void)changingContextWithTrigger:(NSString *)arg1;
+- (void)clearShiftState;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })correctionRect;
+- (UIResponder<UIKeyInput> *)delegate;
+- (UIResponder *)delegateAsResponder;
+- (unsigned long long)delegateConformanceType;
+- (bool)delegateSupportsImagePaste;
+- (void)dismissTextChoicePrompt;
+- (void)ejectKeyDown;
+- (void)endAcceptingInlineCompletionByDirectTap;
+- (void)handleAutoDeleteContinuationOnDestinationWithDeletionCount:(unsigned long long)arg1;
+- (void)handleAutoFillContactDetected;
+- (void)handleAutoFillContactPopoverCommand;
+- (void)handleAutoFillCreditCardDetected;
+- (void)handleAutoFillCreditCardPopoverCommand;
+- (void)handleAutoFillPasswordDetected;
+- (void)handleAutoFillPasswordPopoverCommand;
+- (void)handleEmojiPopoverKeyCommand;
+- (void)handleEventCallbackFromRemoteDestination_didChooseSupplementalItem:(_UISupplementalItem *)arg1 toReplaceText:(NSString *)arg2;
+- (void)handleEventFromRemoteDestination_canSuggestSupplementalItemsForCurrentSelection:(bool)arg1;
+- (void)handleEventFromRemoteSource_cancelChooseSupplementalItemToInsert;
+- (void)handleEventFromRemoteSource_chooseSupplementalItem:(NSArray *)arg1 toReplaceText:(NSString *)arg2;
+- (void)handleEventFromRemoteSource_insertAutofillContent:(NSDictionary *)arg1;
+- (void)handleEventFromRemoteSource_insertSupplementalCandidate:(TIKeyboardCandidate *)arg1 textToCommit:(NSString *)arg2;
+- (void)handleEventFromRemoteSource_insertionPointEnteredText:(NSString *)arg1 withSupplementalCandidate:(TIKeyboardCandidate *)arg2;
+- (void)handleEventFromRemoteSource_insertionPointExitedTextWithSupplementalItems;
+- (void)handleGrammarCorrectionEntries:(NSDictionary *)arg1;
+- (void)handleRemoteDictationEvent_cancelDictation;
+- (void)handleRemoteDictationEvent_handleTip:(NSDictionary *)arg1;
+- (void)handleRemoteDictationEvent_movePopoverView:(NSDictionary *)arg1;
+- (void)handleRemoteDictationEvent_resumeDictation;
+- (void)handleRemoteDictationEvent_setEditMenuFrame:(NSDictionary *)arg1;
+- (void)handleRemoteDictationEvent_startDictation;
+- (void)handleRemoteDictationEvent_stopDictation:(bool)arg1;
+- (void)handleRemoteDictationEvent_stopDictationIgnoreFinalizePhrases;
+- (void)handleRemoteDictationEvent_switchToDictationInputModeWithOptions:(UIDictationInputModeOptions *)arg1;
+- (void)handleRemoteDictationEvent_switchToDictationLanguage:(NSString *)arg1;
+- (void)handleRemoteDictationEvent_updateIdleDetection:(long long)arg1;
+- (void)handleRemoteIndirectGestureWithState:(_UIKeyboardIndirectTextSelectionGestureState *)arg1;
+- (void)handleRemoteKeyboardCameraEvent_startCameraInput:(UIKeyboardCameraSessionRTIConfiguration *)arg1;
+- (UIResponder<UITextInput> *)inputDelegate;
+- (bool)inputModeSwitcherVisible;
+- (RTIInputSystemSourceSession *)inputSystemSourceSession;
+- (void)insertAttributedText:(NSAttributedString *)arg1;
+- (void)insertCustomTextSuggestion:(UITextSuggestion *)arg1;
+- (void)insertSticker:(_UISticker *)arg1;
+- (void)modifyTextInputTraits:(void *)arg1 forceSync:(void *)arg2; // needs 2 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UITextInputTraits *, void*, bool
+- (bool)needAutofillLogin;
+- (bool)performKeyboardEvent:(UIPhysicalKeyboardEvent *)arg1;
+- (bool)performKeyboardOutput:(TIKeyboardOutput *)arg1 checkingDelegate:(bool)arg2 forwardToRemoteInputSource:(bool)arg3;
+- (void)performOperations:(void *)arg1 withTextInputSource:(void *)arg2; // needs 2 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, long long
+- (void)performStopAutoDeleteAtDocumentStart;
+- (void)performTextOperationActionSelector:(SEL)arg1;
+- (bool)performingRemoteTextOperations;
+- (void)presentKeyboardFeedbackAssistantViewControllerForLogURL:(NSURL *)arg1;
+- (void)presentTextChoicePromptForRange:(UITextRange *)arg1;
+- (void)provideAutoFillTypingUpdatesIfNecessary;
+- (NSDictionary *)remoteTextEditingMetadata;
+- (void)removeInlineTextCompletionPrompt;
+- (void)replaceRange:(UITextRange *)arg1 oldText:(NSString *)arg2 withText:(NSString *)arg3;
+- (void)resetInputDelegate;
+- (void)resumeDictationForResponderChange;
+- (bool)returnKeyEnabled;
+- (void)setAttributedMarkedText:(NSAttributedString *)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 inputString:(NSString *)arg3 searchString:(NSString *)arg4;
+- (void)setCanSuggestSupplementalItemsForCurrentSelection:(bool)arg1;
+- (void)setCandidateDisplayIsExtended:(bool)arg1;
+- (void)setCaretVisible:(bool)arg1;
+- (void)setInlineCompletionAsMarkedText:(NSAttributedString *)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 inputString:(NSString *)arg3 searchString:(NSString *)arg4;
+- (void)setInputMode:(NSString *)arg1 userInitiated:(bool)arg2;
+- (void)setInputModeSwitcherVisibleInRemote:(bool)arg1;
+- (void)setKeyboardInputMode:(UIKeyboardInputMode *)arg1 userInitiated:(bool)arg2;
+- (void)setPerformingRemoteTextOperations:(bool)arg1;
+- (void)setRemoteDelegateSupportsImagePaste:(bool)arg1;
+- (void)setShiftStatesNeededInDestination:(bool)arg1 autoShifted:(bool)arg2 shiftLocked:(bool)arg3;
+- (void)showTextChoicesPrompt;
+- (UIKeyboardTaskQueue *)taskQueue;
+- (NSString *)textContentTypeForCurrentInputDelegate;
+- (void)textDidChange:(id <UITextInput>)arg1;
+- (void)textDidScroll;
+- (UITextInputTraits *)textInputTraits;
+- (void)textWillChange:(id <UITextInput>)arg1;
+- (void)textWillScroll;
+- (void)undoWithKeyboardInput:(TIKeyboardInput *)arg1;
+- (void)updateAssistantViewInfo:(UIRemoteInputViewInfo *)arg1;
+- (void)updateDocumentViewsAfterKeyboardOutput:(TIKeyboardOutput *)arg1;
+- (void)updateForExpectedRemoteDocumentStateChange:(TIDocumentState *)arg1 selectedTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forceSync:(bool)arg3;
+- (void)updateInputDelegateForRemoteDocumentStateChange:(TIDocumentState *)arg1 selectedTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 hasText:(bool)arg3 forceSync:(bool)arg4;
+- (void)updateInputDelegateForRemoteTraitChange:(UITextInputTraits *)arg1 forceSync:(bool)arg2;
+
+@end

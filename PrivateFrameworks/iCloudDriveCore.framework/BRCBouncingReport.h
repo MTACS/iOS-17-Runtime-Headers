@@ -1,0 +1,96 @@
+
+@interface BRCBouncingReport : NSObject <NSSecureCoding> {
+    unsigned int  BouncingCountFromAlsToDir;
+    unsigned int  BouncingCountFromAlsToDoc;
+    unsigned int  BouncingCountFromAlsToLnk;
+    unsigned int  BouncingCountFromAlsToPkg;
+    unsigned int  BouncingCountFromDirToAls;
+    unsigned int  BouncingCountFromDirToDoc;
+    unsigned int  BouncingCountFromDirToLnk;
+    unsigned int  BouncingCountFromDirToPkg;
+    unsigned int  BouncingCountFromDocToAls;
+    unsigned int  BouncingCountFromDocToDir;
+    unsigned int  BouncingCountFromDocToLnk;
+    unsigned int  BouncingCountFromDocToPkg;
+    unsigned int  BouncingCountFromLnkToAls;
+    unsigned int  BouncingCountFromLnkToDir;
+    unsigned int  BouncingCountFromLnkToDoc;
+    unsigned int  BouncingCountFromLnkToPkg;
+    unsigned int  BouncingCountFromPkgToAls;
+    unsigned int  BouncingCountFromPkgToDir;
+    unsigned int  BouncingCountFromPkgToDoc;
+    unsigned int  BouncingCountFromPkgToLnk;
+    unsigned int  BouncingCountOnSameType;
+}
+
+@property unsigned int BouncingCountFromAlsToDir;
+@property unsigned int BouncingCountFromAlsToDoc;
+@property unsigned int BouncingCountFromAlsToLnk;
+@property unsigned int BouncingCountFromAlsToPkg;
+@property unsigned int BouncingCountFromDirToAls;
+@property unsigned int BouncingCountFromDirToDoc;
+@property unsigned int BouncingCountFromDirToLnk;
+@property unsigned int BouncingCountFromDirToPkg;
+@property unsigned int BouncingCountFromDocToAls;
+@property unsigned int BouncingCountFromDocToDir;
+@property unsigned int BouncingCountFromDocToLnk;
+@property unsigned int BouncingCountFromDocToPkg;
+@property unsigned int BouncingCountFromLnkToAls;
+@property unsigned int BouncingCountFromLnkToDir;
+@property unsigned int BouncingCountFromLnkToDoc;
+@property unsigned int BouncingCountFromLnkToPkg;
+@property unsigned int BouncingCountFromPkgToAls;
+@property unsigned int BouncingCountFromPkgToDir;
+@property unsigned int BouncingCountFromPkgToDoc;
+@property unsigned int BouncingCountFromPkgToLnk;
+@property unsigned int BouncingCountOnSameType;
+
++ (bool)supportsSecureCoding;
+
+- (unsigned int)BouncingCountFromAlsToDir;
+- (unsigned int)BouncingCountFromAlsToDoc;
+- (unsigned int)BouncingCountFromAlsToLnk;
+- (unsigned int)BouncingCountFromAlsToPkg;
+- (unsigned int)BouncingCountFromDirToAls;
+- (unsigned int)BouncingCountFromDirToDoc;
+- (unsigned int)BouncingCountFromDirToLnk;
+- (unsigned int)BouncingCountFromDirToPkg;
+- (unsigned int)BouncingCountFromDocToAls;
+- (unsigned int)BouncingCountFromDocToDir;
+- (unsigned int)BouncingCountFromDocToLnk;
+- (unsigned int)BouncingCountFromDocToPkg;
+- (unsigned int)BouncingCountFromLnkToAls;
+- (unsigned int)BouncingCountFromLnkToDir;
+- (unsigned int)BouncingCountFromLnkToDoc;
+- (unsigned int)BouncingCountFromLnkToPkg;
+- (unsigned int)BouncingCountFromPkgToAls;
+- (unsigned int)BouncingCountFromPkgToDir;
+- (unsigned int)BouncingCountFromPkgToDoc;
+- (unsigned int)BouncingCountFromPkgToLnk;
+- (unsigned int)BouncingCountOnSameType;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setBouncingCountFromAlsToDir:(unsigned int)arg1;
+- (void)setBouncingCountFromAlsToDoc:(unsigned int)arg1;
+- (void)setBouncingCountFromAlsToLnk:(unsigned int)arg1;
+- (void)setBouncingCountFromAlsToPkg:(unsigned int)arg1;
+- (void)setBouncingCountFromDirToAls:(unsigned int)arg1;
+- (void)setBouncingCountFromDirToDoc:(unsigned int)arg1;
+- (void)setBouncingCountFromDirToLnk:(unsigned int)arg1;
+- (void)setBouncingCountFromDirToPkg:(unsigned int)arg1;
+- (void)setBouncingCountFromDocToAls:(unsigned int)arg1;
+- (void)setBouncingCountFromDocToDir:(unsigned int)arg1;
+- (void)setBouncingCountFromDocToLnk:(unsigned int)arg1;
+- (void)setBouncingCountFromDocToPkg:(unsigned int)arg1;
+- (void)setBouncingCountFromLnkToAls:(unsigned int)arg1;
+- (void)setBouncingCountFromLnkToDir:(unsigned int)arg1;
+- (void)setBouncingCountFromLnkToDoc:(unsigned int)arg1;
+- (void)setBouncingCountFromLnkToPkg:(unsigned int)arg1;
+- (void)setBouncingCountFromPkgToAls:(unsigned int)arg1;
+- (void)setBouncingCountFromPkgToDir:(unsigned int)arg1;
+- (void)setBouncingCountFromPkgToDoc:(unsigned int)arg1;
+- (void)setBouncingCountFromPkgToLnk:(unsigned int)arg1;
+- (void)setBouncingCountOnSameType:(unsigned int)arg1;
+
+@end

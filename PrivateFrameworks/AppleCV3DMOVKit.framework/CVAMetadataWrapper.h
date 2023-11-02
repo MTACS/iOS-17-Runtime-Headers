@@ -1,0 +1,68 @@
+
+@interface CVAMetadataWrapper : NSObject
+
++ (id)accelerometerTrackName:(long long*)arg1 prefix:(id)arg2;
++ (id)alsTrackName:(long long*)arg1 prefix:(id)arg2;
++ (id)commonSet;
++ (id)compassTrackName:(long long*)arg1 prefix:(id)arg2;
++ (id)decodeALS:(id)arg1;
++ (id)decodeAccel:(id)arg1;
++ (id)decodeCLLocation:(id)arg1;
++ (id)decodeCLLocation:(id)arg1 timestamp:(double*)arg2;
++ (id)decodeCMData:(id)arg1;
++ (id)decodeCMDeviceMotion:(id)arg1;
++ (id)decodeCVACalibration:(id)arg1;
++ (id)decodeCVACameraCalibrationData:(id)arg1;
++ (id)decodeCVADepthTOF:(id)arg1;
++ (id)decodeCVAFeatureBuffer:(id)arg1;
++ (id)decodeCVATimedValue:(id)arg1;
++ (id)decodeCVAUserEvent:(id)arg1;
++ (id)decodeClass:(id)arg1 class:(Class)arg2;
++ (id)decodeClass:(id)arg1 class:(Class)arg2 error:(id*)arg3;
++ (id)decodeCommon:(id)arg1;
++ (id)decodeCompass:(id)arg1;
++ (id)decodeDeviceMotion:(id)arg1;
++ (id)decodeDictionary:(id)arg1;
++ (id)decodeGyro:(id)arg1;
++ (id)decodeIMU:(id)arg1;
++ (id)decodeLocationDict:(id)arg1;
++ (id)decodeMotion:(id)arg1;
++ (id)decodeNSCoderObject:(id)arg1 class:(Class)arg2;
++ (id)decodeNSCoderObject:(id)arg1 class:(Class)arg2 error:(id*)arg3;
++ (id)decodeNSCoderObject:(id)arg1 classes:(id)arg2;
++ (id)decodeNSCoderObject:(id)arg1 classes:(id)arg2 error:(id*)arg3;
++ (id)decodePRDevice:(id)arg1;
++ (id)decodeWiFi:(id)arg1;
++ (id)deviceMotionTrackName:(long long*)arg1 prefix:(id)arg2;
++ (id)encodeALSData:(id)arg1;
++ (id)encodeAccelerometerData:(id)arg1 andAdditionalData:(id)arg2;
++ (id)encodeCMData:(id)arg1;
++ (id)encodeCVACalibration:(id)arg1;
++ (id)encodeCVACameraCalibrationData:(id)arg1;
++ (id)encodeCVADepthTOF:(id)arg1;
++ (id)encodeCVAFeatureBuffer:(id)arg1;
++ (id)encodeCVATimedValue:(id)arg1;
++ (id)encodeCVAUserEvent:(id)arg1;
++ (id)encodeClass:(id)arg1 andAdditionalData:(id)arg2;
++ (id)encodeCompassData:(id)arg1;
++ (id)encodeCoreLocationData:(id)arg1 timestamp:(double)arg2 andAdditionalData:(id)arg3;
++ (id)encodeDeviceMotionData:(id)arg1 andAdditionalData:(id)arg2;
++ (id)encodeDictionary:(id)arg1;
++ (id)encodeGyroscopeData:(id)arg1 andAdditionalData:(id)arg2;
++ (id)encodeIMUData:(id)arg1;
++ (id)encodeMotionData:(id)arg1;
++ (id)encodeMotionData:(id)arg1 andAdditionalData:(id)arg2;
++ (id)encodeNSCoderObject:(id)arg1;
++ (id)encodePRDevice:(id)arg1;
++ (id)encodeWiFiData:(id)arg1;
++ (id)gyroTrackName:(long long*)arg1 prefix:(id)arg2;
++ (id)imuTrackName:(long long*)arg1 prefix:(id)arg2;
++ (bool)locationFromTrackName:(id)arg1 location:(long long*)arg2;
++ (id)locationTrackName:(long long*)arg1 prefix:(id)arg2;
++ (id)motionTrackName:(long long*)arg1 prefix:(id)arg2;
++ (id)trackNameFromPrefix:(long long*)arg1 prefix:(id)arg2 defaultValue:(id)arg3;
++ (id)validTracks;
++ (id)version;
++ (id)wifiTrackName:(long long*)arg1 prefix:(id)arg2;
+
+@end

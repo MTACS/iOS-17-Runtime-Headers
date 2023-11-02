@@ -1,0 +1,93 @@
+
+@interface HMDAccessCodeManager : HMFObject <HMDAccessCodeDataManagerDelegate, HMFLogging, HMFMessageReceiver> {
+    HMDAccessoryAccessCodeReaderWriter * _accessoryReaderWriter;
+    <HMDAccessCodeManagerContext> * _context;
+    HMDAccessCodeDataManager * _dataManager;
+    bool  _homeAppForegrounded;
+    NSHashTable * _subscribedClientConnections;
+    Class  _utilities;
+}
+
+@property (readonly) HMDAccessoryAccessCodeReaderWriter *accessoryReaderWriter;
+@property (readonly) <HMDAccessCodeManagerContext> *context;
+@property (readonly) HMDAccessCodeDataManager *dataManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (getter=isHomeAppForegrounded) bool homeAppForegrounded;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (readonly) NSHashTable *subscribedClientConnections;
+@property (readonly) Class superclass;
+@property (readonly) Class utilities;
+
++ (id)logCategory;
+
+- (void).cxx_destruct;
+- (id)_accessCodeForUserWithUUID:(id)arg1 inHome:(id)arg2;
+- (id)_addNewAccessCode:(id)arg1 forUserWithUUID:(id)arg2 toAccessoriesWithUUIDs:(id)arg3 withRetries:(bool)arg4;
+- (id)_createNewAccessCodeForUserWithUUID:(id)arg1;
+- (void)_fetchAccessCodeConstraintsForMessage:(id)arg1;
+- (void)_fetchAccessCodesForMessage:(id)arg1;
+- (void)_generateNewAccessCodeWithCompletion:(id /* block */)arg1;
+- (void)_generateNewUserAccessCodeForMessage:(id)arg1;
+- (void)_notifySubscribersOfMessageWithName:(id)arg1 payload:(id)arg2;
+- (bool)_redispatchToResidentIfNeccesaryForMessage:(id)arg1 withNewResponseHandler:(id /* block */)arg2;
+- (id)_removeAccessCode:(id)arg1 forUser:(id)arg2 removedByUserUUID:(id)arg3;
+- (id)_removeAccessCode:(id)arg1 forUserBeingRemoved:(id)arg2;
+- (id)_removeAccessCode:(id)arg1 forUserWithUUID:(id)arg2 removedByUserUUID:(id)arg3;
+- (id)_removeAccessCodeFromAccessoriesKeepingiCloudDataUponFailure:(id)arg1 forUserUUID:(id)arg2;
+- (void)_removeSimpleLabelAccessCodeMessage:(id)arg1;
+- (id)_resetAccessCodesForHomeAccessCode:(id)arg1;
+- (void)_resetAccessoryAccessCodesForMessage:(id)arg1;
+- (void)_setAccessCodeForUserForMessage:(id)arg1;
+- (void)_submitAccessCodeModificationRequestsForMessage:(id)arg1;
+- (id)_updateAccessCode:(id)arg1 toNewValue:(id)arg2 onAccessoriesWithFetchResponses:(id)arg3 withRetries:(bool)arg4;
+- (void)_updateAccessoryAccessCodeCache;
+- (void)_updateCacheWithModificationRespponses:(id)arg1;
+- (id)_updateModificationRequestsWithUserOrGuestNames:(id)arg1;
+- (id)_waitUntilDataHasSyncedToResidentForAccessoryUUIDs:(id)arg1;
+- (id)_waitUntilDataHasSyncedToResidentIfNecessaryForAccessoryUUIDs:(id)arg1;
+- (void)accessCodeDataManager:(id)arg1 didAddAccessoryAccessCodes:(id)arg2;
+- (void)accessCodeDataManager:(id)arg1 didAddHomeAccessCodes:(id)arg2 addedByUserUUID:(id)arg3;
+- (void)accessCodeDataManager:(id)arg1 didRemoveAccessoryAccessCodes:(id)arg2;
+- (void)accessCodeDataManager:(id)arg1 didRemoveHomeAccessCodes:(id)arg2 removedByUserUUID:(id)arg3;
+- (void)accessCodeDataManager:(id)arg1 didUpdateAccessoryAccessCodes:(id)arg2;
+- (void)accessCodeDataManager:(id)arg1 didUpdateHomeAccessCodes:(id)arg2 changedByUserUUID:(id)arg3;
+- (id)accessoryReaderWriter;
+- (void)configureWithMessageDispatcher:(id)arg1;
+- (id)context;
+- (id)dataManager;
+- (void)fetchAccessCodeForIdentifier:(id)arg1 accessoryUUID:(id)arg2 completion:(id /* block */)arg3;
+- (void)handleAccessorySupportsAccessCodeDidChangeNotification:(id)arg1;
+- (void)handleConfirmDataHasSyncedToResidentMessage:(id)arg1;
+- (void)handleFetchAccessCodeConstraintsMessage:(id)arg1;
+- (void)handleFetchAccessCodesMessage:(id)arg1;
+- (void)handleFetchCachedAccessCodesMessage:(id)arg1;
+- (void)handleFetchHomeAccessCodesMessage:(id)arg1;
+- (void)handleGenerateNewUserAccessCodeMessage:(id)arg1;
+- (void)handleHomeDidDisableCharacteristicNotification:(id)arg1;
+- (void)handleHomeDidEnableCharacteristicNotification:(id)arg1;
+- (void)handleHomeUserRemovedNotification:(id)arg1;
+- (void)handleRemoveHomeAccessCodeMessage:(id)arg1;
+- (void)handleRemoveSimpleLabelAccessCodeMessage:(id)arg1;
+- (void)handleResetAccessoryAccessCodesMessage:(id)arg1;
+- (void)handleSetAccessCodeForUserMessage:(id)arg1;
+- (void)handleSetUserInformationMessage:(id)arg1;
+- (void)handleSubmitAccessCodeModificationRequestsMessage:(id)arg1;
+- (void)handleSubscribeMessage:(id)arg1;
+- (void)handleUnsubscribeMessage:(id)arg1;
+- (void)handleUserAccessCodeDidChangeMessage:(id)arg1;
+- (bool)hasCurrentUserAccessCodeChangedWithChangedAccessCodes:(id)arg1 home:(id)arg2;
+- (id)initWithContext:(id)arg1;
+- (id)initWithContext:(id)arg1 utilities:(Class)arg2 accessoryReaderWriter:(id)arg3 dataManager:(id)arg4;
+- (bool)isHomeAppForegrounded;
+- (id)logIdentifier;
+- (id)messageReceiveQueue;
+- (id)messageTargetUUID;
+- (void)setHomeAppForegrounded:(bool)arg1;
+- (id)subscribedClientConnections;
+- (void)unconfigure;
+- (Class)utilities;
+
+@end

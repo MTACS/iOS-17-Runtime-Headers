@@ -1,0 +1,100 @@
+
+@interface DBHomeKitCharacteristic : NSObject <DBHomeKitEntity> {
+    id  _cachedValue;
+    HMCharacteristic * _characteristic;
+    bool  _current;
+    NSError * _error;
+    id  _formatedValue;
+    id  _pendingValue;
+    DBHomeKitService * _service;
+    unsigned long long  _state;
+    unsigned long long  _transactionId;
+    id  _value;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _valueLock;
+}
+
+@property (nonatomic, retain) id cachedValue;
+@property (nonatomic, retain) HMCharacteristic *characteristic;
+@property (nonatomic) bool current;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double distance;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, readonly) NSString *format;
+@property (nonatomic, retain) id formatedValue;
+@property (nonatomic, readonly) bool hasError;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hidden;
+@property (nonatomic, readonly) DBHome *home;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) bool notifies;
+@property (nonatomic, readonly) bool pendingRead;
+@property (nonatomic, retain) id pendingValue;
+@property (nonatomic, readonly) bool pendingWrite;
+@property (nonatomic, readonly) bool readable;
+@property (nonatomic, readonly) DBHomeKitService *service;
+@property (nonatomic) unsigned long long state;
+@property (nonatomic, readonly) NSString *stateDescription;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long transactionId;
+@property (nonatomic, readonly) NSUUID *uniqueIdentifier;
+@property (nonatomic, readonly) bool usable;
+@property (nonatomic, retain) id value;
+@property (nonatomic) struct os_unfair_lock_s { unsigned int x1; } valueLock;
+@property (nonatomic, readonly) bool writeable;
+
++ (id)chacteristicWithService:(id)arg1 characteristic:(id)arg2;
++ (id)characteristicFormat;
++ (id)characteristicFormats;
++ (void)load;
++ (void)registerCharacteristicClass:(Class)arg1;
++ (id)registeredCharacteristicClasses;
+
+- (void).cxx_destruct;
+- (void)_didUpdate;
+- (bool)_lock_setError:(id)arg1;
+- (unsigned long long)_locked_State;
+- (void)_readValueCompletionTransactionID:(unsigned long long)arg1 error:(id)arg2;
+- (void)_updateValue;
+- (id)cachedValue;
+- (id)characteristic;
+- (bool)current;
+- (id)description;
+- (double)distance;
+- (id)error;
+- (id)format;
+- (id)formatedValue;
+- (bool)hasError;
+- (bool)hidden;
+- (id)home;
+- (id)initWithService:(id)arg1 characteristic:(id)arg2;
+- (id)name;
+- (bool)notifies;
+- (bool)pendingRead;
+- (id)pendingValue;
+- (bool)pendingWrite;
+- (bool)readable;
+- (id)service;
+- (void)setCachedValue:(id)arg1;
+- (void)setCharacteristic:(id)arg1;
+- (void)setCurrent:(bool)arg1;
+- (void)setError:(id)arg1;
+- (void)setFormatedValue:(id)arg1;
+- (void)setPendingValue:(id)arg1;
+- (void)setState:(unsigned long long)arg1;
+- (void)setTransactionId:(unsigned long long)arg1;
+- (void)setValue:(id)arg1;
+- (void)setValueLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
+- (unsigned long long)state;
+- (id)stateDescription;
+- (unsigned long long)transactionId;
+- (id)uniqueIdentifier;
+- (void)updateValueRequiringRead:(bool)arg1;
+- (bool)usable;
+- (id)value;
+- (struct os_unfair_lock_s { unsigned int x1; })valueLock;
+- (bool)writeable;
+
+@end

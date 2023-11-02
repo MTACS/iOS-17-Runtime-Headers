@@ -1,0 +1,4 @@
+
+@protocol CVABackgroundRequest <NSObject>
+
+@end

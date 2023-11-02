@@ -1,0 +1,4 @@
+
+@interface FCCKProtocolTranslator : NSObject
+
+@end

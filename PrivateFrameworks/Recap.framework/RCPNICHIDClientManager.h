@@ -1,0 +1,4 @@
+
+@interface RCPNICHIDClientManager : NSObject
+
+@end

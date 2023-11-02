@@ -1,0 +1,4 @@
+
+@protocol HKSPStateMachineInfoProvider <NSObject>
+
+@end

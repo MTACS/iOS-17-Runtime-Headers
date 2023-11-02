@@ -1,0 +1,96 @@
+
+@interface TADeviceRecord : NSObject <NSSecureCoding> {
+    <TAStoreRequestProtocol> * _delegate;
+    NSMutableDictionary * _deviceRecord;
+    NSMutableDictionary * _deviceUUIDToAddress;
+    NSDate * _lastPurgeDate;
+    NSDate * _lastScanAttemptDate;
+    TADeviceRecordSettings * _settings;
+}
+
+@property (nonatomic) <TAStoreRequestProtocol> *delegate;
+@property (nonatomic, retain) NSMutableDictionary *deviceRecord;
+@property (nonatomic, retain) NSMutableDictionary *deviceUUIDToAddress;
+@property (nonatomic, retain) NSDate *lastPurgeDate;
+@property (nonatomic, retain) NSDate *lastScanAttemptDate;
+@property (nonatomic, retain) TADeviceRecordSettings *settings;
+
++ (unsigned long long)_convertTANotificationStateToTANotificationInternalState:(unsigned long long)arg1;
++ (bool)_isKnownDevice:(unsigned long long)arg1;
++ (id)notificationInternalStateToString:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)_beepOnMoveForceAlertIfEligableForDeviceRecord:(id)arg1 andAdvertisment:(id)arg2;
+- (void)_clearStagedDetectionsForDevice:(id)arg1;
+- (void)_createRecordIfNecessaryWithAdvertisement:(id)arg1 withDate:(id)arg2;
+- (id)_determineFirstObservationDateWithTASuspiciousDevice:(id)arg1;
+- (id)_determineHELEKeepInStagingUntil:(id)arg1;
+- (id)_determineKeepInStagingUntil:(id)arg1;
+- (void)_didSurfaceNotificationFor:(id)arg1;
+- (id)_getDeviceRecord:(id)arg1;
+- (id)_getDeviceRecordWithUUID:(id)arg1;
+- (void)_performNotificationStateTransitionActionsForDevice:(id)arg1 from:(unsigned long long)arg2 to:(unsigned long long)arg3;
+- (void)_processAISFetchSuccess:(id)arg1 andAppendOutgoingRequestsTo:(id)arg2;
+- (void)_processPlaySoundSuccess:(id)arg1 andAppendOutgoingRequestsTo:(id)arg2;
+- (void)_setDevice:(id)arg1 withExternalState:(unsigned long long)arg2 withDate:(id)arg3;
+- (void)_setDevice:(id)arg1 withInternalState:(unsigned long long)arg2 withDate:(id)arg3;
+- (void)_setDevice:(id)arg1 withType:(unsigned long long)arg2 withDate:(id)arg3;
+- (void)_updateAISStateOnNotificationStateChange:(id)arg1 from:(unsigned long long)arg2 to:(unsigned long long)arg3;
+- (void)_updateAdvertisement:(id)arg1 andAppendOutgoingRequestsTo:(id)arg2;
+- (void)_updateKeepInStagingUntil:(id)arg1;
+- (void)checkForScanRequestsWithClock:(id)arg1 andAppendOutgoingRequestsTo:(id)arg2;
+- (id)createTAOutgoingRequestForUnstagingUpdateFor:(id)arg1 withCurrentDate:(id)arg2;
+- (id)createTAOutgoingRequestWithExpiringTASingleDeviceRecord:(id)arg1 withCurrentDate:(id)arg2;
+- (id)delegate;
+- (id)description;
+- (id)descriptionDictionary;
+- (id)deviceRecord;
+- (id)deviceUUIDToAddress;
+- (void)encodeWithCoder:(id)arg1;
+- (void)forceStagedDetectionsToSurfaceImmediatelyWithAdvertisement:(id)arg1 withReason:(unsigned long long)arg2;
+- (void)forceUpdateAISFetchState:(id)arg1 state:(unsigned long long)arg2;
+- (unsigned long long)getAISFetchState:(id)arg1;
+- (id)getAccessoryInfo:(id)arg1;
+- (id)getDetectionResultsToPush;
+- (unsigned long long)getDeviceNotificationState:(id)arg1;
+- (unsigned long long)getDeviceOwnershipType:(id)arg1;
+- (unsigned long long)getDeviceType:(id)arg1;
+- (id)getDeviceUUID:(id)arg1;
+- (id)getDeviceUUIDMapping;
+- (id)getFirstStagedDetectionDate:(id)arg1;
+- (id)getLatestAdvertisement:(id)arg1;
+- (id)getLatestBeepOnMoveDate:(id)arg1;
+- (unsigned long long)getNumOfAISFetch:(id)arg1;
+- (unsigned long long)getNumStagedDetections:(id)arg1;
+- (id)getUnknownBeacon:(id)arg1;
+- (bool)hasStagedImmediateDetections:(id)arg1;
+- (bool)hasSurfacedNotificationFor:(id)arg1;
+- (void)ingestTAEvent:(id)arg1 andAppendOutgoingRequestsTo:(id)arg2;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithSettings:(id)arg1;
+- (bool)isAISFetchSuccessful:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isKnownDevice:(id)arg1;
+- (id)lastPurgeDate;
+- (id)lastScanAttemptDate;
+- (void)logDeviceRecord;
+- (void)mergeWithAnotherDeviceRecord:(id)arg1;
+- (void)processBackgroundDetection:(id)arg1;
+- (void)processSurfacedAlerts:(id)arg1;
+- (void)purgeWithClock:(id)arg1 andAppendOutgoingRequestsTo:(id)arg2;
+- (void)removeDevice:(id)arg1;
+- (void)requestAISFetchIfNeeded:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDeviceRecord:(id)arg1;
+- (void)setDeviceUUIDToAddress:(id)arg1;
+- (void)setLastPurgeDate:(id)arg1;
+- (void)setLastScanAttemptDate:(id)arg1;
+- (void)setSettings:(id)arg1;
+- (id)settings;
+- (void)stageDetectionResults:(id)arg1;
+- (void)stageDevice:(id)arg1 withCurrentDate:(id)arg2;
+- (void)updateDeviceRecordOnSessionChange:(id)arg1 WithCurrentDate:(id)arg2;
+
+@end

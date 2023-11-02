@@ -1,0 +1,4 @@
+
+@interface GKBackgroundTileImageView : UIImageView
+
+@end

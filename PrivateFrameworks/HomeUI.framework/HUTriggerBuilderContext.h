@@ -1,0 +1,86 @@
+
+@interface HUTriggerBuilderContext : NSObject <HFTriggerBuilderContextProviding> {
+    NSString * _actionEditorInstructionsDescription;
+    bool  _allowConvertToShortcut;
+    bool  _allowDurationEditing;
+    NSString * _deleteConfirmationAlertMessage;
+    NSString * _deleteConfirmationAlertTitle;
+    NSString * _deleteInstructionDescription;
+    NSString * _doneButtonTitle;
+    bool  _filtersEmptyActionSets;
+    NSString * _serviceActionsInstructionDescription;
+    bool  _showActionSetsInstructions;
+    bool  _showConditionTriggers;
+    bool  _showTriggerDeleteButton;
+    bool  _showTriggerEnableSwitch;
+    bool  _showTriggerSummary;
+    HFItem * _suggestionItem;
+    NSString * _testActionsInstructionDescription;
+    NSString * _triggerContextAwareTitle;
+    NSSet * _unsupportedTriggers;
+}
+
+@property (nonatomic, copy) NSString *actionEditorInstructionsDescription;
+@property (nonatomic) bool allowConvertToShortcut;
+@property (nonatomic) bool allowDurationEditing;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSString *deleteConfirmationAlertMessage;
+@property (nonatomic, copy) NSString *deleteConfirmationAlertTitle;
+@property (nonatomic, copy) NSString *deleteInstructionDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *doneButtonTitle;
+@property (nonatomic) bool filtersEmptyActionSets;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *serviceActionsInstructionDescription;
+@property (nonatomic) bool showActionSetsInstructions;
+@property (nonatomic) bool showConditionTriggers;
+@property (nonatomic) bool showTriggerDeleteButton;
+@property (nonatomic) bool showTriggerEnableSwitch;
+@property (nonatomic) bool showTriggerSummary;
+@property (nonatomic, retain) HFItem *suggestionItem;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *testActionsInstructionDescription;
+@property (nonatomic, copy) NSString *triggerContextAwareTitle;
+@property (nonatomic, copy) NSSet *unsupportedTriggers;
+
+- (void).cxx_destruct;
+- (id)actionEditorInstructionsDescription;
+- (bool)allowConvertToShortcut;
+- (bool)allowDurationEditing;
+- (id)deleteConfirmationAlertMessage;
+- (id)deleteConfirmationAlertTitle;
+- (id)deleteInstructionDescription;
+- (id)doneButtonTitle;
+- (bool)filtersEmptyActionSets;
+- (id)init;
+- (id)initWithTriggerBuilderContext:(id)arg1;
+- (id)serviceActionsInstructionDescription;
+- (void)setActionEditorInstructionsDescription:(id)arg1;
+- (void)setAllowConvertToShortcut:(bool)arg1;
+- (void)setAllowDurationEditing:(bool)arg1;
+- (void)setDeleteConfirmationAlertMessage:(id)arg1;
+- (void)setDeleteConfirmationAlertTitle:(id)arg1;
+- (void)setDeleteInstructionDescription:(id)arg1;
+- (void)setDoneButtonTitle:(id)arg1;
+- (void)setFiltersEmptyActionSets:(bool)arg1;
+- (void)setServiceActionsInstructionDescription:(id)arg1;
+- (void)setShowActionSetsInstructions:(bool)arg1;
+- (void)setShowConditionTriggers:(bool)arg1;
+- (void)setShowTriggerDeleteButton:(bool)arg1;
+- (void)setShowTriggerEnableSwitch:(bool)arg1;
+- (void)setShowTriggerSummary:(bool)arg1;
+- (void)setSuggestionItem:(id)arg1;
+- (void)setTestActionsInstructionDescription:(id)arg1;
+- (void)setTriggerContextAwareTitle:(id)arg1;
+- (void)setUnsupportedTriggers:(id)arg1;
+- (bool)showActionSetsInstructions;
+- (bool)showConditionTriggers;
+- (bool)showTriggerDeleteButton;
+- (bool)showTriggerEnableSwitch;
+- (bool)showTriggerSummary;
+- (id)suggestionItem;
+- (id)testActionsInstructionDescription;
+- (id)triggerContextAwareTitle;
+- (id)unsupportedTriggers;
+
+@end

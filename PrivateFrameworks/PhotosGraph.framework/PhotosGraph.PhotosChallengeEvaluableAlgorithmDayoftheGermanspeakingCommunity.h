@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmDayoftheGermanspeakingCommunity : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtCC9ChronoKit19ChronoMetadataStore46MutableStateReplicatorPairingRelationshipStore : _TtCC9ChronoKit19ChronoMetadataStore39StateReplicatorPairingRelationshipStore
+
+@end

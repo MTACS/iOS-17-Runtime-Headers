@@ -1,0 +1,97 @@
+
+@interface UIAirDropNode : NSObject <NSSecureCoding, SHSheetPeopleSuggestionProxy> {
+    _Atomic unsigned int  _avatarImageSlotID;
+    _Atomic unsigned int  _bottomLabelSlotID;
+    SFProxyText * _displayName;
+    bool  _hasSquareImage;
+    NSUUID * _identifier;
+    bool  _isDisabled;
+    bool  _isMagicHead;
+    bool  _isPlaceholder;
+    bool  _isRestricted;
+    id /* block */  _loadHandler;
+    _Atomic double  _mainLabelSlotHeight;
+    _Atomic unsigned int  _mainLabelSlotID;
+    <SFPeopleSuggestion> * _peopleSuggestion;
+    long long  _selectionReason;
+    SFProxyText * _subtitle;
+    SDSuggestionNode * _suggestionNode;
+    NSString * _suggestionReason;
+    _Atomic unsigned int  _transportImageSlotID;
+}
+
+@property (nonatomic, readonly) unsigned int avatarImageSlotID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SFProxyText *displayName;
+@property (nonatomic) bool hasSquareImage;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSUUID *identifier;
+@property (nonatomic) bool isDisabled;
+@property (nonatomic) bool isMagicHead;
+@property (nonatomic) bool isPlaceholder;
+@property (nonatomic) bool isRestricted;
+@property (nonatomic, readonly) bool isTapToRadar;
+@property (nonatomic, copy) id /* block */ loadHandler;
+@property (nonatomic, retain) <SFPeopleSuggestion> *peopleSuggestion;
+@property (nonatomic) long long selectionReason;
+@property (nonatomic, retain) SFProxyText *subtitle;
+@property (nonatomic, retain) SDSuggestionNode *suggestionNode;
+@property (nonatomic, retain) NSString *suggestionReason;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int transportImageSlotID;
+
++ (id)TTRAirDropNode;
++ (id)nodeWithIdentifier:(id)arg1 displayName:(id)arg2 subtitle:(id)arg3 avatarImageSlotID:(unsigned int)arg4 transportImageSlotID:(unsigned int)arg5;
++ (id)nodeWithIdentifier:(id)arg1 peopleSuggestion:(id)arg2;
++ (id)nodeWithIdentifier:(id)arg1 suggestionNode:(id)arg2;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (unsigned int)avatarImageSlotID;
+- (unsigned int)bottomLabelSlotID;
+- (id)description;
+- (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasSquareImage;
+- (unsigned long long)hash;
+- (id)identifier;
+- (unsigned int)imageSlotID;
+- (id)initWithCoder:(id)arg1;
+- (bool)isDisabled;
+- (bool)isEqual:(id)arg1;
+- (bool)isMagicHead;
+- (bool)isPlaceholder;
+- (bool)isRestricted;
+- (bool)isTapToRadar;
+- (bool)load;
+- (id /* block */)loadHandler;
+- (double)mainLabelSlotHeight;
+- (unsigned int)mainLabelSlotID;
+- (id)peopleSuggestion;
+- (long long)selectionReason;
+- (void)setAvatarImageSlotID:(unsigned int)arg1;
+- (void)setBottomLabelSlotID:(unsigned int)arg1;
+- (void)setDisplayName:(id)arg1;
+- (void)setHasSquareImage:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setIsDisabled:(bool)arg1;
+- (void)setIsMagicHead:(bool)arg1;
+- (void)setIsPlaceholder:(bool)arg1;
+- (void)setIsRestricted:(bool)arg1;
+- (void)setLoadHandler:(id /* block */)arg1;
+- (void)setMainLabelSlotHeight:(double)arg1;
+- (void)setMainLabelSlotID:(unsigned int)arg1;
+- (void)setPeopleSuggestion:(id)arg1;
+- (void)setSelectionReason:(long long)arg1;
+- (void)setSubtitle:(id)arg1;
+- (void)setSuggestionNode:(id)arg1;
+- (void)setSuggestionReason:(id)arg1;
+- (void)setTransportImageSlotID:(unsigned int)arg1;
+- (id)subtitle;
+- (id)suggestionNode;
+- (id)suggestionReason;
+- (unsigned int)transportImageSlotID;
+- (unsigned int)transportSlotID;
+
+@end

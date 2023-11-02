@@ -1,0 +1,62 @@
+
+@interface SFPowerSourceMonitor : NSObject {
+    bool  _activateCalled;
+    unsigned int  _changeFlags;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    id /* block */  _invalidationHandler;
+    NSMutableDictionary * _powerSources;
+    id /* block */  _powerSourcesChangedHandler;
+    id /* block */  _powerSourcesFoundHandler;
+    id /* block */  _powerSourcesLostHandler;
+    unsigned short  _powerSourcesUpdateIndex;
+    long long  _previousSourcesCount;
+    int  _psNotifyTokenAccessoryAttach;
+    int  _psNotifyTokenAccessoryPowerSource;
+    int  _psNotifyTokenAccessoryTimeRemaining;
+    int  _psNotifyTokenAnyPowerSource;
+    bool  _skipCoalescing;
+    struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
+    CUCoalescer * _updateCoalescer;
+}
+
+@property (nonatomic) unsigned int changeFlags;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, copy) id /* block */ powerSourcesChangedHandler;
+@property (nonatomic, copy) id /* block */ powerSourcesFoundHandler;
+@property (nonatomic, copy) id /* block */ powerSourcesLostHandler;
+@property (nonatomic) bool skipCoalescing;
+
+- (void).cxx_destruct;
+- (void)_cleanup;
+- (void)_foundPowerSource:(id)arg1 desc:(id)arg2 adapterDesc:(id)arg3;
+- (void)_handlePowerSourcesChanged:(id)arg1 changes:(unsigned int)arg2;
+- (void)_handlePowerSourcesFound:(id)arg1;
+- (void)_handlePowerSourcesLost:(id)arg1;
+- (void)_removePowerSources:(id)arg1;
+- (void)_triggerUpdatePowerSources;
+- (void)_update;
+- (void)_updatePowerSource:(id)arg1 desc:(id)arg2 adapterDesc:(id)arg3;
+- (void)_updatePowerSources;
+- (void)_updatePowerSourcesWithInfo:(void*)arg1 sources:(struct __CFArray { }*)arg2 sourcesCount:(long long)arg3;
+- (void)activateWithCompletion:(id /* block */)arg1;
+- (unsigned int)changeFlags;
+- (void)dealloc;
+- (id)dispatchQueue;
+- (id)init;
+- (void)invalidate;
+- (id /* block */)invalidationHandler;
+- (id /* block */)powerSourcesChangedHandler;
+- (id /* block */)powerSourcesFoundHandler;
+- (bool)powerSourcesListWithOutInfo:(const void**)arg1 outSources:(const struct __CFArray {}**)arg2 outSourcesCount:(long long*)arg3;
+- (id /* block */)powerSourcesLostHandler;
+- (void)setChangeFlags:(unsigned int)arg1;
+- (void)setDispatchQueue:(id)arg1;
+- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setPowerSourcesChangedHandler:(id /* block */)arg1;
+- (void)setPowerSourcesFoundHandler:(id /* block */)arg1;
+- (void)setPowerSourcesLostHandler:(id /* block */)arg1;
+- (void)setSkipCoalescing:(bool)arg1;
+- (bool)skipCoalescing;
+
+@end

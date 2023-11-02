@@ -1,0 +1,65 @@
+
+@interface SUSUIMockedSUManagerClient : SUManagerClient
+
+- (void)areUpdatesDownloadableWithOptions:(id)arg1 alternateUpdateOptions:(id)arg2 preferredUpdateDownloadable:(bool*)arg3 alternateUpdateDownloadable:(bool*)arg4 preferredUpdateError:(id*)arg5 alternateUpdateError:(id*)arg6;
+- (void)autoScanAndDownloadIfAvailable:(id /* block */)arg1;
+- (void)cancelDownloadWithOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (id)controllerStrategy;
+- (bool)createInstallationKeybagWithOptions:(id)arg1;
+- (void)currentAutoInstallOperation:(bool)arg1 withResult:(id /* block */)arg2;
+- (void)currentPasscodePolicy:(id /* block */)arg1;
+- (void)delayEndDate:(id /* block */)arg1;
+- (void)descriptors:(id /* block */)arg1;
+- (void)destroyInstallationKeybag;
+- (void)deviceHasSufficientSpaceForDownloads:(id /* block */)arg1;
+- (void)download:(id /* block */)arg1;
+- (void)downloadAndInstallState:(id /* block */)arg1;
+- (void)eligibleRollbackWithOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (void)enableAutomaticDownload:(bool)arg1;
+- (void)enableAutomaticUpdateV2:(bool)arg1;
+- (void)extraSpaceNeededForDownloadWithoutAppPurging:(id /* block */)arg1;
+- (id)getDocumentationDataForInstalledUpdateType:(int)arg1 error:(id*)arg2;
+- (void)getMandatorySoftwareUpdateDictionary:(id /* block */)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2 clientType:(int)arg3;
+- (void)installUpdate:(id /* block */)arg1;
+- (void)installUpdateWithInstallOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (void)isAutoUpdateEnabled:(id /* block */)arg1;
+- (bool)isAutoUpdateScheduled;
+- (void)isAutoUpdateScheduled:(id /* block */)arg1;
+- (bool)isAutomaticDownloadEnabled;
+- (bool)isAutomaticUpdateV2Enabled;
+- (void)isClearingSpaceForDownload:(id /* block */)arg1;
+- (void)isDelayingUpdates:(id /* block */)arg1;
+- (void)isDownloading:(id /* block */)arg1;
+- (bool)isInstallationKeybagRequired;
+- (bool)isInstallationKeybagRequiredForDescriptor:(id)arg1;
+- (void)isRollingBack:(id /* block */)arg1;
+- (void)isScanning:(id /* block */)arg1;
+- (bool)isSplatOnlyUpdateInstalled;
+- (bool)isSplatOnlyUpdateRollbackAllowed:(id*)arg1;
+- (void)isUpdateReadyForInstallation:(id /* block */)arg1;
+- (void)isUpdateReadyForInstallationWithOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (void)pauseDownload:(id /* block */)arg1;
+- (void)presentAutoUpdateBanner:(id /* block */)arg1;
+- (void)previousRollbackWithOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (void)purgeDownloadWithOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (void)recordSUAnalyticsEvent:(id)arg1;
+- (void)resumeDownload:(id /* block */)arg1;
+- (void)rollbackUpdateWithOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (void)scanForUpdates:(id)arg1 withScanResults:(id /* block */)arg2;
+- (void)scheduleRollbackRebootForLater:(id /* block */)arg1;
+- (bool)securityResponseRollbackSuggested:(id)arg1 error:(id*)arg2;
+- (bool)setLastRollbackDescriptor:(id)arg1;
+- (void)setMandatorySoftwareUpdateDictionary:(id)arg1;
+- (void)slaVersion:(id /* block */)arg1;
+- (void)softwareUpdatePathRestriction:(id /* block */)arg1;
+- (void)startDownload:(id /* block */)arg1;
+- (void)startDownloadWithOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (void)submitAllSUAnalyticsEvents;
+- (void)submitSUAnalyticsEvent:(id)arg1;
+- (void)submitSUAnalyticsEventsWithName:(id)arg1;
+- (void)updateDownloadOptions:(id)arg1 withResult:(id /* block */)arg2;
+- (void)updatesDownloadableWithOptions:(id)arg1 alternateDownloadOptions:(id)arg2 replyHandler:(id /* block */)arg3;
+- (bool)writeKeepAliveFile;
+
+@end

@@ -1,0 +1,95 @@
+
+@interface CRLineWrapperV1Configuration : NSObject {
+    float  _angleSimilarityThreshold;
+    long long  _caseWrappingScoreWithNoCapitalization;
+    float  _confidenceThreshold;
+    float  _contextConfidenceThreshold;
+    long long  _correctionMode;
+    float  _heightSimilarityRatio;
+    int  _lmContextSize;
+    double  _lmScoreEOSMinRatio;
+    double  _lmScoreThreshold;
+    float  _maximumVerticalDistanceGrowthRatio;
+    float  _newParagraphIndentDistanceRatioTolerance;
+    long long  _noWrappingEvaluationThreshold;
+    float  _oversegmentedDistanceHeightRatioListItemTolerance;
+    float  _oversegmentedDistanceHeightRatioTolerance;
+    float  _probabilityThreshold;
+    long long  _punctuationWrappingScoreWithEndingMOS;
+    long long  _punctuationWrappingScoreWithNoClosingPunctuation;
+    float  _smallestVerticalDistanceHeightRatio;
+    unsigned long long  _tokenCountIncreaseLimit;
+    float  _widthGrowthLimit;
+    long long  _wrappingEvaluationThreshold;
+}
+
+@property float angleSimilarityThreshold;
+@property long long caseWrappingScoreWithNoCapitalization;
+@property float confidenceThreshold;
+@property float contextConfidenceThreshold;
+@property long long correctionMode;
+@property float heightSimilarityRatio;
+@property int lmContextSize;
+@property double lmScoreEOSMinRatio;
+@property double lmScoreThreshold;
+@property float maximumVerticalDistanceGrowthRatio;
+@property float newParagraphIndentDistanceRatioTolerance;
+@property long long noWrappingEvaluationThreshold;
+@property float oversegmentedDistanceHeightRatioListItemTolerance;
+@property float oversegmentedDistanceHeightRatioTolerance;
+@property (readonly) float probabilityThreshold;
+@property long long punctuationWrappingScoreWithEndingMOS;
+@property long long punctuationWrappingScoreWithNoClosingPunctuation;
+@property float smallestVerticalDistanceHeightRatio;
+@property unsigned long long tokenCountIncreaseLimit;
+@property float widthGrowthLimit;
+@property long long wrappingEvaluationThreshold;
+
++ (long long)_correctionModeFromString:(id)arg1;
+
+- (float)angleSimilarityThreshold;
+- (long long)caseWrappingScoreWithNoCapitalization;
+- (float)confidenceThreshold;
+- (float)contextConfidenceThreshold;
+- (long long)correctionMode;
+- (id)description;
+- (float)heightSimilarityRatio;
+- (id)initWithLocale:(id)arg1;
+- (id)initWithLocale:(id)arg1 useStrictConfig:(bool)arg2;
+- (int)lmContextSize;
+- (double)lmScoreEOSMinRatio;
+- (double)lmScoreThreshold;
+- (float)maximumVerticalDistanceGrowthRatio;
+- (float)newParagraphIndentDistanceRatioTolerance;
+- (long long)noWrappingEvaluationThreshold;
+- (float)oversegmentedDistanceHeightRatioListItemTolerance;
+- (float)oversegmentedDistanceHeightRatioTolerance;
+- (float)probabilityThreshold;
+- (long long)punctuationWrappingScoreWithEndingMOS;
+- (long long)punctuationWrappingScoreWithNoClosingPunctuation;
+- (void)setAngleSimilarityThreshold:(float)arg1;
+- (void)setCaseWrappingScoreWithNoCapitalization:(long long)arg1;
+- (void)setConfidenceThreshold:(float)arg1;
+- (void)setContextConfidenceThreshold:(float)arg1;
+- (void)setCorrectionMode:(long long)arg1;
+- (void)setHeightSimilarityRatio:(float)arg1;
+- (void)setLmContextSize:(int)arg1;
+- (void)setLmScoreEOSMinRatio:(double)arg1;
+- (void)setLmScoreThreshold:(double)arg1;
+- (void)setMaximumVerticalDistanceGrowthRatio:(float)arg1;
+- (void)setNewParagraphIndentDistanceRatioTolerance:(float)arg1;
+- (void)setNoWrappingEvaluationThreshold:(long long)arg1;
+- (void)setOversegmentedDistanceHeightRatioListItemTolerance:(float)arg1;
+- (void)setOversegmentedDistanceHeightRatioTolerance:(float)arg1;
+- (void)setPunctuationWrappingScoreWithEndingMOS:(long long)arg1;
+- (void)setPunctuationWrappingScoreWithNoClosingPunctuation:(long long)arg1;
+- (void)setSmallestVerticalDistanceHeightRatio:(float)arg1;
+- (void)setTokenCountIncreaseLimit:(unsigned long long)arg1;
+- (void)setWidthGrowthLimit:(float)arg1;
+- (void)setWrappingEvaluationThreshold:(long long)arg1;
+- (float)smallestVerticalDistanceHeightRatio;
+- (unsigned long long)tokenCountIncreaseLimit;
+- (float)widthGrowthLimit;
+- (long long)wrappingEvaluationThreshold;
+
+@end

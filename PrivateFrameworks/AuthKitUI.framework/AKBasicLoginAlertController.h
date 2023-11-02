@@ -1,0 +1,87 @@
+
+@interface AKBasicLoginAlertController : UIAlertController <AKBasicLoginAnimateProtocol, AKBasicLoginPasswordFieldProtocol, AKSecondFactorCodeEntry, UITextFieldDelegate> {
+    NSString * _ak_authenticateButtonTitle;
+    NSString * _ak_cancelButtonTitle;
+    NSString * _ak_password;
+    NSString * _ak_reason;
+    NSString * _ak_title;
+    NSString * _ak_username;
+    long long  _alertStyle;
+    <AKBasicLoginControllerDelegate> * _delegate;
+    <NSObject> * _didEnterCodeObserver;
+    NSString * _generatedCode;
+    AKBasicLoginActions * _loginActions;
+    AKBasicLoginSecondFactorActions * _secondFactorActions;
+}
+
+@property (nonatomic) long long alertStyle;
+@property (nonatomic, copy) NSString *authenticateButtonTitle;
+@property (nonatomic, copy) NSString *authenticateTitle;
+@property (nonatomic, copy) NSString *cancelButtonTitle;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AKBasicLoginControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *generatedCode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) AKBasicLoginActions *loginActions;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *reason;
+@property (nonatomic, copy) AKBasicLoginSecondFactorActions *secondFactorActions;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *username;
+
+- (void).cxx_destruct;
+- (void)_beginObservingDidEnterCodeNotifications;
+- (void)_didEnterCode:(id)arg1;
+- (void)_dismissAndShowiForgot:(id)arg1;
+- (void)_endObservingDidEnterCodeNotifications;
+- (id)_passwordField;
+- (void)_passwordFieldDidChange:(id)arg1;
+- (void)_setupAuthenticateAndCancelButtons;
+- (void)_setupAuthenticateAndCancelButtonsWithIForgot:(bool)arg1;
+- (void)_setupViewControllerForAlertStyle;
+- (void)_setupViewControllerForDefaultStyle;
+- (void)_setupViewControllerForIForgotStyle;
+- (void)_setupViewControllerForNonEditableUsernameFieldStyle;
+- (void)_setupViewControllerForSecondFactorEntryStyle;
+- (void)_setupViewControllerForUserOrCreateAppleIDStyle;
+- (void)_syncUsernameAndPasswordPropertiesWithTextFieldContent;
+- (id)_wrappedCancelAction;
+- (long long)alertStyle;
+- (id)authenticateButtonTitle;
+- (id)authenticateTitle;
+- (id)cancelButtonTitle;
+- (void)clearPasswordField;
+- (void)clearSecondFactorEntry;
+- (void)dealloc;
+- (id)delegate;
+- (bool)disablesAutomaticKeyboardDismissal;
+- (id)generatedCode;
+- (id)initWithAlertStyle:(long long)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)jiggleAView;
+- (id)loginActions;
+- (id)password;
+- (id)reason;
+- (id)secondFactorActions;
+- (void)setAlertStyle:(long long)arg1;
+- (void)setAuthenticateButtonTitle:(id)arg1;
+- (void)setAuthenticateTitle:(id)arg1;
+- (void)setCancelButtonTitle:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setGeneratedCode:(id)arg1;
+- (void)setLoginActions:(id)arg1;
+- (void)setPasscodeFieldDisabled:(bool)arg1;
+- (void)setPassword:(id)arg1;
+- (void)setReason:(id)arg1;
+- (void)setSecondFactorActions:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (void)startAnimating;
+- (void)stopAnimating;
+- (bool)textFieldShouldReturn:(id)arg1;
+- (id)username;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

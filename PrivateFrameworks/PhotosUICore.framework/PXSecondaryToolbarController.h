@@ -1,0 +1,95 @@
+
+@interface PXSecondaryToolbarController : NSObject <PXScrollViewControllerObserver> {
+    <PXSecondaryToolbarActionHandler> * _actionHandler;
+    double  _alpha;
+    UIView * _containerView;
+    PXScrollViewController * _contentScrollViewController;
+    UIView * _contentView;
+    UIView * _gradientView;
+    double  _height;
+    bool  _isAtTop;
+    bool  _isShowingGradient;
+    UIView * _leadingAccessoryView;
+    bool  _legibilityGradientEnabled;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _padding;
+    UIView * _secondaryToolbar;
+    bool  _stretched;
+    <PXSecondaryToolbarStyleGuideProvider> * _styleGuideProvider;
+    UIView * _trailingAccessoryView;
+    PXUpdater * _updater;
+    bool  _willUpdate;
+}
+
+@property (nonatomic) <PXSecondaryToolbarActionHandler> *actionHandler;
+@property (nonatomic) double alpha;
+@property (nonatomic, readonly) UIView *containerView;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } containerViewAdditionalEdgeInsets;
+@property (nonatomic, retain) PXScrollViewController *contentScrollViewController;
+@property (nonatomic, retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double height;
+@property (nonatomic) bool isAtTop;
+@property (nonatomic, readonly) bool isSecondaryToolbarVisible;
+@property (nonatomic, retain) UIView *leadingAccessoryView;
+@property (nonatomic) bool legibilityGradientEnabled;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property (nonatomic, readonly) UIView *secondaryToolbar;
+@property (nonatomic) bool stretched;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *trailingAccessoryView;
+@property (nonatomic, readonly) PXUpdater *updater;
+
+- (void).cxx_destruct;
+- (void)_invalidateContentLayout;
+- (void)_replaceAccessoryView:(id)arg1 with:(id)arg2;
+- (void)_updateContentLayout;
+- (void)_updateLegibilityGradient;
+- (void)_updatePositioning;
+- (void)_updateSecondaryToolbarLayout;
+- (void)_updateViewOpacity;
+- (id)actionHandler;
+- (double)alpha;
+- (id)containerView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })containerViewAdditionalEdgeInsets;
+- (id)contentScrollViewController;
+- (id)contentView;
+- (double)height;
+- (id)init;
+- (id)initWithContainerView:(id)arg1 styleGuideProvider:(id)arg2;
+- (void)invalidatePositioning;
+- (void)invalidateSecondaryToolbarLayout;
+- (void)invalidateViewOpacity;
+- (bool)isAtTop;
+- (bool)isSecondaryToolbarVisible;
+- (id)leadingAccessoryView;
+- (bool)legibilityGradientEnabled;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
+- (void)removeFromContainerView;
+- (void)scrollViewControllerDidLayoutSubviews:(id)arg1;
+- (void)scrollViewControllerDidScroll:(id)arg1;
+- (id)secondaryToolbar;
+- (void)setActionHandler:(id)arg1;
+- (void)setAlpha:(double)arg1;
+- (void)setContentScrollViewController:(id)arg1;
+- (void)setContentView:(id)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setIsAtTop:(bool)arg1;
+- (void)setLeadingAccessoryView:(id)arg1;
+- (void)setLegibilityGradientEnabled:(bool)arg1;
+- (void)setNeedsUpdate;
+- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setStretched:(bool)arg1;
+- (void)setTrailingAccessoryView:(id)arg1;
+- (bool)stretched;
+- (id)trailingAccessoryView;
+- (void)updateIfNeeded;
+- (id)updater;
+
+@end

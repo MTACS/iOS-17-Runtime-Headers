@@ -1,0 +1,17 @@
+
+@protocol NCNotificationSummaryExpandedHeaderViewDelegate <NSObject>
+
+@required
+
+- (UIView *)containerViewForClickInteractionPresentedContentForNotificationSummaryExpandedHeaderView:(NCNotificationSummaryExpandedHeaderView *)arg1;
+- (NSString *)materialGroupNameBaseForNotificationSummaryExpandedHeaderView:(NCNotificationSummaryExpandedHeaderView *)arg1;
+- (void)notificationSummaryExpandedHeaderView:(NCNotificationSummaryExpandedHeaderView *)arg1 acceptedSummaryOnboarding:(bool)arg2;
+- (void)notificationSummaryExpandedHeaderView:(NCNotificationSummaryExpandedHeaderView *)arg1 didTransitionToClearState:(bool)arg2;
+- (void)notificationSummaryExpandedHeaderViewDidBeginClickInteraction:(NCNotificationSummaryExpandedHeaderView *)arg1;
+- (void)notificationSummaryExpandedHeaderViewDidDismssClickInteractionPresentedContent:(NCNotificationSummaryExpandedHeaderView *)arg1;
+- (void)notificationSummaryExpandedHeaderViewDidPresentClickInteractionPresentedContent:(NCNotificationSummaryExpandedHeaderView *)arg1;
+- (void)notificationSummaryExpandedHeaderViewRequestsClearAll:(NCNotificationSummaryExpandedHeaderView *)arg1;
+- (void)notificationSummaryExpandedHeaderViewRequestsClearingSummary:(NCNotificationSummaryExpandedHeaderView *)arg1;
+- (void)notificationSummaryExpandedHeaderViewRequestsCollapsingSummary:(NCNotificationSummaryExpandedHeaderView *)arg1;
+
+@end

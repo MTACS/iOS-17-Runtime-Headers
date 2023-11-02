@@ -1,0 +1,97 @@
+
+@interface AAUIBadgeView : UIView <AAUIBadgeViewDrawable, AAUIBadgeViewDrawableDelegate, UIGestureRecognizerDelegate> {
+    UIImage * _backAppleLogo;
+    UIImage * _backTextureImage;
+    NSAttributedString * _backsideAttributedString;
+    AAUIBadge * _badge;
+    <AAUIBadgeViewDelegate> * _badgeDelegate;
+    <AAUIBadgeViewDrawable> * _drawable;
+    double  _lastUpdateTime;
+    UILongPressGestureRecognizer * _longPressRecognizer;
+    bool  _magnetsEngaged;
+    NSNumber * _overrideEarnedShader;
+    id /* block */  _shortenedBadgeBacksideStringProvider;
+    double  _spinRate;
+    UIPanGestureRecognizer * _spinRecognizer;
+    UITapGestureRecognizer * _tapRecognizer;
+    NSDictionary * _tweakableUniforms;
+    bool  _useEarnedShader;
+    NSNumber * _useMetal;
+    bool  _verticalPanningDisabled;
+}
+
+@property (nonatomic, retain) UIImage *backTextureImage;
+@property (nonatomic) <AAUIBadgeViewDelegate> *badgeDelegate;
+@property (nonatomic, retain) AAUIBadgeModelConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) <AAUIBadgeViewDrawable> *drawable;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool magnetsEngaged;
+@property (nonatomic, retain) NSNumber *overrideEarnedShader;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (nonatomic, copy) id /* block */ shortenedBadgeBacksideStringProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSNumber *useMetal;
+@property (nonatomic) bool verticalPanningDisabled;
+@property (nonatomic, readonly) UIView *view;
+
++ (double)badgeAspectRatio;
+
+- (void).cxx_destruct;
+- (void)_applyImpulse:(double)arg1;
+- (double)_attenuatedSpinRate:(double)arg1;
+- (double)_attenuatedVelocity:(double)arg1;
+- (id)_defaultTweaks;
+- (void)_generateBackTextureImage;
+- (void)_invalidateLastUpdateTime;
+- (void)_longPressInternalOnly:(id)arg1;
+- (float)_normalizeAngle:(float)arg1;
+- (void)_panned:(id)arg1;
+- (void)_setBackTextureNeedsRegeneration;
+- (void)_spin360Degrees;
+- (void)_tapped:(id)arg1;
+- (id)_unearnedShaderDefaultTweaks;
+- (id)_valueForTweak:(id)arg1;
+- (id)backTextureImage;
+- (id)badgeDelegate;
+- (void)cleanupAfterSnapshot;
+- (id)configuration;
+- (id)drawable;
+- (id)drawable:(id)arg1 valueForTweakableUniform:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)initUsingEarnedShader:(bool)arg1;
+- (id)initUsingEarnedShader:(bool)arg1 delegate:(id)arg2;
+- (bool)isPaused;
+- (bool)magnetsEngaged;
+- (id)overrideEarnedShader;
+- (double)playFlipInAnimation;
+- (double)playFlipOutAnimation;
+- (long long)preferredStatusBarStyle;
+- (void)resizeBadgeForCurrentViewSize;
+- (void)setBackTextureImage:(id)arg1;
+- (void)setBadgeBacksideAttributedString:(id)arg1;
+- (void)setBadgeBacksideIcon:(id)arg1;
+- (void)setBadgeDelegate:(id)arg1;
+- (void)setConfiguration:(id)arg1;
+- (void)setDrawable:(id)arg1;
+- (void)setFixedBadgeAngle:(double)arg1;
+- (void)setMagnetsEngaged:(bool)arg1;
+- (void)setOverrideEarnedShader:(id)arg1;
+- (void)setPaused:(bool)arg1;
+- (void)setShortenedBadgeBacksideStringProvider:(id /* block */)arg1;
+- (void)setUseMetal:(id)arg1;
+- (void)setVerticalPanningDisabled:(bool)arg1;
+- (id /* block */)shortenedBadgeBacksideStringProvider;
+- (bool)shouldAutorotate;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (id)snapshot;
+- (unsigned long long)supportedInterfaceOrientations;
+- (double)timeSinceLastUpdate;
+- (id)tweakableUniformsForDrawable:(id)arg1;
+- (id)updateBadgeModelForDrawable:(id)arg1;
+- (id)useMetal;
+- (bool)verticalPanningDisabled;
+- (id)view;
+
+@end

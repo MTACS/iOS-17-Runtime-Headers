@@ -1,0 +1,113 @@
+
+@interface BWStillImageCaptureSettings : NSObject <NSSecureCoding> {
+    NSString * _applicationID;
+    unsigned long long  _captureFlags;
+    bool  _captureSourceIsExternalCamera;
+    NSArray * _captureStreamSettings;
+    int  _captureType;
+    NSString * _cmioCompressedFormat;
+    int  _cmioFlashMode;
+    bool  _cmioHighResolutionPhotoEnabled;
+    struct { 
+        int width; 
+        int height; 
+    }  _cmioMaxPhotoDimensions;
+    int  _cmioQualityPrioritization;
+    bool  _deliverDeferredPhotoProxyImage;
+    bool  _deliverOriginalImage;
+    bool  _deliverSushiRaw;
+    bool  _downgradedDeepFusionEnhancedResolutionCapture;
+    BWFrameStatisticsByPortType * _frameStatisticsByPortType;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _lastTimeMachinePTS;
+    NSString * _masterPortType;
+    BWStillImageCaptureMetadata * _metadata;
+    bool  _produceDeferredPhotoProxyImage;
+    float  _scaleFactor;
+    unsigned long long  _sceneFlags;
+    long long  _settingsID;
+    long long  _stillImageRequestTime;
+    int  _timeMachineReferenceFrameBracketedCaptureSequenceNumber;
+}
+
+@property (nonatomic, copy) NSString *applicationID;
+@property (nonatomic, readonly) int bracketedCaptureSequenceNumberForOISLongExposure;
+@property (nonatomic, readonly) unsigned long long captureFlags;
+@property (nonatomic, readonly) bool captureSourceIsExternalCamera;
+@property (nonatomic, readonly) NSArray *captureStreamSettings;
+@property (nonatomic, readonly) int captureType;
+@property (nonatomic) bool deliverDeferredPhotoProxyImage;
+@property (nonatomic, readonly) bool deliverOriginalImage;
+@property (nonatomic, readonly) bool deliverSushiRaw;
+@property (nonatomic, readonly) bool downgradedDeepFusionEnhancedResolutionCapture;
+@property (nonatomic, readonly) bool expectReferenceFrameBracketedCaptureSequenceNumber;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } lastTimeMachinePTS;
+@property (nonatomic, retain) NSString *masterPortType;
+@property (nonatomic, readonly) NSArray *portTypes;
+@property (nonatomic) bool produceDeferredPhotoProxyImage;
+@property (nonatomic) float scaleFactor;
+@property (nonatomic) unsigned long long sceneFlags;
+@property (nonatomic, readonly) long long settingsID;
+@property (nonatomic) long long stillImageRequestTime;
+@property (nonatomic) int timeMachineReferenceFrameBracketedCaptureSequenceNumber;
+
++ (bool)supportsSecureCoding;
+
+- (id)applicationID;
+- (int)bracketedCaptureSequenceNumberForOISLongExposure;
+- (void)cannotProcessDeepFusionEnhancedResolution;
+- (void)cannotProcessDepthPhotos;
+- (unsigned long long)captureFlags;
+- (bool)captureSourceIsExternalCamera;
+- (id)captureStreamSettings;
+- (id)captureStreamSettingsForPortType:(id)arg1;
+- (int)captureType;
+- (id)cmioCompressedFormat;
+- (int)cmioFlashMode;
+- (bool)cmioHighResolutionPhotoEnabled;
+- (struct { int x1; int x2; })cmioMaxPhotoDimensions;
+- (int)cmioQualityPrioritization;
+- (void)dealloc;
+- (bool)deliverDeferredPhotoProxyImage;
+- (bool)deliverOriginalImage;
+- (bool)deliverSushiRaw;
+- (id)description;
+- (bool)downgradedDeepFusionEnhancedResolutionCapture;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)expectReferenceFrameBracketedCaptureSequenceNumber;
+- (id)frameStatisticsByPortType;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithSettingsID:(long long)arg1 captureType:(int)arg2 captureFlags:(unsigned long long)arg3 sceneFlags:(unsigned long long)arg4 captureSourceIsExternalCamera:(bool)arg5 frameStatisticsByPortType:(id)arg6 deliverOriginalImage:(bool)arg7 deliverSushiRaw:(bool)arg8 captureStreamSettings:(id)arg9;
+- (bool)isEqual:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })lastTimeMachinePTS;
+- (id)masterPortType;
+- (id)metadata;
+- (id)portTypes;
+- (bool)produceDeferredPhotoProxyImage;
+- (float)scaleFactor;
+- (unsigned long long)sceneFlags;
+- (void)setApplicationID:(id)arg1;
+- (void)setCmioCompressedFormat:(id)arg1;
+- (void)setCmioFlashMode:(int)arg1;
+- (void)setCmioHighResolutionPhotoEnabled:(bool)arg1;
+- (void)setCmioMaxPhotoDimensions:(struct { int x1; int x2; })arg1;
+- (void)setCmioQualityPrioritization:(int)arg1;
+- (void)setDeliverDeferredPhotoProxyImage:(bool)arg1;
+- (void)setLastTimeMachinePTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMasterPortType:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setProduceDeferredPhotoProxyImage:(bool)arg1;
+- (void)setScaleFactor:(float)arg1;
+- (void)setSceneFlags:(unsigned long long)arg1;
+- (void)setStillImageRequestTime:(long long)arg1;
+- (void)setTimeMachineReferenceFrameBracketedCaptureSequenceNumber:(int)arg1;
+- (long long)settingsID;
+- (long long)stillImageRequestTime;
+- (int)timeMachineReferenceFrameBracketedCaptureSequenceNumber;
+
+@end

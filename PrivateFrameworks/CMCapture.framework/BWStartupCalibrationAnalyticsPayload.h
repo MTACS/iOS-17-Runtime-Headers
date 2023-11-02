@@ -1,0 +1,84 @@
+
+@interface BWStartupCalibrationAnalyticsPayload : NSObject <BWCoreAnalyticsPayload> {
+    float  _accelStandardDeviation;
+    int  _apsVoltage;
+    bool  _closedLoopEntry;
+    bool  _confidenceErrorOccurred;
+    bool  _convergeErrorOccurred;
+    float  _deltaAcceleration;
+    float  _deltaOffset;
+    bool  _gcolEntry;
+    float  _gyroStandardDeviation;
+    bool  _headroomErrorOccurred;
+    bool  _largeOffsetErrorOccurred;
+    float  _maxAcceleration;
+    bool  _motionErrorOccurred;
+    NSString * _portType;
+    bool  _saturationErrorOccurred;
+    float  _sessionOffset;
+    bool  _success;
+}
+
+@property (nonatomic) float accelStandardDeviation;
+@property (nonatomic) int apsVoltage;
+@property (nonatomic) bool closedLoopEntry;
+@property (nonatomic) bool confidenceErrorOccurred;
+@property (nonatomic) bool convergeErrorOccurred;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) float deltaAcceleration;
+@property (nonatomic) float deltaOffset;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool gcolEntry;
+@property (nonatomic) float gyroStandardDeviation;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool headroomErrorOccurred;
+@property (nonatomic) bool largeOffsetErrorOccurred;
+@property (nonatomic) float maxAcceleration;
+@property (nonatomic) bool motionErrorOccurred;
+@property (nonatomic, retain) NSString *portType;
+@property (nonatomic) bool saturationErrorOccurred;
+@property (nonatomic) float sessionOffset;
+@property (nonatomic) bool success;
+@property (readonly) Class superclass;
+
+- (float)accelStandardDeviation;
+- (int)apsVoltage;
+- (bool)closedLoopEntry;
+- (bool)confidenceErrorOccurred;
+- (bool)convergeErrorOccurred;
+- (void)dealloc;
+- (float)deltaAcceleration;
+- (float)deltaOffset;
+- (id)eventDictionary;
+- (id)eventName;
+- (bool)gcolEntry;
+- (float)gyroStandardDeviation;
+- (bool)headroomErrorOccurred;
+- (id)init;
+- (bool)largeOffsetErrorOccurred;
+- (float)maxAcceleration;
+- (bool)motionErrorOccurred;
+- (id)portType;
+- (void)reset;
+- (bool)saturationErrorOccurred;
+- (float)sessionOffset;
+- (void)setAccelStandardDeviation:(float)arg1;
+- (void)setApsVoltage:(int)arg1;
+- (void)setClosedLoopEntry:(bool)arg1;
+- (void)setConfidenceErrorOccurred:(bool)arg1;
+- (void)setConvergeErrorOccurred:(bool)arg1;
+- (void)setDeltaAcceleration:(float)arg1;
+- (void)setDeltaOffset:(float)arg1;
+- (void)setGcolEntry:(bool)arg1;
+- (void)setGyroStandardDeviation:(float)arg1;
+- (void)setHeadroomErrorOccurred:(bool)arg1;
+- (void)setLargeOffsetErrorOccurred:(bool)arg1;
+- (void)setMaxAcceleration:(float)arg1;
+- (void)setMotionErrorOccurred:(bool)arg1;
+- (void)setPortType:(id)arg1;
+- (void)setSaturationErrorOccurred:(bool)arg1;
+- (void)setSessionOffset:(float)arg1;
+- (void)setSuccess:(bool)arg1;
+- (bool)success;
+
+@end

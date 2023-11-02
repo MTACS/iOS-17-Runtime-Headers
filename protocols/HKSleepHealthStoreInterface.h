@@ -1,0 +1,4 @@
+
+@protocol HKSleepHealthStoreInterface <NSObject>
+
+@end

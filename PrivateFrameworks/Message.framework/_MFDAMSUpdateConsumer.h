@@ -1,0 +1,15 @@
+
+@interface _MFDAMSUpdateConsumer : _MFDAMSBasicConsumer <MFDASyncActionsConsumer>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void)commitSyncActions;
+- (void)drainMailbox;
+- (bool)handleItems:(id)arg1;
+- (void)handleResponse:(id)arg1 error:(id)arg2;
+- (void)receiveSyncActions:(id)arg1;
+
+@end

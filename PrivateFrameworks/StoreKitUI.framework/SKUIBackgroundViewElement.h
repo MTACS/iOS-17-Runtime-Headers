@@ -1,0 +1,4 @@
+
+@interface SKUIBackgroundViewElement : SKUIViewElement
+
+@end

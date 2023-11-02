@@ -1,0 +1,4 @@
+
+@protocol BKSSystemShellControlClientInterface <NSObject>
+
+@end

@@ -1,0 +1,90 @@
+
+@interface PowerUICECPredictedTimeManager : NSObject <PowerUISignalMonitorDelegate> {
+    PowerUIBatteryMitigationManager * _batteryMitigationManager;
+    <_CDLocalContext> * _context;
+    NSDate * _deadline;
+    NSString * _debugStatus;
+    NSUserDefaults * _defaults;
+    id /* block */  _handler;
+    <_DKKnowledgeQuerying> * _knowledgeStore;
+    NSObject<OS_os_log> * _log;
+    NSDate * _modelDeadline;
+    NSArray * _monitors;
+    _OSChargingPredictor * _pluggedInPredictor;
+    double  _predictionLeeway;
+    NSObject<OS_dispatch_queue> * _queue;
+    bool  _tBypassSignals;
+    NSDate * _tModelPredition;
+    PowerUITrialManager * _trialManager;
+}
+
+@property (nonatomic, retain) PowerUIBatteryMitigationManager *batteryMitigationManager;
+@property (nonatomic, retain) <_CDLocalContext> *context;
+@property (nonatomic, retain) NSDate *deadline;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSString *debugStatus;
+@property (nonatomic, retain) NSUserDefaults *defaults;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ handler;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <_DKKnowledgeQuerying> *knowledgeStore;
+@property (nonatomic, retain) NSObject<OS_os_log> *log;
+@property (nonatomic, retain) NSDate *modelDeadline;
+@property (nonatomic, retain) NSArray *monitors;
+@property (nonatomic, retain) _OSChargingPredictor *pluggedInPredictor;
+@property (nonatomic) double predictionLeeway;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
+@property (nonatomic) bool tBypassSignals;
+@property (nonatomic, retain) NSDate *tModelPredition;
+@property (nonatomic, retain) PowerUITrialManager *trialManager;
+
++ (id)managerWithKnowledgeStore:(id)arg1 withContextStore:(id)arg2 withHandler:(id /* block */)arg3;
+
+- (void).cxx_destruct;
+- (id)batteryMitigationManager;
+- (id)context;
+- (id)deadline;
+- (id)deadlineFromMonitors;
+- (void)debug;
+- (id)debugStatus;
+- (id)defaults;
+- (id /* block */)handler;
+- (bool)hasSufficientTimeForFullCharge;
+- (id)initWithKnowledgeStore:(id)arg1 withContextStore:(id)arg2 withHandler:(id /* block */)arg3;
+- (id)knowledgeStore;
+- (double)leewayForConfidence:(double)arg1;
+- (id)log;
+- (id)modelDeadline;
+- (void)monitor:(id)arg1 maySuggestNewFullChargeDeadline:(id)arg2;
+- (id)monitors;
+- (id)pluggedInPredictor;
+- (id)predictedUnplugTime;
+- (double)predictionLeeway;
+- (id)queue;
+- (void)resetState;
+- (void)setBatteryMitigationManager:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setDeadline:(id)arg1;
+- (void)setDefaults:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
+- (void)setKnowledgeStore:(id)arg1;
+- (void)setLog:(id)arg1;
+- (void)setModelDeadline:(id)arg1;
+- (void)setMonitors:(id)arg1;
+- (void)setPluggedInPredictor:(id)arg1;
+- (void)setPredictionLeeway:(double)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setTBypassSignals:(bool)arg1;
+- (void)setTModelPredition:(id)arg1;
+- (void)setTrialManager:(id)arg1;
+- (void)startAllMonitoring;
+- (void)stopAllMonitoring;
+- (bool)tBypassSignals;
+- (id)tModelPredition;
+- (bool)testOverrideForSignalMonitors;
+- (id)testingOverrideForPredictedUnplugTime;
+- (double)timeToFullChargeFromBatteryLevel:(unsigned long long)arg1;
+- (id)trialManager;
+
+@end

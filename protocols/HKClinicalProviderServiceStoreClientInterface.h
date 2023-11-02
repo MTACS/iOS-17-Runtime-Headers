@@ -1,0 +1,4 @@
+
+@protocol HKClinicalProviderServiceStoreClientInterface <NSObject>
+
+@end

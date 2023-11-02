@@ -1,0 +1,83 @@
+
+@interface ICTableAccessibilityController : NSObject {
+    ICTableAccessibilityElementProvider * _elementProvider;
+    ICTableAttachmentViewController * _tableAttachmentViewController;
+    ICiOSTableAccessibilityElement * _tableElement;
+}
+
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } attachmentRangeInNote;
+@property (nonatomic, readonly) unsigned long long columnCount;
+@property (nonatomic, readonly) UIView *dragProviderView;
+@property (nonatomic, readonly) ICTableAccessibilityElementProvider *elementProvider;
+@property (nonatomic, readonly) ICTableSelectionKnob *endSelectionKnob;
+@property (nonatomic, readonly) ICTableAttachmentView *hostingTableAttachmentView;
+@property (nonatomic, readonly) bool isTableRightToLeft;
+@property (nonatomic, readonly) UIScrollView *noteScrollView;
+@property (nonatomic, readonly) unsigned long long rowCount;
+@property (nonatomic, readonly) ICTableSelectionKnob *startSelectionKnob;
+@property (nonatomic) ICTableAttachmentViewController *tableAttachmentViewController;
+@property (nonatomic, retain) ICiOSTableAccessibilityElement *tableElement;
+@property (nonatomic, readonly) UIScrollView *tableScrollView;
+
+- (void).cxx_destruct;
+- (void)addColumnAfter;
+- (void)addColumnBefore;
+- (void)addRowAbove;
+- (void)addRowBelow;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })attachmentRangeInNote;
+- (id)attributedContentStringForColumnID:(id)arg1 rowID:(id)arg2;
+- (void)beginEditingCellWithColumnID:(id)arg1 rowID:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectForCellWithColumnID:(id)arg1 rowID:(id)arg2;
+- (id)cellElementForColumnIndex:(unsigned long long)arg1 rowIndex:(unsigned long long)arg2;
+- (id)cellElementsForColumnID:(id)arg1;
+- (id)cellElementsForRowID:(id)arg1;
+- (bool)cellIsEditingAtColumnID:(id)arg1 rowID:(id)arg2;
+- (unsigned long long)columnCount;
+- (id)columnIDForColumnIndex:(unsigned long long)arg1;
+- (unsigned long long)columnIndexForColumnID:(id)arg1;
+- (void)convertTableToText;
+- (void)deleteSelectedColumns;
+- (void)deleteSelectedRows;
+- (id)dragProviderView;
+- (id)elementProvider;
+- (id)endSelectionKnob;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameInScreenSpaceForCellWithColumnID:(id)arg1 rowID:(id)arg2;
+- (id)hostingTableAttachmentView;
+- (id)initWithTableAttachmentViewController:(id)arg1;
+- (void)invalidateAXElementsForColumnID:(id)arg1;
+- (void)invalidateAXElementsForRowID:(id)arg1;
+- (bool)isEditable;
+- (bool)isHeaderCellAtColumnID:(id)arg1 rowID:(id)arg2;
+- (bool)isTableRightToLeft;
+- (bool)isTableTextRangeSelected;
+- (void)moveCurrentColumnOrRow:(bool)arg1 toIndex:(unsigned long long)arg2;
+- (id)noteScrollView;
+- (void)reverseTableDirection;
+- (unsigned long long)rowCount;
+- (id)rowIDForRowIndex:(unsigned long long)arg1;
+- (unsigned long long)rowIndexForRowID:(id)arg1;
+- (void)scrollColumnIDToVisible:(id)arg1 rowID:(id)arg2;
+- (void)selectCellForColumnID:(id)arg1 rowID:(id)arg2;
+- (void)selectCellRangeForCurrentCell;
+- (void)selectColumnWithID:(id)arg1;
+- (void)selectCurrentColumn;
+- (void)selectCurrentRow;
+- (void)selectRowWithID:(id)arg1;
+- (void)selectTableTextRange:(bool)arg1;
+- (id)selectedCells;
+- (id)selectedColumnIDs;
+- (id)selectedRowIDs;
+- (void)setTableAttachmentViewController:(id)arg1;
+- (void)setTableElement:(id)arg1;
+- (void)speakCellRangeSelection:(id)arg1;
+- (id)startSelectionKnob;
+- (id)table;
+- (id)tableAttachmentViewController;
+- (id)tableElement;
+- (void)tableRowOrColumnSelectionDidChange;
+- (id)tableScrollView;
+- (id)textViewForColumnID:(id)arg1;
+- (id)titleForColumnID:(id)arg1;
+- (id)titleForRowID:(id)arg1;
+
+@end

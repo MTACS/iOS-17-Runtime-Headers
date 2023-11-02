@@ -1,0 +1,4 @@
+
+@protocol UICollectionViewTableAllRowAttributes <UICollectionViewTableAttributes, UICollectionViewTableAutoRowAttributes, UICollectionViewTableOtherRowAttributes>
+
+@end

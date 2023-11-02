@@ -1,0 +1,4 @@
+
+@interface TRITripersistedTreatmentRoot : TRIPBRootObject
+
+@end

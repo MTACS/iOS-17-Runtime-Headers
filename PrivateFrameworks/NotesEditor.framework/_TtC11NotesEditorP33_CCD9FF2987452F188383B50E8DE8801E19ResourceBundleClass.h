@@ -1,0 +1,4 @@
+
+@interface _TtC11NotesEditorP33_CCD9FF2987452F188383B50E8DE8801E19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

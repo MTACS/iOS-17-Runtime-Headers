@@ -1,0 +1,4 @@
+
+@interface IntelligencePlatformCore.RegisteredViewsGenerationFullPhase : IntelligencePlatformCore.ViewGenerationFullPipelinePhase
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SXAdvertisementComponentView : SXComponentView
+
+@end

@@ -1,0 +1,102 @@
+
+@interface VKScreenCameraController : VKCameraController <VKAnnotationTrackingCameraController, VKGesturingCameraController> {
+    struct { 
+        bool shouldZoomToFit; 
+        double idealCenterCoordinateDistance; 
+        bool shouldPreserveUserSpecifiedZoomLevel; 
+        bool resetAfterTracking; 
+    }  _annotationTrackingBehavior;
+    VKAnnotationTrackingCameraController * _annotationTrackingCameraController;
+    long long  _annotationTrackingHeadingAnimationDisplayRate;
+    struct { 
+        double min; 
+        double max; 
+        bool allowRubberband; 
+    }  _centerCoordinateDistanceRange;
+    VKGestureCameraBehavior * _gestureCameraControllerBehavior;
+    bool  _hasVehicleHeading;
+    bool  _isPitchIncreasing;
+    VKTimedAnimation * _pitchAnimation;
+    VKTimedAnimation * _regionAnimation;
+    VKCameraRegionRestriction * _regionRestriction;
+    VKTimedAnimation * _rotationAnimation;
+    bool  _userChangedZoomSinceLastProgrammaticRegionChange;
+    VKAnimation * _zoomAnimation;
+    bool  _zoomAnimationCanBeInterrupted;
+}
+
+@property (getter=isAnimatingToTrackAnnotation, nonatomic, readonly) bool animatingToTrackAnnotation;
+@property (nonatomic) struct { bool x1; double x2; bool x3; bool x4; } annotationTrackingBehavior;
+@property (nonatomic) struct { double x1; double x2; bool x3; } centerCoordinateDistanceRange;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasVehicleHeading;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isAnimatingToTrackAnnotation;
+@property (nonatomic, readonly) bool isTrackingHeading;
+@property (nonatomic, retain) VKCameraRegionRestriction *regionRestriction;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) <VKTrackableAnnotation> *trackingAnnotation;
+@property (getter=isTrackingHeading, nonatomic, readonly) bool trackingHeading;
+@property (nonatomic) bool userChangedZoomSinceLastProgrammaticRegionChange;
+
+- (void).cxx_destruct;
+- (struct { bool x1; double x2; bool x3; bool x4; })annotationTrackingBehavior;
+- (bool)canEnter3DMode;
+- (struct { double x1; double x2; bool x3; })centerCoordinateDistanceRange;
+- (void)clampZoomLevelIfNecessary;
+- (void)clampZoomLevelIfNecessaryAnimated:(bool)arg1;
+- (void)dealloc;
+- (double)durationToAnimateToMapRegion:(id)arg1;
+- (void)enter3DMode;
+- (void)exit3DMode;
+- (bool)hasVehicleHeading;
+- (id)initWithMapDataAccess:(struct MapDataAccess { }*)arg1 animationRunner:(struct AnimationRunner { }*)arg2 runLoopController:(struct RunLoopController { }*)arg3 cameraDelegate:(id)arg4;
+- (bool)isAnimating;
+- (bool)isAnimatingToTrackAnnotation;
+- (bool)isTrackingHeading;
+- (void)panWithOffset:(struct CGPoint { double x1; double x2; })arg1 relativeToScreenPoint:(struct CGPoint { double x1; double x2; })arg2 animated:(bool)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
+- (id)regionRestriction;
+- (void)setAnnotationTrackingBehavior:(struct { bool x1; double x2; bool x3; bool x4; })arg1;
+- (void)setCamera:(struct shared_ptr<gdc::Camera> { struct Camera {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (void)setCenterCoordinate3D:(struct { double x1; double x2; double x3; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(long long)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(long long)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (void)setCenterCoordinateDistanceRange:(struct { double x1; double x2; bool x3; })arg1;
+- (void)setCenterCoordinateDistanceRange:(struct { double x1; double x2; bool x3; })arg1 duration:(double)arg2 timingFunction:(id /* block */)arg3;
+- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setHasVehicleHeading:(bool)arg1;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 timingCurve:(id /* block */)arg5 completion:(id /* block */)arg6;
+- (void)setRegionRestriction:(id)arg1;
+- (void)setRegionRestriction:(id)arg1 duration:(double)arg2 timingFunction:(id /* block */)arg3;
+- (void)setUserChangedZoomSinceLastProgrammaticRegionChange:(bool)arg1;
+- (void)setVkCamera:(id)arg1;
+- (void)setYaw:(double)arg1 animated:(bool)arg2;
+- (bool)snapMapIfNecessary:(bool)arg1;
+- (void)startPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1 panAtStartPoint:(bool)arg2;
+- (void)startPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startPitchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startRotatingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startTrackingAnnotation:(id)arg1 trackHeading:(bool)arg2 animated:(bool)arg3 duration:(double)arg4 timingFunction:(id /* block */)arg5;
+- (void)stopAnimations;
+- (void)stopPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopPitchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopRegionAnimation;
+- (void)stopRotatingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopSnappingAnimations;
+- (void)stopTrackingAnnotation;
+- (bool)tapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (long long)tileSize;
+- (id)trackingAnnotation;
+- (void)transferGestureState:(id)arg1;
+- (void)updatePanWithTranslation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)updatePinchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
+- (void)updatePitchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 degrees:(double)arg2;
+- (void)updatePitchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 translation:(double)arg2;
+- (void)updateRotationWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 newValue:(double)arg2;
+- (void)updateState;
+- (void)updateWithTimestamp:(double)arg1 withContext:(void*)arg2;
+- (bool)userChangedZoomSinceLastProgrammaticRegionChange;
+- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id /* block */)arg3;
+
+@end

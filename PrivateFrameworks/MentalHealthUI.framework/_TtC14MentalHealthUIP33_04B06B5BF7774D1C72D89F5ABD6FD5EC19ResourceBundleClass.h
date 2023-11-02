@@ -1,0 +1,4 @@
+
+@interface _TtC14MentalHealthUIP33_04B06B5BF7774D1C72D89F5ABD6FD5EC19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

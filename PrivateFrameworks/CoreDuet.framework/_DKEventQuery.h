@@ -1,0 +1,86 @@
+
+@interface _DKEventQuery : _DKQuery <NSCopying, _DKExecutableQuery> {
+    bool  _deduplicateValues;
+    NSObject<OS_dispatch_queue> * _defaultQueue;
+    NSSet * _deviceIDs;
+    bool  _disableBiomeShim;
+    NSArray * _eventStreams;
+    NSArray * _excludedMetadataKeys;
+    NSArray * _groupByProperties;
+    unsigned long long  _limit;
+    unsigned long long  _offset;
+    NSPredicate * _predicate;
+    bool  _readMetadata;
+    long long  _resultType;
+    id /* block */  _resultsHandler;
+    bool  _returnsDistinctResults;
+    NSArray * _sortDescriptors;
+}
+
+@property bool deduplicateValues;
+@property (retain) NSSet *deviceIDs;
+@property bool disableBiomeShim;
+@property (retain) NSArray *eventStreams;
+@property (retain) NSArray *excludedMetadataKeys;
+@property (retain) NSArray *groupByProperties;
+@property unsigned long long limit;
+@property unsigned long long offset;
+@property (retain) NSPredicate *predicate;
+@property bool readMetadata;
+@property long long resultType;
+@property (copy) id /* block */ resultsHandler;
+@property bool returnsDistinctResults;
+@property (retain) NSArray *sortDescriptors;
+
++ (id)allDevices;
++ (id)constructFetchRequestPredicateForEventStreams:(id)arg1 predicate:(id)arg2 deviceIDs:(id)arg3;
++ (id)eventQueryWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 sortDescriptors:(id)arg5;
++ (id)eventQueryWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 sortDescriptors:(id)arg5 resultHandler:(id /* block */)arg6;
++ (id)expressionForEventDuration;
++ (id)onlyLocalDevice;
++ (id)onlyRemoteDevice;
++ (id)predicateForEventsOfMaximumDuration:(double)arg1;
++ (id)predicateForEventsOfMinimumDuration:(double)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)constructFetchRequestPredicate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)deduplicateValues;
+- (id)description;
+- (id)deviceIDs;
+- (bool)disableBiomeShim;
+- (void)encodeWithCoder:(id)arg1;
+- (id)eventStreams;
+- (id)excludedMetadataKeys;
+- (id)executeUsingCoreDataStorage:(id)arg1 error:(id*)arg2;
+- (id)explicitEventStreamsOrEventStreamsInPredicate;
+- (id)groupByProperties;
+- (id)handleResults:(id)arg1 error:(id)arg2;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 sortDescriptors:(id)arg5 resultHandler:(id /* block */)arg6;
+- (unsigned long long)limit;
+- (unsigned long long)offset;
+- (id)predicate;
+- (bool)readMetadata;
+- (long long)resultType;
+- (id /* block */)resultsHandler;
+- (bool)returnsDistinctResults;
+- (void)setDeduplicateValues:(bool)arg1;
+- (void)setDeviceIDs:(id)arg1;
+- (void)setDisableBiomeShim:(bool)arg1;
+- (void)setEventStreams:(id)arg1;
+- (void)setExcludedMetadataKeys:(id)arg1;
+- (void)setGroupByProperties:(id)arg1;
+- (void)setLimit:(unsigned long long)arg1;
+- (void)setOffset:(unsigned long long)arg1;
+- (void)setPredicate:(id)arg1;
+- (void)setReadMetadata:(bool)arg1;
+- (void)setResultType:(long long)arg1;
+- (void)setResultsHandler:(id /* block */)arg1;
+- (void)setReturnsDistinctResults:(bool)arg1;
+- (void)setSortDescriptors:(id)arg1;
+- (id)sortDescriptors;
+
+@end

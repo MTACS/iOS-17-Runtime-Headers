@@ -1,0 +1,4 @@
+
+@protocol IKJSViewModelService <JSExport>
+
+@end

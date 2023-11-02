@@ -1,0 +1,4 @@
+
+@interface _TtC23SiriInvocationAnalyticsP33_03D004BFBD46EE55C251E0ECED9C243721FileLockDarwinDefault : _TtCs12_SwiftObject
+
+@end

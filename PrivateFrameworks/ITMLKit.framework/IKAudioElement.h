@@ -1,0 +1,4 @@
+
+@interface IKAudioElement : IKMediaElement
+
+@end

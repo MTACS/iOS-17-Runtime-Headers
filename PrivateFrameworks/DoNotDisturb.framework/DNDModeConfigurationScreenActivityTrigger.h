@@ -1,0 +1,4 @@
+
+@interface DNDModeConfigurationScreenActivityTrigger : DNDModeConfigurationTrigger
+
+@end

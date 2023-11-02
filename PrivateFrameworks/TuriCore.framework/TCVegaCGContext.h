@@ -1,0 +1,102 @@
+
+@interface TCVegaCGContext : NSObject <TCVegaCGContextInterface> {
+    struct CGContext { } * _bitmapContext;
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _currentTransform;
+    JSValue * _fillStyle;
+    NSString * _font;
+    double  _globalAlpha;
+    NSString * _lineCap;
+    double  _lineDashOffset;
+    NSString * _lineJoin;
+    double  _lineWidth;
+    double  _miterLimit;
+    UIFont * _nsFont;
+    NSString * _strokeStyle;
+    NSString * _textAlign;
+    double  pixelRatio;
+}
+
+@property (readonly) struct CGContext { }*context;
+@property (retain) JSValue *fillStyle;
+@property (retain) NSString *font;
+@property double globalAlpha;
+@property double height;
+@property (retain) NSString *lineCap;
+@property double lineDashOffset;
+@property (retain) NSString *lineJoin;
+@property double lineWidth;
+@property double miterLimit;
+@property (nonatomic) double pixelRatio;
+@property (retain) NSString *strokeStyle;
+@property (retain) NSString *textAlign;
+@property double width;
+
++ (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })flipYAxisWithHeight:(double)arg1;
++ (struct CGColor { }*)newColorFromR:(unsigned int)arg1 G:(unsigned int)arg2 B:(unsigned int)arg3 A:(unsigned int)arg4;
++ (struct CGColor { }*)newColorFromString:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)arcWithX:(double)arg1 y:(double)arg2 radius:(double)arg3 startAngle:(double)arg4 endAngle:(double)arg5 anticlockwise:(bool)arg6;
+- (void)beginPath;
+- (void)bezierCurveToCP1x:(double)arg1 cp1y:(double)arg2 cp2x:(double)arg3 cp2y:(double)arg4 x:(double)arg5 y:(double)arg6;
+- (void)clearRectWithX:(double)arg1 y:(double)arg2 w:(double)arg3 h:(double)arg4;
+- (void)clip;
+- (void)closePath;
+- (struct CGContext { }*)context;
+- (id)createLinearGradientWithX0:(double)arg1 y0:(double)arg2 x1:(double)arg3 y1:(double)arg4;
+- (void)dealloc;
+- (void)fill;
+- (void)fillRectWithX:(double)arg1 y:(double)arg2 width:(double)arg3 height:(double)arg4;
+- (id)fillStyle;
+- (void)fillTextWithString:(id)arg1 x:(double)arg2 y:(double)arg3;
+- (id)font;
+- (double)globalAlpha;
+- (double)height;
+- (id)init;
+- (bool)isPointInPathWithX:(double)arg1 y:(double)arg2;
+- (id)lineCap;
+- (double)lineDashOffset;
+- (id)lineJoin;
+- (void)lineToX:(double)arg1 y:(double)arg2;
+- (double)lineWidth;
+- (id)measureText:(id)arg1;
+- (double)miterLimit;
+- (void)moveToX:(double)arg1 y:(double)arg2;
+- (double)pixelRatio;
+- (void)rectWithX:(double)arg1 y:(double)arg2 width:(double)arg3 height:(double)arg4;
+- (void)resizeWithWidth:(double)arg1 height:(double)arg2;
+- (void)restore;
+- (void)rotateWithAngle:(double)arg1;
+- (void)save;
+- (void)setFillStyle:(id)arg1;
+- (void)setFont:(id)arg1;
+- (void)setGlobalAlpha:(double)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setLineCap:(id)arg1;
+- (void)setLineDashOffset:(double)arg1;
+- (void)setLineDashWithSegments:(id)arg1;
+- (void)setLineJoin:(id)arg1;
+- (void)setLineWidth:(double)arg1;
+- (void)setMiterLimit:(double)arg1;
+- (void)setPixelRatio:(double)arg1;
+- (void)setStrokeStyle:(id)arg1;
+- (void)setTextAlign:(id)arg1;
+- (void)setTransformWithA:(double)arg1 b:(double)arg2 c:(double)arg3 d:(double)arg4 e:(double)arg5 f:(double)arg6;
+- (void)setWidth:(double)arg1;
+- (void)stroke;
+- (id)strokeStyle;
+- (void)strokeTextWithString:(id)arg1 x:(double)arg2 y:(double)arg3;
+- (id)textAlign;
+- (id)textAttributes;
+- (void)textWithString:(id)arg1 x:(double)arg2 y:(double)arg3 drawingMode:(int)arg4;
+- (void)translateWithX:(double)arg1 y:(double)arg2;
+- (double)width;
+
+@end

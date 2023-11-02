@@ -1,0 +1,4 @@
+
+@protocol HMEMessageDatagramConnection <HMEConnection>
+
+@end

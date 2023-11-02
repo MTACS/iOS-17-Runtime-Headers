@@ -1,0 +1,48 @@
+
+@interface SFPrintPageRenderer : UIPrintPageRenderer <UIPrintInteractionControllerDelegate> {
+    NSString * _URLString;
+    double  _URLWidth;
+    UIPrintFormatter * _contentFormatter;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _contentOffset;
+    NSString * _dateString;
+    double  _dateWidth;
+    <SFPrintPageRendererDelegate> * _delegate;
+    UIColor * _footerColor;
+    UIFont * _footerFont;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _footerOffset;
+    NSNumberFormatter * _numberFormatter;
+    bool  _printFooter;
+    double  _printWidth;
+}
+
+@property (nonatomic, retain) NSString *URLString;
+@property (nonatomic, retain) UIPrintFormatter *contentFormatter;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SFPrintPageRendererDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool printFooter;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)URLString;
+- (id)contentFormatter;
+- (id)delegate;
+- (void)drawFooterForPageAtIndex:(long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)init;
+- (bool)printFooter;
+- (void)printInteractionControllerDidFinishJob:(id)arg1;
+- (id)printInteractionControllerParentViewController:(id)arg1;
+- (void)printInteractionControllerWillStartJob:(id)arg1;
+- (void)setContentFormatter:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setPrintFooter:(bool)arg1;
+- (void)setURLString:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmQueensBirthday : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

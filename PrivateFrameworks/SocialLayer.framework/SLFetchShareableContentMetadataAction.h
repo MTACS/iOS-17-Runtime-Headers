@@ -1,0 +1,4 @@
+
+@interface SLFetchShareableContentMetadataAction : SLShareableContentAction
+
+@end

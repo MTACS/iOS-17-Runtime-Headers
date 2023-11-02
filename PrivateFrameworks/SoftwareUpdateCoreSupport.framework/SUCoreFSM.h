@@ -1,0 +1,87 @@
+
+@interface SUCoreFSM : NSString {
+    NSString * _currentState;
+    SUCoreDiag * _diag;
+    NSObject<OS_dispatch_queue> * _extendedStateQueue;
+    NSString * _fsmName;
+    NSString * _fullName;
+    NSString * _instanceName;
+    bool  _isActive;
+    NSString * _pendingFollowupEvent;
+    id  _pendingFollowupInfo;
+    bool  _performingEvent;
+    NSMutableDictionary * _registeredActionTable;
+    NSString * _startState;
+    NSDictionary * _stateTable;
+    unsigned long long  _untrackedOccurrences;
+    NSMutableDictionary * _usageTable;
+}
+
+@property (nonatomic, retain) NSString *currentState;
+@property (nonatomic, readonly) SUCoreDiag *diag;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *extendedStateQueue;
+@property (nonatomic, readonly, retain) NSString *fsmName;
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly, retain) NSString *instanceName;
+@property (nonatomic) bool isActive;
+@property (nonatomic, retain) NSString *pendingFollowupEvent;
+@property (nonatomic, retain) id pendingFollowupInfo;
+@property (nonatomic) bool performingEvent;
+@property (nonatomic, readonly) NSMutableDictionary *registeredActionTable;
+@property (nonatomic, readonly) NSString *startState;
+@property (nonatomic, readonly) NSDictionary *stateTable;
+@property (nonatomic) unsigned long long untrackedOccurrences;
+@property (nonatomic, retain) NSMutableDictionary *usageTable;
+
+- (void).cxx_destruct;
+- (id)_acceptEvent:(id)arg1 withInfo:(id)arg2 issueType:(id)arg3 attachedAction:(id*)arg4;
+- (bool)_activateMachineWithStateTable:(id)arg1 withActionTable:(id)arg2;
+- (id)_initMachine:(id)arg1 ofInstance:(id)arg2 withTable:(id)arg3 startingIn:(id)arg4 usingDelegate:(id)arg5 registeringAllInfoClass:(Class)arg6 registeringAndActivating:(bool)arg7;
+- (void)_performEvent:(id)arg1 withInfo:(id)arg2 issueType:(id)arg3 forCell:(id)arg4 attachedAction:(id)arg5 checkingAttached:(bool)arg6;
+- (void)_postEvent:(id)arg1 withInfo:(id)arg2;
+- (void)_registerAction:(id)arg1 ForEvent:(id)arg2 inState:(id)arg3 usingDelegate:(id)arg4 withInfoClass:(Class)arg5 actionTable:(id)arg6 loggingRegistration:(bool)arg7;
+- (void)_registerAllActions:(id)arg1 withInfoClass:(Class)arg2 stateTable:(id)arg3 actionTable:(id)arg4 loggingRegistration:(bool)arg5;
+- (void)_simulateEventAlteration:(id)arg1 fsmEvent:(id*)arg2 eventInfo:(id*)arg3 attachedAction:(id*)arg4;
+- (void)_trackEventOccurrence:(id)arg1 withInfo:(id)arg2 issueType:(id)arg3;
+- (void)_triggerAction:(id)arg1 usingAttached:(id)arg2 onEvent:(id)arg3 inState:(id)arg4 withInfo:(id)arg5 nextState:(id)arg6;
+- (void)activateMachine;
+- (id)copyCurrentState;
+- (id)copyCurrentStateProtected;
+- (id)currentState;
+- (id)diag;
+- (void)dumpEventInStateOccurrences:(id)arg1;
+- (id)extendedStateQueue;
+- (void)followupEvent:(id)arg1;
+- (void)followupEvent:(id)arg1 withInfo:(id)arg2;
+- (id)fsmName;
+- (id)fullName;
+- (id)initMachine:(id)arg1 ofInstance:(id)arg2 withTable:(id)arg3 startingIn:(id)arg4;
+- (id)initMachine:(id)arg1 ofInstance:(id)arg2 withTable:(id)arg3 startingIn:(id)arg4 usingDelegate:(id)arg5 registeringAllInfoClass:(Class)arg6;
+- (id)initMachine:(id)arg1 withTable:(id)arg2 startingIn:(id)arg3;
+- (id)initMachine:(id)arg1 withTable:(id)arg2 startingIn:(id)arg3 usingDelegate:(id)arg4 registeringAllInfoClass:(Class)arg5;
+- (id)instanceName;
+- (bool)isActive;
+- (id)pendingFollowupEvent;
+- (id)pendingFollowupInfo;
+- (bool)performingEvent;
+- (void)postEvent:(id)arg1;
+- (void)postEvent:(id)arg1 withInfo:(id)arg2;
+- (void)postProtectedEvent:(id)arg1;
+- (void)postProtectedEvent:(id)arg1 withInfo:(id)arg2;
+- (void)registerAction:(id)arg1 ForEvent:(id)arg2 inState:(id)arg3 usingDelegate:(id)arg4 withInfoClass:(Class)arg5;
+- (void)registerAllActions:(id)arg1 withInfoClass:(Class)arg2;
+- (id)registeredActionTable;
+- (void)setCurrentState:(id)arg1;
+- (void)setIsActive:(bool)arg1;
+- (void)setPendingFollowupEvent:(id)arg1;
+- (void)setPendingFollowupInfo:(id)arg1;
+- (void)setPerformingEvent:(bool)arg1;
+- (void)setUntrackedOccurrences:(unsigned long long)arg1;
+- (void)setUsageTable:(id)arg1;
+- (id)startState;
+- (id)stateTable;
+- (void)teardownMachine;
+- (unsigned long long)untrackedOccurrences;
+- (id)usageTable;
+
+@end

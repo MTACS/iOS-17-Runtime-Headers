@@ -1,0 +1,4 @@
+
+@interface UIPDFHighlightAnnotationView : UIPDFAnnotationView
+
+@end

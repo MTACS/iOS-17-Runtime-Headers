@@ -1,0 +1,4 @@
+
+@interface MKFRoomDatabaseID : MKFModelDatabaseID
+
+@end

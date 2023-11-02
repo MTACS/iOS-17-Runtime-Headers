@@ -1,0 +1,4 @@
+
+@protocol HKSharedSummaryCloudSyncManagerClientInterface <NSObject>
+
+@end

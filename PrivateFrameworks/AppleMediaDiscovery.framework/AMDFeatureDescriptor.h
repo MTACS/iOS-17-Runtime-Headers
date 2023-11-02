@@ -1,0 +1,91 @@
+
+@interface AMDFeatureDescriptor : NSObject {
+    NSString * _aggregatedProperty;
+    NSMutableArray * _aggregatedPropertyList;
+    NSObject * _defaultJoinValue;
+    NSDictionary * _defaultJoinValueDict;
+    bool  _doOuterJoin;
+    NSString * _featureName;
+    NSFetchRequest * _fetchRequest;
+    NSArray * _joinRequiredColumns;
+    NSString * _joinTable;
+    NSString * _joinTableDomain;
+    NSString * _joinType;
+    NSString * _keyProperty;
+    NSNumber * _maxRecords;
+    NSMutableDictionary * _propertyDict;
+    NSString * _sortKey;
+    NSNumber * _sortOrder;
+    NSString * _version;
+}
+
+@property (nonatomic, retain) NSString *aggregatedProperty;
+@property (nonatomic, retain) NSMutableArray *aggregatedPropertyList;
+@property (nonatomic, retain) NSObject *defaultJoinValue;
+@property (nonatomic, retain) NSDictionary *defaultJoinValueDict;
+@property (nonatomic) bool doOuterJoin;
+@property (nonatomic, retain) NSString *featureName;
+@property (nonatomic, retain) NSFetchRequest *fetchRequest;
+@property (nonatomic, retain) NSArray *joinRequiredColumns;
+@property (nonatomic, retain) NSString *joinTable;
+@property (nonatomic, retain) NSString *joinTableDomain;
+@property (nonatomic) NSString *joinType;
+@property (nonatomic, retain) NSString *keyProperty;
+@property (nonatomic, retain) NSNumber *maxRecords;
+@property (nonatomic, retain) NSMutableDictionary *propertyDict;
+@property (nonatomic, retain) NSString *sortKey;
+@property (nonatomic, retain) NSNumber *sortOrder;
+@property (nonatomic, retain) NSString *version;
+
++ (id)getDataType:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)aggregatedProperty;
+- (id)aggregatedPropertyList;
+- (bool)checkJoinParameters;
+- (id)defaultJoinValue;
+- (id)defaultJoinValueDict;
+- (bool)doOuterJoin;
+- (id)featureName;
+- (id)fetchRequest;
+- (id)getFeature:(id*)arg1;
+- (id)getFeatureData:(id*)arg1;
+- (id)initWithDictionary:(id)arg1 withUserId:(id)arg2 featureName:(id)arg3;
+- (id)initWithDictionaryV2:(id)arg1 withUserId:(id)arg2 featureName:(id)arg3 withDomain:(id)arg4;
+- (id)joinRequiredColumns;
+- (id)joinTable;
+- (id)joinTableDomain;
+- (id)joinType;
+- (id)keyProperty;
+- (id)maxRecords;
+- (void)outerJoin:(id)arg1;
+- (id)performInnerJoin:(id)arg1;
+- (id)performOuterJoin:(id)arg1;
+- (id)prepareArrayResult:(id)arg1;
+- (id)prepareDictionaryResult:(id)arg1;
+- (id)prepareResult:(id)arg1;
+- (id)propertyDict;
+- (void)setAggregatedProperty:(id)arg1;
+- (void)setAggregatedPropertyList:(id)arg1;
+- (void)setDefaultJoinValue:(id)arg1;
+- (void)setDefaultJoinValueDict:(id)arg1;
+- (void)setDoOuterJoin:(bool)arg1;
+- (void)setFeatureName:(id)arg1;
+- (void)setFetchRequest:(id)arg1;
+- (void)setJoinRequiredColumns:(id)arg1;
+- (void)setJoinTable:(id)arg1;
+- (void)setJoinTableDomain:(id)arg1;
+- (void)setJoinType:(id)arg1;
+- (void)setKeyProperty:(id)arg1;
+- (void)setMaxRecords:(id)arg1;
+- (void)setPropertyDict:(id)arg1;
+- (void)setSortKey:(id)arg1;
+- (void)setSortOrder:(id)arg1;
+- (void)setVersion:(id)arg1;
+- (id)sort:(id)arg1;
+- (id)sortKey;
+- (id)sortOrder;
+- (id)transformTPDataForJoin:(id)arg1;
+- (id)version;
+
+@end

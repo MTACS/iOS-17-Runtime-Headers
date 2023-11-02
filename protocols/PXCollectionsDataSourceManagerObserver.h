@@ -1,0 +1,4 @@
+
+@protocol PXCollectionsDataSourceManagerObserver <PXSectionedDataSourceManagerObserver>
+
+@end

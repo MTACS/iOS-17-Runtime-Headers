@@ -1,0 +1,4 @@
+
+@protocol GEOResourceManifestUpdateAssertionRecord <NSObject>
+
+@end

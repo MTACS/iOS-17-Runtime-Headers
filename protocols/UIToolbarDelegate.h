@@ -1,0 +1,4 @@
+
+@protocol UIToolbarDelegate <UIBarPositioningDelegate>
+
+@end

@@ -1,0 +1,83 @@
+
+@interface VCPMediaAnalysisService : NSObject <VCPMediaAnalysisClientProtocol> {
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _handlerQueue;
+    NSObject<OS_dispatch_queue> * _managementQueue;
+    int  _nextRequestID;
+    NSMutableDictionary * _progressBlocks;
+}
+
++ (id)analysisService;
++ (id)defaultDeferredProcessingTypes;
++ (id)errorWithDescription:(id)arg1;
++ (int)queryCachedFaceAnalysisProgress:(id*)arg1 forPhotoLibrary:(id)arg2;
++ (int)queryCachedFaceAnalysisProgress:(id*)arg1 forPhotoLibrary:(id)arg2 withExtendTimeoutBlock:(id /* block */)arg3;
++ (int)queryProgress:(float*)arg1 forPhotoLibrary:(id)arg2 andTaskID:(unsigned long long)arg3;
++ (int)queryProgress:(float*)arg1 forPhotoLibrary:(id)arg2 andTaskID:(unsigned long long)arg3 withExtendTimeoutBlock:(id /* block */)arg4;
++ (int)queryProgressDetail:(id*)arg1 forPhotoLibrary:(id)arg2 andTaskID:(unsigned long long)arg3;
++ (int)queryProgressDetail:(id*)arg1 forPhotoLibrary:(id)arg2 andTaskID:(unsigned long long)arg3 withExtendTimeoutBlock:(id /* block */)arg4;
++ (int)queryProgressDetail:(id*)arg1 forPhotoLibraryURL:(id)arg2 andTaskID:(unsigned long long)arg3;
++ (int)queryProgressDetail:(id*)arg1 forPhotoLibraryURL:(id)arg2 andTaskID:(unsigned long long)arg3 withExtendTimeoutBlock:(id /* block */)arg4;
++ (id)sharedAnalysisService;
+
+- (void).cxx_destruct;
+- (id)assetsPendingDeferredProcessingWithPhotoLibraryURL:(id)arg1 error:(id*)arg2;
+- (void)cancelAllRequests;
+- (void)cancelBackgroundActivity;
+- (void)cancelRequest:(int)arg1;
+- (id)connection;
+- (int)downloadVideoEncoderWithCompletionHandler:(id /* block */)arg1;
+- (id)init;
+- (void)invalidate;
+- (void)notifyLibraryAvailableAtURL:(id)arg1;
+- (int)queryAutoCounterOptInStatusForPhotoLibraryURL:(id)arg1 withPersonLocalIdentifiers:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)reportProgress:(double)arg1 forRequest:(int)arg2;
+- (int)requestAnalysisTypes:(unsigned long long)arg1 forAssetWithResourceURLs:(id)arg2 withOptions:(id)arg3 progressHandler:(id /* block */)arg4 andCompletionHandler:(id /* block */)arg5;
+- (int)requestAnalysisTypes:(unsigned long long)arg1 forAssets:(id)arg2 withOptions:(id)arg3 progressHandler:(id /* block */)arg4 andCompletionHandler:(id /* block */)arg5;
+- (int)requestAutoCounterAccuracyCalculationForPhotoLibraryURL:(id)arg1 clusterStateURL:(id)arg2 groundTruthURL:(id)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestAutoCounterAccuracyCalculationForPhotoLibraryURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (int)requestAutoCounterSIMLValidationForPhotoLibraryURL:(id)arg1 simlGroundTruthURL:(id)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestBackgroundAnalysisForAssets:(id)arg1 fromPhotoLibraryWithURL:(id)arg2 realTime:(bool)arg3 progessHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (int)requestBackgroundAnalysisForAssets:(id)arg1 realTime:(bool)arg2 progessHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestBackgroundProcessingWithTaskID:(unsigned long long)arg1 forPhotoLibrary:(id)arg2 progessHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestClusterCacheValidationWithPhotoLibraryURL:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (bool)requestDeferredProcessingTypes:(id)arg1 assets:(id)arg2 error:(id*)arg3;
+- (int)requestDumpAutoCounterForPhotoLibraryURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (int)requestFRCForAssetURL:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestFaceCandidatesforKeyFaceForPersonsWithLocalIdentifiers:(id)arg1 photoLibraryURL:(id)arg2 progessHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestFaceProcessingForAssets:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestFaceProcessingForPhotoLibrary:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestForceDeferredProcessingWithProgessHandler:(id /* block */)arg1 andCompletionHandler:(id /* block */)arg2;
+- (int)requestFullProcessingForPhotoLibrary:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestIdentificationOfFaces:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (int)requestLivePhotoEffectsForAssets:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestMediaAnalysisDatabaseBackupForPhotoLibraryURL:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (int)requestMultiWorkerProcessingForPhotoLibrary:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestOptInAutoCounterForPhotoLibraryURL:(id)arg1 withPersons:(id)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestPersonPreferenceForPhotoLibraryURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (int)requestPersonProcessingForPhotoLibraryURL:(id)arg1 options:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestPersonPromoterStatusWithAdvancedFlag:(bool)arg1 photoLibraryURL:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestProcessingTypes:(unsigned long long)arg1 forAssetsWithLocalIdentifiers:(id)arg2 fromPhotoLibraryWithURL:(id)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (int)requestProcessingWithTaskID:(unsigned long long)arg1 forAssets:(id)arg2 withOptions:(id)arg3 progressHandler:(id /* block */)arg4 andCompletionHandler:(id /* block */)arg5;
+- (int)requestProcessingWithTaskID:(unsigned long long)arg1 forPhotoLibrary:(id)arg2 withOptions:(id)arg3 progessHandler:(id /* block */)arg4 andCompletionHandler:(id /* block */)arg5;
+- (int)requestQuickFaceIdentificationForPhotoLibraryURL:(id)arg1 withOptions:(id)arg2 andCompletionHandler:(id /* block */)arg3;
+- (int)requestRebuildPersonsWithLocalIdentifiers:(id)arg1 photoLibraryURL:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestRecentsProcessing:(unsigned long long)arg1 photoLibrary:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestReclusterFacesWithPhotoLibraryURL:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestResetFaceClassificationModelForPhotoLibraryURL:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestResetFaceClusteringStateWithPhotoLibraryURL:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestResetPersons:(id)arg1 forPhotoLibraryURL:(id)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestResetPetClassificationModelForPhotoLibraryURL:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestSceneProcessingForAssets:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestSceneProcessingForPhotoLibrary:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestSceneprintProcessingForAssets:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestStaticStickerScoringForLibrary:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestSuggestedMePersonIdentifierWithContext:(id)arg1 photoLibraryURL:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestSuggestedPersonsForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedPersonSuggestions:(id)arg2 toBeRejectedPersonSuggestions:(id)arg3 photoLibraryURL:(id)arg4 progessHandler:(id /* block */)arg5 completionHandler:(id /* block */)arg6;
+- (int)requestUpdateKeyFacesOfPersonsWithLocalIdentifiers:(id)arg1 forceUpdate:(bool)arg2 photoLibraryURL:(id)arg3 progessHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (int)requestVIPModelFilepathForPhotoLibraryURL:(id)arg1 forModelType:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (int)requestVideoCaptionForFrames:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestVideoStabilizationForAssets:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3 andCompletionHandler:(id /* block */)arg4;
+- (int)requestWallpaperUpgradeAtURL:(id)arg1 toDestinationURL:(id)arg2 withOptions:(id)arg3 andCompletionHandler:(id /* block */)arg4;
+
+@end

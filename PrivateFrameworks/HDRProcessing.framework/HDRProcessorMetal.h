@@ -1,0 +1,4 @@
+
+@interface HDRProcessorMetal : HDRProcessor
+
+@end

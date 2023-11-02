@@ -1,0 +1,4 @@
+
+@interface _TtCC9ChronoKit19ChronoMetadataStore27MutableRemoteExtensionStore : _TtCC9ChronoKit19ChronoMetadataStore20RemoteExtensionStore
+
+@end

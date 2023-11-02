@@ -1,0 +1,63 @@
+
+@interface CDMPostProcessUtils : NSObject
+
++ (void)addNormalizedValuesTo:(id)arg1 alignedWith:(id)arg2 from:(id)arg3;
++ (void)annotateDUDAWithMRRRewrittenUtterance:(id)arg1 matchingSpans:(id)arg2 userDialogAct:(id)arg3;
++ (void)annotateDelegatedUDAParses:(id)arg1 matchingSpans:(id)arg2 mrRewrittenUtterance:(id)arg3;
++ (void)annotateNLUResponse:(id)arg1 nluRequest:(id)arg2 matchingSpans:(id)arg3 tokenChain:(id)arg4;
++ (void)annotateParses:(id)arg1 tokenChain:(id)arg2 matchingSpans:(id)arg3 asrHypothesis:(id)arg4;
++ (void)annotateUserParses:(id)arg1 correctionOutcome:(id)arg2;
++ (void)copyASRTimingInfoToUtteranceSpan:(id)arg1 startIndexTokenDict:(id)arg2 endIndexTokenDict:(id)arg3;
++ (void)copyAlignedSpanEntitySpanForSameType:(id)arg1 spanIndexDict:(id)arg2 utteranceAlignment:(id)arg3 entityKey:(id)arg4 tokenChain:(id)arg5;
++ (void)copyAlignedSpanIdentifierForSameType:(id)arg1 spanIndexDict:(id)arg2 utteranceAlignment:(id)arg3 entityKey:(id)arg4 groupIndexDict:(id)arg5 tokenChain:(id)arg6;
++ (void)copyMentionResolverSpanEntitySpans:(id)arg1 fromMatchingSpans:(id)arg2 toParseGraph:(id)arg3;
++ (void)copyMentionResolverSpanIdentifiers:(id)arg1 fromMatchingSpans:(id)arg2 toParseGraph:(id)arg3;
++ (void)copySubsumedSpanEntitySpan:(id)arg1 spans:(id)arg2 parseEntityKey:(id)arg3 utteranceAlignment:(id)arg4 tokenChain:(id)arg5;
++ (void)createIdentifierGroups:(id)arg1 spans:(id)arg2 parseEntityKey:(id)arg3 parseAlignment:(id)arg4 interpretationGroupCurrentMax:(id)arg5;
++ (id)entityKeyFrom:(id)arg1 at:(unsigned long long)arg2;
++ (id)filterAndConvertInternalMatchingSpan:(id)arg1;
++ (id)filterAndConvertInternalMatchingSpans:(id)arg1;
++ (id)getAlignedEntitySpanSpans:(id)arg1;
++ (id)getAlignedIdentifierSpans:(id)arg1;
++ (id)getCorrectionOutcomeFromUserParses:(id)arg1 ccqrCorrectionOutcome:(id)arg2;
++ (id)getCroppedUserParses:(id)arg1;
++ (id)getFederatedParses:(id)arg1 parsesNLv4:(id)arg2 parsesCATI:(id)arg3 parsesUaaP:(id)arg4 parsesPSC:(id)arg5 parsesAutoShortcuts:(id)arg6 parsesAppendOverrides:(id)arg7 parsesSSU:(id)arg8 addDebugInfo:(id)arg9;
++ (id)getGroupIndexDict:(id)arg1;
++ (id)getPostProcessUserParses:(id)arg1;
++ (id)getPostProcessUserParses:(id)arg1 parsesNLv4:(id)arg2 parsesCATI:(id)arg3 addDebugInfo:(id)arg4;
++ (id)getPostProcessUserParses:(id)arg1 parsesNLv4:(id)arg2 parsesCATI:(id)arg3 parsesUaaP:(id)arg4 addDebugInfo:(id)arg5;
++ (id)getPostProcessUserParses:(id)arg1 parsesNLv4:(id)arg2 parsesCATI:(id)arg3 parsesUaaP:(id)arg4 parsesPSC:(id)arg5 parsesAutoShortcuts:(id)arg6 parsesAppendOverrides:(id)arg7 parsesSSU:(id)arg8 addDebugInfo:(id)arg9;
++ (id)getSignificantTokenCountFrom:(unsigned int)arg1 to:(unsigned int)arg2 within:(id)arg3;
++ (bool)hasEntityEdgeTo:(int)arg1 inGraph:(id)arg2;
++ (bool)hasTagNamespace:(id)arg1;
++ (unsigned char)isExternalMatchingSpan:(id)arg1 fromMatcher:(int)arg2;
++ (unsigned char)isInternalMatchingSpan:(id)arg1 fromMatcher:(int)arg2;
++ (void)logParsesRanking:(id)arg1 addDebugInfo:(id)arg2;
++ (void)mapVocGenericBundleIdsToPlatformBundleIdsForGraph:(id)arg1;
++ (void)mapVocGenericBundleIdsToPlatformBundleIdsForParse:(id)arg1;
++ (id)normalizedPayloadsFrom:(long long)arg1 to:(long long)arg2 within:(id)arg3;
++ (void)populateComparableProbabilityForParsesNLv4:(id)arg1 parsesSNLC:(id)arg2;
++ (void)populateComparableProbabilityFromProbabilityParses:(id)arg1;
++ (void)populateComparableProbabilityParses:(id)arg1 threshold:(float)arg2;
++ (void)populateComparableProbabilityParsesAutoShortcuts:(id)arg1;
++ (void)populateComparableProbabilityParsesCATI:(id)arg1;
++ (void)populateComparableProbabilityParsesPSC:(id)arg1;
++ (void)populateComparableProbabilityParsesSNLC:(id)arg1 deviceParses:(id)arg2;
++ (void)populateComparableProbabilityParsesSSU:(id)arg1;
++ (void)populateComparableProbabilityParsesUaaP:(id)arg1;
++ (void)removeProbabilityFromUserParses:(id)arg1;
++ (id)rewriteMessageFromMatchingSpans:(id)arg1 mrRewrittenUtterance:(id)arg2;
++ (void)runFeatureStore:(id)arg1 nluResponse:(id)arg2 snlcRequest:(id)arg3 snlcResponse:(id)arg4 pscRequest:(id)arg5 pscResponse:(id)arg6 spanProtoResponse:(id)arg7 tokenProtoResponse:(id)arg8 mdRequest:(id)arg9 mdResponse:(id)arg10 mrRequest:(id)arg11 mrResponse:(id)arg12 nLv4Request:(id)arg13 nLv4Response:(id)arg14;
++ (id)runPostProcess:(id)arg1 snlcRequest:(id)arg2 snlcResponse:(id)arg3 nLv4Request:(id)arg4 nLv4Response:(id)arg5 uaapNLProtoResponse:(id)arg6 catiProtoResponse:(id)arg7 pscRequest:(id)arg8 pscResponse:(id)arg9 lvcResponse:(id)arg10 overridesProtoResponse:(id)arg11 mdRequest:(id)arg12 mdResponse:(id)arg13 mrRequest:(id)arg14 mrResponse:(id)arg15 spanProtoResponse:(id)arg16 rdResponse:(id)arg17 tokenProtoResponse:(id)arg18 ssuResponse:(id)arg19 ccqrResponse:(id)arg20 correctionOutcome:(id)arg21 nluRequest:(id)arg22 graphInput:(id)arg23 debugText:(id)arg24;
++ (id)selectParsesFromUserParsesUaaP:(id)arg1 userParsesShortcut:(id)arg2 userParsesReplaceOverrides:(id)arg3 userParsesAppendOverrides:(id)arg4 userParsesSNLC:(id)arg5 userParsesNLv4:(id)arg6 userParsesCATI:(id)arg7 userParsesPSC:(id)arg8 userParsesAutoShortcuts:(id)arg9 userParsesSSU:(id)arg10 addDebugInfo:(id)arg11;
++ (id)significantTokenCountFrom:(unsigned int)arg1 to:(unsigned int)arg2 within:(id)arg3;
++ (id)sortParses:(id)arg1;
++ (id)spanIndexDict:(id)arg1 tokenChain:(id)arg2;
++ (void)splitParses:(id)arg1 deviceParses:(id)arg2 zeroParses:(id)arg3;
++ (void)stripBugFixNamespaceSuffix:(id)arg1;
++ (void)stripBugFixPropertyKeySuffix:(id)arg1;
++ (id)supplementaryOutputFromMatchingSpans:(id)arg1 rewriteMessage:(id)arg2 correctionOutcome:(id)arg3;
++ (void)updateIndexesForSignificantTokensFrom:(unsigned int*)arg1 to:(unsigned int*)arg2 tokenChain:(id)arg3 entityKey:(id)arg4;
++ (id)usoGraphs:(id)arg1;
+
+@end

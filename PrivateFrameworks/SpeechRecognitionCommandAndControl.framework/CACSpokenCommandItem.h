@@ -1,0 +1,90 @@
+
+@interface CACSpokenCommandItem : CACSpokenCommandGroup {
+    id  _commandInfo;
+    NSMutableDictionary * _customDictionary;
+    bool  _isEdited;
+    NSString * _locale;
+    NSArray * _searchAlternates;
+    NSString * _untranslatedDisplayString;
+    NSString * _untranslatedLocale;
+}
+
+@property (nonatomic, retain) id commandInfo;
+@property (nonatomic, retain) NSString *customAppName;
+@property (nonatomic, retain) AXReplayableGesture *customGesture;
+@property (nonatomic, retain) NSArray *customPasteBoard;
+@property (nonatomic, retain) NSString *customScope;
+@property (nonatomic, retain) NSString *customShortcutsWorkflowIdentifier;
+@property (nonatomic, retain) NSString *customTextToInsert;
+@property (nonatomic, retain) NSString *customType;
+@property (nonatomic, retain) CACRecordedUserActionFlow *customUserActionFlow;
+@property (nonatomic) bool isCollapsed;
+@property (nonatomic) bool isEdited;
+@property (nonatomic, retain) NSString *locale;
+@property (nonatomic, retain) NSArray *searchAlternates;
+@property (nonatomic, retain) NSString *untranslatedDisplayString;
+@property (nonatomic, retain) NSString *untranslatedLocale;
+
++ (id)newCommandItemWithLocale:(id)arg1 scope:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)_customCommandStringsWithLocale:(id)arg1;
+- (void)_reloadFromProperties:(id)arg1;
+- (void)_saveKey:(id)arg1 toDictionary:(id)arg2;
+- (void)_setCustomCommandStrings:(id)arg1 withLocale:(id)arg2;
+- (void)_updateBuiltInCommandsWithLocale:(id)arg1;
+- (id)cloneWithoutCommands;
+- (id)commandInfo;
+- (id)commandsArray;
+- (bool)conflictsWithItem:(id)arg1;
+- (id)copy;
+- (id)customAppName;
+- (id)customGesture;
+- (id)customPasteBoard;
+- (id)customScope;
+- (id)customShortcutsWorkflowIdentifier;
+- (id)customTextToInsert;
+- (id)customType;
+- (id)customUserActionFlow;
+- (id)description;
+- (id)dictionaryForSavingToPreferences;
+- (id)displayString;
+- (bool)evaluateCommandPredicate:(id)arg1;
+- (id)initWithIdentifier:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 properties:(id)arg2 locale:(id)arg3;
+- (bool)isCollapsed;
+- (bool)isEdited;
+- (bool)isGroup;
+- (bool)isVisible;
+- (id)locale;
+- (id)primaryBuiltinCommandForLocale:(id)arg1;
+- (void)refreshDataFromPreferences;
+- (void)removeFromPreferences;
+- (void)saveToPreferences;
+- (id)searchAlternates;
+- (void)setCommandInfo:(id)arg1;
+- (void)setCustomAppName:(id)arg1;
+- (void)setCustomGesture:(id)arg1;
+- (void)setCustomPasteBoard:(id)arg1;
+- (void)setCustomScope:(id)arg1;
+- (void)setCustomShortcutsWorkflowIdentifier:(id)arg1;
+- (void)setCustomTextToInsert:(id)arg1;
+- (void)setCustomType:(id)arg1;
+- (void)setCustomUserActionFlow:(id)arg1;
+- (void)setDisplayString:(id)arg1;
+- (void)setIsCollapsed:(bool)arg1;
+- (void)setIsConfirmationRequired:(bool)arg1;
+- (void)setIsEdited:(bool)arg1;
+- (void)setIsEnabled:(bool)arg1;
+- (void)setLocale:(id)arg1;
+- (void)setSearchAlternates:(id)arg1;
+- (void)setUntranslatedDisplayString:(id)arg1;
+- (void)setUntranslatedLocale:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2 locale:(id)arg3;
+- (id)sortString;
+- (id)untranslatedDisplayString;
+- (id)untranslatedDisplayStringAndLocale:(id*)arg1;
+- (id)untranslatedLocale;
+- (id)valueForKey:(id)arg1 locale:(id)arg2;
+
+@end

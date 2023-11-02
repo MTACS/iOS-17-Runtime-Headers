@@ -1,0 +1,80 @@
+
+@interface ICPaperDocumentTextAttachmentView : UIView <ICAccessibilityRotorSearchElement, ICPaperDocumentEngagementDataProvider, UIContextMenuInteractionDelegate, UIGestureRecognizerDelegate, UIPointerInteractionDelegate> {
+    void $__lazy_storage_$_paperDidSaveSelectorDelayer;
+    void $__lazy_storage_$_smallBrickView;
+    void _userScale;
+    void attachmentChangeNotifications;
+    void displayMode;
+    void engagementData;
+    void headerView;
+    void identifier;
+    void idleTimeInterval;
+    void inlinePaperDocumentView;
+    void internalErrorLabel;
+    void isRevertingChanges;
+    void isUpgradingLegacyAttachment;
+    void kMinMediaHeight;
+    void kMinMediaHeightFraction;
+    void liveStreamMessenger;
+    void paperDocumentContainerView;
+    void participantDetailsDataSource;
+    void pinchToResizeGestureRecognizer;
+    void quickLookTapGestureRecognizer;
+    void shouldUpgradeAttachmentAfterQuickLookIsDismissed;
+    void showParticipantCursors;
+    void snapshotInfo;
+    void task;
+    void textAttachment;
+    void textContainer;
+    void userScaleAtStartOfZoomGesture;
+    void viewProvider;
+}
+
+@property (nonatomic, copy) NSArray *accessibilityElements;
+@property (nonatomic, copy) NSString *accessibilityLabel;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) _TtC11NotesEditor27PaperDocumentEngagementData *engagementData;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *supportedRotorTypes;
+@property (nonatomic, retain) NSTextAttachment *textAttachment;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } textRangeInNote;
+
+- (void).cxx_destruct;
+- (id)_icaxEnclosingTextView;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_icaxRangeInTextStorage;
+- (id)accessibilityElements;
+- (id)accessibilityLabel;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
+- (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
+- (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
+- (void)dealloc;
+- (void)didMoveToWindow;
+- (id)engagementData;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)paperDidSaveDidQuiesce;
+- (id)paperDocumentEngagementData;
+- (void)pinch:(id)arg1;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (void)quickLook:(id)arg1;
+- (void)resetPaperDocumentEngagementData;
+- (void)setAccessibilityElements:(id)arg1;
+- (void)setAccessibilityLabel:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setEngagementData:(id)arg1;
+- (void)setTextAttachment:(id)arg1;
+- (id)supportedRotorTypes;
+- (id)textAttachment;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })textRangeInNote;
+- (id)tiledViewAttachmentViews;
+- (void)updateHeaderConfiguration;
+- (void)willMoveToWindow:(id)arg1;
+
+@end

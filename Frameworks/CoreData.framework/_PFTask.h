@@ -1,0 +1,25 @@
+
+@interface _PFTask : NSObject {
+    int  _cd_rc;
+    void * _task;
+    void * arguments;
+    struct _opaque_pthread_cond_t { 
+        long long __sig; 
+        BOOL __opaque[40]; 
+    }  condition;
+    int  isFinishedFlag;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  lock;
+}
+
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (void)dealloc;
+- (id)initWithFunction:(int (*)arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
+- (oneway void)release;
+- (id)retain;
+- (unsigned long long)retainCount;
+
+@end

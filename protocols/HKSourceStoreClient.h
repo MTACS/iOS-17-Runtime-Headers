@@ -1,0 +1,4 @@
+
+@protocol HKSourceStoreClient <NSObject>
+
+@end

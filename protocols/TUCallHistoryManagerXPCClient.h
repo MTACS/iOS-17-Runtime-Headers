@@ -1,0 +1,4 @@
+
+@protocol TUCallHistoryManagerXPCClient <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol Settings.SettingsBaseProtocol
+
+@end

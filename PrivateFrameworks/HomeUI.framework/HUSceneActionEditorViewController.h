@@ -1,0 +1,97 @@
+
+@interface HUSceneActionEditorViewController : HUItemTableViewController <HUActionSetAccessoryPickerViewControllerDelegate, HUDetailsPresentationDelegateHost, HUEmbeddedSceneActionGridViewControllerDelegate, HUIconPickerViewControllerDelegate, HUMediaSelectionViewControllerDelegate, HUNameAndIconEditorCellDelegate, HUSceneServicePickerViewControllerDelegate, HUServiceGridViewControllerDelegate, HUSwitchCellDelegate, HUSymbolIconPickerDelegate> {
+    NSMutableDictionary * _actionGridViewControllersByEditorType;
+    NSString * _editingName;
+    bool  _hasViewEverAppeared;
+    unsigned long long  _mode;
+    HUQuickControlSummaryNavigationBarTitleView * _navigationBarTitleView;
+    <HUPresentationDelegate> * _presentationDelegate;
+    bool  _requiresPresentingViewControllerDismissal;
+    <HUSceneEditorDelegate> * _sceneEditorDelegate;
+    bool  _showCancelButton;
+}
+
+@property (nonatomic, readonly) NSMutableDictionary *actionGridViewControllersByEditorType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *editingName;
+@property (nonatomic) bool hasViewEverAppeared;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HUSceneActionEditorItemManager *itemManager;
+@property (nonatomic) unsigned long long mode;
+@property (nonatomic, retain) HUQuickControlSummaryNavigationBarTitleView *navigationBarTitleView;
+@property (nonatomic) <HUPresentationDelegate> *presentationDelegate;
+@property (nonatomic, copy) NSSet *prioritizedAccessories;
+@property (nonatomic) bool requiresPresentingViewControllerDismissal;
+@property (nonatomic, readonly) NSString *savedName;
+@property (nonatomic) <HUSceneEditorDelegate> *sceneEditorDelegate;
+@property (nonatomic) bool showCancelButton;
+@property (readonly) Class superclass;
+
++ (bool)adoptsDefaultGridLayoutMargins;
+
+- (void).cxx_destruct;
+- (id)_actionGridViewControllerForEditorType:(unsigned long long)arg1;
+- (bool)_allowEditingNameAndIcon;
+- (void)_cancel:(id)arg1;
+- (void)_changeServices:(id)arg1;
+- (void)_deleteScene:(id)arg1 indexPath:(id)arg2;
+- (void)_done:(id)arg1;
+- (void)_presentMediaSelection;
+- (void)_sendSceneIconEditEventDidChangeColor:(bool)arg1 didChangeIcon:(bool)arg2;
+- (void)_servicePickerDidFinish;
+- (void)_testScene:(id)arg1;
+- (void)_updateActionSetBuilderName;
+- (void)_validateDoneButton;
+- (id)actionGridViewControllersByEditorType;
+- (void)actionSetAccessoryPickerDidFinish:(id)arg1;
+- (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
+- (id)childViewControllersToPreload;
+- (id)commitChanges;
+- (id)contentConfigurationForHeaderViewAtSectionIndex:(unsigned long long)arg1;
+- (id)currentTextForTextField:(id)arg1 item:(id)arg2;
+- (id)defaultTextForTextField:(id)arg1 item:(id)arg2;
+- (id)editingName;
+- (bool)hasViewEverAppeared;
+- (void)iconPicker:(id)arg1 didPickIcon:(id)arg2 withTintColor:(id)arg3;
+- (void)iconPicker:(id)arg1 didPickIconDescriptor:(id)arg2;
+- (void)iconPickerDidCancel:(id)arg1;
+- (id)initWithActionSetBuilder:(id)arg1 mode:(unsigned long long)arg2;
+- (void)itemManagerDidUpdate:(id)arg1;
+- (id)mediaSelectionViewController:(id)arg1 messageForMediaPickerUnavailableReason:(long long)arg2;
+- (id)mediaSelectionViewControllerMessageForMediaActionPlayUnavailable:(id)arg1;
+- (unsigned long long)mode;
+- (void)nameAndIconEditorCellDidTapIcon:(id)arg1;
+- (id)navigationBarTitleView;
+- (id)placeholderTextForTextField:(id)arg1 item:(id)arg2;
+- (id)presentationDelegate;
+- (id)prioritizedAccessories;
+- (bool)requiresPresentingViewControllerDismissal;
+- (id)savedName;
+- (void)sceneActionGridViewController:(id)arg1 didUpdate:(id)arg2;
+- (id)sceneEditorDelegate;
+- (void)sceneServicePickerDidFinish:(id)arg1;
+- (void)serviceGridViewController:(id)arg1 didTapItem:(id)arg2;
+- (void)setEditingName:(id)arg1;
+- (void)setHasViewEverAppeared:(bool)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setNavigationBarTitleView:(id)arg1;
+- (void)setPresentationDelegate:(id)arg1;
+- (void)setPrioritizedAccessories:(id)arg1;
+- (void)setRequiresPresentingViewControllerDismissal:(bool)arg1;
+- (void)setSceneEditorDelegate:(id)arg1;
+- (void)setShowCancelButton:(bool)arg1;
+- (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
+- (bool)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
+- (bool)shouldManageTextFieldForItem:(id)arg1;
+- (bool)showCancelButton;
+- (void)switchCell:(id)arg1 didTurnOn:(bool)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (void)textDidChange:(id)arg1 forTextField:(id)arg2 item:(id)arg3;
+- (void)textFieldDidEndEditing:(id)arg1 item:(id)arg2;
+- (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(bool)arg4;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLoad;
+
+@end

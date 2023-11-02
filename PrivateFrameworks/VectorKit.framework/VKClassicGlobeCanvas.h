@@ -1,0 +1,167 @@
+
+@interface VKClassicGlobeCanvas : VKScreenCanvas <GEOResourceManifestTileGroupObserver, VKInteractiveMap> {
+    VKARCameraController * _arCameraController;
+    bool  _arRoadDisabledState;
+    bool  _canShowFlyover;
+    bool  _coarseLoading;
+    double  _contentScale;
+    double  _currentZoomLevel;
+    struct AltitudeDebugSettings { 
+        bool altitudePauseLoading; 
+        bool altitudeFreezeViewNode; 
+        bool altitudeTexturePaging; 
+        bool altitudeShowTileBounds; 
+        bool altitudeThreadDrawing; 
+        bool altitudeMipmapSatellite; 
+        bool altitudeMipmapFlyover; 
+        bool altitudeMipmapObjectTree; 
+        bool altitudeShowNightLight; 
+        float lodScale; 
+        float tileQualityThreshold; 
+        float hideMeshTime; 
+        float fadeSpeed; 
+        bool tourSpeedup; 
+        float tourSpeedupFactor; 
+    }  _debugSettings;
+    <VKInteractiveMapDelegate> * _delegate;
+    bool  _disableLabels;
+    bool  _disableRoads;
+    void * _engine;
+    struct shared_ptr<ggl::FlyoverLibrary> { 
+        struct FlyoverLibrary {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _flyoverLibrary;
+    int  _flyoverMode;
+    void * _globe;
+    struct unique_ptr<md::GlobeAdapter, std::default_delete<md::GlobeAdapter>> { 
+        struct __compressed_pair<md::GlobeAdapter *, std::default_delete<md::GlobeAdapter>> { 
+            struct GlobeAdapter {} *__value_; 
+        } __ptr_; 
+    }  _globeAdapter;
+    VKGlobeCameraController * _globeCameraController;
+    bool  _initialized;
+    struct shared_ptr<bool> { 
+        bool *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _isDead;
+    bool  _isDownloading;
+    bool  _isLoading;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _lastCanvasSize;
+    void * _loadingStatusTracker;
+    int  _mapType;
+    struct shared_ptr<md::GlobeOverlayContainer> { 
+        struct GlobeOverlayContainer {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _overlayContainer;
+    id /* block */  _sceneDidLoadCallback;
+    bool  _tourIsDownloading;
+    bool  _trafficEnabled;
+}
+
+@property (nonatomic, readonly) VKARCameraController *arCameraController;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <VKInteractiveMapDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool disableLabels;
+@property (nonatomic) bool disableRoads;
+@property (nonatomic, readonly) bool flyoverAvailable;
+@property (nonatomic, readonly) int flyoverMode;
+@property (nonatomic, readonly) VKGlobeCameraController *globeCameraController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) int mapType;
+@property (nonatomic, readonly) NSArray *overlays;
+@property (nonatomic, copy) id /* block */ sceneDidLoadCallback;
+@property (readonly) Class superclass;
+@property (nonatomic) bool trafficEnabled;
+@property (nonatomic, readonly) NSArray *visibleTileSets;
+
++ (bool)supportsMapType:(int)arg1 scale:(int)arg2;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (struct CGPoint { double x1; double x2; })_centerScreenPoint;
+- (const void*)_clientStyleState;
+- (void)_reloadStylesheet;
+- (void)_setDefaultFov:(float)arg1;
+- (const void*)_styleManager;
+- (void)_update;
+- (void)_updateDebugSettings;
+- (void)addOverlay:(id)arg1;
+- (id /* block */)annotationCoordinateTest;
+- (id /* block */)annotationRectTest;
+- (id)arCameraController;
+- (id)attributionsForCurrentRegion;
+- (id)consoleString:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })convertCoordinateToCameraModelPoint:(struct { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertCoordinateToPoint:(struct { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertMapPointToPoint:(struct { double x1; double x2; })arg1;
+- (struct { double x1; double x2; })convertPointToCoordinate:(struct CGPoint { double x1; double x2; })arg1;
+- (struct { double x1; double x2; })convertPointToCoordinateOnSphere:(struct CGPoint { double x1; double x2; })arg1;
+- (struct { double x1; double x2; })convertPointToMapPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)createFlyoverPreTourAnimation:(id)arg1 duration:(double)arg2;
+- (void)dealloc;
+- (void)debugHighlightObjectAtPoint:(struct CGPoint { double x1; double x2; })arg1 highlightTarget:(unsigned char)arg2;
+- (id)delegate;
+- (id)detailedDescription;
+- (void)didBecomeActive;
+- (void)didBecomeInActive;
+- (void)didPresent;
+- (void)didReceiveMemoryWarning:(bool)arg1 beAggressive:(bool)arg2;
+- (void)disableFlyoverStatistics;
+- (bool)disableLabels;
+- (bool)disableRoads;
+- (void)disableTileAnalytics;
+- (void)enableFlyoverStatistics;
+- (void)enableTileAnalytics;
+- (void)enterARSessionAtCoordinate:(struct { double x1; double x2; })arg1;
+- (void)exitARSession;
+- (bool)flyoverAvailable;
+- (int)flyoverMode;
+- (id)flyoverStatistics;
+- (id)globeCameraController;
+- (id)initWithMapEngine:(void*)arg1 inBackground:(bool)arg2;
+- (void)insertOverlay:(id)arg1 aboveOverlay:(id)arg2;
+- (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
+- (bool)isPointValidForGesturing:(struct CGPoint { double x1; double x2; })arg1;
+- (int)mapType;
+- (struct GlobeOverlayContainer { struct GlobeView {} *x1; id x2; struct mutex { struct _opaque_pthread_mutex_t { long long x_1_2_1; BOOL x_1_2_2[56]; } x_3_1_1; } x3; double x4; }*)overlayContainer;
+- (id)overlays;
+- (void)pauseFlyoverTourAnimation;
+- (void)prepareFlyoverAnimation:(id)arg1 completion:(id /* block */)arg2;
+- (void)removeOverlay:(id)arg1;
+- (void)resetFlyoverStatistics;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
+- (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
+- (void)resumeFlyoverTourAnimation;
+- (id /* block */)sceneDidLoadCallback;
+- (void)setCamera:(struct shared_ptr<gdc::Camera> { struct Camera {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (void)setContentsScale:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDisableLabels:(bool)arg1;
+- (void)setDisableRoads:(bool)arg1;
+- (void)setMapType:(int)arg1;
+- (void)setMapType:(int)arg1 animated:(bool)arg2;
+- (void)setSceneDidLoadCallback:(id /* block */)arg1;
+- (void)setTrafficEnabled:(bool)arg1;
+- (void)setupMapScene;
+- (bool)shouldHideOffscreenSelectedAnnotation;
+- (void)startFlyoverAnimation:(id)arg1 animateToStart:(bool)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
+- (void)startFlyoverTourAnimation:(unsigned long long)arg1 animateToStart:(bool)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
+- (void)stopAnimations;
+- (void)stopFlyoverAnimation;
+- (void)stopLoading;
+- (void)stopSnappingAnimations;
+- (bool)trafficEnabled;
+- (void)transferStateFromCanvas:(id)arg1;
+- (void)transitionToTracking:(bool)arg1 mapMode:(long long)arg2 startLocation:(struct { double x1; double x2; })arg3 startCourse:(double)arg4 cameraController:(id)arg5 pounceCompletionHandler:(id /* block */)arg6;
+- (void)updateCameraForFrameResize;
+- (void)updateWithTimestamp:(double)arg1 withContext:(void*)arg2;
+- (bool)useNewRenderPath;
+- (id)visibleTileSets;
+- (void)waitForLoading;
+- (void)willDealloc;
+
+@end

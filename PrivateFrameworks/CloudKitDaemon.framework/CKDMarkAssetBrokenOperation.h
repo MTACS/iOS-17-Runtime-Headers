@@ -1,0 +1,98 @@
+
+@interface CKDMarkAssetBrokenOperation : CKDDatabaseOperation {
+    id /* block */  _assetOrPackageMarkedBrokenBlock;
+    bool  _bypassPCSEncryptionForTouchRepairZone;
+    CKDModifyRecordsOperation * _corruptOperation;
+    CKDFetchRecordsOperation * _fetchOperation;
+    NSString * _field;
+    long long  _listIndex;
+    NSError * _markAssetBrokenError;
+    unsigned long long  _numMarkAssetBrokenFailures;
+    CKRecord * _record;
+    CKRecordID * _recordID;
+    CKRecordZone * _repairZone;
+    bool  _simulateCorruptAsset;
+    bool  _touchRepairZone;
+    CKUploadRequestConfiguration * _uploadRequestConfiguration;
+    CKDMarkAssetBrokenURLRequestWrapperOperation * _wrapperOperation;
+    bool  _writeRepairRecord;
+    CKDModifyRecordZonesOperation * _zoneCreateOperation;
+    CKDFetchRecordZonesOperation * _zoneFetchOperation;
+}
+
+@property (nonatomic, copy) id /* block */ assetOrPackageMarkedBrokenBlock;
+@property (nonatomic) bool bypassPCSEncryptionForTouchRepairZone;
+@property (nonatomic, retain) <CKMarkAssetBrokenOperationCallbacks> *clientOperationCallbackProxy;
+@property (nonatomic, retain) CKDModifyRecordsOperation *corruptOperation;
+@property (nonatomic, retain) CKDFetchRecordsOperation *fetchOperation;
+@property (nonatomic, retain) NSString *field;
+@property (nonatomic) long long listIndex;
+@property (nonatomic, retain) NSError *markAssetBrokenError;
+@property (nonatomic) unsigned long long numMarkAssetBrokenFailures;
+@property (nonatomic, retain) CKRecord *record;
+@property (nonatomic, retain) CKRecordID *recordID;
+@property (nonatomic, retain) CKRecordZone *repairZone;
+@property (nonatomic) bool simulateCorruptAsset;
+@property (nonatomic) unsigned long long state;
+@property (nonatomic) bool touchRepairZone;
+@property (nonatomic, retain) CKUploadRequestConfiguration *uploadRequestConfiguration;
+@property (nonatomic, retain) CKDMarkAssetBrokenURLRequestWrapperOperation *wrapperOperation;
+@property (nonatomic) bool writeRepairRecord;
+@property (nonatomic, retain) CKDModifyRecordZonesOperation *zoneCreateOperation;
+@property (nonatomic, retain) CKDFetchRecordZonesOperation *zoneFetchOperation;
+
++ (id)nameForState:(unsigned long long)arg1;
+
+- (void).cxx_destruct;
+- (void)_breakAsset;
+- (void)_fetchRecord;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
+- (void)_markAssetBroken;
+- (void)_touchCreateRepairZone;
+- (void)_touchFetchRepairZone;
+- (id)activityCreate;
+- (id)assetOrPackageForFetchedRecord;
+- (id /* block */)assetOrPackageMarkedBrokenBlock;
+- (bool)bypassPCSEncryptionForTouchRepairZone;
+- (id)checkPreconditions;
+- (id)corruptOperation;
+- (id)fetchOperation;
+- (id)field;
+- (id)initWithOperationInfo:(id)arg1 container:(id)arg2;
+- (long long)listIndex;
+- (void)main;
+- (bool)makeStateTransition;
+- (id)markAssetBrokenError;
+- (unsigned long long)numMarkAssetBrokenFailures;
+- (int)operationType;
+- (id)record;
+- (id)recordID;
+- (id)repairContainer;
+- (id)repairZone;
+- (void)setAssetOrPackageMarkedBrokenBlock:(id /* block */)arg1;
+- (void)setBypassPCSEncryptionForTouchRepairZone:(bool)arg1;
+- (void)setCorruptOperation:(id)arg1;
+- (void)setFetchOperation:(id)arg1;
+- (void)setField:(id)arg1;
+- (void)setListIndex:(long long)arg1;
+- (void)setMarkAssetBrokenError:(id)arg1;
+- (void)setNumMarkAssetBrokenFailures:(unsigned long long)arg1;
+- (void)setRecord:(id)arg1;
+- (void)setRecordID:(id)arg1;
+- (void)setRepairZone:(id)arg1;
+- (void)setSimulateCorruptAsset:(bool)arg1;
+- (void)setTouchRepairZone:(bool)arg1;
+- (void)setUploadRequestConfiguration:(id)arg1;
+- (void)setWrapperOperation:(id)arg1;
+- (void)setWriteRepairRecord:(bool)arg1;
+- (void)setZoneCreateOperation:(id)arg1;
+- (void)setZoneFetchOperation:(id)arg1;
+- (bool)simulateCorruptAsset;
+- (bool)touchRepairZone;
+- (id)uploadRequestConfiguration;
+- (id)wrapperOperation;
+- (bool)writeRepairRecord;
+- (id)zoneCreateOperation;
+- (id)zoneFetchOperation;
+
+@end

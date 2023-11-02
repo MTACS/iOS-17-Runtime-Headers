@@ -1,0 +1,4 @@
+
+@protocol MLComputeDeviceProtocol <NSObject>
+
+@end

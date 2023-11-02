@@ -1,0 +1,4 @@
+
+@interface _TtC9PassKitUIP33_4FAAFE3B2DB0502CDD91C96394F98D9419ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SXTextSourceFactory
+
+@end

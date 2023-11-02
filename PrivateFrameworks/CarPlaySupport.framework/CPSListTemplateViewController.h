@@ -1,0 +1,97 @@
+
+@interface CPSListTemplateViewController : CPSBaseTemplateViewController <CPListTemplateProviding, CPUINowPlayingObserving, UITableViewDelegate> {
+    bool  _assistantCellAvailable;
+    NSUUID * _currentSpinningIdentifier;
+    CPSSectionedDataSource * _dataSource;
+    CPSEmptyView * _emptyView;
+    NSUUID * _lastFocusedItem;
+    NSUUID * _nextSpinningIdentifier;
+    CPUINowPlayingManager * _nowPlayingManager;
+    NSTimer * _spinnerStartTimer;
+    unsigned long long  _spinnerState;
+    NSTimer * _spinnerTimeoutTimer;
+    CPSTableView * _tableView;
+}
+
+@property (nonatomic) bool assistantCellAvailable;
+@property (nonatomic, copy) NSUUID *currentSpinningIdentifier;
+@property (nonatomic, retain) CPSSectionedDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CPSEmptyView *emptyView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSUUID *lastFocusedItem;
+@property (nonatomic, readonly) CPListTemplate *listTemplate;
+@property (nonatomic, copy) NSUUID *nextSpinningIdentifier;
+@property (nonatomic, retain) CPUINowPlayingManager *nowPlayingManager;
+@property (nonatomic, retain) NSTimer *spinnerStartTimer;
+@property (nonatomic) unsigned long long spinnerState;
+@property (nonatomic, retain) NSTimer *spinnerTimeoutTimer;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) CPSTableView *tableView;
+
++ (bool)clientAssistantCellConfiguration:(id)arg1 availableWithError:(id*)arg2 templateEnvironment:(id)arg3;
++ (id)intentIdentifierFromConfigurationEnum:(long long)arg1;
+
+- (void).cxx_destruct;
+- (void)_activateSiriForAssistantItem;
+- (void)_activateSiriForMessageItem:(id)arg1;
+- (void)_addSpinnerToIdentifier:(id)arg1;
+- (void)_cancelScheduledLoadingSpinner;
+- (void)_cellSelectionCompleted:(id)arg1;
+- (long long)_playingIndicatorStateForSnapshot:(id)arg1;
+- (void)_scheduleLoadingSpinnerForIdentifier:(id)arg1;
+- (void)_scrollViewAccessoryInsetsDidChange:(id)arg1;
+- (bool)_shouldRetainFocusOnWillAppear;
+- (void)_startSpinnerTimerFired:(id)arg1 identifier:(id)arg2;
+- (void)_timeoutSpinnerFired:(id)arg1 identifier:(id)arg2;
+- (void)_updateEmptyView;
+- (void)_updatePlayingIndicators;
+- (void)_viewDidLoad;
+- (bool)_wantsNowPlayingButton;
+- (bool)assistantCellAvailable;
+- (id)currentSpinningIdentifier;
+- (id)dataSource;
+- (void)didSelectMediaButton:(id)arg1;
+- (id)emptyView;
+- (id)initWithListTemplate:(id)arg1 templateDelegate:(id)arg2 templateEnvironment:(id)arg3;
+- (id)lastFocusedItem;
+- (id)listTemplate;
+- (id)nextSpinningIdentifier;
+- (id)nowPlayingManager;
+- (void)nowPlayingManager:(id)arg1 didUpdateSnapshot:(id)arg2;
+- (id)preferredFocusEnvironments;
+- (void)reloadItems:(id)arg1;
+- (void)reloadTemplate:(id)arg1;
+- (bool)restoresFocusAfterTransition;
+- (void)scrollToTop;
+- (void)setAssistantCellAvailable:(bool)arg1;
+- (void)setButton:(id)arg1 enabled:(bool)arg2;
+- (void)setButton:(id)arg1 hidden:(bool)arg2;
+- (void)setCurrentSpinningIdentifier:(id)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setEmptyView:(id)arg1;
+- (void)setLastFocusedItem:(id)arg1;
+- (void)setNextSpinningIdentifier:(id)arg1;
+- (void)setNowPlayingManager:(id)arg1;
+- (void)setSpinnerStartTimer:(id)arg1;
+- (void)setSpinnerState:(unsigned long long)arg1;
+- (void)setSpinnerTimeoutTimer:(id)arg1;
+- (void)setTableView:(id)arg1;
+- (id)spinnerStartTimer;
+- (unsigned long long)spinnerState;
+- (id)spinnerTimeoutTimer;
+- (id)tableView;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)updateAssistantCell;
+- (void)updateAssistantCellConfiguration:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)updateAssistantCellTitle;
+- (void)updateSectionHeaderImage:(id)arg1 forSectionIdentifier:(id)arg2;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+
+@end

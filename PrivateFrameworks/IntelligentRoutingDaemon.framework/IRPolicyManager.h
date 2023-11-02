@@ -1,0 +1,80 @@
+
+@interface IRPolicyManager : NSObject <IRDeallocSync, IRPersistenceSynchronizable, IRPolicyManagerContextObserver, IRServiceHandling> {
+    IRCandidateManager * _candidateManager;
+    <IRPolicyManagerDelegate> * _delegate;
+    IRHistoryManager * _historyManager;
+    bool  _isLowLatencyMiLo;
+    long long  _mode;
+    IRPolicyEngine * _policyEngine;
+    NSObject<OS_dispatch_queue> * _queue;
+    IRReplayWriter * _replayWriter;
+    IRMediaRemoteProvider * _saredLocalEndpointProvider;
+    IRServiceDO * _service;
+    IRStatisticsManager * _statisticsManager;
+    IRSystemStateManager * _systemStateManager;
+}
+
+@property (nonatomic, retain) IRCandidateManager *candidateManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <IRPolicyManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) IRHistoryManager *historyManager;
+@property (nonatomic) bool isLowLatencyMiLo;
+@property (nonatomic) long long mode;
+@property (nonatomic, retain) IRPolicyEngine *policyEngine;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) IRReplayWriter *replayWriter;
+@property (nonatomic, retain) IRMediaRemoteProvider *saredLocalEndpointProvider;
+@property (nonatomic, retain) IRServiceDO *service;
+@property (nonatomic, retain) IRStatisticsManager *statisticsManager;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) IRSystemStateManager *systemStateManager;
+
+- (void).cxx_destruct;
+- (void)_checkAndStartLowLatencyMiLoIfNeeded;
+- (void)_handleMiLoRealTimeUponAddEvent:(id)arg1;
+- (void)_handleMiLoRealTimeUponContextChange;
+- (void)_handleMiLoRealTimeUponRequestCurrentContext;
+- (void)addEvent:(id)arg1 forCandidateIdentifier:(id)arg2;
+- (id)candidateManager;
+- (void)clearStatistics;
+- (void)dealloc;
+- (void)deallocSync;
+- (id)delegate;
+- (void)deleteCandidate:(id)arg1;
+- (void)didReceiveMiloPredictionRealTime;
+- (void)didUpdateContextWithReason:(id)arg1;
+- (id)getService;
+- (id)getStatistics;
+- (id)historyManager;
+- (id)initWithService:(id)arg1 queue:(id)arg2 delegate:(id)arg3 avOutputDeviceProvider:(id)arg4 biomeProvider:(id)arg5 miloProvider:(id)arg6 rapportProvider:(id)arg7 proximityProvider:(id)arg8 serviceStore:(id)arg9 displayMonitor:(id)arg10 audioAVOutputContextController:(id)arg11 isLowLatencyMiLo:(bool)arg12;
+- (bool)isLowLatencyMiLo;
+- (long long)mode;
+- (id)policyEngine;
+- (id)queue;
+- (id)replayWriter;
+- (id)requestCurrentContext;
+- (void)restartLowLatencyMiLo:(bool)arg1;
+- (void)run;
+- (id)saredLocalEndpointProvider;
+- (id)service;
+- (void)setCandidateManager:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHistoryManager:(id)arg1;
+- (void)setIsLowLatencyMiLo:(bool)arg1;
+- (void)setMode:(long long)arg1;
+- (void)setPolicyEngine:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setReplayWriter:(id)arg1;
+- (void)setSaredLocalEndpointProvider:(id)arg1;
+- (void)setService:(id)arg1;
+- (void)setStatisticsManager:(id)arg1;
+- (void)setSystemStateManager:(id)arg1;
+- (void)setUpdateMode:(long long)arg1;
+- (id)statisticsManager;
+- (void)synchronizeAndFetchFromDBOnDisk;
+- (id)systemStateManager;
+- (void)updateCandidates:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface GQDBGTemplateSlide : GQDBGAbstractSlide
+
+@end

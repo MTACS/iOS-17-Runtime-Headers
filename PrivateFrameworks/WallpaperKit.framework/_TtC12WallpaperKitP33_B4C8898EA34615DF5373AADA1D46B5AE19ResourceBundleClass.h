@@ -1,0 +1,4 @@
+
+@interface _TtC12WallpaperKitP33_B4C8898EA34615DF5373AADA1D46B5AE19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

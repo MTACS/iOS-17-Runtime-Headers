@@ -1,0 +1,88 @@
+
+@interface PSUIAppDataUsageSpecifierFactory : NSObject <Loggable> {
+    <PSBillingPeriodSelectorSpecifierDelegate> * _billingCycleDelegate;
+    PSBillingPeriodSelectorSpecifier * _billingPeriodSelectorSpecifier;
+    NSArray * _bundleIDs;
+    CHManager * _callHistoryManager;
+    PSUICallTimeGroup * _callTimeGroup;
+    PSUICarrierSpaceManager * _carrierSpaceManager;
+    PSUICoreTelephonyDataCache * _dataCache;
+    NSString * _groupSpecifierTitle;
+    PSListController * _hostController;
+    PSCellularManagementCache * _managementCache;
+    <PSAppCellularUsageSpecifierDelegate> * _policySpecifierDelegate;
+    <PSUIResetStatisticsGroupDelegate> * _resetStatisticsDelegate;
+    PSUIResetStatisticsGroup * _resetStatisticsGroup;
+    PSUICellularUsageContentSpecifiers * _savedContentSpecifiers;
+    NSArray * _savedHeaderSpecifiers;
+    PSDataUsageStatisticsCache * _statisticsCache;
+    PSUITotalCellularUsageSubgroup * _totalUsageSubgroup;
+}
+
+@property (nonatomic) <PSBillingPeriodSelectorSpecifierDelegate> *billingCycleDelegate;
+@property (nonatomic, retain) PSBillingPeriodSelectorSpecifier *billingPeriodSelectorSpecifier;
+@property (nonatomic, retain) NSArray *bundleIDs;
+@property (nonatomic, retain) CHManager *callHistoryManager;
+@property (nonatomic, retain) PSUICallTimeGroup *callTimeGroup;
+@property (nonatomic, retain) PSUICarrierSpaceManager *carrierSpaceManager;
+@property (nonatomic, retain) PSUICoreTelephonyDataCache *dataCache;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *groupSpecifierTitle;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) PSListController *hostController;
+@property (nonatomic, retain) PSCellularManagementCache *managementCache;
+@property (nonatomic) <PSAppCellularUsageSpecifierDelegate> *policySpecifierDelegate;
+@property (nonatomic) <PSUIResetStatisticsGroupDelegate> *resetStatisticsDelegate;
+@property (nonatomic, retain) PSUIResetStatisticsGroup *resetStatisticsGroup;
+@property (retain) PSUICellularUsageContentSpecifiers *savedContentSpecifiers;
+@property (retain) NSArray *savedHeaderSpecifiers;
+@property (nonatomic, retain) PSDataUsageStatisticsCache *statisticsCache;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PSUITotalCellularUsageSubgroup *totalUsageSubgroup;
+
+- (void).cxx_destruct;
+- (void)addAppUsageSpecifiersToContentSpecifiers:(id)arg1;
+- (void)addLeadingSpecifiersToContentSpecifiers:(id)arg1;
+- (void)addTrailingSpecifiersToContentSpecifiers:(id)arg1;
+- (id)billingCycleDelegate;
+- (id)billingPeriodSelectorSpecifier;
+- (id)bundleIDs;
+- (id)callHistoryManager;
+- (id)callTimeGroup;
+- (id)carrierSpaceManager;
+- (id)contentSpecifiers;
+- (id)dataCache;
+- (id)getLogger;
+- (id)groupSpecifierTitle;
+- (id)headerSpecifiers;
+- (id)hostController;
+- (id)initWithGroupSpecifierTitle:(id)arg1 hostController:(id)arg2 managementCache:(id)arg3 statisticsCache:(id)arg4 dataCache:(id)arg5 callHistoryManager:(id)arg6 carrierSpaceManager:(id)arg7 billingCycleDelegate:(id)arg8 policySpecifierDelegate:(id)arg9 resetStatisticsDelegate:(id)arg10;
+- (id)managementCache;
+- (id)policySpecifierDelegate;
+- (void)refreshOrderingOfContentSpecifiers;
+- (id)resetStatisticsDelegate;
+- (id)resetStatisticsGroup;
+- (id)savedContentSpecifiers;
+- (id)savedHeaderSpecifiers;
+- (void)setBillingCycleDelegate:(id)arg1;
+- (void)setBillingPeriodSelectorSpecifier:(id)arg1;
+- (void)setBundleIDs:(id)arg1;
+- (void)setCallHistoryManager:(id)arg1;
+- (void)setCallTimeGroup:(id)arg1;
+- (void)setCarrierSpaceManager:(id)arg1;
+- (void)setDataCache:(id)arg1;
+- (void)setGroupSpecifierTitle:(id)arg1;
+- (void)setHostController:(id)arg1;
+- (void)setManagementCache:(id)arg1;
+- (void)setPolicySpecifierDelegate:(id)arg1;
+- (void)setResetStatisticsDelegate:(id)arg1;
+- (void)setResetStatisticsGroup:(id)arg1;
+- (void)setSavedContentSpecifiers:(id)arg1;
+- (void)setSavedHeaderSpecifiers:(id)arg1;
+- (void)setStatisticsCache:(id)arg1;
+- (void)setTotalUsageSubgroup:(id)arg1;
+- (id)statisticsCache;
+- (id)totalUsageSubgroup;
+
+@end

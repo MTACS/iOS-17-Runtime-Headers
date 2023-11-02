@@ -1,0 +1,4 @@
+
+@interface NALocalization : NSObject
+
+@end

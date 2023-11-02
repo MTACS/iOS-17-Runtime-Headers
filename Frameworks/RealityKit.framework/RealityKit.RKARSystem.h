@@ -1,0 +1,75 @@
+
+@interface RealityKit.RKARSystem : NSObject {
+    void $__lazy_storage_$_cameraRenderGraph;
+    void $__lazy_storage_$_debugAnchorPlaneMaterial;
+    void $__lazy_storage_$_debugAxisEntity;
+    void $__lazy_storage_$_debugProbeMaterial;
+    void $__lazy_storage_$_depthOfFieldRenderGraph;
+    void $__lazy_storage_$_motionBlurRenderGraph;
+    void $__lazy_storage_$_postProcessingCombinedHDRRenderGraph;
+    void $__lazy_storage_$_postProcessingCombinedRenderGraph;
+    void __autoFireStartTriggerOnPlacement;
+    void __enableUpdateCameraProjectionMatrixFromARFrame;
+    void __enableUpdateCameraWorldMatrixFromARFrame;
+    void __passthroughIntensityExponent;
+    void __renderQuality;
+    void addedAnchors;
+    void anchorSemaphore;
+    void arEmitter;
+    void arView;
+    void cachedGestureHitTestResults;
+    void cameraCombinedPostProcessMaterials;
+    void cameraMode;
+    void cameraNoiseRandomTranslation;
+    void cameraPassthroughMaterial;
+    void cameraSegmentationCompositeMaterial;
+    void capturedFrame;
+    void collaborationStarted;
+    void connectedPeers;
+    void debugAnchorsByAnchorIdentifier;
+    void debugFeaturePointUpdateRate;
+    void debugFeaturePoints;
+    void debugOptions;
+    void debugPlanesByAnchorIdentifier;
+    void debugProbesByAnchorIdentifier;
+    void delegate;
+    void displayToCameraMatrix;
+    void drPostAndCompositionMaterial;
+    void engine;
+    void faceMeshEntitiesByAnchorIdentifier;
+    void fallbackAmbientColor;
+    void fallbackAmbientIntensity;
+    void groundingShadowMode;
+    void isFaceSession;
+    void lastARFrameTimeStamp;
+    void lastUpdateTime;
+    void lightEntity;
+    void maxNumberOfAttemptsToGetARFrameInDuplicateCase;
+    void needInitialCollaborationData;
+    void netSessionObserver;
+    void prevOrientation;
+    void probePlacementManager;
+    void removedAnchors;
+    void renderOptions;
+    void scene;
+    void session;
+    void shadowReceiverEntitiesByAnchorIdentifier;
+    void shouldRenderCameraFeed;
+    void simpleForwardEmitter;
+    void sleepDurationInDuplicateARFrameCase;
+    void suDepthFeatheringMaterial;
+    void textureCache;
+    void timeSinceLastDebugFeaturePointUpdate;
+    void updateCameraViewDescriptorSettings;
+    void updatedAnchors;
+    void useLowSampleAA;
+    void worldOrigin;
+    void zFar;
+    void zNear;
+}
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+
+@end

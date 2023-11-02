@@ -1,0 +1,4 @@
+
+@protocol SFEntityTopic <SFQueryTopic>
+
+@end

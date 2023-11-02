@@ -1,0 +1,4 @@
+
+@interface _TtC14MentalHealthUIP33_618BF2D948581815FD85A9097216FDAA28MentalHealthUIRepresentative : _TtCs12_SwiftObject
+
+@end

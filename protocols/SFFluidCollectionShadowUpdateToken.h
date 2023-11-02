@@ -1,0 +1,4 @@
+
+@protocol SFFluidCollectionShadowUpdateToken <NSObject>
+
+@end

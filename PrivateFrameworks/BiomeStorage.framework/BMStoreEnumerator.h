@@ -1,0 +1,4 @@
+
+@interface BMStoreEnumerator : BMStoreEnumeratorBase
+
+@end

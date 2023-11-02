@@ -1,0 +1,24 @@
+
+@interface FCANFContent : NSObject {
+    NSArray * _fontResourceIDs;
+    NSString * _identifier;
+    FCAssetHandle * _mainDocumentAssetHandle;
+}
+
+@property (nonatomic, readonly) NSArray *anfDocumentAssetHandles;
+@property (nonatomic, readonly) NSArray *fontResourceIDs;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) bool isANFDocumentCached;
+@property (nonatomic, readonly) FCAssetHandle *mainDocumentAssetHandle;
+
+- (void).cxx_destruct;
+- (id)anfDocumentAssetHandles;
+- (id)fetchANFDocumentDataProviderWithCompletion:(id /* block */)arg1;
+- (id)fetchANFDocumentDataProviderWithPriority:(long long)arg1 completion:(id /* block */)arg2;
+- (id)fontResourceIDs;
+- (id)identifier;
+- (id)initWithIdentifier:(id)arg1 mainDocumentAssetHandle:(id)arg2 fontResourceIDs:(id)arg3;
+- (bool)isANFDocumentCached;
+- (id)mainDocumentAssetHandle;
+
+@end

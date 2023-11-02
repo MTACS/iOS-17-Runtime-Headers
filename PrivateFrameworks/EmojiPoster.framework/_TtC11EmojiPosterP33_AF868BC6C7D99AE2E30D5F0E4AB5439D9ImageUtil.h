@@ -1,0 +1,4 @@
+
+@interface _TtC11EmojiPosterP33_AF868BC6C7D99AE2E30D5F0E4AB5439D9ImageUtil : _TtCs12_SwiftObject
+
+@end

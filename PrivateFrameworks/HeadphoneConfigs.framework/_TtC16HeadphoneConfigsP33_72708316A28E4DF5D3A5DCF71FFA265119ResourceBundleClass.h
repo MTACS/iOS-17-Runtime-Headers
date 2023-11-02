@@ -1,0 +1,4 @@
+
+@interface _TtC16HeadphoneConfigsP33_72708316A28E4DF5D3A5DCF71FFA265119ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

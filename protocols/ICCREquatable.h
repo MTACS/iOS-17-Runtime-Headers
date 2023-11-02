@@ -1,0 +1,4 @@
+
+@protocol ICCREquatable <ICCRDataType>
+
+@end

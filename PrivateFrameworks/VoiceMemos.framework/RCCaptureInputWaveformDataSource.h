@@ -1,0 +1,81 @@
+
+@interface RCCaptureInputWaveformDataSource : RCWaveformDataSource <AVCaptureAudioDataOutputSampleBufferDelegate, RCWaveformDataSourceObserver> {
+    RCWaveform * _baseWaveform;
+    RCCompositionWaveformDataSource * _baseWaveformDataSource;
+    bool  _canUpdateCaptureComposition;
+    NSArray * _captureInitialDecomposedFragments;
+    double  _captureInsertionDurationInComposition;
+    double  _captureInsertionTimeInComposition;
+    RCMutableComposition * _capturedComposition;
+    RCMutableCompositionFragment * _capturedFragment;
+    RCComposition * _destinationComposition;
+    RCCompositionFragment * _destinationFragment;
+    double  _finalCapturedFragmentDuration;
+    double  _updatedCapturedFragmentDuration;
+    double  captureDelta;
+}
+
+@property (nonatomic, readonly) RCWaveform *baseWaveform;
+@property (nonatomic, readonly) RCCompositionWaveformDataSource *baseWaveformDataSource;
+@property (nonatomic, readonly) bool canUpdateCaptureComposition;
+@property (nonatomic, readonly) NSArray *captureInitialDecomposedFragments;
+@property (nonatomic, readonly) double captureInsertionDurationInComposition;
+@property (nonatomic, readonly) double captureInsertionTimeInComposition;
+@property (nonatomic, readonly) RCMutableComposition *capturedComposition;
+@property (nonatomic, readonly) RCMutableCompositionFragment *capturedFragment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) RCComposition *destinationComposition;
+@property (nonatomic, readonly) RCCompositionFragment *destinationFragment;
+@property (nonatomic, readonly) double finalCapturedFragmentDuration;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) double updatedCapturedFragmentDuration;
+
+- (void).cxx_destruct;
+- (id)_captureSegmentsInComponentWaveform:(id)arg1 captureTimeRange:(struct { double x1; double x2; })arg2 componentWaveformSegmentOffset:(double)arg3;
+- (void)_captureSesionCompletedWithFinalizedDuration:(double)arg1;
+- (void)_extendAccumulatedWaveformSegmentsToMatchFinalDuration:(double)arg1;
+- (double)_fragmentDuration;
+- (void)_initializeCaptureComposition;
+- (void)_modifyAccumulatedWaveformSegmentsToMatchFinalDuration:(double)arg1;
+- (void)_truncateAccumulatedWaveformSegmentsToEndTime:(double)arg1;
+- (void)_updateCapturedComposition:(bool)arg1;
+- (bool)appendAveragePowerLevelsByDigestingAudioPCMBuffer:(id)arg1;
+- (bool)appendAveragePowerLevelsByDigestingCapturedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)appendAveragePowerLevelsByDigestingWaveformSegment:(id)arg1;
+- (id)baseWaveform;
+- (id)baseWaveformDataSource;
+- (bool)canUpdateCaptureComposition;
+- (void)cancelLoading;
+- (id)captureInitialDecomposedFragments;
+- (double)captureInsertionDurationInComposition;
+- (double)captureInsertionTimeInComposition;
+- (id)capturedComposition;
+- (id)capturedFragment;
+- (id)destinationComposition;
+- (id)destinationFragment;
+- (double)duration;
+- (double)finalCapturedFragmentDuration;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(id /* block */)arg2;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 finalizedFragmentDuration:(double)arg2 completionBlock:(id /* block */)arg3;
+- (void)flushPendingCapturedSampleBuffers;
+- (id)initWithDestinationComposition:(id)arg1 destinationFragment:(id)arg2;
+- (id)segmentsInCompositionByConvertingFromActiveLoadingFragment:(id)arg1;
+- (bool)setPaused:(bool)arg1;
+- (bool)shouldMergeLiveWaveform;
+- (void)startLoading;
+- (struct { double x1; double x2; })timeRangeToHighlight;
+- (void)undoCapture;
+- (void)updateCapturedDelta:(double)arg1;
+- (double)updatedCapturedFragmentDuration;
+- (bool)waitUntilFinished;
+- (bool)waitUntilFinishedWithFinalizedDestinationFragmentDuration:(double)arg1;
+- (void)waveformDataSource:(id)arg1 didLoadWaveformSegment:(id)arg2;
+- (void)waveformDataSourceDidFinishLoading:(id)arg1;
+- (void)waveformDataSourceRequiresUpdate:(id)arg1;
+- (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;
+- (id)waveformSegmentsInTimeRange:(struct { double x1; double x2; })arg1;
+- (id)waveformSegmentsIntersectingTimeRange:(struct { double x1; double x2; })arg1;
+
+@end

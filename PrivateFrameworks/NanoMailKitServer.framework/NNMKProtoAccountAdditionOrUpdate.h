@@ -1,0 +1,108 @@
+
+@interface NNMKProtoAccountAdditionOrUpdate : PBCodable <NSCopying> {
+    NSString * _accountId;
+    NSString * _defaultEmail;
+    NSString * _displayName;
+    NSString * _emailAddressToken;
+    NSMutableArray * _emails;
+    unsigned int  _fullSyncVersion;
+    struct { 
+        unsigned int fullSyncVersion : 1; 
+        unsigned int shouldArchive : 1; 
+    }  _has;
+    NSString * _localId;
+    NSMutableArray * _mailboxes;
+    NSString * _parentId;
+    NSString * _pccEmailAddress;
+    bool  _shouldArchive;
+    NSString * _typeIdentifier;
+    NSString * _username;
+}
+
+@property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, retain) NSString *defaultEmail;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *emailAddressToken;
+@property (nonatomic, retain) NSMutableArray *emails;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) bool hasAccountId;
+@property (nonatomic, readonly) bool hasDefaultEmail;
+@property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic, readonly) bool hasEmailAddressToken;
+@property (nonatomic) bool hasFullSyncVersion;
+@property (nonatomic, readonly) bool hasLocalId;
+@property (nonatomic, readonly) bool hasParentId;
+@property (nonatomic, readonly) bool hasPccEmailAddress;
+@property (nonatomic) bool hasShouldArchive;
+@property (nonatomic, readonly) bool hasTypeIdentifier;
+@property (nonatomic, readonly) bool hasUsername;
+@property (nonatomic, retain) NSString *localId;
+@property (nonatomic, retain) NSMutableArray *mailboxes;
+@property (nonatomic, retain) NSString *parentId;
+@property (nonatomic, retain) NSString *pccEmailAddress;
+@property (nonatomic) bool shouldArchive;
+@property (nonatomic, retain) NSString *typeIdentifier;
+@property (nonatomic, retain) NSString *username;
+
++ (Class)emailType;
++ (Class)mailboxesType;
+
+- (void).cxx_destruct;
+- (id)accountId;
+- (void)addEmail:(id)arg1;
+- (void)addMailboxes:(id)arg1;
+- (void)clearEmails;
+- (void)clearMailboxes;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)defaultEmail;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)displayName;
+- (id)emailAddressToken;
+- (id)emailAtIndex:(unsigned long long)arg1;
+- (id)emails;
+- (unsigned long long)emailsCount;
+- (unsigned int)fullSyncVersion;
+- (bool)hasAccountId;
+- (bool)hasDefaultEmail;
+- (bool)hasDisplayName;
+- (bool)hasEmailAddressToken;
+- (bool)hasFullSyncVersion;
+- (bool)hasLocalId;
+- (bool)hasParentId;
+- (bool)hasPccEmailAddress;
+- (bool)hasShouldArchive;
+- (bool)hasTypeIdentifier;
+- (bool)hasUsername;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)localId;
+- (id)mailboxes;
+- (id)mailboxesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)mailboxesCount;
+- (void)mergeFrom:(id)arg1;
+- (id)parentId;
+- (id)pccEmailAddress;
+- (bool)readFrom:(id)arg1;
+- (void)setAccountId:(id)arg1;
+- (void)setDefaultEmail:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (void)setEmailAddressToken:(id)arg1;
+- (void)setEmails:(id)arg1;
+- (void)setFullSyncVersion:(unsigned int)arg1;
+- (void)setHasFullSyncVersion:(bool)arg1;
+- (void)setHasShouldArchive:(bool)arg1;
+- (void)setLocalId:(id)arg1;
+- (void)setMailboxes:(id)arg1;
+- (void)setParentId:(id)arg1;
+- (void)setPccEmailAddress:(id)arg1;
+- (void)setShouldArchive:(bool)arg1;
+- (void)setTypeIdentifier:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (bool)shouldArchive;
+- (id)typeIdentifier;
+- (id)username;
+- (void)writeTo:(id)arg1;
+
+@end

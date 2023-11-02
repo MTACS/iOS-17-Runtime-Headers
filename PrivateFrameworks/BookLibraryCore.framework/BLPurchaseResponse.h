@@ -1,0 +1,96 @@
+
+@interface BLPurchaseResponse : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _currency;
+    NSString * _downloadID;
+    NSNumber * _errorCode;
+    NSString * _errorDescription;
+    NSString * _errorDomain;
+    NSNumber * _firstUnderlyingErrorCode;
+    NSString * _firstUnderlyingErrorDomain;
+    NSString * _firstUnderlyingErrorLocalizedDescription;
+    bool  _hasRacGUID;
+    bool  _isUserCancelError;
+    NSDictionary * _item;
+    NSString * _logUUID;
+    NSDictionary * _metadata;
+    NSString * _permLink;
+    NSString * _price;
+    NSString * _purchaseParameters;
+    NSArray * _purchaseResponseItems;
+    NSDictionary * _responseMetrics;
+    NSNumber * _storeID;
+    NSNumber * _supplementalContentCount;
+}
+
+@property (nonatomic, copy) NSString *currency;
+@property (nonatomic, copy) NSString *downloadID;
+@property (nonatomic, copy) NSNumber *errorCode;
+@property (nonatomic, copy) NSString *errorDescription;
+@property (nonatomic, copy) NSString *errorDomain;
+@property (nonatomic, copy) NSNumber *firstUnderlyingErrorCode;
+@property (nonatomic, copy) NSString *firstUnderlyingErrorDomain;
+@property (nonatomic, copy) NSString *firstUnderlyingErrorLocalizedDescription;
+@property (nonatomic) bool hasRacGUID;
+@property (nonatomic) bool isUserCancelError;
+@property (nonatomic, copy) NSDictionary *item;
+@property (nonatomic, copy) NSString *logUUID;
+@property (nonatomic, copy) NSDictionary *metadata;
+@property (nonatomic, copy) NSString *permLink;
+@property (nonatomic, copy) NSString *price;
+@property (nonatomic, copy) NSString *purchaseParameters;
+@property (nonatomic, retain) NSArray *purchaseResponseItems;
+@property (nonatomic, copy) NSDictionary *responseMetrics;
+@property (nonatomic, retain) NSNumber *storeID;
+@property (nonatomic, copy) NSNumber *supplementalContentCount;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)_updatePropertiesFromPurchaseError:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currency;
+- (id)downloadID;
+- (void)encodeWithCoder:(id)arg1;
+- (id)errorCode;
+- (id)errorDescription;
+- (id)errorDomain;
+- (id)firstUnderlyingErrorCode;
+- (id)firstUnderlyingErrorDomain;
+- (id)firstUnderlyingErrorLocalizedDescription;
+- (bool)hasRacGUID;
+- (id)initWithAMSPurchaseResult:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPurchase:(id)arg1 error:(id)arg2;
+- (bool)isUserCancelError;
+- (id)item;
+- (id)logUUID;
+- (id)metadata;
+- (id)permLink;
+- (id)price;
+- (id)purchaseParameters;
+- (id)purchaseResponseItems;
+- (id)responseMetrics;
+- (void)setCurrency:(id)arg1;
+- (void)setDownloadID:(id)arg1;
+- (void)setErrorCode:(id)arg1;
+- (void)setErrorDescription:(id)arg1;
+- (void)setErrorDomain:(id)arg1;
+- (void)setFirstUnderlyingErrorCode:(id)arg1;
+- (void)setFirstUnderlyingErrorDomain:(id)arg1;
+- (void)setFirstUnderlyingErrorLocalizedDescription:(id)arg1;
+- (void)setHasRacGUID:(bool)arg1;
+- (void)setIsUserCancelError:(bool)arg1;
+- (void)setItem:(id)arg1;
+- (void)setLogUUID:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setPermLink:(id)arg1;
+- (void)setPrice:(id)arg1;
+- (void)setPurchaseParameters:(id)arg1;
+- (void)setPurchaseResponseItems:(id)arg1;
+- (void)setResponseMetrics:(id)arg1;
+- (void)setStoreID:(id)arg1;
+- (void)setSupplementalContentCount:(id)arg1;
+- (id)storeID;
+- (id)supplementalContentCount;
+
+@end

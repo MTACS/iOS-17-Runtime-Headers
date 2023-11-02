@@ -1,0 +1,93 @@
+
+@interface PHImportOptions : NSObject {
+    PHAssetCollection * _destinationAlbum;
+    PHCollectionList * _destinationFolder;
+    PHImportSource * _importSource;
+    PHPhotoLibrary * _library;
+    PHLibraryScope * _libraryScope;
+    struct options_bits { 
+        unsigned int preserveFolderStructure : 1; 
+        unsigned int hideProgress : 1; 
+        unsigned int skipAlertWhenFinished : 1; 
+        unsigned int referencedImport : 1; 
+        unsigned int allowDuplicates : 1; 
+        unsigned int skipDiskSpaceCheck : 1; 
+        unsigned int deleteAfterImport : 1; 
+        unsigned int metadataAddMode : 1; 
+        unsigned int omitImportComplete : 1; 
+        unsigned int allowUnsupported : 1; 
+        unsigned int fileOperation : 3; 
+        unsigned int importedBy : 8; 
+        unsigned int moveToSharedLibrary : 1; 
+    }  _options_bits;
+    NSString * _personId;
+    NSSortDescriptor * _sortDescriptor;
+    NSMutableDictionary * _userIptcMetadata;
+}
+
+@property (nonatomic) bool allowDuplicates;
+@property (nonatomic) bool allowUnsupported;
+@property (nonatomic) bool deleteAfterImport;
+@property (nonatomic, retain) PHAssetCollection *destinationAlbum;
+@property (nonatomic, retain) PHCollectionList *destinationFolder;
+@property (nonatomic) unsigned char fileOperation;
+@property (nonatomic) bool hideProgress;
+@property (nonatomic, retain) PHImportSource *importSource;
+@property (nonatomic) short importedBy;
+@property (nonatomic, retain) PHPhotoLibrary *library;
+@property (nonatomic, retain) PHLibraryScope *libraryScope;
+@property (nonatomic) unsigned char metadataAddMode;
+@property (nonatomic) bool omitImportComplete;
+@property (nonatomic, retain) NSString *personId;
+@property (nonatomic) bool preserveFolderStructure;
+@property (nonatomic) bool shouldImportAsReferenced;
+@property (nonatomic) bool skipAlertWhenFinished;
+@property (nonatomic) bool skipDiskSpaceCheck;
+@property (nonatomic, retain) NSSortDescriptor *sortDescriptor;
+@property (nonatomic, retain) NSMutableDictionary *userIptcMetadata;
+
+- (void).cxx_destruct;
+- (bool)allowDuplicates;
+- (bool)allowUnsupported;
+- (bool)deleteAfterImport;
+- (id)description;
+- (id)destinationAlbum;
+- (id)destinationFolder;
+- (unsigned char)fileOperation;
+- (bool)hideProgress;
+- (id)importSource;
+- (short)importedBy;
+- (id)init;
+- (id)library;
+- (id)libraryScope;
+- (unsigned char)metadataAddMode;
+- (bool)omitImportComplete;
+- (id)personId;
+- (bool)preserveFolderStructure;
+- (void)setAllowDuplicates:(bool)arg1;
+- (void)setAllowUnsupported:(bool)arg1;
+- (void)setDeleteAfterImport:(bool)arg1;
+- (void)setDestinationAlbum:(id)arg1;
+- (void)setDestinationFolder:(id)arg1;
+- (void)setFileOperation:(unsigned char)arg1;
+- (void)setHideProgress:(bool)arg1;
+- (void)setImportSource:(id)arg1;
+- (void)setImportedBy:(short)arg1;
+- (void)setLibrary:(id)arg1;
+- (void)setLibraryScope:(id)arg1;
+- (void)setMetadataAddMode:(unsigned char)arg1;
+- (void)setOmitImportComplete:(bool)arg1;
+- (void)setPersonId:(id)arg1;
+- (void)setPreserveFolderStructure:(bool)arg1;
+- (void)setShouldImportAsReferenced:(bool)arg1;
+- (void)setSkipAlertWhenFinished:(bool)arg1;
+- (void)setSkipDiskSpaceCheck:(bool)arg1;
+- (void)setSortDescriptor:(id)arg1;
+- (void)setUserIptcMetadata:(id)arg1;
+- (bool)shouldImportAsReferenced;
+- (bool)skipAlertWhenFinished;
+- (bool)skipDiskSpaceCheck;
+- (id)sortDescriptor;
+- (id)userIptcMetadata;
+
+@end

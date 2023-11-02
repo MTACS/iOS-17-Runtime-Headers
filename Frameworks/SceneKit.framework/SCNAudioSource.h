@@ -1,0 +1,61 @@
+
+@interface SCNAudioSource : NSObject <NSCopying, NSSecureCoding> {
+    AVAudioPCMBuffer * _audioBuffer;
+    AVAudioFile * _audioFile;
+    NSString * _audioName;
+    NSURL * _audioURL;
+    bool  _loaded;
+    bool  _loops;
+    bool  _shouldStream;
+    bool  positional;
+    float  rate;
+    float  reverbBlend;
+    float  volume;
+}
+
+@property (nonatomic) bool loops;
+@property (getter=isPositional, nonatomic) bool positional;
+@property (nonatomic) float rate;
+@property (nonatomic) float reverbBlend;
+@property (nonatomic) bool shouldStream;
+@property (nonatomic) float volume;
+
++ (id)audioSourceNamed:(id)arg1;
++ (id)audioSourceWithAVAudioPCMBuffer:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void)_customDecodingOfSCNAudioSource:(id)arg1;
+- (void)_customEncodingOfSCNAudioSource:(id)arg1;
+- (void)_load;
+- (void)_loadURLWithBundle:(id)arg1;
+- (id)audioBuffer;
+- (id)audioBufferFormat;
+- (id)audioFile;
+- (id)copy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (double)duration;
+- (void)encodeWithCoder:(id)arg1;
+- (id)fileName;
+- (id)initWithAVAudioPCMBuffer:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFileNamed:(id)arg1;
+- (id)initWithFileNamed:(id)arg1 inBundle:(id)arg2;
+- (id)initWithURL:(id)arg1;
+- (bool)isPositional;
+- (void)load;
+- (void)loadIfNeeded;
+- (bool)loops;
+- (float)rate;
+- (long long)renderingAlgorithm;
+- (float)reverbBlend;
+- (void)setLoops:(bool)arg1;
+- (void)setPositional:(bool)arg1;
+- (void)setRate:(float)arg1;
+- (void)setReverbBlend:(float)arg1;
+- (void)setShouldStream:(bool)arg1;
+- (void)setVolume:(float)arg1;
+- (bool)shouldStream;
+- (float)volume;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol HKMedicationExposableDoseEventControlClientInterface <NSObject>
+
+@end

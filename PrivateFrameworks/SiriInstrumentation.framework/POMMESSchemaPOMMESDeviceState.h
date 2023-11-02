@@ -1,0 +1,92 @@
+
+@interface POMMESSchemaPOMMESDeviceState : SISchemaInstrumentationMessage {
+    NSString * _companionName;
+    struct { 
+        unsigned int isCarDoNotDisturbModeEnabled : 1; 
+        unsigned int isCarPlayEnabled : 1; 
+        unsigned int isEyesFreeEnabled : 1; 
+        unsigned int isLockedWithPasscode : 1; 
+        unsigned int isMultiUserDevice : 1; 
+        unsigned int isTextToSpeechEnabled : 1; 
+        unsigned int isVoiceTriggerEnabled : 1; 
+    }  _has;
+    bool  _hasCompanionName;
+    bool  _isCarDoNotDisturbModeEnabled;
+    bool  _isCarPlayEnabled;
+    bool  _isEyesFreeEnabled;
+    bool  _isLockedWithPasscode;
+    bool  _isMultiUserDevice;
+    bool  _isTextToSpeechEnabled;
+    bool  _isVoiceTriggerEnabled;
+}
+
+@property (nonatomic, copy) NSString *companionName;
+@property (nonatomic) bool hasCompanionName;
+@property (nonatomic) bool hasIsCarDoNotDisturbModeEnabled;
+@property (nonatomic) bool hasIsCarPlayEnabled;
+@property (nonatomic) bool hasIsEyesFreeEnabled;
+@property (nonatomic) bool hasIsLockedWithPasscode;
+@property (nonatomic) bool hasIsMultiUserDevice;
+@property (nonatomic) bool hasIsTextToSpeechEnabled;
+@property (nonatomic) bool hasIsVoiceTriggerEnabled;
+@property (nonatomic) bool isCarDoNotDisturbModeEnabled;
+@property (nonatomic) bool isCarPlayEnabled;
+@property (nonatomic) bool isEyesFreeEnabled;
+@property (nonatomic) bool isLockedWithPasscode;
+@property (nonatomic) bool isMultiUserDevice;
+@property (nonatomic) bool isTextToSpeechEnabled;
+@property (nonatomic) bool isVoiceTriggerEnabled;
+@property (nonatomic, readonly) NSData *jsonData;
+
+- (void).cxx_destruct;
+- (id)companionName;
+- (void)deleteCompanionName;
+- (void)deleteIsCarDoNotDisturbModeEnabled;
+- (void)deleteIsCarPlayEnabled;
+- (void)deleteIsEyesFreeEnabled;
+- (void)deleteIsLockedWithPasscode;
+- (void)deleteIsMultiUserDevice;
+- (void)deleteIsTextToSpeechEnabled;
+- (void)deleteIsVoiceTriggerEnabled;
+- (id)dictionaryRepresentation;
+- (bool)hasCompanionName;
+- (bool)hasIsCarDoNotDisturbModeEnabled;
+- (bool)hasIsCarPlayEnabled;
+- (bool)hasIsEyesFreeEnabled;
+- (bool)hasIsLockedWithPasscode;
+- (bool)hasIsMultiUserDevice;
+- (bool)hasIsTextToSpeechEnabled;
+- (bool)hasIsVoiceTriggerEnabled;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isCarDoNotDisturbModeEnabled;
+- (bool)isCarPlayEnabled;
+- (bool)isEqual:(id)arg1;
+- (bool)isEyesFreeEnabled;
+- (bool)isLockedWithPasscode;
+- (bool)isMultiUserDevice;
+- (bool)isTextToSpeechEnabled;
+- (bool)isVoiceTriggerEnabled;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (void)setCompanionName:(id)arg1;
+- (void)setHasCompanionName:(bool)arg1;
+- (void)setHasIsCarDoNotDisturbModeEnabled:(bool)arg1;
+- (void)setHasIsCarPlayEnabled:(bool)arg1;
+- (void)setHasIsEyesFreeEnabled:(bool)arg1;
+- (void)setHasIsLockedWithPasscode:(bool)arg1;
+- (void)setHasIsMultiUserDevice:(bool)arg1;
+- (void)setHasIsTextToSpeechEnabled:(bool)arg1;
+- (void)setHasIsVoiceTriggerEnabled:(bool)arg1;
+- (void)setIsCarDoNotDisturbModeEnabled:(bool)arg1;
+- (void)setIsCarPlayEnabled:(bool)arg1;
+- (void)setIsEyesFreeEnabled:(bool)arg1;
+- (void)setIsLockedWithPasscode:(bool)arg1;
+- (void)setIsMultiUserDevice:(bool)arg1;
+- (void)setIsTextToSpeechEnabled:(bool)arg1;
+- (void)setIsVoiceTriggerEnabled:(bool)arg1;
+- (id)suppressMessageUnderConditions;
+- (void)writeTo:(id)arg1;
+
+@end

@@ -1,0 +1,115 @@
+
+@interface VCAudioStreamConfig : VCMediaStreamConfig {
+    bool  _anbrEnabled;
+    long long  _audioStreamMode;
+    int  _bundlingScheme;
+    unsigned int  _channelCount;
+    NSMutableDictionary * _codecConfigurations;
+    unsigned int  _dtmfSampleRate;
+    bool  _dtmfTonePlaybackEnabled;
+    bool  _enableMaxBitrateOnNoChangeCMR;
+    struct tagVCAudioFrameFormat { 
+        struct AudioStreamBasicDescription { 
+            double mSampleRate; 
+            unsigned int mFormatID; 
+            unsigned int mFormatFlags; 
+            unsigned int mBytesPerPacket; 
+            unsigned int mFramesPerPacket; 
+            unsigned int mBytesPerFrame; 
+            unsigned int mChannelsPerFrame; 
+            unsigned int mBitsPerChannel; 
+            unsigned int mReserved; 
+        } format; 
+        unsigned int samplesPerFrame; 
+    }  _externalIOFormat;
+    bool  _forceEVSWideBand;
+    bool  _isLowLatency;
+    unsigned char  _numRedundantPayloads;
+    int  _oneToOneOperatingMode;
+    unsigned int  _preferredMediaBitRate;
+    bool  _redEnabled;
+    bool  _shouldApplyRedAsBoolean;
+    long long  _subscriptionSlot;
+    NSMutableOrderedSet * _supportedNumRedundantPayload;
+    bool  _supportsAdaptation;
+    bool  _useExternalIO;
+    bool  _useWifiTiers;
+    float  _volume;
+}
+
+@property (nonatomic) bool anbrEnabled;
+@property (nonatomic) long long audioStreamMode;
+@property (nonatomic) int bundlingScheme;
+@property (nonatomic) unsigned int channelCount;
+@property (nonatomic, readonly) NSDictionary *codecConfigurations;
+@property (nonatomic) unsigned int dtmfSampleRate;
+@property (nonatomic) bool dtmfTonePlaybackEnabled;
+@property (nonatomic) bool enableMaxBitrateOnNoChangeCMR;
+@property (nonatomic) const struct tagVCAudioFrameFormat { struct AudioStreamBasicDescription { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; } x1; unsigned int x2; }*externalIOFormat;
+@property (nonatomic) bool forceEVSWideBand;
+@property (nonatomic) bool isLowLatency;
+@property (nonatomic) unsigned char numRedundantPayloads;
+@property (nonatomic) int oneToOneOperatingMode;
+@property (nonatomic) unsigned int preferredMediaBitRate;
+@property (getter=isRedEnabled, nonatomic, readonly) bool redEnabled;
+@property (nonatomic) bool shouldApplyRedAsBoolean;
+@property (nonatomic) long long subscriptionSlot;
+@property (nonatomic, readonly) NSArray *supportedNumRedundantPayload;
+@property (nonatomic) bool supportsAdaptation;
+@property (nonatomic, readonly) bool useExternalIO;
+@property (nonatomic) bool useWifiTiers;
+@property (nonatomic) float volume;
+
++ (int)bundlingSchemeForAudioStreamMode:(long long)arg1 payloadType:(int)arg2;
+
+- (void)addCodecConfiguration:(id)arg1;
+- (void)addSupportedNumRedundantPayload:(unsigned int)arg1;
+- (bool)anbrEnabled;
+- (long long)audioStreamMode;
+- (int)bundlingScheme;
+- (unsigned int)channelCount;
+- (id)codecConfigurations;
+- (void)dealloc;
+- (unsigned int)dtmfSampleRate;
+- (bool)dtmfTonePlaybackEnabled;
+- (bool)enableMaxBitrateOnNoChangeCMR;
+- (const struct tagVCAudioFrameFormat { struct AudioStreamBasicDescription { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; } x1; unsigned int x2; }*)externalIOFormat;
+- (bool)forceEVSWideBand;
+- (id)init;
+- (id)initWithClientDictionary:(id)arg1;
+- (bool)isLowLatency;
+- (bool)isRedEnabled;
+- (unsigned char)numRedundantPayloads;
+- (int)oneToOneOperatingMode;
+- (unsigned int)preferredMediaBitRate;
+- (void)setAnbrEnabled:(bool)arg1;
+- (void)setAudioStreamMode:(long long)arg1;
+- (void)setBundlingScheme:(int)arg1;
+- (void)setChannelCount:(unsigned int)arg1;
+- (void)setDtmfSampleRate:(unsigned int)arg1;
+- (void)setDtmfTonePlaybackEnabled:(bool)arg1;
+- (void)setEnableMaxBitrateOnNoChangeCMR:(bool)arg1;
+- (void)setExternalIOFormat:(const struct tagVCAudioFrameFormat { struct AudioStreamBasicDescription { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; } x1; unsigned int x2; }*)arg1;
+- (void)setForceEVSWideBand:(bool)arg1;
+- (void)setIsLowLatency:(bool)arg1;
+- (void)setNumRedundantPayloads:(unsigned char)arg1;
+- (void)setOneToOneOperatingMode:(int)arg1;
+- (void)setPreferredMediaBitRate:(unsigned int)arg1;
+- (void)setShouldApplyRedAsBoolean:(bool)arg1;
+- (void)setSubscriptionSlot:(long long)arg1;
+- (void)setSupportsAdaptation:(bool)arg1;
+- (void)setUseWifiTiers:(bool)arg1;
+- (void)setVolume:(float)arg1;
+- (bool)setupCNCodecWithClientDictionary:(id)arg1;
+- (bool)setupCodecWithClientDictionary:(id)arg1;
+- (bool)setupDTMFCodecWithClientDictionary:(id)arg1;
+- (void)setupRedWithRxPayload:(unsigned int)arg1 txPayload:(unsigned int)arg2;
+- (bool)shouldApplyRedAsBoolean;
+- (long long)subscriptionSlot;
+- (id)supportedNumRedundantPayload;
+- (bool)supportsAdaptation;
+- (bool)useExternalIO;
+- (bool)useWifiTiers;
+- (float)volume;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface INCodableDecimalAttributeMetadata : INCodableNumberAttributeMetadata
+
+@end

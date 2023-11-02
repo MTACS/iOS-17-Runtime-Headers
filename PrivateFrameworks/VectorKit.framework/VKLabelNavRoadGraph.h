@@ -1,0 +1,181 @@
+
+@interface VKLabelNavRoadGraph : NSObject {
+    unsigned long long  _currentRoadStartSimplifiedPointIndex;
+    struct unordered_set<std::shared_ptr<md::LabelTile>, std::hash<std::shared_ptr<md::LabelTile>>, std::equal_to<std::shared_ptr<md::LabelTile>>, geo::StdAllocator<std::shared_ptr<md::LabelTile>, mdm::Allocator>> { 
+        struct __hash_table<std::shared_ptr<md::LabelTile>, std::hash<std::shared_ptr<md::LabelTile>>, std::equal_to<std::shared_ptr<md::LabelTile>>, geo::StdAllocator<std::shared_ptr<md::LabelTile>, mdm::Allocator>> { 
+            struct unique_ptr<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *[], std::__bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator>>> { 
+                struct __compressed_pair<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> **, std::__bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator>>> { 
+                    void **__value_; 
+                    struct __bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator>> { 
+                        struct __compressed_pair<unsigned long, geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator>> { 
+                            unsigned long long __value_; 
+                            struct StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator> { 
+                                struct Allocator {} *_allocator; 
+                            } __value_; 
+                        } __data_; 
+                    } __value_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *>, geo::StdAllocator<std::__hash_node<std::shared_ptr<md::LabelTile>, void *>, mdm::Allocator>> { 
+                struct __hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> { 
+                    void *__next_; 
+                } __value_; 
+                struct StdAllocator<std::__hash_node<std::shared_ptr<md::LabelTile>, void *>, mdm::Allocator> { 
+                    struct Allocator {} *_allocator; 
+                } __value_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::hash<std::shared_ptr<md::LabelTile>>> { 
+                unsigned long long __value_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::equal_to<std::shared_ptr<md::LabelTile>>> { 
+                float __value_; 
+            } __p3_; 
+        } __table_; 
+    }  _duplicateTiles;
+    unsigned long long  _firstPOIAligningRouteSegment;
+    NSMutableArray * _intersections;
+    NSMutableArray * _junctions;
+    struct Box<double, 2> { 
+        struct Matrix<double, 2, 1> { 
+            double _e[2]; 
+        } _minimum; 
+        struct Matrix<double, 2, 1> { 
+            double _e[2]; 
+        } _maximum; 
+    }  _offRouteJunctionSelectRect;
+    NSMutableArray * _offRouteJunctions;
+    bool  _offRouteJunctionsValid;
+    NSMutableArray * _oppositeCarriagewayJunctions;
+    bool  _oppositeCarriagewayJunctionsValid;
+    struct unordered_map<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>, std::hash<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>, std::equal_to<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>, geo::StdAllocator<std::pair<const std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, mdm::Allocator>> { 
+        struct __hash_table<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, std::__unordered_map_hasher<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, std::hash<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>, std::equal_to<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>>, std::__unordered_map_equal<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, std::equal_to<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>, std::hash<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>>, geo::StdAllocator<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, mdm::Allocator>> { 
+            struct unique_ptr<std::__hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *> *[], std::__bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *> *, mdm::Allocator>>> { 
+                struct __compressed_pair<std::__hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *> **, std::__bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *> *, mdm::Allocator>>> { 
+                    void **__value_; 
+                    struct __bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *> *, mdm::Allocator>> { 
+                        struct __compressed_pair<unsigned long, geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *> *, mdm::Allocator>> { 
+                            unsigned long long __value_; 
+                            struct StdAllocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *> *, mdm::Allocator> { 
+                                struct Allocator {} *_allocator; 
+                            } __value_; 
+                        } __data_; 
+                    } __value_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *>, geo::StdAllocator<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *>, mdm::Allocator>> { 
+                struct __hash_node_base<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *> *> { 
+                    void *__next_; 
+                } __value_; 
+                struct StdAllocator<std::__hash_node<std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, void *>, mdm::Allocator> { 
+                    struct Allocator {} *_allocator; 
+                } __value_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__unordered_map_hasher<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, std::hash<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>, std::equal_to<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>>> { 
+                unsigned long long __value_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__unordered_map_equal<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::__hash_value_type<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>, std::shared_ptr<NavRoadFeature>>, std::equal_to<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>, std::hash<std::basic_string<char, std::char_traits<char>, geo::StdAllocator<char, mdm::Allocator>>>>> { 
+                float __value_; 
+            } __p3_; 
+        } __table_; 
+    }  _routeFeatureMap;
+    bool  _routeFeatureMapValid;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
+    }  _routeUserOffset;
+    struct vector<RouteSegment, geo::StdAllocator<RouteSegment, mdm::Allocator>> { 
+        struct RouteSegment {} *__begin_; 
+        struct RouteSegment {} *__end_; 
+        struct __compressed_pair<RouteSegment *, geo::StdAllocator<RouteSegment, mdm::Allocator>> { 
+            struct RouteSegment {} *__value_; 
+            struct StdAllocator<RouteSegment, mdm::Allocator> { 
+                struct Allocator {} *_allocator; 
+            } __value_; 
+        } __end_cap_; 
+    }  _screenRouteSegments;
+    bool  _screenRouteValid;
+    struct vector<md::LabelPoint, geo::StdAllocator<md::LabelPoint, mdm::Allocator>> { 
+        struct LabelPoint {} *__begin_; 
+        struct LabelPoint {} *__end_; 
+        struct __compressed_pair<md::LabelPoint *, geo::StdAllocator<md::LabelPoint, mdm::Allocator>> { 
+            struct LabelPoint {} *__value_; 
+            struct StdAllocator<md::LabelPoint, mdm::Allocator> { 
+                struct Allocator {} *_allocator; 
+            } __value_; 
+        } __end_cap_; 
+    }  _simplifiedRoutePoints;
+    bool  _simplifiedRouteValid;
+    NSMutableDictionary * _tileDatasByIndex;
+    struct unordered_set<std::shared_ptr<md::LabelTile>, std::hash<std::shared_ptr<md::LabelTile>>, std::equal_to<std::shared_ptr<md::LabelTile>>, geo::StdAllocator<std::shared_ptr<md::LabelTile>, mdm::Allocator>> { 
+        struct __hash_table<std::shared_ptr<md::LabelTile>, std::hash<std::shared_ptr<md::LabelTile>>, std::equal_to<std::shared_ptr<md::LabelTile>>, geo::StdAllocator<std::shared_ptr<md::LabelTile>, mdm::Allocator>> { 
+            struct unique_ptr<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *[], std::__bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator>>> { 
+                struct __compressed_pair<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> **, std::__bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator>>> { 
+                    void **__value_; 
+                    struct __bucket_list_deallocator<geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator>> { 
+                        struct __compressed_pair<unsigned long, geo::StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator>> { 
+                            unsigned long long __value_; 
+                            struct StdAllocator<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> *, mdm::Allocator> { 
+                                struct Allocator {} *_allocator; 
+                            } __value_; 
+                        } __data_; 
+                    } __value_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *>, geo::StdAllocator<std::__hash_node<std::shared_ptr<md::LabelTile>, void *>, mdm::Allocator>> { 
+                struct __hash_node_base<std::__hash_node<std::shared_ptr<md::LabelTile>, void *> *> { 
+                    void *__next_; 
+                } __value_; 
+                struct StdAllocator<std::__hash_node<std::shared_ptr<md::LabelTile>, void *>, mdm::Allocator> { 
+                    struct Allocator {} *_allocator; 
+                } __value_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::hash<std::shared_ptr<md::LabelTile>>> { 
+                unsigned long long __value_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::equal_to<std::shared_ptr<md::LabelTile>>> { 
+                float __value_; 
+            } __p3_; 
+        } __table_; 
+    }  _tiles;
+    struct Matrix<float, 2, 1> { 
+        float _e[2]; 
+    }  _unitHeading;
+}
+
+@property (nonatomic, retain) NSMutableArray *junctions;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (bool)_checkIfDualCarriageWayConnectorRoad:(id)arg1 fromJunction:(id)arg2 toJunction:(id)arg3 checkShields:(bool)arg4;
+- (id)_findInterTileJunctionForJunction:(id)arg1;
+- (void)_findOffRouteJunctions;
+- (id)_junctionForRoadEdge:(const struct GeoCodecsRoadEdge { struct GeoCodecsMultiSectionFeature {} *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct GeoCodecsConnectivityJunction {} *x6; struct GeoCodecsConnectivityJunction {} *x7; }*)arg1 atA:(bool)arg2 routeOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg3 tile:(const void*)arg4;
+- (id)_nextIntersectionForRoad:(id)arg1;
+- (void)_transformRouteToScreenWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct MapNavLabeler {} *x3; struct LabelLayoutContext {} *x4; struct LabelNavLayoutContext {} *x5; }*)arg1;
+- (void)_updateIntersectionsForDepth:(unsigned long long)arg1;
+- (void)_updateSimplifiedRoute;
+- (void)addRouteRoadEdge:(const struct VKLabelNavRouteRoadEdge { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; struct GeoCodecsRoadEdge { struct GeoCodecsMultiSectionFeature {} *x_3_1_1; unsigned long long x_3_1_2; unsigned long long x_3_1_3; unsigned long long x_3_1_4; unsigned long long x_3_1_5; struct GeoCodecsConnectivityJunction {} *x_3_1_6; struct GeoCodecsConnectivityJunction {} *x_3_1_7; } x3; unsigned long long x4; unsigned long long x5; }*)arg1 atA:(bool)arg2 isRouteRefineJunction:(bool)arg3 tile:(const void*)arg4 junctionList:(id)arg5;
+- (bool)collideRouteWithLabel:(id)arg1 routeCrossProduct:(float*)arg2 context:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct MapNavLabeler {} *x3; struct LabelLayoutContext {} *x4; struct LabelNavLayoutContext {} *x5; }*)arg3;
+- (unsigned char)computeRoutePositionForPOIAtPixel:(const void*)arg1 currentPosition:(unsigned char)arg2 context:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct MapNavLabeler {} *x3; struct LabelLayoutContext {} *x4; struct LabelNavLayoutContext {} *x5; }*)arg3;
+- (unsigned long long)countReadyJunctionLists;
+- (void)debugDraw:(id)arg1 overlayConsole:(void*)arg2 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct MapNavLabeler {} *x3; struct LabelLayoutContext {} *x4; struct LabelNavLayoutContext {} *x5; }*)arg3;
+- (void)evaluateDualCarriagewayForJunction:(id)arg1 outputJunctionList:(id)arg2;
+- (id)initWithJunctions:(id)arg1;
+- (bool)isPriorRouteCollinearWithRoad:(id)arg1 distance:(float)arg2;
+- (id)junctionForRoad:(id)arg1 nearJunction:(bool)arg2 crossTileEdge:(bool)arg3;
+- (id)junctionListForDepth:(unsigned long long)arg1;
+- (id)junctions;
+- (id)nextRoadSegmentForRoad:(id)arg1;
+- (id)offRouteGraphJunctionsWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct MapNavLabeler {} *x3; struct LabelLayoutContext {} *x4; struct LabelNavLayoutContext {} *x5; }*)arg1 maxJunctions:(unsigned long long)arg2 isOnRoute:(bool)arg3;
+- (id)offRouteJunctionList;
+- (id)oppositeCarriagewayJunctions;
+- (id)overpassJunctionForJunction:(id)arg1;
+- (bool)prepareOppositeCarriagewayJunctions;
+- (void)reset;
+- (void)routeJunctionsHaveChanged;
+- (void)setJunctions:(id)arg1;
+- (void)setTiles:(const void*)arg1;
+- (void)startingLabelLayoutWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct MapNavLabeler {} *x3; struct LabelLayoutContext {} *x4; struct LabelNavLayoutContext {} *x5; }*)arg1 routeUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
+- (struct Matrix<float, 2, 1> { float x1[2]; })unitHeading;
+
+@end

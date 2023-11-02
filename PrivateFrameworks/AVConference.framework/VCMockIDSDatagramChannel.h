@@ -1,0 +1,163 @@
+
+@interface VCMockIDSDatagramChannel : IDSDatagramChannel {
+    NSLock * _blockSettingLock;
+    int  _dataPath;
+    struct { 
+        unsigned int options_flags; 
+        unsigned long long participantID; 
+        unsigned short probeGroupID; 
+        unsigned char channelPriority; 
+        BOOL streamIDCount; 
+        unsigned short streamIDs[12]; 
+        unsigned char generationCounterLSB; 
+        unsigned short statsID; 
+        struct { 
+            unsigned short serverTimestamp; 
+            unsigned short serverPacketInterval; 
+            unsigned short totalServerPacketReceived; 
+            unsigned short totalServerPacketSent; 
+            unsigned short uplinkBandwidth; 
+        } statsPayload; 
+        double arrivalTime; 
+        unsigned long long expireTimestamp; 
+        bool encryptedHBH; 
+        unsigned long long encryptionSequenceNumber; 
+        unsigned char packetUUID[16]; 
+        bool retransmittedPacket; 
+        bool nonRetransmittablePacket; 
+    }  _datagramOptionsCached;
+    struct __CFAllocator { } * _datagramPacketAllocator;
+    unsigned long long  _datagramPacketNextSequenceNumber;
+    struct _VCSingleLinkedList { 
+        struct _VCSingleLinkedListEntry {} *head; 
+        bool initialized; 
+        int (*compare)(); 
+        unsigned long long countEntries; 
+    }  _datagramPackets;
+    struct _VCSingleLinkedList { 
+        struct _VCSingleLinkedListEntry {} *head; 
+        bool initialized; 
+        int (*compare)(); 
+        unsigned long long countEntries; 
+    }  _datagramPacketsDirectIDSPath;
+    NSObject<OS_dispatch_queue> * _directPathRTXQueue;
+    NSObject<OS_dispatch_queue> * _directPathReadQueue;
+    bool  _doNotDropNackOrRetransmitted;
+    double  _emulatedRxPLR;
+    id /* block */  _eventHandler;
+    NSLock * _flushDatagramPacketsLock;
+    bool  _isECNEnabled;
+    bool  _isNackEnabled;
+    bool  _isServerStatsCached;
+    bool  _isSourceParticipantIDOnFanOutPacketsEnabled;
+    bool  _isValid;
+    bool  _isWrongParticipantIDOnFanOutPacketsEnabled;
+    VCMockIDSDataChannelLinkContext * _linkContext;
+    unsigned char  _packetBuffer;
+    unsigned short  _packetBufferDataSize;
+    struct { 
+        unsigned int options_flags; 
+        unsigned long long participantID; 
+        unsigned short probeGroupID; 
+        unsigned char channelPriority; 
+        BOOL streamIDCount; 
+        unsigned short streamIDs[12]; 
+        unsigned char generationCounterLSB; 
+        unsigned short statsID; 
+        struct { 
+            unsigned short serverTimestamp; 
+            unsigned short serverPacketInterval; 
+            unsigned short totalServerPacketReceived; 
+            unsigned short totalServerPacketSent; 
+            unsigned short uplinkBandwidth; 
+        } statsPayload; 
+        double arrivalTime; 
+        unsigned long long expireTimestamp; 
+        bool encryptedHBH; 
+        unsigned long long encryptionSequenceNumber; 
+        unsigned char packetUUID[16]; 
+        bool retransmittedPacket; 
+        bool nonRetransmittablePacket; 
+    }  _packetDatagramOptions;
+    long long  _participantGenerationCounter;
+    id /* block */  _readHandler;
+    id /* block */  _readHandlerWithOptions;
+    id /* block */  _readyToReadBlock;
+    id /* block */  _sharedWriteCompletionHandler;
+    int  _socket;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _streamSubscriptionLock;
+    NSDictionary * _subscribedStreamsByParticipantID;
+    bool  _usingOptions;
+    id /* block */  _writeDatagramBlock;
+    id /* block */  _writeDatagramsBlock;
+    NSLock * _writeDirectPathIDSLock;
+    unsigned short  numPacketReceived;
+    unsigned short  numPacketSent;
+}
+
+@property (readonly) bool idsUPlusOneMode;
+
++ (void)extractRTPData:(char *)arg1 ssrc:(unsigned int*)arg2 sequenceNumber:(unsigned short*)arg3;
+
+- (void)addMediaPacketToBuffer:(char *)arg1 length:(unsigned long long)arg2 datagramOptions:(struct { unsigned int x1; unsigned long long x2; unsigned short x3; unsigned char x4; BOOL x5; unsigned short x6[12]; unsigned char x7; unsigned short x8; struct { unsigned short x_9_1_1; unsigned short x_9_1_2; unsigned short x_9_1_3; unsigned short x_9_1_4; unsigned short x_9_1_5; } x9; double x10; unsigned long long x11; bool x12; unsigned long long x13; unsigned char x14[16]; bool x15; bool x16; })arg3;
+- (void)cleanup;
+- (struct _VCMockIDSDatagramChannelPacket { struct _VCSingleLinkedListEntry { struct _VCSingleLinkedListEntry {} *x_1_1_1; } x1; unsigned char x2[1500]; unsigned long long x3; bool x4; struct { unsigned int x_5_1_1; unsigned long long x_5_1_2; unsigned short x_5_1_3; unsigned char x_5_1_4; BOOL x_5_1_5; unsigned short x_5_1_6[12]; unsigned char x_5_1_7; unsigned short x_5_1_8; struct { unsigned short x_9_2_1; unsigned short x_9_2_2; unsigned short x_9_2_3; unsigned short x_9_2_4; unsigned short x_9_2_5; } x_5_1_9; double x_5_1_10; unsigned long long x_5_1_11; bool x_5_1_12; unsigned long long x_5_1_13; unsigned char x_5_1_14[16]; bool x_5_1_15; bool x_5_1_16; } x5; unsigned long long x6; }*)constructPacket:(struct _VCMockIDSDatagramChannelPacket { struct _VCSingleLinkedListEntry { struct _VCSingleLinkedListEntry {} *x_1_1_1; } x1; unsigned char x2[1500]; unsigned long long x3; bool x4; struct { unsigned int x_5_1_1; unsigned long long x_5_1_2; unsigned short x_5_1_3; unsigned char x_5_1_4; BOOL x_5_1_5; unsigned short x_5_1_6[12]; unsigned char x_5_1_7; unsigned short x_5_1_8; struct { unsigned short x_9_2_1; unsigned short x_9_2_2; unsigned short x_9_2_3; unsigned short x_9_2_4; unsigned short x_9_2_5; } x_5_1_9; double x_5_1_10; unsigned long long x_5_1_11; bool x_5_1_12; unsigned long long x_5_1_13; unsigned char x_5_1_14[16]; bool x_5_1_15; bool x_5_1_16; } x5; unsigned long long x6; }*)arg1 datagram:(const void*)arg2 datagramSize:(unsigned int)arg3 datagramOptions:(struct { unsigned int x1; unsigned long long x2; unsigned short x3; unsigned char x4; BOOL x5; unsigned short x6[12]; unsigned char x7; unsigned short x8; struct { unsigned short x_9_1_1; unsigned short x_9_1_2; unsigned short x_9_1_3; unsigned short x_9_1_4; unsigned short x_9_1_5; } x9; double x10; unsigned long long x11; bool x12; unsigned long long x13; unsigned char x14[16]; bool x15; bool x16; }*)arg4;
+- (bool)createSocket;
+- (void)dealloc;
+- (void)dequeueDatagramPacket:(id /* block */)arg1;
+- (int)drainUnderlyingFileDescriptor;
+- (bool)enqueueDatagramPacket:(const void*)arg1 datagramSize:(unsigned int)arg2 options:(struct { unsigned int x1; unsigned long long x2; unsigned short x3; unsigned char x4; BOOL x5; unsigned short x6[12]; unsigned char x7; unsigned short x8; struct { unsigned short x_9_1_1; unsigned short x_9_1_2; unsigned short x_9_1_3; unsigned short x_9_1_4; unsigned short x_9_1_5; } x9; double x10; unsigned long long x11; bool x12; unsigned long long x13; unsigned char x14[16]; bool x15; bool x16; }*)arg3 error:(id*)arg4;
+- (void)flushDatagramPacketsList;
+- (void)flushDatagramPacketsListDIrectIDSPath;
+- (void)flushLinkProbingStatusWithOptions:(id)arg1;
+- (void)handlePacket:(struct _VCMockIDSDatagramChannelPacket { struct _VCSingleLinkedListEntry { struct _VCSingleLinkedListEntry {} *x_1_1_1; } x1; unsigned char x2[1500]; unsigned long long x3; bool x4; struct { unsigned int x_5_1_1; unsigned long long x_5_1_2; unsigned short x_5_1_3; unsigned char x_5_1_4; BOOL x_5_1_5; unsigned short x_5_1_6[12]; unsigned char x_5_1_7; unsigned short x_5_1_8; struct { unsigned short x_9_2_1; unsigned short x_9_2_2; unsigned short x_9_2_3; unsigned short x_9_2_4; unsigned short x_9_2_5; } x_5_1_9; double x_5_1_10; unsigned long long x_5_1_11; bool x_5_1_12; unsigned long long x_5_1_13; unsigned char x_5_1_14[16]; bool x_5_1_15; bool x_5_1_16; } x5; unsigned long long x6; }*)arg1 packetHandler:(id /* block */)arg2 shouldDropThisPacket:(bool)arg3;
+- (bool)idsUPlusOneMode;
+- (id)initCreateSocketRequiresOptions:(bool)arg1 dataPath:(int)arg2;
+- (id)initRequiresOptions:(bool)arg1;
+- (void)invalidate;
+- (bool)isControlChannelDatagram:(struct _VCMockIDSDatagramChannelPacket { struct _VCSingleLinkedListEntry { struct _VCSingleLinkedListEntry {} *x_1_1_1; } x1; unsigned char x2[1500]; unsigned long long x3; bool x4; struct { unsigned int x_5_1_1; unsigned long long x_5_1_2; unsigned short x_5_1_3; unsigned char x_5_1_4; BOOL x_5_1_5; unsigned short x_5_1_6[12]; unsigned char x_5_1_7; unsigned short x_5_1_8; struct { unsigned short x_9_2_1; unsigned short x_9_2_2; unsigned short x_9_2_3; unsigned short x_9_2_4; unsigned short x_9_2_5; } x_5_1_9; double x_5_1_10; unsigned long long x_5_1_11; bool x_5_1_12; unsigned long long x_5_1_13; unsigned char x_5_1_14[16]; bool x_5_1_15; bool x_5_1_16; } x5; unsigned long long x6; }*)arg1;
+- (bool)isMediaPacket:(char *)arg1 length:(unsigned long long)arg2;
+- (bool)isNACKPacket:(char *)arg1 length:(unsigned long long)arg2;
+- (bool)isRTCPPacket:(char *)arg1 length:(unsigned long long)arg2;
+- (id)newArrayOfStreamIdsForPacket:(struct _VCMockIDSDatagramChannelPacket { struct _VCSingleLinkedListEntry { struct _VCSingleLinkedListEntry {} *x_1_1_1; } x1; unsigned char x2[1500]; unsigned long long x3; bool x4; struct { unsigned int x_5_1_1; unsigned long long x_5_1_2; unsigned short x_5_1_3; unsigned char x_5_1_4; BOOL x_5_1_5; unsigned short x_5_1_6[12]; unsigned char x_5_1_7; unsigned short x_5_1_8; struct { unsigned short x_9_2_1; unsigned short x_9_2_2; unsigned short x_9_2_3; unsigned short x_9_2_4; unsigned short x_9_2_5; } x_5_1_9; double x_5_1_10; unsigned long long x_5_1_11; bool x_5_1_12; unsigned long long x_5_1_13; unsigned char x_5_1_14[16]; bool x_5_1_15; bool x_5_1_16; } x5; unsigned long long x6; }*)arg1;
+- (void)osChannelInfoLog;
+- (void)printDroppedPacketInfo:(struct _VCMockIDSDatagramChannelPacket { struct _VCSingleLinkedListEntry { struct _VCSingleLinkedListEntry {} *x_1_1_1; } x1; unsigned char x2[1500]; unsigned long long x3; bool x4; struct { unsigned int x_5_1_1; unsigned long long x_5_1_2; unsigned short x_5_1_3; unsigned char x_5_1_4; BOOL x_5_1_5; unsigned short x_5_1_6[12]; unsigned char x_5_1_7; unsigned short x_5_1_8; struct { unsigned short x_9_2_1; unsigned short x_9_2_2; unsigned short x_9_2_3; unsigned short x_9_2_4; unsigned short x_9_2_5; } x_5_1_9; double x_5_1_10; unsigned long long x_5_1_11; bool x_5_1_12; unsigned long long x_5_1_13; unsigned char x_5_1_14[16]; bool x_5_1_15; bool x_5_1_16; } x5; unsigned long long x6; }*)arg1;
+- (bool)processDatagramForDirectIDSDataPath:(const void*)arg1 datagramSize:(unsigned int)arg2 datagramOptions:(struct { unsigned int x1; unsigned long long x2; unsigned short x3; unsigned char x4; BOOL x5; unsigned short x6[12]; unsigned char x7; unsigned short x8; struct { unsigned short x_9_1_1; unsigned short x_9_1_2; unsigned short x_9_1_3; unsigned short x_9_1_4; unsigned short x_9_1_5; } x9; double x10; unsigned long long x11; bool x12; unsigned long long x13; unsigned char x14[16]; bool x15; bool x16; }*)arg3 error:(id*)arg4;
+- (void)processPacket:(struct _VCMockIDSDatagramChannelPacket { struct _VCSingleLinkedListEntry { struct _VCSingleLinkedListEntry {} *x_1_1_1; } x1; unsigned char x2[1500]; unsigned long long x3; bool x4; struct { unsigned int x_5_1_1; unsigned long long x_5_1_2; unsigned short x_5_1_3; unsigned char x_5_1_4; BOOL x_5_1_5; unsigned short x_5_1_6[12]; unsigned char x_5_1_7; unsigned short x_5_1_8; struct { unsigned short x_9_2_1; unsigned short x_9_2_2; unsigned short x_9_2_3; unsigned short x_9_2_4; unsigned short x_9_2_5; } x_5_1_9; double x_5_1_10; unsigned long long x_5_1_11; bool x_5_1_12; unsigned long long x_5_1_13; unsigned char x_5_1_14[16]; bool x_5_1_15; bool x_5_1_16; } x5; unsigned long long x6; }*)arg1 packetHandler:(id /* block */)arg2;
+- (void)processWriteCompletionCallback:(id /* block */)arg1 forDatagramWithSize:(unsigned long long)arg2 error:(id)arg3;
+- (void)queryProbingResultsWithOptions:(id)arg1;
+- (void)queryStatusWithOptions:(id)arg1;
+- (void)readDatagram:(const void*)arg1 datagramSize:(unsigned int)arg2 datagramOptions:(struct { unsigned int x1; unsigned long long x2; unsigned short x3; unsigned char x4; BOOL x5; unsigned short x6[12]; unsigned char x7; unsigned short x8; struct { unsigned short x_9_1_1; unsigned short x_9_1_2; unsigned short x_9_1_3; unsigned short x_9_1_4; unsigned short x_9_1_5; } x9; double x10; unsigned long long x11; bool x12; unsigned long long x13; unsigned char x14[16]; bool x15; bool x16; }*)arg3;
+- (void)readDatagramWithCompletionHandler:(id /* block */)arg1;
+- (void)readDatagramsWithCompletionHandler:(id /* block */)arg1;
+- (int)readyToRead;
+- (void)reportFirstPacketTimeForMKI:(id)arg1;
+- (void)requestSessionInfoWithOptions:(id)arg1;
+- (void)retrieveAndProcesOnePacket:(unsigned int)arg1 seq:(unsigned short)arg2 count:(int)arg3 index:(int)arg4;
+- (void)retrieveAndProcessMediaPacketsFromBuffer:(struct tagRTCPPACKET { struct tagRTCPCOMMON { unsigned int x_1_1_1 : 5; unsigned int x_1_1_2 : 1; unsigned int x_1_1_3 : 2; unsigned int x_1_1_4 : 8; unsigned short x_1_1_5; } x1; union { struct tagSR_RTCP { unsigned int x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; struct tagRTCP_RRB { unsigned int x_7_3_1; unsigned int x_7_3_2 : 8; unsigned int x_7_3_3 : 24; unsigned int x_7_3_4; unsigned int x_7_3_5; unsigned int x_7_3_6; unsigned int x_7_3_7; } x_1_2_7[1]; } x_2_1_1; struct tagRR_RTCP { unsigned int x_2_2_1; struct tagRTCP_RRB { unsigned int x_2_3_1; unsigned int x_2_3_2 : 8; unsigned int x_2_3_3 : 24; unsigned int x_2_3_4; unsigned int x_2_3_5; unsigned int x_2_3_6; unsigned int x_2_3_7; } x_2_2_2[1]; } x_2_1_2; struct tagSDES_RTCP { unsigned int x_3_2_1; struct tagRTCPSDES { unsigned char x_2_3_1; unsigned char x_2_3_2; BOOL x_2_3_3[258]; } x_3_2_2; } x_2_1_3; struct tagBYE_RTCP { unsigned int x_4_2_1; } x_2_1_4; struct tagRTCP_APP { unsigned int x_5_2_1; unsigned int x_5_2_2; } x_2_1_5; struct tagRTCP_APP_LTRP { struct tagRTCP_APP { unsigned int x_1_3_1; unsigned int x_1_3_2; } x_6_2_1; unsigned int x_6_2_2; } x_2_1_6; } x2; }*)arg1 packetHandler:(id /* block */)arg2;
+- (void)setChannelPreferences:(id)arg1;
+- (void)setEventHandler:(id /* block */)arg1;
+- (void)setParticipantIDOnOptions:(struct { unsigned int x1; unsigned long long x2; unsigned short x3; unsigned char x4; BOOL x5; unsigned short x6[12]; unsigned char x7; unsigned short x8; struct { unsigned short x_9_1_1; unsigned short x_9_1_2; unsigned short x_9_1_3; unsigned short x_9_1_4; unsigned short x_9_1_5; } x9; double x10; unsigned long long x11; bool x12; unsigned long long x13; unsigned char x14[16]; bool x15; bool x16; }*)arg1;
+- (void)setReadHandler:(id /* block */)arg1;
+- (void)setReadHandlerWithOptions:(id /* block */)arg1;
+- (void)setReadyToReadBlock:(id /* block */)arg1;
+- (void)setUPlusOneMode:(bool)arg1 isInitiator:(bool)arg2;
+- (void)setWiFiAssist:(bool)arg1;
+- (void)setWriteCompletionHandler:(id /* block */)arg1;
+- (void)setWriteDatagramBlock:(id /* block */)arg1;
+- (void)setWriteDatagramsBlock:(id /* block */)arg1;
+- (bool)setupMockIDSDatagramChannelRequiresOptions:(bool)arg1;
+- (bool)shouldReadPacket:(struct _VCMockIDSDatagramChannelPacket { struct _VCSingleLinkedListEntry { struct _VCSingleLinkedListEntry {} *x_1_1_1; } x1; unsigned char x2[1500]; unsigned long long x3; bool x4; struct { unsigned int x_5_1_1; unsigned long long x_5_1_2; unsigned short x_5_1_3; unsigned char x_5_1_4; BOOL x_5_1_5; unsigned short x_5_1_6[12]; unsigned char x_5_1_7; unsigned short x_5_1_8; struct { unsigned short x_9_2_1; unsigned short x_9_2_2; unsigned short x_9_2_3; unsigned short x_9_2_4; unsigned short x_9_2_5; } x_5_1_9; double x_5_1_10; unsigned long long x_5_1_11; bool x_5_1_12; unsigned long long x_5_1_13; unsigned char x_5_1_14[16]; bool x_5_1_15; bool x_5_1_16; } x5; unsigned long long x6; }*)arg1;
+- (void)signalUnderlyingFileDescriptor;
+- (void)start;
+- (void)startActiveProbingWithOptions:(id)arg1;
+- (void)stopActiveProbingWithOptions:(id)arg1;
+- (int)underlyingFileDescriptor;
+- (void)writeDatagram:(const void*)arg1 datagramSize:(unsigned int)arg2 datagramInfo:(struct { BOOL x1; unsigned short x2; unsigned char x3; unsigned short x4; unsigned char x5; })arg3 options:(struct { unsigned int x1; unsigned long long x2; unsigned short x3; unsigned char x4; BOOL x5; unsigned short x6[12]; unsigned char x7; unsigned short x8; struct { unsigned short x_9_1_1; unsigned short x_9_1_2; unsigned short x_9_1_3; unsigned short x_9_1_4; unsigned short x_9_1_5; } x9; double x10; unsigned long long x11; bool x12; unsigned long long x13; unsigned char x14[16]; bool x15; bool x16; }*)arg4 completionHandler:(id /* block */)arg5;
+- (void)writeDatagram:(const void*)arg1 datagramSize:(unsigned int)arg2 flags:(struct { BOOL x1; unsigned short x2; unsigned char x3; unsigned short x4; unsigned char x5; })arg3 completionHandler:(id /* block */)arg4;
+- (void)writeDatagrams:(const void**)arg1 datagramsSize:(unsigned int*)arg2 datagramsInfo:(struct { BOOL x1; unsigned short x2; unsigned char x3; unsigned short x4; unsigned char x5; }*)arg3 datagramsCount:(int)arg4 options:(struct { /* ? */ }**)arg5 completionHandler:(id /* block */)arg6;
+
+@end

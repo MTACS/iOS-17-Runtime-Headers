@@ -1,0 +1,4 @@
+
+@interface HMDAnalyticsCalendarEventData : HMFObject
+
+@end

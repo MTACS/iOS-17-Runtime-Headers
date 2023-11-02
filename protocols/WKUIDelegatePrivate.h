@@ -1,0 +1,112 @@
+
+@protocol WKUIDelegatePrivate <WKUIDelegate>
+
+@optional
+
+- (NSArray *)_attachmentListForWebView:(WKWebView *)arg1;
+- (NSArray *)_attachmentListForWebView:(WKWebView *)arg1 sourceIsManaged:(bool*)arg2;
+- (UIView *)_contextMenuHintPreviewContainerViewForWebView:(WKWebView *)arg1;
+- (NSDictionary *)_dataDetectionContextForWebView:(WKWebView *)arg1;
+- (UIViewController *)_presentingViewControllerForWebView:(WKWebView *)arg1;
+- (NSArray *)_webView:(WKWebView *)arg1 actionsForElement:(_WKActivatedElementInfo *)arg2 defaultActions:(NSArray *)arg3;
+- (NSArray *)_webView:(WKWebView *)arg1 adjustedDataInteractionItemProviders:(NSArray *)arg2;
+- (NSArray *)_webView:(WKWebView *)arg1 adjustedDataInteractionItemProvidersForItemProvider:(id)arg2 representingObjects:(NSArray *)arg3 additionalData:(NSDictionary *)arg4;
+- (void)_webView:(WKWebView *)arg1 alternateActionForURL:(NSURL *)arg2;
+- (NSURL *)_webView:(WKWebView *)arg1 alternateURLFromImage:(UIImage *)arg2 userInfo:(id*)arg3;
+- (void)_webView:(void *)arg1 checkUserMediaPermissionForURL:(void *)arg2 mainFrameURL:(void *)arg3 frameIdentifier:(void *)arg4 decisionHandler:(void *)arg5; // needs 5 arg types, found 11: WKWebView *, NSURL *, NSURL *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, bool, void*
+- (void)_webView:(WKWebView *)arg1 commitPreviewedImageWithURL:(NSURL *)arg2;
+- (void)_webView:(WKWebView *)arg1 commitPreviewedViewController:(UIViewController *)arg2;
+- (void)_webView:(void *)arg1 contextMenuConfigurationForElement:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: WKWebView *, WKContextMenuElementInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIContextMenuConfiguration *, void*
+- (UIViewController *)_webView:(WKWebView *)arg1 contextMenuContentPreviewForElement:(WKContextMenuElementInfo *)arg2;
+- (void)_webView:(WKWebView *)arg1 contextMenuDidEndForElement:(WKContextMenuElementInfo *)arg2;
+- (void)_webView:(WKWebView *)arg1 contextMenuForElement:(WKContextMenuElementInfo *)arg2 willCommitWithAnimator:(id <UIContextMenuInteractionCommitAnimating>)arg3;
+- (void)_webView:(WKWebView *)arg1 contextMenuWillPresentForElement:(WKContextMenuElementInfo *)arg2;
+- (void)_webView:(void *)arg1 createWebViewWithConfiguration:(void *)arg2 forNavigationAction:(void *)arg3 windowFeatures:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 10: WKWebView *, WKWebViewConfiguration *, WKNavigationAction *, WKWindowFeatures *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WKWebView *, void*
+- (void)_webView:(WKWebView *)arg1 dataInteraction:(id)arg2 session:(id)arg3 didEndWithOperation:(unsigned long long)arg4;
+- (void)_webView:(WKWebView *)arg1 dataInteraction:(id)arg2 sessionWillBegin:(id)arg3;
+- (void)_webView:(WKWebView *)arg1 dataInteractionOperationWasHandled:(bool)arg2 forSession:(id)arg3 itemProviders:(NSArray *)arg4;
+- (long long)_webView:(WKWebView *)arg1 dataOwnerForDragSession:(id <UIDragSession>)arg2;
+- (long long)_webView:(WKWebView *)arg1 dataOwnerForDropSession:(id <UIDropSession>)arg2;
+- (void)_webView:(void *)arg1 decideDatabaseQuotaForSecurityOrigin:(void *)arg2 currentQuota:(void *)arg3 currentOriginUsage:(void *)arg4 currentDatabaseUsage:(void *)arg5 expectedUsage:(void *)arg6 decisionHandler:(void *)arg7; // needs 7 arg types, found 12: WKWebView *, WKSecurityOrigin *, unsigned long long, unsigned long long, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
+- (void)_webView:(void *)arg1 decideDatabaseQuotaForSecurityOrigin:(void *)arg2 databaseName:(void *)arg3 displayName:(void *)arg4 currentQuota:(void *)arg5 currentOriginUsage:(void *)arg6 currentDatabaseUsage:(void *)arg7 expectedUsage:(void *)arg8 decisionHandler:(void *)arg9; // needs 9 arg types, found 14: WKWebView *, WKSecurityOrigin *, NSString *, NSString *, unsigned long long, unsigned long long, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
+- (void)_webView:(void *)arg1 decideWebApplicationCacheQuotaForSecurityOrigin:(void *)arg2 currentQuota:(void *)arg3 totalBytesNeeded:(void *)arg4 decisionHandler:(void *)arg5; // needs 5 arg types, found 10: WKWebView *, WKSecurityOrigin *, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
+- (void)_webView:(WKWebView *)arg1 didChangeFontAttributes:(NSDictionary *)arg2;
+- (void)_webView:(WKWebView *)arg1 didChangeSafeAreaShouldAffectObscuredInsets:(bool)arg2;
+- (void)_webView:(WKWebView *)arg1 didDismissFocusedElementViewController:(UIViewController *)arg2;
+- (void)_webView:(WKWebView *)arg1 didDismissPreviewViewController:(UIViewController *)arg2;
+- (void)_webView:(WKWebView *)arg1 didDismissPreviewViewController:(UIViewController *)arg2 committing:(bool)arg3;
+- (void)_webView:(WKWebView *)arg1 didInsertAttachment:(_WKAttachment *)arg2 withSource:(NSString *)arg3;
+- (void)_webView:(WKWebView *)arg1 didInvalidateDataForAttachment:(_WKAttachment *)arg2;
+- (void)_webView:(WKWebView *)arg1 didNotHandleTapAsClickAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)_webView:(WKWebView *)arg1 didPresentFocusedElementViewController:(UIViewController *)arg2;
+- (void)_webView:(WKWebView *)arg1 didRemoveAttachment:(_WKAttachment *)arg2;
+- (void)_webView:(WKWebView *)arg1 didResignInputElementStrongPasswordAppearanceWithUserInfo:(id <NSSecureCoding>)arg2;
+- (unsigned long long)_webView:(WKWebView *)arg1 dragDestinationActionMaskForDraggingInfo:(id)arg2;
+- (void)_webView:(WKWebView *)arg1 editorStateDidChange:(NSDictionary *)arg2;
+- (bool)_webView:(WKWebView *)arg1 fileUploadPanelContentIsManagedWithInitiatingFrame:(WKFrameInfo *)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_webView:(WKWebView *)arg1 finalObscuredInsetsForScrollView:(UIScrollView *)arg2 withVelocity:(struct CGPoint { double x1; double x2; })arg3 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg4;
+- (bool)_webView:(WKWebView *)arg1 gestureRecognizerCanBePreventedByTouchEvents:(UIGestureRecognizer *)arg2;
+- (bool)_webView:(WKWebView *)arg1 gestureRecognizerCouldPinch:(UIGestureRecognizer *)arg2;
+- (void)_webView:(void *)arg1 getAlternateURLFromImage:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: WKWebView *, UIImage *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSDictionary *, void*
+- (void)_webView:(WKWebView *)arg1 handleAutoplayEvent:(long long)arg2 withFlags:(unsigned long long)arg3;
+- (void)_webView:(WKWebView *)arg1 hasVideoInPictureInPictureDidChange:(bool)arg2;
+- (void)_webView:(WKWebView *)arg1 imageOrMediaDocumentSizeChanged:(struct CGSize { double x1; double x2; })arg2;
+- (void)_webView:(void *)arg1 includeSensitiveMediaDeviceDetails:(void *)arg2; // needs 2 arg types, found 7: WKWebView *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (unsigned long long)_webView:(WKWebView *)arg1 indexIntoAttachmentListForElement:(_WKActivatedElementInfo *)arg2;
+- (void)_webView:(WKWebView *)arg1 mediaCaptureStateDidChange:(unsigned long long)arg2;
+- (void)_webView:(WKWebView *)arg1 mouseDidMoveOverElement:(_WKHitTestResult *)arg2 withFlags:(long long)arg3 userInfo:(id <NSSecureCoding>)arg4;
+- (bool)_webView:(WKWebView *)arg1 performDataInteractionOperationWithItemProviders:(NSArray *)arg2;
+- (UITargetedDragPreview *)_webView:(WKWebView *)arg1 previewForCancellingItem:(UIDragItem *)arg2 withDefault:(UITargetedDragPreview *)arg3;
+- (UITargetedDragPreview *)_webView:(WKWebView *)arg1 previewForLiftingItem:(UIDragItem *)arg2 session:(id <UIDragSession>)arg3;
+- (UIViewController *)_webView:(WKWebView *)arg1 previewViewControllerForAnimatedImageAtURL:(NSURL *)arg2 defaultActions:(NSArray *)arg3 elementInfo:(_WKActivatedElementInfo *)arg4 imageSize:(struct CGSize { double x1; double x2; })arg5;
+- (UIViewController *)_webView:(WKWebView *)arg1 previewViewControllerForImage:(UIImage *)arg2 alternateURL:(NSURL *)arg3 defaultActions:(NSArray *)arg4 elementInfo:(_WKActivatedElementInfo *)arg5;
+- (UIViewController *)_webView:(WKWebView *)arg1 previewViewControllerForURL:(NSURL *)arg2;
+- (UIViewController *)_webView:(WKWebView *)arg1 previewViewControllerForURL:(NSURL *)arg2 defaultActions:(NSArray *)arg3 elementInfo:(_WKActivatedElementInfo *)arg4;
+- (void)_webView:(WKWebView *)arg1 printFrame:(_WKFrameHandle *)arg2;
+- (void)_webView:(void *)arg1 printFrame:(void *)arg2 pdfFirstPageSize:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: WKWebView *, _WKFrameHandle *, struct CGSize { double x1; double x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)_webView:(void *)arg1 queryPermission:(void *)arg2 forOrigin:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: WKWebView *, NSString *, WKSecurityOrigin *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (void)_webView:(void *)arg1 requestCookieConsentWithMoreInfoHandler:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 12: WKWebView *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, id /* block */, void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 requestDisplayCapturePermissionForOrigin:(void *)arg2 initiatedByFrame:(void *)arg3 withSystemAudio:(void *)arg4 decisionHandler:(void *)arg5; // needs 5 arg types, found 10: WKWebView *, WKSecurityOrigin *, WKFrameInfo *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (void)_webView:(void *)arg1 requestGeolocationAuthorizationForURL:(void *)arg2 frame:(void *)arg3 decisionHandler:(void *)arg4; // needs 4 arg types, found 9: WKWebView *, NSURL *, WKFrameInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 requestGeolocationPermissionForFrame:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 8: WKWebView *, WKFrameInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 requestGeolocationPermissionForOrigin:(void *)arg2 initiatedByFrame:(void *)arg3 decisionHandler:(void *)arg4; // needs 4 arg types, found 9: WKWebView *, WKSecurityOrigin *, WKFrameInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (void)_webView:(void *)arg1 requestNotificationPermissionForSecurityOrigin:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 8: WKWebView *, WKSecurityOrigin *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 requestPermissionForXRSessionOrigin:(void *)arg2 mode:(void *)arg3 grantedFeatures:(void *)arg4 consentRequiredFeatures:(void *)arg5 consentOptionalFeatures:(void *)arg6 completionHandler:(void *)arg7; // needs 7 arg types, found 12: WKWebView *, NSString *, long long, unsigned long long, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
+- (void)_webView:(void *)arg1 requestPermissionForXRSessionOrigin:(void *)arg2 mode:(void *)arg3 grantedFeatures:(void *)arg4 consentRequiredFeatures:(void *)arg5 consentOptionalFeatures:(void *)arg6 requiredFeaturesRequested:(void *)arg7 optionalFeaturesRequested:(void *)arg8 completionHandler:(void *)arg9; // needs 9 arg types, found 14: WKWebView *, NSString *, long long, unsigned long long, unsigned long long, unsigned long long, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
+- (void)_webView:(void *)arg1 requestSpeechRecognitionPermissionForOrigin:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 8: WKWebView *, WKSecurityOrigin *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 requestStorageAccessPanelForDomain:(void *)arg2 underCurrentDomain:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: WKWebView *, NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 requestUserMediaAuthorizationForDevices:(void *)arg2 url:(void *)arg3 mainFrameURL:(void *)arg4 decisionHandler:(void *)arg5; // needs 5 arg types, found 10: WKWebView *, unsigned long long, NSURL *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 requestWebAuthenticationNoGestureForOrigin:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: WKWebView *, WKSecurityOrigin *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 runBeforeUnloadConfirmPanelWithMessage:(void *)arg2 initiatedByFrame:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: WKWebView *, NSString *, WKFrameInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webView:(void *)arg1 runWebAuthenticationPanel:(void *)arg2 initiatedByFrame:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: WKWebView *, _WKWebAuthenticationPanel *, WKFrameInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (void)_webView:(WKWebView *)arg1 setShouldKeepScreenAwake:(bool)arg2;
+- (void)_webView:(void *)arg1 shouldAllowPDFAtURL:(void *)arg2 toOpenFromFrame:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: WKWebView *, NSURL *, WKFrameInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (bool)_webView:(WKWebView *)arg1 shouldIncludeAppLinkActionsForElement:(_WKActivatedElementInfo *)arg2;
+- (bool)_webView:(WKWebView *)arg1 showCustomSheetForElement:(_WKActivatedElementInfo *)arg2;
+- (void)_webView:(void *)arg1 startXRSessionWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: WKWebView *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*
+- (void)_webView:(WKWebView *)arg1 takeFocus:(long long)arg2;
+- (bool)_webView:(WKWebView *)arg1 touchEventsMustRequireGestureRecognizerToFail:(UIGestureRecognizer *)arg2;
+- (void)_webView:(WKWebView *)arg1 updatedAppBadge:(NSNumber *)arg2 fromSecurityOrigin:(WKSecurityOrigin *)arg3;
+- (void)_webView:(WKWebView *)arg1 updatedClientBadge:(NSNumber *)arg2 fromSecurityOrigin:(WKSecurityOrigin *)arg3;
+- (NSArray *)_webView:(WKWebView *)arg1 willPerformDropWithSession:(id <UIDropSession>)arg2;
+- (void)_webView:(WKWebView *)arg1 willPreviewImageWithURL:(NSURL *)arg2;
+- (void)_webView:(WKWebView *)arg1 willShareActivityItems:(NSArray *)arg2;
+- (unsigned long long)_webView:(WKWebView *)arg1 willUpdateDataInteractionOperationToOperation:(unsigned long long)arg2 forSession:(id)arg3;
+- (UIDropProposal *)_webView:(WKWebView *)arg1 willUpdateDropProposalToProposal:(UIDropProposal *)arg2 forSession:(id <UIDropSession>)arg3;
+- (bool)_webViewCanBecomeFocused:(WKWebView *)arg1;
+- (void)_webViewClose:(WKWebView *)arg1;
+- (void)_webViewDidDisableInspectorBrowserDomain:(WKWebView *)arg1;
+- (void)_webViewDidEnableInspectorBrowserDomain:(WKWebView *)arg1;
+- (void)_webViewDidEnterFullscreen:(WKWebView *)arg1;
+- (void)_webViewDidExitFullscreen:(WKWebView *)arg1;
+- (void)_webViewDidLosePointerLock:(WKWebView *)arg1;
+- (void)_webViewDidRequestPointerLock:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: WKWebView *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webViewDidShowSafeBrowsingWarning:(WKWebView *)arg1;
+- (void)_webViewEndXRSession:(WKWebView *)arg1;
+- (void)_webViewFullscreenMayReturnToInline:(WKWebView *)arg1;
+- (bool)_webViewLockScreenOrientation:(WKWebView *)arg1 lockType:(long long)arg2;
+- (void)_webViewRequestPointerLock:(WKWebView *)arg1;
+- (void)_webViewStatusBarWasTapped:(WKWebView *)arg1;
+- (void)_webViewUnlockScreenOrientation:(WKWebView *)arg1;
+
+@end

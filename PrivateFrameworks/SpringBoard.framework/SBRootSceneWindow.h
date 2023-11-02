@@ -1,0 +1,4 @@
+
+@interface SBRootSceneWindow : UIRootSceneWindow
+
+@end

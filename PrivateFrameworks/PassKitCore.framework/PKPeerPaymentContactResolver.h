@@ -1,0 +1,4 @@
+
+@interface PKPeerPaymentContactResolver : PKContactResolver
+
+@end

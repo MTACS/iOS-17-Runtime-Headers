@@ -1,0 +1,85 @@
+
+@interface FPDDomainIndexer : NSObject {
+    unsigned long long  _batchIndexedCount;
+    unsigned long long  _batchIndexedCountSinceLastIndexing;
+    bool  _clearNeedsIndexing;
+    unsigned long long  _consecutiveBatchErrorCount;
+    <FPDDomainIndexerDelegate> * _delegate;
+    FPDDomain * _domain;
+    NSString * _domainIdentifier;
+    bool  _droppedIndex;
+    NSURL * _droppedIndexURL;
+    bool  _enabled;
+    FPDExtension * _extension;
+    bool  _invalidated;
+    bool  _isIndexing;
+    bool  _isStarted;
+    NSError * _lastError;
+    NSDate * _lastIndexingStartDate;
+    unsigned long long  _maxRetryDelayInSec;
+    NSURL * _needsAuthURL;
+    bool  _needsAuthentication;
+    bool  _needsIndexing;
+    NSString * _providerDomainID;
+    NSObject<OS_dispatch_queue> * _queue;
+    bool  _registeredWithScheduler;
+    NSString * _spotlightDomainIdentifier;
+    NSURL * _stateURL;
+    NSObject<OS_dispatch_source> * _timerSource;
+}
+
+@property (nonatomic) <FPDDomainIndexerDelegate> *delegate;
+@property (nonatomic, readonly) FPDDomain *domain;
+@property (nonatomic, retain) NSString *domainIdentifier;
+@property (nonatomic) FPDExtension *extension;
+@property (nonatomic, readonly) bool isIndexed;
+@property (nonatomic, readonly) bool learnNeedsAuthenticationFromBatchError;
+@property (nonatomic) unsigned long long maxRetryDelayInSec;
+@property (nonatomic) bool needsAuthentication;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+
+- (void).cxx_destruct;
+- (void)__indexOneBatchIfPossibleClearingNeedsIndexing:(bool)arg1;
+- (void)_cancelTimer;
+- (void)_handleOneBatchCompletionWithError:(id)arg1 hasMoreChanges:(bool)arg2;
+- (void)_indexOneBatchIfPossibleClearingNeedsIndexing:(bool)arg1;
+- (void)_signalChangesWithCompletionHandler:(id /* block */)arg1;
+- (void)_unregisterFromScheduler;
+- (void)clearDroppedIndexOnDisk;
+- (void)clearNeedsAuth;
+- (void)clearNeedsAuthOnDisk;
+- (void)clearNeedsIndexingOnDisk;
+- (id)delegate;
+- (id)description;
+- (id)domain;
+- (id)domainIdentifier;
+- (void)dropIndexForDomainRemoval:(bool)arg1 completion:(id /* block */)arg2;
+- (void)dumpStateTo:(id)arg1;
+- (id)extension;
+- (void)indexOneBatchWithCompletionHandler:(id /* block */)arg1;
+- (id)initWithExtension:(id)arg1 domain:(id)arg2 enabled:(bool)arg3;
+- (void)invalidate;
+- (bool)isIndexed;
+- (bool)learnNeedsAuthenticationFromBatchError;
+- (id)localSpotlightIndexer;
+- (unsigned long long)maxRetryDelayInSec;
+- (bool)needsAuthentication;
+- (void)persistDroppedIndexOnDisk;
+- (void)persistNeedsIndexingOnDisk;
+- (void)persistsNeedsAuthOnDisk;
+- (id)queue;
+- (bool)readDroppedIndexFromDisk;
+- (bool)readNeedsAuthFromDisk;
+- (bool)readNeedsIndexingFromDisk;
+- (void)setDelegate:(id)arg1;
+- (void)setDomainIdentifier:(id)arg1;
+- (void)setExtension:(id)arg1;
+- (void)setIndexingEnabled:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)setMaxRetryDelayInSec:(unsigned long long)arg1;
+- (void)setNeedsAuth;
+- (void)setNeedsAuthentication:(bool)arg1;
+- (void)signalChangesWithCompletionHandler:(id /* block */)arg1;
+- (void)signalNeedsReindexFromScratchWithCompletionHandler:(id /* block */)arg1;
+- (void)start;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC13HomeKitEventsP33_7FDAD9B84D5D354B923A3F92925FEBC623LoggedObjectPropertyKey : _TtCs12_SwiftObject
+
+@end

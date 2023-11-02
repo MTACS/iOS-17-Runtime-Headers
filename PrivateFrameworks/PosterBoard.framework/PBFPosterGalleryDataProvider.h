@@ -1,0 +1,92 @@
+
+@interface PBFPosterGalleryDataProvider : NSObject <BSInvalidatable, NSCopying, NSMutableCopying, PBFExtensionInstanceProviding, PBFPosterPreviewGenerator> {
+    long long  _changeCount;
+    <PBFComplicationSnapshotProviding> * _complicationSnapshotProvider;
+    PBFPosterExtensionInstanceCollection * _extensionInstanceCollection;
+    <PRPosterExtensionProvider> * _extensionProvider;
+    NSHashTable * _observers;
+    NSMutableOrderedSet * _orderedSectionIdentifiers;
+    NSMutableSet * _outstandingSnapshotRequests;
+    NSMutableDictionary * _posterPreviewForPosterUniqueIdentifier;
+    NSMutableDictionary * _sectionIdentifierToItems;
+    NSMutableDictionary * _sectionIdentifierToLocalizedSubtitle;
+    NSMutableDictionary * _sectionIdentifierToLocalizedTitle;
+    NSMutableDictionary * _sectionIdentifierToSectionType;
+    <PBFPosterSnapshotProviding> * _snapshotProvider;
+    long long  _transactionsCount;
+}
+
+@property (nonatomic, retain) <PBFComplicationSnapshotProviding> *complicationSnapshotProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) <PRPosterExtensionProvider> *extensionProvider;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long numberOfSections;
+@property (nonatomic, retain) NSMutableOrderedSet *orderedSectionIdentifiers;
+@property (nonatomic, retain) NSMutableDictionary *posterPreviewForPosterUniqueIdentifier;
+@property (nonatomic, retain) NSMutableDictionary *sectionIdentifierToItems;
+@property (nonatomic, retain) NSMutableDictionary *sectionIdentifierToLocalizedSubtitle;
+@property (nonatomic, retain) NSMutableDictionary *sectionIdentifierToLocalizedTitle;
+@property (nonatomic, retain) NSMutableDictionary *sectionIdentifierToSectionType;
+@property (nonatomic, readonly) NSOrderedSet *sectionIdentifiers;
+@property (nonatomic, retain) <PBFPosterSnapshotProviding> *snapshotProvider;
+@property (readonly) Class superclass;
+
++ (id)demoPreviewProvider;
+
+- (void).cxx_destruct;
+- (void)_decrementTransactionCount:(bool)arg1;
+- (void)_incrementTransactionCount:(bool)arg1;
+- (void)_markChangeDidOccur;
+- (void)_notifyObserversDidUpdate;
+- (void)_notifyObserversWillUpdate;
+- (id)acquireExtensionInstance:(id)arg1 reason:(id)arg2 error:(out id*)arg3;
+- (void)addObserver:(id)arg1;
+- (id)buildSnapshot;
+- (id)complicationSnapshotProvider;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)extensionProvider;
+- (void)fetchComplicationPreviewImagesForPreview:(id)arg1 complicationSnapshotReceivedHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (id)fetchSnapshotForPosterPreview:(id)arg1 context:(id)arg2 completion:(id /* block */)arg3;
+- (id)fetchSnapshotForPosterPreview:(id)arg1 context:(id)arg2 definition:(id)arg3 completion:(id /* block */)arg4;
+- (id)init;
+- (void)invalidate;
+- (id)itemsForSectionWithIdentifier:(id)arg1;
+- (id)localizedSubtitleForSectionWithIdentifier:(id)arg1;
+- (id)localizedTitleForSectionWithIdentifier:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)numberOfItemsInSectionWithIdentifier:(id)arg1;
+- (unsigned long long)numberOfSections;
+- (id)orderedSectionIdentifiers;
+- (id)posterPreviewForPosterUniqueIdentifier;
+- (id)posterPreviews;
+- (id)posterPreviewsForPath:(id)arg1;
+- (id)preparedComplicationPreviewImagesForPreview:(id)arg1;
+- (id)preparedSnapshotForPosterPreview:(id)arg1 context:(id)arg2;
+- (id)preparedSnapshotForPosterPreview:(id)arg1 context:(id)arg2 definition:(id)arg3;
+- (id)previewForPreviewUniqueIdentifier:(id)arg1;
+- (void)relinquishExtensionInstance:(id)arg1 reason:(id)arg2;
+- (void)removeObserver:(id)arg1;
+- (id)sectionIdentifierForIndex:(long long)arg1;
+- (id)sectionIdentifierToItems;
+- (id)sectionIdentifierToLocalizedSubtitle;
+- (id)sectionIdentifierToLocalizedTitle;
+- (id)sectionIdentifierToSectionType;
+- (id)sectionIdentifiers;
+- (unsigned long long)sectionIndexForIdentifier:(id)arg1;
+- (bool)sectionShowsDescriptionLabel:(id)arg1;
+- (bool)sectionShowsTitleLabel:(id)arg1;
+- (long long)sectionTypeForSectionWithIdentifier:(id)arg1;
+- (void)setComplicationSnapshotProvider:(id)arg1;
+- (void)setExtensionProvider:(id)arg1;
+- (void)setOrderedSectionIdentifiers:(id)arg1;
+- (void)setPosterPreviewForPosterUniqueIdentifier:(id)arg1;
+- (void)setSectionIdentifierToItems:(id)arg1;
+- (void)setSectionIdentifierToLocalizedSubtitle:(id)arg1;
+- (void)setSectionIdentifierToLocalizedTitle:(id)arg1;
+- (void)setSectionIdentifierToSectionType:(id)arg1;
+- (void)setSnapshotProvider:(id)arg1;
+- (id)snapshotProvider;
+
+@end

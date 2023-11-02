@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.HomeAutomationAirQualityEntityResponses : HomeAutomationInternal.HomeAutomationEntityResponses
+
+@end

@@ -1,0 +1,65 @@
+
+@interface _RealityKit_SwiftUI.DataModel : _TtCs12_SwiftObject {
+    void $__lazy_storage_$_arViewResolution;
+    void $__lazy_storage_$_surfaceAnchor;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _cameraIso;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _canTakeManualShot;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _coveragePointRenderer;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _debuggingMode;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _id;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _latestCoveragePointCloud;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _miniViewScreenRotationAngle;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _numShotsTaken;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _numShotsTakenThisSegment;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _reticleAimVector;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _shouldShowARKitCoachingView;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _showCenterReticle;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _showMiniView;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _state;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _triggerShakeReticle;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _userCompletedOrbit;
+    void arCoachingOverlayView;
+    void arCoachingOverlayViewDelegate;
+    void arFrameProcessor;
+    void arView;
+    void binFillAnimationDurationSecs;
+    void captureBoxModel;
+    void captureCircle;
+    void captureSession;
+    void captureSessionSubscriptions;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  checkpointURL;
+    void currentSegmentID;
+    void depthHazeStartPercent;
+    void detectBoxModel;
+    void deviceMotionEstimator;
+    void enableOverCaptureWhenInternalSessionCreated;
+    void frameProcessorUpdateSubscription;
+    void imageWriter;
+    void imageWriterCompleted;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  imagesURL;
+    void isInternalSessionCompleted;
+    void isObjectFlippable;
+    void isRunning;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  lastCameraFeedback;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  lastFeedback;
+    void localTime;
+    void manualShotRefractoryTimer;
+    void metalDevice;
+    void minSpeedGoodness;
+    void onFeedback;
+    void panGesture;
+    void pointCloudsBySegment;
+    void postProcessRenderer;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  previousState;
+    void scanningModelToWorldTransform;
+    void shouldDebugDraw;
+    void showMiniViewTransitionDurationSecs;
+    void soundManager;
+    void startDetectingReticleDelay;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  stateBeforePause;
+    void tapGesture;
+    void updateSubscription;
+    void userFeedbackSystem;
+}
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SBUIPresentableCancelSystemDragAction : BSAction
+
+@end

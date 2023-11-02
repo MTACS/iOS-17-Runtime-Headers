@@ -1,0 +1,107 @@
+
+@interface TFBetaAppLaunchScreenViewSpecification : NSObject {
+    UIFont * _bodyTextFont;
+    UIFontMetrics * _bodyTextFontMetrics;
+    UIFont * _bodyTitleFont;
+    UIFontMetrics * _bodyTitleFontMetrics;
+    double  _bodyTitleLabelLastBaselineToBodyTextLabelFirstBaseline;
+    double  _bottommostLabelLastBaselineToImageTopEdge;
+    double  _bottommostLabelLastBaselineToLockupTopEdge;
+    double  _buttonBackgroundTopEdgeToPrimaryButtonTopEdge;
+    double  _buttonHeight;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _buttonModuleContentLayoutInsets;
+    double  _interButtonPadding;
+    double  _lockupBottomEdgeToBodyTitleLabelFirstBaseline;
+    UIFont * _primaryButtonTextFont;
+    UIFontMetrics * _primaryButtonTextFontMetrics;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _scrollViewContentLayoutInsets;
+    UIFont * _subtitleFont;
+    UIFontMetrics * _subtitleFontMetrics;
+    UIFont * _titleFont;
+    UIFontMetrics * _titleFontMetrics;
+    double  _titleLabelLastBaselineToSubtitleLabelFirstBaseline;
+    double  _viewTopMarginAdditionalPaddingAsFractionOfTotalHeight;
+    double  _viewTopMarginToTitleLabelFirstBaseline;
+}
+
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) UIFont *bodyTextFont;
+@property (nonatomic, readonly) UIFontMetrics *bodyTextFontMetrics;
+@property (nonatomic, readonly) UIFont *bodyTitleFont;
+@property (nonatomic, readonly) UIFontMetrics *bodyTitleFontMetrics;
+@property (nonatomic, readonly) double bodyTitleLabelLastBaselineToBodyTextLabelFirstBaseline;
+@property (nonatomic, readonly) double bottommostLabelLastBaselineToImageTopEdge;
+@property (nonatomic, readonly) double bottommostLabelLastBaselineToLockupTopEdge;
+@property (nonatomic, readonly) double buttonBackgroundTopEdgeToPrimaryButtonTopEdge;
+@property (nonatomic, readonly) double buttonHeight;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } buttonModuleContentLayoutInsets;
+@property (nonatomic, readonly) UIColor *buttonTintColor;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } headerIconViewSize;
+@property (nonatomic, readonly) double interButtonPadding;
+@property (nonatomic, readonly) double lockupBottomEdgeToBodyTitleLabelFirstBaseline;
+@property (nonatomic, readonly) UIColor *overButtonTintTextColor;
+@property (nonatomic, readonly) double primaryButtonCornerRadius;
+@property (nonatomic, readonly) UIFont *primaryButtonTextFont;
+@property (nonatomic, readonly) UIFontMetrics *primaryButtonTextFontMetrics;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } scrollViewContentLayoutInsets;
+@property (nonatomic, readonly) UIFont *subtitleFont;
+@property (nonatomic, readonly) UIFontMetrics *subtitleFontMetrics;
+@property (nonatomic, readonly) UIColor *textColor;
+@property (nonatomic, readonly) UIFont *titleFont;
+@property (nonatomic, readonly) UIFontMetrics *titleFontMetrics;
+@property (nonatomic, readonly) double titleLabelLastBaselineToSubtitleLabelFirstBaseline;
+@property (nonatomic, readonly) double viewTopMarginAdditionalPaddingAsFractionOfTotalHeight;
+@property (nonatomic, readonly) double viewTopMarginToTitleLabelFirstBaseline;
+
+- (void).cxx_destruct;
+- (id)_bodyTextFontStyle;
+- (id)_bodyTitleFontStyle;
+- (id)_createBodyTextFontForTraitCollection:(id)arg1;
+- (id)_createBodyTitleFontForTraitCollection:(id)arg1;
+- (id)_createPrimaryButtonTextFontForTraitCollection:(id)arg1;
+- (id)_createSubtitleFontForTraitCollection:(id)arg1;
+- (id)_createTitleFontForTraitCollection:(id)arg1;
+- (id)_primaryButtonTextFontStyle;
+- (id)_subtitleFontStyle;
+- (id)_titleFontStyle;
+- (id)backgroundColor;
+- (id)bodyTextFont;
+- (id)bodyTextFontMetrics;
+- (id)bodyTitleFont;
+- (id)bodyTitleFontMetrics;
+- (double)bodyTitleLabelLastBaselineToBodyTextLabelFirstBaseline;
+- (double)bottommostLabelLastBaselineToImageTopEdge;
+- (double)bottommostLabelLastBaselineToLockupTopEdge;
+- (double)buttonBackgroundTopEdgeToPrimaryButtonTopEdge;
+- (double)buttonHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })buttonModuleContentLayoutInsets;
+- (id)buttonTintColor;
+- (struct CGSize { double x1; double x2; })headerIconViewSize;
+- (id)initWithTraitCollection:(id)arg1;
+- (double)interButtonPadding;
+- (double)lockupBottomEdgeToBodyTitleLabelFirstBaseline;
+- (id)overButtonTintTextColor;
+- (double)primaryButtonCornerRadius;
+- (id)primaryButtonTextFont;
+- (id)primaryButtonTextFontMetrics;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })scrollViewContentLayoutInsets;
+- (id)subtitleFont;
+- (id)subtitleFontMetrics;
+- (id)textColor;
+- (id)titleFont;
+- (id)titleFontMetrics;
+- (double)titleLabelLastBaselineToSubtitleLabelFirstBaseline;
+- (double)viewTopMarginAdditionalPaddingAsFractionOfTotalHeight;
+- (double)viewTopMarginToTitleLabelFirstBaseline;
+
+@end

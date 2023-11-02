@@ -1,0 +1,37 @@
+
+@interface ML3StatementAccumulator : NSObject {
+    ML3DatabaseConnection * _connection;
+    NSString * _databasePath;
+    NSUUID * _existingTransactionIdentifier;
+    unsigned long long  _priorityLevel;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSMutableArray * _statementQueue;
+    unsigned long long  _statementThreshold;
+    MLMediaLibraryService * _xpcService;
+}
+
+@property (nonatomic, readonly) ML3DatabaseConnection *connection;
+@property (nonatomic, readonly) NSString *databasePath;
+@property (nonatomic, retain) NSUUID *existingTransactionIdentifier;
+@property (nonatomic) unsigned long long priorityLevel;
+@property (nonatomic, readonly) NSMutableArray *statementQueue;
+@property (nonatomic) unsigned long long statementThreshold;
+
+- (void).cxx_destruct;
+- (bool)_onQueueFlushAndWait:(bool)arg1;
+- (id)connection;
+- (id)databasePath;
+- (void)dealloc;
+- (bool)enqueueStatement:(id)arg1;
+- (id)existingTransactionIdentifier;
+- (bool)flushAndWait:(bool)arg1;
+- (id)init;
+- (id)initWithConnection:(id)arg1;
+- (unsigned long long)priorityLevel;
+- (void)setExistingTransactionIdentifier:(id)arg1;
+- (void)setPriorityLevel:(unsigned long long)arg1;
+- (void)setStatementThreshold:(unsigned long long)arg1;
+- (id)statementQueue;
+- (unsigned long long)statementThreshold;
+
+@end

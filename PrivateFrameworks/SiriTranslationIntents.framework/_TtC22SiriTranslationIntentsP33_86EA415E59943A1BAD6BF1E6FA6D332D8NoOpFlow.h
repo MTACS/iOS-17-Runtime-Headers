@@ -1,0 +1,4 @@
+
+@interface _TtC22SiriTranslationIntentsP33_86EA415E59943A1BAD6BF1E6FA6D332D8NoOpFlow : _TtCs12_SwiftObject
+
+@end

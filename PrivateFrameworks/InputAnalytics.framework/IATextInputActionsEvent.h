@@ -1,0 +1,80 @@
+
+@interface IATextInputActionsEvent : NSObject <IATelemetryEvent> {
+    NSString * _bundleId;
+    unsigned long long  _inputActionCount;
+    bool  _isEmojiSearch;
+    bool  _isMarkedText;
+    NSString * _keyboardLayout;
+    NSString * _keyboardType;
+    NSString * _keyboardVariant;
+    NSString * _language;
+    long long  _netCharacters;
+    long long  _netEmojiCharacters;
+    NSString * _region;
+    NSString * _sessionActions;
+    bool  _sessionIsModeless;
+    long long  _source;
+    long long  _type;
+    unsigned long long  _userRemovedCharacters;
+    unsigned long long  _userRemovedEmojiCharacters;
+}
+
+@property (nonatomic) NSString *bundleId;
+@property unsigned long long inputActionCount;
+@property bool isEmojiSearch;
+@property bool isMarkedText;
+@property (nonatomic) NSString *keyboardLayout;
+@property (nonatomic) NSString *keyboardType;
+@property (nonatomic) NSString *keyboardVariant;
+@property (nonatomic) NSString *language;
+@property long long netCharacters;
+@property long long netEmojiCharacters;
+@property (nonatomic) NSString *region;
+@property (nonatomic) NSString *sessionActions;
+@property bool sessionIsModeless;
+@property long long source;
+@property long long type;
+@property unsigned long long userRemovedCharacters;
+@property unsigned long long userRemovedEmojiCharacters;
+
+- (id)bundleId;
+- (void)dispatchEvent;
+- (void)dispatchEvent:(id /* block */)arg1;
+- (id)initWithbundleId:(id)arg1;
+- (unsigned long long)inputActionCount;
+- (bool)isDispatchable;
+- (bool)isEmojiSearch;
+- (bool)isMarkedText;
+- (id)keyboardLayout;
+- (id)keyboardType;
+- (id)keyboardVariant;
+- (id)language;
+- (long long)netCharacters;
+- (long long)netEmojiCharacters;
+- (id)region;
+- (void)resetMeasures;
+- (id)sessionActions;
+- (bool)sessionIsModeless;
+- (void)setBundleId:(id)arg1;
+- (void)setInputActionCount:(unsigned long long)arg1;
+- (void)setIsEmojiSearch:(bool)arg1;
+- (void)setIsMarkedText:(bool)arg1;
+- (void)setKeyboardLayout:(id)arg1;
+- (void)setKeyboardType:(id)arg1;
+- (void)setKeyboardVariant:(id)arg1;
+- (void)setLanguage:(id)arg1;
+- (void)setNetCharacters:(long long)arg1;
+- (void)setNetEmojiCharacters:(long long)arg1;
+- (void)setRegion:(id)arg1;
+- (void)setSessionActions:(id)arg1;
+- (void)setSessionIsModeless:(bool)arg1;
+- (void)setSource:(long long)arg1;
+- (void)setType:(long long)arg1;
+- (void)setUserRemovedCharacters:(unsigned long long)arg1;
+- (void)setUserRemovedEmojiCharacters:(unsigned long long)arg1;
+- (long long)source;
+- (long long)type;
+- (unsigned long long)userRemovedCharacters;
+- (unsigned long long)userRemovedEmojiCharacters;
+
+@end

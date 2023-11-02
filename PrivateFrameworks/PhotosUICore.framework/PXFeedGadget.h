@@ -1,0 +1,83 @@
+
+@interface PXFeedGadget : NSObject <PXGadget, PXProgrammaticNavigationParticipant> {
+    PXFeedConfiguration * _configuration;
+    <PXGadgetDelegate> * _delegate;
+    bool  _didLoadNavigationParticipant;
+    PXFeedViewController * _feedViewController;
+    PXGadgetSpec * _gadgetSpec;
+    bool  _isContentActive;
+    bool  _isContentVisible;
+    bool  _isGadgetControllerActive;
+    <PXProgrammaticNavigationParticipant> * _navigationParticipant;
+    PXFeedViewLayoutSpecManager * _specManager;
+}
+
+@property (nonatomic, readonly) NSString *accessoryButtonTitle;
+@property (nonatomic, readonly) unsigned long long accessoryButtonType;
+@property (nonatomic, readonly) Class collectionViewItemClass;
+@property (nonatomic, readonly) PXFeedConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PXGadgetDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) PXFeedViewController *feedViewController;
+@property (nonatomic, readonly) unsigned long long gadgetCapabilities;
+@property (nonatomic, retain) PXGadgetSpec *gadgetSpec;
+@property (nonatomic, readonly) unsigned long long gadgetType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long headerStyle;
+@property (nonatomic) bool isContentActive;
+@property (nonatomic) bool isContentVisible;
+@property (nonatomic) bool isGadgetControllerActive;
+@property (nonatomic, readonly) NSString *localizedTitle;
+@property (nonatomic, readonly) UINavigationController *navigationController;
+@property (nonatomic, readonly) <PXProgrammaticNavigationParticipant> *navigationParticipant;
+@property (nonatomic) long long priority;
+@property (nonatomic, readonly) PXProgrammaticNavigationDestination *px_navigationDestination;
+@property (nonatomic, readonly) PXFeedViewLayoutSpecManager *specManager;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleContentRect;
+@property (nonatomic, readonly) bool wantsMultilineTitle;
+
+- (void).cxx_destruct;
+- (void)_loadFeedViewControllerIfNeeded;
+- (void)_loadSpecManagerIfNeeded;
+- (void)_navigateToFullFeedAnimated:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateIsContentActive;
+- (id)accessoryButtonTitle;
+- (unsigned long long)accessoryButtonType;
+- (id)configuration;
+- (id)contentViewController;
+- (void)contentViewDidDisappear;
+- (void)contentViewWillAppear;
+- (id)delegate;
+- (id)feedViewController;
+- (unsigned long long)gadgetCapabilities;
+- (void)gadgetControllerHasAppeared;
+- (id)gadgetSpec;
+- (unsigned long long)gadgetType;
+- (void)gadgetWasDismissed;
+- (unsigned long long)headerStyle;
+- (id)init;
+- (id)initWithConfiguration:(id)arg1;
+- (void)invalidatePreferredContentHeight;
+- (bool)isContentActive;
+- (bool)isContentVisible;
+- (bool)isGadgetControllerActive;
+- (id)localizedTitle;
+- (void)navigateToDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (id)navigationController;
+- (id)navigationParticipant;
+- (id)nextExistingParticipantOnRouteToDestination:(id)arg1;
+- (id)px_navigationDestination;
+- (unsigned long long)routingOptionsForDestination:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setGadgetSpec:(id)arg1;
+- (void)setIsContentActive:(bool)arg1;
+- (void)setIsContentVisible:(bool)arg1;
+- (void)setIsGadgetControllerActive:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)specManager;
+- (void)userDidSelectAccessoryButton:(id)arg1;
+- (bool)wantsMultilineTitle;
+
+@end

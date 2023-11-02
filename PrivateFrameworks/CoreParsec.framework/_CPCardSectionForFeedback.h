@@ -1,0 +1,82 @@
+
+@interface _CPCardSectionForFeedback : PBCodable <NSSecureCoding, _CPCardSectionForFeedback> {
+    NSString * _actionDestination;
+    NSString * _actionTarget;
+    NSArray * _buttons;
+    NSString * _cardSectionDetail;
+    NSString * _cardSectionId;
+    int  _cardSectionType;
+    NSArray * _cardSections;
+    NSString * _commandDetail;
+    int  _commandType;
+    NSArray * _leadingSwipeButtonItems;
+    NSString * _resultId;
+    NSArray * _trailingSwipeButtonItems;
+}
+
+@property (nonatomic, copy) NSString *actionDestination;
+@property (nonatomic, copy) NSString *actionTarget;
+@property (nonatomic, copy) NSArray *buttons;
+@property (nonatomic, copy) NSString *cardSectionDetail;
+@property (nonatomic, copy) NSString *cardSectionId;
+@property (nonatomic) int cardSectionType;
+@property (nonatomic, copy) NSArray *cardSections;
+@property (nonatomic, copy) NSString *commandDetail;
+@property (nonatomic) int commandType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSArray *leadingSwipeButtonItems;
+@property (nonatomic, copy) NSString *resultId;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *trailingSwipeButtonItems;
+
+- (void).cxx_destruct;
+- (id)actionDestination;
+- (id)actionTarget;
+- (void)addButtons:(id)arg1;
+- (void)addCardSections:(id)arg1;
+- (void)addLeadingSwipeButtonItems:(id)arg1;
+- (void)addTrailingSwipeButtonItems:(id)arg1;
+- (id)buttons;
+- (id)buttonsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)buttonsCount;
+- (id)cardSectionDetail;
+- (id)cardSectionId;
+- (int)cardSectionType;
+- (id)cardSections;
+- (id)cardSectionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)cardSectionsCount;
+- (void)clearButtons;
+- (void)clearCardSections;
+- (void)clearLeadingSwipeButtonItems;
+- (void)clearTrailingSwipeButtonItems;
+- (id)commandDetail;
+- (int)commandType;
+- (unsigned long long)hash;
+- (id)initWithFacade:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)leadingSwipeButtonItems;
+- (id)leadingSwipeButtonItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)leadingSwipeButtonItemsCount;
+- (bool)readFrom:(id)arg1;
+- (id)resultId;
+- (void)setActionDestination:(id)arg1;
+- (void)setActionTarget:(id)arg1;
+- (void)setButtons:(id)arg1;
+- (void)setCardSectionDetail:(id)arg1;
+- (void)setCardSectionId:(id)arg1;
+- (void)setCardSectionType:(int)arg1;
+- (void)setCardSections:(id)arg1;
+- (void)setCommandDetail:(id)arg1;
+- (void)setCommandType:(int)arg1;
+- (void)setLeadingSwipeButtonItems:(id)arg1;
+- (void)setResultId:(id)arg1;
+- (void)setTrailingSwipeButtonItems:(id)arg1;
+- (id)trailingSwipeButtonItems;
+- (id)trailingSwipeButtonItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)trailingSwipeButtonItemsCount;
+- (void)writeTo:(id)arg1;
+
+@end

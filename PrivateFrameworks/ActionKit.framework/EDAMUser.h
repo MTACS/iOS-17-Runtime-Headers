@@ -1,0 +1,95 @@
+
+@interface EDAMUser : FATObject {
+    EDAMAccountLimits * _accountLimits;
+    EDAMAccounting * _accounting;
+    NSNumber * _active;
+    EDAMUserAttributes * _attributes;
+    EDAMBusinessUserInfo * _businessUserInfo;
+    NSNumber * _created;
+    NSNumber * _deleted;
+    NSString * _email;
+    NSNumber * _id;
+    NSString * _name;
+    NSNumber * _photoLastUpdated;
+    NSString * _photoUrl;
+    EDAMPremiumInfo * _premiumInfo;
+    EDAMPricingModel * _pricingModel;
+    NSNumber * _privilege;
+    NSNumber * _serviceLevel;
+    NSString * _shardId;
+    EDAMSubscriptionInfo * _subscriptionInfo;
+    NSString * _timezone;
+    NSNumber * _updated;
+    NSString * _username;
+}
+
+@property (nonatomic, retain) EDAMAccountLimits *accountLimits;
+@property (nonatomic, retain) EDAMAccounting *accounting;
+@property (nonatomic, retain) NSNumber *active;
+@property (nonatomic, retain) EDAMUserAttributes *attributes;
+@property (nonatomic, retain) EDAMBusinessUserInfo *businessUserInfo;
+@property (nonatomic, retain) NSNumber *created;
+@property (nonatomic, retain) NSNumber *deleted;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSNumber *id;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *photoLastUpdated;
+@property (nonatomic, retain) NSString *photoUrl;
+@property (nonatomic, retain) EDAMPremiumInfo *premiumInfo;
+@property (nonatomic, retain) EDAMPricingModel *pricingModel;
+@property (nonatomic, retain) NSNumber *privilege;
+@property (nonatomic, retain) NSNumber *serviceLevel;
+@property (nonatomic, retain) NSString *shardId;
+@property (nonatomic, retain) EDAMSubscriptionInfo *subscriptionInfo;
+@property (nonatomic, retain) NSString *timezone;
+@property (nonatomic, retain) NSNumber *updated;
+@property (nonatomic, retain) NSString *username;
+
++ (id)structFields;
++ (id)structName;
+
+- (void).cxx_destruct;
+- (id)accountLimits;
+- (id)accounting;
+- (id)active;
+- (id)attributes;
+- (id)businessUserInfo;
+- (id)created;
+- (id)deleted;
+- (id)email;
+- (id)id;
+- (id)name;
+- (id)photoLastUpdated;
+- (id)photoUrl;
+- (id)premiumInfo;
+- (id)pricingModel;
+- (id)privilege;
+- (id)serviceLevel;
+- (void)setAccountLimits:(id)arg1;
+- (void)setAccounting:(id)arg1;
+- (void)setActive:(id)arg1;
+- (void)setAttributes:(id)arg1;
+- (void)setBusinessUserInfo:(id)arg1;
+- (void)setCreated:(id)arg1;
+- (void)setDeleted:(id)arg1;
+- (void)setEmail:(id)arg1;
+- (void)setId:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setPhotoLastUpdated:(id)arg1;
+- (void)setPhotoUrl:(id)arg1;
+- (void)setPremiumInfo:(id)arg1;
+- (void)setPricingModel:(id)arg1;
+- (void)setPrivilege:(id)arg1;
+- (void)setServiceLevel:(id)arg1;
+- (void)setShardId:(id)arg1;
+- (void)setSubscriptionInfo:(id)arg1;
+- (void)setTimezone:(id)arg1;
+- (void)setUpdated:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (id)shardId;
+- (id)subscriptionInfo;
+- (id)timezone;
+- (id)updated;
+- (id)username;
+
+@end

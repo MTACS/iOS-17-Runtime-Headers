@@ -1,0 +1,72 @@
+
+@interface PKPaymentMerchantSession : NSObject <NSCopying, NSSecureCoding> {
+    NSData * _ampEnrollmentPinning;
+    NSString * _displayName;
+    NSString * _domain;
+    unsigned long long  _epochTimestamp;
+    unsigned long long  _expiresAt;
+    NSString * _initiative;
+    NSString * _initiativeContext;
+    NSString * _merchantIdentifier;
+    NSString * _merchantSessionIdentifier;
+    NSString * _nonce;
+    NSString * _operationalAnalyticsIdentifier;
+    NSString * _retryNonce;
+    NSData * _signature;
+    NSArray * _signedFields;
+}
+
+@property (nonatomic, readonly) NSData *ampEnrollmentPinning;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSString *domain;
+@property (nonatomic, readonly) unsigned long long epochTimestamp;
+@property (nonatomic, readonly) unsigned long long expiresAt;
+@property (nonatomic, readonly) NSString *initiative;
+@property (nonatomic, readonly) NSString *initiativeContext;
+@property (nonatomic, readonly) NSString *merchantIdentifier;
+@property (nonatomic, readonly) NSString *merchantSessionIdentifier;
+@property (nonatomic, readonly) NSString *nonce;
+@property (nonatomic, readonly) NSString *operationalAnalyticsIdentifier;
+@property (nonatomic, retain) NSString *retryNonce;
+@property (nonatomic, readonly) NSData *signature;
+@property (nonatomic, readonly) NSArray *signedFields;
+
++ (id)paymentMerchantSessionWithProtobuf:(id)arg1;
++ (bool)supportsSecureCoding;
++ (long long)version;
+
+- (void).cxx_destruct;
+- (bool)_isModern;
+- (id)ampEnrollmentPinning;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)displayName;
+- (id)domain;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)epochTimestamp;
+- (unsigned long long)expiresAt;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 domain:(id)arg5 displayName:(id)arg6 signature:(id)arg7;
+- (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 displayName:(id)arg6 initiativeContext:(id)arg7 initiative:(id)arg8 ampEnrollmentPinning:(id)arg9 operationalAnalyticsIdentifier:(id)arg10 signedFields:(id)arg11 signature:(id)arg12;
+- (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 displayName:(id)arg6 initiativeContext:(id)arg7 initiative:(id)arg8 signedFields:(id)arg9 signature:(id)arg10;
+- (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 domain:(id)arg6 displayName:(id)arg7 operationalAnalyticsIdentifier:(id)arg8 signature:(id)arg9;
+- (id)initiative;
+- (id)initiativeContext;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPaymentMerchantSession:(id)arg1;
+- (id)merchantIdentifier;
+- (id)merchantSessionIdentifier;
+- (id)nonce;
+- (id)operationalAnalyticsIdentifier;
+- (id)protobuf;
+- (id)retryNonce;
+- (void)setRetryNonce:(id)arg1;
+- (id)signature;
+- (id)signedData;
+- (id)signedFields;
+- (bool)supportsURL:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC9WiFiKitUIP33_A29D951DB0C66A0FE976FAA0FBC42C4219ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

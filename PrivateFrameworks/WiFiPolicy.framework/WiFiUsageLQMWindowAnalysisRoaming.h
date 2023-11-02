@@ -1,0 +1,113 @@
+
+@interface WiFiUsageLQMWindowAnalysisRoaming : WiFiUsageLQMWindowAnalysis {
+    bool  _firstRoamAfterRoamRecommLifted;
+    bool  _isColocatedRoam;
+    bool  _isWNMScoreRoam;
+    long long  _latency;
+    long long  _originRssi;
+    WiFiUsageSessionPingPongStats * _pingPongStats;
+    NSString * _roamBssSupports;
+    struct { 
+        long long valueByBand[3]; 
+        bool valid[3]; 
+    }  _roamConfigChannels;
+    struct { 
+        bool isAllowed; 
+        bool forceApply; 
+        bool deviceSupport; 
+        bool isEAP; 
+        unsigned long long environment; 
+        unsigned long long networkOfInterestType; 
+        unsigned long long LOIType; 
+    }  _roamConfigCriteria;
+    long long  _roamConfigTriggerRssi;
+    unsigned long long  _roamFullBandScanCount;
+    unsigned long long  _roamPartialBandScanCount;
+    unsigned long long  _roamPktsPendingAqm;
+    unsigned long long  _roamPktsPendingTxSubQ;
+    unsigned long long  _roamScannedChannelCount;
+    unsigned long long  _roamSuppressionEnabledPerc;
+    double  _roamSuppressionWaitForRoamEnd;
+    double  _roamSuppressionWaitForRoamStart;
+    NSString * _roamingReason;
+    NSString * _roamingStatus;
+    long long  _scanDuration;
+    long long  _targetRssi;
+}
+
+@property (nonatomic) bool firstRoamAfterRoamRecommLifted;
+@property (nonatomic) bool isColocatedRoam;
+@property (nonatomic) bool isWNMScoreRoam;
+@property (nonatomic) long long latency;
+@property (nonatomic) long long originRssi;
+@property (nonatomic, retain) WiFiUsageSessionPingPongStats *pingPongStats;
+@property (nonatomic, retain) NSString *roamBssSupports;
+@property (nonatomic) struct { long long x1[3]; bool x2[3]; } roamConfigChannels;
+@property (nonatomic) struct { bool x1; bool x2; bool x3; bool x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; } roamConfigCriteria;
+@property (nonatomic) long long roamConfigTriggerRssi;
+@property (nonatomic) unsigned long long roamFullBandScanCount;
+@property (nonatomic) unsigned long long roamPartialBandScanCount;
+@property (nonatomic) unsigned long long roamPktsPendingAqm;
+@property (nonatomic) unsigned long long roamPktsPendingTxSubQ;
+@property (nonatomic) unsigned long long roamScannedChannelCount;
+@property (nonatomic) unsigned long long roamSuppressionEnabledPerc;
+@property (nonatomic) double roamSuppressionWaitForRoamEnd;
+@property (nonatomic) double roamSuppressionWaitForRoamStart;
+@property (nonatomic, retain) NSString *roamingReason;
+@property (nonatomic, retain) NSString *roamingStatus;
+@property (nonatomic) long long scanDuration;
+@property (nonatomic) long long targetRssi;
+
++ (id)bssSupportWithFlags:(id)arg1;
++ (bool)isColocatedRoam:(id)arg1;
++ (bool)isWNMRoam:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)addDimensionsTo:(id)arg1;
+- (bool)firstRoamAfterRoamRecommLifted;
+- (id)initWithRollingWindow:(id)arg1 WithRoamingState:(bool)arg2 andReasonString:(id)arg3 andStatus:(unsigned long long)arg4 asString:(id)arg5 andLatency:(unsigned long long)arg6 andRoamData:(id)arg7 andCurrentBSSSession:(id)arg8 andContext:(struct context { bool x1; bool x2; bool x3; })arg9 andPingPongStats:(id)arg10 andTimestamp:(id)arg11 onQueue:(id)arg12;
+- (bool)isColocatedRoam;
+- (bool)isWNMScoreRoam;
+- (long long)latency;
+- (long long)originRssi;
+- (id)pingPongStats;
+- (id)roamBssSupports;
+- (struct { long long x1[3]; bool x2[3]; })roamConfigChannels;
+- (struct { bool x1; bool x2; bool x3; bool x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; })roamConfigCriteria;
+- (long long)roamConfigTriggerRssi;
+- (unsigned long long)roamFullBandScanCount;
+- (unsigned long long)roamPartialBandScanCount;
+- (unsigned long long)roamPktsPendingAqm;
+- (unsigned long long)roamPktsPendingTxSubQ;
+- (unsigned long long)roamScannedChannelCount;
+- (unsigned long long)roamSuppressionEnabledPerc;
+- (double)roamSuppressionWaitForRoamEnd;
+- (double)roamSuppressionWaitForRoamStart;
+- (id)roamingReason;
+- (id)roamingStatus;
+- (long long)scanDuration;
+- (void)setFirstRoamAfterRoamRecommLifted:(bool)arg1;
+- (void)setIsColocatedRoam:(bool)arg1;
+- (void)setIsWNMScoreRoam:(bool)arg1;
+- (void)setLatency:(long long)arg1;
+- (void)setOriginRssi:(long long)arg1;
+- (void)setPingPongStats:(id)arg1;
+- (void)setRoamBssSupports:(id)arg1;
+- (void)setRoamConfigChannels:(struct { long long x1[3]; bool x2[3]; })arg1;
+- (void)setRoamConfigCriteria:(struct { bool x1; bool x2; bool x3; bool x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; })arg1;
+- (void)setRoamConfigTriggerRssi:(long long)arg1;
+- (void)setRoamFullBandScanCount:(unsigned long long)arg1;
+- (void)setRoamPartialBandScanCount:(unsigned long long)arg1;
+- (void)setRoamPktsPendingAqm:(unsigned long long)arg1;
+- (void)setRoamPktsPendingTxSubQ:(unsigned long long)arg1;
+- (void)setRoamScannedChannelCount:(unsigned long long)arg1;
+- (void)setRoamSuppressionEnabledPerc:(unsigned long long)arg1;
+- (void)setRoamSuppressionWaitForRoamEnd:(double)arg1;
+- (void)setRoamSuppressionWaitForRoamStart:(double)arg1;
+- (void)setRoamingReason:(id)arg1;
+- (void)setRoamingStatus:(id)arg1;
+- (void)setScanDuration:(long long)arg1;
+- (void)setTargetRssi:(long long)arg1;
+- (long long)targetRssi;
+
+@end

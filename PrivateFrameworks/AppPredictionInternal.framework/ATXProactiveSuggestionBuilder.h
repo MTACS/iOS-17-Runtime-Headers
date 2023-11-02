@@ -1,0 +1,63 @@
+
+@interface ATXProactiveSuggestionBuilder : NSObject
+
++ (id)_actionPredictionReasonForActionResult:(id)arg1 reasons:(id)arg2;
++ (unsigned long long)_actionPredictionReasonsForActionResult:(id)arg1 reasons:(id)arg2;
++ (id)_appPredictionReasonForPredictionItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; })arg1 reasons:(id)arg2;
++ (long long)_confidenceCategoryForPredictionItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; })arg1;
++ (long long)_confidenceCategoryForScore:(double)arg1 highThreshold:(double)arg2 mediumThreshold:(double)arg3;
++ (long long)_confidenceCategoryGivenIsHighConfidence:(bool)arg1;
++ (id)_executableSpecForAppClipWithHeroAppPrediction:(id)arg1;
++ (id)_executableSpecForAppWithBundleId:(id)arg1;
++ (id)_executableSpecForScoredAction:(id)arg1;
++ (id)_executableSpecForSpotlightAction:(id)arg1;
++ (bool)_isHeroAppForPredictionItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; })arg1;
++ (bool)_isHeuristicActionForActionResult:(id)arg1;
++ (bool)_isInstalledAppClipForPredictionItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; })arg1;
++ (bool)_isMagicalMomentForPredictionItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; })arg1;
++ (id)_proactiveSuggestionForSpotlightPOIFromHeroAppPrediction:(id)arg1 clientModelSpec:(id)arg2;
++ (id)_proactiveSuggestionFromAppPredictionItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; })arg1 clientModelSpec:(id)arg2 reasons:(id)arg3;
++ (id)_proactiveSuggestionFromHeroAppPrediction:(id)arg1 clientModelSpec:(id)arg2 reasons:(id)arg3;
++ (id)_proactiveSuggestionFromMagicalMomentsPredictionBundleId:(id)arg1 mmSignals:(id)arg2 clientModelSpec:(id)arg3 reasons:(id)arg4;
++ (id)_proactiveSuggestionsFromActionResult:(id)arg1 clientModelSpec:(id)arg2 reasons:(id)arg3;
++ (id)_proactiveSuggestionsFromHeuristicActionResult:(id)arg1 clientModelSpec:(id)arg2 reasons:(id)arg3 allowedOnLockscreen:(bool)arg4;
++ (id)_scoreSpecForAppClipWithScore:(double)arg1 mediumThreshold:(double)arg2 highThreshold:(double)arg3;
++ (id)_scoreSpecForAppWithScore:(double)arg1 isHighConfidence:(bool)arg2;
++ (id)_scoreSpecForHeroAppPrediction:(id)arg1;
++ (id)_scoreSpecForMagicalMomentsPredictionWithMmSignals:(id)arg1;
++ (id)_scoreSpecForPredictionItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; })arg1;
++ (id)_scoreSpecForScore:(double)arg1 highThreshold:(double)arg2 mediumThreshold:(double)arg3;
++ (id)_uiSpecForAppClipWithBundleId:(id)arg1 title:(id)arg2 subtitle:(id)arg3 predictionReason:(id)arg4;
++ (id)_uiSpecForAppWithBundleId:(id)arg1 scoreSpec:(id)arg2 predictionReason:(id)arg3;
++ (id)_uiSpecForAppWithBundleId:(id)arg1 scoreSpec:(id)arg2 predictionReason:(id)arg3 allowedOnHomescreen:(bool)arg4;
++ (id)_uiSpecForHeroAppPrediction:(id)arg1 scoreSpec:(id)arg2 predictionReason:(id)arg3;
++ (id)_uiSpecForMMAppWithBundleId:(id)arg1 scoreSpec:(id)arg2 predictionReasonString:(id)arg3 anchor:(long long)arg4 predictionReasons:(unsigned long long)arg5;
++ (id)_uiSpecForScoredAction:(id)arg1 scoreSpec:(id)arg2 clientModelSpec:(id)arg3 predictionReason:(id)arg4;
++ (id)_uiSpecForScoredAction:(id)arg1 scoreSpec:(id)arg2 clientModelSpec:(id)arg3 predictionReason:(id)arg4 allowedOnLockscreen:(bool)arg5 allowedOnHomescreen:(bool)arg6;
++ (id)_uiSpecForScoredAction:(id)arg1 scoreSpec:(id)arg2 clientModelSpec:(id)arg3 predictionReason:(id)arg4 allowedOnLockscreen:(bool)arg5 allowedOnHomescreen:(bool)arg6 predictionReasons:(unsigned long long)arg7;
++ (id)_uiSpecForScoredAction:(id)arg1 scoreSpec:(id)arg2 clientModelSpec:(id)arg3 predictionReason:(id)arg4 allowedOnLockscreen:(bool)arg5 predictionReasons:(unsigned long long)arg6;
++ (id)_uiSpecForScoredAction:(id)arg1 scoreSpec:(id)arg2 clientModelSpec:(id)arg3 predictionReason:(id)arg4 shouldClearOnEngagement:(bool)arg5 allowedOnLockscreen:(bool)arg6;
++ (id)_uiSpecForScoredAction:(id)arg1 scoreSpec:(id)arg2 clientModelSpec:(id)arg3 predictionReason:(id)arg4 shouldClearOnEngagement:(bool)arg5 allowedOnLockscreen:(bool)arg6 allowedOnHomescreen:(bool)arg7 predictionReasons:(unsigned long long)arg8;
++ (id)_uiSpecForSpotlightPOIPrediction:(id)arg1 predictionReasons:(unsigned long long)arg2;
++ (id)cachedTitleAndSubtitleForAction:(id)arg1;
++ (id)executableIdForAction:(id)arg1;
++ (bool)isMMAnchorWhitelistedForHomeScreen:(long long)arg1;
++ (id)predictionReasonForAnchorModelPrediction:(id)arg1;
++ (unsigned long long)predictionReasonsForAnchorModelPrediction:(id)arg1;
++ (id)proactiveSuggestionForAppClipFromHeroAppPrediction:(id)arg1 clientModelSpec:(id)arg2 mediumThreshold:(double)arg3 highThreshold:(double)arg4 reasons:(id)arg5;
++ (id)proactiveSuggestionForAppClipsFromHeroAppPredictions:(id)arg1 clientModelSpec:(id)arg2 mediumThreshold:(double)arg3 highThreshold:(double)arg4;
++ (id)proactiveSuggestionForAppWithAnchorModelPrediction:(id)arg1 clientModelSpec:(id)arg2 mediumThreshold:(double)arg3 highThreshold:(double)arg4 allowedOnHomescreen:(bool)arg5;
++ (id)proactiveSuggestionForAppWithBundleId:(id)arg1 score:(double)arg2 clientModelSpec:(id)arg3 mediumThreshold:(double)arg4 highThreshold:(double)arg5 predictionReason:(id)arg6 allowedOnHomescreen:(bool)arg7;
++ (id)proactiveSuggestionForLinkActionPrediction:(id)arg1 score:(double)arg2 clientModelSpec:(id)arg3 mediumThreshold:(double)arg4 highThreshold:(double)arg5 predictionReason:(id)arg6 allowedOnHomescreen:(bool)arg7;
++ (id)proactiveSuggestionForLockscreenAction:(id)arg1 clientModelSpec:(id)arg2;
++ (id)proactiveSuggestionsForAnchorModelFromScoredActionWithReason:(id)arg1 clientModelSpec:(id)arg2 mediumThreshold:(double)arg3 highThreshold:(double)arg4 allowedOnHomescreen:(bool)arg5 predictionReasons:(unsigned long long)arg6;
++ (id)proactiveSuggestionsForAppsWithHeroAppPredictions:(id)arg1 clientModelSpec:(id)arg2;
++ (id)proactiveSuggestionsForAppsWithMagicalMomentsMap:(id)arg1 clientModelSpec:(id)arg2;
++ (id)proactiveSuggestionsForLockscreenActions:(id)arg1 clientModelSpec:(id)arg2;
++ (id)proactiveSuggestionsForSpotlightPOIWithHeroAppPredictions:(id)arg1 clientModelSpec:(id)arg2;
++ (id)proactiveSuggestionsFromActionResults:(id)arg1 clientModelSpec:(id)arg2;
++ (id)proactiveSuggestionsFromAppPredictionItems:(const void*)arg1 clientModelSpec:(id)arg2 maxSuggestionsToSendToBlendingLayer:(int)arg3;
++ (id)proactiveSuggestionsFromHeuristicActionResults:(id)arg1 clientModelSpec:(id)arg2;
++ (id)proactiveSuggestionsFromScoredAction:(id)arg1 clientModelSpec:(id)arg2 mediumThreshold:(double)arg3 highThreshold:(double)arg4 predictionReason:(id)arg5 allowedOnHomescreen:(bool)arg6 predictionReasons:(unsigned long long)arg7;
+
+@end

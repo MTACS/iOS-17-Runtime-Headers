@@ -1,0 +1,14 @@
+
+@protocol NCNotificationListInteractiveTransitionCoordinatorDelegate <NSObject>
+
+@required
+
+- (void)notificationListInteractiveTransitionCoordinator:(NCNotificationListInteractiveTransitionCoordinator *)arg1 didUpdateListDisplaySetting:(unsigned long long)arg2 isPersistentSetting:(bool)arg3 hideRevealedList:(bool)arg4;
+- (unsigned long long)notificationListInteractiveTransitionCoordinator:(NCNotificationListInteractiveTransitionCoordinator *)arg1 requestsCountForInteractiveListView:(NCNotificationListView *)arg2;
+- (unsigned long long)notificationListInteractiveTransitionCoordinator:(NCNotificationListInteractiveTransitionCoordinator *)arg1 requestsIndexForInteractiveListView:(NCNotificationListView *)arg2;
+- (bool)notificationListInteractiveTransitionCoordinatorRequestsIsCurrentDigestVisible:(NCNotificationListInteractiveTransitionCoordinator *)arg1;
+- (bool)notificationListInteractiveTransitionCoordinatorRequestsIsHiddenListRevealed:(NCNotificationListInteractiveTransitionCoordinator *)arg1;
+- (bool)notificationListInteractiveTransitionCoordinatorRequestsIsScrollingListContent:(NCNotificationListInteractiveTransitionCoordinator *)arg1;
+- (void)notificationListInteractiveTransitionCoordinatorRequestsMigratingProminentNotificationsForHiddenSetting:(NCNotificationListInteractiveTransitionCoordinator *)arg1;
+
+@end

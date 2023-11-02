@@ -1,0 +1,4 @@
+
+@protocol BPSWindowMetadata
+
+@end

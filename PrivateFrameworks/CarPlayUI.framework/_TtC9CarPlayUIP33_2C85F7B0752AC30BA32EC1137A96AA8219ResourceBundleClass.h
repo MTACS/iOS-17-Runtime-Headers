@@ -1,0 +1,4 @@
+
+@interface _TtC9CarPlayUIP33_2C85F7B0752AC30BA32EC1137A96AA8219ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CIPhotoEffectStageMono : CIPhotoEffect
+
+@end

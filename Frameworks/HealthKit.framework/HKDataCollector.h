@@ -1,0 +1,92 @@
+
+@interface HKDataCollector : NSObject <HKDataCollectorClientInterface, _HKXPCExportable> {
+    NSString * _bundleIdentifier;
+    HKDataCollectorCollectionConfiguration * _collectionConfiguration;
+    <HKDataCollectorDelegate> * _delegate;
+    HKDevice * _device;
+    id /* block */  _finishCompletion;
+    NSMutableArray * _flushRequests;
+    bool  _hasResumed;
+    NSUUID * _identifier;
+    bool  _invalidated;
+    double  _lastLogTime;
+    NSMutableArray * _pendingBatches;
+    HKTaskServerProxyProvider * _proxyProvider;
+    HKQuantityType * _quantityType;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _reconsiderationSource;
+    NSUUID * _registrationUUID;
+    bool  _requiresRegistration;
+    id /* block */  _resumeCompletion;
+    HKRetryableOperation * _retryableOperation;
+    bool  _shouldFlushAll;
+    long long  _state;
+    long long  _totalDatumCount;
+    NSMutableDictionary * _unconfirmedBatchesByUUID;
+    double  _unitTest_clientFlushRequestTimeoutOverride;
+    id /* block */  _unitTest_connectionInterruptedHandler;
+    double  _unitTest_maxDatumAgeOverride;
+    id /* block */  _unitTest_registrationCompleteHandler;
+    NSMutableDictionary * _unpersistedBatchesByUUID;
+}
+
+@property (readonly, copy) NSString *bundleIdentifier;
+@property (nonatomic, readonly, copy) HKDataCollectorCollectionConfiguration *collectionConfiguration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HKDataCollectorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) HKDevice *device;
+@property (readonly) unsigned long long hash;
+@property (readonly, copy) HKQuantityType *quantityType;
+@property (readonly) Class superclass;
+
++ (id)clientInterface;
++ (id)serverInterface;
+
+- (void).cxx_destruct;
+- (bool)_datumsInDateOrder:(id)arg1 secondDatum:(id)arg2;
+- (id)_prunedBatch:(id)arg1 maximumLength:(long long)arg2;
+- (id)_queue_callToDelegateAndEnqueueForClientFlushRequest:(id)arg1;
+- (void)_queue_checkForFinish;
+- (void)_queue_considerCompletingFlushRequests;
+- (void)_queue_considerSendingBatches;
+- (void)_queue_insertBatchForDatums:(id)arg1 device:(id)arg2 metadata:(id)arg3 completion:(id /* block */)arg4;
+- (void)_queue_pruneOldDatums;
+- (void)_queue_requestRegistration;
+- (void)_queue_resetUnpersistedBatches;
+- (void)_queue_sendBatch:(id)arg1;
+- (void)_queue_taskServer_insertDatums:(id)arg1 device:(id)arg2 metadata:(id)arg3 batchUUID:(id)arg4 completion:(id /* block */)arg5;
+- (void)_queue_updateReconsiderationTimer;
+- (void)_removeBatch:(id)arg1;
+- (void)_requestRegistration;
+- (bool)_validateDatums:(id)arg1 error:(out id*)arg2;
+- (id)bundleIdentifier;
+- (void)clientRemote_beginCollectionWithConfiguration:(id)arg1 lastPersistedDatum:(id)arg2 registrationUUID:(id)arg3;
+- (void)clientRemote_collectThroughDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)clientRemote_collectionConfigurationDidChange:(id)arg1;
+- (void)clientRemote_finishedPersistenceForBatch:(id)arg1 error:(id)arg2;
+- (void)clientRemote_receivedBatch:(id)arg1 error:(id)arg2;
+- (void)clientRemote_synchronizeWithCompletion:(id /* block */)arg1;
+- (id)collectionConfiguration;
+- (void)connectionInterrupted;
+- (void)connectionInvalidated;
+- (id)delegate;
+- (id)description;
+- (id)device;
+- (id)exportedInterface;
+- (void)finishWithCompletion:(id /* block */)arg1;
+- (id)initWithHealthStore:(id)arg1 bundleIdentifier:(id)arg2 quantityType:(id)arg3;
+- (void)insertDatums:(id)arg1 device:(id)arg2 metadata:(id)arg3 completion:(id /* block */)arg4;
+- (id)quantityType;
+- (id)remoteInterface;
+- (void)resumeWithCompletion:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)unitTest_pendingBatches;
+- (void)unitTest_setClientFlushRequestTimeoutOverride:(double)arg1;
+- (void)unitTest_setConnectionInterruptedHandler:(id /* block */)arg1;
+- (void)unitTest_setMaxDatumAgeOverride:(double)arg1;
+- (void)unitTest_setRegistrationCompleteHandler:(id /* block */)arg1;
+- (id)unitTest_unconfirmedBatches;
+- (id)unitTest_unpersistedBatches;
+
+@end

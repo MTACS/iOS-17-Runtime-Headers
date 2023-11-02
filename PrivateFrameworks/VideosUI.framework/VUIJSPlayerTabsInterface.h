@@ -1,0 +1,4 @@
+
+@interface VUIJSPlayerTabsInterface : VUIJSObject
+
+@end

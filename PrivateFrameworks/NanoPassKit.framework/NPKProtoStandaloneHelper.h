@@ -1,0 +1,61 @@
+
+@interface NPKProtoStandaloneHelper : NSObject
+
++ (void)_convertChooseCredentialsStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertChooseFlowStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertChooseProductStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertDigitalIssuanceAmountStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertDigitalIssuancePaymentStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertIssuerVerificationChannelsStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertIssuerVerificationCodeStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertIssuerVerificationFieldsStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertLocalDeviceManualEntry:(id)arg1 protoContext:(id)arg2;
++ (void)_convertLocalDeviceManualEntryProgress:(id)arg1 protoContext:(id)arg2;
++ (void)_convertManualEntryStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertMoreInformationStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertPasscodeUpgradeStepContext:(id)arg1 protoContext:(id)arg2;
++ (id)_convertProtoWelcomeStepContext:(id)arg1 requestContext:(id)arg2;
++ (void)_convertProvisioningProgressStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertProvisioningResultStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertReaderModeEntryStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertReaderModeIngestionStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertSecondaryManualEntryStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertTermsAndConditionsStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertWelcomeStepContext:(id)arg1 protoContext:(id)arg2;
++ (id)fromNPKProtoStandalonePaymentProvisioningFlowStepContext:(id)arg1 requestContext:(id)arg2;
++ (struct CGSize { double x1; double x2; })passImageSize;
++ (struct CGSize { double x1; double x2; })passThumbnailImageSize;
++ (void)setPassImageSize:(struct CGSize { double x1; double x2; })arg1;
++ (void)setPassThumbnailImageSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)sha1hash:(id)arg1;
++ (id)toJsonString:(id)arg1;
++ (id)toNPKProtoStandaloneCreditAccountCredential:(id)arg1 thumbnailSize:(bool)arg2;
++ (id)toNPKProtoStandaloneError:(id)arg1;
++ (id)toNPKProtoStandalonePass:(id)arg1 thumbnailSize:(bool)arg2;
++ (int)toNPKProtoStandalonePassType:(unsigned long long)arg1;
++ (int)toNPKProtoStandalonePaymentApplicationState:(long long)arg1;
++ (id)toNPKProtoStandalonePaymentCredential:(id)arg1;
++ (id)toNPKProtoStandalonePaymentCredentialUnion:(id)arg1 withFlowIdentifier:(id)arg2 thumbnailSize:(bool)arg3;
++ (id)toNPKProtoStandalonePaymentDigitalIssuanceMetadata:(id)arg1;
++ (id)toNPKProtoStandalonePaymentPass:(id)arg1 thumbnailSize:(bool)arg2;
++ (int)toNPKProtoStandalonePaymentPassActivationState:(unsigned long long)arg1;
++ (id)toNPKProtoStandalonePaymentProvisioningFlowManualEntryStepContext:(id)arg1;
++ (id)toNPKProtoStandalonePaymentProvisioningFlowPickerItem:(id)arg1;
++ (id)toNPKProtoStandalonePaymentProvisioningFlowPickerSection:(id)arg1;
++ (id)toNPKProtoStandalonePaymentProvisioningFlowStepContext:(id)arg1 fromStep:(int)arg2 toStep:(int)arg3;
++ (id)toNPKProtoStandalonePaymentProvisioningMethodMetadata:(id)arg1;
++ (id)toNPKProtoStandalonePaymentRemoteCredential:(id)arg1 thumbnailSize:(bool)arg2;
++ (id)toNPKProtoStandalonePaymentSetupField:(id)arg1;
++ (int)toNPKProtoStandalonePaymentSetupFieldType:(unsigned long long)arg1;
++ (id)toNPKProtoStandalonePaymentSetupMoreInfoItem:(id)arg1;
++ (id)toNPKProtoStandalonePaymentSetupProduct:(id)arg1;
++ (id)toNPKProtoStandalonePaymentSetupProductImageAssetURLs:(id)arg1;
++ (id)toNPKProtoStandalonePaymentSetupProductPaymentOption:(id)arg1;
++ (int)toNPKProtoStandaloneReaderModeIngestionState:(unsigned long long)arg1;
++ (id)toNPKProtoStandaloneVerificationChannel:(id)arg1;
++ (int)toNPKProtoStandaloneVerificationChannelType:(unsigned long long)arg1;
++ (id)toPKPaymentSetupField:(id)arg1;
++ (unsigned long long)toPKPaymentSetupFieldType:(int)arg1;
++ (id)toStringValue:(id)arg1;
+
+@end

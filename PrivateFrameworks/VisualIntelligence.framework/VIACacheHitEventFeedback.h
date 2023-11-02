@@ -1,0 +1,4 @@
+
+@interface VIACacheHitEventFeedback : SFFeedback
+
+@end

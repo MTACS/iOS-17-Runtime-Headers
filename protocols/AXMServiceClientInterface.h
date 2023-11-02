@@ -1,0 +1,4 @@
+
+@protocol AXMServiceClientInterface <NSObject>
+
+@end

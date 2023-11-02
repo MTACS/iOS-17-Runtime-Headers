@@ -1,0 +1,4 @@
+
+@interface SGTaggedMallocCompressionBuffer : NSObject
+
+@end

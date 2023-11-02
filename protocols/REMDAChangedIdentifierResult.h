@@ -1,0 +1,4 @@
+
+@protocol REMDAChangedIdentifierResult <NSObject>
+
+@end

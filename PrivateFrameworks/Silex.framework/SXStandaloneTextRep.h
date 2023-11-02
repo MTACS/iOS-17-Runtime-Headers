@@ -1,0 +1,4 @@
+
+@interface SXStandaloneTextRep : SXContainerRep
+
+@end

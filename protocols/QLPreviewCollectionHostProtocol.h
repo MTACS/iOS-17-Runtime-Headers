@@ -1,0 +1,4 @@
+
+@protocol QLPreviewCollectionHostProtocol <NSObject>
+
+@end

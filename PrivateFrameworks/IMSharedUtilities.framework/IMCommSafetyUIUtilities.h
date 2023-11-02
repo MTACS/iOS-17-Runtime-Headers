@@ -1,0 +1,4 @@
+
+@interface IMCommSafetyUIUtilities : NSObject
+
+@end

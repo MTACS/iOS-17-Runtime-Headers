@@ -1,0 +1,4 @@
+
+@interface SBApplicationPlaceholderProxy : FBSApplicationPlaceholder
+
+@end

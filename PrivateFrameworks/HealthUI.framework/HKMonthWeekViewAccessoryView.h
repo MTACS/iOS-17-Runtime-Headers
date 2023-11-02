@@ -1,0 +1,4 @@
+
+@interface HKMonthWeekViewAccessoryView : UIView
+
+@end

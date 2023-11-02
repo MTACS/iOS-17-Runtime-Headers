@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmRestaurant : PhotosGraph.PhotosChallengeEvaluableMeaningAlgorithm
+
+@end

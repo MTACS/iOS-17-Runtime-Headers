@@ -1,0 +1,82 @@
+
+@interface _SBTransientOverlayPresentedEntity : NSObject {
+    SBTransientOverlayBackgroundWindow * _backgroundWindow;
+    SBPresentationObservationToken * _bannerLongLookPresentationObservationToken;
+    <BSInvalidatable> * _bannerLongLookWindowLevelAssertion;
+    double  _baseWindowLevel;
+    SBPresentationObservationToken * _controlCenterPresentationObservationToken;
+    <BSInvalidatable> * _controlCenterWindowLevelAssertion;
+    <BSInvalidatable> * _disableAutoUnlockAssertion;
+    bool  _dismissing;
+    SBFluidDismissalState * _fluidDismissalState;
+    bool  _hasFinishedWindowInitialization;
+    bool  _hasPreservedInputViews;
+    <BSInvalidatable> * _keyFocusStealingAssertion;
+    <BSInvalidatable> * _proximityEnabledAssertion;
+    bool  _rotating;
+    SBPresentationObservationToken * _siriPresentationObservationToken;
+    <BSInvalidatable> * _siriWindowLevelAssertion;
+    SBTransientOverlayViewController * _viewController;
+    <BSInvalidatable> * _wallpaperAnimationSuspensionAssertion;
+    SBTransientOverlayWindow * _window;
+}
+
+@property (nonatomic, retain) SBTransientOverlayBackgroundWindow *backgroundWindow;
+@property (nonatomic, retain) SBPresentationObservationToken *bannerLongLookPresentationObservationToken;
+@property (nonatomic, retain) <BSInvalidatable> *bannerLongLookWindowLevelAssertion;
+@property (nonatomic, readonly) double baseWindowLevel;
+@property (nonatomic, retain) SBPresentationObservationToken *controlCenterPresentationObservationToken;
+@property (nonatomic, retain) <BSInvalidatable> *controlCenterWindowLevelAssertion;
+@property (nonatomic, retain) <BSInvalidatable> *disableAutoUnlockAssertion;
+@property (getter=isDismissing, nonatomic) bool dismissing;
+@property (nonatomic, retain) SBFluidDismissalState *fluidDismissalState;
+@property (nonatomic) bool hasFinishedWindowInitialization;
+@property (nonatomic) bool hasPreservedInputViews;
+@property (nonatomic, retain) <BSInvalidatable> *keyFocusStealingAssertion;
+@property (nonatomic, retain) <BSInvalidatable> *proximityEnabledAssertion;
+@property (getter=isRotating, nonatomic) bool rotating;
+@property (nonatomic, retain) SBPresentationObservationToken *siriPresentationObservationToken;
+@property (nonatomic, retain) <BSInvalidatable> *siriWindowLevelAssertion;
+@property (nonatomic, readonly) SBTransientOverlayViewController *viewController;
+@property (nonatomic, retain) <BSInvalidatable> *wallpaperAnimationSuspensionAssertion;
+@property (nonatomic, readonly) SBTransientOverlayWindow *window;
+
+- (void).cxx_destruct;
+- (id)backgroundWindow;
+- (id)bannerLongLookPresentationObservationToken;
+- (id)bannerLongLookWindowLevelAssertion;
+- (double)baseWindowLevel;
+- (id)controlCenterPresentationObservationToken;
+- (id)controlCenterWindowLevelAssertion;
+- (id)disableAutoUnlockAssertion;
+- (id)fluidDismissalState;
+- (bool)hasFinishedWindowInitialization;
+- (bool)hasPreservedInputViews;
+- (id)initWithViewController:(id)arg1 window:(id)arg2 baseWindowLevel:(double)arg3;
+- (bool)isDismissing;
+- (bool)isRotating;
+- (id)keyFocusStealingAssertion;
+- (id)proximityEnabledAssertion;
+- (void)setBackgroundWindow:(id)arg1;
+- (void)setBannerLongLookPresentationObservationToken:(id)arg1;
+- (void)setBannerLongLookWindowLevelAssertion:(id)arg1;
+- (void)setControlCenterPresentationObservationToken:(id)arg1;
+- (void)setControlCenterWindowLevelAssertion:(id)arg1;
+- (void)setDisableAutoUnlockAssertion:(id)arg1;
+- (void)setDismissing:(bool)arg1;
+- (void)setFluidDismissalState:(id)arg1;
+- (void)setHasFinishedWindowInitialization:(bool)arg1;
+- (void)setHasPreservedInputViews:(bool)arg1;
+- (void)setKeyFocusStealingAssertion:(id)arg1;
+- (void)setProximityEnabledAssertion:(id)arg1;
+- (void)setRotating:(bool)arg1;
+- (void)setSiriPresentationObservationToken:(id)arg1;
+- (void)setSiriWindowLevelAssertion:(id)arg1;
+- (void)setWallpaperAnimationSuspensionAssertion:(id)arg1;
+- (id)siriPresentationObservationToken;
+- (id)siriWindowLevelAssertion;
+- (id)viewController;
+- (id)wallpaperAnimationSuspensionAssertion;
+- (id)window;
+
+@end

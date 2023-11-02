@@ -1,0 +1,45 @@
+
+@interface CKDProgressTracker : NSObject {
+    unsigned long long  _cachedCompletedBytes;
+    unsigned long long  _cachedTotalBytes;
+    NSMapTable * _completedBytesByItems;
+    bool  _hasCachedCompletedBytes;
+    bool  _hasCachedTotalBytes;
+    double  _lastItemPercentage;
+    NSString * _trackingID;
+}
+
+@property (nonatomic) unsigned long long cachedCompletedBytes;
+@property (nonatomic) unsigned long long cachedTotalBytes;
+@property (nonatomic, retain) NSMapTable *completedBytesByItems;
+@property (nonatomic) bool hasCachedCompletedBytes;
+@property (nonatomic) bool hasCachedTotalBytes;
+@property (nonatomic) double lastItemPercentage;
+@property (nonatomic, retain) NSString *trackingID;
+
++ (unsigned long long)_sizeForItem:(id)arg1;
+
+- (void).cxx_destruct;
+- (unsigned long long)_updateTotalBytes;
+- (unsigned long long)_updateTotalCompletedBytes;
+- (unsigned long long)cachedCompletedBytes;
+- (unsigned long long)cachedTotalBytes;
+- (id)completedBytesByItems;
+- (bool)hasCachedCompletedBytes;
+- (bool)hasCachedTotalBytes;
+- (id)init;
+- (id)initWithTrackingID:(id)arg1;
+- (double)lastItemPercentage;
+- (void)setCachedCompletedBytes:(unsigned long long)arg1;
+- (void)setCachedTotalBytes:(unsigned long long)arg1;
+- (void)setCompletedBytesByItems:(id)arg1;
+- (void)setHasCachedCompletedBytes:(bool)arg1;
+- (void)setHasCachedTotalBytes:(bool)arg1;
+- (void)setLastItemPercentage:(double)arg1;
+- (void)setTrackingID:(id)arg1;
+- (void)startTrackingItems:(id)arg1;
+- (void)stopTrackingItems:(id)arg1;
+- (id)trackingID;
+- (double)updateProgressWithItem:(id)arg1 progress:(double)arg2;
+
+@end

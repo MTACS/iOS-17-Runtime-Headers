@@ -1,0 +1,4 @@
+
+@protocol CHCallInteractionManager <NSObject>
+
+@end

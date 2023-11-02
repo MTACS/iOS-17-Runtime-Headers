@@ -1,0 +1,91 @@
+
+@interface SKAStatusPublishingServiceClient : NSObject <SKAStatusPublishingServiceClientConnectionLifecycleDelegate, SKStatusPublishingDaemonProtocol> {
+    bool  _accountCheckCompleted;
+    bool  _accountIsStatusKitCapable;
+    <SKAChannelManaging> * _channelManager;
+    SKAStatusPublishingServiceClientConnection * _clientConnection;
+    <SKADatabaseManaging> * _databaseManager;
+    <SKADatabaseProviding> * _databaseProvider;
+    <SKAStatusPublishingServiceClientDelegate> * _delegate;
+    SKAInvitationManager * _invitationManager;
+    <SKAMessagingProviding> * _messagingProvider;
+    <SKAStatusPublishingManaging> * _publishingManager;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _statusTypeIdenfifier;
+}
+
+@property (nonatomic) bool accountCheckCompleted;
+@property (nonatomic) bool accountIsStatusKitCapable;
+@property (nonatomic, retain) <SKAChannelManaging> *channelManager;
+@property (nonatomic, retain) SKAStatusPublishingServiceClientConnection *clientConnection;
+@property (nonatomic, retain) <SKADatabaseManaging> *databaseManager;
+@property (nonatomic, retain) <SKADatabaseProviding> *databaseProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKAStatusPublishingServiceClientDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SKAInvitationManager *invitationManager;
+@property (nonatomic, retain) <SKAMessagingProviding> *messagingProvider;
+@property (nonatomic, retain) <SKAStatusPublishingManaging> *publishingManager;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly, copy) NSString *statusTypeIdenfifier;
+@property (readonly) Class superclass;
+
++ (id)_accountNotCapableError;
++ (id)_dateCreatedDriftError;
++ (id)_missingEntitlmentErrorForStatusTypeIdentifier:(id)arg1;
++ (id)_noPersonalChannelErrorForStatusTypeIdentifier:(id)arg1;
++ (id)_noUsersToShareWithError;
++ (id)_unableToResolveSenderHandleError;
++ (id)logger;
+
+- (void).cxx_destruct;
+- (double)_delayForStatusPublishRequest:(id)arg1;
+- (double)_randomScheduledPublishDelay;
+- (double)_randomSecondaryDeviceRepublishDelay;
+- (double)_randomUnscheduledPublishDelay;
+- (double)_scheduledPublishMaxDelayTime;
+- (double)_secondaryDeviceRepublishMaxDelayTime;
+- (double)_secondaryDeviceRepublishMinDelayTime;
+- (id)_serverBagNumberForKey:(id)arg1;
+- (double)_serverBagTimeIntervalForKey:(id)arg1 withDefaultValue:(double)arg2;
+- (double)_unscheduledPublishMaxDelayTime;
+- (bool)accountCheckCompleted;
+- (bool)accountIsStatusKitCapable;
+- (void)accountIsStatusKitCapableWithCompletion:(id /* block */)arg1;
+- (id)channelManager;
+- (id)clientConnection;
+- (id)databaseManager;
+- (id)databaseProvider;
+- (id)delegate;
+- (id)description;
+- (void)fetchHandleInvitability:(id)arg1 fromHandle:(id)arg2 forStatusTypeIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (id)initWithXPCConnection:(id)arg1 queue:(id)arg2 delegate:(id)arg3 databaseManager:(id)arg4 invitationManager:(id)arg5 publishingManager:(id)arg6 channelManager:(id)arg7;
+- (id)invitationManager;
+- (void)inviteHandles:(id)arg1 fromSenderHandle:(id)arg2 withInvitationPayload:(id)arg3 statusTypeIdentifier:(id)arg4 completion:(id /* block */)arg5;
+- (void)invitedHandlesForStatusTypeIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)isHandleInviteable:(id)arg1 fromHandle:(id)arg2 forStatusTypeIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)isHandleInvited:(id)arg1 fromSenderHandle:(id)arg2 forStatusTypeIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (id)messagingProvider;
+- (void)publishStatusRequest:(id)arg1 statusTypeIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (id)publishingManager;
+- (void)publishingServiceClientConnectionWasInterrupted:(id)arg1;
+- (void)publishingServiceClientConnectionWasInvalidated:(id)arg1;
+- (id)queue;
+- (void)registerForDelegateCallbacksWithStatusTypeIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)removeAllInvitedHandlesFromPersonalChannelWithStatusTypeIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)removeInvitedHandles:(id)arg1 statusTypeIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)setAccountCheckCompleted:(bool)arg1;
+- (void)setAccountIsStatusKitCapable:(bool)arg1;
+- (void)setChannelManager:(id)arg1;
+- (void)setClientConnection:(id)arg1;
+- (void)setDatabaseManager:(id)arg1;
+- (void)setDatabaseProvider:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setInvitationManager:(id)arg1;
+- (void)setMessagingProvider:(id)arg1;
+- (void)setPublishingManager:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (id)statusTypeIdenfifier;
+
+@end

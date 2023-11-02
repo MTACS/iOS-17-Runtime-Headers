@@ -1,0 +1,72 @@
+
+@interface VMUCallTreeNode : NSObject {
+    unsigned long long  _address;
+    void * _children;
+    unsigned int  _count;
+    NSString * _name;
+    unsigned long long  _numBytes;
+    unsigned int  _numChildren;
+    VMUCallTreeNode * _parent;
+}
+
++ (id)makeFakeRootForNode:(id)arg1;
++ (id)nodeWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4;
++ (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg2;
++ (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg2 sampler:(id)arg3 options:(unsigned long long)arg4;
+
+- (void).cxx_destruct;
+- (void)_printCallTreeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 cumulativeOutput:(id)arg2 indentString:(id)arg3 branchPointCount:(unsigned int)arg4 topFunctions:(id)arg5 options:(unsigned long long)arg6;
+- (void)addChild:(id)arg1;
+- (unsigned long long)address;
+- (id)allChildren;
+- (id)browserName;
+- (bool)callTreeHasBranches;
+- (id)chargeLibrariesInSet:(id)arg1 toCaller:(id)arg2 parentLibrary:(id)arg3;
+- (id)chargeLibrariesToCallers:(id)arg1 keepBoundaries:(bool)arg2;
+- (id)chargeSystemLibrariesToCallersAndKeepBoundaries:(bool)arg1;
+- (id)childAtIndex:(unsigned int)arg1;
+- (long long)compare:(id)arg1;
+- (long long)comparePuttingMainThreadFirst:(id)arg1;
+- (long long)comparePuttingRetainCycleNodesAtTop:(id)arg1;
+- (long long)compareSizeAndCount:(id)arg1;
+- (unsigned int)count;
+- (void)countFunctionOccurrencesInTree:(id)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)filterOutSymbols:(id)arg1;
+- (id)filterOutSymbols:(id)arg1 required:(id)arg2;
+- (id)findOrAddChildWithName:(id)arg1 address:(unsigned long long)arg2;
+- (id)findOrAddChildWithName:(id)arg1 address:(unsigned long long)arg2 nodeSearchType:(int)arg3 isLeafNode:(bool)arg4;
+- (id)fullOutputWithThreshold:(unsigned int)arg1;
+- (id)fullOutputWithThreshold:(unsigned int)arg1 showPseudoNodes:(bool)arg2;
+- (void)getBrowserName:(id)arg1;
+- (id)initWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4;
+- (id)invertedNode;
+- (bool)isMallocBlockContentNode;
+- (bool)isPseudo;
+- (id)largestTopOfStackPath;
+- (id)name;
+- (id)nameWithStringsForSymbol:(id)arg1 library:(id)arg2 loadAddress:(id)arg3 offset:(id)arg4 address:(id)arg5 suffix:(id)arg6;
+- (id)nameWithoutOffset;
+- (unsigned long long)numBytes;
+- (unsigned int)numChildren;
+- (id)parent;
+- (void)parseNameIntoSymbol:(id*)arg1 library:(id*)arg2 loadAddress:(unsigned long long*)arg3 offset:(unsigned long long*)arg4 address:(unsigned long long*)arg5 suffix:(id*)arg6;
+- (void)printCallTree;
+- (void)printCallTreeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+- (void)printCallTreeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 cumulativeOutput:(id)arg2 options:(unsigned long long)arg3;
+- (id)pruneCount:(unsigned int)arg1;
+- (id)pruneMallocSize:(unsigned long long)arg1;
+- (id)pseudoName;
+- (id)pseudoNodeTopOfStackChild;
+- (void)setChildren:(id)arg1;
+- (id)sortedChildren;
+- (id)sortedChildrenWithPseudoNode;
+- (id)sortedChildrenWithPseudoNode:(id)arg1 withCompare:(SEL)arg2;
+- (id)stringFromCallTreeIndentIfNoBranches:(bool)arg1;
+- (id)stringFromCallTreeIndentIfNoBranches:(bool)arg1 showPseudoNodes:(bool)arg2;
+- (id)stringFromCallTreeWithOptions:(unsigned long long)arg1;
+- (unsigned int)sumOfChildCounts;
+- (bool)symbolNameIsUnknown;
+
+@end

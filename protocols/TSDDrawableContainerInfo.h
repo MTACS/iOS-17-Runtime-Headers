@@ -1,0 +1,4 @@
+
+@protocol TSDDrawableContainerInfo <TSDMutableContainerInfo>
+
+@end

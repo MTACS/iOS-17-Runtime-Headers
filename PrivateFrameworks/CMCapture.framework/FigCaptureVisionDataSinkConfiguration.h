@@ -1,0 +1,97 @@
+
+@interface FigCaptureVisionDataSinkConfiguration : FigCaptureSinkConfiguration {
+    bool  _dynamicThresholdingEnabled;
+    bool  _featureBinningEnabled;
+    int  _featureMatchingDescriptorSize;
+    bool  _featureMatchingEnabled;
+    bool  _featureOrientationAssignmentEnabled;
+    float  _gaussianPyramidBaseOctaveDownscalingFactor;
+    unsigned int  _gaussianPyramidOctavesCount;
+    unsigned long long  _hammingDistanceThreshold;
+    unsigned int  _keypointDetectionFlowType;
+    float  _keypointDetectionThreshold;
+    NSData * _laccConfigAndMetadata;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _maxBurstDuration;
+    float  _maxBurstFrameRate;
+    float  _maxFrameRate;
+    unsigned int  _maxKeypointsCount;
+    float  _orientationDistanceThreshold;
+    float  _sigmaDistanceThreshold;
+    float  _squareDistanceDisparityFraction;
+    unsigned long long  _subPixelThreshold;
+}
+
+@property (getter=isDynamicThresholdingEnabled, nonatomic) bool dynamicThresholdingEnabled;
+@property (nonatomic, readonly) NSDictionary *embeddedCaptureDeviceConfiguration;
+@property (nonatomic) bool featureBinningEnabled;
+@property (nonatomic) int featureMatchingDescriptorSize;
+@property (getter=isFeatureMatchingEnabled, nonatomic) bool featureMatchingEnabled;
+@property (nonatomic) bool featureOrientationAssignmentEnabled;
+@property (nonatomic) float gaussianPyramidBaseOctaveDownscalingFactor;
+@property (nonatomic) unsigned int gaussianPyramidOctavesCount;
+@property (nonatomic) unsigned long long hammingDistanceThreshold;
+@property (nonatomic) unsigned int keypointDetectionFlowType;
+@property (nonatomic) float keypointDetectionThreshold;
+@property (nonatomic, retain) NSData *laccConfigAndMetadata;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } maxBurstDuration;
+@property (nonatomic) float maxBurstFrameRate;
+@property (nonatomic) float maxFrameRate;
+@property (nonatomic) unsigned int maxKeypointsCount;
+@property (nonatomic) float orientationDistanceThreshold;
+@property (nonatomic) float sigmaDistanceThreshold;
+@property (nonatomic) float squareDistanceDisparityFraction;
+@property (nonatomic) unsigned long long subPixelThreshold;
+
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)copyXPCEncoding;
+- (void)dealloc;
+- (id)description;
+- (id)embeddedCaptureDeviceConfiguration;
+- (bool)featureBinningEnabled;
+- (int)featureMatchingDescriptorSize;
+- (bool)featureOrientationAssignmentEnabled;
+- (float)gaussianPyramidBaseOctaveDownscalingFactor;
+- (unsigned int)gaussianPyramidOctavesCount;
+- (unsigned long long)hammingDistanceThreshold;
+- (id)initWithXPCEncoding:(id)arg1;
+- (bool)isDynamicThresholdingEnabled;
+- (bool)isEqual:(id)arg1;
+- (bool)isFeatureMatchingEnabled;
+- (unsigned int)keypointDetectionFlowType;
+- (float)keypointDetectionThreshold;
+- (id)laccConfigAndMetadata;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxBurstDuration;
+- (float)maxBurstFrameRate;
+- (float)maxFrameRate;
+- (unsigned int)maxKeypointsCount;
+- (float)orientationDistanceThreshold;
+- (void)setDynamicThresholdingEnabled:(bool)arg1;
+- (void)setFeatureBinningEnabled:(bool)arg1;
+- (void)setFeatureMatchingDescriptorSize:(int)arg1;
+- (void)setFeatureMatchingEnabled:(bool)arg1;
+- (void)setFeatureOrientationAssignmentEnabled:(bool)arg1;
+- (void)setGaussianPyramidBaseOctaveDownscalingFactor:(float)arg1;
+- (void)setGaussianPyramidOctavesCount:(unsigned int)arg1;
+- (void)setHammingDistanceThreshold:(unsigned long long)arg1;
+- (void)setKeypointDetectionFlowType:(unsigned int)arg1;
+- (void)setKeypointDetectionThreshold:(float)arg1;
+- (void)setLaccConfigAndMetadata:(id)arg1;
+- (void)setMaxBurstDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMaxBurstFrameRate:(float)arg1;
+- (void)setMaxFrameRate:(float)arg1;
+- (void)setMaxKeypointsCount:(unsigned int)arg1;
+- (void)setOrientationDistanceThreshold:(float)arg1;
+- (void)setSigmaDistanceThreshold:(float)arg1;
+- (void)setSquareDistanceDisparityFraction:(float)arg1;
+- (void)setSubPixelThreshold:(unsigned long long)arg1;
+- (float)sigmaDistanceThreshold;
+- (int)sinkType;
+- (float)squareDistanceDisparityFraction;
+- (unsigned long long)subPixelThreshold;
+
+@end

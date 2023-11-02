@@ -1,0 +1,4 @@
+
+@interface _TtC7SharingP33_E194EA3C182259FA021DE7A599393D5319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

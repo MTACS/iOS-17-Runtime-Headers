@@ -1,0 +1,4 @@
+
+@interface PKPaymentSetupAppExtensionsListItem : PKPaymentSetupListItem
+
+@end

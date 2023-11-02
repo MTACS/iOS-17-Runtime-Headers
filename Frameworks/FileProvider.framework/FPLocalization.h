@@ -1,0 +1,4 @@
+
+@interface FPLocalization : NSObject
+
+@end

@@ -1,0 +1,92 @@
+
+@interface MTPodcastDerivedPropertyObserver : NSObject <MTDerivedPropertyChangeNotifying, MTLibraryChangeNotifier> {
+    NSMutableDictionary * _cache;
+    NSSet * _channelPropertiesToFetch;
+    id /* block */  _didFinishProcessingContextSaveHandlerForTests;
+    <MTEpisodeLevelCalculatorProtocol> * _episodeLevelCalculator;
+    NSSet * _episodePropertiesToFetch;
+    NSObject<OS_dispatch_queue> * _handlerQueue;
+    NSMutableDictionary * _handlers;
+    bool  _isObserving;
+    NSPersistentHistoryToken * _latestPersistentHistoryToken;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    NSObject<OS_dispatch_source> * _persistentHistorySource;
+    NSMutableDictionary * _podcastCache;
+    NSSet * _podcastPropertiesToFetch;
+    NSSet * _podcastStatsProperties;
+    bool  _processingIsPaused;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *cache;
+@property (nonatomic, retain) NSSet *channelPropertiesToFetch;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ didFinishProcessingContextSaveHandlerForTests;
+@property (nonatomic, readonly) <MTEpisodeLevelCalculatorProtocol> *episodeLevelCalculator;
+@property (nonatomic, retain) NSSet *episodePropertiesToFetch;
+@property (nonatomic, retain) NSMutableDictionary *handlers;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isObserving;
+@property (nonatomic, retain) NSPersistentHistoryToken *latestPersistentHistoryToken;
+@property (nonatomic, retain) NSMutableDictionary *podcastCache;
+@property (nonatomic, retain) NSSet *podcastPropertiesToFetch;
+@property (nonatomic, retain) NSSet *podcastStatsProperties;
+@property (readonly) Class superclass;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (bool)_changeContainsRelevantChannelChanges:(id)arg1;
+- (bool)_changeContainsRelevantEpisodeChanges:(id)arg1;
+- (bool)_changeContainsRelevantPodcastChanges:(id)arg1;
+- (void)_fetchLatestProcessedPersistentHistoryToken;
+- (id)_historyTransactionsSinceLatestPersistentHistoryToken;
+- (id)_predicateForEpisodesToUpdateWithPodcastUuid:(id)arg1 predicateForUnplayedInUnplayedTab:(id)arg2 predicateForUserEpisodes:(id)arg3;
+- (void)_processLatestPersistentHistoryTransactions;
+- (void)_setLastProcessedPersistentHistoryToken:(id)arg1;
+- (bool)_shouldSkipSettingPropertiesForWatchPPT;
+- (bool)_shouldUpdatePodcastsStatsForChange:(id)arg1;
+- (void)_updateDerivedPropertiesForPodcastUUIDs:(id)arg1;
+- (void)_updateEpisodeCountsForPodcastUuid:(id)arg1;
+- (id)addDerivedPropertyChangeHandler:(id /* block */)arg1;
+- (id)cache;
+- (id)channelPropertiesToFetch;
+- (unsigned long long)countOfUnplayedEpisodesForPodcast:(id)arg1;
+- (id)dependentPropertyForKey:(id)arg1 forPodcastUuid:(id)arg2;
+- (id)derivedPropertiesForPodcast:(id)arg1;
+- (id)derivedPropertyValueForKey:(id)arg1 forPodcast:(id)arg2;
+- (id /* block */)didFinishProcessingContextSaveHandlerForTests;
+- (id)episodeLevelCalculator;
+- (id)episodePropertiesToFetch;
+- (void)episodeResultsChangedForPodcastUuid:(id)arg1;
+- (id)handlers;
+- (id)init;
+- (bool)isObserving;
+- (id)latestPersistentHistoryToken;
+- (void)libraryDidChange:(id)arg1;
+- (void)notifyObserversForPodcast:(id)arg1;
+- (void)pauseProcessing;
+- (id)podcastCache;
+- (id)podcastPropertiesToFetch;
+- (id)podcastStatsProperties;
+- (void)processLatestPersistentHistoryTransactions;
+- (void)removeDerivedPropertyChangeHandler:(id)arg1;
+- (void)reportStatsForPodcasts;
+- (void)resumeProcessing;
+- (void)setCache:(id)arg1;
+- (void)setChannelPropertiesToFetch:(id)arg1;
+- (void)setDependentPropertyValue:(id)arg1 forKey:(id)arg2 forPodcastUuid:(id)arg3;
+- (bool)setDerivedPropertyValue:(id)arg1 forKey:(id)arg2 forPodcast:(id)arg3;
+- (void)setDidFinishProcessingContextSaveHandlerForTests:(id /* block */)arg1;
+- (void)setEpisodePropertiesToFetch:(id)arg1;
+- (void)setHandlers:(id)arg1;
+- (void)setIsObserving:(bool)arg1;
+- (void)setLatestPersistentHistoryToken:(id)arg1;
+- (void)setPodcastCache:(id)arg1;
+- (void)setPodcastPropertiesToFetch:(id)arg1;
+- (void)setPodcastStatsProperties:(id)arg1;
+- (void)startObserving;
+- (void)stopObserving;
+- (void)updateFlagsForPodcastUuid:(id)arg1 predicateForUnplayedTab:(id)arg2 predicateForUserEpisodes:(id)arg3;
+
+@end

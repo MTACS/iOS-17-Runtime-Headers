@@ -1,0 +1,91 @@
+
+@interface WFGalleryWorkflow : NSObject <NSMutableCopying, WFCloudKitItem, WFSortableGalleryObject> {
+    CKRecordID * _base;
+    NSDate * _createdAt;
+    NSArray * _hiddenRegions;
+    NSNumber * _iconColor;
+    WFFileRepresentation * _iconFile;
+    NSNumber * _iconGlyph;
+    CKRecordID * _identifier;
+    NSString * _language;
+    NSString * _longDescription;
+    long long  _minVersion;
+    NSDate * _modifiedAt;
+    NSString * _name;
+    NSString * _persistentIdentifier;
+    NSNumber * _searchable;
+    NSString * _shortDescription;
+    WFFileRepresentation * _shortcutFile;
+    WFFileRepresentation * _signedShortcutFile;
+    NSString * _signingStatus;
+    NSArray * _supportedIdioms;
+    WFWorkflowRecord * _workflowRecord;
+}
+
+@property (nonatomic, readonly) CKRecordID *base;
+@property (nonatomic, readonly) NSDate *createdAt;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSArray *hiddenRegions;
+@property (nonatomic, readonly) WFWorkflowIcon *icon;
+@property (nonatomic, retain) NSNumber *iconColor;
+@property (nonatomic, readonly) WFFileRepresentation *iconFile;
+@property (nonatomic, retain) NSNumber *iconGlyph;
+@property (nonatomic, readonly) CKRecordID *identifier;
+@property (nonatomic, readonly) NSString *language;
+@property (nonatomic, readonly) NSString *longDescription;
+@property (nonatomic, readonly) long long minVersion;
+@property (nonatomic, readonly) NSDate *modifiedAt;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *persistentIdentifier;
+@property (nonatomic, copy) NSData *recordSystemFieldsData;
+@property (nonatomic, readonly) NSNumber *searchable;
+@property (nonatomic, readonly) NSString *shortDescription;
+@property (nonatomic, readonly) WFFileRepresentation *shortcutFile;
+@property (nonatomic, retain) WFFileRepresentation *signedShortcutFile;
+@property (nonatomic, copy) NSString *signingStatus;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *supportedIdioms;
+@property (nonatomic, readonly) WFWorkflowRecord *workflowRecord;
+
++ (id)properties;
++ (id)recordType;
+
+- (void).cxx_destruct;
+- (id)base;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)createdAt;
+- (id)ensureFileAssets;
+- (unsigned long long)hash;
+- (id)hiddenRegions;
+- (id)icon;
+- (id)iconColor;
+- (id)iconFile;
+- (id)iconGlyph;
+- (id)identifier;
+- (bool)isEqual:(id)arg1;
+- (id)language;
+- (id)longDescription;
+- (long long)minVersion;
+- (id)modifiedAt;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)name;
+- (id)persistentIdentifier;
+- (id)propertiesForEventLogging;
+- (unsigned long long)referenceActionForKey:(id)arg1;
+- (id)searchable;
+- (void)setCreatedAt:(id)arg1 modifiedAt:(id)arg2 createdBy:(id)arg3;
+- (void)setIconColor:(id)arg1;
+- (void)setIconGlyph:(id)arg1;
+- (void)setSignedShortcutFile:(id)arg1;
+- (void)setSigningStatus:(id)arg1;
+- (id)sharingURL;
+- (id)shortDescription;
+- (id)shortcutFile;
+- (id)signedShortcutFile;
+- (id)signingStatus;
+- (id)supportedIdioms;
+- (id)workflowRecord;
+
+@end

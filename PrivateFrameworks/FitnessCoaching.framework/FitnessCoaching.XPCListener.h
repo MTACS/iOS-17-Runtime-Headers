@@ -1,0 +1,15 @@
+
+@interface FitnessCoaching.XPCListener : NSObject <FCCTransportInterface, NSXPCListenerDelegate> {
+    void listener;
+    void requiredEntitlements;
+    void transportDispatchService;
+}
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)transportMessage:(void *)arg1 data:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 19: unsigned long long, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, inout unsigned short, long double, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, inout unsigned short, /* Warning: Unrecognized filer type: 'E' using 'void*' */ void*, const const out const /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, /* Warning: Unrecognized filer type: '>' using 'void*' */ void*
+- (void)transportRequest:(void *)arg1 data:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 27: unsigned long long, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, inout unsigned short, long double, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, inout unsigned short, long double, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, inout unsigned short, /* Warning: Unrecognized filer type: 'E' using 'void*' */ void*, const const out const /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, /* Warning: Unrecognized filer type: '>' using 'void*' */ void*
+
+@end

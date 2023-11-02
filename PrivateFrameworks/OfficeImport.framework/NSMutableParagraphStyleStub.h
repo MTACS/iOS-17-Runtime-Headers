@@ -1,0 +1,4 @@
+
+@interface NSMutableParagraphStyleStub : NSObject
+
+@end

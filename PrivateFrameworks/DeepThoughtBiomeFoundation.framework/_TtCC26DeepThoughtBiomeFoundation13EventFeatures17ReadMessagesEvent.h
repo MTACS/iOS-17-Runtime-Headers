@@ -1,0 +1,4 @@
+
+@interface _TtCC26DeepThoughtBiomeFoundation13EventFeatures17ReadMessagesEvent : _TtCs12_SwiftObject
+
+@end

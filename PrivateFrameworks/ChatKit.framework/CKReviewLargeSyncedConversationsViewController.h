@@ -1,0 +1,4 @@
+
+@interface CKReviewLargeSyncedConversationsViewController : CKReviewLargeUnsyncedConversationsViewController
+
+@end

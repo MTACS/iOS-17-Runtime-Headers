@@ -1,0 +1,18 @@
+
+@interface SXContentDisplayContainerModifier : NSObject <SXDOMModifying> {
+    NSMutableDictionary * _containers;
+}
+
+@property (nonatomic, readonly) NSMutableDictionary *containers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)containers;
+- (void)ensureWrappingContainerComponentForComponents:(id)arg1 parentComponent:(id)arg2;
+- (id)init;
+- (void)modifyDOM:(id)arg1 context:(id)arg2;
+
+@end

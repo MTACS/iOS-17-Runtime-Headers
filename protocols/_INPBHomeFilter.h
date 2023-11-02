@@ -1,0 +1,78 @@
+
+@protocol _INPBHomeFilter <NSObject>
+
+@required
+
+- (int)StringAsDeviceType:(NSString *)arg1;
+- (int)StringAsEntityType:(NSString *)arg1;
+- (int)StringAsOuterDeviceType:(NSString *)arg1;
+- (int)StringAsServiceType:(NSString *)arg1;
+- (int)StringAsSubServiceType:(NSString *)arg1;
+- (_INPBDataString *)accessory;
+- (void)addEntityIdentifiers:(NSString *)arg1;
+- (void)clearEntityIdentifiers;
+- (int)deviceType;
+- (NSString *)deviceTypeAsString:(int)arg1;
+- (NSArray *)entityIdentifiers;
+- (NSString *)entityIdentifiersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)entityIdentifiersCount;
+- (_INPBDataString *)entityName;
+- (int)entityType;
+- (NSString *)entityTypeAsString:(int)arg1;
+- (_INPBDataString *)group;
+- (bool)hasAccessory;
+- (bool)hasAllQuantifier;
+- (bool)hasDeviceType;
+- (bool)hasEntityName;
+- (bool)hasEntityType;
+- (bool)hasGroup;
+- (bool)hasHasAllQuantifier;
+- (bool)hasHome;
+- (bool)hasIsExcludeFilter;
+- (bool)hasOuterDeviceName;
+- (bool)hasOuterDeviceType;
+- (bool)hasRoom;
+- (bool)hasScene;
+- (bool)hasService;
+- (bool)hasServiceType;
+- (bool)hasSubServiceType;
+- (bool)hasZone;
+- (_INPBDataString *)home;
+- (bool)isExcludeFilter;
+- (_INPBDataString *)outerDeviceName;
+- (int)outerDeviceType;
+- (NSString *)outerDeviceTypeAsString:(int)arg1;
+- (_INPBDataString *)room;
+- (_INPBDataString *)scene;
+- (_INPBDataString *)service;
+- (int)serviceType;
+- (NSString *)serviceTypeAsString:(int)arg1;
+- (void)setAccessory:(_INPBDataString *)arg1;
+- (void)setDeviceType:(int)arg1;
+- (void)setEntityIdentifiers:(NSArray *)arg1;
+- (void)setEntityName:(_INPBDataString *)arg1;
+- (void)setEntityType:(int)arg1;
+- (void)setGroup:(_INPBDataString *)arg1;
+- (void)setHasAllQuantifier:(bool)arg1;
+- (void)setHasDeviceType:(bool)arg1;
+- (void)setHasEntityType:(bool)arg1;
+- (void)setHasHasAllQuantifier:(bool)arg1;
+- (void)setHasIsExcludeFilter:(bool)arg1;
+- (void)setHasOuterDeviceType:(bool)arg1;
+- (void)setHasServiceType:(bool)arg1;
+- (void)setHasSubServiceType:(bool)arg1;
+- (void)setHome:(_INPBDataString *)arg1;
+- (void)setIsExcludeFilter:(bool)arg1;
+- (void)setOuterDeviceName:(_INPBDataString *)arg1;
+- (void)setOuterDeviceType:(int)arg1;
+- (void)setRoom:(_INPBDataString *)arg1;
+- (void)setScene:(_INPBDataString *)arg1;
+- (void)setService:(_INPBDataString *)arg1;
+- (void)setServiceType:(int)arg1;
+- (void)setSubServiceType:(int)arg1;
+- (void)setZone:(_INPBDataString *)arg1;
+- (int)subServiceType;
+- (NSString *)subServiceTypeAsString:(int)arg1;
+- (_INPBDataString *)zone;
+
+@end

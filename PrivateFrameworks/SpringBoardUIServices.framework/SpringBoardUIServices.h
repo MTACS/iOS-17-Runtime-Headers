@@ -1,0 +1,4 @@
+
+@interface SpringBoardUIServices : NSObject
+
+@end

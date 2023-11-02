@@ -1,0 +1,4 @@
+
+@protocol SNResult <NSObject>
+
+@end

@@ -1,0 +1,95 @@
+
+@interface WFContact : NSObject <NSCopying, NSSecureCoding, WFNaming, WFSerializableContent> {
+    WFFileRepresentation * _fullDataVCardRepresentation;
+    bool  _hasImageData;
+    long long  _multivalueIndex;
+    NSString * _nickname;
+    int  _propertyID;
+    NSArray * _socialProfiles;
+    WFFileRepresentation * _vCardRepresentation;
+}
+
+@property (nonatomic, readonly) NSArray *URLs;
+@property (nonatomic, readonly) WFContactLabeledValue *birthday;
+@property (nonatomic, readonly) NSDate *creationDate;
+@property (nonatomic, readonly) NSArray *dates;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *emailAddresses;
+@property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, readonly) NSString *formattedName;
+@property (nonatomic, readonly) WFFileRepresentation *fullDataVCardRepresentation;
+@property (nonatomic, readonly) bool hasImageData;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *imageData;
+@property (nonatomic, readonly) NSArray *instantMessageAddresses;
+@property (nonatomic, readonly) NSString *lastName;
+@property (nonatomic, readonly) NSString *middleName;
+@property (nonatomic, readonly) NSDate *modificationDate;
+@property (nonatomic, readonly) long long multivalueIndex;
+@property (nonatomic, readonly) NSString *namePrefix;
+@property (nonatomic, readonly) NSString *nameSuffix;
+@property (nonatomic, readonly) NSString *nickname;
+@property (nonatomic, readonly) NSString *organization;
+@property (nonatomic, readonly) NSArray *phoneNumbers;
+@property (nonatomic, readonly) int propertyID;
+@property (nonatomic, readonly) NSArray *socialProfiles;
+@property (nonatomic, readonly) NSArray *streetAddresses;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSData *thumbnailImageData;
+@property (nonatomic, readonly) WFFileRepresentation *vCardRepresentation;
+@property (nonatomic, readonly, copy) NSString *wfName;
+
++ (id)addContactsChangeObserver:(id /* block */)arg1;
++ (id)cnContactWithINPerson:(id)arg1;
++ (id)contactWithVCardData:(id)arg1 propertyID:(int)arg2 multivalueIndex:(long long)arg3;
++ (id)contactsWithVCardData:(id)arg1;
++ (id)labelFromINPersonHandleLabel:(id)arg1;
++ (id)objectWithWFSerializedRepresentation:(id)arg1;
++ (long long)predictedTypeForHandleValue:(id)arg1;
++ (long long)predictedTypeForHandleValue:(id)arg1 allowsCustomHandles:(bool)arg2;
++ (Class)preferredConcreteSubclass;
++ (void)removeContactsChangeObserver:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)INPersonRepresentation;
+- (id)URLs;
+- (id)attributionSetWithCachingIdentifier:(id)arg1;
+- (id)birthday;
+- (id)contactIdentifierForINPerson;
+- (id)contactWithPropertyID:(int)arg1 multivalueIndex:(long long)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creationDate;
+- (id)dates;
+- (id)description;
+- (id)emailAddresses;
+- (void)encodeWithCoder:(id)arg1;
+- (id)firstName;
+- (id)formattedName;
+- (id)fullDataVCardRepresentation;
+- (bool)hasImageData;
+- (bool)hasValueForPropertyID:(int)arg1;
+- (id)imageData;
+- (id)initWithCoder:(id)arg1;
+- (id)instantMessageAddresses;
+- (id)lastName;
+- (id)middleName;
+- (id)modificationDate;
+- (long long)multivalueIndex;
+- (id)namePrefix;
+- (id)nameSuffix;
+- (id)nickname;
+- (id)organization;
+- (id)phoneNumbers;
+- (int)propertyID;
+- (id)socialProfiles;
+- (id)streetAddresses;
+- (id)thumbnailImageData;
+- (id)vCardRepresentation;
+- (id)vCardRepresentationWithFullData:(bool)arg1;
+- (id)valueForPropertyID:(int)arg1;
+- (id)wfName;
+- (id)wfSerializedRepresentation;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CNDematerializeCancelationToken : CNCancelationToken
+
+@end

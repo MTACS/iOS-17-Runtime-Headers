@@ -1,0 +1,57 @@
+
+@interface PKOrderPhysicalCardController : NSObject <PKSetupFlowControllerProtocol> {
+    PKAccount * _account;
+    PKAccountService * _accountService;
+    PKAccountUser * _accountUser;
+    NSArray * _artworkOptions;
+    unsigned long long  _featureIdentifier;
+    NSString * _nameOnCard;
+    unsigned long long  _orderReason;
+    <PKSetupFlowControllerProtocol> * _parentFlowController;
+    PKPaymentPass * _paymentPass;
+    long long  _paymentSetupContext;
+    PKPaymentWebService * _paymentWebService;
+    PKAccountWebServiceRequestPhysicalCardRequest * _physicalCardRequest;
+    PKPhysicalCard * _physicalCardToReplace;
+    NSArray * _priceOptions;
+    PKAccountWebServicePhysicalCardActionRequest * _replacePhysicalCardRequest;
+    PKPhysicalCardArtworkOption * _selectedArtworkOption;
+    CNPostalAddress * _shippingAddress;
+}
+
+@property (nonatomic, copy) NSArray *artworkOptions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long featureIdentifier;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *nameOnCard;
+@property (nonatomic, retain) <PKSetupFlowControllerProtocol> *parentFlowController;
+@property (nonatomic, readonly) PKPaymentPass *paymentPass;
+@property (nonatomic, readonly) long long paymentSetupContext;
+@property (nonatomic, retain) PKPhysicalCardArtworkOption *selectedArtworkOption;
+@property (nonatomic, retain) CNPostalAddress *shippingAddress;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_paymentRequest;
+- (id)_priceForRequestingPhysicalCard;
+- (id)artworkOptions;
+- (void)completeOrderPhysicalCardWithApplePayTrustSignature:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)featureIdentifier;
+- (id)initWithAccountService:(id)arg1 paymentWebService:(id)arg2 paymentPass:(id)arg3 account:(id)arg4 accountUser:(id)arg5 orderReason:(unsigned long long)arg6 context:(long long)arg7 currentPhysicalCard:(id)arg8;
+- (id)nameOnCard;
+- (void)nextViewControllerWithCompletion:(id /* block */)arg1;
+- (id)parentFlowController;
+- (id)paymentPass;
+- (long long)paymentSetupContext;
+- (id)selectedArtworkOption;
+- (void)setArtworkOptions:(id)arg1;
+- (void)setNameOnCard:(id)arg1;
+- (void)setParentFlowController:(id)arg1;
+- (void)setSelectedArtworkOption:(id)arg1;
+- (void)setShippingAddress:(id)arg1;
+- (id)shippingAddress;
+- (void)startOrderPhysicalCardWithCompletion:(id /* block */)arg1;
+- (void)updateCustomizationOptionsWithCompletion:(id /* block */)arg1;
+
+@end

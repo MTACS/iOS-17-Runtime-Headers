@@ -1,0 +1,4 @@
+
+@interface AVTAttributeLabelView : UIView
+
+@end

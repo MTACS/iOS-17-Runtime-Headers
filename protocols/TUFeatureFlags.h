@@ -1,0 +1,75 @@
+
+@protocol TUFeatureFlags <NSObject>
+
+@required
+
+- (bool)FTUserScore;
+- (bool)TTRBannerEnabled;
+- (bool)aTVHandoff;
+- (bool)announceCalls;
+- (bool)avLessSharePlayEnabled;
+- (bool)avcCameraSelectionEnabled;
+- (bool)callManagementMuteControl;
+- (bool)callScreeningEnabled;
+- (bool)callScreeningEnabledM3;
+- (bool)callScreeningRTTEnabled;
+- (bool)callsBusinessMetadataQuery;
+- (bool)captionDraggingEnabled;
+- (bool)catalystClientEnabled;
+- (bool)collaborateTogetherEnabled;
+- (bool)continuityCaptureEnabled;
+- (bool)conversationHandoffEnabled;
+- (bool)conversationOneToOneModeEnabled;
+- (bool)dualSIMRingtoneEnabled;
+- (bool)embedSwapBannerEnabled;
+- (bool)expanseBTSwitchingEnabled;
+- (bool)expanseEnabled;
+- (bool)filterGFTaaSCalls;
+- (bool)ftvSpatialAudioEnabled;
+- (bool)fullScreenVoicemailDetailsEnabled;
+- (bool)gameCenterSharePlayIntegration;
+- (bool)gelatoEnabled;
+- (bool)gftDowngradeToOneToOne;
+- (bool)gftOnWatch;
+- (bool)greenTeaLinksEnabled;
+- (bool)groupFacetimeAsAServiceEnabled;
+- (bool)incomingBannerOverSixUpEnabled;
+- (bool)increaseCallHistoryEnabled;
+- (bool)intelligentRoutingEnabled;
+- (bool)lagunaEnabled;
+- (bool)lagunaPullBackEnabled;
+- (bool)livePhotoDonation;
+- (bool)livePhotoXPCServiceEnabled;
+- (bool)memojiCameraEnabled;
+- (bool)mochiEnabled;
+- (bool)nameAndPhotoBackwardsCompatibilityEnabled;
+- (bool)nameAndPhotoEnabled;
+- (bool)nameAndPhotoEnabledC3;
+- (bool)nonInterruptingCalls;
+- (bool)offrampEnabled;
+- (bool)phoneRecentsAvatarsEnabled;
+- (bool)phoneRecentsEnabled;
+- (bool)previewMSROptimizationEnabled;
+- (bool)qrPluginEncryptionEnabled;
+- (bool)reactionsEnabled;
+- (bool)requestA2DPOverIncomingCalls;
+- (bool)sckSystemPickerEnabled;
+- (bool)screenSharingCALayerHostMode;
+- (bool)screenSharingDeskViewEnabled;
+- (bool)screenSharingDeskViewSqueegeeEnabled;
+- (bool)sharePlayDisabled;
+- (bool)sharePlayDiscoverabilityEnabled;
+- (bool)sharePlayInFaceTimeCanvasEnabled;
+- (bool)sharePlayWithAirplayEnabled;
+- (bool)suggestionsReloadForSelectedRecipients;
+- (bool)supportsScreenSharing;
+- (bool)uNNotificationsMacOSEnabled;
+- (bool)uPlusNDowngrade;
+- (bool)uPlusOneScreenSharing;
+- (bool)unreliableMessengerEnabled;
+- (bool)videoMessagingEnabled;
+- (bool)videoMessagingEnabledM3;
+- (bool)voiceCallSpamReportToCarrierEnabled;
+- (bool)wombatWisdomEnabled;
+
+@end

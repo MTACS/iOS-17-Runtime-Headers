@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.AsyncHomekitInvocationResponseHandler : HomeAutomationInternal.BaseAsyncResponseHandler
+
+@end

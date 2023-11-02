@@ -1,0 +1,92 @@
+
+@interface PXPeopleBootstrapContext : NSObject {
+    double  _backingScaleFactor;
+    unsigned long long  _bootstrapType;
+    NSString * _callerInfo;
+    id /* block */  _cancelBlock;
+    id /* block */  _delayedPersonBlock;
+    bool  _didCommitPreBootstrapAction;
+    PHFace * _face;
+    PXPeopleNameSelection * _nameSelection;
+    id /* block */  _onInitBlock;
+    <PXPersonSuggestion> * _personSuggestion;
+    <PXPeopleSuggestionManagerDataSource> * _prefetchedDataSource;
+    bool  _skipInitialAction;
+    <PXPerson> * _sourcePerson;
+    PXPeopleSuggestionManager * _suggestionManager;
+    <PXPerson> * _targetPerson;
+    bool  _wantsMergeCandidateSuggestions;
+    bool  _wantsNaming;
+    bool  _wantsPostNaming;
+    bool  _wantsToBeAddedToPeopleAlbum;
+}
+
+@property (nonatomic) double backingScaleFactor;
+@property unsigned long long bootstrapType;
+@property (nonatomic, retain) NSString *callerInfo;
+@property (nonatomic, copy) id /* block */ cancelBlock;
+@property (nonatomic, copy) id /* block */ delayedPersonBlock;
+@property (nonatomic) bool didCommitPreBootstrapAction;
+@property (nonatomic, retain) PHFace *face;
+@property (nonatomic, readonly) NSString *localizedName;
+@property (retain) PXPeopleNameSelection *nameSelection;
+@property (nonatomic, copy) id /* block */ onInitBlock;
+@property (nonatomic, retain) <PXPersonSuggestion> *personSuggestion;
+@property (nonatomic, retain) <PXPeopleSuggestionManagerDataSource> *prefetchedDataSource;
+@property (nonatomic) bool skipInitialAction;
+@property (retain) <PXPerson> *sourcePerson;
+@property (retain) PXPeopleSuggestionManager *suggestionManager;
+@property (retain) <PXPerson> *targetPerson;
+@property (nonatomic) bool wantsMergeCandidateSuggestions;
+@property (nonatomic) bool wantsNaming;
+@property (nonatomic) bool wantsPostNaming;
+@property (nonatomic) bool wantsToBeAddedToPeopleAlbum;
+
++ (id)contextWithFace:(id)arg1 type:(unsigned long long)arg2 delayedPersonBlock:(id /* block */)arg3;
++ (id)contextWithPerson:(id)arg1 type:(unsigned long long)arg2;
++ (id)contextWithPersonSuggestion:(id)arg1;
+
+- (void).cxx_destruct;
+- (double)backingScaleFactor;
+- (unsigned long long)bootstrapType;
+- (id)callerInfo;
+- (id /* block */)cancelBlock;
+- (id /* block */)delayedPersonBlock;
+- (id)description;
+- (bool)didCommitPreBootstrapAction;
+- (id)face;
+- (id)init;
+- (id)localizedName;
+- (id)nameSelection;
+- (id /* block */)onInitBlock;
+- (id)personSuggestion;
+- (id)prefetchedDataSource;
+- (void)setBackingScaleFactor:(double)arg1;
+- (void)setBootstrapType:(unsigned long long)arg1;
+- (void)setCallerInfo:(id)arg1;
+- (void)setCancelBlock:(id /* block */)arg1;
+- (void)setDelayedPersonBlock:(id /* block */)arg1;
+- (void)setDidCommitPreBootstrapAction:(bool)arg1;
+- (void)setFace:(id)arg1;
+- (void)setNameSelection:(id)arg1;
+- (void)setOnInitBlock:(id /* block */)arg1;
+- (void)setPersonSuggestion:(id)arg1;
+- (void)setPrefetchedDataSource:(id)arg1;
+- (void)setSkipInitialAction:(bool)arg1;
+- (void)setSourcePerson:(id)arg1;
+- (void)setSuggestionManager:(id)arg1;
+- (void)setTargetPerson:(id)arg1;
+- (void)setWantsMergeCandidateSuggestions:(bool)arg1;
+- (void)setWantsNaming:(bool)arg1;
+- (void)setWantsPostNaming:(bool)arg1;
+- (void)setWantsToBeAddedToPeopleAlbum:(bool)arg1;
+- (bool)skipInitialAction;
+- (id)sourcePerson;
+- (id)suggestionManager;
+- (id)targetPerson;
+- (bool)wantsMergeCandidateSuggestions;
+- (bool)wantsNaming;
+- (bool)wantsPostNaming;
+- (bool)wantsToBeAddedToPeopleAlbum;
+
+@end

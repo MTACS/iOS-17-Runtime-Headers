@@ -1,0 +1,94 @@
+
+@interface HFDemoModeAccessory : HMAccessory <HFAccessoryRepresentable, HFUserNotificationServiceSettingsProviding> {
+    HMHome * _home;
+    NSUUID * _internalUniqueIdentifier;
+    bool  _isInternallyCertified;
+    NSPredicate * _notificationCondition;
+    bool  _notificationsEnabled;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSString *firmwareVersion;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HFAccessoryType *hf_accessoryType;
+@property (nonatomic, readonly) NSSet *hf_associatedAccessories;
+@property (nonatomic, readonly) bool hf_canSpanMultipleRooms;
+@property (nonatomic, readonly) NSSet *hf_containedCharacteristics;
+@property (nonatomic, readonly) NSSet *hf_containedProfiles;
+@property (nonatomic, readonly) NSSet *hf_containedServices;
+@property (nonatomic, readonly) bool hf_effectiveIsFavorite;
+@property (nonatomic, readonly) bool hf_effectiveShowInHomeDashboard;
+@property (nonatomic, readonly) bool hf_hasSetFavorite;
+@property (nonatomic, readonly) bool hf_hasSetShowInHomeDashboard;
+@property (nonatomic, readonly) bool hf_hasSetVisibleInHomeStatus;
+@property (nonatomic, readonly) <HFHomeKitObject> *hf_homeKitObject;
+@property (nonatomic, readonly) bool hf_isFavorite;
+@property (nonatomic, readonly) bool hf_isForcedVisibleInHomeStatus;
+@property (nonatomic, readonly) bool hf_isIdentifiable;
+@property (nonatomic, readonly) bool hf_isVisibleInHomeStatus;
+@property (nonatomic, readonly) Class hf_itemClass;
+@property (nonatomic, readonly) HMRoom *hf_safeRoom;
+@property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
+@property (nonatomic, readonly) bool hf_shouldShowInFavorites;
+@property (nonatomic, readonly) bool hf_showInHomeDashboard;
+@property (nonatomic, readonly) bool hf_supportsHomeStatus;
+@property (nonatomic, readonly) NSString *hf_tileSize;
+@property (nonatomic, readonly, copy) HFUserNotificationServiceSettings *hf_userNotificationSettings;
+@property (nonatomic, retain) HMHome *home;
+@property (nonatomic, retain) NSUUID *internalUniqueIdentifier;
+@property (nonatomic) bool isInternallyCertified;
+@property (nonatomic, readonly, copy) NSString *manufacturer;
+@property (nonatomic, readonly, copy) NSString *model;
+@property (nonatomic, retain) NSPredicate *notificationCondition;
+@property (getter=areNotificationsEnabled, nonatomic) bool notificationsEnabled;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
+
++ (id)_demoModeAccessoryTypeToHomeKitAccessoryType;
++ (bool)_hasValidKeys:(id)arg1;
++ (id)accessoryWithContentsOfDictionary:(id)arg1 forHome:(id)arg2;
+
+- (void).cxx_destruct;
+- (bool)_isAppleInternalAccessory;
+- (bool)_shouldShowAppleInternalManufacturerInfo;
+- (void)_updateManufacturerInfoWithString:(id)arg1 forKey:(id)arg2;
+- (bool)areNotificationsEnabled;
+- (id)category;
+- (long long)certificationStatus;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)firmwareVersion;
+- (bool)hf_effectiveIsFavorite;
+- (bool)hf_hasSetFavorite;
+- (bool)hf_isFavorite;
+- (bool)hf_isMediaAccessory;
+- (Class)hf_itemClass;
+- (id)hf_serviceNameComponents;
+- (bool)hf_shouldShowInFavorites;
+- (bool)hf_shouldShowSoftwareUpdateInfo;
+- (id)hf_updateIsFavorite:(bool)arg1;
+- (id)hf_updateUserNotificationSettings:(id)arg1;
+- (id)hf_userNotificationSettings;
+- (id)home;
+- (id)initWithContentsOfDictionary:(id)arg1 forHome:(id)arg2;
+- (id)internalUniqueIdentifier;
+- (bool)isInternallyCertified;
+- (bool)isReachable;
+- (id)manufacturer;
+- (id)model;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)name;
+- (id)notificationCondition;
+- (id)room;
+- (id)serialNumber;
+- (id)services;
+- (void)setHome:(id)arg1;
+- (void)setInternalUniqueIdentifier:(id)arg1;
+- (void)setIsInternallyCertified:(bool)arg1;
+- (void)setNotificationCondition:(id)arg1;
+- (void)setNotificationsEnabled:(bool)arg1;
+- (id)symptomsHandler;
+- (id)uniqueIdentifier;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC9TipsTryItP33_A8B345E0D4114562F127BA9772FFE7CB19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

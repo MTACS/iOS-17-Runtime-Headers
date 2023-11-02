@@ -1,0 +1,4 @@
+
+@protocol TSWPTransientSelection
+
+@end

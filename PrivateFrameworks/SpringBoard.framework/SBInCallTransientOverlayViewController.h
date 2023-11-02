@@ -1,0 +1,84 @@
+
+@interface SBInCallTransientOverlayViewController : SBTransientOverlayViewController <BSInvalidatable, SBDeviceApplicationSceneHandleObserver, SBDeviceApplicationSceneStatusBarStateObserver, SBIdleTimerCoordinating> {
+    <SBInCallTransientOverlayViewControllerDelegate> * _delegate;
+    UIView<SBApplicationSceneBackgroundView> * _existingSceneBackgroundView;
+    SBIdleTimerCoordinatorHelper * _idleTimerCoordinatorHelper;
+    SBSUIInCallSceneClientSettingsDiffInspector * _inCallSceneClientSettingsDiffInspector;
+    _SBInCallProxySceneBackgroundView * _proxySceneBackgroundView;
+    SBDeviceApplicationSceneHandle * _sceneHandle;
+    SBDeviceApplicationSceneViewController * _sceneViewController;
+    SBInCallSettings * _settings;
+    bool  _shouldIgnoreHomeIndicatorAutoHiddenClientSettings;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBInCallTransientOverlayViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SBDeviceApplicationSceneHandle *sceneHandle;
+@property (nonatomic) bool shouldIgnoreHomeIndicatorAutoHiddenClientSettings;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (id)_inCallSceneClientSettingsDiffInspector;
+- (void)_registerForAmbientPresentationTraitChange;
+- (bool)allowsStackingOverlayContentAbove;
+- (id)associatedBundleIdentifiersToSuppressInSystemAperture;
+- (id)associatedSceneIdentifiersToSuppressInSystemAperture;
+- (bool)canBecomeFirstResponder;
+- (bool)canResignFirstResponder;
+- (id)coordinatorRequestedIdleTimerBehavior:(id)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (void)handleGestureDismissal;
+- (bool)handleHeadsetButtonPress:(bool)arg1;
+- (bool)handleHomeButtonPress;
+- (bool)handleLockButtonPress;
+- (bool)handleVolumeDownButtonPress;
+- (bool)handleVolumeUpButtonPress;
+- (id)hostedSceneIdentityTokens;
+- (id)idleTimerProvider:(id)arg1 didProposeBehavior:(id)arg2 forReason:(id)arg3;
+- (id)initWithSceneHandle:(id)arg1;
+- (void)invalidate;
+- (bool)isContentOpaque;
+- (bool)isPresentedFromSceneWithIdentityTokenString:(id)arg1;
+- (id)newTransientOverlayDismissalTransitionCoordinator;
+- (id)newTransientOverlayPresentationTransitionCoordinator;
+- (id)preferredBackgroundActivitiesToSuppress;
+- (id)preferredDisplayLayoutElementIdentifier;
+- (long long)preferredLockedGestureDismissalStyle;
+- (long long)preferredStatusBarStyle;
+- (long long)preferredUnlockedGestureDismissalStyle;
+- (long long)preferredWhitePointAdaptivityStyle;
+- (bool)prefersEmbeddedDisplayPresentation;
+- (bool)prefersHomeIndicatorAutoHidden;
+- (bool)prefersStatusBarHidden;
+- (bool)preventsSystemApertureSuppressionFromBelow;
+- (id /* block */)sceneDeactivationPredicate;
+- (id)sceneHandle;
+- (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
+- (void)sceneWithIdentifier:(id)arg1 didChangeBackgroundActivitiesToSuppressTo:(id)arg2;
+- (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarAlphaTo:(double)arg2;
+- (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarHiddenTo:(bool)arg2 withAnimation:(long long)arg3;
+- (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarStyleTo:(long long)arg2;
+- (int)serviceProcessIdentifier;
+- (void)setContainerOrientation:(long long)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setIdleTimerCoordinator:(id)arg1;
+- (void)setShouldIgnoreHomeIndicatorAutoHiddenClientSettings:(bool)arg1;
+- (bool)shouldDisableBanners;
+- (bool)shouldIgnoreHomeIndicatorAutoHiddenClientSettings;
+- (bool)shouldUseSceneBasedKeyboardFocus;
+- (id)succinctDescriptionBuilder;
+- (unsigned long long)supportedInterfaceOrientations;
+- (bool)supportsAlwaysOnDisplay;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+
+@end

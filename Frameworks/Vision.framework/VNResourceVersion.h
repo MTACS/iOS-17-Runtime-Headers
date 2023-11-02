@@ -1,0 +1,4 @@
+
+@interface VNResourceVersion : VisionCoreResourceVersion
+
+@end

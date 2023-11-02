@@ -1,0 +1,4 @@
+
+@protocol ICQPageDelegate <ICQDelegate>
+
+@end

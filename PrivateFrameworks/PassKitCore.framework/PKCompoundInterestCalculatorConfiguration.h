@@ -1,0 +1,87 @@
+
+@interface PKCompoundInterestCalculatorConfiguration : NSObject {
+    NSDecimalNumber * _apr;
+    unsigned long long  _calculationMethod;
+    NSCalendar * _calendar;
+    long long  _compoundingPeriods;
+    NSDecimalNumber * _currentBalance;
+    NSArray * _futurePayments;
+    bool  _inGrace;
+    bool  _isInDisasterRecovery;
+    NSDate * _periodEndDate;
+    NSDate * _periodStartDate;
+    NSDecimalNumber * _periodStartingBalance;
+    NSArray * _periodTransactions;
+    NSTimeZone * _productTimeZone;
+    NSDecimalNumber * _remainingPeriodMinimumPayment;
+    NSDecimalNumber * _remainingPeriodMinimumPaymentExcludedFromInterestCalculation;
+    NSDecimalNumber * _remainingPeriodStartingBalance;
+    NSDecimalNumber * _remainingPeriodStartingBalanceForGracePurposes;
+    NSDecimalNumber * _unpostedInterest;
+    NSDate * _unpostedInterestTimestamp;
+}
+
+@property (setter=setAPR:, nonatomic, retain) NSDecimalNumber *apr;
+@property (nonatomic) unsigned long long calculationMethod;
+@property (nonatomic) long long compoundingPeriods;
+@property (nonatomic, retain) NSDecimalNumber *currentBalance;
+@property (nonatomic, copy) NSArray *futurePayments;
+@property (nonatomic) bool inGrace;
+@property (nonatomic) bool isInDisasterRecovery;
+@property (nonatomic, retain) NSDate *periodEndDate;
+@property (nonatomic, retain) NSDate *periodStartDate;
+@property (nonatomic, retain) NSDecimalNumber *periodStartingBalance;
+@property (nonatomic, copy) NSArray *periodTransactions;
+@property (nonatomic, retain) NSTimeZone *productTimeZone;
+@property (nonatomic, retain) NSDecimalNumber *remainingPeriodMinimumPayment;
+@property (nonatomic, retain) NSDecimalNumber *remainingPeriodMinimumPaymentExcludedFromInterestCalculation;
+@property (nonatomic, retain) NSDecimalNumber *remainingPeriodStartingBalance;
+@property (nonatomic, retain) NSDecimalNumber *remainingPeriodStartingBalanceForGracePurposes;
+@property (nonatomic, retain) NSDecimalNumber *unpostedInterest;
+@property (nonatomic, retain) NSDate *unpostedInterestTimestamp;
+
++ (id)configurationWithCreditAccount:(id)arg1;
+
+- (void).cxx_destruct;
+- (long long)_daysInYearForDate:(id)arg1 withTimeZone:(id)arg2;
+- (id)apr;
+- (unsigned long long)calculationMethod;
+- (long long)compoundingPeriods;
+- (id)currentBalance;
+- (id)description;
+- (id)futurePayments;
+- (bool)inGrace;
+- (id)init;
+- (bool)isInDisasterRecovery;
+- (id)periodEndDate;
+- (id)periodStartDate;
+- (id)periodStartingBalance;
+- (id)periodTransactions;
+- (id)productTimeZone;
+- (id)remainingPeriodMinimumPayment;
+- (id)remainingPeriodMinimumPaymentExcludedFromInterestCalculation;
+- (id)remainingPeriodStartingBalance;
+- (id)remainingPeriodStartingBalanceForGracePurposes;
+- (void)setAPR:(id)arg1;
+- (void)setCalculationMethod:(unsigned long long)arg1;
+- (void)setCompoundingPeriods:(long long)arg1;
+- (void)setCurrentBalance:(id)arg1;
+- (void)setFuturePayments:(id)arg1;
+- (void)setInGrace:(bool)arg1;
+- (void)setIsInDisasterRecovery:(bool)arg1;
+- (void)setPeriodEndDate:(id)arg1;
+- (void)setPeriodStartDate:(id)arg1;
+- (void)setPeriodStartingBalance:(id)arg1;
+- (void)setPeriodTransactions:(id)arg1;
+- (void)setProductTimeZone:(id)arg1;
+- (void)setRemainingPeriodMinimumPayment:(id)arg1;
+- (void)setRemainingPeriodMinimumPaymentExcludedFromInterestCalculation:(id)arg1;
+- (void)setRemainingPeriodStartingBalance:(id)arg1;
+- (void)setRemainingPeriodStartingBalanceForGracePurposes:(id)arg1;
+- (void)setUnpostedInterest:(id)arg1;
+- (void)setUnpostedInterestTimestamp:(id)arg1;
+- (id)unpostedInterest;
+- (id)unpostedInterestTimestamp;
+- (void)updateWithCreditAccount:(id)arg1;
+
+@end

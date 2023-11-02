@@ -1,0 +1,4 @@
+
+@interface MTRTestClusterClusterTestListInt8UReverseRequestParams : MTRUnitTestingClusterTestListInt8UReverseRequestParams
+
+@end

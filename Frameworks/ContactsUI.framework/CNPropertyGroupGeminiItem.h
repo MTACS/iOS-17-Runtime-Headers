@@ -1,0 +1,33 @@
+
+@interface CNPropertyGroupGeminiItem : CNPropertyGroupItem <CNUIGeminiDataSourceDelegate> {
+    CNMutableContact * _editingContact;
+    CNGeminiResult * _geminiResult;
+    <CNUIGeminiDataSourceDelegate> * _geminiUpdateDelegate;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CNMutableContact *editingContact;
+@property (nonatomic, retain) CNGeminiResult *geminiResult;
+@property (nonatomic) <CNUIGeminiDataSourceDelegate> *geminiUpdateDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)canRemove;
+- (id)description;
+- (id)displayLabel;
+- (id)displayStringForValue:(id)arg1;
+- (id)displayValue;
+- (id)editingContact;
+- (void)geminiDataSourceDidUpdate:(id)arg1;
+- (id)geminiResult;
+- (id)geminiUpdateDelegate;
+- (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
+- (bool)isValidValue:(id)arg1;
+- (void)setEditingContact:(id)arg1;
+- (void)setGeminiResult:(id)arg1;
+- (void)setGeminiUpdateDelegate:(id)arg1;
+- (void)updateLabeledValueWithValue:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SBWindowedAccessoryWindow : SBSecureWindow
+
+@end

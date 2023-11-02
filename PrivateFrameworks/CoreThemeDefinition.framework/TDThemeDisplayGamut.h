@@ -1,0 +1,4 @@
+
+@interface TDThemeDisplayGamut : TDThemeConstant
+
+@end

@@ -1,0 +1,4 @@
+
+@interface PRComplicationRenderingCompletedAction : BSAction
+
+@end

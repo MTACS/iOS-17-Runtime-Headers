@@ -1,0 +1,111 @@
+
+@interface GEOFormattedString : PBCodable <GEOServerFormattedString, NSCopying> {
+    GEOConditionalFormattedString * _alternativeString;
+    struct { 
+        unsigned int read_unknownFields : 1; 
+        unsigned int read_alternativeString : 1; 
+        unsigned int read_formatArguments : 1; 
+        unsigned int read_formatStrings : 1; 
+        unsigned int read_formatStyles : 1; 
+        unsigned int read_metaData : 1; 
+        unsigned int read_separators : 1; 
+        unsigned int wrote_anyField : 1; 
+    }  _flags;
+    NSMutableArray * _formatArguments;
+    NSMutableArray * _formatStrings;
+    NSMutableArray * _formatStyles;
+    GEOFormattedStringMetaData * _metaData;
+    PBDataReader * _reader;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _readerLock;
+    unsigned int  _readerMarkLength;
+    unsigned int  _readerMarkPos;
+    NSMutableArray * _separators;
+    PBUnknownFields * _unknownFields;
+}
+
+@property (nonatomic, readonly) <GEOServerConditionalString> *alternativeString;
+@property (nonatomic, retain) GEOConditionalFormattedString *alternativeString;
+@property (nonatomic, readonly) NSString *basicString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableArray *formatArguments;
+@property (nonatomic, retain) NSMutableArray *formatStrings;
+@property (nonatomic, readonly) NSArray *formatStrings;
+@property (nonatomic, readonly) NSArray *formatStyles;
+@property (nonatomic, retain) NSMutableArray *formatStyles;
+@property (nonatomic, readonly) NSArray *formatTokens;
+@property (nonatomic, readonly) bool hasAlternativeString;
+@property (nonatomic, readonly) bool hasMetaData;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isPrivate;
+@property (nonatomic, retain) GEOFormattedStringMetaData *metaData;
+@property (nonatomic, readonly) NSArray *separators;
+@property (nonatomic, retain) NSMutableArray *separators;
+@property (nonatomic, readonly) NSString *stringWithDefaultValues;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+
++ (Class)formatArgumentType;
++ (Class)formatStringType;
++ (Class)formatStyleType;
++ (bool)isValid:(id)arg1;
++ (Class)separatorType;
+
+- (void).cxx_destruct;
+- (id)_joinFormattedComponentsWithSeparators:(id)arg1;
+- (void)addFormatArgument:(id)arg1;
+- (void)addFormatString:(id)arg1;
+- (void)addFormatStyle:(id)arg1;
+- (void)addSeparator:(id)arg1;
+- (id)alternativeString;
+- (id)basicString;
+- (void)clearFormatArguments;
+- (void)clearFormatStrings;
+- (void)clearFormatStyles;
+- (void)clearSeparators;
+- (void)clearUnknownFields:(bool)arg1;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)formatArgumentAtIndex:(unsigned long long)arg1;
+- (id)formatArguments;
+- (unsigned long long)formatArgumentsCount;
+- (id)formatStringAtIndex:(unsigned long long)arg1;
+- (id)formatStrings;
+- (unsigned long long)formatStringsCount;
+- (id)formatStyleAtIndex:(unsigned long long)arg1;
+- (id)formatStyles;
+- (unsigned long long)formatStylesCount;
+- (id)formatTokens;
+- (bool)hasAlternativeString;
+- (bool)hasMetaData;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithData:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (id)initWithString:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isPrivate;
+- (id)jsonRepresentation;
+- (void)mergeFrom:(id)arg1;
+- (id)metaData;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)separatorAtIndex:(unsigned long long)arg1;
+- (id)separators;
+- (unsigned long long)separatorsCount;
+- (void)setAlternativeString:(id)arg1;
+- (void)setFormatArguments:(id)arg1;
+- (void)setFormatStrings:(id)arg1;
+- (void)setFormatStyles:(id)arg1;
+- (void)setMetaData:(id)arg1;
+- (void)setSeparators:(id)arg1;
+- (id)stringWithDefaultValues;
+- (id)unknownFields;
+- (void)writeTo:(id)arg1;
+
+@end

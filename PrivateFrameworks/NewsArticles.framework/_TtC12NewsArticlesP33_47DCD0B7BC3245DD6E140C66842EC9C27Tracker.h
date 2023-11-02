@@ -1,0 +1,4 @@
+
+@interface _TtC12NewsArticlesP33_47DCD0B7BC3245DD6E140C66842EC9C27Tracker : _TtCs12_SwiftObject
+
+@end

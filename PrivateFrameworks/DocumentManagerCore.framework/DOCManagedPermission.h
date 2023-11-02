@@ -1,0 +1,96 @@
+
+@interface DOCManagedPermission : NSObject {
+    ACAccountStore * _accountStore;
+    NSCache * _appContainerIDCache;
+    NSCache * _cache;
+    bool  _didLoadSharedConnectionValues;
+    bool  _hasOpenInRestrictions;
+    unsigned long long  _hostAccountDataOwnerState;
+    NSString * _hostIdentifier;
+    bool  _isLocalStorageAllowed;
+    bool  _isManagedAppsCloudSyncDisallowed;
+    bool  _isNetworkDriveAccessInFilesAllowed;
+    bool  _isUSBAccessAllowed;
+    bool  _mayOpenFromManagedToUnmanaged;
+    bool  _mayOpenFromUnmanagedToManaged;
+    NSDictionary * _personaStringForDomainID;
+}
+
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic, retain) NSCache *appContainerIDCache;
+@property (nonatomic, retain) NSCache *cache;
+@property (nonatomic, readonly) bool hasOpenInRestrictions;
+@property (nonatomic) unsigned long long hostAccountDataOwnerState;
+@property (nonatomic, copy) NSString *hostIdentifier;
+@property (nonatomic, readonly) bool isNetworkDriveAllowed;
+@property (nonatomic, readonly) bool isUSBAccessAllowed;
+@property (nonatomic, copy) NSDictionary *personaStringForDomainID;
+
++ (id)defaultPermission;
+
+- (void).cxx_destruct;
+- (void)_loadSharedConnectionValues;
+- (id)accountStore;
+- (bool)adoptPersona:(id)arg1 andPerformBlock:(id /* block */)arg2;
+- (bool)adoptPersonaFromDomain:(id)arg1 andPerformBlock:(id /* block */)arg2;
+- (bool)adoptPersonaFromItem:(id)arg1 andPerformBlock:(id /* block */)arg2;
+- (bool)adoptPersonaFromItems:(id)arg1 andPerformBlock:(id /* block */)arg2;
+- (bool)adoptPersonaliCloudPersonaAndPerformBlock:(id /* block */)arg1;
+- (id)allowedFileProviderBundleIdentifiersForHostBundleIdentifier:(id)arg1;
+- (id)appContainerBundleIDForFPItem:(id)arg1;
+- (id)appContainerIDCache;
+- (id)cache;
+- (void)cachePersonaStringForProviders:(id)arg1;
+- (bool)canAppWithBundleIdentifier:(id)arg1 performAction:(unsigned long long)arg2 accountIdentifier:(id)arg3;
+- (bool)canAppWithBundleIdentifier:(id)arg1 performAction:(unsigned long long)arg2 bundleIdentifier:(id)arg3;
+- (bool)canAppWithBundleIdentifier:(id)arg1 performAction:(unsigned long long)arg2 item:(id)arg3;
+- (bool)canAppWithConfiguration:(id)arg1 handleNode:(id)arg2;
+- (bool)canAppWithDataOwnerState:(unsigned long long)arg1 performAction:(unsigned long long)arg2 dataOwnerState:(unsigned long long)arg3;
+- (bool)canAppWithDataOwnerState:(unsigned long long)arg1 performAction:(unsigned long long)arg2 node:(id)arg3;
+- (bool)canCopyItems:(id)arg1;
+- (bool)canCopySourceIsContentManaged:(bool)arg1;
+- (bool)canCopyfromContainingBundleIdentifer:(id)arg1;
+- (bool)canHostAppPerformAction:(unsigned long long)arg1 accountIdentifier:(id)arg2;
+- (bool)canHostAppPerformAction:(unsigned long long)arg1 bundleIdentifier:(id)arg2;
+- (bool)canHostAppPerformAction:(unsigned long long)arg1 fileProviderDomain:(id)arg2;
+- (bool)canHostAppPerformAction:(unsigned long long)arg1 legacyPickerExtension:(id)arg2;
+- (bool)canHostAppPerformAction:(unsigned long long)arg1 targetNode:(id)arg2;
+- (bool)canItem:(id)arg1 performAction:(unsigned long long)arg2 item:(id)arg3;
+- (bool)canItems:(id)arg1 performAction:(unsigned long long)arg2 fileProviderDomain:(id)arg3;
+- (void)cleanAppContainerBundleIDCache;
+- (unsigned long long)dataOwnerStateForAccountIdentifier:(id)arg1;
+- (unsigned long long)dataOwnerStateForBundleIdentifier:(id)arg1;
+- (unsigned long long)dataOwnerStateForConfiguration:(id)arg1;
+- (unsigned long long)dataOwnerStateForFPDomain:(id)arg1;
+- (unsigned long long)dataOwnerStateForItem:(id)arg1;
+- (unsigned long long)dataOwnerStateForItems:(id)arg1;
+- (unsigned long long)dataOwnerStateForNode:(id)arg1;
+- (unsigned long long)dataOwnerStateForiCloudDomain:(id)arg1;
+- (void)dealloc;
+- (id)defaultFileProviderForAppBundle:(id)arg1;
+- (bool)hasAnyEffectiveRestrictions;
+- (bool)hasOpenInRestrictions;
+- (unsigned long long)hostAccountDataOwnerState;
+- (id)hostIdentifier;
+- (id)init;
+- (bool)isCurrentPersonaEnterprise;
+- (bool)isLocalStorageAllowed;
+- (bool)isManagedAppsCloudSyncAllowed;
+- (bool)isManagedAppsCloudSyncDisallowed;
+- (bool)isNetworkDriveAllowed;
+- (bool)isUSBAccessAllowed;
+- (bool)mayOpenFromManagedToUnmanaged;
+- (bool)mayOpenFromUnmanagedToManaged;
+- (id)personaStringForDomainID;
+- (id)personaStringFromItem:(id)arg1;
+- (id)queueFileDataForAcceptance:(id)arg1 originalFileName:(id)arg2 forBundleID:(id)arg3 outError:(id*)arg4;
+- (void)resetAllCachedPermissions;
+- (void)setAccountStore:(id)arg1;
+- (void)setAppContainerIDCache:(id)arg1;
+- (void)setCache:(id)arg1;
+- (void)setHostAccountDataOwnerState:(unsigned long long)arg1;
+- (void)setHostIdentifier:(id)arg1;
+- (void)setPersonaStringForDomainID:(id)arg1;
+- (unsigned long long)userActionForConfiguration:(id)arg1;
+
+@end

@@ -1,0 +1,91 @@
+
+@interface CAARSchemaCAARProactiveFeatures : SISchemaInstrumentationMessage {
+    double  _appRelevanceScore;
+    struct { 
+        unsigned int isAppInTopOneRelevance : 1; 
+        unsigned int isAppInTopFiveRelevance : 1; 
+        unsigned int isAppInTopTenRelevance : 1; 
+        unsigned int isIntentInTopOneRelevance : 1; 
+        unsigned int isIntentInTopFiveRelevance : 1; 
+        unsigned int isIntentInTopTenRelevance : 1; 
+        unsigned int appRelevanceScore : 1; 
+        unsigned int intentRelevanceScore : 1; 
+    }  _has;
+    double  _intentRelevanceScore;
+    bool  _isAppInTopFiveRelevance;
+    bool  _isAppInTopOneRelevance;
+    bool  _isAppInTopTenRelevance;
+    bool  _isIntentInTopFiveRelevance;
+    bool  _isIntentInTopOneRelevance;
+    bool  _isIntentInTopTenRelevance;
+}
+
+@property (nonatomic) double appRelevanceScore;
+@property (nonatomic) bool hasAppRelevanceScore;
+@property (nonatomic) bool hasIntentRelevanceScore;
+@property (nonatomic) bool hasIsAppInTopFiveRelevance;
+@property (nonatomic) bool hasIsAppInTopOneRelevance;
+@property (nonatomic) bool hasIsAppInTopTenRelevance;
+@property (nonatomic) bool hasIsIntentInTopFiveRelevance;
+@property (nonatomic) bool hasIsIntentInTopOneRelevance;
+@property (nonatomic) bool hasIsIntentInTopTenRelevance;
+@property (nonatomic) double intentRelevanceScore;
+@property (nonatomic) bool isAppInTopFiveRelevance;
+@property (nonatomic) bool isAppInTopOneRelevance;
+@property (nonatomic) bool isAppInTopTenRelevance;
+@property (nonatomic) bool isIntentInTopFiveRelevance;
+@property (nonatomic) bool isIntentInTopOneRelevance;
+@property (nonatomic) bool isIntentInTopTenRelevance;
+@property (nonatomic, readonly) NSData *jsonData;
+
+- (double)appRelevanceScore;
+- (void)deleteAppRelevanceScore;
+- (void)deleteIntentRelevanceScore;
+- (void)deleteIsAppInTopFiveRelevance;
+- (void)deleteIsAppInTopOneRelevance;
+- (void)deleteIsAppInTopTenRelevance;
+- (void)deleteIsIntentInTopFiveRelevance;
+- (void)deleteIsIntentInTopOneRelevance;
+- (void)deleteIsIntentInTopTenRelevance;
+- (id)dictionaryRepresentation;
+- (bool)hasAppRelevanceScore;
+- (bool)hasIntentRelevanceScore;
+- (bool)hasIsAppInTopFiveRelevance;
+- (bool)hasIsAppInTopOneRelevance;
+- (bool)hasIsAppInTopTenRelevance;
+- (bool)hasIsIntentInTopFiveRelevance;
+- (bool)hasIsIntentInTopOneRelevance;
+- (bool)hasIsIntentInTopTenRelevance;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (double)intentRelevanceScore;
+- (bool)isAppInTopFiveRelevance;
+- (bool)isAppInTopOneRelevance;
+- (bool)isAppInTopTenRelevance;
+- (bool)isEqual:(id)arg1;
+- (bool)isIntentInTopFiveRelevance;
+- (bool)isIntentInTopOneRelevance;
+- (bool)isIntentInTopTenRelevance;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (void)setAppRelevanceScore:(double)arg1;
+- (void)setHasAppRelevanceScore:(bool)arg1;
+- (void)setHasIntentRelevanceScore:(bool)arg1;
+- (void)setHasIsAppInTopFiveRelevance:(bool)arg1;
+- (void)setHasIsAppInTopOneRelevance:(bool)arg1;
+- (void)setHasIsAppInTopTenRelevance:(bool)arg1;
+- (void)setHasIsIntentInTopFiveRelevance:(bool)arg1;
+- (void)setHasIsIntentInTopOneRelevance:(bool)arg1;
+- (void)setHasIsIntentInTopTenRelevance:(bool)arg1;
+- (void)setIntentRelevanceScore:(double)arg1;
+- (void)setIsAppInTopFiveRelevance:(bool)arg1;
+- (void)setIsAppInTopOneRelevance:(bool)arg1;
+- (void)setIsAppInTopTenRelevance:(bool)arg1;
+- (void)setIsIntentInTopFiveRelevance:(bool)arg1;
+- (void)setIsIntentInTopOneRelevance:(bool)arg1;
+- (void)setIsIntentInTopTenRelevance:(bool)arg1;
+- (id)suppressMessageUnderConditions;
+- (void)writeTo:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface AVGenericMediaFileOutputSettingsValidator : AVMediaFileOutputSettingsValidator
+
+@end

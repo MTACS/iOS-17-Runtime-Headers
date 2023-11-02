@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.WatchPostExecutionResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

@@ -1,0 +1,8 @@
+
+@protocol FCHeadlineClusterOrdering <NSObject>
+
+@required
+
+- (NSOrderedSet *)orderTopicsWithClusteredHeadlines:(void *)arg1 additionalHeadlines:(void *)arg2 subscribedTagIDs:(void *)arg3 scoresByArticleID:(void *)arg4 personalizer:(void *)arg5 tagNameProvider:(void *)arg6 personalizationTreatment:(void *)arg7 translationProvider:(void *)arg8; // needs 8 arg types, found 13: NSDictionary *, NSArray *, NSSet *, NSDictionary *, <FCFeedPersonalizing> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, NSString *, id /* block */, NSString *, void*, FCPersonalizationTreatment *, <FCTranslationProvider> *
+
+@end

@@ -1,0 +1,39 @@
+
+@interface __NSArrayM : NSMutableArray {
+    _Atomic struct __cow_state_t {} * cow;
+    /* Warning: unhandled struct encoding: '{?="list"^@"offset"I"size"I"state"(?="mutations"Q""{?="muts"I"used"I})}' */ struct { 
+        offset **list; 
+    }  storage;
+}
+
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
+
+- (void)_mutate;
+- (void)addObject:(id)arg1;
+- (id)allObjects;
+- (id)copy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (void)dealloc;
+- (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (void)exchangeObjectAtIndex:(unsigned long long)arg1 withObjectAtIndex:(unsigned long long)arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)indexOfObjectIdenticalTo:(id)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)insertObjects:(const id*)arg1 count:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
+- (id)mutableCopy;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (void)removeAllObjects;
+- (void)removeLastObject;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)removeObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)replaceObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withObjects:(const id*)arg2 count:(unsigned long long)arg3;
+- (void)setObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
+
+@end

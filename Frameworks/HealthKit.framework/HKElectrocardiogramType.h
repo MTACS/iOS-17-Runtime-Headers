@@ -1,0 +1,4 @@
+
+@interface HKElectrocardiogramType : HKSampleType
+
+@end

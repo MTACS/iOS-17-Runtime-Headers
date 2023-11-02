@@ -1,0 +1,93 @@
+
+@interface INFERENCESchemaINFERENCEWorkoutsAppSelectionTrainingIndependentSignals : SISchemaInstrumentationMessage {
+    INFERENCESchemaINFERENCECommonAppIndependentSignals * _commonIndependent;
+    int  _deviceMotionState;
+    struct { 
+        unsigned int nowPlayingState : 1; 
+        unsigned int deviceMotionState : 1; 
+        unsigned int isDeviceLockStatus : 1; 
+        unsigned int isMobileDataOn : 1; 
+        unsigned int isWifiOn : 1; 
+        unsigned int workoutType : 1; 
+        unsigned int isIndoorWorkout : 1; 
+    }  _has;
+    bool  _hasCommonIndependent;
+    bool  _isDeviceLockStatus;
+    bool  _isIndoorWorkout;
+    bool  _isMobileDataOn;
+    bool  _isWifiOn;
+    int  _nowPlayingState;
+    int  _workoutType;
+}
+
+@property (nonatomic, retain) INFERENCESchemaINFERENCECommonAppIndependentSignals *commonIndependent;
+@property (nonatomic) int deviceMotionState;
+@property (nonatomic) bool hasCommonIndependent;
+@property (nonatomic) bool hasDeviceMotionState;
+@property (nonatomic) bool hasIsDeviceLockStatus;
+@property (nonatomic) bool hasIsIndoorWorkout;
+@property (nonatomic) bool hasIsMobileDataOn;
+@property (nonatomic) bool hasIsWifiOn;
+@property (nonatomic) bool hasNowPlayingState;
+@property (nonatomic) bool hasWorkoutType;
+@property (nonatomic) bool isDeviceLockStatus;
+@property (nonatomic) bool isIndoorWorkout;
+@property (nonatomic) bool isMobileDataOn;
+@property (nonatomic) bool isWifiOn;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) int nowPlayingState;
+@property (nonatomic) int workoutType;
+
+- (void).cxx_destruct;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (id)commonIndependent;
+- (void)deleteCommonIndependent;
+- (void)deleteDeviceMotionState;
+- (void)deleteIsDeviceLockStatus;
+- (void)deleteIsIndoorWorkout;
+- (void)deleteIsMobileDataOn;
+- (void)deleteIsWifiOn;
+- (void)deleteNowPlayingState;
+- (void)deleteWorkoutType;
+- (int)deviceMotionState;
+- (id)dictionaryRepresentation;
+- (bool)hasCommonIndependent;
+- (bool)hasDeviceMotionState;
+- (bool)hasIsDeviceLockStatus;
+- (bool)hasIsIndoorWorkout;
+- (bool)hasIsMobileDataOn;
+- (bool)hasIsWifiOn;
+- (bool)hasNowPlayingState;
+- (bool)hasWorkoutType;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isDeviceLockStatus;
+- (bool)isEqual:(id)arg1;
+- (bool)isIndoorWorkout;
+- (bool)isMobileDataOn;
+- (bool)isWifiOn;
+- (id)jsonData;
+- (int)nowPlayingState;
+- (bool)readFrom:(id)arg1;
+- (void)setCommonIndependent:(id)arg1;
+- (void)setDeviceMotionState:(int)arg1;
+- (void)setHasCommonIndependent:(bool)arg1;
+- (void)setHasDeviceMotionState:(bool)arg1;
+- (void)setHasIsDeviceLockStatus:(bool)arg1;
+- (void)setHasIsIndoorWorkout:(bool)arg1;
+- (void)setHasIsMobileDataOn:(bool)arg1;
+- (void)setHasIsWifiOn:(bool)arg1;
+- (void)setHasNowPlayingState:(bool)arg1;
+- (void)setHasWorkoutType:(bool)arg1;
+- (void)setIsDeviceLockStatus:(bool)arg1;
+- (void)setIsIndoorWorkout:(bool)arg1;
+- (void)setIsMobileDataOn:(bool)arg1;
+- (void)setIsWifiOn:(bool)arg1;
+- (void)setNowPlayingState:(int)arg1;
+- (void)setWorkoutType:(int)arg1;
+- (id)suppressMessageUnderConditions;
+- (int)workoutType;
+- (void)writeTo:(id)arg1;
+
+@end

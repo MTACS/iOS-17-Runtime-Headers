@@ -1,0 +1,4 @@
+
+@interface _TtCC21AppPredictionInternal21TimeOfDayContextStore14EveningContext : AppPredictionInternal.TimeOfDayContext
+
+@end

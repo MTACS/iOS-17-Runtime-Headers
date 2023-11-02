@@ -1,0 +1,4 @@
+
+@protocol PXNavigationListDataSectionManagerObserver <PXDataSectionManagerChangeObserver>
+
+@end

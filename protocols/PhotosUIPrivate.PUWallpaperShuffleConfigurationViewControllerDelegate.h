@@ -1,0 +1,10 @@
+
+@protocol PhotosUIPrivate.PUWallpaperShuffleConfigurationViewControllerDelegate
+
+@required
+
+- (void)wallpaperShuffleConfigurationViewController:(_TtC15PhotosUIPrivate45PUWallpaperShuffleConfigurationViewController *)arg1 didFinishWithPosterConfiguration:(PFPosterConfiguration *)arg2;
+- (void)wallpaperShuffleConfigurationViewControllerDidCancelManuallySelectingPhotos:(_TtC15PhotosUIPrivate45PUWallpaperShuffleConfigurationViewController *)arg1;
+- (void)wallpaperShuffleConfigurationViewControllerDidDismiss:(_TtC15PhotosUIPrivate45PUWallpaperShuffleConfigurationViewController *)arg1;
+
+@end

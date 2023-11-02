@@ -1,0 +1,4 @@
+
+@protocol BBSettingsGatewayClientInterface <NSObject>
+
+@end

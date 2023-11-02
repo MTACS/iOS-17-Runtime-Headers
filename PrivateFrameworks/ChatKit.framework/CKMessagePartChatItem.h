@@ -1,0 +1,81 @@
+
+@interface CKMessagePartChatItem : CKBalloonChatItem {
+    CKMessagePartHighlightChatItem * _messageHighlightChatItem;
+    NSArray * _visibleAssociatedMessageChatItems;
+}
+
+@property (nonatomic, readonly) bool canSendMessageAcknowledgment;
+@property (nonatomic, readonly) BOOL color;
+@property (nonatomic, readonly) NSItemProvider *dragItemProvider;
+@property (nonatomic, readonly) bool hasMessageAcknowledgment;
+@property (nonatomic, readonly) bool hasMessageAcknowledgmentWithNoneFromMe;
+@property (nonatomic, readonly) bool hasStickers;
+@property (nonatomic, readonly) bool hasVisibleAssociatedMessageItems;
+@property (nonatomic, readonly) long long index;
+@property (nonatomic, readonly) bool isBlackholed;
+@property (nonatomic, readonly) bool isCorrupt;
+@property (nonatomic, readonly) bool isReply;
+@property (nonatomic, readonly) bool isReplyContextPreview;
+@property (nonatomic, readonly) IMMessage *message;
+@property (nonatomic, readonly, copy) NSArray *messageAcknowledgments;
+@property (nonatomic, readonly) CKMessagePartHighlightChatItem *messageHighlightChatItem;
+@property (nonatomic, readonly) IMMessageItem *messageItem;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } messagePartRange;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } originalMessagePartRange;
+@property (nonatomic, readonly) NSArray *pasteboardItemProviders;
+@property (nonatomic, readonly) NSString *serviceName;
+@property (nonatomic, readonly) long long stewieConversationID;
+@property (nonatomic, readonly) NSString *threadIdentifier;
+@property (nonatomic, readonly) IMMessageItem *threadOriginator;
+@property (nonatomic, readonly) NSArray *visibleAssociatedMessageChatItems;
+
+- (void).cxx_destruct;
+- (bool)_isSURFRelatedMessage;
+- (void)_setVisibleAssociatedMessageChatItems:(id)arg1;
+- (id)aggregateAcknowledgmentChatItem;
+- (bool)canAttachStickers;
+- (bool)canCopy;
+- (bool)canForward;
+- (bool)canInlineReply;
+- (bool)canSendAsTextMessage;
+- (bool)canSendMessageAcknowledgment;
+- (BOOL)color;
+- (id)compositionWithContext:(id)arg1;
+- (void)configureBalloonView:(id)arg1;
+- (id)description;
+- (id)dragItemProvider;
+- (bool)failed;
+- (id)fileURLForAttachment;
+- (bool)hasMessageAcknowledgment;
+- (bool)hasMessageAcknowledgmentWithNoneFromMe;
+- (bool)hasStickers;
+- (bool)hasVisibleAssociatedMessageItems;
+- (long long)index;
+- (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
+- (bool)isBlackholed;
+- (bool)isCorrupt;
+- (bool)isFromMe;
+- (bool)isReply;
+- (bool)isReplyContextPreview;
+- (id)message;
+- (id)messageAcknowledgments;
+- (id)messageHighlightChatItem;
+- (id)messageItem;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })messagePartRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })originalMessagePartRange;
+- (id)pasteboardItemProviders;
+- (id)rtfDocumentItemsWithFormatString:(id)arg1 selectedTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (long long)selectedType;
+- (id)sender;
+- (id)serviceName;
+- (long long)stewieConversationID;
+- (bool)stickersSnapToPoint;
+- (id)tapbackActionButtonImageName;
+- (id)threadIdentifier;
+- (id)threadOriginator;
+- (id)time;
+- (double)timeIntervalSinceMessageSent;
+- (id)visibleAssociatedMessageChatItems;
+- (id)votingCounts;
+
+@end

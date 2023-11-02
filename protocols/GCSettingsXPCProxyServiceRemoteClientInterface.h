@@ -1,0 +1,4 @@
+
+@protocol GCSettingsXPCProxyServiceRemoteClientInterface
+
+@end

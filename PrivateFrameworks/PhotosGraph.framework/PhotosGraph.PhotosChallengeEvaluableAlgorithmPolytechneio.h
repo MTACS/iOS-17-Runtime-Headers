@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmPolytechneio : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

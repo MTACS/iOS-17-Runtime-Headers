@@ -1,0 +1,194 @@
+
+@interface WBSAnalyticsLogger : NSObject {
+    NSObject<OS_dispatch_queue> * _analyticsSynchronizationQueue;
+    NSString * _perSitePreferencesPopoverLocation;
+    long long  _persona;
+    NSString * _safariVersion;
+}
+
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+
++ (id)sharedLogger;
+
+- (void).cxx_destruct;
+- (id)_builtInImageNameToSimpleName:(id)arg1;
+- (void)_didAddBookmarkWithMethod:(id)arg1 menuItemType:(id)arg2;
+- (void)_logDiagnosticMessageWithKey:(id)arg1 diagnosticMessage:(id)arg2 integerValue:(long long)arg3;
+- (void)_logDiagnosticMessageWithKey:(id)arg1 diagnosticMessage:(id)arg2 stringValue:(id)arg3;
+- (id)_nameForStartPageSection:(long long)arg1;
+- (id)_sanitizedPathExtensionForAnalyticsForPathExtension:(id)arg1;
+- (void)_sendEvent:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)_sendEventAddingVersionInfo:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)didAcceptCompletionItemOfType:(long long)arg1 atRank:(unsigned long long)arg2;
+- (void)didAcceptSearchSuggestionOfType:(long long)arg1;
+- (void)didActivateLinkWithZoomScale:(float)arg1 recentlyZoomedIn:(bool)arg2;
+- (void)didActivateReaderWithTrigger:(long long)arg1;
+- (void)didAddBookmarkFromToolbarMenuWithItemType:(long long)arg1;
+- (void)didAddBookmarkWithMethod:(long long)arg1;
+- (void)didAddNumberOfBookmarksInMemory:(unsigned long long)arg1;
+- (void)didAddReadingListItemWithMethod:(long long)arg1;
+- (void)didAddWebClip;
+- (void)didBanWebsiteWithMetadata:(id)arg1;
+- (void)didChangeStartPageSectionVisibility:(id)arg1 visible:(bool)arg2;
+- (void)didChooseIntervalFromAutomaticTabClosingFirstTimeExperiencePrompt:(id)arg1;
+- (void)didChooseTopHit:(bool)arg1 matchLength:(unsigned long long)arg2 matchScore:(float)arg3;
+- (void)didClassifySafeBrowsingImageWithClassificationString:(id)arg1 confidence:(float)arg2 modelEvaluationDuration:(double)arg3;
+- (void)didClearBrowsingDataFromInterval:(long long)arg1 withMethod:(long long)arg2;
+- (void)didClearStartPageBackgroundImage;
+- (void)didCloseTabWithTrigger:(long long)arg1 tabClosingAction:(long long)arg2 numberOfTabsClosed:(unsigned long long)arg3 tabCollectionViewType:(long long)arg4;
+- (void)didCloseTabWithTrigger:(long long)arg1 tabCollectionViewType:(long long)arg2;
+- (void)didCloseTabsAutomaticallyWithCount:(unsigned long long)arg1 tabClosingInterval:(id)arg2;
+- (void)didCloseVisualTabPickerWithMethod:(long long)arg1;
+- (void)didContinueUserActivityOfType:(long long)arg1;
+- (void)didConvertExtensionWithKeySupport:(id)arg1;
+- (void)didCreateNewTabGroup;
+- (void)didCreateNewTabGroupFromTheDropDownMenu;
+- (void)didCreateTabGroupFromLocation:(long long)arg1 prepopulatedWithTabs:(bool)arg2;
+- (void)didDeleteBookmarkInMemory;
+- (void)didDeleteNumberOfBookmarksInMemory:(unsigned long long)arg1;
+- (void)didDetectLanguageOfWebpage:(id)arg1 primaryLocale:(id)arg2 webpageCanBeTranslatedToPrimaryLocale:(bool)arg3 canOfferTranslation:(bool)arg4 firstNonPrimaryLocaleThatCanBeTranslatedTo:(id)arg5 numberOfPreferredLocales:(unsigned long long)arg6 notificationLevel:(long long)arg7;
+- (void)didDetectPossibleUserTrackingInHostApp:(id)arg1 urlHasIDFA:(bool)arg2 urlHasQueryString:(bool)arg3 userInteracted:(bool)arg4 viewControllerIsHidden:(bool)arg5;
+- (void)didDetermineReaderAvailability:(bool)arg1;
+- (void)didDismissCompletionListWithItemAccepted:(bool)arg1 goKeyTapped:(bool)arg2 unifiedFieldContentType:(long long)arg3;
+- (void)didDismissSwitchToSafariBanner;
+- (void)didDownvoteDataSourceWithMetadata:(id)arg1;
+- (void)didDragAndDropCustomStartPageBackgroundImage;
+- (void)didEngageWithStartPageSection:(long long)arg1;
+- (void)didEnterBackgroundWithBookmarksInMemory;
+- (void)didEnterTabViewWithMethod:(long long)arg1;
+- (void)didFindOnPageWithTrigger:(long long)arg1;
+- (void)didFinishPageLoadWithPageLoadStatus:(long long)arg1;
+- (void)didInjectScriptForExtensionWithIdentifier:(id)arg1;
+- (void)didInvokeToolbarButtonForExtensionWithIdentifier:(id)arg1;
+- (void)didLoadTabContent:(long long)arg1;
+- (void)didManuallyMarkReadingListItemAsRead:(bool)arg1;
+- (void)didModifyPerSitePreferencesWithPreferenceIdentifier:(id)arg1 modificationLevel:(long long)arg2 type:(long long)arg3 method:(long long)arg4;
+- (void)didMoveToBackgroundWithNumberOfOnGoingDownloads:(unsigned long long)arg1;
+- (void)didOpenClearHistoryFromSource:(id)arg1;
+- (void)didOpenCloudTabsItemWithPosition:(long long)arg1;
+- (void)didOpenNewBlankTabWithTrigger:(long long)arg1 tabCollectionViewType:(long long)arg2;
+- (void)didOpenNewTabWithURLWithTrigger:(long long)arg1 isExternalLink:(bool)arg2 tabCollectionViewType:(long long)arg3;
+- (void)didOpenNewTabWithURLWithTrigger:(long long)arg1 tabCollectionViewType:(long long)arg2;
+- (void)didOpenPerSitePreferencesPopoverVia:(long long)arg1;
+- (void)didOpenReadingListItemWithPosition:(long long)arg1;
+- (void)didOpenReadingListItemWithReachableNetwork:(bool)arg1 isContinuousTransition:(bool)arg2;
+- (void)didOpenRecentlyClosedTabsItemWithPosition:(long long)arg1;
+- (void)didOpenRecommendationWithMetadata:(id)arg1 withPosition:(long long)arg2;
+- (void)didOpenTabGroupDropDownMenu;
+- (void)didOpenVisualTabPickerWithMethod:(long long)arg1;
+- (void)didPerformActionOnDownloadsPopover:(long long)arg1;
+- (void)didPerformDownloadsFileEvent:(long long)arg1 withFileType:(id)arg2;
+- (void)didPerformMoreMenuAction:(long long)arg1;
+- (void)didPerformSafeBrowsingAction:(long long)arg1 fromSource:(long long)arg2;
+- (void)didPerformVisualTabPickerMiscEvent:(long long)arg1;
+- (void)didPresentUsernamePrompt;
+- (void)didPreventBookmarkActionWithBookmarkType:(long long)arg1 actionType:(long long)arg2;
+- (void)didPrintPage;
+- (void)didReceiveAnalyticsEventFromWebKitWithName:(id)arg1 description:(id)arg2 payload:(id)arg3;
+- (void)didReloadEvent:(long long)arg1 withReloadType:(long long)arg2 withReloadProvenance:(long long)arg3 withLayout:(long long)arg4;
+- (void)didRemoveFrequentlyVisitedSite;
+- (void)didRemoveSiteSpecificSearchProvider;
+- (void)didRequestPageShowingSideBar:(bool)arg1;
+- (void)didRequestSearchSuggestions;
+- (void)didRequestTranslatingToLocale:(id)arg1 webpageLocale:(id)arg2 requestType:(long long)arg3 isTargetLocalePrimaryLocale:(bool)arg4;
+- (void)didRetrieveNumberOfFavorites:(unsigned long long)arg1;
+- (void)didRetrieveNumberOfFrequentlyVisitedSites:(unsigned long long)arg1;
+- (void)didRetrieveNumberOfRecommendations:(unsigned long long)arg1 numberOfTopics:(unsigned long long)arg2;
+- (void)didRevealDownloadWithMIMEType:(id)arg1 uti:(id)arg2 result:(long long)arg3;
+- (void)didSaveInMemoryBookmarksToSideFile;
+- (void)didSelectFavoriteWithOpenLocation:(long long)arg1;
+- (void)didSelectFrequentlyVisitedSiteWithOpenLocation:(long long)arg1;
+- (void)didSelectStartPrivateWindowInDropDownMenu;
+- (void)didSelectTabGroupInDropDownMenu;
+- (void)didSendTabGroup;
+- (void)didSetBuiltInStartPageBackgroundImage;
+- (void)didSetCustomStartPageBackgroundImage;
+- (void)didSetDownloadFolderToProviderWithIdentifier:(id)arg1 isDefaultFolder:(bool)arg2;
+- (void)didSetPrivateBrowsingEnabled:(bool)arg1;
+- (void)didShowPasswordGenerationPromptWithPasswordAccepted:(bool)arg1;
+- (void)didShowSafeBrowsingWarningWithSource:(long long)arg1;
+- (void)didSnapBack;
+- (void)didStartDragWithDragContentType:(long long)arg1;
+- (void)didSuggestUsernameInPromptAndUserKeptSuggestion:(bool)arg1;
+- (void)didSwitchToSafari:(id)arg1 entryPoint:(id)arg2;
+- (void)didSwitchToTabGroupFromLocation:(long long)arg1;
+- (void)didTakeActionOnClearHistory:(id)arg1;
+- (void)didToggleShowLessButtonForSection:(long long)arg1;
+- (void)didToggleShowMoreButtonForSection:(long long)arg1;
+- (void)didToggleShowMoreButtonForSection:(long long)arg1 isShowingMore:(bool)arg2;
+- (void)didUseGeneratedPassword;
+- (void)didUseSidebarAction:(long long)arg1;
+- (void)didVisitBookmarksWithOpenLocation:(long long)arg1 numberOfBookmarksVisited:(unsigned long long)arg2;
+- (void)generatedPasswordDidOverwriteExistingPasswordWithTrigger:(long long)arg1;
+- (id)initWithQueue:(id)arg1;
+- (void)logDiagnosticMessageWithKey:(id)arg1 diagnosticMessage:(id)arg2;
+- (void)logDiagnosticMessageWithKey:(id)arg1 diagnosticMessage:(id)arg2 result:(long long)arg3;
+- (void)logDiagnosticMessageWithKey:(id)arg1 diagnosticMessage:(id)arg2 value:(id)arg3;
+- (void)performOnAnalyticsQueueWithDelay:(long long)arg1 block:(id /* block */)arg2;
+- (void)recordSearchResultPageImpressionWithDefaultSearchProviderIdentifier:(id)arg1 searchProviderIdentifier:(id)arg2 provenance:(long long)arg3;
+- (void)registerSafariVersion:(id)arg1 persona:(long long)arg2;
+- (void)reportApplicationCacheSize:(unsigned long long)arg1;
+- (void)reportAudioIndicatorClickEvent:(long long)arg1;
+- (void)reportAutomaticTabClosingInterval:(id)arg1;
+- (void)reportAverageNumberOfTabsPerTabGroup:(long long)arg1 andMaximum:(long long)arg2;
+- (void)reportCustomizationSyncEnablement:(bool)arg1;
+- (void)reportExperimentalFeaturesOnLaunchForWebXREnabled:(bool)arg1 webXRGamepadsModuleEnabled:(bool)arg2 webXRHandInputModuleEnabled:(bool)arg3 modelElementEnabled:(bool)arg4;
+- (void)reportFirstInteractionAfterTranslation:(long long)arg1 maxVisibleHeightPercentage:(float)arg2;
+- (void)reportIOSToolbarButtonUsage:(long long)arg1 withLayout:(long long)arg2;
+- (void)reportInvalidMessageFromWebProcess:(id)arg1;
+- (void)reportMacOSToolbarButtonUsage:(long long)arg1 withLayout:(long long)arg2;
+- (void)reportNumberOfDuplicateBookmarksWithTopLevelDuplicatesCount:(unsigned long long)arg1 allDuplicatesCount:(unsigned long long)arg2;
+- (void)reportNumberOfExtensionsWithFrequencyDictionaryProvider:(id /* block */)arg1;
+- (void)reportNumberOfPinnedTabs:(unsigned long long)arg1;
+- (void)reportNumberOfTabGroups:(long long)arg1;
+- (void)reportNumberOfTabs:(long long)arg1;
+- (void)reportNumberOfTabsPerWindow:(long long)arg1;
+- (void)reportNumberOfWindows:(long long)arg1;
+- (void)reportOverlayStatusBarIsEnabled:(bool)arg1;
+- (void)reportPictureInPictureEvent:(long long)arg1;
+- (void)reportPrivateBrowsingUsage:(long long)arg1;
+- (void)reportPrivateRelayModulePromptEvent:(id)arg1;
+- (void)reportSVCToolbarButtonUsage:(long long)arg1;
+- (void)reportSafariVersion:(id)arg1 safariAndWebKitVersion:(id)arg2;
+- (void)reportShowFullURLInSmartSearchFieldPreference:(bool)arg1;
+- (void)reportShowStandaloneTabBarPreference:(bool)arg1;
+- (void)reportStartPageBackgroundImageVisible:(bool)arg1;
+- (void)reportStartPageBackgroundName:(id)arg1;
+- (void)reportStartPageOverrideStatistics:(id)arg1;
+- (void)reportStartPageSectionVisibility:(long long)arg1 visible:(bool)arg2;
+- (void)reportStartPageVisibility;
+- (void)reportStatusForExtensions:(id)arg1 extensionType:(id)arg2;
+- (void)reportTabsForNonTabGroupUser:(long long)arg1 andAverageNumber:(long long)arg2;
+- (void)reportUnifiedFieldEvent:(long long)arg1;
+- (void)reportUnifiedFieldHistoryItemURLAutocompletedEventWithDaysSinceLastVisit:(id)arg1;
+- (void)reportUnifiedTabBarStatusWithLayout:(long long)arg1 numberOfTabsInCurrentTabBar:(unsigned long long)arg2 tabBarIsCurrentlyScrollable:(bool)arg3 tabsShowOnlyIcons:(bool)arg4 backgroundColorInTabBarEnabled:(bool)arg5;
+- (void)reportUserPreferencesOnLaunchForJavaScriptEnabled:(bool)arg1 safeBrowsingEnabled:(bool)arg2 siteSpecificSearchEnabled:(bool)arg3 trackingPolicy:(unsigned long long)arg4;
+- (void)reportWeakPasswordWarningEvent:(long long)arg1;
+- (void)webExtensionBackgroundPage:(id)arg1 livedTooLong:(double)arg2;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (void)_sf_didAddFavoriteFromShareSheet;
+- (void)_sf_didBeginDownloadWithMIMEType:(id)arg1 uti:(id)arg2 downloadType:(long long)arg3 promptType:(long long)arg4 browserPersona:(long long)arg5;
+- (void)_sf_didPerformFormatMenuAction:(long long)arg1 provenance:(long long)arg2;
+- (void)_sf_performExtensionsReportIfNecessaryWithExtensionsController:(id)arg1;
+- (void)_sf_reportCapsuleLayoutStyle:(long long)arg1 backgroundColorInTabBarEnabled:(bool)arg2;
+- (void)_sf_reportPrivateWindowStatus:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MobileSafariUI.framework/MobileSafariUI
+
+- (void)_performPrivateBrowsingReport;
+- (void)_performStandaloneTabBarReport;
+- (void)_performTabGroupsReport;
+- (void)_performTabsForNonTabGroupUserReport;
+- (void)_standaloneTabBarAnalyticsLogger_updatePeriodicCoreAnalyticsLastReportTime;
+- (void)_tabGroupsAnalyticsLogger_updatePeriodicCoreAnalyticsLastReportTime;
+- (void)schedulePeriodicPrivateBrowsingReport;
+- (void)schedulePeriodicStandaloneTabBarReport;
+- (void)schedulePeriodicTabGroupsReport;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
+- (void)reportNumberOfFlaggedPasswordsUsingSavedAccountAuditorIfNeeded:(id)arg1;
+
+@end

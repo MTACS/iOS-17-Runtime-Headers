@@ -1,0 +1,101 @@
+
+@interface SBPIPDefaultPositionHyperregionComposer : NSObject <SBPIPPositionHyperregionComposing> {
+    <SBPIPPositionHyperregionComposerDelegate> * _delegate;
+    bool  _isPad;
+    struct SBPIPPositionGeometryContext { 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } pipCurrentSize; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } pipLastSteadySize; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } pipStashedSize; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } pipAnchorPointOffset; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } containerBounds; 
+        struct UIEdgeInsets { 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
+        } edgeInsets; 
+        struct UIEdgeInsets { 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
+        } minimumPadding; 
+        struct UIEdgeInsets { 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
+        } stashedMinimumPadding; 
+        unsigned long long offscreenCorners; 
+        long long orientation; 
+    }  _lastGeometryContext;
+    struct SBPIPPositionInteractionStateContext { 
+        bool isStashed; 
+        bool isInteractive; 
+        bool hasActiveGesture; 
+        bool isFreelyPositionable; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } projectedPosition; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } initialPosition; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } currentPosition; 
+        double currentPositionStashProgress; 
+        double projectedPositionStashProgress; 
+    }  _lastInteractionStateContext;
+    NSDictionary * _lastRegionsMap;
+    NSDictionary * _lastResolvedRegionsMap;
+    SBPIPPositionHyperregionLibrary * _regionsLibrary;
+    SBWindowScene * _representedWindowScene;
+}
+
+@property (nonatomic, copy) NSArray *connectedWindowScenes;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBPIPPositionHyperregionComposerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) SBWindowScene *representedWindowScene;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_addRegionWithType:(long long)arg1 geometry:(struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })arg2 toMap:(id)arg3;
+- (void)_pruneRegionsMap:(id)arg1 geometry:(struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })arg2 interaction:(struct SBPIPPositionInteractionStateContext { bool x1; bool x2; bool x3; bool x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; struct CGPoint { double x_7_1_1; double x_7_1_2; } x7; double x8; double x9; })arg3;
+- (id)_unprunedCornersForGeometry:(struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })arg1;
+- (unsigned long long)canonicalPositionForPoint:(struct CGPoint { double x1; double x2; })arg1 proposedPosition:(unsigned long long)arg2 geometry:(struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })arg3 interaction:(struct SBPIPPositionInteractionStateContext { bool x1; bool x2; bool x3; bool x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; struct CGPoint { double x_7_1_1; double x_7_1_2; } x7; double x8; double x9; })arg4;
+- (struct CGPoint { double x1; double x2; })defaultCornerPositionForLayoutSettingsPosition:(unsigned long long)arg1 proposedCenter:(struct CGPoint { double x1; double x2; })arg2 geometry:(struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })arg3 interaction:(struct SBPIPPositionInteractionStateContext { bool x1; bool x2; bool x3; bool x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; struct CGPoint { double x_7_1_1; double x_7_1_2; } x7; double x8; double x9; })arg4;
+- (id)delegate;
+- (id)init;
+- (void)invalidate;
+- (id)positionRegionsForRegions:(id)arg1 geometry:(struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })arg2 interaction:(struct SBPIPPositionInteractionStateContext { bool x1; bool x2; bool x3; bool x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; struct CGPoint { double x_7_1_1; double x_7_1_2; } x7; double x8; double x9; })arg3;
+- (id)representedWindowScene;
+- (void)setDelegate:(id)arg1;
+- (void)setRepresentedWindowScene:(id)arg1;
+
+@end

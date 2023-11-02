@@ -1,0 +1,4 @@
+
+@protocol GCAdaptiveTriggersXPCProxyServiceRemoteClientInterface
+
+@end

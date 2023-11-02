@@ -1,0 +1,4 @@
+
+@interface _TtC21CommunicationsSetupUIP33_4688D96596046C2F86EB2B6359739CC219ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

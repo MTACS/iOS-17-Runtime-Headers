@@ -1,0 +1,4 @@
+
+@protocol CRSIconLayoutServerToClientInterface <NSObject>
+
+@end

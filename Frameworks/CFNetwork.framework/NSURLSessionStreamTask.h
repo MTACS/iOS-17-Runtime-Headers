@@ -1,0 +1,4 @@
+
+@interface NSURLSessionStreamTask : NSURLSessionTask
+
+@end

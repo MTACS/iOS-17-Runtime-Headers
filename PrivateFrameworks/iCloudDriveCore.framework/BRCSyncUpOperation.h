@@ -1,0 +1,95 @@
+
+@interface BRCSyncUpOperation : _BRCOperation <BRCOperationSubclass> {
+    NSMutableDictionary * _conflictLosersToResolveByRecordID;
+    float  _cost;
+    NSMutableArray * _createdAppLibraryNames;
+    NSMutableOrderedSet * _deletedRecordIDs;
+    bool  _encounteredErrorOnPCSChainedItem;
+    BRCLocalItem * _itemNeedingPCSChaining;
+    NSMutableArray * _iworkUnsharedShareIDs;
+    NSMutableArray * _packagesInFlight;
+    NSMutableDictionary * _pluginFieldsForRecordDeletesByID;
+    NSMutableDictionary * _recordIDsToDeleteToEtags;
+    NSMutableArray * _recordsNeedingNewSharingProtectionInfo;
+    NSMutableArray * _recordsNeedingUpdatedSharingProtectionInfo;
+    NSMutableArray * _recordsToSave;
+    NSMutableDictionary * _renamedShareIDsToNames;
+    unsigned long long  _requestID;
+    BRCServerZone * _serverZone;
+    NSString * _stageID;
+    id /* block */  _syncUpCompletionBlock;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *conflictLosersToResolveByRecordID;
+@property (nonatomic, readonly) float cost;
+@property (nonatomic, readonly) NSMutableArray *createdAppLibraryNames;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSMutableOrderedSet *deletedRecordIDs;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool encounteredErrorOnPCSChainedItem;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) BRCLocalItem *itemNeedingPCSChaining;
+@property (nonatomic, retain) NSMutableArray *iworkUnsharedShareIDs;
+@property (nonatomic, retain) NSMutableArray *packagesInFlight;
+@property (nonatomic, retain) NSMutableDictionary *pluginFieldsForRecordDeletesByID;
+@property (nonatomic, retain) NSMutableDictionary *recordIDsToDeleteToEtags;
+@property (nonatomic, retain) NSMutableArray *recordsNeedingNewSharingProtectionInfo;
+@property (nonatomic, retain) NSMutableArray *recordsNeedingUpdatedSharingProtectionInfo;
+@property (nonatomic, retain) NSMutableArray *recordsToSave;
+@property (nonatomic, retain) NSMutableDictionary *renamedShareIDsToNames;
+@property (nonatomic, retain) BRCServerZone *serverZone;
+@property (nonatomic, retain) NSString *stageID;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ syncUpCompletionBlock;
+
++ (id)syncUpOperationForZone:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned long long*)arg3;
+
+- (void).cxx_destruct;
+- (void)_performModifyRecordsOrPCSChainOperationWithCompletion:(id /* block */)arg1;
+- (bool)_performPCSChainOperationIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)_performShareUpdateAndModifyRecordsWithCompletion:(id /* block */)arg1;
+- (void)_performUpdateSharingProtectionDataIfNecessary:(id /* block */)arg1;
+- (bool)_recordIsIWorkShareable:(id)arg1;
+- (void)_scheduleShareUpdateAndModifyRecordsAndZoneCreationOperation;
+- (void)_setSharingFieldsOnContentRecord:(id)arg1 withProtectionData:(id)arg2 baseToken:(id)arg3 routingKey:(id)arg4 forceOverwrite:(bool)arg5;
+- (id)conflictLosersToResolveByRecordID;
+- (float)cost;
+- (id)createActivity;
+- (id)createdAppLibraryNames;
+- (void)dealloc;
+- (id)deletedRecordIDs;
+- (bool)encounteredErrorOnPCSChainedItem;
+- (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (id)initWithZone:(id)arg1;
+- (id)itemNeedingPCSChaining;
+- (id)iworkUnsharedShareIDs;
+- (void)main;
+- (id)packagesInFlight;
+- (void)performShareUpdate:(id /* block */)arg1;
+- (id)pluginFieldsForRecordDeletesByID;
+- (bool)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
+- (id)recordIDsToDeleteToEtags;
+- (id)recordsNeedingNewSharingProtectionInfo;
+- (id)recordsNeedingUpdatedSharingProtectionInfo;
+- (id)recordsToSave;
+- (id)renamedShareIDsToNames;
+- (id)serverZone;
+- (void)setConflictLosersToResolveByRecordID:(id)arg1;
+- (void)setDeletedRecordIDs:(id)arg1;
+- (void)setItemNeedingPCSChaining:(id)arg1;
+- (void)setIworkUnsharedShareIDs:(id)arg1;
+- (void)setPackagesInFlight:(id)arg1;
+- (void)setPluginFieldsForRecordDeletesByID:(id)arg1;
+- (void)setRecordIDsToDeleteToEtags:(id)arg1;
+- (void)setRecordsNeedingNewSharingProtectionInfo:(id)arg1;
+- (void)setRecordsNeedingUpdatedSharingProtectionInfo:(id)arg1;
+- (void)setRecordsToSave:(id)arg1;
+- (void)setRenamedShareIDsToNames:(id)arg1;
+- (void)setServerZone:(id)arg1;
+- (void)setStageID:(id)arg1;
+- (void)setSyncUpCompletionBlock:(id /* block */)arg1;
+- (bool)shouldRetryForError:(id)arg1;
+- (id)stageID;
+- (id /* block */)syncUpCompletionBlock;
+
+@end

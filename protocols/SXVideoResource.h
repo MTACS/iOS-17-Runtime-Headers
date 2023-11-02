@@ -1,0 +1,4 @@
+
+@protocol SXVideoResource <SXResource>
+
+@end

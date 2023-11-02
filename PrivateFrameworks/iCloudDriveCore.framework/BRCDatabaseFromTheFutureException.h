@@ -1,0 +1,4 @@
+
+@interface BRCDatabaseFromTheFutureException : NSException
+
+@end

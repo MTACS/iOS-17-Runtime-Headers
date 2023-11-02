@@ -1,0 +1,4 @@
+
+@interface _TtCE8StocksUICSo8NSBundleP33_086C78EAB4E35F5394281323D7B482F96Marker : _TtCs12_SwiftObject
+
+@end

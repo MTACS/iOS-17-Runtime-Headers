@@ -1,0 +1,38 @@
+
+@interface SKUIRedeemConfiguration : NSObject {
+    long long  _category;
+    SKUIClientContext * _clientContext;
+    UIImage * _inputImage;
+    SKUIITunesPassConfiguration * _itunesPassConfiguration;
+    UIImage * _landingImage;
+    NSOperationQueue * _operationQueue;
+    UIImage * _successImage;
+}
+
+@property (nonatomic, readonly) SKUIITunesPassConfiguration *ITunesPassConfiguration;
+@property (nonatomic, readonly) long long category;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (nonatomic, readonly) UIImage *inputImage;
+@property (nonatomic, readonly) UIImage *landingImage;
+@property (nonatomic, readonly) NSOperationQueue *operationQueue;
+@property (nonatomic, readonly) UIImage *successImage;
+
+- (void).cxx_destruct;
+- (id)ITunesPassConfiguration;
+- (void)_didLoadWithResponseDictionary:(id)arg1;
+- (void)_loadConfigurationWithURLBagDictionary:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)_loadDefaultImages;
+- (id)_redeemPreflightRequestBodyData;
+- (void)_setInputImage:(id)arg1;
+- (void)_setLandingImage:(id)arg1;
+- (void)_setSuccessImage:(id)arg1;
+- (long long)category;
+- (id)clientContext;
+- (id)initWithOperationQueue:(id)arg1 category:(long long)arg2 clientContext:(id)arg3;
+- (id)inputImage;
+- (id)landingImage;
+- (void)loadConfigurationWithCompletionBlock:(id /* block */)arg1;
+- (id)operationQueue;
+- (id)successImage;
+
+@end

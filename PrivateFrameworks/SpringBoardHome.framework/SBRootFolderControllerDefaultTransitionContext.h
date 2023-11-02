@@ -1,0 +1,4 @@
+
+@interface SBRootFolderControllerDefaultTransitionContext : SBViewControllerTransitionContext
+
+@end

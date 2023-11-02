@@ -1,0 +1,55 @@
+
+@interface AVTAvatarLibraryViewController : UIViewController <AVTAvatarLibraryModelDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
+    UICollectionView * _collectionView;
+    <AVTAvatarLibraryViewControllerDelegate> * _delegate;
+    AVTUIEnvironment * _environment;
+    _AVTAvatarRecordImageProvider * _imageProvider;
+    UILongPressGestureRecognizer * _longPressGesture;
+    AVTAvatarLibraryModel * _model;
+}
+
+@property (nonatomic, readonly) UICollectionView *collectionView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AVTAvatarLibraryViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) AVTUIEnvironment *environment;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) _AVTAvatarRecordImageProvider *imageProvider;
+@property (nonatomic, readonly) UILongPressGestureRecognizer *longPressGesture;
+@property (nonatomic, readonly) AVTAvatarLibraryModel *model;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)collectionView;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (id)delegate;
+- (void)didAddRecord:(id)arg1;
+- (void)didDeleteRecord:(id)arg1;
+- (void)didEditRecord:(id)arg1;
+- (void)didLongPress:(id)arg1;
+- (void)didTapDoneButton:(id)arg1;
+- (void)didUpdateLibraryItems:(id)arg1;
+- (void)dismissController:(id)arg1 completion:(id /* block */)arg2;
+- (id)environment;
+- (id)imageProvider;
+- (id)initWithAvatarStore:(id)arg1;
+- (id)initWithAvatarStore:(id)arg1 environment:(id)arg2;
+- (id)initWithModel:(id)arg1 imageProvider:(id)arg2 environment:(id)arg3;
+- (void)insertItemsAtIndexes:(id)arg1 deleteItemsAtIndexes:(id)arg2 reloadItemsAtIndexes:(id)arg3;
+- (void)loadView;
+- (id)longPressGesture;
+- (id)model;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)presentUIViewController:(id)arg1 forItem:(id)arg2;
+- (void)presetEditorViewController:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (bool)shouldUseLargeLayout;
+- (void)updateVisibleHeaders;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+
+@end

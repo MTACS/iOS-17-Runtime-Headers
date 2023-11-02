@@ -1,0 +1,9 @@
+
+@interface _TtC16NewsSubscriptionP33_AAA2A8DD3F83AA64AD1FDBD84255A7FD22ProxyEmailResponseInfo : _TtCs12_SwiftObject {
+    void domainId;
+    void forwardEmail;
+    void proxyEmail;
+    void teamId;
+}
+
+@end

@@ -1,0 +1,40 @@
+
+@interface SNSoundClassifier : NSObject <SNAnalyzing> {
+    NSSet * _classLabelsDenylist;
+    NSString * _classifierIdentifier;
+    struct shared_ptr<DSPGraph::Graph> { 
+        struct Graph {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _graph;
+    <SNMLModel> * _model;
+    unsigned int  _modelBlockSize;
+    double  _overlapFactor;
+    int  _resultsToDiscardCount;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _windowDuration;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct shared_ptr<DSPGraph::Graph> { struct Graph {} *x1; struct __shared_weak_count {} *x2; } graph;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) void*resultsBox;
+@property (readonly) Class superclass;
+
++ (id)new;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (bool)adaptToSystemConfiguration:(id)arg1 error:(id*)arg2;
+- (struct shared_ptr<DSPGraph::Graph> { struct Graph {} *x1; struct __shared_weak_count {} *x2; })graph;
+- (id)init;
+- (void)primeGraph;
+- (void*)resultsBox;
+- (id)resultsFromBox:(void*)arg1 renderedWithFrameCount:(int)arg2;
+- (id)sharedProcessorConfiguration;
+
+@end

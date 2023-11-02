@@ -1,0 +1,4 @@
+
+@interface _TtCC26DeepThoughtBiomeFoundation12TurnFeatures15RequestSequence : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface MCMActionArgumentCommand : MCMActionArgumentBase
+
+@end

@@ -1,0 +1,4 @@
+
+@interface VUIFloatingCollectionViewCell : VUIBaseCollectionViewCell
+
+@end

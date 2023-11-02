@@ -1,0 +1,84 @@
+
+@interface CPSPointsOfInterestPickerViewController : CPSBaseEntityContentViewController <CPSActionButtonLayoutDelegate, CPSButtonDelegate, CPSLinearFocusProviding, CPSPointsOfInterestPickerInfoDelegate, UITableViewDataSource, UITableViewDelegate> {
+    UIViewPropertyAnimator * _animator;
+    CPSActionButton * _cancelButton;
+    <CPSPointsOfInterestPickerDelegate> * _delegate;
+    CPSPointsOfInterestPickerInfoView * _infoView;
+    NSArray * _layoutConstraints;
+    unsigned long long  _pickerState;
+    <UIFocusEnvironment> * _requestedFocusItem;
+    double  _scrollHeight;
+    CPSPointsOfInterestTableView * _tableView;
+    UILabel * _titleLabel;
+}
+
+@property (nonatomic, retain) UIViewPropertyAnimator *animator;
+@property (nonatomic, retain) CPSActionButton *cancelButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CPSPointsOfInterestPickerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CPSPointsOfInterestPickerInfoView *infoView;
+@property (nonatomic, retain) NSArray *layoutConstraints;
+@property (nonatomic) unsigned long long pickerState;
+@property (nonatomic, retain) <UIFocusEnvironment> *requestedFocusItem;
+@property (nonatomic) double scrollHeight;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) CPSPointsOfInterestTableView *tableView;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, readonly) bool useRightHandDriveFocusGuide;
+
+- (void).cxx_destruct;
+- (id)_linearFocusItems;
+- (void)_updateFocusedItem:(id)arg1;
+- (void)actionButtonPressed:(id)arg1 forModel:(id)arg2;
+- (id)animator;
+- (struct CGSize { double x1; double x2; })buttonGlyphSize;
+- (struct CGSize { double x1; double x2; })buttonSize;
+- (id)cancelButton;
+- (void)cancelButtonPressed:(id)arg1;
+- (void)completeTransition:(bool)arg1;
+- (id)delegate;
+- (void)didSelectButton:(id)arg1;
+- (void)didUpdateEntity:(id)arg1;
+- (id)infoView;
+- (id)initWithEntity:(id)arg1 resourceProvider:(id)arg2;
+- (id)layoutConstraints;
+- (void)loadView;
+- (void)modelDidDeselect:(id)arg1;
+- (void)modelDidSelect:(id)arg1;
+- (unsigned long long)pickerState;
+- (id)pointsOfInterest;
+- (id)preferredFocusEnvironments;
+- (id)requestedFocusItem;
+- (void)resetLayoutConstraints;
+- (double)scrollHeight;
+- (id)selectedItem;
+- (void)setAnimator:(id)arg1;
+- (void)setCancelButton:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setInfoView:(id)arg1;
+- (void)setLayoutConstraints:(id)arg1;
+- (void)setPickerState:(unsigned long long)arg1;
+- (void)setRequestedFocusItem:(id)arg1;
+- (void)setScrollHeight:(double)arg1;
+- (void)setSelectedItem:(id)arg1;
+- (void)setTableView:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (void)setupLayoutConstraints;
+- (void)setupViews;
+- (id)tableView;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)template;
+- (id)titleLabel;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)transitionToPrimaryCard;
+- (void)transitionToSecondaryCard;
+- (void)updateViewConstraints;
+- (void)viewDidLoad;
+
+@end

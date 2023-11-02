@@ -1,0 +1,4 @@
+
+@interface _TtCE13CoreIDVSharedCSo8NSBundleP33_93A89D86E6BB36FF1BBD2BC1065888BD11BundleToken : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CNUIDSFaceTimeHandleAvailabilityCache : CNUIDSHandleAvailabilityCache
+
+@end

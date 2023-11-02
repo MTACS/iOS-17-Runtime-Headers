@@ -1,0 +1,4 @@
+
+@protocol MapsSuggestionsAnyJSON <NSObject>
+
+@end

@@ -1,0 +1,90 @@
+
+@interface MXServerBoundFrame : PBCodable <NSCopying> {
+    MXAudioFrame * _audioFrame;
+    MXBeginDictation * _beginDictation;
+    MXBeginRequest * _beginRequest;
+    MXCancelRequest * _cancelRequest;
+    struct { 
+        unsigned int payload : 1; 
+    }  _has;
+    int  _payload;
+    MXSessionMetadata * _sessionMetadata;
+    MXSpeechProfile * _speechProfile;
+    MXSpeechProfileBuildRequest * _speechProfileRequest;
+    MXStreamingSpeechProfileCommit * _streamingSpeechProfileCommit;
+    MXStreamingSpeechProfileAddData * _streamingSpeechProfileData;
+    MXStreamingSpeechProfileBegin * _streamingSpeechProfileRequest;
+}
+
+@property (nonatomic, retain) MXAudioFrame *audioFrame;
+@property (nonatomic, retain) MXBeginDictation *beginDictation;
+@property (nonatomic, retain) MXBeginRequest *beginRequest;
+@property (nonatomic, retain) MXCancelRequest *cancelRequest;
+@property (nonatomic, readonly) bool hasAudioFrame;
+@property (nonatomic, readonly) bool hasBeginDictation;
+@property (nonatomic, readonly) bool hasBeginRequest;
+@property (nonatomic, readonly) bool hasCancelRequest;
+@property (nonatomic) bool hasPayload;
+@property (nonatomic, readonly) bool hasSessionMetadata;
+@property (nonatomic, readonly) bool hasSpeechProfile;
+@property (nonatomic, readonly) bool hasSpeechProfileRequest;
+@property (nonatomic, readonly) bool hasStreamingSpeechProfileCommit;
+@property (nonatomic, readonly) bool hasStreamingSpeechProfileData;
+@property (nonatomic, readonly) bool hasStreamingSpeechProfileRequest;
+@property (nonatomic) int payload;
+@property (nonatomic, retain) MXSessionMetadata *sessionMetadata;
+@property (nonatomic, retain) MXSpeechProfile *speechProfile;
+@property (nonatomic, retain) MXSpeechProfileBuildRequest *speechProfileRequest;
+@property (nonatomic, retain) MXStreamingSpeechProfileCommit *streamingSpeechProfileCommit;
+@property (nonatomic, retain) MXStreamingSpeechProfileAddData *streamingSpeechProfileData;
+@property (nonatomic, retain) MXStreamingSpeechProfileBegin *streamingSpeechProfileRequest;
+
+- (void).cxx_destruct;
+- (int)StringAsPayload:(id)arg1;
+- (id)audioFrame;
+- (id)beginDictation;
+- (id)beginRequest;
+- (id)cancelRequest;
+- (void)clearOneofValuesForPayload;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasAudioFrame;
+- (bool)hasBeginDictation;
+- (bool)hasBeginRequest;
+- (bool)hasCancelRequest;
+- (bool)hasPayload;
+- (bool)hasSessionMetadata;
+- (bool)hasSpeechProfile;
+- (bool)hasSpeechProfileRequest;
+- (bool)hasStreamingSpeechProfileCommit;
+- (bool)hasStreamingSpeechProfileData;
+- (bool)hasStreamingSpeechProfileRequest;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (int)payload;
+- (id)payloadAsString:(int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)sessionMetadata;
+- (void)setAudioFrame:(id)arg1;
+- (void)setBeginDictation:(id)arg1;
+- (void)setBeginRequest:(id)arg1;
+- (void)setCancelRequest:(id)arg1;
+- (void)setHasPayload:(bool)arg1;
+- (void)setPayload:(int)arg1;
+- (void)setSessionMetadata:(id)arg1;
+- (void)setSpeechProfile:(id)arg1;
+- (void)setSpeechProfileRequest:(id)arg1;
+- (void)setStreamingSpeechProfileCommit:(id)arg1;
+- (void)setStreamingSpeechProfileData:(id)arg1;
+- (void)setStreamingSpeechProfileRequest:(id)arg1;
+- (id)speechProfile;
+- (id)speechProfileRequest;
+- (id)streamingSpeechProfileCommit;
+- (id)streamingSpeechProfileData;
+- (id)streamingSpeechProfileRequest;
+- (void)writeTo:(id)arg1;
+
+@end

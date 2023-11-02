@@ -1,0 +1,86 @@
+
+@interface SCLSchoolModeCoordinator : NSObject <SCLSchoolModeServerObserver, SCLTransportControllerDelegate> {
+    SCLActiveDurationAnalyticsSource * _activeDurationAnalyticsSource;
+    NSMutableSet * _clients;
+    SCLSchoolModeCoordinatorConfiguration * _configuration;
+    SCLState * _currentState;
+    NSURL * _directoryURL;
+    int  _firstUnlockToken;
+    bool  _hasReceivedFirstUnlock;
+    SCLUnlockHistoryItem * _pendingUnlockItem;
+    SCLPersistentSettings * _persistentSettings;
+    bool  _ready;
+    NSURL * _scheduleURL;
+    SCLSettingsSyncCoordinator * _settingsSyncCoordinator;
+    unsigned long long  _stateHandle;
+}
+
+@property (nonatomic, readonly) SCLActiveDurationAnalyticsSource *activeDurationAnalyticsSource;
+@property (nonatomic, readonly) NSMutableSet *clients;
+@property (nonatomic, readonly, copy) SCLSchoolModeCoordinatorConfiguration *configuration;
+@property (nonatomic, readonly) SCLState *currentState;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSURL *directoryURL;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SCLUnlockHistoryItem *pendingUnlockItem;
+@property (nonatomic, retain) SCLPersistentSettings *persistentSettings;
+@property (getter=isReady, nonatomic, readonly) bool ready;
+@property (nonatomic, retain) SCLScheduleSettings *scheduleSettings;
+@property (nonatomic, readonly) NSURL *scheduleURL;
+@property (nonatomic, retain) SCLSettingsSyncCoordinator *settingsSyncCoordinator;
+@property (nonatomic) unsigned long long stateHandle;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_checkIfClassCDataIsAvailable;
+- (void)_classCDataIsAvailable;
+- (id)_configuration;
+- (void)_createSchoolTimeDirectoryIfNeeded;
+- (void)_lock_loadPersistentSchedule;
+- (void)_lock_updatePersistentSettingsWithBlock:(id /* block */)arg1;
+- (void)_noteHistoryDidUpdate;
+- (void)_persistSettings:(id)arg1;
+- (void)_registerForFirstUnlockIfNeeded;
+- (void)_requestRemoteScheduleSettingsIfNeeded;
+- (void)_updateClientsWithSchedule:(id)arg1 notify:(bool)arg2;
+- (void)activateSettingsSyncCoordinatorWithSettings:(id)arg1;
+- (id)activeDurationAnalyticsSource;
+- (void)addClient:(id)arg1;
+- (void)addUnlockHistoryItem:(id)arg1 completion:(id /* block */)arg2;
+- (bool)applySchedule:(id)arg1 error:(id*)arg2;
+- (bool)applySchedule:(id)arg1 forInitialSync:(bool)arg2 error:(id*)arg3;
+- (id)clients;
+- (id)configuration;
+- (id)currentScheduleSettingsForTransportController:(id)arg1;
+- (id)currentState;
+- (void)dealloc;
+- (void)deleteHistoryWithCompletion:(id /* block */)arg1;
+- (id)directoryURL;
+- (void)fetchRecentUnlockHistoryItemsWithCompletion:(id /* block */)arg1;
+- (id)historyStore;
+- (id)idsDevice;
+- (id)initWithConfiguration:(id)arg1;
+- (bool)isReady;
+- (id)nrDevice;
+- (id)pendingUnlockItem;
+- (id)persistentSettings;
+- (void)purgeOldHistoryItems;
+- (void)removeClient:(id)arg1;
+- (id)scheduleSettings;
+- (id)scheduleURL;
+- (id)server;
+- (void)server:(id)arg1 didUpdateState:(id)arg2 fromState:(id)arg3;
+- (bool)setActive:(bool)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (void)setPendingUnlockItem:(id)arg1;
+- (void)setPersistentSettings:(id)arg1;
+- (void)setSettingsSyncCoordinator:(id)arg1;
+- (void)setStateHandle:(unsigned long long)arg1;
+- (id)settingsSyncCoordinator;
+- (struct os_state_data_s { unsigned int x1; union { unsigned int x_2_1_1 : 32; unsigned int x_2_1_2; } x2; struct os_state_data_decoder_s { BOOL x_3_1_1[64]; BOOL x_3_1_2[64]; } x3; BOOL x4[64]; unsigned char x5[0]; }*)stateDataWithHints:(struct os_state_hints_s { unsigned int x1; char *x2; unsigned int x3; unsigned int x4; }*)arg1;
+- (unsigned long long)stateHandle;
+- (id)transportController;
+- (void)transportController:(id)arg1 didReceiveSchedule:(id)arg2 forInitialSync:(bool)arg3;
+- (void)transportController:(id)arg1 didReceiveUnlockHistoryItem:(id)arg2;
+
+@end

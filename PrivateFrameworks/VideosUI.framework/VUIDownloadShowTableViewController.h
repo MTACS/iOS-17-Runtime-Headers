@@ -1,0 +1,81 @@
+
+@interface VUIDownloadShowTableViewController : UITableViewController <VUIDownloadEntityTableViewCellDelegate, VUILibraryDataSourceDelegate> {
+    NSMutableArray * _assetControllersToRemove;
+    UIBarButtonItem * _backBarButtonItem;
+    VUIDownloadShowDataSource * _downloadDataSource;
+    NSMutableArray * _groupings;
+    UIBarButtonItem * _leftBarButtonItem;
+    UIBarButtonItem * _rightBarButtonItem;
+    NSArray * _seasons;
+    VUIMediaEntitiesDataSource * _seasonsDataSource;
+    VUIDownloadShowTableHeaderView * _sizingHeader;
+}
+
+@property (nonatomic, retain) NSMutableArray *assetControllersToRemove;
+@property (nonatomic, retain) UIBarButtonItem *backBarButtonItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) VUIDownloadShowDataSource *downloadDataSource;
+@property (nonatomic, retain) NSMutableArray *groupings;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIBarButtonItem *leftBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem *rightBarButtonItem;
+@property (nonatomic, retain) NSArray *seasons;
+@property (nonatomic, retain) VUIMediaEntitiesDataSource *seasonsDataSource;
+@property (nonatomic, retain) VUIDownloadShowTableHeaderView *sizingHeader;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_cancelPressed;
+- (void)_clearTableViewSelections:(bool)arg1;
+- (id)_configureDeleteAlertControllerForIndexPath:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)_configureRenewAlertControllerForIndexPath:(id)arg1 forPreferredStyle:(long long)arg2 withCompletion:(id /* block */)arg3;
+- (void)_didPressGetMoreEpisodes:(id)arg1;
+- (void)_editToggled;
+- (bool)_episodeHasAllCanonicalIDs:(id)arg1;
+- (void)_exitEditingMode;
+- (id)_headerTitleForEpisodeMediaItem:(id)arg1;
+- (bool)_mediaItemShouldShowRenewOption:(id)arg1;
+- (id)_moreEpisodesURLForSection:(long long)arg1;
+- (void)_popIfNeeded;
+- (void)_updateNavigationBarPadding;
+- (id)assetControllersToRemove;
+- (id)backBarButtonItem;
+- (void)dataSourceDidFinishFetching:(id)arg1;
+- (void)dealloc;
+- (void)downloadCellDidRequestCancelDownload:(id)arg1;
+- (id)downloadDataSource;
+- (void)fullscreenPlaybackUIDidChangeNotification:(id)arg1;
+- (id)groupings;
+- (id)initWithDataSource:(id)arg1 seasonsDataSource:(id)arg2;
+- (id)leftBarButtonItem;
+- (void)loadView;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)rightBarButtonItem;
+- (id)seasons;
+- (id)seasonsDataSource;
+- (void)setAssetControllersToRemove:(id)arg1;
+- (void)setBackBarButtonItem:(id)arg1;
+- (void)setDownloadDataSource:(id)arg1;
+- (void)setGroupings:(id)arg1;
+- (void)setLeftBarButtonItem:(id)arg1;
+- (void)setRightBarButtonItem:(id)arg1;
+- (void)setSeasons:(id)arg1;
+- (void)setSeasonsDataSource:(id)arg1;
+- (void)setSizingHeader:(id)arg1;
+- (id)sizingHeader;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+
+@end

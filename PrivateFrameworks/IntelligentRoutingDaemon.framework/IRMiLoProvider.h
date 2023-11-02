@@ -1,0 +1,95 @@
+
+@interface IRMiLoProvider : NSObject <CLMiLoConnectionDelegate, IRMiLoFeedbackProvider> {
+    bool  _isLowLatency;
+    bool  _isMiLoServiceStateRunning;
+    bool  _isRealTimeMiLoRequestedForPowerOptimizations;
+    int  _miLoConnectionProgressStatus;
+    long long  _miLoServiceQuality;
+    long long  _miLoServiceQualityReasonBitmap;
+    IRMiLoConnectionBridge * _miloConnectionBridge;
+    NSString * _miloServiceStatusStringQE;
+    int  _numberOfConsecutiveMiLoFailAttempts;
+    <IRMiLoProviderObserverProtocol> * _observer;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSUUID * _requestSinglePredictionIdentifierRealTime;
+    NSUUID * _serviceUuid;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isLowLatency;
+@property (nonatomic) bool isMiLoServiceStateRunning;
+@property (nonatomic) bool isRealTimeMiLoRequestedForPowerOptimizations;
+@property int miLoConnectionProgressStatus;
+@property (nonatomic) long long miLoServiceQuality;
+@property (nonatomic) long long miLoServiceQualityReasonBitmap;
+@property (nonatomic, retain) IRMiLoConnectionBridge *miloConnectionBridge;
+@property (nonatomic, retain) NSString *miloServiceStatusStringQE;
+@property int numberOfConsecutiveMiLoFailAttempts;
+@property (nonatomic) <IRMiLoProviderObserverProtocol> *observer;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSUUID *requestSinglePredictionIdentifierRealTime;
+@property (nonatomic, retain) NSUUID *serviceUuid;
+@property (readonly) Class superclass;
+
++ (int)MiLoLocationTypeToIRLocationSemantic:(id)arg1;
++ (long long)bitmapFromServiceQualityReasonArray:(id)arg1;
++ (bool)isConfidenceValid:(long long)arg1;
++ (bool)isInMotion:(unsigned long long)arg1;
++ (bool)isQualityValid:(long long)arg1;
+
+- (void).cxx_destruct;
+- (void)_createLslConnectionIfNecessaryAndConnectWithNServiceUuid:(id)arg1;
+- (id)_miloPredictionLogString:(id)arg1;
+- (id)_miloServiceStatusLogStringFromStatus:(id)arg1;
+- (void)_serviceReset;
+- (void)addObserver:(id)arg1 withServiceUuid:(id)arg2 isLowLatency:(bool)arg3;
+- (void)connectToLslService;
+- (void)deleteServiceWithUuid:(id)arg1;
+- (id)getMiloServiceStatusStringQEWithPrediction:(id)arg1;
+- (id)initWithQueue:(id)arg1;
+- (bool)isLowLatency;
+- (bool)isMiLoServiceStateRunning;
+- (bool)isRealTimeMiLoRequestedForPowerOptimizations;
+- (void)labelPredictionUuid:(id)arg1 withEventUuid:(id)arg2;
+- (void)miLoConnection:(id)arg1 connectServiceDidFailWithServiceIdentifier:(id)arg2 withError:(id)arg3;
+- (void)miLoConnection:(id)arg1 createServiceDidFailWithError:(id)arg2;
+- (void)miLoConnection:(id)arg1 deleteServiceDidFailForServiceWithIdentifier:(id)arg2 withError:(id)arg3;
+- (void)miLoConnection:(id)arg1 didCompleteClientRequest:(id)arg2 withError:(id)arg3;
+- (void)miLoConnection:(id)arg1 didCreateServiceWithServiceIdentifier:(id)arg2;
+- (void)miLoConnection:(id)arg1 didDeleteServiceWithServiceIdentifier:(id)arg2;
+- (void)miLoConnection:(id)arg1 didUpdatePrediction:(id)arg2;
+- (void)miLoConnection:(id)arg1 didUpdateServiceStatus:(id)arg2;
+- (void)miLoConnection:(id)arg1 disconnectServiceDidFailWithServiceIdentifier:(id)arg2 withError:(id)arg3;
+- (void)miLoConnection:(id)arg1 queryServiceDidFailWithError:(id)arg2;
+- (int)miLoConnectionProgressStatus;
+- (long long)miLoServiceQuality;
+- (long long)miLoServiceQualityReasonBitmap;
+- (id)miloConnectionBridge;
+- (id)miloServiceStatusStringQE;
+- (int)numberOfConsecutiveMiLoFailAttempts;
+- (id)observer;
+- (id)queue;
+- (void)recoverServiceIfRequired:(id)arg1;
+- (void)removeObserver;
+- (id)requestSinglePredictionIdentifierRealTime;
+- (id)requestSinglePredictionRealTime;
+- (void)serviceResetAndIncreaseFailCount;
+- (id)serviceUuid;
+- (void)setIsLowLatency:(bool)arg1;
+- (void)setIsMiLoServiceStateRunning:(bool)arg1;
+- (void)setIsRealTimeMiLoRequestedForPowerOptimizations:(bool)arg1;
+- (void)setMiLoConnectionProgressStatus:(int)arg1;
+- (void)setMiLoServiceQuality:(long long)arg1;
+- (void)setMiLoServiceQualityReasonBitmap:(long long)arg1;
+- (void)setMiloConnectionBridge:(id)arg1;
+- (void)setMiloServiceStatusStringQE:(id)arg1;
+- (void)setNumberOfConsecutiveMiLoFailAttempts:(int)arg1;
+- (void)setObserver:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setRequestSinglePredictionIdentifierRealTime:(id)arg1;
+- (void)setServiceUuid:(id)arg1;
+- (bool)startLowLatencyMiLoAndRequestSinglePredictionRealTime:(id*)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface HMBMirrorOutputResult : HMFObject
+
+@end

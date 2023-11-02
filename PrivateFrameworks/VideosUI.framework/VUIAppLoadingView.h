@@ -1,0 +1,31 @@
+
+@interface VUIAppLoadingView : VUIBaseView {
+    double  _delay;
+    bool  _hiding;
+    UIImageView * _maskView;
+    UIWindow * _overlayWindow;
+    VUIActivityIndicatorView * _spinner;
+    double  _timeout;
+    UIVisualEffectView * _visualEffectView;
+    UIView * _wallpaperView;
+}
+
+@property (nonatomic, retain) VUIActivityIndicatorView *spinner;
+
++ (id)loadingScreen;
+
+- (void).cxx_destruct;
+- (void)didRotate:(id)arg1;
+- (void)hide;
+- (double)hideAnimationDuration;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 templateImage:(id)arg2;
+- (bool)isVisible;
+- (void)setLoadingDelay:(double)arg1;
+- (void)setSpinner:(id)arg1;
+- (void)setTimeout:(double)arg1;
+- (void)showOverKeyWindow;
+- (void)showOverKeyWindowWithSpinnerOnly:(bool)arg1;
+- (id)spinner;
+- (void)timeout;
+
+@end

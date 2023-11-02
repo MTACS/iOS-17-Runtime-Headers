@@ -1,0 +1,4 @@
+
+@interface _TtC17DeviceDiscoveryUIP33_8C09A402DE25ED18D82CC462321EF95619ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

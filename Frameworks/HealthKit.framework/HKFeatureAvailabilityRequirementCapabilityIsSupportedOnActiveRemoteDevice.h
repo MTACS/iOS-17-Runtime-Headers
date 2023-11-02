@@ -1,0 +1,6 @@
+
+@interface HKFeatureAvailabilityRequirementCapabilityIsSupportedOnActiveRemoteDevice : _HKFeatureAvailabilityRequirementCapabilityIsSupportedOnActiveRemoteDevice
+
++ (id)requirementIdentifier;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol GCSettingsXPCProxyServerEndpointDelegate
+
+@end

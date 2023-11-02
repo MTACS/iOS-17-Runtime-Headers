@@ -1,0 +1,80 @@
+
+@interface PKTextInputDebugRadarViewController : UIViewController <PKTextInputDebugRadarEntryCellDelegate, UICollectionViewDataSource> {
+    UISegmentedControl * __contextDetailControl;
+    UICollectionView * __entriesCollectionView;
+    bool  __includeSysdiagnose;
+    NSMutableIndexSet * __includedEntryIndexes;
+    NSMutableArray * __intendedTexts;
+    double  __keyboardVerticalOverlap;
+    UIBarButtonItem * __submitButton;
+    UIButton * __sysdiagnoseButton;
+    <PKTextInputDebugRadarViewControllerDelegate> * _delegate;
+    PKTextInputDebugSharpenerLog * _sharpenerLog;
+}
+
+@property (nonatomic, retain) UISegmentedControl *_contextDetailControl;
+@property (nonatomic, retain) UICollectionView *_entriesCollectionView;
+@property (nonatomic) bool _includeSysdiagnose;
+@property (nonatomic, retain) NSMutableIndexSet *_includedEntryIndexes;
+@property (nonatomic, retain) NSMutableArray *_intendedTexts;
+@property (setter=_setKeyboardVerticalOverlap:, nonatomic) double _keyboardVerticalOverlap;
+@property (nonatomic, retain) UIBarButtonItem *_submitButton;
+@property (nonatomic, retain) UIButton *_sysdiagnoseButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKTextInputDebugRadarViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) PKTextInputDebugSharpenerLog *sharpenerLog;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_accumulatedLogEntryTextsForRadar;
+- (id)_buildString;
+- (bool)_canShowWhileLocked;
+- (void)_configureCell:(id)arg1 atIndexPath:(id)arg2;
+- (id)_contextDetailControl;
+- (id)_deviceString;
+- (void)_dismiss;
+- (id)_entriesCollectionView;
+- (id)_generateLaunchURLWithLogFilename:(id)arg1;
+- (void)_handleCancelButton:(id)arg1;
+- (void)_handleDetailControlChanged:(id)arg1;
+- (void)_handleKeyboardWillHide:(id)arg1;
+- (void)_handleKeyboardWillShow:(id)arg1;
+- (void)_handleSubmitRadarButton:(id)arg1;
+- (bool)_includeSysdiagnose;
+- (id)_includedEntryIndexes;
+- (id)_intendedTexts;
+- (double)_keyboardVerticalOverlap;
+- (void)_launchTTRAndDismiss;
+- (void)_loadIntendedTexts;
+- (id)_logEntryTextForRadarTitle;
+- (id)_loggedMainLocaleDescription;
+- (long long)_selectedContentLevel;
+- (void)_setKeyboardVerticalOverlap:(double)arg1;
+- (void)_setupViews;
+- (id)_submitButton;
+- (id)_sysdiagnoseButton;
+- (void)_toggleSysdiagnoseButton;
+- (void)_updateScrollView;
+- (void)_updateSubmitButton;
+- (void)_updateSysdiagnoseButton;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)delegate;
+- (void)entryCellIncludedEntryDidChange:(id)arg1;
+- (void)entryCellIntendedTextDidChange:(id)arg1;
+- (id)initWithSharpenerLog:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)set_contextDetailControl:(id)arg1;
+- (void)set_entriesCollectionView:(id)arg1;
+- (void)set_includeSysdiagnose:(bool)arg1;
+- (void)set_includedEntryIndexes:(id)arg1;
+- (void)set_intendedTexts:(id)arg1;
+- (void)set_submitButton:(id)arg1;
+- (void)set_sysdiagnoseButton:(id)arg1;
+- (id)sharpenerLog;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLoad;
+
+@end

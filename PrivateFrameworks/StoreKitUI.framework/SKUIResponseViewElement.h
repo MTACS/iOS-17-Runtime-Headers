@@ -1,0 +1,4 @@
+
+@interface SKUIResponseViewElement : SKUIViewElement
+
+@end

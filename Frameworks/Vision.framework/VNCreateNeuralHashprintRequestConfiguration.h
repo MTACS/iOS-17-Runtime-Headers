@@ -1,0 +1,4 @@
+
+@interface VNCreateNeuralHashprintRequestConfiguration : VNImageBasedRequestConfiguration
+
+@end

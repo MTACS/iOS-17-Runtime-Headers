@@ -1,0 +1,4 @@
+
+@interface SGDataNormalization : NSObject
+
+@end

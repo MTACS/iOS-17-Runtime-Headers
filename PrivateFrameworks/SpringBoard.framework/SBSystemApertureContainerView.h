@@ -1,0 +1,126 @@
+
+@interface SBSystemApertureContainerView : UIView <PTSettingsKeyObserver, SBSAInterfaceElementIdentifying, SBSystemApertureElementOrientationAuthority, SBSystemApertureElementOrientationObserving, SBSystemApertureElementViewControllingContaining, SBSystemApertureGainMapBackedRendering, _UILumaTrackingBackdropViewDelegate> {
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _activeContentRotationTransform;
+    UIView * _backgroundGroupingView;
+    _UILumaTrackingBackdropView * _backgroundLumaSamplingBackdrop;
+    UIView * _blobEnablingBlackFillView;
+    UIColor * _cachedValidatedKeyLineTintColor;
+    UIView * _contentClippingView;
+    UIView * _darkBkgKeyLineView;
+    <SBSystemApertureContainerViewDelegate> * _delegate;
+    <SBSystemApertureElementOrientationAuthority> * _elementOrientationAuthority;
+    UIViewController<SAUIElementViewControlling> * _elementViewController;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _gainMapLayerInsets;
+    _SBSystemApertureGainMapView * _gainMapView;
+    UIView * _hitTestView;
+    NSUUID * _interfaceElementIdentifier;
+    long long  _keyLineMode;
+    UIColor * _keyLineTintColor;
+    _SBAdaptiveKeyLineBackdropView * _lightBkgKeyLineView;
+    bool  _needsShadowStyleUpdate;
+    UIViewController<SAUIElementViewControlling> * _outgoingElementViewController;
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _previousContentTransform;
+    unsigned long long  _rank;
+    long long  _renderingBackgroundLuminanceLevel;
+    UIView * _rotatingContentView;
+    long long  _sampledBackgroundLuminanceLevel;
+    UIView * _scalingContentView;
+    SBSystemApertureSettings * _settings;
+    long long  _shadowStyle;
+    UIView * _shadowView;
+    UIView * _subBackgroundGroupingView;
+    NSMutableDictionary * _transitionIDsToReasons;
+}
+
+@property (nonatomic, readonly, copy) SBSAContainerViewDescription *containerViewDescription;
+@property (getter=isContentClippingEnabled, nonatomic) bool contentClippingEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBSystemApertureContainerViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <SBSystemApertureElementOrientationAuthority> *elementOrientationAuthority;
+@property (nonatomic) UIViewController<SAUIElementViewControlling> *elementViewController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSUUID *interfaceElementIdentifier;
+@property (nonatomic) long long keyLineMode;
+@property (nonatomic, copy) UIColor *keyLineTintColor;
+@property (nonatomic, readonly) UIViewController<SAUIElementViewControlling> *outgoingElementViewController;
+@property (nonatomic) unsigned long long rank;
+@property (nonatomic) struct SBSystemApertureContainerRenderingConfiguration { long long x1; long long x2; } renderingConfiguration;
+@property (nonatomic, readonly) long long sampledBackgroundLuminanceLevel;
+@property (nonatomic, readonly) UIView *scalingContentView;
+@property (nonatomic) long long shadowStyle;
+@property (readonly) Class superclass;
+
++ (double)_defaultCornerRadiusForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inWindow:(id)arg2;
+
+- (void).cxx_destruct;
+- (void)_applySettingsValues;
+- (id)_generateAccessibilityIdentifier;
+- (void)_invertColorsChanged:(id)arg1;
+- (bool)_isInRotationTransition;
+- (void)_layoutHitTestViewWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setContentViewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 elementViewControllerInterfaceOrientation:(long long)arg2;
+- (void)_setContinuousCornerRadius:(double)arg1;
+- (void)_setCornerRadius:(double)arg1;
+- (void)_updateContentViewTransformImmediately;
+- (void)_updateKeyLineFilters;
+- (void)_updateShadowStyleIfNeeded;
+- (id)_validatedKeyLineTintColor;
+- (long long)activeElementInterfaceOrientationForSystemApertureElementOrientationObserver:(id)arg1;
+- (void)addContentSubview:(id)arg1;
+- (void)backgroundLumaView:(id)arg1 didTransitionToLevel:(unsigned long long)arg2;
+- (id)containerViewDescription;
+- (id)delegate;
+- (id)elementOrientationAuthority;
+- (void)elementOrientationDidChangeWithTransitionCoordinator:(id)arg1;
+- (id)elementViewController;
+- (id)initWithInterfaceElementIdentifier:(id)arg1;
+- (id)interfaceElementIdentifier;
+- (bool)isContentClippingEnabled;
+- (long long)keyLineMode;
+- (id)keyLineTintColor;
+- (void)layoutSubviews;
+- (id)outgoingElementViewController;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (unsigned long long)rank;
+- (struct SBSystemApertureContainerRenderingConfiguration { long long x1; long long x2; })renderingConfiguration;
+- (long long)sampledBackgroundLuminanceLevel;
+- (id)scalingContentView;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setContentClippingEnabled:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setElementOrientationAuthority:(id)arg1;
+- (void)setElementViewController:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setID0CornerRadius:(double)arg1;
+- (void)setKeyLineMode:(long long)arg1;
+- (void)setKeyLineTintColor:(id)arg1;
+- (void)setNeedsLayout;
+- (void)setRank:(unsigned long long)arg1;
+- (void)setRenderingConfiguration:(struct SBSystemApertureContainerRenderingConfiguration { long long x1; long long x2; })arg1;
+- (void)setShadowStyle:(long long)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (long long)shadowStyle;
+- (void)willMoveToSuperview:(id)arg1;
+
+@end

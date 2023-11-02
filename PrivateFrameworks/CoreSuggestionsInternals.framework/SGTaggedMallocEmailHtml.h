@@ -1,0 +1,4 @@
+
+@interface SGTaggedMallocEmailHtml : NSObject
+
+@end

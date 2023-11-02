@@ -1,0 +1,4 @@
+
+@protocol IMDDatabaseQueries <NSObject>
+
+@end

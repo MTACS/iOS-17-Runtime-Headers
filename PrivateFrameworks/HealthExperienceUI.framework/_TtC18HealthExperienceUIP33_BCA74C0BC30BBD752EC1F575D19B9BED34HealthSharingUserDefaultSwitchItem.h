@@ -1,0 +1,4 @@
+
+@interface _TtC18HealthExperienceUIP33_BCA74C0BC30BBD752EC1F575D19B9BED34HealthSharingUserDefaultSwitchItem : HealthExperienceUI.UserDefaultSwitchItem
+
+@end

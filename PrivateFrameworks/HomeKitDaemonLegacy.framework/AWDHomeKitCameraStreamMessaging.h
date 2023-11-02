@@ -1,0 +1,82 @@
+
+@interface AWDHomeKitCameraStreamMessaging : PBCodable <NSCopying> {
+    struct { 
+        unsigned int receivedConnSetup : 1; 
+        unsigned int receivedNegotiationRequest : 1; 
+        unsigned int receivedStartRequest : 1; 
+        unsigned int sentConnSetup : 1; 
+        unsigned int sentNegotiationRequest : 1; 
+        unsigned int sentNegotiationResponse : 1; 
+        unsigned int sentStartRequest : 1; 
+        unsigned int sentStartResponse : 1; 
+    }  _has;
+    unsigned int  _receivedConnSetup;
+    unsigned int  _receivedNegotiationRequest;
+    unsigned int  _receivedStartRequest;
+    unsigned int  _sentConnSetup;
+    unsigned int  _sentNegotiationRequest;
+    unsigned int  _sentNegotiationResponse;
+    unsigned int  _sentStartRequest;
+    unsigned int  _sentStartResponse;
+}
+
+@property (nonatomic) bool hasReceivedConnSetup;
+@property (nonatomic) bool hasReceivedNegotiationRequest;
+@property (nonatomic) bool hasReceivedStartRequest;
+@property (nonatomic) bool hasSentConnSetup;
+@property (nonatomic) bool hasSentNegotiationRequest;
+@property (nonatomic) bool hasSentNegotiationResponse;
+@property (nonatomic) bool hasSentStartRequest;
+@property (nonatomic) bool hasSentStartResponse;
+@property (nonatomic) unsigned int receivedConnSetup;
+@property (nonatomic) unsigned int receivedNegotiationRequest;
+@property (nonatomic) unsigned int receivedStartRequest;
+@property (nonatomic) unsigned int sentConnSetup;
+@property (nonatomic) unsigned int sentNegotiationRequest;
+@property (nonatomic) unsigned int sentNegotiationResponse;
+@property (nonatomic) unsigned int sentStartRequest;
+@property (nonatomic) unsigned int sentStartResponse;
+
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasReceivedConnSetup;
+- (bool)hasReceivedNegotiationRequest;
+- (bool)hasReceivedStartRequest;
+- (bool)hasSentConnSetup;
+- (bool)hasSentNegotiationRequest;
+- (bool)hasSentNegotiationResponse;
+- (bool)hasSentStartRequest;
+- (bool)hasSentStartResponse;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)receivedConnSetup;
+- (unsigned int)receivedNegotiationRequest;
+- (unsigned int)receivedStartRequest;
+- (unsigned int)sentConnSetup;
+- (unsigned int)sentNegotiationRequest;
+- (unsigned int)sentNegotiationResponse;
+- (unsigned int)sentStartRequest;
+- (unsigned int)sentStartResponse;
+- (void)setHasReceivedConnSetup:(bool)arg1;
+- (void)setHasReceivedNegotiationRequest:(bool)arg1;
+- (void)setHasReceivedStartRequest:(bool)arg1;
+- (void)setHasSentConnSetup:(bool)arg1;
+- (void)setHasSentNegotiationRequest:(bool)arg1;
+- (void)setHasSentNegotiationResponse:(bool)arg1;
+- (void)setHasSentStartRequest:(bool)arg1;
+- (void)setHasSentStartResponse:(bool)arg1;
+- (void)setReceivedConnSetup:(unsigned int)arg1;
+- (void)setReceivedNegotiationRequest:(unsigned int)arg1;
+- (void)setReceivedStartRequest:(unsigned int)arg1;
+- (void)setSentConnSetup:(unsigned int)arg1;
+- (void)setSentNegotiationRequest:(unsigned int)arg1;
+- (void)setSentNegotiationResponse:(unsigned int)arg1;
+- (void)setSentStartRequest:(unsigned int)arg1;
+- (void)setSentStartResponse:(unsigned int)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

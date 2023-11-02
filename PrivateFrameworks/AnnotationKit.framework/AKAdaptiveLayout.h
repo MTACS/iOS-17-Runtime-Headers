@@ -1,0 +1,4 @@
+
+@interface AKAdaptiveLayout : NSObject
+
+@end

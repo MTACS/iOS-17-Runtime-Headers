@@ -1,0 +1,70 @@
+
+@interface NWURLSessionDelegateWrapper : NSObject {
+    NWURLSessionDelegateQueue * _delegateQueueWrapper;
+    NWURLSessionDelegateWrapper * _fallbackDelegateWrapper;
+    NSURLSession * _session;
+    NSObject<OS_dispatch_queue> * _workQueue;
+    <NSObject> * _wrappedDelegate;
+    unsigned int  accept__didReceiveInformationalResponse;
+    unsigned int  accept__schemeUpgraded;
+    unsigned int  accept_betterRouteDiscovered;
+    unsigned int  accept_didBecomeDownloadTask;
+    unsigned int  accept_didBecomeInputOutputStream;
+    unsigned int  accept_didBecomeStreamTask;
+    unsigned int  accept_didCloseWithCode;
+    unsigned int  accept_didCompleteWithError;
+    unsigned int  accept_didCreateTask;
+    unsigned int  accept_didFinishCollectingMetrics;
+    unsigned int  accept_didFinishDownloadingToURL;
+    unsigned int  accept_didOpenWithProtocol;
+    unsigned int  accept_didReceiveChallenge;
+    unsigned int  accept_didReceiveData_withCB;
+    unsigned int  accept_didReceiveData_withoutCB;
+    unsigned int  accept_didReceiveResponse;
+    unsigned int  accept_didResumeAtOffset;
+    unsigned int  accept_didSendBodyData;
+    unsigned int  accept_didWriteData;
+    unsigned int  accept_isWaitingForConnectivity;
+    unsigned int  accept_needNewBodyStream;
+    unsigned int  accept_readClosed;
+    unsigned int  accept_sessionDidBecomeInvalidWithError;
+    unsigned int  accept_sessionDidFinishEventsForBackgroundURLSession;
+    unsigned int  accept_sessionDidReceiveChallenge;
+    unsigned int  accept_willBeginDelayedRequest;
+    unsigned int  accept_willCacheResponse;
+    unsigned int  accept_willPerformHTTPRedirection;
+    unsigned int  accept_writeClosed;
+    unsigned int  checked__didReceiveInformationalResponse;
+    unsigned int  checked__schemeUpgraded;
+    unsigned int  checked_betterRouteDiscovered;
+    unsigned int  checked_didBecomeDownloadTask;
+    unsigned int  checked_didBecomeInputOutputStream;
+    unsigned int  checked_didBecomeStreamTask;
+    unsigned int  checked_didCloseWithCode;
+    unsigned int  checked_didCompleteWithError;
+    unsigned int  checked_didCreateTask;
+    unsigned int  checked_didFinishCollectingMetrics;
+    unsigned int  checked_didFinishDownloadingToURL;
+    unsigned int  checked_didOpenWithProtocol;
+    unsigned int  checked_didReceiveChallenge;
+    unsigned int  checked_didReceiveData_withCB;
+    unsigned int  checked_didReceiveData_withoutCB;
+    unsigned int  checked_didReceiveResponse;
+    unsigned int  checked_didResumeAtOffset;
+    unsigned int  checked_didSendBodyData;
+    unsigned int  checked_didWriteData;
+    unsigned int  checked_isWaitingForConnectivity;
+    unsigned int  checked_needNewBodyStream;
+    unsigned int  checked_readClosed;
+    unsigned int  checked_sessionDidBecomeInvalidWithError;
+    unsigned int  checked_sessionDidFinishEventsForBackgroundURLSession;
+    unsigned int  checked_sessionDidReceiveChallenge;
+    unsigned int  checked_willBeginDelayedRequest;
+    unsigned int  checked_willCacheResponse;
+    unsigned int  checked_willPerformHTTPRedirection;
+    unsigned int  checked_writeClosed;
+}
+
+- (void).cxx_destruct;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface TSWPBundleLookupClass : NSObject
+
+@end

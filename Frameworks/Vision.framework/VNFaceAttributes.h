@@ -1,0 +1,97 @@
+
+@interface VNFaceAttributes : NSObject <NSCopying, NSSecureCoding, VNObjectCloning, VNRequestRevisionProviding> {
+    VNFaceAttributeCategory * _VN1uMyFtnYEWjbrdx3yAuDndKkPeyzNJhB;
+    VNFaceAttributeCategory * _VN2riiZbQrloRhCzYW56f0rk4N3ROe151S;
+    VNFaceAttributeCategory * _VN3iT1YRjjnIuELobV1olJiO1vvItN6Kdq;
+    VNFaceAttributeCategory * _VN4UfLbvVUqMvYV8bbGFQcxg5yRLm8ekI1;
+    VNFaceAttributeCategory * _VN7CbCeAogPS2iHE6VQwu6H96xanljtMqk;
+    VNFaceAttributeCategory * _VN7exwFFmQF0AI9P7FjBljwEFu7QYUGCYE;
+    VNFaceAttributeCategory * _VN7fiLHgGnvqPqG63cfDUCK4Xm8obUuWoP;
+    VNFaceAttributeCategory * _VNpLorzxnyAlLcPFNcKhgoNCmy9b5BRWyk;
+    VNFaceAttributeCategory * _ageCategory;
+    VNFaceAttributeCategory * _baldCategory;
+    VNFaceAttributeCategory * _eyesCategory;
+    VNFaceAttributeCategory * _faceHairCategory;
+    VNFaceAttributeCategory * _facemaskCategory;
+    VNFaceAttributeCategory * _glassesCategory;
+    VNFaceAttributeCategory * _hairColorCategory;
+    VNFaceAttributeCategory * _makeupCategory;
+    VNFaceAttributeCategory * _makeupEyesCategory;
+    VNFaceAttributeCategory * _makeupLipsCategory;
+    unsigned long long  _requestRevision;
+    VNFaceAttributeCategory * _smilingCategory;
+}
+
+@property (readonly) VNFaceAttributeCategory *VN1uMyFtnYEWjbrdx3yAuDndKkPeyzNJhB;
+@property (readonly) VNFaceAttributeCategory *VN2riiZbQrloRhCzYW56f0rk4N3ROe151S;
+@property (readonly) VNFaceAttributeCategory *VN3iT1YRjjnIuELobV1olJiO1vvItN6Kdq;
+@property (readonly) VNFaceAttributeCategory *VN4UfLbvVUqMvYV8bbGFQcxg5yRLm8ekI1;
+@property (readonly) VNFaceAttributeCategory *VN7CbCeAogPS2iHE6VQwu6H96xanljtMqk;
+@property (readonly) VNFaceAttributeCategory *VN7exwFFmQF0AI9P7FjBljwEFu7QYUGCYE;
+@property (readonly) VNFaceAttributeCategory *VN7fiLHgGnvqPqG63cfDUCK4Xm8obUuWoP;
+@property (readonly) VNFaceAttributeCategory *VNpLorzxnyAlLcPFNcKhgoNCmy9b5BRWyk;
+@property (readonly) VNFaceAttributeCategory *ageCategory;
+@property (readonly) VNFaceAttributeCategory *baldCategory;
+@property (readonly) VNFaceAttributeCategory *eyesCategory;
+@property (readonly) VNFaceAttributeCategory *faceHairCategory;
+@property (readonly) VNFaceAttributeCategory *facemaskCategory;
+@property (readonly) VNFaceAttributeCategory *genderCategory;
+@property (readonly) VNFaceAttributeCategory *glassesCategory;
+@property (readonly) VNFaceAttributeCategory *hairColorCategory;
+@property (readonly) VNFaceAttributeCategory *makeupCategory;
+@property (readonly) VNFaceAttributeCategory *makeupEyesCategory;
+@property (readonly) VNFaceAttributeCategory *makeupLipsCategory;
+@property (nonatomic, readonly) unsigned long long requestRevision;
+@property (readonly) VNFaceAttributeCategory *smilingCategory;
+@property (readonly) VNFaceAttributeCategory *vNpLorzxnyAlLcPFNcKhgoNCmy9b5BRWyk;
+@property (readonly) VNFaceAttributeCategory *vn1uMyFtnYEWjbrdx3yAuDndKkPeyzNJhB;
+@property (readonly) VNFaceAttributeCategory *vn2riiZbQrloRhCzYW56f0rk4N3ROe151S;
+@property (readonly) VNFaceAttributeCategory *vn3iT1YRjjnIuELobV1olJiO1vvItN6Kdq;
+@property (readonly) VNFaceAttributeCategory *vn4UfLbvVUqMvYV8bbGFQcxg5yRLm8ekI1;
+@property (readonly) VNFaceAttributeCategory *vn7CbCeAogPS2iHE6VQwu6H96xanljtMqk;
+@property (readonly) VNFaceAttributeCategory *vn7exwFFmQF0AI9P7FjBljwEFu7QYUGCYE;
+@property (readonly) VNFaceAttributeCategory *vn7fiLHgGnvqPqG63cfDUCK4Xm8obUuWoP;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)VN1uMyFtnYEWjbrdx3yAuDndKkPeyzNJhB;
+- (id)VN2riiZbQrloRhCzYW56f0rk4N3ROe151S;
+- (id)VN3iT1YRjjnIuELobV1olJiO1vvItN6Kdq;
+- (id)VN4UfLbvVUqMvYV8bbGFQcxg5yRLm8ekI1;
+- (id)VN7CbCeAogPS2iHE6VQwu6H96xanljtMqk;
+- (id)VN7exwFFmQF0AI9P7FjBljwEFu7QYUGCYE;
+- (id)VN7fiLHgGnvqPqG63cfDUCK4Xm8obUuWoP;
+- (id)VNpLorzxnyAlLcPFNcKhgoNCmy9b5BRWyk;
+- (id)ageCategory;
+- (id)baldCategory;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)eyesCategory;
+- (id)faceHairCategory;
+- (id)facemaskCategory;
+- (id)genderCategory;
+- (id)glassesCategory;
+- (id)hairColorCategory;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithRequestRevision:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)makeupCategory;
+- (id)makeupEyesCategory;
+- (id)makeupLipsCategory;
+- (unsigned long long)requestRevision;
+- (void)setAgeCategory:(id)arg1;
+- (void)setVN5ui9WkMeVvCBruHiQE1q2r6E9kO1AyrP:(id)arg1;
+- (id)smilingCategory;
+- (id)vNpLorzxnyAlLcPFNcKhgoNCmy9b5BRWyk;
+- (id)vn1uMyFtnYEWjbrdx3yAuDndKkPeyzNJhB;
+- (id)vn2riiZbQrloRhCzYW56f0rk4N3ROe151S;
+- (id)vn3iT1YRjjnIuELobV1olJiO1vvItN6Kdq;
+- (id)vn4UfLbvVUqMvYV8bbGFQcxg5yRLm8ekI1;
+- (id)vn7CbCeAogPS2iHE6VQwu6H96xanljtMqk;
+- (id)vn7exwFFmQF0AI9P7FjBljwEFu7QYUGCYE;
+- (id)vn7fiLHgGnvqPqG63cfDUCK4Xm8obUuWoP;
+- (id)vn_cloneObject;
+
+@end

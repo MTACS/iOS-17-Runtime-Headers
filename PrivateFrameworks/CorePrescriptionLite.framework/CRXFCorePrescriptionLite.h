@@ -1,0 +1,4 @@
+
+@interface CRXFCorePrescriptionLite : NSObject
+
+@end

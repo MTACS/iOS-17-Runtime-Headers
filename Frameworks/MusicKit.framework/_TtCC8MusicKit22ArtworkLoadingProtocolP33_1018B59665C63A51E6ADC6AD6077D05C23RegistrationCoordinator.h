@@ -1,0 +1,4 @@
+
+@interface _TtCC8MusicKit22ArtworkLoadingProtocolP33_1018B59665C63A51E6ADC6AD6077D05C23RegistrationCoordinator : _TtCs12_SwiftObject
+
+@end

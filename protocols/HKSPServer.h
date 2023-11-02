@@ -1,0 +1,9 @@
+
+@protocol HKSPServer
+
+@required
+
+- (void)checkInWithSyncAnchorContainer:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: HKSPSyncAnchorContainer *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)connectWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, HKSPSyncAnchorContainer *, NSError *, void*
+
+@end

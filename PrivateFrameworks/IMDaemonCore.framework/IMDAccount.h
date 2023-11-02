@@ -1,0 +1,87 @@
+
+@interface IMDAccount : NSObject <IMSystemMonitorListener> {
+    NSMutableDictionary * _accountDefaults;
+    NSString * _accountID;
+    bool  _loading;
+    NSString * _loginID;
+    bool  _managed;
+    NSArray * _replicationSessions;
+    IMDService * _service;
+    int  _serviceDisconnectReason;
+    unsigned int  _serviceLoginStatus;
+    NSString * _serviceLoginStatusMessage;
+    IMDServiceSession * _session;
+    bool  _shouldPublishNowPlaying;
+}
+
+@property (nonatomic, readonly) NSDictionary *accountDefaults;
+@property (nonatomic, copy) NSString *accountID;
+@property (nonatomic, readonly) long long accountType;
+@property (getter=isActive, nonatomic, readonly) bool active;
+@property (nonatomic, readonly, copy) NSArray *aliases;
+@property (nonatomic, readonly) bool canMakeDowngradeRoutingChecks;
+@property (getter=isDisabled, nonatomic, readonly) bool disabled;
+@property (getter=isLoading, nonatomic) bool loading;
+@property (nonatomic, copy) NSString *loginID;
+@property (getter=isManaged, nonatomic) bool managed;
+@property (nonatomic, readonly, retain) NSDictionary *registrationAlertInfo;
+@property (nonatomic, readonly) int registrationError;
+@property (nonatomic, readonly) int registrationStatus;
+@property (nonatomic, readonly) NSArray *replicationSessions;
+@property (nonatomic, retain) IMDService *service;
+@property (nonatomic) int serviceDisconnectReason;
+@property (nonatomic) unsigned int serviceLoginStatus;
+@property (nonatomic, copy) NSString *serviceLoginStatusMessage;
+@property (nonatomic, retain) IMDServiceSession *session;
+@property (nonatomic, readonly) bool shouldPublishNowPlaying;
+@property (nonatomic) bool wasDisabledAutomatically;
+
+- (void).cxx_destruct;
+- (void)_createReplicationSessionsIfNecessary;
+- (void)_forceSetLoginStatus:(unsigned int)arg1 message:(id)arg2 reason:(int)arg3 properties:(id)arg4;
+- (id)_registrationInfo;
+- (id)accountDefaults;
+- (id)accountID;
+- (id)accountInfoToPost;
+- (long long)accountType;
+- (id)aliases;
+- (bool)canMakeDowngradeRoutingChecks;
+- (void)createSessionIfNecessary;
+- (void)dealloc;
+- (id)initWithAccountID:(id)arg1 defaults:(id)arg2 service:(id)arg3;
+- (bool)isActive;
+- (bool)isDisabled;
+- (bool)isLoading;
+- (bool)isManaged;
+- (id)loginID;
+- (void)postAccountCapabilities;
+- (id)registrationAlertInfo;
+- (int)registrationError;
+- (int)registrationStatus;
+- (void)releaseSession;
+- (id)replicationSessions;
+- (void)resetReplicationSessions;
+- (id)service;
+- (int)serviceDisconnectReason;
+- (unsigned int)serviceLoginStatus;
+- (id)serviceLoginStatusMessage;
+- (id)session;
+- (void)setAccountID:(id)arg1;
+- (void)setIsManaged:(bool)arg1;
+- (void)setLoading:(bool)arg1;
+- (void)setLoginID:(id)arg1;
+- (void)setLoginStatus:(unsigned int)arg1 message:(id)arg2;
+- (void)setLoginStatus:(unsigned int)arg1 message:(id)arg2 reason:(int)arg3 properties:(id)arg4;
+- (void)setManaged:(bool)arg1;
+- (void)setRegistrationStatus:(int)arg1 error:(int)arg2 alertInfo:(id)arg3;
+- (void)setService:(id)arg1;
+- (void)setServiceDisconnectReason:(int)arg1;
+- (void)setServiceLoginStatus:(unsigned int)arg1;
+- (void)setServiceLoginStatusMessage:(id)arg1;
+- (void)setSession:(id)arg1;
+- (void)setWasDisabledAutomatically:(bool)arg1;
+- (bool)shouldPublishNowPlaying;
+- (bool)wasDisabledAutomatically;
+- (void)writeAccountDefaults:(id)arg1;
+
+@end

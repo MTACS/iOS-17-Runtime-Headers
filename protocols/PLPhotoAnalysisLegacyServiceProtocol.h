@@ -1,0 +1,4 @@
+
+@protocol PLPhotoAnalysisLegacyServiceProtocol <PLPhotoAnalysisJobServiceProtocol, PLPhotoAnalysisGraphServiceProtocol, PLPhotoAnalysisGraphServiceMusicProtocol, PLPhotoAnalysisGraphServiceClientProtocol, PLPhotoAnalysisVisionServiceFaceProcessingProtocol, PLPhotoAnalysisPresentationServiceProtocol>
+
+@end

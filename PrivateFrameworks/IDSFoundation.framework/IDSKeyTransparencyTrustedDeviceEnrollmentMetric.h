@@ -1,0 +1,81 @@
+
+@interface IDSKeyTransparencyTrustedDeviceEnrollmentMetric : NSObject <CUTRTCMetric> {
+    long long  _accountKeyErrorCode;
+    NSString * _accountKeyErrorDomain;
+    double  _accountKeyOperationTimeInterval;
+    bool  _accountKeySuccess;
+    long long  _accountKeyUnderlyingErrorCode;
+    NSString * _accountKeyUnderlyingErrorDomain;
+    long long  _cloudKitErrorCode;
+    NSString * _cloudKitErrorDomain;
+    double  _cloudKitOperationTimeInterval;
+    bool  _cloudKitSuccess;
+    long long  _cloudKitUnderlyingErrorCode;
+    NSString * _cloudKitUnderlyingErrorDomain;
+    bool  _isKVSMetric;
+    unsigned long long  _keyTransparencyVersion;
+    long long  _kvsErrorCode;
+    NSString * _kvsErrorDomain;
+    bool  _kvsSuccess;
+    double  _kvsSyncTimeInterval;
+    long long  _kvsUnderlyingErrorCode;
+    NSString * _kvsUnderlyingErrorDomain;
+}
+
+@property (nonatomic, readonly) long long accountKeyErrorCode;
+@property (nonatomic, readonly) NSString *accountKeyErrorDomain;
+@property (nonatomic, readonly) double accountKeyOperationTimeInterval;
+@property (nonatomic, readonly) bool accountKeySuccess;
+@property (nonatomic, readonly) long long accountKeyUnderlyingErrorCode;
+@property (nonatomic, readonly) NSString *accountKeyUnderlyingErrorDomain;
+@property (nonatomic, readonly) long long cloudKitErrorCode;
+@property (nonatomic, readonly) NSString *cloudKitErrorDomain;
+@property (nonatomic, readonly) double cloudKitOperationTimeInterval;
+@property (nonatomic, readonly) bool cloudKitSuccess;
+@property (nonatomic, readonly) long long cloudKitUnderlyingErrorCode;
+@property (nonatomic, readonly) NSString *cloudKitUnderlyingErrorDomain;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSDictionary *dictionaryRepresentation;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isKVSMetric;
+@property (nonatomic, readonly) unsigned long long keyTransparencyVersion;
+@property (nonatomic, readonly) long long kvsErrorCode;
+@property (nonatomic, readonly) NSString *kvsErrorDomain;
+@property (nonatomic, readonly) bool kvsSuccess;
+@property (nonatomic, readonly) double kvsSyncTimeInterval;
+@property (nonatomic, readonly) long long kvsUnderlyingErrorCode;
+@property (nonatomic, readonly) NSString *kvsUnderlyingErrorDomain;
+@property (readonly) NSString *name;
+@property (readonly) unsigned short rtcType;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (long long)accountKeyErrorCode;
+- (id)accountKeyErrorDomain;
+- (double)accountKeyOperationTimeInterval;
+- (bool)accountKeySuccess;
+- (long long)accountKeyUnderlyingErrorCode;
+- (id)accountKeyUnderlyingErrorDomain;
+- (long long)cloudKitErrorCode;
+- (id)cloudKitErrorDomain;
+- (double)cloudKitOperationTimeInterval;
+- (bool)cloudKitSuccess;
+- (long long)cloudKitUnderlyingErrorCode;
+- (id)cloudKitUnderlyingErrorDomain;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)initWithKeyTransparencyVersion:(unsigned long long)arg1 cloudKitSuccess:(bool)arg2 cloudKitErrorDomain:(id)arg3 cloudKitErrorCode:(long long)arg4 cloudKitUnderlyingErrorDomain:(id)arg5 cloudKitUnderlyingErrorCode:(long long)arg6 cloudKitOperationTimeInterval:(double)arg7 accountKeySuccess:(bool)arg8 accountKeyErrorDomain:(id)arg9 accountKeyErrorCode:(long long)arg10 accountKeyUnderlyingErrorDomain:(id)arg11 accountKeyUnderlyingErrorCode:(long long)arg12 accountKeyOperationTimeInterval:(double)arg13;
+- (id)initWithKeyTransparencyVersion:(unsigned long long)arg1 kvsSuccess:(bool)arg2 kvsErrorDomain:(id)arg3 kvsErrorCode:(long long)arg4 kvsSyncTimeInterval:(double)arg5 kvsUnderlyingErrorDomain:(id)arg6 kvsUnderlyingErrorCode:(long long)arg7;
+- (bool)isKVSMetric;
+- (unsigned long long)keyTransparencyVersion;
+- (long long)kvsErrorCode;
+- (id)kvsErrorDomain;
+- (bool)kvsSuccess;
+- (double)kvsSyncTimeInterval;
+- (long long)kvsUnderlyingErrorCode;
+- (id)kvsUnderlyingErrorDomain;
+- (id)name;
+- (unsigned short)rtcType;
+
+@end

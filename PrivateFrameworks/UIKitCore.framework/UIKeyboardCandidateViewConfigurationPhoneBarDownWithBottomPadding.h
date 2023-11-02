@@ -1,0 +1,4 @@
+
+@interface UIKeyboardCandidateViewConfigurationPhoneBarDownWithBottomPadding : UIKeyboardCandidateViewConfigurationPhoneBarDown
+
+@end

@@ -1,0 +1,4 @@
+
+@interface PPFeedbackExclusionProvider : NSObject
+
+@end

@@ -1,0 +1,91 @@
+
+@interface STUIStatusBarVisualProvider_Pad : STUIStatusBarVisualProvider_iOS <STUIStatusBarRegionCursorInsetProvider> {
+    _UILumaTrackingBackdropView * _centerBackgroundLumaView;
+    STUIStatusBarDisplayItemPlacement * _datePlacement;
+    _UILumaTrackingBackdropView * _leadingBackgroundLumaView;
+    NSLayoutConstraint * _leadingRegionTrailingAnchorConstraint;
+    NSDictionary * _orderedDisplayItemPlacements;
+    STUIStatusBarDisplayItemPlacement * _timePlacement;
+    _UILumaTrackingBackdropView * _trailingBackgroundLumaView;
+    NSLayoutConstraint * _trailingRegionLeadingAnchorConstraint;
+}
+
+@property (nonatomic, readonly) bool canFixupDisplayItemAttributes;
+@property (nonatomic, retain) _UILumaTrackingBackdropView *centerBackgroundLumaView;
+@property (nonatomic, readonly) UIFont *clockFont;
+@property (nonatomic, retain) STUIStatusBarDisplayItemPlacement *datePlacement;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; } expandedEdgeInsets;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) _UILumaTrackingBackdropView *leadingBackgroundLumaView;
+@property (nonatomic, retain) NSLayoutConstraint *leadingRegionTrailingAnchorConstraint;
+@property (nonatomic, retain) NSDictionary *orderedDisplayItemPlacements;
+@property (nonatomic) STUIStatusBar *statusBar;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsIndirectPointerTouchActions;
+@property (nonatomic, retain) STUIStatusBarDisplayItemPlacement *timePlacement;
+@property (nonatomic, retain) _UILumaTrackingBackdropView *trailingBackgroundLumaView;
+@property (nonatomic, retain) NSLayoutConstraint *trailingRegionLeadingAnchorConstraint;
+
++ (double)baselineOffset;
++ (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
++ (double)height;
++ (double)regionCursorCornerRadius;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })regionCursorInsets;
++ (bool)regionCursorIsPill;
++ (Class)visualProviderSubclassForScreen:(id)arg1 visualProviderInfo:(id)arg2;
+
+- (void).cxx_destruct;
+- (void)_dateTimePreferencesUpdated;
+- (void)_updateConstraintsForAvoidanceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)_updateDateAndTimePlacements;
+- (void)actionable:(id)arg1 highlighted:(bool)arg2 initialPress:(bool)arg3;
+- (double)airplaneShouldFadeForAnimationType:(long long)arg1;
+- (double)airplaneSpeedForAnimationType:(long long)arg1;
+- (double)airplaneTravelOffsetInProposedPartWithIdentifier:(id*)arg1 animationType:(long long)arg2;
+- (void)avoidanceFrameUpdatedFromFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withAnimationSettings:(id)arg2 options:(unsigned long long)arg3;
+- (id)centerBackgroundLumaView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clockBoundsForLayoutItem:(id)arg1;
+- (id)clockFont;
+- (id)datePlacement;
+- (void)dealloc;
+- (id)displayItemIdentifiersForPartWithIdentifier:(id)arg1;
+- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })expandedEdgeInsets;
+- (id)expandedFont;
+- (id)expandedPillFont;
+- (struct CGSize { double x1; double x2; })expandedPillSize;
+- (id)init;
+- (void)itemCreated:(id)arg1;
+- (id)leadingBackgroundLumaView;
+- (id)leadingRegionTrailingAnchorConstraint;
+- (id)normalFont;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)orderedDisplayItemPlacements;
+- (id)orderedDisplayItemPlacementsInRegionWithIdentifier:(id)arg1;
+- (id)overriddenStyleAttributesForDisplayItemWithIdentifier:(id)arg1;
+- (id)pillFont;
+- (struct CGSize { double x1; double x2; })pillSize;
+- (id)pillSmallFont;
+- (id)regionIdentifiersForBackgroundLumaView:(id)arg1;
+- (id)regionIdentifiersForPartWithIdentifier:(id)arg1;
+- (double)regionSpacing;
+- (void)setCenterBackgroundLumaView:(id)arg1;
+- (void)setDatePlacement:(id)arg1;
+- (void)setLeadingBackgroundLumaView:(id)arg1;
+- (void)setLeadingRegionTrailingAnchorConstraint:(id)arg1;
+- (void)setOrderedDisplayItemPlacements:(id)arg1;
+- (void)setTimePlacement:(id)arg1;
+- (void)setTrailingBackgroundLumaView:(id)arg1;
+- (void)setTrailingRegionLeadingAnchorConstraint:(id)arg1;
+- (id)setupInContainerView:(id)arg1;
+- (void)sizeUpdatedFromSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })smallPillSize;
+- (void)statusBarEnabledPartsUpdated;
+- (id)styleAttributesForStyle:(long long)arg1;
+- (id)timePlacement;
+- (id)trailingBackgroundLumaView;
+- (id)trailingRegionLeadingAnchorConstraint;
+- (bool)wantsPillInExpandedTrailingPlacements;
+
+@end

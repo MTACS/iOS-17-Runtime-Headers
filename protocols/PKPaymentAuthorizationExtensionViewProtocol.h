@@ -1,0 +1,4 @@
+
+@protocol PKPaymentAuthorizationExtensionViewProtocol <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface DUSchemaDataUploadContent : DUSchemaDUContent
+
+@end

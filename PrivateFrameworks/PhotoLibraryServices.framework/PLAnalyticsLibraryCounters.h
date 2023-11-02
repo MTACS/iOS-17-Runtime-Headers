@@ -1,0 +1,55 @@
+
+@interface PLAnalyticsLibraryCounters : NSObject {
+    _Atomic unsigned long long  addedInLast30Days;
+    _Atomic unsigned long long  adjustedCount;
+    _Atomic unsigned long long  assetCount;
+    _Atomic unsigned long long  assetsWithFacesCount;
+    _Atomic unsigned long long  assetsWithOCRCount;
+    _Atomic unsigned long long  assetsWithOCROrFacesCount;
+    _Atomic unsigned long long  assetsWithTorsoOnlyFacesCount;
+    _Atomic unsigned long long  camera;
+    _Atomic unsigned long long  contactLinkedPersonCount;
+    _Atomic unsigned long long  duplicateAssetCount;
+    _Atomic unsigned long long  duplicateAssetGroupCount;
+    _Atomic unsigned long long  duplicateSharedLibraryAssetCount;
+    _Atomic unsigned long long  faceCount;
+    _Atomic unsigned long long  favoriteCount;
+    _Atomic unsigned long long  favoritedPersonCount;
+    _Atomic unsigned long long  finderSyncedAssetCount;
+    _Atomic unsigned long long  gpsLocationCount;
+    _Atomic unsigned long long  graphVerifiedPersonCount;
+    _Atomic unsigned long long  heifCount;
+    _Atomic unsigned long long  hiddenPersonCount;
+    _Atomic unsigned long long  importedByAssetCount;
+    _Atomic unsigned long long  isActive;
+    _Atomic unsigned long long  jpegCount;
+    _Atomic unsigned long long  junkCount;
+    _Atomic unsigned long long  livePhotosCount;
+    _Atomic unsigned long long  namedPersonCount;
+    _Atomic unsigned long long  nonGuestSavedFromMessagesCount;
+    _Atomic unsigned long long  originalOnTopAssetCount;
+    _Atomic unsigned long long  otherImagesCount;
+    _Atomic unsigned long long  otherMediaCount;
+    _Atomic unsigned long long  personCount;
+    _Atomic unsigned long long  personPetDetectionTypeCount;
+    _Atomic unsigned long long  personalLibraryAssetCount;
+    _Atomic unsigned long long  photosCount;
+    _Atomic unsigned long long  portraitCount;
+    _Atomic unsigned long long  rawCount;
+    _Atomic unsigned long long  resourceCount;
+    _Atomic unsigned long long  savedFromMessagesCount;
+    _Atomic unsigned long long  savedFromPhotosCount;
+    _Atomic unsigned long long  screenshotCount;
+    _Atomic unsigned long long  sharedLibraryAssetCount;
+    _Atomic unsigned long long  sharedLibraryAssetsAddedInCameraCount;
+    _Atomic unsigned long long  sharedLibraryAssetsAddedInSuggestionsCount;
+    _Atomic unsigned long long  sharedLibraryAssetsAddedManuallyCount;
+    _Atomic unsigned long long  sharedLibraryLocalAssetsAddedInCameraCount;
+    _Atomic unsigned long long  tombstonePersonCount;
+    _Atomic unsigned long long  trashedAssetCount;
+    _Atomic unsigned long long  userFeedbackPersonCount;
+    _Atomic unsigned long long  userVerifiedPersonCount;
+    _Atomic unsigned long long  videosCount;
+}
+
+@end

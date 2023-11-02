@@ -1,0 +1,13 @@
+
+@interface SiriMessageTypes.TRPFinalizedMessage : SiriMessageTypes.RequestMessageBase {
+    void finalTCUId;
+    void finalTRPId;
+    void lastTRPCandidateId;
+}
+
+@property (nonatomic, readonly) NSString *description;
+
+- (void).cxx_destruct;
+- (id)description;
+
+@end

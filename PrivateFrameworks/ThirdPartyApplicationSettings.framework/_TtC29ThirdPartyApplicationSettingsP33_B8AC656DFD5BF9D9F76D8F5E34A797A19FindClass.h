@@ -1,0 +1,4 @@
+
+@interface _TtC29ThirdPartyApplicationSettingsP33_B8AC656DFD5BF9D9F76D8F5E34A797A19FindClass : _TtCs12_SwiftObject
+
+@end

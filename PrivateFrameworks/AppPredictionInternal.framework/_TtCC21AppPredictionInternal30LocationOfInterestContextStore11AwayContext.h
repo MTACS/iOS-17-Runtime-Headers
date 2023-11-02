@@ -1,0 +1,4 @@
+
+@interface _TtCC21AppPredictionInternal30LocationOfInterestContextStore11AwayContext : AppPredictionInternal.LocationOfInterestContext
+
+@end

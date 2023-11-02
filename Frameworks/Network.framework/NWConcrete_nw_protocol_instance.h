@@ -1,0 +1,154 @@
+
+@interface NWConcrete_nw_protocol_instance : NSObject <OS_nw_protocol_instance> {
+    NSObject<OS_nw_association> * association;
+    struct nw_protocol_callbacks { 
+        int (*add_input_handler)(); 
+        int (*remove_input_handler)(); 
+        int (*replace_input_handler)(); 
+        int (*connect)(); 
+        int (*disconnect)(); 
+        int (*connected)(); 
+        int (*disconnected)(); 
+        int (*error)(); 
+        int (*input_available)(); 
+        int (*output_available)(); 
+        int (*get_input_frames)(); 
+        int (*get_output_frames)(); 
+        int (*finalize_output_frames)(); 
+        int (*link_state)(); 
+        int (*get_parameters)(); 
+        int (*get_path)(); 
+        int (*get_local_endpoint)(); 
+        int (*get_remote_endpoint)(); 
+        int (*register_notification)(); 
+        int (*unregister_notification)(); 
+        int (*notify)(); 
+        int (*updated_path)(); 
+        int (*supports_external_data)(); 
+        int (*input_finished)(); 
+        int (*output_finished)(); 
+        int (*get_output_local_endpoint)(); 
+        int (*get_output_interface)(); 
+        int (*waiting_for_output)(); 
+        int (*copy_info)(); 
+        int (*add_listen_handler)(); 
+        int (*remove_listen_handler)(); 
+        int (*get_message_properties)(); 
+        int (*reset)(); 
+        int (*input_flush)(); 
+    }  callbacks;
+    unsigned int  connection_used;
+    NSObject<OS_nw_context> * context;
+    NSObject<OS_nw_path> * current_path;
+    unsigned long long  current_setup_path;
+    NSObject<OS_nw_endpoint> * current_setup_path_endpoint;
+    NSObject<OS_nw_endpoint> * current_setup_path_local_endpoint;
+    NSObject<OS_nw_parameters> * current_setup_path_parameters;
+    struct nw_hash_table { } * custom_flow_mapping_table;
+    unsigned int  datagram;
+    unsigned long long  default_path;
+    NSObject<OS_nw_endpoint> * derived_ipv4_endpoint;
+    void * destroy_timer;
+    struct nw_frame_array_s { 
+        struct nw_frame {} *tqh_first; 
+        struct nw_frame {} **tqh_last; 
+    }  empty_frame_pool;
+    unsigned int  empty_frame_pool_count;
+    NSObject<OS_nw_endpoint> * endpoint;
+    unsigned int  failed_to_get_output;
+    unsigned long long  flow_in_connected;
+    NSObject<OS_nw_path_flow_registration> * flow_registration;
+    struct nw_hash_table { } * flows_table;
+    void * handle;
+    unsigned int  ignore_future_path_changes;
+    struct nw_frame_array_s { 
+        struct nw_frame {} *tqh_first; 
+        struct nw_frame {} **tqh_last; 
+    }  inbound_frames;
+    unsigned int  initialized;
+    unsigned int  input_acknowledged;
+    unsigned long long  last_accepted_flow;
+    unsigned int  last_probe_connectivity;
+    int  level;
+    unsigned int  limit_outbound_data;
+    unsigned int  link_flow_controlled;
+    struct nw_listen_protocol { struct nw_listen_protocol_callbacks {} *x1; struct nw_protocol {} *x2; void *x3; void *x4; } * listen_handler;
+    BOOL  log_str;
+    unsigned long long  maximum_content_size;
+    unsigned int  needs_finalize_output;
+    unsigned int  needs_output_available;
+    unsigned int  new_flow_is_control;
+    NWConcrete_nw_protocol_metadata * new_flow_metadata;
+    NWConcrete_nw_protocol_options * options;
+    NSObject<OS_nw_array> * outbound_data_requests;
+    struct nw_frame_array_s { 
+        struct nw_frame {} *tqh_first; 
+        struct nw_frame {} **tqh_last; 
+    }  outbound_frames;
+    unsigned int  output_connected;
+    NSObject<OS_nw_parameters> * parameters;
+    NWConcrete_nw_protocol_definition * parent_definition;
+    unsigned short  paths_log_id_num;
+    struct nw_hash_table { } * paths_table;
+    NSObject<OS_xpc_object> * paths_to_establish;
+    unsigned int  pending_inbound_frame_bytes;
+    unsigned int  pending_inbound_frame_count;
+    struct nw_frame_array_s { 
+        struct nw_frame {} *tqh_first; 
+        struct nw_frame {} **tqh_last; 
+    }  pending_inbound_frames;
+    unsigned int  pending_input_finished;
+    struct nw_frame_array_s { 
+        struct nw_frame {} *tqh_first; 
+        struct nw_frame {} **tqh_last; 
+    }  pending_outbound_frames;
+    NSObject<OS_nw_endpoint> * preferred_ipv4_address;
+    NSObject<OS_nw_endpoint> * preferred_ipv6_address;
+    unsigned int  previous_fallback_is_weak;
+    unsigned int  previous_should_fallback;
+    unsigned long long  primary_path;
+    unsigned int  processing_input;
+    unsigned int  processing_output;
+    unsigned int  prohibit_joining;
+    struct nw_protocol { 
+        unsigned char flow_id[16]; 
+        struct nw_protocol_identifier {} *identifier; 
+        struct nw_protocol_callbacks {} *callbacks; 
+        struct nw_protocol {} *output_handler; 
+        void *handle; 
+        struct nw_protocol {} *default_input_handler; 
+        void *output_handler_context; 
+    }  protocol;
+    unsigned int  protocol_outbound_data_limit;
+    unsigned int  reads_suspended;
+    unsigned int  ready;
+    NSObject<OS_nw_protocol_instance_registrar> * registrar;
+    unsigned int  reported_send_error;
+    unsigned int  reporting_all_done;
+    unsigned long long  reserve_footer_size;
+    unsigned long long  reserve_header_size;
+    unsigned int  should_destroy;
+    unsigned int  should_signal_outbound_not_pending;
+    unsigned int  started;
+    unsigned int  supports_external_data;
+    unsigned int  suppress_logging;
+    unsigned int  tearing_down;
+    unsigned int  timer_enabled;
+    unsigned int  wait_for_early_data;
+    unsigned int  waiting_for_link_flow_control;
+    unsigned int  waiting_for_listener_accept;
+    id /* block */  wakeup;
+    id /* block */  wakeup_block;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (struct nw_protocol { unsigned char x1[16]; struct nw_protocol_identifier {} *x2; struct nw_protocol_callbacks {} *x3; struct nw_protocol {} *x4; void *x5; struct nw_protocol {} *x6; void *x7; }*)getProtocolStructure;
+- (id)init;
+
+@end

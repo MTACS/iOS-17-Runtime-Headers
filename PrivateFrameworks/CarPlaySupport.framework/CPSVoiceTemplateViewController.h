@@ -1,0 +1,33 @@
+
+@interface CPSVoiceTemplateViewController : CPSBaseTemplateViewController <CPVoiceTemplateProviding> {
+    UITapGestureRecognizer * _backGestureRecognizer;
+    double  _lastVoiceTemplateStateChangeTime;
+    CPSVoiceView * _titleView;
+}
+
+@property (nonatomic, retain) UITapGestureRecognizer *backGestureRecognizer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double lastVoiceTemplateStateChangeTime;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) CPSVoiceView *titleView;
+
+- (void).cxx_destruct;
+- (void)_activateStateWithIdentifier:(id)arg1;
+- (void)_backGestureFired:(id)arg1;
+- (id)_stateWithIdentifier:(id)arg1;
+- (void)_viewDidLoad;
+- (id)backGestureRecognizer;
+- (id)initWithVoiceTemplate:(id)arg1 templateDelegate:(id)arg2 templateEnvironment:(id)arg3;
+- (double)lastVoiceTemplateStateChangeTime;
+- (void)setBackGestureRecognizer:(id)arg1;
+- (void)setLastVoiceTemplateStateChangeTime:(double)arg1;
+- (void)setTitleView:(id)arg1;
+- (id)titleView;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (id)voiceTemplate;
+
+@end

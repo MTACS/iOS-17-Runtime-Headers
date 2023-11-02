@@ -1,0 +1,97 @@
+
+@interface BMItemType : NSObject <NSCopying, NSSecureCoding> {
+    long long  _edge;
+    _DKEventStream * _eventStream;
+    NSString * _identifier;
+    Class  _valueClass;
+    id /* block */  _valueExtractBlock;
+}
+
+@property (nonatomic) long long edge;
+@property (nonatomic, retain) _DKEventStream *eventStream;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, retain) Class valueClass;
+@property (nonatomic, copy) id /* block */ valueExtractBlock;
+
++ (id)alarmSnoozedAny;
++ (id)alarmSnoozedWithID;
++ (id)alarmStoppedAny;
++ (id)alarmStoppedWithID;
++ (id)allItemTypes;
++ (id)allItemTypesDictionary;
++ (id)allRegisteredItemTypes;
++ (id)appActivityType;
++ (id)appInFocus;
++ (id)appIntentAutomationHash;
++ (id)appIntentClass;
++ (id)appLaunchedReason;
++ (id)appOpened;
++ (id)bluetoothConnectedToDevice;
++ (id)bluetoothConnectedToDeviceWithAddress;
++ (id)bluetoothConnectedToDeviceWithName;
++ (id)bundleIdOfHostOpenedShareExtension;
++ (id)bundleIdOfShareExtensionOpened;
++ (id)connectedToCarPlay;
++ (id)connectedToExternalAudioOutput;
++ (id)dayOfWeek;
++ (id)enterLocation;
++ (id)exitLocation;
++ (id)firstBacklightAfterWakeup;
++ (id)hourOfDay;
++ (id)hourOfDaySlot;
++ (id)interactionContentURL;
++ (id)interactionDirection;
++ (id)interactionExtractedTopicFromAttachment;
++ (id)interactionItemTypes;
++ (id)interactionMechanism;
++ (id)interactionPhotoContact;
++ (id)interactionPhotoLocation;
++ (id)interactionPhotoScene;
++ (id)interactionRecipients;
++ (id)interactionSender;
++ (id)interactionSharingSourceBundleID;
++ (id)interactionTargetBundleID;
++ (id)interactionTextTopic;
++ (id)interactionUTIType;
++ (id)isWeekend;
++ (id)locationIdentifier;
++ (id)mediaGenreStartedPlaying;
++ (id)mediaIsPlaying;
++ (void)registerItemType:(id)arg1;
++ (id)relevanceAppActivityHash;
++ (id)relevanceCoarseAppActivityHash;
++ (id)relevanceCoarseIntentHash;
++ (id)relevanceIntentHash;
++ (bool)supportsSecureCoding;
++ (id)taskSpecificItemWithIdentifier:(id)arg1 valueClass:(Class)arg2;
++ (id)temporalItemTypes;
++ (id)toggledAirplaneMode;
++ (id)toggledDoNotDisturb;
++ (id)toggledLowPowerMode;
++ (void)unregisterItemType:(id)arg1;
++ (id)wifiConnectedToSSID;
++ (id)wifiDisconnectedFromSSID;
++ (id)wifiIsConnectedToSSID;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (long long)edge;
+- (void)encodeWithCoder:(id)arg1;
+- (id)eventStream;
+- (id)extractEventFromDKEvent:(id)arg1;
+- (id)extractItemFromDKEvent:(id)arg1;
+- (id)extractValueFromDKEvent:(id)arg1;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setEdge:(long long)arg1;
+- (void)setEventStream:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setValueClass:(Class)arg1;
+- (void)setValueExtractBlock:(id /* block */)arg1;
+- (Class)valueClass;
+- (id /* block */)valueExtractBlock;
+
+@end

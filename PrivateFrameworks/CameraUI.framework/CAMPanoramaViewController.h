@@ -1,0 +1,50 @@
+
+@interface CAMPanoramaViewController : UIViewController <CAMPanoramaChangeDelegate, CAMPanoramaViewDelegate> {
+    CUCaptureController * __captureController;
+    long long  __captureOrientation;
+    UITapGestureRecognizer * __directionChangeGestureRecognizer;
+    CAMAnalyticsCaptureEvent * _analyticsCaptureEvent;
+    long long  _layoutStyle;
+    bool  _painting;
+}
+
+@property (nonatomic, readonly) CUCaptureController *_captureController;
+@property (setter=_setCaptureOrientation:, nonatomic) long long _captureOrientation;
+@property (nonatomic, readonly) UITapGestureRecognizer *_directionChangeGestureRecognizer;
+@property (nonatomic, retain) CAMAnalyticsCaptureEvent *analyticsCaptureEvent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long layoutStyle;
+@property (getter=isPainting, setter=_setPainting:, nonatomic) bool painting;
+@property (nonatomic, readonly) CAMPanoramaView *panoramaView;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (id)_captureController;
+- (long long)_captureOrientation;
+- (id)_directionChangeGestureRecognizer;
+- (void)_handleDirectionChange:(id)arg1;
+- (void)_setCaptureOrientation:(long long)arg1;
+- (void)_setPainting:(bool)arg1;
+- (id)analyticsCaptureEvent;
+- (void)didChangeToCaptureOrientation:(long long)arg1;
+- (void)finishedProcessingPanorama;
+- (id)initWithCaptureController:(id)arg1 layoutStyle:(long long)arg2;
+- (id)initWithCoder:(id)arg1;
+- (bool)isPainting;
+- (long long)layoutStyle;
+- (void)loadView;
+- (void)panoramaConfigurationDidChangeWithDirection:(long long)arg1;
+- (id)panoramaView;
+- (void)panoramaView:(id)arg1 didUpdateInstruction:(long long)arg2;
+- (void)panoramaViewDidRequestSynchronizedDirectionChange:(id)arg1 toDirection:(long long)arg2;
+- (void)setAnalyticsCaptureEvent:(id)arg1;
+- (void)setLayoutStyle:(long long)arg1;
+- (void)startPainting;
+- (void)startProcessingPanorama;
+- (void)stopPainting;
+- (void)updateWithStatus:(id)arg1;
+
+@end

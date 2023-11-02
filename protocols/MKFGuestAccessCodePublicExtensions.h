@@ -1,0 +1,4 @@
+
+@protocol MKFGuestAccessCodePublicExtensions
+
+@end

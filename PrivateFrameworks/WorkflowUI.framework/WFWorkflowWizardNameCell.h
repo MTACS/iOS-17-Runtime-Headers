@@ -1,0 +1,92 @@
+
+@interface WFWorkflowWizardNameCell : UITableViewCell <UITextFieldDelegate> {
+    WFWorkflowWizardNameClearButton * _clearButton;
+    <WFWorkflowWizardNameCellDataSource> * _dataSource;
+    <WFWorkflowWizardNameCellDelegate> * _delegate;
+    NSArray * _horizontalConstraintsWithInset;
+    NSArray * _horizontalConstraintsWithoutInset;
+    WFWorkflowWizardNameIconButton * _iconButton;
+    UIView * _phraseView;
+    UIView * _platterView;
+    WFWorkflowWizardNameRecordButton * _recordButton;
+    UITextField * _shortcutNameTextField;
+    bool  _showsHeySiri;
+    bool  _useDoneButtonOnKeyboard;
+    bool  _useHorizontalInset;
+}
+
+@property (nonatomic, retain) WFWorkflowWizardNameClearButton *clearButton;
+@property (nonatomic) <WFWorkflowWizardNameCellDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WFWorkflowWizardNameCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSArray *horizontalConstraintsWithInset;
+@property (nonatomic, retain) NSArray *horizontalConstraintsWithoutInset;
+@property (nonatomic, retain) WFWorkflowWizardNameIconButton *iconButton;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, retain) UIView *phraseView;
+@property (nonatomic, retain) UIView *platterView;
+@property (nonatomic, retain) WFWorkflowWizardNameRecordButton *recordButton;
+@property (nonatomic, retain) UITextField *shortcutNameTextField;
+@property (nonatomic) bool showsHeySiri;
+@property (readonly) Class superclass;
+@property (nonatomic) bool useDoneButtonOnKeyboard;
+@property (nonatomic) bool useHorizontalInset;
+
++ (double)defaultRowHeight;
+
+- (void).cxx_destruct;
+- (bool)becomeFirstResponder;
+- (bool)canBecomeFirstResponder;
+- (id)clearButton;
+- (void)configureIconButton;
+- (void)configureWithName:(id)arg1 showsHeySiri:(bool)arg2 icon:(id)arg3;
+- (void)configureWithName:(id)arg1 showsHeySiri:(bool)arg2 useHorizontalInset:(bool)arg3 icon:(id)arg4;
+- (void)configureWithName:(id)arg1 showsHeySiri:(bool)arg2 useHorizontalInset:(bool)arg3 icon:(id)arg4 customImageData:(id)arg5;
+- (id)dataSource;
+- (id)delegate;
+- (void)didTapClearButton;
+- (void)didTapIconButton;
+- (void)didTapRecordButton;
+- (id)dropdownMenuIconButton;
+- (id)horizontalConstraintsWithInset;
+- (id)horizontalConstraintsWithoutInset;
+- (id)iconButton;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)name;
+- (id)phraseView;
+- (id)platterView;
+- (id)recordButton;
+- (id)regularIconButton;
+- (void)setClearButton:(id)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDropdownMenuForIconButton:(id)arg1;
+- (void)setHorizontalConstraintsWithInset:(id)arg1;
+- (void)setHorizontalConstraintsWithoutInset:(id)arg1;
+- (void)setIcon:(id)arg1 customImageData:(id)arg2;
+- (void)setIconButton:(id)arg1;
+- (void)setIconButtonConstraints;
+- (void)setName:(id)arg1;
+- (void)setPhraseView:(id)arg1;
+- (void)setPlatterView:(id)arg1;
+- (void)setRecordButton:(id)arg1;
+- (void)setShortcutNameTextField:(id)arg1;
+- (void)setShowsHeySiri:(bool)arg1;
+- (void)setUseDoneButtonOnKeyboard:(bool)arg1;
+- (void)setUseHorizontalContraints:(bool)arg1;
+- (void)setUseHorizontalInset:(bool)arg1;
+- (bool)shortcutNameIsEmpty;
+- (id)shortcutNameTextField;
+- (bool)showsHeySiri;
+- (void)textFieldDidChange;
+- (bool)textFieldShouldReturn:(id)arg1;
+- (void)updateButtonVisibility;
+- (void)updateViewForDoneButton;
+- (void)updateViewForHorizontalConstraints;
+- (bool)useDoneButtonOnKeyboard;
+- (bool)useDropdownMenuIconButton;
+- (bool)useHorizontalInset;
+
+@end

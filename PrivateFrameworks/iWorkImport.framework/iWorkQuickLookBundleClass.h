@@ -1,0 +1,4 @@
+
+@interface iWorkQuickLookBundleClass : NSObject
+
+@end

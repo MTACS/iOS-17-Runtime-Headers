@@ -1,0 +1,83 @@
+
+@interface MRUNowPlayingVolumeControlsView : UIView <MPVolumeDisplaying, MRUGroupSliderDelegate, MRUStepperDelegate, MRUVisualStylingProviderObserver, MRUVolumeControllerDelegate> {
+    <MRUNowPlayingVolumeControlsViewDelegate> * _delegate;
+    bool  _dimmed;
+    bool  _ignoreAnimationForVolumeEvents;
+    long long  _layout;
+    bool  _onScreen;
+    MRUGroupSlider * _slider;
+    MRUStepper * _stepper;
+    MRUVisualStylingProvider * _stylingProvider;
+    MRUVolumeController * _volumeController;
+    MRUVolumeGroupCoordinator * _volumeGroupCoordinator;
+}
+
+@property (nonatomic, retain) <MPVolumeControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MRUNowPlayingVolumeControlsViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isDimmed, nonatomic) bool dimmed;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool ignoreAnimationForVolumeEvents;
+@property (nonatomic) long long layout;
+@property (getter=isOnScreen, nonatomic) bool onScreen;
+@property (getter=isOnScreenForVolumeDisplay, nonatomic, readonly) bool onScreenForVolumeDisplay;
+@property (nonatomic, retain) MRUGroupSlider *slider;
+@property (nonatomic, retain) MRUStepper *stepper;
+@property (nonatomic, retain) MRUVisualStylingProvider *stylingProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *volumeAudioCategory;
+@property (nonatomic, retain) MRUVolumeController *volumeController;
+@property (nonatomic, retain) MRUVolumeGroupCoordinator *volumeGroupCoordinator;
+@property (nonatomic, readonly) UIWindowScene *windowSceneForVolumeDisplay;
+
+- (void).cxx_destruct;
+- (id)dataSource;
+- (void)dealloc;
+- (id)delegate;
+- (bool)ignoreAnimationForVolumeEvents;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDimmed;
+- (bool)isOnScreen;
+- (bool)isOnScreenForVolumeDisplay;
+- (long long)layout;
+- (void)layoutSubviews;
+- (void)setDataSource:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDimmed:(bool)arg1;
+- (void)setIgnoreAnimationForVolumeEvents:(bool)arg1;
+- (void)setLayout:(long long)arg1;
+- (void)setOnScreen:(bool)arg1;
+- (void)setSlider:(id)arg1;
+- (void)setStepper:(id)arg1;
+- (void)setStylingProvider:(id)arg1;
+- (void)setVolumeController:(id)arg1;
+- (void)setVolumeGroupCoordinator:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)slider;
+- (void)sliderLongPressActionDidBegin:(id)arg1;
+- (void)sliderLongPressActionDidCancel:(id)arg1;
+- (void)sliderLongPressActionDidFinish:(id)arg1;
+- (bool)sliderShouldAllowLongPress:(id)arg1;
+- (void)sliderValueChanged:(id)arg1;
+- (id)stepper;
+- (void)stepperDecrementHoldBegan:(id)arg1;
+- (void)stepperDecrementHoldEnded:(id)arg1;
+- (void)stepperDidDecrement:(id)arg1;
+- (void)stepperDidIncrement:(id)arg1;
+- (void)stepperIncrementHoldBegan:(id)arg1;
+- (void)stepperIncrementHoldEnded:(id)arg1;
+- (id)stylingProvider;
+- (void)updateVisibility;
+- (void)updateVisualStyling;
+- (void)updateVolumeAnimated:(bool)arg1;
+- (void)visualStylingProviderDidChange:(id)arg1;
+- (id)volumeAudioCategory;
+- (id)volumeController;
+- (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(bool)arg2;
+- (void)volumeController:(id)arg1 volumeControlCapabilitiesDidChange:(unsigned int)arg2;
+- (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
+- (id)volumeGroupCoordinator;
+- (id)windowSceneForVolumeDisplay;
+
+@end

@@ -1,0 +1,78 @@
+
+@interface ATDeviceService : ATConcreteService <ATIDSServiceListener, ATMessageLinkListenerDelegate, ATMessageLinkRequestHandler, ATSyncClientDelegate, ATXPCInterfaceProtocol> {
+    int  _atcRunningToken;
+    ATDeviceSyncManager * _deviceSyncManager;
+    ATEventScheduler * _eventScheduler;
+    ATIDSService * _idsService;
+    ATLegacyDeviceSyncManager * _legacyDeviceSyncManager;
+    ATLockdownListener * _legacyLockdownListener;
+    ATLockdownListener * _lockdownListener;
+    NSMapTable * _messageLinkProxyListeners;
+    ATDevicePairedSyncManager * _pairedSyncManager;
+    ATServiceProxyListener * _proxyListener;
+    NSObject<OS_dispatch_queue> * _queue;
+    ATDeviceSettings * _settings;
+    NSObject<OS_dispatch_source> * _sigTermSrc;
+    MSVXPCTransaction * _startupTransaction;
+    ATStatusObserverListener * _statusObserverListener;
+    ATXPCListener * _xpcListener;
+    MSVXPCTransaction * _xpcTransaction;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (void)_addObserversToMessageLink:(id)arg1;
+- (void)_cancelSyncForMessageLink:(id)arg1;
+- (id)_deviceMessageLink;
+- (void)_endStartupTransaction;
+- (void)_removeObserversFromMessageLink:(id)arg1;
+- (void)_requestSyncForLibrary:(id)arg1 onMessageLink:(id)arg2;
+- (void)_scheduleNewSyncIfNeeded;
+- (void)_setupStartupTransaction;
+- (void)addMessageLink:(id)arg1;
+- (id)allMessageLinkProxyListeners;
+- (void)applicationInstallsArePrioritized:(id)arg1 arePaused:(id)arg2;
+- (void)applicationInstallsDidCancel:(id)arg1;
+- (void)applicationInstallsDidChange:(id)arg1;
+- (void)applicationInstallsDidPrioritize:(id)arg1;
+- (void)applicationsDidInstall:(id)arg1;
+- (void)applicationsDidUninstall:(id)arg1;
+- (void)cancelAssetTransferForFailedAsset:(id)arg1;
+- (void)cancelSyncWithCompletion:(id /* block */)arg1;
+- (void)clearSyncDataWithCompletion:(id /* block */)arg1;
+- (void)dealloc;
+- (void)getAssetMetricswithCompletion:(id /* block */)arg1;
+- (void)getDataRestoreIsCompleteWithCompletion:(id /* block */)arg1;
+- (void)getSyncStateWithCompletion:(id /* block */)arg1;
+- (void)handleDataMigrationFinished;
+- (void)idsServiceDevicesDidChange:(id)arg1;
+- (id)init;
+- (void)initiateAssetDownloadSessionsWithCompletion:(id /* block */)arg1;
+- (void)keepATCAlive:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (void)listener:(id)arg1 didReceiveMessageLinkRequest:(id)arg2;
+- (void)lowBatteryNotificationWithCompletion:(id /* block */)arg1;
+- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
+- (void)messageLinkWasClosed:(id)arg1;
+- (void)openDeviceMessageLinkWithPriority:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)prioritizeAsset:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)proxyListenerForMessageLink:(id)arg1;
+- (void)purgePartialAsset:(id)arg1 forDataclass:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)registerForStatusOfDataclasses:(id)arg1 enabled:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)removeMessageLink:(id)arg1;
+- (void)requestKeybagSyncToPairedDeviceWithCompletion:(id /* block */)arg1;
+- (void)requestSyncForLibrary:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)requestSyncForPairedDeviceWithPriority:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)restoreFromDeviceWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (bool)run;
+- (bool)stop;
+- (void)syncChangesForDataClass:(id)arg1 withPriority:(int)arg2;
+- (void)syncClient:(id)arg1 hasChangesWithPriority:(int)arg2;
+
+@end

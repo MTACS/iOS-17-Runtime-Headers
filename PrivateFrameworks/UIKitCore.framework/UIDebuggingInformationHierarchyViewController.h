@@ -1,0 +1,86 @@
+
+@interface UIDebuggingInformationHierarchyViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIDebuggingInformationHierarchyCellDelegate, UIDebuggingInformationHierarchyLayoutDelegate, UIDebuggingInformationTouchObserver, UIDebuggingInformationViewController> {
+    UICollectionView * _collectionView;
+    NSMutableDictionary * _controlsForKeys;
+    NSArray * _data;
+    UIDebuggingInformationInspectorDetailViewController * _detail;
+    UIView * _highlightedView;
+    NSMutableArray * _keys;
+    NSMutableDictionary * _managedValues;
+    NSArray * _normalItems;
+    NSMutableDictionary * _observersForKeys;
+    struct CGColor { } * _originalBorderColor;
+    double  _originalBorderWidth;
+    UIRefreshControl * _refreshControl;
+    UIView * _rootViewForInspection;
+    NSArray * _showingOverlayItems;
+}
+
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (nonatomic, retain) NSMutableDictionary *controlsForKeys;
+@property (nonatomic, retain) NSArray *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIDebuggingInformationInspectorDetailViewController *detail;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIView *highlightedView;
+@property (nonatomic, retain) NSMutableArray *keys;
+@property (nonatomic, retain) NSMutableDictionary *managedValues;
+@property (nonatomic, retain) NSMutableDictionary *observersForKeys;
+@property (nonatomic) struct CGColor { }*originalBorderColor;
+@property (nonatomic) double originalBorderWidth;
+@property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (nonatomic, retain) UIView *rootViewForInspection;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_showWindowChange;
+- (void)chooseNewTarget:(id)arg1;
+- (void)collapseBeneathCell:(id)arg1;
+- (id)collectionView;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (id)colorForIndentationLevel:(unsigned long long)arg1;
+- (id)controlsForKeys;
+- (id)data;
+- (id)detail;
+- (void)didReceiveNewView:(id)arg1;
+- (void)displayDetailsForCell:(id)arg1;
+- (void)expandBeneathCell:(id)arg1;
+- (id)getViewsRecursiveWithLevel:(unsigned long long)arg1 forView:(id)arg2;
+- (void)highlightView:(id)arg1;
+- (id)highlightedView;
+- (unsigned long long)indentationLevelForIndexPath:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)keys;
+- (id)managedValues;
+- (id)observersForKeys;
+- (struct CGColor { }*)originalBorderColor;
+- (double)originalBorderWidth;
+- (void)refresh:(id)arg1;
+- (id)refreshControl;
+- (id)rootViewForInspection;
+- (void)setCollectionView:(id)arg1;
+- (void)setControlsForKeys:(id)arg1;
+- (void)setData:(id)arg1;
+- (void)setDetail:(id)arg1;
+- (void)setHighlightedView:(id)arg1;
+- (void)setKeys:(id)arg1;
+- (void)setManagedValues:(id)arg1;
+- (void)setObserversForKeys:(id)arg1;
+- (void)setOriginalBorderColor:(struct CGColor { }*)arg1;
+- (void)setOriginalBorderWidth:(double)arg1;
+- (void)setRefreshControl:(id)arg1;
+- (void)setRootViewForInspection:(id)arg1;
+- (bool)shouldCollapseAtIndexPath:(id)arg1;
+- (bool)shouldHighlightSelectedCells;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+
+@end

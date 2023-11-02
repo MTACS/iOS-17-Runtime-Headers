@@ -1,0 +1,93 @@
+
+@interface FLOWSchemaFLOWPhoneCallContext : SISchemaInstrumentationMessage {
+    FLOWSchemaFLOWPhoneCallEmergencyContext * _emergencyContext;
+    struct { 
+        unsigned int phoneCallType : 1; 
+        unsigned int phoneCallAppType : 1; 
+        unsigned int isThirdPartyFaceTime : 1; 
+        unsigned int searchCallHistoryIntent : 1; 
+        unsigned int userPersona : 1; 
+    }  _has;
+    bool  _hasEmergencyContext;
+    bool  _isThirdPartyFaceTime;
+    NSArray * _personTypes;
+    int  _phoneCallAppType;
+    int  _phoneCallType;
+    NSArray * _recipientTypes;
+    int  _searchCallHistoryIntent;
+    int  _userPersona;
+}
+
+@property (nonatomic, retain) FLOWSchemaFLOWPhoneCallEmergencyContext *emergencyContext;
+@property (nonatomic) bool hasEmergencyContext;
+@property (nonatomic) bool hasIsThirdPartyFaceTime;
+@property (nonatomic) bool hasPhoneCallAppType;
+@property (nonatomic) bool hasPhoneCallType;
+@property (nonatomic) bool hasSearchCallHistoryIntent;
+@property (nonatomic) bool hasUserPersona;
+@property (nonatomic) bool isThirdPartyFaceTime;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSArray *personTypes;
+@property (nonatomic) int phoneCallAppType;
+@property (nonatomic) int phoneCallType;
+@property (nonatomic, copy) NSArray *recipientTypes;
+@property (nonatomic) int searchCallHistoryIntent;
+@property (nonatomic) int userPersona;
+
+- (void).cxx_destruct;
+- (void)addPersonType:(int)arg1;
+- (void)addRecipientType:(int)arg1;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (void)clearPersonType;
+- (void)clearRecipientType;
+- (void)deleteEmergencyContext;
+- (void)deleteIsThirdPartyFaceTime;
+- (void)deletePersonType;
+- (void)deletePhoneCallAppType;
+- (void)deletePhoneCallType;
+- (void)deleteRecipientType;
+- (void)deleteSearchCallHistoryIntent;
+- (void)deleteUserPersona;
+- (id)dictionaryRepresentation;
+- (id)emergencyContext;
+- (bool)hasEmergencyContext;
+- (bool)hasIsThirdPartyFaceTime;
+- (bool)hasPhoneCallAppType;
+- (bool)hasPhoneCallType;
+- (bool)hasSearchCallHistoryIntent;
+- (bool)hasUserPersona;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isThirdPartyFaceTime;
+- (id)jsonData;
+- (int)personTypeAtIndex:(unsigned long long)arg1;
+- (unsigned long long)personTypeCount;
+- (id)personTypes;
+- (int)phoneCallAppType;
+- (int)phoneCallType;
+- (bool)readFrom:(id)arg1;
+- (int)recipientTypeAtIndex:(unsigned long long)arg1;
+- (unsigned long long)recipientTypeCount;
+- (id)recipientTypes;
+- (int)searchCallHistoryIntent;
+- (void)setEmergencyContext:(id)arg1;
+- (void)setHasEmergencyContext:(bool)arg1;
+- (void)setHasIsThirdPartyFaceTime:(bool)arg1;
+- (void)setHasPhoneCallAppType:(bool)arg1;
+- (void)setHasPhoneCallType:(bool)arg1;
+- (void)setHasSearchCallHistoryIntent:(bool)arg1;
+- (void)setHasUserPersona:(bool)arg1;
+- (void)setIsThirdPartyFaceTime:(bool)arg1;
+- (void)setPersonTypes:(id)arg1;
+- (void)setPhoneCallAppType:(int)arg1;
+- (void)setPhoneCallType:(int)arg1;
+- (void)setRecipientTypes:(id)arg1;
+- (void)setSearchCallHistoryIntent:(int)arg1;
+- (void)setUserPersona:(int)arg1;
+- (id)suppressMessageUnderConditions;
+- (int)userPersona;
+- (void)writeTo:(id)arg1;
+
+@end

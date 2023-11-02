@@ -1,0 +1,4 @@
+
+@interface _TtC12NanoUniverseP33_56FF90A4576BBB6563A0A400203BD4F019ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

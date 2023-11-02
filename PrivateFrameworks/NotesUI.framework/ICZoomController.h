@@ -1,0 +1,4 @@
+
+@interface ICZoomController : ICTTZoomController
+
+@end

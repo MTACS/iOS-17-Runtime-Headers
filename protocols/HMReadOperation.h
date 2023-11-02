@@ -1,0 +1,4 @@
+
+@protocol HMReadOperation <NSObject>
+
+@end

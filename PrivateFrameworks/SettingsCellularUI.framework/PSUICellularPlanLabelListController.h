@@ -1,0 +1,36 @@
+
+@interface PSUICellularPlanLabelListController : PSListController <UITextFieldDelegate> {
+    PSUICellularPlanUniversalReference * _planReference;
+    NSArray * _predefinedLabels;
+    UITextField * _textField;
+    NSString * _validatedCustomLabelText;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PSUICellularPlanUniversalReference *planReference;
+@property (nonatomic, retain) NSArray *predefinedLabels;
+@property (readonly) Class superclass;
+@property (nonatomic) UITextField *textField;
+@property (nonatomic, retain) NSString *validatedCustomLabelText;
+
+- (void).cxx_destruct;
+- (void)dismissKeyboard;
+- (id)getLogger;
+- (id)planReference;
+- (id)predefinedLabels;
+- (void)setPlanReference:(id)arg1;
+- (void)setPredefinedLabels:(id)arg1;
+- (void)setTextField:(id)arg1;
+- (void)setValidatedCustomLabelText:(id)arg1;
+- (id)specifiers;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)textField;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (id)validatedCustomLabelText;
+- (void)viewDidLoad;
+- (void)willMoveToParentViewController:(id)arg1;
+
+@end

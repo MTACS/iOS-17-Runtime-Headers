@@ -1,0 +1,96 @@
+
+@interface PKBillPaymentSuggestedAmountController : NSObject {
+    PKAccount * _account;
+    PKAccountUserCollection * _accountUserCollection;
+    NSArray * _approvedTransactionsBillPaymentForPreviousStatement;
+    NSArray * _approvedTransactionsBillPaymentSinceStatement;
+    NSArray * _approvedTransactionsPurchasesForPreviousStatement;
+    NSArray * _approvedTransactionsPurchasesSinceStatement;
+    PKAccountServiceAccountResolutionCofiguration * _configuration;
+    bool  _currentStatementIsLastMonthsStatement;
+    NSDecimalNumber * _currentStatementPaymentsSum;
+    NSArray * _currentStatementSelectedSuggestedAmountEvents;
+    NSMutableArray * _differentialPrivacyFeatures;
+    _DPStringRecorder * _differentialPrivacyRecorder;
+    FHPaymentRingSuggestionController * _fhController;
+    bool  _isMonthOne;
+    bool  _isMonthZero;
+    bool  _isOnPaymentPlan;
+    bool  _isOnPlanCompletion;
+    NSMutableDictionary * _merchantCategoryTransactionSums;
+    NSDateFormatter * _monthAndDayFormatter;
+    NSDateFormatter * _monthFormatter;
+    long long  _numberOfActiveInstallments;
+    long long  _numberOfActiveStatementedInstallments;
+    NSMutableDictionary * _paymentRingInstrumentationRecord;
+    NSDecimalNumber * _previousStatementPaymentsSum;
+    NSArray * _previousStatementSelectedSuggestedAmountEvents;
+    NSDecimalNumber * _statementPurchasesSum;
+    PKTransactionSource * _transactionSource;
+}
+
+@property (nonatomic, readonly) PKAccount *account;
+@property (nonatomic, readonly) PKAccountUserCollection *accountUserCollection;
+@property (nonatomic, readonly) NSArray *approvedTransactionsBillPaymentForPreviousStatement;
+@property (nonatomic, readonly) NSArray *approvedTransactionsBillPaymentSinceStatement;
+@property (nonatomic, readonly) NSArray *approvedTransactionsPurchasesForPreviousStatement;
+@property (nonatomic, readonly) NSArray *approvedTransactionsPurchasesSinceStatement;
+@property (nonatomic, retain) PKAccountServiceAccountResolutionCofiguration *configuration;
+@property (nonatomic, readonly) NSArray *currentStatementSelectedSuggestedAmountEvents;
+@property (nonatomic, readonly) NSArray *previousStatementSelectedSuggestedAmountEvents;
+@property (nonatomic, readonly) PKTransactionSource *transactionSource;
+
++ (void)_approvedTransactionsForPreviousStatementForAccount:(id)arg1 transactionSource:(id)arg2 transactionType:(long long)arg3 completion:(id /* block */)arg4;
++ (void)_approvedTransactionsSinceStatementForAccount:(id)arg1 transactionSource:(id)arg2 transactionType:(long long)arg3 completion:(id /* block */)arg4;
++ (void)approvedTransactionsBillPaymentForPreviousStatementForAccount:(id)arg1 transactionSource:(id)arg2 completion:(id /* block */)arg3;
++ (void)approvedTransactionsBillPaymentSinceStatementForAccount:(id)arg1 transactionSource:(id)arg2 completion:(id /* block */)arg3;
++ (void)approvedTransactionsPurchasesForPreviousStatementForAccount:(id)arg1 transactionSource:(id)arg2 completion:(id /* block */)arg3;
++ (void)approvedTransactionsPurchasesSinceStatementForAccount:(id)arg1 transactionSource:(id)arg2 completion:(id /* block */)arg3;
++ (void)currentStatementSelectedSuggestedAmountEventsForAccount:(id)arg1 completion:(id /* block */)arg2;
++ (void)defaultControllerForAccount:(id)arg1 accountUserCollection:(id)arg2 transactionSource:(id)arg3 configuration:(id)arg4 completion:(id /* block */)arg5;
++ (void)previousStatementSelectedSuggestedAmountEventsForAccount:(id)arg1 completion:(id /* block */)arg2;
+
+- (void).cxx_destruct;
+- (bool)_allMandatoryValuesAreSameAmount;
+- (bool)_calculateCurrentStatementIsLastMonthsStatement;
+- (id)_calculateThresholdForLastPaymentCategory:(unsigned long long)arg1 statementBalance:(id)arg2 suggestedAmountWithSameCategory:(id)arg3;
+- (bool)_categoryIsCurrentBalanceType:(unsigned long long)arg1;
+- (bool)_categoryIsPaymentPlan:(unsigned long long)arg1;
+- (id)_createDefaultAmountSuggestionListFromAccount;
+- (id)_filterSuggestions:(id)arg1 belowThreshold:(id)arg2;
+- (void)_generateAmountSuggestionListUsingTransactionHistoryForList:(id)arg1;
+- (void)_initializeDifferentialPrivacy:(id)arg1 accountSummary:(id)arg2;
+- (void)_initializePaymentRingInstrumentationRecord:(id)arg1 accountSummary:(id)arg2;
+- (id)_messageForSuggestion:(id)arg1;
+- (void)_minimumMerchcantCategoriesAboveMinimumAmount:(id)arg1 minMerchantCategory1:(long long*)arg2 minMerchantCategory2:(long long*)arg3 minMerchantCategorySum1:(id*)arg4 minMerchantCategorySum2:(id*)arg5;
+- (id)_planCompletionTitleString;
+- (void)_populatePriorityValuesForList:(id)arg1;
+- (void)_populateStringValuesForList:(id)arg1;
+- (id)_remainingStatementBalanceGapDescriptionText;
+- (id)_remainingStatementBalanceGapTitleText;
+- (id)_remainingStatementBalanceMessageString;
+- (id)_remainingStatementBalanceTitleString;
+- (void)_setDifferentialPrivacyFeature:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
+- (bool)_suggestedAmountListIsValidAfterPurgeIfNecessary:(id)arg1;
+- (id)_suggestedAmountsForPayOffDateForStatementBalance:(id)arg1 creditUtilization:(id)arg2 lastPaymentCategory:(unsigned long long)arg3;
+- (id)_titleForSuggestion:(id)arg1;
+- (void)_zerothOrFirstMonthBillPaymentSuggestionsForList:(id)arg1;
+- (id)account;
+- (id)accountUserCollection;
+- (id)approvedTransactionsBillPaymentForPreviousStatement;
+- (id)approvedTransactionsBillPaymentSinceStatement;
+- (id)approvedTransactionsPurchasesForPreviousStatement;
+- (id)approvedTransactionsPurchasesSinceStatement;
+- (id)configuration;
+- (id)currentStatementSelectedSuggestedAmountEvents;
+- (id)differentialPrivacyFeaturesAsString;
+- (id)generateAmountSuggestionListWithFinHealth:(bool)arg1;
+- (id)initWithAccount:(id)arg1 accountUserCollection:(id)arg2 transactionSource:(id)arg3 currentStatementSelectedSuggestedAmountEvents:(id)arg4 previousStatementSelectedSuggestedAmountEvents:(id)arg5 approvedTransactionsPurchasesSinceStatement:(id)arg6 approvedTransactionsPurchasesForPreviousStatement:(id)arg7 approvedTransactionsBillPaymentSinceStatement:(id)arg8 approvedTransactionsBillPaymentForPreviousStatement:(id)arg9 configuration:(id)arg10;
+- (id)paymentRingInstrumentationRecordAsString;
+- (id)previousStatementSelectedSuggestedAmountEvents;
+- (void)recordPaymentActionWithDifferentialPrivacy:(unsigned long long)arg1;
+- (void)recordPaymentRingAction:(unsigned long long)arg1;
+- (void)setConfiguration:(id)arg1;
+- (id)transactionSource;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface BCShared : NSObject
+
+@end

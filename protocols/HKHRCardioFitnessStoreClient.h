@@ -1,0 +1,4 @@
+
+@protocol HKHRCardioFitnessStoreClient <NSObject>
+
+@end

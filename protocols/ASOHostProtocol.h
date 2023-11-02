@@ -1,0 +1,4 @@
+
+@protocol ASOHostProtocol <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SKUIExpandPageSectionContext : NSObject
+
+@end

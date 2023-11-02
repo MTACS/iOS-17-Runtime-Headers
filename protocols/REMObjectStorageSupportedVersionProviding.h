@@ -1,0 +1,4 @@
+
+@protocol REMObjectStorageSupportedVersionProviding <REMSupportedVersionProviding, REMSupportedVersionUpdating, _REMSupportedVersionAssignableEffectiveVersion>
+
+@end

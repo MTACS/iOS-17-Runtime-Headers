@@ -1,0 +1,60 @@
+
+@interface VNValidationUtilities : NSObject
+
++ (bool)_validateDetectedObjectObservations:(id)arg1 forObservationClass:(Class)arg2 withMinimumCount:(unsigned long long)arg3 forOptionalRequest:(id)arg4 error:(id*)arg5;
++ (bool)_validateFaceObservations:(id)arg1 withMinimumCount:(unsigned long long)arg2 forOptionalRequest:(id)arg3 error:(id*)arg4;
++ (id)computeDeviceForKey:(id)arg1 inOptions:(id)arg2 error:(id*)arg3;
++ (bool)getArray:(id*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withElementsOfClass:(Class)arg4 requiredMinimumCount:(unsigned long long)arg5 allowedMaximumCount:(unsigned long long)arg6 error:(id*)arg7;
++ (bool)getBOOLValue:(bool*)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (bool)getBOOLValue:(bool*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(bool)arg4 error:(id*)arg5;
++ (bool)getDoubleValue:(double*)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (bool)getDoubleValue:(double*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(double)arg4 error:(id*)arg5;
++ (bool)getFloatValue:(float*)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (bool)getFloatValue:(float*)arg1 forKey:(id)arg2 inOptions:(id)arg3 minimumValue:(float)arg4 maximumValue:(float)arg5 error:(id*)arg6;
++ (bool)getFloatValue:(float*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(float)arg4 error:(id*)arg5;
++ (bool)getIntValue:(int*)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (bool)getIntValue:(int*)arg1 forKey:(id)arg2 inOptions:(id)arg3 minimumValue:(int)arg4 maximumValue:(int)arg5 error:(id*)arg6;
++ (bool)getIntValue:(int*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(int)arg4 error:(id*)arg5;
++ (bool)getMTLGPUPriority:(unsigned long long*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(unsigned long long)arg4 error:(id*)arg5;
++ (bool)getNSIntegerValue:(long long*)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (bool)getNSIntegerValue:(long long*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(long long)arg4 error:(id*)arg5;
++ (bool)getNSUIntegerValue:(unsigned long long*)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (bool)getNSUIntegerValue:(unsigned long long*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(unsigned long long)arg4 error:(id*)arg5;
++ (bool)getOSTypeValue:(unsigned int*)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (bool)getOSTypeValue:(unsigned int*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(unsigned int)arg4 error:(id*)arg5;
++ (bool)getOptionalArray:(id*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withElementsOfClass:(Class)arg4 error:(id*)arg5;
++ (bool)getOptionalFaceObservations:(id*)arg1 inOptions:(id)arg2 withOptionName:(id)arg3 error:(id*)arg4;
++ (bool)getOptionalObject:(id*)arg1 ofClass:(Class)arg2 forKey:(id)arg3 inOptions:(id)arg4 error:(id*)arg5;
++ (bool)getOptionalOriginatingRequestSpecifier:(id*)arg1 forKey:(id)arg2 inOptions:(id)arg3 specifyingRequestClass:(Class)arg4 error:(id*)arg5;
++ (bool)getPercentageValue:(double*)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(double)arg4 error:(id*)arg5;
++ (id)originatingRequestSpecifierForKey:(id)arg1 inOptions:(id)arg2 error:(id*)arg3;
++ (id)originatingRequestSpecifierForKey:(id)arg1 inOptions:(id)arg2 specifyingRequestClass:(Class)arg3 error:(id*)arg4;
++ (id)originatingRequestSpecifierInOptions:(id)arg1 error:(id*)arg2;
++ (id)originatingRequestSpecifierInOptions:(id)arg1 specifyingRequestClass:(Class)arg2 error:(id*)arg3;
++ (id)requiredArrayForKey:(id)arg1 inOptions:(id)arg2 withElementsOfClass:(Class)arg3 error:(id*)arg4;
++ (id)requiredDetectedObjectObservationInOptions:(id)arg1 withOptionName:(id)arg2 forObservationClass:(Class)arg3 error:(id*)arg4;
++ (id)requiredFaceObservationInOptions:(id)arg1 withOptionName:(id)arg2 error:(id*)arg3;
++ (id)requiredFaceObservationsInOptions:(id)arg1 withOptionName:(id)arg2 error:(id*)arg3;
++ (id)requiredObjectConformingToProtocol:(id)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (id)requiredObjectOfClass:(Class)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
++ (id)requiredSessionInOptions:(id)arg1 error:(id*)arg2;
++ (bool)validateArray:(id)arg1 named:(id)arg2 hasElementsOfClass:(Class)arg3 requiredMinimumCount:(unsigned long long)arg4 allowedMaximumCount:(unsigned long long)arg5 error:(id*)arg6;
++ (bool)validateAsyncStatusResult:(id)arg1 error:(id*)arg2;
++ (bool)validateAsyncStatusResults:(id)arg1 error:(id*)arg2;
++ (bool)validateAsyncStatusState:(id)arg1 error:(id*)arg2;
++ (bool)validateClassArray:(id)arg1 named:(id)arg2 hasElementsAncestoredFromClass:(Class)arg3 requiredMinimumCount:(unsigned long long)arg4 allowedMaximumCount:(unsigned long long)arg5 error:(id*)arg6;
++ (bool)validateNonNilOptionsDictionary:(id)arg1 selector:(SEL)arg2 error:(id*)arg3;
++ (bool)validateNonZeroImageWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 componentNameProvidingBlock:(id /* block */)arg3 error:(id*)arg4;
++ (bool)validateOptionalDetectedObjectObservations:(id)arg1 forObservationClass:(Class)arg2 error:(id*)arg3;
++ (bool)validateOptionalDetectedObjectObservations:(id)arg1 forObservationClass:(Class)arg2 forRequest:(id)arg3 error:(id*)arg4;
++ (bool)validateOptionalFaceObservations:(id)arg1 error:(id*)arg2;
++ (bool)validateOptionalFaceObservations:(id)arg1 forRequest:(id)arg2 error:(id*)arg3;
++ (bool)validateRequiredClusterIDs:(id)arg1 error:(id*)arg2;
++ (bool)validateRequiredDetectedObjectObservations:(id)arg1 forObservationClass:(Class)arg2 error:(id*)arg3;
++ (bool)validateRequiredDetectedObjectObservations:(id)arg1 forObservationClass:(Class)arg2 forRequest:(id)arg3 error:(id*)arg4;
++ (bool)validateRequiredFaceObservations:(id)arg1 error:(id*)arg2;
++ (bool)validateRequiredFaceObservations:(id)arg1 forRequest:(id)arg2 error:(id*)arg3;
++ (bool)validateScoreRange:(float)arg1 named:(id)arg2 error:(id*)arg3;
++ (bool)validateVNConfidenceRange:(float)arg1 error:(id*)arg2;
+
+@end

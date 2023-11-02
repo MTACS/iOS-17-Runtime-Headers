@@ -1,0 +1,4 @@
+
+@interface _TtC16SetupAssistantUIP33_7CC8F3A56DAF351D4B7EA3A9215C126B19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

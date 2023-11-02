@@ -1,0 +1,75 @@
+
+@interface CHUISMutableWidgetSceneSettings : UIMutableApplicationSceneSettings
+
+@property (nonatomic, copy) NSString *additionalSnapshotPresentationContext;
+@property (getter=areAnimationsPaused, nonatomic) bool animationsPaused;
+@property (nonatomic) bool canAppearInSecureEnvironment;
+@property (nonatomic) unsigned long long clipBehavior;
+@property (nonatomic) unsigned long long colorScheme;
+@property (getter=isContentPaused, nonatomic) bool contentPaused;
+@property (nonatomic) unsigned long long contentType;
+@property (nonatomic, copy) CHSInlineTextParameters *inlineTextParameters;
+@property (getter=isInteractionDisabled, nonatomic) bool interactionDisabled;
+@property (nonatomic, copy) CHSWidgetMetrics *metrics;
+@property (nonatomic) bool prefersUnredactedContentInLowLuminanceEnvironment;
+@property (nonatomic, copy) NSString *remoteViewControllerClassName;
+@property (nonatomic, retain) CHSWidgetRenderScheme *renderScheme;
+@property (nonatomic) bool showsWidgetLabel;
+@property (nonatomic) bool supportsLowLuminance;
+@property (nonatomic, copy) CHSWidgetTintParameters *tintParameters;
+@property (nonatomic, copy) CHUISWidgetVisibilitySettings *visibility;
+@property (getter=shouldVisibleEntrySnapshot, nonatomic) bool visibleEntryShouldSnapshot;
+@property (nonatomic, copy) CHSWidget *widget;
+@property (nonatomic, copy) NSString *widgetConfigurationIdentifier;
+@property (nonatomic, copy) NSString *widgetHostIdentifier;
+@property (nonatomic) unsigned long long widgetPriority;
+
+- (id)additionalSnapshotPresentationContext;
+- (bool)areAnimationsPaused;
+- (bool)canAppearInSecureEnvironment;
+- (unsigned long long)clipBehavior;
+- (unsigned long long)colorScheme;
+- (unsigned long long)contentType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)inlineTextParameters;
+- (bool)isContentPaused;
+- (bool)isInteractionDisabled;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (id)metrics;
+- (bool)prefersUnredactedContentInLowLuminanceEnvironment;
+- (id)remoteViewControllerClassName;
+- (id)renderScheme;
+- (void)setAdditionalSnapshotPresentationContext:(id)arg1;
+- (void)setAnimationsPaused:(bool)arg1;
+- (void)setCanAppearInSecureEnvironment:(bool)arg1;
+- (void)setClipBehavior:(unsigned long long)arg1;
+- (void)setColorScheme:(unsigned long long)arg1;
+- (void)setContentPaused:(bool)arg1;
+- (void)setContentType:(unsigned long long)arg1;
+- (void)setInlineTextParameters:(id)arg1;
+- (void)setInteractionDisabled:(bool)arg1;
+- (void)setMetrics:(id)arg1;
+- (void)setPrefersUnredactedContentInLowLuminanceEnvironment:(bool)arg1;
+- (void)setRemoteViewControllerClassName:(id)arg1;
+- (void)setRenderScheme:(id)arg1;
+- (void)setShowsWidgetLabel:(bool)arg1;
+- (void)setSupportsLowLuminance:(bool)arg1;
+- (void)setTintParameters:(id)arg1;
+- (void)setVisibility:(id)arg1;
+- (void)setVisibleEntryShouldSnapshot:(bool)arg1;
+- (void)setWidget:(id)arg1;
+- (void)setWidgetConfigurationIdentifier:(id)arg1;
+- (void)setWidgetHostIdentifier:(id)arg1;
+- (void)setWidgetPriority:(unsigned long long)arg1;
+- (bool)shouldVisibleEntrySnapshot;
+- (bool)showsWidgetLabel;
+- (bool)supportsLowLuminance;
+- (id)tintParameters;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (id)visibility;
+- (id)widget;
+- (id)widgetConfigurationIdentifier;
+- (id)widgetHostIdentifier;
+- (unsigned long long)widgetPriority;
+
+@end

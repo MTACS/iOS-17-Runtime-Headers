@@ -1,0 +1,66 @@
+
+@interface IKDataSourceElement : IKViewElement {
+    bool  _areItemsBound;
+    long long  _autoHighlightIndex;
+    NSArray * _autoHighlightedChildElements;
+    <IKDataSourceElementImplementing> * _impl;
+    struct { 
+        bool hasMasterPrototypes; 
+        bool hasProxiedItemElements; 
+        bool hasMasterPrototypeForItemAtIndex; 
+        bool hasResetImplicitUpdates; 
+        bool hasProxyElementForLoadedChildElement; 
+        bool hasCanProxyUnloadedChildElement; 
+    }  _implFlags;
+    NSDictionary * _indexTitles;
+}
+
+@property (nonatomic) long long autoHighlightIndex;
+@property (nonatomic, copy) NSArray *autoHighlightedChildElements;
+@property (nonatomic, readonly) <IKDataSourceElementImplementing> *impl;
+@property (nonatomic, copy) NSDictionary *indexTitles;
+@property (getter=areItemsBound, nonatomic, readonly) bool itemsBound;
+@property (nonatomic, readonly) IKChangeSet *itemsChangeSet;
+@property (nonatomic, readonly) NSArray *masterPrototypes;
+@property (nonatomic, readonly) NSArray *prototypes;
+@property (nonatomic, readonly, copy) NSArray *proxiedItemElements;
+
++ (unsigned long long)updateTypeForChangeInAttribute:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
+
+- (void).cxx_destruct;
+- (id)_parsedIndexTitlesFromString:(id)arg1;
+- (void)appDocumentDidMarkStylesDirty;
+- (id)applyUpdatesWithElement:(id)arg1;
+- (bool)areItemsBound;
+- (long long)autoHighlightIndex;
+- (id)autoHighlightedChildElements;
+- (bool)canProxyUnloadedChildElement:(id)arg1;
+- (void)configureUpdatesWithElement:(id)arg1;
+- (void)dealloc;
+- (id)debugDescription;
+- (id)elementForItemAtIndex:(long long)arg1;
+- (void)enumerateItemElementsUsingBlock:(id /* block */)arg1;
+- (id)firstItemElement;
+- (id)impl;
+- (long long)indexOfItemForElement:(id)arg1;
+- (id)indexTitles;
+- (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
+- (id)itemsChangeSet;
+- (id)lastItemElement;
+- (void)loadIndex:(long long)arg1;
+- (id)masterPrototypeForItemAtIndex:(unsigned long long)arg1;
+- (id)masterPrototypes;
+- (long long)numberOfItems;
+- (id)prototypeForItemAtIndex:(long long)arg1;
+- (id)prototypes;
+- (id)proxiedItemElements;
+- (id)proxyElementForLoadedChildElement:(id)arg1;
+- (void)resetImplicitUpdates;
+- (void)resetProperty:(unsigned long long)arg1;
+- (void)resetUpdates;
+- (void)setAutoHighlightIndex:(long long)arg1;
+- (void)setAutoHighlightedChildElements:(id)arg1;
+- (void)setIndexTitles:(id)arg1;
+- (void)unloadIndex:(long long)arg1;
+
+@end

@@ -1,0 +1,84 @@
+
+@interface SBCameraHardwareButton : NSObject <PTSettingsKeyObserver, SBHIDButtonStateDelegate, SBHardwareButtonColluding, SBPhysicalButtonSceneOverrideObserver, SBSceneManagerObserver> {
+    SBCameraActivationManager * _activationManager;
+    NSMutableIndexSet * _allCameraShutterButtonPIDs;
+    SBApplicationController * _applicationController;
+    SBBacklightController * _backlightController;
+    SBBacklightStudyLogger * _backlightStudyLogger;
+    SBHIDButtonStateArbiter * _buttonArbiter;
+    SBCoverSheetPresentationManager * _coverSheetPresentationManager;
+    SBCameraHardwareButtonDefaults * _defaults;
+    <BSInvalidatable> * _deferringRuleAssertion;
+    BSMutableIntegerMap * _deferringTokensPerPID;
+    BKSHIDEventDeliveryManager * _deliveryManager;
+    bool  _disableDeferringToApplications;
+    <BSInvalidatable> * _dispatchingRuleAssertion;
+    NSMutableIndexSet * _foregroundCameraShutterButtonPIDs;
+    NSMutableIndexSet * _foregroundPendingRemovalCameraShutterButtonPIDs;
+    SBHardwareButtonCoordinator * _hardwareButtonCoordinator;
+    int  _lastCameraApplicationPID;
+    SBLiftToWakeStudyLogger * _liftToWakeStudyLogger;
+    SBLockScreenManager * _lockScreenManager;
+    double  _longPressCancellationTimeout;
+    BSAbsoluteMachTimer * _longPressCancellationTimer;
+    _SBCameraLaunchCondition * _longPressCondition;
+    SBSceneManager * _mainDisplaySceneManager;
+    _SBCameraLaunchCondition * _outOfPocketCondition;
+    <BSInvalidatable> * _physicalButtonOverrideObserver;
+    FBScene * _physicalButtonOverrideScene;
+    CMPocketStateManager * _pocketStateManager;
+    RBSProcessMonitor * _processMonitor;
+    SBProximitySensorManager * _proximitySensorManager;
+    SBCameraHardwareButtonSettings * _settings;
+    _SBCameraLaunchCondition * _shouldLaunchCameraCondition;
+    bool  _shouldUsePocketStateDetection;
+    SBCameraHardwareButtonStudyLogger * _studyLogger;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool disableDeferringToApplications;
+@property (nonatomic, retain) SBHardwareButtonCoordinator *hardwareButtonCoordinator;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_deferCameraPressesToApplication:(id)arg1;
+- (void)_deferCameraPressesToCameraApplication;
+- (void)_deferCameraPressesToPID:(int)arg1;
+- (void)_deferCameraPressesToSpringBoard;
+- (bool)_deferToForegroundApp;
+- (bool)_deferToPhysicalOverrideScene;
+- (bool)_isCoverSheetCameraVisible;
+- (void)_launchCameraIfReady;
+- (void)_longPressDidCancel;
+- (void)_notifyCoreAnalyticsCameraDidLaunchToLockScreen:(bool)arg1 screenWasOff:(bool)arg2;
+- (void)_process:(id)arg1 stateDidUpdate:(id)arg2;
+- (void)_reconfigureProcessMonitor;
+- (void)_reconfigureProcessMonitorForPredicates:(id)arg1;
+- (bool)_shouldDeferToCoverSheetCamera;
+- (bool)_shouldDeferToNonSpringBoardProcess;
+- (void)_startWaitingForLongPressCancellation;
+- (void)_stopWaitingForLongPressCancellation;
+- (void)_updateCameraDeferringRule;
+- (void)_updateSettingsForReason:(id)arg1;
+- (void)addProcessRequestingCameraButton:(int)arg1 token:(id)arg2;
+- (void)cancelHardwareButtonPress;
+- (void)dealloc;
+- (bool)disableDeferringToApplications;
+- (void)handleButtonEvent:(struct __IOHIDEvent { }*)arg1;
+- (id)hardwareButtonCoordinator;
+- (id)hardwareButtonIdentifier;
+- (id)initWithActivationManager:(id)arg1;
+- (void)performActionsForButtonDown:(id)arg1;
+- (void)performActionsForButtonLongPress:(id)arg1;
+- (void)performActionsForButtonUp:(id)arg1;
+- (void)physicalButtonSceneOverridesDidChange:(id)arg1;
+- (void)removeProcessRequestingCameraButton:(int)arg1;
+- (void)sceneManager:(id)arg1 didAddExternalForegroundApplicationSceneHandle:(id)arg2;
+- (void)sceneManager:(id)arg1 didRemoveExternalForegroundApplicationSceneHandle:(id)arg2;
+- (void)setDisableDeferringToApplications:(bool)arg1;
+- (void)setHardwareButtonCoordinator:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+
+@end

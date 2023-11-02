@@ -1,0 +1,4 @@
+
+@interface TRITripersistedClientRolloutArtifactRoot : TRIPBRootObject
+
+@end

@@ -1,0 +1,22 @@
+
+@interface SLExternalServiceGatekeeper : NSObject <NSURLSessionTaskDelegate> {
+    id /* block */  _completion;
+    NSString * _redirectHost;
+    NSURL * _url;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)_completeWithURLToLoad:(id)arg1 error:(id)arg2;
+- (bool)_gatekeepingIsNotAvailable;
+- (id)initForPermissionToAccessURL:(id)arg1 fromURLString:(id)arg2 completion:(id /* block */)arg3;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC16ScreenTimeUICoreP33_1400D9BA3FCF37A51CFE3BCD81F6E9DB19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface HKWorkoutType : HKSampleType
+
+@end

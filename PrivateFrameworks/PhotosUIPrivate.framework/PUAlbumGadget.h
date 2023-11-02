@@ -1,0 +1,81 @@
+
+@interface PUAlbumGadget : NSObject <PXDiagnosticsEnvironment, PXGadget> {
+    PXAssetCollectionActionManager * _actionManager;
+    <PUAlbumGadgetDelegate> * _albumGadgetDelegate;
+    PUAlbumListCellContentView * _albumListCellContentView;
+    PHCollection * _collection;
+    bool  _contentViewVisible;
+    <PXGadgetDelegate> * _delegate;
+    PXGadgetSpec * _gadgetSpec;
+    NSIndexSet * _indexesOfHiddenStackItems;
+    double  _lastPreferredHeight;
+    bool  _needsUpdate;
+}
+
+@property (nonatomic, readonly) NSString *accessoryButtonTitle;
+@property (nonatomic, readonly) unsigned long long accessoryButtonType;
+@property (nonatomic, readonly) PXAssetCollectionActionManager *actionManager;
+@property (nonatomic) <PUAlbumGadgetDelegate> *albumGadgetDelegate;
+@property (nonatomic, readonly) PUAlbumListCellContentView *albumListCellContentView;
+@property (nonatomic, readonly) PUAlbumListCellContentViewHelper *albumListCellContentViewHelper;
+@property (nonatomic, retain) PHCollection *collection;
+@property (nonatomic, readonly) Class collectionViewItemClass;
+@property (getter=isContentViewVisible, nonatomic) bool contentViewVisible;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PXGadgetDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long gadgetCapabilities;
+@property (nonatomic, retain) PXGadgetSpec *gadgetSpec;
+@property (nonatomic, readonly) unsigned long long gadgetType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long headerStyle;
+@property (nonatomic, copy) NSIndexSet *indexesOfHiddenStackItems;
+@property (nonatomic) double lastPreferredHeight;
+@property (nonatomic, readonly) NSString *localizedTitle;
+@property (nonatomic) bool needsUpdate;
+@property (nonatomic) long long priority;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleContentRect;
+@property (nonatomic, readonly) bool wantsMultilineTitle;
+
+- (void).cxx_destruct;
+- (void)_updateContent;
+- (id)actionManager;
+- (id)albumGadgetDelegate;
+- (id)albumListCellContentView;
+- (id)albumListCellContentViewHelper;
+- (id)collection;
+- (id)contentView;
+- (void)contentViewDidDisappear;
+- (void)contentViewWillAppear;
+- (id)contextMenuWithSuggestedActions:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (long long)estimatedIndexInCollection:(id)arg1 ofAssetForStackItemAtIndex:(long long)arg2;
+- (unsigned long long)gadgetCapabilities;
+- (id)gadgetSpec;
+- (unsigned long long)gadgetType;
+- (id)indexesOfHiddenStackItems;
+- (id)init;
+- (id)initWithCollection:(id)arg1 albumGadgetDelegate:(id)arg2;
+- (bool)isContentViewVisible;
+- (double)lastPreferredHeight;
+- (bool)needsUpdate;
+- (id)previewViewControllerAtLocation:(struct CGPoint { double x1; double x2; })arg1 fromSourceView:(id)arg2;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (void)reconfigure;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForStackItemAtIndex:(long long)arg1 inCoordinateSpace:(id)arg2;
+- (void)setAlbumGadgetDelegate:(id)arg1;
+- (void)setCollection:(id)arg1;
+- (void)setContentViewVisible:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setGadgetSpec:(id)arg1;
+- (void)setIndexesOfHiddenStackItems:(id)arg1;
+- (void)setLastPreferredHeight:(double)arg1;
+- (void)setNeedsUpdate:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)targetPreviewViewForLocation:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (id)title;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SafariPasswordManagersControllerDelegate <NSObject>
+
+@end

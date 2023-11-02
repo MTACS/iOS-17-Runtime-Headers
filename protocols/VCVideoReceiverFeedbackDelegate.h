@@ -1,0 +1,4 @@
+
+@protocol VCVideoReceiverFeedbackDelegate <NSObject>
+
+@end

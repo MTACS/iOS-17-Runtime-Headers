@@ -1,0 +1,17 @@
+
+@interface CUIKUserActivityRemindersListCategory : CUIKUserActivityWithSource {
+    NSString * _externalID;
+    bool  _predictable;
+    NSString * _title;
+}
+
+- (void).cxx_destruct;
+- (bool)_isMatchForRemindersList:(id)arg1;
+- (id)dictionary;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithRemindersList:(id)arg1;
+- (id)initWithRemindersList:(id)arg1 forceLocal:(bool)arg2;
+- (id)remindersListFromStore:(id)arg1;
+- (void)updateActivity:(id)arg1;
+
+@end

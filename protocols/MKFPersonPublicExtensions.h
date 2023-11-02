@@ -1,0 +1,4 @@
+
+@protocol MKFPersonPublicExtensions <MKFPersonHMPersonTransformable>
+
+@end

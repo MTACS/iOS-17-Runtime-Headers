@@ -1,0 +1,95 @@
+
+@interface SASingleDeviceRecord : NSObject <NSSecureCoding> {
+    <SAAnalyticsServiceProtocol> * _analytics;
+    <SATimeServiceProtocol> * _clock;
+    long long  _connectionState;
+    unsigned long long  _currentMonitoringSessionState;
+    unsigned long long  _currentScenarioClass;
+    NSDate * _currentScenarioTime;
+    SADevice * _device;
+    NSDate * _firstAdvertisementAfterScenarioTransition;
+    bool  _hasSurfacedNotification;
+    NSDate * _lastCompanionDisconnectionDate;
+    NSDate * _lastWithYouDate;
+    TALocationLite * _lastWithYouLocation;
+    TASPAdvertisement * _latestAdvertisement;
+    TASPAdvertisement * _latestNOAdvertisement;
+    TASPAdvertisement * _latestWildAdvertisement;
+    unsigned long long  _monitoringSessionStateAtTimeOfFirstAdv;
+    unsigned long long  _notificationState;
+    NSUUID * _uuid;
+    NSMutableArray * _uuidsOfRelatedDevices;
+    unsigned long long  _withYouStatus;
+}
+
+@property (nonatomic, retain) <SAAnalyticsServiceProtocol> *analytics;
+@property (nonatomic, retain) <SATimeServiceProtocol> *clock;
+@property (nonatomic) long long connectionState;
+@property (nonatomic) unsigned long long currentMonitoringSessionState;
+@property (nonatomic, readonly) unsigned long long currentScenarioClass;
+@property (nonatomic, readonly) NSDate *currentScenarioTime;
+@property (nonatomic, retain) SADevice *device;
+@property (nonatomic, readonly) NSDate *firstAdvertisementAfterScenarioTransition;
+@property (nonatomic) bool hasSurfacedNotification;
+@property (readonly) bool isConnected;
+@property (nonatomic, readonly) NSDate *lastCompanionDisconnectionDate;
+@property (nonatomic, readonly) NSDate *lastWithYouDate;
+@property (nonatomic, copy) TALocationLite *lastWithYouLocation;
+@property (nonatomic, readonly) TASPAdvertisement *latestAdvertisement;
+@property (nonatomic, readonly) TASPAdvertisement *latestNOAdvertisement;
+@property (nonatomic, readonly) TASPAdvertisement *latestWildAdvertisement;
+@property (nonatomic, readonly) unsigned long long monitoringSessionStateAtTimeOfFirstAdv;
+@property (nonatomic) unsigned long long notificationState;
+@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, retain) NSMutableArray *uuidsOfRelatedDevices;
+@property (nonatomic) unsigned long long withYouStatus;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)analytics;
+- (id)clock;
+- (long long)connectionState;
+- (unsigned long long)currentMonitoringSessionState;
+- (unsigned long long)currentScenarioClass;
+- (id)currentScenarioTime;
+- (id)device;
+- (void)encodeWithCoder:(id)arg1;
+- (id)firstAdvertisementAfterScenarioTransition;
+- (bool)hasSurfacedNotification;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithConnectionEvent:(id)arg1 clock:(id)arg2 analytics:(id)arg3;
+- (id)initWithDevice:(id)arg1 clock:(id)arg2 analytics:(id)arg3;
+- (void)insertRelatedDevice:(id)arg1;
+- (bool)isConnected;
+- (id)lastCompanionDisconnectionDate;
+- (id)lastWithYouDate;
+- (id)lastWithYouLocation;
+- (id)latestAdvertisement;
+- (id)latestNOAdvertisement;
+- (id)latestWildAdvertisement;
+- (unsigned long long)monitoringSessionStateAtTimeOfFirstAdv;
+- (unsigned long long)notificationState;
+- (void)publishAnalyticsForFirstAdv:(id)arg1 scenario:(unsigned long long)arg2;
+- (void)resetRelatedDevices;
+- (void)setAnalytics:(id)arg1;
+- (void)setClock:(id)arg1;
+- (void)setConnectionState:(long long)arg1;
+- (void)setCurrentMonitoringSessionState:(unsigned long long)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setHasSurfacedNotification:(bool)arg1;
+- (void)setLastWithYouLocation:(id)arg1;
+- (void)setNotificationState:(unsigned long long)arg1;
+- (void)setUuidsOfRelatedDevices:(id)arg1;
+- (void)setWithYouStatus:(unsigned long long)arg1;
+- (void)updateCurrentScenarioClass:(unsigned long long)arg1;
+- (void)updateFirstAdvertisementAfterScenarioTransition:(id)arg1;
+- (void)updateLastCompanionDisconnectionDate:(id)arg1;
+- (void)updateLastWithYouDate:(id)arg1;
+- (void)updateLatestAdvertisement:(id)arg1;
+- (void)updateWithYouStatus:(unsigned long long)arg1;
+- (id)uuid;
+- (id)uuidsOfRelatedDevices;
+- (unsigned long long)withYouStatus;
+
+@end

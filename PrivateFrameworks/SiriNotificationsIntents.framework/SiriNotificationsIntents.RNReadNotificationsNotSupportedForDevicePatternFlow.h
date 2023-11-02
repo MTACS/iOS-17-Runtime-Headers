@@ -1,0 +1,4 @@
+
+@interface SiriNotificationsIntents.RNReadNotificationsNotSupportedForDevicePatternFlow : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface TREventMessage : TRMessage
+
+@end

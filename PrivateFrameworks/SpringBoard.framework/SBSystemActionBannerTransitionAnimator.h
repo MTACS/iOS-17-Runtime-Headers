@@ -1,0 +1,4 @@
+
+@interface SBSystemActionBannerTransitionAnimator : SBBannerCustomTransitionAnimator
+
+@end

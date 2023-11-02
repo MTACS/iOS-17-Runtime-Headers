@@ -1,0 +1,4 @@
+
+@interface _TtCC33iCloudSubscriptionOptimizerDaemon23BiomeNotificationStream14ReceivedEvents : _TtCs12_SwiftObject
+
+@end

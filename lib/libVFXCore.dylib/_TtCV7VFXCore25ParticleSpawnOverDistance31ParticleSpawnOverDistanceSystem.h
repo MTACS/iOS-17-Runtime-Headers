@@ -1,0 +1,4 @@
+
+@interface _TtCV7VFXCore25ParticleSpawnOverDistance31ParticleSpawnOverDistanceSystem : _TtCs12_SwiftObject
+
+@end

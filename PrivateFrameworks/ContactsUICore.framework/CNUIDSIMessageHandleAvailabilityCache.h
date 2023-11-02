@@ -1,0 +1,4 @@
+
+@interface CNUIDSIMessageHandleAvailabilityCache : CNUIDSHandleAvailabilityCache
+
+@end

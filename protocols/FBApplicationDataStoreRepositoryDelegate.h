@@ -1,0 +1,4 @@
+
+@protocol FBApplicationDataStoreRepositoryDelegate <FBApplicationDataStoreRepositoryReadingDelegate>
+
+@end

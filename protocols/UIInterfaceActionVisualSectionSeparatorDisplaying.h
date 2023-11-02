@@ -1,0 +1,4 @@
+
+@protocol UIInterfaceActionVisualSectionSeparatorDisplaying <UISeparatorDisplaying>
+
+@end

@@ -1,0 +1,59 @@
+
+@interface HROnboardingBulletPointViewController : HKOnboardingBaseViewController <HRStackedButtonViewDelegate> {
+    UILabel * _bodyLabel;
+    NSHashTable * _bulletPointBodyLabels;
+    UIStackView * _bulletPointsView;
+    NSLayoutConstraint * _contentViewBottomConstraint;
+    UIView * _lastBulletPointView;
+    HRStackedButtonView * _stackedButtonView;
+    UILabel * _titleLabel;
+}
+
+@property (nonatomic, retain) UILabel *bodyLabel;
+@property (nonatomic, readonly) NSString *bodyString;
+@property (nonatomic, retain) NSHashTable *bulletPointBodyLabels;
+@property (nonatomic, readonly) NSArray *bulletPoints;
+@property (nonatomic, retain) UIStackView *bulletPointsView;
+@property (nonatomic, readonly) NSString *buttonTitleString;
+@property (nonatomic, retain) NSLayoutConstraint *contentViewBottomConstraint;
+@property (nonatomic, retain) UIView *lastBulletPointView;
+@property (nonatomic, retain) HRStackedButtonView *stackedButtonView;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, readonly) NSString *titleString;
+
+- (void).cxx_destruct;
+- (void)_adjustButtonFooterViewLocationForViewContentHeight;
+- (id)_bodyFont;
+- (id)_boldSubheadlineFont;
+- (struct CGSize { double x1; double x2; })_bulletImageSize;
+- (double)_cannotDoHeaderLastBaselineToCannotDoBodyFirstBaseline;
+- (void)_setUpButtonFooterView;
+- (void)_setupBulletPointViews;
+- (id)_subheadlineFont;
+- (id)bodyLabel;
+- (id)bodyString;
+- (id)bulletPointBodyLabels;
+- (id)bulletPoints;
+- (id)bulletPointsView;
+- (id)buttonTitleString;
+- (id)contentViewBottomConstraint;
+- (id)lastBulletPointView;
+- (void)setBodyLabel:(id)arg1;
+- (void)setBulletPointBodyLabels:(id)arg1;
+- (void)setBulletPointsView:(id)arg1;
+- (void)setContentViewBottomConstraint:(id)arg1;
+- (void)setLastBulletPointView:(id)arg1;
+- (void)setStackedButtonView:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (void)setUpConstraints;
+- (void)setUpUI;
+- (id)stackedButtonView;
+- (void)stackedButtonView:(id)arg1 didTapButtonAtIndex:(long long)arg2;
+- (id)titleLabel;
+- (id)titleString;
+- (void)updateUserInterfaceForStyle:(long long)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+
+@end

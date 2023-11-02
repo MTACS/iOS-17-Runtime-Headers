@@ -1,0 +1,97 @@
+
+@interface PHSuggestionChangeRequest : PHChangeRequest <PHInsertChangeRequest, PHUpdateChangeRequest> {
+    PHRelationshipChangeRequestHelper * _keyAssetsHelper;
+    PHRelationshipChangeRequestHelper * _representativeAssetsHelper;
+}
+
+@property (nonatomic, readonly) long long accessScopeOptionsRequirement;
+@property (nonatomic) unsigned long long availableFeatures;
+@property (getter=isClientEntitled, nonatomic, readonly) bool clientEntitled;
+@property (nonatomic, readonly) NSString *clientName;
+@property (nonatomic, retain) NSString *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned short featuredState;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool isNewRequest;
+@property (nonatomic, readonly) PHRelationshipChangeRequestHelper *keyAssetsHelper;
+@property (nonatomic, readonly) NSString *managedEntityName;
+@property (getter=isMutated, readonly) bool mutated;
+@property (nonatomic) unsigned short notificationState;
+@property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedSuggestion;
+@property (nonatomic, readonly) PHRelationshipChangeRequestHelper *representativeAssetsHelper;
+@property (nonatomic) bool shouldPerformConcurrentWork;
+@property (nonatomic, retain) NSString *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
+
++ (id)changeRequestForSuggestion:(id)arg1;
++ (id)creationRequestForSuggestion;
++ (id)creationRequestForSuggestionWithType:(unsigned short)arg1 subtype:(unsigned short)arg2 keyAssets:(id)arg3 representativeAssets:(id)arg4 creationDate:(id)arg5 relevantUntilDate:(id)arg6 version:(long long)arg7;
++ (void)deleteSuggestions:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_calculateAndSetExpungeDate;
+- (id)actionData;
+- (id)activationDate;
+- (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (bool)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id*)arg3;
+- (unsigned long long)availableFeatures;
+- (id)context;
+- (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
+- (id)creationDate;
+- (void)encodeToXPCDict:(id)arg1;
+- (id)endDate;
+- (id)expungeDate;
+- (unsigned short)featuredState;
+- (id)featuresData;
+- (id)initForNewObject;
+- (id)initWithUUID:(id)arg1 objectID:(id)arg2;
+- (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
+- (id)keyAssetsHelper;
+- (id)managedEntityName;
+- (void)markAccepted;
+- (void)markActive;
+- (void)markDeclined;
+- (void)markReactivated;
+- (void)markRetired;
+- (unsigned short)notificationState;
+- (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
+- (id)placeholderForCreatedSuggestion;
+- (id)relevantUntilDate;
+- (id)representativeAssetsHelper;
+- (void)setActionData:(id)arg1;
+- (void)setActionProperties:(id)arg1;
+- (void)setActivationDate:(id)arg1;
+- (void)setAvailableFeatures:(unsigned long long)arg1;
+- (void)setContext:(id)arg1;
+- (void)setCreationDate:(id)arg1;
+- (void)setEndDate:(id)arg1;
+- (void)setExpungeDate:(id)arg1;
+- (void)setFeaturedState:(unsigned short)arg1;
+- (void)setFeaturesData:(id)arg1;
+- (void)setFeaturesProperties:(id)arg1;
+- (void)setKeyAssets:(id)arg1;
+- (void)setNotificationState:(unsigned short)arg1;
+- (void)setRelevantUntilDate:(id)arg1;
+- (void)setRepresentativeAssets:(id)arg1;
+- (void)setStartAndEndDatesWithKeyAssets:(id)arg1 representativeAssets:(id)arg2;
+- (void)setStartDate:(id)arg1;
+- (void)setState:(unsigned short)arg1;
+- (void)setSubtitle:(id)arg1;
+- (void)setSubtype:(unsigned short)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setType:(unsigned short)arg1;
+- (void)setVersion:(long long)arg1;
+- (id)startDate;
+- (unsigned short)state;
+- (id)subtitle;
+- (unsigned short)subtype;
+- (id)title;
+- (unsigned short)type;
+- (id)validateMutationsToManagedObject:(id)arg1;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (long long)version;
+
+@end

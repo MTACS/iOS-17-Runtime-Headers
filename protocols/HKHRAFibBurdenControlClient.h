@@ -1,0 +1,4 @@
+
+@protocol HKHRAFibBurdenControlClient <NSObject>
+
+@end

@@ -1,0 +1,93 @@
+
+@interface PKPrinter : NSObject {
+    long long  _accessState;
+    PKPrinterBrowseInfo * _browseInfo;
+    struct PrintJobRequest_Client { int (**x1)(); id x2; id x3; } * _job_request;
+    PKPrinterDescription * _printerDescription;
+    NSDate * _printerDescriptionTime;
+    bool  _supportsColor;
+    bool  _supportsDuplex;
+}
+
+@property (readonly) long long accessState;
+@property (readonly) PKPrinterBrowseInfo *browseInfo;
+@property (readonly) NSString *description;
+@property (readonly) NSString *displayName;
+@property (readonly) bool hasIdentifyPrinterOp;
+@property (readonly) bool hasPrintInfoSupported;
+@property (readonly) long long jobAccountIDSupport;
+@property (readonly) unsigned long long jobTypesSupported;
+@property (readonly) long long kind;
+@property (readonly) NSString *location;
+@property (readonly) NSString *makeAndModel;
+@property (readonly) NSString *name;
+@property (readonly) NSDictionary *printInfoSupported;
+@property (readonly) NSURL *printerURL;
+@property (readonly) bool supportsColor;
+@property (readonly) bool supportsDuplex;
+@property (readonly) bool supportsJobAccountID;
+@property (readonly) long long type;
+@property (readonly) NSString *uuid;
+
++ (bool)printerLookupWithName:(id)arg1 andTimeout:(double)arg2;
++ (void)printerWithBonjourEndpoint:(id)arg1 discoveryTimeout:(double)arg2 completionHandler:(id /* block */)arg3;
++ (void)printerWithEndpointData:(id)arg1 discoveryTime:(double)arg2 completionHandler:(id /* block */)arg3;
++ (id)printerWithName:(id)arg1;
++ (id)printerWithName:(id)arg1 discoveryTimeout:(double)arg2;
++ (void)printerWithName:(id)arg1 discoveryTimeout:(double)arg2 completionHandler:(id /* block */)arg3;
++ (void)printerWithURL:(id)arg1 discoveryTimeout:(double)arg2 completionHandler:(id /* block */)arg3;
+
+- (void).cxx_destruct;
+- (bool)_allowedToPrintToThisPrinter;
+- (void)_checkAvailable:(double)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_identifySelf:(id)arg1;
+- (void)_updateAccessState:(long long)arg1;
+- (void)_updateDescription:(id)arg1 browseInfo:(id)arg2;
+- (void)abortJobCompletionHandler:(id /* block */)arg1;
+- (long long)accessState;
+- (id)availableRollPapersPreferBorderless:(bool)arg1;
+- (id)bonjourName;
+- (id)browseInfo;
+- (void)cancelUnlock;
+- (struct PrintJobRequest_Client { int (**x1)(); id x2; id x3; }*)createRequest:(id)arg1 ofType:(id)arg2;
+- (id)debugDescription;
+- (id)description;
+- (id)displayName;
+- (int)feedOrientation:(id)arg1;
+- (void)finalizeJob:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)finishJobCompletionHandler:(id /* block */)arg1;
+- (void)getSupplyLevels:(id /* block */)arg1;
+- (bool)hasIdentifyPrinterOp;
+- (bool)hasPrintInfoSupported;
+- (void)identifySelf;
+- (id)initPKPrinterWithBrowseInfo:(id)arg1;
+- (bool)isFromMCProfile;
+- (bool)isPaperReady:(id)arg1;
+- (long long)jobAccountIDSupport;
+- (unsigned long long)jobTypesSupported;
+- (long long)kind;
+- (bool)knowsReadyPaperList;
+- (id)location;
+- (id)makeAndModel;
+- (id)matchedPaper:(id)arg1 preferBorderless:(bool)arg2 withDuplexMode:(id)arg3 didMatch:(bool*)arg4;
+- (id)name;
+- (id)papersForDocumentWithSize:(struct CGSize { double x1; double x2; })arg1 andDuplex:(bool)arg2;
+- (id)papersForDocumentWithSize:(struct CGSize { double x1; double x2; })arg1 scaleUpOnRoll:(bool)arg2 andDuplex:(bool)arg3;
+- (id)papersForPhotoWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)pollForPrinterAttributes:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)pollForPrinterStatusQueue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)printInfoSupported;
+- (void)printURL:(id)arg1 ofType:(id)arg2 printSettings:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)printerURL;
+- (void)removeCredentialsFromKeychain;
+- (long long)sendData:(const char *)arg1 ofLength:(long long)arg2;
+- (long long)startJob:(id)arg1 ofType:(id)arg2;
+- (bool)supportsColor;
+- (bool)supportsDuplex;
+- (bool)supportsJobAccountID;
+- (long long)type;
+- (void)unlockWithCompletionHandler:(id /* block */)arg1;
+- (id)uuid;
+- (void)withDescriptionAsync:(id /* block */)arg1;
+
+@end

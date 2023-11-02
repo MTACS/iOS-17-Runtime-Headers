@@ -1,0 +1,85 @@
+
+@interface VUIDebugMetricsEventCell : UITableViewCell {
+    VUILabel * _eventTypeLabel;
+    VUITextLayout * _eventTypeLabelLayout;
+    NSString * _eventTypeLabelStr;
+    VUISeparatorView * _separatorView;
+    VUILabel * _subhead1Label;
+    VUITextLayout * _subhead1LabelLayout;
+    NSString * _subhead1LabelStr;
+    VUILabel * _subhead2Label;
+    VUITextLayout * _subhead2LabelLayout;
+    NSString * _subhead2LabelStr;
+    VUILabel * _subhead3Label;
+    VUITextLayout * _subhead3LabelLayout;
+    NSString * _subhead3LabelStr;
+    UIImageView * _tabImageView;
+    NSString * _tabName;
+    VUILabel * _tabNameLabel;
+    VUITextLayout * _tabNameLabelLayout;
+}
+
+@property (nonatomic, retain) VUILabel *eventTypeLabel;
+@property (nonatomic, retain) VUITextLayout *eventTypeLabelLayout;
+@property (nonatomic, copy) NSString *eventTypeLabelStr;
+@property (nonatomic, retain) VUISeparatorView *separatorView;
+@property (nonatomic, retain) VUILabel *subhead1Label;
+@property (nonatomic, retain) VUITextLayout *subhead1LabelLayout;
+@property (nonatomic, copy) NSString *subhead1LabelStr;
+@property (nonatomic, retain) VUILabel *subhead2Label;
+@property (nonatomic, retain) VUITextLayout *subhead2LabelLayout;
+@property (nonatomic, copy) NSString *subhead2LabelStr;
+@property (nonatomic, retain) VUILabel *subhead3Label;
+@property (nonatomic, retain) VUITextLayout *subhead3LabelLayout;
+@property (nonatomic, copy) NSString *subhead3LabelStr;
+@property (nonatomic, copy) UIImage *tabImage;
+@property (nonatomic, retain) UIImageView *tabImageView;
+@property (nonatomic, copy) NSString *tabName;
+@property (nonatomic, retain) VUILabel *tabNameLabel;
+@property (nonatomic, retain) VUITextLayout *tabNameLabelLayout;
+
+- (void).cxx_destruct;
+- (id)eventTypeLabel;
+- (id)eventTypeLabelLayout;
+- (id)eventTypeLabelStr;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
+- (void)prepareForReuse;
+- (id)separatorView;
+- (void)setEventTypeLabel:(id)arg1;
+- (void)setEventTypeLabelLayout:(id)arg1;
+- (void)setEventTypeLabelStr:(id)arg1;
+- (void)setSeparatorView:(id)arg1;
+- (void)setSubhead1Label:(id)arg1;
+- (void)setSubhead1LabelColor:(id)arg1;
+- (void)setSubhead1LabelLayout:(id)arg1;
+- (void)setSubhead1LabelStr:(id)arg1;
+- (void)setSubhead2Label:(id)arg1;
+- (void)setSubhead2LabelColor:(id)arg1;
+- (void)setSubhead2LabelLayout:(id)arg1;
+- (void)setSubhead2LabelStr:(id)arg1;
+- (void)setSubhead3Label:(id)arg1;
+- (void)setSubhead3LabelColor:(id)arg1;
+- (void)setSubhead3LabelLayout:(id)arg1;
+- (void)setSubhead3LabelStr:(id)arg1;
+- (void)setTabImage:(id)arg1;
+- (void)setTabImageView:(id)arg1;
+- (void)setTabName:(id)arg1;
+- (void)setTabNameLabel:(id)arg1;
+- (void)setTabNameLabelLayout:(id)arg1;
+- (id)subhead1Label;
+- (id)subhead1LabelLayout;
+- (id)subhead1LabelStr;
+- (id)subhead2Label;
+- (id)subhead2LabelLayout;
+- (id)subhead2LabelStr;
+- (id)subhead3Label;
+- (id)subhead3LabelLayout;
+- (id)subhead3LabelStr;
+- (id)tabImage;
+- (id)tabImageView;
+- (id)tabName;
+- (id)tabNameLabel;
+- (id)tabNameLabelLayout;
+
+@end

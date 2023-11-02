@@ -1,0 +1,4 @@
+
+@interface PKAuxiliaryCapabilityWebServiceResponse : PKPaymentWebServiceResponse
+
+@end

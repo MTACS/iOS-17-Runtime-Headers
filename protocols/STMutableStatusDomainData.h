@@ -1,0 +1,4 @@
+
+@protocol STMutableStatusDomainData <STStatusDomainData>
+
+@end

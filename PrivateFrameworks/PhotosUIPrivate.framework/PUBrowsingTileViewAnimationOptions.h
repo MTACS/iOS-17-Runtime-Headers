@@ -1,0 +1,4 @@
+
+@interface PUBrowsingTileViewAnimationOptions : PUTileAnimationOptions
+
+@end

@@ -1,0 +1,80 @@
+
+@interface LUILogViewerView : UIView {
+    UIStackView * _buttonStack;
+    UIButton * _clearButton;
+    UIButton * _closeButton;
+    UIView * _contentHolderView;
+    <LUILogViewerViewDelegate> * _delegate;
+    UIButton * _filterButton;
+    UIView * _filterView;
+    UIButton * _leftCaretButton;
+    UIButton * _logButton;
+    UIButton * _rightCaretButton;
+    UISearchBar * _searchBar;
+    UILabel * _searchResultLabel;
+}
+
+@property (nonatomic, retain) UIStackView *buttonStack;
+@property (nonatomic, retain) UIButton *clearButton;
+@property (nonatomic, retain) UIButton *closeButton;
+@property (nonatomic, retain) UIView *contentHolderView;
+@property (nonatomic) <LUILogViewerViewDelegate> *delegate;
+@property (nonatomic, retain) UIButton *filterButton;
+@property (nonatomic, retain) UIView *filterView;
+@property (nonatomic, retain) UIButton *leftCaretButton;
+@property (nonatomic, retain) UIButton *logButton;
+@property (nonatomic, retain) UIButton *rightCaretButton;
+@property (nonatomic, retain) UISearchBar *searchBar;
+@property (nonatomic, retain) UILabel *searchResultLabel;
+
+- (void).cxx_destruct;
+- (id)_createButtonWithTitle:(id)arg1 action:(SEL)arg2;
+- (id)_createClearButton;
+- (id)_createCloseButton;
+- (id)_createFilterButton;
+- (id)_createLeftCaretButton;
+- (id)_createLogButton;
+- (id)_createRightCaretButton;
+- (id)_createSearchBar;
+- (id)_createSearchResultLabel;
+- (void)_highlightButton:(id)arg1 highlight:(bool)arg2;
+- (void)_setup;
+- (id)buttonStack;
+- (id)clearButton;
+- (void)clearButtonTapped:(id)arg1;
+- (id)closeButton;
+- (void)closeButtonTapped:(id)arg1;
+- (id)contentHolderView;
+- (id)delegate;
+- (id)filterButton;
+- (void)filterButtonTapped:(id)arg1;
+- (id)filterView;
+- (void)highlightFilterButton:(bool)arg1;
+- (void)highlightLogButton:(bool)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)leftCaretButton;
+- (void)leftCaretButtonTapped:(id)arg1;
+- (id)logButton;
+- (void)logButtonTapped:(id)arg1;
+- (void)resetSearchResultLabel;
+- (id)rightCaretButton;
+- (void)rightCaretButtonTapped:(id)arg1;
+- (id)searchBar;
+- (id)searchResultLabel;
+- (void)setButtonStack:(id)arg1;
+- (void)setClearButton:(id)arg1;
+- (void)setCloseButton:(id)arg1;
+- (void)setContentHolderView:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFilterButton:(id)arg1;
+- (void)setFilterView:(id)arg1;
+- (void)setLeftCaretButton:(id)arg1;
+- (void)setLogButton:(id)arg1;
+- (void)setRightCaretButton:(id)arg1;
+- (void)setSearchBar:(id)arg1;
+- (void)setSearchResultLabel:(id)arg1;
+- (void)switchClearButtonTitle:(bool)arg1;
+- (void)updateSearchResultLabelWithTotalResult:(unsigned long long)arg1 currentIndex:(unsigned long long)arg2;
+
+@end

@@ -1,0 +1,95 @@
+
+@interface TPSContextualEvent : TPSSerializableObject {
+    TPSContextualEventBookmark * _bookmark;
+    long long  _daysSinceLastMajorUpdate;
+    NSDate * _eventSinceDate;
+    NSString * _identifier;
+    NSString * _key;
+    long long  _lookBackDays;
+    NSDate * _matchedDate;
+    unsigned int  _minObservationCount;
+    NSMutableDictionary * _observationMap;
+    NSMutableSet * _observerIdentifiers;
+    TPSContextualEvent * _state;
+    long long  _status;
+    long long  _type;
+    NSDictionary * _userInfoPersistent;
+    NSDictionary * _userInfoQuery;
+}
+
+@property (nonatomic, copy) TPSContextualEventBookmark *bookmark;
+@property (nonatomic, readonly) unsigned int currentObservationCount;
+@property (nonatomic) long long daysSinceLastMajorUpdate;
+@property (nonatomic, copy) NSDate *eventSinceDate;
+@property (nonatomic, readonly) double eventTimeToLiveInterval;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic) long long lookBackDays;
+@property (nonatomic, copy) NSDate *matchedDate;
+@property (nonatomic) unsigned int minObservationCount;
+@property (nonatomic, retain) NSMutableDictionary *observationMap;
+@property (nonatomic, retain) NSMutableSet *observerIdentifiers;
+@property (nonatomic, copy) TPSContextualEvent *state;
+@property (nonatomic) long long status;
+@property (nonatomic) long long type;
+@property (nonatomic, copy) NSDictionary *userInfoPersistent;
+@property (nonatomic, copy) NSDictionary *userInfoQuery;
+
++ (id)eventDictionaryForIdentifier:(id)arg1 type:(long long)arg2 status:(long long)arg3;
++ (id)identifierFromEventInfoDictionary:(id)arg1;
++ (bool)supportsSecureCoding;
++ (long long)typeFromEventDictionary:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)addObserverIdentifier:(id)arg1;
+- (id)bookmark;
+- (bool)canBeRemoved;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)currentObservationCount;
+- (long long)daysSinceLastMajorUpdate;
+- (double)daysSinceLastMajorUpdateTimeIntervalInSeconds;
+- (id)debugDescription;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)eventSinceDate;
+- (id)eventSinceLastMajorUpdateDate;
+- (double)eventTimeToLiveInterval;
+- (bool)hasDaysSinceLastMajorUpdate;
+- (bool)hasLookBackDays;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)key;
+- (long long)lookBackDays;
+- (double)lookbackTimeIntervalInSeconds;
+- (id)matchedDate;
+- (unsigned int)minObservationCount;
+- (id)newStateFromStateDictionary:(id)arg1;
+- (id)observationMap;
+- (bool)observedWithResults:(id)arg1;
+- (id)observerIdentifiers;
+- (void)removeAllObservations;
+- (void)removeObserverIdentifiers:(id)arg1;
+- (void)removeOutdatedObservationDates;
+- (void)setBookmark:(id)arg1;
+- (void)setDaysSinceLastMajorUpdate:(long long)arg1;
+- (void)setEventSinceDate:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setKey:(id)arg1;
+- (void)setLookBackDays:(long long)arg1;
+- (void)setMatchedDate:(id)arg1;
+- (void)setMinObservationCount:(unsigned int)arg1;
+- (void)setObservationMap:(id)arg1;
+- (void)setObserverIdentifiers:(id)arg1;
+- (void)setState:(id)arg1;
+- (void)setStatus:(long long)arg1;
+- (void)setType:(long long)arg1;
+- (void)setUserInfoPersistent:(id)arg1;
+- (void)setUserInfoQuery:(id)arg1;
+- (id)state;
+- (long long)status;
+- (long long)type;
+- (id)userInfoPersistent;
+- (id)userInfoQuery;
+
+@end

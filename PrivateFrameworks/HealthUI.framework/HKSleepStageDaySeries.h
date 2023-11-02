@@ -1,0 +1,96 @@
+
+@interface HKSleepStageDaySeries : HKGraphSeries <HKAxisLabelDataSource, HKSleepStageCategoryHighlightable> {
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _cornerRadiiStorage;
+    NSNumber * _highlightedSleepStageStorage;
+    NSLock * _seriesMutableStateLock;
+    HKFillStyle * _sleepStageBackgroundFillStyleStorage;
+    HKFillStyle * _sleepStageBackgroundInactiveFillStyleStorage;
+    NSArray * _sleepStageFillStylesStorage;
+    UIColor * _sleepStageLabelColorStorage;
+    UIFont * _sleepStageLabelFontStorage;
+}
+
+@property (nonatomic) struct CGSize { double x1; double x2; } cornerRadii;
+@property (nonatomic) struct CGSize { double x1; double x2; } cornerRadiiStorage;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSNumber *highlightedSleepStage;
+@property (nonatomic, copy) NSNumber *highlightedSleepStageStorage;
+@property (nonatomic, readonly) NSLock *seriesMutableStateLock;
+@property (nonatomic, copy) HKFillStyle *sleepStageBackgroundFillStyle;
+@property (nonatomic, copy) HKFillStyle *sleepStageBackgroundFillStyleStorage;
+@property (nonatomic, copy) HKFillStyle *sleepStageBackgroundInactiveFillStyle;
+@property (nonatomic, copy) HKFillStyle *sleepStageBackgroundInactiveFillStyleStorage;
+@property (nonatomic, copy) NSArray *sleepStageFillStyles;
+@property (nonatomic, copy) NSArray *sleepStageFillStylesStorage;
+@property (nonatomic, copy) UIColor *sleepStageLabelColor;
+@property (nonatomic, retain) UIColor *sleepStageLabelColorStorage;
+@property (nonatomic, copy) UIFont *sleepStageLabelFont;
+@property (nonatomic, retain) UIFont *sleepStageLabelFontStorage;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_addSomnogramConnectionPath:(id)arg1 toBezierPath:(id)arg2;
+- (id)_buildConnectionFromStageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toStageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)_buildConnectionPathFromBackgroundRects:(id)arg1;
+- (void)_drawLabelAndRuleLineForString:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 horizontalOffset:(double)arg3 verticalOffset:(double)arg4 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 context:(struct CGContext { }*)arg6;
+- (void)_drawPaths:(id)arg1 withFillStyles:(id)arg2 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 context:(struct CGContext { }*)arg4;
+- (void)_drawSleepStageLabels:(struct CGContext { }*)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)_drawStagesBackgroundWithRects:(id)arg1 buildPath:(id)arg2 cornerRadii:(struct CGSize { double x1; double x2; })arg3 highlightedSleepStage:(id)arg4 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 renderContext:(struct CGContext { }*)arg6;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_enumerationRectForStage:(long long)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_nonSleepStageBarRectForCoordinate:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)_rebuildFillStyles;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sleepStageBarRectForCoordinate:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)_visibleSleepStagesInBlockCoordinates:(id)arg1 pointTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 screenRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (double)_yAxisOffsetForCoordinate:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)cacheKeysForModelRange:(id)arg1 zoomScale:(double)arg2;
+- (id)coordinatesForBlock:(id)arg1 blockPath:(struct HKGraphSeriesDataBlockPath { long long x1; long long x2; long long x3; })arg2 xAxis:(id)arg3 yAxis:(id)arg4;
+- (struct CGSize { double x1; double x2; })cornerRadii;
+- (struct CGSize { double x1; double x2; })cornerRadiiStorage;
+- (id)determineBottomConnectionPathFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 cornerRadius:(double)arg3;
+- (id)determineTopConnectionPathFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 cornerRadius:(double)arg3;
+- (double)distanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)drawOverlayInContext:(struct CGContext { }*)arg1 seriesOverlayData:(id)arg2;
+- (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 renderContext:(struct CGContext { }*)arg5 secondaryRenderContext:(id)arg6 seriesRenderingDelegate:(id)arg7;
+- (id)findAxisLabelsInModelRange:(id)arg1 zoomScale:(double)arg2;
+- (id)highlightedSleepStage;
+- (id)highlightedSleepStageStorage;
+- (id)init;
+- (id)mergeOverlappingRects:(id)arg1;
+- (long long)overlayType;
+- (struct CGPoint { double x1; double x2; })renderPositionForLabelLocation:(id)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 constantOffset:(double)arg5 isHorizontal:(bool)arg6 optionalOffset:(struct CGPoint { double x1; double x2; })arg7;
+- (id)seriesMutableStateLock;
+- (void)setCornerRadii:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCornerRadiiStorage:(struct CGSize { double x1; double x2; })arg1;
+- (void)setHighlightedSleepStage:(id)arg1;
+- (void)setHighlightedSleepStageStorage:(id)arg1;
+- (void)setSleepStageBackgroundFillStyle:(id)arg1;
+- (void)setSleepStageBackgroundFillStyleStorage:(id)arg1;
+- (void)setSleepStageBackgroundInactiveFillStyle:(id)arg1;
+- (void)setSleepStageBackgroundInactiveFillStyleStorage:(id)arg1;
+- (void)setSleepStageFillStyles:(id)arg1;
+- (void)setSleepStageFillStylesStorage:(id)arg1;
+- (void)setSleepStageLabelColor:(id)arg1;
+- (void)setSleepStageLabelColorStorage:(id)arg1;
+- (void)setSleepStageLabelFont:(id)arg1;
+- (void)setSleepStageLabelFontStorage:(id)arg1;
+- (id)sleepStageBackgroundFillStyle;
+- (id)sleepStageBackgroundFillStyleStorage;
+- (id)sleepStageBackgroundInactiveFillStyle;
+- (id)sleepStageBackgroundInactiveFillStyleStorage;
+- (id)sleepStageFillStyles;
+- (id)sleepStageFillStylesStorage;
+- (id)sleepStageLabelColor;
+- (id)sleepStageLabelColorStorage;
+- (id)sleepStageLabelFont;
+- (id)sleepStageLabelFontStorage;
+- (bool)supportsMultiTouchSelection;
+- (double)xAxisDistanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (double)xAxisSelectedCoordinate:(double)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (double)yAxisDifferenceToPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+
+@end

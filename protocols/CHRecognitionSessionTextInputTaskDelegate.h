@@ -1,0 +1,4 @@
+
+@protocol CHRecognitionSessionTextInputTaskDelegate <CHRecognitionSessionTaskDelegate>
+
+@end

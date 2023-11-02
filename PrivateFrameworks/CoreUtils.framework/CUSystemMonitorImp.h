@@ -1,0 +1,256 @@
+
+@interface CUSystemMonitorImp : NSObject <CLLocationManagerDelegate, CXCallObserverDelegate, CoreTelephonyClientDelegate, FMFSessionDelegate> {
+    int  _activeCallCount;
+    struct { 
+        unsigned char bytes[6]; 
+    }  _bluetoothAddress48;
+    NSData * _bluetoothAddressData;
+    CUBluetoothClient * _bluetoothClient;
+    TUCallCenter * _callCenter;
+    unsigned int  _callFlags;
+    struct { 
+        int callCountIncomingConnected; 
+        int callCountIncomingUnconnected; 
+        int callCountOutgoingConnected; 
+        int callCountOutgoingUnconnected; 
+    }  _callInfo;
+    CXCallObserver * _callObserver;
+    bool  _callStatusObserving;
+    int  _connectedCallCount;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    int  _familyBuddyToken;
+    bool  _familyFailed;
+    NSArray * _familyMembers;
+    bool  _familyObserving;
+    CUSystemMonitor * _familyPrimaryIPMonitor;
+    int  _familyUpdatedToken;
+    NSObject<OS_dispatch_source> * _firstUnlockTimer;
+    int  _firstUnlockToken;
+    bool  _firstUnlocked;
+    int  _fmfDevicesChangedToken;
+    CLLocationManager * _locationManager;
+    unsigned int  _locationVisitsFlags;
+    bool  _manateeAvailable;
+    bool  _manateeObserving;
+    NSObject<OS_dispatch_source> * _manateeRetryTimer;
+    int  _manateeState;
+    int  _meDeviceChangedToken;
+    NSString * _meDeviceFMFDeviceID;
+    NSString * _meDeviceIDSDeviceID;
+    bool  _meDeviceIsMe;
+    NSString * _meDeviceName;
+    int  _meDeviceRetryToken;
+    bool  _meDeviceValid;
+    NSMutableSet * _monitors;
+    CMMotionActivityManager * _motionActivityManager;
+    unsigned int  _motionFlags;
+    CMMotionManager * _motionManager;
+    int  _motionOrientation;
+    unsigned int  _netFlags;
+    CUNetInterfaceMonitor * _netInterfaceMonitor;
+    CMDeviceOrientationManager * _orientationManager;
+    int  _powerSourceToken;
+    bool  _powerUnlimited;
+    NSString * _primaryAppleID;
+    bool  _primaryAppleIDActive;
+    bool  _primaryAppleIDIsHSA2;
+    int  _primaryAppleIDNotifyToken;
+    bool  _primaryAppleIDObserving;
+    union { 
+        struct sockaddr { 
+            unsigned char sa_len; 
+            unsigned char sa_family; 
+            BOOL sa_data[14]; 
+        } sa; 
+        struct sockaddr_in { 
+            unsigned char sin_len; 
+            unsigned char sin_family; 
+            unsigned short sin_port; 
+            struct in_addr { 
+                unsigned int s_addr; 
+            } sin_addr; 
+            BOOL sin_zero[8]; 
+        } v4; 
+        struct sockaddr_in6 { 
+            unsigned char sin6_len; 
+            unsigned char sin6_family; 
+            unsigned short sin6_port; 
+            unsigned int sin6_flowinfo; 
+            struct in6_addr { 
+                union { 
+                    unsigned char __u6_addr8[16]; 
+                    unsigned short __u6_addr16[8]; 
+                    unsigned int __u6_addr32[4]; 
+                } __u6_addr; 
+            } sin6_addr; 
+            unsigned int sin6_scope_id; 
+        } v6; 
+    }  _primaryIPv4Addr;
+    union { 
+        struct sockaddr { 
+            unsigned char sa_len; 
+            unsigned char sa_family; 
+            BOOL sa_data[14]; 
+        } sa; 
+        struct sockaddr_in { 
+            unsigned char sin_len; 
+            unsigned char sin_family; 
+            unsigned short sin_port; 
+            struct in_addr { 
+                unsigned int s_addr; 
+            } sin_addr; 
+            BOOL sin_zero[8]; 
+        } v4; 
+        struct sockaddr_in6 { 
+            unsigned char sin6_len; 
+            unsigned char sin6_family; 
+            unsigned short sin6_port; 
+            unsigned int sin6_flowinfo; 
+            struct in6_addr { 
+                union { 
+                    unsigned char __u6_addr8[16]; 
+                    unsigned short __u6_addr16[8]; 
+                    unsigned int __u6_addr32[4]; 
+                } __u6_addr; 
+            } sin6_addr; 
+            unsigned int sin6_scope_id; 
+        } v6; 
+    }  _primaryIPv6Addr;
+    NSString * _primaryNetworkSignature;
+    CoreTelephonyClient * _regionCTClient;
+    struct __CTServerConnection { } * _regionCTServerCnx;
+    NSString * _regionISOCountryCode;
+    NSString * _regionMobileCountryCode;
+    NSString * _regionRoutineCountry;
+    RTRoutineManager * _regionRoutineManager;
+    int  _regionRoutineNotifyToken;
+    NSString * _regionRoutineState;
+    struct { 
+        unsigned char bytes[6]; 
+    }  _rotatingIdentifier48;
+    NSData * _rotatingIdentifierData;
+    NSObject<OS_dispatch_source> * _rotatingIdentifierTimer;
+    bool  _scChangesPending;
+    struct __SCDynamicStore { } * _scDynamicStore;
+    NSMutableArray * _scInitialKeys;
+    NSString * _scKeySystemName;
+    NSArray * _scNotificationKeys;
+    NSArray * _scNotificationPatterns;
+    NSString * _scPatternNetInterfaceIPv4;
+    NSString * _scPatternNetInterfaceIPv6;
+    int  _screenBlankedToken;
+    bool  _screenLocked;
+    int  _screenLockedToken;
+    bool  _screenOn;
+    bool  _screenSaverActive;
+    int  _systemLockState;
+    int  _systemLockStateToken;
+    NSString * _systemName;
+    int  _systemUIBluetoothNotifyToken;
+    unsigned int  _systemUIFlags;
+    NSDictionary * _systemUIIdentifierMap;
+    FBSDisplayLayoutMonitor * _systemUIMonitor;
+    unsigned int  _wifiFlags;
+    CUWiFiManager * _wifiManager;
+    int  _wifiState;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (int)_activeCallCountUnached;
+- (void)_bluetoothAddressMonitorStart;
+- (void)_bluetoothAddressMonitorStop;
+- (void)_callCenterStatusChanged:(id)arg1;
+- (unsigned int)_callFlagsUncached;
+- (void)_callInfoChanged;
+- (struct { int x1; int x2; int x3; int x4; })_callInfoUncached;
+- (void)_callMonitorStart;
+- (void)_callMonitorStop;
+- (int)_connectedCallCountUnached;
+- (void)_familyGetMembers:(bool)arg1;
+- (void)_familyMonitorStart;
+- (void)_familyMonitorStop;
+- (void)_familyNetworkChanged;
+- (void)_familyUpdated:(id)arg1;
+- (void)_firstUnlockMonitorCheck:(bool)arg1;
+- (void)_firstUnlockMonitorStart;
+- (void)_firstUnlockMonitorStop;
+- (void)_forceManateeStateRefresh;
+- (bool)_hasMonitorPassingTest:(id /* block */)arg1;
+- (void)_invokeBlock:(id /* block */)arg1 passingTest:(id /* block */)arg2;
+- (void)_locationVisitUpdate:(id)arg1 arrived:(bool)arg2;
+- (void)_locationVisitsMonitorStart;
+- (void)_locationVisitsMonitorStop;
+- (void)_locationsOfInterestDidChange:(bool)arg1;
+- (void)_manateeChanged:(id)arg1;
+- (void)_manateeMonitorStart;
+- (void)_manateeMonitorStop;
+- (void)_manateeRead;
+- (void)_manatreeUpdateRetryTimer:(bool)arg1;
+- (void)_meDeviceCheckCompletion:(id)arg1 error:(id)arg2 firstCheck:(bool)arg3;
+- (void)_meDeviceCheckStart:(bool)arg1;
+- (void)_meDeviceMonitorStart;
+- (void)_meDeviceMonitorStop;
+- (void)_motionMonitorHandleActivity:(id)arg1;
+- (void)_motionMonitorOrientationChanged:(id)arg1;
+- (void)_motionMonitorStart;
+- (void)_motionMonitorStop;
+- (void)_netInterfaceMonitorStart;
+- (void)_netInterfaceMonitorStop;
+- (void)_powerUnlimitedMonitorStart;
+- (void)_powerUnlimitedMonitorStop;
+- (id)_primaryAppleIDAccount;
+- (void)_primaryAppleIDChanged2:(bool)arg1;
+- (void)_primaryAppleIDChanged:(id)arg1;
+- (void)_primaryAppleIDMonitorStart;
+- (void)_primaryAppleIDMonitorStop;
+- (void)_regionMonitorGet;
+- (void)_regionMonitorStart;
+- (void)_regionMonitorStop;
+- (void)_regionMonitorUpdateLocationsOfInterest:(id)arg1;
+- (void)_regionMonitorUpdateMCC:(id)arg1;
+- (void)_rotatingIdentifierMonitorStart;
+- (void)_rotatingIdentifierMonitorStop;
+- (void)_rotatingIdentifierTimerFired;
+- (void)_screenChanged:(bool)arg1;
+- (void)_screenLockedChanged;
+- (void)_screenLockedMonitorStart;
+- (void)_screenLockedMonitorStop;
+- (void)_screenOnMonitorStart;
+- (void)_screenOnMonitorStartiOS;
+- (void)_screenOnMonitorStop;
+- (void)_screenSaverMonitorStart;
+- (void)_screenSaverMonitorStop;
+- (void)_systemConfigChanged:(id)arg1 initial:(bool)arg2;
+- (void)_systemConfigNetInterfaceChanged:(id)arg1 initial:(bool)arg2;
+- (void)_systemConfigSystemNameChanged:(bool)arg1;
+- (void)_systemConfigUpdateKeyPtr:(id*)arg1 name:(id)arg2 enabled:(bool)arg3 creator:(id /* block */)arg4;
+- (void)_systemConfigUpdateNotifications;
+- (void)_systemLockStateMonitorStart;
+- (void)_systemLockStateMonitorStop;
+- (void)_systemLockStateUpdate:(bool)arg1;
+- (void)_systemUIMonitorChangedFlags:(unsigned int)arg1;
+- (void)_systemUIMonitorStart;
+- (void)_systemUIMonitorStop;
+- (void)_update;
+- (void)_wifiMonitorStart;
+- (void)_wifiMonitorStateChanged:(bool)arg1;
+- (void)_wifiMonitorStop;
+- (void)addMonitor:(id)arg1 completion:(id /* block */)arg2;
+- (void)callObserver:(id)arg1 callChanged:(id)arg2;
+- (void)cellMonitorUpdate:(id)arg1 info:(id)arg2;
+- (id)init;
+- (void)locationManager:(id)arg1 didArrive:(id)arg2 completion:(id /* block */)arg3;
+- (void)locationManager:(id)arg1 didDepart:(id)arg2 completion:(id /* block */)arg3;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)locationManager:(id)arg1 didVisit:(id)arg2;
+- (void)locationManagerDidChangeAuthorization:(id)arg1;
+- (void)removeMonitor:(id)arg1;
+- (void)updateWithQueue:(id)arg1 completion:(id /* block */)arg2;
+
+@end

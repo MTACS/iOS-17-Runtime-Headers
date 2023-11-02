@@ -1,0 +1,4 @@
+
+@protocol EQKitLayoutSchemataSpace <NSObject>
+
+@end

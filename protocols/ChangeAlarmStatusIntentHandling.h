@@ -1,0 +1,18 @@
+
+@protocol ChangeAlarmStatusIntentHandling <NSObject>
+
+@required
+
+- (void)handleChangeAlarmStatus:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: ChangeAlarmStatusIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, ChangeAlarmStatusIntentResponse *, void*
+- (void)handleChangeAlarmStatus:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: ChangeAlarmStatusIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, ChangeAlarmStatusIntentResponse *, void*
+- (void)resolveAlarmsForChangeAlarmStatus:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: ChangeAlarmStatusIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)resolveAlarmsForChangeAlarmStatus:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: ChangeAlarmStatusIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)resolveHandleSilentlyForChangeAlarmStatus:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: ChangeAlarmStatusIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, INBooleanResolutionResult *, void*
+- (void)resolveHandleSilentlyForChangeAlarmStatus:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: ChangeAlarmStatusIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, INBooleanResolutionResult *, void*
+
+@optional
+
+- (void)confirmChangeAlarmStatus:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: ChangeAlarmStatusIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, ChangeAlarmStatusIntentResponse *, void*
+- (void)confirmChangeAlarmStatus:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: ChangeAlarmStatusIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, ChangeAlarmStatusIntentResponse *, void*
+
+@end

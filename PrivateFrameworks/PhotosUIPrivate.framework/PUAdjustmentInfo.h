@@ -1,0 +1,86 @@
+
+@interface PUAdjustmentInfo : NSObject {
+    NSString * _adjustmentKey;
+    NSString * _attributeKey;
+    double  _baseLevel;
+    double  _currentLevel;
+    <PUAdjustmentCustomBehavior> * _customSettingDelegate;
+    double  _defaultLevel;
+    bool  _enabled;
+    bool  _iconIsColor;
+    NSString * _iconName;
+    NSString * _identifier;
+    double  _identityLevel;
+    double  _lastAdjustedLevel;
+    NSString * _localizedActionName;
+    NSString * _localizedName;
+    NSString * _localizedSectionName;
+    double  _maximumLevel;
+    double  _minimumLevel;
+    NSString * _settingKey;
+}
+
+@property (nonatomic, retain) NSString *adjustmentKey;
+@property (nonatomic, retain) NSString *attributeKey;
+@property (nonatomic) double baseLevel;
+@property (nonatomic) double currentLevel;
+@property (nonatomic, retain) <PUAdjustmentCustomBehavior> *customSettingDelegate;
+@property (nonatomic) double defaultLevel;
+@property (nonatomic) bool enabled;
+@property (nonatomic) bool iconIsColor;
+@property (nonatomic, retain) NSString *iconName;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) double identityLevel;
+@property (nonatomic) double lastAdjustedLevel;
+@property (nonatomic, retain) NSString *localizedActionName;
+@property (nonatomic, retain) NSString *localizedName;
+@property (nonatomic, retain) NSString *localizedSectionName;
+@property (nonatomic) double maximumLevel;
+@property (nonatomic) double minimumLevel;
+@property (nonatomic, readonly) double normalizedCurrentLevel;
+@property (nonatomic, readonly) double normalizedDefaultLevel;
+@property (nonatomic, retain) NSString *settingKey;
+
+- (void).cxx_destruct;
+- (id)adjustmentKey;
+- (id)attributeKey;
+- (double)baseLevel;
+- (id)copy;
+- (double)currentLevel;
+- (id)customSettingDelegate;
+- (double)defaultLevel;
+- (id)description;
+- (bool)enabled;
+- (bool)iconIsColor;
+- (id)iconName;
+- (id)identifier;
+- (double)identityLevel;
+- (double)lastAdjustedLevel;
+- (id)localizedActionName;
+- (id)localizedName;
+- (id)localizedSectionName;
+- (double)maximumLevel;
+- (double)minimumLevel;
+- (double)normalizedCurrentLevel;
+- (double)normalizedDefaultLevel;
+- (void)setAdjustmentKey:(id)arg1;
+- (void)setAttributeKey:(id)arg1;
+- (void)setBaseLevel:(double)arg1;
+- (void)setCurrentLevel:(double)arg1;
+- (void)setCustomSettingDelegate:(id)arg1;
+- (void)setDefaultLevel:(double)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setIconIsColor:(bool)arg1;
+- (void)setIconName:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setIdentityLevel:(double)arg1;
+- (void)setLastAdjustedLevel:(double)arg1;
+- (void)setLocalizedActionName:(id)arg1;
+- (void)setLocalizedName:(id)arg1;
+- (void)setLocalizedSectionName:(id)arg1;
+- (void)setMaximumLevel:(double)arg1;
+- (void)setMinimumLevel:(double)arg1;
+- (void)setSettingKey:(id)arg1;
+- (id)settingKey;
+
+@end

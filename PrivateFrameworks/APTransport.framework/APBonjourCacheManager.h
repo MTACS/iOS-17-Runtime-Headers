@@ -1,0 +1,81 @@
+
+@interface APBonjourCacheManager : NSObject {
+    bool  _cacheChanged;
+    NSMutableDictionary * _cachedItems;
+    NSMutableDictionary * _deviceMap;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
+    id /* block */  _invalidationHandler;
+    NSString * _label;
+    NSString * _networkSignature;
+    double  _networkSignatureWasValidAt;
+    int  _pairedPeersChangedToken;
+    bool  _pairedPeersGetting;
+    NSMutableDictionary * _pairedPeersMap;
+    NSMutableSet * _removedItems;
+    id /* block */  _reportDeviceFoundHandler;
+    id /* block */  _reportDeviceLostHandler;
+    NSObject<OS_dispatch_source> * _retryTimer;
+    NSString * _serviceType;
+    CUSystemMonitor * _systemMonitor;
+    struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
+    CUCoalescer * _writeCoaleser;
+}
+
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) id /* block */ reportDeviceFoundHandler;
+@property (nonatomic, copy) id /* block */ reportDeviceLostHandler;
+@property (nonatomic, copy) NSString *serviceType;
+
+- (void).cxx_destruct;
+- (void)_activateWithCompletion:(id /* block */)arg1;
+- (void)_addDeviceToCache:(id)arg1 pairedPeerInfo:(id)arg2 event:(long long)arg3;
+- (void)_cancelRetryGetPairedPeers;
+- (void)_deviceFound:(id)arg1 altPairedInfo:(id)arg2 recheck:(bool)arg3 event:(long long)arg4;
+- (void)_flushCachedItems;
+- (id)_getCacheDirectoryURLCreateIfNecessary:(bool)arg1 error:(id*)arg2;
+- (id)_getCacheFileURLCreateIfNecessary:(bool)arg1 error:(id*)arg2;
+- (void)_invalidate;
+- (void)_invalidated;
+- (void)_migrateCacheDirectoryIfNecessary;
+- (void)_networkSignatureChanged;
+- (void)_pairedPeersChanged;
+- (id)_readCachedItems;
+- (void)_recheckDevices:(long long)arg1;
+- (void)_refreshCachedItems;
+- (void)_refreshOrRemoveCachedItem:(id)arg1;
+- (void)_removeIfDuplicatesFoundOrIfNoLongerCacheable:(unsigned long long)arg1 identifier:(id)arg2 serialNumber:(id)arg3 manufacturer:(id)arg4 isCacheable:(bool)arg5;
+- (void)_replaceIfnameFromDNSString:(id)arg1;
+- (void)_reportCachedItemLost:(id)arg1 event:(long long)arg2;
+- (void)_reportCachedItemsFound:(long long)arg1;
+- (void)_reportCachedItemsLost:(long long)arg1;
+- (void)_sanitizeDNSStrings:(id)arg1;
+- (void)_startRetryGetPairedPeersTimer;
+- (void)_updateCachedDeviceInfoWhenRealDeviceIsFound:(id)arg1 event:(long long)arg2;
+- (void)_updateLastSeenTimestamp:(id)arg1;
+- (bool)_writeCachedItems:(id)arg1;
+- (void)activateWithCompletion:(id /* block */)arg1;
+- (void)cacheHKPeerIfNeeded:(id)arg1 pairedPeerInfo:(id)arg2;
+- (void)dealloc;
+- (void)deviceFound:(id)arg1;
+- (bool)deviceLost:(id)arg1;
+- (id)dispatchQueue;
+- (void)forceReportCachedDevices;
+- (id)init;
+- (void)invalidate;
+- (id /* block */)invalidationHandler;
+- (id)label;
+- (id /* block */)reportDeviceFoundHandler;
+- (id /* block */)reportDeviceLostHandler;
+- (id)serviceType;
+- (void)setDispatchQueue:(id)arg1;
+- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setLabel:(id)arg1;
+- (void)setReportDeviceFoundHandler:(id /* block */)arg1;
+- (void)setReportDeviceLostHandler:(id /* block */)arg1;
+- (void)setServiceType:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface PKNumericSuggestionsAlgorithm : NSObject
+
+@end

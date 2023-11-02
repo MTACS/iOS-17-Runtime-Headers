@@ -1,0 +1,174 @@
+
+@interface GEOComposedRouteStep : NSObject <GEOComposedRouteStepTravelTimeProvider, NSSecureCoding> {
+    GEOComposedRoute * _composedRoute;
+    double  _distance;
+    int  _drivingSide;
+    struct { 
+        unsigned int index; 
+        float offset; 
+    }  _endRouteCoordinate;
+    GEOStep * _geoStep;
+    GEOJunction * _junction;
+    NSString * _maneuverRoadName;
+    NSString * _maneuverRoadOrExitName;
+    struct { 
+        unsigned int index; 
+        float offset; 
+    }  _maneuverStartRouteCoordinate;
+    long long  _routeSegmentType;
+    struct { 
+        unsigned int index; 
+        float offset; 
+    }  _startRouteCoordinate;
+    unsigned long long  _stepIndex;
+}
+
+@property (nonatomic, readonly) NSArray *advisories;
+@property (nonatomic, readonly) <GEOTransitArtworkDataSource> *artworkOverride;
+@property (nonatomic, readonly) GEOComposedTransitTripRouteStep *closestLogicalBoardOrAlightStep;
+@property (nonatomic) GEOComposedRoute *composedRoute;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double distance;
+@property (nonatomic, readonly) GEOComposedString *distanceStringForListView;
+@property (nonatomic, readonly) GEOComposedString *distanceStringForSignView;
+@property (nonatomic, readonly) int drivingSide;
+@property (nonatomic, readonly) unsigned int duration;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } endGeoCoordinate;
+@property (nonatomic, readonly) struct { unsigned int x1; float x2; } endRouteCoordinate;
+@property (nonatomic, readonly) GEOPBTransitStop *endingStop;
+@property (nonatomic, readonly) GEOComposedRouteEVStepInfo *evInfo;
+@property (nonatomic, readonly) GEOStep *geoStep;
+@property (nonatomic, readonly) bool hasDuration;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSArray *instructionStringsForListView;
+@property (nonatomic, readonly) GEOInstructionSet *instructions;
+@property (nonatomic, readonly) bool isArrivalStep;
+@property (nonatomic, readonly) bool isChargingStop;
+@property (nonatomic, readonly) bool isStartOrResumeStep;
+@property (nonatomic, readonly) bool isUncertainArrival;
+@property (nonatomic, readonly) GEOJunction *junction;
+@property (nonatomic, readonly) NSString *maneuverRoadName;
+@property (nonatomic, readonly) NSString *maneuverRoadOrExitName;
+@property (nonatomic, readonly) struct { unsigned int x1; float x2; } maneuverStartRouteCoordinate;
+@property (nonatomic, readonly) int maneuverType;
+@property (nonatomic, readonly) GEOComposedTransitTripRouteStep *nextAlightingStep;
+@property (nonatomic, readonly) GEOComposedTransitTripRouteStep *nextBoardingStep;
+@property (getter=getNextStep, nonatomic, readonly) GEOComposedRouteStep *nextStep;
+@property (nonatomic, readonly) GEOPBTransitStop *nextStop;
+@property (nonatomic, readonly) NSArray *normalInstructionStringsForSignView;
+@property (nonatomic, readonly) unsigned long long pathIndex;
+@property (nonatomic, readonly) GEOComposedTransitTripRouteStep *previousAlightingStep;
+@property (nonatomic, readonly) GEOComposedTransitTripRouteStep *previousBoardingStep;
+@property (getter=getPreviousStep, nonatomic, readonly) GEOComposedRouteStep *previousStep;
+@property (nonatomic, readonly) GEOPBTransitStop *previousStop;
+@property (nonatomic, readonly) NSArray *routeDetailsPrimaryArtwork;
+@property (nonatomic, readonly) <GEOTransitArtworkDataSource> *routeDetailsSecondaryArtwork;
+@property (nonatomic, readonly) long long routeSegmentType;
+@property (nonatomic, readonly) GEOComposedRouteSegment *segment;
+@property (nonatomic, readonly) bool shouldCreateAlightExitGroup;
+@property (nonatomic, readonly) bool shouldCreateArrivalGroup;
+@property (nonatomic, readonly) bool shouldCreateEnterBoardGroup;
+@property (nonatomic, readonly) bool shouldCreateFerryProgressionGroup;
+@property (nonatomic, readonly) bool shouldCreateTransferGroup;
+@property (nonatomic, readonly) bool shouldCreateTripProgressionGroup;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } startGeoCoordinate;
+@property (nonatomic, readonly) struct { unsigned int x1; float x2; } startRouteCoordinate;
+@property (nonatomic, readonly) unsigned int startTime;
+@property (nonatomic, readonly) GEOPBTransitStop *startingStop;
+@property (nonatomic, readonly) unsigned int stepID;
+@property (nonatomic, readonly) unsigned long long stepIndex;
+@property (nonatomic, readonly) NSArray *steppingArtwork;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *transitIncidents;
+@property (nonatomic, readonly) GEOTransitStep *transitStep;
+@property (nonatomic, readonly) int transportType;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (bool)_belongsToTransferGroup;
+- (id)advisories;
+- (id)artworkOverride;
+- (id)closestLogicalBoardOrAlightStep;
+- (id)composedRoute;
+- (id)description;
+- (double)distance;
+- (id)distanceStringForListView;
+- (id)distanceStringForSignView;
+- (int)drivingSide;
+- (unsigned int)duration;
+- (void)encodeWithCoder:(id)arg1;
+- (struct { double x1; double x2; double x3; })endGeoCoordinate;
+- (unsigned int)endPointIndex;
+- (struct { unsigned int x1; float x2; })endRouteCoordinate;
+- (id)endingStop;
+- (id)evInfo;
+- (id)firstNameOrBranch;
+- (id)geoStep;
+- (id)getNextStep;
+- (id)getPreviousStep;
+- (bool)hasDuration;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithComposedRoute:(id)arg1 geoRouteLeg:(id)arg2 geoStep:(id)arg3 routeSegmentType:(long long)arg4 stepIndex:(unsigned long long)arg5 pointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6 maneuverPointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg7;
+- (id)initWithComposedRoute:(id)arg1 geoRouteLeg:(id)arg2 geoStep:(id)arg3 routeSegmentType:(long long)arg4 stepIndex:(unsigned long long)arg5 startRouteCoordinate:(struct { unsigned int x1; float x2; })arg6 endRouteCoordinate:(struct { unsigned int x1; float x2; })arg7 maneuverStartRouteCoordinate:(struct { unsigned int x1; float x2; })arg8;
+- (id)initWithComposedRoute:(id)arg1 routeSegmentType:(long long)arg2 stepIndex:(unsigned long long)arg3 pointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
+- (id)instructionStringsForListView;
+- (id)instructions;
+- (bool)isArrivalStep;
+- (bool)isChargingStop;
+- (bool)isStartOrResumeStep;
+- (bool)isUncertainArrival;
+- (id)junction;
+- (int)maneuver;
+- (unsigned int)maneuverEndPointIndex;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })maneuverPointRange;
+- (id)maneuverRoadName;
+- (id)maneuverRoadOrExitName;
+- (unsigned int)maneuverStartPointIndex;
+- (struct { unsigned int x1; float x2; })maneuverStartRouteCoordinate;
+- (int)maneuverType;
+- (id)nextAlightingStep;
+- (id)nextBoardingStep;
+- (id)nextStop;
+- (id)normalInstructionStringsForSignView;
+- (unsigned long long)pathIndex;
+- (unsigned int)pointCount;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })pointRange;
+- (id)previousAlightingStep;
+- (id)previousBoardingStep;
+- (id)previousStop;
+- (struct GEOPolylineCoordinateRange { struct { unsigned int x_1_1_1; float x_1_1_2; } x1; struct { unsigned int x_2_1_1; float x_2_1_2; } x2; })routeCoordinateRange;
+- (id)routeDetailsPrimaryArtwork;
+- (id)routeDetailsSecondaryArtwork;
+- (long long)routeSegmentType;
+- (id)segment;
+- (void)setComposedRoute:(id)arg1;
+- (bool)shouldCreateAlightExitGroup;
+- (bool)shouldCreateArrivalGroup;
+- (bool)shouldCreateEnterBoardGroup;
+- (bool)shouldCreateFerryProgressionGroup;
+- (bool)shouldCreateTransferGroup;
+- (bool)shouldCreateTripProgressionGroup;
+- (bool)shouldPreloadWithHighPriority;
+- (struct { double x1; double x2; double x3; })startGeoCoordinate;
+- (unsigned int)startPointIndex;
+- (struct { unsigned int x1; float x2; })startRouteCoordinate;
+- (unsigned int)startTime;
+- (id)startingStop;
+- (unsigned int)stepID;
+- (unsigned long long)stepIndex;
+- (id)steppingArtwork;
+- (id)timeCheckpoints;
+- (id)transitIncidents;
+- (id)transitStep;
+- (int)transportType;
+- (double)travelTime;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
+- (id)contentsForContext:(long long)arg1;
+
+@end

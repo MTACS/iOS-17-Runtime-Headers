@@ -1,0 +1,4 @@
+
+@interface MTRTestClusterClusterTestUnknownCommandParams : MTRUnitTestingClusterTestUnknownCommandParams
+
+@end

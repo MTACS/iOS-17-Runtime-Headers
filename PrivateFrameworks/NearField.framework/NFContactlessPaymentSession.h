@@ -1,0 +1,56 @@
+
+@interface NFContactlessPaymentSession : NFSession <NFContactlessPaymentSessionCallbacks> {
+    NFApplet * _activeApplet;
+    NSDictionary * _appletsById;
+    NFApplet * _defaultApplet;
+    <NFContactlessPaymentSessionDelegate> * _delegate;
+    bool  _fieldNotificationSent;
+    unsigned long long  _numActiveSEs;
+}
+
+@property (readonly, retain) NFApplet *activeApplet;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, retain) NFApplet *defaultApplet;
+@property <NFContactlessPaymentSessionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) unsigned long long numberOfActiveSecureElements;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)activeApplet;
+- (id)allApplets;
+- (id)appletWithIdentifier:(id)arg1;
+- (id)defaultApplet;
+- (id)delegate;
+- (void)didDetectField:(bool)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
+- (void)didEndTransaction:(id)arg1;
+- (void)didEndUnexpectedly;
+- (void)didExpireTransactionForApplet:(id)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1 withObject:(id)arg2;
+- (void)didFailDeferredAuthorization;
+- (void)didFelicaStateChange:(id)arg1;
+- (void)didReceiveActivityTimeout:(id)arg1;
+- (void)didReceivePendingServerRequest;
+- (void)didSelectApplet:(id)arg1;
+- (void)didStartSession:(id)arg1;
+- (void)didStartTransaction:(id)arg1;
+- (void)endSession;
+- (void)endSessionWithCompletion:(id /* block */)arg1;
+- (id)felicaAppletState:(id)arg1;
+- (id)felicaAppletState:(id)arg1 error:(id*)arg2;
+- (unsigned long long)numberOfActiveSecureElements;
+- (bool)setActivePaymentApplet:(id)arg1 authorization:(id)arg2;
+- (bool)setActivePaymentApplet:(id)arg1 authorization:(id)arg2 error:(id*)arg3;
+- (bool)setActivePaymentApplet:(id)arg1 makeDefault:(bool)arg2 authorization:(id)arg3;
+- (void)setDelegate:(id)arg1;
+- (bool)startCardEmulationWithAuthorization:(id)arg1;
+- (bool)startCardEmulationWithAuthorization:(id)arg1 error:(id*)arg2;
+- (bool)startDeferredCardEmulationWithAuthorization:(id)arg1;
+- (bool)startDeferredCardEmulationWithAuthorization:(id)arg1 error:(id*)arg2;
+- (bool)stopCardEmulation;
+- (bool)stopCardEmulation:(id*)arg1;
+- (id)transitAppletState:(id)arg1 error:(id*)arg2;
+
+@end

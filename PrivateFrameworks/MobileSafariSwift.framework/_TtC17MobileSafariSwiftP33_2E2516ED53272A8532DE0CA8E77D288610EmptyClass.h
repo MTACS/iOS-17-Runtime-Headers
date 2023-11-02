@@ -1,0 +1,4 @@
+
+@interface _TtC17MobileSafariSwiftP33_2E2516ED53272A8532DE0CA8E77D288610EmptyClass : _TtCs12_SwiftObject
+
+@end

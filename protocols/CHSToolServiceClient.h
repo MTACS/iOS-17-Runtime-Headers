@@ -1,0 +1,4 @@
+
+@protocol CHSToolServiceClient <NSObject>
+
+@end

@@ -1,0 +1,17 @@
+
+@interface CRKNotifyingConfigurationSource : NSObject <CRKConfigurationSource> {
+    <CRKConfigurationSource> * mBaseSource;
+    NSString * mNotificationName;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)fetchConfiguration:(id /* block */)arg1;
+- (id)initWithConfigurationSource:(id)arg1 notificationName:(id)arg2;
+- (void)setConfiguration:(id)arg1 completion:(id /* block */)arg2;
+
+@end

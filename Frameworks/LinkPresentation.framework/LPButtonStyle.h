@@ -1,0 +1,95 @@
+
+@interface LPButtonStyle : NSObject {
+    LPPointUnit * _additionalVerticalPadding;
+    UIColor * _backgroundColor;
+    bool  _enableUserInteractionForDecorativeButton;
+    UIFont * _font;
+    UIColor * _foregroundColor;
+    LPPointUnit * _height;
+    bool  _ignoresInvertColors;
+    LPPointUnit * _imagePadding;
+    LPPointUnit * _indicatorSpacing;
+    LPPadding * _margin;
+    UIColor * _menuBackgroundColor;
+    UIFont * _menuFont;
+    LPPointUnit * _menuMinimumWidth;
+    LPPointUnit * _minimumHeight;
+    LPPointUnit * _minimumWidth;
+    LPPadding * _padding;
+    LPCircularProgressIndicatorStyle * _progressIndicatorStyle;
+    bool  _showsChevronForSingleAction;
+    UIImageSymbolConfiguration * _symbolConfiguration;
+    bool  _useSegmentedControl;
+    bool  _useSystemButtonAppearance;
+}
+
+@property (nonatomic, retain) LPPointUnit *additionalVerticalPadding;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic) bool enableUserInteractionForDecorativeButton;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) UIColor *foregroundColor;
+@property (nonatomic, retain) LPPointUnit *height;
+@property (nonatomic) bool ignoresInvertColors;
+@property (nonatomic, retain) LPPointUnit *imagePadding;
+@property (nonatomic, retain) LPPointUnit *indicatorSpacing;
+@property (nonatomic, retain) LPPadding *margin;
+@property (nonatomic, retain) UIColor *menuBackgroundColor;
+@property (nonatomic, retain) UIFont *menuFont;
+@property (nonatomic, retain) LPPointUnit *menuMinimumWidth;
+@property (nonatomic, retain) LPPointUnit *minimumHeight;
+@property (nonatomic, retain) LPPointUnit *minimumWidth;
+@property (nonatomic, retain) LPPadding *padding;
+@property (nonatomic, retain) LPCircularProgressIndicatorStyle *progressIndicatorStyle;
+@property (nonatomic) bool showsChevronForSingleAction;
+@property (nonatomic, retain) UIImageSymbolConfiguration *symbolConfiguration;
+@property (nonatomic) bool useSegmentedControl;
+@property (nonatomic) bool useSystemButtonAppearance;
+
++ (id)systemPillButtonStyleForPlatform:(long long)arg1;
+
+- (void).cxx_destruct;
+- (id)additionalVerticalPadding;
+- (id)backgroundColor;
+- (bool)enableUserInteractionForDecorativeButton;
+- (id)font;
+- (id)foregroundColor;
+- (id)height;
+- (bool)ignoresInvertColors;
+- (id)imagePadding;
+- (id)indicatorSpacing;
+- (id)initWithPlatform:(long long)arg1;
+- (id)margin;
+- (id)menuBackgroundColor;
+- (id)menuFont;
+- (id)menuMinimumWidth;
+- (id)minimumHeight;
+- (id)minimumWidth;
+- (id)padding;
+- (id)progressIndicatorStyle;
+- (void)setAdditionalVerticalPadding:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setEnableUserInteractionForDecorativeButton:(bool)arg1;
+- (void)setFont:(id)arg1;
+- (void)setForegroundColor:(id)arg1;
+- (void)setHeight:(id)arg1;
+- (void)setIgnoresInvertColors:(bool)arg1;
+- (void)setImagePadding:(id)arg1;
+- (void)setIndicatorSpacing:(id)arg1;
+- (void)setMargin:(id)arg1;
+- (void)setMenuBackgroundColor:(id)arg1;
+- (void)setMenuFont:(id)arg1;
+- (void)setMenuMinimumWidth:(id)arg1;
+- (void)setMinimumHeight:(id)arg1;
+- (void)setMinimumWidth:(id)arg1;
+- (void)setPadding:(id)arg1;
+- (void)setProgressIndicatorStyle:(id)arg1;
+- (void)setShowsChevronForSingleAction:(bool)arg1;
+- (void)setSymbolConfiguration:(id)arg1;
+- (void)setUseSegmentedControl:(bool)arg1;
+- (void)setUseSystemButtonAppearance:(bool)arg1;
+- (bool)showsChevronForSingleAction;
+- (id)symbolConfiguration;
+- (bool)useSegmentedControl;
+- (bool)useSystemButtonAppearance;
+
+@end

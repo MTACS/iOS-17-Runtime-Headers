@@ -1,0 +1,4 @@
+
+@interface DMFFetchInstalledProvisioningProfilesRequest : DMFFetchProvisioningProfilesRequest
+
+@end

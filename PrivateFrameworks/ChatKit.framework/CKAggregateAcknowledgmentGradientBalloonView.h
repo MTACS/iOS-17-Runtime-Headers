@@ -1,0 +1,4 @@
+
+@interface CKAggregateAcknowledgmentGradientBalloonView : CKAggregateAcknowledgmentBalloonView
+
+@end

@@ -1,0 +1,11 @@
+
+@protocol HMDSiriEndpointProfileMetricsDispatcherDataSource <NSObject>
+
+@required
+
+- (NSString *)accessoryCategoryTypeForSiriEndpointProfileMetricsDispatcher:(HMDSiriEndpointProfileMetricsDispatcher *)arg1;
+- (HMDCompositeSettingsControllerManager *)compositeSettingsControllerManagerForSiriEndpointProfileMetricsDispatcher:(HMDSiriEndpointProfileMetricsDispatcher *)arg1;
+- (HMDSiriEndpointProfileFields *)profileFieldsForSiriEndpointProfileMetricsDispatcher:(HMDSiriEndpointProfileMetricsDispatcher *)arg1;
+- (bool)shouldSubmitRoutineConfigurationEventForSiriEndpointProfileMetricsDispatcher:(HMDSiriEndpointProfileMetricsDispatcher *)arg1;
+
+@end

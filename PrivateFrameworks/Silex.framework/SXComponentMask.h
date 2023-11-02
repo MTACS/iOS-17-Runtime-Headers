@@ -1,0 +1,4 @@
+
+@interface SXComponentMask : SXJSONObject
+
+@end

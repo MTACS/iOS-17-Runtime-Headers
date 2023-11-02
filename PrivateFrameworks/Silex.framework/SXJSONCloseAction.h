@@ -1,0 +1,4 @@
+
+@interface SXJSONCloseAction : SXJSONAction
+
+@end

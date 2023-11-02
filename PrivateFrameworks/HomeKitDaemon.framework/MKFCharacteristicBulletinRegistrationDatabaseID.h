@@ -1,0 +1,4 @@
+
+@interface MKFCharacteristicBulletinRegistrationDatabaseID : MKFBulletinRegistrationDatabaseID
+
+@end

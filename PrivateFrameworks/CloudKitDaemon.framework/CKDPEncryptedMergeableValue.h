@@ -1,0 +1,23 @@
+
+@interface CKDPEncryptedMergeableValue : PBCodable <NSCopying> {
+    CKDPIdentifier * _identifier;
+}
+
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, retain) CKDPIdentifier *identifier;
+
+- (void).cxx_destruct;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasIdentifier;
+- (unsigned long long)hash;
+- (id)identifier;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

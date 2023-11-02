@@ -1,0 +1,78 @@
+
+@interface NTPBFeedCellHostViewExposure : PBCodable <NSCopying> {
+    int  _areaPresentationReason;
+    NSString * _campaignId;
+    NSString * _campaignType;
+    NSString * _creativeId;
+    int  _feedCellHostType;
+    struct { 
+        unsigned int areaPresentationReason : 1; 
+        unsigned int feedCellHostType : 1; 
+        unsigned int userAction : 1; 
+        unsigned int pickFavsButtonExposed : 1; 
+    }  _has;
+    bool  _pickFavsButtonExposed;
+    NSString * _topicFeedId;
+    int  _userAction;
+}
+
+@property (nonatomic) int areaPresentationReason;
+@property (nonatomic, retain) NSString *campaignId;
+@property (nonatomic, retain) NSString *campaignType;
+@property (nonatomic, retain) NSString *creativeId;
+@property (nonatomic) int feedCellHostType;
+@property (nonatomic) bool hasAreaPresentationReason;
+@property (nonatomic, readonly) bool hasCampaignId;
+@property (nonatomic, readonly) bool hasCampaignType;
+@property (nonatomic, readonly) bool hasCreativeId;
+@property (nonatomic) bool hasFeedCellHostType;
+@property (nonatomic) bool hasPickFavsButtonExposed;
+@property (nonatomic, readonly) bool hasTopicFeedId;
+@property (nonatomic) bool hasUserAction;
+@property (nonatomic) bool pickFavsButtonExposed;
+@property (nonatomic, retain) NSString *topicFeedId;
+@property (nonatomic) int userAction;
+
+- (void).cxx_destruct;
+- (int)StringAsAreaPresentationReason:(id)arg1;
+- (int)StringAsFeedCellHostType:(id)arg1;
+- (int)areaPresentationReason;
+- (id)areaPresentationReasonAsString:(int)arg1;
+- (id)campaignId;
+- (id)campaignType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creativeId;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (int)feedCellHostType;
+- (id)feedCellHostTypeAsString:(int)arg1;
+- (bool)hasAreaPresentationReason;
+- (bool)hasCampaignId;
+- (bool)hasCampaignType;
+- (bool)hasCreativeId;
+- (bool)hasFeedCellHostType;
+- (bool)hasPickFavsButtonExposed;
+- (bool)hasTopicFeedId;
+- (bool)hasUserAction;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)pickFavsButtonExposed;
+- (bool)readFrom:(id)arg1;
+- (void)setAreaPresentationReason:(int)arg1;
+- (void)setCampaignId:(id)arg1;
+- (void)setCampaignType:(id)arg1;
+- (void)setCreativeId:(id)arg1;
+- (void)setFeedCellHostType:(int)arg1;
+- (void)setHasAreaPresentationReason:(bool)arg1;
+- (void)setHasFeedCellHostType:(bool)arg1;
+- (void)setHasPickFavsButtonExposed:(bool)arg1;
+- (void)setHasUserAction:(bool)arg1;
+- (void)setPickFavsButtonExposed:(bool)arg1;
+- (void)setTopicFeedId:(id)arg1;
+- (void)setUserAction:(int)arg1;
+- (id)topicFeedId;
+- (int)userAction;
+- (void)writeTo:(id)arg1;
+
+@end

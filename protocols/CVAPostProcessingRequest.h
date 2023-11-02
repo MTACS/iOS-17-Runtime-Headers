@@ -1,0 +1,4 @@
+
+@protocol CVAPostProcessingRequest <NSObject>
+
+@end

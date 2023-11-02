@@ -1,0 +1,49 @@
+
+@interface CDPDSOSCircleController : NSObject <CDPDCircleControl> {
+    CDPDCircleStateObserver * _circleJoinObserver;
+    <CDPDCircleProxy> * _circleProxy;
+    <CDPDCircleDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _requestSynchronizationQueue;
+    <CDPStateUIProviderInternal> * _uiProvider;
+}
+
+@property (nonatomic, retain) <CDPDCircleProxy> *circleProxy;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CDPDCircleDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) <CDPStateUIProviderInternal> *uiProvider;
+
+- (void).cxx_destruct;
+- (void)_joinCircleIgnoringBackups:(bool)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)_peerCount;
+- (id)_peerDeviceNamesByPeerID;
+- (void)_requestCircleJoinWithObserver:(id)arg1 requestBlock:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)_requestToJoinAfterRestoreAndWaitForSuccessWithHandler:(id /* block */)arg1;
+- (void)_requestToJoinAndWaitForSuccessWithHandler:(id /* block */)arg1;
+- (void)_requestToJoinWithObserver:(id)arg1 completion:(id /* block */)arg2;
+- (void)_requestToJoinWithRequestBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)applyToJoinCircleWithJoinHandler:(id /* block */)arg1;
+- (void)cancelApplicationToJoinCircle;
+- (id)circleProxy;
+- (unsigned long long)circleStatus;
+- (int)circleSyncingStatus;
+- (long long)cliqueStatus;
+- (void)dealloc;
+- (id)delegate;
+- (id)initWithUiProvider:(id)arg1 delegate:(id)arg2 circleProxy:(id)arg3 octagonTrustProxy:(id)arg4;
+- (void)joinCircleAfterRecoveryWithCompletion:(id /* block */)arg1;
+- (void)joinCircleIgnoringBackups:(bool)arg1 completion:(id /* block */)arg2;
+- (void)joinCircleWithCompletion:(id /* block */)arg1;
+- (id)peerID;
+- (void)prepareCircleStateForRecovery;
+- (void)resetCircleIncludingCloudKitData:(bool)arg1 cloudKitResetReasonDescription:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)setCircleProxy:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setUiProvider:(id)arg1;
+- (bool)synchronizeCircleViews;
+- (id)uiProvider;
+- (void)useCircleInfoToUpdateNameForDevices:(id)arg1;
+
+@end

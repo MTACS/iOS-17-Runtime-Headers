@@ -1,0 +1,82 @@
+
+@interface VUIActionPunchout : VUIAction {
+    VUIAppContext * _appContext;
+    NSString * _canonicalID;
+    WLKChannelDetails * _channelDetails;
+    VUIContentRating * _contentRating;
+    NSString * _contentTitle;
+    NSString * _externalID;
+    bool  _isAdultContent;
+    bool  _isEntitledToPlay;
+    bool  _isPlaybackURL;
+    NSString * _mediaType;
+    NSURL * _punchoutURL;
+    NSString * _referenceID;
+    bool  _shouldAvoidInstallSheet;
+    bool  _shouldPunchOutAfterAppInstallation;
+    bool  _shouldRunPreflightManager;
+}
+
+@property (nonatomic, retain) VUIAppContext *appContext;
+@property (nonatomic, retain) NSString *canonicalID;
+@property (nonatomic, retain) WLKChannelDetails *channelDetails;
+@property (nonatomic, retain) VUIContentRating *contentRating;
+@property (nonatomic, copy) NSString *contentTitle;
+@property (nonatomic, retain) NSString *externalID;
+@property (nonatomic) bool isAdultContent;
+@property (nonatomic) bool isEntitledToPlay;
+@property (nonatomic) bool isPlaybackURL;
+@property (nonatomic, retain) NSString *mediaType;
+@property (nonatomic, retain) NSURL *punchoutURL;
+@property (nonatomic, retain) NSString *referenceID;
+@property (nonatomic) bool shouldAvoidInstallSheet;
+@property (nonatomic) bool shouldPunchOutAfterAppInstallation;
+@property (nonatomic) bool shouldRunPreflightManager;
+
+- (void).cxx_destruct;
+- (void)_continueInstallFlowAfterPreflight:(id /* block */)arg1;
+- (bool)_isValidAppInstalled;
+- (void)_openAirplayPicker:(id /* block */)arg1;
+- (void)_openPunchoutURL:(id /* block */)arg1;
+- (void)_presentASCSingleAppInstaller:(id /* block */)arg1;
+- (void)_showErrorMessageAlert:(id)arg1;
+- (void)_startAppInstallFlow:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (id)appContext;
+- (bool)canPerformNow;
+- (id)canonicalID;
+- (id)channelDetails;
+- (void)checkVppaStatus:(id /* block */)arg1;
+- (id)contentRating;
+- (id)contentTitle;
+- (id)externalID;
+- (id)initWithContextData:(id)arg1 appContext:(id)arg2;
+- (bool)isAccountRequired;
+- (bool)isAdultContent;
+- (bool)isEntitledToPlay;
+- (bool)isPlaybackURL;
+- (id)mediaType;
+- (void)performWithTargetResponder:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)punchoutURL;
+- (id)referenceID;
+- (void)setAppContext:(id)arg1;
+- (void)setCanonicalID:(id)arg1;
+- (void)setChannelDetails:(id)arg1;
+- (void)setContentRating:(id)arg1;
+- (void)setContentTitle:(id)arg1;
+- (void)setExternalID:(id)arg1;
+- (void)setIsAdultContent:(bool)arg1;
+- (void)setIsEntitledToPlay:(bool)arg1;
+- (void)setIsPlaybackURL:(bool)arg1;
+- (void)setMediaType:(id)arg1;
+- (void)setPunchoutURL:(id)arg1;
+- (void)setReferenceID:(id)arg1;
+- (void)setShouldAvoidInstallSheet:(bool)arg1;
+- (void)setShouldPunchOutAfterAppInstallation:(bool)arg1;
+- (void)setShouldRunPreflightManager:(bool)arg1;
+- (bool)shouldAvoidInstallSheet;
+- (bool)shouldPunchOutAfterAppInstallation;
+- (bool)shouldRunPreflightManager;
+- (void)showAPPInstallRestrictedErrorAlert;
+- (id)topPresentedViewController;
+
+@end

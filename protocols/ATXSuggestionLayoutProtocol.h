@@ -1,0 +1,4 @@
+
+@protocol ATXSuggestionLayoutProtocol <ATXUICacheProtocol>
+
+@end

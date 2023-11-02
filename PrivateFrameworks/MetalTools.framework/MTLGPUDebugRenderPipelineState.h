@@ -1,0 +1,85 @@
+
+@interface MTLGPUDebugRenderPipelineState : MTLToolsRenderPipelineState {
+    NSMutableArray * _binaryFunctionData;
+    MTLGPUDebugImageData * _fragmentFunctionData;
+    int  _fragmentMaxCallStackDepth;
+    MTLGPUDebugBuffer * _indirectStateBuffer;
+    MTLRenderPipelineReflection * _internalReflection;
+    MTLGPUDebugImageData * _meshFunctionData;
+    int  _meshMaxCallStackDepth;
+    MTLGPUDebugImageData * _objectFunctionData;
+    int  _objectMaxCallStackDepth;
+    NSMutableArray * _retainedFunctions;
+    bool  _supportsIndirectCommandBuffers;
+    MTLGPUDebugImageData * _tileFunctionData;
+    int  _tileMaxCallStackDepth;
+    MTLRenderPipelineReflection * _userReflection;
+    MTLGPUDebugImageData * _vertexFunctionData;
+    int  _vertexMaxCallStackDepth;
+}
+
+@property (nonatomic, readonly) NSArray *binaryFunctionData;
+@property (nonatomic, readonly) MTLGPUDebugBuffer *fragmentConstantsBuffer;
+@property (nonatomic, readonly) MTLGPUDebugImageData *fragmentFunctionData;
+@property (nonatomic, readonly) int fragmentMaxCallStackDepth;
+@property (nonatomic, readonly) MTLGPUDebugBuffer *indirectStateBuffer;
+@property (nonatomic, readonly) MTLRenderPipelineReflection *internalReflection;
+@property (nonatomic, readonly) MTLGPUDebugBuffer *meshConstantsBuffer;
+@property (nonatomic, readonly) MTLGPUDebugImageData *meshFunctionData;
+@property (nonatomic, readonly) int meshMaxCallStackDepth;
+@property (nonatomic, readonly) MTLGPUDebugBuffer *objectConstantsBuffer;
+@property (nonatomic, readonly) MTLGPUDebugImageData *objectFunctionData;
+@property (nonatomic, readonly) int objectMaxCallStackDepth;
+@property (nonatomic, readonly) MTLGPUDebugBuffer *tileConstantsBuffer;
+@property (nonatomic, readonly) MTLGPUDebugImageData *tileFunctionData;
+@property (nonatomic, readonly) int tileMaxCallStackDepth;
+@property (nonatomic, readonly) MTLRenderPipelineReflection *userReflection;
+@property (nonatomic, readonly) MTLGPUDebugBuffer *vertexConstantsBuffer;
+@property (nonatomic, readonly) MTLGPUDebugImageData *vertexFunctionData;
+@property (nonatomic, readonly) int vertexMaxCallStackDepth;
+
+- (void)_initConstantsBuffer:(id)arg1 device:(id)arg2;
+- (id)binaryFunctionData;
+- (void)dealloc;
+- (id)fragmentConstantsBuffer;
+- (id)fragmentFunctionData;
+- (int)fragmentMaxCallStackDepth;
+- (id)functionHandleWithFunction:(id)arg1 stage:(unsigned long long)arg2;
+- (id)indirectStateBuffer;
+- (id)initWithRenderPipelineState:(id)arg1 descriptor:(id)arg2 unwrappedDescriptor:(id)arg3 reflection:(id)arg4 device:(id)arg5 pipelineOptions:(unsigned long long)arg6;
+- (id)initWithRenderPipelineState:(id)arg1 meshDescriptor:(id)arg2 unwrappedDescriptor:(id)arg3 reflection:(id)arg4 device:(id)arg5 pipelineOptions:(unsigned long long)arg6;
+- (id)initWithRenderPipelineState:(id)arg1 tileDescriptor:(id)arg2 reflection:(id)arg3 device:(id)arg4;
+- (id)initWithRenderPipelineState:(id)arg1 vertexBinaryFunctions:(id)arg2 fragmentBinaryFunctions:(id)arg3 tileBinaryFunctions:(id)arg4 objectBinaryFunctions:(id)arg5 meshBinaryFunctions:(id)arg6 withState:(id)arg7 device:(id)arg8;
+- (id)internalReflection;
+- (id)meshConstantsBuffer;
+- (id)meshFunctionData;
+- (int)meshMaxCallStackDepth;
+- (id)newFragmentIntersectionFunctionTableWithDescriptor:(id)arg1;
+- (id)newIntersectionFunctionTableWithDescriptor:(id)arg1 stage:(unsigned long long)arg2;
+- (id)newMeshIntersectionFunctionTableWithDescriptor:(id)arg1;
+- (id)newObjectIntersectionFunctionTableWithDescriptor:(id)arg1;
+- (id)newRenderPipelineStateWithAdditionalBinaryFunctions:(id)arg1 error:(id*)arg2;
+- (id)newRenderPipelineStateWithAdditionalBinaryFunctions:(id)arg1 fragmentAdditionalBinaryFunctions:(id)arg2 error:(id*)arg3;
+- (id)newTileIntersectionFunctionTableWithDescriptor:(id)arg1;
+- (id)newTileRenderPipelineStateWithAdditionalBinaryFunctions:(id)arg1 error:(id*)arg2;
+- (id)newVertexIntersectionFunctionTableWithDescriptor:(id)arg1;
+- (id)newVisibleFunctionTableFromFragmentStageWithDescriptor:(id)arg1;
+- (id)newVisibleFunctionTableFromMeshStageWithDescriptor:(id)arg1;
+- (id)newVisibleFunctionTableFromObjectStageWithDescriptor:(id)arg1;
+- (id)newVisibleFunctionTableFromTileStageWithDescriptor:(id)arg1;
+- (id)newVisibleFunctionTableFromVertexStageWithDescriptor:(id)arg1;
+- (id)newVisibleFunctionTableWithDescriptor:(id)arg1 stage:(unsigned long long)arg2;
+- (id)objectConstantsBuffer;
+- (id)objectFunctionData;
+- (int)objectMaxCallStackDepth;
+- (void)releaseReflection;
+- (id)tileConstantsBuffer;
+- (id)tileFunctionData;
+- (int)tileMaxCallStackDepth;
+- (id)unwrapBinaryFunctions:(id)arg1;
+- (id)userReflection;
+- (id)vertexConstantsBuffer;
+- (id)vertexFunctionData;
+- (int)vertexMaxCallStackDepth;
+
+@end

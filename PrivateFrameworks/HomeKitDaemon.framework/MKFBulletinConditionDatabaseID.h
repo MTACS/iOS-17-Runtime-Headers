@@ -1,0 +1,4 @@
+
+@interface MKFBulletinConditionDatabaseID : MKFModelDatabaseID
+
+@end

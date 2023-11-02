@@ -1,0 +1,4 @@
+
+@interface AELocalizedErrorDescriptions : NSObject
+
+@end

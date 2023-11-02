@@ -1,0 +1,4 @@
+
+@interface SKUIFamilySetupTemplateViewElement : SKUIViewElement
+
+@end

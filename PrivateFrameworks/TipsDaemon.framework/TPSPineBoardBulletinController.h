@@ -1,0 +1,4 @@
+
+@interface TPSPineBoardBulletinController : TPSLocalNotificationController
+
+@end

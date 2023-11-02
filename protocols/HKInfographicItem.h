@@ -1,0 +1,4 @@
+
+@protocol HKInfographicItem <NSObject>
+
+@end

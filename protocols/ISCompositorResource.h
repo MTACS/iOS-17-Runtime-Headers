@@ -1,0 +1,4 @@
+
+@protocol ISCompositorResource <NSObject>
+
+@end

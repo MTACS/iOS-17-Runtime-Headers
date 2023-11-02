@@ -1,0 +1,81 @@
+
+@interface CSOpportuneSpeakListener : NSObject <CSAudioStreamProvidingDelegate, CSSPGEndpointAnalyzerDelegate> {
+    NSObject<OS_dispatch_queue> * _alignBufferQueue;
+    CSPlainAudioFileWriter * _audioFileWriter;
+    <CSAudioSessionProviding> * _audioSessionProvider;
+    CSAudioStream * _audioStream;
+    <CSAudioStreamProviding> * _audioStreamProvider;
+    CSAudioTimeConverter * _audioTimeConverter;
+    <CSOpportuneSpeakListenerDelegate> * _delegate;
+    bool  _isMediaPlayingNow;
+    CSAudioRecordContext * _latestContext;
+    NSMutableArray * _remoteVADAlignBuffer;
+    unsigned long long  _remoteVADAlignCount;
+    int  _remoteVADSPGRatio;
+    unsigned long long  _runningSampleCount;
+    CSSPGEndpointAnalyzer * _spgEndpointAnalyzer;
+}
+
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *alignBufferQueue;
+@property (nonatomic, retain) CSPlainAudioFileWriter *audioFileWriter;
+@property (nonatomic, retain) <CSAudioSessionProviding> *audioSessionProvider;
+@property (nonatomic, retain) CSAudioStream *audioStream;
+@property (nonatomic, retain) <CSAudioStreamProviding> *audioStreamProvider;
+@property (nonatomic, retain) CSAudioTimeConverter *audioTimeConverter;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CSOpportuneSpeakListenerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property bool isMediaPlayingNow;
+@property (nonatomic, retain) CSAudioRecordContext *latestContext;
+@property (nonatomic, retain) NSMutableArray *remoteVADAlignBuffer;
+@property (nonatomic) unsigned long long remoteVADAlignCount;
+@property (nonatomic) int remoteVADSPGRatio;
+@property (nonatomic) unsigned long long runningSampleCount;
+@property (nonatomic, retain) CSSPGEndpointAnalyzer *spgEndpointAnalyzer;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_addRemoteVADSignal:(bool)arg1;
+- (bool)_popRemoteVADSignal;
+- (void)_resetAlignBuffer;
+- (bool)_shouldReportBoron;
+- (void)_startRequestWithCompletion:(id /* block */)arg1;
+- (id)alignBufferQueue;
+- (id)audioFileWriter;
+- (id)audioSessionProvider;
+- (id)audioStream;
+- (id)audioStreamProvider;
+- (void)audioStreamProvider:(id)arg1 audioBufferAvailable:(id)arg2;
+- (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
+- (void)audioStreamProvider:(id)arg1 didStopStreamUnexpectedly:(long long)arg2;
+- (id)audioTimeConverter;
+- (id)delegate;
+- (id)init;
+- (bool)isMediaPlayingNow;
+- (id)latestContext;
+- (id)remoteVADAlignBuffer;
+- (unsigned long long)remoteVADAlignCount;
+- (int)remoteVADSPGRatio;
+- (unsigned long long)runningSampleCount;
+- (void)setAlignBufferQueue:(id)arg1;
+- (void)setAudioFileWriter:(id)arg1;
+- (void)setAudioSessionProvider:(id)arg1;
+- (void)setAudioStream:(id)arg1;
+- (void)setAudioStreamProvider:(id)arg1;
+- (void)setAudioTimeConverter:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setIsMediaPlayingNow:(bool)arg1;
+- (void)setLatestContext:(id)arg1;
+- (void)setRemoteVADAlignBuffer:(id)arg1;
+- (void)setRemoteVADAlignCount:(unsigned long long)arg1;
+- (void)setRemoteVADSPGRatio:(int)arg1;
+- (void)setRunningSampleCount:(unsigned long long)arg1;
+- (void)setSpgEndpointAnalyzer:(id)arg1;
+- (id)spgEndpointAnalyzer;
+- (void)spgEndpointAnalyzer:(id)arg1 hasSilenceScoreEstimate:(double)arg2 clientProcessedAudioTimeMS:(float)arg3;
+- (void)startListenWithOption:(id)arg1 completion:(id /* block */)arg2;
+- (void)stopListenWithCompletion:(id /* block */)arg1;
+- (void)stopListenWithStateReset:(bool)arg1 completion:(id /* block */)arg2;
+
+@end

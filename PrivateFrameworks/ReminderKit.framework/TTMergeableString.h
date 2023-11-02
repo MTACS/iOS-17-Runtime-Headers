@@ -1,0 +1,153 @@
+
+@interface TTMergeableString : NSObject <CRDataType> {
+    NSMutableAttributedString * _attributedString;
+    bool  _cacheInvalid;
+    NSObject<TTMergeableStringDelegate> * _delegate;
+    unsigned long long  _editCount;
+    struct vector<TopoSubstring *, std::allocator<TopoSubstring *>> { 
+        struct TopoSubstring {} **__begin_; 
+        struct TopoSubstring {} **__end_; 
+        struct __compressed_pair<TopoSubstring **, std::allocator<TopoSubstring *>> { 
+            struct TopoSubstring {} **__value_; 
+        } __end_cap_; 
+    }  _endNodes;
+    bool  _hasLocalChanges;
+    NSHashTable * _objectsNeedingUpdatedRanges;
+    struct vector<TopoSubstring *, std::allocator<TopoSubstring *>> { 
+        struct TopoSubstring {} **__begin_; 
+        struct TopoSubstring {} **__end_; 
+        struct __compressed_pair<TopoSubstring **, std::allocator<TopoSubstring *>> { 
+            struct TopoSubstring {} **__value_; 
+        } __end_cap_; 
+    }  _orderedSubstrings;
+    unsigned long long  _replicaStyleClock;
+    unsigned long long  _replicaTextClock;
+    NSUUID * _replicaUUID;
+    struct vector<TopoSubstring *, std::allocator<TopoSubstring *>> { 
+        struct TopoSubstring {} **__begin_; 
+        struct TopoSubstring {} **__end_; 
+        struct __compressed_pair<TopoSubstring **, std::allocator<TopoSubstring *>> { 
+            struct TopoSubstring {} **__value_; 
+        } __end_cap_; 
+    }  _startNodes;
+    TTVectorMultiTimestamp * _timestamp;
+    unsigned int  _unserializedClock;
+    id /* block */  _updateRangeBlock;
+}
+
+@property (nonatomic, retain) NSMutableAttributedString *attributedString;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) NSObject<TTMergeableStringDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CRTTCompatibleDocument *document;
+@property (nonatomic) bool hasLocalChanges;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSHashTable *objectsNeedingUpdatedRanges;
+@property (nonatomic, readonly) unsigned long long replicaStyleClock;
+@property (nonatomic, readonly) unsigned long long replicaTextClock;
+@property (nonatomic, retain) NSUUID *replicaUUID;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) TTVectorMultiTimestamp *timestamp;
+
++ (id)unserialisedReplicaID;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)_testSetTextTimestamp:(unsigned long long)arg1;
+- (id)attributedString;
+- (void)beginEditing;
+- (bool)canMergeString:(id)arg1;
+- (id)characterRangesForSelection:(id)arg1;
+- (id)characterRangesForSelection:(id)arg1 selectedSubstringsBlock:(id /* block */)arg2;
+- (bool)check:(id*)arg1;
+- (void)checkTimestampLogStyleErrors:(bool)arg1;
+- (void)cleanupObjectsNeedingUpdatedRanges;
+- (void)coalesce;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (void)deleteCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)deleteSubstrings:(void*)arg1 withCharacterRanges:(void*)arg2;
+- (id)deltaSince:(id)arg1 in:(id)arg2;
+- (id)description;
+- (id)document;
+- (id)dotDescription:(unsigned long long)arg1;
+- (void)dumpMergeData:(id)arg1;
+- (void)endEditing;
+- (void*)endNodes;
+- (void)enumerateRangesModifiedAfter:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateSubstrings:(id /* block */)arg1;
+- (void)generateIdsForLocalChanges;
+- (void)generateIdsForLocalChangesSafeForSharedTimestamp:(bool)arg1;
+- (unsigned long long)getCharacterIndexForCharID:(struct TopoID { id x1; unsigned int x2; })arg1;
+- (void)getCharacterRanges:(void*)arg1 forSubstrings:(void*)arg2;
+- (void*)getSubstringBeforeTopoID:(struct TopoID { id x1; unsigned int x2; })arg1;
+- (void)getSubstrings:(void*)arg1 forCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)getSubstrings:(void*)arg1 forTopoIDRange:(struct TopoIDRange { struct TopoID { id x_1_1_1; unsigned int x_1_1_2; } x1; unsigned int x2; })arg2;
+- (void)getSubstrings:(void*)arg1 inOrderedSubstrings:(void*)arg2 forCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (bool)graphIsEqual:(id)arg1;
+- (bool)hasLocalChanges;
+- (unsigned long long)hash;
+- (id)i_saveDeltasSinceTimestamp:(id)arg1 toArchive:(void*)arg2;
+- (id)init;
+- (id)initWithArchive:(const void*)arg1 andReplicaID:(id)arg2;
+- (id)initWithArchive:(const void*)arg1 andReplicaID:(id)arg2 andSharedTimestamp:(id)arg3;
+- (id)initWithArchive:(const void*)arg1 andReplicaID:(id)arg2 withOrderedSubstrings:(void*)arg3;
+- (id)initWithArchive:(const void*)arg1 andReplicaID:(id)arg2 withOrderedSubstrings:(void*)arg3 timestamp:(id)arg4;
+- (id)initWithData:(id)arg1 andReplicaID:(id)arg2;
+- (id)initWithReplicaID:(id)arg1;
+- (id)initWithReplicaID:(id)arg1 asFragment:(bool)arg2;
+- (struct TopoIDRange { struct TopoID { id x_1_1_1; unsigned int x_1_1_2; } x1; unsigned int x2; })insertAttributedString:(id)arg1 after:(void*)arg2 before:(void*)arg3;
+- (void)insertAttributedString:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)insertString:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)invalidateCache;
+- (bool)isEqual:(id)arg1;
+- (bool)isFragment;
+- (unsigned long long)length;
+- (void)mergeWith:(id)arg1;
+- (unsigned long long)mergeWithString:(id)arg1;
+- (unsigned long long)mergeWithString:(id)arg1 mergeTimestamps:(bool)arg2;
+- (void)moveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toIndex:(unsigned long long)arg2;
+- (id)objectsNeedingUpdatedRanges;
+- (void*)orderedSubstrings;
+- (void)realizeLocalChangesIn:(id)arg1;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withAttributedString:(id)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withString:(id)arg2;
+- (unsigned long long)replicaStyleClock;
+- (unsigned long long)replicaTextClock;
+- (id)replicaUUID;
+- (id)replicaUUIDForCharacterAtIndex:(unsigned long long)arg1;
+- (void)resetLocalReplicaClocksToTimestampValues;
+- (void)saveDeltaSinceTimestamp:(id)arg1 toArchive:(void*)arg2;
+- (void)saveSubstrings:(void*)arg1 archiveSet:(void*)arg2 linkSet:(void*)arg3 archivedString:(id*)arg4 toArchive:(void*)arg5;
+- (void)saveToArchive:(void*)arg1;
+- (bool)selection:(id)arg1 wasModifiedAfter:(id)arg2;
+- (id)selectionForCharacterRanges:(id)arg1;
+- (id)selectionForCharacterRanges:(id)arg1 selectionAffinity:(unsigned long long)arg2;
+- (id)serialize;
+- (id)serializeDeltaSinceTimestamp:(id)arg1;
+- (void)setAttributedString:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDocument:(id)arg1;
+- (void)setHasLocalChanges:(bool)arg1;
+- (void)setReplicaUUID:(id)arg1;
+- (void)setTimestamp:(id)arg1;
+- (bool)shouldInvalidateCachedSubstringsWithTimestamp:(id)arg1;
+- (void)sortSplitNodes;
+- (void*)splitTopoSubstring:(void*)arg1 atIndex:(unsigned int)arg2;
+- (void*)startNodes;
+- (id)string;
+- (long long)substring:(void*)arg1 modifiedAfter:(id)arg2;
+- (bool)textEitherSideOfSelectionAnchor:(struct TopoID { id x1; unsigned int x2; })arg1 wasModifiedAfter:(id)arg2;
+- (id)timestamp;
+- (id)tombstone;
+- (void)traverseUnordered:(id /* block */)arg1;
+- (void)updateAttributedStringAfterMerge;
+- (void)updateCache;
+- (void)updateClock;
+- (void)updateSubstringIndexes;
+- (void)updateTimestampsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)updateTopoIDRange:(struct TopoIDRange { struct TopoID { id x_1_1_1; unsigned int x_1_1_2; } x1; unsigned int x2; })arg1 toNewRangeID:(struct TopoIDRange { struct TopoID { id x_1_1_1; unsigned int x_1_1_2; } x1; unsigned int x2; })arg2;
+- (void)walkGraph:(id /* block */)arg1;
+
+@end

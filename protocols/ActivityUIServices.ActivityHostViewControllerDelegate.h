@@ -1,0 +1,15 @@
+
+@protocol ActivityUIServices.ActivityHostViewControllerDelegate <NSObject>
+
+@required
+
+- (void)activityHostViewControllerAudioCategoriesDisablingVolumeHUDDidChangeWithViewController:(_TtC18ActivityUIServices26ActivityHostViewController *)arg1;
+- (void)activityHostViewControllerBackgroundTintColorDidChangeWithViewController:(_TtC18ActivityUIServices26ActivityHostViewController *)arg1;
+- (void)activityHostViewControllerHostShouldCancelTouchesWithViewController:(_TtC18ActivityUIServices26ActivityHostViewController *)arg1;
+- (void)activityHostViewControllerSignificantUserInteractionBeganWithViewController:(_TtC18ActivityUIServices26ActivityHostViewController *)arg1;
+- (void)activityHostViewControllerSignificantUserInteractionEndedWithViewController:(_TtC18ActivityUIServices26ActivityHostViewController *)arg1;
+- (void)activityHostViewControllerTextColorDidChangeWithViewController:(_TtC18ActivityUIServices26ActivityHostViewController *)arg1;
+- (void)activityHostViewControllerWithViewController:(_TtC18ActivityUIServices26ActivityHostViewController *)arg1 didSetIdleTimerDisabled:(bool)arg2;
+- (void)activityHostViewControllerWithViewController:(_TtC18ActivityUIServices26ActivityHostViewController *)arg1 requestsLaunchWithAction:(BSAction *)arg2;
+
+@end

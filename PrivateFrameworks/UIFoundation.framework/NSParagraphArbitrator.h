@@ -1,0 +1,114 @@
+
+@interface NSParagraphArbitrator : NSObject {
+    NSAttributedString * _attributedString;
+    struct UBreakIterator { } * _breaker;
+    NSString * _breakerLocale;
+    NSString * _breakerString;
+    bool  _breaksLinesForInteractiveText;
+    NSParagraphStyle * _defaultParagraphStyle;
+    bool  _hyphenatesAsLastResort;
+    double  _hyphenationFactor;
+    bool  _languageSupportsLineBreakStyle;
+    unsigned long long  _lineBreakStrategy;
+    int  _lineBreakStyle;
+    id /* block */  _lineWidth;
+    bool  _needsOptimalLayout;
+    _NSOptimalLineBreaker * _optimalLineBreaker;
+    struct __CTLine { } * _paragraphLine;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _paragraphRange;
+    NSString * _preferredLanguage;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _previousLineRange;
+    bool  _textContainerIsSimple;
+    double  _textContainerWidth;
+    struct __CFStringTokenizer { } * _tokenizer;
+    long long  _typesetterBehavior;
+    unsigned long long  _usesOptimalLayout;
+    id /* block */  _validateLineBreakContext;
+}
+
+@property (retain) NSAttributedString *attributedString;
+@property bool breaksLinesForInteractiveText;
+@property (readonly) NSString *debugString;
+@property (copy) NSParagraphStyle *defaultParagraphStyle;
+@property bool hyphenatesAsLastResort;
+@property double hyphenationFactor;
+@property unsigned long long lineBreakStrategy;
+@property (copy) id /* block */ lineWidth;
+@property (readonly) bool mayCompressLines;
+@property struct __CTLine { }*paragraphLine;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } paragraphRange;
+@property (copy) NSString *preferredLanguage;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } previousLineRange;
+@property bool textContainerIsSimple;
+@property double textContainerWidth;
+@property (readonly) struct __CFStringTokenizer { }*tokenizer;
+@property long long typesetterBehavior;
+@property (copy) id /* block */ validateLineBreakContext;
+
++ (bool)_hyphenatesAsLastResort;
++ (int)_lineBreakStyleForFont:(id)arg1;
++ (void)initialize;
++ (id)paragraphArbitratorWithAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+
+- (bool)_attributedStringOverridesLineBreakBeforeIndex:(id)arg1;
+- (void)_computeOptimalLayout;
+- (struct { unsigned long long x1; unsigned long long x2; bool x3; })_firstFitLineBreakContextBeforeIndex:(unsigned long long)arg1 lineFragmentWidth:(double)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (int)_lineBreakStyle;
+- (int)_lineBreakStyleForLastResortHyphenation:(bool)arg1;
+- (struct { unsigned long long x1; unsigned long long x2; bool x3; })_optimalLineBreakContextBeforeIndex:(unsigned long long)arg1 lineFragmentWidth:(double)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (id)_preferredLanguageForCharacterAtIndex:(unsigned long long)arg1;
+- (bool)_shouldUseCFStringTokenizerForLineBreaks;
+- (bool)_shouldUseOptimalLayout;
+- (unsigned long long)adjustedLineBreakIndexForProposedIndex:(unsigned long long)arg1;
+- (id)attributedString;
+- (bool)breaksLinesForInteractiveText;
+- (void)configureOptimalLineBreaker;
+- (void)dealloc;
+- (id)debugString;
+- (id)defaultParagraphStyle;
+- (bool)hyphenatesAsLastResort;
+- (double)hyphenationFactor;
+- (id)init;
+- (id)initWithAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (struct { unsigned long long x1; unsigned long long x2; bool x3; })lineBreakContextBeforeIndex:(unsigned long long)arg1 lineFragmentWidth:(double)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (unsigned long long)lineBreakStrategy;
+- (id /* block */)lineWidth;
+- (bool)mayCompressLines;
+- (id)optimalLineBreaker;
+- (struct __CTLine { }*)paragraphLine;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })paragraphRange;
+- (id)preferredLanguage;
+- (bool)prepareBreakIteratorForCharacterAtIndex:(unsigned long long)arg1;
+- (bool)prepareTokenizerForPreferredLanguage:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })previousLineRange;
+- (double)raggednessWithCharIndexAsLineBreak:(unsigned long long)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)reset;
+- (void)resetBreaker;
+- (void)setAttributedString:(id)arg1;
+- (void)setBreaksLinesForInteractiveText:(bool)arg1;
+- (void)setDefaultParagraphStyle:(id)arg1;
+- (void)setHyphenatesAsLastResort:(bool)arg1;
+- (void)setHyphenationFactor:(double)arg1;
+- (void)setLineBreakStrategy:(unsigned long long)arg1;
+- (void)setLineWidth:(id /* block */)arg1;
+- (void)setParagraphLine:(struct __CTLine { }*)arg1;
+- (void)setParagraphRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setPreferredLanguage:(id)arg1;
+- (void)setPreviousLineRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setTextContainerIsSimple:(bool)arg1;
+- (void)setTextContainerWidth:(double)arg1;
+- (void)setTypesetterBehavior:(long long)arg1;
+- (void)setValidateLineBreakContext:(id /* block */)arg1;
+- (bool)textContainerIsSimple;
+- (double)textContainerWidth;
+- (struct __CFStringTokenizer { }*)tokenizer;
+- (long long)typesetterBehavior;
+- (id /* block */)validateLineBreakContext;
+
+@end

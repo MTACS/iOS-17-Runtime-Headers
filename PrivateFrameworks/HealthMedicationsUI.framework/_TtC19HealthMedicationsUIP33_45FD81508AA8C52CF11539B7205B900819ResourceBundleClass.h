@@ -1,0 +1,4 @@
+
+@interface _TtC19HealthMedicationsUIP33_45FD81508AA8C52CF11539B7205B900819ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

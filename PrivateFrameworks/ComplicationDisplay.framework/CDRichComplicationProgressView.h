@@ -1,0 +1,87 @@
+
+@interface CDRichComplicationProgressView : UIView <CLKMonochromeComplicationView, CLKMonochromeFilterProvider> {
+    CDRichComplicationShapeView * _backgroundView;
+    float  _currentBackgroundViewAlphaPercentage;
+    CLKDevice * _device;
+    bool  _enabled;
+    long long  _family;
+    <CLKMonochromeFilterProvider> * _filterProvider;
+    CDRichComplicationShapeView * _foregroundView;
+    CLKGaugeProvider * _gaugeProvider;
+    NSArray * _gradientColors;
+    UIView * _indicatorView;
+    double  _progress;
+    CAShapeLayer * _ringLayer;
+    UIView * _ringView;
+    bool  _showAlternateIndicatorColor;
+    bool  _showHolePunch;
+    bool  _showIndicatorView;
+    long long  _style;
+    NSNumber * _updateToken;
+}
+
+@property (nonatomic, readonly) CDRichComplicationShapeView *backgroundView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool enabled;
+@property (nonatomic) <CLKMonochromeFilterProvider> *filterProvider;
+@property (nonatomic, readonly) CDRichComplicationShapeView *foregroundView;
+@property (nonatomic, retain) CLKGaugeProvider *gaugeProvider;
+@property (nonatomic, retain) NSArray *gradientColors;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIView *indicatorView;
+@property (nonatomic) double progress;
+@property (nonatomic, readonly) CAShapeLayer *ringLayer;
+@property (nonatomic, readonly) UIView *ringView;
+@property (nonatomic) bool showAlternateIndicatorColor;
+@property (nonatomic) bool showHolePunch;
+@property (nonatomic) bool showIndicatorView;
+@property (nonatomic) long long style;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_adjustBackgroundViewAlphaWithPercentage:(float)arg1;
+- (void)_applyStyle;
+- (void)_updateRingShape;
+- (void)_updateUIFromGaugeProvider;
+- (void)animateToProgress:(float)arg1 duration:(double)arg2;
+- (id)backgroundView;
+- (id)colorForView:(id)arg1 accented:(bool)arg2;
+- (void)dealloc;
+- (bool)enabled;
+- (id)filterForView:(id)arg1 style:(long long)arg2;
+- (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)filterProvider;
+- (id)filtersForView:(id)arg1 style:(long long)arg2;
+- (id)filtersForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)foregroundView;
+- (id)gaugeProvider;
+- (id)gradientColors;
+- (id)indicatorView;
+- (id)initForFamily:(long long)arg1 device:(id)arg2 backgroundShapeView:(id)arg3 foregroundShapeView:(id)arg4;
+- (id)interpolatedColorForView:(id)arg1;
+- (void)layoutSubviews;
+- (id)overrideBackgroundGradientColorsForGradientColors:(id)arg1;
+- (id)overrideBackgroundGradientColorsForGradientColors:(id)arg1 locations:(id)arg2;
+- (double)progress;
+- (id)ringLayer;
+- (id)ringView;
+- (void)setEnabled:(bool)arg1;
+- (void)setFilterProvider:(id)arg1;
+- (void)setGaugeProvider:(id)arg1;
+- (void)setGradientColors:(id)arg1;
+- (void)setGradientColors:(id)arg1 locations:(id)arg2;
+- (void)setIndicatorView:(id)arg1;
+- (void)setProgress:(double)arg1;
+- (void)setShowAlternateIndicatorColor:(bool)arg1;
+- (void)setShowHolePunch:(bool)arg1;
+- (void)setShowIndicatorView:(bool)arg1;
+- (void)setStyle:(long long)arg1;
+- (bool)showAlternateIndicatorColor;
+- (bool)showHolePunch;
+- (bool)showIndicatorView;
+- (long long)style;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)updateMonochromeColor;
+
+@end

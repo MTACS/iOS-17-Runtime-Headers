@@ -1,0 +1,4 @@
+
+@interface MKFAnalysisEventBulletinRegistrationDatabaseID : MKFBulletinRegistrationDatabaseID
+
+@end

@@ -1,0 +1,50 @@
+
+@interface NUIOSurfaceStorage : _NUAbstractBufferStorage <NUPurgeableStorage, NUSurfaceStorage> {
+    <NUDevice> * _device;
+    long long  _purgeLevel;
+    bool  _purgeable;
+    NUIOSurface * _surface;
+}
+
+@property (retain) NUColorSpace *colorSpace;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NUPixelFormat *format;
+@property (readonly) unsigned long long hash;
+@property (readonly) struct { long long x1; long long x2; } size;
+@property (readonly) long long sizeInBytes;
+@property (readonly) Class superclass;
+@property (readonly) NURegion *validRegion;
+
+- (void).cxx_destruct;
+- (void)_allocateSurface;
+- (long long)_copyFromIOSurfaceStorage:(id)arg1 region:(id)arg2 device:(id)arg3;
+- (void)adjustPurgeLevel:(long long)arg1;
+- (long long)copyFromStorage:(id)arg1 region:(id)arg2;
+- (bool)decrementUseCount;
+- (id)description;
+- (void)incrementUseCount;
+- (id)initWithSize:(struct { long long x1; long long x2; })arg1 format:(id)arg2;
+- (id)initWithSurface:(id)arg1;
+- (bool)isInUse;
+- (bool)isPurgeable;
+- (bool)isPurged;
+- (bool)isShared;
+- (bool)makeNonPurgeable;
+- (void)makePurgeable;
+- (long long)purgeLevel;
+- (long long)readBufferInRegion:(id)arg1 block:(id /* block */)arg2;
+- (long long)readSurfaceInRegion:(id)arg1 block:(id /* block */)arg2;
+- (long long)readTextureInRegion:(id)arg1 device:(id)arg2 block:(id /* block */)arg3;
+- (long long)rowBytes;
+- (void)setColorSpace:(id)arg1;
+- (long long)sizeInBytes;
+- (long long)useAsCIImageWithOptions:(id)arg1 renderer:(id)arg2 block:(id /* block */)arg3;
+- (long long)useAsCIRenderDestinationWithRenderer:(id)arg1 block:(id /* block */)arg2;
+- (long long)useAsCVPixelBufferWithBlock:(id /* block */)arg1;
+- (int)useCount;
+- (long long)writeBufferInRegion:(id)arg1 block:(id /* block */)arg2;
+- (long long)writeSurfaceInRegion:(id)arg1 block:(id /* block */)arg2;
+- (long long)writeTextureInRegion:(id)arg1 device:(id)arg2 block:(id /* block */)arg3;
+
+@end

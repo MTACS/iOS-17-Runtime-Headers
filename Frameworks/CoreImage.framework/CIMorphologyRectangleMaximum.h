@@ -1,0 +1,4 @@
+
+@interface CIMorphologyRectangleMaximum : CIMorphologyRectangle
+
+@end

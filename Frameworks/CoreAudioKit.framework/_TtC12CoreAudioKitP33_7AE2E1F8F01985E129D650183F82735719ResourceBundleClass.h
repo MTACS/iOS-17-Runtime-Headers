@@ -1,0 +1,4 @@
+
+@interface _TtC12CoreAudioKitP33_7AE2E1F8F01985E129D650183F82735719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

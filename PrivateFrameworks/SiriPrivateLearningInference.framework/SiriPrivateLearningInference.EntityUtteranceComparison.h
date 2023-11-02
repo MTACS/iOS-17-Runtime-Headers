@@ -1,0 +1,4 @@
+
+@interface SiriPrivateLearningInference.EntityUtteranceComparison : SiriPrivateLearningInference.ThresholdedTurnComparison
+
+@end

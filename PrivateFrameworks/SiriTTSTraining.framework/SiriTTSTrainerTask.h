@@ -1,0 +1,91 @@
+
+@interface SiriTTSTrainerTask : NSObject <NSSecureCoding> {
+    NSString * _appId;
+    NSString * _assetLanguage;
+    NSString * _assetName;
+    long long  _currentTaskStatusProgressValue;
+    NSString * _dataAssetPath;
+    NSError * _error;
+    bool  _forceToStart;
+    NSString * _inferenceAssetPath;
+    float  _normalizedProgressValue;
+    long long  _retryTimes;
+    NSString * _taskId;
+    long long  _taskMode;
+    long long  _taskStatus;
+    NSDate * _taskSubmissionDate;
+    long long  _totalTaskStatusProgressValue;
+    double  _totalTrainingTime;
+    NSString * _trainingAssetPath;
+    long long  _trainingStartTime;
+    long long  _trainingStatus;
+}
+
+@property (nonatomic, retain) NSString *appId;
+@property (nonatomic, readonly, retain) NSString *assetLanguage;
+@property (nonatomic, readonly, retain) NSString *assetName;
+@property (nonatomic) long long currentTaskStatusProgressValue;
+@property (nonatomic, retain) NSString *dataAssetPath;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic) bool forceToStart;
+@property (nonatomic, retain) NSString *inferenceAssetPath;
+@property (nonatomic) float normalizedProgressValue;
+@property (nonatomic) long long retryTimes;
+@property (nonatomic, retain) NSString *taskId;
+@property (nonatomic) long long taskMode;
+@property (nonatomic) long long taskStatus;
+@property (nonatomic) NSDate *taskSubmissionDate;
+@property (nonatomic) long long totalTaskStatusProgressValue;
+@property (nonatomic) double totalTrainingTime;
+@property (nonatomic, retain) NSString *trainingAssetPath;
+@property (nonatomic) long long trainingStartTime;
+@property (nonatomic) long long trainingStatus;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)appId;
+- (id)assetLanguage;
+- (id)assetName;
+- (long long)currentTaskStatusProgressValue;
+- (id)dataAssetPath;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)error;
+- (bool)forceToStart;
+- (id)inferenceAssetPath;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithLanguage:(id)arg1 name:(id)arg2;
+- (id)initWithTask:(id)arg1;
+- (float)normalizedProgressValue;
+- (long long)retryTimes;
+- (void)setAppId:(id)arg1;
+- (void)setCurrentTaskStatusProgressValue:(long long)arg1;
+- (void)setDataAssetPath:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setForceToStart:(bool)arg1;
+- (void)setInferenceAssetPath:(id)arg1;
+- (void)setNormalizedProgressValue:(float)arg1;
+- (void)setRetryTimes:(long long)arg1;
+- (void)setTaskId:(id)arg1;
+- (void)setTaskMode:(long long)arg1;
+- (void)setTaskStatus:(long long)arg1;
+- (void)setTaskSubmissionDate:(id)arg1;
+- (void)setTotalTaskStatusProgressValue:(long long)arg1;
+- (void)setTotalTrainingTime:(double)arg1;
+- (void)setTrainingAssetPath:(id)arg1;
+- (void)setTrainingStartTime:(long long)arg1;
+- (void)setTrainingStatus:(long long)arg1;
+- (id)taskId;
+- (long long)taskMode;
+- (long long)taskStatus;
+- (id)taskSubmissionDate;
+- (double)timeIntervalSinceSubmission;
+- (double)timeIntervalSinceTrainingStart;
+- (long long)totalTaskStatusProgressValue;
+- (double)totalTrainingTime;
+- (id)trainingAssetPath;
+- (long long)trainingStartTime;
+- (long long)trainingStatus;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface DEContext : DEExecutionContext
+
+@end

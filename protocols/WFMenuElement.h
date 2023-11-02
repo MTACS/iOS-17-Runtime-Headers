@@ -1,0 +1,4 @@
+
+@protocol WFMenuElement <NSObject>
+
+@end

@@ -1,0 +1,81 @@
+
+@interface NewsArticles.ArticleViewController : UIViewController <FCBundleSubscriptionChangeObserver, NAArticleFooterDelegate, NAZoomable, NUArticleHardPaywallPresentationReporting, NUArticleHostViewControllerDelegate, NUArticleViewControllerLoadingListener, NULoadingDelegate, NUURLHandlerDelegate, TSTabBarSplitViewAutoObserver, UIScrollViewDelegate> {
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  articleGroupData;
+    void articleViewController;
+    void commands;
+    void completedReadingDebouncer;
+    void contentBackgroundColor;
+    void coverViewManager;
+    void destinationViewSize;
+    void didDisappearCompletions;
+    void documentSectionBlueprintProvider;
+    void eventHandler;
+    void footerProvider;
+    void footers;
+    void hardPaywallViewController;
+    void headerProvider;
+    void headers;
+    void headline;
+    void isImpressionable;
+    void keyCommandManager;
+    void keyboardInputMonitor;
+    void modalHostStyle;
+    void model;
+    void multiDelegate;
+    void observableScrollView;
+    void pageDelegate;
+    void paywallPreparationEventManager;
+    void presentationContext;
+    void scrollDebounce;
+    void spaceKeyCommandsRegistered;
+    void styler;
+    void urlHandler;
+    void viewingSessionID;
+}
+
+@property (nonatomic, readonly) bool canBecomeFirstResponder;
+
+- (void).cxx_destruct;
+- (void)URLHandler:(id)arg1 wantsToPresentViewController:(id)arg2 animated:(bool)arg3;
+- (void)URLHandler:(id)arg1 willOpenURL:(id)arg2;
+- (bool)accessibilityShouldScroll:(id)arg1;
+- (bool)accessibilityShouldScroll:(id)arg1 defaultValue:(bool)arg2;
+- (void)articleHostViewController:(id)arg1 didScrollToPosition:(id)arg2;
+- (void)articleHostViewControllerDidScrollToBottomOfPrimaryContent:(id)arg1;
+- (void)bundleSubscriptionDidSubscribe:(id)arg1;
+- (bool)canBecomeFirstResponder;
+- (bool)canDecreaseTextSize;
+- (bool)canIncreaseTextSize;
+- (bool)canResetZoom;
+- (bool)canZoomIn;
+- (bool)canZoomOut;
+- (void)decreaseTextSize;
+- (void)didLoadArticle:(id)arg1 withContext:(id)arg2;
+- (void)footerNeedsLayout:(id)arg1;
+- (void)handleKeyCommandWithKeyCommand:(id)arg1;
+- (void)increaseTextSize;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (bool)isPreviewing;
+- (bool)isShowingHardPaywall;
+- (void)loadingDidFinishWithError:(id)arg1;
+- (void)loadingWillStart;
+- (void)resetZoom;
+- (bool)resignFirstResponder;
+- (void)scrollViewDidScroll:(id)arg1;
+- (bool)shouldOccludeAccessibilityElement:(id)arg1;
+- (bool)shouldUpdateFocusInContext:(id)arg1;
+- (void)tabBarSplitViewDidChangeFocusToFocus:(long long)arg1 action:(long long)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)zoomIn;
+- (void)zoomOut;
+
+@end

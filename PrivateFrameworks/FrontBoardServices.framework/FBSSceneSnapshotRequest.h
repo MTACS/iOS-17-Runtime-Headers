@@ -1,0 +1,37 @@
+
+@interface FBSSceneSnapshotRequest : NSObject <BSXPCCoding> {
+    bool  _allowsProtectedContent;
+    <FBSSceneSnapshotRequestDelegate> * _delegate;
+    bool  _handled;
+    NSString * _sceneID;
+    FBSSceneSettings * _settings;
+}
+
+@property (nonatomic, readonly) bool allowsProtectedContent;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FBSSceneSnapshotRequestDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *sceneID;
+@property (nonatomic, readonly, copy) FBSSceneSettings *settings;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)allowsProtectedContent;
+- (id)delegate;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (void)encodeWithXPCDictionary:(id)arg1;
+- (id)initWithSettings:(id)arg1;
+- (id)initWithSettings:(id)arg1 allowsProtectedContent:(bool)arg2;
+- (id)initWithXPCDictionary:(id)arg1;
+- (bool)performSnapshotWithContext:(id)arg1;
+- (id)sceneID;
+- (void)setDelegate:(id)arg1;
+- (void)setSceneID:(id)arg1;
+- (id)settings;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+
+@end

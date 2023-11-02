@@ -1,0 +1,97 @@
+
+@interface WFiTunesSoftwareObject : WFiTunesObject <MTLJSONSerializing> {
+    NSString * _artistID;
+    NSString * _artistName;
+    NSNumber * _averageRating;
+    NSNumber * _averageRatingLatestVersion;
+    NSString * _bundleIdentifier;
+    NSString * _category;
+    NSString * _contentRating;
+    NSString * _currencyCode;
+    NSString * _descriptionText;
+    NSNumber * _fileSize;
+    NSString * _formattedPrice;
+    NSArray * _iPadScreenshotURLs;
+    bool  _isUniversal;
+    NSDate * _lastUpdated;
+    NSString * _minimumOSVersion;
+    NSNumber * _numberOfRatings;
+    NSNumber * _numberOfRatingsLatestVersion;
+    NSNumber * _price;
+    NSDate * _releaseDate;
+    NSString * _releaseNotes;
+    NSArray * _screenshotURLs;
+    NSArray * _supportedDevices;
+    NSArray * _supportedLanguages;
+    bool  _supportsGameCenter;
+    NSString * _version;
+}
+
+@property (nonatomic, readonly) NSString *artistID;
+@property (nonatomic, readonly) NSString *artistName;
+@property (nonatomic, readonly) NSNumber *averageRating;
+@property (nonatomic, readonly) NSNumber *averageRatingLatestVersion;
+@property (nonatomic, readonly) NSString *bundleIdentifier;
+@property (nonatomic, readonly) NSString *category;
+@property (nonatomic, readonly) NSString *contentRating;
+@property (nonatomic, readonly) NSString *currencyCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *descriptionText;
+@property (nonatomic, readonly, copy) NSDictionary *dictionaryValue;
+@property (nonatomic, readonly) NSNumber *fileSize;
+@property (nonatomic, readonly) NSString *formattedPrice;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSArray *iPadScreenshotURLs;
+@property (nonatomic, readonly) bool isUniversal;
+@property (nonatomic, readonly) NSDate *lastUpdated;
+@property (nonatomic, readonly) NSString *minimumOSVersion;
+@property (nonatomic, readonly) NSNumber *numberOfRatings;
+@property (nonatomic, readonly) NSNumber *numberOfRatingsLatestVersion;
+@property (nonatomic, readonly) NSNumber *price;
+@property (nonatomic, readonly) NSDate *releaseDate;
+@property (nonatomic, readonly) NSString *releaseNotes;
+@property (nonatomic, readonly) NSArray *screenshotURLs;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *supportedDevices;
+@property (nonatomic, readonly) NSArray *supportedLanguages;
+@property (nonatomic, readonly) bool supportsGameCenter;
+@property (nonatomic, readonly) NSString *version;
+
++ (id)JSONKeyPathsByPropertyKey;
++ (id)allowedSecureCodingClassesByPropertyKey;
++ (id)fileSizeJSONTransformer;
++ (id)iPadScreenshotURLsJSONTransformer;
++ (id)isUniversalJSONTransformer;
++ (id)lastUpdatedJSONTransformer;
++ (id)screenshotURLsJSONTransformer;
++ (id)supportsGameCenterJSONTransformer;
+
+- (void).cxx_destruct;
+- (id)artistID;
+- (id)artistName;
+- (id)averageRating;
+- (id)averageRatingLatestVersion;
+- (id)bundleIdentifier;
+- (id)category;
+- (id)contentRating;
+- (id)currencyCode;
+- (id)descriptionText;
+- (id)fileSize;
+- (id)formattedPrice;
+- (id)iPadScreenshotURLs;
+- (bool)isUniversal;
+- (id)lastUpdated;
+- (id)minimumOSVersion;
+- (id)numberOfRatings;
+- (id)numberOfRatingsLatestVersion;
+- (id)price;
+- (id)releaseDate;
+- (id)releaseNotes;
+- (id)screenshotURLs;
+- (id)supportedDevices;
+- (id)supportedLanguages;
+- (bool)supportsGameCenter;
+- (id)version;
+
+@end

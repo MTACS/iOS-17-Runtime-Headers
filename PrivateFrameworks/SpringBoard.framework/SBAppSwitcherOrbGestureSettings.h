@@ -1,0 +1,92 @@
+
+@interface SBAppSwitcherOrbGestureSettings : PTSettings {
+    double  _additionalThrowDisplacement;
+    SBAppSwitcherOrbGestureAnimationSettings * _animationSettings;
+    double  _appToAppCurveMinimum;
+    bool  _canPlayCommitHaptic;
+    bool  _canPlayInitialHaptic;
+    bool  _canPop;
+    double  _commitToNextAppTranslation;
+    double  _commitToPreviousAppTranslation;
+    double  _dimmingValue;
+    double  _forceAdjustMax;
+    bool  _forceDrivesInitialProgress;
+    double  _forcePeekAdjustApex;
+    double  _homeToAppCurveMinimum;
+    double  _maxAverageBreathingVelocity;
+    double  _maxBreathingVelocityInterval;
+    double  _maxIconScrollProgressAllowed;
+    double  _maxPopPanTranslation;
+    double  _minPanTranslation;
+    double  _orbGestureRegionMax;
+    bool  _useOrbGesture;
+}
+
+@property double additionalThrowDisplacement;
+@property (retain) SBAppSwitcherOrbGestureAnimationSettings *animationSettings;
+@property double appToAppCurveMinimum;
+@property bool canPlayCommitHaptic;
+@property bool canPlayInitialHaptic;
+@property bool canPop;
+@property double commitToNextAppTranslation;
+@property double commitToPreviousAppTranslation;
+@property double dimmingValue;
+@property double forceAdjustMax;
+@property bool forceDrivesInitialProgress;
+@property double forcePeekAdjustApex;
+@property double homeToAppCurveMinimum;
+@property double maxAverageBreathingVelocity;
+@property double maxBreathingVelocityInterval;
+@property double maxIconScrollProgressAllowed;
+@property double maxPopPanTranslation;
+@property double minPanTranslation;
+@property double orbGestureRegionMax;
+@property bool useOrbGesture;
+
++ (id)settingsControllerModule;
+
+- (void).cxx_destruct;
+- (double)additionalThrowDisplacement;
+- (id)animationSettings;
+- (double)appToAppCurveMinimum;
+- (bool)canPlayCommitHaptic;
+- (bool)canPlayInitialHaptic;
+- (bool)canPop;
+- (double)commitToNextAppTranslation;
+- (double)commitToPreviousAppTranslation;
+- (double)dimmingValue;
+- (double)forceAdjustMax;
+- (bool)forceDrivesInitialProgress;
+- (double)forcePeekAdjustApex;
+- (double)homeToAppCurveMinimum;
+- (double)maxAverageBreathingVelocity;
+- (double)maxBreathingVelocityInterval;
+- (double)maxIconScrollProgressAllowed;
+- (double)maxPopPanTranslation;
+- (double)minPanTranslation;
+- (double)orbGestureRegionMax;
+- (void)setAdditionalThrowDisplacement:(double)arg1;
+- (void)setAnimationSettings:(id)arg1;
+- (void)setAppToAppCurveMinimum:(double)arg1;
+- (void)setCanPlayCommitHaptic:(bool)arg1;
+- (void)setCanPlayInitialHaptic:(bool)arg1;
+- (void)setCanPop:(bool)arg1;
+- (void)setCommitToNextAppTranslation:(double)arg1;
+- (void)setCommitToPreviousAppTranslation:(double)arg1;
+- (void)setDefaultValues;
+- (void)setDimmingValue:(double)arg1;
+- (void)setForceAdjustMax:(double)arg1;
+- (void)setForceDrivesInitialProgress:(bool)arg1;
+- (void)setForcePeekAdjustApex:(double)arg1;
+- (void)setHomeToAppCurveMinimum:(double)arg1;
+- (void)setMaxAverageBreathingVelocity:(double)arg1;
+- (void)setMaxBreathingVelocityInterval:(double)arg1;
+- (void)setMaxIconScrollProgressAllowed:(double)arg1;
+- (void)setMaxPopPanTranslation:(double)arg1;
+- (void)setMinPanTranslation:(double)arg1;
+- (void)setOrbGestureRegionMax:(double)arg1;
+- (void)setUseOrbGesture:(bool)arg1;
+- (bool)useOrbGesture;
+- (double)valueAlongDefaultForcePressCurveWithMinY:(double)arg1 progress:(double)arg2 fromHomeScreen:(bool)arg3;
+
+@end

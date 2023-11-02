@@ -1,0 +1,4 @@
+
+@protocol SCNTransactionCommandObject <NSObject>
+
+@end

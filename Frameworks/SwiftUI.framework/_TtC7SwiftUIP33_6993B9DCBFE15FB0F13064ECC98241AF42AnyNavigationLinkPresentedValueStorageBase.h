@@ -1,0 +1,4 @@
+
+@interface _TtC7SwiftUIP33_6993B9DCBFE15FB0F13064ECC98241AF42AnyNavigationLinkPresentedValueStorageBase : _TtCs12_SwiftObject
+
+@end

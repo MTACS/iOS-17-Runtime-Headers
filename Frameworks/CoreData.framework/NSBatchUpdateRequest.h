@@ -1,0 +1,53 @@
+
+@interface NSBatchUpdateRequest : NSPersistentStoreRequest <NSPredicatedStoreRequest> {
+    NSDictionary * _columnsToUpdate;
+    id  _entity;
+    struct _requestFlags { 
+        unsigned int includesSubentities : 1; 
+        unsigned int resultType : 2; 
+        unsigned int entityIsName : 1; 
+        unsigned int secureOperation : 1; 
+        unsigned int _RESERVED : 27; 
+    }  _flags;
+    NSPredicate * _predicate;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSEntityDescription *entity;
+@property (readonly, copy) NSString *entityName;
+@property (readonly) unsigned long long hash;
+@property bool includesSubentities;
+@property (retain) NSPredicate *predicate;
+@property (copy) NSDictionary *propertiesToUpdate;
+@property unsigned long long resultType;
+@property (getter=_secureOperation, setter=_setSecureOperation:, nonatomic) bool shouldPerformSecureOperation;
+@property (readonly) Class superclass;
+
++ (id)batchUpdateRequestWithEntityName:(id)arg1;
++ (id)decodeFromXPCArchive:(id)arg1 withContext:(id)arg2 withPolicy:(id)arg3;
+
+- (void)_resolveEntityWithContext:(id)arg1;
+- (bool)_secureOperation;
+- (void)_setSecureOperation:(bool)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)encodeForXPC;
+- (id)entity;
+- (id)entityName;
+- (bool)includesSubentities;
+- (id)init;
+- (id)initWithEntity:(id)arg1;
+- (id)initWithEntityName:(id)arg1;
+- (id)predicate;
+- (id)propertiesToUpdate;
+- (unsigned long long)requestType;
+- (unsigned long long)resultType;
+- (void)setIncludesSubentities:(bool)arg1;
+- (void)setPredicate:(id)arg1;
+- (void)setPropertiesToUpdate:(id)arg1;
+- (void)setResultType:(unsigned long long)arg1;
+- (void)setShouldPerformSecureOperation:(bool)arg1;
+- (bool)shouldPerformSecureOperation;
+
+@end

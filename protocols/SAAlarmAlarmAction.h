@@ -1,0 +1,4 @@
+
+@protocol SAAlarmAlarmAction <SAAceSerializable>
+
+@end

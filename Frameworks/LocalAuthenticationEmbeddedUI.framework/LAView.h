@@ -1,0 +1,4 @@
+
+@interface LAView : UIView
+
+@end

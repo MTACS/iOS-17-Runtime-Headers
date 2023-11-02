@@ -1,0 +1,4 @@
+
+@protocol NEFilterExtensionProviderHostProtocol <NEExtensionProviderHostProtocol>
+
+@end

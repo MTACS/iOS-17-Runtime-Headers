@@ -1,0 +1,95 @@
+
+@interface HDCloudSyncStoreRecord : HDCloudSyncRecord {
+    HDCloudSyncSequenceRecord * _slotASequenceHeaderRecord;
+    HDCloudSyncSequenceRecord * _slotBSequenceHeaderRecord;
+    HDCloudSyncSequenceRecord * _tombstoneSequenceRecord;
+    HDCloudSyncCodableStore * _underlyingStore;
+}
+
+@property (getter=isActive, nonatomic) bool active;
+@property (nonatomic) int deviceMode;
+@property (nonatomic, copy) NSString *deviceName;
+@property (nonatomic, readonly) bool isChild;
+@property (nonatomic) long long order;
+@property (nonatomic, readonly, copy) NSArray *orderedSequenceRecords;
+@property (nonatomic, readonly, copy) NSString *ownerIdentifier;
+@property (nonatomic, copy) NSString *pendingOwner;
+@property (nonatomic, copy) HDSyncIdentity *pendingSyncIdentity;
+@property (nonatomic, copy) NSString *productType;
+@property (nonatomic) int requiredProtocolVersion;
+@property (nonatomic, readonly) HDCloudSyncSequenceRecord *sequenceRecord;
+@property (nonatomic, copy) HDCloudSyncShardPredicate *shardPredicate;
+@property (nonatomic, readonly, copy) NSUUID *storeIdentifier;
+@property (nonatomic) int supportedProtocolVersion;
+@property (nonatomic, readonly) HDSyncIdentity *syncIdentity;
+@property (nonatomic, copy) NSString *systemBuildVersion;
+@property (nonatomic, readonly) HDCloudSyncSequenceRecord *tombstoneSequenceRecord;
+
++ (id)fieldsForUnprotectedSerialization;
++ (bool)hasFutureSchema:(id)arg1;
++ (bool)isStoreRecord:(id)arg1;
++ (bool)isStoreRecordID:(id)arg1;
++ (id)recordIDForOwnerIdentifier:(id)arg1 storeIdentifier:(id)arg2 zoneID:(id)arg3;
++ (id)recordIDWithIndividualZoneID:(id)arg1;
++ (id)recordType;
++ (id)recordWithCKRecord:(id)arg1 error:(id*)arg2;
++ (bool)requiresUnderlyingMessage;
+
+- (void).cxx_destruct;
+- (id)activeSequenceHeaderRecord;
+- (id)addNewSequenceHeaderRecordWithSyncAnchorMap:(id)arg1 includedIdentifiers:(id)arg2 includedSyncIdentities:(id)arg3 includedChildSyncIdentities:(id)arg4;
+- (id)addNewTombstoneSequenceHeaderRecordWithIncludedIdentifiers:(id)arg1 includedSyncIdentities:(id)arg2 includedChildSyncIdentities:(id)arg3;
+- (void)addSequenceHeaderRecord:(id)arg1;
+- (id)clearCurrentSequenceHeaderRecord;
+- (id)clearOldSequenceHeaderRecord;
+- (id)clearPendingSequenceHeaderRecord;
+- (id)clearTombstoneSequenceHeaderRecord;
+- (long long)compare:(id)arg1;
+- (id)currentSequenceHeaderRecord;
+- (id)description;
+- (int)deviceMode;
+- (id)deviceName;
+- (bool)hasActiveSequence;
+- (bool)hasSequenceWithFutureProtocolVersion;
+- (unsigned long long)hash;
+- (id)initInSyncCircle:(id)arg1 ownerIdentifier:(id)arg2 storeIdentifier:(id)arg3 syncIdentity:(id)arg4 isChild:(bool)arg5 unified:(bool)arg6;
+- (id)initInSyncCircle:(id)arg1 ownerIdentifier:(id)arg2 storeIdentifier:(id)arg3 syncIdentity:(id)arg4 isChild:(bool)arg5 zoneID:(id)arg6;
+- (id)initWithCKRecord:(id)arg1 schemaVersion:(long long)arg2;
+- (bool)isActive;
+- (bool)isChild;
+- (bool)isEqual:(id)arg1;
+- (id)oldSequenceHeaderRecord;
+- (long long)order;
+- (id)orderedSequenceRecords;
+- (id)ownerIdentifier;
+- (id)pendingOwner;
+- (id)pendingSequenceHeaderRecord;
+- (id)pendingSyncIdentity;
+- (id)printDescription;
+- (id)productType;
+- (void)removeSequenceHeaderRecord:(id)arg1;
+- (void)repairOwnerIdentifier:(id)arg1;
+- (int)requiredProtocolVersion;
+- (id)sequenceRecord;
+- (id)sequenceRecordWithRecordID:(id)arg1;
+- (id)serializeUnderlyingMessage;
+- (void)setActive:(bool)arg1;
+- (void)setDeviceMode:(int)arg1;
+- (void)setDeviceName:(id)arg1;
+- (void)setOrder:(long long)arg1;
+- (void)setPendingOwner:(id)arg1;
+- (void)setPendingSyncIdentity:(id)arg1;
+- (void)setProductType:(id)arg1;
+- (void)setRequiredProtocolVersion:(int)arg1;
+- (void)setShardPredicate:(id)arg1;
+- (void)setSupportedProtocolVersion:(int)arg1;
+- (void)setSystemBuildVersion:(id)arg1;
+- (id)shardPredicate;
+- (id)shortDescription;
+- (id)storeIdentifier;
+- (int)supportedProtocolVersion;
+- (id)syncIdentity;
+- (id)systemBuildVersion;
+- (id)tombstoneSequenceRecord;
+
+@end

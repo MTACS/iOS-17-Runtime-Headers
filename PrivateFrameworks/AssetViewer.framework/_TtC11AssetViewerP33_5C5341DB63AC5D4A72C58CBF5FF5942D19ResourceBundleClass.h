@@ -1,0 +1,4 @@
+
+@interface _TtC11AssetViewerP33_5C5341DB63AC5D4A72C58CBF5FF5942D19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

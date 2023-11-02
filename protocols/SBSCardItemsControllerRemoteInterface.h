@@ -1,0 +1,4 @@
+
+@protocol SBSCardItemsControllerRemoteInterface <NSObject>
+
+@end

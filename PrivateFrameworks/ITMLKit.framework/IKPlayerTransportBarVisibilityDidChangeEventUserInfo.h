@@ -1,0 +1,17 @@
+
+@interface IKPlayerTransportBarVisibilityDidChangeEventUserInfo : NSObject <IKPlayerEventMarshaling> {
+    bool  _hidden;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hidden;
+@property (nonatomic, readonly) NSDictionary *properties;
+@property (readonly) Class superclass;
+
+- (bool)hidden;
+- (id)initWithHidden:(bool)arg1;
+- (id)properties;
+
+@end

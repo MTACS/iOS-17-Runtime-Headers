@@ -1,0 +1,4 @@
+
+@interface _TtC15StrokeAnimationP33_27A79AFDD3406FCADE068596BABC2F4F19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

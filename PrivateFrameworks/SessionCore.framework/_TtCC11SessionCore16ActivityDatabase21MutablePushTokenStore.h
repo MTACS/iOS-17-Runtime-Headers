@@ -1,0 +1,4 @@
+
+@interface _TtCC11SessionCore16ActivityDatabase21MutablePushTokenStore : _TtCC11SessionCore16ActivityDatabase14PushTokenStore
+
+@end

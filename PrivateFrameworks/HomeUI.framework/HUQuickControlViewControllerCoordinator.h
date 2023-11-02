@@ -1,0 +1,86 @@
+
+@interface HUQuickControlViewControllerCoordinator : NSObject <HFItemManagerDelegate, HFOverrideCharacteristicValueProvider, HUQuickControlViewControllerDelegate> {
+    HUQuickControlViewController * _activeController;
+    HUQuickControlContentCharacteristicWritingUpdateAdapter * _characteristicWritingAdapter;
+    <HUQuickControlContentHosting> * _controlHost;
+    NSSet * _controlItems;
+    bool  _controlsVisible;
+    <HUQuickControlViewControllerCoordinatorDelegate> * _delegate;
+    HMHome * _home;
+    <HFIconDescriptor> * _iconDescriptor;
+    HFItem<NSCopying> * _item;
+    HFSimpleItemManager * _itemManager;
+    NSString * _primaryStatusText;
+    HFItem * _reachabilityItem;
+    HFSimpleItemManager * _reachabilityItemManager;
+    bool  _reachable;
+    NSString * _secondaryStatusText;
+    bool  _shouldIncludeRoomNameInHeaderTitle;
+    bool  _showIconOffState;
+    HFOverrideCharacteristicValueSource * _valueSource;
+}
+
+@property (nonatomic, retain) HUQuickControlViewController *activeController;
+@property (nonatomic, readonly) HUQuickControlContentCharacteristicWritingUpdateAdapter *characteristicWritingAdapter;
+@property (nonatomic) <HUQuickControlContentHosting> *controlHost;
+@property (nonatomic, readonly) NSSet *controlItems;
+@property (getter=areControlsVisible, nonatomic) bool controlsVisible;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HUQuickControlViewControllerCoordinatorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HMHome *home;
+@property (nonatomic, readonly) <HFIconDescriptor> *iconDescriptor;
+@property (nonatomic, readonly) HFItem<NSCopying> *item;
+@property (nonatomic, readonly) HFSimpleItemManager *itemManager;
+@property (nonatomic, copy) NSString *primaryStatusText;
+@property (nonatomic, readonly) HFItem *reachabilityItem;
+@property (nonatomic, readonly) HFSimpleItemManager *reachabilityItemManager;
+@property (getter=isReachable, nonatomic, readonly) bool reachable;
+@property (nonatomic, copy) NSString *secondaryStatusText;
+@property (nonatomic) bool shouldIncludeRoomNameInHeaderTitle;
+@property (nonatomic, readonly) bool showIconOffState;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) HFOverrideCharacteristicValueSource *valueSource;
+
+- (void).cxx_destruct;
+- (id)_controllerForControllableCharacteristic:(id)arg1;
+- (void)_createControlViewControllersForControlItems:(id)arg1;
+- (id)_itemToUseForIconAndStatus;
+- (id)_primaryStatusTextForLatestResults:(id)arg1 showingSecondaryStatus:(bool)arg2;
+- (id)_secondaryStatusTextForLatestResults:(id)arg1;
+- (void)_updateIconDescriptorNotifyingDelegate:(bool)arg1;
+- (void)_updateReachabilityStateNotifiyingDelegate:(bool)arg1;
+- (void)_updateStatusTextNotifyingDelegate:(bool)arg1;
+- (id)activeController;
+- (bool)areControlsVisible;
+- (id)characteristicWritingAdapter;
+- (id)controlHost;
+- (id)controlItems;
+- (id)delegate;
+- (id)home;
+- (id)iconDescriptor;
+- (id)initWithItem:(id)arg1 controlItems:(id)arg2 home:(id)arg3 delegate:(id)arg4;
+- (bool)isReachable;
+- (id)item;
+- (id)itemManager;
+- (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
+- (id)primaryStatusText;
+- (void)quickControlViewControllerDidUpdateStatusOverrides:(id)arg1;
+- (id)reachabilityItem;
+- (id)reachabilityItemManager;
+- (id)secondaryStatusText;
+- (void)setActiveController:(id)arg1;
+- (void)setControlHost:(id)arg1;
+- (void)setControlsVisible:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setPrimaryStatusText:(id)arg1;
+- (void)setSecondaryStatusText:(id)arg1;
+- (void)setShouldIncludeRoomNameInHeaderTitle:(bool)arg1;
+- (bool)shouldIncludeRoomNameInHeaderTitle;
+- (bool)showIconOffState;
+- (id)valueSource;
+- (id)valueSource:(id)arg1 overrideValueForCharacteristic:(id)arg2;
+- (bool)valueSource:(id)arg1 shouldOverrideValueForCharacteristic:(id)arg2;
+
+@end

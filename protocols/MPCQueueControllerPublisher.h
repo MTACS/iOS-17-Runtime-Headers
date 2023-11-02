@@ -1,0 +1,4 @@
+
+@protocol MPCQueueControllerPublisher <MPCQueueControllerSessionTypesInvalidatable, MPCQueueControllerQueueTypesInvalidatable>
+
+@end

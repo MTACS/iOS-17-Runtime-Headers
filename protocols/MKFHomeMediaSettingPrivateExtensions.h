@@ -1,0 +1,4 @@
+
+@protocol MKFHomeMediaSettingPrivateExtensions
+
+@end

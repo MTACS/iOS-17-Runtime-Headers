@@ -1,0 +1,88 @@
+
+@interface SBVoiceControlTransientOverlayViewController : SBTransientOverlayViewController <CSExternalBehaviorProviding, SBVoiceControlViewControllerDelegate> {
+    _UIBackdropView * _backdropView;
+    SBVoiceControlViewController * _contentViewController;
+    <SBVoiceControlTransientOverlayViewControllerDelegate> * _voiceControlDelegate;
+}
+
+@property (nonatomic, readonly, copy) NSString *coverSheetIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *nextRecognitionAudioInputPaths;
+@property (nonatomic, readonly) long long notificationBehavior;
+@property (nonatomic, readonly) long long participantState;
+@property (nonatomic, readonly) long long proximityDetectionMode;
+@property (nonatomic, readonly) unsigned long long restrictedCapabilities;
+@property (nonatomic, readonly) long long scrollingStrategy;
+@property (nonatomic) bool shouldAllowSensitiveActions;
+@property (nonatomic) bool shouldDisableHandlerActions;
+@property (nonatomic) bool shouldDisableVoiceControlForBluetoothRequests;
+@property (readonly) Class superclass;
+@property (nonatomic) <SBVoiceControlTransientOverlayViewControllerDelegate> *voiceControlDelegate;
+@property (getter=isVoiceControlLoggingEnabled, nonatomic) bool voiceControlLoggingEnabled;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (int)_preferredStatusBarVisibility;
+- (bool)becomeFirstResponder;
+- (void)beginIgnoringAppearanceUpdates;
+- (bool)canBecomeFirstResponder;
+- (bool)canResignFirstResponder;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
+- (id)childViewControllerForScreenEdgesDeferringSystemGestures;
+- (void)conformsToCSBehaviorProviding;
+- (void)conformsToCSExternalBehaviorProviding;
+- (id)coverSheetIdentifier;
+- (void)dealloc;
+- (void)endIgnoringAppearanceUpdates;
+- (void)handleGestureDismissal;
+- (void)handleHeadsetButtonUpFromButtonDownSource:(bool)arg1;
+- (bool)handleHomeButtonPress;
+- (long long)idleTimerDuration;
+- (long long)idleTimerMode;
+- (long long)idleWarnMode;
+- (id)initWithSource:(id)arg1;
+- (bool)isVoiceControlLoggingEnabled;
+- (id)newTransientOverlayDismissalTransitionCoordinator;
+- (id)newTransientOverlayPresentationTransitionCoordinator;
+- (id)nextRecognitionAudioInputPaths;
+- (long long)notificationBehavior;
+- (long long)participantState;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (long long)preferredLockedGestureDismissalStyle;
+- (long long)preferredStatusBarStyle;
+- (long long)preferredUnlockedGestureDismissalStyle;
+- (long long)preferredWhitePointAdaptivityStyle;
+- (bool)prefersEmbeddedDisplayPresentation;
+- (bool)prefersProximityDetectionEnabled;
+- (long long)proximityDetectionMode;
+- (void)resetSessionWithSource:(id)arg1;
+- (bool)resignFirstResponder;
+- (unsigned long long)restrictedCapabilities;
+- (long long)scrollingStrategy;
+- (void)setContainerOrientation:(long long)arg1;
+- (void)setNextRecognitionAudioInputPaths:(id)arg1;
+- (void)setShouldAllowSensitiveActions:(bool)arg1;
+- (void)setShouldDisableHandlerActions:(bool)arg1;
+- (void)setShouldDisableVoiceControlForBluetoothRequests:(bool)arg1;
+- (void)setVoiceControlDelegate:(id)arg1;
+- (void)setVoiceControlLoggingEnabled:(bool)arg1;
+- (bool)shouldAllowSensitiveActions;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldAutorotate;
+- (bool)shouldDisableHandlerActions;
+- (bool)shouldDisableOrientationUpdates;
+- (bool)shouldDisableVoiceControlForBluetoothRequests;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (id)voiceControlDelegate;
+- (void)voiceControlViewControllerPrefersProximityDetectionEnabledDidChange:(id)arg1;
+- (void)voiceControlViewControllerRequestsDismissal:(id)arg1;
+
+@end

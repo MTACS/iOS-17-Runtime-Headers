@@ -1,0 +1,67 @@
+
+@interface BRCPathToItemLookup : NSObject {
+    BRCClientZone * _clientZone;
+    BRCPQLConnection * _db;
+    struct { 
+        unsigned int byFileID : 1; 
+        unsigned int byDocumentID : 1; 
+        unsigned int byPath : 1; 
+        unsigned int parentItem : 1; 
+        unsigned int serverItem : 1; 
+        unsigned int serverByPath : 1; 
+        unsigned int packageItem : 1; 
+        unsigned int clientZone : 1; 
+    }  _fetched;
+    BRCDocumentItem * _matchByDocumentID;
+    BRCDocumentItem * _matchByDocumentIDGlobally;
+    BRCLocalItem * _matchByFileID;
+    BRCLocalItem * _matchByFileIDGlobally;
+    BRCLocalItem * _matchByPath;
+    BRCPackageItem * _packageItem;
+    BRCDirectoryItem * _parentItem;
+    BRCRelativePath * _pathOfItem;
+    BRCRelativePath * _relpathOfFSEvent;
+    BRCServerItem * _serverByPath;
+}
+
+@property (nonatomic, retain) BRCDocumentItem *byDocumentID;
+@property (readonly, retain) BRCDocumentItem *byDocumentIDGlobally;
+@property (nonatomic, retain) BRCLocalItem *byFileID;
+@property (readonly, retain) BRCLocalItem *byFileIDGlobally;
+@property (nonatomic, readonly) BRCLocalItem *byPath;
+@property (nonatomic, readonly) BRCClientZone *clientZone;
+@property (nonatomic, readonly) BRCPQLConnection *db;
+@property (nonatomic, readonly) BRCDirectoryItem *parentItem;
+@property (nonatomic, readonly) BRCRelativePath *relpathOfFSEvent;
+@property (nonatomic, readonly) BRCRelativePath *relpathOfItem;
+@property (nonatomic, readonly) BRCServerItem *serverByPath;
+
++ (id)lookupForRelativePath:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_byPathWithLastPathComponent:(id)arg1;
+- (bool)_fetchByDocumentID:(bool)arg1;
+- (bool)_fetchByFileID:(bool)arg1;
+- (bool)_fetchByPath;
+- (bool)_fetchClientZone;
+- (id)_resolveClientZoneWhileFetchingFileID:(bool)arg1 fetchindDocID:(bool)arg2;
+- (bool)_shareIDMatchesParent:(id)arg1;
+- (id)byDocumentID;
+- (id)byDocumentIDGlobally;
+- (id)byFileID;
+- (id)byFileIDGlobally;
+- (id)byPath;
+- (id)byPathWithLastPathComponent:(id)arg1;
+- (id)clientZone;
+- (id)db;
+- (id)description;
+- (id)initWithRelativePath:(id)arg1;
+- (id)initWithRelativePath:(id)arg1 db:(id)arg2;
+- (id)parentItem;
+- (id)relpathOfFSEvent;
+- (id)relpathOfItem;
+- (id)serverByPath;
+- (void)setByDocumentID:(id)arg1;
+- (void)setByFileID:(id)arg1;
+
+@end

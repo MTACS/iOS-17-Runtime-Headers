@@ -1,0 +1,4 @@
+
+@interface _UIStatusBarExpandedPillBackgroundActivityItem : _UIStatusBarPillBackgroundActivityItem
+
+@end

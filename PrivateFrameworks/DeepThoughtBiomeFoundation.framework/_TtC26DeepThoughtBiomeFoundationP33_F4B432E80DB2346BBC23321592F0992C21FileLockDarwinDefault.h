@@ -1,0 +1,4 @@
+
+@interface _TtC26DeepThoughtBiomeFoundationP33_F4B432E80DB2346BBC23321592F0992C21FileLockDarwinDefault : _TtCs12_SwiftObject
+
+@end

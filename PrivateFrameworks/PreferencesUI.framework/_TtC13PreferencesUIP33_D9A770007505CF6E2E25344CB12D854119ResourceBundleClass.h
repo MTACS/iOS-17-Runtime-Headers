@@ -1,0 +1,4 @@
+
+@interface _TtC13PreferencesUIP33_D9A770007505CF6E2E25344CB12D854119ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SBEntityRemovalDosidoSlideOutUpwardAnimationSettings : SBEntityRemovalDosidoSlideOutAnimationSettings
+
+@end

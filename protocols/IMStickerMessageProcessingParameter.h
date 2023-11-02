@@ -1,0 +1,4 @@
+
+@protocol IMStickerMessageProcessingParameter <IMAssociatedMessageProcessingParameter>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SBPIPInterruptionAssertion : SBPIPBehaviorOverrideAssertion
+
+@end

@@ -1,0 +1,13 @@
+
+@interface ECDigestMD5AuthScheme : ECAuthScheme
+
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)digestMD5AuthScheme;
+
+- (unsigned int)applescriptScheme;
+- (void)dealloc;
+- (id)humanReadableName;
+- (id)name;
+- (id)supportedSASLMechanisms;
+
+@end

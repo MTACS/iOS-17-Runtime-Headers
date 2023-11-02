@@ -1,0 +1,4 @@
+
+@interface MKFPresenceBulletinConditionDatabaseID : MKFBulletinConditionDatabaseID
+
+@end

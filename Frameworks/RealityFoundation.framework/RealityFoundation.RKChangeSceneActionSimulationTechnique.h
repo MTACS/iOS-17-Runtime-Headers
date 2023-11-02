@@ -1,0 +1,4 @@
+
+@interface RealityFoundation.RKChangeSceneActionSimulationTechnique : RealityFoundation.RKChangeSceneActionBasicTechnique
+
+@end

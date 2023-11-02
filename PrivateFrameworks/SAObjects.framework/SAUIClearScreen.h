@@ -1,0 +1,21 @@
+
+@interface SAUIClearScreen : SABaseClientBoundCommand
+
+@property (nonatomic, retain) SAAceView *initialView;
+
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
++ (id)clearScreen;
++ (id)clearScreenWithDictionary:(id)arg1 context:(id)arg2;
+
+- (id)encodedClassName;
+- (id)groupIdentifier;
+- (id)initialView;
+- (bool)requiresResponse;
+- (void)setInitialView:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriUIFoundation.framework/SiriUIFoundation
+
+- (long long)sruif_usefulUserResultType;
+
+@end

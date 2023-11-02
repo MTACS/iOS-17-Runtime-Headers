@@ -1,0 +1,104 @@
+
+@interface NPKProtoPassSyncStateChange : PBCodable <NSCopying> {
+    NSData * _baseManifestHashForPartialUpdate;
+    int  _changeType;
+    NSData * _changeUUID;
+    NPKProtoCatalog * _companionCatalog;
+    struct { 
+        unsigned int lastKnownReconciledPassSyncStateHashVersion : 1; 
+        unsigned int passSegmentIndex : 1; 
+        unsigned int passSegmentTotal : 1; 
+    }  _has;
+    NSData * _lastKnownReconciledPassSyncStateHash;
+    unsigned int  _lastKnownReconciledPassSyncStateHashVersion;
+    NSData * _passData;
+    unsigned int  _passSegmentIndex;
+    unsigned int  _passSegmentTotal;
+    NSMutableArray * _remoteAssetsForPartialUpdates;
+    NPKProtoPassSyncStateItem * _syncStateItem;
+    NSString * _uniqueID;
+    NPKProtoCatalog * _watchCatalog;
+}
+
+@property (nonatomic, retain) NSData *baseManifestHashForPartialUpdate;
+@property (nonatomic) int changeType;
+@property (nonatomic, retain) NSData *changeUUID;
+@property (nonatomic, retain) NPKProtoCatalog *companionCatalog;
+@property (nonatomic, readonly) bool hasBaseManifestHashForPartialUpdate;
+@property (nonatomic, readonly) bool hasCompanionCatalog;
+@property (nonatomic, readonly) bool hasLastKnownReconciledPassSyncStateHash;
+@property (nonatomic) bool hasLastKnownReconciledPassSyncStateHashVersion;
+@property (nonatomic, readonly) bool hasPassData;
+@property (nonatomic) bool hasPassSegmentIndex;
+@property (nonatomic) bool hasPassSegmentTotal;
+@property (nonatomic, readonly) bool hasSyncStateItem;
+@property (nonatomic, readonly) bool hasWatchCatalog;
+@property (nonatomic, retain) NSData *lastKnownReconciledPassSyncStateHash;
+@property (nonatomic) unsigned int lastKnownReconciledPassSyncStateHashVersion;
+@property (nonatomic, retain) NSData *passData;
+@property (nonatomic) unsigned int passSegmentIndex;
+@property (nonatomic) unsigned int passSegmentTotal;
+@property (nonatomic, retain) NSMutableArray *remoteAssetsForPartialUpdates;
+@property (nonatomic, retain) NPKProtoPassSyncStateItem *syncStateItem;
+@property (nonatomic, retain) NSString *uniqueID;
+@property (nonatomic, retain) NPKProtoCatalog *watchCatalog;
+
++ (Class)remoteAssetsForPartialUpdateType;
+
+- (void).cxx_destruct;
+- (int)StringAsChangeType:(id)arg1;
+- (void)addRemoteAssetsForPartialUpdate:(id)arg1;
+- (id)baseManifestHashForPartialUpdate;
+- (int)changeType;
+- (id)changeTypeAsString:(int)arg1;
+- (id)changeUUID;
+- (void)clearRemoteAssetsForPartialUpdates;
+- (id)companionCatalog;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasBaseManifestHashForPartialUpdate;
+- (bool)hasCompanionCatalog;
+- (bool)hasLastKnownReconciledPassSyncStateHash;
+- (bool)hasLastKnownReconciledPassSyncStateHashVersion;
+- (bool)hasPassData;
+- (bool)hasPassSegmentIndex;
+- (bool)hasPassSegmentTotal;
+- (bool)hasSyncStateItem;
+- (bool)hasWatchCatalog;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)lastKnownReconciledPassSyncStateHash;
+- (unsigned int)lastKnownReconciledPassSyncStateHashVersion;
+- (void)mergeFrom:(id)arg1;
+- (id)npkDescription;
+- (id)passData;
+- (unsigned int)passSegmentIndex;
+- (unsigned int)passSegmentTotal;
+- (bool)readFrom:(id)arg1;
+- (id)remoteAssetsForPartialUpdateAtIndex:(unsigned long long)arg1;
+- (id)remoteAssetsForPartialUpdates;
+- (unsigned long long)remoteAssetsForPartialUpdatesCount;
+- (void)setBaseManifestHashForPartialUpdate:(id)arg1;
+- (void)setChangeType:(int)arg1;
+- (void)setChangeUUID:(id)arg1;
+- (void)setCompanionCatalog:(id)arg1;
+- (void)setHasLastKnownReconciledPassSyncStateHashVersion:(bool)arg1;
+- (void)setHasPassSegmentIndex:(bool)arg1;
+- (void)setHasPassSegmentTotal:(bool)arg1;
+- (void)setLastKnownReconciledPassSyncStateHash:(id)arg1;
+- (void)setLastKnownReconciledPassSyncStateHashVersion:(unsigned int)arg1;
+- (void)setPassData:(id)arg1;
+- (void)setPassSegmentIndex:(unsigned int)arg1;
+- (void)setPassSegmentTotal:(unsigned int)arg1;
+- (void)setRemoteAssetsForPartialUpdates:(id)arg1;
+- (void)setSyncStateItem:(id)arg1;
+- (void)setUniqueID:(id)arg1;
+- (void)setWatchCatalog:(id)arg1;
+- (id)syncStateItem;
+- (id)uniqueID;
+- (id)watchCatalog;
+- (void)writeTo:(id)arg1;
+
+@end

@@ -1,0 +1,90 @@
+
+@interface SRDeviceUsageReport : NSObject <NSSecureCoding, SRSampleExporting, SRSampling> {
+    double  __firstAppLaunchTimeRelativeToInterval;
+    NSMutableArray * __mutableActivityLevels;
+    NSMutableArray * __mutableMotionActivities;
+    NSMutableDictionary * __reportApplicationIdentifierByBundleIdentifier;
+    double  __totalChargingDuration;
+    double  _duration;
+    NSMutableDictionary * _mutableApplicationUsageByCategory;
+    NSMutableDictionary * _mutableNotificationUsageByCategory;
+    NSMutableDictionary * _mutableWebUsageByCategory;
+    double  _startTime;
+    double  _totalScreenWakeDuration;
+    long long  _totalScreenWakes;
+    double  _totalUnlockDuration;
+    long long  _totalUnlocks;
+    NSString * _version;
+}
+
+@property double _firstAppLaunchTimeRelativeToInterval;
+@property (retain) NSMutableArray *_mutableActivityLevels;
+@property (retain) NSMutableArray *_mutableMotionActivities;
+@property (retain) NSMutableDictionary *_reportApplicationIdentifierByBundleIdentifier;
+@property double _totalChargingDuration;
+@property (readonly, copy) NSDictionary *applicationUsageByCategory;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property double duration;
+@property (readonly) unsigned long long hash;
+@property (retain) NSMutableDictionary *mutableApplicationUsageByCategory;
+@property (retain) NSMutableDictionary *mutableNotificationUsageByCategory;
+@property (retain) NSMutableDictionary *mutableWebUsageByCategory;
+@property (readonly, copy) NSDictionary *notificationUsageByCategory;
+@property double startTime;
+@property (readonly) Class superclass;
+@property double totalScreenWakeDuration;
+@property long long totalScreenWakes;
+@property double totalUnlockDuration;
+@property long long totalUnlocks;
+@property (nonatomic, copy) NSString *version;
+@property (readonly, copy) NSDictionary *webUsageByCategory;
+
++ (id)deviceUsageReportWithInterval:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (id)_activityLevels;
+- (double)_firstAppLaunchTimeRelativeToInterval;
+- (id)_motionActivities;
+- (id)_mutableActivityLevels;
+- (id)_mutableMotionActivities;
+- (id)_reportApplicationIdentifierByBundleIdentifier;
+- (double)_totalChargingDuration;
+- (id)applicationUsageByCategory;
+- (id)binarySampleRepresentation;
+- (void)dealloc;
+- (id)description;
+- (double)duration;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)mutableApplicationUsageByCategory;
+- (id)mutableNotificationUsageByCategory;
+- (id)mutableWebUsageByCategory;
+- (id)notificationUsageByCategory;
+- (void)setDuration:(double)arg1;
+- (void)setMutableApplicationUsageByCategory:(id)arg1;
+- (void)setMutableNotificationUsageByCategory:(id)arg1;
+- (void)setMutableWebUsageByCategory:(id)arg1;
+- (void)setStartTime:(double)arg1;
+- (void)setTotalScreenWakeDuration:(double)arg1;
+- (void)setTotalScreenWakes:(long long)arg1;
+- (void)setTotalUnlockDuration:(double)arg1;
+- (void)setTotalUnlocks:(long long)arg1;
+- (void)setVersion:(id)arg1;
+- (void)set_firstAppLaunchTimeRelativeToInterval:(double)arg1;
+- (void)set_mutableActivityLevels:(id)arg1;
+- (void)set_mutableMotionActivities:(id)arg1;
+- (void)set_reportApplicationIdentifierByBundleIdentifier:(id)arg1;
+- (void)set_totalChargingDuration:(double)arg1;
+- (id)sr_dictionaryRepresentation;
+- (double)startTime;
+- (double)totalScreenWakeDuration;
+- (long long)totalScreenWakes;
+- (double)totalUnlockDuration;
+- (long long)totalUnlocks;
+- (id)version;
+- (id)webUsageByCategory;
+
+@end

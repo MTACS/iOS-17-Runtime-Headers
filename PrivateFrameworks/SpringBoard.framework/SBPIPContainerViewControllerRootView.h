@@ -1,0 +1,4 @@
+
+@interface SBPIPContainerViewControllerRootView : SBFTouchPassThroughView
+
+@end

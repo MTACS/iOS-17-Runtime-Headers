@@ -1,0 +1,4 @@
+
+@interface StocksLogging : NSObject
+
+@end

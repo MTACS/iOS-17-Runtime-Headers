@@ -1,0 +1,29 @@
+
+@interface _MRGenericMessageProtobuf : PBCodable <NSCopying> {
+    NSData * _data;
+    NSString * _key;
+}
+
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, readonly) bool hasData;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic, retain) NSString *key;
+
+- (void).cxx_destruct;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)data;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasData;
+- (bool)hasKey;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)key;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setData:(id)arg1;
+- (void)setKey:(id)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

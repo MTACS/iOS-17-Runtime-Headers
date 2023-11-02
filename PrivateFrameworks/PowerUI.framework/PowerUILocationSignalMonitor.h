@@ -1,0 +1,97 @@
+
+@interface PowerUILocationSignalMonitor : NSObject <CLLocationManagerDelegate, PowerUISignalMonitor> {
+    NSDictionary * _analyticsData;
+    NSObject<OS_dispatch_semaphore> * _authorizationSemaphore;
+    int  _authorizationStatus;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    <_CDLocalContext> * _context;
+    CLLocation * _currentLocation;
+    <PowerUISignalMonitorDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _fullChargeDateQueue;
+    CLLocationManager * _locationManager;
+    NSObject<OS_os_log> * _log;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_semaphore> * _requestLocationSemaphore;
+    RTRoutineManager * _routine;
+    <_DKKnowledgeQuerying> * _store;
+}
+
+@property (nonatomic, retain) NSDictionary *analyticsData;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *authorizationSemaphore;
+@property (nonatomic) int authorizationStatus;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, retain) <_CDLocalContext> *context;
+@property (retain) CLLocation *currentLocation;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) <PowerUISignalMonitorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *fullChargeDateQueue;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) NSObject<OS_os_log> *log;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (retain) NSObject<OS_dispatch_semaphore> *requestLocationSemaphore;
+@property (nonatomic, retain) RTRoutineManager *routine;
+@property (nonatomic, retain) <_DKKnowledgeQuerying> *store;
+@property (readonly) Class superclass;
+
++ (id)monitorWithDelegate:(id)arg1;
++ (id)monitorWithDelegate:(id)arg1 trialManager:(id)arg2 withContext:(id)arg3 withKnowledgeStore:(id)arg4;
++ (id)stringFromRTType:(long long)arg1;
+
+- (void).cxx_destruct;
+- (id)LOIsWithinMeters:(int)arg1;
+- (id)analyticsData;
+- (id)authorizationSemaphore;
+- (int)authorizationStatus;
+- (id)callbackQueue;
+- (id)context;
+- (id)coreRoutinePredictedEntryDateFromNearbyLOIs:(id)arg1;
+- (id)currentLocation;
+- (id)delegate;
+- (double)empiricalDurationAtRemoteLocation:(long long)arg1 withPotentialLOIs:(id)arg2;
+- (double)empiricalDurationAwayFromLocations:(id)arg1;
+- (id)empiricalPredictedDateAwayFromNearbyLocations:(id)arg1;
+- (id)empiricalPredictedDateStayingAtNearbyLOIs:(id)arg1 withRemoteLocation:(long long)arg2;
+- (id)fullChargeDateQueue;
+- (long long)inKnownMicrolocation;
+- (bool)inTypicalChargingLocationWithError:(id*)arg1;
+- (id)initWithDelegate:(id)arg1 trialManager:(id)arg2 withContextStore:(id)arg3 withKnowledgeStore:(id)arg4;
+- (bool)isInSameTimeZone;
+- (id)lastAcquiredLocation;
+- (id)likelyToBeInKnownArea;
+- (bool)locationIsUncertain:(id)arg1;
+- (id)locationManager;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)locationManager:(id)arg1 didVisit:(id)arg2;
+- (void)locationManagerDidChangeAuthorization:(id)arg1;
+- (id)log;
+- (void)logPredictionsWithDuration:(id)arg1 withConfidence:(id)arg2 withLOIString:(id)arg3 withPredictionMethod:(id)arg4 withSkipString:(id)arg5;
+- (id)longChargesAroundDate:(id)arg1 withinSeconds:(double)arg2 withinDays:(int)arg3 withMinimumDuration:(double)arg4 checkWhetherNearDate:(bool)arg5;
+- (bool)longChargesOccurredInLocationsNear:(id)arg1 withError:(id*)arg2;
+- (bool)notAuthorizedForLocation;
+- (id)queue;
+- (id)requestLocationSemaphore;
+- (id)requiredFullChargeDate;
+- (id)routine;
+- (void)setAnalyticsData:(id)arg1;
+- (void)setAuthorizationSemaphore:(id)arg1;
+- (void)setAuthorizationStatus:(int)arg1;
+- (void)setCallbackQueue:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setCurrentLocation:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFullChargeDateQueue:(id)arg1;
+- (void)setLocationManager:(id)arg1;
+- (void)setLog:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setRequestLocationSemaphore:(id)arg1;
+- (void)setRoutine:(id)arg1;
+- (void)setStore:(id)arg1;
+- (unsigned long long)signalID;
+- (void)startMonitoring;
+- (void)stopMonitoring;
+- (id)store;
+
+@end

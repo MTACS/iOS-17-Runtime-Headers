@@ -1,0 +1,18 @@
+
+@interface TMLJSONObjectDerived : TMLJSONObject {
+    NSString * _keyPath;
+    TMLJSONObject * _parent;
+}
+
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)initWithParent:(id)arg1 keyPath:(id)arg2;
+- (id)rawJSON;
+- (void)setRawJSON:(id)arg1;
+- (void)tmlAddObserver:(id)arg1 forKeyPath:(id)arg2 callback:(id /* block */)arg3;
+- (void)tmlRemoveObserver:(id)arg1 forKeyPath:(id)arg2;
+- (id)valueForKey:(id)arg1;
+- (id)valueForKeyPath:(id)arg1;
+
+@end

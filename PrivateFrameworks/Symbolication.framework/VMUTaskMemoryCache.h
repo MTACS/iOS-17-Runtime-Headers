@@ -1,0 +1,95 @@
+
+@interface VMUTaskMemoryCache : NSObject {
+    NSString * _corePath;
+    unsigned int  _dyldPlatform;
+    bool  _dyldPlatformIsValid;
+    bool  _haveAttemptedDyldPlatformFetch;
+    struct mapped_memory_t { } * _memoryRegions;
+    int  _pid;
+    id /* block */  _regionInfoBlock;
+    bool  _taskIs64Bit;
+    bool  _taskIsSelf;
+    bool  _taskIsTranslated;
+    unsigned int  _taskPort;
+    unsigned long long  _taskType;
+}
+
+@property (nonatomic, readonly) struct mapped_memory_t { }*memoryRegions;
+@property (nonatomic, copy) id /* block */ regionInfoBlock;
+
++ (bool)taskIs64Bit:(unsigned int)arg1;
++ (id)taskMemoryCacheForTask:(unsigned int)arg1;
+
+- (void).cxx_destruct;
+- (bool)copyRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 to:(void*)arg2;
+- (id)coreFileParentProcName;
+- (id)coreFileParentProcPath;
+- (id)coreFileProcName;
+- (id)coreFileProcPath;
+- (bool)coreHasInfoRequriedForMemoryAnalysis;
+- (struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })createSymbolicatorWithFlags:(unsigned int)arg1 andNotification:(id /* block */)arg2;
+- (void)dealloc;
+- (void)enumerateMemoryCache:(id /* block */)arg1;
+- (const struct mapped_region_node_t { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned int x4; }*)findMappedAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
+- (void)flushMemoryCache;
+- (int)getCoreFileArgsLen:(int*)arg1;
+- (int)getCoreFileCPUType:(int*)arg1;
+- (int)getCoreFileDirtyFlags:(int*)arg1;
+- (int)getCoreFileLedgerAlternateAccounting:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerAlternateAccountingCompressed:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerGraphicsFootprint:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerGraphicsFootprintCompressed:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerInternal:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerInternalCompressed:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerIokitMapped:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerMediaFootprint:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerMediaFootprintCompressed:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerNetworkNonvolatile:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerNetworkNonvolatileCompressed:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerNeuralFootprint:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerNeuralFootprintCompressed:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerPageTable:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerPhysFootprint:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerPhysFootprintLifetimeMax:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerPurgeableNonvolatile:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerPurgeableNonvolatileCompressed:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerTaggedFootprint:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerTaggedFootprintCompressed:(unsigned long long*)arg1;
+- (int)getCoreFileLedgerWiredMem:(unsigned long long*)arg1;
+- (int)getCoreFilePPid:(int*)arg1;
+- (int)getCoreFilePid:(int*)arg1;
+- (int)getCoreFileProcArgc:(int*)arg1;
+- (int)getCoreFileProcFlags:(unsigned int*)arg1;
+- (int)getCoreFileProcStarttimeSec:(unsigned long long*)arg1;
+- (int)getCoreFileProcStarttimeUSec:(unsigned long long*)arg1;
+- (int)getCoreFileUdataPointersIntoBuffer:(unsigned long long*)arg1 count:(unsigned long long*)arg2;
+- (int)getCoreFileUserstack:(unsigned long long*)arg1;
+- (int)getPlatform:(unsigned int*)arg1;
+- (id)initWithCoreFile:(id)arg1;
+- (id)initWithTask:(unsigned int)arg1;
+- (bool)isDriverKit;
+- (bool)isSimulator;
+- (int)machVMPageRangeQueryWithAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 dispositions:(unsigned long long)arg3 dispositionsCount:(unsigned long long*)arg4 usePhysFootprintAccounting:(bool)arg5;
+- (int)machVMPurgableControlWithAddress:(unsigned long long)arg1 control:(int)arg2 state:(int*)arg3;
+- (int)machVMRegionRecurseSubmapShortInfo64OnAddress:(unsigned long long*)arg1 size:(unsigned long long*)arg2 nestingDepth:(unsigned int*)arg3 info:(struct vm_region_submap_short_info_64 { int x1; int x2; unsigned int x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned short x7; unsigned char x8; unsigned char x9; int x10; int x11; unsigned int x12; unsigned short x13; }*)arg4;
+- (int)mapAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
+- (int)mapAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnedAddress:(unsigned long long*)arg3 returnedSize:(unsigned long long*)arg4;
+- (struct mapped_memory_t { }*)memoryRegions;
+- (int)peekAtAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnsBuf:(void**)arg3;
+- (const char *)peekStringAtAddress:(unsigned long long)arg1;
+- (void)printMemoryCache;
+- (int)procRegionFileNameForAddress:(unsigned long long)arg1 buffer:(void*)arg2 bufferSize:(unsigned int)arg3;
+- (int)readPointerAt:(unsigned long long)arg1 value:(unsigned long long*)arg2;
+- (id /* block */)regionInfoBlock;
+- (bool)representsCore;
+- (void)setRegionInfoBlock:(id /* block */)arg1;
+- (int)startPeeking;
+- (int)stopPeeking;
+- (bool)taskIsTranslated;
+- (unsigned int)taskPort;
+- (int)taskThreadsWithList:(unsigned int**)arg1 listCnt:(unsigned int*)arg2;
+- (int)threadGetState:(unsigned int)arg1 withFlavor:(int)arg2 oldState:(unsigned int*)arg3 oldStateCnt:(unsigned int*)arg4;
+- (unsigned long long)tryPeekAtAddress:(unsigned long long)arg1 outPtr:(void**)arg2;
+- (int)unmapAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnedAddress:(unsigned long long*)arg3 returnedSize:(unsigned long long*)arg4;
+
+@end

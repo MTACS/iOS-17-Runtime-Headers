@@ -1,0 +1,4 @@
+
+@interface PBUIBokehColorArbiter : NSObject
+
+@end

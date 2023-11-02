@@ -1,0 +1,4 @@
+
+@interface CLLocationPushServiceExtensionHostContext : CLLocationPushServiceExtensionContext <CLLocationPushServiceExtensionHostXPCInterface>
+
+@end

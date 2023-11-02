@@ -1,0 +1,4 @@
+
+@interface WFSiriOpenURLResponse : WFSiriActionResponse
+
+@end

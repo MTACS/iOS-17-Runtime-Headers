@@ -1,0 +1,4 @@
+
+@interface SiriUISnippetBridgeView : UIView
+
+@end

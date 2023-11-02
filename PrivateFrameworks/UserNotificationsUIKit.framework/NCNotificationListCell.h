@@ -1,0 +1,83 @@
+
+@interface NCNotificationListCell : UIView <NCMaterialDisplaying, NCNotificationListDimmable, PLSwipeInteractionDelegate> {
+    <NCNotificationListCellActionHandling> * _actionHandler;
+    <NCNotificationListCellActionProviding> * _actionProvider;
+    UIView * _contentView;
+    UIViewController<NCNotificationListDimmable> * _contentViewController;
+    NSString * _materialGroupNameBase;
+    long long  _materialRecipe;
+    UIColor * _materialTintColor;
+    bool  _sideSwipedWithoutTouch;
+    PLSwipeInteraction * _swipeInteraction;
+    UIColor * _textColor;
+}
+
+@property (nonatomic) <NCNotificationListCellActionHandling> *actionHandler;
+@property (nonatomic) <NCNotificationListCellActionProviding> *actionProvider;
+@property (getter=isContentUserInteractionEnabled, nonatomic) bool contentUserInteractionEnabled;
+@property (nonatomic, readonly) UIView *contentView;
+@property (nonatomic, retain) UIViewController<NCNotificationListDimmable> *contentViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *materialGroupNameBase;
+@property (nonatomic) long long materialRecipe;
+@property (nonatomic, copy) UIColor *materialTintColor;
+@property (nonatomic, readonly) NCNotificationViewController *notificationViewController;
+@property (getter=isSideSwipedWithoutTouch, nonatomic) bool sideSwipedWithoutTouch;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PLSwipeInteraction *swipeInteraction;
+@property (nonatomic, retain) UIColor *textColor;
+
+- (void).cxx_destruct;
+- (bool)_actionHandlerAllowsPerformingClipping;
+- (void)_configureClippingIfNecessary;
+- (bool)_disableRasterizeInAnimations;
+- (void)_layoutContentView;
+- (void)_resetClipping;
+- (void)_setupClipping;
+- (bool)_shouldPerformClipping;
+- (id)actionHandler;
+- (id)actionProvider;
+- (double)buttonsCornerRadiusForSwipeInteraction:(id)arg1;
+- (long long)buttonsRecipeForSwipeInteraction:(id)arg1;
+- (id)buttonsTextColorForSwipeInteraction:(id)arg1;
+- (id)buttonsTintColorForSwipeInteraction:(id)arg1;
+- (void)configureStackDimmingForTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (id)contentView;
+- (id)contentViewController;
+- (void)hideActionButtonsAnimated:(bool)arg1 fastAnimation:(bool)arg2 completion:(id /* block */)arg3;
+- (void)hintSideSwipeForDefaultAction;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isContentUserInteractionEnabled;
+- (bool)isSideSwipedWithoutTouch;
+- (void)layoutSubviews;
+- (id)materialGroupNameBase;
+- (long long)materialRecipe;
+- (id)materialTintColor;
+- (id)notificationViewController;
+- (void)revealSupplementaryActionsWithCompletion:(id /* block */)arg1;
+- (id)senderForActionWithIdentifier:(id)arg1;
+- (void)setActionHandler:(id)arg1;
+- (void)setActionProvider:(id)arg1;
+- (void)setContentUserInteractionEnabled:(bool)arg1;
+- (void)setContentViewController:(id)arg1;
+- (void)setMaterialGroupNameBase:(id)arg1;
+- (void)setMaterialRecipe:(long long)arg1;
+- (void)setMaterialTintColor:(id)arg1;
+- (void)setSideSwipedWithoutTouch:(bool)arg1;
+- (void)setTextColor:(id)arg1;
+- (bool)shouldContinuePresentingActionButtonsForSwipeInteraction:(id)arg1;
+- (bool)shouldVerticallyStackButtonsForSwipeInteraction:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)swipeInteraction;
+- (id)swipeInteraction:(id)arg1 actionsToRevealFromLayoutLocation:(unsigned long long)arg2;
+- (void)swipeInteraction:(id)arg1 didMoveToNewXPosition:(double)arg2;
+- (bool)swipeInteraction:(id)arg1 shouldRevealActionsFromLayoutLocation:(unsigned long long)arg2;
+- (void)swipeInteractionDidBeginHidingActions:(id)arg1;
+- (void)swipeInteractionDidBeginRevealingActions:(id)arg1;
+- (void)swipeInteractionDidSignificantUserInteraction:(id)arg1;
+- (id)textColor;
+- (id)viewToMoveForSwipeInteraction:(id)arg1;
+
+@end

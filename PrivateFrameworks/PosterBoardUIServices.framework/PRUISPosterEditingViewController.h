@@ -1,0 +1,101 @@
+
+@interface PRUISPosterEditingViewController : UIViewController <PREditingSceneViewControllerDelegate, PREditingSceneViewControllerObserver, PRPosterExtensionProviderObserver> {
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  __lock;
+    <PRSPosterExtensionDescribing> * __lock_extension;
+    unsigned long long  _acceptButtonType;
+    PRSPosterConfiguration * _configuration;
+    <PRUISPosterEditingContext> * _context;
+    <PRUISPosterEditingViewControllerDelegate> * _delegate;
+    PREditingSceneViewController * _editingSceneViewController;
+    PRPosterExtensionDefaultDataSource * _extensionDataSource;
+    NSString * _extensionIdentifier;
+    bool  _hasPreparedForEditing;
+    PRSPosterPath * _path;
+    bool  _prefersDisplayingSnapshotBeforePresentation;
+    NSString * _role;
+    UIImage * _snapshot;
+    <PRUISPosterSnapshotCache> * _snapshotCache;
+    UIImageView * _snapshotImageView;
+    PRMutablePosterConfiguration * _temporaryConfiguration;
+}
+
+@property (nonatomic) struct os_unfair_lock_s { unsigned int x1; } _lock;
+@property (nonatomic, retain) <PRSPosterExtensionDescribing> *_lock_extension;
+@property (nonatomic) unsigned long long acceptButtonType;
+@property (nonatomic, readonly) PRSPosterConfiguration *configuration;
+@property (nonatomic, readonly) <PRUISPosterEditingContext> *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PRUISPosterEditingViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PREditingSceneViewController *editingSceneViewController;
+@property (nonatomic, retain) PRPosterExtensionDefaultDataSource *extensionDataSource;
+@property (nonatomic, readonly, copy) NSString *extensionIdentifier;
+@property (nonatomic) bool hasPreparedForEditing;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) PRSPosterPath *path;
+@property (nonatomic) bool prefersDisplayingSnapshotBeforePresentation;
+@property (nonatomic) bool showsContentWhenReady;
+@property (nonatomic, retain) UIImage *snapshot;
+@property (nonatomic, readonly) <PRUISPosterSnapshotCache> *snapshotCache;
+@property (nonatomic, retain) UIImageView *snapshotImageView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PRMutablePosterConfiguration *temporaryConfiguration;
+
++ (struct PREditingSceneViewControllerTopButtonLayout { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })_topButtonLayout;
++ (id)posterEditingViewControllerForProvider:(id)arg1 role:(id)arg2 context:(id)arg3 error:(out id*)arg4;
+
+- (void).cxx_destruct;
+- (void)_commonInit;
+- (id)_contentOnlyPosterLevelSet;
+- (struct os_unfair_lock_s { unsigned int x1; })_lock;
+- (id)_lock_extension;
+- (void)_prepareEditingForNewPoster;
+- (void)_prepareEditingForPath:(id)arg1;
+- (void)_prepareForEditing;
+- (unsigned long long)acceptButtonType;
+- (id)configuration;
+- (id)contentOnlySnapshot;
+- (id)context;
+- (void)dealloc;
+- (id)delegate;
+- (id)editingSceneViewController;
+- (void)editingSceneViewController:(id)arg1 userDidDismissWithAction:(long long)arg2 updatedConfiguration:(id)arg3 updatedConfiguredProperties:(id)arg4 completion:(id /* block */)arg5;
+- (void)editingSceneViewControllerDidFinishShowingContent:(id)arg1;
+- (id)extensionDataSource;
+- (id)extensionIdentifier;
+- (bool)hasPreparedForEditing;
+- (id)initWithExistingConfiguration:(id)arg1 context:(id)arg2;
+- (id)initWithExtensionIdentifier:(id)arg1 configuration:(id)arg2 context:(id)arg3;
+- (id)internalContext;
+- (id)path;
+- (id)phonePreviewSnapshot;
+- (void)posterExtensionProvider:(id)arg1 foundExtensions:(id)arg2;
+- (bool)prefersDisplayingSnapshotBeforePresentation;
+- (bool)prefersStatusBarHidden;
+- (void)presentationDidFinishAnimated:(bool)arg1;
+- (void)setAcceptButtonType:(unsigned long long)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEditingSceneViewController:(id)arg1;
+- (void)setExtensionDataSource:(id)arg1;
+- (void)setHasPreparedForEditing:(bool)arg1;
+- (void)setPrefersDisplayingSnapshotBeforePresentation:(bool)arg1;
+- (void)setShowsContentWhenReady:(bool)arg1;
+- (void)setSnapshot:(id)arg1;
+- (void)setSnapshotImageView:(id)arg1;
+- (void)setTemporaryConfiguration:(id)arg1;
+- (void)set_lock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
+- (void)set_lock_extension:(id)arg1;
+- (bool)showsContentWhenReady;
+- (id)snapshot;
+- (id)snapshotCache;
+- (id)snapshotImageView;
+- (id)snapshotWithOptions:(unsigned long long)arg1;
+- (id)temporaryConfiguration;
+- (struct PREditingSceneViewControllerTopButtonLayout { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })topButtonLayoutForEditingSceneViewController:(id)arg1;
+- (void)updateEditingControllerWithContext:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLoad;
+
+@end

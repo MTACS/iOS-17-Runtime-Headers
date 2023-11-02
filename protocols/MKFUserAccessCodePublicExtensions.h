@@ -1,0 +1,4 @@
+
+@protocol MKFUserAccessCodePublicExtensions
+
+@end

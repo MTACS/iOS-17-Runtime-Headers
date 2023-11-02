@@ -1,0 +1,4 @@
+
+@protocol SATimerTimerAction <SAAceSerializable>
+
+@end

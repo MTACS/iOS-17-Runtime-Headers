@@ -1,0 +1,31 @@
+
+@protocol IKDataSourceElementImplementing <NSObject>
+
+@required
+
+- (void)applyUpdatesWithImplementation:(void *)arg1 usingUpdater:(void *)arg2; // needs 2 arg types, found 6: <IKDataSourceElementImplementing> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, IKDataSourceElement *, id /* block */, void*
+- (void)configureUpdatesWithImplementation:(id <IKDataSourceElementImplementing>)arg1;
+- (IKViewElement *)elementForItemAtIndex:(long long)arg1;
+- (long long)indexOfItemForElement:(IKViewElement *)arg1;
+- (NSDictionary *)indexTitles;
+- (void)initializeWithElementFactory:(IKViewElementFactory *)arg1;
+- (IKChangeSet *)itemsChangeSet;
+- (void)loadIndex:(long long)arg1;
+- (long long)numberOfItems;
+- (IKViewElement *)prototypeForItemAtIndex:(long long)arg1;
+- (NSArray *)prototypes;
+- (void)resetUpdates;
+- (void)teardown;
+- (void)unloadIndex:(long long)arg1;
+- (void)updateStylesUsingUpdater:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+
+@optional
+
+- (bool)canProxyUnloadedChildElement:(IKViewElement *)arg1;
+- (IKViewElement *)masterPrototypeForItemAtIndex:(unsigned long long)arg1;
+- (NSArray *)masterPrototypes;
+- (NSArray *)proxiedItemElements;
+- (IKViewElement *)proxyElementForLoadedChildElement:(IKViewElement *)arg1;
+- (void)resetImplicitUpdates;
+
+@end

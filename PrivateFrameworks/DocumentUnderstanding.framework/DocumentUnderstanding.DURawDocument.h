@@ -1,0 +1,85 @@
+
+@interface DocumentUnderstanding.DURawDocument : NSObject <NSCoding, NSCopying> {
+    void abstract;
+    void comment;
+    void creator;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  dateCreated;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  dateModified;
+    void documentHTMLData;
+    void documentMessageData;
+    void documentUIElements;
+    void headline;
+    void identifier;
+    void inLanguage;
+    void keywords;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  significantLink;
+    void subHeadline;
+    void text;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  thumbnailUrl;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  url;
+    void version;
+}
+
+@property (nonatomic, copy) NSString *abstract;
+@property (nonatomic, copy) NSString *comment;
+@property (nonatomic, copy) NSString *creator;
+@property (nonatomic, copy) NSDate *dateCreated;
+@property (nonatomic, copy) NSDate *dateModified;
+@property (nonatomic, retain) _TtC21DocumentUnderstanding18DUDocumentHTMLData *documentHTMLData;
+@property (nonatomic, retain) _TtC21DocumentUnderstanding21DUDocumentMessageData *documentMessageData;
+@property (nonatomic, copy) NSArray *documentUIElements;
+@property (nonatomic, copy) NSString *headline;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *inLanguage;
+@property (nonatomic, copy) NSArray *keywords;
+@property (nonatomic, copy) NSURL *significantLink;
+@property (nonatomic, copy) NSString *subHeadline;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSURL *thumbnailUrl;
+@property (nonatomic, copy) NSURL *url;
+@property (nonatomic, copy) NSString *version;
+
+- (void).cxx_destruct;
+- (id)abstract;
+- (id)comment;
+- (id)copyWithZone:(void*)arg1;
+- (id)creator;
+- (id)dateCreated;
+- (id)dateModified;
+- (id)documentHTMLData;
+- (id)documentMessageData;
+- (id)documentUIElements;
+- (void)encodeWithCoder:(id)arg1;
+- (id)headline;
+- (id)identifier;
+- (id)inLanguage;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)keywords;
+- (void)setAbstract:(id)arg1;
+- (void)setComment:(id)arg1;
+- (void)setCreator:(id)arg1;
+- (void)setDateCreated:(id)arg1;
+- (void)setDateModified:(id)arg1;
+- (void)setDocumentHTMLData:(id)arg1;
+- (void)setDocumentMessageData:(id)arg1;
+- (void)setDocumentUIElements:(id)arg1;
+- (void)setHeadline:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setInLanguage:(id)arg1;
+- (void)setKeywords:(id)arg1;
+- (void)setSignificantLink:(id)arg1;
+- (void)setSubHeadline:(id)arg1;
+- (void)setText:(id)arg1;
+- (void)setThumbnailUrl:(id)arg1;
+- (void)setUrl:(id)arg1;
+- (void)setVersion:(id)arg1;
+- (id)significantLink;
+- (id)subHeadline;
+- (id)text;
+- (id)thumbnailUrl;
+- (id)url;
+- (id)version;
+
+@end

@@ -1,0 +1,138 @@
+
+@interface _UIEditMenuListView : UIView <UICollectionViewDelegate, UIGestureRecognizerDelegate> {
+    long long  _arrowDirection;
+    long long  _axis;
+    NSString * _backgroundMaterialGroupName;
+    UIView * _backgroundView;
+    _UIEditMenuCollectionView * _collectionView;
+    UIView * _customBackgroundPlatterView;
+    UICollectionViewDiffableDataSource * _dataSource;
+    <_UIEditMenuListViewDelegate> * _delegate;
+    UIMenu * _displayedMenu;
+    NSIndexPath * _highlightedIndexPath;
+    NSIndexPath * _hoveredIndexPath;
+    double  _largestPageWidth;
+    _UIEditMenuPageButton * _leftButton;
+    CAShapeLayer * _maskLayer;
+    UIView * _menuContainerView;
+    struct { 
+        unsigned int pagination : 1; 
+    }  _needsUpdate;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _previousBounds;
+    _UIEditMenuPageButton * _rightButton;
+    NSIndexPath * _scrubbedIndexPath;
+    _UIContextMenuSelectionGestureRecognizer * _selectionGestureRecognizer;
+    _UIDiffuseShadowView * _shadowView;
+    UIView * _titleContainerView;
+    UIView * _titleSeparatorView;
+    UIView * _titleView;
+    double  _verticalContentHeight;
+}
+
+@property (nonatomic) long long arrowDirection;
+@property (nonatomic) long long axis;
+@property (nonatomic, readonly) UIView *backgroundView;
+@property (nonatomic, readonly) _UIEditMenuCollectionView *collectionView;
+@property (nonatomic, readonly) UIView *customBackgroundPlatterView;
+@property (nonatomic, readonly) UICollectionViewDiffableDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <_UIEditMenuListViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIMenu *displayedMenu;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSIndexPath *highlightedIndexPath;
+@property (nonatomic, retain) NSIndexPath *hoveredIndexPath;
+@property (nonatomic, readonly) _UIEditMenuPageButton *leftButton;
+@property (nonatomic, readonly) CAShapeLayer *maskLayer;
+@property (nonatomic, readonly) UIView *menuContainerView;
+@property (nonatomic, readonly) _UIEditMenuPageButton *rightButton;
+@property (nonatomic, retain) NSIndexPath *scrubbedIndexPath;
+@property (nonatomic, readonly) bool scrubbingEnabled;
+@property (nonatomic, readonly) _UIContextMenuSelectionGestureRecognizer *selectionGestureRecognizer;
+@property (nonatomic, readonly) _UIDiffuseShadowView *shadowView;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIView *titleContainerView;
+@property (nonatomic, readonly) UIView *titleSeparatorView;
+@property (nonatomic, readonly) UIView *titleView;
+
++ (double)minimumRequiredWidthForArrowInRoundedListViewForAxis:(long long)arg1 traitCollection:(id)arg2;
+
+- (void).cxx_destruct;
+- (bool)_canSelectItemAtIndexPath:(id)arg1;
+- (double)_collectionViewWidthForPageProgress:(double)arg1;
+- (void)_contentSizeCategoryDidChange;
+- (void)_createDataSource;
+- (void)_createViewHierarchy;
+- (void)_didTapLeftDirectionalButton:(id)arg1;
+- (void)_didTapRightDirectionalButton:(id)arg1;
+- (void)_handleHoverGesture:(id)arg1;
+- (void)_handleSelectionGesture:(id)arg1;
+- (bool)_hasDisplayedMenu;
+- (bool)_hasPasteAuthentication;
+- (void)_highlightItemAtIndexPath:(id)arg1;
+- (id)_indexPathForGestureRecognizer:(id)arg1;
+- (struct CGSize { double x1; double x2; })_intrinsicHorizontalContentSizeForTraitCollection:(id)arg1 containerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { double x1; double x2; })_intrinsicVerticalContentSizeForContainer:(id)arg1 containerSize:(struct CGSize { double x1; double x2; })arg2;
+- (double)_minimumRequiredWidthForArrowInRoundedListViewForAxis:(long long)arg1;
+- (void)_reloadMenuAnimated:(bool)arg1;
+- (void)_selectItemAtIndexPath:(id)arg1;
+- (void)_setNeedsPaginationUpdate;
+- (struct CGSize { double x1; double x2; })_titleViewSizeForFittingWidth:(double)arg1;
+- (void)_unhighlightCurrentlyHighlightedItem;
+- (void)_updateArrowEdgeInsets;
+- (void)_updateHighlightState;
+- (void)_updateMaskingLayerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_updatePaginationForSnapshot:(id)arg1 containerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { double x1; double x2; })_verticalMenuContentSizeFittingContainerSize:(struct CGSize { double x1; double x2; })arg1 traits:(id)arg2;
+- (long long)arrowDirection;
+- (struct CGSize { double x1; double x2; })arrowSizeForDirection:(long long)arg1;
+- (long long)axis;
+- (id)backgroundMaterialGroupName;
+- (id)backgroundView;
+- (id)collectionView;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (id)customBackgroundPlatterView;
+- (id)dataSource;
+- (id)delegate;
+- (id)displayedMenu;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)hasShadow;
+- (id)highlightedIndexPath;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hoveredIndexPath;
+- (id)initWithDelegate:(id)arg1 menu:(id)arg2 titleView:(id)arg3;
+- (struct CGSize { double x1; double x2; })intrinsicContentSizeForContainer:(id)arg1 containerSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)layoutSubviews;
+- (id)leftButton;
+- (id)maskLayer;
+- (id)menuContainerView;
+- (void)reloadWithMenu:(id)arg1 titleView:(id)arg2 animated:(bool)arg3;
+- (id)rightButton;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (id)scrubbedIndexPath;
+- (bool)scrubbingEnabled;
+- (id)selectionGestureRecognizer;
+- (void)setArrowDirection:(long long)arg1;
+- (void)setAxis:(long long)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHighlightedIndexPath:(id)arg1;
+- (void)setHoveredIndexPath:(id)arg1;
+- (void)setScrubbedIndexPath:(id)arg1;
+- (void)setScrubbingEnabled:(bool)arg1;
+- (id)shadowView;
+- (id)titleContainerView;
+- (id)titleSeparatorView;
+- (id)titleView;
+
+@end

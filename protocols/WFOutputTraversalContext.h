@@ -1,0 +1,4 @@
+
+@protocol WFOutputTraversalContext <NSObject>
+
+@end

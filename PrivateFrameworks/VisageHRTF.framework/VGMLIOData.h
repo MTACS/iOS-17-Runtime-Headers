@@ -1,0 +1,4 @@
+
+@interface VGMLIOData : NSObject
+
+@end

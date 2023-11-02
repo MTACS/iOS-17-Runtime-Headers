@@ -1,0 +1,4 @@
+
+@interface PTSChoiceRow : PTChoiceRow
+
+@end

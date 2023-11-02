@@ -1,0 +1,4 @@
+
+@interface HUQuickControlColorItemLayoutOptions : HUQuickControlCollectionViewControllerLayoutOptions
+
+@end

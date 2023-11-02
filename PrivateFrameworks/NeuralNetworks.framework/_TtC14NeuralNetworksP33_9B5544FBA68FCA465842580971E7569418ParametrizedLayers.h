@@ -1,0 +1,4 @@
+
+@interface _TtC14NeuralNetworksP33_9B5544FBA68FCA465842580971E7569418ParametrizedLayers : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol HKMedicationControlClientInterface <NSObject>
+
+@end

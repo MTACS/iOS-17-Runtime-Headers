@@ -1,0 +1,4 @@
+
+@interface __NSConcreteMutableAttributedStringAccessibility_super : UIAccessibilitySafeCategory
+
+@end

@@ -1,0 +1,93 @@
+
+@interface _ATXAppPredictor : NSObject {
+    NSArray * _abGroupIdentifiers;
+    ATXActionPredictionBlacklist * _actionPredictionBlacklist;
+    _ATXAppDailyDose * _appDailyDose;
+    ATXAppFeaturizer * _appFeaturizer;
+    _ATXAppInfoManager * _appInfoManager;
+    _ATXAppInstallMonitor * _appInstallMonitor;
+    ATXAppIntentMonitor * _appIntentMonitor;
+    _Atomic bool  _appLaunchAndInstallMonitorsInitialized;
+    _ATXAppLaunchLocation * _appLaunchLocation;
+    ATXAppLaunchLogger * _appLaunchLogger;
+    _ATXAppLaunchMonitor * _appLaunchMonitor;
+    ATXAppPredictionBlacklist * _appPredictionBlacklist;
+    ATXCDNDownloaderTriggerManager * _cdnDownloaderTriggerManager;
+    ATXCurrentABGroupDetails * _currentABGroupDetails;
+    NSString * _dayZeroABGroupIdentifier;
+    NSString * _dayZeroIntentABGroupIdentifier;
+    NSDictionary * _dayZeroIntentParameters;
+    NSDictionary * _dayZeroParameters;
+    _Atomic bool  _iOSOnlyDependenciesInitialized;
+    ATXMediaApplications * _mediaApps;
+    ATXAppLaunchMicroLocation * _microLocation;
+    ATXMagicalMomentsUpdateMonitor * _mmPredictionMonitor;
+    ATXBBNotificationManager * _notificationManager;
+    ATXPredictionContextBuilder * _predictionContextBuilder;
+    NSObject<OS_dispatch_queue> * _queue;
+    _ATXRecentInstallCache * _recentInstallCache;
+    NSUserDefaults * _userDefaults;
+}
+
+@property (nonatomic, retain) NSArray *abGroupIdentifiers;
+@property (nonatomic, retain) ATXCDNDownloaderTriggerManager *cdnDownloaderTriggerManager;
+
++ (id)_arrayFromSet:(id)arg1 upToSize:(unsigned long long)arg2;
++ (id)getParseTreeForConsumerSubType:(unsigned char)arg1;
++ (id)inputScoresForPredictionItem:(const struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; }*)arg1;
++ (id)pruneItemsToRankForConsumerSubType:(unsigned char)arg1 itemsToRank:(id)arg2 datastore:(id)arg3;
++ (id)recreateSharedInstanceWithCurrentABGroup;
++ (id)sharedInstance;
++ (void)updateConfidenceForItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; }*)arg1 subscores:(id)arg2;
+
+- (void).cxx_destruct;
+- (void)_addZeroDayAppIntentKeysToBundleIdTable:(id)arg1;
+- (id)_allDayZeroApps;
+- (id)_appPredictionsSeedAppsGivenSBAppList:(id)arg1 consumerSubType:(unsigned char)arg2 minimumDesiredApps:(unsigned long long)arg3;
+- (id)_appsToPredictWithConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3 allSBApps:(id)arg4 appPredictionBlacklist:(id)arg5 digitalHealthBlacklist:(id)arg6;
+- (void)_copyValidScoreInputsFromPredictionItem:(const struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; }*)arg1 toPredictionItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; }*)arg2;
+- (struct unordered_map<NSString *, const ATXPredictionItem *, ATXNSStringHash, ATXNSStringEqual, std::allocator<std::pair<NSString *const, const ATXPredictionItem *>>> { struct __hash_table<std::__hash_value_type<NSString *, const ATXPredictionItem *>, std::__unordered_map_hasher<NSString *, std::__hash_value_type<NSString *, const ATXPredictionItem *>, ATXNSStringHash, ATXNSStringEqual>, std::__unordered_map_equal<NSString *, std::__hash_value_type<NSString *, const ATXPredictionItem *>, ATXNSStringEqual, ATXNSStringHash>, std::allocator<std::__hash_value_type<NSString *, const ATXPredictionItem *>>> { struct unique_ptr<std::__hash_node_base<std::__hash_node<std::__hash_value_type<NSString *, const ATXPredictionItem *>, void *> *> *[], std::__bucket_list_deallocator<std::allocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<NSString *, const ATXPredictionItem *>, void *> *> *>>> { struct __compressed_pair<std::__hash_node_base<std::__hash_node<std::__hash_value_type<NSString *, const ATXPredictionItem *>, void *> *> **, std::__bucket_list_deallocator<std::allocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<NSString *, const ATXPredictionItem *>, void *> *> *>>> { void **x_1_3_1; struct __bucket_list_deallocator<std::allocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<NSString *, const ATXPredictionItem *>, void *> *> *>> { struct __compressed_pair<unsigned long, std::allocator<std::__hash_node_base<std::__hash_node<std::__hash_value_type<NSString *, const ATXPredictionItem *>, void *> *> *>> { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; } x1; })_createMapOfKeyToItemForPredictionItems:(const void*)arg1;
+- (struct vector<ATXPredictionItem, std::allocator<ATXPredictionItem>> { struct ATXPredictionItem {} *x1; struct ATXPredictionItem {} *x2; struct __compressed_pair<ATXPredictionItem *, std::allocator<ATXPredictionItem>> { struct ATXPredictionItem {} *x_3_1_1; } x3; })_evalFeaturesForActions:(id)arg1 scoreLogger:(id)arg2 context:(id)arg3 featureCache:(id)arg4;
+- (struct vector<ATXPredictionItem, std::allocator<ATXPredictionItem>> { struct ATXPredictionItem {} *x1; struct ATXPredictionItem {} *x2; struct __compressed_pair<ATXPredictionItem *, std::allocator<ATXPredictionItem>> { struct ATXPredictionItem {} *x_3_1_1; } x3; })_evalFeaturesForAppForAllIntents:(id)arg1 scoreLogger:(id)arg2 context:(id)arg3;
+- (struct vector<ATXPredictionItem, std::allocator<ATXPredictionItem>> { struct ATXPredictionItem {} *x1; struct ATXPredictionItem {} *x2; struct __compressed_pair<ATXPredictionItem *, std::allocator<ATXPredictionItem>> { struct ATXPredictionItem {} *x_3_1_1; } x3; })_evalFeaturesForAppIntents:(id)arg1 scoreLogger:(id)arg2 context:(id)arg3;
+- (struct vector<ATXPredictionItem, std::allocator<ATXPredictionItem>> { struct ATXPredictionItem {} *x1; struct ATXPredictionItem {} *x2; struct __compressed_pair<ATXPredictionItem *, std::allocator<ATXPredictionItem>> { struct ATXPredictionItem {} *x_3_1_1; } x3; })_getPredictionForItems:(id)arg1 clipBundleIdsToRank:(id)arg2 consumerSubType:(unsigned char)arg3 intent:(id)arg4 scoreLogger:(id)arg5 context:(id)arg6 featureCache:(id)arg7;
+- (bool)_initAppLaunchAndInstallMonitors;
+- (void)_initFeaturizers;
+- (bool)_initIOSOnlyDependencies;
+- (double)_predictionScoreAndUpdateConfidenceForItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; }*)arg1 interpreter:(id)arg2 consumerSubType:(unsigned char)arg3 scoreLogger:(id)arg4 intentType:(id)arg5;
+- (void)_setActionBlacklist:(id)arg1;
+- (void)_updateFromAsset;
+- (void)_updateFromZeroDayAsset;
+- (void)_updateFromZeroDayIntentAsset;
+- (id)abGroupIdentifiers;
+- (id)appInstallMonitor;
+- (id)appIntentMonitor;
+- (id)appLaunchMonitor;
+- (id)cdnDownloaderTriggerManager;
+- (void)dealloc;
+- (double)finalScoreForSubscores:(id)arg1 consumerSubType:(unsigned char)arg2;
+- (id)getABGroups;
+- (id)getPredictionModelDetailsForConsumerSubType:(unsigned char)arg1;
+- (id)init;
+- (id)initInternal;
+- (void)iterZeroDayAppIntentKeysWithBlock:(id /* block */)arg1;
+- (void)logCacheAgeAtRefreshForNonBlendingCachesWithCachePath:(id)arg1 consumerSubType:(unsigned char)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (bool)predictAndWriteCacheFileWithLimit:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 candidateBundleIdentifiers:(id)arg4 candidateActiontypes:(id)arg5 scoreLogger:(id)arg6 path:(id)arg7 cacheFileDescriptors:(id)arg8 featureCache:(id)arg9;
+- (id)predictWithLimit:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 candidateBundleIdentifiers:(id)arg4 candidateActiontypes:(id)arg5 scoreLogger:(id)arg6;
+- (id)predictWithLimit:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 candidateBundleIdentifiers:(id)arg4 candidateActiontypes:(id)arg5 scoreLogger:(id)arg6 predictionItemsToKeep:(void*)arg7 predictedItemsOutParameter:(void*)arg8 context:(id)arg9 datastore:(id)arg10 featureCache:(id)arg11;
+- (id)predictWithLimit:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 candidateBundleIdentifiers:(id)arg4 candidateActiontypes:(id)arg5 scoreLogger:(id)arg6 predictionItemsToKeep:(void*)arg7 predictedItemsOutParameter:(void*)arg8 context:(id)arg9 featureCache:(id)arg10;
+- (id)predictWithLimit:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 candidateBundleIdentifiers:(id)arg4 candidateActiontypes:(id)arg5 scoreLogger:(id)arg6 predictionItemsToKeep:(void*)arg7 predictedItemsOutParameter:(void*)arg8 datastore:(id)arg9;
+- (id)predictWithLimit:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 candidateBundleIdentifiers:(id)arg4 candidateActiontypes:(id)arg5 scoreLogger:(id)arg6 predictionItemsToKeep:(void*)arg7 predictedItemsOutParameter:(void*)arg8 featureCache:(id)arg9;
+- (double)predictionScoreAndUpdateConfidenceForItem:(struct ATXPredictionItem { id x1; unsigned long long x2; float x3[817]; float x4; bool x5; bool x6; }*)arg1 consumerSubType:(unsigned char)arg2;
+- (void)receiveFeedbackForConsumerType:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 atxResponse:(id)arg3 engagementType:(unsigned long long)arg4 engagedBundleId:(id)arg5 bundleIdsShown:(id)arg6 explicitlyRejectedBundleIds:(id)arg7 context:(id)arg8;
+- (id)recentInstallCache;
+- (void)resetRecentInstallCache;
+- (void)setAbGroupIdentifiers:(id)arg1;
+- (void)setCdnDownloaderTriggerManager:(id)arg1;
+- (void)setupScoreLogger:(id)arg1 forConsumerSubType:(unsigned char)arg2;
+- (void)train;
+- (void)trainWithActivity:(id)arg1;
+- (bool)writeCacheFileWithSerializedChunks:(id)arg1 path:(id)arg2 cacheFileDescriptors:(id)arg3 consumerSubType:(unsigned char)arg4;
+
+@end

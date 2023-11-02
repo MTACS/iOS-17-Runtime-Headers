@@ -1,0 +1,82 @@
+
+@interface AXGestureRecorderFingerPathCollection : NSObject {
+    <AXGestureRecorderFingerPathCollectionDelegate> * _delegate;
+    NSMutableArray * _fingerPaths;
+    NSMutableArray * _forcesArrays;
+    double  _maximumFingerLineWidth;
+    unsigned long long  _maximumFingerPathsCount;
+    double  _minimumFingerLineWidth;
+    NSMutableArray * _pointsArrays;
+    unsigned long long  _referenceTimesArrayIndex;
+    AXMutableReplayableGesture * _replayableGesture;
+    bool  _shouldRecordRealTimeGesture;
+    NSMutableArray * _timesArrays;
+    NSMutableDictionary * _touchPathIndicesToFingerPathIndices;
+}
+
+@property (nonatomic) <AXGestureRecorderFingerPathCollectionDelegate> *delegate;
+@property (nonatomic, retain) NSMutableArray *fingerPaths;
+@property (nonatomic, readonly) unsigned long long fingerPathsCount;
+@property (nonatomic, retain) NSMutableArray *forcesArrays;
+@property (nonatomic) double maximumFingerLineWidth;
+@property (nonatomic) unsigned long long maximumFingerPathsCount;
+@property (nonatomic) double minimumFingerLineWidth;
+@property (nonatomic, retain) NSMutableArray *pointsArrays;
+@property (nonatomic, readonly) NSMutableArray *referenceTimesArray;
+@property (nonatomic) unsigned long long referenceTimesArrayIndex;
+@property (nonatomic, retain) AXMutableReplayableGesture *replayableGesture;
+@property (nonatomic) bool shouldRecordRealTimeGesture;
+@property (nonatomic, retain) NSMutableArray *timesArrays;
+@property (nonatomic, readonly) unsigned long long timestampsCount;
+@property (nonatomic, retain) NSMutableDictionary *touchPathIndicesToFingerPathIndices;
+
+- (void).cxx_destruct;
+- (void)_addPointsToReplayableGesture:(id)arg1 forces:(id)arg2 time:(double)arg3;
+- (id)_bezierPathToAppendForTouchLocation:(struct CGPoint { double x1; double x2; })arg1 unnamedValue:(double)arg2 optionalPreviousTouchLocation:(id)arg3 optionalPreviousForce:(id)arg4;
+- (void)_didInsertFingerPathAtIndex:(unsigned long long)arg1;
+- (void)_didUpdateFingerPathAtIndex:(unsigned long long)arg1;
+- (struct CGPoint { double x1; double x2; })_interfaceOrientedScreenPointForPoint:(struct CGPoint { double x1; double x2; })arg1 view:(id)arg2;
+- (id)_nonRealTimeFingerPathToAppendForIndex:(unsigned long long)arg1 upToPositionForTimestampAtIndex:(unsigned long long)arg2;
+- (id)_realTimeFingerPathToAppendForIndex:(unsigned long long)arg1 upToPositionForTimestampAtIndex:(unsigned long long)arg2;
+- (void)_referenceTimesArrayIndexNeedsRefresh;
+- (void)appendFingerPathsFromFingerPathCollection:(id)arg1;
+- (void)appendPointsForTouches:(id)arg1 referenceView:(id)arg2 time:(double)arg3;
+- (void)dealloc;
+- (id)delegate;
+- (id)fingerPathAtIndex:(unsigned long long)arg1;
+- (id)fingerPathToAppendForIndex:(unsigned long long)arg1 forTimestampAtIndex:(unsigned long long)arg2;
+- (id)fingerPaths;
+- (unsigned long long)fingerPathsCount;
+- (id)forcesArrays;
+- (void)handleLiftForTouches:(id)arg1 referenceView:(id)arg2 time:(double)arg3;
+- (id)init;
+- (id)initWithMaximumFingerPathsCount:(unsigned long long)arg1;
+- (double)maximumFingerLineWidth;
+- (unsigned long long)maximumFingerPathsCount;
+- (double)minimumFingerLineWidth;
+- (id)pointsArrays;
+- (id)propertyListRepresentationWithName:(id)arg1;
+- (id)referenceTimesArray;
+- (unsigned long long)referenceTimesArrayIndex;
+- (id)replayableGesture;
+- (id)replayableGestureRepresentation;
+- (void)reset;
+- (void)setDelegate:(id)arg1;
+- (void)setFingerPaths:(id)arg1;
+- (void)setForcesArrays:(id)arg1;
+- (void)setMaximumFingerLineWidth:(double)arg1;
+- (void)setMaximumFingerPathsCount:(unsigned long long)arg1;
+- (void)setMinimumFingerLineWidth:(double)arg1;
+- (void)setPointsArrays:(id)arg1;
+- (void)setReferenceTimesArrayIndex:(unsigned long long)arg1;
+- (void)setReplayableGesture:(id)arg1;
+- (void)setShouldRecordRealTimeGesture:(bool)arg1;
+- (void)setTimesArrays:(id)arg1;
+- (void)setTouchPathIndicesToFingerPathIndices:(id)arg1;
+- (bool)shouldRecordRealTimeGesture;
+- (id)timesArrays;
+- (double)timestampAtIndex:(unsigned long long)arg1;
+- (unsigned long long)timestampsCount;
+- (id)touchPathIndicesToFingerPathIndices;
+
+@end

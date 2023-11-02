@@ -1,0 +1,4 @@
+
+@protocol OKWidgetWebViewProxyExports <JSExport>
+
+@end

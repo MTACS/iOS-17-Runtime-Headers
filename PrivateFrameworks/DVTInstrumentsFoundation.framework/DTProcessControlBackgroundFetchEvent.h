@@ -1,0 +1,4 @@
+
+@interface DTProcessControlBackgroundFetchEvent : DTProcessControlEvent
+
+@end

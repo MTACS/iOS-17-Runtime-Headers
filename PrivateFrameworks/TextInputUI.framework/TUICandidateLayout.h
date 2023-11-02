@@ -1,0 +1,113 @@
+
+@interface TUICandidateLayout : UICollectionViewLayout <NSCopying> {
+    NSMutableArray * _candidateAttributes;
+    bool  _candidateNumberEnabled;
+    unsigned long long  _columnsCount;
+    TUICandidateLayoutAttributes * _customHeaderAttributes;
+    double  _customHeaderHeight;
+    bool  _dirty;
+    NSMutableDictionary * _dummyCandidateAttributes;
+    bool  _fillGridWithLines;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _gridLineOffset;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _gridLinePadding;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _gridPadding;
+    NSMutableArray * _groupHeaderAttributes;
+    long long  _layoutOrientation;
+    NSMutableArray * _lineAttributes;
+    double  _minimumInterItemSpacing;
+    NSIndexPath * _oldFirstVisibleIndexPath;
+    double  _oldFirstVisibleOffset;
+    long long  _rowType;
+    bool  _shouldJustifyRow;
+    bool  _showExtraLineBeforeFirstRow;
+    bool  _showsIndex;
+    double  _singleSlottedCellMargin;
+    NSMutableArray * _slottedCellSeparatorAttributes;
+    long long  _transitionState;
+}
+
+@property (nonatomic) bool candidateNumberEnabled;
+@property (nonatomic) unsigned long long columnsCount;
+@property (nonatomic) double customHeaderHeight;
+@property (nonatomic) bool fillGridWithLines;
+@property (nonatomic) struct CGPoint { double x1; double x2; } gridLineOffset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } gridLinePadding;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } gridPadding;
+@property (nonatomic) long long layoutOrientation;
+@property (nonatomic) double minimumInterItemSpacing;
+@property (nonatomic, retain) NSIndexPath *oldFirstVisibleIndexPath;
+@property (nonatomic) double oldFirstVisibleOffset;
+@property (nonatomic) long long rowType;
+@property (nonatomic) bool shouldJustifyRow;
+@property (nonatomic) bool showExtraLineBeforeFirstRow;
+@property (nonatomic) bool showsIndex;
+@property (nonatomic) double singleSlottedCellMargin;
+@property (nonatomic) long long transitionState;
+
+- (void).cxx_destruct;
+- (bool)candidateNumberEnabled;
+- (void)clearLayoutAttributes;
+- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (unsigned long long)columnsCount;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)customHeaderHeight;
+- (bool)fillGridWithLines;
+- (bool)flipsHorizontallyInOppositeLayoutDirection;
+- (struct CGPoint { double x1; double x2; })gridLineOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })gridLinePadding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })gridPadding;
+- (id)init;
+- (void)invalidateLayout;
+- (void)justify:(id)arg1 rowStartX:(double)arg2 maxWidth:(double)arg3 remainingWidth:(double)arg4 endOfSection:(bool)arg5;
+- (id)keyForDummyCandidateIndexPath:(id)arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForItemAtIndexPath:(id)arg1;
+- (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (long long)layoutOrientation;
+- (void)layoutSlottedCandidates;
+- (double)minimumInterItemSpacing;
+- (id)oldFirstVisibleIndexPath;
+- (double)oldFirstVisibleOffset;
+- (void)prepareLayout;
+- (void)prepareLayoutForMultiRow;
+- (void)prepareLayoutForSingleRow;
+- (void)rotateAttributesBy90Degrees;
+- (long long)rowType;
+- (void)setCandidateNumberEnabled:(bool)arg1;
+- (void)setColumnsCount:(unsigned long long)arg1;
+- (void)setCustomHeaderHeight:(double)arg1;
+- (void)setFillGridWithLines:(bool)arg1;
+- (void)setGridLineOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setGridLinePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setGridPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setLayoutOrientation:(long long)arg1;
+- (void)setMinimumInterItemSpacing:(double)arg1;
+- (void)setOldFirstVisibleIndexPath:(id)arg1;
+- (void)setOldFirstVisibleOffset:(double)arg1;
+- (void)setRowType:(long long)arg1;
+- (void)setShouldJustifyRow:(bool)arg1;
+- (void)setShowExtraLineBeforeFirstRow:(bool)arg1;
+- (void)setShowsIndex:(bool)arg1;
+- (void)setSingleSlottedCellMargin:(double)arg1;
+- (void)setTransitionState:(long long)arg1;
+- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)shouldJustifyRow;
+- (bool)showExtraLineBeforeFirstRow;
+- (bool)showsIndex;
+- (double)singleSlottedCellMargin;
+- (long long)transitionState;
+
+@end

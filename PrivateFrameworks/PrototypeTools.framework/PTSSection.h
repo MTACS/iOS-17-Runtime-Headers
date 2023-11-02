@@ -1,0 +1,4 @@
+
+@interface PTSSection : PTSection
+
+@end

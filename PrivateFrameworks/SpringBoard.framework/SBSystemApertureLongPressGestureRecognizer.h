@@ -1,0 +1,4 @@
+
+@interface SBSystemApertureLongPressGestureRecognizer : UILongPressGestureRecognizer
+
+@end

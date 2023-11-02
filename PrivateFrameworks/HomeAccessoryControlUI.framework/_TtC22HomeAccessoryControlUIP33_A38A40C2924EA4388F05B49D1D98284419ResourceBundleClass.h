@@ -1,0 +1,4 @@
+
+@interface _TtC22HomeAccessoryControlUIP33_A38A40C2924EA4388F05B49D1D98284419ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

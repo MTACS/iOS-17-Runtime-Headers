@@ -1,0 +1,100 @@
+
+@interface _INPBAddTasksIntent : PBCodable <NSCopying, NSSecureCoding, _INPBAddTasksIntent> {
+    _INPBContactEventTrigger * _contactEventTrigger;
+    struct { 
+        unsigned int priority : 1; 
+        unsigned int taskReference : 1; 
+    }  _has;
+    _INPBIntent * _intent;
+    _INPBIntentMetadata * _intentMetadata;
+    int  _priority;
+    _INPBSpatialEventTrigger * _spatialEventTrigger;
+    _INPBTaskList * _targetTaskList;
+    NSArray * _targetTaskListMembers;
+    int  _taskReference;
+    NSArray * _taskTitles;
+    _INPBTemporalEventTrigger * _temporalEventTrigger;
+}
+
+@property (nonatomic, retain) _INPBContactEventTrigger *contactEventTrigger;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasContactEventTrigger;
+@property (nonatomic, readonly) bool hasIntent;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic) bool hasPriority;
+@property (nonatomic, readonly) bool hasSpatialEventTrigger;
+@property (nonatomic, readonly) bool hasTargetTaskList;
+@property (nonatomic) bool hasTaskReference;
+@property (nonatomic, readonly) bool hasTemporalEventTrigger;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) _INPBIntent *intent;
+@property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
+@property (nonatomic) int priority;
+@property (nonatomic, retain) _INPBSpatialEventTrigger *spatialEventTrigger;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) _INPBTaskList *targetTaskList;
+@property (nonatomic, copy) NSArray *targetTaskListMembers;
+@property (nonatomic, readonly) unsigned long long targetTaskListMembersCount;
+@property (nonatomic) int taskReference;
+@property (nonatomic, copy) NSArray *taskTitles;
+@property (nonatomic, readonly) unsigned long long taskTitlesCount;
+@property (nonatomic, retain) _INPBTemporalEventTrigger *temporalEventTrigger;
+
++ (bool)supportsSecureCoding;
++ (Class)targetTaskListMembersType;
++ (Class)taskTitlesType;
+
+- (void).cxx_destruct;
+- (int)StringAsPriority:(id)arg1;
+- (int)StringAsTaskReference:(id)arg1;
+- (void)addTargetTaskListMembers:(id)arg1;
+- (void)addTaskTitles:(id)arg1;
+- (void)clearTargetTaskListMembers;
+- (void)clearTaskTitles;
+- (id)contactEventTrigger;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasContactEventTrigger;
+- (bool)hasIntent;
+- (bool)hasIntentMetadata;
+- (bool)hasPriority;
+- (bool)hasSpatialEventTrigger;
+- (bool)hasTargetTaskList;
+- (bool)hasTaskReference;
+- (bool)hasTemporalEventTrigger;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)intent;
+- (id)intentMetadata;
+- (bool)isEqual:(id)arg1;
+- (int)priority;
+- (id)priorityAsString:(int)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setContactEventTrigger:(id)arg1;
+- (void)setHasPriority:(bool)arg1;
+- (void)setHasTaskReference:(bool)arg1;
+- (void)setIntent:(id)arg1;
+- (void)setIntentMetadata:(id)arg1;
+- (void)setPriority:(int)arg1;
+- (void)setSpatialEventTrigger:(id)arg1;
+- (void)setTargetTaskList:(id)arg1;
+- (void)setTargetTaskListMembers:(id)arg1;
+- (void)setTaskReference:(int)arg1;
+- (void)setTaskTitles:(id)arg1;
+- (void)setTemporalEventTrigger:(id)arg1;
+- (id)spatialEventTrigger;
+- (id)targetTaskList;
+- (id)targetTaskListMembers;
+- (id)targetTaskListMembersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)targetTaskListMembersCount;
+- (int)taskReference;
+- (id)taskReferenceAsString:(int)arg1;
+- (id)taskTitles;
+- (id)taskTitlesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)taskTitlesCount;
+- (id)temporalEventTrigger;
+- (void)writeTo:(id)arg1;
+
+@end

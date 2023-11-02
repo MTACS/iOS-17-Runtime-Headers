@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.FoundNoMatchingEntitiesResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

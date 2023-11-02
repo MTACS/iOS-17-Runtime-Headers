@@ -1,0 +1,4 @@
+
+@interface SUDialog : NSObject
+
+@end

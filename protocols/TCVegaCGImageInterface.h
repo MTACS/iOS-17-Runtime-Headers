@@ -1,0 +1,4 @@
+
+@protocol TCVegaCGImageInterface <JSExport>
+
+@end

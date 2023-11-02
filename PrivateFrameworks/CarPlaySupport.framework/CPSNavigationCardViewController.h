@@ -1,0 +1,80 @@
+
+@interface CPSNavigationCardViewController : UIViewController <CPSNavigationDisplaying> {
+    UIView * _containerView;
+    NSLayoutConstraint * _containerViewHeightConstraint;
+    NSLayoutConstraint * _containerViewTopConstraint;
+    CPSManeuversCardView * _currentManeuversCardView;
+    CPSPausedCardView * _currentPausedCardView;
+    UIColor * _guidanceBackgroundColor;
+    NSArray * _layoutHelperVerticalConstraints;
+    CPSLayoutHelperView * _layoutHelperView;
+    NSString * _navigatingBundleIdentifier;
+    bool  _navigationCardHidden;
+    NSMutableSet * _navigationCardHiddenRequesters;
+    bool  _passesLinkCheck;
+    NSLayoutConstraint * _sizingViewBottomConstraint;
+}
+
+@property (nonatomic, retain) UIView *containerView;
+@property (nonatomic, retain) NSLayoutConstraint *containerViewHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *containerViewTopConstraint;
+@property (nonatomic, retain) CPSManeuversCardView *currentManeuversCardView;
+@property (nonatomic, retain) CPSPausedCardView *currentPausedCardView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIColor *guidanceBackgroundColor;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *layoutHelperVerticalConstraints;
+@property (nonatomic, readonly) CPSLayoutHelperView *layoutHelperView;
+@property (nonatomic, copy) NSString *navigatingBundleIdentifier;
+@property (nonatomic) bool navigationCardHidden;
+@property (nonatomic, retain) NSMutableSet *navigationCardHiddenRequesters;
+@property (nonatomic) bool passesLinkCheck;
+@property (nonatomic, retain) NSLayoutConstraint *sizingViewBottomConstraint;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_shouldAnimate;
+- (void)_showPausedViewForReason:(unsigned long long)arg1 description:(id)arg2 pauseCardColor:(id)arg3;
+- (void)_transitionFromViews:(id)arg1 inView:(id)arg2;
+- (void)_updateCardBackgroundColors;
+- (void)_updateHelperConstraints;
+- (void)_updateLinkedCheck;
+- (void)_updateNavigationCardHidden;
+- (void)_updateSizingViewConstraintsForView:(id)arg1;
+- (void)availableHeightChangedTo:(double)arg1;
+- (id)containerView;
+- (id)containerViewHeightConstraint;
+- (id)containerViewTopConstraint;
+- (id)currentManeuversCardView;
+- (id)currentPausedCardView;
+- (id)guidanceBackgroundColor;
+- (id)layoutHelperVerticalConstraints;
+- (id)layoutHelperView;
+- (id)navigatingBundleIdentifier;
+- (bool)navigationCardHidden;
+- (id)navigationCardHiddenRequesters;
+- (void)navigator:(id)arg1 didEndTrip:(bool)arg2;
+- (void)navigator:(id)arg1 pausedTripForReason:(unsigned long long)arg2 description:(id)arg3 usingColor:(id)arg4;
+- (bool)passesLinkCheck;
+- (void)setContainerView:(id)arg1;
+- (void)setContainerViewHeightConstraint:(id)arg1;
+- (void)setContainerViewTopConstraint:(id)arg1;
+- (void)setCurrentManeuversCardView:(id)arg1;
+- (void)setCurrentPausedCardView:(id)arg1;
+- (void)setGuidanceBackgroundColor:(id)arg1;
+- (void)setLayoutHelperVerticalConstraints:(id)arg1;
+- (void)setNavigatingBundleIdentifier:(id)arg1;
+- (void)setNavigationCardHidden:(bool)arg1;
+- (void)setNavigationCardHidden:(bool)arg1 forRequester:(id)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
+- (void)setNavigationCardHiddenRequesters:(id)arg1;
+- (void)setPassesLinkCheck:(bool)arg1;
+- (void)setSizingViewBottomConstraint:(id)arg1;
+- (void)showManeuvers:(id)arg1 usingDisplayStyles:(id)arg2;
+- (id)sizingViewBottomConstraint;
+- (void)updateEstimates:(id)arg1 forManeuver:(id)arg2;
+- (void)updateTripEstimates:(id)arg1;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+
+@end

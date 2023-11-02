@@ -1,0 +1,4 @@
+
+@interface GQDTOverlapCell : GQDTCell
+
+@end

@@ -1,0 +1,96 @@
+
+@interface HKMCProjectionAccuracyMetric : NSObject {
+    NSString * _activePairedWatchProductType;
+    long long  _daysAgoLogged;
+    NSNumber * _daysFromMostLikelyEnd;
+    NSNumber * _daysFromMostLikelyStart;
+    NSNumber * _daysFromProjectedEnd;
+    NSNumber * _daysFromProjectedStart;
+    NSDictionary * _eventPayload;
+    bool  _heartRateBasedPredictionEnabled;
+    bool  _internalLiveOnCycleFactorOverrideEnabled;
+    bool  _isLoggingMultipleDays;
+    NSNumber * _isOngoingPeriod;
+    bool  _isSleepConfiguredForWristTemperatureMeasurements;
+    bool  _isWristTemperatureInputDelivered;
+    bool  _overlapMostLikelyDays;
+    bool  _overlapNone;
+    bool  _overlapProjectedDays;
+    bool  _partiallyLogged;
+    bool  _periodPredictionEnabled;
+    NSString * _predictionPrimarySource;
+    long long  _totalDayRange;
+    bool  _wristTemperatureBasedPredictionEnabled;
+}
+
+@property (nonatomic, retain) NSString *activePairedWatchProductType;
+@property (nonatomic) long long daysAgoLogged;
+@property (nonatomic, retain) NSNumber *daysFromMostLikelyEnd;
+@property (nonatomic, retain) NSNumber *daysFromMostLikelyStart;
+@property (nonatomic, retain) NSNumber *daysFromProjectedEnd;
+@property (nonatomic, retain) NSNumber *daysFromProjectedStart;
+@property (nonatomic, copy) NSDictionary *eventPayload;
+@property (nonatomic) bool heartRateBasedPredictionEnabled;
+@property (nonatomic) bool internalLiveOnCycleFactorOverrideEnabled;
+@property (nonatomic) bool isLoggingMultipleDays;
+@property (nonatomic, retain) NSNumber *isOngoingPeriod;
+@property (nonatomic) bool isSleepConfiguredForWristTemperatureMeasurements;
+@property (nonatomic) bool isWristTemperatureInputDelivered;
+@property (nonatomic) bool overlapMostLikelyDays;
+@property (nonatomic) bool overlapNone;
+@property (nonatomic) bool overlapProjectedDays;
+@property (nonatomic) bool partiallyLogged;
+@property (nonatomic) bool periodPredictionEnabled;
+@property (nonatomic, retain) NSString *predictionPrimarySource;
+@property (nonatomic) long long totalDayRange;
+@property (nonatomic) bool wristTemperatureBasedPredictionEnabled;
+
++ (id)eventName;
+
+- (void).cxx_destruct;
+- (id)activePairedWatchProductType;
+- (long long)daysAgoLogged;
+- (id)daysFromMostLikelyEnd;
+- (id)daysFromMostLikelyStart;
+- (id)daysFromProjectedEnd;
+- (id)daysFromProjectedStart;
+- (id)description;
+- (id)eventPayload;
+- (bool)heartRateBasedPredictionEnabled;
+- (id)initWithOverlapMostLikelyDays:(bool)arg1 overlapProjectedDays:(bool)arg2 overlapNone:(bool)arg3 predictionPrimarySource:(id)arg4 totalDayRange:(long long)arg5 partiallyLogged:(bool)arg6 periodPredictionEnabled:(bool)arg7 heartRateBasedPredictionEnabled:(bool)arg8 isLoggingMultipleDays:(bool)arg9 daysAgoLogged:(long long)arg10 isOngoingPeriod:(id)arg11 activePairedWatchProductType:(id)arg12 daysFromMostLikelyStart:(id)arg13 daysFromMostLikelyEnd:(id)arg14 daysFromProjectedStart:(id)arg15 daysFromProjectedEnd:(id)arg16 wristTemperatureBasedPredictionEnabled:(bool)arg17 isWristTemperatureInputDelivered:(bool)arg18 isSleepConfiguredForWristTemperatureMeasurements:(bool)arg19 internalLiveOnCycleFactorOverrideEnabled:(bool)arg20;
+- (bool)internalLiveOnCycleFactorOverrideEnabled;
+- (bool)isLoggingMultipleDays;
+- (id)isOngoingPeriod;
+- (bool)isSleepConfiguredForWristTemperatureMeasurements;
+- (bool)isWristTemperatureInputDelivered;
+- (bool)overlapMostLikelyDays;
+- (bool)overlapNone;
+- (bool)overlapProjectedDays;
+- (bool)partiallyLogged;
+- (bool)periodPredictionEnabled;
+- (id)predictionPrimarySource;
+- (void)setActivePairedWatchProductType:(id)arg1;
+- (void)setDaysAgoLogged:(long long)arg1;
+- (void)setDaysFromMostLikelyEnd:(id)arg1;
+- (void)setDaysFromMostLikelyStart:(id)arg1;
+- (void)setDaysFromProjectedEnd:(id)arg1;
+- (void)setDaysFromProjectedStart:(id)arg1;
+- (void)setEventPayload:(id)arg1;
+- (void)setHeartRateBasedPredictionEnabled:(bool)arg1;
+- (void)setInternalLiveOnCycleFactorOverrideEnabled:(bool)arg1;
+- (void)setIsLoggingMultipleDays:(bool)arg1;
+- (void)setIsOngoingPeriod:(id)arg1;
+- (void)setIsSleepConfiguredForWristTemperatureMeasurements:(bool)arg1;
+- (void)setIsWristTemperatureInputDelivered:(bool)arg1;
+- (void)setOverlapMostLikelyDays:(bool)arg1;
+- (void)setOverlapNone:(bool)arg1;
+- (void)setOverlapProjectedDays:(bool)arg1;
+- (void)setPartiallyLogged:(bool)arg1;
+- (void)setPeriodPredictionEnabled:(bool)arg1;
+- (void)setPredictionPrimarySource:(id)arg1;
+- (void)setTotalDayRange:(long long)arg1;
+- (void)setWristTemperatureBasedPredictionEnabled:(bool)arg1;
+- (long long)totalDayRange;
+- (bool)wristTemperatureBasedPredictionEnabled;
+
+@end

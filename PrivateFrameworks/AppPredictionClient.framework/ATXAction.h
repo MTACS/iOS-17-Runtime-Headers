@@ -1,0 +1,154 @@
+
+@interface ATXAction : NSObject <ATXLazyIntentDelegateProtocol, ATXMemoryPressureObserver, ATXProtoBufWrapper, ATXSuggestionExecutableProtocol, BMStoreData, CRContent, NSCopying, NSSecureCoding> {
+    unsigned long long  _actionType;
+    NSUUID * _actionUUID;
+    NSString * _bundleId;
+    NSNumber * _cachedHash;
+    CSSearchableItemAttributeSet * _contentAttributeSet;
+    ATXActionCriteria * _criteria;
+    NSString * _heuristic;
+    NSDictionary * _heuristicMetadata;
+    bool  _isFutureMedia;
+    bool  _isTVWhiteListedLongFormMediaDoNotUseDirectly;
+    NSString * _itemIdentifier;
+    NSString * _languageCode;
+    ATXLazyIntent * _lazyIntent;
+    ATXAVRouteInfo * _routeInfo;
+    NSString * _subtitle;
+    NSString * _title;
+    NSUserActivity * _userActivity;
+    unsigned long long  _userActivityHash;
+    UAUserActivityProxy * _userActivityProxy;
+    NSString * _userActivityString;
+}
+
+@property (nonatomic, readonly) unsigned long long actionType;
+@property (nonatomic, readonly) NSUUID *actionUUID;
+@property (nonatomic, readonly) NSString *bundleId;
+@property (nonatomic, readonly) NSNumber *cachedHash;
+@property (nonatomic, readonly) CSSearchableItemAttributeSet *contentAttributeSet;
+@property (nonatomic, readonly) ATXActionCriteria *criteria;
+@property (nonatomic, readonly) unsigned int dataVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *heuristic;
+@property (nonatomic, readonly) NSDictionary *heuristicMetadata;
+@property (nonatomic, readonly) INIntent *intent;
+@property (nonatomic, readonly) bool isFutureMedia;
+@property (nonatomic, readonly) bool isHeuristic;
+@property (nonatomic, readonly) bool isTVWhiteListedLongFormMedia;
+@property (nonatomic, readonly) NSString *itemIdentifier;
+@property (nonatomic, readonly) ATXAVRouteInfo *routeInfo;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSUserActivity *userActivity;
+@property (nonatomic, readonly) UAUserActivityProxy *userActivityProxy;
+@property (nonatomic, readonly) NSString *userActivityString;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionClient.framework/AppPredictionClient
+
++ (id)_extractValueInKeyValueBlob:(id)arg1 withKey:(id)arg2;
++ (bool)_isTVIntent:(id)arg1 bundleId:(id)arg2;
++ (unsigned long long)_userActivityHashForUserInfoDict:(id)arg1 activityType:(id)arg2 webpageURL:(id)arg3;
++ (id)actionFromProactiveSuggestion:(id)arg1;
++ (id)atx_doNotDisturbForCurrentLocationActionWithTitle:(id)arg1 subtitle:(id)arg2 heuristicName:(id)arg3;
++ (id)atx_doNotDisturbForEventActionWithTitle:(id)arg1 subtitle:(id)arg2 eventTitle:(id)arg3 eventIdentifier:(id)arg4 eventUniqueID:(id)arg5 heuristicName:(id)arg6;
++ (id)atx_sendMessageActionWithTitle:(id)arg1 subtitle:(id)arg2 recipientName:(id)arg3 recipientHandle:(id)arg4 text:(id)arg5 contactIdentifier:(id)arg6 conversationIdentifier:(id)arg7 eventIdentifier:(id)arg8 heuristicName:(id)arg9;
++ (id)atx_setAirplaneModeActionWithTitle:(id)arg1 subtitle:(id)arg2;
++ (id)atx_setAlarmActionWithTitle:(id)arg1 subtitle:(id)arg2 eventIdentifier:(id)arg3 eventTitle:(id)arg4 alarmDate:(id)arg5 heuristicName:(id)arg6;
++ (id)atx_showCheckInActionWithTeamId:(id)arg1 userActivityString:(id)arg2 subtitle:(id)arg3 overrideBundleId:(id)arg4 suggestedEventUniqueKey:(id)arg5 heuristicName:(id)arg6;
++ (id)atx_showCheckInActionWithTeamId:(id)arg1 userActivityString:(id)arg2 subtitle:(id)arg3 overrideBundleId:(id)arg4 suggestedEventUniqueKey:(id)arg5 heuristicName:(id)arg6 criteria:(id)arg7;
++ (id)atx_startAudioCallActionWithTitle:(id)arg1 subtitle:(id)arg2 recipientName:(id)arg3 recipientHandle:(id)arg4 callService:(id)arg5 contactIdentifier:(id)arg6 eventIdentifier:(id)arg7 heuristicName:(id)arg8;
++ (id)atx_startCallActionWithTitle:(id)arg1 subtitle:(id)arg2 recipientName:(id)arg3 recipientHandle:(id)arg4 callService:(id)arg5 contactIdentifier:(id)arg6 eventIdentifier:(id)arg7 heuristicName:(id)arg8 mediaType:(id)arg9;
++ (id)atx_startVideoCallActionWithTitle:(id)arg1 subtitle:(id)arg2 recipientName:(id)arg3 recipientHandle:(id)arg4 callService:(id)arg5 contactIdentifier:(id)arg6 eventIdentifier:(id)arg7 heuristicName:(id)arg8;
++ (id)atx_updateAlarmActionWithTitle:(id)arg1 subtitle:(id)arg2 alarmID:(id)arg3 alarmTitle:(id)arg4 heuristicName:(id)arg5;
++ (id)atx_userActivityActionWithBestAppSuggestion:(id)arg1 title:(id)arg2 subtitle:(id)arg3 bundleID:(id)arg4 activityType:(id)arg5 heuristicName:(id)arg6;
++ (id)atx_userActivityActionWithTitle:(id)arg1 subtitle:(id)arg2 bundleID:(id)arg3 activityType:(id)arg4 urlString:(id)arg5 userInfo:(id)arg6 heuristicName:(id)arg7;
++ (id)eventWithData:(id)arg1 dataVersion:(unsigned int)arg2;
++ (id)getActionKeyForBundleId:(id)arg1 actionType:(id)arg2;
++ (id)getDateFromUserActivityString:(id)arg1 forActionKey:(id)arg2;
++ (id)getNSUATypefromActivityType:(id)arg1;
++ (bool)supportsSecureCoding;
++ (id)unarchivedActionFromData:(id)arg1;
++ (id)webUrlParsedForUserActivityWithUrlString:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_bundleIdForDisplay;
+- (unsigned long long)_hash;
+- (id)_initWithCoder:(id)arg1;
+- (void)_setUserActivityHash:(unsigned long long)arg1;
+- (bool)_shouldUseCachedTitle:(id)arg1 cachedLanguageCode:(id)arg2;
+- (id)_spotlightContentType;
+- (id)_subtitle;
+- (id)_title;
+- (id)actionDescription;
+- (id)actionKey;
+- (id)actionSubtitle;
+- (id)actionTitle;
+- (unsigned long long)actionType;
+- (id)actionUUID;
+- (id)actionWithRouteInfo:(id)arg1;
+- (id)archivedDataForAction;
+- (id)bundleId;
+- (id)cachedHash;
+- (id)contentAttributeSet;
+- (id)copyWithParameterWhitelist:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)criteria;
+- (unsigned int)dataVersion;
+- (id)dateForAction;
+- (void)dealloc;
+- (id)description;
+- (void)didDeserializeIntent:(id)arg1;
+- (id)encodeAsProto;
+- (void)encodeWithCoder:(id)arg1;
+- (void)handleMemoryPressure;
+- (bool)hasActionTitle;
+- (unsigned long long)hash;
+- (unsigned long long)hashSlotSetWithNonNilParameters:(id)arg1;
+- (id)heuristic;
+- (id)heuristicMetadata;
+- (id)init;
+- (id)initFromBestAppSuggestion:(id)arg1 activity:(id)arg2 actionUUID:(id)arg3 bundleId:(id)arg4 contentAttributeSet:(id)arg5 itemIdentifier:(id)arg6 heuristic:(id)arg7 heuristicMetadata:(id)arg8 criteria:(id)arg9 isFutureMedia:(bool)arg10 title:(id)arg11 subtitle:(id)arg12;
+- (id)initWithActivityProxy:(id)arg1 activity:(id)arg2 activityString:(id)arg3 itemIdentifier:(id)arg4 contentAttributeSet:(id)arg5 intent:(id)arg6 actionUUID:(id)arg7 bundleId:(id)arg8 type:(unsigned long long)arg9 heuristic:(id)arg10 heuristicMetadata:(id)arg11 criteria:(id)arg12 isFutureMedia:(bool)arg13 routeInfo:(id)arg14 title:(id)arg15 subtitle:(id)arg16 languageCode:(id)arg17 cachedHash:(id)arg18;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithIntent:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 heuristic:(id)arg4 heuristicMetadata:(id)arg5 criteria:(id)arg6 isFutureMedia:(bool)arg7 title:(id)arg8 subtitle:(id)arg9;
+- (id)initWithNSUserActivity:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 contentAttributeSet:(id)arg4 itemIdentifier:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 criteria:(id)arg8 isFutureMedia:(bool)arg9 title:(id)arg10 subtitle:(id)arg11;
+- (id)initWithNSUserActivityString:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 itemIdentifier:(id)arg4 contentAttributeSet:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 isFutureMedia:(bool)arg8 title:(id)arg9 subtitle:(id)arg10;
+- (id)initWithProto:(id)arg1;
+- (id)initWithProtoData:(id)arg1;
+- (id)intent;
+- (void)invalidateCachedHash;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAction:(id)arg1;
+- (bool)isFutureMedia;
+- (bool)isHeuristic;
+- (bool)isTVAction;
+- (bool)isTVWhiteListedLongFormMedia;
+- (id)itemIdentifier;
+- (id)json;
+- (unsigned long long)paramHash;
+- (id)predictionTypeStringForPET;
+- (id)proto;
+- (id)routeInfo;
+- (id)serialize;
+- (void)setCriteria:(id)arg1;
+- (void)setHeuristic:(id)arg1;
+- (void)setLaunchIdForIntent:(id)arg1;
+- (void)setSubtitleForSerializationToCache;
+- (void)setTitleForSerializationToCache;
+- (id)slotSet;
+- (id)underlyingInteraction;
+- (id)userActivity;
+- (unsigned long long)userActivityHash;
+- (id)userActivityProxy;
+- (id)userActivityString;
+- (id)userActivityWebpageURL;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionUI.framework/AppPredictionUI
+
++ (bool)apui_isSupportedForCardRequests;
+
+- (id)apui_intent;
+
+@end

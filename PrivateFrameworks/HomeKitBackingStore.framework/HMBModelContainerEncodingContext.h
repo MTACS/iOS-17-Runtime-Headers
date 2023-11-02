@@ -1,0 +1,4 @@
+
+@interface HMBModelContainerEncodingContext : HMFObject
+
+@end

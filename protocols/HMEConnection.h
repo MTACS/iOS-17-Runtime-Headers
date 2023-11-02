@@ -1,0 +1,4 @@
+
+@protocol HMEConnection <NSObject>
+
+@end

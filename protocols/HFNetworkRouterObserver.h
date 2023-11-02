@@ -1,0 +1,4 @@
+
+@protocol HFNetworkRouterObserver <HMNetworkRouterProfileDelegate>
+
+@end

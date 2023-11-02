@@ -1,0 +1,4 @@
+
+@interface MKFStringCharacteristicDatabaseID : MKFCharacteristicDatabaseID
+
+@end

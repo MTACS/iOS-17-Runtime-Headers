@@ -1,0 +1,86 @@
+
+@interface MCProfileTitlePageViewModel : NSObject <DMCRFInteractionClient, MCInteractionDelegate> {
+    id /* block */  _cleanupTask;
+    UIViewController<MCProfileTitlePageViewModelDelegate> * _delegate;
+    int  _installState;
+    bool  _isInstallingProfile;
+    NSString * _managedAppleID;
+    NSString * _personaID;
+    NSString * _pin;
+    id /* block */  _postRestoreTask;
+    MCProfile * _profile;
+    NSData * _profileData;
+    DMCProfileViewModel * _profileViewModel;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+}
+
+@property (nonatomic, readonly) NSString *accountIdentifier;
+@property (nonatomic, copy) id /* block */ cleanupTask;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) UIViewController<MCProfileTitlePageViewModelDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) int installState;
+@property (nonatomic) bool isInstallingProfile;
+@property (nonatomic, copy) NSString *managedAppleID;
+@property (nonatomic, copy) NSString *personaID;
+@property (nonatomic, copy) NSString *pin;
+@property (nonatomic, copy) id /* block */ postRestoreTask;
+@property (nonatomic, retain) MCProfile *profile;
+@property (nonatomic, retain) NSData *profileData;
+@property (nonatomic, retain) DMCProfileViewModel *profileViewModel;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialQueue;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_continueInstallAfterPresentingWarnings;
+- (id)_createAuthenticationContext:(id)arg1 presentingViewController:(id)arg2;
+- (void)_handleMAIDSignInRequestWithAccountID:(id)arg1 personaID:(id)arg2 connection:(id)arg3;
+- (void)_handleUserInputRequest:(id)arg1;
+- (bool)_installErrorIsUserCancelledError:(id)arg1;
+- (void)_installFinishedWithIdentifier:(id)arg1 error:(id)arg2;
+- (void)_respondToMAIDAuthenticationRequestIfNeeded:(id)arg1 successful:(bool)arg2 error:(id)arg3 isCancelled:(bool)arg4;
+- (void)_respondToUserInputRequest:(id)arg1 cancelled:(bool)arg2;
+- (void)_setup;
+- (void)_signInMAID:(id)arg1 authenticationResult:(id)arg2 personaID:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)accountIdentifier;
+- (id /* block */)cleanupTask;
+- (void)dealloc;
+- (id)delegate;
+- (void)doesUserWantToRestoreSnapshot:(id)arg1 withConflictingApps:(id)arg2 completion:(id /* block */)arg3;
+- (id)init;
+- (id)initWithProfile:(id)arg1 profileData:(id)arg2;
+- (int)installState;
+- (bool)isInstallingProfile;
+- (id)managedAppleID;
+- (id)personaID;
+- (id)pin;
+- (id /* block */)postRestoreTask;
+- (id)profile;
+- (void)profileConnection:(id)arg1 didFinishInstallationWithIdentifier:(id)arg2 error:(id)arg3;
+- (void)profileConnection:(id)arg1 didFinishPreflightWithError:(id)arg2;
+- (void)profileConnection:(id)arg1 didRequestMAIDSignIn:(id)arg2 personaID:(id)arg3;
+- (void)profileConnection:(id)arg1 didRequestManagedRestoreWithManagedAppleID:(id)arg2 personaID:(id)arg3;
+- (void)profileConnection:(id)arg1 didRequestUserInput:(id)arg2;
+- (void)profileConnection:(id)arg1 didShowUserWarnings:(id)arg2;
+- (void)profileConnectionDidRequestCurrentPasscode:(id)arg1;
+- (id)profileData;
+- (id)profileViewModel;
+- (id)serialQueue;
+- (void)setCleanupTask:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setInstallState:(int)arg1;
+- (void)setIsInstallingProfile:(bool)arg1;
+- (void)setManagedAppleID:(id)arg1;
+- (void)setPersonaID:(id)arg1;
+- (void)setPin:(id)arg1;
+- (void)setPostRestoreTask:(id /* block */)arg1;
+- (void)setProfile:(id)arg1;
+- (void)setProfileData:(id)arg1;
+- (void)setProfileViewModel:(id)arg1;
+- (void)setSerialQueue:(id)arg1;
+- (void)startProfileInstallationFlow;
+- (void)terminateProfileInstallationFlow;
+- (void)terminateProfileInstallationFlowAndDeleteProfile;
+
+@end

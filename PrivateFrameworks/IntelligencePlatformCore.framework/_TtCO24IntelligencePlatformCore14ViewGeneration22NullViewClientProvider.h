@@ -1,0 +1,4 @@
+
+@interface _TtCO24IntelligencePlatformCore14ViewGeneration22NullViewClientProvider : _TtCs12_SwiftObject
+
+@end

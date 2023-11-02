@@ -1,0 +1,133 @@
+
+@interface _UITextContainerView : UIView <NSUITextViewCommonMethods, _UITextViewCanvasViewContext> {
+    UIView<_UITextCanvas> * _canvasView;
+    <_UITextContainerViewDelegate> * _delegate;
+    long long  _invalidationSeqClipsToBounds;
+    unsigned long long  _invalidationSeqNo;
+    NSDictionary * _linkTextAttributes;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxSize;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _minSize;
+    struct { 
+        unsigned int textContainerOriginInvalid : 1; 
+        unsigned int verticalLayout : 2; 
+        unsigned int horizontallyResizable : 1; 
+        unsigned int verticallyResizable : 1; 
+        unsigned int freezeTextContainerSize : 1; 
+        unsigned int usesStandardTextScaling : 1; 
+    }  _tcvFlags;
+    NSTextContainer * _textContainer;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _textContainerInset;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _textContainerOrigin;
+    _UITextLayoutControllerBase<_UITextLayoutController> * _textLayoutController;
+    UITextView * _textView;
+}
+
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _clipRectForFadedEdges;
+@property (nonatomic, readonly) UIView<_UITextCanvas> *canvasView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <_UITextContainerViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } drawingScale;
+@property (getter=isEditable, nonatomic, readonly) bool editable;
+@property (nonatomic, readonly) UIScrollView *enclosingScrollView;
+@property (getter=_freezeTextContainerSize, setter=_setFreezeTextContainerSize:, nonatomic) bool freezeTextContainerSize;
+@property (readonly) unsigned long long hash;
+@property (getter=isHorizontallyResizable, nonatomic) bool horizontallyResizable;
+@property (nonatomic, readonly) NSLayoutManager *layoutManager;
+@property (nonatomic, readonly) long long layoutOrientation;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } markedRange;
+@property (nonatomic, readonly) NSDictionary *markedTextStyle;
+@property (nonatomic) struct CGSize { double x1; double x2; } maxSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } minSize;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIColor *textColor;
+@property (nonatomic) NSTextContainer *textContainer;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textContainerInset;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } textContainerOrigin;
+@property (nonatomic, readonly) _UITextLayoutControllerBase<_UITextLayoutController> *textLayoutController;
+@property (nonatomic) bool usesStandardTextScaling;
+@property (getter=isVerticallyResizable, nonatomic) bool verticallyResizable;
+
+- (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_clipRectForFadedEdges;
+- (void)_ensureLayoutCompleteForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_ensureLayoutCompleteToEndOfCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)_ensureLayoutForCappedSize;
+- (void)_ensureMinAndMaxSizesConsistentWithBounds;
+- (bool)_freezeTextContainerSize;
+- (void)_setFrameOrBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 oldRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 isFrameRect:(bool)arg3 settingAction:(id /* block */)arg4;
+- (void)_setFreezeTextContainerSize:(bool)arg1;
+- (void)_setNeedsContentsFormatUpdate;
+- (bool)_shouldCapSizeToFitLayoutRange:(out struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1;
+- (void)_sizeToConstrainedContainerUsedRect;
+- (id)attributedSubstringForMarkedRange;
+- (id)canvasView;
+- (id)delegate;
+- (id)description;
+- (void)didAddTextAttachmentViews:(id)arg1;
+- (void)didLayoutTextAttachmentView:(id)arg1 inFragmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)didRemoveTextAttachmentViews:(id)arg1;
+- (bool)drawTextInRectIfNeeded:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })drawingScale;
+- (id)enclosingScrollView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textLayoutController:(id)arg2 textContainer:(id)arg3 delegate:(id)arg4;
+- (void)invalidateTextContainerOrigin;
+- (bool)isEditable;
+- (bool)isHorizontallyResizable;
+- (bool)isVerticallyResizable;
+- (id)layoutManager;
+- (id)layoutManager:(id)arg1 effectiveCUICatalogForTextEffect:(id)arg2;
+- (long long)layoutOrientation;
+- (void)layoutSubviews;
+- (id)linkAttributesForLink:(id)arg1 forCharacterAtIndex:(unsigned long long)arg2;
+- (id)linkTextAttributes;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })markedRange;
+- (id)markedTextStyle;
+- (struct CGSize { double x1; double x2; })maxSize;
+- (struct CGSize { double x1; double x2; })minSize;
+- (bool)reconfigureWithLayoutManager:(id)arg1 triggeredBySelector:(SEL)arg2;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setConstrainedFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHorizontallyResizable:(bool)arg1;
+- (void)setLayoutOrientation:(long long)arg1;
+- (void)setMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMinSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNeedsDisplay;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(bool)arg2;
+- (void)setTextContainer:(id)arg1;
+- (void)setTextContainerInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setUsesStandardTextScaling:(bool)arg1;
+- (void)setVerticallyResizable:(bool)arg1;
+- (void)sizeToFit;
+- (id)textColor;
+- (id)textContainer;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textContainerInset;
+- (struct CGPoint { double x1; double x2; })textContainerOrigin;
+- (void)textContainerUsageDidChangeToSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)textLayoutController;
+- (void)tintColorDidChange;
+- (void)updateInsertionPointStateAndRestartTimer:(bool)arg1;
+- (bool)usesStandardTextScaling;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
+- (void)willMoveToSuperview:(id)arg1;
+
+@end

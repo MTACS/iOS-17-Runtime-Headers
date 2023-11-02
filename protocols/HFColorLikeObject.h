@@ -1,0 +1,4 @@
+
+@protocol HFColorLikeObject <NSObject>
+
+@end

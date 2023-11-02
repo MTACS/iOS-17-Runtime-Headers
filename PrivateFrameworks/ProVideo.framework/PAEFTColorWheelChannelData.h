@@ -1,0 +1,4 @@
+
+@interface PAEFTColorWheelChannelData : PAEColorWheelChannelData
+
+@end

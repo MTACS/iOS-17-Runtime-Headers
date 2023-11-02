@@ -1,0 +1,4 @@
+
+@protocol BMDSLSubscriber <BMDSLIdentifiable>
+
+@end

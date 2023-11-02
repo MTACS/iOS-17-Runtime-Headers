@@ -1,0 +1,22 @@
+
+@interface VideosUI.SportsFavoritesLockupCell : VUIBaseListViewCell {
+    void accessoryImageView;
+    void bottomSeparatorView;
+    void hideBottomSeparator;
+    void hideTopSeparator;
+    void layout;
+    void logoImageView;
+    void titleLabel;
+    void topSeparatorView;
+}
+
+- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (void)prepareForReuse;
+- (void)setHighlighted:(bool)arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+
+@end

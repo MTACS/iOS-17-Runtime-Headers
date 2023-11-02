@@ -1,0 +1,4 @@
+
+@interface SiriShortPressButtonContext : SiriContext
+
+@end

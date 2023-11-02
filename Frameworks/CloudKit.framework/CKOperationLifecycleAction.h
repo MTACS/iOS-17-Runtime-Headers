@@ -1,0 +1,4 @@
+
+@interface CKOperationLifecycleAction : NSObject
+
+@end

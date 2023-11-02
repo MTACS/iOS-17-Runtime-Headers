@@ -1,0 +1,4 @@
+
+@interface _TtCV16SiriAudioSupport21NowPlayingStateSignal21NowPlayingStateClient : _TtCs12_SwiftObject
+
+@end

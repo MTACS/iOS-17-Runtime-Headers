@@ -1,0 +1,4 @@
+
+@protocol NviDataReceiver <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC19_AppIntents_SwiftUIP33_0C5968EDF62CEE874EDEA3170A2F882A19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface AXHASettings : HUHearingAidSettings
+
+@end

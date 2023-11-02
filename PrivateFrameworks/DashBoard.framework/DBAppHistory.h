@@ -1,0 +1,92 @@
+
+@interface DBAppHistory : NSObject <DBAppHistoryAppDockProviding, DBWorkspaceObserver> {
+    NSMutableDictionary * _appHistory;
+    bool  _nowPlayingIsVisible;
+    CARObserverHashTable * _observers;
+    CRCarPlayAppPolicyEvaluator * _policyEvaluator;
+    <DBAppPolicyProviding> * _policyProvider;
+    NSArray * _sessionAppContextURLs;
+    NSMutableDictionary * _sessionContextOwners;
+    NSArray * _sessionEchoContextURLs;
+    NSArray * _sessionFeatureKeys;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *appHistory;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool nowPlayingIsVisible;
+@property (nonatomic, retain) CARObserverHashTable *observers;
+@property (nonatomic, readonly) NSArray *orderedAppHistory;
+@property (nonatomic, readonly) CRCarPlayAppPolicyEvaluator *policyEvaluator;
+@property (nonatomic) <DBAppPolicyProviding> *policyProvider;
+@property (nonatomic, retain) NSArray *sessionAppContextURLs;
+@property (nonatomic, retain) NSMutableDictionary *sessionContextOwners;
+@property (nonatomic, retain) NSArray *sessionEchoContextURLs;
+@property (nonatomic, retain) NSArray *sessionFeatureKeys;
+@property (readonly) Class superclass;
+
++ (unsigned long long)applicationCategoryForURL:(id)arg1;
++ (id)availableApplicationContexts;
++ (id)contextForApplicationCategory:(unsigned long long)arg1;
+
+- (void).cxx_destruct;
+- (id)_allInstalledApplicationsInCategory:(unsigned long long)arg1;
+- (id)_appInfoForBundleIdentifier:(id)arg1;
+- (void)_bundleIdentifierDidBecomeVisible:(id)arg1 previousBundleIdentifier:(id)arg2;
+- (void)_commonInit;
+- (bool)_evaluatePolicyForBundleIdentifier:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)_evaluateUniversalLinksForURL:(id)arg1 withIconProvider:(id)arg2 completion:(id /* block */)arg3;
+- (bool)_isMapsApplicationForBundleIdentifier:(id)arg1;
+- (bool)_isNowPlayingApplicationForBundleIdentifier:(id)arg1;
+- (void)_nowPlayingWillAppear:(id)arg1;
+- (void)_nowPlayingWillDisappear:(id)arg1;
+- (id)_orderedAppsForBundleIdentifiers:(id)arg1;
+- (void)_persistSessionUIContextOwnership;
+- (id)_preferredBundleIdentifierInCategory:(unsigned long long)arg1;
+- (void)_sessionDidConnect:(id)arg1 environmentConfiguration:(id)arg2;
+- (void)_sessionDidDisconnect;
+- (void)addObserver:(id)arg1;
+- (unsigned long long)appDockCategoryForBundleIdentifier:(id)arg1;
+- (id)appHistory;
+- (unsigned long long)applicationCategoryForBundleIdentifier:(id)arg1;
+- (bool)applicationVisibleInCarPlay:(id)arg1 withIconProvider:(id)arg2;
+- (void)applySessionAppContexts:(id)arg1;
+- (void)applySessionEchoContexts:(id)arg1;
+- (unsigned long long)currentOwnerForContext:(id)arg1;
+- (void)dealloc;
+- (id)initWithPolicyEvaluator:(id)arg1;
+- (id)initWithPolicyProvider:(id)arg1;
+- (bool)isBundleIdentifierValidForDock:(id)arg1;
+- (double)lastActivationTimeForApplication:(id)arg1;
+- (double)lastActivationTimeForBundleIdentifier:(id)arg1;
+- (void)nowPlayingIconTapped;
+- (bool)nowPlayingIsVisible;
+- (id)observers;
+- (void)openApplicationURL:(id)arg1 withIconProvider:(id)arg2 activationSettings:(id)arg3 completion:(id /* block */)arg4;
+- (id)orderedAppHistory;
+- (id)orderedAppsMatchingCategory:(unsigned long long)arg1;
+- (id)orderedAppsMatchingDockCategory:(unsigned long long)arg1;
+- (id)orderedBundleIdentifiersMatchingDockCategory:(unsigned long long)arg1;
+- (id)policyEvaluator;
+- (id)policyForBundleIdentifier:(id)arg1;
+- (id)policyProvider;
+- (void)removeObserver:(id)arg1;
+- (void)resetAppHistory;
+- (id)sessionAppContextURLs;
+- (id)sessionContextOwners;
+- (id)sessionEchoContextURLs;
+- (id)sessionFeatureKeys;
+- (void)setAppHistory:(id)arg1;
+- (void)setDashboardAppOnDisconnect:(id)arg1;
+- (void)setNowPlayingIsVisible:(bool)arg1;
+- (void)setObservers:(id)arg1;
+- (void)setPolicyProvider:(id)arg1;
+- (void)setSessionAppContextURLs:(id)arg1;
+- (void)setSessionContextOwners:(id)arg1;
+- (void)setSessionEchoContextURLs:(id)arg1;
+- (void)setSessionFeatureKeys:(id)arg1;
+- (void)updateOwner:(unsigned long long)arg1 forContext:(id)arg2;
+- (void)workspace:(id)arg1 stateDidChangeFromState:(id)arg2 toState:(id)arg3;
+
+@end

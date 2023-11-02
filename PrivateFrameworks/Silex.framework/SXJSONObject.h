@@ -1,0 +1,46 @@
+
+@interface SXJSONObject : NSObject {
+    NSDictionary * _jsonDictionary;
+    NSMutableDictionary * _objectStorage;
+    NSString * _specificationVersion;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _unfairLock;
+}
+
+@property (nonatomic, readonly) NSDictionary *jsonDictionary;
+@property (nonatomic, readonly) NSMutableDictionary *objectStorage;
+@property (nonatomic, readonly) NSString *specificationVersion;
+@property (nonatomic, readonly) struct os_unfair_lock_s { unsigned int x1; } unfairLock;
+
++ (Class)classForProtocolProperty:(id)arg1 withValue:(id)arg2;
++ (Class)classOverrideAtInitialization:(Class)arg1 type:(id)arg2;
++ (void)initialize;
++ (id)jsonPropertyNameForObjCPropertyName:(id)arg1;
++ (void)lock;
++ (id /* block */)objectValueClassBlockForPropertyWithName:(id)arg1;
++ (id)propertyDefinitions;
++ (id)propertyHashTable;
++ (id)protocolPropertyDefinitions;
++ (id /* block */)purgeClassBlockForPropertyWithName:(id)arg1;
++ (void)unlock;
++ (id /* block */)valueClassBlockForPropertyWithName:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)JSONRepresentation;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)debugDescription;
+- (id)init;
+- (id)initWithJSONData:(id)arg1 andVersion:(id)arg2;
+- (id)initWithJSONObject:(id)arg1 andVersion:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (id)jsonDictionary;
+- (id)objectStorage;
+- (id)specificationVersion;
+- (void)storeObject:(id)arg1 forLookupKey:(id)arg2;
+- (void)storeValue:(id)arg1 forLookupKey:(id)arg2;
+- (struct os_unfair_lock_s { unsigned int x1; })unfairLock;
+- (id)valueForLookupKey:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol CVAPortraitGenericRequest <NSObject>
+
+@end

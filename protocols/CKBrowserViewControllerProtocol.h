@@ -1,0 +1,105 @@
+
+@protocol CKBrowserViewControllerProtocol <NSObject>
+
+@required
+
+- (IMBalloonPlugin *)balloonPlugin;
+- (IMBalloonPluginDataSource *)balloonPluginDataSource;
+- (long long)browserPresentationStyle;
+- (NSString *)conversationID;
+- (void)dismiss;
+- (bool)inExpandedPresentation;
+- (bool)inFullScreenModalPresentation;
+- (id)initWithBalloonPlugin:(IMBalloonPlugin *)arg1;
+- (id)initWithBalloonPlugin:(IMBalloonPlugin *)arg1 dataSource:(IMBalloonPluginDataSource *)arg2;
+- (bool)isDismissing;
+- (bool)isLoaded;
+- (bool)isPrimaryViewController;
+- (bool)isiMessage;
+- (bool)mayBeKeptInViewHierarchy;
+- (UIViewController *)presentationViewController;
+- (<CKBrowserViewControllerSendDelegate> *)sendDelegate;
+- (void)setBalloonPluginDataSource:(IMBalloonPluginDataSource *)arg1;
+- (void)setConversationID:(NSString *)arg1;
+- (void)setIsPrimaryViewController:(bool)arg1;
+- (void)setIsiMessage:(bool)arg1;
+- (void)setPresentationViewController:(UIViewController *)arg1;
+- (void)setSendDelegate:(id <CKBrowserViewControllerSendDelegate>)arg1;
+- (bool)shouldShowChatChrome;
+- (bool)shouldSuppressEntryView;
+- (bool)supportsQuickView;
+- (bool)wantsDarkUI;
+- (bool)wantsOpaqueUI;
+
+@optional
+
+- (void)_addStickerAnimationDidFinishWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)_addStickerToStoreWithRepresentations:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }, NSError *, void*
+- (void)_addStickerToStoreWithRepresentations:(void *)arg1 completionWithStickerIDs:(void *)arg2; // needs 2 arg types, found 9: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }, NSArray *, NSError *, void*
+- (void)_addStickerToStoreWithRepresentations:(void *)arg1 sourceRect:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSArray *, struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)_animatedStickerCreationProgressChanged:(NSDictionary *)arg1 progress:(double)arg2;
+- (void)_didRemoveStickerPreview;
+- (void)_prepareForAddStickerFromSubjectLift;
+- (void)_setPluginIdentifierToShow:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 6: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)_updateContentOverlayInsetsForSelfAndChildren;
+- (void)_updateCurrentBrowserConsumer:(long long)arg1;
+- (NSNumber *)adamID;
+- (unsigned long long)badgeValue;
+- (void)beginDisablingUserInteraction;
+- (void)beginSuppressingAppearanceMethods;
+- (CKBrowserDragManager *)browserDragManager;
+- (void)browserScrolledOffScreen;
+- (void)browserScrolledOnScreen;
+- (bool)canReplaceDataSource;
+- (id)cancelTouchesInView;
+- (UIViewController *)canvasViewController;
+- (void)checkForTouchInRemoteProcessIfNecessaryWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (NSData *)conversationEngramID;
+- (long long)currentBrowserConsumer;
+- (void)deferredForceTearDownRemoteView;
+- (void)didTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
+- (UIView *)dragTargetView;
+- (void)dropAssertion;
+- (void)endDisablingUserInteraction;
+- (void)endSuppressingAppearanceMethods;
+- (void)forceTearDownRemoteView;
+- (void)forceTearDownRemoteViewOverridingExceptions:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })horizontalSwipeExclusionRect;
+- (bool)isAlive;
+- (bool)isBusiness;
+- (void)killExtensionProcess;
+- (bool)linkedBeforeDawn;
+- (bool)linkedBeforeYukon;
+- (void)loadRemoteViewWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)messageAddedWithDataSource:(IMBalloonPluginDataSource *)arg1;
+- (long long)parentModalPresentationStyle;
+- (<UIViewControllerTransitioningDelegate> *)parentTransitioningDelegate;
+- (void)prepareForDisplay;
+- (NSArray *)recipients;
+- (UIViewController *)remoteViewController;
+- (void)requestPresentationWithStickerType:(NSString *)arg1 identifier:(NSUUID *)arg2;
+- (NSData *)requestSnapshotDataForPersistance;
+- (void)requestStickerExtensionMetadataDictionary:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
+- (void)saveSnapshotForBrowserViewController;
+- (NSString *)sender;
+- (void)setAdamID:(NSNumber *)arg1;
+- (void)setConversationEngramID:(NSData *)arg1;
+- (void)setCurrentBrowserConsumer:(long long)arg1;
+- (void)setDragTargetView:(UIView *)arg1;
+- (void)setIsBusiness:(bool)arg1;
+- (void)setRecipients:(NSArray *)arg1;
+- (void)setSender:(NSString *)arg1;
+- (void)setShouldDisableSnapshotView:(bool)arg1;
+- (void)setStoreLaunchURL:(NSURL *)arg1 sourceApplication:(NSString *)arg2;
+- (unsigned long long)sheetDetentStyle;
+- (bool)shouldDisableInsetsForGrabber;
+- (bool)shouldDisableSnapshotView;
+- (void)unloadRemoteView;
+- (void)viewDidTransitionToCompactPresentation;
+- (void)viewDidTransitionToExpandedPresentation;
+- (void)viewWillTransitionToCompactPresentation;
+- (void)viewWillTransitionToExpandedPresentation;
+- (void)volumeButtonPressed:(bool)arg1;
+- (bool)wasExpandedPresentation;
+
+@end

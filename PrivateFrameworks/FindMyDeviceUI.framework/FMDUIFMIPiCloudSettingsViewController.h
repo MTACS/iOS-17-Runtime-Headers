@@ -1,0 +1,87 @@
+
+@interface FMDUIFMIPiCloudSettingsViewController : PSListController {
+    ACAccount * _account;
+    bool  _activityInProgress;
+    bool  _firstTimeSetup;
+    PSSpecifier * _fmipSpecifier;
+    UIProgressHUD * _hud;
+    bool  _offlineFindingDisabledDueToNotHSA2;
+    bool  _offlineFindingEnabled;
+    PSSpecifier * _sendLastLocationSpecifier;
+    NSObject<SPSettingsConfigurating> * _spSession;
+    bool  _togglingFMIPSwitch;
+}
+
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic) bool activityInProgress;
+@property (nonatomic) bool firstTimeSetup;
+@property (nonatomic, retain) PSSpecifier *fmipSpecifier;
+@property (nonatomic, retain) UIProgressHUD *hud;
+@property (nonatomic) bool offlineFindingDisabledDueToNotHSA2;
+@property (nonatomic) bool offlineFindingEnabled;
+@property (nonatomic, retain) PSSpecifier *sendLastLocationSpecifier;
+@property (nonatomic, retain) NSObject<SPSettingsConfigurating> *spSession;
+@property (nonatomic) bool togglingFMIPSwitch;
+
+- (void).cxx_destruct;
+- (bool)FMWLANEnabled;
+- (id)_clientInfoHeader;
+- (void)_disableFMIP;
+- (bool)_doesDeviceSupportOfflineFindingLowPowerMode;
+- (void)_enableFMIP;
+- (void)_fmipSettingsCacheDidUpdate:(id)arg1;
+- (id)_fmipSwitchOnForSpecifier:(id)arg1;
+- (id)_groupSpecifierForFMIP;
+- (id)_groupSpecifierForOfflineFinding;
+- (id)_groupSpecifierForSendLastLocation;
+- (void)_loadSearchPartyConfiguration;
+- (id)_offlineFindingSwitchOnForSpecifier:(id)arg1;
+- (void)_reloadSpecifiersOnMainQueue;
+- (id)_sendLastLocationSwitchOnForSpecifier:(id)arg1;
+- (void)_setFMIPSwitchOn:(id)arg1 forSpecifier:(id)arg2;
+- (void)_setOfflineFindingSwitchOn:(id)arg1 forSpecifier:(id)arg2;
+- (void)_setSendLastLocationSwitchOn:(id)arg1 forSpecifier:(id)arg2;
+- (void)_showFMIPPrivacyPage;
+- (void)_showOfflineFindingAlertWhenTurningOff;
+- (void)_showOfflineFindingLearnMorePage;
+- (id)_specifierForFMIP;
+- (id)_specifierForOfflineFinding;
+- (id)_specifierForSendLastLocation;
+- (id)_userAgentHeader;
+- (id)account;
+- (bool)activityInProgress;
+- (bool)firstTimeSetup;
+- (id)fmipSpecifier;
+- (void)hideActivityInProgress;
+- (void)hideActivityInProgressUI;
+- (void)hideActivityInProgressUIWithDelay:(double)arg1;
+- (id)hud;
+- (id)init;
+- (bool)isShowingActivityInProgressUI;
+- (bool)offlineFindingDisabledDueToNotHSA2;
+- (bool)offlineFindingEnabled;
+- (void)presentHSA2UpgradeForOfflineFinding;
+- (id)sendLastLocationSpecifier;
+- (void)setAccount:(id)arg1;
+- (void)setActivityInProgress:(bool)arg1;
+- (void)setFirstTimeSetup:(bool)arg1;
+- (void)setFmipSpecifier:(id)arg1;
+- (void)setHud:(id)arg1;
+- (void)setOfflineFindingDisabledDueToNotHSA2:(bool)arg1;
+- (void)setOfflineFindingEnabled:(bool)arg1;
+- (void)setSearchPartyConfigurationActive:(bool)arg1;
+- (void)setSendLastLocationSpecifier:(id)arg1;
+- (void)setSpSession:(id)arg1;
+- (void)setTogglingFMIPSwitch:(bool)arg1;
+- (void)showActivityInProgress;
+- (void)showActivityInProgressUIWithMessage:(id)arg1;
+- (void)showHSA2UpgradeAlert;
+- (id)spSession;
+- (id)specifiers;
+- (bool)togglingFMIPSwitch;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

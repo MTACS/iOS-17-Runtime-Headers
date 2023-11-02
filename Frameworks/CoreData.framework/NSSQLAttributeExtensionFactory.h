@@ -1,0 +1,4 @@
+
+@interface NSSQLAttributeExtensionFactory : NSObject
+
+@end

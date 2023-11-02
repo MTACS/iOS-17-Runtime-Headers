@@ -1,0 +1,28 @@
+
+@interface CNComposeAddressConcatenator : NSObject {
+    NSString * _andNMoreFormat;
+    NSString * _andNMoreNoEllipsisFormat;
+    NSString * _nAddressesFormat;
+    NSString * _truncatedAddressFormat;
+}
+
+@property (nonatomic, retain) NSString *andNMoreFormat;
+@property (nonatomic, retain) NSString *andNMoreNoEllipsisFormat;
+@property (nonatomic, retain) NSString *nAddressesFormat;
+@property (nonatomic, retain) NSString *truncatedAddressFormat;
+
++ (id)defaultRecipientListConcatenator;
+
+- (void).cxx_destruct;
+- (id)andNMoreFormat;
+- (id)andNMoreNoEllipsisFormat;
+- (id)commaSeparatedAddressListWithAddressCount:(unsigned long long)arg1 prefixForAddressAtIndex:(id /* block */)arg2 stringForAddressAtIndex:(id /* block */)arg3 lengthValidationBlock:(id /* block */)arg4;
+- (void)getCommaSeparatedAddressList:(out id*)arg1 andListSuffix:(out id*)arg2 withAddressCount:(unsigned long long)arg3 prefixForAddressAtIndex:(id /* block */)arg4 stringForAddressAtIndex:(id /* block */)arg5 lengthValidationBlock:(id /* block */)arg6;
+- (id)nAddressesFormat;
+- (void)setAndNMoreFormat:(id)arg1;
+- (void)setAndNMoreNoEllipsisFormat:(id)arg1;
+- (void)setNAddressesFormat:(id)arg1;
+- (void)setTruncatedAddressFormat:(id)arg1;
+- (id)truncatedAddressFormat;
+
+@end

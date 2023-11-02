@@ -1,0 +1,4 @@
+
+@interface MKFSignificantTimeEventDatabaseID : MKFEventDatabaseID
+
+@end

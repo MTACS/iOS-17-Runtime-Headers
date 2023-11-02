@@ -1,0 +1,154 @@
+
+@interface PXImageRequester : PXObservable <PXMutableImageRequester> {
+    <PXDisplayAsset> * __currentImageSourceAsset;
+    PXImageRequest * __currentRequest;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  __targetSize;
+    <PXDisplayAsset> * _asset;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _contentSize;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _contentsRect;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _cropRect;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _desiredContentsRect;
+    long long  _downloadIntent;
+    bool  _hasFullQuality;
+    UIImage * _image;
+    bool  _isInCloud;
+    NSError * _loadingError;
+    double  _loadingProgress;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maximumRequestSize;
+    <PXUIImageProvider> * _mediaProvider;
+    struct { 
+        bool targetSize; 
+        bool imageRequest; 
+        bool isInCloud; 
+    }  _needsUpdateFlags;
+    UIImage * _opportunisticImage;
+    double  _scale;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _viewportSize;
+}
+
+@property (setter=_setCurrentImageSourceAsset:, nonatomic, retain) <PXDisplayAsset> *_currentImageSourceAsset;
+@property (setter=_setCurrentRequest:, nonatomic, retain) PXImageRequest *_currentRequest;
+@property (setter=_setTargetSize:, nonatomic) struct CGSize { double x1; double x2; } _targetSize;
+@property (nonatomic, readonly) <PXDisplayAsset> *asset;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentsRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } desiredContentsRect;
+@property (nonatomic, readonly) long long downloadIntent;
+@property (setter=_setHasFullQuality:, nonatomic) bool hasFullQuality;
+@property (readonly) unsigned long long hash;
+@property (setter=_setImage:, nonatomic, retain) UIImage *image;
+@property (setter=_setIsInCloud:, nonatomic) bool isInCloud;
+@property (nonatomic, retain) NSError *loadingError;
+@property (setter=_setLoadingProgress:, nonatomic) double loadingProgress;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } maximumRequestSize;
+@property (nonatomic, readonly) <PXUIImageProvider> *mediaProvider;
+@property (setter=_setOpportunisticImage:, nonatomic, retain) UIImage *opportunisticImage;
+@property (nonatomic, readonly) double scale;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
+
++ (id)defaultOptions;
+
+- (void).cxx_destruct;
+- (void)_cancelRequests;
+- (id)_currentImageSourceAsset;
+- (id)_currentRequest;
+- (void)_handleProgressForImageRequest:(id)arg1 progress:(double)arg2;
+- (void)_handleResultOfImageRequest:(id)arg1 image:(id)arg2 info:(id)arg3;
+- (void)_invalidateImageRequest;
+- (void)_invalidateIsInCloud;
+- (void)_invalidateTargetSize;
+- (bool)_needsUpdate;
+- (void)_setCurrentImageSourceAsset:(id)arg1;
+- (void)_setCurrentRequest:(id)arg1;
+- (void)_setHasFullQuality:(bool)arg1;
+- (void)_setImage:(id)arg1;
+- (void)_setIsInCloud:(bool)arg1;
+- (void)_setLoadingProgress:(double)arg1;
+- (void)_setOpportunisticImage:(id)arg1;
+- (void)_setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })_targetSize;
+- (void)_updateIfNeeded;
+- (void)_updateImageRequestIfNeeded;
+- (void)_updateIsInCloudIfNeeded;
+- (void)_updateTargetSizeIfNeeded;
+- (id)asset;
+- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentsRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (void)dealloc;
+- (id)description;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })desiredContentsRect;
+- (void)didPerformChanges;
+- (long long)downloadIntent;
+- (void)handlePreloadedImage:(id)arg1;
+- (void)handlePreloadedImageRequester:(id)arg1;
+- (bool)hasFullQuality;
+- (id)image;
+- (id)init;
+- (id)initWithMediaProvider:(id)arg1 asset:(id)arg2;
+- (bool)isInCloud;
+- (id)loadingError;
+- (double)loadingProgress;
+- (struct CGSize { double x1; double x2; })maximumRequestSize;
+- (id)mediaProvider;
+- (id)mutableChangeObject;
+- (id)opportunisticImage;
+- (void)performChanges:(id /* block */)arg1;
+- (double)scale;
+- (void)setAsset:(id)arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDesiredContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDownloadIntent:(long long)arg1;
+- (void)setLoadingError:(id)arg1;
+- (void)setMaximumRequestSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMediaProvider:(id)arg1;
+- (void)setScale:(double)arg1;
+- (void)setViewportSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })viewportSize;
+
+@end

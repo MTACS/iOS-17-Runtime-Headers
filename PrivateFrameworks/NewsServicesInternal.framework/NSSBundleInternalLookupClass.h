@@ -1,0 +1,4 @@
+
+@interface NSSBundleInternalLookupClass : NSObject
+
+@end

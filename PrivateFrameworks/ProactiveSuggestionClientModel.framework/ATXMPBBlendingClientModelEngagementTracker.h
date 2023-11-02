@@ -1,0 +1,91 @@
+
+@interface ATXMPBBlendingClientModelEngagementTracker : PBCodable <NSCopying> {
+    NSString * _abGroup;
+    NSString * _clientModelABGroup;
+    unsigned int  _clientModelCacheAge;
+    NSString * _clientModelId;
+    NSString * _consumerSubType;
+    unsigned int  _consumerSubTypeCacheAge;
+    int  _engagementType;
+    struct { 
+        unsigned int clientModelCacheAge : 1; 
+        unsigned int consumerSubTypeCacheAge : 1; 
+        unsigned int engagementType : 1; 
+        unsigned int numSuggestionsForClientModelInLayout : 1; 
+        unsigned int positionInClientModelCacheOfEngagedSuggestion : 1; 
+    }  _has;
+    NSString * _layoutType;
+    unsigned int  _numSuggestionsForClientModelInLayout;
+    unsigned int  _positionInClientModelCacheOfEngagedSuggestion;
+}
+
+@property (nonatomic, retain) NSString *abGroup;
+@property (nonatomic, retain) NSString *clientModelABGroup;
+@property (nonatomic) unsigned int clientModelCacheAge;
+@property (nonatomic, retain) NSString *clientModelId;
+@property (nonatomic, retain) NSString *consumerSubType;
+@property (nonatomic) unsigned int consumerSubTypeCacheAge;
+@property (nonatomic) int engagementType;
+@property (nonatomic, readonly) bool hasAbGroup;
+@property (nonatomic, readonly) bool hasClientModelABGroup;
+@property (nonatomic) bool hasClientModelCacheAge;
+@property (nonatomic, readonly) bool hasClientModelId;
+@property (nonatomic, readonly) bool hasConsumerSubType;
+@property (nonatomic) bool hasConsumerSubTypeCacheAge;
+@property (nonatomic) bool hasEngagementType;
+@property (nonatomic, readonly) bool hasLayoutType;
+@property (nonatomic) bool hasNumSuggestionsForClientModelInLayout;
+@property (nonatomic) bool hasPositionInClientModelCacheOfEngagedSuggestion;
+@property (nonatomic, retain) NSString *layoutType;
+@property (nonatomic) unsigned int numSuggestionsForClientModelInLayout;
+@property (nonatomic) unsigned int positionInClientModelCacheOfEngagedSuggestion;
+
+- (void).cxx_destruct;
+- (int)StringAsEngagementType:(id)arg1;
+- (id)abGroup;
+- (id)clientModelABGroup;
+- (unsigned int)clientModelCacheAge;
+- (id)clientModelId;
+- (id)consumerSubType;
+- (unsigned int)consumerSubTypeCacheAge;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (int)engagementType;
+- (id)engagementTypeAsString:(int)arg1;
+- (bool)hasAbGroup;
+- (bool)hasClientModelABGroup;
+- (bool)hasClientModelCacheAge;
+- (bool)hasClientModelId;
+- (bool)hasConsumerSubType;
+- (bool)hasConsumerSubTypeCacheAge;
+- (bool)hasEngagementType;
+- (bool)hasLayoutType;
+- (bool)hasNumSuggestionsForClientModelInLayout;
+- (bool)hasPositionInClientModelCacheOfEngagedSuggestion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)layoutType;
+- (void)mergeFrom:(id)arg1;
+- (unsigned int)numSuggestionsForClientModelInLayout;
+- (unsigned int)positionInClientModelCacheOfEngagedSuggestion;
+- (bool)readFrom:(id)arg1;
+- (void)setAbGroup:(id)arg1;
+- (void)setClientModelABGroup:(id)arg1;
+- (void)setClientModelCacheAge:(unsigned int)arg1;
+- (void)setClientModelId:(id)arg1;
+- (void)setConsumerSubType:(id)arg1;
+- (void)setConsumerSubTypeCacheAge:(unsigned int)arg1;
+- (void)setEngagementType:(int)arg1;
+- (void)setHasClientModelCacheAge:(bool)arg1;
+- (void)setHasConsumerSubTypeCacheAge:(bool)arg1;
+- (void)setHasEngagementType:(bool)arg1;
+- (void)setHasNumSuggestionsForClientModelInLayout:(bool)arg1;
+- (void)setHasPositionInClientModelCacheOfEngagedSuggestion:(bool)arg1;
+- (void)setLayoutType:(id)arg1;
+- (void)setNumSuggestionsForClientModelInLayout:(unsigned int)arg1;
+- (void)setPositionInClientModelCacheOfEngagedSuggestion:(unsigned int)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

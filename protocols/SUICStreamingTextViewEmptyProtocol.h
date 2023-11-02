@@ -1,0 +1,4 @@
+
+@protocol SUICStreamingTextViewEmptyProtocol
+
+@end

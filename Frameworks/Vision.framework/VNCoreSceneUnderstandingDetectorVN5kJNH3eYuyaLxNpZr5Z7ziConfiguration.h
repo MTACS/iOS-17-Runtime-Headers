@@ -1,0 +1,4 @@
+
+@interface VNCoreSceneUnderstandingDetectorVN5kJNH3eYuyaLxNpZr5Z7ziConfiguration : VNCoreSceneUnderstandingDetectorCustomClassifierConfiguration
+
+@end

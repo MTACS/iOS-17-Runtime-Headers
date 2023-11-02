@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.BlockFeatureNotAvailableForDeviceHandler : HomeAutomationInternal.BaseBlockingHandler
+
+@end

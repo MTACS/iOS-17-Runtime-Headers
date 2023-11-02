@@ -1,0 +1,4 @@
+
+@interface SBEntityRemovalFloatingSlideOutUpwardAnimationSettings : SBEntityRemovalFloatingSlideOutAnimationSettings
+
+@end

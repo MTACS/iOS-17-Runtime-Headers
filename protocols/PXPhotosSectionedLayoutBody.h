@@ -1,0 +1,4 @@
+
+@protocol PXPhotosSectionedLayoutBody <NSObject>
+
+@end

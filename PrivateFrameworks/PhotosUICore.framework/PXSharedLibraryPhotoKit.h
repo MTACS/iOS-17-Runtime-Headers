@@ -1,0 +1,77 @@
+
+@interface PXSharedLibraryPhotoKit : NSObject <PXPhotoLibraryUIChangeObserver, PXSharedLibrary> {
+    PHLibraryScope * _libraryScope;
+    PHShareParticipant * _owner;
+    PHFetchResult * _participants;
+    PXSharedLibraryRule * _rule;
+}
+
+@property (nonatomic, readonly) unsigned long long cloudItemCount;
+@property (nonatomic, readonly) unsigned long long cloudPhotoCount;
+@property (nonatomic, readonly) unsigned long long cloudVideoCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly) bool isDeclined;
+@property (nonatomic, readonly) bool isExiting;
+@property (nonatomic, readonly) bool isInLocalMode;
+@property (nonatomic, readonly) bool isInPreview;
+@property (nonatomic, readonly) bool isOwned;
+@property (nonatomic, readonly) bool isPublished;
+@property (nonatomic, readonly) PHLibraryScope *libraryScope;
+@property (nonatomic, readonly, copy) <PXSharedLibraryParticipant> *owner;
+@property (nonatomic, readonly, copy) NSArray *participants;
+@property (nonatomic, readonly, copy) PXSharedLibraryRule *rule;
+@property (nonatomic, readonly, copy) NSURL *shareURL;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_updateOwner;
+- (void)_updateParticipants;
+- (void)acceptInvitationWithRule:(id)arg1 progress:(id)arg2 completion:(id /* block */)arg3;
+- (void)addAssetSharingSuggestions:(id)arg1 completion:(id /* block */)arg2;
+- (void)addParticipantsWithEmailAddresses:(id)arg1 phoneNumbers:(id)arg2 presentationEnvironment:(id)arg3 withCompletion:(id /* block */)arg4;
+- (void)addPersonUUIDsToPersonCondition:(id)arg1 completion:(id /* block */)arg2;
+- (bool)canAddParticipantsWithEmailAddresses:(id)arg1 phoneNumbers:(id)arg2;
+- (bool)canDeleteParticipants:(id)arg1;
+- (bool)canEditParticipants;
+- (bool)canMoveAssetsToPersonalLibrary:(id)arg1;
+- (bool)canMoveAssetsToSharedLibrary:(id)arg1;
+- (bool)canRemoveAssetSharingSuggestions:(id)arg1;
+- (unsigned long long)cloudItemCount;
+- (unsigned long long)cloudPhotoCount;
+- (unsigned long long)cloudVideoCount;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)declineInvitationWithCompletion:(id /* block */)arg1;
+- (void)deleteParticipants:(id)arg1 presentationEnvironment:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)description;
+- (void)exitPreviewWithPresentationEnvironment:(id)arg1 completion:(id /* block */)arg2;
+- (void)exitWithRetentionPolicy:(long long)arg1 presentationEnvironment:(id)arg2 progress:(id)arg3 completion:(id /* block */)arg4;
+- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })fetchItemCounts;
+- (id)identifier;
+- (id)init;
+- (id)initWithLibraryScope:(id)arg1;
+- (bool)isDeclined;
+- (bool)isExiting;
+- (bool)isInLocalMode;
+- (bool)isInPreview;
+- (bool)isOwned;
+- (bool)isPublished;
+- (id)libraryScope;
+- (void)moveAssetsToPersonalLibrary:(id)arg1 completion:(id /* block */)arg2;
+- (void)moveAssetsToSharedLibrary:(id)arg1 completion:(id /* block */)arg2;
+- (void)moveAssetsWithLocalIdentifiersToSharedLibrary:(id)arg1 completion:(id /* block */)arg2;
+- (id)owner;
+- (id)participants;
+- (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
+- (void)previewInvitationWithRule:(id)arg1 progress:(id)arg2 completion:(id /* block */)arg3;
+- (void)publishPreviewWithPresentationEnvironment:(id)arg1 progress:(id)arg2 completion:(id /* block */)arg3;
+- (void)removeAssetSharingSuggestions:(id)arg1 completion:(id /* block */)arg2;
+- (void)removePersonUUIDsFromPersonCondition:(id)arg1 completion:(id /* block */)arg2;
+- (void)restoreDeclinedInvitationWithCompletion:(id /* block */)arg1;
+- (id)rule;
+- (id)shareURL;
+- (id)sourceLibraryInfo;
+
+@end

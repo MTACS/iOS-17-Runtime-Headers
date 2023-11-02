@@ -1,0 +1,4 @@
+
+@interface _TtC16HealthMobilityUIP33_6209D9881C44E89D843734AE011EF95E19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

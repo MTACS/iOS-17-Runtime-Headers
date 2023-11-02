@@ -1,0 +1,4 @@
+
+@interface _TtC8VideosUIP33_ACFD3BAD0B775DA80EE19AB2C2084A3419ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

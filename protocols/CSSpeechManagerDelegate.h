@@ -1,0 +1,4 @@
+
+@protocol CSSpeechManagerDelegate <NSObject>
+
+@end

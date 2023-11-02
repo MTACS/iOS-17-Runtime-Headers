@@ -1,0 +1,4 @@
+
+@interface SUUIFamilySetupTemplateViewElement : SUUIViewElement
+
+@end

@@ -1,0 +1,4 @@
+
+@interface RTRoutineManagerRegistrant : NSObject
+
+@end

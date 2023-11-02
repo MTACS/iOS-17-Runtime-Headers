@@ -1,0 +1,83 @@
+
+@interface _GCNintendoJoyConDevice : NSObject <GCBatteryXPCProxyServerEndpointDelegate, GCNintendoJoyConFusionGestureServiceClientInterface, GCPlayerIndicatorXPCProxyServerEndpointDelegate, _GCDeviceBatteryComponent, _GCDeviceControllerProviding, _GCDeviceGamepadComponent, _GCDeviceHapticCapabilitiesComponent, _GCDevicePlayerIndexIndicatorComponent, _GCDriverClientHapticInterfaceProvider, _GCLogicalDevice, _GCPhysicalDevice> {
+    GCDeviceBattery * _battery;
+    id /* block */  _batteryComponentBatteryUpdatedHandler;
+    <GCBatteryServiceServerInterface> * _batteryServiceServer;
+    NSMapTable * _clientBatteryEndpoints;
+    NSMapTable * _clientPlayerIndicatorEndpoints;
+    NSMapTable * _clients;
+    _GCDeviceConfiguration * _configuration;
+    <_GCDeviceDriverConnection> * _driverConnection;
+    id  _driverConnectionInvalidationRegistration;
+    _GCNintendoFusedJoyConDevice * _fusionDevice;
+    <NSObject><NSCopying><NSSecureCoding> * _identifier;
+    long long  _indicatedPlayerIndex;
+    _GCNintendoJoyConDeviceManager * _manager;
+    _GCHIDServiceInfo * _serviceInfo;
+    unsigned char  _type;
+}
+
+@property (nonatomic, readonly) GCDeviceBattery *battery;
+@property (nonatomic, readonly) struct { unsigned char x1; unsigned char x2; unsigned char x3; } bodyColor;
+@property (nonatomic, readonly) struct { unsigned char x1; unsigned char x2; unsigned char x3; } buttonsColor;
+@property (readonly) NSSet *components;
+@property (nonatomic, retain) _GCDeviceConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ deviceBatteryComponentBatteryUpdatedHandler;
+@property (nonatomic, copy) id /* block */ deviceBatteryServiceConnectedHandler;
+@property (nonatomic, readonly) <_GCDeviceDriverConnection> *driverConnection;
+@property (nonatomic) _GCNintendoFusedJoyConDevice *fusionDevice;
+@property (readonly) <_GCGamepadEventSourceDescription> *gamepadEventSource;
+@property (nonatomic, readonly) GCHapticCapabilityGraph *hapticCapabilityGraph;
+@property (nonatomic, readonly) NSArray *hapticEngines;
+@property (readonly) unsigned long long hash;
+@property (readonly, copy) <NSObject><NSCopying><NSSecureCoding> *identifier;
+@property long long indicatedPlayerIndex;
+@property (nonatomic) unsigned char inputMode;
+@property (readonly) <_GCDeviceManager> *manager;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned char type;
+@property (readonly) NSSet *underlyingDevices;
+
+- (void).cxx_destruct;
+- (void)_addClient:(id)arg1;
+- (void)_removeClient:(id)arg1;
+- (void)activateLogical;
+- (id)battery;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; })bodyColor;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; })buttonsColor;
+- (id)components;
+- (id)configuration;
+- (id /* block */)deviceBatteryComponentBatteryUpdatedHandler;
+- (id /* block */)deviceBatteryServiceConnectedHandler;
+- (id)driverConnection;
+- (id)fusionDevice;
+- (id)gamepadEventSource;
+- (id)hapticCapabilityGraph;
+- (id)hapticDriver;
+- (id)hapticEngines;
+- (void)homeButtonLongPressGesture:(bool)arg1;
+- (id)identifier;
+- (long long)indicatedPlayerIndex;
+- (id)init;
+- (id)initWithHIDDevice:(id)arg1 manager:(id)arg2 type:(unsigned char)arg3;
+- (unsigned char)inputMode;
+- (id)makeControllerForClient:(id)arg1;
+- (id)manager;
+- (void)playerIndicatorXPCProxyServerEndpoint:(id)arg1 didReceivePlayerIndexChange:(long long)arg2;
+- (void)propagateBattery:(id)arg1;
+- (id)propertyForKey:(id)arg1;
+- (id)readBattery;
+- (void)setConfiguration:(id)arg1;
+- (void)setDeviceBatteryComponentBatteryUpdatedHandler:(id /* block */)arg1;
+- (void)setDeviceBatteryServiceConnectedHandler:(id /* block */)arg1;
+- (void)setDriverConnection:(id)arg1;
+- (void)setFusionDevice:(id)arg1;
+- (void)setIndicatedPlayerIndex:(long long)arg1;
+- (void)setInputMode:(unsigned char)arg1;
+- (unsigned char)type;
+- (id)underlyingDevices;
+- (void)updateBattery:(unsigned char)arg1 isCharging:(bool)arg2;
+
+@end

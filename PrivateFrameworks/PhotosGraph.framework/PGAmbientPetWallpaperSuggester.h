@@ -1,0 +1,16 @@
+
+@interface PGAmbientPetWallpaperSuggester : PGPetWallpaperSuggester <PGPetWallpaperSuggesterProtocol>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PGPetWallpaperSuggesterFilteringContext *primaryFilteringContext;
+@property (nonatomic, retain) PGPetWallpaperSuggesterFilteringContext *secondaryFilteringContext;
+@property (readonly) Class superclass;
+
++ (id)suggestionSubtypes;
++ (id)suggestionTypes;
+
+- (void)setupFilteringContexts;
+
+@end

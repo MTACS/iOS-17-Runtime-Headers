@@ -1,0 +1,34 @@
+
+@interface MFEmailSet : EAEmailAddressSet {
+    struct __CFSet { } * _set;
+}
+
++ (id)set;
+
+- (id)_generateAllObjectsFromSelector:(SEL)arg1;
+- (void)_setupSetWithCapacity:(unsigned long long)arg1;
+- (void)addObject:(id)arg1;
+- (id)allCommentedAddresses;
+- (id)allObjects;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (void)dealloc;
+- (id)init;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithSet:(id)arg1;
+- (void)intersectSet:(id)arg1;
+- (bool)intersectsSet:(id)arg1;
+- (bool)isEqualToSet:(id)arg1;
+- (bool)isSubsetOfSet:(id)arg1;
+- (id)member:(id)arg1;
+- (void)minusSet:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)objectEnumerator;
+- (void)removeAllObjects;
+- (void)removeObject:(id)arg1;
+- (id)serializedRepresentation;
+- (void)setSet:(id)arg1;
+- (void)unionSet:(id)arg1;
+
+@end

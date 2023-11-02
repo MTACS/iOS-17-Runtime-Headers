@@ -1,0 +1,30 @@
+
+@interface HKElectrocardiogramSessionConfiguration : NSObject <NSCopying, NSSecureCoding> {
+    double  _maximumDuration;
+    long long  _mode;
+    NSUUID * _sessionUUID;
+    bool  _wornOnRightArm;
+}
+
+@property (nonatomic) double maximumDuration;
+@property (nonatomic) long long mode;
+@property (nonatomic, copy) NSUUID *sessionUUID;
+@property (nonatomic) bool wornOnRightArm;
+
++ (id)sessionConfigurationWithUUID:(id)arg1 mode:(long long)arg2 maximumDuration:(double)arg3 wornOnRightArm:(bool)arg4;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (double)maximumDuration;
+- (long long)mode;
+- (id)sessionUUID;
+- (void)setMaximumDuration:(double)arg1;
+- (void)setMode:(long long)arg1;
+- (void)setSessionUUID:(id)arg1;
+- (void)setWornOnRightArm:(bool)arg1;
+- (bool)wornOnRightArm;
+
+@end

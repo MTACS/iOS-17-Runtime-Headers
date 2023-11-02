@@ -1,0 +1,56 @@
+
+@interface IDSGroupSessionParticipantUpdate : NSObject {
+    NSData * _clientContextData;
+    bool  _fromServer;
+    NSUUID * _groupUUID;
+    bool  _isInitiator;
+    NSArray * _members;
+    NSData * _participantData;
+    NSString * _participantDestinationID;
+    IDSURI * _participantDestinationURI;
+    NSDictionary * _participantIDs;
+    unsigned long long  _participantIdentifier;
+    unsigned long long  _participantUpdateSubtype;
+    unsigned long long  _participantUpdateType;
+    NSUUID * _relaySessionID;
+    NSDate * _serverDate;
+}
+
+@property (nonatomic, readonly) NSData *clientContextData;
+@property (nonatomic, readonly) bool fromServer;
+@property (nonatomic, readonly) NSUUID *groupUUID;
+@property (nonatomic, readonly) bool isInitiator;
+@property (nonatomic, readonly) NSArray *members;
+@property (nonatomic, readonly) NSData *participantData;
+@property (nonatomic, readonly) NSString *participantDestinationID;
+@property (nonatomic, readonly) IDSURI *participantDestinationURI;
+@property (nonatomic, readonly) NSDictionary *participantIDs;
+@property (nonatomic, readonly) unsigned long long participantIdentifier;
+@property (nonatomic, readonly) unsigned long long participantUpdateSubtype;
+@property (nonatomic, readonly) unsigned long long participantUpdateType;
+@property (nonatomic, readonly) NSUUID *relaySessionID;
+@property (nonatomic, readonly) NSDate *serverDate;
+
+- (void).cxx_destruct;
+- (id)clientContextData;
+- (id)debugDescription;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)fromServer;
+- (id)groupUUID;
+- (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)initWithGroupUUID:(id)arg1 isInitiator:(bool)arg2 participantIdentifier:(unsigned long long)arg3 participantDestinationID:(id)arg4 participantUpdateType:(unsigned long long)arg5 participantUpdateSubtype:(unsigned long long)arg6 fromServer:(bool)arg7 serverDate:(id)arg8 participantData:(id)arg9 clientContextData:(id)arg10 members:(id)arg11 participantIDs:(id)arg12 relaySessionID:(id)arg13;
+- (id)initWithGroupUUID:(id)arg1 isInitiator:(bool)arg2 participantIdentifier:(unsigned long long)arg3 participantDestinationURI:(id)arg4 participantUpdateType:(unsigned long long)arg5 participantUpdateSubtype:(unsigned long long)arg6 fromServer:(bool)arg7 serverDate:(id)arg8 participantData:(id)arg9 clientContextData:(id)arg10 members:(id)arg11 participantIDs:(id)arg12 relaySessionID:(id)arg13;
+- (bool)isInitiator;
+- (id)members;
+- (id)participantData;
+- (id)participantDestinationID;
+- (id)participantDestinationURI;
+- (id)participantIDs;
+- (unsigned long long)participantIdentifier;
+- (unsigned long long)participantUpdateSubtype;
+- (unsigned long long)participantUpdateType;
+- (id)relaySessionID;
+- (id)serverDate;
+
+@end

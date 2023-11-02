@@ -1,0 +1,95 @@
+
+@interface ICQOfferManager : NSObject {
+    NSMutableDictionary * _cachedOffers;
+    ICQUnfairLock * _cachedOffersLock;
+    NSTimer * _premiumOfferInvalidationTimer;
+    NSMutableDictionary * _registeredDarwinNotifications;
+    NSTimer * _regularOfferInvalidationTimer;
+}
+
+@property (getter=isBuddyOfferEnabled, nonatomic) bool buddyOfferEnabled;
+@property (nonatomic, retain) NSMutableDictionary *cachedOffers;
+@property (nonatomic, retain) ICQUnfairLock *cachedOffersLock;
+@property (nonatomic, readonly) bool isDeviceStorageAlmostFull;
+@property (nonatomic, readonly) NSNumber *photosLibrarySize;
+@property (nonatomic, retain) NSMutableDictionary *registeredDarwinNotifications;
+@property (getter=isSimulatedDeviceStorageAlmostFull, nonatomic) bool simulatedDeviceStorageAlmostFull;
+@property (nonatomic, retain) NSNumber *simulatedPhotosLibrarySize;
+
++ (bool)_legacyBuddyOfferMightNeedPresenting;
++ (bool)buddyOfferMightNeedPresenting;
++ (id)ckBackupDeviceID;
++ (id)defaultBundleIdentifier;
++ (id)defaultPlaceholderKeys;
++ (id)sharedOfferManager;
++ (id)stringWithPlaceholderFormat:(id)arg1 alternateString:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)_currentOfferForBundleIdentifier:(id)arg1 options:(id)arg2;
+- (void)_firedPremiumOfferInvalidationTimer:(id)arg1;
+- (void)_firedRegularOfferInvalidationTimer:(id)arg1;
+- (void)_funnelCloudServerOfferForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
+- (void)_getOfferForAccount:(id)arg1 bundleIdentifier:(id)arg2 options:(id)arg3 offerContext:(id)arg4 completion:(id /* block */)arg5;
+- (void)_getOfferForBundleIdentifier:(id)arg1 options:(id)arg2 offerContext:(id)arg3 completion:(id /* block */)arg4;
+- (void)_handlePushReceivedDarwinNotificationRequestType:(long long)arg1;
+- (bool)_offerTypeMatchesRequestOptions:(id)arg1 offer:(id)arg2;
+- (id)_premiumOptions;
+- (void)_refetchDefaultOffer;
+- (void)_refetchPremiumOffer;
+- (void)_refetchRegularOffer;
+- (id)_refreshOfferWithDaemonOfferDict:(id)arg1 offerRequestType:(long long)arg2 bundleId:(id)arg3;
+- (void)_registerForDarwinNotification:(id)arg1;
+- (void)_setupTimerForInvalidationDate:(id)arg1 forType:(long long)arg2;
+- (void)_setupTimerForPremiumOfferInvalidationDate:(id)arg1;
+- (void)_setupTimerForRegularOfferInvalidationDate:(id)arg1;
+- (bool)_shouldUseOffer:(id)arg1 forBundleIdentifier:(id)arg2;
+- (void)_teardownInvalidationTimerForRequestType:(long long)arg1;
+- (void)_teardownPremiumOfferInvalidationTimer;
+- (void)_teardownRegularOfferInvalidationTimer;
+- (void)_unregisterForAllDarwinNotifications;
+- (void)_unregisterForDarwinNotification:(id)arg1;
+- (id)cachedOfferForType:(long long)arg1;
+- (id)cachedOffers;
+- (id)cachedOffersLock;
+- (void)clearFollowups;
+- (id)currentDefaultOffer;
+- (id)currentOffer;
+- (id)currentOfferForBundleIdentifier:(id)arg1;
+- (id)currentPremiumOffer;
+- (id)currentPremiumOfferForBundleIdentifier:(id)arg1;
+- (void)dealloc;
+- (bool)fetchOfferIfNeeded;
+- (void)forcePostFollowup;
+- (void)getDefaultOfferWithCompletion:(id /* block */)arg1;
+- (void)getOfferForBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)getOfferForBundleIdentifier:(id)arg1 offerContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)getOfferWithCompletion:(id /* block */)arg1;
+- (void)getPremiumOfferAndOpportunityBubbleForBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)getPremiumOfferAndOpportunityBubbleWithCompletion:(id /* block */)arg1;
+- (void)getPremiumOfferForBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)getPremiumOfferForBundleIdentifier:(id)arg1 offerContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)getPremiumOfferWithCompletion:(id /* block */)arg1;
+- (id)init;
+- (bool)isBuddyOfferEnabled;
+- (bool)isDeviceStorageAlmostFull;
+- (bool)isSimulatedDeviceStorageAlmostFull;
+- (id)photosLibrarySize;
+- (void)postBackupRestoredOffer:(id /* block */)arg1;
+- (void)postBuddyOfferType:(id)arg1;
+- (void)postOfferType:(id)arg1;
+- (id)registeredDarwinNotifications;
+- (void)setBuddyOfferEnabled:(bool)arg1;
+- (void)setCachedOfferForType:(long long)arg1 newOffer:(id)arg2;
+- (void)setCachedOffers:(id)arg1;
+- (void)setCachedOffersLock:(id)arg1;
+- (void)setRegisteredDarwinNotifications:(id)arg1;
+- (void)setSimulatedDeviceStorageAlmostFull:(bool)arg1;
+- (void)setSimulatedPhotosLibrarySize:(id)arg1;
+- (id)simulatedPhotosLibrarySize;
+- (void)teardownCachedBuddyOffer;
+- (void)teardownCachedOffer;
+- (void)teardownCachedOffers;
+- (void)teardownCachedPremiumOffer;
+- (void)updateOfferId:(id)arg1 buttonId:(id)arg2 info:(id)arg3 completion:(id /* block */)arg4;
+
+@end

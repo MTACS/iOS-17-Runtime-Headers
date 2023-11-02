@@ -1,0 +1,4 @@
+
+@interface PMMConstants : NSObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface COTimerCreateRequest : COTimerRequest
+
+@end

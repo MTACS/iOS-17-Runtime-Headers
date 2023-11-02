@@ -1,0 +1,80 @@
+
+@interface NWStatsUDPSnapshot : NWStatsProtocolSnapshot {
+    struct nstat_udp_descriptor { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; struct activity_bitmap { unsigned long long x_5_1_1; unsigned long long x_5_1_2[2]; } x5; union { struct sockaddr_in { unsigned char x_1_2_1; unsigned char x_1_2_2; unsigned short x_1_2_3; struct in_addr { unsigned int x_4_3_1; } x_1_2_4; BOOL x_1_2_5[8]; } x_6_1_1; struct sockaddr_in6 { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned short x_2_2_3; unsigned int x_2_2_4; struct in6_addr { union { unsigned char x_1_4_1[16]; unsigned short x_1_4_2[8]; unsigned int x_1_4_3[4]; } x_5_3_1; } x_2_2_5; unsigned int x_2_2_6; } x_6_1_2; } x6; union { struct sockaddr_in { unsigned char x_1_2_1; unsigned char x_1_2_2; unsigned short x_1_2_3; struct in_addr { unsigned int x_4_3_1; } x_1_2_4; BOOL x_1_2_5[8]; } x_7_1_1; struct sockaddr_in6 { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned short x_2_2_3; unsigned int x_2_2_4; struct in6_addr { union { unsigned char x_1_4_1[16]; unsigned short x_1_4_2[8]; unsigned int x_1_4_3[4]; } x_5_3_1; } x_2_2_5; unsigned int x_2_2_6; } x_7_1_2; } x7; } * _descriptor;
+    NSUUID * _euuid;
+    NSUUID * _flowuuid;
+    NSData * _localAddress;
+    NSString * _processName;
+    NSData * _remoteAddress;
+    double  _snapshotTimeInterval;
+    NSDate * _snapshotTimestamp;
+    double  _startTimeInterval;
+    NSDate * _startTimestamp;
+    NSUUID * _uuid;
+    NSUUID * _vuuid;
+}
+
+@property (nonatomic, readonly) bool isSubFlow;
+
+- (void).cxx_destruct;
+- (id)descriptorDescription;
+- (int)epid;
+- (unsigned long long)eupid;
+- (id)euuid;
+- (bool)failedFlowswitchValuesLookup;
+- (bool)failedRouteValuesLookup;
+- (bool)failedSkywalkAction;
+- (double)flowDuration;
+- (double)flowSnapshotTimeIntervalSince1970;
+- (double)flowSnapshotTimeIntervalSinceReferenceDate;
+- (id)flowSnapshotTimestamp;
+- (unsigned long long)flowStartContinuousTime;
+- (double)flowStartTimeIntervalSince1970;
+- (double)flowStartTimeIntervalSinceReferenceDate;
+- (id)flowStartTimestamp;
+- (bool)flowUsesChannels;
+- (id)flowuuid;
+- (bool)hasLocalDestination;
+- (bool)hasNonLocalDestination;
+- (id)initWithUpdate:(const struct nstat_msg_src_update_convenient { struct nstat_msg_src_update_hdr { struct nstat_msg_hdr { unsigned long long x_1_2_1; unsigned int x_1_2_2; unsigned short x_1_2_3; unsigned short x_1_2_4; } x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; struct nstat_counts { unsigned long long x_4_2_1; unsigned long long x_4_2_2; unsigned long long x_4_2_3; unsigned long long x_4_2_4; unsigned long long x_4_2_5; unsigned long long x_4_2_6; unsigned long long x_4_2_7; unsigned long long x_4_2_8; unsigned long long x_4_2_9; unsigned long long x_4_2_10; unsigned int x_4_2_11; unsigned int x_4_2_12; unsigned int x_4_2_13; unsigned int x_4_2_14; unsigned int x_4_2_15; unsigned int x_4_2_16; unsigned int x_4_2_17; unsigned int x_4_2_18; } x_1_1_4; unsigned int x_1_1_5; unsigned char x_1_1_6[4]; } x1; union { struct nstat_tcp_descriptor { unsigned long long x_1_2_1; unsigned long long x_1_2_2; unsigned long long x_1_2_3; unsigned long long x_1_2_4; unsigned long long x_1_2_5; unsigned long long x_1_2_6; struct activity_bitmap { unsigned long long x_7_3_1; unsigned long long x_7_3_2[2]; } x_1_2_7; unsigned int x_1_2_8; unsigned int x_1_2_9; unsigned int x_1_2_10; unsigned int x_1_2_11; unsigned int x_1_2_12; unsigned int x_1_2_13; unsigned int x_1_2_14; unsigned int x_1_2_15; unsigned int x_1_2_16; unsigned int x_1_2_17; unsigned int x_1_2_18; unsigned int x_1_2_19; unsigned int x_1_2_20; union { struct sockaddr_in { unsigned char x_1_4_1; unsigned char x_1_4_2; unsigned short x_1_4_3; struct in_addr { unsigned int x_4_5_1; } x_1_4_4; BOOL x_1_4_5[8]; } x_21_3_1; struct sockaddr_in6 { unsigned char x_2_4_1; unsigned char x_2_4_2; unsigned short x_2_4_3; unsigned int x_2_4_4; struct in6_addr { union { unsigned char x_1_6_1[16]; unsigned short x_1_6_2[8]; unsigned int x_1_6_3[4]; } x_5_5_1; } x_2_4_5; unsigned int x_2_4_6; } x_21_3_2; } x_1_2_21; } x_2_1_1; } x2; }*)arg1 startTime:(double)arg2 flowFlags:(unsigned int)arg3 previously:(struct update_subset_for_deltas { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg4;
+- (bool)interfaceAWDL;
+- (bool)interfaceCellular;
+- (bool)interfaceCellularViaAnyFallback;
+- (bool)interfaceCellularViaFallback;
+- (bool)interfaceCellularViaFastFallback;
+- (bool)interfaceCellularViaIndependentFallback;
+- (bool)interfaceCellularViaPreferredFallback;
+- (bool)interfaceCellularViaSlowFallback;
+- (bool)interfaceConstrained;
+- (bool)interfaceExpensive;
+- (unsigned int)interfaceIndex;
+- (bool)interfaceLLW;
+- (bool)interfaceLoopback;
+- (bool)interfaceUnknown;
+- (bool)interfaceWiFi;
+- (bool)interfaceWired;
+- (bool)isKnownInbound;
+- (bool)isKnownListener;
+- (bool)isKnownOutbound;
+- (bool)isSubFlow;
+- (id)localAddress;
+- (unsigned short)localPort;
+- (unsigned long long)networkActivityMapPart1;
+- (unsigned long long)networkActivityMapPart2;
+- (unsigned long long)networkActivityMapStartTime;
+- (unsigned int)personaID;
+- (int)processID;
+- (id)processName;
+- (id)provider;
+- (unsigned int)receiveBufferSize;
+- (unsigned int)receiveBufferUsed;
+- (id)remoteAddress;
+- (unsigned short)remotePort;
+- (void)setFlowSnapshotTimeIntervalSinceReferenceDate:(double)arg1;
+- (unsigned int)trafficClass;
+- (unsigned int)uid;
+- (unsigned long long)uniqueProcessID;
+- (id)uuid;
+- (id)vuuid;
+
+@end

@@ -1,0 +1,88 @@
+
+@interface PGSuggestionOptions : NSObject {
+    NSDictionary * _additionalOptions;
+    bool  _allowNotification;
+    bool  _clearFeaturedSuggestions;
+    bool  _computeReasons;
+    bool  _discardGeneratedSuggestions;
+    bool  _generatesInvalidSuggestions;
+    bool  _ignoreCollisionsWithExistingSuggestions;
+    bool  _ignoreCollisionsWithSameBatchSuggestions;
+    NSDate * _localToday;
+    unsigned long long  _maximumNumberOfSuggestions;
+    bool  _noLimitPerFeature;
+    bool  _shouldProcessExistingSuggestions;
+    NSIndexSet * _suggestionSubtypeBlocklist;
+    NSIndexSet * _suggestionSubtypeWhitelist;
+    NSIndexSet * _suggestionTypeBlocklist;
+    NSIndexSet * _suggestionTypeWhitelist;
+    NSDate * _universalEndDate;
+    NSDate * _universalEndDateForWholeLibrarySuggestions;
+    NSDate * _universalStartDate;
+}
+
+@property (nonatomic, retain) NSDictionary *additionalOptions;
+@property (nonatomic) bool allowNotification;
+@property (nonatomic) bool clearFeaturedSuggestions;
+@property (nonatomic) bool computeReasons;
+@property (nonatomic) bool discardGeneratedSuggestions;
+@property (nonatomic) bool generateInvalidSuggestions;
+@property (nonatomic) bool ignoreCollisionsWithExistingSuggestions;
+@property (nonatomic) bool ignoreCollisionsWithSameBatchSuggestions;
+@property (nonatomic, retain) NSDate *localToday;
+@property (nonatomic) unsigned long long maximumNumberOfSuggestions;
+@property (nonatomic) bool noLimitPerFeature;
+@property (nonatomic) bool shouldProcessExistingSuggestions;
+@property (nonatomic, retain) NSIndexSet *suggestionSubtypeBlocklist;
+@property (nonatomic, retain) NSIndexSet *suggestionSubtypeWhitelist;
+@property (nonatomic, retain) NSIndexSet *suggestionTypeBlocklist;
+@property (nonatomic, retain) NSIndexSet *suggestionTypeWhitelist;
+@property (nonatomic, retain) NSDate *universalEndDate;
+@property (nonatomic, retain) NSDate *universalEndDateForWholeLibrarySuggestions;
+@property (nonatomic, retain) NSDate *universalStartDate;
+
+- (void).cxx_destruct;
+- (id)additionalOptions;
+- (bool)allowNotification;
+- (bool)clearFeaturedSuggestions;
+- (bool)computeReasons;
+- (bool)discardGeneratedSuggestions;
+- (bool)generateInvalidSuggestions;
+- (bool)ignoreCollisionsWithExistingSuggestions;
+- (bool)ignoreCollisionsWithSameBatchSuggestions;
+- (id)init;
+- (id)initWithOptionsDictionary:(id)arg1;
+- (id)localToday;
+- (unsigned long long)maximumNumberOfSuggestions;
+- (bool)noLimitPerFeature;
+- (void)setAdditionalOptions:(id)arg1;
+- (void)setAllowNotification:(bool)arg1;
+- (void)setClearFeaturedSuggestions:(bool)arg1;
+- (void)setComputeReasons:(bool)arg1;
+- (void)setDefaultStartAndEndDatesIfNeeded;
+- (void)setDefaultStartAndEndDatesIfNeededWithNumberOfDays:(long long)arg1;
+- (void)setDiscardGeneratedSuggestions:(bool)arg1;
+- (void)setGenerateInvalidSuggestions:(bool)arg1;
+- (void)setIgnoreCollisionsWithExistingSuggestions:(bool)arg1;
+- (void)setIgnoreCollisionsWithSameBatchSuggestions:(bool)arg1;
+- (void)setLocalToday:(id)arg1;
+- (void)setMaximumNumberOfSuggestions:(unsigned long long)arg1;
+- (void)setNoLimitPerFeature:(bool)arg1;
+- (void)setShouldProcessExistingSuggestions:(bool)arg1;
+- (void)setSuggestionSubtypeBlocklist:(id)arg1;
+- (void)setSuggestionSubtypeWhitelist:(id)arg1;
+- (void)setSuggestionTypeBlocklist:(id)arg1;
+- (void)setSuggestionTypeWhitelist:(id)arg1;
+- (void)setUniversalEndDate:(id)arg1;
+- (void)setUniversalEndDateForWholeLibrarySuggestions:(id)arg1;
+- (void)setUniversalStartDate:(id)arg1;
+- (bool)shouldProcessExistingSuggestions;
+- (id)suggestionSubtypeBlocklist;
+- (id)suggestionSubtypeWhitelist;
+- (id)suggestionTypeBlocklist;
+- (id)suggestionTypeWhitelist;
+- (id)universalEndDate;
+- (id)universalEndDateForWholeLibrarySuggestions;
+- (id)universalStartDate;
+
+@end

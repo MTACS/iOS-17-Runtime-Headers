@@ -1,0 +1,75 @@
+
+@interface GEOComposedRouteTransitTripSection : GEOComposedRouteSection <GEOComposedRouteTransitSection> {
+    struct { 
+        unsigned long long stopID; 
+        unsigned long long hallID; 
+        unsigned long long stationID; 
+    }  _fromNodeID;
+    struct { 
+        double latitude; 
+        double longitude; 
+    }  _fromNodeLocation;
+    struct Color<float, 4, geo::ColorSpace::Linear> { 
+        struct Matrix<float, 4, 1> { 
+            float _e[4]; 
+        } _backing; 
+    }  _lineColor;
+    unsigned long long  _lineID;
+    struct { 
+        struct { 
+            double x; 
+            double y; 
+        } origin; 
+        struct { 
+            double width; 
+            double height; 
+        } size; 
+    }  _originalBounds;
+    struct { 
+        unsigned long long stopID; 
+        unsigned long long hallID; 
+        unsigned long long stationID; 
+    }  _toNodeID;
+    struct { 
+        double latitude; 
+        double longitude; 
+    }  _toNodeLocation;
+    int  _toNodeSignificance;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; } fromNodeID;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isTransfer;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Color<float' */ struct  lineColor; /* unknown property attribute:  1>=[4f]}} */
+@property (nonatomic, readonly) unsigned long long lineID;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; } toNodeID;
+@property (nonatomic, readonly) int toNodeSignificance;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (id).cxx_construct;
+- (bool)_MapsCarPlay_isEqual:(id)arg1;
+- (id)_hallForStop:(id)arg1 withDecoderData:(id)arg2;
+- (void)_initSupportWithDecoderData:(id)arg1 step:(id)arg2 toNodeSignificance:(int)arg3 transitLineColor:(id)arg4;
+- (id)_stationForHall:(id)arg1 withDecoderData:(id)arg2;
+- (id)description;
+- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })fromNodeID;
+- (id)initWithCoordinates:(id)arg1 segment:(id)arg2 segmentIndex:(unsigned long long)arg3 steps:(id)arg4 startCoordinateIndex:(unsigned int)arg5 coordinateCount:(unsigned int)arg6 stepIndex:(unsigned long long)arg7 toNodeSignificance:(int)arg8 transitLineColor:(id)arg9 startDistance:(double)arg10 lengthScaleFactor:(double)arg11 decoderData:(id)arg12;
+- (id)initWithCoordinates:(id)arg1 segment:(id)arg2 segmentIndex:(unsigned long long)arg3 steps:(id)arg4 startCoordinateIndex:(unsigned int)arg5 coordinateCount:(unsigned int)arg6 stepIndex:(unsigned long long)arg7 toNodeSignificance:(int)arg8 transitLineColor:(id)arg9 startDistance:(double)arg10 lengthScaleFactor:(double)arg11 fallbackStartCoordinate:(struct { double x1; double x2; })arg12 fallbackEndCoordinate:(struct { double x1; double x2; })arg13;
+- (bool)isTransfer;
+- (struct Color<float, 4, geo::ColorSpace::Linear> { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; })lineColor;
+- (unsigned long long)lineID;
+- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })toNodeID;
+- (int)toNodeSignificance;
+
+// Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
+
+- (bool)_getEndPoints:(id)arg1 rect:(const void*)arg2 result:(void*)arg3;
+- (bool)_validateSnappedPaths:(id)arg1 snappedTileBounds:(const void*)arg2 overlay:(id)arg3;
+- (id)pathsForRenderRegion:(id)arg1 inOverlay:(id)arg2 shouldSnapToTransit:(bool)arg3 verifySnapping:(bool)arg4;
+- (id)unsnappedPathsInOverlay:(id)arg1;
+
+@end

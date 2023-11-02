@@ -1,0 +1,4 @@
+
+@protocol SBSUniversalControlServerToClientInterface <NSObject>
+
+@end

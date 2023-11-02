@@ -1,0 +1,4 @@
+
+@interface _TtC7SwiftUIP33_B437445B20C411B83F8E47EB39F0306419AnyGestureResponder : SwiftUI.UnaryViewResponder
+
+@end

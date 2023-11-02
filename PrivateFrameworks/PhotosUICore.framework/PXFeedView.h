@@ -1,0 +1,82 @@
+
+@interface PXFeedView : UIView <PXGAXResponder, PXTapToRadarDiagnosticProvider, PXTouchingUIGestureRecognizerDelegate, UIGestureRecognizerDelegate> {
+    <PXGAXResponder> * _axNextResponder;
+    id /* block */  _currentHoverCompletion;
+    id /* block */  _currentTouchCompletion;
+    PXFeedContentLayout * _feedContentLayout;
+    UIHoverGestureRecognizer * _hoverGesture;
+    <NSObject><NSCopying> * _hoveredItemObjectID;
+    bool  _isActive;
+    PXGSplitLayout * _splitLayout;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+    PXFeedTitleLayout * _titleLayout;
+    PXTouchingUIGestureRecognizer * _touchingGestureRecognizer;
+    PXGViewCoordinator * _tungstenViewCoordinator;
+    PXFeedViewModel * _viewModel;
+}
+
+@property (nonatomic) <PXGAXResponder> *axNextResponder;
+@property (nonatomic, copy) id /* block */ currentHoverCompletion;
+@property (nonatomic, copy) id /* block */ currentTouchCompletion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) PXFeedContentLayout *feedContentLayout;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) UIHoverGestureRecognizer *hoverGesture;
+@property (nonatomic, retain) <NSObject><NSCopying> *hoveredItemObjectID;
+@property (nonatomic) bool isActive;
+@property (nonatomic, readonly) PXGSplitLayout *splitLayout;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, readonly) PXFeedTitleLayout *titleLayout;
+@property (nonatomic, readonly) PXTouchingUIGestureRecognizer *touchingGestureRecognizer;
+@property (nonatomic, readonly) PXGView *tungstenView;
+@property (nonatomic, readonly) PXGViewCoordinator *tungstenViewCoordinator;
+@property (nonatomic, readonly) PXFeedViewModel *viewModel;
+
+- (void).cxx_destruct;
+- (void)_handleChangeToModifySelectionWithUserInfo:(id)arg1;
+- (void)_handleHover:(id)arg1;
+- (void)_handleHoverEventAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_handleTap:(id)arg1;
+- (void)_handleTouch:(id)arg1;
+- (void)_installGestureRecognizers;
+- (id)axContainingScrollViewForAXGroup:(id)arg1;
+- (void)axGroup:(id)arg1 didChange:(unsigned long long)arg2 userInfo:(id)arg3;
+- (bool)axGroup:(id)arg1 didRequestToPerformAction:(long long)arg2 userInfo:(id)arg3;
+- (id)axNextResponder;
+- (void)beginTouchingAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)collectTapToRadarDiagnosticsIntoContainer:(id)arg1;
+- (id /* block */)currentHoverCompletion;
+- (id /* block */)currentTouchCompletion;
+- (void)endTouching;
+- (id)feedContentLayout;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)handlePrimaryInteractionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hoverGesture;
+- (id)hoveredItemObjectID;
+- (struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })indexPathClosestToIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1 inDirection:(unsigned long long)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 configuration:(id)arg2;
+- (bool)isActive;
+- (id)itemPlacementControllerForItemReference:(id)arg1;
+- (id)regionOfInterestForObjectReference:(id)arg1;
+- (void)scrollObjectReference:(id)arg1 toScrollPosition:(unsigned long long)arg2;
+- (void)setAxNextResponder:(id)arg1;
+- (void)setCurrentHoverCompletion:(id /* block */)arg1;
+- (void)setCurrentTouchCompletion:(id /* block */)arg1;
+- (void)setHoveredItemObjectID:(id)arg1;
+- (void)setIsActive:(bool)arg1;
+- (id)splitLayout;
+- (id)tapGestureRecognizer;
+- (id)titleLayout;
+- (id)touchingGestureRecognizer;
+- (void)touchingUIGestureRecognizerWillBeginTouching:(id)arg1;
+- (void)touchingUIGestureRecognizerWillEndTouching:(id)arg1;
+- (id)tungstenView;
+- (id)tungstenViewCoordinator;
+- (id)viewModel;
+
+@end

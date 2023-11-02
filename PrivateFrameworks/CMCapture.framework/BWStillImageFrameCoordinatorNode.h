@@ -1,0 +1,33 @@
+
+@interface BWStillImageFrameCoordinatorNode : BWNode {
+    BWStillImageSettings * _currentStillImageSettings;
+    bool  _holdMessagesUntilAllInputsAreLive;
+    NSMutableArray * _inputsForQueuedMessages;
+    NSMutableDictionary * _portTypeToFrameCounters;
+    NSDictionary * _portTypeToInput;
+    NSDictionary * _portTypeToOutput;
+    NSDictionary * _portTypeToSensorRawInput;
+    NSDictionary * _portTypeToSensorRawOutput;
+    NSMutableArray * _queuedMessages;
+}
+
++ (void)initialize;
+
+- (void)_handleMessage:(id)arg1 fromInput:(id)arg2;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)dealloc;
+- (void)didReachEndOfDataForInput:(id)arg1;
+- (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
+- (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
+- (void)handleNodeError:(id)arg1 forInput:(id)arg2;
+- (void)handleStillImagePrewarmWithSettings:(id)arg1 forInput:(id)arg2;
+- (id)initWithPortTypes:(id)arg1 sensorRawInputPortTypes:(id)arg2;
+- (id)inputForPortType:(id)arg1;
+- (id)nodeSubType;
+- (id)nodeType;
+- (id)outputForPortType:(id)arg1;
+- (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
+- (id)sensorRawInputForPortType:(id)arg1;
+- (id)sensorRawOutputForPortType:(id)arg1;
+
+@end

@@ -1,0 +1,51 @@
+
+@interface CEMApplicationSettingsManagedDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol> {
+    NSNumber * _payloadAllowManagedAppsCloudSync;
+    NSNumber * _payloadAllowManagedToWriteUnmanagedContacts;
+    NSNumber * _payloadAllowOpenFromManagedToUnmanaged;
+    NSNumber * _payloadAllowOpenFromUnmanagedToManaged;
+    NSNumber * _payloadAllowUnmanagedToReadManagedContacts;
+    NSNumber * _payloadForceAirDropUnmanaged;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSNumber *payloadAllowManagedAppsCloudSync;
+@property (nonatomic, copy) NSNumber *payloadAllowManagedToWriteUnmanagedContacts;
+@property (nonatomic, copy) NSNumber *payloadAllowOpenFromManagedToUnmanaged;
+@property (nonatomic, copy) NSNumber *payloadAllowOpenFromUnmanagedToManaged;
+@property (nonatomic, copy) NSNumber *payloadAllowUnmanagedToReadManagedContacts;
+@property (nonatomic, copy) NSNumber *payloadForceAirDropUnmanaged;
+@property (readonly) Class superclass;
+
++ (id)allowedPayloadKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowOpenFromManagedToUnmanaged:(id)arg2 withAllowOpenFromUnmanagedToManaged:(id)arg3 withForceAirDropUnmanaged:(id)arg4 withAllowManagedAppsCloudSync:(id)arg5 withAllowManagedToWriteUnmanagedContacts:(id)arg6 withAllowUnmanagedToReadManagedContacts:(id)arg7;
++ (id)profileType;
++ (id)registeredClassName;
++ (id)registeredIdentifier;
++ (id)restrictionPayloadKeys;
+
+- (void).cxx_destruct;
+- (int)activationLevel;
+- (id)assetReferences;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)loadPayload:(id)arg1 error:(id*)arg2;
+- (bool)multipleAllowed;
+- (bool)mustBeSupervised;
+- (id)payloadAllowManagedAppsCloudSync;
+- (id)payloadAllowManagedToWriteUnmanagedContacts;
+- (id)payloadAllowOpenFromManagedToUnmanaged;
+- (id)payloadAllowOpenFromUnmanagedToManaged;
+- (id)payloadAllowUnmanagedToReadManagedContacts;
+- (id)payloadForceAirDropUnmanaged;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (void)setPayloadAllowManagedAppsCloudSync:(id)arg1;
+- (void)setPayloadAllowManagedToWriteUnmanagedContacts:(id)arg1;
+- (void)setPayloadAllowOpenFromManagedToUnmanaged:(id)arg1;
+- (void)setPayloadAllowOpenFromUnmanagedToManaged:(id)arg1;
+- (void)setPayloadAllowUnmanagedToReadManagedContacts:(id)arg1;
+- (void)setPayloadForceAirDropUnmanaged:(id)arg1;
+
+@end

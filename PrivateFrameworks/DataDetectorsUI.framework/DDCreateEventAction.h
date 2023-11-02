@@ -1,0 +1,13 @@
+
+@interface DDCreateEventAction : DDAddEventAction <EKEventEditViewDelegate>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
+- (id)localizedName;
+- (void)prepareViewControllerForActionController:(id)arg1;
+
+@end

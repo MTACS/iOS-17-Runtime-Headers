@@ -1,0 +1,4 @@
+
+@interface WebCoreRenderThemeBundle : NSObject
+
+@end

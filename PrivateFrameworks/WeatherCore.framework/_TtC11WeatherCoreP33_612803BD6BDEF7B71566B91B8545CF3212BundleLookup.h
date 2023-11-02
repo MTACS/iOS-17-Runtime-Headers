@@ -1,0 +1,4 @@
+
+@interface _TtC11WeatherCoreP33_612803BD6BDEF7B71566B91B8545CF3212BundleLookup : _TtCs12_SwiftObject
+
+@end

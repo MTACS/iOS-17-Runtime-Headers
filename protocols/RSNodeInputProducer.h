@@ -1,0 +1,4 @@
+
+@protocol RSNodeInputProducer <NSObject>
+
+@end

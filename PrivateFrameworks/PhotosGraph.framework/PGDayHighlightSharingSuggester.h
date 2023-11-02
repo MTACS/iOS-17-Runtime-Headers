@@ -1,0 +1,17 @@
+
+@interface PGDayHighlightSharingSuggester : PGAbstractSuggester <PGSuggester>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool lastSuggestionWasColliding;
+@property (readonly) Class superclass;
+
++ (bool)canSuggestHighlightNodeWithoutPeople:(id)arg1 loggingConnection:(id)arg2;
++ (bool)shouldSuggestHighlightNode:(id)arg1 neighborScoreComputer:(id)arg2 loggingConnection:(id)arg3;
++ (id)suggestionSubtypes;
++ (id)suggestionTypes;
+
+- (id)suggestionsWithOptions:(id)arg1 progress:(id /* block */)arg2;
+
+@end

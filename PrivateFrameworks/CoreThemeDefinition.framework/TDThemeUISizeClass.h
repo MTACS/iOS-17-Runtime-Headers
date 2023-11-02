@@ -1,0 +1,4 @@
+
+@interface TDThemeUISizeClass : TDThemeConstant
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol TSKTransformableObject <NSObject>
+
+@end

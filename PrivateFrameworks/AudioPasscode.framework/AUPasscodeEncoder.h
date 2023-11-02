@@ -1,0 +1,111 @@
+
+@interface AUPasscodeEncoder : AUAudioUnit {
+    struct map<unsigned int, std::any, std::less<unsigned int>, std::allocator<std::pair<const unsigned int, std::any>>> { 
+        struct __tree<std::__value_type<unsigned int, std::any>, std::__map_value_compare<unsigned int, std::__value_type<unsigned int, std::any>, std::less<unsigned int>>, std::allocator<std::__value_type<unsigned int, std::any>>> { 
+            void *__begin_node_; 
+            struct __compressed_pair<std::__tree_end_node<std::__tree_node_base<void *> *>, std::allocator<std::__tree_node<std::__value_type<unsigned int, std::any>, void *>>> { 
+                struct __tree_end_node<std::__tree_node_base<void *> *> { 
+                    void *__left_; 
+                } __value_; 
+            } __pair1_; 
+            struct __compressed_pair<unsigned long, std::__map_value_compare<unsigned int, std::__value_type<unsigned int, std::any>, std::less<unsigned int>>> { 
+                unsigned long long __value_; 
+            } __pair3_; 
+        } __tree_; 
+    }  _apcEncoderConfig;
+    id /* block */  _assetEndedAndSilencedHandler;
+    long long  _assetLength;
+    long long  _assetSampleCount;
+    unsigned long long  _beginningTime;
+    AUPasscodeCodecConfiguration * _codecConfig;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    bool  _embedPasscode;
+    struct unique_ptr<EOFReachedMessage, std::default_delete<EOFReachedMessage>> { 
+        struct __compressed_pair<EOFReachedMessage *, std::default_delete<EOFReachedMessage>> { 
+            struct EOFReachedMessage {} *__value_; 
+        } __ptr_; 
+    }  _eofMessage;
+    unsigned int  _fadeOutNumSamples;
+    unsigned int  _fadeOutSampleIndex;
+    float  _fadeOutTimeSeconds;
+    struct BufferedInputBus { 
+        AUAudioUnitBus *bus; 
+        unsigned int maxFrames; 
+        AVAudioPCMBuffer *pcmBuffer; 
+        struct AudioBufferList {} *originalAudioBufferList; 
+        struct AudioBufferList {} *mutableAudioBufferList; 
+    }  _inputBus;
+    AUAudioUnitBusArray * _inputBusArray;
+    struct unique_ptr<APCEncoderBase, std::default_delete<APCEncoderBase>> { 
+        struct __compressed_pair<APCEncoderBase *, std::default_delete<APCEncoderBase>> { 
+            struct APCEncoderBase {} *__value_; 
+        } __ptr_; 
+    }  _kernel;
+    unsigned long long  _loopNumber;
+    unsigned long long  _numLoopsToStopAfter;
+    AUAudioUnitBus * _outputBus;
+    AUAudioUnitBusArray * _outputBusArray;
+    bool  _outputIsSilenced;
+    NSMutableDictionary * _passcodeEmbedInfo;
+    NSData * _payload;
+    struct unique_ptr<caulk::concurrent::messenger, std::default_delete<caulk::concurrent::messenger>> { 
+        struct __compressed_pair<caulk::concurrent::messenger *, std::default_delete<caulk::concurrent::messenger>> { 
+            struct messenger {} *__value_; 
+        } __ptr_; 
+    }  _rtMessenger;
+    bool  _silenceOutputOnNextAssetEnding;
+    bool  _triggerFadeOut;
+}
+
+@property (nonatomic, copy) id /* block */ assetEndedAndSilencedHandler;
+@property (nonatomic) long long assetLength;
+@property (nonatomic, retain) AUPasscodeCodecConfiguration *codecConfig;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic) bool embedPasscode;
+@property (nonatomic) float fadeOutTimeSeconds;
+@property (nonatomic) unsigned long long numLoopsToStopAfter;
+@property (nonatomic, retain) NSMutableDictionary *passcodeEmbedInfo;
+@property (nonatomic, copy) NSData *payload;
+@property (nonatomic) bool silenceOutputOnNextAssetEnding;
+@property (nonatomic) bool triggerFadeOut;
+
++ (struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })getAUDesc;
++ (void)registerAU;
++ (id)supportedEncoders;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (bool)allocateRenderResourcesAndReturnError:(id*)arg1;
+- (id /* block */)assetEndedAndSilencedHandler;
+- (long long)assetLength;
+- (bool)canProcessInPlace;
+- (id)codecConfig;
+- (void)dealloc;
+- (void)deallocateRenderResources;
+- (id)dispatchQueue;
+- (bool)embedPasscode;
+- (float)fadeOutTimeSeconds;
+- (void)handleEOFReachedForAsset;
+- (id)initWithComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)inputBusses;
+- (id /* block */)internalRenderBlock;
+- (unsigned long long)numLoopsToStopAfter;
+- (id)outputBusses;
+- (id)passcodeEmbedInfo;
+- (id)payload;
+- (void)reset;
+- (void)setAssetEndedAndSilencedHandler:(id /* block */)arg1;
+- (void)setAssetLength:(long long)arg1;
+- (void)setCodecConfig:(id)arg1;
+- (void)setDispatchQueue:(id)arg1;
+- (void)setEmbedPasscode:(bool)arg1;
+- (void)setFadeOutTimeSeconds:(float)arg1;
+- (void)setNumLoopsToStopAfter:(unsigned long long)arg1;
+- (void)setPasscodeEmbedInfo:(id)arg1;
+- (void)setPayload:(id)arg1;
+- (void)setSilenceOutputOnNextAssetEnding:(bool)arg1;
+- (void)setTriggerFadeOut:(bool)arg1;
+- (bool)silenceOutputOnNextAssetEnding;
+- (bool)triggerFadeOut;
+
+@end

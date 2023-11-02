@@ -1,0 +1,27 @@
+
+@protocol CHAutoStyling <NSObject>
+
+@required
+
+- (OADStroke *)autoStrokeForSeriesIndex:(unsigned long long)arg1;
+- (OADFill *)autoTextFill;
+- (void)resolveAxisGraphicProperties:(OADGraphicProperties *)arg1;
+- (void)resolveChartAreaGraphicProperties:(OADGraphicProperties *)arg1;
+- (void)resolveFloorGraphicProperties:(OADGraphicProperties *)arg1;
+- (void)resolveGraphicPropertiesOfErrorBar:(OADGraphicProperties *)arg1 forSeriesIndex:(unsigned long long)arg2;
+- (void)resolveGraphicPropertiesOfSeries:(OADGraphicProperties *)arg1 forSeriesIndex:(unsigned long long)arg2;
+- (void)resolveGraphicPropertiesOfSeries:(OADGraphicProperties *)arg1 forSeriesIndex:(unsigned long long)arg2 isLine:(bool)arg3;
+- (void)resolveGraphicPropertiesOfTrendline:(OADGraphicProperties *)arg1 forSeriesIndex:(unsigned long long)arg2;
+- (void)resolveLegendGraphicProperties:(OADGraphicProperties *)arg1;
+- (void)resolveMajorGridLinesGraphicProperties:(OADGraphicProperties *)arg1;
+- (void)resolveMarker:(void *)arg1 withSeriesGraphicProperties:(void *)arg2 forSeriesIndex:(void *)arg3 clientGraphicPropertyDefaults:(void *)arg4; // needs 4 arg types, found 10: CHDMarker *, OADGraphicProperties *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, id, id /* block */, OADGraphicProperties *, NSArray *, void*
+- (void)resolveMinorGridLinesGraphicProperties:(OADGraphicProperties *)arg1;
+- (void)resolvePlotAreaGraphicProperties:(OADGraphicProperties *)arg1;
+- (void)resolveWallGraphicProperties:(OADGraphicProperties *)arg1;
+
+@optional
+
+- (void)setAutoChartFillIsHollow:(bool)arg1;
+- (void)setAutoChartStrokeIsHollow:(bool)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface TDTextureInterpretation : TDThemeConstant
+
+@end

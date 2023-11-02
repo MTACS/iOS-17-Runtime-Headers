@@ -1,0 +1,4 @@
+
+@protocol WFTTSStringComponent <NSObject>
+
+@end

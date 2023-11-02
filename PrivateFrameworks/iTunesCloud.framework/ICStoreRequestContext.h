@@ -1,0 +1,53 @@
+
+@interface ICStoreRequestContext : ICRequestContext <NSSecureCoding> {
+    bool  _allowsExpiredBags;
+    ICUserIdentity * _delegatedIdentity;
+    ICUserIdentity * _identity;
+    ICUserIdentityStore * _identityStore;
+    long long  _personalizationStyle;
+    ICStoreDialogResponseHandler * _storeDialogResponseHandler;
+}
+
+@property (nonatomic, readonly) bool allowsExpiredBags;
+@property (nonatomic, readonly, copy) ICUserIdentity *delegatedIdentity;
+@property (nonatomic, readonly, copy) ICUserIdentity *identity;
+@property (nonatomic, readonly) ICUserIdentityStore *identityStore;
+@property (nonatomic, readonly) long long personalizationStyle;
+@property (nonatomic, readonly, copy) ICStoreDialogResponseHandler *storeDialogResponseHandler;
+
+// Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
+
++ (id)activeStoreAccountRequestContext;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (bool)allowsExpiredBags;
+- (id)copyWithBlock:(id /* block */)arg1;
+- (id)delegatedIdentity;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)identity;
+- (id)identityStore;
+- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithIdentity:(id)arg1;
+- (id)initWithIdentity:(id)arg1 clientInfo:(id)arg2;
+- (id)initWithIdentity:(id)arg1 identityStore:(id)arg2 clientInfo:(id)arg3;
+- (id)initWithIdentity:(id)arg1 identityStore:(id)arg2 clientInfo:(id)arg3 authenticationProvider:(id)arg4;
+- (bool)isEqual:(id)arg1;
+- (long long)personalizationStyle;
+- (void)setAllowsExpiredBags:(bool)arg1;
+- (void)setDelegatedIdentity:(id)arg1;
+- (void)setIdentity:(id)arg1;
+- (void)setIdentityStore:(id)arg1;
+- (void)setPersonalizationStyle:(long long)arg1;
+- (void)setStoreDialogResponseHandler:(id)arg1;
+- (id)storeDialogResponseHandler;
+- (id)userAgent;
+
+// Image: /System/Library/PrivateFrameworks/BookLibrary.framework/BookLibrary
+
+- (id)initWithActiveAccountAllowAuthenticationOnceADay_bl;
+
+@end

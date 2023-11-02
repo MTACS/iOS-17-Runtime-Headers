@@ -1,0 +1,44 @@
+
+@interface PKPaymentSetupViewController : UIViewController {
+    UIButton * _cancelButton;
+    <PKPaymentSetupRequestViewControllerDelegate> * _delegate;
+    bool  _explicitPresentationStyle;
+    UILabel * _loadingLabel;
+    PKPaymentSetupRequest * _paymentSetupRequest;
+    long long  _presentationStyle;
+    PKRemotePaymentSetupViewController * _remoteVC;
+    _UIAsyncInvocation * _remoteVCRequest;
+    UIActivityIndicatorView * _spinner;
+}
+
+@property (nonatomic) <PKPaymentSetupRequestViewControllerDelegate> *delegate;
+@property (nonatomic) long long presentationStyle;
+
++ (bool)_shouldForwardViewWillTransitionToSize;
++ (void)paymentSetupFeaturesForConfiguration:(id)arg1 completion:(id /* block */)arg2;
+
+- (void).cxx_destruct;
+- (void)_cancelTapped;
+- (void)_hideLoadingContent;
+- (void)_setRemoteVC:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)childViewControllerForStatusBarHidden;
+- (id)childViewControllerForStatusBarStyle;
+- (void)dealloc;
+- (id)delegate;
+- (void)didFinishWithPasses:(id)arg1 error:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithPaymentSetupRequest:(id)arg1;
+- (void)loadView;
+- (long long)modalTransitionStyle;
+- (long long)presentationStyle;
+- (void)setDelegate:(id)arg1;
+- (void)setPresentationStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)updateModalPresentationStyle;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+
+@end

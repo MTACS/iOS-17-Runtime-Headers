@@ -1,0 +1,85 @@
+
+@interface ARImageSensorSettings : NSObject <NSCopying> {
+    bool  _autoFocusEnabled;
+    bool  _backFacingCameraGeometricDistortionCorrectionEnabled;
+    bool  _calibrationDataOutputEnabled;
+    bool  _dropsInitialFramesOutsideExposureTargetOffsetThreshold;
+    bool  _enabled;
+    bool  _focusPixelBlurScoreDeliveryEnabled;
+    float  _maxGainOverride;
+    unsigned long long  _maximumNumberOfInitialFramesDropped;
+    unsigned long long  _maximumNumberOfTrackedFaces;
+    NSString * _metaData;
+    bool  _mirrorVideoOutput;
+    float  _negativeExposureTargetOffsetThreshold;
+    float  _positiveExposureTargetOffsetThreshold;
+    bool  _supportsCapturingHighResolutionFrames;
+    ARVideoFormat * _videoFormat;
+    bool  _videoHDRAllowed;
+    bool  _visionDataOutputEnabled;
+    NSDictionary * _visionDataOutputParameters;
+}
+
+@property (nonatomic) bool autoFocusEnabled;
+@property (nonatomic) bool backFacingCameraGeometricDistortionCorrectionEnabled;
+@property (nonatomic) bool calibrationDataOutputEnabled;
+@property (nonatomic) bool dropsInitialFramesOutsideExposureTargetOffsetThreshold;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (nonatomic) bool focusPixelBlurScoreDeliveryEnabled;
+@property (nonatomic) float maxGainOverride;
+@property (nonatomic) unsigned long long maximumNumberOfInitialFramesDropped;
+@property (nonatomic) unsigned long long maximumNumberOfTrackedFaces;
+@property (nonatomic, copy) NSString *metaData;
+@property (nonatomic) bool mirrorVideoOutput;
+@property (nonatomic) float negativeExposureTargetOffsetThreshold;
+@property (nonatomic) float positiveExposureTargetOffsetThreshold;
+@property (nonatomic) bool supportsCapturingHighResolutionFrames;
+@property (nonatomic, retain) ARVideoFormat *videoFormat;
+@property (nonatomic) bool videoHDRAllowed;
+@property (nonatomic) bool visionDataOutputEnabled;
+@property (nonatomic, retain) NSDictionary *visionDataOutputParameters;
+
+- (void).cxx_destruct;
+- (bool)autoFocusEnabled;
+- (bool)backFacingCameraGeometricDistortionCorrectionEnabled;
+- (bool)calibrationDataOutputEnabled;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (bool)dropsInitialFramesOutsideExposureTargetOffsetThreshold;
+- (bool)focusPixelBlurScoreDeliveryEnabled;
+- (unsigned long long)hash;
+- (id)initWithVideoFormat:(id)arg1;
+- (bool)isEnabled;
+- (bool)isEqual:(id)arg1;
+- (float)maxGainOverride;
+- (unsigned long long)maximumNumberOfInitialFramesDropped;
+- (unsigned long long)maximumNumberOfTrackedFaces;
+- (id)metaData;
+- (bool)mirrorVideoOutput;
+- (float)negativeExposureTargetOffsetThreshold;
+- (float)positiveExposureTargetOffsetThreshold;
+- (void)setAutoFocusEnabled:(bool)arg1;
+- (void)setBackFacingCameraGeometricDistortionCorrectionEnabled:(bool)arg1;
+- (void)setCalibrationDataOutputEnabled:(bool)arg1;
+- (void)setDropsInitialFramesOutsideExposureTargetOffsetThreshold:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setFocusPixelBlurScoreDeliveryEnabled:(bool)arg1;
+- (void)setMaxGainOverride:(float)arg1;
+- (void)setMaximumNumberOfInitialFramesDropped:(unsigned long long)arg1;
+- (void)setMaximumNumberOfTrackedFaces:(unsigned long long)arg1;
+- (void)setMetaData:(id)arg1;
+- (void)setMirrorVideoOutput:(bool)arg1;
+- (void)setNegativeExposureTargetOffsetThreshold:(float)arg1;
+- (void)setPositiveExposureTargetOffsetThreshold:(float)arg1;
+- (void)setSupportsCapturingHighResolutionFrames:(bool)arg1;
+- (void)setVideoFormat:(id)arg1;
+- (void)setVideoHDRAllowed:(bool)arg1;
+- (void)setVisionDataOutputEnabled:(bool)arg1;
+- (void)setVisionDataOutputParameters:(id)arg1;
+- (bool)supportsCapturingHighResolutionFrames;
+- (id)videoFormat;
+- (bool)videoHDRAllowed;
+- (bool)visionDataOutputEnabled;
+- (id)visionDataOutputParameters;
+
+@end

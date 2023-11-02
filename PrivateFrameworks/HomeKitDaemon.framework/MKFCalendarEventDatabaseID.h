@@ -1,0 +1,4 @@
+
+@interface MKFCalendarEventDatabaseID : MKFEventDatabaseID
+
+@end

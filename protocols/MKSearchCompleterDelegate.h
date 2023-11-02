@@ -1,0 +1,4 @@
+
+@protocol MKSearchCompleterDelegate <MKLocalSearchCompleterDelegatePrivate>
+
+@end

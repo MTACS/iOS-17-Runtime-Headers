@@ -1,0 +1,4 @@
+
+@interface NSBitmapImageRepStub : NSObject
+
+@end

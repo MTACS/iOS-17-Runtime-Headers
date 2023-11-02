@@ -1,0 +1,93 @@
+
+@interface DAEASOAuthFlowController : NSObject <SL_OOPAuthFlowDelegate, UIWebViewDelegate> {
+    NSString * _accountId;
+    DAEASOAuthPKCEChallenge * _challenge;
+    NSString * _claimsChallenge;
+    NSString * _clientID;
+    id /* block */  _completion;
+    NSString * _easEndPoint;
+    bool  _isOnPrem;
+    NSString * _issuer;
+    NSData * _jwksData;
+    NSString * _jwksURI;
+    unsigned long long  _oauthType;
+    NSString * _oauthURI;
+    NSString * _redirectURI;
+    NSString * _state;
+    NSString * _tokenRequestURI;
+    NSString * _username;
+}
+
+@property (nonatomic, copy) NSString *accountId;
+@property (nonatomic, retain) DAEASOAuthPKCEChallenge *challenge;
+@property (nonatomic, retain) NSString *claimsChallenge;
+@property (nonatomic, copy) NSString *clientID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *easEndPoint;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isOnPrem;
+@property (nonatomic, retain) NSString *issuer;
+@property (nonatomic, retain) NSData *jwksData;
+@property (nonatomic, retain) NSString *jwksURI;
+@property (nonatomic) unsigned long long oauthType;
+@property (nonatomic, copy) NSString *oauthURI;
+@property (nonatomic, copy) NSString *redirectURI;
+@property (nonatomic, retain) NSString *state;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *tokenRequestURI;
+@property (nonatomic, copy) NSString *username;
+
++ (id)upgradeAuthorizationEndpoint:(id)arg1;
++ (id)upgradeTokenEndpoint:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_accountDescription;
+- (void)_assignConnectionPropertiesToSessionConfiguration:(id)arg1;
+- (void)_exchangeAuthCode:(id)arg1 codeVerifier:(id)arg2 claims:(id)arg3 forTokensAndUsernameWithCompletion:(id /* block */)arg4;
+- (void)_exchangeAuthCode:(id)arg1 codeVerifier:(id)arg2 claims:(id)arg3 forTokensWithCompletion:(id /* block */)arg4;
+- (id)_urlRequestForOAuthTokenFromAuthCode:(id)arg1 codeVerifier:(id)arg2 claims:(id)arg3;
+- (id)accountId;
+- (id)authURLForUsername:(id)arg1;
+- (id)authURLForUsername:(id)arg1 originalAuthURL:(id)arg2;
+- (id)challenge;
+- (id)claimsChallenge;
+- (id)clientID;
+- (id)easEndPoint;
+- (void)exchangeAuthCode:(id)arg1 codeVerifier:(id)arg2 claims:(id)arg3 forTokensAndUsernameWithCompletion:(id /* block */)arg4;
+- (id)initWithOAuthType:(unsigned long long)arg1 authURI:(id)arg2 username:(id)arg3 accountId:(id)arg4 claims:(id)arg5 isOnPrem:(bool)arg6;
+- (id)initialRedirectURL;
+- (bool)isOnPrem;
+- (id)issuer;
+- (id)jwksData;
+- (id)jwksURI;
+- (unsigned long long)oauthType;
+- (id)oauthURI;
+- (id)onPremAuthURLForUsername:(id)arg1 originalAuthURL:(id)arg2 resource:(id)arg3;
+- (id)redirectURI;
+- (id)requestForAuthURL:(id)arg1;
+- (void)retrieveJWKSDataFromURI:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)retrieveOpenIDMetadataFromURI:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setAccountId:(id)arg1;
+- (void)setAuthFlowCompletion:(id /* block */)arg1;
+- (void)setChallenge:(id)arg1;
+- (void)setClaimsChallenge:(id)arg1;
+- (void)setClientID:(id)arg1;
+- (void)setEasEndPoint:(id)arg1;
+- (void)setIsOnPrem:(bool)arg1;
+- (void)setIssuer:(id)arg1;
+- (void)setJwksData:(id)arg1;
+- (void)setJwksURI:(id)arg1;
+- (void)setOauthType:(unsigned long long)arg1;
+- (void)setOauthURI:(id)arg1;
+- (void)setRedirectURI:(id)arg1;
+- (void)setState:(id)arg1;
+- (void)setTokenRequestURI:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (bool)shouldHideWebViewForLoadWithRequest:(id)arg1;
+- (id)state;
+- (id)tokenRequestURI;
+- (id)username;
+- (void)webViewDidFinishLoadWithPageTitleSupplier:(id /* block */)arg1;
+
+@end

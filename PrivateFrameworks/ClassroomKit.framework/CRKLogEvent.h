@@ -1,0 +1,30 @@
+
+@interface CRKLogEvent : NSObject <NSSecureCoding> {
+    NSDate * _date;
+    NSString * _name;
+    NSDictionary * _userInfo;
+}
+
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSDictionary *userInfo;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)date;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithName:(id)arg1 date:(id)arg2 userInfo:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToEvent:(id)arg1;
+- (id)name;
+- (void)setDate:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (id)userInfo;
+
+@end

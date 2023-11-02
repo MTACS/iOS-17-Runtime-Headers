@@ -1,0 +1,90 @@
+
+@interface CSEndpointerMetrics : NSObject <NSCopying, NSSecureCoding> {
+    NSDictionary * _additionalMetrics;
+    NSString * _assetConfigVersion;
+    unsigned long long  _assetProviderType;
+    double  _blkHepAudioOrigin;
+    unsigned long long  _endpointBufferHostTime;
+    unsigned long long  _endpointHostTime;
+    long long  _endpointerType;
+    NSArray * _featuresAtEndpoint;
+    unsigned long long  _firstAudioSampleSensorTimestamp;
+    bool  _isAnchorTimeBuffered;
+    bool  _isRequestTimeOut;
+    OSDFeatures * _osdFeaturesAtEndpoint;
+    NSString * _requestId;
+    NSDictionary * _serverFeatureLatencyDistribution;
+    CSServerEndpointFeatures * _serverFeaturesAtEndpoint;
+    double  _totalAudioRecorded;
+    double  _trailingSilenceDurationAtEndpoint;
+    double  _vtExtraAudioAtStartInMs;
+}
+
+@property (nonatomic, retain) NSDictionary *additionalMetrics;
+@property (nonatomic, retain) NSString *assetConfigVersion;
+@property (nonatomic) unsigned long long assetProviderType;
+@property (nonatomic) double blkHepAudioOrigin;
+@property (nonatomic) unsigned long long endpointBufferHostTime;
+@property (nonatomic) unsigned long long endpointHostTime;
+@property (nonatomic) long long endpointerType;
+@property (nonatomic, retain) NSArray *featuresAtEndpoint;
+@property (nonatomic) unsigned long long firstAudioSampleSensorTimestamp;
+@property (nonatomic) bool isAnchorTimeBuffered;
+@property (nonatomic) bool isRequestTimeOut;
+@property (nonatomic, retain) OSDFeatures *osdFeaturesAtEndpoint;
+@property (nonatomic, retain) NSString *requestId;
+@property (nonatomic, retain) NSDictionary *serverFeatureLatencyDistribution;
+@property (nonatomic, retain) CSServerEndpointFeatures *serverFeaturesAtEndpoint;
+@property (nonatomic) double totalAudioRecorded;
+@property (nonatomic) double trailingSilenceDurationAtEndpoint;
+@property (nonatomic) double vtExtraAudioAtStartInMs;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)additionalMetrics;
+- (id)assetConfigVersion;
+- (unsigned long long)assetProviderType;
+- (double)blkHepAudioOrigin;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)endpointBufferHostTime;
+- (unsigned long long)endpointHostTime;
+- (long long)endpointerType;
+- (id)featuresAtEndpoint;
+- (unsigned long long)firstAudioSampleSensorTimestamp;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithTotalAudioRecorded:(double)arg1 endpointBufferHostTime:(unsigned long long)arg2 featuresAtEndpoint:(id)arg3 endpointerType:(long long)arg4 serverFeatureLatencyDistribution:(id)arg5 additionalMetrics:(id)arg6 trailingSilenceDurationAtEndpoint:(double)arg7 requestId:(id)arg8;
+- (id)initWithTotalAudioRecorded:(double)arg1 endpointBufferHostTime:(unsigned long long)arg2 featuresAtEndpoint:(id)arg3 endpointerType:(long long)arg4 serverFeatureLatencyDistribution:(id)arg5 additionalMetrics:(id)arg6 trailingSilenceDurationAtEndpoint:(double)arg7 requestId:(id)arg8 osdFeatures:(id)arg9 serverFeatures:(id)arg10 isRequestTimeOut:(bool)arg11 assetConfigVersion:(id)arg12 assetProviderType:(unsigned long long)arg13 blkHepAudioOrigin:(double)arg14 vtExtraAudioAtStartInMs:(double)arg15 firstAudioSampleSensorTimestamp:(unsigned long long)arg16 isAnchorTimeBuffered:(bool)arg17 endpointHostTime:(unsigned long long)arg18;
+- (bool)isAnchorTimeBuffered;
+- (bool)isEnhancedEndpointer;
+- (bool)isRequestTimeOut;
+- (id)metricsCopyWithRequestId:(id)arg1 lastAudioChunkHostTime:(unsigned long long)arg2;
+- (id)osdFeaturesAtEndpoint;
+- (id)requestId;
+- (id)serverFeatureLatencyDistribution;
+- (id)serverFeaturesAtEndpoint;
+- (void)setAdditionalMetrics:(id)arg1;
+- (void)setAssetConfigVersion:(id)arg1;
+- (void)setAssetProviderType:(unsigned long long)arg1;
+- (void)setBlkHepAudioOrigin:(double)arg1;
+- (void)setEndpointBufferHostTime:(unsigned long long)arg1;
+- (void)setEndpointHostTime:(unsigned long long)arg1;
+- (void)setEndpointerType:(long long)arg1;
+- (void)setFeaturesAtEndpoint:(id)arg1;
+- (void)setFirstAudioSampleSensorTimestamp:(unsigned long long)arg1;
+- (void)setIsAnchorTimeBuffered:(bool)arg1;
+- (void)setIsRequestTimeOut:(bool)arg1;
+- (void)setOsdFeaturesAtEndpoint:(id)arg1;
+- (void)setRequestId:(id)arg1;
+- (void)setServerFeatureLatencyDistribution:(id)arg1;
+- (void)setServerFeaturesAtEndpoint:(id)arg1;
+- (void)setTotalAudioRecorded:(double)arg1;
+- (void)setTrailingSilenceDurationAtEndpoint:(double)arg1;
+- (void)setVtExtraAudioAtStartInMs:(double)arg1;
+- (double)totalAudioRecorded;
+- (double)trailingSilenceDurationAtEndpoint;
+- (double)vtExtraAudioAtStartInMs;
+
+@end

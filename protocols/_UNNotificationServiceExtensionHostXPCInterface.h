@@ -1,0 +1,4 @@
+
+@protocol _UNNotificationServiceExtensionHostXPCInterface <_UNNotificationServiceExtensionXPCInterface>
+
+@end

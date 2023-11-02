@@ -1,0 +1,4 @@
+
+@interface AccessibilityFrameworkUtilities : NSObject
+
+@end

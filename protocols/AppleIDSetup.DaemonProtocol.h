@@ -1,0 +1,4 @@
+
+@protocol AppleIDSetup.DaemonProtocol
+
+@end

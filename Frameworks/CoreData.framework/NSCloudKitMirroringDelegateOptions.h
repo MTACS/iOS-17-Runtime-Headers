@@ -1,0 +1,82 @@
+
+@interface NSCloudKitMirroringDelegateOptions : NSObject <NSCopying> {
+    NSString * _apsConnectionMachServiceName;
+    PFCloudKitArchivingUtilities * _archivingUtilities;
+    bool  _automaticallyDownloadFileBackedFutures;
+    bool  _automaticallyScheduleImportAndExportOperations;
+    bool  _bypassSchedulerActivityForInitialImport;
+    NSNumber * _ckAssetThresholdBytes;
+    NSString * _containerIdentifier;
+    CKContainerOptions * _containerOptions;
+    PFCloudKitContainerProvider * _containerProvider;
+    long long  _databaseScope;
+    CKOperationConfiguration * _defaultOperationConfiguration;
+    bool  _initializeSchema;
+    PFCloudKitMetadataPurger * _metadataPurger;
+    PFCloudKitMetricsClient * _metricsClient;
+    CKNotificationListener * _notificationListener;
+    NSNumber * _operationMemoryThresholdBytes;
+    bool  _preserveLegacyRecordMetadataBehavior;
+    NSObject<NSCloudKitMirroringDelegateProgressProvider> * _progressProvider;
+    CKScheduler * _scheduler;
+    bool  _skipCloudKitSetup;
+    PFCloudKitStoreMonitorProvider * _storeMonitorProvider;
+    bool  _test_useLegacySavePolicy;
+    bool  _useDaemon;
+    bool  _useDeviceToDeviceEncryption;
+    bool  _useTestDaemon;
+}
+
+@property (nonatomic, retain) NSString *apsConnectionMachServiceName;
+@property (nonatomic) bool automaticallyDownloadFileBackedFutures;
+@property (nonatomic) bool automaticallyScheduleImportAndExportOperations;
+@property (nonatomic, retain) NSNumber *ckAssetThresholdBytes;
+@property (nonatomic, retain) NSString *containerIdentifier;
+@property (nonatomic, retain) CKContainerOptions *containerOptions;
+@property (nonatomic) long long databaseScope;
+@property (nonatomic, retain) CKOperationConfiguration *defaultOperationConfiguration;
+@property (nonatomic) bool initializeSchema;
+@property (nonatomic, retain) NSNumber *operationMemoryThresholdBytes;
+@property (nonatomic) bool preserveLegacyRecordMetadataBehavior;
+@property (nonatomic) NSObject<NSCloudKitMirroringDelegateProgressProvider> *progressProvider;
+@property (nonatomic) bool useDeviceToDeviceEncryption;
+@property (nonatomic) bool useEncryptedStorage;
+
+- (void).cxx_destruct;
+- (id)apsConnectionMachServiceName;
+- (bool)automaticallyDownloadFileBackedFutures;
+- (bool)automaticallyScheduleImportAndExportOperations;
+- (id)ckAssetThresholdBytes;
+- (id)containerIdentifier;
+- (id)containerOptions;
+- (id)copy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)databaseScope;
+- (void)dealloc;
+- (id)defaultOperationConfiguration;
+- (id)description;
+- (id)init;
+- (id)initWithCloudKitContainerOptions:(id)arg1;
+- (id)initWithContainerIdentifier:(id)arg1;
+- (bool)initializeSchema;
+- (id)operationMemoryThresholdBytes;
+- (bool)preserveLegacyRecordMetadataBehavior;
+- (id)progressProvider;
+- (void)setApsConnectionMachServiceName:(id)arg1;
+- (void)setAutomaticallyDownloadFileBackedFutures:(bool)arg1;
+- (void)setAutomaticallyScheduleImportAndExportOperations:(bool)arg1;
+- (void)setCkAssetThresholdBytes:(id)arg1;
+- (void)setContainerIdentifier:(id)arg1;
+- (void)setContainerOptions:(id)arg1;
+- (void)setDatabaseScope:(long long)arg1;
+- (void)setDefaultOperationConfiguration:(id)arg1;
+- (void)setInitializeSchema:(bool)arg1;
+- (void)setOperationMemoryThresholdBytes:(id)arg1;
+- (void)setPreserveLegacyRecordMetadataBehavior:(bool)arg1;
+- (void)setProgressProvider:(id)arg1;
+- (void)setUseDeviceToDeviceEncryption:(bool)arg1;
+- (void)setUseEncryptedStorage:(bool)arg1;
+- (bool)useDeviceToDeviceEncryption;
+- (bool)useEncryptedStorage;
+
+@end

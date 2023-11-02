@@ -1,0 +1,4 @@
+
+@interface _TtC17CoreSuggestionsUIP33_A9C57C778E13F68FFB33BAB7FB25C23119ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

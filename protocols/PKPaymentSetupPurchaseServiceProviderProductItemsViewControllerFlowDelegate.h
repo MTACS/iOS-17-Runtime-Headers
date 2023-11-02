@@ -1,0 +1,9 @@
+
+@protocol PKPaymentSetupPurchaseServiceProviderProductItemsViewControllerFlowDelegate <NSObject>
+
+@required
+
+- (void)purchaseServiceProviderProductItemsViewController:(PKPaymentSetupPurchaseServiceProviderProductItemsViewController *)arg1 didPerformPurchaseWithCredential:(PKPaymentDigitalIssuanceProductCredential *)arg2;
+- (void)purchaseServiceProviderProductItemsViewControllerDidTerminate:(PKPaymentSetupPurchaseServiceProviderProductItemsViewController *)arg1;
+
+@end

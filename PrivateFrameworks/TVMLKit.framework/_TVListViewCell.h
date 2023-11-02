@@ -1,0 +1,50 @@
+
+@interface _TVListViewCell : UICollectionViewCell {
+    UIColor * _backgroundColor;
+    UIVisualEffectView * _backgroundVisualEffectView;
+    <_TVListViewCellDelegate> * _delegate;
+    bool  _disabled;
+    _UIFloatingContentView * _floatingView;
+    UIColor * _highlightedBackgroundColor;
+    bool  _shouldAppearSelected;
+    bool  _visualEffectViewBackgroundEnabled;
+}
+
+@property (nonatomic) <_TVListViewCellDelegate> *delegate;
+@property (getter=isDisabled, nonatomic) bool disabled;
+@property (nonatomic, retain) _UIFloatingContentView *floatingView;
+@property (nonatomic) bool shouldAppearSelected;
+@property (nonatomic) bool visualEffectViewBackgroundEnabled;
+
+- (void).cxx_destruct;
+- (bool)_descendantsShouldHighlight;
+- (unsigned long long)_floatingViewControlState;
+- (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
+- (void)_updateSelectedBackgroundColor;
+- (bool)canBecomeFocused;
+- (id)delegate;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)floatingView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDisabled;
+- (void)layoutSubviews;
+- (void)prepareForReuse;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setBackgroundColor:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setDisabled:(bool)arg1;
+- (void)setFloatingView:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setShouldAppearSelected:(bool)arg1;
+- (void)setVisualEffectViewBackgroundEnabled:(bool)arg1;
+- (bool)shouldAppearSelected;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateFloatingViewControlStateForPreviouslyFocusedView:(id)arg1;
+- (bool)visualEffectViewBackgroundEnabled;
+
+@end

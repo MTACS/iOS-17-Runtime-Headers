@@ -1,0 +1,4 @@
+
+@interface PVTimedObjectCodingError : NSObject
+
+@end

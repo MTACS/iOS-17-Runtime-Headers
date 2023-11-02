@@ -1,0 +1,84 @@
+
+@interface BKUIButtonTray : UIView {
+    <BKUIButtonTrayActionDelegate> * _actionDelegate;
+    UIButton * _bottomLinkButton;
+    UIView * _bottomPaddingView;
+    NSLayoutConstraint * _escapeHatchButtonBottomConstraint;
+    NSLayoutConstraint * _escapeHatchButtonLeadingConstraint;
+    NSLayoutConstraint * _escapeHatchButtonTrailingConstraint;
+    bool  _inSheet;
+    bool  _isInline;
+    NSArray * _layoutConstraints;
+    UIButton * _nextStateButton;
+    UIView * _nextStateButtonContainer;
+    NSLayoutConstraint * _nextStateButtonContainerBottomConstraintTall;
+    NSLayoutConstraint * _nextStateButtonContainerHorizontalPositionConstraint;
+    UIButton * _topLinkButton;
+    <UITraitChangeRegistration> * _traitChangeRegistration;
+    bool  _willUseActionDelegate;
+}
+
+@property (nonatomic) <BKUIButtonTrayActionDelegate> *actionDelegate;
+@property (nonatomic, retain) UIButton *bottomLinkButton;
+@property (nonatomic, retain) UIView *bottomPaddingView;
+@property (nonatomic, retain) NSLayoutConstraint *escapeHatchButtonBottomConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *escapeHatchButtonLeadingConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *escapeHatchButtonTrailingConstraint;
+@property (nonatomic) bool inSheet;
+@property (nonatomic) bool isInline;
+@property (nonatomic, retain) NSArray *layoutConstraints;
+@property (nonatomic, retain) UIButton *nextStateButton;
+@property (nonatomic, retain) UIView *nextStateButtonContainer;
+@property (nonatomic, retain) NSLayoutConstraint *nextStateButtonContainerBottomConstraintTall;
+@property (nonatomic, retain) NSLayoutConstraint *nextStateButtonContainerHorizontalPositionConstraint;
+@property (nonatomic, retain) UIButton *topLinkButton;
+@property (nonatomic, retain) <UITraitChangeRegistration> *traitChangeRegistration;
+@property (nonatomic) bool willUseActionDelegate;
+
+- (void).cxx_destruct;
+- (double)_bottomPadding;
+- (void)_layoutInternalButtonsForDisplayState:(long long)arg1;
+- (id)actionDelegate;
+- (id)bottomLinkButton;
+- (id)bottomPaddingView;
+- (void)continueButtonPressed:(id)arg1;
+- (long long)displayState;
+- (id)escapeHatchButtonBottomConstraint;
+- (id)escapeHatchButtonLeadingConstraint;
+- (id)escapeHatchButtonTrailingConstraint;
+- (bool)inSheet;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 willUseActionDelegate:(bool)arg2;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isInline;
+- (id)layoutConstraints;
+- (void)linkButtonPressed:(id)arg1;
+- (id)nextStateButton;
+- (id)nextStateButtonContainer;
+- (id)nextStateButtonContainerBottomConstraintTall;
+- (id)nextStateButtonContainerHorizontalPositionConstraint;
+- (id)nextStateButtonContainerHorizontalPositionConstraint:(bool)arg1;
+- (void)setActionDelegate:(id)arg1;
+- (void)setBottomLinkButton:(id)arg1;
+- (void)setBottomPaddingView:(id)arg1;
+- (void)setEscapeHatchButtonBottomConstraint:(id)arg1;
+- (void)setEscapeHatchButtonLeadingConstraint:(id)arg1;
+- (void)setEscapeHatchButtonTrailingConstraint:(id)arg1;
+- (void)setInSheet:(bool)arg1;
+- (void)setIsInline:(bool)arg1;
+- (void)setLayoutConstraints:(id)arg1;
+- (void)setNextStateButton:(id)arg1;
+- (void)setNextStateButtonContainer:(id)arg1;
+- (void)setNextStateButtonContainerBottomConstraintTall:(id)arg1;
+- (void)setNextStateButtonContainerHorizontalPositionConstraint:(id)arg1;
+- (void)setTopLinkButton:(id)arg1;
+- (void)setTraitChangeRegistration:(id)arg1;
+- (void)setWillUseActionDelegate:(bool)arg1;
+- (void)showRetryButton;
+- (id)topLinkButton;
+- (void)topLinkButtonPressed:(id)arg1;
+- (id)traitChangeRegistration;
+- (void)updateButtonLayout;
+- (bool)willUseActionDelegate;
+
+@end

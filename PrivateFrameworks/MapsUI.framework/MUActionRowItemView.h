@@ -1,0 +1,90 @@
+
+@interface MUActionRowItemView : UIButton {
+    UIView * _accessoryContainerView;
+    UIView * _accessoryView;
+    UIView * _backgroundView;
+    UIColor * _contentBackgroundColor;
+    <MUActionRowItemViewDelegate> * _delegate;
+    MUEdgeLayout * _edgeLayout;
+    bool  _fullWidthMode;
+    UIImageView * _glyphImageView;
+    NSString * _glyphName;
+    UIColor * _highlightedBackgroundColor;
+    bool  _hovering;
+    MUStackLayout * _iconLabelStackLayout;
+    UILabel * _label;
+    bool  _showSelectedState;
+    long long  _style;
+    bool  _touched;
+    bool  _useVibrancy;
+    MKVibrantView * _vibrantView;
+}
+
+@property (nonatomic, copy) UIView *accessoryView;
+@property (nonatomic, retain) UIColor *contentBackgroundColor;
+@property (nonatomic) <MUActionRowItemViewDelegate> *delegate;
+@property (nonatomic) bool fullWidthMode;
+@property (nonatomic, retain) UIColor *glyphColor;
+@property (nonatomic, copy) NSString *glyphName;
+@property (nonatomic, retain) UIColor *highlightedBackgroundColor;
+@property (nonatomic) bool hovering;
+@property (nonatomic) bool showSelectedState;
+@property (nonatomic, readonly) long long style;
+@property (nonatomic, copy) NSString *titleText;
+@property (nonatomic) bool touched;
+@property (nonatomic, readonly) bool useVibrancy;
+
++ (id)glyphFont;
++ (id)labelFont;
+
+- (void).cxx_destruct;
+- (void)_applyBorderIfNeeded;
+- (void)_contentSizeDidChange;
+- (void)_touchBegan;
+- (void)_touchCancelled;
+- (void)_touchEnded;
+- (void)_updateMetrics;
+- (id)accessibilityLabel;
+- (id)accessoryView;
+- (id)contentBackgroundColor;
+- (id)delegate;
+- (void)didMoveToWindow;
+- (bool)fullWidthMode;
+- (id)glyphColor;
+- (id)glyphName;
+- (void)handleHoverGesture:(id)arg1;
+- (void)handleMenuPresentation;
+- (void)handlePress;
+- (id)highlightedBackgroundColor;
+- (bool)hovering;
+- (void)infoCardThemeChanged;
+- (id)initWithStyle:(long long)arg1 useVibrancy:(bool)arg2;
+- (void)layoutSubviews;
+- (void)setAccessibilityLabel:(id)arg1;
+- (void)setAccessoryView:(id)arg1;
+- (void)setContentBackgroundColor:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setFullWidthMode:(bool)arg1;
+- (void)setGlyphColor:(id)arg1;
+- (void)setGlyphName:(id)arg1;
+- (void)setHighlightedBackgroundColor:(id)arg1;
+- (void)setHovering:(bool)arg1;
+- (void)setMenu:(id)arg1;
+- (void)setShowSelectedState:(bool)arg1;
+- (void)setTintColor:(id)arg1;
+- (void)setTitleText:(id)arg1;
+- (void)setTouched:(bool)arg1;
+- (bool)showSelectedState;
+- (long long)style;
+- (void)tintColorDidChange;
+- (id)titleText;
+- (bool)touched;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)updateColor;
+- (void)updateImage;
+- (bool)useVibrancy;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface GPSGameFilter : NSObject
+
+@end

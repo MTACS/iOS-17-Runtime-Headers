@@ -1,0 +1,4 @@
+
+@interface GQDWPTocEmpty : GQDWPBlockList
+
+@end

@@ -1,0 +1,100 @@
+
+@interface GEOLogMsgStateMapView : PBCodable <NSCopying> {
+    struct { 
+        unsigned int has_pitch : 1; 
+        unsigned int has_styleZoomLevel : 1; 
+        unsigned int has_zoomLevel : 1; 
+        unsigned int has_mapType : 1; 
+        unsigned int has_viewMode : 1; 
+        unsigned int has_isAdvancedMap : 1; 
+        unsigned int has_isGlobeProjection : 1; 
+        unsigned int has_watchProximityRadiusOn : 1; 
+    }  _flags;
+    bool  _isAdvancedMap;
+    bool  _isGlobeProjection;
+    GEOMapRegion * _mapRegion;
+    int  _mapType;
+    double  _pitch;
+    double  _styleZoomLevel;
+    int  _viewMode;
+    bool  _watchProximityRadiusOn;
+    double  _zoomLevel;
+}
+
+@property (nonatomic) bool hasIsAdvancedMap;
+@property (nonatomic) bool hasIsGlobeProjection;
+@property (nonatomic, readonly) bool hasMapRegion;
+@property (nonatomic) bool hasMapType;
+@property (nonatomic) bool hasPitch;
+@property (nonatomic) bool hasStyleZoomLevel;
+@property (nonatomic) bool hasViewMode;
+@property (nonatomic) bool hasWatchProximityRadiusOn;
+@property (nonatomic) bool hasZoomLevel;
+@property (nonatomic) bool isAdvancedMap;
+@property (nonatomic) bool isGlobeProjection;
+@property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic) int mapType;
+@property (nonatomic) double pitch;
+@property (nonatomic) double styleZoomLevel;
+@property (nonatomic) int viewMode;
+@property (nonatomic) bool watchProximityRadiusOn;
+@property (nonatomic) double zoomLevel;
+
++ (bool)isValid:(id)arg1;
+
+- (void).cxx_destruct;
+- (int)StringAsMapType:(id)arg1;
+- (int)StringAsViewMode:(id)arg1;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasGreenTeaWithValue:(bool)arg1;
+- (bool)hasIsAdvancedMap;
+- (bool)hasIsGlobeProjection;
+- (bool)hasMapRegion;
+- (bool)hasMapType;
+- (bool)hasPitch;
+- (bool)hasStyleZoomLevel;
+- (bool)hasViewMode;
+- (bool)hasWatchProximityRadiusOn;
+- (bool)hasZoomLevel;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isAdvancedMap;
+- (bool)isEqual:(id)arg1;
+- (bool)isGlobeProjection;
+- (id)jsonRepresentation;
+- (id)mapRegion;
+- (int)mapType;
+- (id)mapTypeAsString:(int)arg1;
+- (void)mergeFrom:(id)arg1;
+- (double)pitch;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsAdvancedMap:(bool)arg1;
+- (void)setHasIsGlobeProjection:(bool)arg1;
+- (void)setHasMapType:(bool)arg1;
+- (void)setHasPitch:(bool)arg1;
+- (void)setHasStyleZoomLevel:(bool)arg1;
+- (void)setHasViewMode:(bool)arg1;
+- (void)setHasWatchProximityRadiusOn:(bool)arg1;
+- (void)setHasZoomLevel:(bool)arg1;
+- (void)setIsAdvancedMap:(bool)arg1;
+- (void)setIsGlobeProjection:(bool)arg1;
+- (void)setMapRegion:(id)arg1;
+- (void)setMapType:(int)arg1;
+- (void)setPitch:(double)arg1;
+- (void)setStyleZoomLevel:(double)arg1;
+- (void)setViewMode:(int)arg1;
+- (void)setWatchProximityRadiusOn:(bool)arg1;
+- (void)setZoomLevel:(double)arg1;
+- (double)styleZoomLevel;
+- (int)viewMode;
+- (id)viewModeAsString:(int)arg1;
+- (bool)watchProximityRadiusOn;
+- (void)writeTo:(id)arg1;
+- (double)zoomLevel;
+
+@end

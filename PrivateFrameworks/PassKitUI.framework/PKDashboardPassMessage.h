@@ -1,0 +1,98 @@
+
+@interface PKDashboardPassMessage : NSObject {
+    id /* block */  _actionOnButtonPress;
+    id /* block */  _actionOnDismiss;
+    id /* block */  _actionOnMessagePress;
+    id /* block */  _actionOnViewed;
+    NSDictionary * _additionalEventAnalyticsOnButtonPress;
+    NSString * _analyticsIdentifier;
+    NSString * _analyticsReporterSubject;
+    CNContact * _avatarContact;
+    NSString * _buttonTitle;
+    AMSDialogRequest * _dialogRequest;
+    NSString * _identifier;
+    UIImage * _image;
+    UIColor * _imageTintColor;
+    bool  _isDestructiveAction;
+    NSString * _message;
+    bool  _reportToAnalytics;
+    NSString * _secondaryMessage;
+    NSString * _secondaryTitle;
+    bool  _showDisclosure;
+    bool  _showSpinner;
+    NSString * _title;
+    unsigned long long  _type;
+}
+
+@property (nonatomic, copy) id /* block */ actionOnButtonPress;
+@property (nonatomic, copy) id /* block */ actionOnDismiss;
+@property (nonatomic, copy) id /* block */ actionOnMessagePress;
+@property (nonatomic, copy) id /* block */ actionOnViewed;
+@property (nonatomic, copy) NSDictionary *additionalEventAnalyticsOnButtonPress;
+@property (nonatomic, copy) NSString *analyticsIdentifier;
+@property (nonatomic) NSString *analyticsReporterSubject;
+@property (nonatomic, retain) CNContact *avatarContact;
+@property (nonatomic, copy) NSString *buttonTitle;
+@property (nonatomic, retain) AMSDialogRequest *dialogRequest;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIColor *imageTintColor;
+@property (nonatomic) bool isDestructiveAction;
+@property (nonatomic, copy) NSString *message;
+@property (getter=canReportToAnalytics, nonatomic) bool reportToAnalytics;
+@property (nonatomic, copy) NSString *secondaryMessage;
+@property (nonatomic, copy) NSString *secondaryTitle;
+@property (nonatomic) bool showDisclosure;
+@property (nonatomic) bool showSpinner;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) unsigned long long type;
+
++ (id)messageFromDialogRequest:(id)arg1 withAction:(id /* block */)arg2;
+
+- (void).cxx_destruct;
+- (id /* block */)actionOnButtonPress;
+- (id /* block */)actionOnDismiss;
+- (id /* block */)actionOnMessagePress;
+- (id /* block */)actionOnViewed;
+- (id)additionalEventAnalyticsOnButtonPress;
+- (id)analyticsIdentifier;
+- (id)analyticsReporterSubject;
+- (id)avatarContact;
+- (id)buttonTitle;
+- (bool)canReportToAnalytics;
+- (id)dialogRequest;
+- (id)identifier;
+- (id)image;
+- (id)imageTintColor;
+- (bool)isDestructiveAction;
+- (id)message;
+- (id)secondaryMessage;
+- (id)secondaryTitle;
+- (void)setActionOnButtonPress:(id /* block */)arg1;
+- (void)setActionOnDismiss:(id /* block */)arg1;
+- (void)setActionOnMessagePress:(id /* block */)arg1;
+- (void)setActionOnViewed:(id /* block */)arg1;
+- (void)setAdditionalEventAnalyticsOnButtonPress:(id)arg1;
+- (void)setAnalyticsIdentifier:(id)arg1;
+- (void)setAnalyticsReporterSubject:(id)arg1;
+- (void)setAvatarContact:(id)arg1;
+- (void)setButtonTitle:(id)arg1;
+- (void)setDialogRequest:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setImage:(id)arg1;
+- (void)setImageTintColor:(id)arg1;
+- (void)setIsDestructiveAction:(bool)arg1;
+- (void)setMessage:(id)arg1;
+- (void)setReportToAnalytics:(bool)arg1;
+- (void)setSecondaryMessage:(id)arg1;
+- (void)setSecondaryTitle:(id)arg1;
+- (void)setShowDisclosure:(bool)arg1;
+- (void)setShowSpinner:(bool)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setType:(unsigned long long)arg1;
+- (bool)showDisclosure;
+- (bool)showSpinner;
+- (id)title;
+- (unsigned long long)type;
+
+@end

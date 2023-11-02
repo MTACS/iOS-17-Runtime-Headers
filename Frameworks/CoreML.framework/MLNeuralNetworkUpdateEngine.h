@@ -1,0 +1,94 @@
+
+@interface MLNeuralNetworkUpdateEngine : MLNeuralNetworkV1Engine <MLUpdatable> {
+    NSDictionary * _classLabelToIndexMap;
+    bool  _continueWithUpdate;
+    NSDictionary * _coreMLToEspressoParamsMap;
+    NSString * _lossOutputName;
+    NSString * _lossTargetName;
+    MLParameterContainer * _parameterContainer;
+    MLUpdateProgressHandlers * _progressHandlers;
+    NSObject<OS_dispatch_queue> * _progressHandlersDispatchQueue;
+    MLShufflingBatchProvider * _shuffableTrainingData;
+    ETTaskState * _snapshot;
+    ETTaskDefinition * _task;
+}
+
+@property (nonatomic, readonly) NSDictionary *classLabelToIndexMap;
+@property (nonatomic, readonly) MLModelConfiguration *configuration;
+@property (nonatomic) bool continueWithUpdate;
+@property (nonatomic, retain) NSDictionary *coreMLToEspressoParamsMap;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSString *lossOutputName;
+@property (nonatomic, retain) NSString *lossTargetName;
+@property (readonly) MLModelMetadata *metadata;
+@property (nonatomic, readonly) MLModelDescription *modelDescription;
+@property (nonatomic, retain) MLParameterContainer *parameterContainer;
+@property (nonatomic, readonly) unsigned long long predictionTypeForKTrace;
+@property (nonatomic, retain) MLUpdateProgressHandlers *progressHandlers;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *progressHandlersDispatchQueue;
+@property (nonatomic, readonly) bool recordsPredictionEvent;
+@property (nonatomic, retain) MLShufflingBatchProvider *shuffableTrainingData;
+@property (nonatomic, readonly) unsigned long long signpostID;
+@property (nonatomic, retain) ETTaskState *snapshot;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsConcurrentSubmissions;
+@property (nonatomic, retain) ETTaskDefinition *task;
+
++ (id)createCoreMLToEspressoParamsMap;
++ (id)loadModelFromCompiledArchive:(void*)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id*)arg5;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)biasForLayer:(id)arg1 error:(id*)arg2;
+- (void)cancelUpdate;
+- (id)classLabelToIndexMap;
+- (id)collectMetricsFromTaskContext:(id)arg1 isInCallBack:(bool)arg2;
+- (bool)continueWithUpdate;
+- (id)coreMLToEspressoParamsMap;
+- (id)createEspressoTaskFrom:(id)arg1 updateParameters:(void*)arg2 lossInputName:(id)arg3 lossTargetName:(id)arg4 lossOutputName:(id)arg5 updatableLayerNames:(id)arg6 configuration:(id)arg7 error:(id*)arg8;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithCompiledArchive:(void*)arg1 nnContainer:(id)arg2 configuration:(id)arg3 error:(id*)arg4;
+- (void)loadLossInputName:(id*)arg1 updatableLayerNames:(id*)arg2 fromCompiledArchive:(void*)arg3;
+- (void)loadLossTargetName:(id*)arg1 lossOutputName:(id*)arg2 fromUpdateParameters:(void*)arg3;
+- (id)lossOutputName;
+- (id)lossTargetName;
+- (id)parameterContainer;
+- (id)parameterValueForKey:(id)arg1;
+- (id)parameterValueForKey:(id)arg1 error:(id*)arg2;
+- (id)paramsForLayer:(id)arg1 parameterType:(unsigned long long)arg2 error:(id*)arg3;
+- (id)predictionFromFeatures:(id)arg1 error:(id*)arg2;
+- (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (unsigned long long)predictionTypeForKTrace;
+- (id)predictionsFromBatch:(id)arg1 error:(id*)arg2;
+- (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)progressHandlers;
+- (id)progressHandlersDispatchQueue;
+- (void)resumeUpdate;
+- (void)resumeUpdateWithParameters:(id)arg1;
+- (void)setContinueWithUpdate:(bool)arg1;
+- (void)setCoreMLToEspressoParamsMap:(id)arg1;
+- (void)setLossOutputName:(id)arg1;
+- (void)setLossTargetName:(id)arg1;
+- (void)setParameterContainer:(id)arg1;
+- (void)setProgressHandlers:(id)arg1;
+- (void)setProgressHandlersDispatchQueue:(id)arg1;
+- (void)setShuffableTrainingData:(id)arg1;
+- (void)setSnapshot:(id)arg1;
+- (void)setTask:(id)arg1;
+- (void)setUpdateProgressHandlers:(id)arg1 dispatchQueue:(id)arg2;
+- (bool)setWeightsOrBiasesForLayer:(id)arg1 layerType:(unsigned long long)arg2 value:(id)arg3 error:(id*)arg4;
+- (id)shuffableTrainingData;
+- (id)snapshot;
+- (id)stringForDataType:(unsigned long long)arg1;
+- (id)task;
+- (bool)updateLearningRateWithTaskContext:(id)arg1 isInCallBack:(bool)arg2 error:(id*)arg3;
+- (void)updateModelWithData:(id)arg1;
+- (id)updateParameters;
+- (bool)updateWeightsAndBiasesFromConfigParams:(id)arg1 error:(id*)arg2;
+- (id)weightsForLayer:(id)arg1 error:(id*)arg2;
+- (bool)writeToURL:(id)arg1 error:(id*)arg2;
+
+@end

@@ -1,0 +1,18 @@
+
+@protocol CoreTelephonyClientSubscriberDelegate <NSObject>
+
+@optional
+
+- (void)authTokenChanged:(CTServiceDescriptor *)arg1;
+- (void)didDetectSimDeactivation:(CTXPCServiceSubscriptionContext *)arg1 info:(CTSimDeactivationInfo *)arg2;
+- (void)prlVersionDidChange:(CTXPCServiceSubscriptionContext *)arg1 version:(NSNumber *)arg2;
+- (void)shortLabelsDidChange;
+- (void)simLockSaveRequestDidComplete:(CTXPCServiceSubscriptionContext *)arg1 success:(bool)arg2;
+- (void)simPinChangeRequestDidComplete:(CTXPCServiceSubscriptionContext *)arg1 success:(bool)arg2;
+- (void)simPinEntryErrorDidOccur:(CTXPCServiceSubscriptionContext *)arg1 status:(NSString *)arg2;
+- (void)simPukEntryErrorDidOccur:(CTXPCServiceSubscriptionContext *)arg1 status:(NSString *)arg2;
+- (void)simStatusDidChange:(CTXPCServiceSubscriptionContext *)arg1 status:(NSString *)arg2;
+- (void)subscriberCountryCodeDidChange:(CTXPCServiceSubscriptionContext *)arg1;
+- (void)userDefaultVoiceSlotDidChange:(CTXPCServiceSubscriptionContext *)arg1;
+
+@end

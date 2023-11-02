@@ -1,0 +1,16 @@
+
+@protocol PKDrawingGestureTarget <NSObject, PKDrawingReplaySupport>
+
+@required
+
+- (void)drawingBegan:(UITouch *)arg1;
+- (void)drawingCancelled;
+- (void)drawingEnded:(UITouch *)arg1;
+- (void)drawingEstimatedPropertiesUpdated:(NSSet *)arg1;
+- (void)drawingMoved:(UITouch *)arg1 withEvent:(UIEvent *)arg2;
+
+@optional
+
+- (bool)drawingShouldBegin:(NSSet *)arg1 withEvent:(UIEvent *)arg2;
+
+@end

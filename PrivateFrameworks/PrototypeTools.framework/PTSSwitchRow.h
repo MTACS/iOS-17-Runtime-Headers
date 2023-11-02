@@ -1,0 +1,4 @@
+
+@interface PTSSwitchRow : PTSwitchRow
+
+@end

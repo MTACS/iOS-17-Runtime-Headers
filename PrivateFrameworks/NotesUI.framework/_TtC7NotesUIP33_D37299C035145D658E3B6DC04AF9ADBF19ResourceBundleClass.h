@@ -1,0 +1,4 @@
+
+@interface _TtC7NotesUIP33_D37299C035145D658E3B6DC04AF9ADBF19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

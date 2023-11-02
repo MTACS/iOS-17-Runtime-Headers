@@ -1,0 +1,4 @@
+
+@protocol DDUIEndpointPairingBrowsingTransport <DDUIEndpointPairingTransport>
+
+@end

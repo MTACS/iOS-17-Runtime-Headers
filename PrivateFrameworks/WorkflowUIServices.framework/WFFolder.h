@@ -1,0 +1,4 @@
+
+@interface WFFolder : INObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol UIInteractionContext <NSObject>
+
+@end

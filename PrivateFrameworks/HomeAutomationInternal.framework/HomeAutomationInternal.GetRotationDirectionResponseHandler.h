@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.GetRotationDirectionResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

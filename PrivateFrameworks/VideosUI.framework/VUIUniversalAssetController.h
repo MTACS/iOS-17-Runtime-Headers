@@ -1,0 +1,87 @@
+
+@interface VUIUniversalAssetController : NSObject <MPStoreDownloadManagerObserver, TVPDownloadDelegate, VUIDownloadManagerDelegate, VUIMediaEntityAssetController> {
+    NSObject<OS_dispatch_queue> * _completionDispatchQueueInternal;
+    TVPDownload * _download;
+    MPMediaItem * _mpMediaItem;
+    VUIMediaEntityAssetControllerState * _stateInternal;
+    MPStoreDownload * _storeDownload;
+    VUIVideoManagedObject * _videoManagedObject;
+    VUIVideosPlayable * _videosPlayable;
+}
+
+@property (nonatomic, readonly) bool allowsManualDownloadRenewal;
+@property (nonatomic, readonly) NSString *brandID;
+@property (nonatomic, readonly) NSString *brandName;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *completionDispatchQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *completionDispatchQueueInternal;
+@property (nonatomic, readonly) bool contentAllowsCellularDownload;
+@property (nonatomic, readonly) VUIContentRating *contentRating;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) TVPDownload *download;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) MPMediaItem *mpMediaItem;
+@property (nonatomic, readonly, copy) VUIMediaEntityAssetControllerState *state;
+@property (nonatomic, retain) VUIMediaEntityAssetControllerState *stateInternal;
+@property (nonatomic, retain) MPStoreDownload *storeDownload;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsRedownloadingContent;
+@property (nonatomic, readonly) bool supportsStartingDownload;
+@property (nonatomic, retain) VUIVideoManagedObject *videoManagedObject;
+@property (nonatomic, retain) VUIVideosPlayable *videosPlayable;
+
+- (void).cxx_destruct;
+- (void)_createAndSaveVideoManagedObjectForDownloadInitiation;
+- (id)_createAndSaveVideoManagedObjectForMPMediaItem:(id)arg1;
+- (id)_createAndSaveVideoManagedObjectForPlayable:(id)arg1;
+- (void)_handleMediaLibraryContentsDidChangeNotification:(id)arg1;
+- (bool)_isVideoFullyDownloadedCheckingSidebandLibrary:(bool)arg1;
+- (void)_updateDownloadStateAndNotifyListeners;
+- (void)_updateObservedDownload;
+- (void)_videoManagedObjectWasCreated:(id)arg1;
+- (bool)allowsManualDownloadRenewal;
+- (id)brandID;
+- (id)brandName;
+- (void)cancelAndRemoveDownload;
+- (void)cancelKeyFetch;
+- (id)completionDispatchQueue;
+- (id)completionDispatchQueueInternal;
+- (bool)contentAllowsCellularDownload;
+- (id)contentRating;
+- (void)dealloc;
+- (void)deleteAndRedownloadAllowingCellular:(bool)arg1 quality:(long long)arg2 shouldMarkAsDeletedOnCancellationOrFailure:(bool)arg3 completion:(id /* block */)arg4;
+- (id)download;
+- (void)download:(id)arg1 didChangeStateTo:(long long)arg2;
+- (void)download:(id)arg1 progressDidChange:(double)arg2;
+- (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
+- (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (void)fetchNewKeysForDownloadedVideo;
+- (id)initWithMPMediaItem:(id)arg1;
+- (id)initWithVideoManagedObject:(id)arg1;
+- (id)initWithVideoManagedObject:(id)arg1 mpMediaItem:(id)arg2 videosPlayable:(id)arg3;
+- (id)initWithVideosPlayable:(id)arg1;
+- (void)invalidate;
+- (id)mpMediaItem;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)pauseDownload;
+- (void)resumeDownload;
+- (void)setCompletionDispatchQueue:(id)arg1;
+- (void)setCompletionDispatchQueueInternal:(id)arg1;
+- (void)setDownload:(id)arg1;
+- (void)setMpMediaItem:(id)arg1;
+- (void)setStateInternal:(id)arg1;
+- (void)setStoreDownload:(id)arg1;
+- (void)setVideoManagedObject:(id)arg1;
+- (void)setVideosPlayable:(id)arg1;
+- (void)startDownloadAllowingCellular:(bool)arg1 quality:(long long)arg2 shouldMarkAsDeletedOnCancellationOrFailure:(bool)arg3 preferEnhancedDownload:(bool)arg4 completion:(id /* block */)arg5;
+- (id)state;
+- (id)stateInternal;
+- (id)storeDownload;
+- (bool)supportsRedownloadingContent;
+- (bool)supportsStartingDownload;
+- (id)videoManagedObject;
+- (id)videosPlayable;
+
+@end

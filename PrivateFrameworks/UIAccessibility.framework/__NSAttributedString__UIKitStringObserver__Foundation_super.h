@@ -1,0 +1,4 @@
+
+@interface __NSAttributedString__UIKitStringObserver__Foundation_super : UIAccessibilitySafeCategory
+
+@end

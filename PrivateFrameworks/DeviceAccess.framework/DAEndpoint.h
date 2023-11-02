@@ -1,0 +1,84 @@
+
+@interface DAEndpoint : NSObject {
+    unsigned long long  _addTicks;
+    NSString * _airplayDeviceID;
+    NSString * _bonjourFullName;
+    NSString * _bonjourHostname;
+    unsigned int  _bonjourInterfaceIndex;
+    NSString * _bonjourName;
+    NSString * _bonjourType;
+    bool  _grouped;
+    NSString * _identifier;
+    NSString * _ipv4String;
+    bool  _missing;
+    NSString * _name;
+    DADevice * _parentDevice;
+    NSString * _protocolTypeString;
+    bool  _selected;
+    DADevice * _underlyingDADevice;
+    NSDictionary * _userInfo;
+}
+
+@property (nonatomic) unsigned long long addTicks;
+@property (nonatomic, copy) NSString *airplayDeviceID;
+@property (nonatomic, copy) NSString *bonjourFullName;
+@property (nonatomic, copy) NSString *bonjourHostname;
+@property (nonatomic) unsigned int bonjourInterfaceIndex;
+@property (nonatomic, copy) NSString *bonjourName;
+@property (nonatomic, copy) NSString *bonjourType;
+@property (nonatomic) bool grouped;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *ipv4String;
+@property (nonatomic, readonly) bool missing;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) DADevice *parentDevice;
+@property (nonatomic, readonly, copy) NSDictionary *persistentDictionaryRepresentation;
+@property (nonatomic, copy) NSString *protocolTypeString;
+@property (nonatomic) bool selected;
+@property (nonatomic, copy) DADevice *underlyingDADevice;
+@property (nonatomic, copy) NSDictionary *userInfo;
+
+- (void).cxx_destruct;
+- (unsigned long long)addTicks;
+- (id)airplayDeviceID;
+- (id)bonjourFullName;
+- (id)bonjourHostname;
+- (unsigned int)bonjourInterfaceIndex;
+- (id)bonjourName;
+- (id)bonjourType;
+- (id)description;
+- (id)descriptionWithLevel:(int)arg1;
+- (bool)grouped;
+- (id)identifier;
+- (id)initWithPersistentDictionaryRepresentation:(id)arg1 error:(id*)arg2;
+- (id)ipv4String;
+- (bool)matchesSelectedEndpoint:(id)arg1 allowName:(bool)arg2;
+- (void)mergeMissingInfoFromEndpoint:(id)arg1;
+- (bool)missing;
+- (id)name;
+- (id)parentDevice;
+- (id)persistentDictionaryRepresentation;
+- (id)protocolTypeString;
+- (bool)sameDeviceAsEndpoint:(id)arg1;
+- (bool)selected;
+- (void)setAddTicks:(unsigned long long)arg1;
+- (void)setAirplayDeviceID:(id)arg1;
+- (void)setBonjourFullName:(id)arg1;
+- (void)setBonjourHostname:(id)arg1;
+- (void)setBonjourInterfaceIndex:(unsigned int)arg1;
+- (void)setBonjourName:(id)arg1;
+- (void)setBonjourType:(id)arg1;
+- (void)setGrouped:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setIpv4String:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setParentDevice:(id)arg1;
+- (void)setProtocolTypeString:(id)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setUnderlyingDADevice:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (id)underlyingDADevice;
+- (void)updateWithEndpoint:(id)arg1;
+- (id)userInfo;
+
+@end

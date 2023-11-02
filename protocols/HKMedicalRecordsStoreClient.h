@@ -1,0 +1,4 @@
+
+@protocol HKMedicalRecordsStoreClient <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC18AppStoreComponentsP33_3E7C267A338E56B37F91B967B691D92819ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

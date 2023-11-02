@@ -1,0 +1,4 @@
+
+@protocol HKCountryMonitorControlClient <NSObject>
+
+@end

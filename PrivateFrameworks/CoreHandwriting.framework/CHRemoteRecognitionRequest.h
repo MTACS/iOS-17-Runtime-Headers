@@ -1,0 +1,101 @@
+
+@interface CHRemoteRecognitionRequest : NSObject <NSSecureCoding> {
+    NSDictionary * _activeCharacterSetPerLocale;
+    int  _autoCapitalizationMode;
+    int  _autoCorrectionMode;
+    int  _baseWritingDirection;
+    int  _contentType;
+    CHDrawing * _drawing;
+    bool  _enableCachingIfAvailable;
+    bool  _enableGen2CharacterLMIfAvailable;
+    bool  _enableGen2ModelIfAvailable;
+    bool  _enableStrokeReordering;
+    bool  _hasBeenSubmitted;
+    NSArray * _locales;
+    unsigned long long  _maxRecognitionResultCount;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _minimumDrawingSize;
+    NSDictionary * _options;
+    NSDictionary * _parametersOverride;
+    long long  _priority;
+    int  _recognitionMode;
+    bool  _shouldUseTextReplacements;
+}
+
+@property (nonatomic, copy) NSDictionary *activeCharacterSetPerLocale;
+@property (nonatomic) int autoCapitalizationMode;
+@property (nonatomic) int autoCorrectionMode;
+@property (nonatomic) int baseWritingDirection;
+@property (nonatomic) int contentType;
+@property (nonatomic, copy) CHDrawing *drawing;
+@property (nonatomic) bool enableCachingIfAvailable;
+@property (nonatomic) bool enableGen2CharacterLMIfAvailable;
+@property (nonatomic) bool enableGen2ModelIfAvailable;
+@property (nonatomic) bool enableStrokeReordering;
+@property (nonatomic) bool hasBeenSubmitted;
+@property (nonatomic, copy) NSArray *locales;
+@property (nonatomic) unsigned long long maxRecognitionResultCount;
+@property (nonatomic) struct CGSize { double x1; double x2; } minimumDrawingSize;
+@property (nonatomic, copy) NSDictionary *options;
+@property (nonatomic, copy) NSDictionary *parametersOverride;
+@property (nonatomic) long long priority;
+@property (nonatomic) int recognitionMode;
+@property (nonatomic, readonly) bool shouldRemoveUnnaturalGaps;
+@property (nonatomic) bool shouldUseTextReplacements;
+
++ (id)loadFromFile:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)activeCharacterSetPerLocale;
+- (int)autoCapitalizationMode;
+- (int)autoCorrectionMode;
+- (int)baseWritingDirection;
+- (int)contentType;
+- (id)description;
+- (id)drawing;
+- (bool)enableCachingIfAvailable;
+- (bool)enableGen2CharacterLMIfAvailable;
+- (bool)enableGen2ModelIfAvailable;
+- (bool)enableStrokeReordering;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasBeenSubmitted;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithLocales:(id)arg1 recognitionMode:(int)arg2 drawing:(id)arg3 options:(id)arg4 priority:(long long)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRemoteRecognitionRequest:(id)arg1;
+- (id)locales;
+- (unsigned long long)maxRecognitionResultCount;
+- (struct CGSize { double x1; double x2; })minimumDrawingSize;
+- (id)options;
+- (id)parametersOverride;
+- (long long)priority;
+- (int)recognitionMode;
+- (id)recognizerConfigurationKeyWithLocale:(id)arg1;
+- (void)setActiveCharacterSetPerLocale:(id)arg1;
+- (void)setAutoCapitalizationMode:(int)arg1;
+- (void)setAutoCorrectionMode:(int)arg1;
+- (void)setBaseWritingDirection:(int)arg1;
+- (void)setContentType:(int)arg1;
+- (void)setDrawing:(id)arg1;
+- (void)setEnableCachingIfAvailable:(bool)arg1;
+- (void)setEnableGen2CharacterLMIfAvailable:(bool)arg1;
+- (void)setEnableGen2ModelIfAvailable:(bool)arg1;
+- (void)setEnableStrokeReordering:(bool)arg1;
+- (void)setHasBeenSubmitted:(bool)arg1;
+- (void)setLocales:(id)arg1;
+- (void)setMaxRecognitionResultCount:(unsigned long long)arg1;
+- (void)setMinimumDrawingSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setOptions:(id)arg1;
+- (void)setParametersOverride:(id)arg1;
+- (void)setPriority:(long long)arg1;
+- (void)setRecognitionMode:(int)arg1;
+- (void)setShouldUseTextReplacements:(bool)arg1;
+- (bool)shouldRemoveUnnaturalGaps;
+- (bool)shouldUseTextReplacements;
+- (id)writeToFileInFolder:(id)arg1 basename:(id)arg2;
+
+@end

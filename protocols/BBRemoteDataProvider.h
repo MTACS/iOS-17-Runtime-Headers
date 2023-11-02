@@ -1,0 +1,4 @@
+
+@protocol BBRemoteDataProvider <BBDataProvider>
+
+@end

@@ -1,0 +1,86 @@
+
+@interface BookmarkFolderLibraryItemController : LibraryItemController <BookmarksTableViewControllerDelegate, WBTabGroupManagerObserver, _SFBookmarkInfoViewControllerDelegate, _SFNavigationIntentHandling> {
+    bool  _allowsEditing;
+    <WBBookmarkProvider> * _bookmarkProvider;
+    NSObject<OS_dispatch_queue> * _bookmarkProviderQueue;
+    WebBookmarkCollection * _collection;
+    UIBarButtonItem * _createFolderButtonItem;
+    UIBarButtonItem * _editButtonItem;
+    UIBarButtonItem * _editingDoneButtonItem;
+    UIBarButtonItem * _flexibleSpaceItem;
+    WebBookmark * _folder;
+    bool  _isEditing;
+    <LinkPreviewProvider> * _linkPreviewProvider;
+    <_SFNavigationIntentHandling> * _navigationIntentHandler;
+    <TabGroupProvider> * _tabGroupProvider;
+    BookmarksTableViewController * _viewController;
+}
+
+@property (nonatomic, retain) <WBBookmarkProvider> *bookmarkProvider;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *bookmarkProviderQueue;
+@property (nonatomic, retain) WebBookmarkCollection *collection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) WebBookmark *folder;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) <LinkPreviewProvider> *linkPreviewProvider;
+@property (nonatomic) <_SFNavigationIntentHandling> *navigationIntentHandler;
+@property (readonly) Class superclass;
+@property (nonatomic) <TabGroupProvider> *tabGroupProvider;
+
+- (void).cxx_destruct;
+- (void)_createToolbarItemsIfNecessary;
+- (void)_didPressEditButton;
+- (void)_didPressEditingDoneButton;
+- (void)_didPressNewFolderButton;
+- (void)_folderContentsDidChange:(id)arg1;
+- (void)_reloadFolderContentsForFolderIDIfNeeded:(int)arg1;
+- (void)_setEditingFromToolbarButton:(bool)arg1;
+- (id)_toolbarItemsForViewController:(id)arg1;
+- (void)_updateToolbarItemsForViewController:(id)arg1 animated:(bool)arg2;
+- (id)accessibilityIdentifier;
+- (bool)bookmarkInfoViewControllerShouldUseTranslucentAppearance:(id)arg1;
+- (id)bookmarkProvider;
+- (id)bookmarkProviderQueue;
+- (void)bookmarksTableViewControllerWillDisappear:(id)arg1;
+- (bool)bookmarksTableViewIsReadOnly:(id)arg1;
+- (bool)bookmarksTableViewShouldDispatchNavigationIntent:(id)arg1 forSelectedBookmark:(id)arg2;
+- (id)collection;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsetForBookmarksTableViewController:(id)arg1;
+- (void)dealloc;
+- (void)dispatchNavigationIntent:(id)arg1;
+- (long long)dropIntentForSession:(id)arg1;
+- (unsigned long long)dropOperationForSession:(id)arg1;
+- (id)folder;
+- (void)handleNavigationIntent:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)hash;
+- (id)initWithConfiguration:(id)arg1 sectionController:(id)arg2 folder:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isSpringLoaded;
+- (id)linkPreviewProvider;
+- (id)navigationIntentHandler;
+- (void)panelViewControllerDidBeginEditing:(id)arg1;
+- (void)panelViewControllerDidEndEditing:(id)arg1;
+- (bool)panelViewControllerShouldUseSearchControllerInNavigationItem:(id)arg1;
+- (void)performDropWithProposal:(id)arg1 session:(id)arg2;
+- (bool)selectionFollowsFocus;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInsetForBookmarksTableViewController:(id)arg1;
+- (void)setBookmarkProvider:(id)arg1;
+- (void)setBookmarkProviderQueue:(id)arg1;
+- (void)setCollection:(id)arg1;
+- (void)setLinkPreviewProvider:(id)arg1;
+- (void)setNavigationIntentHandler:(id)arg1;
+- (void)setTabGroupProvider:(id)arg1;
+- (void)tabGroupManager:(id)arg1 didRemoveTabGroupWithUUID:(id)arg2;
+- (void)tabGroupManager:(id)arg1 didUpdateScopedBookmarkList:(id)arg2;
+- (void)tabGroupManager:(id)arg1 didUpdateTabGroupWithUUID:(id)arg2;
+- (void)tabGroupManagerDidUpdateTabGroups:(id)arg1;
+- (id)tabGroupProvider;
+- (id)tabGroupProviderForBookmarkInfoViewController:(id)arg1;
+- (void)toggleEditBookmarks;
+- (id)topViewController;
+- (void)updateListContentConfiguration:(id)arg1;
+- (void)updateToolbarIfNeeded;
+- (id)viewController;
+
+@end

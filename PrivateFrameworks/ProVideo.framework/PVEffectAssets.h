@@ -1,0 +1,4 @@
+
+@interface PVEffectAssets : NSObject
+
+@end

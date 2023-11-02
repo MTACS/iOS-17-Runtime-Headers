@@ -1,0 +1,51 @@
+
+@interface AKToolController : NSObject {
+    bool  _allInkEnabled;
+    AKController * _controller;
+    bool  _pencilInkEnabled;
+    unsigned long long  _toolMode;
+}
+
+@property (nonatomic) bool allInkEnabled;
+@property AKController *controller;
+@property (nonatomic, readonly) bool isInDefaultMode;
+@property (nonatomic) bool pencilInkEnabled;
+@property (nonatomic) unsigned long long toolMode;
+
++ (void)cascadeAnnotations:(id)arg1 onPageController:(id)arg2 forPaste:(bool)arg3;
+
+- (void).cxx_destruct;
+- (unsigned long long)_arrowStyleForToolTag:(long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_centerBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGPoint { double x1; double x2; })_defaultCenterForNewAnnotation;
+- (id)_defaultFillColorForAnnotationOfClass:(Class)arg1;
+- (id)_defaultHeartTypingAttributesWithFillColor:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultRectangleForNewAnnotation:(id)arg1 centeredAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_defaultTextBoxTypingAttributes;
+- (id)_defaultTypingAttributes;
+- (double)_modelBaseScaleFactorForNewAnnotation;
+- (void)_peripheralAvailabilityDidUpdate:(id)arg1;
+- (void)_setRectangleToFitTextOnTextAnnotation:(id)arg1;
+- (id)_strokeColorForNewAnnotation;
+- (double)_strokeWidthForNewAnnotation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_validatedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fitsInVisibleRegionOfOverlayView:(id)arg2 ownedByPageController:(id)arg3 centeredAtPoint:(struct CGPoint { double x1; double x2; })arg4;
+- (void)addNewAnnotation:(id)arg1 onPageController:(id)arg2 shouldSelect:(bool)arg3 shouldCascade:(bool)arg4;
+- (bool)allInkEnabled;
+- (id)controller;
+- (id)createAnnotationOfType:(long long)arg1 centeredAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)dealloc;
+- (unsigned long long)defaultToolMode;
+- (id)initWithController:(id)arg1;
+- (bool)isInDefaultMode;
+- (bool)isToolSenderEnabled:(id)arg1;
+- (bool)pencilInkEnabled;
+- (void)performToolActionForSender:(id)arg1;
+- (void)resetToDefaultMode;
+- (void)setAllInkEnabled:(bool)arg1;
+- (void)setController:(id)arg1;
+- (void)setPencilInkEnabled:(bool)arg1;
+- (void)setToolMode:(unsigned long long)arg1;
+- (unsigned long long)toolMode;
+- (void)updateToolSenderState:(id)arg1 enabled:(bool)arg2;
+
+@end

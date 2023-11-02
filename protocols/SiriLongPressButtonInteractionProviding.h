@@ -1,0 +1,4 @@
+
+@protocol SiriLongPressButtonInteractionProviding <NSObject>
+
+@end

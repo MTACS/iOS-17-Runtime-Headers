@@ -1,0 +1,4 @@
+
+@interface TDThemeVectorGlyphRenderingMode : TDThemeConstant
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SKUIIndexBarViewElement : SKUIViewElement
+
+@end

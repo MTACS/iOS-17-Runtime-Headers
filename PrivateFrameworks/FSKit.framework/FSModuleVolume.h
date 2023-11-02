@@ -1,0 +1,4 @@
+
+@interface FSModuleVolume : NSObject
+
+@end

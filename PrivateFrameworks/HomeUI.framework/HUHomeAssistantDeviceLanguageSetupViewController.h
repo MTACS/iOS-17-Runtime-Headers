@@ -1,0 +1,88 @@
+
+@interface HUHomeAssistantDeviceLanguageSetupViewController : HUImageOBWelcomeController <HUConfigurationViewController, HUConfigurationViewControllerFlow, HUOnboardingWarningPresenter, HUPreloadableViewController> {
+    OBTrayButton * _continueButton;
+    NSString * _continueButtonString;
+    SEL  _continueSelector;
+    OBLinkTrayButton * _customizeButton;
+    NSString * _customizeButtonString;
+    SEL  _customizeSelector;
+    <HUConfigurationViewControllerDelegate> * _delegate;
+    NSString * _detailsString;
+    HMHome * _home;
+    NSArray * _homeAssistantDevicesHavingLanguageMismatch;
+    bool  _maxNumberOfVoicesReached;
+    HUPersonalRequestsEditorItemManager * _prEditorItemManager;
+    bool  _shouldSetMultiUserIsEnabled;
+    NSArray * _supportedVoiceRecognitionLanguages;
+    NSString * _titleString;
+}
+
+@property (nonatomic, retain) OBTrayButton *continueButton;
+@property (nonatomic) NSString *continueButtonString;
+@property (nonatomic) SEL continueSelector;
+@property (nonatomic, retain) OBLinkTrayButton *customizeButton;
+@property (nonatomic) NSString *customizeButtonString;
+@property (nonatomic) SEL customizeSelector;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HUConfigurationViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) NSString *detailsString;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) HMHome *home;
+@property (nonatomic, retain) NSArray *homeAssistantDevicesHavingLanguageMismatch;
+@property (nonatomic) bool isFinalStep;
+@property (nonatomic) bool maxNumberOfVoicesReached;
+@property (nonatomic, retain) HUPersonalRequestsEditorItemManager *prEditorItemManager;
+@property (nonatomic) bool shouldSetMultiUserIsEnabled;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *supportedVoiceRecognitionLanguages;
+@property (nonatomic) NSString *titleString;
+
+- (void).cxx_destruct;
+- (void)_cancelLanguageSetup;
+- (void)_cancelLanguageSetupWithoutWarningUser;
+- (void)_changeLanguage;
+- (void)_checkForiCloudSiriEnabledAndCompleteSetup;
+- (void)_completeLanguageSetup;
+- (void)_setupPersonalRequestsItemInfrastructure;
+- (void)_turnOffPersonalRequests;
+- (id)continueButton;
+- (id)continueButtonString;
+- (SEL)continueSelector;
+- (id)customizeButton;
+- (id)customizeButtonString;
+- (SEL)customizeSelector;
+- (id)delegate;
+- (id)detailsString;
+- (id)home;
+- (id)homeAssistantDevicesHavingLanguageMismatch;
+- (id)hu_preloadContent;
+- (id)initWithHome:(id)arg1;
+- (bool)maxNumberOfVoicesReached;
+- (bool)needsToWaitForPreload;
+- (Class)onboardingFlowClass;
+- (id)prEditorItemManager;
+- (void)setContinueButton:(id)arg1;
+- (void)setContinueButtonString:(id)arg1;
+- (void)setContinueSelector:(SEL)arg1;
+- (void)setCustomizeButton:(id)arg1;
+- (void)setCustomizeButtonString:(id)arg1;
+- (void)setCustomizeSelector:(SEL)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDetailsString:(id)arg1;
+- (void)setHome:(id)arg1;
+- (void)setHomeAssistantDevicesHavingLanguageMismatch:(id)arg1;
+- (void)setMaxNumberOfVoicesReached:(bool)arg1;
+- (void)setPrEditorItemManager:(id)arg1;
+- (void)setShouldSetMultiUserIsEnabled:(bool)arg1;
+- (void)setSupportedVoiceRecognitionLanguages:(id)arg1;
+- (void)setTitleString:(id)arg1;
+- (bool)shouldSetMultiUserIsEnabled;
+- (id)supportedVoiceRecognitionLanguages;
+- (id)titleString;
+- (void)userTappedCancelFromWarning;
+- (void)userTappedContinueFromWarning;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

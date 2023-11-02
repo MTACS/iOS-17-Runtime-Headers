@@ -1,0 +1,4 @@
+
+@protocol OBSetupAssistantSupport <NSObject>
+
+@end

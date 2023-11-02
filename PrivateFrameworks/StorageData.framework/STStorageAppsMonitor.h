@@ -1,0 +1,98 @@
+
+@interface STStorageAppsMonitor : NSObject <LSApplicationWorkspaceObserverProtocol, STMSizeCacheDelegate> {
+    NSArray * _allApps;
+    STMSizer * _appSizer;
+    NSDictionary * _appsByID;
+    bool  _appsLoaded;
+    NSLock * _appsLock;
+    STSizeDict * _categorySizes;
+    NSDictionary * _childAppsByParentID;
+    bool  _containersSized;
+    SUDownload * _currentSoftwareUpdate;
+    long long  _currentSoftwareUpdateSize;
+    NSOperation * _initialLoadOperation;
+    long long  _localStorageContainerSize;
+    NSArray * _pkContainers;
+    long long  _pluginkitDataSize;
+    NSArray * _prevApps;
+    NSOperationQueue * _serialQueue;
+    Class  _sharedContainerClass;
+    NSDictionary * _sharedContainers;
+    bool  _sortNeeded;
+    NSOperation * _updateAppsOperation;
+    STUsageBundleRegistry * _usageBundles;
+}
+
+@property (readonly) NSArray *allApps;
+@property (retain) STMSizer *appSizer;
+@property (readonly) NSArray *apps;
+@property (readonly) bool appsLoaded;
+@property (retain) STSizeDict *categorySizes;
+@property (readonly) bool containersSized;
+@property (retain) SUDownload *currentSoftwareUpdate;
+@property (readonly) long long currentSoftwareUpdateSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) NSArray *demotableApps;
+@property (readonly) NSArray *demotedApps;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) long long localStorageContainerSize;
+@property (readonly) long long pluginkitDataSize;
+@property (retain) NSArray *prevApps;
+@property (readonly) Class superclass;
+@property (retain) STUsageBundleRegistry *usageBundles;
+
++ (id)sharedMonitor;
+
+- (void).cxx_destruct;
+- (void)_logAppSizes:(id)arg1;
+- (void)addDeviceInfoToDict:(id)arg1;
+- (void)addNumber:(long long)arg1 toDict:(id)arg2 forKey:(id)arg3;
+- (void)addTimestampToDict:(id)arg1;
+- (id)allApps;
+- (id)appSizer;
+- (id)appSizesDict;
+- (id)appWithIdentifier:(id)arg1;
+- (void)applicationInstallsDidChange:(id)arg1;
+- (void)applicationStateDidChange:(id)arg1;
+- (void)applicationsDidInstall:(id)arg1;
+- (void)applicationsDidUninstall:(id)arg1;
+- (id)apps;
+- (bool)appsLoaded;
+- (id)appsSortedBySize;
+- (void)appsStateChanged:(id)arg1;
+- (id)categorySizes;
+- (id)categorySizesDict;
+- (id)childAppsForApp:(id)arg1;
+- (bool)containersSized;
+- (id)currentSoftwareUpdate;
+- (long long)currentSoftwareUpdateSize;
+- (void)dealloc;
+- (id)demotableApps;
+- (id)demotedApps;
+- (id)filteredApps:(id /* block */)arg1 sortedUsingBlock:(id /* block */)arg2;
+- (id)init;
+- (void)loadApps;
+- (long long)localStorageContainerSize;
+- (void)logAppSizes;
+- (void)mediaSizesChanged:(id)arg1;
+- (void)notifyAppsChanged;
+- (long long)pluginkitDataSize;
+- (id)prevApps;
+- (void)refreshApps:(id)arg1;
+- (void)setAppSizer:(id)arg1;
+- (void)setCategorySizes:(id)arg1;
+- (void)setCurrentSoftwareUpdate:(id)arg1;
+- (void)setPrevApps:(id)arg1;
+- (void)setSortNeeded;
+- (void)setUsageBundles:(id)arg1;
+- (void)sizeCacheItemsUpdated:(id)arg1;
+- (void)startMonitor;
+- (void)stopMonitor;
+- (id)storageInfoDict;
+- (void)sync;
+- (id)updateApps;
+- (id)usageBundleForIdentifier:(id)arg1;
+- (id)usageBundles;
+
+@end

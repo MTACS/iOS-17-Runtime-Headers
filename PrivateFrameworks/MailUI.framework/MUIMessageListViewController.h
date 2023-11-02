@@ -1,0 +1,4 @@
+
+@interface MUIMessageListViewController : MUIPlatformViewController
+
+@end

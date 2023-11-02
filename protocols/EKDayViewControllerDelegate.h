@@ -1,0 +1,49 @@
+
+@protocol EKDayViewControllerDelegate <NSObject, EKUIAppReviewPrompter>
+
+@required
+
+- (void)dayOccurrenceViewSelected:(EKDayOccurrenceView *)arg1 source:(unsigned long long)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 didChangeDisplayDate:(NSDateComponents *)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 didSelectEvent:(EKEvent *)arg2 animated:(bool)arg3 userInitiated:(bool)arg4;
+- (NSArray *)selectedEventsForEditMenu;
+
+@optional
+
+- (void)dayViewController:(EKDayViewController *)arg1 awaitsDeletingOccurrence:(EKEvent *)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 awaitsRefreshingOccurrence:(EKEvent *)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 beginEditingOccurrence:(EKEvent *)arg2 creationMethod:(NSString *)arg3;
+- (EKEvent *)dayViewController:(EKDayViewController *)arg1 createEventAtDate:(NSDate *)arg2 allDay:(bool)arg3;
+- (void)dayViewController:(EKDayViewController *)arg1 didChangeDisplayedOccurrencesDueToTrigger:(int)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 didReloadDataDueToTrigger:(int)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 didStartDeceleratingTargettingDate:(NSDateComponents *)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 handleGestureCommittingOccurrence:(EKEvent *)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 modifySelection:(EKEvent *)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 requestsPresentationOfViewControllerForGestures:(UIViewController *)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 requestsSaveFirstVisibleSecondPreference:(int)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 requestsSaveHourScalePreference:(double)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 requestsShowEvent:(EKEvent *)arg2 showDetails:(bool)arg3;
+- (UIView *)dayViewController:(EKDayViewController *)arg1 selectedCopyViewForView:(EKDayOccurrenceView *)arg2;
+- (bool)dayViewController:(EKDayViewController *)arg1 willDuplicateOccurrence:(EKEvent *)arg2;
+- (void)dayViewControllerCurrentDayDidCompleteAsyncLoadAndLayout:(EKDayViewController *)arg1;
+- (void)dayViewControllerDidChangeDisplayedOccurrences:(EKDayViewController *)arg1;
+- (void)dayViewControllerDidEndDecelerating:(EKDayViewController *)arg1;
+- (void)dayViewControllerDidEndScrolling:(EKDayViewController *)arg1;
+- (void)dayViewControllerDidFinishPinchingDayView:(EKDayViewController *)arg1;
+- (void)dayViewControllerDidReloadData:(EKDayViewController *)arg1;
+- (void)dayViewControllerDidRespondToApplicationDidBecomeActiveStateChange:(EKDayViewController *)arg1;
+- (void)dayViewControllerDidTapEmptySpace:(EKDayViewController *)arg1 onDate:(EKCalendarDate *)arg2;
+- (void)dayViewControllerDidUpdateScrollPosition:(EKDayViewController *)arg1;
+- (void)dayViewControllerIsPinchingDayView:(EKDayViewController *)arg1;
+- (double)dayViewControllerPersistedHourScalePreference:(EKDayViewController *)arg1;
+- (bool)dayViewControllerShouldAllowLongPress:(EKDayViewController *)arg1;
+- (bool)dayViewControllerShouldDrawSynchronously:(EKDayViewController *)arg1;
+- (bool)dayViewControllerShouldEndGestureEditingOnTap:(EKDayViewController *)arg1;
+- (bool)dayViewControllerShouldShowDetachDialogOnGestureDraggingEnd:(EKDayViewController *)arg1;
+- (void)dayViewcontrollerDidBeginMovingEventWithGesture:(EKDayViewController *)arg1;
+- (bool)dayviewControllerShouldAllowSwipeToChangeDays:(EKDayViewController *)arg1;
+- (bool)delegateWantsToHandleDayViewController:(EKDayViewController *)arg1 gestureCommittingOccurrence:(EKEvent *)arg2;
+- (NSArray *)selectedOccurrencesForDayViewController:(EKDayViewController *)arg1;
+- (void)updateSelectedOccurrenceView;
+
+@end

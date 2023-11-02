@@ -1,0 +1,4 @@
+
+@protocol ICInlineAttachmentCryptoStrategy <ICCloudSyncingObjectCryptoStrategy>
+
+@end

@@ -1,0 +1,82 @@
+
+@interface MNHybridLocationProvider : NSObject <MNLocationProvider, MNLocationProviderDelegate> {
+    MNCoreLocationProvider * _coreLocationProvider;
+    <MNLocationProviderDelegate> * _delegate;
+    double  _distanceFilter;
+    double  _effectiveAccuracy;
+    unsigned long long  _mode;
+    double  _nonLeechedDesiredAccuracy;
+}
+
+@property (nonatomic, readonly) bool coarseModeEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MNLocationProviderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double desiredAccuracy;
+@property (nonatomic) double distanceFilter;
+@property (nonatomic, retain) NSBundle *effectiveBundle;
+@property (nonatomic, copy) NSString *effectiveBundleIdentifier;
+@property (nonatomic, readonly) double expectedGpsUpdateInterval;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) int headingOrientation;
+@property (nonatomic, readonly) bool isAuthorized;
+@property (nonatomic, readonly) bool isTracePlayer;
+@property (nonatomic) unsigned long long mode;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) double timeScale;
+@property (nonatomic, readonly) unsigned long long traceVersion;
+
+- (void).cxx_destruct;
+- (void)_setEffectiveAccuracy:(double)arg1;
+- (void)_sharedInit;
+- (bool)coarseModeEnabled;
+- (id)coreLocationProvider;
+- (id)delegate;
+- (double)desiredAccuracy;
+- (double)distanceFilter;
+- (id)effectiveBundle;
+- (id)effectiveBundleIdentifier;
+- (double)expectedGpsUpdateInterval;
+- (int)headingOrientation;
+- (id)init;
+- (id)initWithEffectiveBundle:(id)arg1;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1;
+- (bool)isAuthorized;
+- (bool)isTracePlayer;
+- (id)leechedLocationProvider;
+- (void)locationProvider:(id)arg1 didChangeCoarseMode:(bool)arg2;
+- (void)locationProvider:(id)arg1 didEnterRegion:(id)arg2;
+- (void)locationProvider:(id)arg1 didExitRegion:(id)arg2;
+- (void)locationProvider:(id)arg1 didReceiveError:(id)arg2;
+- (void)locationProvider:(id)arg1 didUpdateHeading:(id)arg2;
+- (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2;
+- (void)locationProvider:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
+- (void)locationProvider:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
+- (void)locationProvider:(id)arg1 monitoringDidFailForRegion:(id)arg2 withError:(id)arg3;
+- (void)locationProviderDidChangeAuthorizationStatus:(id)arg1;
+- (void)locationProviderDidPauseLocationUpdates:(id)arg1;
+- (void)locationProviderDidResumeLocationUpdates:(id)arg1;
+- (bool)locationProviderShouldPauseLocationUpdates:(id)arg1;
+- (unsigned long long)mode;
+- (void)resetForActiveTileGroupChanged;
+- (void)setDelegate:(id)arg1;
+- (void)setDesiredAccuracy:(double)arg1;
+- (void)setDistanceFilter:(double)arg1;
+- (void)setEffectiveBundle:(id)arg1;
+- (void)setEffectiveBundleIdentifier:(id)arg1;
+- (void)setHeadingOrientation:(int)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)startMonitoringForRegion:(id)arg1;
+- (void)startUpdatingHeading;
+- (void)startUpdatingLocation;
+- (void)startUpdatingVehicleHeading;
+- (void)startUpdatingVehicleSpeed;
+- (void)stopMonitoringForRegion:(id)arg1;
+- (void)stopUpdatingHeading;
+- (void)stopUpdatingLocation;
+- (void)stopUpdatingVehicleHeading;
+- (void)stopUpdatingVehicleSpeed;
+- (double)timeScale;
+- (unsigned long long)traceVersion;
+
+@end

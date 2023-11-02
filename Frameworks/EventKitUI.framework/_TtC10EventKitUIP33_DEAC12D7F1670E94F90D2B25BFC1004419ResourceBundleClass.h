@@ -1,0 +1,4 @@
+
+@interface _TtC10EventKitUIP33_DEAC12D7F1670E94F90D2B25BFC1004419ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

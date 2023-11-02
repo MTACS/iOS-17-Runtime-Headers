@@ -1,0 +1,4 @@
+
+@interface CNReplaySubjectCacheEntry : NSObject
+
+@end

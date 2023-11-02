@@ -1,0 +1,4 @@
+
+@interface _TtCE20MentalHealthWidgetUICSo8NSBundleP33_21F17CA7A5BFA6250F3DB6A07C6F7C8C8Sentinel : _TtCs12_SwiftObject
+
+@end

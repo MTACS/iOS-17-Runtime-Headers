@@ -1,0 +1,4 @@
+
+@protocol PKPencilObserverInteractionDelegate <NSObject>
+
+@end

@@ -1,0 +1,90 @@
+
+@interface WOHealthBridgeProtoPersistence : PBCodable <NSCopying> {
+    NSMutableArray * _keyedDatas;
+    NSMutableArray * _keyedDates;
+    NSMutableArray * _keyedNumbers;
+    NSMutableArray * _keyedStrings;
+    double  _objectModificationTimeSinceReferenceDate;
+    int  _objectState;
+    NSData * _persistedData;
+    NSData * _persistedProtoData;
+    WOHealthBridgeSyncIdentity * _syncIdentity;
+    int  _type;
+    NSData * _uuid;
+    int  _version;
+}
+
+@property (nonatomic, readonly) bool hasPersistedProtoData;
+@property (nonatomic, readonly) bool hasSyncIdentity;
+@property (nonatomic, retain) NSMutableArray *keyedDatas;
+@property (nonatomic, retain) NSMutableArray *keyedDates;
+@property (nonatomic, retain) NSMutableArray *keyedNumbers;
+@property (nonatomic, retain) NSMutableArray *keyedStrings;
+@property (nonatomic) double objectModificationTimeSinceReferenceDate;
+@property (nonatomic) int objectState;
+@property (nonatomic, retain) NSData *persistedData;
+@property (nonatomic, retain) NSData *persistedProtoData;
+@property (nonatomic, retain) WOHealthBridgeSyncIdentity *syncIdentity;
+@property (nonatomic) int type;
+@property (nonatomic, retain) NSData *uuid;
+@property (nonatomic) int version;
+
++ (Class)keyedDatasType;
++ (Class)keyedDatesType;
++ (Class)keyedNumbersType;
++ (Class)keyedStringsType;
+
+- (void).cxx_destruct;
+- (void)addKeyedDatas:(id)arg1;
+- (void)addKeyedDates:(id)arg1;
+- (void)addKeyedNumbers:(id)arg1;
+- (void)addKeyedStrings:(id)arg1;
+- (void)clearKeyedDatas;
+- (void)clearKeyedDates;
+- (void)clearKeyedNumbers;
+- (void)clearKeyedStrings;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasPersistedProtoData;
+- (bool)hasSyncIdentity;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)keyedDatas;
+- (id)keyedDatasAtIndex:(unsigned long long)arg1;
+- (unsigned long long)keyedDatasCount;
+- (id)keyedDates;
+- (id)keyedDatesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)keyedDatesCount;
+- (id)keyedNumbers;
+- (id)keyedNumbersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)keyedNumbersCount;
+- (id)keyedStrings;
+- (id)keyedStringsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)keyedStringsCount;
+- (void)mergeFrom:(id)arg1;
+- (double)objectModificationTimeSinceReferenceDate;
+- (int)objectState;
+- (id)persistedData;
+- (id)persistedProtoData;
+- (bool)readFrom:(id)arg1;
+- (void)setKeyedDatas:(id)arg1;
+- (void)setKeyedDates:(id)arg1;
+- (void)setKeyedNumbers:(id)arg1;
+- (void)setKeyedStrings:(id)arg1;
+- (void)setObjectModificationTimeSinceReferenceDate:(double)arg1;
+- (void)setObjectState:(int)arg1;
+- (void)setPersistedData:(id)arg1;
+- (void)setPersistedProtoData:(id)arg1;
+- (void)setSyncIdentity:(id)arg1;
+- (void)setType:(int)arg1;
+- (void)setUuid:(id)arg1;
+- (void)setVersion:(int)arg1;
+- (id)syncIdentity;
+- (int)type;
+- (id)uuid;
+- (int)version;
+- (void)writeTo:(id)arg1;
+
+@end

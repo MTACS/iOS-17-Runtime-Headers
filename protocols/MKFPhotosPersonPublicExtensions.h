@@ -1,0 +1,4 @@
+
+@protocol MKFPhotosPersonPublicExtensions
+
+@end

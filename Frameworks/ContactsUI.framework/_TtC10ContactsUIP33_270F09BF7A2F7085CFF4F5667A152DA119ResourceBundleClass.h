@@ -1,0 +1,4 @@
+
+@interface _TtC10ContactsUIP33_270F09BF7A2F7085CFF4F5667A152DA119ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

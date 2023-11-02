@@ -1,0 +1,86 @@
+
+@interface PKAuthenticatorEvaluationRequest : NSObject {
+    NSNumber * _PINLength;
+    NSString * _PINTitle;
+    struct __SecAccessControl { } * _accessControlRef;
+    bool  _assumeBiometricOrPasscodeAvailable;
+    bool  _assumeUserIntentAvailable;
+    NSData * _externalizedContext;
+    NSString * _fallbackOptionTitle;
+    bool  _hasInitialAuthenticatorState;
+    unsigned long long  _initialAuthenticatorState;
+    unsigned long long  _maxBiometryFailures;
+    bool  _passcodeOnly;
+    NSString * _passcodeTitle;
+    NSString * _physicalButtonTitle;
+    long long  _policy;
+    NSNumber * _processIdentifier;
+    NSString * _processName;
+    NSString * _reason;
+    bool  _useLegacyAuthenticator;
+    bool  _useStockAuthInterface;
+}
+
+@property (nonatomic, copy) NSNumber *PINLength;
+@property (nonatomic, copy) NSString *PINTitle;
+@property (nonatomic) struct __SecAccessControl { }*accessControlRef;
+@property (nonatomic) bool assumeBiometricOrPasscodeAvailable;
+@property (nonatomic) bool assumeUserIntentAvailable;
+@property (nonatomic, retain) NSData *externalizedContext;
+@property (nonatomic, copy) NSString *fallbackOptionTitle;
+@property (nonatomic) bool hasInitialAuthenticatorState;
+@property (nonatomic) unsigned long long initialAuthenticatorState;
+@property (nonatomic) unsigned long long maxBiometryFailures;
+@property (nonatomic) bool passcodeOnly;
+@property (nonatomic, copy) NSString *passcodeTitle;
+@property (nonatomic, copy) NSString *physicalButtonTitle;
+@property (nonatomic, readonly) long long policy;
+@property (nonatomic, copy) NSNumber *processIdentifier;
+@property (nonatomic, copy) NSString *processName;
+@property (nonatomic, copy) NSString *reason;
+@property (nonatomic) bool useLegacyAuthenticator;
+@property (nonatomic) bool useStockAuthInterface;
+
+- (void).cxx_destruct;
+- (id)PINLength;
+- (id)PINTitle;
+- (struct __SecAccessControl { }*)accessControlRef;
+- (bool)assumeBiometricOrPasscodeAvailable;
+- (bool)assumeUserIntentAvailable;
+- (void)dealloc;
+- (id)externalizedContext;
+- (id)fallbackOptionTitle;
+- (bool)hasInitialAuthenticatorState;
+- (id)init;
+- (id)initWithPolicy:(long long)arg1;
+- (unsigned long long)initialAuthenticatorState;
+- (unsigned long long)maxBiometryFailures;
+- (bool)passcodeOnly;
+- (id)passcodeTitle;
+- (id)physicalButtonTitle;
+- (long long)policy;
+- (id)processIdentifier;
+- (id)processName;
+- (id)reason;
+- (void)setAccessControlRef:(struct __SecAccessControl { }*)arg1;
+- (void)setAssumeBiometricOrPasscodeAvailable:(bool)arg1;
+- (void)setAssumeUserIntentAvailable:(bool)arg1;
+- (void)setExternalizedContext:(id)arg1;
+- (void)setFallbackOptionTitle:(id)arg1;
+- (void)setHasInitialAuthenticatorState:(bool)arg1;
+- (void)setInitialAuthenticatorState:(unsigned long long)arg1;
+- (void)setMaxBiometryFailures:(unsigned long long)arg1;
+- (void)setPINLength:(id)arg1;
+- (void)setPINTitle:(id)arg1;
+- (void)setPasscodeOnly:(bool)arg1;
+- (void)setPasscodeTitle:(id)arg1;
+- (void)setPhysicalButtonTitle:(id)arg1;
+- (void)setProcessIdentifier:(id)arg1;
+- (void)setProcessName:(id)arg1;
+- (void)setReason:(id)arg1;
+- (void)setUseLegacyAuthenticator:(bool)arg1;
+- (void)setUseStockAuthInterface:(bool)arg1;
+- (bool)useLegacyAuthenticator;
+- (bool)useStockAuthInterface;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol HFSoftwareUpdateControllerObserver <HMSoftwareUpdateControllerDelegate>
+
+@end

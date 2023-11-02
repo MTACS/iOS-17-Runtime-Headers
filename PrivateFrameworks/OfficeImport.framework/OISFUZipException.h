@@ -1,0 +1,4 @@
+
+@interface OISFUZipException : NSException
+
+@end

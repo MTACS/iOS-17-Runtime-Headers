@@ -1,0 +1,23 @@
+
+@interface SXDocumentMetadataProvider : NSObject <SXAutoPlacementProviding, SXDocumentLanguageProviding, SXDocumentMetadataProviding, SXDocumentTitleProviding> {
+    <SXDocumentProviding> * _documentProvider;
+}
+
+@property (nonatomic, readonly) <SXAutoPlacement> *autoPlacement;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <SXDocumentProviding> *documentProvider;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *language;
+@property (nonatomic, readonly) SXMetadata *metadata;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *title;
+
+- (void).cxx_destruct;
+- (id)documentProvider;
+- (id)initWithDocumentProvider:(id)arg1;
+- (id)language;
+- (id)metadata;
+- (id)title;
+
+@end

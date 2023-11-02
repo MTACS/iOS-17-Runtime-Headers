@@ -1,0 +1,4 @@
+
+@protocol PTCinematographyStreamDelegate <NSObject>
+
+@end

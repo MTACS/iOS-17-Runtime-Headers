@@ -1,0 +1,30 @@
+
+@interface HKLevelCategoryDataSource : HKHealthQueryChartCacheDataSource {
+    id /* block */  _pointStyleBlock;
+    HKSampleType * _sampleType;
+    id /* block */  _userInfoCreationBlock;
+    NSArray * _valueOrder;
+}
+
+@property (nonatomic, copy) id /* block */ pointStyleBlock;
+@property (nonatomic, retain) HKSampleType *sampleType;
+@property (nonatomic, copy) id /* block */ userInfoCreationBlock;
+@property (nonatomic, retain) NSArray *valueOrder;
+
+- (void).cxx_destruct;
+- (id)_chartPointsWithSamples:(id)arg1 sourceTimeZone:(id)arg2;
+- (id)chartPointsFromQueryData:(id)arg1 dataIsFromRemoteSource:(bool)arg2;
+- (id /* block */)generateSharableQueryDataForRequest:(id)arg1 healthStore:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id /* block */)pointStyleBlock;
+- (id)queriesForRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)queryDescription;
+- (id)sampleType;
+- (void)setPointStyleBlock:(id /* block */)arg1;
+- (void)setSampleType:(id)arg1;
+- (void)setUserInfoCreationBlock:(id /* block */)arg1;
+- (void)setValueOrder:(id)arg1;
+- (bool)supportsChartQueryDataGeneration;
+- (id /* block */)userInfoCreationBlock;
+- (id)valueOrder;
+
+@end

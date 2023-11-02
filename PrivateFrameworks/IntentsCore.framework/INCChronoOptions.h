@@ -1,0 +1,4 @@
+
+@interface INCChronoOptions : INCWidgetOptions
+
+@end

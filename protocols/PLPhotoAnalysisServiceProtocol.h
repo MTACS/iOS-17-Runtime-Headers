@@ -1,0 +1,4 @@
+
+@protocol PLPhotoAnalysisServiceProtocol <PLPhotoAnalysisLegacyServiceProtocol, PLAnalysisServiceLibraryAvailabilityNotificationProtocol>
+
+@end

@@ -1,0 +1,80 @@
+
+@interface MessageHeaderViewModel : MessageItemViewModel <MessageHeaderViewModelBuilder, NSCopying> {
+    MFAddressAtomStatusManager * _atomManager;
+    NSArray * _bccList;
+    EFFuture * _brandIndicatorFuture;
+    NSArray * _ccList;
+    NSDate * _dateSent;
+    <EMCollectionItemID> * _itemID;
+    MFMailboxUid * _mailbox;
+    EFObservable<EFObserver> * _observableObserver;
+    NSArray * _senderList;
+    ECSubject * _subject;
+    NSArray * _toList;
+}
+
+@property (getter=isVIP, nonatomic) bool VIP;
+@property (nonatomic, retain) MFAddressAtomStatusManager *atomManager;
+@property (nonatomic, copy) NSArray *bccList;
+@property (getter=isBlockedSender, nonatomic) bool blockedSender;
+@property (nonatomic, retain) EFFuture *brandIndicatorFuture;
+@property (nonatomic, copy) NSArray *ccList;
+@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, copy) NSDate *dateSent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDate *displayDate;
+@property (nonatomic, copy) NSIndexSet *flagColors;
+@property (getter=isFlagged, nonatomic) bool flagged;
+@property (nonatomic, copy) EMFollowUp *followUp;
+@property (getter=isForwarded, nonatomic) bool forwarded;
+@property (nonatomic) bool hasAttachments;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) <EMCollectionItemID> *itemID;
+@property (nonatomic, copy) MFMailboxUid *mailbox;
+@property (nonatomic, readonly) EFObservable *modelObservable;
+@property (getter=isMute, nonatomic) bool mute;
+@property (getter=isNotify, nonatomic) bool notify;
+@property (nonatomic, retain) EFObservable<EFObserver> *observableObserver;
+@property (getter=isRead, nonatomic) bool read;
+@property (nonatomic, copy) NSDate *readLaterDate;
+@property (getter=isReplied, nonatomic) bool replied;
+@property (nonatomic, copy) NSDate *sendLaterDate;
+@property (nonatomic, copy) NSArray *senderList;
+@property (nonatomic, copy) ECSubject *subject;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *toList;
+@property (nonatomic) long long unsubscribeType;
+
+- (void).cxx_destruct;
+- (id)atomManager;
+- (id)bccList;
+- (id)brandIndicatorFuture;
+- (id)ccList;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dateSent;
+- (id)initWithBuilder:(id /* block */)arg1;
+- (id)initWithItemBuilder:(id /* block */)arg1;
+- (id)itemID;
+- (id)mailbox;
+- (id)modelObservable;
+- (id)observableObserver;
+- (id)senderList;
+- (void)setAtomManager:(id)arg1;
+- (void)setBccList:(id)arg1;
+- (void)setBrandIndicatorFuture:(id)arg1;
+- (void)setCcList:(id)arg1;
+- (void)setDateSent:(id)arg1;
+- (void)setItemID:(id)arg1;
+- (void)setMailbox:(id)arg1;
+- (void)setObservableObserver:(id)arg1;
+- (void)setSenderList:(id)arg1;
+- (void)setSubject:(id)arg1;
+- (void)setToList:(id)arg1;
+- (id)subject;
+- (id)toList;
+- (id)updatedFlagsModelWithBuilder:(id /* block */)arg1;
+- (id)updatedModelWithBuilder:(id /* block */)arg1;
+- (id)updatedModelWithMessage:(id)arg1 brandIndicatorFuture:(id)arg2;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SOHostExtensionViewProtocol <SOExtensionViewProtocol>
+
+@end

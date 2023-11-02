@@ -1,0 +1,4 @@
+
+@interface _TtC15SeymourServicesP33_1686438F40EA7027C8CF004FA1577E2319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

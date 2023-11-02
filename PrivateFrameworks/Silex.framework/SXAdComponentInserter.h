@@ -1,0 +1,35 @@
+
+@interface SXAdComponentInserter : NSObject <SXComponentInserter> {
+    <SXAdvertisingSettingsFactory> * _advertisingSettingsFactory;
+    <SXComponentInsertionConditionEngine> * _conditionEngine;
+    long long  _insertedCount;
+    double  _lastInsertedYOffset;
+}
+
+@property (nonatomic, readonly) <SXAdvertisingSettingsFactory> *advertisingSettingsFactory;
+@property (nonatomic, readonly) unsigned long long componentTraits;
+@property (nonatomic, readonly) <SXComponentInsertionConditionEngine> *conditionEngine;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long insertedCount;
+@property (nonatomic) double lastInsertedYOffset;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (unsigned long long)adTypeFromBannerType:(unsigned long long)arg1;
+- (id)advertisingSettingsFactory;
+- (id)cacheValidatorForCache:(id)arg1 DOMObjectProvider:(id)arg2;
+- (id)componentInsertForMarker:(id)arg1 DOMObjectProvider:(id)arg2 layoutProvider:(id)arg3;
+- (void)componentInsertionCompleted;
+- (unsigned long long)componentTraits;
+- (id)conditionEngine;
+- (id)conditionsForDOMObjectProvider:(id)arg1;
+- (id)initWithConditionEngine:(id)arg1 advertisingSettingsFactory:(id)arg2;
+- (long long)insertedCount;
+- (double)lastInsertedYOffset;
+- (void)setInsertedCount:(long long)arg1;
+- (void)setLastInsertedYOffset:(double)arg1;
+- (bool)validateMarker:(id)arg1 DOMObjectProvider:(id)arg2 layoutProvider:(id)arg3;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SBHBDoublePressUpGestureRecognizer : UIHBClickGestureRecognizer
+
+@end

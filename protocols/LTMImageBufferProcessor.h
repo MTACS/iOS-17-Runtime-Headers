@@ -1,0 +1,4 @@
+
+@protocol LTMImageBufferProcessor <MetalImageBufferProcessor>
+
+@end

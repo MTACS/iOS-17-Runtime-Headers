@@ -1,0 +1,113 @@
+
+@interface GKGameInternal : GKGameDescriptor {
+    NSSet * _compatiblePlatforms;
+    NSString * _defaultLeaderboardIdentifier;
+    union { 
+        struct { 
+            unsigned int _platform_unused : 8; 
+            unsigned int _prerendered : 1; 
+            unsigned int _supportsLeaderboards : 1; 
+            unsigned int _supportsLeaderboardSets : 1; 
+            unsigned int _hasAggregateLeaderboard : 1; 
+            unsigned int _supportsAchievements : 1; 
+            unsigned int _supportsMultiplayer : 1; 
+            unsigned int _valid : 1; 
+            unsigned int _unused : 1; 
+            unsigned int _supportsTurnBasedMultiplayer : 1; 
+            unsigned int _isArcadeGame : 1; 
+            unsigned int _supportsChallenges : 1; 
+            unsigned int _reserved : 13; 
+        } ; 
+        unsigned int _value; 
+    }  _flags;
+    NSDictionary * _icons;
+    unsigned short  _maxAchievementPoints;
+    NSString * _name;
+    unsigned short  _numberOfAchievements;
+    unsigned short  _numberOfLeaderboardSets;
+    unsigned short  _numberOfLeaderboards;
+    NSSet * _supportedTransports;
+}
+
+@property (nonatomic, readonly) bool canBeIndexed;
+@property (nonatomic, retain) NSSet *compatiblePlatforms;
+@property (nonatomic, retain) NSString *defaultLeaderboardIdentifier;
+@property (nonatomic) unsigned int flags;
+@property (nonatomic, readonly) GKGameDescriptor *gameDescriptor;
+@property (nonatomic) bool hasAggregateLeaderboard;
+@property (nonatomic, retain) NSDictionary *icons;
+@property (nonatomic) bool isArcadeGame;
+@property (nonatomic) unsigned short maxAchievementPoints;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) unsigned short numberOfAchievements;
+@property (nonatomic) unsigned short numberOfLeaderboardSets;
+@property (nonatomic) unsigned short numberOfLeaderboards;
+@property (getter=isPrerendered, nonatomic) bool prerendered;
+@property (nonatomic, readonly) NSURL *storeURL;
+@property (nonatomic, retain) NSSet *supportedTransports;
+@property (nonatomic) bool supportsAchievements;
+@property (nonatomic) bool supportsChallenges;
+@property (nonatomic) bool supportsLeaderboardSets;
+@property (nonatomic) bool supportsLeaderboards;
+@property (nonatomic) bool supportsMultiplayer;
+@property (nonatomic) bool supportsTurnBasedMultiplayer;
+@property (getter=isValid, nonatomic) bool valid;
+
++ (id)createGameControllerDaemonGameInternal;
++ (id)createGamedGameInternal;
++ (id)secureCodedPropertyKeys;
+
+- (void).cxx_destruct;
+- (bool)canBeIndexed;
+- (id)compatiblePlatforms;
+- (id)defaultCategory;
+- (id)defaultLeaderboardIdentifier;
+- (id)description;
+- (unsigned int)flags;
+- (id)gameDescriptor;
+- (bool)hasAggregateLeaderboard;
+- (unsigned long long)hash;
+- (id)icons;
+- (bool)isArcadeGame;
+- (bool)isEqual:(id)arg1;
+- (bool)isPrerendered;
+- (bool)isValid;
+- (unsigned short)maxAchievementPoints;
+- (id)name;
+- (unsigned short)numberOfAchievements;
+- (unsigned short)numberOfCategories;
+- (unsigned short)numberOfLeaderboardSets;
+- (unsigned short)numberOfLeaderboards;
+- (id)serverRepresentation;
+- (void)setCompatiblePlatforms:(id)arg1;
+- (void)setDefaultLeaderboardIdentifier:(id)arg1;
+- (void)setFlags:(unsigned int)arg1;
+- (void)setHasAggregateLeaderboard:(bool)arg1;
+- (void)setIcons:(id)arg1;
+- (void)setIsArcadeGame:(bool)arg1;
+- (void)setMaxAchievementPoints:(unsigned short)arg1;
+- (void)setName:(id)arg1;
+- (void)setNumberOfAchievements:(unsigned short)arg1;
+- (void)setNumberOfLeaderboardSets:(unsigned short)arg1;
+- (void)setNumberOfLeaderboards:(unsigned short)arg1;
+- (void)setPrerendered:(bool)arg1;
+- (void)setSupportedTransports:(id)arg1;
+- (void)setSupportsAchievements:(bool)arg1;
+- (void)setSupportsChallenges:(bool)arg1;
+- (void)setSupportsLeaderboardSets:(bool)arg1;
+- (void)setSupportsLeaderboards:(bool)arg1;
+- (void)setSupportsMultiplayer:(bool)arg1;
+- (void)setSupportsTurnBasedMultiplayer:(bool)arg1;
+- (void)setValid:(bool)arg1;
+- (void)storeItemURLForGamePlatform:(long long)arg1 withContext:(id)arg2 withHandler:(id /* block */)arg3;
+- (id)storeItemURLForURL:(id)arg1 gamePlatform:(long long)arg2 extraQueryParams:(id)arg3;
+- (id)storeURL;
+- (id)supportedTransports;
+- (bool)supportsAchievements;
+- (bool)supportsChallenges;
+- (bool)supportsLeaderboardSets;
+- (bool)supportsLeaderboards;
+- (bool)supportsMultiplayer;
+- (bool)supportsTurnBasedMultiplayer;
+
+@end

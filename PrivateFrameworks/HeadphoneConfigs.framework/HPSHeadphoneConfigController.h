@@ -1,0 +1,4 @@
+
+@interface HPSHeadphoneConfigController : BTSDeviceConfigController
+
+@end

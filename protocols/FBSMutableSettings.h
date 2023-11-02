@@ -1,0 +1,4 @@
+
+@protocol FBSMutableSettings <FBSSettings>
+
+@end

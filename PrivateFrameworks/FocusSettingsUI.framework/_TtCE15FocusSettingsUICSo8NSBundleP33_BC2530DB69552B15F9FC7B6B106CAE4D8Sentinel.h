@@ -1,0 +1,4 @@
+
+@interface _TtCE15FocusSettingsUICSo8NSBundleP33_BC2530DB69552B15F9FC7B6B106CAE4D8Sentinel : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,42 @@
+
+@interface PSEditingPane : UIView {
+    id  _delegate;
+    unsigned int  _requiresKeyboard;
+    PSSpecifier * _specifier;
+    UIViewController * _viewController;
+}
+
+@property (nonatomic) UIViewController *viewController;
+
++ (id)defaultBackgroundColor;
++ (float)preferredHeight;
+
+- (void).cxx_destruct;
+- (void)addNewValue;
+- (bool)changed;
+- (id)childViewControllerForHostingViewController;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRect;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)doneEditing;
+- (void)editMode;
+- (bool)handlesDoneButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)insetContent;
+- (void)layoutInsetContent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)preferenceSpecifier;
+- (id)preferenceValue;
+- (bool)requiresKeyboard;
+- (id)scrollViewToBeInsetted;
+- (void)setDelegate:(id)arg1;
+- (void)setPreferenceSpecifier:(id)arg1;
+- (void)setPreferenceValue:(id)arg1;
+- (void)setViewController:(id)arg1;
+- (bool)shouldInsetContent;
+- (id)specifierLabel;
+- (id)viewController;
+- (void)viewDidBecomeVisible;
+- (bool)wantsNewButton;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+
+@end

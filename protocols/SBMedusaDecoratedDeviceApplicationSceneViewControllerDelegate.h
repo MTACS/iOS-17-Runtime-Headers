@@ -1,0 +1,13 @@
+
+@protocol SBMedusaDecoratedDeviceApplicationSceneViewControllerDelegate <NSObject>
+
+@required
+
+- (void)medusaDecoratedDeviceApplicationSceneViewController:(SBMedusaDecoratedDeviceApplicationSceneViewController *)arg1 statusBarTapped:(UITapGestureRecognizer *)arg2 tapActionType:(long long)arg3;
+- (void)medusaDecoratedDeviceApplicationSceneViewControllerDidUpdateHomeAffordanceSupportedOrientations:(SBMedusaDecoratedDeviceApplicationSceneViewController *)arg1;
+
+@optional
+
+- (bool)medusaDecoratedDeviceApplicationSceneViewControllerIsInNonrotatingWindow:(SBMedusaDecoratedDeviceApplicationSceneViewController *)arg1;
+
+@end

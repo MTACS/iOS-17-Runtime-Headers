@@ -1,0 +1,21 @@
+
+@interface SXImageResource : SXResource <SXImageResource>
+
+@property (nonatomic, readonly) NSURL *URL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } dimensions;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) NSString *imageIdentifier;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool wideColorSpace;
+
+- (id)description;
+- (double)heightForImageWidth:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFills:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)wideColorSpace;
+- (double)widthForImageHeight:(double)arg1;
+
+@end

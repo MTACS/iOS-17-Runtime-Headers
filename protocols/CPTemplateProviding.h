@@ -1,0 +1,33 @@
+
+@protocol CPTemplateProviding <NSObject>
+
+@required
+
+- (void)clientRequestNowPlayingTemplateAnimated:(bool)arg1;
+- (void)containsTemplate:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: CPTemplate *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)dismissTemplateAnimated:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)getPresentedTemplateWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSUUID *, void*
+- (void)getTemplatesWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)getTopTemplateWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSUUID *, void*
+- (void)popTemplateAnimated:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)popToRootTemplateAnimated:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)popToTemplate:(void *)arg1 animated:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: CPTemplate *, NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)presentActionSheetTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 8: CPActionSheetTemplate *, <CPAlertDelegate> *, NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)presentAlertTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 8: CPAlertTemplate *, <CPAlertDelegate> *, NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)presentVoiceTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 9: CPVoiceControlTemplate *, <CPVoiceControlTemplateDelegate> *, NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPVoiceTemplateProviding> *, void*
+- (void)pushEntityTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 presentationStyle:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: CPTemplate<CPEntityProviding> *, <CPEntityClientTemplateDelegate> *, NSNumber *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPEntityUpdateProviding> *, void*
+- (void)pushGridTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 presentationStyle:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: CPGridTemplate *, <CPGridTemplateClientDelegate> *, NSNumber *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPGridTemplateProviding> *, void*
+- (void)pushInformationTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 presentationStyle:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: CPInformationTemplate *, <CPTemplateDelegate> *, NSNumber *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPBaseTemplateProviding> *, void*
+- (void)pushListTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 presentationStyle:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: CPListTemplate *, <CPListClientTemplateDelegate> *, NSNumber *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPListTemplateProviding> *, void*
+- (void)pushMapTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 presentationStyle:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: CPMapTemplate *, <CPMapClientTemplateDelegate> *, NSNumber *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPMapTemplateProviding> *, void*
+- (void)pushNowPlayingTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 presentationStyle:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: CPNowPlayingTemplate *, <CPNowPlayingClientTemplateDelegate> *, NSNumber *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPNowPlayingTemplateProviding> *, void*
+- (void)pushSearchTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 animated:(void *)arg3 presentationStyle:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: CPSearchTemplate *, <CPSearchClientTemplateDelegate> *, NSNumber *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPSearchTemplateProviding> *, void*
+- (void)pushTabBarTemplate:(CPTabBarTemplate *)arg1 animated:(NSNumber *)arg2;
+- (void)requestBannerProviderWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPBannerProviding> *, void*
+- (void)requestNavigationProviderForMapTemplate:(void *)arg1 withReply:(void *)arg2; // needs 2 arg types, found 7: CPMapTemplate *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPNavigationSessionProviding> *, void*
+- (void)selectTabBarTemplateAtIndex:(long long)arg1;
+- (void)setHostPrefersDarkUserInterfaceStyle:(bool)arg1;
+- (void)setTabBarTemplate:(void *)arg1 withProxyDelegate:(void *)arg2 reply:(void *)arg3 animated:(void *)arg4; // needs 4 arg types, found 9: CPTabBarTemplate *, <CPTabBarClientTemplateDelegate> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CPTabBarTemplateProviding> *, void*, NSNumber *
+- (void)updateTabBarTemplate:(CPTabBarTemplate *)arg1;
+
+@end

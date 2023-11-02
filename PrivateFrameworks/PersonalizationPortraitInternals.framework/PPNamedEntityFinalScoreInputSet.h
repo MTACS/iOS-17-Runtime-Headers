@@ -1,0 +1,4 @@
+
+@interface PPNamedEntityFinalScoreInputSet : PPBaseScoreInputSet
+
+@end

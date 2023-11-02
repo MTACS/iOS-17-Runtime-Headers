@@ -1,0 +1,4 @@
+
+@protocol SIRINLUUserDialogAct <NSSecureCoding>
+
+@end

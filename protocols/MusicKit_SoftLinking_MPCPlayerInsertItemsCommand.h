@@ -1,0 +1,9 @@
+
+@protocol MusicKit_SoftLinking_MPCPlayerInsertItemsCommand <NSObject>
+
+@required
+
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_insertItemsCommand_insertAfterPlayingItemCommandRequestWithPlaybackIntent:(MusicKit_SoftLinking_MPCPlaybackIntent *)arg1;
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_insertItemsCommand_insertAtEndOfTracklistCommandRequestWithPlaybackIntent:(MusicKit_SoftLinking_MPCPlaybackIntent *)arg1;
+
+@end

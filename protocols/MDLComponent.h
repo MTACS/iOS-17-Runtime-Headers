@@ -1,0 +1,4 @@
+
+@protocol MDLComponent <NSObject>
+
+@end

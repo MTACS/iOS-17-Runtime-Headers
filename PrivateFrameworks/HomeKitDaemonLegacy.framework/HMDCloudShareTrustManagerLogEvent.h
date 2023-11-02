@@ -1,0 +1,4 @@
+
+@interface HMDCloudShareTrustManagerLogEvent : HMMLogEvent
+
+@end

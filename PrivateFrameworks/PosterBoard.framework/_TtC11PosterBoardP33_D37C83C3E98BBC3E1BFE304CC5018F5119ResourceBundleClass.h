@@ -1,0 +1,4 @@
+
+@interface _TtC11PosterBoardP33_D37C83C3E98BBC3E1BFE304CC5018F5119ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

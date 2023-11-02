@@ -1,0 +1,4 @@
+
+@interface RecordVoiceMemoIntent : INIntent
+
+@end

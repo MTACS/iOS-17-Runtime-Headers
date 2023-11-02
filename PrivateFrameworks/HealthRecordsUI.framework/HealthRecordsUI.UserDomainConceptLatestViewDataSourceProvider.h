@@ -1,0 +1,4 @@
+
+@interface HealthRecordsUI.UserDomainConceptLatestViewDataSourceProvider : HealthRecordsUI.UserDomainConceptListViewDataSourceProvider
+
+@end

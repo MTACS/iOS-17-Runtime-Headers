@@ -1,0 +1,20 @@
+
+@interface POXMLXPathContext : NSObject {
+    POXMLContext * _xmldocContext;
+    struct _xmlXPathContext { struct _xmlDoc {} *x1; struct _xmlNode {} *x2; int x3; int x4; struct _xmlHashTable {} *x5; int x6; int x7; struct _xmlXPathType {} *x8; int x9; int x10; struct _xmlHashTable {} *x11; int x12; int x13; struct _xmlXPathAxis {} *x14; struct _xmlNs {} **x15; int x16; void *x17; int x18; int x19; int x20; struct _xmlNode {} *x21; struct _xmlNode {} *x22; struct _xmlHashTable {} *x23; int (*x24)(); void *x25; void *x26; char *x27; char *x28; int (*x29)(); void *x30; struct _xmlNs {} **x31; int x32; void *x33; int (*x34)(); struct _xmlError { int x_35_1_1; int x_35_1_2; char *x_35_1_3; int x_35_1_4; char *x_35_1_5; int x_35_1_6; char *x_35_1_7; char *x_35_1_8; char *x_35_1_9; int x_35_1_10; int x_35_1_11; void *x_35_1_12; void *x_35_1_13; } x35; struct _xmlNode {} *x36; struct _xmlDict {} *x37; int x38; void *x39; unsigned long long x40; unsigned long long x41; int x42; } * _xpathCtx;
+}
+
+@property (nonatomic, retain) POXMLContext *xmldocContext;
+@property (nonatomic) struct _xmlXPathContext { struct _xmlDoc {} *x1; struct _xmlNode {} *x2; int x3; int x4; struct _xmlHashTable {} *x5; int x6; int x7; struct _xmlXPathType {} *x8; int x9; int x10; struct _xmlHashTable {} *x11; int x12; int x13; struct _xmlXPathAxis {} *x14; struct _xmlNs {} **x15; int x16; void *x17; int x18; int x19; int x20; struct _xmlNode {} *x21; struct _xmlNode {} *x22; struct _xmlHashTable {} *x23; int (*x24)(); void *x25; void *x26; char *x27; char *x28; int (*x29)(); void *x30; struct _xmlNs {} **x31; int x32; void *x33; int (*x34)(); struct _xmlError { int x_35_1_1; int x_35_1_2; char *x_35_1_3; int x_35_1_4; char *x_35_1_5; int x_35_1_6; char *x_35_1_7; char *x_35_1_8; char *x_35_1_9; int x_35_1_10; int x_35_1_11; void *x_35_1_12; void *x_35_1_13; } x35; struct _xmlNode {} *x36; struct _xmlDict {} *x37; int x38; void *x39; unsigned long long x40; unsigned long long x41; int x42; }*xpathCtx;
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)evaluateXPath:(id)arg1;
+- (id)initWithXMLContext:(id)arg1;
+- (bool)registerNamespaces:(id)arg1;
+- (void)setXmldocContext:(id)arg1;
+- (void)setXpathCtx:(struct _xmlXPathContext { struct _xmlDoc {} *x1; struct _xmlNode {} *x2; int x3; int x4; struct _xmlHashTable {} *x5; int x6; int x7; struct _xmlXPathType {} *x8; int x9; int x10; struct _xmlHashTable {} *x11; int x12; int x13; struct _xmlXPathAxis {} *x14; struct _xmlNs {} **x15; int x16; void *x17; int x18; int x19; int x20; struct _xmlNode {} *x21; struct _xmlNode {} *x22; struct _xmlHashTable {} *x23; int (*x24)(); void *x25; void *x26; char *x27; char *x28; int (*x29)(); void *x30; struct _xmlNs {} **x31; int x32; void *x33; int (*x34)(); struct _xmlError { int x_35_1_1; int x_35_1_2; char *x_35_1_3; int x_35_1_4; char *x_35_1_5; int x_35_1_6; char *x_35_1_7; char *x_35_1_8; char *x_35_1_9; int x_35_1_10; int x_35_1_11; void *x_35_1_12; void *x_35_1_13; } x35; struct _xmlNode {} *x36; struct _xmlDict {} *x37; int x38; void *x39; unsigned long long x40; unsigned long long x41; int x42; }*)arg1;
+- (id)xmldocContext;
+- (struct _xmlXPathContext { struct _xmlDoc {} *x1; struct _xmlNode {} *x2; int x3; int x4; struct _xmlHashTable {} *x5; int x6; int x7; struct _xmlXPathType {} *x8; int x9; int x10; struct _xmlHashTable {} *x11; int x12; int x13; struct _xmlXPathAxis {} *x14; struct _xmlNs {} **x15; int x16; void *x17; int x18; int x19; int x20; struct _xmlNode {} *x21; struct _xmlNode {} *x22; struct _xmlHashTable {} *x23; int (*x24)(); void *x25; void *x26; char *x27; char *x28; int (*x29)(); void *x30; struct _xmlNs {} **x31; int x32; void *x33; int (*x34)(); struct _xmlError { int x_35_1_1; int x_35_1_2; char *x_35_1_3; int x_35_1_4; char *x_35_1_5; int x_35_1_6; char *x_35_1_7; char *x_35_1_8; char *x_35_1_9; int x_35_1_10; int x_35_1_11; void *x_35_1_12; void *x_35_1_13; } x35; struct _xmlNode {} *x36; struct _xmlDict {} *x37; int x38; void *x39; unsigned long long x40; unsigned long long x41; int x42; }*)xpathCtx;
+
+@end

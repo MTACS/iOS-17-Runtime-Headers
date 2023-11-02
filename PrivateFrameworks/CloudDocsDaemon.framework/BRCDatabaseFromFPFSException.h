@@ -1,0 +1,4 @@
+
+@interface BRCDatabaseFromFPFSException : NSException
+
+@end

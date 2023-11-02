@@ -1,0 +1,4 @@
+
+@interface MKFHomePersonManagerSettingDatabaseID : MKFHomeSettingDatabaseID
+
+@end

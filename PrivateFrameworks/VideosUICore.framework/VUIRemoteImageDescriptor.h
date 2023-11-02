@@ -1,0 +1,117 @@
+
+@interface VUIRemoteImageDescriptor : NSObject {
+    NSString * _accessibilityText;
+    bool  _animatesShadowChanges;
+    double  _aspectRatio;
+    UIColor * _backgroundColor;
+    UIColor * _borderColor;
+    struct _VUICornerRadii { 
+        double topLeft; 
+        double topRight; 
+        double bottomLeft; 
+        double bottomRight; 
+    }  _borderRadii;
+    double  _borderWidth;
+    bool  _clearsExisting;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _containerSize;
+    bool  _continuousBorder;
+    NSString * _cropCode;
+    unsigned long long  _decoratorType;
+    NSString * _extension;
+    UIColor * _highlightColor;
+    bool  _loadsImmediately;
+    bool  _optimizedImageRendering;
+    NSString * _p3Specifier;
+    UIColor * _placeholderColor;
+    NSString * _placeholderSrc;
+    long long  _scaleMode;
+    NSShadow * _shadow;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _size;
+    NSString * _src;
+    bool  _templated;
+    UIColor * _tintColor;
+}
+
+@property (nonatomic, copy) NSString *accessibilityText;
+@property (nonatomic) bool animatesShadowChanges;
+@property (nonatomic, readonly) double aspectRatio;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) UIColor *borderColor;
+@property (nonatomic) struct _VUICornerRadii { double x1; double x2; double x3; double x4; } borderRadii;
+@property (nonatomic) double borderWidth;
+@property (nonatomic) bool clearsExisting;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } containerSize;
+@property (nonatomic) bool continuousBorder;
+@property (nonatomic, copy) NSString *cropCode;
+@property (nonatomic) unsigned long long decoratorType;
+@property (nonatomic, copy) NSString *extension;
+@property (nonatomic, retain) UIColor *highlightColor;
+@property (nonatomic) bool loadsImmediately;
+@property (nonatomic) bool optimizedImageRendering;
+@property (nonatomic, copy) NSString *p3Specifier;
+@property (nonatomic, retain) UIColor *placeholderColor;
+@property (nonatomic, copy) NSString *placeholderSrc;
+@property (nonatomic) long long scaleMode;
+@property (nonatomic, retain) NSShadow *shadow;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) NSString *src;
+@property (getter=isTemplated, nonatomic) bool templated;
+@property (nonatomic, retain) UIColor *tintColor;
+
+- (void).cxx_destruct;
+- (id)accessibilityText;
+- (bool)animatesShadowChanges;
+- (double)aspectRatio;
+- (id)backgroundColor;
+- (id)borderColor;
+- (struct _VUICornerRadii { double x1; double x2; double x3; double x4; })borderRadii;
+- (double)borderWidth;
+- (bool)clearsExisting;
+- (struct CGSize { double x1; double x2; })containerSize;
+- (bool)continuousBorder;
+- (id)cropCode;
+- (unsigned long long)decoratorType;
+- (id)extension;
+- (id)highlightColor;
+- (id)initWithSrc:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithSrc:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 containerSize:(struct CGSize { double x1; double x2; })arg3;
+- (bool)isTemplated;
+- (bool)loadsImmediately;
+- (bool)optimizedImageRendering;
+- (id)p3Specifier;
+- (id)placeholderColor;
+- (id)placeholderSrc;
+- (long long)scaleMode;
+- (void)setAccessibilityText:(id)arg1;
+- (void)setAnimatesShadowChanges:(bool)arg1;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setBorderColor:(id)arg1;
+- (void)setBorderRadii:(struct _VUICornerRadii { double x1; double x2; double x3; double x4; })arg1;
+- (void)setBorderWidth:(double)arg1;
+- (void)setClearsExisting:(bool)arg1;
+- (void)setContinuousBorder:(bool)arg1;
+- (void)setCropCode:(id)arg1;
+- (void)setDecoratorType:(unsigned long long)arg1;
+- (void)setExtension:(id)arg1;
+- (void)setHighlightColor:(id)arg1;
+- (void)setLoadsImmediately:(bool)arg1;
+- (void)setOptimizedImageRendering:(bool)arg1;
+- (void)setP3Specifier:(id)arg1;
+- (void)setPlaceholderColor:(id)arg1;
+- (void)setPlaceholderSrc:(id)arg1;
+- (void)setScaleMode:(long long)arg1;
+- (void)setShadow:(id)arg1;
+- (void)setTemplated:(bool)arg1;
+- (void)setTintColor:(id)arg1;
+- (id)shadow;
+- (struct CGSize { double x1; double x2; })size;
+- (id)src;
+- (id)tintColor;
+
+@end

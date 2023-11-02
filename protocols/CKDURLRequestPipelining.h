@@ -1,0 +1,4 @@
+
+@protocol CKDURLRequestPipelining <NSObject>
+
+@end

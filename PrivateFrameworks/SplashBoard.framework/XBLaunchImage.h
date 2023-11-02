@@ -1,0 +1,4 @@
+
+@interface XBLaunchImage : UIImage
+
+@end

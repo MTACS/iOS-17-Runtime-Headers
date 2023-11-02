@@ -1,0 +1,86 @@
+
+@interface _GEOPlaceSearchCompletionItem : NSObject <GEOCompletionItemPrivate> {
+    GEOSearchCategory * _category;
+    GEOCollectionResult * _collectionResult;
+    NSArray * _displayLines;
+    GEOPDAutocompleteEntry * _entry;
+    int  _entryIndex;
+    int  _entryListIndex;
+    NSArray * _lineHighlights;
+    <GEOMapItem> * _mapItem;
+    GEOPublisherResult * _publisherResult;
+    NSArray * _resultRefinements;
+    bool  _supportsOfflineDownload;
+    GEOMapServiceTraits * _traits;
+}
+
+@property (nonatomic, readonly) long long autocompleteCellType;
+@property (nonatomic, readonly) GEOResolvedItem *clientResolved;
+@property (nonatomic, readonly) GEOCollectionResult *collectionResult;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) GEODirectionIntent *directionIntent;
+@property (nonatomic, readonly) float disambiguationRadiusMeters;
+@property (nonatomic, readonly) NSArray *displayLines;
+@property (nonatomic, readonly) GEOPDAutocompleteEntry *entry;
+@property (nonatomic, readonly) NSData *entryMetadata;
+@property (nonatomic, readonly) long long entryTapBehavior;
+@property (nonatomic, readonly) <GEOMapItem> *geoMapItem;
+@property (nonatomic, readonly) bool hasDisambiguationRadiusMeters;
+@property (nonatomic, readonly) bool hasQueryAcceleratorAffordanceEnabled;
+@property (nonatomic, readonly) bool hasSortPriority;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) GEOStyleAttributes *iconStyleAttributes;
+@property (nonatomic, readonly) GEOMapItemIdentifier *identifier;
+@property (nonatomic, readonly) NSData *metadata;
+@property (getter=_placeDataAutocompleteEntry, nonatomic, readonly) GEOPDAutocompleteEntry *placeDataAutocompleteEntry;
+@property (nonatomic, readonly) int placeType;
+@property (nonatomic, readonly) GEOPublisherResult *publisherResult;
+@property (nonatomic, readonly) NSString *queryAcceleratorCompletionString;
+@property (nonatomic, readonly) NSArray *resultRefinements;
+@property (nonatomic, readonly) GEORetainedSearchMetadata *retainedSearchMetadata;
+@property (nonatomic, readonly) GEOSearchCategory *searchCategory;
+@property (nonatomic, readonly) GEOServerResultScoreMetadata *serverResultScoreMetadata;
+@property (nonatomic, readonly) long long sortPriority;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsOfflineDownload;
+@property (nonatomic, readonly) long long type;
+
+- (void).cxx_destruct;
+- (id)_placeDataAutocompleteEntry;
+- (long long)autocompleteCellType;
+- (id)calloutTitle;
+- (id)clientResolved;
+- (id)collectionResult;
+- (id)directionIntent;
+- (float)disambiguationRadiusMeters;
+- (id)displayLines;
+- (id)entry;
+- (id)entryMetadata;
+- (long long)entryTapBehavior;
+- (id)geoMapItem;
+- (bool)getCoordinate:(struct { double x1; double x2; }*)arg1;
+- (bool)hasDisambiguationRadiusMeters;
+- (bool)hasQueryAcceleratorAffordanceEnabled;
+- (bool)hasSortPriority;
+- (unsigned long long)hash;
+- (id)highlightsForLine:(unsigned long long)arg1;
+- (id)iconStyleAttributes;
+- (id)identifier;
+- (id)initWithEntry:(id)arg1 traits:(id)arg2 entryListIndex:(int)arg3 entryIndex:(int)arg4 mapItems:(id)arg5 collections:(id)arg6 publishers:(id)arg7;
+- (bool)isEqual:(id)arg1;
+- (id)metadata;
+- (int)placeType;
+- (id)publisherResult;
+- (id)queryAcceleratorCompletionString;
+- (id)queryLine;
+- (id)resultRefinements;
+- (id)retainedSearchMetadata;
+- (id)searchCategory;
+- (void)sendFeedback;
+- (id)serverResultScoreMetadata;
+- (long long)sortPriority;
+- (bool)supportsOfflineDownload;
+- (long long)type;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface DMFInstalledCertificate : DMFCertificate
+
+@end

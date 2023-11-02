@@ -1,0 +1,4 @@
+
+@interface AVPlayerLayerIntermediateLayer : FigBaseCALayer
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC8StocksUIP33_547D200B0EEF7108C3F1C5CA94A4CBB09Localized : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface OccurrenceCacheDataSource : CUIKOccurrenceCacheDataSource
+
+@end

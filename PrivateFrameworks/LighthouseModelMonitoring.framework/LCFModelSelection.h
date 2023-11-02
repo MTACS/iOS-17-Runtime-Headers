@@ -1,0 +1,4 @@
+
+@interface LCFModelSelection : NSObject
+
+@end

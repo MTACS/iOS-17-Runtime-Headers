@@ -1,0 +1,16 @@
+
+@interface CalUMCalendarDataContainerProvider : NSObject <CalCalendarDataContainerProvider>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)sharedInstance;
+
+- (bool)accountUsesDataSeparatedContainer:(id)arg1;
+- (id)containerForAccountIdentifier:(id)arg1;
+- (id)containerInfoForAccountIdentifier:(id)arg1;
+- (id)containerInfoForPersonaIdentifier:(id)arg1;
+
+@end

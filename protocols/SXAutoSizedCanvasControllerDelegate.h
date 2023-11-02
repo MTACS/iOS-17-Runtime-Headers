@@ -1,0 +1,4 @@
+
+@protocol SXAutoSizedCanvasControllerDelegate <NSObject>
+
+@end

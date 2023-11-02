@@ -1,0 +1,29 @@
+
+@interface _NSProxyWrapperMutableOrderedSet : _NSNotifyingWrapperMutableOrderedSet {
+    _NSFaultingMutableOrderedSetMutationMethods * _mutationMethods;
+}
+
+- (void)addObject:(id)arg1;
+- (void)addObjects:(const id*)arg1 count:(unsigned long long)arg2;
+- (void)addObjectsFromArray:(id)arg1;
+- (void)dealloc;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
+- (void)insertObjects:(id*)arg1 count:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
+- (void)intersectOrderedSet:(id)arg1;
+- (void)intersectSet:(id)arg1;
+- (void)minusOrderedSet:(id)arg1;
+- (void)minusSet:(id)arg1;
+- (void)removeAllObjects;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)removeObjectsAtIndexes:(id)arg1;
+- (void)removeObjectsInArray:(id)arg1;
+- (void)removeObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)sortRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned long long)arg2 usingComparator:(id /* block */)arg3;
+- (void)sortUsingComparator:(id /* block */)arg1;
+- (void)sortWithOptions:(unsigned long long)arg1 usingComparator:(id /* block */)arg2;
+- (void)unionOrderedSet:(id)arg1;
+- (void)unionSet:(id)arg1;
+
+@end

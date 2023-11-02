@@ -1,0 +1,4 @@
+
+@interface HMDAnalyticsDurationEventData : HMFObject
+
+@end

@@ -1,0 +1,97 @@
+
+@interface CALNTriggeredEventNotificationEKDataSource : NSObject <CALNTimeToLeaveRefreshMonitorDelegate, CALNTravelEngineDelegate, CALNTriggeredEventNotificationDataSource> {
+    <CALNAlarmEngineMonitor> * _alarmEngineMonitor;
+    CALNCalendarCoreLocationManager * _coreLocationManager;
+    <CALNDataSourceEventRepresentationProvider> * _dataSourceEventRepresentationProvider;
+    <CALNDebugPreferences> * _debugPreferences;
+    <CALNTriggeredEventNotificationDataSourceDelegate> * _delegate;
+    <EKEventStoreProvider> * _eventStoreProvider;
+    <CALNFoundInAppsEventTracker> * _foundInAppsEventTracker;
+    CALNTriggeredEventNotificationMailtoURLProvider * _mailtoURLProvider;
+    <CALNRemoteMutator> * _remoteMutator;
+    <CALNRouteHypothesizerProvider> * _routeHypothesizerProvider;
+    <CALNSuggestionsServiceLogger> * _suggestionsServiceLogger;
+    <CALNTimeToLeaveRefreshMonitor> * _timeToLeaveRefreshMonitor;
+    <CALNTravelEngine> * _travelEngine;
+    <CALNTTLEventTracker> * _ttlEventTracker;
+}
+
+@property (nonatomic, readonly) <CALNAlarmEngineMonitor> *alarmEngineMonitor;
+@property (nonatomic, readonly) CALNCalendarCoreLocationManager *coreLocationManager;
+@property (nonatomic, readonly) <CALNDataSourceEventRepresentationProvider> *dataSourceEventRepresentationProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <CALNDebugPreferences> *debugPreferences;
+@property (nonatomic) <CALNTriggeredEventNotificationDataSourceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <EKEventStoreProvider> *eventStoreProvider;
+@property (nonatomic, readonly) <CALNFoundInAppsEventTracker> *foundInAppsEventTracker;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) CALNTriggeredEventNotificationMailtoURLProvider *mailtoURLProvider;
+@property (nonatomic, readonly) <CALNRemoteMutator> *remoteMutator;
+@property (nonatomic, readonly) <CALNRouteHypothesizerProvider> *routeHypothesizerProvider;
+@property (nonatomic, readonly) <CALNSuggestionsServiceLogger> *suggestionsServiceLogger;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) <CALNTimeToLeaveRefreshMonitor> *timeToLeaveRefreshMonitor;
+@property (nonatomic, readonly) <CALNTravelEngine> *travelEngine;
+@property (nonatomic, readonly) <CALNTTLEventTracker> *ttlEventTracker;
+
++ (id)_alarmDateForAlarm:(id)arg1 eventStartDate:(id)arg2;
++ (id)_alarmForEvent:(id)arg1 withAlarmID:(id)arg2;
++ (id)_sourceClientIdentifierForAlertInfo:(id)arg1;
++ (double)snoozeInterval;
+
+- (void).cxx_destruct;
+- (void)_alertFiredForAlertInfo:(id)arg1;
+- (void)_alertsFired:(id)arg1;
+- (void)_didSetUpTimeToLeaveRefreshTimerForEventID:(id)arg1 triggerDate:(id)arg2;
+- (id)_eventForEventID:(id)arg1;
+- (id)_eventForSourceClientIdentifier:(id)arg1;
+- (id)_filterAlerts:(id)arg1;
+- (void)_handleNotificationActionForSourceClientIdentifier:(id)arg1 acknowledgeAlarm:(bool)arg2 eventActions:(id /* block */)arg3;
+- (id)_notificationExpirationDateForAlarmDate:(id)arg1 eventEndDate:(id)arg2;
+- (id)_notificationExpirationDateForNullableAlarmDate:(id)arg1 eventEndDate:(id)arg2;
+- (double)_requestHypothesisRefreshInterval;
+- (bool)_shouldTriggerForAlertInfo:(id)arg1;
+- (bool)_shouldWithdrawNotificationWithSourceClientIdentifier:(id)arg1 event:(id)arg2 alarmID:(id)arg3;
+- (void)acknowledgeEventWithSourceClientIdentifier:(id)arg1 shouldMarkAsHavingReceivedLocation:(bool)arg2;
+- (id)alarmEngineMonitor;
+- (void)ceaseRouteMonitoringEventForSourceClientIdentifier:(id)arg1;
+- (void)ceaseRouteMonitoringEventWithEventID:(id)arg1;
+- (id)coreLocationManager;
+- (id)dataSourceEventRepresentationProvider;
+- (id)debugPreferences;
+- (id)delegate;
+- (void)didDismissUINotification:(unsigned long long)arg1 forPlannedDestination:(id)arg2 dismissalType:(unsigned long long)arg3;
+- (id)eventObjectIDForEventID:(id)arg1;
+- (id)eventStoreProvider;
+- (id)fetchTriggeredEventNotificationInfoWithSourceClientIdentifier:(id)arg1 isProtectedDataAvailable:(bool)arg2;
+- (id)foundInAppsEventTracker;
+- (void)handleConferenceCallActionWithSourceClientIdentifier:(id)arg1;
+- (void)handleDirectionsActionWithSourceClientIdentifier:(id)arg1 hypothesis:(id)arg2 lastFireTimeOfAlertOffsetFromTravelTime:(id)arg3;
+- (void)handleMailOrganizerActionWithSourceClientIdentifier:(id)arg1 hypothesis:(id)arg2;
+- (id)initWithEventStoreProvider:(id)arg1 remoteMutator:(id)arg2 dataSourceEventRepresentationProvider:(id)arg3 coreLocationProvider:(id)arg4 ttlEventTracker:(id)arg5 alarmEngineMonitor:(id)arg6 travelEngine:(id)arg7 foundInAppsEventTracker:(id)arg8 suggestionsServiceLogger:(id)arg9 routeHypothesizerProvider:(id)arg10 timeToLeaveRefreshMonitor:(id)arg11 debugPreferences:(id)arg12 mailtoURLProvider:(id)arg13;
+- (id)mailtoURLProvider;
+- (id)notificationExpirationDateForEventID:(id)arg1 alarmID:(id)arg2;
+- (id)remoteMutator;
+- (void)removeTimeToLeaveRefreshTimerForEventID:(id)arg1;
+- (void)removeTimeToLeaveRefreshTimerForSourceClientIdentifier:(id)arg1;
+- (id)routeHypothesizerProvider;
+- (void)sendFeedbackForAddedLeaveNowNotificationWithSourceClientIdentifier:(id)arg1;
+- (void)sendFeedbackForAddedTravelAdvisoryNotificationWithSourceClientIdentifier:(id)arg1 hypothesis:(id)arg2 travelAdvisoryTimelinessPeriod:(unsigned long long)arg3;
+- (void)setDelegate:(id)arg1;
+- (void)setUpTimeToLeaveRefreshTimerWithTriggerDate:(id)arg1 eventID:(id)arg2;
+- (void)setUpTimeToLeaveRefreshTimerWithTriggerDate:(id)arg1 sourceClientIdentifier:(id)arg2;
+- (bool)shouldRemoveNotificationMetaDataWithEventID:(id)arg1;
+- (bool)shouldRemoveTimeToLeaveRefreshTimerWithRefreshDate:(id)arg1 eventID:(id)arg2;
+- (bool)shouldWithdrawNotificationWithSourceClientIdentifier:(id)arg1;
+- (void)snoozeEventWithSourceClientIdentifier:(id)arg1 snoozeType:(unsigned long long)arg2;
+- (id)suggestionsServiceLogger;
+- (id)timeToLeaveRefreshMonitor;
+- (void)timeToLeaveRefreshMonitor:(id)arg1 refreshTimerFiredForEventExternalURL:(id)arg2;
+- (id)travelEngine;
+- (void)travelEngine:(id)arg1 authorizationChanged:(bool)arg2;
+- (void)travelEngine:(id)arg1 eventSignificantlyChangedWithEventExternalURL:(id)arg2;
+- (void)travelEngine:(id)arg1 receivedHypothesis:(id)arg2 eventExternalURL:(id)arg3;
+- (id)ttlEventTracker;
+
+@end

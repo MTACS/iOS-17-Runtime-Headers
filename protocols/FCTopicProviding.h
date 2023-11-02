@@ -1,0 +1,4 @@
+
+@protocol FCTopicProviding <FCTagProviding>
+
+@end

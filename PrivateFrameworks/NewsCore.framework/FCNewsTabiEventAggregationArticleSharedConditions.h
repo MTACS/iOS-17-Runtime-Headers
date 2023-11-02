@@ -1,0 +1,4 @@
+
+@interface FCNewsTabiEventAggregationArticleSharedConditions : FCNewsTabiEventAggregationBaseEventConditions
+
+@end

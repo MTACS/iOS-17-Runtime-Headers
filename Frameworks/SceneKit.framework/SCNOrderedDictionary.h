@@ -1,0 +1,26 @@
+
+@interface SCNOrderedDictionary : NSObject {
+    NSMutableDictionary * _keyValues;
+    NSMutableArray * _keys;
+}
+
+- (void)_setupFrom:(id)arg1;
+- (id)allKeys;
+- (id)allValues;
+- (void)applyBlock:(id /* block */)arg1;
+- (void)applyFunction:(int (*)arg1 withContext:(void*)arg2;
+- (id)copy;
+- (unsigned long long)count;
+- (void)dealloc;
+- (id)description;
+- (id)dictionary;
+- (id)keys;
+- (id)objectAtIndex:(long long)arg1;
+- (id)objectForKey:(id)arg1;
+- (void)removeAllObjects;
+- (void)removeObjectForKey:(id)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (id)valueForKey:(id)arg1;
+
+@end

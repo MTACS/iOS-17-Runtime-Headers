@@ -1,0 +1,115 @@
+
+@interface SBHWidgetWrapperViewController : UIViewController <SBIconViewActionDelegate, SBIconViewObserver> {
+    long long  _backgroundType;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _contentSize;
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _contentTransform;
+    id /* block */  _defaultBackgroundViewConfigurator;
+    id /* block */  _defaultBackgroundViewProvider;
+    <SBHWidgetWrapperViewControllerDelegate> * _delegate;
+    bool  _dragging;
+    bool  _forcesEdgeAntialiasing;
+    <SBHAddWidgetSheetGalleryItem> * _galleryItem;
+    SBIconView * _iconView;
+    <SBIconViewProviding> * _iconViewProvider;
+    unsigned long long  _indexOfSelectedSizeClass;
+    <SBIconListLayoutProvider> * _listLayoutProvider;
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _shadowTransform;
+    NSArray * _supportedSizeClasses;
+    bool  _titleAndSubtitleVisible;
+    bool  _usesAmbientScaleFactorForRemovableBackgroundItems;
+}
+
+@property (nonatomic) long long backgroundType;
+@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } contentTransform;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) id /* block */ defaultBackgroundViewConfigurator;
+@property (nonatomic, copy) id /* block */ defaultBackgroundViewProvider;
+@property (nonatomic) <SBHWidgetWrapperViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isDragging, nonatomic) bool dragging;
+@property (nonatomic) bool forcesEdgeAntialiasing;
+@property (nonatomic, readonly) <SBHAddWidgetSheetGalleryItem> *galleryItem;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SBIconView *iconView;
+@property (nonatomic, readonly) <SBIconViewProviding> *iconViewProvider;
+@property (nonatomic) unsigned long long indexOfSelectedSizeClass;
+@property (nonatomic, readonly) <SBIconListLayoutProvider> *listLayoutProvider;
+@property (nonatomic) long long selectedSizeClass;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } shadowTransform;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSArray *supportedSizeClasses;
+@property (nonatomic) bool titleAndSubtitleVisible;
+@property (nonatomic) bool usesAmbientScaleFactorForRemovableBackgroundItems;
+@property (nonatomic, readonly) SBHWidgetWrapperView *wrapperView;
+
+- (void).cxx_destruct;
+- (void)_configureCustomImageViewController:(id)arg1 iconView:(id)arg2;
+- (void)_configureIconView:(id)arg1 forIcon:(id)arg2;
+- (void)_removeIconViewKeepObserving:(bool)arg1;
+- (void)_updateAvocadoHostViewController;
+- (id /* block */)_widgetBackgroundViewConfigurator;
+- (id /* block */)_widgetBackgroundViewProvider;
+- (id)_widgetDragHandler;
+- (long long)backgroundType;
+- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })contentTransform;
+- (void)dealloc;
+- (id /* block */)defaultBackgroundViewConfigurator;
+- (id /* block */)defaultBackgroundViewProvider;
+- (id)delegate;
+- (bool)forcesEdgeAntialiasing;
+- (id)galleryItem;
+- (void)iconTapped:(id)arg1;
+- (void)iconTouchBegan:(id)arg1;
+- (id)iconView;
+- (void)iconView:(id)arg1 didChangeCustomImageViewController:(id)arg2;
+- (void)iconViewDidEndDrag:(id)arg1;
+- (id)iconViewProvider;
+- (void)iconViewWillBeginDrag:(id)arg1;
+- (unsigned long long)indexOfSelectedSizeClass;
+- (id)initWithGalleryItem:(id)arg1 titleAndSubtitleVisible:(bool)arg2 listLayoutProvider:(id)arg3 iconViewProvider:(id)arg4;
+- (bool)isDragging;
+- (id)listLayoutProvider;
+- (void)loadView;
+- (long long)selectedSizeClass;
+- (void)setBackgroundType:(long long)arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setDefaultBackgroundViewConfigurator:(id /* block */)arg1;
+- (void)setDefaultBackgroundViewProvider:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDragging:(bool)arg1;
+- (void)setForcesEdgeAntialiasing:(bool)arg1;
+- (void)setGalleryItem:(id)arg1;
+- (void)setIndexOfSelectedSizeClass:(unsigned long long)arg1;
+- (void)setSelectedSizeClass:(long long)arg1;
+- (void)setShadowTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setTitleAndSubtitleVisible:(bool)arg1;
+- (void)setUsesAmbientScaleFactorForRemovableBackgroundItems:(bool)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })shadowTransform;
+- (id)supportedSizeClasses;
+- (bool)titleAndSubtitleVisible;
+- (void)traitCollectionDidChange:(id)arg1;
+- (bool)usesAmbientScaleFactorForRemovableBackgroundItems;
+- (id)wrapperView;
+- (long long)wrapperViewBackgroundType;
+
+@end

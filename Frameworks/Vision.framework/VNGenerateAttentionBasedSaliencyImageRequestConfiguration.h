@@ -1,0 +1,4 @@
+
+@interface VNGenerateAttentionBasedSaliencyImageRequestConfiguration : VNImageBasedRequestConfiguration
+
+@end

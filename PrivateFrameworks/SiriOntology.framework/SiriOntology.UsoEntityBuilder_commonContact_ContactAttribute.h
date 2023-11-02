@@ -1,0 +1,4 @@
+
+@interface SiriOntology.UsoEntityBuilder_commonContact_ContactAttribute : SiriOntology.UsoEntityBuilderGlobalArgs
+
+@end

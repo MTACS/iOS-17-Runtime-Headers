@@ -1,0 +1,84 @@
+
+@interface EKICSPreviewController : NSObject <EKCalendarChooserDelegate, EKEventViewDelegatePrivateAllInProcess, EKICSPreviewListDelegate> {
+    unsigned long long  _actionsState;
+    bool  _allowsEditing;
+    bool  _allowsImport;
+    bool  _allowsSubitems;
+    long long  _cancelButtonType;
+    UIViewController * _contentViewController;
+    EKEventViewController * _currentImport;
+    EKEvent * _eventFromUID;
+    EKEventStore * _eventStore;
+    int  _eventUID;
+    bool  _hasCustomCancelButton;
+    bool  _importing;
+    EKICSPreviewModel * _model;
+    <EKICSPreviewControllerDelegate> * _previewDelegate;
+    bool  _showListViewForOneEvent;
+}
+
+@property (nonatomic) unsigned long long actionsState;
+@property (nonatomic) bool allowsEditing;
+@property (nonatomic) bool allowsImport;
+@property (nonatomic) bool allowsSubitems;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int eventUID;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) EKICSPreviewModel *model;
+@property (nonatomic) <EKICSPreviewControllerDelegate> *previewDelegate;
+@property (nonatomic) bool showListViewForOneEvent;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_anyCalendarsSupportingImport;
+- (bool)_calendarSupportsImport:(id)arg1;
+- (unsigned long long)_countOfCalendarsSupportingImport;
+- (void)_createCancelButtonWithType:(long long)arg1 target:(id)arg2 action:(SEL)arg3;
+- (void)_databaseChanged:(id)arg1;
+- (id)_defaultCalendarForImport;
+- (void)_enumerateSupportedCalendarsUsingBlock:(id /* block */)arg1;
+- (bool)_shouldShowCalendarChooser;
+- (void)_updateCancelButton;
+- (unsigned long long)actionsState;
+- (bool)allowsEditing;
+- (bool)allowsImport;
+- (bool)allowsSubitems;
+- (void)attemptDisplayReviewPrompt;
+- (void)calendarChooserDidCancel:(id)arg1;
+- (void)calendarChooserDidFinish:(id)arg1;
+- (void)dealloc;
+- (id)detailViewForEvent:(id)arg1 eventInRealStore:(bool)arg2 showUpdate:(bool)arg3 showDelete:(bool)arg4;
+- (int)eventUID;
+- (void)eventViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
+- (void)eventViewControllerDidRequestAddToCalendar:(id)arg1;
+- (bool)eventViewControllerShouldAlwaysShowNavBar:(id)arg1;
+- (bool)eventViewControllerShouldDismissSelf:(id)arg1;
+- (void)handleDidImportEvent:(id)arg1 fromController:(id)arg2 intoCalendar:(id)arg3;
+- (void)handleImportEventError;
+- (void)icsPreviewListController:(id)arg1 didSelectEvent:(id)arg2;
+- (void)icsPreviewListControllerDidRequestImportAll:(id)arg1;
+- (void)importAllIntoCalendar:(id)arg1;
+- (void)importAllRequested:(id)arg1;
+- (void)importEventFromController:(id)arg1 intoCalendar:(id)arg2;
+- (id)initWithData:(id)arg1 eventStore:(id)arg2;
+- (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned long long)arg3;
+- (id)initWithEventObjectID:(id)arg1 eventStore:(id)arg2;
+- (id)initWithEventUID:(int)arg1 eventStore:(id)arg2;
+- (id)initWithURL:(id)arg1 eventStore:(id)arg2;
+- (id)initWithURL:(id)arg1 eventStore:(id)arg2 options:(unsigned long long)arg3;
+- (id)model;
+- (void)presentCalendarChooserForController:(id)arg1;
+- (id)previewDelegate;
+- (void)setActionsState:(unsigned long long)arg1;
+- (void)setAllowsEditing:(bool)arg1;
+- (void)setAllowsImport:(bool)arg1;
+- (void)setAllowsSubitems:(bool)arg1;
+- (void)setCancelButtonWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)setPreviewDelegate:(id)arg1;
+- (void)setShowListViewForOneEvent:(bool)arg1;
+- (bool)showListViewForOneEvent;
+- (id)singleExistingEventUniqueID;
+- (id)viewController;
+
+@end

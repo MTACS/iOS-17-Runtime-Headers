@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmTanabataStarFestival : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

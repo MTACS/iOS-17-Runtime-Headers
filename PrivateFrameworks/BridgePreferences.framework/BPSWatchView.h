@@ -1,0 +1,63 @@
+
+@interface BPSWatchView : UIView <BPSWatchViewProtocol> {
+    NSString * _screenImageName;
+    NSString * _screenImageSearchBundleIdentifier;
+    unsigned long long  _sizeOverride;
+    unsigned long long  _style;
+    NSString * _styleVersionSuffix;
+    bool  _wantsInternalFPOLabel;
+    bool  _wantsLightenBlendedScreen;
+    BPSRemoteImageView * _watchImageView;
+    UIImageView * _watchScreenImageView;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *screenImageName;
+@property (nonatomic, retain) NSString *screenImageSearchBundleIdentifier;
+@property (nonatomic) unsigned long long sizeOverride;
+@property (nonatomic) unsigned long long style;
+@property (nonatomic, copy) NSString *styleVersionSuffix;
+@property (readonly) Class superclass;
+@property (nonatomic) bool wantsInternalFPOLabel;
+@property (nonatomic) bool wantsLightenBlendedScreen;
+@property (nonatomic, retain) BPSRemoteImageView *watchImageView;
+@property (nonatomic, readonly) UIImageView *watchScreenImageView;
+
+- (void).cxx_destruct;
+- (void)_cleanedImageName:(id*)arg1 withFallbackImage:(id*)arg2;
+- (void)applyScreenStyle;
+- (unsigned long long)deviceSize;
+- (id)image;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (id)initWithStyle:(unsigned long long)arg1 allowsMaterialFallback:(bool)arg2;
+- (id)initWithStyle:(unsigned long long)arg1 andVersionModifier:(id)arg2;
+- (id)initWithStyle:(unsigned long long)arg1 versionModifier:(id)arg2 allowsMaterialFallback:(bool)arg3;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)layoutSubviews;
+- (void)layoutWatchScreenImageView;
+- (void)overrideMaterial:(unsigned long long)arg1 size:(unsigned long long)arg2;
+- (id)screenBackground:(struct CGSize { double x1; double x2; })arg1;
+- (id)screenImageName;
+- (id)screenImageSearchBundleIdentifier;
+- (struct CGSize { double x1; double x2; })screenImageSize;
+- (void)setScreenImageName:(id)arg1;
+- (void)setScreenImageSearchBundleIdentifier:(id)arg1;
+- (void)setSizeOverride:(unsigned long long)arg1;
+- (void)setStyle:(unsigned long long)arg1;
+- (void)setStyleVersionSuffix:(id)arg1;
+- (void)setWantsInternalFPOLabel:(bool)arg1;
+- (void)setWantsLightenBlendedScreen:(bool)arg1;
+- (void)setWatchImageView:(id)arg1;
+- (unsigned long long)sizeOverride;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)style;
+- (id)styleVersionSuffix;
+- (bool)wantsInternalFPOLabel;
+- (bool)wantsLightenBlendedScreen;
+- (id)watchAssetBundle;
+- (id)watchImageView;
+- (id)watchScreenImageView;
+
+@end

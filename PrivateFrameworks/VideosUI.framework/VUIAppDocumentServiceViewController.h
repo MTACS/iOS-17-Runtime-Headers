@@ -1,0 +1,94 @@
+
+@interface VUIAppDocumentServiceViewController : _TVAppDocumentRequestController <IKUpdateServiceRequestDelegate, UIPopoverPresentationControllerDelegate, VUIAppDocumentUpdateEventMonitorObserving> {
+    VUIAppContext * _appContext;
+    bool  _deferDocumentUpdateEventProcessing;
+    VUIAppDocumentUpdateEventStore * _deferredDocumentUpdateEventStore;
+    NSString * _documentRef;
+    <VUIAppDocumentUpdateContext> * _documentUpdateContext;
+    NSMutableOrderedSet * _documentUpdateViewElements;
+    NSMutableArray * _impressionableSwiftViewControllers;
+    bool  _markDocumentDirtyForRefreshUpdate;
+    NSString * _viewControllerDocumentIdentifier;
+    NSString * _viewControllerIdentifier;
+    unsigned long long  _viewWillAppearReason;
+}
+
+@property (nonatomic) VUIAppContext *appContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) bool deferDocumentUpdateEventProcessing;
+@property (nonatomic, retain) VUIAppDocumentUpdateEventStore *deferredDocumentUpdateEventStore;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *documentRef;
+@property (nonatomic, retain) <VUIAppDocumentUpdateContext> *documentUpdateContext;
+@property (nonatomic, retain) NSMutableOrderedSet *documentUpdateViewElements;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSMutableArray *impressionableSwiftViewControllers;
+@property (getter=isDocumentMarkedDirty, nonatomic) bool markDocumentDirtyForRefreshUpdate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *viewControllerDocumentIdentifier;
+@property (nonatomic, retain) NSString *viewControllerIdentifier;
+@property (nonatomic) unsigned long long viewWillAppearReason;
+
++ (id)_findCollectionListChildElementsInViewElement:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_cancelDocumentUpdateWithRequest:(id)arg1;
+- (void)_cancelDocumentUpdates;
+- (void)_cancelDocumentUpdatesAndPreserveUpdateEvents;
+- (void)_disableFastScrollIfNeeded;
+- (bool)_hasRefreshEvents;
+- (void)_performNextDocumentUpdateIfNeeded;
+- (id)_receivedEvents;
+- (void)_registerDocumentUpdateEventDescriptorsWithServiceCompletionStatus:(long long)arg1;
+- (void)_removeEventTypes:(id)arg1 receivedEvents:(id)arg2;
+- (void)_removeStoreEvents:(unsigned long long)arg1;
+- (void)_startDocumentUpdateWithRequest:(id)arg1;
+- (void)_startDocumentUpdatesForDeferredEventsIfPossible;
+- (void)_startDocumentUpdatesWithContext:(id)arg1;
+- (void)_unregisterDocumentUpdateEventDescriptors;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (id)appContext;
+- (void)appDocumentDidReceiveEvent:(id)arg1;
+- (void)appDocumentHasBecomeActive;
+- (void)dealloc;
+- (bool)deferDocumentUpdateEventProcessing;
+- (id)deferredDocumentUpdateEventStore;
+- (void)didCompleteDocumentCreationWithStatus:(long long)arg1 errorDictionary:(id)arg2;
+- (void)documentDidUpdate:(id)arg1;
+- (id)documentRef;
+- (id)documentUpdateContext;
+- (id)documentUpdateViewElements;
+- (bool)handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id*)arg4;
+- (id)impressionableSwiftViewControllers;
+- (id)init;
+- (id)initWithAppContext:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDocumentServiceRequest:(id)arg1;
+- (id)initWithDocumentServiceRequest:(id)arg1 loadImmediately:(bool)arg2;
+- (id)initWithDocumentServiceRequest:(id)arg1 loadImmediately:(bool)arg2 documentRef:(id)arg3 viewControllerIdentifier:(id)arg4 viewControllerDocumentIdentifier:(id)arg5;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (bool)isDocumentMarkedDirty;
+- (bool)isEqualToAppDocumentServiceViewController:(id)arg1;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)serviceRequest:(id)arg1 didCompleteWithStatus:(long long)arg2 errorDictionary:(id)arg3;
+- (void)setAppContext:(id)arg1;
+- (void)setDeferDocumentUpdateEventProcessing:(bool)arg1;
+- (void)setDeferredDocumentUpdateEventStore:(id)arg1;
+- (void)setDocumentRef:(id)arg1;
+- (void)setDocumentUpdateContext:(id)arg1;
+- (void)setDocumentUpdateViewElements:(id)arg1;
+- (void)setImpressionableSwiftViewControllers:(id)arg1;
+- (void)setMarkDocumentDirtyForRefreshUpdate:(bool)arg1;
+- (void)setViewControllerDocumentIdentifier:(id)arg1;
+- (void)setViewControllerIdentifier:(id)arg1;
+- (void)setViewWillAppearReason:(unsigned long long)arg1;
+- (void)updateDocumentWithContextDictionary:(id)arg1 element:(id)arg2;
+- (void)updateServiceRequest:(id)arg1 documentDidChange:(id)arg2;
+- (id)viewControllerDocumentIdentifier;
+- (id)viewControllerIdentifier;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppearAfterTabSwitch;
+- (unsigned long long)viewWillAppearReason;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

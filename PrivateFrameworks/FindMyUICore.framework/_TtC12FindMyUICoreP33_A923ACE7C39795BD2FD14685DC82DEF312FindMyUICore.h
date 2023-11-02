@@ -1,0 +1,4 @@
+
+@interface _TtC12FindMyUICoreP33_A923ACE7C39795BD2FD14685DC82DEF312FindMyUICore : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKGeoJSONObject <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol PBPosterSceneClientSettings
+
+@end

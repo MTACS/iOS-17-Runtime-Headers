@@ -1,0 +1,4 @@
+
+@protocol MTLDeadlineProfile <NSObject>
+
+@end

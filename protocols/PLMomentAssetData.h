@@ -1,0 +1,114 @@
+
+@protocol PLMomentAssetData <PLMomentRefreshable, PLRegionsClusteringItem>
+
+@required
+
+- (NSArray *)assetComparisonSortDescriptors;
+- (NSString *)avalancheUUID;
+- (long long)compareToAsset:(id <PLMomentAssetData>)arg1;
+- (double)curationScore;
+- (NSDate *)dateCreated;
+- (<PLPhotosHighlightData> *)dayGroupHighlightBeingAssets;
+- (<PLPhotosHighlightData> *)dayGroupHighlightBeingExtendedAssets;
+- (<PLPhotosHighlightData> *)dayGroupHighlightBeingKeyAssetPrivate;
+- (<PLPhotosHighlightData> *)dayGroupHighlightBeingKeyAssetShared;
+- (<PLPhotosHighlightData> *)dayGroupHighlightBeingSummaryAssets;
+- (bool)favorite;
+- (NSString *)globalUUID;
+- (double)gpsHorizontalAccuracy;
+- (bool)hasChanges;
+- (bool)hasLibraryScope;
+- (<PLPhotosHighlightData> *)highlightBeingAssets;
+- (<PLPhotosHighlightData> *)highlightBeingExtendedAssets;
+- (<PLPhotosHighlightData> *)highlightBeingKeyAssetPrivate;
+- (<PLPhotosHighlightData> *)highlightBeingKeyAssetShared;
+- (<PLPhotosHighlightData> *)highlightBeingSummaryAssets;
+- (NSSet *)highlightsBeingAdaptiveAssets;
+- (NSSet *)highlightsBeingAdaptiveExplicitlyAddedAssets;
+- (NSSet *)highlightsBeingAdaptiveExplicitlyRemovedAssets;
+- (NSSet *)highlightsBeingAdaptiveExtendedAssets;
+- (NSSet *)highlightsBeingAdaptiveKeyAssetPrivate;
+- (NSSet *)highlightsBeingAdaptiveKeyAssetPrivateUserEdited;
+- (NSSet *)highlightsBeingAdaptiveKeyAssetShared;
+- (NSSet *)highlightsBeingAdaptiveKeyAssetSharedUserEdited;
+- (NSSet *)highlightsBeingAdaptiveSummaryAssets;
+- (NSString *)importedByBundleIdentifier;
+- (int)inferredTimeZoneOffset;
+- (bool)isAvalancheStackPhoto;
+- (bool)isDeleted;
+- (bool)isInterestingForAvalanche;
+- (bool)isPhoto;
+- (bool)isScreenRecording;
+- (bool)isSuggestedForSharingByPhotos;
+- (bool)isVideo;
+- (NSDate *)localDateCreated;
+- (CLLocation *)location;
+- (PLRevGeoLocationInfo *)locationInfo;
+- (<PLMomentData> *)moment;
+- (<PLPhotosHighlightData> *)monthHighlightBeingKeyAssetPrivate;
+- (<PLPhotosHighlightData> *)monthHighlightBeingKeyAssetShared;
+- (PLRevGeoPlaceAnnotation *)placeAnnotation;
+- (void)reportSharedAssetIncrementalChange:(PLSharedAssetsContainerIncrementalChange *)arg1;
+- (NSData *)reverseLocationData;
+- (bool)reverseLocationDataIsValid;
+- (short)savedAssetType;
+- (void)setCurationScore:(double)arg1;
+- (void)setDateCreated:(NSDate *)arg1;
+- (void)setDayGroupHighlightBeingAssets:(id <PLPhotosHighlightData>)arg1;
+- (void)setDayGroupHighlightBeingExtendedAssets:(id <PLPhotosHighlightData>)arg1;
+- (void)setDayGroupHighlightBeingKeyAssetPrivate:(id <PLPhotosHighlightData>)arg1;
+- (void)setDayGroupHighlightBeingKeyAssetShared:(id <PLPhotosHighlightData>)arg1;
+- (void)setDayGroupHighlightBeingSummaryAssets:(id <PLPhotosHighlightData>)arg1;
+- (void)setFavorite:(bool)arg1;
+- (void)setHighlightBeingAssets:(id <PLPhotosHighlightData>)arg1;
+- (void)setHighlightBeingExtendedAssets:(id <PLPhotosHighlightData>)arg1;
+- (void)setHighlightBeingKeyAssetPrivate:(id <PLPhotosHighlightData>)arg1;
+- (void)setHighlightBeingKeyAssetShared:(id <PLPhotosHighlightData>)arg1;
+- (void)setHighlightBeingSummaryAssets:(id <PLPhotosHighlightData>)arg1;
+- (void)setHighlightsBeingAdaptiveAssets:(NSSet *)arg1;
+- (void)setHighlightsBeingAdaptiveExplicitlyAddedAssets:(NSSet *)arg1;
+- (void)setHighlightsBeingAdaptiveExplicitlyRemovedAssets:(NSSet *)arg1;
+- (void)setHighlightsBeingAdaptiveExtendedAssets:(NSSet *)arg1;
+- (void)setHighlightsBeingAdaptiveKeyAssetPrivate:(NSSet *)arg1;
+- (void)setHighlightsBeingAdaptiveKeyAssetPrivateUserEdited:(NSSet *)arg1;
+- (void)setHighlightsBeingAdaptiveKeyAssetShared:(NSSet *)arg1;
+- (void)setHighlightsBeingAdaptiveKeyAssetSharedUserEdited:(NSSet *)arg1;
+- (void)setHighlightsBeingAdaptiveSummaryAssets:(NSSet *)arg1;
+- (void)setLocation:(CLLocation *)arg1;
+- (void)setMoment:(id <PLMomentData>)arg1;
+- (void)setMonthHighlightBeingKeyAssetPrivate:(id <PLPhotosHighlightData>)arg1;
+- (void)setMonthHighlightBeingKeyAssetShared:(id <PLPhotosHighlightData>)arg1;
+- (void)setReverseLocationData:(NSData *)arg1;
+- (void)setReverseLocationDataIsValid:(bool)arg1;
+- (void)setShiftedLocation:(CLLocation *)arg1;
+- (void)setShiftedLocationIsValid:(bool)arg1;
+- (void)setYearHighlightBeingKeyAssetPrivate:(id <PLPhotosHighlightData>)arg1;
+- (void)setYearHighlightBeingKeyAssetShared:(id <PLPhotosHighlightData>)arg1;
+- (unsigned char)shareState;
+- (CLLocation *)shiftedLocation;
+- (bool)shiftedLocationIsValid;
+- (unsigned short)syndicationProcessingValue;
+- (unsigned long long)syndicationProcessingVersion;
+- (NSObject<NSCopying> *)uniqueObjectID;
+- (bool)visibilityStateIsEqualToState:(short)arg1;
+- (<PLPhotosHighlightData> *)yearHighlightBeingKeyAssetPrivate;
+- (<PLPhotosHighlightData> *)yearHighlightBeingKeyAssetShared;
+
+@optional
+
+- (NSString *)cloudAssetGUID;
+- (double)duration;
+- (long long)height;
+- (short)kind;
+- (short)kindSubtype;
+- (NSDate *)modificationDate;
+- (void)setDuration:(double)arg1;
+- (void)setHeight:(long long)arg1;
+- (void)setKind:(short)arg1;
+- (void)setKindSubtype:(short)arg1;
+- (void)setModificationDate:(NSDate *)arg1;
+- (void)setWidth:(long long)arg1;
+- (NSString *)uuid;
+- (long long)width;
+
+@end

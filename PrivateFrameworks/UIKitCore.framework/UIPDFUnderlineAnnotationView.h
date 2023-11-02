@@ -1,0 +1,4 @@
+
+@interface UIPDFUnderlineAnnotationView : UIPDFAnnotationView
+
+@end

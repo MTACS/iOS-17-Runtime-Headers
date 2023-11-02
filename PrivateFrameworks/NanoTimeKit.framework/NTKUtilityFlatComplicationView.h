@@ -1,0 +1,96 @@
+
+@interface NTKUtilityFlatComplicationView : NTKUtilityComplicationView <CLKMonochromeComplicationView, CLKMonochromeFilterProvider, NTKUtilityFlatComplicationView> {
+    CLKUIColoringLabel * _activeLabel;
+    UIImageView * _curvedHighlightView;
+    CLKUICurvedColoringLabel * _curvedLabel;
+    <NTKUtilityFlatComplicationViewDelegate> * _delegate;
+    <CLKMonochromeFilterProvider> * _filterProvider;
+    UIView<CDComplicationImageView> * _imageView;
+    CLKUIColoringLabel * _label;
+    double  _textWidthInRadians;
+}
+
+@property (nonatomic, retain) UIColor *accentColor;
+@property (nonatomic) bool alwaysEnforcePlatterInset;
+@property (nonatomic) bool canUseCurvedText;
+@property (nonatomic) double circleRadius;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NTKUtilityFlatComplicationViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CLKDevice *device;
+@property (nonatomic) <CDComplicationDisplayObserver> *displayObserver;
+@property (nonatomic) double editingRotationAngle;
+@property (nonatomic) <CLKMonochromeFilterProvider> *filterProvider;
+@property (nonatomic) double fontSize;
+@property (nonatomic) double fontWeight;
+@property (nonatomic) double foregroundAlpha;
+@property (nonatomic, retain) UIColor *foregroundColor;
+@property (nonatomic) double foregroundImageAlpha;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic, retain) UIView<CDComplicationImageView> *imageView;
+@property (nonatomic, retain) CLKUIColoringLabel *label;
+@property (nonatomic) double maxAngularWidth;
+@property (nonatomic) unsigned long long placement;
+@property (nonatomic, retain) UIColor *platterColor;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic) bool shouldScaleAndFadeWhenHighlighting;
+@property (nonatomic) bool shouldUseBackgroundPlatter;
+@property (nonatomic) bool shouldUseTemplateColors;
+@property (readonly) Class superclass;
+@property (nonatomic) bool suppressesInternalColorOverrides;
+@property (nonatomic, readonly) double textWidthInRadians;
+@property (readonly) NSDate *timeTravelDate;
+@property (nonatomic) bool useAlternativePunctuation;
+@property (nonatomic) bool useBlockyHighlightCorners;
+@property (nonatomic) bool useRoundedFontDesign;
+@property (nonatomic) bool usesLegibility;
+
++ (void)circleRadius:(double*)arg1 centerAngle:(double*)arg2 maxAngularWidth:(double*)arg3 interior:(bool*)arg4 forPlacement:(unsigned long long)arg5 forDevice:(id)arg6;
++ (bool)handlesComplicationTemplate:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_backgroundPlatterImage;
+- (void)_enumerateColoringStackedImagesViewsWithBlock:(id /* block */)arg1;
+- (void)_enumerateColoringViewsWithBlock:(id /* block */)arg1;
+- (bool)_shouldLayoutWithImageView;
+- (void)_updateContentForMaxSizeChange;
+- (void)_updateForTemplateChange;
+- (void)_updateHighlightViewCornerRadius;
+- (void)_updateLabelMaxWidth;
+- (double)_widthThatFits;
+- (struct CGSize { double x1; double x2; })boundingSizeOfCurrentComplicationTemplate;
+- (double)circleRadius;
+- (id)colorForView:(id)arg1 accented:(bool)arg2;
+- (id)delegate;
+- (id)filterForView:(id)arg1 style:(long long)arg2;
+- (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)filterProvider;
+- (id)filtersForView:(id)arg1 style:(long long)arg2;
+- (id)filtersForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (unsigned long long)imagePlacement;
+- (id)imageView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)label;
+- (void)layoutSubviews;
+- (double)maxAngularWidth;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setCanUseCurvedText:(bool)arg1;
+- (void)setCircleRadius:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFilterProvider:(id)arg1;
+- (void)setForegroundColor:(id)arg1;
+- (void)setImageView:(id)arg1;
+- (void)setLabel:(id)arg1;
+- (void)setMaxAngularWidth:(double)arg1;
+- (void)setPlacement:(unsigned long long)arg1;
+- (void)setShouldUseBackgroundPlatter:(bool)arg1;
+- (void)setTextWidthInRadians:(double)arg1;
+- (void)setUseBlockyHighlightCorners:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (double)textWidthInRadians;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)updateMonochromeColor;
+- (void)updateTextWidthIfNeeded;
+
+@end

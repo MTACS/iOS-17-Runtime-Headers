@@ -1,0 +1,4 @@
+
+@interface PXDebugCMMIncomingTableViewCell : UITableViewCell
+
+@end

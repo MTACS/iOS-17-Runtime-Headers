@@ -1,0 +1,4 @@
+
+@interface CDPCAADPOnRowSelectReporter : CDPCAReporter
+
+@end

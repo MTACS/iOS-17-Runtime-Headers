@@ -1,0 +1,4 @@
+
+@protocol PXGadgetTransition <NSObject>
+
+@end

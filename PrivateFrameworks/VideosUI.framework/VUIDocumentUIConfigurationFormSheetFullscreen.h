@@ -1,0 +1,4 @@
+
+@interface VUIDocumentUIConfigurationFormSheetFullscreen : VUIDocumentUIConfigurationModal
+
+@end

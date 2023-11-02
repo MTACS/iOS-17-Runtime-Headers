@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmHarvestFestival_KR : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

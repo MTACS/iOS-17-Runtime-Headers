@@ -1,0 +1,33 @@
+
+@interface MTRClusterModeSelect : MTRCluster {
+    MTRDevice * _device;
+    unsigned short  _endpoint;
+}
+
+@property (nonatomic, readonly) MTRDevice *device;
+@property (nonatomic, readonly) unsigned short endpoint;
+
+- (void).cxx_destruct;
+- (void)changeToModeWithParams:(id)arg1 expectedValues:(id)arg2 expectedValueInterval:(id)arg3 completion:(id /* block */)arg4;
+- (void)changeToModeWithParams:(id)arg1 expectedValues:(id)arg2 expectedValueInterval:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)device;
+- (unsigned short)endpoint;
+- (id)initWithDevice:(id)arg1 endpoint:(unsigned short)arg2 queue:(id)arg3;
+- (id)initWithDevice:(id)arg1 endpointID:(id)arg2 queue:(id)arg3;
+- (id)readAttributeAcceptedCommandListWithParams:(id)arg1;
+- (id)readAttributeAttributeListWithParams:(id)arg1;
+- (id)readAttributeClusterRevisionWithParams:(id)arg1;
+- (id)readAttributeCurrentModeWithParams:(id)arg1;
+- (id)readAttributeDescriptionWithParams:(id)arg1;
+- (id)readAttributeFeatureMapWithParams:(id)arg1;
+- (id)readAttributeGeneratedCommandListWithParams:(id)arg1;
+- (id)readAttributeOnModeWithParams:(id)arg1;
+- (id)readAttributeStandardNamespaceWithParams:(id)arg1;
+- (id)readAttributeStartUpModeWithParams:(id)arg1;
+- (id)readAttributeSupportedModesWithParams:(id)arg1;
+- (void)writeAttributeOnModeWithValue:(id)arg1 expectedValueInterval:(id)arg2;
+- (void)writeAttributeOnModeWithValue:(id)arg1 expectedValueInterval:(id)arg2 params:(id)arg3;
+- (void)writeAttributeStartUpModeWithValue:(id)arg1 expectedValueInterval:(id)arg2;
+- (void)writeAttributeStartUpModeWithValue:(id)arg1 expectedValueInterval:(id)arg2 params:(id)arg3;
+
+@end

@@ -1,0 +1,9 @@
+
+@protocol SFSharedAccountsGroupMessageInvitePreviewViewControllerDelegate <NSObject>
+
+@required
+
+- (void)groupMessageInvitePreviewViewControllerDidSelectCancel:(SFSharedAccountsGroupMessageInvitePreviewViewController *)arg1;
+- (void)groupMessageInvitePreviewViewControllerDidSelectContinue:(SFSharedAccountsGroupMessageInvitePreviewViewController *)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC25NanoWeatherKitUICompanionP33_62A64D66728D49E2724C17D463600A2211NWKUIBundle : _TtCs12_SwiftObject
+
+@end

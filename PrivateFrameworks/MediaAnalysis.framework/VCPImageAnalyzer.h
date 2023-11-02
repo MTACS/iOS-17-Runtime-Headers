@@ -1,0 +1,24 @@
+
+@interface VCPImageAnalyzer : NSObject {
+    struct Scaler { 
+        struct CF<__CVPixelBufferPool *> { 
+            struct __CVPixelBufferPool {} *value_; 
+        } pool_; 
+        int width_; 
+        int height_; 
+        unsigned int format_; 
+        struct CF<OpaqueVTPixelTransferSession *> { 
+            struct OpaqueVTPixelTransferSession {} *value_; 
+        } transfer_session_; 
+    }  _scaler;
+}
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (int)aggregateTileResults:(id)arg1 tileRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 imageSize:(struct CGSize { double x1; double x2; })arg3 landscape:(bool)arg4 results:(id)arg5;
+- (int)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 flags:(unsigned long long*)arg2 results:(id*)arg3 cancel:(id /* block */)arg4;
+- (int)analyzePixelBufferInTiles:(struct __CVBuffer { }*)arg1 results:(id)arg2 cancel:(id /* block */)arg3;
+- (int)calculateTextureness:(float*)arg1 height:(int)arg2 width:(int)arg3 sdof:(bool)arg4 result:(char *)arg5;
+- (int)processTile:(struct __CVBuffer { }*)arg1 results:(id)arg2 cancel:(id /* block */)arg3;
+
+@end

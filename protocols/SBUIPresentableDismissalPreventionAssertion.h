@@ -1,0 +1,4 @@
+
+@protocol SBUIPresentableDismissalPreventionAssertion <SBUIPresentableAssertion>
+
+@end

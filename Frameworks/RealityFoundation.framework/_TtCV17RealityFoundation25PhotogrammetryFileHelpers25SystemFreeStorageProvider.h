@@ -1,0 +1,4 @@
+
+@interface _TtCV17RealityFoundation25PhotogrammetryFileHelpers25SystemFreeStorageProvider : _TtCs12_SwiftObject
+
+@end

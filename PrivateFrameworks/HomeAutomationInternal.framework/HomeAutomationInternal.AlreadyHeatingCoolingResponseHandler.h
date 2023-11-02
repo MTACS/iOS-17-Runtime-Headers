@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.AlreadyHeatingCoolingResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

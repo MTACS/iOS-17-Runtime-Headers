@@ -1,0 +1,31 @@
+
+@interface PGPersonMemoryGenerator : PGOverTimeMemoryGenerator {
+    PGFeaturedTimePeriodMemoryConfiguration * _featuredSeasonConfiguration;
+    PGFeaturedTimePeriodMemoryConfiguration * _featuredYearConfiguration;
+    PGMemoryMomentRequirements * _momentRequirements;
+    PGOverTheYearsMemoryConfiguration * _overTheYearsConfiguration;
+    bool  _requireFaceProcessingMeetsThresholdOverTime;
+    bool  _requireSceneProcessingMeetsThresholdOverTime;
+}
+
+- (void).cxx_destruct;
+- (unsigned long long)durationForCuration;
+- (unsigned long long)durationForExtendedCuration;
+- (void)enumerateMomentNodesAndFeatureNodesInGraph:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)featuredSeasonConfiguration;
+- (id)featuredYearConfiguration;
+- (id)initWithMemoryGenerationContext:(id)arg1;
+- (id)keyAssetCurationOptionsWithTriggeredMemory:(id)arg1 inGraph:(id)arg2;
+- (unsigned long long)memoryCategory;
+- (unsigned long long)memoryCategorySubcategoryForOverTimeType:(unsigned long long)arg1;
+- (id)momentRequirements;
+- (id)overTheYearsConfiguration;
+- (id)relevantFeederForTriggeredMemory:(id)arg1 inGraph:(id)arg2 allowGuestAsset:(bool)arg3 progressReporter:(id)arg4;
+- (bool)requireFaceProcessingMeetsThresholdOverTime;
+- (bool)requireSceneProcessingMeetsThresholdOverTime;
+- (bool)semanticalDedupingEnabledForExtendedCuration;
+- (void)setRequireFaceProcessingMeetsThresholdOverTime:(bool)arg1;
+- (void)setRequireSceneProcessingMeetsThresholdOverTime:(bool)arg1;
+- (id)titleGeneratorForTriggeredMemory:(id)arg1 withKeyAsset:(id)arg2 curatedAssets:(id)arg3 extendedCuratedAssets:(id)arg4 titleGenerationContext:(id)arg5 inGraph:(id)arg6;
+
+@end

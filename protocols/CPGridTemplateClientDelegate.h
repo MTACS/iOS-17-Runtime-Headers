@@ -1,0 +1,4 @@
+
+@protocol CPGridTemplateClientDelegate <CPTemplateDelegate>
+
+@end

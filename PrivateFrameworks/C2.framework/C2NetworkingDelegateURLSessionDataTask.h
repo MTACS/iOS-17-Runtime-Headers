@@ -1,0 +1,97 @@
+
+@interface C2NetworkingDelegateURLSessionDataTask : NSObject {
+    <NSURLSessionAppleIDContext> * __appleIDContext;
+    double  __timeoutIntervalForResource;
+    C2RequestOptions * _c2RequestOptions;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    long long  _countOfBytesClientExpectsToReceive;
+    long long  _countOfBytesClientExpectsToSend;
+    long long  _countOfBytesExpectedToReceive;
+    long long  _countOfBytesExpectedToSend;
+    long long  _countOfBytesReceived;
+    long long  _countOfBytesSent;
+    NSURLRequest * _currentRequest;
+    NSURLRequest * _originalRequest;
+    NSURLResponse * _response;
+    C2NetworkingDelegateURLSession * _session;
+    long long  _state;
+    NSError * _syntheticError;
+    NSString * _taskDescription;
+    unsigned long long  _taskIdentifier;
+    NSDictionary * _timingData;
+}
+
+@property (setter=_setAppleIDContext:, copy) <NSURLSessionAppleIDContext> *_appleIDContext;
+@property double _timeoutIntervalForResource;
+@property (nonatomic, retain) C2RequestOptions *c2RequestOptions;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property long long countOfBytesClientExpectsToReceive;
+@property long long countOfBytesClientExpectsToSend;
+@property long long countOfBytesExpectedToReceive;
+@property long long countOfBytesExpectedToSend;
+@property long long countOfBytesReceived;
+@property long long countOfBytesSent;
+@property (copy) NSURLRequest *currentRequest;
+@property (copy) NSURLRequest *originalRequest;
+@property (copy) NSURLResponse *response;
+@property (nonatomic) C2NetworkingDelegateURLSession *session;
+@property long long state;
+@property (retain) NSError *syntheticError;
+@property (copy) NSString *taskDescription;
+@property (readonly) unsigned long long taskIdentifier;
+@property (nonatomic, retain) NSDictionary *timingData;
+
++ (unsigned long long)nextTaskIdentifier;
+
+- (void).cxx_destruct;
+- (id)_appleIDContext;
+- (void)_drainInputStream:(id)arg1 sinkData:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_setAppleIDContext:(id)arg1;
+- (double)_timeoutIntervalForResource;
+- (id)_timingData;
+- (id)c2RequestOptions;
+- (void)cancel;
+- (id)clientQueue;
+- (long long)countOfBytesClientExpectsToReceive;
+- (long long)countOfBytesClientExpectsToSend;
+- (long long)countOfBytesExpectedToReceive;
+- (long long)countOfBytesExpectedToSend;
+- (long long)countOfBytesReceived;
+- (long long)countOfBytesSent;
+- (id)currentRequest;
+- (void)handleCompletion;
+- (void)handleResponse:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)init;
+- (id)originalRequest;
+- (void)processRequest:(id)arg1 configuration:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)response;
+- (void)resume;
+- (id)session;
+- (void)setC2RequestOptions:(id)arg1;
+- (void)setClientQueue:(id)arg1;
+- (void)setCountOfBytesClientExpectsToReceive:(long long)arg1;
+- (void)setCountOfBytesClientExpectsToSend:(long long)arg1;
+- (void)setCountOfBytesExpectedToReceive:(long long)arg1;
+- (void)setCountOfBytesExpectedToSend:(long long)arg1;
+- (void)setCountOfBytesReceived:(long long)arg1;
+- (void)setCountOfBytesSent:(long long)arg1;
+- (void)setCurrentRequest:(id)arg1;
+- (void)setOriginalRequest:(id)arg1;
+- (void)setResponse:(id)arg1;
+- (void)setSession:(id)arg1;
+- (void)setState:(long long)arg1;
+- (void)setSyntheticError:(id)arg1;
+- (void)setTaskDescription:(id)arg1;
+- (void)setTimingData:(id)arg1;
+- (void)set_timeoutIntervalForResource:(double)arg1;
+- (void)setupRequest:(id /* block */)arg1;
+- (void)setupRequestBodyForRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (long long)state;
+- (void)streamResponseBody:(id)arg1 offset:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
+- (id)syntheticError;
+- (id)taskDescription;
+- (unsigned long long)taskIdentifier;
+- (id)timingData;
+- (void)willSendRequest:(id /* block */)arg1;
+
+@end

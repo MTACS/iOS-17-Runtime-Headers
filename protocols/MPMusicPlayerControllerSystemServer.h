@@ -1,0 +1,4 @@
+
+@protocol MPMusicPlayerControllerSystemServer <MPMusicPlayerControllerServer>
+
+@end

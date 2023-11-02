@@ -1,0 +1,4 @@
+
+@interface RSStructurePostProcess : NSObject
+
+@end

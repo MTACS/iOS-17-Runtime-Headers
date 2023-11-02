@@ -1,0 +1,4 @@
+
+@interface NLSequenceModel : NLModel
+
+@end

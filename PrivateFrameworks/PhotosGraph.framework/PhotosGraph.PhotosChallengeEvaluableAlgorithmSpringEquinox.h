@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmSpringEquinox : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

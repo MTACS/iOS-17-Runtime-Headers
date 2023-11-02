@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmFoundingoftheRepublicofChina : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

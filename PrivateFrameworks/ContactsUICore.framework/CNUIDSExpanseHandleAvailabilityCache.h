@@ -1,0 +1,4 @@
+
+@interface CNUIDSExpanseHandleAvailabilityCache : CNUIDSHandleAvailabilityCache
+
+@end

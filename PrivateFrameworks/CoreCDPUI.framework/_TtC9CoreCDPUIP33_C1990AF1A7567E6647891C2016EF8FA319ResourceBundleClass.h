@@ -1,0 +1,4 @@
+
+@interface _TtC9CoreCDPUIP33_C1990AF1A7567E6647891C2016EF8FA319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

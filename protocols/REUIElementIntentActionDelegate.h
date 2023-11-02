@@ -1,0 +1,4 @@
+
+@protocol REUIElementIntentActionDelegate <REUIElementDonatedActionActionDelegate>
+
+@end

@@ -1,0 +1,93 @@
+
+@interface SignpostCAInstrumentationProcessor : NSObject {
+    id /* block */  _clientDrawableIntervalBlock;
+    id /* block */  _commitIntervalBlock;
+    id /* block */  _contextInfoBlock;
+    SignpostEvent * _curFrameLifetimeBegin;
+    unsigned int  _curFrameSeed;
+    SignpostEvent * _curLongFrameLifetimeBegin;
+    id /* block */  _frameLatencyBlock;
+    id /* block */  _frameLifetimeBlock;
+    NSMutableDictionary * _frameSeedToAccumulatedRenderStateDict;
+    NSMutableDictionary * _frameSeedToAccumulatedStateDict;
+    id /* block */  _hidLatencyBlock;
+    id /* block */  _imageQueueSampleEventBlock;
+    bool  _isConciseFormat;
+    NSMutableDictionary * _queueIDToSurfaceIDToClientDrawableIntervalDict;
+    id /* block */  _renderBlock;
+    id /* block */  _transactionLifetimeBlock;
+}
+
+@property (nonatomic, copy) id /* block */ clientDrawableIntervalBlock;
+@property (nonatomic, copy) id /* block */ commitIntervalBlock;
+@property (nonatomic, copy) id /* block */ contextInfoBlock;
+@property (nonatomic, retain) SignpostEvent *curFrameLifetimeBegin;
+@property (nonatomic) unsigned int curFrameSeed;
+@property (nonatomic, retain) SignpostEvent *curLongFrameLifetimeBegin;
+@property (nonatomic, copy) id /* block */ frameLatencyBlock;
+@property (nonatomic, copy) id /* block */ frameLifetimeBlock;
+@property (nonatomic, readonly) NSMutableDictionary *frameSeedToAccumulatedRenderStateDict;
+@property (nonatomic, readonly) NSMutableDictionary *frameSeedToAccumulatedStateDict;
+@property (nonatomic, copy) id /* block */ hidLatencyBlock;
+@property (nonatomic, copy) id /* block */ imageQueueSampleEventBlock;
+@property (nonatomic) bool isConciseFormat;
+@property (nonatomic, readonly) NSMutableDictionary *queueIDToSurfaceIDToClientDrawableIntervalDict;
+@property (nonatomic, copy) id /* block */ renderBlock;
+@property (nonatomic, copy) id /* block */ transactionLifetimeBlock;
+
++ (void)addNeededMetalSCToAllowlist:(id)arg1;
++ (void)addNeededSCToAllowlist:(id)arg1;
++ (void)addNeededSCToWhitelist:(id)arg1;
++ (bool)filterPassesRequiredSCForCAInstrumentation:(id)arg1;
++ (bool)filterPassesRequiredSCForCAMetalInstrumentation:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_cleanupStateWithSeed:(unsigned int)arg1;
+- (void)_handleClientDrawableInterval:(id)arg1;
+- (void)_handleContextInfo:(id)arg1;
+- (void)_handleFrameLatencyInterval:(id)arg1;
+- (void)_handleFrameLifetimeBegin:(id)arg1;
+- (void)_handleFrameLifetimeInterval:(id)arg1 isLong:(bool)arg2;
+- (void)_handleHIDInterval:(id)arg1;
+- (void)_handleImageQueueSampleEvent:(id)arg1;
+- (void)_handleLongFrameLifetimeBegin:(id)arg1;
+- (void)_handleRenderInterval:(id)arg1;
+- (id)_renderStateForFrameSeed:(unsigned int)arg1;
+- (id)_stateForFrameSeed:(unsigned int)arg1;
+- (id /* block */)clientDrawableIntervalBlock;
+- (id /* block */)commitIntervalBlock;
+- (id /* block */)contextInfoBlock;
+- (id)curFrameLifetimeBegin;
+- (unsigned int)curFrameSeed;
+- (id)curLongFrameLifetimeBegin;
+- (id /* block */)frameLatencyBlock;
+- (id /* block */)frameLifetimeBlock;
+- (id)frameSeedToAccumulatedRenderStateDict;
+- (id)frameSeedToAccumulatedStateDict;
+- (void)handleDeviceReboot;
+- (bool)handleSignpostEvent:(id)arg1;
+- (bool)handleSignpostInterval:(id)arg1;
+- (void)handleSignpostIntervalBegin:(id)arg1;
+- (id /* block */)hidLatencyBlock;
+- (id /* block */)imageQueueSampleEventBlock;
+- (id)init;
+- (bool)isConciseFormat;
+- (id)newConfiguredExtractor;
+- (id)queueIDToSurfaceIDToClientDrawableIntervalDict;
+- (id /* block */)renderBlock;
+- (void)setClientDrawableIntervalBlock:(id /* block */)arg1;
+- (void)setCommitIntervalBlock:(id /* block */)arg1;
+- (void)setContextInfoBlock:(id /* block */)arg1;
+- (void)setCurFrameLifetimeBegin:(id)arg1;
+- (void)setCurFrameSeed:(unsigned int)arg1;
+- (void)setCurLongFrameLifetimeBegin:(id)arg1;
+- (void)setFrameLatencyBlock:(id /* block */)arg1;
+- (void)setFrameLifetimeBlock:(id /* block */)arg1;
+- (void)setHidLatencyBlock:(id /* block */)arg1;
+- (void)setImageQueueSampleEventBlock:(id /* block */)arg1;
+- (void)setIsConciseFormat:(bool)arg1;
+- (void)setRenderBlock:(id /* block */)arg1;
+- (void)setTransactionLifetimeBlock:(id /* block */)arg1;
+- (id /* block */)transactionLifetimeBlock;
+
+@end

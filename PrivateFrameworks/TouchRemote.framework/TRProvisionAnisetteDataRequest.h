@@ -1,0 +1,4 @@
+
+@interface TRProvisionAnisetteDataRequest : TRRequestMessage
+
+@end

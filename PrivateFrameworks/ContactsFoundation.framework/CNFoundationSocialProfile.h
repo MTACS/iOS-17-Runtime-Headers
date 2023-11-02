@@ -1,0 +1,31 @@
+
+@interface CNFoundationSocialProfile : NSObject <NSCopying> {
+    NSString * _displayName;
+    NSString * _service;
+    NSString * _urlString;
+    NSString * _userIdentifier;
+    NSString * _username;
+}
+
+@property (readonly, copy) NSString *displayName;
+@property (readonly, copy) NSString *service;
+@property (readonly, copy) NSString *urlString;
+@property (readonly, copy) NSString *userIdentifier;
+@property (readonly, copy) NSString *username;
+
++ (id)emptySocialProfile;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)displayName;
+- (unsigned long long)hash;
+- (id)initWithUrlString:(id)arg1 username:(id)arg2 userIdentifier:(id)arg3 service:(id)arg4 displayName:(id)arg5;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (id)service;
+- (id)urlString;
+- (id)userIdentifier;
+- (id)username;
+
+@end

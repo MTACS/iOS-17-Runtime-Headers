@@ -1,0 +1,4 @@
+
+@interface DMFInstalledProvisioningProfile : DMFProvisioningProfile
+
+@end

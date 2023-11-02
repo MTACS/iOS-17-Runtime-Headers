@@ -1,0 +1,4 @@
+
+@protocol CSCoverSheetViewControllerProtocol <CSCoverSheetViewPresenting>
+
+@end

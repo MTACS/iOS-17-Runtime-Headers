@@ -1,0 +1,4 @@
+
+@interface _TtC19ContactlessReaderUIP33_99E780E0E452CA33D1ABAC476439934519ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

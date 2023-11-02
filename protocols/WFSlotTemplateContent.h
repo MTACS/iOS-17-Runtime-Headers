@@ -1,0 +1,4 @@
+
+@protocol WFSlotTemplateContent <NSObject>
+
+@end

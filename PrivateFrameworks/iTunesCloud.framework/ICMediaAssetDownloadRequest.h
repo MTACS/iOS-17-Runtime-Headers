@@ -1,0 +1,82 @@
+
+@interface ICMediaAssetDownloadRequest : ICRequestOperation <ICContentKeySessionDelegateProtocol> {
+    NSMutableDictionary * _additionalHTTPHeaderFields;
+    bool  _allowDownloadOnConstrainedNetworks;
+    bool  _allowsCellularData;
+    bool  _allowsCellularFallback;
+    bool  _allowsProxyCellularData;
+    ICContentKeySession * _contentKeySession;
+    NSURL * _destinationURL;
+    bool  _discretionary;
+    ICURLSession * _downloadSession;
+    NSError * _keyDeliveryError;
+    NSNumber * _maximumSampleRate;
+    NSNumber * _minimumBitrate;
+    bool  _prefersHLSAsset;
+    bool  _prefersLossless;
+    bool  _prefersMultichannel;
+    ICURLRequest * _request;
+    ICStoreRequestContext * _requestContext;
+    bool  _requiresPower;
+    ICURLResponse * _response;
+    NSData * _resumeData;
+    ICStoreMediaResponseItem * _storeMediaResponseItem;
+}
+
+@property (nonatomic) bool allowDownloadOnConstrainedNetworks;
+@property (nonatomic) bool allowsCellularData;
+@property (nonatomic) bool allowsCellularFallback;
+@property (nonatomic) bool allowsProxyCellularData;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSURL *destinationURL;
+@property (getter=isDiscretionary, nonatomic) bool discretionary;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSNumber *maximumSampleRate;
+@property (nonatomic, copy) NSNumber *minimumBitrate;
+@property (nonatomic) bool prefersHLSAsset;
+@property (nonatomic) bool prefersLossless;
+@property (nonatomic) bool prefersMultichannel;
+@property (nonatomic) bool requiresPower;
+@property (nonatomic, copy) NSData *resumeData;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_createAVAssetDownloadOptionsDictionary;
+- (id)_mediaKindFromResponseItemMetadata:(id)arg1;
+- (id)_sessionIdentifier;
+- (bool)allowDownloadOnConstrainedNetworks;
+- (bool)allowsCellularData;
+- (bool)allowsCellularFallback;
+- (bool)allowsProxyCellularData;
+- (void)cancel;
+- (void)contentKeySession:(id)arg1 didFinishProcessingKey:(id)arg2 withResponse:(id)arg3 error:(id)arg4;
+- (id)destinationURL;
+- (void)execute;
+- (void)finishWithError:(id)arg1;
+- (id)initWithRequestContext:(id)arg1 storeMediaResponseItem:(id)arg2 resumeData:(id)arg3;
+- (bool)isDiscretionary;
+- (id)maximumSampleRate;
+- (id)minimumBitrate;
+- (void)performRequestWithResponseHandler:(id /* block */)arg1;
+- (bool)prefersHLSAsset;
+- (bool)prefersLossless;
+- (bool)prefersMultichannel;
+- (bool)requiresPower;
+- (id)resumeData;
+- (void)setAllowDownloadOnConstrainedNetworks:(bool)arg1;
+- (void)setAllowsCellularData:(bool)arg1;
+- (void)setAllowsCellularFallback:(bool)arg1;
+- (void)setAllowsProxyCellularData:(bool)arg1;
+- (void)setDestinationURL:(id)arg1;
+- (void)setDiscretionary:(bool)arg1;
+- (void)setMaximumSampleRate:(id)arg1;
+- (void)setMinimumBitrate:(id)arg1;
+- (void)setPrefersHLSAsset:(bool)arg1;
+- (void)setPrefersLossless:(bool)arg1;
+- (void)setPrefersMultichannel:(bool)arg1;
+- (void)setRequiresPower:(bool)arg1;
+- (void)setResumeData:(id)arg1;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtCV9WorkoutUI19HeartRateStatusViewP33_FD897410C5DD714B72C7B064058BD47212BundleLookup : _TtCs12_SwiftObject
+
+@end

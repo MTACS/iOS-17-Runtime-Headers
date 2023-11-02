@@ -1,0 +1,44 @@
+
+@interface WKNSNumber : NSNumber <WKObject> {
+    union { 
+        struct ObjectStorage<API::Number<bool, API::Object::Type::Boolean>> { 
+            struct type { 
+                unsigned char __lx[24]; 
+            } data; 
+        } _boolean; 
+        struct ObjectStorage<API::Number<double, API::Object::Type::Double>> { 
+            struct type { 
+                unsigned char __lx[24]; 
+            } data; 
+        } _double; 
+        struct ObjectStorage<API::Number<unsigned long long, API::Object::Type::UInt64>> { 
+            struct type { 
+                unsigned char __lx[24]; 
+            } data; 
+        } _uint64; 
+        struct ObjectStorage<API::Number<long long, API::Object::Type::Int64>> { 
+            struct type { 
+                unsigned char __lx[24]; 
+            } data; 
+        } _int64; 
+    }  _number;
+    int  _type;
+}
+
+@property (readonly) struct Object { int (**x1)(); void *x2; }*_apiObject;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (struct Object { int (**x1)(); void *x2; }*)_apiObject;
+- (BOOL)charValue;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (double)doubleValue;
+- (void)getValue:(void*)arg1;
+- (long long)longLongValue;
+- (const char *)objCType;
+- (unsigned long long)unsignedLongLongValue;
+
+@end

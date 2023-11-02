@@ -1,0 +1,85 @@
+
+@interface _SFPageFormatMenuController : NSObject <SFMenuConfiguring, _SFPageFormatMenuItemControllerDelegate> {
+    <_SFBrowserContentController> * _browserContentController;
+    _SFSettingsAlertItem * _downloadsAlertItem;
+    _SFSettingsAlertItem * _readerAlertItem;
+    bool  _showsListeningControls;
+    _SFSettingsAlertItem * _siriReaderAlertItem;
+    NSArray * _translationAlertItems;
+    _SFPageFormatMenuUIMenuBuilder * _uiMenuBuilder;
+    UIViewController * _viewController;
+}
+
+@property (nonatomic, readonly) <_SFBrowserContentController> *browserContentController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) _SFSettingsAlertItem *readerAlertItem;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) _SFPageFormatMenuUIMenuBuilder *uiMenuBuilder;
+@property (nonatomic, readonly) UIViewController *viewController;
+
+- (void).cxx_destruct;
+- (void)_addSiriReaderAlertItemToAlert:(id)arg1;
+- (id)_advancedPrivateBrowsingPrivacyProtectionsAlertItem;
+- (void)_anchorInWindowCoordinatesForAlert:(id)arg1;
+- (void)_buildTranslationAlertItemsWithSourceInfo:(id)arg1;
+- (bool)_canHideToolbar;
+- (bool)_canShowWebsiteSettings;
+- (bool)_canToggleAdvancedPrivateBrowsingPrivacyProtections;
+- (bool)_canToggleBetweenDesktopAndMobileSite;
+- (bool)_canToggleContentBlockers;
+- (bool)_canTogglePrivateRelay;
+- (id)_contentBlockerManager;
+- (id)_contentBlockersToggleAlertItem;
+- (void)_contructMenuForAlert:(id)arg1 orientation:(long long)arg2;
+- (id)_desktopMobileToggleAlertItemWithOrientation:(long long)arg1;
+- (void)_didFinishLastDownload:(id)arg1;
+- (id)_downloadsAlertItem;
+- (id)_endListeningToSiriReaderAlertItem;
+- (id)_exitTranslationAlertItem;
+- (id)_fullScreenAlertItem;
+- (bool)_hasStartedTranslation;
+- (void)_hasUnviewedDownloadsDidChange:(id)arg1;
+- (id)_internalTapToRadarTranslationAlertItem;
+- (id)_listeningControlsAlertItem;
+- (id)_localizedStringOfRunningDownloads;
+- (id)_manageExtensionsAlertItem;
+- (id)_mediaStateAlertItem;
+- (id)_moreControlsAlertItem;
+- (id)_pageZoomAlertItem;
+- (id)_pauseAllAnimationsAlertItem;
+- (id)_playAllAnimationsAlertItem;
+- (id)_playbackRateAlertItem;
+- (id)_playbackStateAndPositionAlertItem;
+- (id)_privateRelayToggleAlertItem;
+- (id)_readerAlertItem;
+- (void)_readerAvailabilityDidChange:(id)arg1;
+- (id)_readerFontAlertItem;
+- (id)_readerTextSizeAlertItem;
+- (id)_readerThemeAlertItem;
+- (void)_reloadAlert:(id)arg1;
+- (bool)_shouldEnableDownloadsAlert;
+- (bool)_shouldShowUnviewedFinishedDownloadsIndicator;
+- (id)_siriReaderAlertItemWithState:(long long)arg1 identifier:(id)arg2;
+- (id)_titleForPlaybackState:(long long)arg1;
+- (void)_totalProgressDidChange:(id)arg1;
+- (id)_translateAlertItemForLocaleIdentifier:(id)arg1;
+- (void)_translationAvailabilityDidChange:(id)arg1;
+- (void)_updateDownloadsAlertItem:(id)arg1;
+- (id)_userFeedbackTranslationAlertItem;
+- (id)_webExtensionsController;
+- (id)_websiteSettingsAlertItem;
+- (id)browserContentController;
+- (void)configureMenuAndAdoptButton:(id)arg1;
+- (void)dismissMenu;
+- (id)initWithBrowserContentController:(id)arg1;
+- (id)menuForOrientation:(long long)arg1 sourceInfo:(id)arg2;
+- (void)presentMenuFromViewController:(id)arg1 withSourceInfo:(id)arg2;
+- (void)presentModalViewController:(id)arg1 completion:(id /* block */)arg2;
+- (id)readerAlertItem;
+- (id)uiMenuBuilder;
+- (id)viewController;
+- (id)viewControllerForPresentationForItemController:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface __AXSB_SBSpotlightMultiplexingViewController_super : UIAccessibilitySafeCategory
+
+@end

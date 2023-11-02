@@ -1,0 +1,4 @@
+
+@interface TRRequestMessage : TRMessage
+
+@end

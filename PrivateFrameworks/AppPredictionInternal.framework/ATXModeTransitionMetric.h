@@ -1,0 +1,88 @@
+
+@interface ATXModeTransitionMetric : _ATXCoreAnalyticsMetric {
+    bool  _appBasedSchedulingEnabled;
+    NSString * _currentModeOrigin;
+    NSString * _enterReason;
+    NSString * _exitReason;
+    NSNumber * _inferredModeConfidenceScore;
+    NSNumber * _inferredModeDuration;
+    NSString * _inferredModeOriginAnchorType;
+    NSString * _inferredModeType;
+    NSNumber * _inferredModeUILocation;
+    bool  _locationBasedSchedulingEnabled;
+    NSString * _nextModeSemanticType;
+    double  _previousModeDuration;
+    bool  _previousModeHadScheduledExit;
+    NSString * _previousModeOrigin;
+    NSString * _previousModeSemanticType;
+    bool  _smartActivationEnabled;
+    bool  _timeBasedSchedulingEnabled;
+    NSString * _transitionDeviceType;
+    NSString * _transitionSource;
+}
+
+@property (nonatomic) bool appBasedSchedulingEnabled;
+@property (nonatomic, retain) NSString *currentModeOrigin;
+@property (nonatomic, retain) NSString *enterReason;
+@property (nonatomic, retain) NSString *exitReason;
+@property (nonatomic, retain) NSNumber *inferredModeConfidenceScore;
+@property (nonatomic, retain) NSNumber *inferredModeDuration;
+@property (nonatomic, retain) NSString *inferredModeOriginAnchorType;
+@property (nonatomic, retain) NSString *inferredModeType;
+@property (nonatomic, retain) NSNumber *inferredModeUILocation;
+@property (nonatomic) bool locationBasedSchedulingEnabled;
+@property (nonatomic, retain) NSString *nextModeSemanticType;
+@property (nonatomic) double previousModeDuration;
+@property (nonatomic) bool previousModeHadScheduledExit;
+@property (nonatomic, retain) NSString *previousModeOrigin;
+@property (nonatomic, retain) NSString *previousModeSemanticType;
+@property (nonatomic) bool smartActivationEnabled;
+@property (nonatomic) bool timeBasedSchedulingEnabled;
+@property (nonatomic, retain) NSString *transitionDeviceType;
+@property (nonatomic, retain) NSString *transitionSource;
+
+- (void).cxx_destruct;
+- (bool)appBasedSchedulingEnabled;
+- (id)coreAnalyticsDictionary;
+- (id)currentModeOrigin;
+- (id)description;
+- (id)enterReason;
+- (id)exitReason;
+- (id)inferredModeConfidenceScore;
+- (id)inferredModeDuration;
+- (id)inferredModeOriginAnchorType;
+- (id)inferredModeType;
+- (id)inferredModeUILocation;
+- (id)initWithPreviousModeSemanticType:(id)arg1 previousModeDuration:(double)arg2 previousModeHadScheduledExit:(bool)arg3 exitReason:(id)arg4 enterReason:(id)arg5 transitionDeviceType:(id)arg6 transitionSource:(id)arg7 nextModeSemanticType:(id)arg8;
+- (bool)locationBasedSchedulingEnabled;
+- (id)metricName;
+- (id)nextModeSemanticType;
+- (double)previousModeDuration;
+- (bool)previousModeHadScheduledExit;
+- (id)previousModeOrigin;
+- (id)previousModeSemanticType;
+- (void)setAppBasedSchedulingEnabled:(bool)arg1;
+- (void)setCurrentModeOrigin:(id)arg1;
+- (void)setEnterReason:(id)arg1;
+- (void)setExitReason:(id)arg1;
+- (void)setInferredModeConfidenceScore:(id)arg1;
+- (void)setInferredModeDuration:(id)arg1;
+- (void)setInferredModeOriginAnchorType:(id)arg1;
+- (void)setInferredModeType:(id)arg1;
+- (void)setInferredModeUILocation:(id)arg1;
+- (void)setLocationBasedSchedulingEnabled:(bool)arg1;
+- (void)setNextModeSemanticType:(id)arg1;
+- (void)setPreviousModeDuration:(double)arg1;
+- (void)setPreviousModeHadScheduledExit:(bool)arg1;
+- (void)setPreviousModeOrigin:(id)arg1;
+- (void)setPreviousModeSemanticType:(id)arg1;
+- (void)setSmartActivationEnabled:(bool)arg1;
+- (void)setTimeBasedSchedulingEnabled:(bool)arg1;
+- (void)setTransitionDeviceType:(id)arg1;
+- (void)setTransitionSource:(id)arg1;
+- (bool)smartActivationEnabled;
+- (bool)timeBasedSchedulingEnabled;
+- (id)transitionDeviceType;
+- (id)transitionSource;
+
+@end

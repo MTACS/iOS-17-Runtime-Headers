@@ -1,0 +1,24 @@
+
+@interface ATXTypes : NSObject
+
++ (id)consumerMapping;
++ (unsigned char)consumerSubtypeForString:(id)arg1 found:(bool*)arg2;
++ (id)consumerSubtypeMapping;
++ (unsigned long long)consumerTypeForString:(id)arg1 found:(bool*)arg2;
++ (unsigned long long)consumerTypeForSubType:(unsigned char)arg1;
++ (unsigned long long)engagementTypeForString:(id)arg1 found:(bool*)arg2;
++ (id)inverseConsumerSubtypeMapping;
++ (bool)isActionSpotlightConsumerSubType:(unsigned char)arg1;
++ (void)iterConsumerSubTypesWithBlock:(id /* block */)arg1;
++ (void)iterConsumerTypesWithBlock:(id /* block */)arg1;
++ (id)safeStringForConsumerSubtype:(unsigned char)arg1;
++ (id)stringForConsumerSubtype:(unsigned char)arg1;
++ (id)stringForConsumerType:(unsigned long long)arg1;
++ (id)stringForEngagementType:(unsigned long long)arg1;
++ (id)uiTypeForActionConsumerSubType:(unsigned char)arg1;
++ (id)validConsumerSubTypeList;
++ (id)validConsumerSubTypes;
++ (id)validConsumerTypeList;
++ (id)validConsumerTypes;
+
+@end

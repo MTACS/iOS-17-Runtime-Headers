@@ -1,0 +1,4 @@
+
+@protocol WeatherServiceInternalProtocol <NSObject>
+
+@end

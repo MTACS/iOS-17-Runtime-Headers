@@ -1,0 +1,4 @@
+
+@interface _TtC14CoreChartSwiftP33_8A0606AD468191CFCA21B8A6D8CFE5D111GestureNode : _TtCs12_SwiftObject
+
+@end

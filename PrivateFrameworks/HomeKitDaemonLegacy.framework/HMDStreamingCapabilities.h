@@ -1,0 +1,51 @@
+
+@interface HMDStreamingCapabilities : HMFObject <NSSecureCoding> {
+    unsigned long long  _streamingTierType;
+    NSDictionary * _supportedAudioCodecs;
+    NSSet * _supportedAudioSampleRates;
+    NSSet * _supportedBitRateSettings;
+    NSSet * _supportedH264Levels;
+    NSSet * _supportedH264Profiles;
+    NSSet * _supportedPacketizationModes;
+    NSSet * _supportedVideoCodecs;
+    NSSet * _supportedVideoResolutions;
+    bool  _supportsComfortNoise;
+}
+
+@property (nonatomic) unsigned long long streamingTierType;
+@property (nonatomic, readonly) NSDictionary *supportedAudioCodecs;
+@property (nonatomic, readonly) NSSet *supportedAudioSampleRates;
+@property (nonatomic, readonly) NSSet *supportedBitRateSettings;
+@property (nonatomic, readonly) NSSet *supportedH264Levels;
+@property (nonatomic, readonly) NSSet *supportedH264Profiles;
+@property (nonatomic, readonly) NSSet *supportedPacketizationModes;
+@property (nonatomic, readonly) NSSet *supportedVideoCodecs;
+@property (nonatomic, readonly) NSSet *supportedVideoResolutions;
+@property (nonatomic) bool supportsComfortNoise;
+
++ (unsigned long long)aspectRatioOfResolution:(id)arg1;
++ (bool)supportsSecureCoding;
++ (void)translateCapabilities:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_supportedResolutionsWithOverrides;
+- (void)_updateWithStreamPreference:(id)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithStreamPreference:(id)arg1;
+- (void)setStreamingTierType:(unsigned long long)arg1;
+- (void)setSupportsComfortNoise:(bool)arg1;
+- (unsigned long long)streamingTierType;
+- (id)supportedAudioCodecs;
+- (id)supportedAudioSampleRates;
+- (id)supportedBitRateSettings;
+- (id)supportedH264Levels;
+- (id)supportedH264Profiles;
+- (id)supportedPacketizationModes;
+- (id)supportedVideoCodecs;
+- (id)supportedVideoResolutions;
+- (bool)supportsComfortNoise;
+- (void)updateWithRemoteSettings:(id)arg1;
+
+@end

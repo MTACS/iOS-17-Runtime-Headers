@@ -1,0 +1,97 @@
+
+@interface PLLibraryScope : PLShare <PLCloudDeletable, PLSyncableObject> {
+    bool  _didPrepareAssetsForScopeDelete;
+    bool  _needsResetShareStateAfterSave;
+}
+
+@property (nonatomic) short autoSharePolicy;
+@property (nonatomic) short cloudDeleteState;
+@property (readonly) long long cloudDeletionType;
+@property (nonatomic) int cloudItemCount;
+@property (nonatomic) short cloudLocalState;
+@property (nonatomic) int cloudPhotoCount;
+@property (readonly, copy) NSString *cloudUUIDForDeletion;
+@property (nonatomic) int cloudVideoCount;
+@property (nonatomic) int countOfAssetsAddedByCameraSmartSharing;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned short exitSource;
+@property (nonatomic) short exitState;
+@property (nonatomic) short exitType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSDate *lastParticipantAssetTrashNotificationDate;
+@property (nonatomic, copy) NSDate *lastParticipantAssetTrashNotificationViewedDate;
+@property (nonatomic, retain) NSSet *libraryScopeAssets;
+@property (nonatomic, readonly, retain) id localID;
+@property (nonatomic) short participantCloudUpdateState;
+@property (nonatomic) short previewState;
+@property (nonatomic, retain) NSData *rulesData;
+@property (nonatomic) short scopeSyncingState;
+@property (readonly) Class superclass;
+
++ (void)_cleanupLocalPreviewLibraryScopesInManagedObjectContext:(id)arg1;
++ (id)_computeCountOfContributedAssetsTrashedByOtherParticipantsSinceLastNotificationDateInLibraryScope:(id)arg1 outPhotoCount:(unsigned long long*)arg2 outVideoCount:(unsigned long long*)arg3 outItemCount:(unsigned long long*)arg4;
++ (unsigned long long)_immediateNotificationAssetThresholdToUseWithPhotoLibrary:(id)arg1;
++ (id)_libraryForEnumerationFromBundle:(id)arg1 withName:(const char *)arg2;
++ (id)_nearestDateSetToHour:(long long)arg1 minute:(long long)arg2;
++ (bool)_preflightChecksForFiringParticipantAssetTrashNotificationWithPhotoLibrary:(id)arg1;
++ (bool)_queryIsShareEverythingInternalQuery:(id)arg1;
++ (id)_shareEverythingInternalQuery;
++ (id)activeLibraryScopeInManagedObjectContext:(id)arg1;
++ (short)activeSyncingStateToUse;
++ (id)compoundPredicateForMarkingOnboardingPreviewAssetsWithRulePredicate:(id)arg1;
++ (id)createOwnedShareWithUUID:(id)arg1 creationDate:(id)arg2 title:(id)arg3 unitTestMode:(bool)arg4 inPhotoLibrary:(id)arg5;
++ (id)entityName;
++ (id)fireParticipantAssetTrashNotificationIfNeededWithPhotoLibrary:(id)arg1 forceNotification:(bool)arg2;
++ (void)informRapportToAddShareParticipantUUIDs:(id)arg1 photoLibrary:(id)arg2;
++ (void)informRapportToRemoveShareParticipantUUIDs:(id)arg1 photoLibraryBundle:(id)arg2;
++ (id)insertOrUpdateShareWithCPLScopeChange:(id)arg1 inPhotoLibrary:(id)arg2;
++ (bool)libraryScopeIsActiveWithScopeSyncingState:(short)arg1;
++ (bool)libraryScopeScopeIdentifierWasCreatedInLocalOnlyMode:(id)arg1;
++ (id)localOnlySharedSyncScopeIdentifierPrefix;
++ (short)participationStateFromLibraryScope:(id)arg1;
++ (id)predicateForActiveLibraryScope;
++ (id)predicateForPreviewLibraryScope;
++ (id)predicateToExcludeExitingLibraryScopes;
++ (id)resetLibraryScopeAssetStatesWithManagedObjectContext:(id)arg1;
++ (id)resetLocalOnlyLibraryScopesAndAllLibraryScopeAssetStatesWithManagedObjectContext:(id)arg1;
++ (id)scopeIdentifierPrefix;
++ (bool)shouldAllowFetchURLWithScopeChange:(id)arg1 photoLibrary:(id)arg2 error:(id*)arg3;
++ (bool)supportsCPLScopeType:(long long)arg1;
++ (void)updateLibraryScopeActiveDefaultsWithManagedObjectContext:(id)arg1;
+
+- (void)_confirmAllRemainingOnboardingPreviewAssetsWithProgress:(id)arg1 photoLibrary:(id)arg2;
+- (id)_cplShare;
+- (void)_insertOwnedParticipantInLibrary:(id)arg1 unitTestMode:(bool)arg2;
+- (bool)_libraryScopeWasCreatedInLocalOnlyMode;
+- (void)_verifyCurrentUserParticipantExists;
+- (void)acceptWithCompletionHandler:(id /* block */)arg1;
+- (id)activateScopeWithCompletionHandler:(id /* block */)arg1;
+- (id)cloudSyncableRulesData;
+- (bool)confirmAllRemainingOnboardingPreviewAssetsWithProgress:(id)arg1 databaseContext:(id)arg2 withError:(id*)arg3;
+- (id)cplFullRecord;
+- (id)cplScopeChange;
+- (void)deactivateScopeWithCompletionHandler:(id /* block */)arg1;
+- (void)didSave;
+- (bool)incrementallyDeleteAndSaveWithError:(id*)arg1;
+- (bool)isSyncableChange;
+- (bool)libraryScopeIsActive;
+- (id)localID;
+- (id)markOnboardingPreviewAssetsByProcessingRulesWithExcludePersonUUIDs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)prepareForDeletion;
+- (void)publishWithCompletionHandler:(id /* block */)arg1;
+- (void)removeParticipantsWithParticipantUUIDs:(id)arg1 fromLibraryScopeWithIdentifier:(id)arg2 retentionPolicy:(long long)arg3 exitSource:(unsigned short)arg4 completionHandler:(id /* block */)arg5;
+- (bool)removePeopleRulesForPersonUUID:(id)arg1;
+- (void)setScopeSyncingState:(short)arg1;
+- (bool)shouldEnableRulesChangeTracker;
+- (void)startExitWithRetentionPolicy:(long long)arg1 exitSource:(unsigned short)arg2 completionHandler:(id /* block */)arg3;
+- (void)startTrackingParticipantAssetTrashStateIfNeeded;
+- (void)stopTrackingParticipantAssetTrashedStateIfNeeded;
+- (bool)supportsCloudUpload;
+- (bool)updatePeopleRulesForAllTombstonedPersons;
+- (bool)updatePeopleRulesForTombstonePersonUUID:(id)arg1 replaceWithPersonUUID:(id)arg2;
+- (void)updateRulesDataWithCloudSyncableRulesData:(id)arg1;
+- (void)userViewedAssetTrashNotificationWithManagedObjectContext:(id)arg1;
+- (void)willSave;
+
+@end

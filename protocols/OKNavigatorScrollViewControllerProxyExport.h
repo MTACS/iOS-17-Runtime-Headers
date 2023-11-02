@@ -1,0 +1,4 @@
+
+@protocol OKNavigatorScrollViewControllerProxyExport <JSExport>
+
+@end

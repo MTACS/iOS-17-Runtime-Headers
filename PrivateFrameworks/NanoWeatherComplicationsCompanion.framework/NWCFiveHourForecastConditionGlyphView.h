@@ -1,0 +1,4 @@
+
+@interface NWCFiveHourForecastConditionGlyphView : NWCFiveHourForecastView
+
+@end

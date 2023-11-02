@@ -1,0 +1,95 @@
+
+@interface ELSSnapshot : NSObject <NSCopying> {
+    unsigned long long  _consent;
+    NSData * _consentData;
+    NSArray * _consentHandles;
+    NSUserDefaults * _defaults;
+    NSDate * _endDate;
+    NSDictionary * _followUpOptions;
+    NSArray * _identifiersToRetry;
+    NSDictionary * _metadata;
+    NSArray * _queue;
+    long long  _retriesRemaining;
+    DEDDevice * _sessionDevice;
+    NSDate * _startDate;
+    unsigned long long  _status;
+    NSNumber * _uploadCompletedPercentage;
+}
+
+@property (nonatomic) unsigned long long consent;
+@property (nonatomic, retain) NSData *consentData;
+@property (nonatomic, retain) NSArray *consentHandles;
+@property (nonatomic, retain) NSUserDefaults *defaults;
+@property (nonatomic, readonly) double durationRemaining;
+@property (nonatomic, readonly) NSArray *encodedQueue;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSDictionary *followUpOptions;
+@property (nonatomic, retain) NSArray *identifiersToRetry;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic, readonly) bool needsFollowup;
+@property (nonatomic, retain) NSArray *queue;
+@property (nonatomic) long long retriesRemaining;
+@property (nonatomic, retain) DEDDevice *sessionDevice;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic) unsigned long long status;
+@property (nonatomic, readonly) double totalDuration;
+@property (nonatomic, retain) NSNumber *uploadCompletedPercentage;
+
++ (id)consentToString:(unsigned long long)arg1;
++ (id)statusToString:(unsigned long long)arg1;
+
+- (void).cxx_destruct;
+- (id)JSONObject;
+- (unsigned long long)consent;
+- (id)consentData;
+- (id)consentHandles;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)decodeQueue:(id)arg1;
+- (id)dedSessionIdentifier;
+- (id)defaults;
+- (id)description;
+- (id)dictionaryRepresentationPretty:(bool)arg1;
+- (double)durationRemaining;
+- (id)encodedQueue;
+- (id)endDate;
+- (id)followUpOptions;
+- (id)identifiersToRetry;
+- (id)init;
+- (id)metadata;
+- (bool)needsFollowup;
+- (id)queue;
+- (void)refreshConsent;
+- (void)refreshConsentData;
+- (void)refreshConsentHandles;
+- (void)refreshDates;
+- (void)refreshFollowUpOptions;
+- (void)refreshIdentifiersToRetry;
+- (void)refreshKeyPaths:(id)arg1;
+- (void)refreshMetadata;
+- (void)refreshQueue;
+- (void)refreshRetriesRemaining;
+- (void)refreshSessionDevice;
+- (void)refreshStatus;
+- (void)refreshUploadCompletedPercentage;
+- (long long)retriesRemaining;
+- (id)sessionDevice;
+- (void)setConsent:(unsigned long long)arg1;
+- (void)setConsentData:(id)arg1;
+- (void)setConsentHandles:(id)arg1;
+- (void)setDefaults:(id)arg1;
+- (void)setEndDate:(id)arg1;
+- (void)setFollowUpOptions:(id)arg1;
+- (void)setIdentifiersToRetry:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setRetriesRemaining:(long long)arg1;
+- (void)setSessionDevice:(id)arg1;
+- (void)setStartDate:(id)arg1;
+- (void)setStatus:(unsigned long long)arg1;
+- (void)setUploadCompletedPercentage:(id)arg1;
+- (id)startDate;
+- (unsigned long long)status;
+- (double)totalDuration;
+- (id)uploadCompletedPercentage;
+
+@end

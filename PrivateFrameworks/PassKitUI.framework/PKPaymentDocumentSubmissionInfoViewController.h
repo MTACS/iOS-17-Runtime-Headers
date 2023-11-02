@@ -1,0 +1,33 @@
+
+@interface PKPaymentDocumentSubmissionInfoViewController : PKExplanationViewController <PKExplanationViewControllerDelegate, PKExplanationViewDelegate, PKPaymentDocumentSubmissionControllerDelegate, PKPaymentSetupPresentationProtocol> {
+    long long  _context;
+    PKPaymentDocumentSubmissionController * _controller;
+    long long  _currentSide;
+    long long  _currentState;
+    unsigned long long  _featureIdentifier;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_cancelPressed;
+- (void)_reportViewDidAppear:(bool)arg1;
+- (id)_secondaryButton;
+- (void)captureController:(id)arg1 didChangeStateTo:(long long)arg2;
+- (void)captureController:(id)arg1 showLoading:(bool)arg2;
+- (void)didSelectSetupLater;
+- (void)explanationViewDidSelectContinue:(id)arg1;
+- (void)explanationViewDidSelectSetupLater:(id)arg1;
+- (id)initWithController:(id)arg1 context:(long long)arg2 featureIdentifier:(unsigned long long)arg3;
+- (unsigned long long)onPresentationRemoveViewControllersAfterMarker;
+- (unsigned long long)paymentSetupMarker;
+- (void)updateUIWithState:(long long)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol HFLightObserver <HMLightProfileDelegate>
+
+@end

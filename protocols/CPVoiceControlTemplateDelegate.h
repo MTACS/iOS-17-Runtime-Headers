@@ -1,0 +1,4 @@
+
+@protocol CPVoiceControlTemplateDelegate <CPTemplateDelegate>
+
+@end

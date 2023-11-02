@@ -1,0 +1,4 @@
+
+@interface _TtC7NewsUI2P33_24841C2FFD902AA4BA5D8DAE9764F0FC19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

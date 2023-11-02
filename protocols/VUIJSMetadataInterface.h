@@ -1,0 +1,4 @@
+
+@protocol VUIJSMetadataInterface <JSExport>
+
+@end

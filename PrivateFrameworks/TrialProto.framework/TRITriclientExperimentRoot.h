@@ -1,0 +1,4 @@
+
+@interface TRITriclientExperimentRoot : TRIPBRootObject
+
+@end

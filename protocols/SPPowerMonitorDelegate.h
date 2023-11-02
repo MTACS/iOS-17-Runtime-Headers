@@ -1,0 +1,4 @@
+
+@protocol SPPowerMonitorDelegate <NSObject>
+
+@end

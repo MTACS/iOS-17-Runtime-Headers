@@ -1,0 +1,82 @@
+
+@interface USOSchemaUSOGraph : SISchemaInstrumentationMessage {
+    NSArray * _alignments;
+    NSArray * _edges;
+    bool  _hasLinkId;
+    bool  _hasVersion;
+    NSArray * _identifiers;
+    SISchemaUUID * _linkId;
+    NSArray * _nodes;
+    NSArray * _spans;
+    SISchemaVersion * _version;
+}
+
+@property (nonatomic, copy) NSArray *alignments;
+@property (nonatomic, copy) NSArray *edges;
+@property (nonatomic) bool hasLinkId;
+@property (nonatomic) bool hasVersion;
+@property (nonatomic, copy) NSArray *identifiers;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, retain) SISchemaUUID *linkId;
+@property (nonatomic, copy) NSArray *nodes;
+@property (nonatomic, copy) NSArray *spans;
+@property (nonatomic, retain) SISchemaVersion *version;
+
+- (void).cxx_destruct;
+- (void)addAlignments:(id)arg1;
+- (void)addEdges:(id)arg1;
+- (void)addIdentifiers:(id)arg1;
+- (void)addNodes:(id)arg1;
+- (void)addSpans:(id)arg1;
+- (id)alignments;
+- (id)alignmentsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)alignmentsCount;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (void)clearAlignments;
+- (void)clearEdges;
+- (void)clearIdentifiers;
+- (void)clearNodes;
+- (void)clearSpans;
+- (void)deleteAlignments;
+- (void)deleteEdges;
+- (void)deleteIdentifiers;
+- (void)deleteLinkId;
+- (void)deleteNodes;
+- (void)deleteSpans;
+- (void)deleteVersion;
+- (id)dictionaryRepresentation;
+- (id)edges;
+- (id)edgesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)edgesCount;
+- (bool)hasLinkId;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (id)identifiers;
+- (id)identifiersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)identifiersCount;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (id)linkId;
+- (id)nodes;
+- (id)nodesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)nodesCount;
+- (bool)readFrom:(id)arg1;
+- (void)setAlignments:(id)arg1;
+- (void)setEdges:(id)arg1;
+- (void)setHasLinkId:(bool)arg1;
+- (void)setHasVersion:(bool)arg1;
+- (void)setIdentifiers:(id)arg1;
+- (void)setLinkId:(id)arg1;
+- (void)setNodes:(id)arg1;
+- (void)setSpans:(id)arg1;
+- (void)setVersion:(id)arg1;
+- (id)spans;
+- (id)spansAtIndex:(unsigned long long)arg1;
+- (unsigned long long)spansCount;
+- (id)suppressMessageUnderConditions;
+- (id)version;
+- (void)writeTo:(id)arg1;
+
+@end

@@ -1,0 +1,63 @@
+
+@interface UIKBRenderFactory_Monolith : UIKBRenderFactory
+
+- (id)_activeTraitsForControlKey:(id)arg1;
+- (id)_activeTraitsForKey:(id)arg1;
+- (id)_activeTraitsForLetterKey:(id)arg1;
+- (id)_disabledTraitsForControlKey:(id)arg1;
+- (id)_disabledTraitsForKey:(id)arg1;
+- (id)_disabledTraitsForLetterKey:(id)arg1;
+- (id)_enabledTraitsForControlKey:(id)arg1;
+- (id)_enabledTraitsForKey:(id)arg1;
+- (id)_enabledTraitsForLetterKey:(id)arg1;
+- (id)_highlightedTraitsForControlKey:(id)arg1;
+- (id)_highlightedTraitsForKey:(id)arg1;
+- (id)_highlightedTraitsForLetterKey:(id)arg1;
+- (struct CGPoint { double x1; double x2; })_secondaryTextOffsetForKey:(id)arg1;
+- (struct CGPoint { double x1; double x2; })_textOffsetForKey:(id)arg1;
+- (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
+- (id)_variantTraitsForControlKey:(id)arg1 onKeyplane:(id)arg2;
+- (id)_variantTraitsForLetterKey:(id)arg1 onKeyplane:(id)arg2;
+- (id)activeTextColor;
+- (long long)assetIdiom;
+- (id)backgroundTraitsForKeyplane:(id)arg1;
+- (void)configureCornersOnGeometry:(id)arg1 forKey:(id)arg2;
+- (void)configureGeometry:(id)arg1 forControlKey:(id)arg2;
+- (void)configureSymbolStyle:(id)arg1 forControlKey:(id)arg2;
+- (void)configureSymbolStyles:(id)arg1 forLetterKey:(id)arg2;
+- (double)controlKeyFontSize;
+- (double)controlKeyFontWeight;
+- (double)controlKeyRectCornerRadius;
+- (double)deleteKeyFontSize;
+- (id)disabledTextColor;
+- (id)displayContentsForKey:(id)arg1;
+- (id)enabledTextColor;
+- (bool)forceVariantsInsideKeyplane;
+- (id)highlightedTextColor;
+- (id)highlightedVariantBackgroundColor;
+- (id)highlightedVariantTextColor;
+- (double)keyRectCornerRadius;
+- (id)keyplaneSwitcherBackgroundColor;
+- (id)keyplaneSwitcherDividerColor;
+- (struct CGSize { double x1; double x2; })letterKeyFocusIncreaseSize;
+- (double)letterKeyFontSize;
+- (double)letterKeyFontWeight;
+- (double)letterKeySecondaryFontSize;
+- (double)letterKeyTwoLineFontSize;
+- (double)letterKeyTwoLineFontWeight;
+- (void)lowQualityTraits:(id)arg1;
+- (id)shadowColorString;
+- (double)shadowOpacity;
+- (double)shadowRadius;
+- (double)shadowVerticalOffset;
+- (double)tldKeyFontSize;
+- (double)tldKeyFontWeight;
+- (double)variantKeyFocusIncrease;
+- (double)variantKeyFocusRectRadius;
+- (double)variantKeyHeight;
+- (double)variantKeyWidth;
+- (id)variantPlatterBackgroundColor;
+- (double)variantPlatterCornerRadius;
+- (id)variantTextColor;
+
+@end

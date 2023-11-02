@@ -1,0 +1,4 @@
+
+@protocol HFAccessorySoftwareUpdateControllerV2Observer <HMAccessorySoftwareUpdateControllerV2Delegate, HFSoftwareUpdateManagerDelegate>
+
+@end

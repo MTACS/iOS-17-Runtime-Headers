@@ -1,0 +1,4 @@
+
+@interface TRSetupActivationRequest : TRRequestMessage
+
+@end

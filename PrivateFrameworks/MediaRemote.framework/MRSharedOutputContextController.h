@@ -1,0 +1,4 @@
+
+@interface MRSharedOutputContextController : MROutputContextController
+
+@end

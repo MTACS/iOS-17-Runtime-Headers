@@ -1,0 +1,4 @@
+
+@interface AEAssetPackageGenerator : NSObject
+
+@end

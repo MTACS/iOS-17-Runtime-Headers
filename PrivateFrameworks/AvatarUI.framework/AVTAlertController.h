@@ -1,0 +1,4 @@
+
+@interface AVTAlertController : UIAlertController
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol TSDAnnotation <TSKAnnotation>
+
+@end

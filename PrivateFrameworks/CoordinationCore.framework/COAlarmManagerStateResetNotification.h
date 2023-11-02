@@ -1,0 +1,4 @@
+
+@interface COAlarmManagerStateResetNotification : COMeshNotification
+
+@end

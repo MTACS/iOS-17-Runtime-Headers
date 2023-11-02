@@ -1,0 +1,4 @@
+
+@protocol FCIssueAccessCheckable <FCBlockedExplicitContentAccessCheckable, FCDraftAccessCheckable, FCNewsVersionAccessCheckable, FCPurchaseAccessCheckable, FCStorefrontAccessCheckable>
+
+@end

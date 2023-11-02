@@ -1,0 +1,4 @@
+
+@protocol SXContentDisplay <NSObject>
+
+@end

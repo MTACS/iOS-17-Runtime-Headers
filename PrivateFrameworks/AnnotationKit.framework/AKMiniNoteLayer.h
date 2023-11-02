@@ -1,0 +1,4 @@
+
+@interface AKMiniNoteLayer : CALayer
+
+@end

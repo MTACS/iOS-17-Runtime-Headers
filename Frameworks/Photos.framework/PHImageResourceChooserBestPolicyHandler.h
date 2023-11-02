@@ -1,0 +1,7 @@
+
+@interface PHImageResourceChooserBestPolicyHandler : PHImageResourceChooserPolicyHandler
+
++ (bool)_imageResourceIsUndecodableBasedOnMetadata:(id)arg1 asset:(id)arg2 loggingPrefix:(id)arg3;
++ (unsigned long long)qualifyResourceInfo:(id)arg1 againstPolicy:(long long)arg2 requestInfo:(id)arg3 reversed:(bool)arg4 tooLargeForPolicy:(bool*)arg5 disqualificationReason:(id*)arg6;
+
+@end

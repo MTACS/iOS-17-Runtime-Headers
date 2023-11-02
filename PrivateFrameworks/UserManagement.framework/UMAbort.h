@@ -1,0 +1,4 @@
+
+@interface UMAbort : NSObject
+
+@end

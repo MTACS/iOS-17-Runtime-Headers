@@ -1,0 +1,4 @@
+
+@interface AVCustomMediaSelectionOption : AVMediaSelectionOption
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC25HealthMedicationsWidgetUIP33_DF5A97F59A80453AE9BCF6F01E57F0E919ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

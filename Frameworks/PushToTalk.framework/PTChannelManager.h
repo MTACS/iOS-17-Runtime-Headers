@@ -1,0 +1,94 @@
+
+@interface PTChannelManager : NSObject <CXChannelProviderDelegate> {
+    NSUUID * _activeChannelUUID;
+    bool  _attemptingChannelRestoration;
+    CXCallController * _callController;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    <PTChannelManagerDelegate> * _channelEventDelegate;
+    <PTChannelRestorationDelegate> * _channelRestorationDelegate;
+    id /* block */  _instantiationCompletionBlock;
+    bool  _isWaitingForPushResult;
+    NSMutableArray * _pendingPushes;
+    bool  _stopTransmitRequestedWhileWaitingForPushResult;
+    NSUUID * _suppressRejoinForRecentlyDisconnectedChannelUUID;
+    CXChannelProvider * _underlyingProvider;
+    NSUUID * _waitingForPushResultChannelUUID;
+}
+
+@property (nonatomic, readonly) NSUUID *activeChannelUUID;
+@property (nonatomic) bool attemptingChannelRestoration;
+@property (nonatomic, readonly) CXCallController *callController;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic) <PTChannelManagerDelegate> *channelEventDelegate;
+@property (nonatomic) <PTChannelRestorationDelegate> *channelRestorationDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (copy) id /* block */ instantiationCompletionBlock;
+@property bool isWaitingForPushResult;
+@property (nonatomic, retain) NSMutableArray *pendingPushes;
+@property bool stopTransmitRequestedWhileWaitingForPushResult;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUUID *suppressRejoinForRecentlyDisconnectedChannelUUID;
+@property (nonatomic, readonly) CXChannelProvider *underlyingProvider;
+@property (retain) NSUUID *waitingForPushResultChannelUUID;
+
++ (void)channelManagerWithDelegate:(id)arg1 restorationDelegate:(id)arg2 completionHandler:(id /* block */)arg3;
+
+- (void).cxx_destruct;
+- (void)_appendPendingPushForUUID:(id)arg1 payload:(id)arg2 reply:(id /* block */)arg3;
+- (void)_deliverChannelManagerInstanceToClientIfNeeded;
+- (void)_deliverPendingPushes;
+- (void)_ensureDelegateIsReadyToReceiveActions:(id)arg1 joinReason:(long long)arg2;
+- (void)_handleLeaveCheckinResult:(id)arg1;
+- (void)_handlePushResult:(id)arg1 pendingPush:(id)arg2;
+- (id)_initWithEventDelegate:(id)arg1 restorationDelegate:(id)arg2 instantiationCompletion:(id /* block */)arg3;
+- (void)_performChannelRestorationAndUpdateChannelDescriptor:(id)arg1 pushPayload:(id)arg2;
+- (void)_requestJoinChannelWithUUID:(id)arg1 channelDescriptor:(id)arg2 originator:(long long)arg3 completion:(id /* block */)arg4;
+- (void)_setActiveRemoteParticipant:(id)arg1 forChannelUUID:(id)arg2 shouldReplaceOutgoingTransmission:(bool)arg3 completionHandler:(id /* block */)arg4;
+- (id)activeChannelUUID;
+- (bool)attemptingChannelRestoration;
+- (id)callController;
+- (id)callbackQueue;
+- (id)channelEventDelegate;
+- (id)channelRestorationDelegate;
+- (id /* block */)instantiationCompletionBlock;
+- (bool)isWaitingForPushResult;
+- (void)leaveChannelWithUUID:(id)arg1;
+- (id)pendingPushes;
+- (void)provider:(id)arg1 didActivateAudioSession:(id)arg2;
+- (void)provider:(id)arg1 didDeactivateAudioSession:(id)arg2;
+- (void)provider:(id)arg1 didReceiveChannelPushToken:(id)arg2;
+- (void)provider:(id)arg1 didReceiveCheckInResult:(long long)arg2 channelUUID:(id)arg3;
+- (void)provider:(id)arg1 didReceivePushPayload:(id)arg2 channelUUID:(id)arg3 reply:(id /* block */)arg4;
+- (void)provider:(id)arg1 performChannelJoinAction:(id)arg2;
+- (void)provider:(id)arg1 performChannelLeaveAction:(id)arg2;
+- (void)provider:(id)arg1 performChannelTransmitStartAction:(id)arg2;
+- (void)provider:(id)arg1 performChannelTransmitStopAction:(id)arg2;
+- (void)providerDidBegin:(id)arg1;
+- (void)providerDidReset:(id)arg1;
+- (void)requestBeginTransmittingWithChannelUUID:(id)arg1;
+- (void)requestJoinChannelWithUUID:(id)arg1 descriptor:(id)arg2;
+- (void)setAccessoryButtonEventsEnabled:(bool)arg1 forChannelUUID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setActiveRemoteParticipant:(id)arg1 forChannelUUID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setAttemptingChannelRestoration:(bool)arg1;
+- (void)setCallbackQueue:(id)arg1;
+- (void)setChannelDescriptor:(id)arg1 forChannelUUID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setChannelEventDelegate:(id)arg1;
+- (void)setChannelRestorationDelegate:(id)arg1;
+- (void)setInstantiationCompletionBlock:(id /* block */)arg1;
+- (void)setIsWaitingForPushResult:(bool)arg1;
+- (void)setPendingPushes:(id)arg1;
+- (void)setServiceStatus:(long long)arg1 forChannelUUID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setStopTransmitRequestedWhileWaitingForPushResult:(bool)arg1;
+- (void)setSuppressRejoinForRecentlyDisconnectedChannelUUID:(id)arg1;
+- (void)setTransmissionMode:(long long)arg1 forChannelUUID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setWaitingForPushResultChannelUUID:(id)arg1;
+- (bool)stopTransmitRequestedWhileWaitingForPushResult;
+- (void)stopTransmittingWithChannelUUID:(id)arg1;
+- (id)suppressRejoinForRecentlyDisconnectedChannelUUID;
+- (id)underlyingProvider;
+- (void)unregisterChannelPushToken;
+- (id)waitingForPushResultChannelUUID;
+
+@end

@@ -1,0 +1,86 @@
+
+@interface AVDelegatingPlaybackCoordinator : AVPlaybackCoordinator {
+    NSMutableDictionary * _controlStates;
+    <AVPlaybackCoordinationMediumDelegate> * _coordinationMediumDelegate;
+    NSString * _currentItemIdentifier;
+    <AVPlaybackCoordinatorPlaybackControlDelegate> * _delegate;
+    id  _didIssueCommandToPlaybackObjectNotificationToken;
+    struct OpaqueFigTimelineCoordinator { } * _figTimelineCoordinator;
+    NSObject<OS_dispatch_queue> * _figTimelineCoordinatorConfigQueue;
+    bool  _isInExpanseMediaPlayback;
+    NSObject<OS_dispatch_queue> * _ivarAccessQueue;
+    long long  _latestRateCommandOrderIndex;
+    long long  _latestSeekCommandOrderIndex;
+    NSString * _mediumLoggingIdentifier;
+    NSMutableArray * _otherParticipants;
+    NSMutableDictionary * _participantLimitPerSuspensionReason;
+    NSMutableDictionary * _participantStates;
+    id  _participantsChangedNotificationToken;
+    bool  _pauseSnapsToMediaTimeOfOriginator;
+    NSMutableArray * _suspensionReasons;
+    NSMutableArray * _suspensionReasonsThatTriggerWaiting;
+    id  _suspensionsChangedNotificationToken;
+    NSObject<OS_dispatch_queue> * _timelineControlQueue;
+    NSMutableArray * _waitingPoliciesArray;
+}
+
+@property (nonatomic, readonly) NSString *currentItemIdentifier;
+@property (nonatomic, readonly) <AVPlaybackCoordinatorPlaybackControlDelegate> *playbackControlDelegate;
+
+- (void).cxx_destruct;
+- (id)_currentWaitingPoliciesArray;
+- (bool)_doesSuspensionReasonTriggerWaiting:(id)arg1;
+- (void)_endSuspension:(struct OpaqueFigTimelineCoordinatorSuspension { }*)arg1;
+- (void)_endSuspension:(struct OpaqueFigTimelineCoordinatorSuspension { }*)arg1 proposingNewTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (long long)_latestRateCommandOrderIndex;
+- (long long)_latestSeekCommandOrderIndex;
+- (id)_participantStateForIdentifier:(id)arg1;
+- (void)_prepareToInitiatePlayback;
+- (void)_removeAllParticipantStates;
+- (void)_removeAllTransportControlStates;
+- (void)_removeParticipantStateWithIdentifier:(id)arg1;
+- (void)_removeUnusedTransportControlStates;
+- (void)_replaceParticipantStates:(id)arg1;
+- (void)_setIsInExpanseMediaPlaybackOnAVAudioSession;
+- (void)_setWaitingPolicies:(id)arg1;
+- (id)_transportControlStateForItemIdentifier:(id)arg1;
+- (void)_updateOtherParticipantsUsingFigParticipantUUIDs:(id)arg1;
+- (void)_updateParticipantStateDictionaryWithParticipantState:(id)arg1;
+- (void)_updateSuspensionReasons:(id)arg1;
+- (void)_updateTransportControlStateDictionaryWithTransportControlState:(id)arg1;
+- (id)_updateWaitingPoliciesArrayWithPolicies:(id)arg1;
+- (id)_waitingPoliciesArray;
+- (void)applyFigPauseSnapsToMediaTimeOfOriginator;
+- (id)avfParticipantsForFigParticipantsUUIDs:(id)arg1;
+- (id)beginSuspensionForReason:(id)arg1;
+- (void)coordinateRateChangeToRate:(float)arg1 options:(unsigned long long)arg2;
+- (void)coordinateSeekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 options:(unsigned long long)arg2;
+- (id)coordinationMediumDelegate;
+- (id)currentItemIdentifier;
+- (void)dealloc;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })expectedItemTimeAtHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (id)figTimelineCoordinatorConfigQueue;
+- (void)handleNewParticipantStateDictionary:(id)arg1;
+- (void)handleNewTransportControlStateDictionary:(id)arg1;
+- (void)handleRemovalOfParticipant:(id)arg1;
+- (void)handleReplacementParticipantStateDictionaries:(id)arg1;
+- (id)initWithPlaybackControlDelegate:(id)arg1;
+- (id)mediumLoggingIdentifier;
+- (id)otherParticipants;
+- (id)participantForIdentifier:(id)arg1;
+- (long long)participantLimitForWaitingOutSuspensionsWithReason:(id)arg1;
+- (id)participantStates;
+- (bool)pauseSnapsToMediaTimeOfOriginator;
+- (id)playbackControlDelegate;
+- (void)reapplyCurrentItemStateToPlaybackControlDelegate;
+- (void)setCoordinationMediumDelegate:(id)arg1;
+- (void)setMediumLoggingIdentifier:(id)arg1;
+- (void)setParticipantLimit:(long long)arg1 forWaitingOutSuspensionsWithReason:(id)arg2;
+- (void)setPauseSnapsToMediaTimeOfOriginator:(bool)arg1;
+- (void)setSuspensionReasonsThatTriggerWaiting:(id)arg1;
+- (id)suspensionReasons;
+- (id)suspensionReasonsThatTriggerWaiting;
+- (id)trackedTransportControlStateDictionaries;
+- (void)transitionToItemWithIdentifier:(id)arg1 proposingInitialTimingBasedOnTimebase:(struct OpaqueCMTimebase { }*)arg2;
+
+@end

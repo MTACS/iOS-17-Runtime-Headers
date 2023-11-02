@@ -1,0 +1,87 @@
+
+@interface MCUIDataManager : NSObject <LSApplicationWorkspaceObserverProtocol, MCUIDataManagerProtocol> {
+    LSApplicationWorkspace * _appWorkspace;
+    int  _appsChangedNotifyToken;
+    NSArray * _blockedApplications;
+    NSArray * _configurationProfilesInfo;
+    NSArray * _enterpriseAppSigners;
+    NSArray * _freeDeveloperAppSigners;
+    MCProfileInfo * _mdmProfileInfo;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    bool  _observing;
+    int  _provisioningProfileInstalledToken;
+    int  _provisioningProfileRemovedToken;
+    NSObject<OS_dispatch_queue> * _reloadQueue;
+    NSArray * _uninstalledProfilesInfo;
+}
+
+@property (nonatomic, retain) LSApplicationWorkspace *appWorkspace;
+@property (nonatomic) int appsChangedNotifyToken;
+@property (nonatomic, retain) NSArray *blockedApplications;
+@property (nonatomic, retain) NSArray *configurationProfilesInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *enterpriseAppSigners;
+@property (nonatomic, retain) NSArray *freeDeveloperAppSigners;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) MCProfileInfo *mdmProfileInfo;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
+@property (nonatomic) bool observing;
+@property (nonatomic) int provisioningProfileInstalledToken;
+@property (nonatomic) int provisioningProfileRemovedToken;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *reloadQueue;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *uninstalledProfilesInfo;
+
++ (bool)_isDeviceManagementHiddenConcrete;
++ (id)sharedManager;
+
+- (void).cxx_destruct;
+- (void)_reloadQueueReloadDataInBackgroundIncludingProfiles:(bool)arg1 appSigners:(bool)arg2 blockedApplications:(bool)arg3 completion:(id /* block */)arg4;
+- (void)allDeviceManagementOutMDMProfileInfo:(id*)arg1 outConfigurationProfilesInfo:(id*)arg2 outUninstalledProfilesInfo:(id*)arg3 outEnterpriseAppSigners:(id*)arg4 outFreeDevAppSigners:(id*)arg5 outBlockedApplications:(id*)arg6;
+- (void)appMovedToBackground:(id)arg1;
+- (void)appMovedToForeground:(id)arg1;
+- (unsigned long long)appSignerCount;
+- (id)appWorkspace;
+- (void)applicationsDidInstall:(id)arg1;
+- (void)applicationsDidUninstall:(id)arg1;
+- (int)appsChangedNotifyToken;
+- (id)blockedApplications;
+- (id)configurationProfiles;
+- (id)configurationProfilesInfo;
+- (void)dealloc;
+- (id)enterpriseAppSigners;
+- (id)freeDeveloperAppSigners;
+- (id)init;
+- (unsigned long long)installedProfileCount;
+- (bool)isDeviceManagementHidden;
+- (bool)isProfileSectionEmpty;
+- (unsigned long long)itemCount;
+- (id)mdmProfile;
+- (id)mdmProfileInfo;
+- (id)memberQueue;
+- (bool)observing;
+- (void)profilesChanged:(id)arg1;
+- (int)provisioningProfileInstalledToken;
+- (int)provisioningProfileRemovedToken;
+- (void)reloadAllDataInBackgroundWithCompletion:(id /* block */)arg1;
+- (void)reloadAppSignersAndBlockedAppsInBackgroundWithCompletion:(id /* block */)arg1;
+- (void)reloadDataInBackgroundIncludingProfiles:(bool)arg1 appSigners:(bool)arg2 blockedApplications:(bool)arg3 completion:(id /* block */)arg4;
+- (void)reloadProfilesInBackgroundWithCompletion:(id /* block */)arg1;
+- (id)reloadQueue;
+- (void)setAppWorkspace:(id)arg1;
+- (void)setAppsChangedNotifyToken:(int)arg1;
+- (void)setBlockedApplications:(id)arg1;
+- (void)setConfigurationProfilesInfo:(id)arg1;
+- (void)setEnterpriseAppSigners:(id)arg1;
+- (void)setFreeDeveloperAppSigners:(id)arg1;
+- (void)setMdmProfileInfo:(id)arg1;
+- (void)setMemberQueue:(id)arg1;
+- (void)setObserving:(bool)arg1;
+- (void)setProvisioningProfileInstalledToken:(int)arg1;
+- (void)setProvisioningProfileRemovedToken:(int)arg1;
+- (void)setReloadQueue:(id)arg1;
+- (void)setUninstalledProfilesInfo:(id)arg1;
+- (id)uninstalledProfilesInfo;
+
+@end

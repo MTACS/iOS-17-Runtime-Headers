@@ -1,0 +1,84 @@
+
+@interface NANowPlayingViewController : UIViewController <NANowPlayingBottomControlsDelegate, NANowPlayingPlaybackControlsDelegate, NANowPlayingPlaybackControlsLayoutSpecProvider, NANowPlayingTitleViewDelegate, NANowPlayingTitleViewLayoutSpecProvider> {
+    NANowPlayingArtworkView * _artworkView;
+    NANowPlayingBottomControls * _bottomControls;
+    UIView * _contentView;
+    <NANowPlayingViewControllerDelegate> * _delegate;
+    UIButton * _dismissButton;
+    _UIGrabber * _grabberView;
+    NANowPlayingPlaybackControls * _playbackControls;
+    NANowPlayingTimeControl * _timeControl;
+    NANowPlayingTitleView * _titleView;
+    NANowPlayingVolumeSlider * _volumeControl;
+}
+
+@property (nonatomic, retain) NANowPlayingArtworkView *artworkView;
+@property (nonatomic, retain) NANowPlayingBottomControls *bottomControls;
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic) <NANowPlayingViewControllerDelegate> *delegate;
+@property (nonatomic, retain) UIButton *dismissButton;
+@property (nonatomic, readonly) UIButton *ellipsisButton;
+@property (nonatomic, retain) _UIGrabber *grabberView;
+@property (nonatomic, retain) NANowPlayingPlaybackControls *playbackControls;
+@property (nonatomic, readonly) double publisherLogoHeight;
+@property (nonatomic, retain) NANowPlayingTimeControl *timeControl;
+@property (nonatomic, retain) NANowPlayingTitleView *titleView;
+@property (nonatomic, retain) NANowPlayingVolumeSlider *volumeControl;
+
+- (void).cxx_destruct;
+- (void)applicationWillEnterForeground;
+- (struct CGSize { double x1; double x2; })artworkSizeForViewWidth:(double)arg1;
+- (void)artworkTapped:(id)arg1;
+- (id)artworkView;
+- (id)bottomControls;
+- (id)contentView;
+- (id)delegate;
+- (id)dismissButton;
+- (void)dismissButtonTapped:(id)arg1;
+- (id)ellipsisButton;
+- (id)grabberView;
+- (id)initWithBackground:(id)arg1;
+- (double)nextTrackAndRewindButtonPointSize;
+- (id)nowPlayingBottomControlsProvidePlaybackRateMenu:(id)arg1;
+- (void)nowPlayingPlaybackControlsDidTapNextTrack:(id)arg1;
+- (void)nowPlayingPlaybackControlsDidTapPause:(id)arg1;
+- (void)nowPlayingPlaybackControlsDidTapPlay:(id)arg1;
+- (void)nowPlayingPlaybackControlsDidTapRewind:(id)arg1;
+- (void)nowPlayingPlaybackControlsDidTapSkipForward:(id)arg1;
+- (void)nowPlayingTitleViewDidTapEllipsis:(id)arg1;
+- (double)playPausePointSize;
+- (id)playbackControls;
+- (double)publisherLogoBottomMargin;
+- (double)publisherLogoHeight;
+- (double)publisherLogoHeight;
+- (void)seekToPosition:(double)arg1;
+- (void)setArtwork:(id)arg1;
+- (void)setArtwork:(id)arg1 animated:(bool)arg2;
+- (void)setArtworkView:(id)arg1;
+- (void)setBottomControls:(id)arg1;
+- (void)setContentView:(id)arg1;
+- (void)setCurrentTime:(double)arg1 duration:(double)arg2 rate:(double)arg3 isWaiting:(bool)arg4 animated:(bool)arg5;
+- (void)setDelegate:(id)arg1;
+- (void)setDismissButton:(id)arg1;
+- (void)setGrabberView:(id)arg1;
+- (void)setIsPlaying:(bool)arg1 waiting:(bool)arg2;
+- (void)setNextTrackButtonEnabled:(bool)arg1;
+- (void)setPlaybackControls:(id)arg1;
+- (void)setPublisherImage:(id)arg1 fallbackName:(id)arg2;
+- (void)setRate:(double)arg1;
+- (void)setSkipForwardButtonEnabled:(bool)arg1;
+- (void)setTimeControl:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setTitleView:(id)arg1;
+- (void)setVolumeControl:(id)arg1;
+- (id)timeControl;
+- (double)titleLabelFontSize;
+- (id)titleView;
+- (void)titleViewTapped:(id)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+- (id)volumeControl;
+
+@end

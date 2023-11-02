@@ -1,0 +1,4 @@
+
+@interface EDAMNoteStoreConstants : NSObject
+
+@end

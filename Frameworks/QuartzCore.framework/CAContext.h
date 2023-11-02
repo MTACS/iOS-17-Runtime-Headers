@@ -1,0 +1,92 @@
+
+@interface CAContext : NSObject {
+    void * _impl;
+}
+
+@property (copy) NSString *annotation;
+@property bool colorMatchUntaggedContent;
+@property struct CGColorSpace { }*colorSpace;
+@property (nonatomic, readonly) unsigned int commitId;
+@property unsigned int commitPriority;
+@property (copy) NSString *contentsFormat;
+@property (readonly) unsigned int contextId;
+@property float desiredDynamicRange;
+@property (readonly) unsigned int displayId;
+@property (retain) CALayer *layer;
+@property float level;
+@property (readonly) NSDictionary *options;
+@property (copy) NSDictionary *payload;
+@property (getter=isSecure) bool secure;
+@property (readonly) bool valid;
+
++ (id)allContexts;
++ (id)contextWithId:(unsigned int)arg1;
++ (id /* block */)createCacheBlock;
++ (id)currentContext;
++ (id /* block */)drawInContextBlock;
++ (id /* block */)finalizeContextBlock;
++ (id)localContext;
++ (id)localContextWithOptions:(id)arg1;
++ (id)objectForSlot:(unsigned int)arg1;
++ (id)remoteContext;
++ (id)remoteContextWithOptions:(id)arg1;
++ (void)setClientPort:(unsigned int)arg1;
++ (void)setCreateCacheBlock:(id /* block */)arg1;
++ (void)setDrawInContextBlock:(id /* block */)arg1;
++ (void)setFinalizeContextBlock:(id /* block */)arg1;
+
+- (bool)addFence:(id)arg1;
+- (bool)addFence:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)annotation;
+- (bool)colorMatchUntaggedContent;
+- (struct CGColorSpace { }*)colorSpace;
+- (unsigned int)commitId;
+- (unsigned int)commitPriority;
+- (id)contentsFormat;
+- (unsigned int)contextId;
+- (void*)contextImpl;
+- (unsigned int)createFencePort;
+- (unsigned int)createImageSlot:(struct CGSize { double x1; double x2; })arg1 hasAlpha:(bool)arg2;
+- (unsigned int)createImageSlot:(struct CGSize { double x1; double x2; })arg1 hasAlpha:(bool)arg2 extendedColors:(bool)arg3;
+- (unsigned int)createSlot;
+- (void)dealloc;
+- (id)debugDescription;
+- (void)deleteSlot:(unsigned int)arg1;
+- (float)desiredDynamicRange;
+- (unsigned int)displayId;
+- (unsigned int)hitTestContext:(struct CGPoint { double x1; double x2; })arg1;
+- (id)initRemoteWithOptions:(id)arg1;
+- (id)initWithOptions:(id)arg1 localContext:(bool)arg2;
+- (void)invalidate;
+- (void)invalidateFences;
+- (bool)isSecure;
+- (id)layer;
+- (float)level;
+- (id)options;
+- (void)orderAbove:(unsigned int)arg1;
+- (void)orderBelow:(unsigned int)arg1;
+- (id)payload;
+- (void*)renderContext;
+- (void)requestClientGlitch:(double)arg1;
+- (void)requestServerGlitch:(double)arg1;
+- (void*)retainRenderContext;
+- (void)setAnnotation:(id)arg1;
+- (void)setColorMatchUntaggedContent:(bool)arg1;
+- (void)setColorSpace:(struct CGColorSpace { }*)arg1;
+- (void)setCommitPriority:(unsigned int)arg1;
+- (void)setContentsFormat:(id)arg1;
+- (void)setDesiredDynamicRange:(float)arg1;
+- (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
+- (void)setFencePort:(unsigned int)arg1;
+- (void)setFencePort:(unsigned int)arg1 commitHandler:(id /* block */)arg2;
+- (void)setLayer:(id)arg1;
+- (void)setLevel:(float)arg1;
+- (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
+- (void)setPayload:(id)arg1;
+- (void)setSecure:(bool)arg1;
+- (void)transferSlot:(unsigned int)arg1 toContextWithId:(unsigned int)arg2;
+- (bool)valid;
+- (bool)waitForCommitId:(unsigned int)arg1 timeout:(double)arg2;
+- (bool)waitForRenderingWithTimeout:(double)arg1;
+
+@end

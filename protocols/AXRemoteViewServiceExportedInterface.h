@@ -1,0 +1,4 @@
+
+@protocol AXRemoteViewServiceExportedInterface <NSObject>
+
+@end

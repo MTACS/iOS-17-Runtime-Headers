@@ -1,0 +1,4 @@
+
+@interface _TtCC6Charts14SgMeasurementsP33_642A44AECF0F6AB8FC6118B501D4049112CacheContent : _TtCs12_SwiftObject
+
+@end

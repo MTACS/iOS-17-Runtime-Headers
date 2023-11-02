@@ -1,0 +1,4 @@
+
+@interface TDNamedColorProduction : TDElementProduction
+
+@end

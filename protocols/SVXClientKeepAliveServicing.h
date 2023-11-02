@@ -1,0 +1,4 @@
+
+@protocol SVXClientKeepAliveServicing <NSObject>
+
+@end

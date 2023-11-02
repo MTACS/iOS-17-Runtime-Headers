@@ -1,0 +1,42 @@
+
+@interface BRCDatabaseBackupStorage : NSObject {
+    NSURL * _attachedDatabaseURL;
+    PQLConnection * _database;
+    NSURL * _databaseURL;
+    NSArray * _urlPropertiesToFetch;
+}
+
+@property (nonatomic, retain) NSURL *attachedDatabaseURL;
+@property (nonatomic, retain) PQLConnection *database;
+@property (nonatomic, retain) NSURL *databaseURL;
+@property (nonatomic, retain) NSArray *urlPropertiesToFetch;
+
+- (void).cxx_destruct;
+- (bool)addRecord:(id)arg1;
+- (bool)addRecordIfNotExist:(id)arg1;
+- (bool)attachDatabase:(id)arg1 error:(id*)arg2;
+- (id)attachedDatabaseURL;
+- (id)backupManifestEnumerator:(id)arg1;
+- (bool)clearStagedIDs:(id)arg1;
+- (id)database;
+- (id)databaseURL;
+- (void)dealloc;
+- (id)docIDForURL:(id)arg1;
+- (bool)fixUpBackupDetector:(id)arg1;
+- (bool)fixUpClientState:(id)arg1;
+- (void)flushAndClose;
+- (id)initWithDatabaseURL:(id)arg1;
+- (bool)negateIDs:(id)arg1;
+- (void)populateNewColumnsInDatabase:(id)arg1 forRecord:(id)arg2 basePath:(id)arg3;
+- (void)populateNewColumnsWithBasePath:(id)arg1;
+- (void)setAttachedDatabaseURL:(id)arg1;
+- (void)setDatabase:(id)arg1;
+- (void)setDatabaseURL:(id)arg1;
+- (bool)setForeignKeys:(id)arg1 enabled:(bool)arg2;
+- (bool)setUpDatabaseWithError:(id*)arg1;
+- (void)setUrlPropertiesToFetch:(id)arg1;
+- (bool)updateAttachedDatabase;
+- (bool)updateIDs:(id)arg1;
+- (id)urlPropertiesToFetch;
+
+@end

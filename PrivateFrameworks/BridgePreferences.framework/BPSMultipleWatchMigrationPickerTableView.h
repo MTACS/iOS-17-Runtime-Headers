@@ -1,0 +1,4 @@
+
+@interface BPSMultipleWatchMigrationPickerTableView : UITableView
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SiriOntology.UsoEntityBuilder_commonStock_StockChangeState : SiriOntology.UsoEntityBuilderGlobalArgs
+
+@end

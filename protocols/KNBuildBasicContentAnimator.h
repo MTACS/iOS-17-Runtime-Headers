@@ -1,0 +1,4 @@
+
+@protocol KNBuildBasicContentAnimator <KNAnimationPluginCARendering>
+
+@end

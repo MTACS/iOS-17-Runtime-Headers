@@ -1,0 +1,6 @@
+
+@interface SBUIBannerSourceApplicationNonAffectingAppLifecycleSceneSpecification : SBUIBannerSourceApplicationSceneSpecification
+
+- (bool)affectsAppLifecycleIfInternal;
+
+@end

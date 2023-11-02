@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.ScenePartialFailureResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

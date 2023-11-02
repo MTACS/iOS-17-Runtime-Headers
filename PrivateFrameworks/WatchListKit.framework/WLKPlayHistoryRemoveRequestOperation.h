@@ -1,0 +1,13 @@
+
+@interface WLKPlayHistoryRemoveRequestOperation : WLKUTSNetworkRequestOperation {
+    WLKContinueWatchingResponse * _response;
+}
+
+@property (nonatomic, readonly) WLKContinueWatchingResponse *response;
+
+- (void).cxx_destruct;
+- (id)initWithChannelID:(id)arg1 externalID:(id)arg2 caller:(id)arg3;
+- (void)processResponse;
+- (id)response;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface COAlarmFiredNotification : COAlarmNotification
+
+@end

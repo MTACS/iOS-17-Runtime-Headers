@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.GetSensorMeasurementResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

@@ -1,0 +1,80 @@
+
+@interface CKMessageEntryRecordedAudioView : UIView <CKAudioControllerDelegate> {
+    CKAudioController * _audioController;
+    CKAudioMediaObject * _audioMediaObject;
+    UIImageView * _balloonImageView;
+    UIVisualEffectView * _blurView;
+    bool  _cachedWaveFormImageIsValid;
+    <CKMessageEntryRecordedAudioViewDelegate> * _delegate;
+    UIButton * _playPauseDeleteButton;
+    double  _time;
+    NSString * _timeFormat;
+    UILabel * _timeLabel;
+    UIImage * _waveformImage;
+    UIImageView * _waveformImageView;
+}
+
+@property (nonatomic, retain) CKAudioController *audioController;
+@property (nonatomic, retain) CKAudioMediaObject *audioMediaObject;
+@property (nonatomic, retain) UIImageView *balloonImageView;
+@property (nonatomic, retain) UIVisualEffectView *blurView;
+@property (nonatomic) bool cachedWaveFormImageIsValid;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKMessageEntryRecordedAudioViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isPlaying;
+@property (nonatomic, retain) UIButton *playPauseDeleteButton;
+@property (readonly) Class superclass;
+@property (nonatomic) double time;
+@property (nonatomic, copy) NSString *timeFormat;
+@property (nonatomic, retain) UILabel *timeLabel;
+@property (nonatomic, retain) UIImage *waveformImage;
+@property (nonatomic, retain) UIImageView *waveformImageView;
+
+- (void).cxx_destruct;
+- (id)audioController;
+- (void)audioController:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
+- (void)audioController:(id)arg1 mediaObjectProgressDidChange:(id)arg2 currentTime:(double)arg3 duration:(double)arg4;
+- (void)audioControllerDidPause:(id)arg1;
+- (void)audioControllerDidStop:(id)arg1;
+- (void)audioControllerPlayingDidChange:(id)arg1;
+- (id)audioMediaObject;
+- (id)balloonImageView;
+- (id)blurView;
+- (bool)cachedWaveFormImageIsValid;
+- (void)dealloc;
+- (id)delegate;
+- (void)handlePlayPauseDelete:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isPlaying;
+- (void)layoutSubviews;
+- (void)pause;
+- (void)play;
+- (id)playPauseDeleteButton;
+- (void)setAudioController:(id)arg1;
+- (void)setAudioMediaObject:(id)arg1;
+- (void)setBalloonImageView:(id)arg1;
+- (void)setBlurView:(id)arg1;
+- (void)setCachedWaveFormImageIsValid:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPlayPauseDeleteButton:(id)arg1;
+- (void)setTime:(double)arg1;
+- (void)setTimeFormat:(id)arg1;
+- (void)setTimeLabel:(id)arg1;
+- (void)setWaveformImage:(id)arg1;
+- (void)setWaveformImageView:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)stop;
+- (double)time;
+- (id)timeFormat;
+- (id)timeLabel;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updatePlayPauseDeleteButton;
+- (void)updateProgress;
+- (void)updateTimeString;
+- (id)waveformImage;
+- (id)waveformImageView;
+
+@end

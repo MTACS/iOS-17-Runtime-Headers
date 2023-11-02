@@ -1,0 +1,4 @@
+
+@protocol AVTTransitionModel <NSObject>
+
+@end

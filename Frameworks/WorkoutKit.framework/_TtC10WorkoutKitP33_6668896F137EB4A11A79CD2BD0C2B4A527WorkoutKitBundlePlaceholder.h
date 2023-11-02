@@ -1,0 +1,4 @@
+
+@interface _TtC10WorkoutKitP33_6668896F137EB4A11A79CD2BD0C2B4A527WorkoutKitBundlePlaceholder : _TtCs12_SwiftObject
+
+@end

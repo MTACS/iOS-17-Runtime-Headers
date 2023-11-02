@@ -1,0 +1,4 @@
+
+@interface _TtC9WeatherUIP33_5B256AAD826C33F715896B0380F21CC219ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

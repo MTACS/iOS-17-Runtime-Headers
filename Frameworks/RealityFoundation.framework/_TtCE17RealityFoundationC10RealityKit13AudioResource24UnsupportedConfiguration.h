@@ -1,0 +1,4 @@
+
+@interface _TtCE17RealityFoundationC10RealityKit13AudioResource24UnsupportedConfiguration : _TtCE17RealityFoundationC10RealityKit13AudioResource10AudioError
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol HKWorkoutClusterStoreClient <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol HKNotificationStoreClient <NSObject>
+
+@end

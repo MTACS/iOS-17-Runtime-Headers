@@ -1,0 +1,4 @@
+
+@protocol MTLPipelineCache <NSObject>
+
+@end

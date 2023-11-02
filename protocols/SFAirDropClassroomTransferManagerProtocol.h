@@ -1,0 +1,4 @@
+
+@protocol SFAirDropClassroomTransferManagerProtocol <SFAirDropClassroomTransferDelegate>
+
+@end

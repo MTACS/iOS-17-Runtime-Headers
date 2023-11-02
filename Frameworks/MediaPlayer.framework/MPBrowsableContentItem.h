@@ -1,0 +1,4 @@
+
+@interface MPBrowsableContentItem : MPContentItem
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol PXStoryMutableController
+
+@end

@@ -1,0 +1,91 @@
+
+@interface TRIFetchOnDemandFactorsTask : TRIBaseTask <TRICancellableTask, TRIMetricsProviding, TRIRetryableTask> {
+    <TRIArtifactProvider> * _artifactProvider;
+    NSDictionary * _assetIdsByFactorPack;
+    NSDictionary * _assetIndexesByTreatment;
+    TRITaskCapabilityModifier * _capabilityModifier;
+    TRIRolloutDeployment * _deployment;
+    NSMutableArray * _dimensions;
+    NSString * _experimentId;
+    NSMutableDictionary * _factorNameByAssetId;
+    _Atomic bool  _isCurrentlyExecuting;
+    _PASLock * _lock;
+    NSMutableArray * _metrics;
+    NSString * _namespaceName;
+    NSString * _notificationKey;
+    int  _retryCount;
+    NSSet * _rolloutFactorNames;
+    <TRITaskAttributing> * _taskAttributing;
+    TRITrialSystemTelemetry * _trialSystemTelemetry;
+    bool  wasDeferred;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSArray *dependencies;
+@property (nonatomic, readonly) TRIRolloutDeployment *deployment;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *experimentId;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCurrentlyExecuting;
+@property (nonatomic) int retryCount;
+@property (nonatomic, copy) NSDate *startTime;
+@property (nonatomic) <TRITaskQueueStateProviding> *stateProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *tags;
+@property (nonatomic, readonly) <TRITaskAttributing> *taskAttribution;
+@property (nonatomic, readonly) NSString *taskName;
+@property (nonatomic, readonly) int taskType;
+@property bool wasDeferred;
+
++ (id)parseFromData:(id)arg1;
++ (bool)supportsSecureCoding;
++ (id)taskWithAssetIndexesByTreatment:(id)arg1 experimentId:(id)arg2 assetIdsByFactorPack:(id)arg3 rolloutFactorNames:(id)arg4 rolloutDeployment:(id)arg5 namespaceName:(id)arg6 taskAttributing:(id)arg7 notificationKey:(id)arg8 capabilityModifier:(id)arg9;
+
+- (void).cxx_destruct;
+- (void)_addDimension:(id)arg1;
+- (void)_addMetric:(id)arg1;
+- (void)_addMetricForFetchOnDemandFactorsTaskError:(int)arg1;
+- (id)_asPersistedTask;
+- (id)_assetIdsFromKeysInDictionary:(id)arg1;
+- (void)_asyncFetchAssetsFromTreatmentRecordsWithContext:(id)arg1 plan:(id)arg2 aggregateProgress:(id)arg3 downloadSize:(unsigned long long*)arg4 downloadOptions:(id)arg5 group:(id)arg6;
+- (void)_asyncFetchCKAssetsFromAssetRecordsWithContext:(id)arg1 plan:(id)arg2 aggregateProgress:(id)arg3 downloadSize:(unsigned long long*)arg4 options:(id)arg5 group:(id)arg6;
+- (void)_asyncFetchMAAssetsFromFactorPacksWithContext:(id)arg1 plan:(id)arg2 aggregateProgress:(id)arg3 downloadSize:(unsigned long long*)arg4 options:(id)arg5 group:(id)arg6;
+- (void)_completeTaskWithStatus:(int)arg1 earliestRetryDate:(id)arg2 error:(id)arg3 aggregateProgress:(id)arg4 context:(id)arg5;
+- (id)_currentTaskStatus;
+- (id)_fetchDiffsFromAssetDiffRecordsWithContext:(id)arg1 plan:(id)arg2 aggregateProgress:(id)arg3 downloadSize:(unsigned long long*)arg4 options:(id)arg5;
+- (id)_fetchOptionsWithDownloadOptions:(id)arg1 paths:(id)arg2;
+- (void)_logOnDemandFactor:(id)arg1 metricName:(id)arg2 namespaceName:(id)arg3 client:(id)arg4 error:(id)arg5;
+- (id)_planForFetchingAssetDiffsWithContext:(id)arg1 downloadOptions:(id)arg2 updatingAggregateProgress:(id)arg3 nonDiffableAssetIds:(id*)arg4 unlinkedMAAssetsOnDisk:(id*)arg5;
+- (id)_planForFetchingAssetsFromFactorPacksWithContext:(id)arg1 assetDiffFetchPlan:(id)arg2 requiredAssetIds:(id)arg3 downloadOptions:(id)arg4 updatingAggregateProgress:(id)arg5;
+- (id)_planForFetchingAssetsFromTreatmentRecordsWithContext:(id)arg1 downloadOptions:(id)arg2 updatingAggregateProgress:(id)arg3;
+- (unsigned long long)_requiredDiskSpaceForPlan:(id)arg1;
+- (struct { unsigned char x1; })_saveIndexedAssetURLs:(id)arg1 withTreatmentId:(id)arg2 usingAssetMetadata:(id)arg3 downloadOptions:(id)arg4 paths:(id)arg5 downloadSize:(unsigned long long*)arg6 error:(id*)arg7;
+- (struct { unsigned char x1; })_saveNamedAssetURLs:(id)arg1 usingAssetMetadata:(id)arg2 downloadOptions:(id)arg3 downloadSize:(unsigned long long*)arg4 paths:(id)arg5 error:(id*)arg6;
+- (id)_telemetryForFactorPackIds:(id)arg1 rolloutDeployment:(id)arg2 treatmentIds:(id)arg3 experimentId:(id)arg4 namespaceName:(id)arg5 taskAttributing:(id)arg6;
+- (bool)_updateFactorPacksByMergingAssets:(id)arg1 context:(id)arg2;
+- (id)deployment;
+- (id)description;
+- (id)dimensions;
+- (void)encodeWithCoder:(id)arg1;
+- (id)experimentId;
+- (unsigned long long)hash;
+- (id)initWithAssetIndexesByTreatment:(id)arg1 experimentId:(id)arg2 assetIdsByFactorPack:(id)arg3 rolloutFactorNames:(id)arg4 rolloutDeployment:(id)arg5 namespaceName:(id)arg6 taskAttributing:(id)arg7 notificationKey:(id)arg8 capabilityModifier:(id)arg9;
+- (id)initWithCoder:(id)arg1;
+- (bool)isCurrentlyExecuting;
+- (bool)isEqual:(id)arg1;
+- (id)metrics;
+- (void)removeDownloadableFactorNames:(id)arg1;
+- (unsigned long long)requiredCapabilities;
+- (int)retryCount;
+- (id)runUsingContext:(id)arg1 withTaskQueue:(id)arg2;
+- (id)serialize;
+- (void)setRetryCount:(int)arg1;
+- (void)setWasDeferred:(bool)arg1;
+- (id)tags;
+- (id)taskAttribution;
+- (int)taskType;
+- (id)trialSystemTelemetry;
+- (bool)wasDeferred;
+- (void)willBeCancelledByTaskQueue:(id)arg1 withContext:(id)arg2;
+
+@end

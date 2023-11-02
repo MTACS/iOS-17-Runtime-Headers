@@ -1,0 +1,4 @@
+
+@protocol CPTabBarClientTemplateDelegate <CPTemplateDelegate>
+
+@end

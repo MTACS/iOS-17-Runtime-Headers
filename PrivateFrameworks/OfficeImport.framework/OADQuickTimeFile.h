@@ -1,0 +1,4 @@
+
+@interface OADQuickTimeFile : OADLinkedMediaFile
+
+@end

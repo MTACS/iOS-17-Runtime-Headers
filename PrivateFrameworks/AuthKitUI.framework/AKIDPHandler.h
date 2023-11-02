@@ -1,0 +1,35 @@
+
+@interface AKIDPHandler : NSObject <WKNavigationDelegate> {
+    id /* block */  _completion;
+    AKServerRequestConfiguration * _configuration;
+    <AKIDPHandlerDelegate> * _delegate;
+    AKURLRequestApprover * _redirectApprover;
+}
+
+@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, readonly) AKServerRequestConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AKIDPHandlerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_completeFlowWithError:(id)arg1;
+- (void)_completeWithACSPostRequestFromWebView:(id)arg1;
+- (id)_safeACSDictionaryFromResult:(id)arg1;
+- (id)_samlJavaScriptQuery;
+- (id)_sanitizeError:(id)arg1;
+- (void)cancel;
+- (id /* block */)completion;
+- (id)configuration;
+- (id)delegate;
+- (id)initWithConfiguration:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setCompletion:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
+- (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
+- (void)webView:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface WFAccessibilityWorkflow : WFWorkflowDescriptor
+
+@end

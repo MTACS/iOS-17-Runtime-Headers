@@ -1,0 +1,4 @@
+
+@protocol TSPresenterType
+
+@end

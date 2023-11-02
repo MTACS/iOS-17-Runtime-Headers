@@ -1,0 +1,90 @@
+
+@interface UNSUserNotificationServer : NSObject <LSApplicationWorkspaceObserverProtocol, UNCRemoteNotificationServerObserver, UNSContentProtectionObserver, UNSDefaultDataProviderFactoryObserver, UNSNotificationRepositoryDelegate> {
+    UNSApplicationLauncher * _applicationLauncher;
+    UNSApplicationService * _applicationService;
+    BKSApplicationStateMonitor * _applicationStateMonitor;
+    UNSAttachmentsRepository * _attachmentsRepository;
+    UNSAttachmentsService * _attachmentsService;
+    UNSNotificationCategoryRepository * _categoryRepository;
+    _UNNotificationCommunicationContextService * _communicationContextService;
+    UNSContentProtectionManager * _contentProtectionManager;
+    UNSDaemonLauncher * _daemonLauncher;
+    UNSDefaultDataProviderFactory * _dataProviderFactory;
+    NSString * _directory;
+    NSObject<OS_dispatch_queue> * _installedSourceQueue;
+    UNCBundleLibrarian * _librarian;
+    NSString * _libraryDirectory;
+    UNSLocalizationService * _localizationService;
+    UNSLocationMonitor * _locationMonitor;
+    UNSNotificationAuthorizationService * _notificationAuthorizationService;
+    UNSNotificationRepository * _notificationRepository;
+    UNSNotificationScheduleRepository * _notificationScheduleRepository;
+    UNSNotificationSchedulingService * _notificationSchedulingService;
+    UNSNotificationSettingsService * _notificationSettingsService;
+    UNSPendingNotificationRepository * _pendingNotificationRepository;
+    UNCPushRegistrationRepository * _pushRegistrationRepository;
+    UNCRemoteNotificationServer * _remoteNotificationService;
+    UNSSettingsGateway * _settingsGateway;
+    NSSet * _systemSourceBundleIdentifiers;
+    UNSNotificationTopicRepository * _topicRepository;
+    UNSUserNotificationServerConnectionListener * _userNotificationServerConnectionListener;
+    UNSUserNotificationServerRemoteNotificationConnectionListener * _userNotificationServerRemoteNotificationConnectionListener;
+    UNSUserNotificationServerSettingsConnectionListener * _userNotificationServerSettingsConnectionListener;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)_sharedInstanceCreateIfNecessary:(bool)arg1;
++ (id)sharedInstance;
++ (id)sharedInstanceIfExists;
+
+- (void).cxx_destruct;
+- (void)_addObserverForApplicationStateMonitor;
+- (void)_addObserverForApplicationStateRestore;
+- (void)_addObserverForApplicationWorkspaceChanges;
+- (void)_addObserverForBackgroundRefreshApplicationChanges;
+- (void)_addObserverForContentProtectionChanges;
+- (void)_addObserverForDataProviderFactoryChanges;
+- (void)_addObserverForLocaleChanges;
+- (void)_addObserverForRemoteNotificationServiceChanges;
+- (void)_addObserverForSignificantTimeChanges;
+- (void)_applicationStateDidRestore;
+- (void)_applicationsDidInstall:(id)arg1;
+- (void)_backgroundRefreshApplicationsDidChange;
+- (void)_didChangeApplicationState:(unsigned int)arg1 forBundleIdentifier:(id)arg2;
+- (void)_ensureAttachmentsIntegrity;
+- (void)_installedSourceQueue_notificationSourcesDidInstall:(id)arg1;
+- (void)_installedSourceQueue_notificationSourcesDidUninstall:(id)arg1;
+- (id)_loadAllSystemNotificationSourceDescriptions;
+- (void)_localeDidChange;
+- (void)_migrateAttachments;
+- (void)_migrateNotificationCategories;
+- (void)_migrateNotificationRepository;
+- (void)_migrateNotificationSchedule;
+- (void)_migratePendingNotificationRequests;
+- (void)_migratePushRegistrations;
+- (void)_registerLoggers;
+- (void)_removeBundleLibrarianMappingsForSourceDescriptions:(id)arg1;
+- (void)_removeNotificationSourceDirectories:(id)arg1;
+- (void)_removePushStore;
+- (id)_sourceDescriptionsForApplications:(id)arg1;
+- (void)_timeDidChangeSignificantly;
+- (void)_triggerLocationArrowForBundleIdentifier:(id)arg1;
+- (void)_validateNotificationRepository;
+- (void)applicationInstallsDidChange:(id)arg1;
+- (void)applicationStateDidChange:(id)arg1;
+- (void)applicationsDidInstall:(id)arg1;
+- (void)applicationsDidUninstall:(id)arg1;
+- (void)contentProtectionStateChangedForFirstUnlock:(bool)arg1;
+- (void)didChangeNotificationSettings:(id)arg1 forBundleIdentifier:(id)arg2;
+- (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
+- (id)init;
+- (void)initialSystemNotificationSourcesDidInstall:(id)arg1 applicationsDidInstall:(id)arg2;
+- (bool)isApplicationForeground:(id)arg1;
+- (bool)observeLaunchProhibitedApps;
+- (void)willPresentNotification:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+
+@end

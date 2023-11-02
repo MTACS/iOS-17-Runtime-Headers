@@ -1,0 +1,4 @@
+
+@interface _UICollectionViewListCellSelectedBackgroundView : _UICollectionViewListCellBackgroundView
+
+@end

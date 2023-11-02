@@ -1,0 +1,4 @@
+
+@protocol GCGameIntentXPCProxyRemoteClientEndpointInterface <_GCIPCRemoteEndpointInterface>
+
+@end

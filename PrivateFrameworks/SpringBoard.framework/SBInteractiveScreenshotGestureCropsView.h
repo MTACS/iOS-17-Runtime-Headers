@@ -1,0 +1,81 @@
+
+@interface SBInteractiveScreenshotGestureCropsView : UIView {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    UIView * _bottomLeftCornerHorizontalView;
+    UIView * _bottomLeftCornerVerticalView;
+    UIView * _bottomLineGrabberView;
+    UIView * _bottomLineView;
+    UIView * _bottomRightCornerHorizontalView;
+    UIView * _bottomRightCornerVerticalView;
+    double  _cornerAlpha;
+    UIColor * _cornerColor;
+    double  _cornerEdgeLength;
+    NSArray * _cornerViews;
+    id  _cropsCompositingFilter;
+    double  _grabberLineWidth;
+    UIView * _leftLineGrabberView;
+    UIView * _leftLineView;
+    double  _lineAlpha;
+    UIColor * _lineColor;
+    double  _lineGrabberAlpha;
+    UIColor * _lineGrabberColor;
+    double  _lineGrabberEdgeLength;
+    NSArray * _lineGrabberViews;
+    NSArray * _lineViews;
+    double  _lineWidth;
+    double  _queue_displayScale;
+    UIView * _rightLineGrabberView;
+    UIView * _rightLineView;
+    UIView * _topLeftCornerHorizontalView;
+    UIView * _topLeftCornerVerticalView;
+    UIView * _topLineGrabberView;
+    UIView * _topLineView;
+    UIView * _topRightCornerHorizontalView;
+    UIView * _topRightCornerVerticalView;
+}
+
+@property (nonatomic) double cornerAlpha;
+@property (nonatomic, retain) UIColor *cornerColor;
+@property (nonatomic) double cornerEdgeLength;
+@property (nonatomic, retain) id cropsCompositingFilter;
+@property (nonatomic) double grabberLineWidth;
+@property (nonatomic) double lineAlpha;
+@property (nonatomic, retain) UIColor *lineColor;
+@property (nonatomic) double lineGrabberAlpha;
+@property (nonatomic, retain) UIColor *lineGrabberColor;
+@property (nonatomic) double lineGrabberEdgeLength;
+@property (nonatomic) double lineWidth;
+
+- (void).cxx_destruct;
+- (void)_setPresentationValue:(id)arg1 forKey:(id)arg2;
+- (void)_updateGeometryForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 shouldUsePresentationValues:(bool)arg2;
+- (void)_updateGeometryOrDeferLayoutUsingModelBounds;
+- (double)cornerAlpha;
+- (id)cornerColor;
+- (double)cornerEdgeLength;
+- (id)cropsCompositingFilter;
+- (double)grabberLineWidth;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (double)lineAlpha;
+- (id)lineColor;
+- (double)lineGrabberAlpha;
+- (id)lineGrabberColor;
+- (double)lineGrabberEdgeLength;
+- (double)lineWidth;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCornerAlpha:(double)arg1;
+- (void)setCornerColor:(id)arg1;
+- (void)setCornerEdgeLength:(double)arg1;
+- (void)setCropsCompositingFilter:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setGrabberLineWidth:(double)arg1;
+- (void)setLineAlpha:(double)arg1;
+- (void)setLineColor:(id)arg1;
+- (void)setLineGrabberAlpha:(double)arg1;
+- (void)setLineGrabberColor:(id)arg1;
+- (void)setLineGrabberEdgeLength:(double)arg1;
+- (void)setLineWidth:(double)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+
+@end

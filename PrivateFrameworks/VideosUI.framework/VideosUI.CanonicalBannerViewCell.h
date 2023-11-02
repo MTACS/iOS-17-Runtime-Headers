@@ -1,0 +1,81 @@
+
+@interface VideosUI.CanonicalBannerViewCell : VUIBaseCollectionViewCell <VUIRentalExpirationLabelDelegate> {
+    void $__lazy_storage_$_pillSeparatorView;
+    void $__lazy_storage_$_separatorView;
+    void attributionView;
+    void attributionViewHeight;
+    void availabilityImageView;
+    void availabilityTextView;
+    void backgroundImageViewModel;
+    void bannerButtonSpacing;
+    void bannerLayout;
+    void bannerViewModel;
+    void buttonViews;
+    void collectionViewFrameSize;
+    void contentOffset;
+    void contentSubtitleView;
+    void contentTitleView;
+    void coverArtImageView;
+    void descComputationLabel;
+    void descriptionTextView;
+    void disclaimerTextBottomSpacing;
+    void disclaimerTextView;
+    void episodeInfoTextView;
+    void gradientLayer;
+    void gradientLayerView;
+    void infoTagsView;
+    void isBackgroundTransitioning;
+    void isImageLoadedForBackgroundTransitioning;
+    void isPhoneSizeClass;
+    void isUberLayout;
+    void promoTextView;
+    void rolesSummaryView;
+    void showAttributionViewBelowBanner;
+    void syndicationId;
+    void tagsComputationLabel;
+    void tagsView;
+    void titleImageView;
+    void transitionBackgroundView;
+    void uberBackgroundView;
+}
+
+@property (nonatomic, readonly) VUIImageView *accessibilityAvailabilityImageView;
+@property (nonatomic, readonly) VUILabel *accessibilityAvailabilityTextView;
+@property (nonatomic, readonly) NSArray *accessibilityButtonViews;
+@property (nonatomic, readonly) VUILabel *accessibilityContentSubtitleView;
+@property (nonatomic, readonly) VUILabel *accessibilityContentTitleView;
+@property (nonatomic, readonly) UIView *accessibilityDescriptionTextView;
+@property (nonatomic, readonly) VUILabel *accessibilityDisclaimerTextView;
+@property (nonatomic, readonly) VUILabel *accessibilityEpisodeInfoTextView;
+@property (nonatomic, readonly) VUILabel *accessibilityPromoTextView;
+@property (nonatomic, readonly) _TtC8VideosUI16RolesSummaryView *accessibilityRolesSummaryView;
+@property (nonatomic, readonly) VUIMediaTagsView *accessibilityTagsView;
+@property (nonatomic, readonly) VUIImageView *accessibilityTitleImageView;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } intrinsicContentSize;
+
+- (void).cxx_destruct;
+- (id)accessibilityAvailabilityImageView;
+- (id)accessibilityAvailabilityTextView;
+- (id)accessibilityButtonViews;
+- (id)accessibilityContentSubtitleView;
+- (id)accessibilityContentTitleView;
+- (id)accessibilityDescriptionTextView;
+- (id)accessibilityDisclaimerTextView;
+- (id)accessibilityEpisodeInfoTextView;
+- (id)accessibilityPromoTextView;
+- (id)accessibilityRolesSummaryView;
+- (id)accessibilityTagsView;
+- (id)accessibilityTitleImageView;
+- (void)dealloc;
+- (void)handleGroupWatchActivityStateUpdatedNotification:(id)arg1;
+- (void)handleSyndicationInfoUpdatedNotification:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)onSystemTraitCollectionDidChange:(id)arg1;
+- (void)rentalExpirationLabelNeedsRelayout:(id)arg1;
+- (void)vui_cellWillBeDisplayed;
+- (struct CGSize { double x1; double x2; })vui_layoutSubviews:(struct CGSize { double x1; double x2; })arg1 computationOnly:(bool)arg2;
+- (void)vui_prepareForReuse;
+
+@end

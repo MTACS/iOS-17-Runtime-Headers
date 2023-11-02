@@ -1,0 +1,4 @@
+
+@interface UNMovieNotificationAttachmentOptions : UNNotificationAttachmentOptions
+
+@end

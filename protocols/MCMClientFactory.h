@@ -1,0 +1,4 @@
+
+@protocol MCMClientFactory <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface PHTextFeatureEncoder : NSKeyedArchiver
+
+@end

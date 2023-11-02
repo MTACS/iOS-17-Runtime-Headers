@@ -1,0 +1,4 @@
+
+@protocol NSURLSessionDataTaskSubclass <NSURLSessionTaskSubclass>
+
+@end

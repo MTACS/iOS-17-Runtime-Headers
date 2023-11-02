@@ -1,0 +1,4 @@
+
+@protocol MKFHomeThreadNetworkPrivateExtensions
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC15CrisisResourcesP33_CF4652A0AFB7FF5F4A9F2848AF62792212BundleHelper : _TtCs12_SwiftObject
+
+@end

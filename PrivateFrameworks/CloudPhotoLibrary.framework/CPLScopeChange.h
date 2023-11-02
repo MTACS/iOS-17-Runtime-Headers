@@ -1,0 +1,95 @@
+
+@interface CPLScopeChange : CPLRecordChange <NSCopying, NSSecureCoding> {
+    bool  _activated;
+    long long  _busyState;
+    bool  _containerHasBeenWiped;
+    CPLLibraryInfo * _libraryInfo;
+    CPLLibraryState * _libraryState;
+    unsigned long long  _pullTaskItem;
+    CPLEngineScope * _scope;
+    long long  _scopeType;
+    CPLShare * _share;
+    NSString * _stagingScopeIdentifier;
+    NSString * _title;
+}
+
+@property (nonatomic, readonly) CPLAccountFlags *accountFlags;
+@property (getter=isActivated, nonatomic) bool activated;
+@property (nonatomic) long long busyState;
+@property (nonatomic, readonly) bool containerHasBeenWiped;
+@property (nonatomic, readonly) NSDate *deleteDate;
+@property (getter=isDisabled, nonatomic, readonly) bool disabled;
+@property (nonatomic, readonly) NSDate *disabledDate;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, retain) CPLLibraryInfo *libraryInfo;
+@property (nonatomic, retain) CPLLibraryState *libraryState;
+@property (nonatomic) unsigned long long pullTaskItem;
+@property (nonatomic, copy) NSDate *recordModificationDate;
+@property (nonatomic, retain) CPLEngineScope *scope;
+@property (nonatomic) long long scopeType;
+@property (nonatomic, copy) CPLScopedIdentifier *scopedIdentifier;
+@property (nonatomic, retain) CPLShare *share;
+@property (nonatomic, copy) NSString *stagingScopeIdentifier;
+@property (nonatomic, copy) NSString *title;
+
++ (bool)cplShouldIgnorePropertyForEquality:(id)arg1;
++ (id)descriptionForBusyState:(long long)arg1;
++ (id)descriptionForScopeType:(long long)arg1;
++ (id)mappingForScopeBusyStateDescription;
++ (id)mappingForScopeTypeDescription;
++ (id)newDeleteScopeChangeWithScopeIdentifier:(id)arg1 type:(long long)arg2;
++ (id)newScopeChangeInferClassWithScopeIdentifier:(id)arg1 type:(long long)arg2;
++ (id)newScopeChangeWithAutomaticScopeIdentifierForScopeType:(long long)arg1;
++ (id)newScopeChangeWithScopeIdentifier:(id)arg1 type:(long long)arg2;
++ (Class)scopeChangeClassForType:(long long)arg1;
++ (bool)scopeWithTypeHasQuota:(long long)arg1;
++ (bool)shouldAutoActivateScopeWithType:(long long)arg1;
++ (bool)supportsDirectMinglingForScopeWithType:(long long)arg1;
++ (bool)supportsSecureCoding;
++ (bool)supportsStagingScopeForScopeWithType:(long long)arg1;
+
+- (void).cxx_destruct;
+- (id)_additionalDescription;
+- (id)_scopedIdentifier;
+- (void)_setChangeType:(unsigned long long)arg1;
+- (id)accountFlags;
+- (id)assetCountPerType;
+- (long long)busyState;
+- (bool)containerHasBeenWiped;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)defaultFlags;
+- (id)deleteDate;
+- (id)description;
+- (id)disabledDate;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithScopeIdentifier:(id)arg1 type:(long long)arg2;
+- (bool)isActivated;
+- (bool)isDisabled;
+- (bool)isLibraryShare;
+- (bool)isScopeChange;
+- (id)libraryInfo;
+- (id)libraryState;
+- (bool)needsToSetScopeIdentifier;
+- (unsigned long long)pullTaskItem;
+- (id)redactedDescription;
+- (id)scope;
+- (id)scopeIdentifier;
+- (long long)scopeType;
+- (void)setActivated:(bool)arg1;
+- (void)setBusyState:(long long)arg1;
+- (void)setLibraryInfo:(id)arg1;
+- (void)setLibraryState:(id)arg1;
+- (void)setPullTaskItem:(unsigned long long)arg1;
+- (void)setScope:(id)arg1;
+- (void)setScopeType:(long long)arg1;
+- (void)setShare:(id)arg1;
+- (void)setStagingScopeIdentifier:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)share;
+- (bool)shouldAlwaysUpdateScopeInfoWhenPossible;
+- (id)stagingScopeIdentifier;
+- (id)title;
+- (void)updateScopeFromScopeChange:(id)arg1 direction:(unsigned long long)arg2 didHaveChanges:(bool*)arg3;
+- (void)updateScopeIdentifier:(id)arg1;
+
+@end

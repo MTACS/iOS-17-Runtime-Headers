@@ -1,0 +1,4 @@
+
+@interface _TtCO10AppIntents17FavoriteOperationP33_76F15E5E9710F9398991AD5479F696B22__ : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,50 @@
+
+@interface BLTPBDateComponents : PBCodable <NSCopying> {
+    struct { 
+        unsigned int hour : 1; 
+        unsigned int minute : 1; 
+        unsigned int second : 1; 
+        unsigned int weekday : 1; 
+    }  _has;
+    int  _hour;
+    int  _minute;
+    int  _second;
+    int  _weekday;
+}
+
+@property (nonatomic) bool hasHour;
+@property (nonatomic) bool hasMinute;
+@property (nonatomic) bool hasSecond;
+@property (nonatomic) bool hasWeekday;
+@property (nonatomic) int hour;
+@property (nonatomic) int minute;
+@property (nonatomic) int second;
+@property (nonatomic) int weekday;
+
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasHour;
+- (bool)hasMinute;
+- (bool)hasSecond;
+- (bool)hasWeekday;
+- (unsigned long long)hash;
+- (int)hour;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (int)minute;
+- (bool)readFrom:(id)arg1;
+- (int)second;
+- (void)setHasHour:(bool)arg1;
+- (void)setHasMinute:(bool)arg1;
+- (void)setHasSecond:(bool)arg1;
+- (void)setHasWeekday:(bool)arg1;
+- (void)setHour:(int)arg1;
+- (void)setMinute:(int)arg1;
+- (void)setSecond:(int)arg1;
+- (void)setWeekday:(int)arg1;
+- (int)weekday;
+- (void)writeTo:(id)arg1;
+
+@end

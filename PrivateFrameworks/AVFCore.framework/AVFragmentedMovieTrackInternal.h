@@ -1,0 +1,4 @@
+
+@interface AVFragmentedMovieTrackInternal : NSObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CPNowPlayingMoreButton : CPNowPlayingButton
+
+@end

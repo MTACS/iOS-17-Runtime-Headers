@@ -1,0 +1,92 @@
+
+@interface PXSurveyQuestionGadget : NSObject <PXGadget, PXSurveyQuestionsGadgetContentViewDelegate> {
+    unsigned long long  _answer;
+    NSSet * _assetUUIDsAssociatedWithGadget;
+    long long  _configurationRequestId;
+    bool  _contentHidden;
+    PXSurveyQuestionsGadgetContentView * _contentView;
+    NSString * _currentAnswerReason;
+    bool  _currentlyInOneUp;
+    <PXGadgetDelegate> * _delegate;
+    PXGadgetSpec * _gadgetSpec;
+    unsigned long long  _gadgetType;
+    PXSurveyQuestionConfigurationHandlers * _handlers;
+    PHQuestion * _question;
+}
+
+@property (nonatomic, readonly) NSString *accessoryButtonTitle;
+@property (nonatomic, readonly) unsigned long long accessoryButtonType;
+@property (nonatomic) unsigned long long answer;
+@property (nonatomic, retain) NSSet *assetUUIDsAssociatedWithGadget;
+@property (nonatomic, readonly) Class collectionViewItemClass;
+@property (nonatomic, readonly) <PXSurveyQuestionConfiguration> *configuration;
+@property (getter=isContentHidden, nonatomic) bool contentHidden;
+@property (nonatomic, retain) PXSurveyQuestionsGadgetContentView *contentView;
+@property (nonatomic, readonly) UIImage *currentImage;
+@property (nonatomic) bool currentlyInOneUp;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PXGadgetDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long gadgetCapabilities;
+@property (nonatomic, retain) PXGadgetSpec *gadgetSpec;
+@property (nonatomic, readonly) unsigned long long gadgetType;
+@property (nonatomic, retain) PXSurveyQuestionConfigurationHandlers *handlers;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long headerStyle;
+@property (nonatomic, readonly) NSString *localizedTitle;
+@property (nonatomic) long long priority;
+@property (nonatomic, readonly) PHQuestion *question;
+@property (nonatomic, readonly) PXRegionOfInterest *regionOfInterestForOneUpTransition;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleContentRect;
+@property (nonatomic, readonly) bool wantsMultilineTitle;
+
++ (unsigned int)confirmYesSoundID;
++ (void)preloadResources;
++ (id)sharedWorkQueue;
+
+- (void).cxx_destruct;
+- (void)_didFinishUpdatingSurveyQuestionStateFromAnswer;
+- (void)_playConfirmYesSound;
+- (void)_updateContentViewConfiguration;
+- (void)_updateSurveyQuestionStateFromAnswer:(unsigned long long)arg1 andReason:(id)arg2;
+- (id)additionalReasonsForWallpaperQuestionsForAnswer:(unsigned long long)arg1;
+- (unsigned long long)answer;
+- (id)assetUUIDsAssociatedWithGadget;
+- (Class)collectionViewItemClass;
+- (id)configuration;
+- (id)contentView;
+- (id)currentImage;
+- (bool)currentlyInOneUp;
+- (id)delegate;
+- (unsigned long long)gadgetCapabilities;
+- (id)gadgetContentView:(id)arg1 additionalReasonMessageForAnswer:(unsigned long long)arg2;
+- (id)gadgetContentView:(id)arg1 additionalReasonTitleForAnswer:(unsigned long long)arg2;
+- (id)gadgetContentView:(id)arg1 additionalReasonsForAnswer:(unsigned long long)arg2;
+- (void)gadgetContentView:(id)arg1 didAnswer:(unsigned long long)arg2 withReason:(id)arg3;
+- (id)gadgetSpec;
+- (unsigned long long)gadgetType;
+- (id)handlers;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithSurveyQuestion:(id)arg1 gadgetType:(unsigned long long)arg2;
+- (bool)isContentHidden;
+- (bool)isEqual:(id)arg1;
+- (void)prepareCollectionViewItem:(id)arg1;
+- (id)question;
+- (unsigned short)questionType;
+- (void)refreshQuestionContentView;
+- (id)regionOfInterestForOneUpTransition;
+- (void)removeCollectionViewItem:(id)arg1;
+- (void)setAnswer:(unsigned long long)arg1;
+- (void)setAssetUUIDsAssociatedWithGadget:(id)arg1;
+- (void)setContentHidden:(bool)arg1;
+- (void)setContentView:(id)arg1;
+- (void)setCurrentlyInOneUp:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setGadgetSpec:(id)arg1;
+- (void)setHandlers:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)uniqueGadgetIdentifier;
+
+@end

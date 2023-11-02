@@ -1,0 +1,4 @@
+
+@interface PIPhotoEffectFadeHDR : PIPhotoEffectHDR
+
+@end

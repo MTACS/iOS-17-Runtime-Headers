@@ -1,0 +1,4 @@
+
+@interface UIStatusBarExternalInCallForegroundStyleAttributes : UIStatusBarExternalForegroundStyleAttributes
+
+@end

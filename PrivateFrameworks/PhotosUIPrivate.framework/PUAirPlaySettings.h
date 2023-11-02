@@ -1,0 +1,57 @@
+
+@interface PUAirPlaySettings : PXSettings {
+    bool  _compensateForOverscan;
+    bool  _ignoreMirroredScreens;
+    bool  _ignoreScreenRecordingScreens;
+    double  _maximumZoomForScrollPadding;
+    double  _minimumZoomForScrollPadding;
+    unsigned long long  _placeholderForMirroredScreen;
+    unsigned long long  _placeholderForSecondScreen;
+    long long  _routeAvailabilityOverride;
+    double  _simulatedScreenContentHeight;
+    double  _simulatedScreenContentWidth;
+    bool  _switchToMediaPresentationMode;
+}
+
+@property (nonatomic) bool compensateForOverscan;
+@property (nonatomic) bool ignoreMirroredScreens;
+@property (nonatomic) bool ignoreScreenRecordingScreens;
+@property (nonatomic) double maximumZoomForScrollPadding;
+@property (nonatomic) double minimumZoomForScrollPadding;
+@property (nonatomic) unsigned long long placeholderForMirroredScreen;
+@property (nonatomic) unsigned long long placeholderForSecondScreen;
+@property (nonatomic) long long routeAvailabilityOverride;
+@property (nonatomic) double simulatedScreenContentHeight;
+@property (nonatomic) double simulatedScreenContentWidth;
+@property (nonatomic) bool switchToMediaPresentationMode;
+
++ (id)settingsControllerModule;
++ (id)sharedInstance;
+
+- (bool)compensateForOverscan;
+- (id)debugDescription;
+- (bool)ignoreMirroredScreens;
+- (bool)ignoreScreenRecordingScreens;
+- (double)maximumZoomForScrollPadding;
+- (double)minimumZoomForScrollPadding;
+- (id)parentSettings;
+- (unsigned long long)placeholderForMirroredScreen;
+- (unsigned long long)placeholderForSecondScreen;
+- (long long)routeAvailabilityOverride;
+- (void)setCompensateForOverscan:(bool)arg1;
+- (void)setDefaultValues;
+- (void)setIgnoreMirroredScreens:(bool)arg1;
+- (void)setIgnoreScreenRecordingScreens:(bool)arg1;
+- (void)setMaximumZoomForScrollPadding:(double)arg1;
+- (void)setMinimumZoomForScrollPadding:(double)arg1;
+- (void)setPlaceholderForMirroredScreen:(unsigned long long)arg1;
+- (void)setPlaceholderForSecondScreen:(unsigned long long)arg1;
+- (void)setRouteAvailabilityOverride:(long long)arg1;
+- (void)setSimulatedScreenContentHeight:(double)arg1;
+- (void)setSimulatedScreenContentWidth:(double)arg1;
+- (void)setSwitchToMediaPresentationMode:(bool)arg1;
+- (double)simulatedScreenContentHeight;
+- (double)simulatedScreenContentWidth;
+- (bool)switchToMediaPresentationMode;
+
+@end

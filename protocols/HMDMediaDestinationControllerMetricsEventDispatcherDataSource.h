@@ -1,0 +1,11 @@
+
+@protocol HMDMediaDestinationControllerMetricsEventDispatcherDataSource
+
+@required
+
+- (NSNumber *)currentDestinationTypeForMediaDestinationControllerMetricsEventDispatcher:(HMDMediaDestinationControllerMetricsEventDispatcher *)arg1;
+- (HMDUser *)currentUserForMediaDestinationControllerMetricsEventDispatcher:(HMDMediaDestinationControllerMetricsEventDispatcher *)arg1;
+- (bool)isTriggeredOnControllerDeviceForMediaDestinationControllerMetricsEventDispatcher:(HMDMediaDestinationControllerMetricsEventDispatcher *)arg1;
+- (long long)mediaDestinationControllerMetricsEventDispatcher:(HMDMediaDestinationControllerMetricsEventDispatcher *)arg1 destinationTypeForDestinationWithIdentifier:(NSUUID *)arg2;
+
+@end

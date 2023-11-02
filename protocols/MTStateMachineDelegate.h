@@ -1,0 +1,4 @@
+
+@protocol MTStateMachineDelegate <NSObject>
+
+@end

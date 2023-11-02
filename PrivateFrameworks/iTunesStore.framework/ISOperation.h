@@ -1,0 +1,96 @@
+
+@interface ISOperation : NSOperation {
+    <ISOperationDelegate> * _delegate;
+    NSError * _error;
+    NSLock * _lock;
+    NSRunLoop * _operationRunLoop;
+    ISOperation * _parentOperation;
+    NSString * _powerAssertionIdentifier;
+    SSOperationProgress * _progress;
+    NSArray * _serializationLockIdentifiers;
+    bool  _shouldMessageMainThread;
+    bool  _shouldRunWithBackgroundPriority;
+    bool  _stopped;
+    NSMutableArray * _subOperations;
+    bool  _success;
+}
+
+@property <ISOperationDelegate> *delegate;
+@property (retain) NSError *error;
+@property (retain) NSRunLoop *operationRunLoop;
+@property (retain) ISOperation *parentOperation;
+@property (retain) NSString *powerAssertionIdentifier;
+@property (nonatomic, readonly) SSOperationProgress *progress;
+@property (readonly) long long progressWeight;
+@property (copy) NSArray *serializationLockIdentifiers;
+@property bool shouldMessageMainThread;
+@property bool shouldRunWithBackgroundPriority;
+@property bool success;
+@property (readonly) NSString *uniqueKey;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
+
+- (void).cxx_destruct;
+- (void)_addSubOperation:(id)arg1;
+- (void)_failAfterException;
+- (void)_keepAliveTimer:(id)arg1;
+- (void)_main:(bool)arg1;
+- (void)_removeSubOperation:(id)arg1;
+- (void)_sendErrorToDelegate:(id)arg1;
+- (void)_sendSuccessToDelegate;
+- (void)_sendWillStartToDelegate;
+- (unsigned long long)authenticatedAccountCredentialSource;
+- (id)authenticatedAccountDSID;
+- (void)cancel;
+- (bool)copyAccountID:(id*)arg1 credentialSource:(unsigned long long*)arg2 byAuthenticatingWithContext:(id)arg3 returningError:(id*)arg4;
+- (bool)copyAccountID:(id*)arg1 credentialSource:(unsigned long long*)arg2 byHandlingAuthenticateResponse:(id)arg3 returningError:(id*)arg4;
+- (id)copyActivePowerAssertionIdentifiers;
+- (id)copySerializationLocks;
+- (id)delegate;
+- (void)delegateDispatch:(id /* block */)arg1;
+- (void)dispatchCompletionBlock;
+- (id)error;
+- (id)init;
+- (bool)loadSoftwareMapReturningError:(id*)arg1;
+- (bool)loadURLBagWithContext:(id)arg1 returningError:(id*)arg2;
+- (id)loadedURLBagWithContext:(id)arg1 accountDSID:(id)arg2 returningError:(id*)arg3;
+- (id)loadedURLBagWithContext:(id)arg1 returningError:(id*)arg2;
+- (void)lock;
+- (void)main;
+- (id)operationRunLoop;
+- (id)parentOperation;
+- (id)powerAssertionIdentifier;
+- (id)progress;
+- (long long)progressWeight;
+- (void)releasePowerAssertionsDuringBlock:(id /* block */)arg1;
+- (void)run;
+- (void)run:(bool)arg1;
+- (int)runRunLoopUntilStopped;
+- (bool)runSubOperation:(id)arg1 onQueue:(id)arg2 error:(id*)arg3;
+- (bool)runSubOperation:(id)arg1 returningError:(id*)arg2;
+- (void)sendDidTakeSerializationLocks;
+- (void)sendProgressToDelegate;
+- (id)serializationLockIdentifiers;
+- (void)setDelegate:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setOperationRunLoop:(id)arg1;
+- (void)setParentOperation:(id)arg1;
+- (void)setPowerAssertionIdentifier:(id)arg1;
+- (void)setSerializationLockIdentifiers:(id)arg1;
+- (void)setShouldMessageMainThread:(bool)arg1;
+- (void)setShouldRunWithBackgroundPriority:(bool)arg1;
+- (void)setSuccess:(bool)arg1;
+- (bool)shouldFailAfterUniquePredecessorError:(id)arg1;
+- (bool)shouldMessageMainThread;
+- (bool)shouldRunWithBackgroundPriority;
+- (bool)stopRunLoop;
+- (bool)success;
+- (id)uniqueKey;
+- (void)unlock;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)sendCompletionCallback:(id)arg1;
+- (void)setScriptOptions:(id)arg1;
+
+@end

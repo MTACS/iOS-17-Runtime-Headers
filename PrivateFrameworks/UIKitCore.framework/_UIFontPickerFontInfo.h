@@ -1,0 +1,97 @@
+
+@interface _UIFontPickerFontInfo : NSObject {
+    NSAttributedString * _attributedString;
+    NSString * _attributedStringContentSize;
+    NSNumber * _canRenderName;
+    NSString * _familyName;
+    UIFontDescriptor * _fontDescriptor;
+    NSString * _fontName;
+    unsigned long long  _hasMultipleFaces;
+    bool  _isSystemFont;
+    double  _lineHeight;
+    NSString * _localizedFamilyName;
+    NSString * _localizedFullName;
+    NSString * _localizedStyleName;
+    NSString * _preferredShortPreviewString;
+    UIImage * _previewImage;
+    NSString * _previewImageContentSize;
+    double  _previewImageDisplayScale;
+    bool  _previewImagePrefersSingleCharacter;
+    bool  _previewImageUsesSingleCharacter;
+    NSNumber * _previewStringContainsArabic;
+    NSString * _styleName;
+    NSArray * _subInfos;
+}
+
+@property (readonly) NSAttributedString *attributedString;
+@property (readonly) NSArray *faces;
+@property (readonly) _UIFontPickerFontInfo *familyInfo;
+@property (readonly) NSString *familyName;
+@property (readonly) bool fontCanRenderLocalizedName;
+@property (readonly) UIFontDescriptor *fontDescriptor;
+@property (getter=isFontFamilyAvailable, readonly) bool fontFamilyAvailable;
+@property (readonly) NSString *fontName;
+@property (readonly) bool hasMultipleFaces;
+@property (readonly) bool isSystemFont;
+@property (readonly) double lineHeight;
+@property (readonly) NSString *localizedFamilyName;
+@property (readonly) NSString *localizedFullName;
+@property (readonly) NSString *localizedName;
+@property (readonly) NSString *postscriptName;
+@property (readonly) NSString *preferredShortPreviewString;
+@property (readonly) UIImage *previewImage;
+@property (nonatomic) bool previewImagePrefersSingleCharacter;
+@property (readonly) NSString *styleName;
+
++ (id)infoWithFamilyName:(id)arg1;
++ (id)infoWithFontDescriptor:(struct __CTFontDescriptor { }*)arg1;
++ (id)infoWithName:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_createPreviewImage:(id)arg1;
+- (id)_fontStringForTraitCollection:(id)arg1;
+- (bool)_hasMultipleFacesForFamily;
+- (void)_populateLocalizedNamesIfNecessary;
+- (id)_sortedFacesByWeight;
+- (void)_updateAttributedStringIfNeeded;
+- (void)_updatePreviewImageIfNeeded;
+- (id)attributedString;
+- (id)description;
+- (id)displayNameForFont:(id)arg1;
+- (id)faceMatchingDescriptor:(id)arg1;
+- (id)faces;
+- (id)familyInfo;
+- (id)familyName;
+- (bool)fontCanRenderLocalizedName;
+- (id)fontDescriptor;
+- (id)fontName;
+- (bool)hasMultipleFaces;
+- (unsigned long long)hash;
+- (id)initWithFamilyName:(id)arg1;
+- (id)initWithFontDescriptor:(id)arg1;
+- (id)initWithFontDescriptor:(id)arg1 isSystemFont:(bool)arg2;
+- (id)initWithSystemDefaultFont;
+- (bool)isEqual:(id)arg1;
+- (bool)isFontFamilyAvailable;
+- (bool)isSystemFont;
+- (double)lineHeight;
+- (id)localizedFamilyName;
+- (id)localizedFullName;
+- (id)localizedName;
+- (bool)matchesClientFontContext:(id)arg1;
+- (bool)matchesConfiguration:(id)arg1;
+- (bool)matchesFamilyForFontDescriptor:(id)arg1;
+- (bool)matchesFamilyName:(id)arg1;
+- (bool)matchesFontDescriptor:(id)arg1;
+- (bool)matchesLanguages:(id)arg1;
+- (bool)matchesSearchString:(id)arg1;
+- (bool)matchesTraits:(unsigned int)arg1;
+- (id)postscriptName;
+- (id)preferredShortPreviewString;
+- (id)previewImage;
+- (bool)previewImagePrefersSingleCharacter;
+- (void)setHasMultipleFaces:(bool)arg1;
+- (void)setPreviewImagePrefersSingleCharacter:(bool)arg1;
+- (id)styleName;
+
+@end

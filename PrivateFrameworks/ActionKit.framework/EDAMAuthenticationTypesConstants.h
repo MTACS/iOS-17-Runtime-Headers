@@ -1,0 +1,4 @@
+
+@interface EDAMAuthenticationTypesConstants : NSObject
+
+@end

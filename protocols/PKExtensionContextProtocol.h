@@ -1,0 +1,4 @@
+
+@protocol PKExtensionContextProtocol <NSObject>
+
+@end

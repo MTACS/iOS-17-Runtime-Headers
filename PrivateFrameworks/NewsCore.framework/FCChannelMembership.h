@@ -1,0 +1,27 @@
+
+@interface FCChannelMembership : NSObject {
+    FCInterestToken * _interestToken;
+    NTPBChannelMembershipRecord * _record;
+}
+
+@property (nonatomic, readonly) NSString *channelID;
+@property (nonatomic, readonly) NSString *draftArticleListID;
+@property (nonatomic, readonly) NSString *draftIssueListID;
+@property (nonatomic, retain) FCInterestToken *interestToken;
+@property (nonatomic, readonly) bool isAllowedToSeeDrafts;
+@property (nonatomic, retain) NTPBChannelMembershipRecord *record;
+
+- (void).cxx_destruct;
+- (id)channelID;
+- (id)draftArticleListID;
+- (id)draftIssueListID;
+- (unsigned long long)hash;
+- (id)initWithRecord:(id)arg1 interestToken:(id)arg2;
+- (id)interestToken;
+- (bool)isAllowedToSeeDrafts;
+- (bool)isEqual:(id)arg1;
+- (id)record;
+- (void)setInterestToken:(id)arg1;
+- (void)setRecord:(id)arg1;
+
+@end

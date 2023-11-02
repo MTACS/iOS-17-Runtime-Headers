@@ -1,0 +1,4 @@
+
+@protocol SXFlexibleSpacerComponent <SXComponent>
+
+@end

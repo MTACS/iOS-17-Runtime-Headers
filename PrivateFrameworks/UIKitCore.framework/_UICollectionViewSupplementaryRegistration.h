@@ -1,0 +1,4 @@
+
+@interface _UICollectionViewSupplementaryRegistration : UICollectionViewSupplementaryRegistration
+
+@end

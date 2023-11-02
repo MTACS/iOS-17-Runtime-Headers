@@ -1,0 +1,34 @@
+
+@interface SATextDecorationRegion : AceObject <SAAceSerializable>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSNumber *length;
+@property (nonatomic, copy) NSString *property;
+@property (nonatomic, copy) NSNumber *start;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
++ (id)textDecorationRegion;
++ (id)textDecorationRegionWithDictionary:(id)arg1 context:(id)arg2;
+
+- (id)encodedClassName;
+- (id)groupIdentifier;
+- (id)length;
+- (id)property;
+- (void)setLength:(id)arg1;
+- (void)setProperty:(id)arg1;
+- (void)setStart:(id)arg1;
+- (id)start;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })siriui_range;
+
+// Image: /System/Library/PrivateFrameworks/SiriUIFoundation.framework/SiriUIFoundation
+
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })sruif_range;
+
+@end

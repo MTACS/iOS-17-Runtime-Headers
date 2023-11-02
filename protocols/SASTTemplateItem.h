@@ -1,0 +1,4 @@
+
+@protocol SASTTemplateItem <SAAceSerializable>
+
+@end

@@ -1,0 +1,95 @@
+
+@interface TVLListenEngine : NSObject <SNResultsObserving> {
+    NSObject<OS_dispatch_queue> * _analysisQueue;
+    AVAudioEngine * _audioEngine;
+    id /* block */  _callback;
+    id /* block */  _completion;
+    NSMutableArray * _confidentResults;
+    long long  _convergenceLossCount;
+    bool  _didMissDeadline;
+    SNEstimateAudioOffsetRequest * _estimateAudioOffsetRequest;
+    AVAudioFile * _file;
+    NSDate * _firstObservationDate;
+    bool  _lastObservationWasConfident;
+    AVAudioInputNode * _microphone;
+    AVAudioUnit * _mixer;
+    AVAudioPlayerNode * _player;
+    SNAudioStreamAnalyzer * _streamAnalyzer;
+    double  _timeToConverge;
+    NSObject<OS_dispatch_source> * _timer;
+}
+
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *analysisQueue;
+@property (nonatomic, retain) AVAudioEngine *audioEngine;
+@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, retain) NSMutableArray *confidentResults;
+@property (nonatomic) long long convergenceLossCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool didMissDeadline;
+@property (nonatomic, retain) SNEstimateAudioOffsetRequest *estimateAudioOffsetRequest;
+@property (nonatomic, retain) AVAudioFile *file;
+@property (nonatomic, retain) NSDate *firstObservationDate;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool lastObservationWasConfident;
+@property (nonatomic, retain) AVAudioInputNode *microphone;
+@property (nonatomic, retain) AVAudioUnit *mixer;
+@property (nonatomic, retain) AVAudioPlayerNode *player;
+@property (nonatomic, retain) SNAudioStreamAnalyzer *streamAnalyzer;
+@property (readonly) Class superclass;
+@property (nonatomic) double timeToConverge;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *timer;
+
++ (void)engineWithCompletion:(id /* block */)arg1;
++ (void)invalidate;
+
+- (void).cxx_destruct;
+- (void)_handleIterruption:(id)arg1;
+- (bool)_setupAndStartAudioEngineGraphWithTimeout:(double)arg1 error:(id*)arg2;
+- (bool)_setupAndStartAudioSessionWithError:(id*)arg1;
+- (void)_splitMicrophoneAndReferenceToneChannels;
+- (id)analysisQueue;
+- (id)audioEngine;
+- (id /* block */)callback;
+- (void)completeAnalysis;
+- (id /* block */)completion;
+- (id)confidentResults;
+- (long long)convergenceLossCount;
+- (bool)didMissDeadline;
+- (id)estimateAudioOffsetRequest;
+- (id)file;
+- (id)firstObservationDate;
+- (id)init;
+- (void)invalidate;
+- (bool)lastObservationWasConfident;
+- (double)medianOfSortedArray:(id)arg1;
+- (id)microphone;
+- (id)mixer;
+- (id)player;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)request:(id)arg1 didProduceResult:(id)arg2;
+- (void)requestDidComplete:(id)arg1;
+- (void)setAnalysisQueue:(id)arg1;
+- (void)setAudioEngine:(id)arg1;
+- (void)setCallback:(id /* block */)arg1;
+- (void)setCompletion:(id /* block */)arg1;
+- (void)setConfidentResults:(id)arg1;
+- (void)setConvergenceLossCount:(long long)arg1;
+- (void)setDidMissDeadline:(bool)arg1;
+- (void)setEstimateAudioOffsetRequest:(id)arg1;
+- (void)setFile:(id)arg1;
+- (void)setFirstObservationDate:(id)arg1;
+- (void)setLastObservationWasConfident:(bool)arg1;
+- (void)setMicrophone:(id)arg1;
+- (void)setMixer:(id)arg1;
+- (void)setPlayer:(id)arg1;
+- (void)setStreamAnalyzer:(id)arg1;
+- (void)setTimeToConverge:(double)arg1;
+- (void)setTimer:(id)arg1;
+- (bool)startListeningWithReferenceTone:(id)arg1 at:(unsigned long long)arg2 saveToFile:(id)arg3 withCallback:(id /* block */)arg4 completion:(id /* block */)arg5;
+- (id)streamAnalyzer;
+- (double)timeToConverge;
+- (id)timer;
+
+@end

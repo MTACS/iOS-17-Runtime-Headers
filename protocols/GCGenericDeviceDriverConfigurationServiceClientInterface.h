@@ -1,0 +1,4 @@
+
+@protocol GCGenericDeviceDriverConfigurationServiceClientInterface
+
+@end

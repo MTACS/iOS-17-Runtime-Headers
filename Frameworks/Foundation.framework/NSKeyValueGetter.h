@@ -1,0 +1,4 @@
+
+@interface NSKeyValueGetter : NSKeyValueAccessor
+
+@end

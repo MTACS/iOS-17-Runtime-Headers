@@ -1,0 +1,4 @@
+
+@protocol SXDebugComponent <SXComponent>
+
+@end

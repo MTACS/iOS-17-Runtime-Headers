@@ -1,0 +1,4 @@
+
+@interface _TtC11WeatherMapsP33_8B68385B4C71517AFEFBC87206258FB612BundleLookup : _TtCs12_SwiftObject
+
+@end

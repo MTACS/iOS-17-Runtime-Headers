@@ -1,0 +1,4 @@
+
+@interface TRITritaskOptionsRoot : TRIPBRootObject
+
+@end

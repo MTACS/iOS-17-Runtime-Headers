@@ -1,0 +1,32 @@
+
+@interface SXLayoutTask : NSObject {
+    SXDOM * _DOM;
+    SXLayoutBlueprint * _blueprint;
+    NSString * _identifier;
+    SXLayoutInstructions * _instructions;
+    SXLayoutOptions * _options;
+    double  _startTime;
+    unsigned long long  _type;
+}
+
+@property (nonatomic, readonly) SXDOM *DOM;
+@property (nonatomic, readonly, copy) SXLayoutBlueprint *blueprint;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) SXLayoutInstructions *instructions;
+@property (nonatomic, readonly) SXLayoutOptions *options;
+@property (nonatomic, readonly) double startTime;
+@property (nonatomic, readonly) unsigned long long type;
+
+- (void).cxx_destruct;
+- (id)DOM;
+- (id)blueprint;
+- (id)description;
+- (id)identifier;
+- (id)initWithOptions:(id)arg1 instructions:(id)arg2;
+- (id)initWithOptions:(id)arg1 instructions:(id)arg2 blueprint:(id)arg3 DOM:(id)arg4;
+- (id)instructions;
+- (id)options;
+- (double)startTime;
+- (unsigned long long)type;
+
+@end

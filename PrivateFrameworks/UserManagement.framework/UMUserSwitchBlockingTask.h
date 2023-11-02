@@ -1,0 +1,4 @@
+
+@interface UMUserSwitchBlockingTask : UMTask
+
+@end

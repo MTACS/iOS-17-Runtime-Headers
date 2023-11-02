@@ -1,0 +1,30 @@
+
+@interface SAUITemplateCollectionViewCell : SAUITemplateBaseItem <SAUITemplateMonogrammable>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *monogramName;
+@property (nonatomic) bool sizeToFitImage;
+@property (nonatomic, copy) NSString *subtitleText;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *themeImages;
+@property (nonatomic, copy) NSString *titleText;
+
++ (id)collectionViewCell;
++ (id)collectionViewCellWithDictionary:(id)arg1 context:(id)arg2;
+
+- (id)encodedClassName;
+- (id)groupIdentifier;
+- (id)monogramName;
+- (void)setMonogramName:(id)arg1;
+- (void)setSizeToFitImage:(bool)arg1;
+- (void)setSubtitleText:(id)arg1;
+- (void)setThemeImages:(id)arg1;
+- (void)setTitleText:(id)arg1;
+- (bool)sizeToFitImage;
+- (id)subtitleText;
+- (id)themeImages;
+- (id)titleText;
+
+@end

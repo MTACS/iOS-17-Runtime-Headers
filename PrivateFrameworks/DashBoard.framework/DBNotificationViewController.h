@@ -1,0 +1,84 @@
+
+@interface DBNotificationViewController : UIViewController <BNBannerSourceListenerDelegate, BNPresentingDelegate, BSInvalidatable, DBNotificationSuspending, FBSceneObserver> {
+    DBBannerAuthority * _bannerAuthority;
+    BNContentViewController * _bannerContentViewController;
+    BNBannerController * _bannerController;
+    BNBannerHostMonitor * _bannerHostMonitor;
+    BNBannerSourceListener * _bannerSourceListener;
+    <DBNotificationViewControllerDelegate> * _delegate;
+    <DBEnvironment> * _environment;
+    bool  _invalidated;
+    id  _screenBorrowToken;
+    NSString * _screenBorrowingPresentableRequestID;
+    NSMutableSet * _suspensionReasons;
+    UITapGestureRecognizer * _tapDismissGestureRecognizer;
+}
+
+@property (nonatomic, readonly) DBBannerAuthority *bannerAuthority;
+@property (nonatomic, readonly) BNContentViewController *bannerContentViewController;
+@property (nonatomic, readonly) BNBannerController *bannerController;
+@property (nonatomic, readonly) BNBannerHostMonitor *bannerHostMonitor;
+@property (nonatomic, readonly) BNBannerSourceListener *bannerSourceListener;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <DBNotificationViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <DBEnvironment> *environment;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool invalidated;
+@property (nonatomic, readonly) double notificationHeight;
+@property (nonatomic, retain) id screenBorrowToken;
+@property (nonatomic, retain) NSString *screenBorrowingPresentableRequestID;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableSet *suspensionReasons;
+@property (nonatomic, readonly) UITapGestureRecognizer *tapDismissGestureRecognizer;
+@property (nonatomic, readonly) FBScene *visibleNotificationScene;
+
+- (void).cxx_destruct;
+- (id)_layoutDescriptionWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 preferredSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)_layoutManager;
+- (void)_performCancelTapGesture:(id)arg1;
+- (id)bannerAuthority;
+- (id)bannerContentViewController;
+- (id)bannerController;
+- (id)bannerHostMonitor;
+- (id)bannerSourceListener;
+- (id)bannerSourceListener:(id)arg1 layoutDescriptionWithError:(id*)arg2;
+- (bool)bannerSourceListener:(id)arg1 recommendsSuspending:(bool)arg2 forReason:(id)arg3 revokingCurrent:(bool)arg4 error:(id*)arg5;
+- (bool)bannerSourceListener:(id)arg1 requestsPostingPresentable:(id)arg2 options:(unsigned long long)arg3 userInfo:(id)arg4 error:(id*)arg5;
+- (id)bannerSourceListener:(id)arg1 requestsRevokingPresentablesWithIdentification:(id)arg2 reason:(id)arg3 animated:(bool)arg4 userInfo:(id)arg5 error:(id*)arg6;
+- (void)dealloc;
+- (id)defaultTransitioningDelegateForPresenter:(id)arg1;
+- (id)delegate;
+- (id)environment;
+- (bool)handleHomeEvent;
+- (void)handleTransitionFromFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)initWithEnvironment:(id)arg1 delegate:(id)arg2;
+- (void)invalidate;
+- (bool)invalidated;
+- (void)loadView;
+- (double)notificationHeight;
+- (id)panGestureRecognizerForPresenter:(id)arg1;
+- (struct CGPoint { double x1; double x2; })presenter:(id)arg1 gestureRecognizer:(id)arg2 locationForTouch:(id)arg3 inView:(id)arg4;
+- (struct CGPoint { double x1; double x2; })presenter:(id)arg1 gestureRecognizer:(id)arg2 translationInView:(id)arg3;
+- (struct CGPoint { double x1; double x2; })presenter:(id)arg1 gestureRecognizer:(id)arg2 velocityInView:(id)arg3;
+- (void)presenter:(id)arg1 willDismissPresentable:(id)arg2 withTransitionCoordinator:(id)arg3 userInfo:(id)arg4;
+- (void)presenter:(id)arg1 willPresentPresentable:(id)arg2 withTransitionCoordinator:(id)arg3 userInfo:(id)arg4;
+- (void)presenter:(id)arg1 willTransitionToSize:(struct CGSize { double x1; double x2; })arg2 withTransitionCoordinator:(id)arg3;
+- (void)presenterRelinquishesVisibility:(id)arg1;
+- (void)presenterRequestsVisibility:(id)arg1;
+- (id)sceneSpecificationForBannerSourceListener:(id)arg1;
+- (id)screenBorrowToken;
+- (id)screenBorrowingPresentableRequestID;
+- (void)setEnvironment:(id)arg1;
+- (void)setInvalidated:(bool)arg1;
+- (void)setScreenBorrowToken:(id)arg1;
+- (void)setScreenBorrowingPresentableRequestID:(id)arg1;
+- (void)setSuspended:(bool)arg1 cancellingCurrent:(bool)arg2 forReason:(id)arg3;
+- (void)setSuspended:(bool)arg1 forReason:(id)arg2;
+- (void)setSuspensionReasons:(id)arg1;
+- (bool)shouldFenceAnimationsForPresentable:(id)arg1;
+- (id)suspensionReasons;
+- (id)tapDismissGestureRecognizer;
+- (id)visibleNotificationScene;
+
+@end

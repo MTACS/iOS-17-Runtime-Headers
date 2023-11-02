@@ -1,0 +1,4 @@
+
+@interface _TtC9SeymourUIP33_117BBE241B79756CE30E9142C26056F211MetalBundle : _TtCs12_SwiftObject
+
+@end

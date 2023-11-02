@@ -1,0 +1,4 @@
+
+@interface SUUIFullscreenImageViewElement : SUUIImageViewElement
+
+@end

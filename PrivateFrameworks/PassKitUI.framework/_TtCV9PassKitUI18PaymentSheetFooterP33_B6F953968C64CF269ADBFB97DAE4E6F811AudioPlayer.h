@@ -1,0 +1,4 @@
+
+@interface _TtCV9PassKitUI18PaymentSheetFooterP33_B6F953968C64CF269ADBFB97DAE4E6F811AudioPlayer : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,104 @@
+
+@interface GEOLogMsgStateMapsFeatures : PBCodable <NSCopying> {
+    int  _favoritesCount;
+    struct { 
+        unsigned int has_favoritesCount : 1; 
+        unsigned int has_followedPublisherCount : 1; 
+        unsigned int has_personalCollectionsCount : 1; 
+        unsigned int has_savedCollectionsCount : 1; 
+        unsigned int has_submittedPhotosCount : 1; 
+        unsigned int has_submittedRatingsCount : 1; 
+        unsigned int has_homeFavoriteSet : 1; 
+        unsigned int has_schoolFavoriteSet : 1; 
+        unsigned int has_transitFavoriteSet : 1; 
+        unsigned int has_workFavoriteSet : 1; 
+    }  _flags;
+    int  _followedPublisherCount;
+    bool  _homeFavoriteSet;
+    int  _personalCollectionsCount;
+    int  _savedCollectionsCount;
+    bool  _schoolFavoriteSet;
+    int  _submittedPhotosCount;
+    int  _submittedRatingsCount;
+    bool  _transitFavoriteSet;
+    bool  _workFavoriteSet;
+}
+
+@property (nonatomic) int favoritesCount;
+@property (nonatomic) int followedPublisherCount;
+@property (nonatomic) bool hasFavoritesCount;
+@property (nonatomic) bool hasFollowedPublisherCount;
+@property (nonatomic) bool hasHomeFavoriteSet;
+@property (nonatomic) bool hasPersonalCollectionsCount;
+@property (nonatomic) bool hasSavedCollectionsCount;
+@property (nonatomic) bool hasSchoolFavoriteSet;
+@property (nonatomic) bool hasSubmittedPhotosCount;
+@property (nonatomic) bool hasSubmittedRatingsCount;
+@property (nonatomic) bool hasTransitFavoriteSet;
+@property (nonatomic) bool hasWorkFavoriteSet;
+@property (nonatomic) bool homeFavoriteSet;
+@property (nonatomic) int personalCollectionsCount;
+@property (nonatomic) int savedCollectionsCount;
+@property (nonatomic) bool schoolFavoriteSet;
+@property (nonatomic) int submittedPhotosCount;
+@property (nonatomic) int submittedRatingsCount;
+@property (nonatomic) bool transitFavoriteSet;
+@property (nonatomic) bool workFavoriteSet;
+
++ (bool)isValid:(id)arg1;
+
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (int)favoritesCount;
+- (int)followedPublisherCount;
+- (bool)hasFavoritesCount;
+- (bool)hasFollowedPublisherCount;
+- (bool)hasHomeFavoriteSet;
+- (bool)hasPersonalCollectionsCount;
+- (bool)hasSavedCollectionsCount;
+- (bool)hasSchoolFavoriteSet;
+- (bool)hasSubmittedPhotosCount;
+- (bool)hasSubmittedRatingsCount;
+- (bool)hasTransitFavoriteSet;
+- (bool)hasWorkFavoriteSet;
+- (unsigned long long)hash;
+- (bool)homeFavoriteSet;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonRepresentation;
+- (void)mergeFrom:(id)arg1;
+- (int)personalCollectionsCount;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (int)savedCollectionsCount;
+- (bool)schoolFavoriteSet;
+- (void)setFavoritesCount:(int)arg1;
+- (void)setFollowedPublisherCount:(int)arg1;
+- (void)setHasFavoritesCount:(bool)arg1;
+- (void)setHasFollowedPublisherCount:(bool)arg1;
+- (void)setHasHomeFavoriteSet:(bool)arg1;
+- (void)setHasPersonalCollectionsCount:(bool)arg1;
+- (void)setHasSavedCollectionsCount:(bool)arg1;
+- (void)setHasSchoolFavoriteSet:(bool)arg1;
+- (void)setHasSubmittedPhotosCount:(bool)arg1;
+- (void)setHasSubmittedRatingsCount:(bool)arg1;
+- (void)setHasTransitFavoriteSet:(bool)arg1;
+- (void)setHasWorkFavoriteSet:(bool)arg1;
+- (void)setHomeFavoriteSet:(bool)arg1;
+- (void)setPersonalCollectionsCount:(int)arg1;
+- (void)setSavedCollectionsCount:(int)arg1;
+- (void)setSchoolFavoriteSet:(bool)arg1;
+- (void)setSubmittedPhotosCount:(int)arg1;
+- (void)setSubmittedRatingsCount:(int)arg1;
+- (void)setTransitFavoriteSet:(bool)arg1;
+- (void)setWorkFavoriteSet:(bool)arg1;
+- (int)submittedPhotosCount;
+- (int)submittedRatingsCount;
+- (bool)transitFavoriteSet;
+- (bool)workFavoriteSet;
+- (void)writeTo:(id)arg1;
+
+@end

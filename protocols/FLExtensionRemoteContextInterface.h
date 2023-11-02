@@ -1,0 +1,4 @@
+
+@protocol FLExtensionRemoteContextInterface <FLExtensionRemoteInterface>
+
+@end

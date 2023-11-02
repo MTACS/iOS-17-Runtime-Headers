@@ -1,0 +1,4 @@
+
+@protocol SFFluidCollectionViewTrackedUpdateToken <NSObject>
+
+@end

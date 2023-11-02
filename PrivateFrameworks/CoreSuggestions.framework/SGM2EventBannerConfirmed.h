@@ -1,0 +1,95 @@
+
+@interface SGM2EventBannerConfirmed : PBCodable <NSCopying> {
+    int  _app;
+    int  _category;
+    int  _dateAdj;
+    int  _duraAdj;
+    int  _extracted;
+    struct { 
+        unsigned int app : 1; 
+        unsigned int category : 1; 
+        unsigned int dateAdj : 1; 
+        unsigned int duraAdj : 1; 
+        unsigned int extracted : 1; 
+        unsigned int state : 1; 
+        unsigned int titleAdj : 1; 
+    }  _has;
+    NSString * _key;
+    int  _state;
+    int  _titleAdj;
+}
+
+@property (nonatomic) int app;
+@property (nonatomic) int category;
+@property (nonatomic) int dateAdj;
+@property (nonatomic) int duraAdj;
+@property (nonatomic) int extracted;
+@property (nonatomic) bool hasApp;
+@property (nonatomic) bool hasCategory;
+@property (nonatomic) bool hasDateAdj;
+@property (nonatomic) bool hasDuraAdj;
+@property (nonatomic) bool hasExtracted;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic) bool hasState;
+@property (nonatomic) bool hasTitleAdj;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic) int state;
+@property (nonatomic) int titleAdj;
+
+- (void).cxx_destruct;
+- (int)StringAsApp:(id)arg1;
+- (int)StringAsCategory:(id)arg1;
+- (int)StringAsDateAdj:(id)arg1;
+- (int)StringAsDuraAdj:(id)arg1;
+- (int)StringAsExtracted:(id)arg1;
+- (int)StringAsState:(id)arg1;
+- (int)StringAsTitleAdj:(id)arg1;
+- (int)app;
+- (id)appAsString:(int)arg1;
+- (int)category;
+- (id)categoryAsString:(int)arg1;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)dateAdj;
+- (id)dateAdjAsString:(int)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (int)duraAdj;
+- (id)duraAdjAsString:(int)arg1;
+- (int)extracted;
+- (id)extractedAsString:(int)arg1;
+- (bool)hasApp;
+- (bool)hasCategory;
+- (bool)hasDateAdj;
+- (bool)hasDuraAdj;
+- (bool)hasExtracted;
+- (bool)hasKey;
+- (bool)hasState;
+- (bool)hasTitleAdj;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)key;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setApp:(int)arg1;
+- (void)setCategory:(int)arg1;
+- (void)setDateAdj:(int)arg1;
+- (void)setDuraAdj:(int)arg1;
+- (void)setExtracted:(int)arg1;
+- (void)setHasApp:(bool)arg1;
+- (void)setHasCategory:(bool)arg1;
+- (void)setHasDateAdj:(bool)arg1;
+- (void)setHasDuraAdj:(bool)arg1;
+- (void)setHasExtracted:(bool)arg1;
+- (void)setHasState:(bool)arg1;
+- (void)setHasTitleAdj:(bool)arg1;
+- (void)setKey:(id)arg1;
+- (void)setState:(int)arg1;
+- (void)setTitleAdj:(int)arg1;
+- (int)state;
+- (id)stateAsString:(int)arg1;
+- (int)titleAdj;
+- (id)titleAdjAsString:(int)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

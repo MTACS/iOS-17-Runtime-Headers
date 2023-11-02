@@ -1,0 +1,4 @@
+
+@interface TLKTableHeaderRow : TLKTableRow
+
+@end

@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.GetThermostatModeResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

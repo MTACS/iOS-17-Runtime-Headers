@@ -1,0 +1,194 @@
+
+@interface ICAttachmentModel : NSObject <ICAttachmentModelUI, ICItemProviderWriting> {
+    ICAttachment * _attachment;
+    bool  _generatingPreviews;
+    bool  _hasDeepLink;
+    bool  _mergeableDataDirty;
+    bool  _previewGenerationOperationCancelled;
+}
+
+@property (nonatomic, readonly) ICAttachment *attachment;
+@property (nonatomic, readonly) bool canMarkup;
+@property (nonatomic, readonly) bool canSaveURL;
+@property (nonatomic, readonly) bool canSaveURLWithOtherAttachments;
+@property (nonatomic, readonly, copy) NSUUID *currentReplicaID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool generateAsynchronousPreviews;
+@property (nonatomic, readonly) bool generatePreviewsDuringCloudActivity;
+@property (getter=isGeneratingPreviews, nonatomic) bool generatingPreviews;
+@property (nonatomic, readonly) id /* block */ genericBrickLargeThumbnailCreator;
+@property (nonatomic, readonly) id /* block */ genericBrickThumbnailCreator;
+@property (nonatomic, readonly) id /* block */ genericListThumbnailCreator;
+@property (nonatomic, readonly) NSString *hardLinkVersion;
+@property (nonatomic) bool hasDeepLink;
+@property (nonatomic, readonly) bool hasPreviews;
+@property (nonatomic, readonly) bool hasThumbnailImage;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } intrinsicContentSize;
+@property (nonatomic, readonly) bool isIncludedInGenericAttachmentCount;
+@property (getter=isMergeableDataDirty, nonatomic) bool mergeableDataDirty;
+@property (nonatomic, readonly) bool needToGeneratePreviews;
+@property (nonatomic, readonly) bool needToPostProcessAttachment;
+@property (nonatomic, readonly) bool needsFullSizePreview;
+@property (nonatomic, readonly) double placeholderHeight;
+@property (nonatomic, readonly) NSString *placeholderImageSystemName;
+@property (nonatomic, readonly) double placeholderWidth;
+@property (nonatomic, readonly) bool preferLocalPreviewImages;
+@property bool previewGenerationOperationCancelled;
+@property (nonatomic, readonly) NSString *previewImageTypeUTI;
+@property (nonatomic, readonly) bool previewsSupportMultipleAppearances;
+@property (nonatomic, readonly) NSArray *quicklookPreviewItems;
+@property (nonatomic, readonly) bool requiresNetworkToGeneratePreview;
+@property (nonatomic, readonly) bool requiresPostProcessing;
+@property (nonatomic, readonly) NSURL *saveURL;
+@property (nonatomic, readonly) bool shouldShowInContentInfoText;
+@property (nonatomic, readonly) bool shouldUsePlaceholderBoundsIfNecessary;
+@property (nonatomic, readonly) bool showThumbnailInNoteList;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsImageClassification;
+@property (nonatomic, readonly) bool supportsOCR;
+@property (nonatomic, readonly) bool supportsQuickLook;
+@property (nonatomic, readonly, copy) NSArray *writableTypeIdentifiersForItemProvider;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
++ (void)deletePreviewItemHardLinkURLs;
++ (Class)modelClassForAttachmentType:(short)arg1;
+
+- (void).cxx_destruct;
+- (void)addLocation;
+- (void)addMergeableDataToCloudKitRecord:(id)arg1 approach:(long long)arg2 mergeableFieldState:(id)arg3;
+- (id)additionalIndexableTextContentInNote;
+- (id)attachment;
+- (void)attachmentAwakeFromFetch;
+- (void)attachmentDidRefresh:(bool)arg1;
+- (void)attachmentIsDeallocating:(id)arg1;
+- (void)attachmentWillRefresh:(bool)arg1;
+- (void)attachmentWillTurnIntoFault;
+- (id)attributesForSharingHTMLWithTagName:(id*)arg1 textContent:(id*)arg2;
+- (bool)canConvertToHTMLForSharing;
+- (bool)canMarkup;
+- (bool)canSaveURL;
+- (bool)canSaveURLWithOtherAttachments;
+- (id)correctedHardlinkURLFileExtensionForExtension:(id)arg1;
+- (id)currentReplicaID;
+- (id)dataForQuickLook;
+- (id)dataForTypeIdentifier:(id)arg1;
+- (void)dealloc;
+- (void)deleteChildAttachments;
+- (id)fileURLForTypeIdentifier:(id)arg1;
+- (id)generateHardLinkURLIfNecessaryForURL:(id)arg1;
+- (id)generateHardLinkURLIfNecessaryForURL:(id)arg1 withFileName:(id)arg2;
+- (id)generateTemporaryURLWithExtension:(id)arg1;
+- (id)hardLinkFolderURL;
+- (id)hardLinkVersion;
+- (bool)hasDeepLink;
+- (bool)hasPreviews;
+- (bool)hasThumbnailImage;
+- (id)initWithAttachment:(id)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isGeneratingPreviews;
+- (bool)isIncludedInGenericAttachmentCount;
+- (bool)isMergeableDataDirty;
+- (bool)isReadyToPresent;
+- (id)localizedFallbackSubtitleIOS;
+- (id)localizedFallbackSubtitleMac;
+- (id)localizedFallbackTitle;
+- (void)mergeMergeableDataFromCloudKitRecord:(id)arg1 approach:(long long)arg2 mergeableFieldState:(id)arg3;
+- (bool)mergeWithMergeableData:(id)arg1;
+- (bool)mergeWithMergeableData:(id)arg1 mergeableFieldState:(id)arg2;
+- (id)mergeableDataForCopying;
+- (id)mergeableDataForCopying:(id*)arg1;
+- (bool)needsFullSizePreview;
+- (void)persistPendingChanges;
+- (double)placeholderHeight;
+- (id)placeholderImageSystemName;
+- (double)placeholderWidth;
+- (bool)preferLocalPreviewImages;
+- (bool)previewGenerationOperationCancelled;
+- (long long)previewImageOrientation;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })previewImageOrientationTransform;
+- (id)previewImageTypeUTI;
+- (id)previewItemTitle;
+- (id)previewItemURL;
+- (bool)previewsSupportMultipleAppearances;
+- (id)providerDataTypes;
+- (id)providerFileTypes;
+- (bool)providesStandaloneTitleForNote;
+- (bool)providesTextContentInNote;
+- (void)redactAuthorAttributionsToCurrentUser;
+- (void)regenerateTextContentInNote;
+- (void)removeTimestampsForReplicaID:(id)arg1;
+- (void)replaceChildInlineAttachment:(id)arg1 withText:(id)arg2;
+- (bool)requiresPostProcessing;
+- (id)saveURL;
+- (id)searchableTextContent;
+- (id)searchableTextContentForLocation;
+- (id)searchableTextContentInNote;
+- (short)sectionForSubAttachments;
+- (void)setGeneratingPreviews:(bool)arg1;
+- (void)setHasDeepLink:(bool)arg1;
+- (void)setMergeableDataDirty:(bool)arg1;
+- (void)setPreviewGenerationOperationCancelled:(bool)arg1;
+- (bool)shouldCropImage;
+- (bool)shouldGeneratePreviewAfterChangeInSubAttachmentWithIdentifier:(id)arg1;
+- (bool)shouldShowInContentInfoText;
+- (bool)shouldSyncPreviewImageToCloud:(id)arg1;
+- (bool)shouldUsePlaceholderBoundsIfNecessary;
+- (bool)showThumbnailInNoteList;
+- (id)standaloneTitleForNote;
+- (bool)supportsImageClassification;
+- (bool)supportsOCR;
+- (bool)supportsQuickLook;
+- (id)textContentInNote;
+- (id)titleForSubAttachment:(id)arg1;
+- (void)undeleteChildAttachments;
+- (void)updateAfterLoadWithInlineAttachmentIdentifierMap:(id)arg1;
+- (void)updateAfterLoadWithSubAttachmentIdentifierMap:(id)arg1;
+- (void)updateAttachmentMarkedForDeletionStateAttachmentIsInUse:(bool)arg1;
+- (void)updateAttachmentSize;
+- (void)updateFileBasedAttributes;
+- (void)willMarkAttachmentForDeletion;
+- (void)writeMergeableData;
+
+// Image: /System/Library/PrivateFrameworks/NotesEditor.framework/NotesEditor
+
++ (id)writableTypeIdentifiersForItemProvider;
+
+- (id)itemProviderIdentifier;
+- (long long)itemProviderType;
+- (id)itemProviderUTI;
+- (long long)itemProviderVisibilityForRepresentationWithTypeIdentifier:(id)arg1;
+- (id)itemProviderWritingData;
+- (id)itemProviderWritingURL;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
+- (void)registerFileLoadHandlersOnItemProvider:(id)arg1;
+- (void)textFindingResultsMatchingString:(id)arg1 ignoreCase:(bool)arg2 wholeWords:(bool)arg3 completion:(id /* block */)arg4;
+- (id)writableTypeIdentifiersForItemProvider;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
++ (id)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize { double x1; double x2; })arg2 uti:(id)arg3;
+
+- (id)activityItems;
+- (void)classifyImageInOperation:(id)arg1;
+- (void)didCancelPreviewGeneratorOperation;
+- (void)drawPreviewInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)fileIconWithPreferredSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)generateAsynchronousPreviews;
+- (void)generateOCRInOperation:(id)arg1;
+- (bool)generatePreviewsDuringCloudActivity;
+- (bool)generatePreviewsInOperation:(id)arg1;
+- (id /* block */)genericBrickLargeThumbnailCreator;
+- (id /* block */)genericBrickThumbnailCreator;
+- (id /* block */)genericListThumbnailCreator;
+- (id)itemProvider;
+- (bool)needToGeneratePreviews;
+- (bool)needToPostProcessAttachment;
+- (id)quicklookPreviewItems;
+- (bool)requiresNetworkToGeneratePreview;
+
+@end

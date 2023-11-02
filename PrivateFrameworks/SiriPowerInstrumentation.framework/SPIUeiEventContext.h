@@ -1,0 +1,4 @@
+
+@interface SPIUeiEventContext : SPIEventContext
+
+@end

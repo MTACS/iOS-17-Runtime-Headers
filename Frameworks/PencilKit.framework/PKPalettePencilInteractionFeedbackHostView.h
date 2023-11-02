@@ -1,0 +1,83 @@
+
+@interface PKPalettePencilInteractionFeedbackHostView : UIView {
+    <PKPalettePencilInteractionFeedbackHostViewDelegate> * _delegate;
+    UIViewFloatAnimatableProperty * _feedbackViewVisibilityAnimatableProperty;
+    NSLayoutConstraint * _layoutGuideCenterXConstraint;
+    NSLayoutConstraint * _layoutGuideCenterYConstraint;
+    NSLayoutConstraint * _layoutGuideHeightConstraint;
+    NSLayoutConstraint * _layoutGuideWidthConstraint;
+    PKPalettePencilInteractionFeedbackView * _pencilInteractionFeedbackView;
+    NSTimer * _pencilInteractionFeedbackViewAutodismissTimer;
+    NSLayoutConstraint * _pencilInteractionFeedbackViewBottomConstraint;
+    NSLayoutConstraint * _pencilInteractionFeedbackViewCenterXConstraint;
+    NSLayoutConstraint * _pencilInteractionFeedbackViewCenterYConstraint;
+    UILayoutGuide * _pencilInteractionFeedbackViewLayoutGuide;
+    NSLayoutConstraint * _pencilInteractionFeedbackViewLeftConstraint;
+    NSLayoutConstraint * _pencilInteractionFeedbackViewRightConstraint;
+    NSLayoutConstraint * _pencilInteractionFeedbackViewTopConstraint;
+    bool  _pencilInteractionFeedbackViewVisible;
+}
+
+@property (nonatomic) <PKPalettePencilInteractionFeedbackHostViewDelegate> *delegate;
+@property (nonatomic, retain) UIViewFloatAnimatableProperty *feedbackViewVisibilityAnimatableProperty;
+@property (nonatomic, retain) NSLayoutConstraint *layoutGuideCenterXConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *layoutGuideCenterYConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *layoutGuideHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *layoutGuideWidthConstraint;
+@property (nonatomic, retain) PKPalettePencilInteractionFeedbackView *pencilInteractionFeedbackView;
+@property (nonatomic, retain) NSTimer *pencilInteractionFeedbackViewAutodismissTimer;
+@property (nonatomic, retain) NSLayoutConstraint *pencilInteractionFeedbackViewBottomConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *pencilInteractionFeedbackViewCenterXConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *pencilInteractionFeedbackViewCenterYConstraint;
+@property (nonatomic, retain) UILayoutGuide *pencilInteractionFeedbackViewLayoutGuide;
+@property (nonatomic, retain) NSLayoutConstraint *pencilInteractionFeedbackViewLeftConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *pencilInteractionFeedbackViewRightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *pencilInteractionFeedbackViewTopConstraint;
+@property (getter=isPencilInteractionFeedbackViewVisible, nonatomic) bool pencilInteractionFeedbackViewVisible;
+
+- (void).cxx_destruct;
+- (void)_animatePencilInteractionFeedbackViewToVisible:(bool)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (bool)_isPencilInteractionFeedbackViewAlmostOffScreen;
+- (long long)_palettePosition;
+- (void)_updateLayoutGuideConstraints;
+- (id)delegate;
+- (id)feedbackViewVisibilityAnimatableProperty;
+- (void)hideFeedbackView;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithDelegate:(id)arg1;
+- (bool)isPencilInteractionFeedbackViewVisible;
+- (id)layoutGuideCenterXConstraint;
+- (id)layoutGuideCenterYConstraint;
+- (id)layoutGuideHeightConstraint;
+- (id)layoutGuideWidthConstraint;
+- (void)layoutSubviews;
+- (double)minimizedPaletteScaleFactor;
+- (struct CGSize { double x1; double x2; })minimizedPaletteSize;
+- (id)pencilInteractionFeedbackView;
+- (id)pencilInteractionFeedbackViewAutodismissTimer;
+- (id)pencilInteractionFeedbackViewBottomConstraint;
+- (id)pencilInteractionFeedbackViewCenterXConstraint;
+- (id)pencilInteractionFeedbackViewCenterYConstraint;
+- (id)pencilInteractionFeedbackViewLayoutGuide;
+- (id)pencilInteractionFeedbackViewLeftConstraint;
+- (id)pencilInteractionFeedbackViewRightConstraint;
+- (id)pencilInteractionFeedbackViewTopConstraint;
+- (void)setDelegate:(id)arg1;
+- (void)setFeedbackViewVisibilityAnimatableProperty:(id)arg1;
+- (void)setLayoutGuideCenterXConstraint:(id)arg1;
+- (void)setLayoutGuideCenterYConstraint:(id)arg1;
+- (void)setLayoutGuideHeightConstraint:(id)arg1;
+- (void)setLayoutGuideWidthConstraint:(id)arg1;
+- (void)setPencilInteractionFeedbackView:(id)arg1;
+- (void)setPencilInteractionFeedbackViewAutodismissTimer:(id)arg1;
+- (void)setPencilInteractionFeedbackViewBottomConstraint:(id)arg1;
+- (void)setPencilInteractionFeedbackViewCenterXConstraint:(id)arg1;
+- (void)setPencilInteractionFeedbackViewCenterYConstraint:(id)arg1;
+- (void)setPencilInteractionFeedbackViewLayoutGuide:(id)arg1;
+- (void)setPencilInteractionFeedbackViewLeftConstraint:(id)arg1;
+- (void)setPencilInteractionFeedbackViewRightConstraint:(id)arg1;
+- (void)setPencilInteractionFeedbackViewTopConstraint:(id)arg1;
+- (void)setPencilInteractionFeedbackViewVisible:(bool)arg1;
+- (void)showFeedbackForCurrentlySelectedToolInPaletteView;
+
+@end

@@ -1,0 +1,9 @@
+
+@protocol SBInteractiveScreenshotCommitWorkspaceTransactionDelegate <NSObject>
+
+@required
+
+- (void)interactiveScreenshotCommitWorkspaceTransactionRequestsGestureWindowInvalidation:(SBInteractiveScreenshotCommitWorkspaceTransaction *)arg1;
+- (void)interactiveScreenshotCommitWorkspaceTransactionRequestsPlaceholderChromeRemoval:(SBInteractiveScreenshotCommitWorkspaceTransaction *)arg1;
+
+@end

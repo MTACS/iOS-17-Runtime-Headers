@@ -1,0 +1,4 @@
+
+@protocol HFResidentDeviceObserver <HMResidentDeviceDelegate>
+
+@end

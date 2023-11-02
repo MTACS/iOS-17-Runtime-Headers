@@ -1,0 +1,4 @@
+
+@interface CSBundlePlaceholderClass : NSObject
+
+@end

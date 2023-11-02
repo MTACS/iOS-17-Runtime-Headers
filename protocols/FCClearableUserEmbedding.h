@@ -1,0 +1,4 @@
+
+@protocol FCClearableUserEmbedding <FCClearableReadingHistory>
+
+@end

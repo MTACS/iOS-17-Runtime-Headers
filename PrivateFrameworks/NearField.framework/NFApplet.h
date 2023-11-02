@@ -1,0 +1,95 @@
+
+@interface NFApplet : NSObject <NSCopying, NSSecureCoding> {
+    unsigned char  _activationState;
+    NSObject<NFAppletCollection> * _appletCollection;
+    unsigned char  _appletGPState;
+    bool  _authTransientConfigurable;
+    bool  _authTransientSupport;
+    NSData * _discretionaryData;
+    unsigned char  _family;
+    unsigned char  _groupActivationStyle;
+    NSString * _groupHeadID;
+    NSArray * _groupMemberIDs;
+    NSString * _identifier;
+    NSData * _identifierAsData;
+    bool  _isContainer;
+    bool  _isProxy;
+    bool  _managedBySP;
+    NSString * _moduleIdentifier;
+    NSArray * _multiSEApplicationGroupMemberIDs;
+    NSString * _packageIdentifier;
+    NSArray * _referencedAppIDs;
+    NSString * _seIdentifier;
+    long long  _seOS;
+    NSData * _typeFSystemCode;
+}
+
+@property (nonatomic, readonly) unsigned char activationState;
+@property (nonatomic, readonly) bool authTransientConfigurable;
+@property (nonatomic, readonly) bool authTransientSupport;
+@property (nonatomic, readonly) bool containsSubKeys;
+@property (nonatomic, readonly, retain) NSData *discretionaryData;
+@property (nonatomic, readonly) unsigned char family;
+@property (nonatomic, readonly, retain) NFApplet *groupHead;
+@property (nonatomic, readonly, retain) NSArray *groupMembers;
+@property (nonatomic, readonly, retain) NSString *identifier;
+@property (nonatomic, readonly, retain) NSData *identifierAsData;
+@property (nonatomic, readonly) bool isGPLocked;
+@property (nonatomic, readonly) bool isTypeF;
+@property (nonatomic, readonly) unsigned char lifecycleState;
+@property (nonatomic, readonly) bool managedBySP;
+@property (nonatomic, readonly, retain) NSString *packageIdentifier;
+@property (nonatomic, readonly, retain) NSArray *referencedApps;
+@property (nonatomic, readonly, retain) NSString *seIdentifier;
+@property (nonatomic, readonly) long long seOS;
+@property (nonatomic, readonly) unsigned char supportedTypeFSystem;
+@property (nonatomic, readonly) bool suppressTypeB;
+
++ (id)aidListForPrinting:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)_initManagedBySP;
+- (void)_setIsActive:(bool)arg1;
+- (unsigned char)activationState;
+- (id)appletCollection;
+- (id)asDictionary;
+- (bool)authTransientConfigurable;
+- (bool)authTransientSupport;
+- (bool)containsSubKeys;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)discretionaryData;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned char)family;
+- (unsigned char)groupActivationStyle;
+- (id)groupHead;
+- (id)groupHeadID;
+- (id)groupMemberIDs;
+- (id)groupMembers;
+- (id)identifier;
+- (id)identifierAsData;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (bool)isContainer;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToApplet:(id)arg1;
+- (bool)isGPLocked;
+- (bool)isPPSEControllable;
+- (bool)isProxy;
+- (bool)isTypeF;
+- (unsigned char)lifecycleState;
+- (bool)managedBySP;
+- (id)moduleIdentifier;
+- (id)multiSEGroupMemberIDs;
+- (id)multiSSDMembers;
+- (id)packageIdentifier;
+- (unsigned long long)rawGPState;
+- (id)referencedApps;
+- (id)seIdentifier;
+- (long long)seOS;
+- (void)setAppletCollection:(id)arg1;
+- (unsigned char)supportedTypeFSystem;
+- (bool)suppressTypeB;
+
+@end

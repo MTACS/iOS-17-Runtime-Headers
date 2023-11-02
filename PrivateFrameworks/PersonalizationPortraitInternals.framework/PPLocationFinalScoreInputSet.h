@@ -1,0 +1,4 @@
+
+@interface PPLocationFinalScoreInputSet : PPBaseScoreInputSet
+
+@end

@@ -1,0 +1,4 @@
+
+@interface TRITrinamespaceRoot : TRIPBRootObject
+
+@end

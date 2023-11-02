@@ -1,0 +1,85 @@
+
+@interface PKCreditPaymentDueCell : PKDashboardCollectionViewCell {
+    UILabel * _dateLabel;
+    <PKCreditPaymentDueCellDelegate> * _delegate;
+    UILabel * _detailLabel;
+    NSString * _fallbackButtonTitle;
+    bool  _isCompactUI;
+    bool  _isTemplateLayout;
+    PKDashboardCreditAccountItem * _item;
+    PKContinuousButton * _payButton;
+    UIFont * _payButtonFont;
+    UIImage * _payButtonImage;
+    UIColor * _payButtonTintColor;
+    UIColor * _payButtonTitleColor;
+    UILabel * _paymentDueLabel;
+    bool  _useAccessibilityLayout;
+    bool  _usingCircleButton;
+}
+
+@property (nonatomic, copy) UIFont *dateLabelFont;
+@property (nonatomic, copy) NSString *dateLabelText;
+@property (nonatomic, copy) UIColor *dateLabelTextColor;
+@property (nonatomic) <PKCreditPaymentDueCellDelegate> *delegate;
+@property (nonatomic, copy) UIFont *detailLabelFont;
+@property (nonatomic, copy) NSString *detailLabelText;
+@property (nonatomic, copy) UIColor *detailLabelTextColor;
+@property (nonatomic, copy) NSString *fallbackButtonTitle;
+@property (nonatomic, retain) PKDashboardCreditAccountItem *item;
+@property (nonatomic, readonly) PKContinuousButton *payButton;
+@property (nonatomic, copy) UIFont *payButtonFont;
+@property (nonatomic, retain) UIImage *payButtonImage;
+@property (nonatomic, copy) UIColor *payButtonTintColor;
+@property (nonatomic, copy) UIColor *payButtonTitleColor;
+@property (nonatomic, copy) UIFont *paymentDueLabelFont;
+@property (nonatomic, copy) NSString *paymentDueLabelText;
+@property (nonatomic, copy) UIColor *paymentDueLabelTextColor;
+@property (nonatomic) bool useAccessibilityLayout;
+
+- (void).cxx_destruct;
+- (void)_buttonTapped:(id)arg1;
+- (struct CGSize { double x1; double x2; })_layoutWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)_payButtonWithCircleLayout:(bool)arg1;
+- (void)_updateButtonImage:(id)arg1;
+- (void)createSubviews;
+- (id)dateLabelFont;
+- (id)dateLabelText;
+- (id)dateLabelTextColor;
+- (id)delegate;
+- (id)detailLabelFont;
+- (id)detailLabelText;
+- (id)detailLabelTextColor;
+- (id)fallbackButtonTitle;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)item;
+- (void)layoutSubviews;
+- (id)payButton;
+- (id)payButtonFont;
+- (id)payButtonImage;
+- (id)payButtonTintColor;
+- (id)payButtonTitleColor;
+- (id)paymentDueLabelFont;
+- (id)paymentDueLabelText;
+- (id)paymentDueLabelTextColor;
+- (void)setButtonTitle:(id)arg1;
+- (void)setDateLabelFont:(id)arg1;
+- (void)setDateLabelText:(id)arg1;
+- (void)setDateLabelTextColor:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDetailLabelFont:(id)arg1;
+- (void)setDetailLabelText:(id)arg1;
+- (void)setDetailLabelTextColor:(id)arg1;
+- (void)setFallbackButtonTitle:(id)arg1;
+- (void)setItem:(id)arg1;
+- (void)setPayButtonFont:(id)arg1;
+- (void)setPayButtonImage:(id)arg1;
+- (void)setPayButtonTintColor:(id)arg1;
+- (void)setPayButtonTitleColor:(id)arg1;
+- (void)setPaymentDueLabelFont:(id)arg1;
+- (void)setPaymentDueLabelText:(id)arg1;
+- (void)setPaymentDueLabelTextColor:(id)arg1;
+- (void)setUseAccessibilityLayout:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)useAccessibilityLayout;
+
+@end

@@ -1,0 +1,93 @@
+
+@interface NETSchemaNETDebugNetworkConnectionStatePreparationSnapshotCaptured : SISchemaInstrumentationMessage {
+    NSString * _connectionInfo;
+    struct { 
+        unsigned int isExpensive : 1; 
+        unsigned int hasIpv6 : 1; 
+        unsigned int hasIpv4 : 1; 
+        unsigned int isConstrained : 1; 
+        unsigned int status : 1; 
+    }  _has;
+    bool  _hasConnectionInfo;
+    bool  _hasIpv4;
+    bool  _hasIpv6;
+    bool  _isConstrained;
+    bool  _isExpensive;
+    NSArray * _pathGateways;
+    NSArray * _pathInterfaces;
+    int  _status;
+}
+
+@property (nonatomic, copy) NSString *connectionInfo;
+@property (nonatomic) bool hasConnectionInfo;
+@property (nonatomic) bool hasHasIpv4;
+@property (nonatomic) bool hasHasIpv6;
+@property (nonatomic) bool hasIpv4;
+@property (nonatomic) bool hasIpv6;
+@property (nonatomic) bool hasIsConstrained;
+@property (nonatomic) bool hasIsExpensive;
+@property (nonatomic) bool hasStatus;
+@property (nonatomic) bool isConstrained;
+@property (nonatomic) bool isExpensive;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSArray *pathGateways;
+@property (nonatomic, copy) NSArray *pathInterfaces;
+@property (nonatomic) int status;
+
+- (void).cxx_destruct;
+- (void)addPathGateways:(id)arg1;
+- (void)addPathInterfaces:(id)arg1;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (void)clearPathGateways;
+- (void)clearPathInterfaces;
+- (id)connectionInfo;
+- (void)deleteConnectionInfo;
+- (void)deleteHasIpv4;
+- (void)deleteHasIpv6;
+- (void)deleteIsConstrained;
+- (void)deleteIsExpensive;
+- (void)deletePathGateways;
+- (void)deletePathInterfaces;
+- (void)deleteStatus;
+- (id)dictionaryRepresentation;
+- (bool)hasConnectionInfo;
+- (bool)hasHasIpv4;
+- (bool)hasHasIpv6;
+- (bool)hasIpv4;
+- (bool)hasIpv6;
+- (bool)hasIsConstrained;
+- (bool)hasIsExpensive;
+- (bool)hasStatus;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isConstrained;
+- (bool)isEqual:(id)arg1;
+- (bool)isExpensive;
+- (id)jsonData;
+- (id)pathGateways;
+- (id)pathGatewaysAtIndex:(unsigned long long)arg1;
+- (unsigned long long)pathGatewaysCount;
+- (id)pathInterfaces;
+- (id)pathInterfacesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)pathInterfacesCount;
+- (bool)readFrom:(id)arg1;
+- (void)setConnectionInfo:(id)arg1;
+- (void)setHasConnectionInfo:(bool)arg1;
+- (void)setHasHasIpv4:(bool)arg1;
+- (void)setHasHasIpv6:(bool)arg1;
+- (void)setHasIpv4:(bool)arg1;
+- (void)setHasIpv6:(bool)arg1;
+- (void)setHasIsConstrained:(bool)arg1;
+- (void)setHasIsExpensive:(bool)arg1;
+- (void)setHasStatus:(bool)arg1;
+- (void)setIsConstrained:(bool)arg1;
+- (void)setIsExpensive:(bool)arg1;
+- (void)setPathGateways:(id)arg1;
+- (void)setPathInterfaces:(id)arg1;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (id)suppressMessageUnderConditions;
+- (void)writeTo:(id)arg1;
+
+@end

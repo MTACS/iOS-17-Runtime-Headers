@@ -1,0 +1,4 @@
+
+@interface CSAudioProviderRecordModeLock : CSAudioProviderRequestLock
+
+@end

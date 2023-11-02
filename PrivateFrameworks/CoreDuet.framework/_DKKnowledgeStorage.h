@@ -1,0 +1,95 @@
+
+@interface _DKKnowledgeStorage : NSObject <_DKCoreDataStorageDelegate, _DKKnowledgeDeleting, _DKKnowledgeEventStreamDeleting, _DKKnowledgeQuerying, _DKKnowledgeSaving> {
+    NSString * _clientID;
+    NSObject<OS_dispatch_queue> * _defaultResponseQueue;
+    NSUUID * _deviceUUID;
+    NSString * _directory;
+    bool  _enableBiomeMigrationDeletion;
+    NSObject<OS_dispatch_queue> * _executionQueue;
+    unsigned long long  _insertsAndDeletesObserverCount;
+    NSHashTable * _knowledgeStorageEventNotificationDelegates;
+    bool  _localOnly;
+    NSURL * _modelURL;
+    _DKCoreDataStorage * _storage;
+    _DKCoreDataStorage * _syncStorage;
+    _DKTombstonePolicy * _tombstonePolicy;
+}
+
+@property (nonatomic, readonly) NSUUID *deviceUUID;
+@property (nonatomic) bool enableBiomeMigrationDeletion;
+@property (nonatomic, readonly) bool localOnly;
+@property (nonatomic, readonly) _DKCoreDataStorage *storage;
+@property (nonatomic, readonly) _DKCoreDataStorage *syncStorage;
+@property (retain) _DKTombstonePolicy *tombstonePolicy;
+
++ (id)sourceDeviceIdentityFromObject:(id)arg1;
++ (id)storageWithDirectory:(id)arg1 readOnly:(bool)arg2;
++ (id)storageWithDirectory:(id)arg1 readOnly:(bool)arg2 localOnly:(bool)arg3;
++ (id)storageWithShallowCopyFromStorage:(id)arg1 clientIdentifier:(id)arg2;
++ (id)storeWithDirectory:(id)arg1 readOnly:(bool)arg2;
+
+- (void).cxx_destruct;
+- (void)_databaseChangedWithNotification:(id)arg1;
+- (void)addKnowledgeStorageEventNotificationDelegate:(id)arg1;
+- (void)closeStorage;
+- (void)closeSyncStorage;
+- (bool)coreDataStorage:(id)arg1 didAutoMigratePersistentStore:(id)arg2 toManagedObjectModel:(id)arg3 havingVersion:(unsigned long long)arg4 error:(id*)arg5;
+- (id)coreDataStorage:(id)arg1 needsManagedObjectModelNameForVersion:(unsigned long long)arg2;
+- (bool)coreDataStorage:(id)arg1 shouldCallDelegateAfterAutoMigrationToManagedObjectModelHavingVersion:(unsigned long long)arg2;
+- (bool)coreDataStorage:(id)arg1 shouldCallDelegateBeforeAutoMigrationFromManagedObjectModelHavingVersion:(unsigned long long)arg2;
+- (bool)coreDataStorage:(id)arg1 willAutoMigrateStoreAtURL:(id)arg2 fromManagedObjectModel:(id)arg3 havingVersion:(unsigned long long)arg4 error:(id*)arg5;
+- (void)dealloc;
+- (void)decrementInsertsAndDeletesObserverCount;
+- (unsigned long long)deleteAllEventsInEventStream:(id)arg1 error:(id*)arg2;
+- (void)deleteAllEventsInEventStream:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (unsigned long long)deleteAllEventsMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (void)deleteAllEventsMatchingPredicate:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (unsigned long long)deleteEventsMatchingPredicate:(id)arg1 limit:(unsigned long long)arg2;
+- (unsigned long long)deleteEventsStartingEarlierThanDate:(id)arg1 limit:(unsigned long long)arg2;
+- (unsigned long long)deleteHistogram:(id)arg1;
+- (bool)deleteObjects:(id)arg1 error:(id*)arg2;
+- (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (unsigned long long)deleteObjectsInEventStream:(id)arg1 ifNeededToLimitEventCount:(unsigned long long)arg2 batchLimit:(unsigned long long)arg3;
+- (unsigned long long)deleteObjectsInEventStreams:(id)arg1 olderThanDate:(id)arg2 limit:(unsigned long long)arg3;
+- (unsigned long long)deleteObjectsOlderThanDate:(id)arg1 excludingPredicate:(id)arg2 limit:(unsigned long long)arg3;
+- (unsigned long long)deleteOldObjectsIfNeededToLimitTotalNumber:(unsigned long long)arg1 excludingPredicate:(id)arg2 limit:(unsigned long long)arg3;
+- (unsigned long long)deleteOrphanedEntities;
+- (bool)deleteStorage;
+- (bool)deleteSyncStorage;
+- (id)deviceUUID;
+- (bool)enableBiomeMigrationDeletion;
+- (unsigned long long)eventCount;
+- (id)eventCountPerStreamName;
+- (id)eventCountsForStreams:(id)arg1;
+- (id)executeQuery:(id)arg1 error:(id*)arg2;
+- (void)executeQuery:(id)arg1 responseQueue:(id)arg2;
+- (void)executeQuery:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)fetchLocalChangesSinceDate:(id)arg1 error:(id*)arg2;
+- (id)fetchSyncChangesSinceDate:(id)arg1 error:(id*)arg2;
+- (void)incrementInsertsAndDeletesObserverCount;
+- (id)keyValueStoreForDomain:(id)arg1;
+- (id)lastChangeSetWithEntityName:(id)arg1 error:(id*)arg2;
+- (unsigned long long)lastSequenceNumberForChangeSetWithEntityName:(id)arg1 error:(id*)arg2;
+- (bool)localOnly;
+- (bool)migrateDataToBiomeWithManagedObjectContext:(id)arg1;
+- (void)removeKnowledgeStorageEventNotificationDelegate:(id)arg1;
+- (void)removeSyncPeer:(id)arg1;
+- (bool)saveChangeSetsForSync:(id)arg1 error:(id*)arg2;
+- (void)saveHistogram:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (bool)saveObjects:(id)arg1 error:(id*)arg2;
+- (void)saveObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)saveObjects:(id)arg1 tracker:(id /* block */)arg2 responseQueue:(id)arg3 withCompletion:(id /* block */)arg4;
+- (bool)saveSyncPeer:(id)arg1 error:(id*)arg2;
+- (void)setEnableBiomeMigrationDeletion:(bool)arg1;
+- (void)setTombstonePolicy:(id)arg1;
+- (id)sourceDeviceIdentity;
+- (void)startSyncDownFromCloudWithResponseQueue:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)startSyncUpToCloudWithResponseQueue:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)storage;
+- (id)syncPeersWithError:(id*)arg1;
+- (id)syncStorage;
+- (id)syncStorageAssertion;
+- (id)tombstonePolicy;
+- (unsigned long long)totalEventCountForStreams:(id)arg1;
+
+@end

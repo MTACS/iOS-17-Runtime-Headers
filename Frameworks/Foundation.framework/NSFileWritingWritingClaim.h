@@ -1,0 +1,32 @@
+
+@interface NSFileWritingWritingClaim : NSFileAccessClaim {
+    NSFileAccessNode * _location1;
+    NSFileAccessNode * _location2;
+    unsigned long long  _options1;
+    unsigned long long  _options2;
+    NSURL * _url1;
+    bool  _url1DidChange;
+    NSURL * _url2;
+    bool  _url2DidChange;
+}
+
++ (bool)supportsSecureCoding;
+
+- (id)allURLs;
+- (bool)blocksClaim:(id)arg1;
+- (void)dealloc;
+- (void)devalueSelf;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(bool)arg2;
+- (void)forwardUsingConnection:(id)arg1 crashHandler:(id /* block */)arg2;
+- (void)granted;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPurposeID:(id)arg1 url:(id)arg2 options:(unsigned long long)arg3 url:(id)arg4 options:(unsigned long long)arg5 claimer:(id /* block */)arg6;
+- (void)invokeClaimer;
+- (bool)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
+- (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
+- (void)protectFilesAgainstEviction;
+- (void)resolveURLsThenContinueInvokingClaimer:(id /* block */)arg1;
+
+@end

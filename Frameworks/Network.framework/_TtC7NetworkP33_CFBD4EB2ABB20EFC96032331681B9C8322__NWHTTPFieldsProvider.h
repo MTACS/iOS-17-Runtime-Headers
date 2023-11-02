@@ -1,0 +1,4 @@
+
+@interface _TtC7NetworkP33_CFBD4EB2ABB20EFC96032331681B9C8322__NWHTTPFieldsProvider : _TtCs12_SwiftObject
+
+@end

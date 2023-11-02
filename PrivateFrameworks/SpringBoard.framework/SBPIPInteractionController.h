@@ -1,0 +1,317 @@
+
+@interface SBPIPInteractionController : NSObject <PTSettingsKeyPathObserver, SBPIPPositionHyperregionComposerDelegate, SBPIPSystemGestureRecognizerDelegate, SBSystemPointerInteractionDelegate, UIGestureRecognizerDelegate> {
+    unsigned long long  _allLayoutSessionUpdateReasons;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _anchorPoint;
+    <SBPIPInteractionControllerDataSource> * _dataSource;
+    NSString * _debugName;
+    <SBPIPInteractionControllerDelegate> * _delegate;
+    bool  _didHandleGestureEndState;
+    bool  _didLastSettleInStashedState;
+    double  _edgeResizeGestureBaselineHeight;
+    double  _edgeResizeGestureBaselineHeightScale;
+    double  _edgeResizeGestureBaselineWidth;
+    double  _edgeResizeGestureBaselineWidthScale;
+    UIPanGestureRecognizer * _edgeResizeGestureRecognizer;
+    bool  _enabled;
+    UIPanGestureRecognizer * _externalPanDrivingGestureRecognizer;
+    struct SBPIPPositionGeometryContext { 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } pipCurrentSize; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } pipLastSteadySize; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } pipStashedSize; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } pipAnchorPointOffset; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } containerBounds; 
+        struct UIEdgeInsets { 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
+        } edgeInsets; 
+        struct UIEdgeInsets { 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
+        } minimumPadding; 
+        struct UIEdgeInsets { 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
+        } stashedMinimumPadding; 
+        unsigned long long offscreenCorners; 
+        long long orientation; 
+    }  _geometryContext;
+    unsigned long long  _gesturesEndedLayoutReason;
+    bool  _gesturesWereCancelled;
+    unsigned long long  _hoveringOverEdge;
+    unsigned long long  _inFlightAnimatedLayouts;
+    SBPIPInteractionSettings * _interactionSettings;
+    UIView * _interactionTargetView;
+    bool  _isChangingSize;
+    double  _lastStashedProgress;
+    UIViewFloatAnimatableProperty * _layoutProgressProperty;
+    SBPIPContentViewLayoutSettings * _layoutSettings;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _nonoperationalFrame;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _panGestureLocationOffset;
+    UIPanGestureRecognizer * _panGestureRecognizer;
+    UIPanGestureRecognizer * _panWhileResizingGestureRecognizer;
+    id /* block */  _pendingInteractionCompletion;
+    _SBPIPInteractionControllerTransitionInfo * _pendingTransition;
+    double  _pinchGestureBaselineScale;
+    SBPIPPinchGestureRecognizer * _pinchGestureRecognizer;
+    double  _pinchGestureScaleFactor;
+    UIView * _pointerHitTestBlocker;
+    unsigned long long  _pointerIsHoveringOverEdge;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _pointerRegion;
+    _UIHyperInteractor * _positionInteractor;
+    NSMutableArray * _positionRegionComposers;
+    SBPIPInteractionControllerVisualizationView * _positionRegionVisualizationView;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _preferredContentSize;
+    double  _preferredScale;
+    NSDictionary * _resolvedPositionRegionsMap;
+    SBPIPRotationGestureRecognizer * _rotationGestureRecognizer;
+    _UIHyperInteractor * _rotationInteractor;
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _rotationTransform;
+    _UIHyperInteractor * _scaleInteractor;
+    NSMutableDictionary * _scenePersistentIdentifierToEdgeInsets;
+    NSMutableDictionary * _scenePersistentIdentifierToStashedPadding;
+    NSString * _shortDescription;
+    long long  _shouldStash;
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _stashTabCompensationTransform;
+    _UIHyperregionUnion * _stashedLeftRegion;
+    _UIHyperregionUnion * _stashedRightRegion;
+    <BSInvalidatable> * _stateCaptureInvalidatable;
+    SBSystemGestureManager * _systemGestureManagerForResizing;
+    SBSystemPointerInteractionManager * _systemPointerInteractionManager;
+    UIView * _targetOverlayView;
+    SBWindowScene * _targetWindowScene;
+    bool  _threeTouchesPanDetected;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _toBeAppliedPreferredContentSize;
+}
+
+@property (nonatomic, readonly) unsigned long long canonicalPosition;
+@property (nonatomic, readonly) double currentNormalizedScale;
+@property (nonatomic, readonly) <SBPIPInteractionControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSString *debugName;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialFrame;
+@property (nonatomic, readonly) SBPIPContentViewLayoutSettings *layoutSettings;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } nonoperationalFrame;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } position;
+@property (nonatomic) struct CGSize { double x1; double x2; } preferredContentSize;
+@property (nonatomic) double preferredNormalizedScale;
+@property (nonatomic, readonly) double preferredScale;
+@property (nonatomic, readonly) double stashProgress;
+@property (getter=isStashed, nonatomic) bool stashed;
+@property (readonly) Class superclass;
+@property (nonatomic) UIView *targetOverlayView;
+@property (nonatomic, readonly) UIView *targetView;
+
+- (void).cxx_destruct;
+- (void)__handleGesturesEndedState:(id)arg1;
+- (void)__moveToAnchorPoint:(struct CGPoint { double x1; double x2; })arg1 reason:(id)arg2;
+- (unsigned long long)__traitsForGesturesReasons:(unsigned long long)arg1;
+- (void)_adjustContentViewAnchorPointForGestureRecognizer:(id)arg1;
+- (void)_applyPreferredScale;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cachedEdgeInsetsForScene:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cachedStashedPaddingForScene:(id)arg1;
+- (void)_cancelAllGestures;
+- (unsigned long long)_canonicalPositionForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })_closestToDefaultCornersPosition;
+- (struct CGPoint { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromWindowForView:(id)arg2 toWindowScene:(id)arg3;
+- (struct CGPoint { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 toReferenceSpaceFromView:(id)arg2;
+- (struct CGPoint { double x1; double x2; })_convertPointToInteractionTargetView:(struct CGPoint { double x1; double x2; })arg1 fromSystemGestureRecognizer:(id)arg2;
+- (struct CGPoint { double x1; double x2; })_currentPosition;
+- (struct CGPoint { double x1; double x2; })_currentPositionForLayoutReason:(unsigned long long)arg1;
+- (struct SBPIPPositionInteractionStateContext { bool x1; bool x2; bool x3; bool x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; struct CGPoint { double x_7_1_1; double x_7_1_2; } x7; double x8; double x9; })_currentPositionInteractionStateContext;
+- (double)_currentRotation;
+- (double)_currentScale;
+- (struct CGSize { double x1; double x2; })_currentSizeForLayoutReason:(unsigned long long)arg1;
+- (void)_enumerateComposers:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)_enumeratePositionRegionComposersUsingBlock:(id /* block */)arg1;
+- (void)_handleGestureBeganState:(id)arg1;
+- (void)_handleGestureEndedState:(id)arg1;
+- (bool)_hasInFlightLayoutAnimations;
+- (bool)_hasValidInteractionTargetView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_inFlightHitTestPadding;
+- (struct CGPoint { double x1; double x2; })_interactionTargetViewPresentationPosition;
+- (bool)_isGestureRecognizerRecognizing:(id)arg1;
+- (bool)_isGesturing;
+- (bool)_isInteractive;
+- (bool)_isPanning;
+- (bool)_isPinching;
+- (bool)_isPositionCloserToStashedLeftRegion:(struct CGPoint { double x1; double x2; })arg1 closestPointOut:(struct CGPoint { double x1; double x2; }*)arg2;
+- (bool)_isPreferredContentSizeDirty;
+- (bool)_isRotating;
+- (bool)_isSizeAffectedByLayoutReasons:(unsigned long long)arg1;
+- (bool)_isSystemGestureRecognizer:(id)arg1;
+- (struct CGSize { double x1; double x2; })_lastSteadySize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_minimumStashedPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_noteStashProgress:(double)arg1 withReason:(unsigned long long)arg2;
+- (void)_performInitialLayoutIfNeeded;
+- (double)_proratedScaleForNormalizedScale:(double)arg1;
+- (bool)_regionIsStashedOne:(id)arg1;
+- (void)_removeGestureRecognizers;
+- (void)_removePointerInteraction;
+- (void)_resetAnchorPoint;
+- (id)_rotationHyperregion;
+- (struct CGPoint { double x1; double x2; })_roundPosition:(struct CGPoint { double x1; double x2; })arg1 forSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)_scaleHyperregion;
+- (void)_setDefaults;
+- (bool)_setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forScene:(id)arg2;
+- (void)_setNeedsLayoutForTraits:(unsigned long long)arg1 withReason:(unsigned long long)arg2 behavior:(int)arg3;
+- (void)_setNeedsLayoutForTraits:(unsigned long long)arg1 withReason:(unsigned long long)arg2 behavior:(int)arg3 layoutCompletion:(id /* block */)arg4 interactionCompletion:(id /* block */)arg5;
+- (void)_setPreferredScale:(double)arg1 additionalReasons:(unsigned long long)arg2 animationBehavior:(int)arg3;
+- (bool)_setStashedPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forScene:(id)arg2;
+- (void)_setupDefaultInteractorsAndHyperRegions;
+- (void)_setupForInitialFrame;
+- (void)_setupGestureRecognizers;
+- (void)_setupPointerInteraction;
+- (void)_setupStateCapture;
+- (void)_sizeChangeBeganWithBehavior:(int)arg1;
+- (void)_sizeChangeEnded;
+- (double)_stashProgressForPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_stashTabCompensationTransformForStashProgress:(double)arg1 reason:(unsigned long long)arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromDisplayArrangeSpaceToWindowScene:(id)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformToDisplayArrangementSpaceFromWindowScene:(id)arg1;
+- (void)_updateGeometryContextBoundsUsingMainDisplayWindowScene;
+- (bool)_updateGeometryContextUsingTargetViewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 orientation:(long long)arg2;
+- (void)_updateHyperregionVisualizationIfNecessary;
+- (void)_updateInteractorsAndCommit:(bool)arg1;
+- (void)_updatePIPSizeGeometryContext;
+- (void)_updatePositionRegionComposers;
+- (void)_updatePreferredContentSize;
+- (void)_updateResolvedPositionHyperRegionsMapWithGeometry:(struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })arg1 interactionState:(struct SBPIPPositionInteractionStateContext { bool x1; bool x2; bool x3; bool x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; struct CGPoint { double x_7_1_1; double x_7_1_2; } x7; double x8; double x9; })arg2;
+- (void)_updateSettingsDrivenParameters;
+- (void)_updateTargetWindowSceneIfNeeded;
+- (void)_updateTargetWindowSceneIfNeededUpdatingInteractors:(bool)arg1;
+- (void)addPositionRegionComposer:(id)arg1;
+- (unsigned long long)canonicalPosition;
+- (double)currentNormalizedScale;
+- (id)dataSource;
+- (void)dealloc;
+- (id)debugName;
+- (id)description;
+- (struct CGPoint { double x1; double x2; })edgeResizeAnchorPoint;
+- (void)finishTransitionToWindowScene:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizerShouldFailForMovementPastHysteresis:(id)arg1;
+- (void)handleEdgeResizeGesture:(id)arg1;
+- (void)handleExternalPanGesture:(id)arg1;
+- (void)handlePanGesture:(id)arg1;
+- (void)handlePinchGesture:(id)arg1;
+- (void)handleRotationGesture:(id)arg1;
+- (id)initWithInteractionTargetView:(id)arg1 preferredContentSize:(struct CGSize { double x1; double x2; })arg2 interactionSettings:(id)arg3 dataSource:(id)arg4 delegate:(id)arg5;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFrame;
+- (bool)isEnabled;
+- (bool)isPinching;
+- (bool)isRotating;
+- (bool)isStashed;
+- (void)layoutInteractedTraits:(unsigned long long)arg1 withReason:(unsigned long long)arg2 source:(id)arg3;
+- (id)layoutSettings;
+- (void)layoutWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 reason:(id)arg2 source:(id)arg3 usingDisplayArrangementSpace:(bool)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonoperationalFrame;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pointerInteractionHitTestInsetsForView:(id)arg1;
+- (void)pointerWillExitRegion;
+- (struct CGPoint { double x1; double x2; })position;
+- (id)positionHyperregion;
+- (void)positionRegionComposerDidInvalidate:(id)arg1;
+- (void)positionRegionComposerNeedsUpdate:(id)arg1 behavior:(int)arg2;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (double)preferredNormalizedScale;
+- (double)preferredScale;
+- (void)prepareForTransitionToWindowScene:(id)arg1;
+- (void)recalculateScale:(out double*)arg1 baselineScale:(out double*)arg2 forTranslationInView:(struct CGPoint { double x1; double x2; })arg3;
+- (id)regionAtLocation:(struct CGPoint { double x1; double x2; })arg1 forView:(id)arg2;
+- (struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })regionComposer:(id)arg1 transformGeometryContext:(struct SBPIPPositionGeometryContext { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct UIEdgeInsets { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; struct UIEdgeInsets { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; struct UIEdgeInsets { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; } x8; unsigned long long x9; long long x10; })arg2 toWindowScene:(id)arg3;
+- (void)reloadHyperregionComposerData;
+- (void)reloadInsets;
+- (void)setContainerSize:(struct CGSize { double x1; double x2; })arg1 withOrientation:(long long)arg2 scene:(id)arg3;
+- (void)setContentLayoutSettings:(id)arg1 animationBehavior:(int)arg2;
+- (void)setEnabled:(bool)arg1;
+- (void)setPlatformMetrics:(id)arg1 contentSize:(struct CGSize { double x1; double x2; })arg2 animationBehavior:(int)arg3;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredNormalizedScale:(double)arg1;
+- (void)setPreferredNormalizedScale:(double)arg1 additionalReasons:(unsigned long long)arg2 animationBehavior:(int)arg3;
+- (void)setStashed:(bool)arg1;
+- (void)setTargetOverlayView:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
+- (bool)shouldBeginPointerInteractionRequest:(id)arg1 atLocation:(struct CGPoint { double x1; double x2; })arg2 forView:(id)arg3;
+- (double)stashProgress;
+- (id)styleForRegion:(id)arg1 forView:(id)arg2;
+- (id)targetOverlayView;
+- (id)targetView;
+- (id)targetWindowSceneForRegionComposer:(id)arg1;
+- (void)toggleUserPreferredScale;
+
+@end

@@ -1,0 +1,91 @@
+
+@interface PXPeoplePickerConfigurationController : NSObject <PXPeopleFlowViewControllerActionDelegate, PXPeoplePickerConfigurationControllerDelegate, PXPeoplePickerViewControllerActionHandler> {
+    long long  _buttonType;
+    bool  _compactMode;
+    <PXPeoplePickerConfigurationControllerHandler> * _configControllerHandler;
+    PXPeopleBootstrapContext * _context;
+    long long  _currentPeopleConfigIndex;
+    long long  _currentViewControllerIndex;
+    NSArray * _identifiers;
+    NSMutableArray * _mutableAddedLocalIdentifiers;
+    NSMutableOrderedSet * _mutableAddedObjectIDs;
+    NSArray * _peopleConfigurations;
+    PHPhotoLibrary * _photoLibrary;
+    PXPeoplePickerViewController * _pickerViewController;
+    NSArray * _preselectedIdentifiers;
+    PXSelectionCoordinator * _selectionCoordinator;
+    bool  _shouldActLikeSingleSelectPicker;
+    bool  _transparentBackground;
+    NSMutableArray * _viewControllers;
+}
+
+@property (nonatomic, readonly) NSOrderedSet *addedObjectIDs;
+@property (nonatomic) long long buttonType;
+@property (nonatomic) bool compactMode;
+@property (nonatomic, readonly) <PXPeoplePickerConfigurationControllerHandler> *configControllerHandler;
+@property (nonatomic, retain) PXPeopleBootstrapContext *context;
+@property (nonatomic) long long currentPeopleConfigIndex;
+@property (nonatomic) long long currentViewControllerIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasContent;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *identifiers;
+@property (nonatomic, readonly) NSMutableArray *mutableAddedLocalIdentifiers;
+@property (nonatomic, readonly) NSMutableOrderedSet *mutableAddedObjectIDs;
+@property (nonatomic, readonly) NSArray *peopleConfigurations;
+@property (nonatomic, readonly) PHPhotoLibrary *photoLibrary;
+@property (nonatomic, readonly) PXPeoplePickerViewController *pickerViewController;
+@property (nonatomic, copy) NSArray *preselectedIdentifiers;
+@property (nonatomic, retain) PXSelectionCoordinator *selectionCoordinator;
+@property (nonatomic) bool shouldActLikeSingleSelectPicker;
+@property (readonly) Class superclass;
+@property (nonatomic) bool transparentBackground;
+@property (nonatomic, readonly) NSMutableArray *viewControllers;
+
++ (id)new;
+
+- (void).cxx_destruct;
+- (id)addedObjectIDs;
+- (long long)buttonType;
+- (bool)compactMode;
+- (id)configControllerHandler;
+- (id)context;
+- (long long)currentPeopleConfigIndex;
+- (id)currentViewController;
+- (long long)currentViewControllerIndex;
+- (void)decrementViewControllers;
+- (void)didAdvanceWithSender:(id)arg1;
+- (bool)hasContent;
+- (id)identifiers;
+- (id)incrementViewControllersForPerson:(id)arg1;
+- (id)init;
+- (id)initWithPeopleConfigurations:(id)arg1 configControllerHandler:(id)arg2 photoLibrary:(id)arg3;
+- (id)mutableAddedLocalIdentifiers;
+- (id)mutableAddedObjectIDs;
+- (id)peopleConfigurations;
+- (void)peoplePicker:(id)arg1 didTapItem:(id)arg2;
+- (id)photoLibrary;
+- (id)pickerViewController;
+- (id)preselectedIdentifiers;
+- (void)requestAdvanceToNextInFlow;
+- (void)requestCancel;
+- (void)requestDone;
+- (id)selectionCoordinator;
+- (void)setAdvanceButtonEnabled:(bool)arg1;
+- (void)setButtonType:(long long)arg1;
+- (void)setCompactMode:(bool)arg1;
+- (void)setContext:(id)arg1;
+- (void)setCurrentPeopleConfigIndex:(long long)arg1;
+- (void)setCurrentViewControllerIndex:(long long)arg1;
+- (void)setIdentifiers:(id)arg1;
+- (void)setPreselectedIdentifiers:(id)arg1;
+- (void)setSelectionCoordinator:(id)arg1;
+- (void)setShouldActLikeSingleSelectPicker:(bool)arg1;
+- (void)setTransparentBackground:(bool)arg1;
+- (bool)shouldActLikeSingleSelectPicker;
+- (bool)transparentBackground;
+- (void)viewControllerWillBePopped:(id)arg1;
+- (id)viewControllers;
+
+@end

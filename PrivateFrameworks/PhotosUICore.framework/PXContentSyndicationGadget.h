@@ -1,0 +1,113 @@
+
+@interface PXContentSyndicationGadget : NSObject <PXChangeObserver, PXContentSyndicationAssetFetchResultProviderChangeObserver, PXContentSyndicationGadgetViewDelegate, PXContentSyndicationSocialLayerHighlightProviderChangeObserver, PXGadget> {
+    <PXDisplayAssetCollection> * _assetCollection;
+    PXImageRequesterHelper * _backImageRequesterHelper;
+    PXContentSyndicationItem * _contentSyndicationItem;
+    PXContentSyndicationCountsController * _countsController;
+    PXImageRequesterHelper * _frontImageRequesterHelper;
+    PXGadgetSpec * _gadgetSpec;
+    PXFooterViewModel * _gridFooterViewModel;
+    <PXUIImageProvider> * _imageProvider;
+    <PXDisplayAssetCollection> * _initialAssetCollection;
+    <PXDisplayAssetFetchResult> * _keyImagesAssetFetchResult;
+    <PXContentSyndicationAssetFetchResultProvider> * _keyImagesAssetFetchResultProvider;
+    PXImageRequesterHelper * _middleImageRequesterHelper;
+    <PXDisplayAsset> * _referenceAssetForSocialLayerHighlight;
+    NSUserActivity * _siriActionActivity;
+    <PXContentSyndicationSocialLayerHighlightProvider> * _socialLayerHighlightProvider;
+    PXContentSyndicationGadgetView * _view;
+    PXContentSyndicationGadgetViewModel * _viewModel;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _visibleContentRect;
+    <PXContentSyndicationGadgetDelegate> * delegate;
+}
+
+@property (nonatomic, readonly) NSString *accessoryButtonTitle;
+@property (nonatomic, readonly) unsigned long long accessoryButtonType;
+@property (nonatomic, copy) <PXDisplayAssetCollection> *assetCollection;
+@property (nonatomic, readonly) Class collectionViewItemClass;
+@property (nonatomic, retain) PXContentSyndicationItem *contentSyndicationItem;
+@property (nonatomic) bool contentViewHiddenForOneUpTransition;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PXContentSyndicationGadgetDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long gadgetCapabilities;
+@property (nonatomic, retain) PXGadgetSpec *gadgetSpec;
+@property (nonatomic, readonly) unsigned long long gadgetType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long headerStyle;
+@property (nonatomic, copy) <PXDisplayAssetCollection> *initialAssetCollection;
+@property (nonatomic, readonly) NSString *localizedTitle;
+@property (nonatomic) long long priority;
+@property (nonatomic, copy) <PXDisplayAsset> *referenceAssetForSocialLayerHighlight;
+@property (nonatomic, readonly, copy) PXRegionOfInterest *regionOfInterestForOneUpTransition;
+@property (nonatomic, retain) NSUserActivity *siriActionActivity;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PXContentSyndicationGadgetView *view;
+@property (nonatomic, readonly) PXContentSyndicationGadgetViewModel *viewModel;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleContentRect;
+@property (nonatomic, readonly) bool wantsMultilineTitle;
+
+- (void).cxx_destruct;
+- (id)_createActionForType:(id)arg1 image:(id)arg2 attributes:(unsigned long long)arg3;
+- (void)_donateUserActivityForAssetCollectionIfNeeded;
+- (void)_fetchKeyImages;
+- (void)_fileRadar;
+- (void)_handleKeyImage:(id)arg1 atIndex:(long long)arg2;
+- (id)_makePresentationEnvironment;
+- (void)_presentDetailViewController;
+- (void)_refreshGadgetContents;
+- (void)_retrieveAssetCollectionIfNeeded;
+- (void)_updateCounts;
+- (void)_updateGridFooterViewModel;
+- (void)_updateImageRequesterHelper:(id)arg1 withAsset:(id)arg2;
+- (void)_updateOverlayTitleWithDetailedCounts:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1 savedCount:(long long)arg2;
+- (id)additionalContextMenuActionsForAttributionViewInContentSyndicationGadgetView:(id)arg1;
+- (id)assetCollection;
+- (void)assetFetchResultProvider:(id)arg1 didChangeAssetFetchResult:(id)arg2 forAssetCollection:(id)arg3;
+- (Class)collectionViewItemClass;
+- (void)commitPreviewView:(id)arg1;
+- (id)contentSyndicationItem;
+- (bool)contentViewHiddenForOneUpTransition;
+- (id)contextMenuWithSuggestedActions:(id)arg1;
+- (id)delegate;
+- (unsigned long long)gadgetCapabilities;
+- (id)gadgetSpec;
+- (unsigned long long)gadgetType;
+- (id)init;
+- (id)initWithAssetFetchResultProvider:(id)arg1 imageProvider:(id)arg2 socialLayerHighlightProvider:(id)arg3;
+- (id)initialAssetCollection;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (void)prepareCollectionViewItem:(id)arg1;
+- (void)presentGridAnimated:(bool)arg1;
+- (void)presentOneUpAnimated:(bool)arg1;
+- (id)previewParametersForTargetPreviewView:(id)arg1;
+- (id)referenceAssetForSocialLayerHighlight;
+- (id)regionOfInterestForOneUpTransition;
+- (void)setAssetCollection:(id)arg1;
+- (void)setContentSyndicationItem:(id)arg1;
+- (void)setContentViewHiddenForOneUpTransition:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setGadgetSpec:(id)arg1;
+- (void)setInitialAssetCollection:(id)arg1;
+- (void)setReferenceAssetForSocialLayerHighlight:(id)arg1;
+- (void)setSiriActionActivity:(id)arg1;
+- (void)setVisibleContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)siriActionActivity;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)socialLayerHighlightProvider:(id)arg1 didChangeSocialLayerHighlight:(id)arg2 forAsset:(id)arg3;
+- (id)targetPreviewViewForLocation:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (void)userDidSelectGadget;
+- (id)view;
+- (id)viewModel;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleContentRect;
+
+@end

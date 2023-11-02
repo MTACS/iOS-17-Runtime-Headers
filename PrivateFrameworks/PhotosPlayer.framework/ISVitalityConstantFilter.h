@@ -1,0 +1,4 @@
+
+@interface ISVitalityConstantFilter : ISVitalityFilter
+
+@end

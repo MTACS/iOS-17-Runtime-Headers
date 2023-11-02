@@ -1,0 +1,4 @@
+
+@interface _TtCE15BatteryCenterUICSo8NSBundleP33_7F2044B7EA7BD1FBE02933F5E053B62D13currentBundle : _TtCs12_SwiftObject
+
+@end

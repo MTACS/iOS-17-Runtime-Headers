@@ -1,0 +1,92 @@
+
+@interface PHImageRequestBehaviorSpec : NSObject {
+    bool  _allowPlaceholder;
+    bool  _cannotReturnSmallerImage;
+    long long  _choosingPolicy;
+    bool  _decodeAsHDR;
+    long long  _downloadIntent;
+    long long  _downloadPriority;
+    bool  _includeHDRGainMap;
+    bool  _includeHDRGainMapInIntermediateImage;
+    unsigned long long  _loadingOptions;
+    double  _minimumTableThumbnailLongSide;
+    bool  _networkAccessAllowed;
+    bool  _onlyUseFetchedAssetPropertiesDuringChoosing;
+    long long  _resizeMode;
+    bool  _synchronous;
+    bool  _useLimitedLibraryMode;
+    bool  _useLowMemoryMode;
+    long long  _version;
+}
+
+@property (nonatomic) bool allowPlaceholder;
+@property (nonatomic) bool cannotReturnSmallerImage;
+@property (nonatomic) long long choosingPolicy;
+@property (nonatomic) bool decodeAsHDR;
+@property (nonatomic) long long downloadIntent;
+@property (nonatomic) long long downloadPriority;
+@property (nonatomic) bool includeHDRGainMap;
+@property (nonatomic) bool includeHDRGainMapInIntermediateImage;
+@property (nonatomic) unsigned long long loadingOptions;
+@property (nonatomic) double minimumTableThumbnailLongSide;
+@property (getter=isNetworkAccessAllowed, nonatomic) bool networkAccessAllowed;
+@property (nonatomic) bool onlyUseFetchedAssetPropertiesDuringChoosing;
+@property (nonatomic) long long resizeMode;
+@property (getter=isSynchronous, nonatomic) bool synchronous;
+@property (nonatomic) bool useLimitedLibraryMode;
+@property (nonatomic) bool useLowMemoryMode;
+@property (nonatomic) long long version;
+
++ (bool)_shouldDecodeAsHDRBasedOnChoosingPolicy:(long long)arg1 options:(id)arg2 asset:(id)arg3;
++ (bool)_shouldLoadHDRGainMapBasedOnChoosingPolicy:(long long)arg1 options:(id)arg2 asset:(id)arg3;
++ (id)contentEditingInputImageBehaviorSpecForBaseVersion:(long long)arg1 isNetworkAccessAllowed:(bool)arg2 downloadIntent:(long long)arg3 shouldUseRAWAsUnadjustedBase:(bool)arg4 asset:(id)arg5;
++ (id)imageRequestBestBehaviorSpecWithPreviousBehaviorSpec:(id)arg1 options:(id)arg2 asset:(id)arg3;
++ (id)imageRequestInitialBehaviorSpecWithImageRequestOptions:(id)arg1 asset:(id)arg2;
++ (id)imageRequestIntermediateBehaviorSpecWithPreviousBehaviorSpec:(id)arg1 options:(id)arg2 asset:(id)arg3;
++ (id)livePhotoRequestInitialBehaviorSpecWithLivePhotoRequestOptions:(id)arg1;
++ (unsigned long long)loadingOptionsFromLoadingMode:(long long)arg1;
+
+- (bool)allowPlaceholder;
+- (bool)cannotReturnSmallerImage;
+- (long long)choosingPolicy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)decodeAsHDR;
+- (id)description;
+- (long long)downloadIntent;
+- (long long)downloadPriority;
+- (bool)includeHDRGainMap;
+- (bool)includeHDRGainMapInIntermediateImage;
+- (bool)isExplicitUserAction;
+- (bool)isNetworkAccessAllowed;
+- (bool)isSynchronous;
+- (unsigned long long)loadingOptions;
+- (double)minimumTableThumbnailLongSide;
+- (bool)onlyUseFetchedAssetPropertiesDuringChoosing;
+- (long long)resizeMode;
+- (void)setAllowPlaceholder:(bool)arg1;
+- (void)setCannotReturnSmallerImage:(bool)arg1;
+- (void)setChoosingPolicy:(long long)arg1;
+- (void)setDecodeAsHDR:(bool)arg1;
+- (void)setDownloadIntent:(long long)arg1;
+- (void)setDownloadPriority:(long long)arg1;
+- (void)setIncludeHDRGainMap:(bool)arg1;
+- (void)setIncludeHDRGainMapInIntermediateImage:(bool)arg1;
+- (void)setLoadingOptions:(unsigned long long)arg1;
+- (void)setMinimumTableThumbnailLongSide:(double)arg1;
+- (void)setNetworkAccessAllowed:(bool)arg1;
+- (void)setOnlyUseFetchedAssetPropertiesDuringChoosing:(bool)arg1;
+- (void)setResizeMode:(long long)arg1;
+- (void)setSynchronous:(bool)arg1;
+- (void)setUseLimitedLibraryMode:(bool)arg1;
+- (void)setUseLowMemoryMode:(bool)arg1;
+- (void)setVersion:(long long)arg1;
+- (id)shortDescription;
+- (bool)shouldLoadData;
+- (bool)shouldLoadDataOrURL;
+- (bool)shouldLoadImage;
+- (bool)shouldLoadURL;
+- (bool)useLimitedLibraryMode;
+- (bool)useLowMemoryMode;
+- (long long)version;
+
+@end

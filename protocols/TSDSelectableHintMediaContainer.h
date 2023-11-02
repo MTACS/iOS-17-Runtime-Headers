@@ -1,0 +1,4 @@
+
+@protocol TSDSelectableHintMediaContainer <TSDReplaceableMediaContainer>
+
+@end

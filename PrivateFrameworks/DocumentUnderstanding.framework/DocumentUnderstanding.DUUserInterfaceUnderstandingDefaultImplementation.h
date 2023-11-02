@@ -1,0 +1,4 @@
+
+@interface DocumentUnderstanding.DUUserInterfaceUnderstandingDefaultImplementation : _TtCs12_SwiftObject
+
+@end

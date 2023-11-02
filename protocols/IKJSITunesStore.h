@@ -1,0 +1,4 @@
+
+@protocol IKJSITunesStore <JSExport>
+
+@end

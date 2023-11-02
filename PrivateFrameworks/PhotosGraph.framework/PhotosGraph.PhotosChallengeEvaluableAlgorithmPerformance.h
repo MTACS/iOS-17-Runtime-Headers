@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmPerformance : PhotosGraph.PhotosChallengeEvaluableMeaningAlgorithm
+
+@end

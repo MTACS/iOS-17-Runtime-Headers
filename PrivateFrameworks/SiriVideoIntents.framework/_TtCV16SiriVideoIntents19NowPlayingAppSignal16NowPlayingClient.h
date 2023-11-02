@@ -1,0 +1,4 @@
+
+@interface _TtCV16SiriVideoIntents19NowPlayingAppSignal16NowPlayingClient : _TtCs12_SwiftObject
+
+@end

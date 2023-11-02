@@ -1,0 +1,47 @@
+
+@interface STAppInfoCache : NSObject {
+    NSCache * _appInfoByBundleIdentifier;
+    NSMutableSet * _bundleIdentifiersWithPendingRequests;
+    NSOperationQueue * _completionHandlerQueue;
+    NSObject<OS_dispatch_queue> * _lookupQueue;
+    NSPersistentContainer * _persistentContainer;
+    NSURLSession * _urlSession;
+}
+
+@property (nonatomic, readonly) NSCache *appInfoByBundleIdentifier;
+@property (nonatomic, readonly) NSMutableSet *bundleIdentifiersWithPendingRequests;
+@property (nonatomic, readonly) NSOperationQueue *completionHandlerQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *lookupQueue;
+@property (retain) NSPersistentContainer *persistentContainer;
+@property (nonatomic, readonly) NSURLSession *urlSession;
+
++ (id)sharedCache;
+
+- (void).cxx_destruct;
+- (id)_appInfoForBundleIdentifier:(id)arg1;
+- (id)_fetchAppInfoFromLaunchServicesWithBundleIdentifier:(id)arg1;
+- (void)_fetchAppStoreInfoAndNotifyWithBundleIdentifiers:(id)arg1;
+- (void)_fetchAppStoreInfoAndNotifyWithBundleIdentifiers:(id)arg1 timeoutInterval:(double)arg2 completionHandler:(id /* block */)arg3;
+- (id)_fetchSyncedInstalledAppInfoForBundleIdentifier:(id)arg1;
+- (void)_finishedFetchingAppInfoByBundleIdentifier:(id)arg1;
+- (void)_handleiTunesResponseForBundleIdentifiers:(id)arg1 response:(id)arg2 data:(id)arg3 error:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)_localAppNameForBundleIdentifier:(id)arg1;
+- (id)_placeholderAppInfoWithBundleIdentifier:(id)arg1;
+- (id)_preloadedAppInfoWithBundleIdentifier:(id)arg1;
+- (void)addObserver:(id)arg1 selector:(SEL)arg2 bundleIdentifier:(id)arg3;
+- (id)appInfoByBundleIdentifier;
+- (id)appInfoForBundleIdentifier:(id)arg1;
+- (id)appInfoForBundleIdentifier:(id)arg1 localOnly:(bool)arg2;
+- (id)bundleIdentifiersWithPendingRequests;
+- (id)completionHandlerQueue;
+- (void)dealloc;
+- (void)fetchAppInfoForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchAppInfoForBundleIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)init;
+- (id)lookupQueue;
+- (id)persistentContainer;
+- (void)removeObserver:(id)arg1 bundleIdentifier:(id)arg2;
+- (void)setPersistentContainer:(id)arg1;
+- (id)urlSession;
+
+@end

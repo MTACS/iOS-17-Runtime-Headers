@@ -1,0 +1,65 @@
+
+@interface SUUIIndexBarControlController : NSObject <SUUIIndexBarControlDataSource, SUUIIndexBarControlDelegate> {
+    SUUIIndexBarEntryDescriptor * _combinedEntryDescriptor;
+    <SUUIIndexBarControlControllerDataSource> * _dataSource;
+    struct { 
+        unsigned int dataSourceRespondsToCombinedEntry : 1; 
+        unsigned int dataSourceRespondsToNumberOfSections : 1; 
+        unsigned int delegateRespondsToDidSelectEntryAtIndexPath : 1; 
+        unsigned int delegateRespondsToDidSelectBeyondBottom : 1; 
+        unsigned int delegateRespondsToDidSelectBeyondTop : 1; 
+    }  _dataSourceDelegateFlags;
+    <SUUIIndexBarControlControllerDelegate> * _delegate;
+    NSMapTable * _entryDescriptorToCachedEntry;
+    bool  _hasValidCombinedEntryDescriptor;
+    SUUIIndexBarControl * _indexBarControl;
+    NSMapTable * _indexPathToEntryDescriptor;
+    NSMapTable * _requestIDToDescriptors;
+    SUUIResourceLoader * _resourceLoader;
+}
+
+@property (nonatomic) <SUUIIndexBarControlControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SUUIIndexBarControlControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SUUIIndexBarControl *indexBarControl;
+@property (nonatomic, retain) SUUIResourceLoader *resourceLoader;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_URLForEntryDescriptor:(id)arg1;
+- (void)_artworkRequestDidLoadImageNotification:(id)arg1;
+- (id)_cachedEntryForEntryDescriptor:(id)arg1;
+- (void)_cancelLoadForEntryDescriptors:(id)arg1;
+- (id)_combinedEntryDescriptor;
+- (void)_configureEntry:(id)arg1 withEntryDescriptor:(id)arg2;
+- (id)_entryDescriptorAtIndexPath:(id)arg1;
+- (id)_entryForEntryDescriptor:(id)arg1 loadingIfNeeded:(bool)arg2;
+- (void)_finishLoadForRequestID:(id)arg1 withResultingImage:(id)arg2;
+- (void)_loadEntryForEntryDescriptor:(id)arg1;
+- (id)_placeholderEntryForEntryDescriptor:(id)arg1;
+- (void)_updateCachedEntry:(id)arg1 forEntryDescriptor:(id)arg2;
+- (id)combinedEntryForIndexBarControl:(id)arg1;
+- (id)dataSource;
+- (void)dealloc;
+- (id)delegate;
+- (id)indexBarControl;
+- (void)indexBarControl:(id)arg1 didSelectEntryAtIndexPath:(id)arg2;
+- (id)indexBarControl:(id)arg1 entryAtIndexPath:(id)arg2;
+- (long long)indexBarControl:(id)arg1 numberOfEntriesInSection:(long long)arg2;
+- (void)indexBarControlDidSelectBeyondBottom:(id)arg1;
+- (void)indexBarControlDidSelectBeyondTop:(id)arg1;
+- (id)init;
+- (id)initWithIndexBarControl:(id)arg1;
+- (long long)numberOfSectionsInIndexBarControl:(id)arg1;
+- (void)reloadCombinedEntryDescriptor;
+- (void)reloadData;
+- (void)reloadEntryDescriptorAtIndexPath:(id)arg1;
+- (void)reloadSections:(id)arg1;
+- (id)resourceLoader;
+- (void)setDataSource:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setResourceLoader:(id)arg1;
+
+@end

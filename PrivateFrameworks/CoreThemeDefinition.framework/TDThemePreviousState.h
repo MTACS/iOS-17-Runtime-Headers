@@ -1,0 +1,4 @@
+
+@interface TDThemePreviousState : TDThemeConstant
+
+@end

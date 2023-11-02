@@ -1,0 +1,4 @@
+
+@protocol NFStateMachineContextType <NSObject>
+
+@end

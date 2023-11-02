@@ -1,0 +1,4 @@
+
+@interface STUIStatusBarForegroundView : UIView
+
+@end

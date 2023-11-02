@@ -1,0 +1,86 @@
+
+@interface CalRecurrenceGenerator : NSObject {
+    bool  _allDay;
+    NSCalendar * _calendar;
+    NSArray * _daysOfTheMonth;
+    NSArray * _daysOfTheWeek;
+    NSArray * _daysOfTheYear;
+    NSDate * _endDate;
+    NSDate * _eventEndDate;
+    NSDate * _eventStartDate;
+    NSTimeZone * _eventTimeZone;
+    int  _frequency;
+    int  _interval;
+    NSArray * _monthsOfTheYear;
+    bool  _onlyIncludeInitialDateIfItMatchesRecurrence;
+    NSArray * _setPositions;
+    bool  _shouldPinMonthDays;
+    unsigned long long  _weekStart;
+    NSArray * _weeksOfTheYear;
+}
+
+@property (nonatomic) bool allDay;
+@property (nonatomic, copy) NSArray *daysOfTheMonth;
+@property (nonatomic, copy) NSArray *daysOfTheWeek;
+@property (nonatomic, copy) NSArray *daysOfTheYear;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, copy) NSDate *eventEndDate;
+@property (nonatomic, copy) NSDate *eventStartDate;
+@property (nonatomic, copy) NSTimeZone *eventTimeZone;
+@property (nonatomic) int frequency;
+@property (nonatomic) int interval;
+@property (nonatomic, copy) NSArray *monthsOfTheYear;
+@property (nonatomic) bool onlyIncludeInitialDateIfItMatchesRecurrence;
+@property (nonatomic, copy) NSArray *setPositions;
+@property (nonatomic) bool shouldPinMonthDays;
+@property (nonatomic) unsigned long long weekStart;
+@property (nonatomic, copy) NSArray *weeksOfTheYear;
+
+- (void).cxx_destruct;
+- (id)_copyDailyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (id)_copyMonthlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (id)_copyWeeklyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (id)_copyYearlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (bool)_isSimpleYearlyRecurrence;
+- (bool)_validateCalDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 pinned:(bool)arg2;
+- (bool)allDay;
+- (id)computeRecurrenceEndDate:(unsigned long long)arg1;
+- (double)convertAbsoluteTime:(double)arg1 fromTimeZone:(id)arg2 toTimeZone:(id)arg3;
+- (id)copyOccurrenceDatesBetweenStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 limit:(long long)arg4;
+- (id)copyOccurrenceDatesWithInitialDate:(id)arg1 allDay:(bool)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 timeZone:(id)arg5 limit:(long long)arg6;
+- (id)daysOfTheMonth;
+- (id)daysOfTheWeek;
+- (id)daysOfTheYear;
+- (double)duration;
+- (id)endDate;
+- (id)eventEndDate;
+- (id)eventStartDate;
+- (id)eventTimeZone;
+- (int)frequency;
+- (id)init;
+- (int)interval;
+- (id)monthsOfTheYear;
+- (bool)onlyIncludeInitialDateIfItMatchesRecurrence;
+- (bool)requiresEndDateConversionFromGMTToEventTimeZone;
+- (void)setAllDay:(bool)arg1;
+- (void)setDaysOfTheMonth:(id)arg1;
+- (void)setDaysOfTheWeek:(id)arg1;
+- (void)setDaysOfTheYear:(id)arg1;
+- (void)setEndDate:(id)arg1;
+- (void)setEventEndDate:(id)arg1;
+- (void)setEventStartDate:(id)arg1;
+- (void)setEventTimeZone:(id)arg1;
+- (void)setFrequency:(int)arg1;
+- (void)setInterval:(int)arg1;
+- (void)setMonthsOfTheYear:(id)arg1;
+- (void)setOnlyIncludeInitialDateIfItMatchesRecurrence:(bool)arg1;
+- (id)setPositions;
+- (void)setSetPositions:(id)arg1;
+- (void)setShouldPinMonthDays:(bool)arg1;
+- (void)setWeekStart:(unsigned long long)arg1;
+- (void)setWeeksOfTheYear:(id)arg1;
+- (bool)shouldPinMonthDays;
+- (unsigned long long)weekStart;
+- (id)weeksOfTheYear;
+
+@end

@@ -1,0 +1,95 @@
+
+@interface SOSFlow : NSObject {
+    <SOSCoreAnalyticsReporting> * _coreAnalyticsReporter;
+    long long  _currentState;
+    bool  _didSeeUnresponsiveResting;
+    NSTimer * _flowStateHeartbeatTimer;
+    HKHealthStore * _healthStore;
+    NSUserDefaults * _healthUserDefaults;
+    bool  _isUserResponsive;
+    _HKMedicalIDData * _medicalIDData;
+    NSHashTable * _observers;
+    bool  _shouldIgnoreMotionCancel;
+    long long  _sosFlowTrigger;
+    unsigned long long  _sosFlowType;
+    PCPersistentTimer * _timer;
+}
+
+@property (nonatomic, retain) <SOSCoreAnalyticsReporting> *coreAnalyticsReporter;
+@property (nonatomic) long long currentState;
+@property (nonatomic) bool didSeeUnresponsiveResting;
+@property (nonatomic, retain) NSTimer *flowStateHeartbeatTimer;
+@property (nonatomic, retain) HKHealthStore *healthStore;
+@property (nonatomic, retain) NSUserDefaults *healthUserDefaults;
+@property (nonatomic) bool isUserResponsive;
+@property (nonatomic, retain) _HKMedicalIDData *medicalIDData;
+@property (nonatomic, retain) NSHashTable *observers;
+@property (nonatomic) bool shouldIgnoreMotionCancel;
+@property (nonatomic, readonly) long long sosFlowTrigger;
+@property (nonatomic) unsigned long long sosFlowType;
+
++ (bool)isInterruptibleState:(long long)arg1;
++ (bool)isInterruptingEvent:(unsigned long long)arg1;
++ (bool)isPreCallState:(long long)arg1;
++ (bool)isTerminalState:(long long)arg1;
++ (bool)isTriggerMechanismUserInitiated:(long long)arg1;
++ (bool)needsHeartbeatForState:(long long)arg1;
++ (long long)sosFlowStateForString:(id)arg1;
++ (unsigned long long)sosFlowTypeForTriggerMechanism:(long long)arg1;
++ (id)validEventsforState:(long long)arg1;
+
+- (void).cxx_destruct;
+- (void)_invalidateTimer;
+- (void)_prefetchMedicalID;
+- (void)addObserver:(id)arg1;
+- (void)callFinished;
+- (bool)canDeviceTriggerAutoDialForSOSFlowType:(unsigned long long)arg1;
+- (double)checkInTimeoutForSOSFlowType:(unsigned long long)arg1;
+- (void)clearFlowStateHeartbeatTimer;
+- (void)contactsCountdownDismissed;
+- (id)coreAnalyticsReporter;
+- (void)countdownRequestedDial;
+- (long long)currentState;
+- (bool)didSeeUnresponsiveResting;
+- (void)eventTriggered;
+- (id)flowStateHeartbeatTimer;
+- (void)handleEmergencyCallInititated;
+- (void)handleEmergencyFallback;
+- (void)handleSOSFlowEvent:(unsigned long long)arg1 withMetaData:(id)arg2;
+- (void)handleUserExited;
+- (id)healthStore;
+- (id)healthUserDefaults;
+- (id)initWithTriggerMechanism:(long long)arg1 healthStore:(id)arg2;
+- (bool)isUserResponsive;
+- (id)medicalIDData;
+- (void)motionDidCancel;
+- (id)observers;
+- (void)removeObserver:(id)arg1;
+- (long long)restingState;
+- (void)setCoreAnalyticsReporter:(id)arg1;
+- (void)setCurrentState:(long long)arg1;
+- (void)setDidSeeUnresponsiveResting:(bool)arg1;
+- (void)setFlowStateHeartbeatTimer:(id)arg1;
+- (void)setHealthStore:(id)arg1;
+- (void)setHealthUserDefaults:(id)arg1;
+- (void)setIsUserResponsive:(bool)arg1;
+- (void)setMedicalIDData:(id)arg1;
+- (void)setObservers:(id)arg1;
+- (void)setShouldIgnoreMotionCancel:(bool)arg1;
+- (void)setSosFlowType:(unsigned long long)arg1;
+- (bool)shouldIgnoreMotionCancel;
+- (bool)shouldShowMedicalID;
+- (long long)sosFlowTrigger;
+- (unsigned long long)sosFlowType;
+- (void)startAnomalyFlow;
+- (void)startFlowStateHeartbeatTimer;
+- (void)startTimerToAutoDial;
+- (void)timerFired:(id)arg1;
+- (void)timerRequestsCountdownToAutoCall;
+- (void)updateState:(long long)arg1;
+- (void)userDismissedCallCountdown;
+- (void)userRespondedToConfirmationWith:(unsigned long long)arg1;
+- (void)userRespondedToRestingStateWith:(long long)arg1;
+- (void)willHandleEvent:(unsigned long long)arg1 withMetaData:(id)arg2;
+
+@end

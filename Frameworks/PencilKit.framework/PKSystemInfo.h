@@ -1,0 +1,4 @@
+
+@interface PKSystemInfo : NSObject
+
+@end

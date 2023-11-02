@@ -1,0 +1,97 @@
+
+@interface BMRankableSocialHighlight : BMEventBase <BMProtoBufWrapper, BMStoreData> {
+    NSArray * _applicationIdentifiers;
+    NSString * _attributionIdentifier;
+    NSString * _batchIdentifier;
+    NSDictionary * _calculatedFeatures;
+    NSString * _clientIdentifier;
+    NSString * _clientVariant;
+    NSDate * _contentCreationDate;
+    NSString * _displayName;
+    NSString * _domainIdentifier;
+    NSString * _groupPhotoPathDigest;
+    NSString * _highlightIdentifier;
+    unsigned long long  _highlightType;
+    NSNumber * _isConversationAutoDonating;
+    NSNumber * _isPrimary;
+    NSString * _originatingDeviceId;
+    NSNumber * _rank;
+    NSDate * _rankingDate;
+    NSString * _resolvedUrl;
+    NSURL * _resourceUrl;
+    NSNumber * _score;
+    BMSocialHighlightContact * _sender;
+    NSString * _sourceBundleId;
+    NSDate * _syndicationDate;
+}
+
+@property (nonatomic, readonly) NSArray *applicationIdentifiers;
+@property (nonatomic, readonly) NSString *attributionIdentifier;
+@property (nonatomic, readonly) NSString *batchIdentifier;
+@property (nonatomic, readonly) NSDictionary *calculatedFeatures;
+@property (nonatomic, readonly) NSString *clientIdentifier;
+@property (nonatomic, readonly) NSString *clientVariant;
+@property (nonatomic, readonly) NSDate *contentCreationDate;
+@property (nonatomic, readonly) unsigned int dataVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSString *domainIdentifier;
+@property (nonatomic, readonly) NSString *groupPhotoPath;
+@property (nonatomic, readonly) NSString *groupPhotoPathDigest;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *highlightIdentifier;
+@property (nonatomic, readonly) unsigned long long highlightType;
+@property (nonatomic, readonly) NSNumber *isConversationAutoDonating;
+@property (nonatomic, readonly) NSNumber *isPrimary;
+@property (nonatomic, readonly) NSString *originatingDeviceId;
+@property (nonatomic, readonly) NSNumber *rank;
+@property (nonatomic, readonly) NSDate *rankingDate;
+@property (nonatomic, readonly) NSString *resolvedUrl;
+@property (nonatomic, readonly) NSURL *resourceUrl;
+@property (nonatomic, readonly) NSNumber *score;
+@property (nonatomic, readonly) BMSocialHighlightContact *sender;
+@property (nonatomic, readonly) NSString *sourceBundleId;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDate *syndicationDate;
+
++ (id)eventWithData:(id)arg1 dataVersion:(unsigned int)arg2;
+
+- (void).cxx_destruct;
+- (int)_protoType;
+- (unsigned long long)_socialHighlightTypeForProtoType:(int)arg1;
+- (id)applicationIdentifiers;
+- (id)attributionIdentifier;
+- (id)batchIdentifier;
+- (id)calculatedFeatures;
+- (id)clientIdentifier;
+- (id)clientVariant;
+- (id)contentCreationDate;
+- (unsigned int)dataVersion;
+- (id)displayName;
+- (id)domainIdentifier;
+- (id)encodeAsProto;
+- (id)groupPhotoPath;
+- (id)groupPhotoPathDigest;
+- (id)highlightIdentifier;
+- (unsigned long long)highlightType;
+- (id)initWithHighlightIdentifier:(id)arg1 highlightType:(unsigned long long)arg2 syndicationDate:(id)arg3 sourceBundleId:(id)arg4 applicationIdentifiers:(id)arg5 resourceUrl:(id)arg6 sender:(id)arg7 domainIdentifier:(id)arg8 batchIdentifier:(id)arg9 calculatedFeatures:(id)arg10 clientIdentifier:(id)arg11 contentCreationDate:(id)arg12 groupPhotoPath:(id)arg13 displayName:(id)arg14 isPrimary:(id)arg15 attributionIdentifier:(id)arg16 rank:(id)arg17 score:(id)arg18 isConversationAutoDonating:(id)arg19 originatingDeviceId:(id)arg20 rankingDate:(id)arg21 resolvedUrl:(id)arg22;
+- (id)initWithHighlightIdentifier:(id)arg1 highlightType:(unsigned long long)arg2 syndicationDate:(id)arg3 sourceBundleId:(id)arg4 applicationIdentifiers:(id)arg5 resourceUrl:(id)arg6 sender:(id)arg7 domainIdentifier:(id)arg8 batchIdentifier:(id)arg9 calculatedFeatures:(id)arg10 clientIdentifier:(id)arg11 contentCreationDate:(id)arg12 groupPhotoPathDigest:(id)arg13 displayName:(id)arg14 isPrimary:(id)arg15 attributionIdentifier:(id)arg16 rank:(id)arg17 score:(id)arg18 isConversationAutoDonating:(id)arg19 originatingDeviceId:(id)arg20 rankingDate:(id)arg21 resolvedUrl:(id)arg22;
+- (id)initWithHighlightIdentifier:(id)arg1 highlightType:(unsigned long long)arg2 syndicationDate:(id)arg3 sourceBundleId:(id)arg4 applicationIdentifiers:(id)arg5 resourceUrl:(id)arg6 sender:(id)arg7 domainIdentifier:(id)arg8 batchIdentifier:(id)arg9 calculatedFeatures:(id)arg10 clientIdentifier:(id)arg11 contentCreationDate:(id)arg12 groupPhotoPathDigest:(id)arg13 displayName:(id)arg14 isPrimary:(id)arg15 attributionIdentifier:(id)arg16 rank:(id)arg17 score:(id)arg18 isConversationAutoDonating:(id)arg19 originatingDeviceId:(id)arg20 rankingDate:(id)arg21 resolvedUrl:(id)arg22 clientVariant:(id)arg23;
+- (id)initWithProto:(id)arg1;
+- (id)initWithProtoData:(id)arg1;
+- (id)isConversationAutoDonating;
+- (id)isPrimary;
+- (id)originatingDeviceId;
+- (id)proto;
+- (id)rank;
+- (id)rankingDate;
+- (id)resolvedUrl;
+- (id)resourceUrl;
+- (id)score;
+- (id)sender;
+- (id)serialize;
+- (id)sourceBundleId;
+- (id)syndicationDate;
+
+@end

@@ -1,0 +1,15 @@
+
+@protocol MusicKit_SoftLinking_MPCPlayerChangeItemCommand <NSObject>
+
+@required
+
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_changeItemCommand_changeToItem:(id <MusicKit_SoftLinking_MPCPlayerResponseItem>)arg1;
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_changeItemCommand_nextChapterCommandRequest;
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_changeItemCommand_nextItemCommandRequest;
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_changeItemCommand_nextSectionCommandRequest;
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_changeItemCommand_previousChapterCommandRequest;
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_changeItemCommand_previousItemCommandRequest;
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_changeItemCommand_previousItemDeferringToPlaybackQueuePositionCommandRequest;
+- (<MusicKit_SoftLinking_MPCPlayerCommandRequest> *)musicKit_changeItemCommand_previousSectionCommandRequest;
+
+@end

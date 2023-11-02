@@ -1,0 +1,4 @@
+
+@protocol MSPContainerEditReplacedEntirely <MSPContainerEdit>
+
+@end

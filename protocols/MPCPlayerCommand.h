@@ -1,0 +1,4 @@
+
+@protocol MPCPlayerCommand <NSObject>
+
+@end

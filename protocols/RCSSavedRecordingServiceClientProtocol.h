@@ -1,0 +1,4 @@
+
+@protocol RCSSavedRecordingServiceClientProtocol <NSObject>
+
+@end

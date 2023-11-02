@@ -1,0 +1,4 @@
+
+@interface SBHomeScreenOverlayWindow : SBFWindow
+
+@end

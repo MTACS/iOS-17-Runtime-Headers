@@ -1,0 +1,4 @@
+
+@interface _TtCO10AppIntents15ChangeOperationP33_6A6ADCDFA1B4DD03A5E27AB000FCCE5A2__ : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface SBMicroPIPTetheringMirrorContentPlaceholderContainerView : SBFTouchPassThroughView
+
+@end

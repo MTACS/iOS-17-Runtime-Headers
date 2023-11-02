@@ -1,0 +1,80 @@
+
+@interface _UIAlertControllerView : UIView {
+    UIView * __contentView;
+    UIView * __dimmingView;
+    UIAlertControllerVisualStyle * __visualStyle;
+    bool  _actionsReversed;
+    UIAlertController * _alertController;
+    bool  _alignsToKeyboard;
+    NSAttributedString * _attributedDetailMessage;
+    NSAttributedString * _attributedMessage;
+    NSAttributedString * _attributedTitle;
+    double  _effectAlpha;
+    bool  _hasDimmingView;
+    NSString * _message;
+    bool  _presentedAsPopover;
+    bool  _shouldHaveBackdropView;
+    NSString * _title;
+}
+
+@property (readonly) UIView *_contentView;
+@property (readonly) UIView *_dimmingView;
+@property (setter=_setVisualStyle:, nonatomic, retain) UIAlertControllerVisualStyle *_visualStyle;
+@property (getter=_actionsReversed, setter=_setActionsReversed:, nonatomic) bool actionsReversed;
+@property UIAlertController *alertController;
+@property bool alignsToKeyboard;
+@property (setter=_setAttributedDetailMessage:, nonatomic, copy) NSAttributedString *attributedDetailMessage;
+@property (setter=_setAttributedMessage:, nonatomic, copy) NSAttributedString *attributedMessage;
+@property (setter=_setAttributedTitle:, nonatomic, copy) NSAttributedString *attributedTitle;
+@property (nonatomic) double effectAlpha;
+@property bool hasDimmingView;
+@property (setter=_setMessage:, nonatomic, copy) NSString *message;
+@property bool presentedAsPopover;
+@property bool shouldHaveBackdropView;
+@property (setter=_setTitle:, nonatomic, copy) NSString *title;
+
+- (void).cxx_destruct;
+- (void)_actionLayoutDirectionChanged;
+- (void)_actionsChanged;
+- (bool)_actionsReversed;
+- (void)_addContentViewControllerToViewHierarchyIfNecessary;
+- (id)_contentView;
+- (id)_dimmingView;
+- (id)_focusedAction;
+- (void)_performBatchActionChangesWithBlock:(id /* block */)arg1;
+- (void)_propertiesChanged;
+- (void)_removeContentViewControllerViewFromHierarchy;
+- (void)_setActionsReversed:(bool)arg1;
+- (void)_setAttributedDetailMessage:(id)arg1;
+- (void)_setAttributedMessage:(id)arg1;
+- (void)_setAttributedTitle:(id)arg1;
+- (void)_setMessage:(id)arg1;
+- (void)_setTitle:(id)arg1;
+- (void)_setVisualStyle:(id)arg1;
+- (void)_textFieldsChanged;
+- (void)_updateLabelProperties;
+- (void)_updatePreferredAction;
+- (id)_visualStyle;
+- (id)alertController;
+- (bool)alignsToKeyboard;
+- (id)attributedDetailMessage;
+- (id)attributedMessage;
+- (id)attributedTitle;
+- (void)beginTrackingSessionByTakingOverForSystemProvidedGestureRecognizer:(id)arg1;
+- (void)configureForDismissAlongsideTransitionCoordinator:(id)arg1;
+- (void)configureForPresentAlongsideTransitionCoordinator:(id)arg1;
+- (void)deselectAllActions;
+- (double)effectAlpha;
+- (bool)hasDimmingView;
+- (id)message;
+- (bool)presentedAsPopover;
+- (void)setAlertController:(id)arg1;
+- (void)setAlignsToKeyboard:(bool)arg1;
+- (void)setEffectAlpha:(double)arg1;
+- (void)setHasDimmingView:(bool)arg1;
+- (void)setPresentedAsPopover:(bool)arg1;
+- (void)setShouldHaveBackdropView:(bool)arg1;
+- (bool)shouldHaveBackdropView;
+- (id)title;
+
+@end

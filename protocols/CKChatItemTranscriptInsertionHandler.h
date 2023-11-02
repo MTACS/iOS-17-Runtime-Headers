@@ -1,0 +1,4 @@
+
+@protocol CKChatItemTranscriptInsertionHandler <NSObject>
+
+@end

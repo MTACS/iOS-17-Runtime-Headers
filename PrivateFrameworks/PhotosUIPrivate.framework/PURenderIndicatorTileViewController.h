@@ -1,0 +1,105 @@
+
+@interface PURenderIndicatorTileViewController : PUTileViewController <PUAssetSharedViewModelChangeObserver, PXLoadingStatusManagerObserver> {
+    PUAssetSharedViewModel * _assetSharedViewModel;
+    PXOperationStatus * _editActionStatus;
+    UIButton * _errorButton;
+    bool  _isProgressViewVisible;
+    bool  _needsUpdateSizeClass;
+    bool  _needsUpdateStatus;
+    bool  _needsUpdateStatusViews;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _progressIndicatorSize;
+    PLRoundProgressView * _progressView;
+    double  _renderLabelTextWidth;
+    UILabel * _renderingLabel;
+    UIView * _roundedBackgroundView;
+    long long  _sizeClass;
+    PXOperationStatus * _status;
+    NSUndoManager * _undoManager;
+    bool  _willShowProgressAfterDelay;
+}
+
+@property (nonatomic, retain) PUAssetSharedViewModel *assetSharedViewModel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PXOperationStatus *editActionStatus;
+@property (nonatomic, retain) UIButton *errorButton;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isProgressViewVisible;
+@property (nonatomic) bool needsUpdateSizeClass;
+@property (nonatomic) bool needsUpdateStatus;
+@property (nonatomic) bool needsUpdateStatusViews;
+@property (nonatomic) struct CGSize { double x1; double x2; } progressIndicatorSize;
+@property (nonatomic, retain) PLRoundProgressView *progressView;
+@property (nonatomic) double renderLabelTextWidth;
+@property (nonatomic, retain) UILabel *renderingLabel;
+@property (nonatomic, retain) UIView *roundedBackgroundView;
+@property (nonatomic) long long sizeClass;
+@property (nonatomic, copy) PXOperationStatus *status;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUndoManager *undoManager;
+@property (nonatomic) bool willShowProgressAfterDelay;
+
++ (id)_loadErrorIconForSizeClass:(long long)arg1;
++ (struct CGSize { double x1; double x2; })progressIndicatorTileSizeForSizeClass:(long long)arg1;
++ (struct CGSize { double x1; double x2; })renderIndicatorTileSizeForSizeClass:(long long)arg1;
++ (bool)wantsRenderViewForTypeOfProcessingNeeded:(unsigned short)arg1;
+
+- (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_expandedBackgroundViewFrame;
+- (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
+- (void)_invalidateSizeClass;
+- (void)_invalidateStatus;
+- (void)_invalidateStatusViews;
+- (bool)_needsUpdate;
+- (void)_setNeedsUpdate;
+- (void)_updateIfNeeded;
+- (void)_updateSizeClassIfNeeded;
+- (void)_updateStatusIfNeeded;
+- (void)_updateStatusViewsIfNeeded;
+- (void)_updateSubviewOrdering;
+- (void)_updateViewFramesForCollapseState:(bool)arg1;
+- (void)applyLayoutInfo:(id)arg1;
+- (id)assetSharedViewModel;
+- (void)becomeReusable;
+- (id)editActionStatus;
+- (id)errorButton;
+- (bool)isProgressViewVisible;
+- (void)loadingStatusManager:(id)arg1 didUpdateLoadingStatus:(id)arg2 forItemIdentifier:(id)arg3;
+- (bool)needsUpdateSizeClass;
+- (bool)needsUpdateStatus;
+- (bool)needsUpdateStatusViews;
+- (struct CGSize { double x1; double x2; })progressIndicatorSize;
+- (id)progressView;
+- (double)renderLabelTextWidth;
+- (id)renderingLabel;
+- (id)roundedBackgroundView;
+- (void)setAssetSharedViewModel:(id)arg1;
+- (void)setEditActionStatus:(id)arg1;
+- (void)setErrorButton:(id)arg1;
+- (void)setIsProgressViewVisible:(bool)arg1;
+- (void)setNeedsUpdateSizeClass:(bool)arg1;
+- (void)setNeedsUpdateStatus:(bool)arg1;
+- (void)setNeedsUpdateStatusViews:(bool)arg1;
+- (void)setProgressIndicatorSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setProgressView:(id)arg1;
+- (void)setProgressViewVisible:(bool)arg1;
+- (void)setProgressViewVisible:(bool)arg1 animated:(bool)arg2;
+- (void)setProgressViewVisible:(bool)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (void)setRenderLabelTextWidth:(double)arg1;
+- (void)setRenderingLabel:(id)arg1;
+- (void)setRoundedBackgroundView:(id)arg1;
+- (void)setSizeClass:(long long)arg1;
+- (void)setStatus:(id)arg1;
+- (void)setUndoManager:(id)arg1;
+- (void)setWillShowProgressAfterDelay:(bool)arg1;
+- (long long)sizeClass;
+- (id)status;
+- (id)undoManager;
+- (void)viewDidLoad;
+- (void)viewModel:(id)arg1 didChange:(id)arg2;
+- (bool)willShowProgressAfterDelay;
+
+@end

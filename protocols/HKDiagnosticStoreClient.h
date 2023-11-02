@@ -1,0 +1,4 @@
+
+@protocol HKDiagnosticStoreClient <NSObject>
+
+@end

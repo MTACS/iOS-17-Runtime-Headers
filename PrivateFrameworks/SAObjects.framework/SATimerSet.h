@@ -1,0 +1,20 @@
+
+@interface SATimerSet : SADomainCommand <SATimerTimerAction>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SATimerObject *timer;
+
++ (id)set;
++ (id)setWithDictionary:(id)arg1 context:(id)arg2;
+
+- (id)encodedClassName;
+- (id)groupIdentifier;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
+- (void)setTimer:(id)arg1;
+- (id)timer;
+
+@end

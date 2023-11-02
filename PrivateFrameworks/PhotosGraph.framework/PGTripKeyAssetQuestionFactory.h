@@ -1,0 +1,9 @@
+
+@interface PGTripKeyAssetQuestionFactory : PGSurveyQuestionFactory
+
+- (void)_enumerateTrips:(id /* block */)arg1;
+- (id)generateQuestionsWithLimit:(unsigned long long)arg1 progressBlock:(id /* block */)arg2;
+- (long long)questionOptions;
+- (unsigned short)questionType;
+
+@end

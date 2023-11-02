@@ -1,0 +1,4 @@
+
+@protocol INExtensionContextHosting <NSObject>
+
+@end

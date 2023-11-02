@@ -1,0 +1,113 @@
+
+@interface NSCoreTypesetter : NSTypesetter {
+    NSDictionary * __extraLineFragmentAttributes;
+    bool  _allowsFontOverridingTextAttachmentVerticalMetrics;
+    bool  _allowsFontSubstitutionAffectingVerticalMetrics;
+    bool  _beginningOfDocument;
+    bool  _breaksLinesForInteractiveText;
+    long long  _containerBreakMode;
+    <NSCoreTypesetterDelegateInternal> * _delegate;
+    bool  _delegateSupportsTextContainer;
+    bool  _enforcesMinimumTextLineFragment;
+    id /* block */  _laidOutLineFragment;
+    long long  _layoutOrientation;
+    bool  _limitsLayoutForSuspiciousContents;
+    double  _lineFragmentOriginYOffset;
+    long long  _maximumNumberOfLines;
+    bool  _requiresCTLineRef;
+    bool  _typographicBoundsIncludesLineFragmentPadding;
+    bool  _usesDefaultHyphenation;
+    id /* block */  _validateLineBreakIndex;
+    bool  _wantsExtraLineFragment;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  characterRange;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  textContainerSize;
+}
+
+@property (copy) NSDictionary *_extraLineFragmentAttributes;
+@property bool allowsFontOverridingTextAttachmentVerticalMetrics;
+@property bool allowsFontSubstitutionAffectingVerticalMetrics;
+@property (getter=isBeginningOfDocument) bool beginningOfDocument;
+@property bool breaksLinesForInteractiveText;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } characterRange;
+@property long long containerBreakMode;
+@property <NSCoreTypesetterDelegate> *delegate;
+@property bool enforcesMinimumTextLineFragment;
+@property (copy) id /* block */ laidOutLineFragment;
+@property long long layoutOrientation;
+@property bool limitsLayoutForSuspiciousContents;
+@property long long maximumNumberOfLines;
+@property bool requiresCTLineRef;
+@property struct CGSize { double x1; double x2; } textContainerSize;
+@property bool typographicBoundsIncludesLineFragmentPadding;
+@property bool usesDefaultHyphenation;
+@property (copy) id /* block */ validateLineBreakIndex;
+@property bool wantsExtraLineFragment;
+
++ (bool)_allowsFontOverridingTextAttachmentVerticalMetricsForStringDrawing;
++ (void)_lineMetricsForAttributes:(id)arg1 typesetterBehavior:(long long)arg2 usesFontLeading:(bool)arg3 applySpacings:(bool)arg4 usesSystemFontLeading:(bool)arg5 usesNegativeFontLeading:(bool)arg6 layoutOrientation:(long long)arg7 lineHeight:(double*)arg8 baselineOffset:(double*)arg9 spacing:(double*)arg10;
++ (void)_maximumAscentAndDescentForRuns:(struct __CFArray { }*)arg1 ascender:(double*)arg2 descender:(double*)arg3;
++ (void)_minMaxPositionsForLineFragmentWithParagraphStyle:(id)arg1 baseWidth:(double)arg2 writingDirection:(long long)arg3 isBeginningOfParagraph:(bool)arg4 minPosition:(double*)arg5 maxPosition:(double*)arg6;
+
+- (int)_NSFastDrawString:(id)arg1 length:(unsigned long long)arg2 attributes:(id)arg3 paragraphStyle:(id)arg4 typesetterBehavior:(long long)arg5 lineBreakMode:(long long)arg6 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg7 padding:(double)arg8 graphicsContext:(id)arg9 baselineRendering:(bool)arg10 usesFontLeading:(bool)arg11 usesScreenFont:(bool)arg12 scrollable:(bool)arg13 syncAlignment:(bool)arg14 mirrored:(bool)arg15 boundingRectPointer:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg16 baselineOffsetPointer:(double*)arg17 drawingContext:(id)arg18;
+- (struct __CTLine { }*)_createLayoutLineFragmentStartingWithCharacterIndex:(inout long long*)arg1 proposedLineFragmentRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 baseLineRef:(inout const struct __CTLine {}**)arg3 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 paragraphStyle:(id)arg5 paragraphArbitrator:(id)arg6 lineBreakMode:(long long)arg7 hasAttachments:(bool)arg8 lineFragmentRect:(out struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg9 glyphOrigin:(out struct CGPoint { double x1; double x2; }*)arg10 hyphenated:(out bool*)arg11 forcedClusterBreak:(out bool*)arg12;
+- (struct __CTLine { }*)_createLineRefForParentLineRef:(inout const struct __CTLine {}**)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 availableWidth:(double)arg3 offset:(double)arg4 paragraphArbitrator:(id)arg5 lineBreakMode:(long long)arg6 hyphenated:(out bool*)arg7 forcedClusterBreak:(out bool*)arg8;
+- (id)_extraLineFragmentAttributes;
+- (long long)_getFirstOverflowTabStopIndexInLineRef:(struct __CTLine { }*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 string:(id)arg3 paragraphStyle:(id)arg4 availableWidth:(double)arg5 offset:(double)arg6;
+- (struct { double x1; double x2; double x3; })_getLineMetricsForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 attributes:(id)arg2 attributedString:(id)arg3 applySpacing:(bool)arg4 usesSystemFontLeading:(bool)arg5 usesNegativeFontLeading:(bool)arg6;
+- (id)_paragraphStyleFromAttributes:(id)arg1;
+- (bool)_shouldShowLineBadges;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_stringDrawingCoreTextEngineWithOriginalString:(id)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 padding:(double)arg3 graphicsContext:(id)arg4 forceClipping:(bool)arg5 attributes:(id)arg6 stringDrawingOptions:(long long)arg7 drawingContext:(id)arg8 stringDrawingInterface:(struct { unsigned char x1; long long x2; bool x3; bool x4; }*)arg9;
+- (bool)allowsFontOverridingTextAttachmentVerticalMetrics;
+- (bool)allowsFontSubstitutionAffectingVerticalMetrics;
+- (void)beginLine;
+- (bool)breaksLinesForInteractiveText;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })characterRange;
+- (long long)containerBreakMode;
+- (void)dealloc;
+- (id)delegate;
+- (void)endLine;
+- (bool)enforcesMinimumTextLineFragment;
+- (id)init;
+- (bool)isBeginningOfDocument;
+- (bool)isSimpleRectangularTextContainerForStartingCharacterAtIndex:(long long)arg1;
+- (id /* block */)laidOutLineFragment;
+- (void)layout;
+- (long long)layoutOrientation;
+- (void)layoutWithYOrigin:(double)arg1;
+- (bool)limitsLayoutForSuspiciousContents;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 atIndex:(long long)arg2 writingDirection:(long long)arg3 remainingRect:(out struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
+- (long long)maximumNumberOfLines;
+- (bool)requiresCTLineRef;
+- (void)setAllowsFontOverridingTextAttachmentVerticalMetrics:(bool)arg1;
+- (void)setAllowsFontSubstitutionAffectingVerticalMetrics:(bool)arg1;
+- (void)setBeginningOfDocument:(bool)arg1;
+- (void)setBreaksLinesForInteractiveText:(bool)arg1;
+- (void)setCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setContainerBreakMode:(long long)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEnforcesMinimumTextLineFragment:(bool)arg1;
+- (void)setLaidOutLineFragment:(id /* block */)arg1;
+- (void)setLayoutOrientation:(long long)arg1;
+- (void)setLimitsLayoutForSuspiciousContents:(bool)arg1;
+- (void)setMaximumNumberOfLines:(long long)arg1;
+- (void)setRequiresCTLineRef:(bool)arg1;
+- (void)setTextContainerSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTypographicBoundsIncludesLineFragmentPadding:(bool)arg1;
+- (void)setUsesDefaultHyphenation:(bool)arg1;
+- (void)setValidateLineBreakIndex:(id /* block */)arg1;
+- (void)setWantsExtraLineFragment:(bool)arg1;
+- (void)set_extraLineFragmentAttributes:(id)arg1;
+- (id)softHyphen;
+- (struct CGSize { double x1; double x2; })textContainerSize;
+- (bool)typographicBoundsIncludesLineFragmentPadding;
+- (bool)usesDefaultHyphenation;
+- (id /* block */)validateLineBreakIndex;
+- (bool)wantsExtraLineFragment;
+
+@end

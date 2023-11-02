@@ -1,0 +1,93 @@
+
+@interface HMDDatabaseZoneManager : HMFObject <HMDCloudShareMessengerDelegate, HMDCloudShareParticipantsManagerDelegate, HMDDatabaseDelegate, HMFLogging> {
+    HMBCloudZone * _cloudZone;
+    <HMDDatabaseZoneManagerDataSource> * _dataSource;
+    <HMDDatabase> * _database;
+    HMDDatabaseZoneManagerConfiguration * _defaultConfiguration;
+    <HMDDatabaseZoneManagerDelegate> * _delegate;
+    HMDHome * _home;
+    HMBLocalZone * _localZone;
+    HMDCloudShareParticipantsManager * _participantsManager;
+    id /* block */  _participantsManagerFactory;
+    HMDCloudShareMessenger * _shareMessenger;
+    long long  _state;
+    NSObject<OS_dispatch_queue> * _workQueue;
+    <HMBLocalZoneDelegate><HMBCloudZoneDelegate> * _zoneDelegate;
+    NSString * _zoneName;
+}
+
+@property (retain) HMBCloudZone *cloudZone;
+@property (readonly, copy) NSString *containerIdentifier;
+@property <HMDDatabaseZoneManagerDataSource> *dataSource;
+@property (readonly) <HMDDatabase> *database;
+@property (readonly, copy) NSString *debugDescription;
+@property (copy) HMDDatabaseZoneManagerConfiguration *defaultConfiguration;
+@property <HMDDatabaseZoneManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) HMDHome *home;
+@property (retain) HMBLocalZone *localZone;
+@property (readonly, copy) NSUUID *messageTargetUUID;
+@property (retain) HMDCloudShareParticipantsManager *participantsManager;
+@property (copy) id /* block */ participantsManagerFactory;
+@property (readonly) HMDCloudShareMessenger *shareMessenger;
+@property long long state;
+@property (readonly) Class superclass;
+@property (readonly) NSObject<OS_dispatch_queue> *workQueue;
+@property <HMBLocalZoneDelegate><HMBCloudZoneDelegate> *zoneDelegate;
+@property (readonly, copy) NSString *zoneName;
+
++ (id)logCategory;
+
+- (void).cxx_destruct;
+- (bool)_fetchExistingPrivateZonesWithConfiguration:(id)arg1;
+- (bool)_fetchPrivateZonesWithConfiguration:(id)arg1;
+- (bool)_fetchSharedZonesWithConfiguration:(id)arg1;
+- (bool)_handleFetchZonesResult:(id)arg1 configuration:(id)arg2;
+- (void)_requestShareInvitationWithConfiguration:(id)arg1;
+- (void)_sendShareInvitation:(id)arg1 toUser:(id)arg2 device:(id)arg3;
+- (void)_tearDownState;
+- (id)cloudZone;
+- (void)configure;
+- (id)containerIdentifier;
+- (id)dataSource;
+- (id)database;
+- (void)database:(id)arg1 didCreateZoneWithName:(id)arg2 isPrivate:(bool)arg3;
+- (void)database:(id)arg1 didReceiveMessageWithUserInfo:(id)arg2;
+- (void)database:(id)arg1 didRemoveZoneWithName:(id)arg2 isPrivate:(bool)arg3;
+- (id)defaultConfiguration;
+- (id)delegate;
+- (id)home;
+- (id)initWithDatabase:(id)arg1 zoneName:(id)arg2 home:(id)arg3 messageTargetUUID:(id)arg4 zoneDelegate:(id)arg5 workQueue:(id)arg6;
+- (id)initWithDatabase:(id)arg1 zoneName:(id)arg2 home:(id)arg3 shareMessenger:(id)arg4 zoneDelegate:(id)arg5 workQueue:(id)arg6;
+- (id)localZone;
+- (id)logIdentifier;
+- (void)manager:(id)arg1 didRequestSendForInvitation:(id)arg2 toDevice:(id)arg3;
+- (void)manager:(id)arg1 didRequestSendForInvitation:(id)arg2 toUser:(id)arg3;
+- (void)manager:(id)arg1 didRevokeShareAccessForUser:(id)arg2;
+- (id)messageTargetUUID;
+- (void)messenger:(id)arg1 didReceiveInvitationData:(id)arg2 completion:(id /* block */)arg3;
+- (void)messenger:(id)arg1 didReceiveInvitationRequestFromUser:(id)arg2 device:(id)arg3;
+- (void)messengerDidReceiveShareAccessRevocation:(id)arg1;
+- (id)participantsManager;
+- (id /* block */)participantsManagerFactory;
+- (id)remove;
+- (void)setCloudZone:(id)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setDefaultConfiguration:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setLocalZone:(id)arg1;
+- (void)setParticipantsManager:(id)arg1;
+- (void)setParticipantsManagerFactory:(id /* block */)arg1;
+- (void)setState:(long long)arg1;
+- (void)setZoneDelegate:(id)arg1;
+- (id)shareMessenger;
+- (bool)start;
+- (bool)startWithConfiguration:(id)arg1;
+- (long long)state;
+- (void)updateShareParticipants;
+- (id)workQueue;
+- (id)zoneDelegate;
+- (id)zoneName;
+
+@end

@@ -1,0 +1,18 @@
+
+@interface VUIAppDocumentPurchaseEventDescriptor : VUIAppDocumentUpdateEventDescriptor {
+    NSString * _canonicalID;
+}
+
+@property (nonatomic, copy) NSString *canonicalID;
+
+- (void).cxx_destruct;
+- (id)canonicalID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (unsigned long long)hash;
+- (id)initWithCanonicalID:(id)arg1;
+- (id)initWithEventType:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setCanonicalID:(id)arg1;
+
+@end

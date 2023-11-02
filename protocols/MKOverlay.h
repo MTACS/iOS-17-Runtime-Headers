@@ -1,0 +1,14 @@
+
+@protocol MKOverlay <MKAnnotation>
+
+@required
+
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
+
+@optional
+
+- (bool)canReplaceMapContent;
+- (bool)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtCC7SwiftUI18SceneStorageValuesP33_1700ED20D4EA891B02973E899ABDB4258AnyEntry : _TtCs12_SwiftObject
+
+@end

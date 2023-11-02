@@ -1,0 +1,4 @@
+
+@interface WFMailSenderPickerParameter : WFCustomIntentDynamicEnumerationParameter
+
+@end

@@ -1,0 +1,4 @@
+
+@interface MKFLocationEventDatabaseID : MKFEventDatabaseID
+
+@end

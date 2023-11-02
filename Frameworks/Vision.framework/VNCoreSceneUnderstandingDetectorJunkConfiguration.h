@@ -1,0 +1,4 @@
+
+@interface VNCoreSceneUnderstandingDetectorJunkConfiguration : VNCoreSceneUnderstandingDetectorCustomClassifierConfiguration
+
+@end

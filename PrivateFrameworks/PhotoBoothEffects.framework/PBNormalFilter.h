@@ -1,0 +1,4 @@
+
+@interface PBNormalFilter : PBFilter
+
+@end

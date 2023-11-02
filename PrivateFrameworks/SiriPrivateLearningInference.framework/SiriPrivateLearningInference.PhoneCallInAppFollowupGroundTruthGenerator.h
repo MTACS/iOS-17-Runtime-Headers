@@ -1,0 +1,4 @@
+
+@interface SiriPrivateLearningInference.PhoneCallInAppFollowupGroundTruthGenerator : _TtCs12_SwiftObject
+
+@end

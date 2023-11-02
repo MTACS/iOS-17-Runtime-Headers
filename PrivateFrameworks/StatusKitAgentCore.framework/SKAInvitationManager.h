@@ -1,0 +1,95 @@
+
+@interface SKAInvitationManager : NSObject <SKAInvitationManaging> {
+    <SKAAccountProviding> * _accountProvider;
+    NSObject<OS_dispatch_queue> * _backgroundCleanupQueue;
+    <SKAChannelManaging> * _channelManager;
+    <SKADatabaseManaging> * _databaseManager;
+    <SKAInvitationManagingDelegate> * _delegate;
+    <SKAMessagingProviding> * _messagingProvider;
+    NSMutableDictionary * _outgoingInvitationMapping;
+    bool  _presenceEnabledByServer;
+    <SKAPresenceManaging> * _presenceManager;
+    bool  _trafficModeEnabled;
+}
+
+@property (nonatomic, retain) <SKAAccountProviding> *accountProvider;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *backgroundCleanupQueue;
+@property (nonatomic, retain) <SKAChannelManaging> *channelManager;
+@property (nonatomic, retain) <SKADatabaseManaging> *databaseManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKAInvitationManagingDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <SKAMessagingProviding> *messagingProvider;
+@property (nonatomic, retain) NSMutableDictionary *outgoingInvitationMapping;
+@property (nonatomic) bool presenceEnabledByServer;
+@property (nonatomic, retain) <SKAPresenceManaging> *presenceManager;
+@property (readonly) Class superclass;
+@property (nonatomic) bool trafficModeEnabled;
+
++ (id)_invalidInvitedHandlesError;
++ (id)_invalidSenderHandleError;
++ (id)_keyRollFailedErrorWithUnderlyingError:(id)arg1;
++ (id)_noPersonalChannelErrorForStatusTypeIdentifier:(id)arg1;
++ (id)_noPresenceChannelForIdentifier:(id)arg1;
++ (id)_presenceDisabledError;
++ (id)_unableToFindAnyExistingInvitationToDeleteError;
++ (id)_unableToFindExistingInvitationForHandlesError:(id)arg1;
++ (id)logger;
+
+- (void).cxx_destruct;
+- (id)_addInvitedHandles:(id)arg1 senderHandle:(id)arg2 toDatabaseForPersonalChannel:(id)arg3 withInvitationPayload:(id)arg4 databaseContext:(id)arg5;
+- (id)_addInvitedHandles:(id)arg1 senderHandle:(id)arg2 toDatabaseForPresenceChannel:(id)arg3 databaseContext:(id)arg4;
+- (void)_createPersonalChannelForStatusTypeIdentifier:(id)arg1 databaseContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)_findOrCreatePersonalChannelForStatusTypeIdentifier:(id)arg1 databaseContext:(id)arg2 completion:(id /* block */)arg3;
+- (id)_invitationMessageForPresenceChannel:(id)arg1;
+- (void)_isHandleInviteable:(id)arg1 completion:(id /* block */)arg2;
+- (void)_isPresenceHandleInviteable:(id)arg1 completion:(id /* block */)arg2;
+- (bool)_presenceEnabledByServer;
+- (id)_ratchetEncryptionKeyForwardOrKeyRollForPersonalChannel:(id)arg1 databaseContext:(id)arg2 invitationWasSentViaKeyRoll:(bool*)arg3 error:(id*)arg4;
+- (bool)_rollEncryptionKeyForChannel:(id)arg1 databaseContext:(id)arg2 error:(id*)arg3;
+- (bool)_sendInvitationMessageForChannel:(id)arg1 toInvitedUsers:(id)arg2 subscriptionKeys:(id)arg3 error:(id*)arg4;
+- (bool)_sendInvitationMessageForPresenceChannel:(id)arg1 toInvitedUsers:(id)arg2 error:(id*)arg3;
+- (bool)_shouldReauthForError:(id)arg1;
+- (id)_updateOrCreateInvitedUserWithHandle:(id)arg1 senderHandle:(id)arg2 onChannel:(id)arg3 withInvitationPayload:(id)arg4 databaseContext:(id)arg5;
+- (bool)_validateInvitedHandle:(id)arg1;
+- (id)_validateInvitedHandles:(id)arg1;
+- (id)accountProvider;
+- (id)backgroundCleanupQueue;
+- (id)channelManager;
+- (id)databaseManager;
+- (id)delegate;
+- (void)fetchHandleInvitability:(id)arg1 fromHandle:(id)arg2 forPresenceIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)fetchHandleInvitability:(id)arg1 fromHandle:(id)arg2 forStatusTypeIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)handleIncomingInvitationMessage:(id)arg1 fromHandle:(id)arg2 fromID:(id)arg3 toHandle:(id)arg4 messageGuid:(id)arg5;
+- (id)initWithMessagingProvider:(id)arg1 databaseManager:(id)arg2 accountProvider:(id)arg3 channelManager:(id)arg4 presenceManager:(id)arg5 trafficMode:(bool)arg6;
+- (void)isHandleInviteable:(id)arg1 fromHandle:(id)arg2 completion:(id /* block */)arg3;
+- (void)isPresenceHandleInviteable:(id)arg1 fromHandle:(id)arg2 completion:(id /* block */)arg3;
+- (id)messagingProvider;
+- (id)outgoingInvitationMapping;
+- (void)outgoingMessageWithIdentifier:(id)arg1 fromHandle:(id)arg2 toHandle:(id)arg3 didSendWithSuccess:(bool)arg4;
+- (bool)presenceEnabledByServer;
+- (id)presenceManager;
+- (id)resolveSenderHandleWithPreferredSenderHandle:(id)arg1;
+- (void)revokeAllInvitationsFromPersonalChannelWithStatusTypeIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)revokeInvitationFromPersonalChannelWithStatusTypeIdentifier:(id)arg1 forHandles:(id)arg2 completion:(id /* block */)arg3;
+- (void)revokeInvitationFromPresenceChannelWithPresenceIdentifier:(id)arg1 forHandles:(id)arg2 completion:(id /* block */)arg3;
+- (bool)rollEncryptionKeyForPersonalChannelWithStatusTypeIdentifier:(id)arg1 error:(id*)arg2;
+- (void)rollPersonalChannelWithStatusTypeIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)rollPresenceChannelWithPresenceIdentifier:(id)arg1 isPersonal:(bool)arg2 completion:(id /* block */)arg3;
+- (void)sendInvitationForPersonalChannelWithStatusTypeIdentifier:(id)arg1 toHandles:(id)arg2 fromSenderHandle:(id)arg3 withInvitationPayload:(id)arg4 completion:(id /* block */)arg5;
+- (void)sendInvitationForPresenceChannelWithPresenceIdentifier:(id)arg1 toHandles:(id)arg2 fromSenderHandle:(id)arg3 options:(id)arg4 completion:(id /* block */)arg5;
+- (void)sendSelfInvitationForPresenceChannelWithPresenceIdentifier:(id)arg1 isPersonal:(bool)arg2 completion:(id /* block */)arg3;
+- (void)setAccountProvider:(id)arg1;
+- (void)setBackgroundCleanupQueue:(id)arg1;
+- (void)setChannelManager:(id)arg1;
+- (void)setDatabaseManager:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setMessagingProvider:(id)arg1;
+- (void)setOutgoingInvitationMapping:(id)arg1;
+- (void)setPresenceEnabledByServer:(bool)arg1;
+- (void)setPresenceManager:(id)arg1;
+- (void)setTrafficModeEnabled:(bool)arg1;
+- (bool)trafficModeEnabled;
+
+@end

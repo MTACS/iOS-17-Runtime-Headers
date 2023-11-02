@@ -1,0 +1,4 @@
+
+@interface _TtC8PhotosUIP33_7810C17CD52AAB2FC11AA7F76614D93A19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

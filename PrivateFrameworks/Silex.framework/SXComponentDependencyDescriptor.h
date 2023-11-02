@@ -1,0 +1,4 @@
+
+@interface SXComponentDependencyDescriptor : NSObject
+
+@end

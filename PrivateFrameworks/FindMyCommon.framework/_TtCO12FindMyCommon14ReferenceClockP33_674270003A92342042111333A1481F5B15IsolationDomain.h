@@ -1,0 +1,4 @@
+
+@interface _TtCO12FindMyCommon14ReferenceClockP33_674270003A92342042111333A1481F5B15IsolationDomain : _TtCs12_SwiftObject
+
+@end

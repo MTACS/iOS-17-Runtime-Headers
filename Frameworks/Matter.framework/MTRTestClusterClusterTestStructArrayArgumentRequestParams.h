@@ -1,0 +1,4 @@
+
+@interface MTRTestClusterClusterTestStructArrayArgumentRequestParams : MTRUnitTestingClusterTestStructArrayArgumentRequestParams
+
+@end

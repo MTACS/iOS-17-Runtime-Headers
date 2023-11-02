@@ -1,0 +1,93 @@
+
+@interface AVTPoseSelectionViewController : UIViewController <AVTPoseSelectionGridViewControllerDelegate> {
+    <AVTAvatarRecord> * _avatarRecord;
+    UIView * _borderMaskView;
+    AVTRecordingButton * _captureButton;
+    <AVTPoseSelectionViewControllerDelegate> * _delegate;
+    AVTCircularButton * _discardButton;
+    UIBarButtonItem * _doneButton;
+    AVTPoseSelectionGridViewController * _gridViewController;
+    UIView * _headerDropShadowView;
+    NSLayoutConstraint * _headerHeightConstraint;
+    AVTAnimojiPoseSelectionHeaderViewController * _headerViewController;
+    unsigned long long  _mode;
+    unsigned long long  _poseTypes;
+    bool  _shouldNotifyDelegateOnSelection;
+    NSArray * _stickerConfigurations;
+}
+
+@property (nonatomic, retain) <AVTAvatarRecord> *avatarRecord;
+@property (nonatomic, retain) UIView *borderMaskView;
+@property (nonatomic, retain) AVTRecordingButton *captureButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AVTPoseSelectionViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) AVTCircularButton *discardButton;
+@property (nonatomic, retain) UIBarButtonItem *doneButton;
+@property (nonatomic, retain) AVTPoseSelectionGridViewController *gridViewController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIView *headerDropShadowView;
+@property (nonatomic, retain) NSLayoutConstraint *headerHeightConstraint;
+@property (nonatomic, retain) AVTAnimojiPoseSelectionHeaderViewController *headerViewController;
+@property (nonatomic) unsigned long long mode;
+@property (nonatomic) unsigned long long poseTypes;
+@property (nonatomic) bool shouldNotifyDelegateOnSelection;
+@property (nonatomic, retain) NSArray *stickerConfigurations;
+@property (readonly) Class superclass;
+
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })borderMaskRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)poseConfigurationsForTypes:(unsigned long long)arg1 avatarRecord:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)avatarRecord;
+- (id)borderMaskView;
+- (bool)canBecomeFirstResponder;
+- (id)captureButton;
+- (void)createCaptureButtonIfNeeded;
+- (void)createDiscardButtonIfNeeded;
+- (id)delegate;
+- (void)didTapCancel:(id)arg1;
+- (void)didTapCaptureButton:(id)arg1;
+- (void)didTapDiscardButton:(id)arg1;
+- (void)didTapDone:(id)arg1;
+- (id)discardButton;
+- (id)doneButton;
+- (id)gridViewController;
+- (id)headerDropShadowView;
+- (id)headerHeightConstraint;
+- (id)headerViewController;
+- (id)initWithSelectedRecord:(id)arg1;
+- (id)initWithSelectedRecord:(id)arg1 poseConfigurations:(id)arg2;
+- (id)initWithSelectedRecord:(id)arg1 poseTypes:(unsigned long long)arg2;
+- (id)keyCommands;
+- (unsigned long long)mode;
+- (void)notifyDelegateOfSelectedPose;
+- (void)poseSelectionGridController:(id)arg1 didSelectConfiguration:(id)arg2;
+- (void)poseSelectionGridControllerDidSelectCameraItem:(id)arg1;
+- (unsigned long long)poseTypes;
+- (void)returnPressed:(id)arg1;
+- (void)setAvatarRecord:(id)arg1;
+- (void)setBorderMaskView:(id)arg1;
+- (void)setCaptureButton:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDiscardButton:(id)arg1;
+- (void)setDoneButton:(id)arg1;
+- (void)setGridViewController:(id)arg1;
+- (void)setHeaderDropShadowView:(id)arg1;
+- (void)setHeaderHeightConstraint:(id)arg1;
+- (void)setHeaderViewController:(id)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setPoseTypes:(unsigned long long)arg1;
+- (void)setShouldNotifyDelegateOnSelection:(bool)arg1;
+- (void)setStickerConfigurations:(id)arg1;
+- (bool)shouldNotifyDelegateOnSelection;
+- (id)stickerConfigurations;
+- (void)updateForPoseConfiguration:(id)arg1 animated:(bool)arg2;
+- (void)updateHeaderHeightConstraint;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+
+@end

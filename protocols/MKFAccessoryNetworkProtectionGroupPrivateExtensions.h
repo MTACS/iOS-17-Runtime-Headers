@@ -1,0 +1,4 @@
+
+@protocol MKFAccessoryNetworkProtectionGroupPrivateExtensions
+
+@end

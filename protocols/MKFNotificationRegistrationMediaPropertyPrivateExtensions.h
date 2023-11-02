@@ -1,0 +1,4 @@
+
+@protocol MKFNotificationRegistrationMediaPropertyPrivateExtensions
+
+@end

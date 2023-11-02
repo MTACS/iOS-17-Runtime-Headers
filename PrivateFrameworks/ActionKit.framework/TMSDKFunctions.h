@@ -1,0 +1,4 @@
+
+@interface TMSDKFunctions : NSObject
+
+@end

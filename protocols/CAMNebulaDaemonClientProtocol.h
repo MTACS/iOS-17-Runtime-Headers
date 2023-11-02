@@ -1,0 +1,4 @@
+
+@protocol CAMNebulaDaemonClientProtocol <CAMNebulaDaemonTimelapseClientProtocol, CAMNebulaDaemonIrisClientProtocol>
+
+@end

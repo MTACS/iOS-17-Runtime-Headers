@@ -1,0 +1,4 @@
+
+@protocol MTRPersistentStorageDelegate <MTRStorage>
+
+@end

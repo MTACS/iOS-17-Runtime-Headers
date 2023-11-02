@@ -1,0 +1,96 @@
+
+@interface CNContactListBannerView : UIView <UIDragInteractionDelegate> {
+    UIView * _avatarView;
+    UIView * _avatarViewContainer;
+    UIView * _bottomSeparator;
+    NSArray * _constraintsPendingActivation;
+    CNContactListStyleApplier * _contactListStyleApplier;
+    CNContactStore * _contactStore;
+    <CNContactListBannerViewDelegate> * _delegate;
+    UIDragInteraction * _dragInteraction;
+    UIView * _footnoteContainer;
+    UILabel * _footnoteLabel;
+    NSLayoutConstraint * _footnoteTitleToTitleVerticalConstraint;
+    NSLayoutConstraint * _footnoteTitleToValueHorizontalSpaceConstraint;
+    UILabel * _footnoteValueLabel;
+    CNContactFormatter * _formatter;
+    UIGestureRecognizer * _longPress;
+    CNContact * _meContact;
+    UILabel * _titleLabel;
+    CALayer * _topSeparator;
+}
+
+@property (nonatomic, retain) UIView *avatarView;
+@property (nonatomic, readonly) UIView *avatarViewContainer;
+@property (nonatomic, readonly) UIView *bottomSeparator;
+@property (nonatomic, retain) NSArray *constraintsPendingActivation;
+@property (nonatomic, retain) CNContactListStyleApplier *contactListStyleApplier;
+@property (nonatomic, retain) CNContactStore *contactStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CNContactListBannerViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIDragInteraction *dragInteraction;
+@property (nonatomic, readonly) UIView *footnoteContainer;
+@property (nonatomic, readonly) UILabel *footnoteLabel;
+@property (nonatomic, retain) NSLayoutConstraint *footnoteTitleToTitleVerticalConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *footnoteTitleToValueHorizontalSpaceConstraint;
+@property (nonatomic, readonly) UILabel *footnoteValueLabel;
+@property (nonatomic, readonly) CNContactFormatter *formatter;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) UIGestureRecognizer *longPress;
+@property (nonatomic, retain) CNContact *meContact;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly) CALayer *topSeparator;
+
++ (id)descriptorForRequiredKeys;
+
+- (void).cxx_destruct;
+- (void)activatePendingConstraints;
+- (void)applyStyle;
+- (id)avatarView;
+- (id)avatarViewContainer;
+- (id)bottomSeparator;
+- (bool)canBecomeFirstResponder;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)cellWasLongPressed:(id)arg1;
+- (void)cellWasSingleTapped:(id)arg1;
+- (void)configureDragInteraction;
+- (id)constraintsPendingActivation;
+- (id)contactListStyleApplier;
+- (id)contactStore;
+- (void)copy:(id)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (bool)displaysContactInfo;
+- (id)dragInteraction;
+- (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
+- (id)footnoteContainer;
+- (id)footnoteLabel;
+- (id)footnoteTitleToTitleVerticalConstraint;
+- (id)footnoteTitleToValueHorizontalSpaceConstraint;
+- (id)footnoteValueLabel;
+- (id)formatter;
+- (id)init;
+- (id)longPress;
+- (id)meContact;
+- (void)menuDidHide:(id)arg1;
+- (void)setAvatarView:(id)arg1;
+- (void)setConstraintsPendingActivation:(id)arg1;
+- (void)setContactListStyleApplier:(id)arg1;
+- (void)setContactStore:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDragInteraction:(id)arg1;
+- (void)setFootnoteTitleToTitleVerticalConstraint:(id)arg1;
+- (void)setFootnoteTitleToValueHorizontalSpaceConstraint:(id)arg1;
+- (void)setMeContact:(id)arg1;
+- (void)setMeContact:(id)arg1 footnoteTitle:(id)arg2 footnoteValue:(id)arg3;
+- (void)setTopSeparatorWithInset:(double)arg1 andLength:(double)arg2;
+- (void)showMenu;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)titleLabel;
+- (id)topSeparator;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateFontRelatedConstraints;
+
+@end

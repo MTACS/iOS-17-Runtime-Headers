@@ -1,0 +1,93 @@
+
+@interface CNSharedProfileStateOracle : NSObject {
+    IMNickname * _archivedNickname;
+    CNContact * _contact;
+    CNUnfairLock * _contactLock;
+    CNContactStore * _contactStore;
+    IMNickname * _currentNickname;
+    IMNicknameProvider * _nicknameProvider;
+    IMNickname * _pendingNickname;
+    CNContactImageStore * _recentContactImageStore;
+    CNContactPosterStore * _recentPosterStore;
+    bool  _shouldContactBeRefetched;
+}
+
+@property (nonatomic, retain) IMNickname *archivedNickname;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic, readonly) CNUnfairLock *contactLock;
+@property (nonatomic, retain) CNContactStore *contactStore;
+@property (nonatomic, retain) IMNickname *currentNickname;
+@property (nonatomic, retain) IMNicknameProvider *nicknameProvider;
+@property (nonatomic, retain) IMNickname *pendingNickname;
+@property (nonatomic, retain) CNContactImageStore *recentContactImageStore;
+@property (nonatomic, retain) CNContactPosterStore *recentPosterStore;
+@property (nonatomic) bool shouldContactBeRefetched;
+
++ (bool)contactIsInAutoUpdateState:(id)arg1;
++ (id)descriptorForRequiredKeys;
++ (unsigned long long)effectiveStateForContact:(id)arg1;
++ (unsigned long long)globalSharedProfileUpdateState;
++ (bool)isAutoUpdateState:(unsigned long long)arg1;
++ (bool)isFeatureEnabled;
++ (bool)isTinker;
++ (id)log;
++ (bool)nicknames:(id)arg1 areValidForContact:(id)arg2;
++ (id)refetchedContactIfNeededWithRequiredKeys:(id)arg1 contactStore:(id)arg2;
++ (bool)shouldAutoUpdateUndeterminedWithPhoto;
++ (bool)shouldAutoUpdateUndeterminedWithoutPhoto;
++ (bool)shouldBypassPersistenceCheck;
+
+- (void).cxx_destruct;
+- (id)archivedNickname;
+- (id)availableActionTypesForEffectiveState;
+- (unsigned long long)avatarViewAnimationTypeForEffectiveState;
+- (unsigned long long)bannerActionTypeForEffectiveState;
+- (bool)canShowRevertToPreviousBannerForEffectiveState:(unsigned long long)arg1;
+- (id)contact;
+- (id)contactLock;
+- (bool)contactRequiresUpdateForActionType:(unsigned long long)arg1;
+- (id)contactStore;
+- (id)currentNickname;
+- (bool)didChangePhotoOrWallpaper;
+- (unsigned long long)effectiveStateForContact;
+- (bool)effectiveStateForContactIsAutoUpdate;
+- (bool)hasPendingWallpaperTransition;
+- (id)initWithContact:(id)arg1 contactStore:(id)arg2;
+- (id)initWithContact:(id)arg1 contactStore:(id)arg2 archivedNickname:(id)arg3 currentNickname:(id)arg4 pendingNickname:(id)arg5;
+- (bool)isRevertBannerExpired;
+- (bool)isRevertToPreviousExpired;
+- (id)lastRecentContactImage;
+- (id)lastRecentPoster;
+- (void)markArchivedNicknameAsIgnored;
+- (id)nicknameProvider;
+- (id)pendingNickname;
+- (id)recentContactImageStore;
+- (id)recentPosterStore;
+- (double)revertBannerMaxDisplayInterval;
+- (double)revertToPreviousMaxDisplayInterval;
+- (void)saveContactImage:(id)arg1;
+- (void)saveContactImage:(id)arg1 withPairedPoster:(id)arg2;
+- (void)saveContactPoster:(id)arg1;
+- (void)saveCurrentAvatarPosterPairToRecents;
+- (bool)saveUpdatedContact:(id)arg1 error:(id*)arg2;
+- (void)setArchivedNickname:(id)arg1;
+- (void)setContact:(id)arg1;
+- (void)setContactStore:(id)arg1;
+- (void)setCurrentNickname:(id)arg1;
+- (void)setNicknameProvider:(id)arg1;
+- (void)setPendingNickname:(id)arg1;
+- (void)setRecentContactImageStore:(id)arg1;
+- (void)setRecentPosterStore:(id)arg1;
+- (void)setShouldContactBeRefetched:(bool)arg1;
+- (bool)shouldContactBeRefetched;
+- (bool)shouldPerformTransitionAnimation;
+- (id)targetProfileForActionType:(unsigned long long)arg1;
+- (id)updateContactAndNicknamesForActionType:(unsigned long long)arg1 error:(id*)arg2;
+- (id)updateContactAndNicknamesForAutoUpdateWithError:(id*)arg1;
+- (id)updateContactAndNicknamesForDeclinedActionType:(unsigned long long)arg1 error:(id*)arg2;
+- (id)updateContactForActionType:(unsigned long long)arg1 error:(id*)arg2;
+- (id)updateContactForAutoUpdateWithError:(id*)arg1;
+- (id)updateContactForDeclinedActionType:(unsigned long long)arg1 error:(id*)arg2;
+- (void)updateOracleContactAndNicknamesWithUpdatedContact:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol FKOrderDetailsViewControllerProtocol <NSObject>
+
+@end

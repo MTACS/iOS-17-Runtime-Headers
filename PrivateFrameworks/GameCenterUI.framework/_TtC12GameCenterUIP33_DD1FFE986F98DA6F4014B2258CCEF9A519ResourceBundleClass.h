@@ -1,0 +1,4 @@
+
+@interface _TtC12GameCenterUIP33_DD1FFE986F98DA6F4014B2258CCEF9A519ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MPCPlaybackEngineEventPayloadJSONValue <NSObject>
+
+@end

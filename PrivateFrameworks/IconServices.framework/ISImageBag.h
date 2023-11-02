@@ -1,0 +1,4 @@
+
+@interface ISImageBag : IFImageBag
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SAAceComparable <SAAceSerializable>
+
+@end

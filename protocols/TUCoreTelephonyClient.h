@@ -1,0 +1,4 @@
+
+@protocol TUCoreTelephonyClient <NSObject>
+
+@end

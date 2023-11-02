@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmBabaMarta : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

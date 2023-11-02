@@ -1,0 +1,4 @@
+
+@interface _TtCE14SmartRepliesUICSo8NSBundleP33_9B92CEDFDCC6D61469718A3E4E4BD7878Sentinel : _TtCs12_SwiftObject
+
+@end

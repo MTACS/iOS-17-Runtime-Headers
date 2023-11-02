@@ -1,0 +1,93 @@
+
+@interface FPDServer : NSObject <NSXPCListenerDelegate> {
+    NSObject<OS_dispatch_queue> * _afterSetupWorkQueue;
+    FPDAppMonitor * _appMonitor;
+    FPDCacheDeleteService * _cacheDelete;
+    FPDExtensionManager * _extensionManager;
+    NSObject<OS_dispatch_group> * _fileProviderManagerIsReadyGroup;
+    Class  _fpckTaskClass;
+    Class  _fpdPurgerClass;
+    Class  _fpfsClass;
+    Class  _fpfsSQLBackupManagerClass;
+    Class  _fpfsSQLRestoreManagerClass;
+    bool  _isPastBuddy;
+    bool  _isUnlocked;
+    NSXPCListener * _listener;
+    NSObject<OS_dispatch_queue> * _machServerQueue;
+    NSObject<OS_dispatch_source> * _machSrc;
+    NSObject<OS_dispatch_queue> * _makeSureSetupEnqueued;
+    FPDActionOperationEngine * _operationEngine;
+    FPDPresenterManager * _presenterManager;
+    int  _providerChangeNotificationToken;
+    NSObject<OS_dispatch_queue> * _setupQueue;
+    NSObject<OS_dispatch_source> * _sigIntSrc;
+    NSObject<OS_dispatch_source> * _sigQuitSrc;
+    NSObject<OS_dispatch_source> * _sigTermSrc;
+    FPPacer * _signalProviderChangesPacer;
+    FPDTelemetryService * _telemetry;
+    FPDVolumeManager * _volumeManager;
+}
+
+@property (nonatomic, readonly) FPDAppMonitor *appMonitor;
+@property (nonatomic, readonly) FPDCacheDeleteService *cacheDelete;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) FPDExtensionManager *extensionManager;
+@property (nonatomic, retain) Class fpckTaskClass;
+@property (nonatomic, retain) Class fpdPurgerClass;
+@property (nonatomic, retain) Class fpfsClass;
+@property (nonatomic, retain) Class fpfsSQLBackupManagerClass;
+@property (nonatomic, retain) Class fpfsSQLRestoreManagerClass;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSXPCListener *listener;
+@property (nonatomic, readonly) FPDActionOperationEngine *operationEngine;
+@property (nonatomic, readonly) FPDPresenterManager *presenterManager;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) FPDTelemetryService *telemetry;
+@property (nonatomic, readonly) FPDVolumeManager *volumeManager;
+
++ (id)appSupportPath;
++ (id)homeDirectory;
++ (id)personaCloudStoragePath;
+
+- (void).cxx_destruct;
+- (void)_computeUnlockedStatusAndSetup;
+- (void)_finishSetup;
+- (void)_initSignals;
+- (void)_monitorUnlockedStatus;
+- (void)_setup;
+- (void)_startXPCListener;
+- (id)appMonitor;
+- (id)cacheDelete;
+- (void)exitWithCode:(int)arg1;
+- (id)extensionManager;
+- (Class)fpckTaskClass;
+- (Class)fpdPurgerClass;
+- (Class)fpfsClass;
+- (Class)fpfsSQLBackupManagerClass;
+- (Class)fpfsSQLRestoreManagerClass;
+- (void)handleExitSignal:(int)arg1;
+- (id)init;
+- (bool)isPastBuddy;
+- (id)listener;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)localeDidChange;
+- (void)materializeURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)migrateLegacyFPFSLocations;
+- (id)operationEngine;
+- (id)presenterManager;
+- (void)providersDidChange;
+- (void)purge;
+- (void)setFpckTaskClass:(Class)arg1;
+- (void)setFpdPurgerClass:(Class)arg1;
+- (void)setFpfsClass:(Class)arg1;
+- (void)setFpfsSQLBackupManagerClass:(Class)arg1;
+- (void)setFpfsSQLRestoreManagerClass:(Class)arg1;
+- (void)setListener:(id)arg1;
+- (void)signalProviderChanges;
+- (void)signalProviderChangesWithLowPriority;
+- (void)start;
+- (id)telemetry;
+- (id)volumeManager;
+
+@end

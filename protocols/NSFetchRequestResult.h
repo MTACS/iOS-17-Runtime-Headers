@@ -1,0 +1,4 @@
+
+@protocol NSFetchRequestResult <NSObject>
+
+@end

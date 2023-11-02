@@ -1,0 +1,8 @@
+
+@interface HomeAutomationInternal.HomeGraphCacheInvalidationSignal : _TtCs12_SwiftObject {
+    void currentCacheInvalidationSignal;
+    void signalName;
+    void storedCacheInvaldationSignal;
+}
+
+@end

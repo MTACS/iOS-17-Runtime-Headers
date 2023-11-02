@@ -1,0 +1,4 @@
+
+@protocol CXChannelProviderVendorProtocol <CXAbstractProviderVendorProtocol, CXAudioSessionActivationStateObserver>
+
+@end

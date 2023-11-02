@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmIndependenceDay_FI : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

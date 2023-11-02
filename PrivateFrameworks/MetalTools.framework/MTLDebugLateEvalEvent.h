@@ -1,0 +1,4 @@
+
+@interface MTLDebugLateEvalEvent : MTLToolsLateEvalEvent
+
+@end

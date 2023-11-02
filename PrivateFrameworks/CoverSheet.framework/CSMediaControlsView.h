@@ -1,0 +1,4 @@
+
+@interface CSMediaControlsView : CSCoverSheetViewBase
+
+@end

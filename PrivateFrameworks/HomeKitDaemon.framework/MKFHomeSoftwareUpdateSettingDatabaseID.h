@@ -1,0 +1,4 @@
+
+@interface MKFHomeSoftwareUpdateSettingDatabaseID : MKFHomeSettingDatabaseID
+
+@end

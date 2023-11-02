@@ -1,0 +1,7 @@
+
+@interface PhotoAnalysis.OnDiskMomentGraphManager : _TtCs12_SwiftObject {
+    void graphManager;
+    void photoLibraryManager;
+}
+
+@end

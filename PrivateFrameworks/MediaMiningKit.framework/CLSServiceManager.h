@@ -1,0 +1,95 @@
+
+@interface CLSServiceManager : NSObject <CLSSocialServiceContactsDelegate> {
+    NSURL * _applicationDataURL;
+    CLSSocialServiceCalendar * _calendarService;
+    CLSSocialServiceContacts * _contactsService;
+    CLSSocialServiceCoreDuet * _coreDuetService;
+    CLSSocialServiceCoreNameParser * _coreNameParserService;
+    bool  _hasAccessToContactsStore;
+    CLSPersonIdentity * _mePerson;
+    CLSLRUMemoryCache * _personsCache;
+    CLSRoutineService * _routineService;
+    NSObject * _routineServiceLockObject;
+}
+
+@property (nonatomic, readonly) NSURL *applicationDataURL;
+@property (nonatomic, readonly) CLSSocialServiceCalendar *calendarService;
+@property (nonatomic, readonly) CLSSocialServiceContacts *contactsService;
+@property (nonatomic, readonly) CLSSocialServiceCoreDuet *coreDuetService;
+@property (nonatomic, readonly) CLSSocialServiceCoreNameParser *coreNameParserService;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasAccessToContactsStore;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CLSPersonIdentity *mePerson;
+@property (nonatomic, readonly) CLSRoutineService *routineService;
+@property (nonatomic, readonly) NSObject *routineServiceLockObject;
+@property (readonly) Class superclass;
+
++ (id)sharedManager;
++ (id)sharedManagerWithURL:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)applicationDataURL;
+- (id)calendarService;
+- (bool)canAccessContactsStore;
+- (id)contactsForIdentifiers:(id)arg1;
+- (id)contactsService;
+- (id)coreDuetPersonSuggestionsOnDate:(id)arg1;
+- (id)coreDuetService;
+- (id)coreNameParserService;
+- (void)enumerateAllPersonsUsingBlock:(id /* block */)arg1;
+- (void)enumerateEventsFromUniversalDate:(id)arg1 toUniversalDate:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumeratePersonsAndPotentialBirthdayDateForContactIdentifiers:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumeratePersonsAndRelationshipUsingBlock:(id /* block */)arg1;
+- (void)enumeratePersonsForFullname:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumeratePersonsForIdentifiers:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)eventsForClueCollection:(id)arg1;
+- (id)eventsForDates:(id)arg1;
+- (id)fetchImportantLocationsOfInterest;
+- (id)fetchLocationOfInterestVisitsAtLocation:(id)arg1 inDateInterval:(id)arg2;
+- (void)flushSocialServicesAtURL:(id)arg1;
+- (bool)hasAccessToContactsStore;
+- (bool)hasAddressesForMePerson;
+- (id)inferredDeviceOwnerForPhotoLibrary:(id)arg1 ignoreContactLinking:(bool)arg2;
+- (id)init;
+- (id)initWithURL:(id)arg1;
+- (void)invalidateCacheForPersonInContactStoreWithContactIdentifiers:(id)arg1;
+- (void)invalidateMePerson;
+- (void)invalidateMomentaryMemoryCaches;
+- (void)invalidatePermanentMemoryCaches;
+- (void)invalidatePersonsCacheForPersonsWithContactIdentifiers:(id)arg1;
+- (void)invalidatePersonsCacheForPersonsWithNames:(id)arg1;
+- (bool)isRemoteLocation:(id)arg1 inDateInterval:(id)arg2;
+- (id)lastLocationOfInterestVisit;
+- (id)locationOfInterestAtLocation:(id)arg1;
+- (id)locationOfInterestCloseToLocation:(id)arg1 inDateInterval:(id)arg2;
+- (id)matchingDictionaryForContactIdentifier:(id)arg1;
+- (id)mePerson;
+- (id)mePersonAddressesOfType:(unsigned long long)arg1;
+- (unsigned long long)numberOfCloseByLocationMatches;
+- (unsigned long long)numberOfLocationsOfInterest;
+- (unsigned long long)numberOfMatchRequests;
+- (unsigned long long)numberOfRemoteLocationMatches;
+- (unsigned long long)numberOfTimeMatches;
+- (unsigned long long)numberOfVisits;
+- (id)personForIdentifier:(id)arg1;
+- (id)personForPersonHandle:(id)arg1;
+- (id)personLocalIdentifierMatchingContactPictureForContactIdentifier:(id)arg1;
+- (id)personResultForName:(id)arg1 inPhotoLibrary:(id)arg2;
+- (id)personResultsForName:(id)arg1 inPhotoLibrary:(id)arg2;
+- (id)personsFromEventParticipants:(id)arg1 excludeCurrentUser:(bool)arg2;
+- (id)personsInContactStoreForContactIdentifiers:(id)arg1 needsRefetching:(bool)arg2 progressBlock:(id /* block */)arg3;
+- (double)pinningVisitsRatio;
+- (void)postProcessLocationsOfInterest;
+- (id)predominantLocationMobilityForDateInterval:(id)arg1 confidence:(double*)arg2;
+- (void)prefetchEventsFromUniversalDate:(id)arg1 toUniversalDate:(id)arg2 forAssetCollectionsSortedByStartDate:(id)arg3 usingBlock:(id /* block */)arg4;
+- (unsigned long long)relationshipHintForPerson:(id)arg1 usingLocales:(id)arg2;
+- (bool)routineIsAvailable;
+- (id)routineService;
+- (id)routineServiceLockObject;
+- (void)setMePerson:(id)arg1;
+- (unsigned long long)sexHintForPerson:(id)arg1 usingLocales:(id)arg2;
+- (id)workCalendarEventsMatchingContactIdentifiers:(id)arg1 fromUniversalDate:(id)arg2 toUniversalDate:(id)arg3;
+
+@end

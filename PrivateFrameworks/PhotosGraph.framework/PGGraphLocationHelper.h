@@ -1,0 +1,90 @@
+
+@interface PGGraphLocationHelper : NSObject {
+    PGGraphAddressNodeCollection * _addressNodes;
+    MABinaryAdjacency * _addressNodesByAreaNode;
+    MABinaryAdjacency * _addressNodesByMomentNode;
+    MABinaryAdjacency * _areaNodesByAddressNode;
+    MABinaryAdjacency * _cityNodesByLocationNode;
+    MABinaryAdjacency * _countryNodesByLocationNode;
+    MABinaryAdjacency * _countyNodesByLocationNode;
+    MABinaryAdjacency * _districtNodesByLocationNode;
+    PGGraph * _graph;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _locationHelperLock;
+    MABinaryAdjacency * _locationNodesByCityNode;
+    MABinaryAdjacency * _locationNodesByCountryNode;
+    MABinaryAdjacency * _locationNodesByCountyNode;
+    MABinaryAdjacency * _locationNodesByDistrictNode;
+    MABinaryAdjacency * _locationNodesByNumberNode;
+    MABinaryAdjacency * _locationNodesByStateNode;
+    MABinaryAdjacency * _locationNodesByStreetNode;
+    MABinaryAdjacency * _momentNodesByAddressNode;
+    MABinaryAdjacency * _numberNodesByLocationNode;
+    MABinaryAdjacency * _stateNodesByLocationNode;
+    MABinaryAdjacency * _streetNodesByLocationNode;
+}
+
++ (id)inefficientLocationHelper;
+
+- (void).cxx_destruct;
+- (struct CLLocationCoordinate2D { double x1; double x2; })_approximateCoordinateForLocationNode:(id)arg1;
+- (id)_closestLocationNodeFromLocationNode:(id)arg1 withDimension:(unsigned long long)arg2 remapMatchingDimensionBlock:(id /* block */)arg3 reverse:(bool)arg4;
+- (id)_commonNodeForLocationNode:(id)arg1 andLocationNode:(id)arg2;
+- (void)_fetchAddressNodes;
+- (void)_fetchLocationNodesByCityNode;
+- (void)_fetchLocationNodesByCountryNode;
+- (void)_fetchLocationNodesByCountyNode;
+- (void)_fetchLocationNodesByDistrictNode;
+- (void)_fetchLocationNodesByNumberNode;
+- (void)_fetchLocationNodesByStateNode;
+- (void)_fetchLocationNodesByStreetNode;
+- (bool)_locationNodesRepresentSameCity:(id)arg1;
+- (id)_mostVisitedLocationNodeForLocationNodes:(id)arg1;
+- (id)_parentLocationNodeForLocationNode:(id)arg1;
+- (id)_parentLocationNodeWithDimension:(unsigned long long)arg1 ofLocationNode:(id)arg2;
+- (id)_parentLocationNodeWithDimension:(unsigned long long)arg1 ofLocationNodeAsCollection:(id)arg2;
+- (id)_parentLocationNodeWithDimension:(unsigned long long)arg1 sourceLocationNodeAsCollection:(id)arg2 sourceLabel:(id)arg3;
+- (id)_validLocationNodeForLocationNode:(id)arg1 withLocationMask:(unsigned long long)arg2;
+- (id)addressNodes;
+- (id)addressNodesByAreaNode;
+- (id)addressNodesByMomentNode;
+- (id)addressNodesFromAreaNodes:(id)arg1;
+- (id)addressNodesFromLocationNodes:(id)arg1;
+- (id)areaNodesByAddressNode;
+- (id)areaNodesFromAddressNodes:(id)arg1;
+- (id)cityNodeFromAddressNode:(id)arg1;
+- (id)cityNodeFromDistrictNode:(id)arg1;
+- (id)cityNodesByLocationNode;
+- (id)cityNodesFromAddressNodes:(id)arg1;
+- (id)closestLocationNodeFromLocationNode:(id)arg1 withDimension:(unsigned long long)arg2 remapMatchingDimensionBlock:(id /* block */)arg3;
+- (id)closestLocationNodeFromLocationNode:(id)arg1 withDimension:(unsigned long long)arg2 reverse:(bool)arg3;
+- (id)commonLocationNodeForRelevantLocationNodes:(id)arg1 locationMask:(unsigned long long)arg2;
+- (id)countryNodeFromAddressNode:(id)arg1;
+- (id)countryNodeFromAddressNodeAsCollection:(id)arg1;
+- (id)countryNodesByLocationNode;
+- (id)countyNodeFromCityNode:(id)arg1;
+- (id)countyNodesByLocationNode;
+- (id)densestCloseLocationNodeFromLocationNode:(id)arg1 withDateInterval:(id)arg2 locationMask:(unsigned long long)arg3;
+- (id)districtNodeFromAddressNode:(id)arg1;
+- (id)districtNodesByLocationNode;
+- (id)initWithGraph:(id)arg1;
+- (bool)locationIsInSupersetCategoryForLocationNode:(id)arg1;
+- (id)locationNodesByCityNode;
+- (id)locationNodesByCountryNode;
+- (id)locationNodesByCountyNode;
+- (id)locationNodesByDistrictNode;
+- (id)locationNodesByNumberNode;
+- (id)locationNodesByStateNode;
+- (id)locationNodesByStreetNode;
+- (id)momentNodesByAddressNode;
+- (id)momentNodesByAddressNodeIntersectingAddressNodes:(id)arg1;
+- (id)numberNodesByLocationNode;
+- (id)relevantAddressNodesForMomentNodes:(id)arg1 applyDensestCloseLocationNode:(bool)arg2;
+- (id)relevantLocationNodesForMomentNodes:(id)arg1 applyDensestCloseLocationNode:(bool)arg2;
+- (id)stateNodeFromAddressNode:(id)arg1;
+- (id)stateNodeFromCityNodeAsCollection:(id)arg1;
+- (id)stateNodesByLocationNode;
+- (id)streetNodesByLocationNode;
+
+@end

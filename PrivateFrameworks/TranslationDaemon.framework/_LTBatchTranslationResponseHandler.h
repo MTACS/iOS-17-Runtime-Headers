@@ -1,0 +1,83 @@
+
+@interface _LTBatchTranslationResponseHandler : NSObject <FTBatchTranslationResponseDelegate> {
+    NSMutableDictionary * _batchedParagraphs;
+    unsigned long long  _bufferSize;
+    NSString * _clientHeader;
+    NSString * _clientIdentifier;
+    bool  _completionHandlerCalled;
+    bool  _hasFinalServerResponse;
+    NSUUID * _logIdentifier;
+    _LTTranslationParagraph * _paragraph;
+    FTMutableBatchTranslationRequest * _request;
+    NSString * _requestID;
+    NSString * _sessionID;
+    NSLocale * _sourceLocale;
+    NSURL * _sourceURL;
+    bool  _supportsGenderDisambiguation;
+    NSLocale * _targetLocale;
+    long long  _taskHint;
+    NSLocale * _toLocale;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *batchedParagraphs;
+@property (nonatomic) unsigned long long bufferSize;
+@property (nonatomic, copy) NSString *clientHeader;
+@property (nonatomic, retain) NSString *clientIdentifier;
+@property (nonatomic) bool completionHandlerCalled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasFinalServerResponse;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSUUID *logIdentifier;
+@property (nonatomic, retain) _LTTranslationParagraph *paragraph;
+@property (nonatomic, retain) FTMutableBatchTranslationRequest *request;
+@property (nonatomic, retain) NSString *requestID;
+@property (nonatomic, retain) NSString *sessionID;
+@property (nonatomic, retain) NSLocale *sourceLocale;
+@property (nonatomic, retain) NSURL *sourceURL;
+@property (readonly) Class superclass;
+@property (nonatomic) bool supportsGenderDisambiguation;
+@property (nonatomic, retain) NSLocale *targetLocale;
+@property (nonatomic) long long taskHint;
+@property (nonatomic, retain) NSLocale *toLocale;
+
+- (void).cxx_destruct;
+- (id)batchedParagraphs;
+- (unsigned long long)bufferSize;
+- (void)callCompletionHandlersWithError:(id)arg1;
+- (id)clientHeader;
+- (id)clientIdentifier;
+- (bool)completionHandlerCalled;
+- (bool)hasFinalServerResponse;
+- (id)logIdentifier;
+- (id)paragraph;
+- (id)request;
+- (id)requestID;
+- (id)sessionID;
+- (void)setBatchedParagraphs:(id)arg1;
+- (void)setBufferSize:(unsigned long long)arg1;
+- (void)setClientHeader:(id)arg1;
+- (void)setClientIdentifier:(id)arg1;
+- (void)setCompletionHandlerCalled:(bool)arg1;
+- (void)setHasFinalServerResponse:(bool)arg1;
+- (void)setLogIdentifier:(id)arg1;
+- (void)setParagraph:(id)arg1;
+- (void)setRequest:(id)arg1;
+- (void)setRequestID:(id)arg1;
+- (void)setSessionID:(id)arg1;
+- (void)setSourceLocale:(id)arg1;
+- (void)setSourceURL:(id)arg1;
+- (void)setSupportsGenderDisambiguation:(bool)arg1;
+- (void)setTargetLocale:(id)arg1;
+- (void)setTaskHint:(long long)arg1;
+- (void)setToLocale:(id)arg1;
+- (id)sourceLocale;
+- (id)sourceURL;
+- (void)streamDidReceiveBatchTranslationStreamingResponse:(id)arg1;
+- (void)streamFailVerifyBatchTranslationStreamingResponse:(id)arg1;
+- (bool)supportsGenderDisambiguation;
+- (id)targetLocale;
+- (long long)taskHint;
+- (id)toLocale;
+
+@end

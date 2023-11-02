@@ -1,0 +1,4 @@
+
+@protocol HMDMediaDestinationMessageHandlerDataSource <HMDMessageHandlerDataSource>
+
+@end

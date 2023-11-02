@@ -1,0 +1,4 @@
+
+@interface ErrorsConstants : NSObject
+
+@end

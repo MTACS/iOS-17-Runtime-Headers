@@ -1,0 +1,4 @@
+
+@interface TRITriclientRolloutRoot : TRIPBRootObject
+
+@end

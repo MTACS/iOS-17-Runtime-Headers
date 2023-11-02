@@ -1,0 +1,81 @@
+
+@interface SHSheetContentDataSourceState : NSObject {
+    NSArray * _actionProxies;
+    NSDictionary * _actionProxyByUUID;
+    NSDictionary * _activitiesByUUID;
+    UIAirDropNode * _airDropProxy;
+    NSDictionary * _customActionIdentifiersByCustomSectionIdentifier;
+    NSOrderedSet * _customSectionIdentifiers;
+    NSArray * _extensionActionIdentifiers;
+    NSArray * _favoriteActionIdentifiers;
+    NSArray * _heroActionIdentifiers;
+    NSArray * _informationalActionIdentifiers;
+    unsigned int  _nearbyCountSlotID;
+    NSArray * _peopleIdentifiers;
+    NSArray * _peopleProxies;
+    NSDictionary * _peopleProxyByUUID;
+    NSArray * _shareIdentifiers;
+    NSArray * _shareProxies;
+    NSDictionary * _shareProxyByUUID;
+    NSArray * _systemActionIdentifiers;
+}
+
+@property (nonatomic, copy) NSArray *actionProxies;
+@property (nonatomic, copy) NSDictionary *actionProxyByUUID;
+@property (nonatomic, copy) NSDictionary *activitiesByUUID;
+@property (nonatomic, retain) UIAirDropNode *airDropProxy;
+@property (nonatomic, copy) NSDictionary *customActionIdentifiersByCustomSectionIdentifier;
+@property (nonatomic, copy) NSOrderedSet *customSectionIdentifiers;
+@property (nonatomic, copy) NSArray *extensionActionIdentifiers;
+@property (nonatomic, copy) NSArray *favoriteActionIdentifiers;
+@property (nonatomic, copy) NSArray *heroActionIdentifiers;
+@property (nonatomic, copy) NSArray *informationalActionIdentifiers;
+@property (nonatomic) unsigned int nearbyCountSlotID;
+@property (nonatomic, copy) NSArray *peopleIdentifiers;
+@property (nonatomic, copy) NSArray *peopleProxies;
+@property (nonatomic, copy) NSDictionary *peopleProxyByUUID;
+@property (nonatomic, copy) NSArray *shareIdentifiers;
+@property (nonatomic, copy) NSArray *shareProxies;
+@property (nonatomic, copy) NSDictionary *shareProxyByUUID;
+@property (nonatomic, copy) NSArray *systemActionIdentifiers;
+
+- (void).cxx_destruct;
+- (id)actionProxies;
+- (id)actionProxyByUUID;
+- (id)activitiesByUUID;
+- (id)airDropProxy;
+- (id)customActionIdentifiersByCustomSectionIdentifier;
+- (id)customSectionIdentifiers;
+- (id)extensionActionIdentifiers;
+- (id)favoriteActionIdentifiers;
+- (id)heroActionIdentifiers;
+- (id)informationalActionIdentifiers;
+- (void)logDiagnosticProperties;
+- (unsigned int)nearbyCountSlotID;
+- (id)peopleIdentifiers;
+- (id)peopleProxies;
+- (id)peopleProxyByUUID;
+- (void)setActionProxies:(id)arg1;
+- (void)setActionProxyByUUID:(id)arg1;
+- (void)setActivitiesByUUID:(id)arg1;
+- (void)setAirDropProxy:(id)arg1;
+- (void)setCustomActionIdentifiersByCustomSectionIdentifier:(id)arg1;
+- (void)setCustomSectionIdentifiers:(id)arg1;
+- (void)setExtensionActionIdentifiers:(id)arg1;
+- (void)setFavoriteActionIdentifiers:(id)arg1;
+- (void)setHeroActionIdentifiers:(id)arg1;
+- (void)setInformationalActionIdentifiers:(id)arg1;
+- (void)setNearbyCountSlotID:(unsigned int)arg1;
+- (void)setPeopleIdentifiers:(id)arg1;
+- (void)setPeopleProxies:(id)arg1;
+- (void)setPeopleProxyByUUID:(id)arg1;
+- (void)setShareIdentifiers:(id)arg1;
+- (void)setShareProxies:(id)arg1;
+- (void)setShareProxyByUUID:(id)arg1;
+- (void)setSystemActionIdentifiers:(id)arg1;
+- (id)shareIdentifiers;
+- (id)shareProxies;
+- (id)shareProxyByUUID;
+- (id)systemActionIdentifiers;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface BookDataStoreBundleLookupClass : NSObject
+
+@end

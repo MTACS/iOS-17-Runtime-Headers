@@ -1,0 +1,4 @@
+
+@interface _TtC14NewsEngagementP33_F4A304D61E333DD5B13A973B395E26479Localized : _TtCs12_SwiftObject
+
+@end

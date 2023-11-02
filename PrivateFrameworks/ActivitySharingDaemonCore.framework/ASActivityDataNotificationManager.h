@@ -1,0 +1,85 @@
+
+@interface ASActivityDataNotificationManager : NSObject <ASActivitySharingManagerReadyObserver, ASCloudKitManagerChangesObserver, HDDataObserver> {
+    ACHAchievementStore * _achievementStore;
+    ASActivityDataBulletinManager * _activityDataBulletinManager;
+    ASActivityDataManager * _activityDataManager;
+    ASCloudKitManager * _cloudKitManager;
+    ASContactsManager * _contactsManager;
+    ASDatabaseClient * _databaseClient;
+    ASFriendListManager * _friendListManager;
+    bool  _isCloudKitManagerProcessingData;
+    ASActivityDataNotificationRulesEngine * _notificationRulesEngine;
+    ASPeriodicUpdateManager * _periodicUpdateManager;
+    NSObject<OS_dispatch_queue> * _queue;
+    bool  _receivedChangesFromCloudKit;
+}
+
+@property (nonatomic, retain) NSNumber *achievementAnchor;
+@property (nonatomic) ASActivityDataBulletinManager *activityDataBulletinManager;
+@property (nonatomic) ASActivityDataManager *activityDataManager;
+@property (nonatomic) ASCloudKitManager *cloudKitManager;
+@property (nonatomic) ASContactsManager *contactsManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) ASFriendListManager *friendListManager;
+@property (nonatomic, retain) NSNumber *goalCompletionAnchor;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isReadyToProcessChanges;
+@property (nonatomic, retain) ASActivityDataNotificationRulesEngine *notificationRulesEngine;
+@property (nonatomic) ASPeriodicUpdateManager *periodicUpdateManager;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSNumber *workoutAnchor;
+
+- (void).cxx_destruct;
+- (id)_localUserDefaultsDomain;
+- (id)_mostRecentAchievementEarnedDateForFriendWithUUID:(id)arg1;
+- (id)_mostRecentGoalCompletedSnapshotIndexForFriendWithUUID:(id)arg1;
+- (id)_mostRecentMonthlyAchievementEarnedDateForFriendWithUUID:(id)arg1;
+- (id)_mostRecentWorkoutCompletionDateForFriendWithUUID:(id)arg1;
+- (id)_nanoUserDefaultsDomain;
+- (id)_nanoUserDefaultsDomainKeyForFriendWithUUID:(id)arg1 keyTypeString:(id)arg2;
+- (void)_notifyAboutWorkoutsDetectionIfRequired:(id)arg1;
+- (id)_queue_selectAchievementNotifications;
+- (id)_queue_selectGoalCompletionNotifications;
+- (id)_queue_selectWorkoutNotifications;
+- (void)_queue_showFriendNotificationsIfRequired;
+- (void)_setMostRecentAchievementEarnedDate:(id)arg1 forFriendWithUUID:(id)arg2;
+- (void)_setMostRecentGoalCompletedSnapshotIndex:(id)arg1 forFriendWithUUID:(id)arg2;
+- (void)_setMostRecentMonthlyAchievementEarnedDate:(id)arg1 forFriendWithUUID:(id)arg2;
+- (void)_setMostRecentWorkoutCompletionDate:(id)arg1 forFriendWithUUID:(id)arg2;
+- (id)achievementAnchor;
+- (id)activityDataBulletinManager;
+- (id)activityDataManager;
+- (void)activitySharingManagerReady:(id)arg1;
+- (void)beginObserving;
+- (id)cloudKitManager;
+- (void)cloudKitManager:(id)arg1 didBeginUpdatesForFetchWithType:(long long)arg2;
+- (void)cloudKitManager:(id)arg1 didEndUpdatesForFetchWithType:(long long)arg2;
+- (void)cloudKitManager:(id)arg1 didReceiveNewActivitySnapshots:(id)arg2 moreComing:(bool)arg3 changesProcessedHandler:(id /* block */)arg4;
+- (void)cloudKitManager:(id)arg1 didReceiveNewFriendAchievements:(id)arg2 moreComing:(bool)arg3 changesProcessedHandler:(id /* block */)arg4;
+- (void)cloudKitManager:(id)arg1 didReceiveNewFriendWorkouts:(id)arg2 moreComing:(bool)arg3 changesProcessedHandler:(id /* block */)arg4;
+- (void)cloudKitManager:(id)arg1 didReceiveNewNotificationEvents:(id)arg2 moreComing:(bool)arg3 changesProcessedHandler:(id /* block */)arg4;
+- (id)contactsManager;
+- (void)dealloc;
+- (void)endObserving;
+- (id)friendListManager;
+- (id)goalCompletionAnchor;
+- (id)initWithDatabaseClient:(id)arg1;
+- (bool)isReadyToProcessChanges;
+- (id)notificationRulesEngine;
+- (id)periodicUpdateManager;
+- (void)samplesAdded:(id)arg1 anchor:(id)arg2;
+- (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
+- (void)setAchievementAnchor:(id)arg1;
+- (void)setActivityDataBulletinManager:(id)arg1;
+- (void)setActivityDataManager:(id)arg1;
+- (void)setCloudKitManager:(id)arg1;
+- (void)setContactsManager:(id)arg1;
+- (void)setFriendListManager:(id)arg1;
+- (void)setGoalCompletionAnchor:(id)arg1;
+- (void)setNotificationRulesEngine:(id)arg1;
+- (void)setPeriodicUpdateManager:(id)arg1;
+- (void)setWorkoutAnchor:(id)arg1;
+- (id)workoutAnchor;
+
+@end

@@ -1,0 +1,88 @@
+
+@interface DTActivityTraceTapConfig : DTTapConfig {
+    NSDate * _importForcedEndDate;
+    NSDate * _importForcedStartDate;
+    NSURL * _importedFileURL;
+    id /* block */  _memoHandler;
+    id /* block */  _processDetectionCallback;
+}
+
+@property (nonatomic, retain) NSArray *dynamicTracingEnabledSubsystems;
+@property (nonatomic) bool enableBacktraceReplacement;
+@property (nonatomic) bool enableHTTPArchiveLogging;
+@property (nonatomic) bool enablePowerLog;
+@property (nonatomic) bool excludeDebug;
+@property (nonatomic) bool excludeInfo;
+@property (nonatomic, retain) NSDate *importForcedEndDate;
+@property (nonatomic, retain) NSDate *importForcedStartDate;
+@property (nonatomic, retain) NSURL *importedFileURL;
+@property (nonatomic) bool includeSenderInfo;
+@property (nonatomic) bool includeWallTime;
+@property (nonatomic, retain) NSDictionary *loggingSubsystemCategoryPairsToEnable;
+@property (nonatomic) unsigned long long machContinuousStart;
+@property (nonatomic) struct mach_timebase_info { unsigned int x1; unsigned int x2; } machTimebase;
+@property (nonatomic, copy) id /* block */ memoHandler;
+@property (nonatomic) unsigned long long mode;
+@property (nonatomic) bool onlySignposts;
+@property (nonatomic, copy) NSString *predicateString;
+@property (nonatomic, copy) id /* block */ processDetectionCallback;
+@property (nonatomic, retain) NSDictionary *signpostSubsystemCategoryPairsToEnable;
+@property (nonatomic) bool signpostsAndLogs;
+@property (nonatomic) int targetPID;
+@property (nonatomic) bool trackExpiredPIDs;
+@property (nonatomic) bool trackPIDToExecNameMapping;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dynamicTracingEnabledSubsystems;
+- (bool)enableBacktraceReplacement;
+- (bool)enableHTTPArchiveLogging;
+- (bool)enablePowerLog;
+- (bool)excludeDebug;
+- (bool)excludeInfo;
+- (id)importForcedEndDate;
+- (id)importForcedStartDate;
+- (id)importedFileURL;
+- (bool)includeSenderInfo;
+- (bool)includeWallTime;
+- (id)init;
+- (bool)isTargetAllProcesses;
+- (id)loggingSubsystemCategoryPairsToEnable;
+- (unsigned long long)machContinuousStart;
+- (struct mach_timebase_info { unsigned int x1; unsigned int x2; })machTimebase;
+- (id /* block */)memoHandler;
+- (unsigned long long)mode;
+- (bool)onlySignposts;
+- (id)predicateString;
+- (id /* block */)processDetectionCallback;
+- (void)setDynamicTracingEnabledSubsystems:(id)arg1;
+- (void)setEnableBacktraceReplacement:(bool)arg1;
+- (void)setEnableHTTPArchiveLogging:(bool)arg1;
+- (void)setEnablePowerLog:(bool)arg1;
+- (void)setExcludeDebug:(bool)arg1;
+- (void)setExcludeInfo:(bool)arg1;
+- (void)setImportForcedEndDate:(id)arg1;
+- (void)setImportForcedStartDate:(id)arg1;
+- (void)setImportedFileURL:(id)arg1;
+- (void)setIncludeSenderInfo:(bool)arg1;
+- (void)setIncludeWallTime:(bool)arg1;
+- (void)setLoggingSubsystemCategoryPairsToEnable:(id)arg1;
+- (void)setMachContinuousStart:(unsigned long long)arg1;
+- (void)setMachTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg1;
+- (void)setMemoHandler:(id /* block */)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setOnlySignposts:(bool)arg1;
+- (void)setPredicateString:(id)arg1;
+- (void)setProcessDetectionCallback:(id /* block */)arg1;
+- (void)setSignpostSubsystemCategoryPairsToEnable:(id)arg1;
+- (void)setSignpostsAndLogs:(bool)arg1;
+- (void)setTargetPID:(int)arg1;
+- (void)setTrackExpiredPIDs:(bool)arg1;
+- (void)setTrackPIDToExecNameMapping:(bool)arg1;
+- (id)signpostSubsystemCategoryPairsToEnable;
+- (bool)signpostsAndLogs;
+- (int)targetPID;
+- (bool)trackExpiredPIDs;
+- (bool)trackPIDToExecNameMapping;
+
+@end

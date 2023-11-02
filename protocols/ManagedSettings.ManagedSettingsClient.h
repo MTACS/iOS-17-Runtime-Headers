@@ -1,0 +1,4 @@
+
+@protocol ManagedSettings.ManagedSettingsClient
+
+@end

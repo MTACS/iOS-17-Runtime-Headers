@@ -1,0 +1,102 @@
+
+@interface _UIFindNavigatorView : UIInputView {
+    long long  _assistantBarStyle;
+    UIButton * _doneButton;
+    <_UIFindNavigatorViewDelegate> * _findNavigatorDelegate;
+    bool  _intrinsicHeightDerivedFromAssistantBar;
+    _UIFindNavigatorViewLayout * _layout;
+    bool  _matchCase;
+    long long  _mode;
+    UIButton * _nextResultButton;
+    UIButton * _previousResultButton;
+    UIButton * _replaceButton;
+    bool  _replaceButtonEnabled;
+    _UIFindNavigatorSearchTextField * _replaceTextField;
+    UILabel * _resultCountLabel;
+    struct { 
+        bool initialized; 
+        UIAction *find; 
+        UIAction *replace; 
+        UIAction *matchCase; 
+        UIAction *wholeWords; 
+    }  _searchMenu;
+    _UIFindNavigatorSearchTextField * _searchTextField;
+    struct { 
+        UIView *left; 
+        UIView *right; 
+        UIView *bottom; 
+    }  _separatorViews;
+    UIButton * _settingsButton;
+    bool  _usesOpaqueBackground;
+    unsigned long long  _visibleSeparatorEdges;
+    bool  _wholeWords;
+}
+
+@property (nonatomic) long long assistantBarStyle;
+@property (nonatomic, readonly) UIButton *doneButton;
+@property (nonatomic) <_UIFindNavigatorViewDelegate> *findNavigatorDelegate;
+@property (nonatomic) bool intrinsicHeightDerivedFromAssistantBar;
+@property (nonatomic) bool matchCase;
+@property (nonatomic) long long mode;
+@property (nonatomic, readonly) UIButton *nextResultButton;
+@property (nonatomic, readonly) UIButton *previousResultButton;
+@property (nonatomic, readonly) UIButton *replaceButton;
+@property (nonatomic) bool replaceButtonEnabled;
+@property (nonatomic, readonly) _UIFindNavigatorSearchTextField *replaceTextField;
+@property (nonatomic, readonly) UILabel *resultCountLabel;
+@property (nonatomic, readonly) _UIFindNavigatorSearchTextField *searchTextField;
+@property (nonatomic, readonly) UIButton *settingsButton;
+@property (nonatomic) bool usesOpaqueBackground;
+@property (nonatomic) unsigned long long visibleSeparatorEdges;
+@property (nonatomic) bool wholeWords;
+
+- (void).cxx_destruct;
+- (bool)_canResignIfContainsFirstResponder;
+- (id)_createNavigatorLayoutForTraitCollection:(id)arg1;
+- (void)_handleSearchMenuItem:(id)arg1;
+- (void)_invalidateSearchSession;
+- (id)_linearFocusMovementSequences;
+- (void)_navigatorHostingTypeChanged;
+- (void)_preferredBackgroundColorChanged;
+- (void)_preferredContentSizeDidChange;
+- (bool)_replacementEnabled;
+- (void)_setNavigatorLayout:(id)arg1;
+- (long long)assistantBarStyle;
+- (bool)becomeFirstResponder;
+- (id)doneButton;
+- (void)find:(id)arg1;
+- (id)findNavigatorDelegate;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)intrinsicHeightDerivedFromAssistantBar;
+- (void)layoutSubviews;
+- (bool)matchCase;
+- (long long)mode;
+- (id)nextResultButton;
+- (id)previousResultButton;
+- (id)replaceButton;
+- (bool)replaceButtonEnabled;
+- (id)replaceTextField;
+- (bool)resignFirstResponder;
+- (id)resultCountLabel;
+- (void)safeAreaInsetsDidChange;
+- (id)searchTextField;
+- (void)setAssistantBarStyle:(long long)arg1;
+- (void)setFindNavigatorDelegate:(id)arg1;
+- (void)setIntrinsicHeightDerivedFromAssistantBar:(bool)arg1;
+- (void)setMatchCase:(bool)arg1;
+- (void)setMode:(long long)arg1;
+- (void)setReplaceButtonEnabled:(bool)arg1;
+- (void)setUsesOpaqueBackground:(bool)arg1;
+- (void)setVisibleSeparatorEdges:(unsigned long long)arg1;
+- (void)setWholeWords:(bool)arg1;
+- (id)settingsButton;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)suggestedFindMenuItems;
+- (void)traitCollectionDidChange:(id)arg1;
+- (bool)usesOpaqueBackground;
+- (unsigned long long)visibleSeparatorEdges;
+- (bool)wholeWords;
+- (void)willMoveToWindow:(id)arg1;
+
+@end

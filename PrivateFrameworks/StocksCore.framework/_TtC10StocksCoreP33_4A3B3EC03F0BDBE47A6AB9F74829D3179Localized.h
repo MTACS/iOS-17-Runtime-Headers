@@ -1,0 +1,4 @@
+
+@interface _TtC10StocksCoreP33_4A3B3EC03F0BDBE47A6AB9F74829D3179Localized : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol ACHAwardsKeyValueClientInterface <NSObject>
+
+@end

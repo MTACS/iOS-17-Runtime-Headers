@@ -1,0 +1,4 @@
+
+@interface _TtC33AppleMediaServicesUIPaymentSheetsP33_03AA647FCA97033A1DFDB2F3E86BC43E19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

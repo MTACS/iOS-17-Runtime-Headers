@@ -1,0 +1,85 @@
+
+@interface _GCHapticPlayer : NSObject {
+    bool  _activeEventThisSlice;
+    NSMutableArray * _activeHapticEvents;
+    double  _activeLifetime;
+    NSArray * _actuators;
+    _GCHapticClientProxy * _client;
+    int  _continuousEventsProcessed;
+    float  _continuousIntensity;
+    float  _continuousSharpness;
+    bool  _dirtyMuteState;
+    NSMutableArray * _eventsToRemove;
+    _GCHapticLogicalDevice * _hapticLogicalDevice;
+    NSNumber * _identifier;
+    double  _initializationTime;
+    NSMutableArray * _intensityParamCurve;
+    _GCHapticDynamicParameter * _intensityParameter;
+    double  _lastActiveTime;
+    int  _muteReasons;
+    bool  _muted;
+    int  _parameterCurvesProcessed;
+    bool  _retainedByClient;
+    NSMutableArray * _scheduledCommands;
+    NSMutableArray * _sharpnessParamCurve;
+    _GCHapticDynamicParameter * _sharpnessParameter;
+    int  _totalEventsProcessed;
+    double  _totalLifetimeInSeconds;
+    int  _transientEventsProcessed;
+    bool  _transientsEnqueuedSinceLastQuery;
+}
+
+@property (nonatomic, readonly, copy) NSArray *actuators;
+@property (nonatomic) int continuousEventsProcessed;
+@property (nonatomic, readonly) float continuousIntensity;
+@property (nonatomic, readonly) float continuousSharpness;
+@property (nonatomic) _GCHapticLogicalDevice *hapticLogicalDevice;
+@property (nonatomic, readonly, copy) NSNumber *identifier;
+@property (nonatomic) int parameterCurvesProcessed;
+@property (getter=isRetainedByClient, nonatomic) bool retainedByClient;
+@property (nonatomic) int totalEventsProcessed;
+@property (nonatomic) double totalLifetimeInSeconds;
+@property (nonatomic) int transientEventsProcessed;
+
+- (void).cxx_destruct;
+- (double)activeLifetimeInSeconds;
+- (id)actuators;
+- (id)bundleIdentifier;
+- (void)clearParameters;
+- (int)continuousEventsProcessed;
+- (float)continuousIntensity;
+- (float)continuousSharpness;
+- (id)controllerProductCategory;
+- (void)dealloc;
+- (id)description;
+- (void)handleCommand:(id)arg1;
+- (id)hapticLogicalDevice;
+- (float)hapticStrength;
+- (bool)hasProcessedActiveEventsAfterTime:(double)arg1;
+- (bool)hasProcessedActiveEventsThisSlice;
+- (bool)hasScheduledCommands;
+- (bool)hasScheduledEventsByTime:(double)arg1;
+- (id)identifier;
+- (id)initWithIdentifier:(unsigned long long)arg1 actuators:(id)arg2 client:(id)arg3;
+- (bool)isActiveAtTime:(double)arg1;
+- (bool)isMuted;
+- (bool)isMutedForReason:(unsigned long long)arg1;
+- (bool)isRetainedByClient;
+- (int)parameterCurvesProcessed;
+- (void)processSliceForLogicalDevice:(id)arg1 startTime:(double)arg2 endTime:(double)arg3;
+- (void)scheduleCommand:(const void*)arg1;
+- (void)setContinuousEventsProcessed:(int)arg1;
+- (void)setHapticLogicalDevice:(id)arg1;
+- (void)setMute:(bool)arg1 forReason:(unsigned long long)arg2;
+- (void)setParameterCurvesProcessed:(int)arg1;
+- (void)setRetainedByClient:(bool)arg1;
+- (void)setTotalEventsProcessed:(int)arg1;
+- (void)setTotalLifetimeInSeconds:(double)arg1;
+- (void)setTransientEventsProcessed:(int)arg1;
+- (void)teardown;
+- (int)totalEventsProcessed;
+- (double)totalLifetimeInSeconds;
+- (int)transientEventsProcessed;
+- (bool)transientsEnqueuedSinceLastQuery;
+
+@end

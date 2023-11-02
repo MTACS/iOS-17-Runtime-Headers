@@ -1,0 +1,136 @@
+
+@interface SFFluidCollectionView : UIScrollView <SFFluidCollectionDataContainer, SFFluidCollectionLayoutContainer, SFFluidCollectionShadowUpdateContainer, UIContextMenuInteractionDelegate> {
+    NSMutableDictionary * _activeInteractions;
+    bool  _allowsMultipleSelection;
+    UIContextMenuInteraction * _contextMenuInteraction;
+    UITouch * _currentTouch;
+    <SFFluidCollectionViewDataSource> * _dataSource;
+    NSMutableSet * _displayedItemInfos;
+    SFFluidCollectionViewDragCoordinator * _dragCoordinator;
+    <SFFluidCollectionViewDragDelegate> * _dragDelegate;
+    SFFluidCollectionViewDropCoordinator * _dropCoordinator;
+    <SFFluidCollectionViewDropDelegate> * _dropDelegate;
+    SFFluidCollectionElementIdentifier * _elementIdentifierPendingSelection;
+    SFFluidCollectionViewLayout * _fluidCollectionViewLayout;
+    bool  _hasLoadedData;
+    NSMutableArray * _interactions;
+    UIViewFloatAnimatableProperty * _interpolatedContentOffsetX;
+    UIViewFloatAnimatableProperty * _interpolatedContentOffsetY;
+    NSMutableDictionary * _itemInfosByElementIdentifier;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _lastBoundsForElementsInRect;
+    NSSet * _lastElementIdentifiersForBounds;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _lastScrollPercent;
+    NSMutableArray * _numberOfItemsBySection;
+    unsigned long long  _numberOfSections;
+    SFFluidCollectionViewReuseManager * _reuseManager;
+    NSMutableSet * _selectedIndexPaths;
+    bool  _settingContentOffsetFromInterpolation;
+    SFFluidCollectionShadowUpdateController * _shadowUpdateController;
+    <UIViewSpringAnimationBehaviorDescribing> * _springBehavior;
+    UITapGestureRecognizer * _tapRecognizer;
+    <SFFluidCollectionViewTrackedUpdateToken> * _trackedUpdateToken;
+    SFFluidCollectionViewUpdate * _update;
+    struct { 
+        bool needsPrepareLayout; 
+        bool needsFinalizeLayout; 
+        bool needsFinalizeAnimatedBoundsChange; 
+        bool needsFinalizeUpdate; 
+    }  _updateFlags;
+    SFFluidCollectionViewUpdate * _updateWithShadowUpdates;
+}
+
+@property (nonatomic, readonly) NSSet *activeInteractions;
+@property (nonatomic) bool allowsMultipleSelection;
+@property (nonatomic, readonly) <UICoordinateSpace> *coordinateSpace;
+@property (nonatomic, readonly) <SFFluidCollectionDataContainer> *dataContainer;
+@property (nonatomic) <SFFluidCollectionViewDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SFFluidCollectionViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <SFFluidCollectionViewDragDelegate> *dragDelegate;
+@property (nonatomic) <SFFluidCollectionViewDropDelegate> *dropDelegate;
+@property (nonatomic, retain) SFFluidCollectionViewLayout *fluidCollectionViewLayout;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSArray *indexPathsOfSelectedItems;
+@property (nonatomic, readonly) unsigned long long numberOfSections;
+@property (nonatomic, readonly) SFFluidCollectionShadowUpdateController *shadowUpdateController;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)activeInteractions;
+- (void)addFluidCollectionViewInteraction:(id)arg1;
+- (bool)allowsMultipleSelection;
+- (void)applyShadowUpdate:(id)arg1;
+- (void)beginFluidCollectionViewInteraction:(id)arg1 withItemsAtIndexPaths:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 configuration:(id)arg2 highlightPreviewForItemWithIdentifier:(id)arg3;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (void)contextMenuInteraction:(id)arg1 willEndForConfiguration:(id)arg2 animator:(id)arg3;
+- (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
+- (id)coordinateSpace;
+- (id)dataContainer;
+- (id)dataSource;
+- (id)dataSourceIndexPathForIndexPath:(id)arg1;
+- (void)deleteItemsAtIndexPaths:(id)arg1;
+- (void)deleteSections:(id)arg1;
+- (id)dequeueSupplementaryViewOfKind:(id)arg1 reuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
+- (id)dequeueViewWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
+- (void)deselectItemAtIndexPath:(id)arg1;
+- (void)didMoveToWindow;
+- (id)dragDelegate;
+- (id)dropDelegate;
+- (void)endFluidCollectionViewInteraction:(id)arg1;
+- (void)endTrackedUpdate:(id)arg1;
+- (id)fluidCollectionViewLayout;
+- (id)indexPathForDataSourceIndexPath:(id)arg1;
+- (id)indexPathForItemView:(id)arg1;
+- (id)indexPathOfItemAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (id)indexPathsForFluidCollectionViewInteraction:(id)arg1;
+- (id)indexPathsOfSelectedItems;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layout:(id)arg2;
+- (void)insertItemsAtIndexPaths:(id)arg1;
+- (void)insertSections:(id)arg1;
+- (bool)isAnimatingItemAtIndexPath:(id)arg1;
+- (void)layoutSubviews;
+- (void)layoutWasInvalidatedWithContext:(id)arg1;
+- (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (void)moveSection:(unsigned long long)arg1 toSection:(unsigned long long)arg2;
+- (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
+- (void)performBatchUpdatesWithBlock:(id /* block */)arg1;
+- (id)performTrackedUpdatesWithBlock:(id /* block */)arg1;
+- (void)registerReuseIdentifier:(id)arg1 viewCreationBlock:(id /* block */)arg2;
+- (void)registerSupplementaryViewOfKind:(id)arg1 reuseIdentifier:(id)arg2 viewCreationBlock:(id /* block */)arg3;
+- (void)reloadData;
+- (void)reloadItemsAtIndexPaths:(id)arg1;
+- (void)selectItemAtIndexPath:(id)arg1;
+- (void)setAllowsMultipleSelection:(bool)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setDragDelegate:(id)arg1;
+- (void)setDropDelegate:(id)arg1;
+- (void)setFluidCollectionViewLayout:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)shadowUpdateController;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateFluidCollectionViewInteraction:(id)arg1;
+- (void)updateProgress:(double)arg1 forTrackedUpdate:(id)arg2;
+- (id)viewForItemAtIndexPath:(id)arg1;
+
+@end

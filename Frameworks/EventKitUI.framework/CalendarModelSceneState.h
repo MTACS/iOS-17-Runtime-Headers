@@ -1,0 +1,4 @@
+
+@interface CalendarModelSceneState : CUIKCalendarModelSceneState
+
+@end

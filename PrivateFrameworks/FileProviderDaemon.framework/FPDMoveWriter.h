@@ -1,0 +1,93 @@
+
+@interface FPDMoveWriter : NSObject <FPCancellable> {
+    NSArray * _accessTokens;
+    NSObject<OS_dispatch_queue> * _asyncQueue;
+    bool  _cancelled;
+    id /* block */  _completionBlock;
+    FPDCoordinator * _coordinator;
+    unsigned long long  _depth;
+    NSMutableArray * _destinationFoldersStack;
+    <FPDMoveWriterExecutor> * _diskWriter;
+    NSError * _error;
+    NSMutableDictionary * _errorsByRoot;
+    NSObservation * _importProgressObservation;
+    FPMoveInfo * _info;
+    id /* block */  _itemCompletionBlock;
+    id /* block */  _itemCopyProgressBlock;
+    unsigned long long  _logSection;
+    FPDActionOperationQueue * _moveQueue;
+    FPDMoveOperation * _operation;
+    bool  _originalBouncePolicy;
+    FPDCoordinator * _preemptiveDownloadCoordinator;
+    NSMutableDictionary * _progressByRoot;
+    <FPDMoveWriterExecutor> * _providerWriter;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _rootCompletionBlock;
+    id /* block */  _rootCreatedBlock;
+    NSMutableArray * _sourceFoldersStack;
+    id  _waitedOnID;
+    id /* block */  _waiterBlock;
+}
+
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, retain) FPDCoordinator *coordinator;
+@property (nonatomic, retain) <FPDMoveWriterExecutor> *diskWriter;
+@property (nonatomic, readonly) FPMoveInfo *info;
+@property (nonatomic, copy) id /* block */ itemCompletionBlock;
+@property (nonatomic, copy) id /* block */ itemCopyProgressBlock;
+@property (nonatomic, readonly) FPDMoveOperation *operation;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, copy) id /* block */ rootCompletionBlock;
+@property (nonatomic, copy) id /* block */ rootCreatedBlock;
+
++ (id)acquireDownloadSlotForItem:(id)arg1;
++ (void)initialize;
++ (void)releaseDownloadSlot:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_finishWithError:(id)arg1;
+- (void)_handleCompletionOfAtom:(id)arg1 source:(id)arg2 result:(id)arg3 error:(id)arg4;
+- (void)_handleFolder:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handleItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handlePostFolder:(id)arg1 completion:(id /* block */)arg2;
+- (void)_performCopyOrMoveOfFolder:(id)arg1 completion:(id /* block */)arg2;
+- (void)_performCopyOrMoveOfItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)_removeRoot:(id)arg1;
+- (void)_step;
+- (void)_unblockWaiterForSourceID:(id)arg1 withResult:(id)arg2 error:(id)arg3;
+- (void)cancel;
+- (void)cancelRoot:(id)arg1;
+- (id /* block */)completionBlock;
+- (id)coordinator;
+- (id)defaultExecutor;
+- (id)diskWriter;
+- (void)dumpStateTo:(id)arg1;
+- (void)failWithError:(id)arg1;
+- (void)handleAtom:(id)arg1 completion:(id /* block */)arg2;
+- (void)handleCreationForAtom:(id)arg1 result:(id)arg2;
+- (id)info;
+- (id)initWithOperation:(id)arg1 queue:(id)arg2;
+- (id /* block */)itemCompletionBlock;
+- (id /* block */)itemCopyProgressBlock;
+- (id)operation;
+- (void)performCopyOfItem:(id)arg1 to:(id)arg2 as:(id)arg3 sourceMaterializeOption:(unsigned long long)arg4 targetMaterializeOption:(unsigned long long)arg5 completion:(id /* block */)arg6;
+- (void)performCopyOfItem:(id)arg1 to:(id)arg2 as:(id)arg3 sourceMaterializeOption:(unsigned long long)arg4 targetMaterializeOption:(unsigned long long)arg5 useDiskWriter:(bool)arg6 completion:(id /* block */)arg7;
+- (void)performCreateFolder:(id)arg1 inside:(id)arg2 as:(id)arg3 useDiskWriter:(bool)arg4 completion:(id /* block */)arg5;
+- (void)performMoveOfFolder:(id)arg1 to:(id)arg2 as:(id)arg3 sourceMaterializeOption:(unsigned long long)arg4 targetMaterializeOption:(unsigned long long)arg5 atomically:(bool)arg6 useDiskWriter:(bool)arg7 completion:(id /* block */)arg8;
+- (void)performMoveOfItem:(id)arg1 to:(id)arg2 as:(id)arg3 sourceMaterializeOption:(unsigned long long)arg4 targetMaterializeOption:(unsigned long long)arg5 useDiskWriter:(bool)arg6 completion:(id /* block */)arg7;
+- (id)queue;
+- (id /* block */)rootCompletionBlock;
+- (id /* block */)rootCreatedBlock;
+- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setCoordinator:(id)arg1;
+- (void)setDiskWriter:(id)arg1;
+- (void)setItemCompletionBlock:(id /* block */)arg1;
+- (void)setItemCopyProgressBlock:(id /* block */)arg1;
+- (void)setProgress:(id)arg1 forRoot:(id)arg2;
+- (void)setRootCompletionBlock:(id /* block */)arg1;
+- (void)setRootCreatedBlock:(id /* block */)arg1;
+- (void)start;
+- (void)startDownloadOfItem:(id)arg1 shouldMaterializeRecursively:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (id)waitForResultOfSourceID:(id)arg1 root:(id)arg2 error:(id*)arg3;
+
+@end

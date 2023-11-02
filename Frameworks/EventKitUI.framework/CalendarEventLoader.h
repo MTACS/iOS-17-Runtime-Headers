@@ -1,0 +1,4 @@
+
+@interface CalendarEventLoader : CUIKEventLoader
+
+@end

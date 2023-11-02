@@ -1,0 +1,90 @@
+
+@interface MXMetricPayload : NSObject <NSSecureCoding> {
+    MXAnimationMetric * _animationMetrics;
+    MXAppExitMetric * _applicationExitMetrics;
+    MXAppLaunchMetric * _applicationLaunchMetrics;
+    MXAppResponsivenessMetric * _applicationResponsivenessMetrics;
+    MXAppRunTimeMetric * _applicationTimeMetrics;
+    MXCellularConditionMetric * _cellularConditionMetrics;
+    MXCPUMetric * _cpuMetrics;
+    MXDiskIOMetric * _diskIOMetrics;
+    MXDisplayMetric * _displayMetrics;
+    MXGPUMetric * _gpuMetrics;
+    bool  _includesMultipleApplicationVersions;
+    NSString * _latestApplicationVersion;
+    MXLocationActivityMetric * _locationActivityMetrics;
+    MXMemoryMetric * _memoryMetrics;
+    MXMetaData * _metaData;
+    MXNetworkTransferMetric * _networkTransferMetrics;
+    NSArray * _signpostMetrics;
+    NSDate * _timeStampBegin;
+    NSDate * _timeStampEnd;
+}
+
+@property (retain) MXAnimationMetric *animationMetrics;
+@property (retain) MXAppExitMetric *applicationExitMetrics;
+@property (retain) MXAppLaunchMetric *applicationLaunchMetrics;
+@property (retain) MXAppResponsivenessMetric *applicationResponsivenessMetrics;
+@property (retain) MXAppRunTimeMetric *applicationTimeMetrics;
+@property (retain) MXCellularConditionMetric *cellularConditionMetrics;
+@property (retain) MXCPUMetric *cpuMetrics;
+@property (retain) MXDiskIOMetric *diskIOMetrics;
+@property (retain) MXDisplayMetric *displayMetrics;
+@property (retain) MXGPUMetric *gpuMetrics;
+@property (readonly) bool includesMultipleApplicationVersions;
+@property (readonly) NSString *latestApplicationVersion;
+@property (retain) MXLocationActivityMetric *locationActivityMetrics;
+@property (retain) MXMemoryMetric *memoryMetrics;
+@property (retain) MXMetaData *metaData;
+@property (retain) MXNetworkTransferMetric *networkTransferMetrics;
+@property (retain) NSArray *signpostMetrics;
+@property (readonly) NSDate *timeStampBegin;
+@property (readonly) NSDate *timeStampEnd;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)DictionaryRepresentation;
+- (id)JSONRepresentation;
+- (id)animationMetrics;
+- (id)applicationExitMetrics;
+- (id)applicationLaunchMetrics;
+- (id)applicationResponsivenessMetrics;
+- (id)applicationTimeMetrics;
+- (id)cellularConditionMetrics;
+- (id)cpuMetrics;
+- (id)dictionaryRepresentation;
+- (id)diskIOMetrics;
+- (id)displayMetrics;
+- (void)encodeWithCoder:(id)arg1;
+- (id)gpuMetrics;
+- (bool)includesMultipleApplicationVersions;
+- (id)initWithAppVersion:(id)arg1 withMutipleAppVersions:(bool)arg2 withTimeStampBegin:(id)arg3 withTimeStampEnd:(id)arg4;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPayloadData:(id)arg1 withMutipleAppVersions:(bool)arg2 withTimeStampBegin:(id)arg3 withTimeStampEnd:(id)arg4 withMetaData:(id)arg5 withMetrics:(id)arg6;
+- (id)latestApplicationVersion;
+- (id)locationActivityMetrics;
+- (id)memoryMetrics;
+- (id)metaData;
+- (id)networkTransferMetrics;
+- (void)setAnimationMetrics:(id)arg1;
+- (void)setApplicationExitMetrics:(id)arg1;
+- (void)setApplicationLaunchMetrics:(id)arg1;
+- (void)setApplicationResponsivenessMetrics:(id)arg1;
+- (void)setApplicationTimeMetrics:(id)arg1;
+- (void)setCellularConditionMetrics:(id)arg1;
+- (void)setCpuMetrics:(id)arg1;
+- (void)setDiskIOMetrics:(id)arg1;
+- (void)setDisplayMetrics:(id)arg1;
+- (void)setGpuMetrics:(id)arg1;
+- (void)setLocationActivityMetrics:(id)arg1;
+- (void)setMemoryMetrics:(id)arg1;
+- (void)setMetaData:(id)arg1;
+- (void)setNetworkTransferMetrics:(id)arg1;
+- (void)setSignpostMetrics:(id)arg1;
+- (id)signpostMetrics;
+- (id)timeStampBegin;
+- (id)timeStampEnd;
+- (id)toDictionary;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MTLFunctionStitchingAttribute <NSObject>
+
+@end

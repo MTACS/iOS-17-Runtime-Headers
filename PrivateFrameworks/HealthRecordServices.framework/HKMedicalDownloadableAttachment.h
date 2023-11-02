@@ -1,0 +1,90 @@
+
+@interface HKMedicalDownloadableAttachment : NSObject <NSCopying, NSSecureCoding> {
+    HKFHIRVersion * _FHIRVersion;
+    NSUUID * _accountIdentifier;
+    NSUUID * _attachmentIdentifier;
+    NSUUID * _clinicalRecordIdentifier;
+    NSString * _contentType;
+    NSDate * _creationDate;
+    long long  _errorStatus;
+    NSData * _expectedHash;
+    NSURL * _fileURL;
+    NSUUID * _identifier;
+    NSData * _inlineData;
+    NSData * _inlineDataChecksum;
+    NSError * _lastError;
+    NSDate * _lastUpdatedDate;
+    NSLocale * _locale;
+    NSUUID * _medicalRecordIdentifier;
+    NSDictionary * _metadata;
+    NSDate * _nextRetryDate;
+    long long  _retryCount;
+    NSNumber * _sizeInBytes;
+    long long  _status;
+    NSString * _title;
+    long long  _type;
+    NSURL * _webURL;
+}
+
+@property (nonatomic, readonly, copy) HKFHIRVersion *FHIRVersion;
+@property (nonatomic, readonly, copy) NSUUID *accountIdentifier;
+@property (nonatomic, readonly, copy) NSUUID *attachmentIdentifier;
+@property (nonatomic, readonly, copy) NSUUID *clinicalRecordIdentifier;
+@property (nonatomic, readonly, copy) NSString *contentType;
+@property (nonatomic, readonly, copy) NSDate *creationDate;
+@property (nonatomic, readonly) long long errorStatus;
+@property (nonatomic, readonly, copy) NSData *expectedHash;
+@property (nonatomic, readonly, copy) NSURL *fileURL;
+@property (nonatomic, readonly, copy) NSUUID *identifier;
+@property (nonatomic, readonly, copy) NSData *inlineData;
+@property (nonatomic, readonly, copy) NSData *inlineDataChecksum;
+@property (nonatomic, readonly, copy) NSError *lastError;
+@property (nonatomic, readonly, copy) NSDate *lastUpdatedDate;
+@property (nonatomic, readonly, copy) NSLocale *locale;
+@property (nonatomic, readonly, copy) NSUUID *medicalRecordIdentifier;
+@property (nonatomic, readonly, copy) NSDictionary *metadata;
+@property (nonatomic, readonly, copy) NSDate *nextRetryDate;
+@property (nonatomic, readonly) long long retryCount;
+@property (nonatomic, readonly, copy) NSNumber *sizeInBytes;
+@property (nonatomic, readonly) long long status;
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly) long long type;
+@property (nonatomic, readonly, copy) NSURL *webURL;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)FHIRVersion;
+- (id)accountIdentifier;
+- (id)attachmentIdentifier;
+- (id)clinicalRecordIdentifier;
+- (id)contentType;
+- (id)copyForAccountWithIdentifier:(id)arg1 medicalRecordIdentifier:(id)arg2 clinicalRecordIdentifier:(id)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creationDate;
+- (void)encodeWithCoder:(id)arg1;
+- (long long)errorStatus;
+- (id)expectedHash;
+- (id)fileURL;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 medicalRecordIdentifier:(id)arg2 clinicalRecordIdentifier:(id)arg3 accountIdentifier:(id)arg4 FHIRVersion:(id)arg5 type:(long long)arg6 status:(long long)arg7 errorStatus:(long long)arg8 title:(id)arg9 webURL:(id)arg10 sizeInBytes:(id)arg11 contentType:(id)arg12 locale:(id)arg13 expectedHash:(id)arg14 creationDate:(id)arg15 retryCount:(long long)arg16 nextRetryDate:(id)arg17 lastUpdatedDate:(id)arg18 lastError:(id)arg19 fileURL:(id)arg20 inlineData:(id)arg21 inlineDataChecksum:(id)arg22 attachmentIdentifier:(id)arg23 metadata:(id)arg24;
+- (id)inlineData;
+- (id)inlineDataChecksum;
+- (bool)isEqual:(id)arg1;
+- (id)lastError;
+- (id)lastUpdatedDate;
+- (id)locale;
+- (id)medicalRecordIdentifier;
+- (id)metadata;
+- (id)nextRetryDate;
+- (long long)retryCount;
+- (id)sizeInBytes;
+- (long long)status;
+- (id)title;
+- (long long)type;
+- (id)webURL;
+
+@end

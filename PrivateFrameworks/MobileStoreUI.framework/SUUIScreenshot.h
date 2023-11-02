@@ -1,0 +1,35 @@
+
+@interface SUUIScreenshot : NSObject <NSCopying, SUUICacheCoding> {
+    NSString * _orientation;
+    NSMutableDictionary * _sizes;
+    long long  _uniqueIdentifier;
+    NSString * _urlTemplate;
+    NSMutableDictionary * _urls;
+}
+
+@property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long numberOfVariants;
+@property (nonatomic, readonly) NSString *orientationString;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long uniqueIdentifier;
+
+- (void).cxx_destruct;
+- (id)URLForVariant:(id)arg1;
+- (void)_addURLsFromDictionary:(id)arg1 withRemoteLocalKeysMap:(id)arg2;
+- (id)_firstVariant;
+- (id)_initSUUIScreenshot;
+- (id)cacheRepresentation;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (id)initWithCacheRepresentation:(id)arg1;
+- (id)initWithScreenshotDictionary:(id)arg1;
+- (long long)numberOfVariants;
+- (id)orientationString;
+- (void)setArtwork:(id)arg1 forVariant:(id)arg2;
+- (struct CGSize { double x1; double x2; })sizeForVariant:(id)arg1;
+- (long long)uniqueIdentifier;
+
+@end

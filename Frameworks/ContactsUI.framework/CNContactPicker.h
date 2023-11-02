@@ -1,0 +1,4 @@
+
+@interface CNContactPicker : CNContactPickerViewController
+
+@end

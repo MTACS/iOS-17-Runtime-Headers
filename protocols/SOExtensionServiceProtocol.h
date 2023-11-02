@@ -1,0 +1,4 @@
+
+@protocol SOExtensionServiceProtocol <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC7SwiftUIP33_4B6F5E96359C1B6C6815EDE8FF79BA6514DynamicStorage : _TtCs12_SwiftObject
+
+@end

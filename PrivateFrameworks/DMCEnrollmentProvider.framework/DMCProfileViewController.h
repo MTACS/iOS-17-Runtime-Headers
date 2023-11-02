@@ -1,0 +1,87 @@
+
+@interface DMCProfileViewController : DMCProfileTableViewController {
+    DMCProfileViewModel * _UIProfile;
+    bool  _installComplete;
+    unsigned long long  _installProfileSource;
+    unsigned long long  _profileExpiry;
+    bool  _profileRemovable;
+    <DMCProfileUIDataProvider> * _profileUIDataProvider;
+    <DMCProfileViewControllerDelegate> * _profileViewControllerDelegate;
+    long long  _profileViewMode;
+    unsigned long long  _rmConfigurationsCount;
+    RMConfigurationsSpecifierProvider * _rmSpecifierProvider;
+}
+
+@property (nonatomic, readonly) DMCProfileViewModel *UIProfile;
+@property (nonatomic) bool installComplete;
+@property (nonatomic) unsigned long long installProfileSource;
+@property (nonatomic) unsigned long long profileExpiry;
+@property (nonatomic) bool profileRemovable;
+@property (nonatomic, retain) <DMCProfileUIDataProvider> *profileUIDataProvider;
+@property (nonatomic) <DMCProfileViewControllerDelegate> *profileViewControllerDelegate;
+@property (nonatomic) long long profileViewMode;
+@property (nonatomic) unsigned long long rmConfigurationsCount;
+@property (nonatomic, retain) RMConfigurationsSpecifierProvider *rmSpecifierProvider;
+
+- (void).cxx_destruct;
+- (id)UIProfile;
+- (bool)_delegateCanPoll;
+- (bool)_delegateCanRemove;
+- (bool)_delegateCanUpdate;
+- (id)_emptyViewForHeaderFooter;
+- (double)_heightForHeaderFooterInSection:(long long)arg1;
+- (bool)_isSectionPopulated:(long long)arg1;
+- (void)_poll;
+- (int)_profileDetailsModeForElevatedPayloadAtIndexPath:(id)arg1;
+- (unsigned long long)_profileExpiryForProfile:(id)arg1;
+- (void)_removeProfile;
+- (void)_rmConfigsChanged:(id)arg1;
+- (void)_setup;
+- (bool)_shouldShowPollButton;
+- (bool)_shouldShowRemoveButton;
+- (bool)_shouldShowUpdateButton;
+- (bool)_showManagedPayloads;
+- (void)_tableChanged:(id)arg1;
+- (id)_tableView:(id)arg1 buttonForRowAtIndexPath:(id)arg2 text:(id)arg3 color:(id)arg4;
+- (id)_tableView:(id)arg1 elevatedPayloadCellForRowAtIndexPath:(id)arg2;
+- (id)_tableView:(id)arg1 profileCellForRowAtIndexPath:(id)arg2;
+- (id)_tableView:(id)arg1 profileMoreDetailsCellForRowAtIndexPath:(id)arg2;
+- (id)_tableView:(id)arg1 removeButtonForRowAtIndexPath:(id)arg2;
+- (void)_updateProfile;
+- (id)initWithMDMProfileForRMAccount;
+- (id)initWithProfile:(id)arg1 viewMode:(long long)arg2;
+- (id)initWithProfile:(id)arg1 viewMode:(long long)arg2 profileUIDataProvider:(id)arg3;
+- (bool)installComplete;
+- (unsigned long long)installProfileSource;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (unsigned long long)profileExpiry;
+- (bool)profileRemovable;
+- (id)profileUIDataProvider;
+- (id)profileViewControllerDelegate;
+- (long long)profileViewMode;
+- (unsigned long long)rmConfigurationsCount;
+- (id)rmSpecifierProvider;
+- (void)setInstallComplete:(bool)arg1;
+- (void)setInstallProfileSource:(unsigned long long)arg1;
+- (void)setProfile:(id)arg1;
+- (void)setProfileExpiry:(unsigned long long)arg1;
+- (void)setProfileRemovable:(bool)arg1;
+- (void)setProfileUIDataProvider:(id)arg1;
+- (void)setProfileViewControllerDelegate:(id)arg1;
+- (void)setProfileViewMode:(long long)arg1;
+- (void)setRmConfigurationsCount:(unsigned long long)arg1;
+- (void)setRmSpecifierProvider:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)viewWillAppear:(bool)arg1;
+
+@end

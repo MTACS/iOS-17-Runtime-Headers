@@ -1,0 +1,4 @@
+
+@interface PRLocalization : NSObject
+
+@end

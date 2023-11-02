@@ -1,0 +1,4 @@
+
+@interface OADVideoFile : OADLinkedMediaFile
+
+@end

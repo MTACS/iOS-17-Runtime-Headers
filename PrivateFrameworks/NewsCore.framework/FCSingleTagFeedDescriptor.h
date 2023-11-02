@@ -1,0 +1,46 @@
+
+@interface FCSingleTagFeedDescriptor : FCFeedDescriptor {
+    unsigned long long  _feedConfiguration;
+    unsigned long long  _feedFilterOptions;
+    long long  _feedPersonalizationConfigurationSet;
+    long long  _feedSortMethod;
+    long long  _feedType;
+    <FCTagProviding> * _masterTag;
+    <FCTagProviding> * _tag;
+}
+
+@property (nonatomic, readonly, copy) <FCTagProviding> *masterTag;
+@property (nonatomic, copy) <FCTagProviding> *tag;
+
+- (void).cxx_destruct;
+- (id)backingChannel;
+- (id)backingChannelID;
+- (id)backingSectionID;
+- (id)backingTag;
+- (id)backingTopicID;
+- (unsigned long long)feedConfiguration;
+- (unsigned long long)feedFilterOptions;
+- (long long)feedPersonalizationConfigurationSet;
+- (long long)feedSortMethod;
+- (long long)feedType;
+- (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
+- (bool)hideAccessoryText;
+- (id)iAdCategories;
+- (long long)iAdContentProvider;
+- (id)iAdFeedID;
+- (id)iAdKeywords;
+- (id)iAdPrimaryAudience;
+- (id)iAdSectionID;
+- (id)initWithContext:(id)arg1 tag:(id)arg2 feedConfiguration:(unsigned long long)arg3;
+- (id)initWithContext:(id)arg1 tag:(id)arg2 sortMethod:(long long)arg3 filterOptions:(unsigned long long)arg4 personalizationConfigurationSet:(long long)arg5 feedConfiguration:(unsigned long long)arg6;
+- (id)initWithIdentifier:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isSubscribable;
+- (bool)isSubscribedToWithSubscriptionController:(id)arg1;
+- (id)masterTag;
+- (id)name;
+- (void)setTag:(id)arg1;
+- (id)tag;
+- (id)theme;
+
+@end

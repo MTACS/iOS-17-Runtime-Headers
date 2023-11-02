@@ -1,0 +1,4 @@
+
+@protocol RPTBlockBasedScrollTestParameters <RPTTestParameters>
+
+@end

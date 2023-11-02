@@ -1,0 +1,4 @@
+
+@interface SCKPUtilities : NSObject
+
+@end

@@ -1,0 +1,97 @@
+
+@interface NACXPCServer : NSObject <NACIDSClientDelegate, NACXPCInterface, NSXPCListenerDelegate> {
+    NSObject<OS_dispatch_queue> * _audioAndHapticPreviewQueue;
+    NSObject<OS_dispatch_source> * _audioRouteDeferTimer;
+    NSMutableDictionary * _audioRoutesRecords;
+    NPSDomainAccessor * _domainAccessor;
+    float  _hapticIntensity;
+    long long  _hapticState;
+    NACIDSClient * _idsClient;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    NSMutableDictionary * _listeningModesRecords;
+    bool  _prominentHapticEnabled;
+    bool  _systemMutedState;
+    NSMutableDictionary * _volumeRecords;
+    NSXPCListener * _xpcListener;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)server;
+
+- (void).cxx_destruct;
+- (void)EULimitForTarget:(id)arg1 result:(id /* block */)arg2;
+- (long long)_aggregatedCountOfObserversForTarget:(id)arg1 inRecords:(id)arg2;
+- (id)_audioRoutesRecordForCategory:(id)arg1;
+- (void)_beginObservingListeningModesForTarget:(id)arg1 connection:(id)arg2;
+- (void)_beginObservingVolumeForTarget:(id)arg1 connection:(id)arg2;
+- (float)_cachedHapticIntensity;
+- (long long)_cachedHapticState;
+- (bool)_cachedProminentHapticState;
+- (bool)_cachedSystemMutedState;
+- (id)_cachedVolumeRecords;
+- (void)_cancelDeferredAudioRoutesUpdate;
+- (void)_cleanupConnection:(id)arg1;
+- (void)_endObservingAudioRoutesForCategory:(id)arg1 connection:(id)arg2;
+- (void)_endObservingListeningModesForTarget:(id)arg1 connection:(id)arg2;
+- (void)_endObservingVolumeForTarget:(id)arg1 connection:(id)arg2;
+- (id)_listeningModesRecordForTarget:(id)arg1;
+- (void)_persistHapticIntensity;
+- (void)_persistHapticState;
+- (void)_persistProminentHapticState;
+- (void)_persistSystemMutedState;
+- (void)_persistVolumeRecords;
+- (id)_routeObservationCategoriesForConnection:(id)arg1;
+- (void)_scheduleDeferredAudioRoutesUpdate:(id)arg1 category:(id)arg2;
+- (void)_updateAudioRoutes:(id)arg1 category:(id)arg2;
+- (id)_volumeRecordForTarget:(id)arg1;
+- (void)audioRoutesForCategory:(id)arg1 result:(id /* block */)arg2;
+- (void)availableListeningModesForTarget:(id)arg1 result:(id /* block */)arg2;
+- (void)beginObservingAudioRoutesForCategory:(id)arg1;
+- (void)beginObservingListeningModesForTarget:(id)arg1;
+- (void)beginObservingVolumeForTarget:(id)arg1;
+- (void)client:(id)arg1 EULimit:(float)arg2 didChangeForTarget:(id)arg3;
+- (void)client:(id)arg1 audioRoutes:(id)arg2 didChangeForCategory:(id)arg3;
+- (void)client:(id)arg1 availableListeningModes:(id)arg2 didChangeForTarget:(id)arg3;
+- (void)client:(id)arg1 currentListeningMode:(id)arg2 didChangeForTarget:(id)arg3;
+- (void)client:(id)arg1 didFailToSetCurrentListeningModeForTarget:(id)arg2 error:(id)arg3;
+- (void)client:(id)arg1 hapticIntensityDidChange:(float)arg2;
+- (void)client:(id)arg1 hapticStateDidChange:(long long)arg2;
+- (void)client:(id)arg1 mutedState:(bool)arg2 didChangeForTarget:(id)arg3;
+- (void)client:(id)arg1 prominentHapticStateDidChange:(bool)arg2;
+- (void)client:(id)arg1 routeObservationCancelledForCategory:(id)arg2;
+- (void)client:(id)arg1 systemMutedStateDidChange:(bool)arg2;
+- (void)client:(id)arg1 volumeControlAvailable:(bool)arg2 didChangeForTarget:(id)arg3;
+- (void)client:(id)arg1 volumeObservationCancelledForTarget:(id)arg2;
+- (void)client:(id)arg1 volumeValue:(float)arg2 didChangeForTarget:(id)arg3;
+- (void)client:(id)arg1 volumeWarningEnabled:(bool)arg2 volumeWarningState:(long long)arg3 didChangeForTarget:(id)arg4;
+- (void)currentListeningModeForTarget:(id)arg1 result:(id /* block */)arg2;
+- (void)endObservingAudioRoutesForCategory:(id)arg1;
+- (void)endObservingListeningModesForTarget:(id)arg1;
+- (void)endObservingVolumeForTarget:(id)arg1;
+- (void)hapticIntensity:(id /* block */)arg1;
+- (void)hapticState:(id /* block */)arg1;
+- (id)init;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)mutedStateForTarget:(id)arg1 result:(id /* block */)arg2;
+- (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;
+- (void)playAudioAndHapticPreview;
+- (void)playDefaultHapticPreview;
+- (void)playProminentHapticPreview;
+- (void)prominentHapticEnabled:(id /* block */)arg1;
+- (void)setCurrentListeningMode:(id)arg1 forTarget:(id)arg2;
+- (void)setHapticIntensity:(float)arg1;
+- (void)setHapticState:(long long)arg1;
+- (void)setMuted:(bool)arg1 forTarget:(id)arg2;
+- (void)setProminentHapticEnabled:(bool)arg1;
+- (void)setSystemMuted:(bool)arg1;
+- (void)setVolumeValue:(float)arg1 forTarget:(id)arg2;
+- (void)systemMutedState:(id /* block */)arg1;
+- (void)volumeControlAvailabilityForTarget:(id)arg1 result:(id /* block */)arg2;
+- (void)volumeValueForTarget:(id)arg1 result:(id /* block */)arg2;
+- (void)volumeWarningForTarget:(id)arg1 result:(id /* block */)arg2;
+
+@end

@@ -1,0 +1,85 @@
+
+@interface MUPlaceEnrichmentActionManager : NSObject <MUPlaceEnrichmentActionHandler> {
+    MUAMSResultProvider * _amsResultProvider;
+    <MUPlaceEnrichmentSectionAnalyticsDelegate> * _analyticsDelegate;
+    <MUPlaceCallToActionSectionControllerDelegate> * _callToActionDelegate;
+    <MUPlaceEnrichmentSectionContextMenuDelegate> * _contextMenuDelegate;
+    MUPlaceDataAvailability * _dataAvailability;
+    <MUPlaceEnrichmentDataProvider> * _enrichmentDataProvider;
+    <MUExternalActionHandling> * _externalActionHandler;
+    NSMutableArray * _externalActionsControllers;
+    NSMutableDictionary * _externalActionsPairs;
+    MKMapItem * _mapItem;
+    id /* block */  _onActionUpdate;
+    MUPlaceActionManager * _placeActionManager;
+    MUPresentationOptions * _presentationOptions;
+    UIView * _sourceView;
+    NSMutableSet * _supportedActions;
+}
+
+@property (nonatomic, retain) MUAMSResultProvider *amsResultProvider;
+@property (nonatomic) <MUPlaceEnrichmentSectionAnalyticsDelegate> *analyticsDelegate;
+@property (nonatomic) <MUPlaceCallToActionSectionControllerDelegate> *callToActionDelegate;
+@property (nonatomic) <MUPlaceEnrichmentSectionContextMenuDelegate> *contextMenuDelegate;
+@property (nonatomic, retain) MUPlaceDataAvailability *dataAvailability;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) <MUPlaceEnrichmentDataProvider> *enrichmentDataProvider;
+@property (nonatomic) <MUExternalActionHandling> *externalActionHandler;
+@property (nonatomic, retain) NSMutableArray *externalActionsControllers;
+@property (nonatomic, retain) NSMutableDictionary *externalActionsPairs;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, copy) id /* block */ onActionUpdate;
+@property (nonatomic, retain) MUPlaceActionManager *placeActionManager;
+@property (nonatomic, retain) MUPresentationOptions *presentationOptions;
+@property (nonatomic, retain) UIView *sourceView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableSet *supportedActions;
+
+- (void).cxx_destruct;
+- (id)adamIDForAppCategory:(id)arg1;
+- (void)addExternalActionsAsSupportedActions:(id)arg1;
+- (void)addPhotoAction:(id)arg1;
+- (id)amsResultProvider;
+- (id)analyticsDelegate;
+- (id)callToActionDelegate;
+- (void)configureWithEnrichmentDataProvider:(id)arg1 presentationOptions:(id)arg2;
+- (void)contextMenuAction:(id)arg1;
+- (id)contextMenuDelegate;
+- (id)dataAvailability;
+- (id)dictionaryForAction:(id)arg1;
+- (void)directionsAction:(id)arg1;
+- (id)enrichmentDataProvider;
+- (id)externalActionHandler;
+- (id)externalActionsControllers;
+- (id)externalActionsPairs;
+- (void)getAppAction:(id)arg1;
+- (id)initWithPlaceActionManager:(id)arg1 mapItem:(id)arg2 dataAvailability:(id)arg3 amsResultProvider:(id)arg4 callToActionDelegate:(id)arg5 contextMenuDelegate:(id)arg6 externalActionHandler:(id)arg7 analyticsDelegate:(id)arg8 onActionUpdate:(id /* block */)arg9;
+- (void)layoutActionsUsingArguments:(id)arg1 completion:(id /* block */)arg2;
+- (id)mapItem;
+- (id /* block */)onActionUpdate;
+- (void)performActionUsingArguments:(id)arg1 contextMenu:(id)arg2 completion:(id /* block */)arg3;
+- (id)placeActionManager;
+- (id)presentationOptions;
+- (void)ratePlaceAction:(id)arg1;
+- (void)setAmsResultProvider:(id)arg1;
+- (void)setAnalyticsDelegate:(id)arg1;
+- (void)setCallToActionDelegate:(id)arg1;
+- (void)setContextMenuDelegate:(id)arg1;
+- (void)setDataAvailability:(id)arg1;
+- (void)setEnrichmentDataProvider:(id)arg1;
+- (void)setExternalActionHandler:(id)arg1;
+- (void)setExternalActionsControllers:(id)arg1;
+- (void)setExternalActionsPairs:(id)arg1;
+- (void)setMapItem:(id)arg1;
+- (void)setOnActionUpdate:(id /* block */)arg1;
+- (void)setPlaceActionManager:(id)arg1;
+- (void)setPresentationOptions:(id)arg1;
+- (void)setSourceView:(id)arg1;
+- (void)setSupportedActions:(id)arg1;
+- (id)sourceView;
+- (id)supportedActions;
+- (id)supportedPlaceEnrichmentActions;
+
+@end

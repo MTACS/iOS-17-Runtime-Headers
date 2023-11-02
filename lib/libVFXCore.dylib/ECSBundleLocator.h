@@ -1,0 +1,4 @@
+
+@interface ECSBundleLocator : NSObject
+
+@end

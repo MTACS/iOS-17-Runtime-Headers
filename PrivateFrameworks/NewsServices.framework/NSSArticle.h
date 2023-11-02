@@ -1,0 +1,4 @@
+
+@interface NSSArticle : NSSArticleInternal
+
+@end

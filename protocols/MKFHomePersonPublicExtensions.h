@@ -1,0 +1,4 @@
+
+@protocol MKFHomePersonPublicExtensions
+
+@end

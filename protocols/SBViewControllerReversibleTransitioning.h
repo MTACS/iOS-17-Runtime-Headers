@@ -1,0 +1,4 @@
+
+@protocol SBViewControllerReversibleTransitioning <SBViewControllerCancellableTransitioning, SBViewControllerRestartableTransitioning>
+
+@end

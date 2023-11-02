@@ -1,0 +1,81 @@
+
+@interface WFParameterValuePickerTableViewCellConfiguration : NSObject <UIContentConfiguration> {
+    bool  _containedInState;
+    double  _cornerRadius;
+    <WFParameterValuePickerTableViewCellDelegate> * _delegate;
+    bool  _disablesSeparatorIconInset;
+    bool  _forceImageScaling;
+    WFIcon * _icon;
+    WFImage * _image;
+    UIViewController * _parentViewController;
+    NSString * _secondaryText;
+    UIColor * _secondaryTextColor;
+    UIFont * _secondaryTextFont;
+    NSString * _text;
+    UIColor * _textColor;
+    UIFont * _textFont;
+    bool  _usesInsetGroupedTableStyle;
+    bool  _usesToggleForSelection;
+}
+
+@property (getter=isContainedInState, nonatomic) bool containedInState;
+@property (nonatomic) double cornerRadius;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WFParameterValuePickerTableViewCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool disablesSeparatorIconInset;
+@property (nonatomic) bool forceImageScaling;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) WFIcon *icon;
+@property (nonatomic, retain) WFImage *image;
+@property (nonatomic) UIViewController *parentViewController;
+@property (nonatomic, copy) NSString *secondaryText;
+@property (nonatomic, copy) UIColor *secondaryTextColor;
+@property (nonatomic, retain) UIFont *secondaryTextFont;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) UIColor *textColor;
+@property (nonatomic, retain) UIFont *textFont;
+@property (nonatomic) bool usesInsetGroupedTableStyle;
+@property (nonatomic) bool usesToggleForSelection;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)cornerRadius;
+- (id)delegate;
+- (bool)disablesSeparatorIconInset;
+- (bool)forceImageScaling;
+- (unsigned long long)hash;
+- (id)icon;
+- (id)image;
+- (bool)isContainedInState;
+- (bool)isEqual:(id)arg1;
+- (id)makeContentView;
+- (id)parentViewController;
+- (id)secondaryText;
+- (id)secondaryTextColor;
+- (id)secondaryTextFont;
+- (void)setContainedInState:(bool)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDisablesSeparatorIconInset:(bool)arg1;
+- (void)setForceImageScaling:(bool)arg1;
+- (void)setIcon:(id)arg1;
+- (void)setImage:(id)arg1;
+- (void)setParentViewController:(id)arg1;
+- (void)setSecondaryText:(id)arg1;
+- (void)setSecondaryTextColor:(id)arg1;
+- (void)setSecondaryTextFont:(id)arg1;
+- (void)setText:(id)arg1;
+- (void)setTextColor:(id)arg1;
+- (void)setTextFont:(id)arg1;
+- (void)setUsesInsetGroupedTableStyle:(bool)arg1;
+- (void)setUsesToggleForSelection:(bool)arg1;
+- (id)text;
+- (id)textColor;
+- (id)textFont;
+- (id)updatedConfigurationForState:(id)arg1;
+- (bool)usesInsetGroupedTableStyle;
+- (bool)usesToggleForSelection;
+
+@end

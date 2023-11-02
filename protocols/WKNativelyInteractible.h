@@ -1,0 +1,4 @@
+
+@protocol WKNativelyInteractible <NSObject>
+
+@end

@@ -1,0 +1,95 @@
+
+@interface FBKDeviceManager : NSObject <DEDPairingProtocol> {
+    NSArray * __notConfiguredDevicesCache;
+    NSMutableDictionary * __notConfiguredDevicesMatchingPlatformCache;
+    NSMutableDictionary * _beginPairingBlocks;
+    NSMutableDictionary * _devicePinAttemptCount;
+    bool  _hasScannedAtLeastOnce;
+    bool  _hidesNotConfiguredDevices;
+    bool  _isScanning;
+    NSMutableArray * _postScanTaskQueue;
+    long long  _scanRequestCount;
+    NSMutableDictionary * _tryPinBlocks;
+}
+
+@property (retain) NSArray *_notConfiguredDevicesCache;
+@property (retain) NSMutableDictionary *_notConfiguredDevicesMatchingPlatformCache;
+@property (retain) NSMutableDictionary *beginPairingBlocks;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) NSMutableDictionary *devicePinAttemptCount;
+@property bool hasScannedAtLeastOnce;
+@property (readonly) unsigned long long hash;
+@property bool hidesNotConfiguredDevices;
+@property bool isScanning;
+@property (retain) NSMutableArray *postScanTaskQueue;
+@property long long scanRequestCount;
+@property (readonly) Class superclass;
+@property (retain) NSMutableDictionary *tryPinBlocks;
+
++ (id)sharedInstance;
++ (id)supportedPlatforms;
+
+- (void).cxx_destruct;
+- (id)_allDevicesFromDEDDevices:(id)arg1;
+- (id)_availableDevicesWithUserVisiblePlatforms:(id)arg1;
+- (id)_configuredDevicesWithAvailableDevices:(id)arg1;
+- (void)_drainPostScanTaskQueue;
+- (void)_failedPinChallengeForDevice:(id)arg1;
+- (void)_incrementPinChallengeAttemptForDevice:(id)arg1;
+- (void)_invalidateCaches;
+- (id)_notConfiguredDevicesCache;
+- (id)_notConfiguredDevicesMatchingPlatformCache;
+- (unsigned long long)_pinAttemptCountForDevice:(id)arg1;
+- (void)_postDeviceChangeNotification;
+- (id)_preferredTargetDevicesForFollowup:(id)arg1 withConfiguredDevices:(id)arg2;
+- (void)_reportPinAttemptForDevice:(id)arg1 success:(bool)arg2;
+- (void)_showPinChallengeForDevice:(id)arg1;
+- (void)_updateStoredDevices;
+- (void)_updateStoredDevicesWithConfiguredDevices:(id)arg1;
+- (id)allDevices;
+- (id)availableDevices;
+- (id)beginPairingBlocks;
+- (void)beginPairingDevice:(id)arg1 showUIBlock:(id /* block */)arg2;
+- (void)beginScanning;
+- (bool)canStopScan;
+- (id)configuredDevices;
+- (void)decrementScanRequest;
+- (id)ded;
+- (id)dedDevicesSortDescriptors;
+- (id)devicePinAttemptCount;
+- (id)devicesFromDefaults;
+- (id)devicesMatchingPlatform:(id)arg1 withDevices:(id)arg2;
+- (id)groupedDeviceForDEDDevice:(id)arg1;
+- (id)groupedDeviceWithIdentifier:(id)arg1;
+- (id)groupedDevicesSortDescriptors;
+- (bool)hasAnyConfiguredDevicesMatchingPlatform:(id)arg1;
+- (bool)hasScannedAtLeastOnce;
+- (bool)hidesNotConfiguredDevices;
+- (void)incrementScanRequest;
+- (id)init;
+- (bool)isScanning;
+- (id)notConfiguredDevices;
+- (id)notConfiguredDevicesMatchingPlatform:(id)arg1;
+- (id)postScanTaskQueue;
+- (id)preferredTargetDevicesForFollowup:(id)arg1;
+- (void)promptPINForDevice:(id)arg1;
+- (void)runAfterScan:(id /* block */)arg1;
+- (long long)scanRequestCount;
+- (void)setBeginPairingBlocks:(id)arg1;
+- (void)setDevicePinAttemptCount:(id)arg1;
+- (void)setHasScannedAtLeastOnce:(bool)arg1;
+- (void)setHidesNotConfiguredDevices:(bool)arg1;
+- (void)setIsScanning:(bool)arg1;
+- (void)setPostScanTaskQueue:(id)arg1;
+- (void)setScanRequestCount:(long long)arg1;
+- (void)setTryPinBlocks:(id)arg1;
+- (void)set_notConfiguredDevicesCache:(id)arg1;
+- (void)set_notConfiguredDevicesMatchingPlatformCache:(id)arg1;
+- (void)stopScanning;
+- (void)successPINForDevice:(id)arg1;
+- (id)thisDevice;
+- (void)tryPairingDevice:(id)arg1 withPin:(id)arg2 completion:(id /* block */)arg3;
+- (id)tryPinBlocks;
+
+@end

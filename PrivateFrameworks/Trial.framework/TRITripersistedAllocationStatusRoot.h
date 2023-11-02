@@ -1,0 +1,4 @@
+
+@interface TRITripersistedAllocationStatusRoot : TRIPBRootObject
+
+@end

@@ -1,0 +1,80 @@
+
+@interface NCNotificationAlertQueue : NSObject <NCNotificationAlertDestination, NCNotificationAlertDestinationDelegate> {
+    NCNotificationRequest * _coalescingRequest;
+    <NCNotificationAlertDestinationDelegate> * _delegate;
+    NCNotificationDestinationsRegistry * _destinationsRegistry;
+    NCNotificationCollapsingQueue * _queue;
+}
+
+@property (getter=isAlertDestination, nonatomic, readonly) bool alertDestination;
+@property (nonatomic, retain) NCNotificationRequest *coalescingRequest;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NCNotificationAlertDestinationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NCNotificationDestinationsRegistry *destinationsRegistry;
+@property (nonatomic, readonly) BSServiceConnectionEndpoint *endpoint;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) NCNotificationCollapsingQueue *queue;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_destinations:(id)arg1 canReceiveNotificationRequest:(id)arg2;
+- (bool)_performDestinationOperationForRequest:(id)arg1 block:(id /* block */)arg2;
+- (void)_postEnqueuedNotificationRequestsCoalescingWith:(id)arg1;
+- (void)_postNextNotificationRequest;
+- (void)_postNextNotificationRequestPassingTest:(id /* block */)arg1;
+- (bool)_postNotificationRequest:(id)arg1;
+- (void)_prepareDestinationsToReceiveCriticalNotificationRequest:(id)arg1;
+- (bool)_readyToReceiveForNotificationRequest:(id)arg1;
+- (bool)canReceiveNotificationRequest:(id)arg1;
+- (id)coalescingRequest;
+- (id)delegate;
+- (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsCoalescedWith:(id)arg2;
+- (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsPassingTest:(id /* block */)arg2;
+- (void)destination:(id)arg1 didDismissNotificationRequest:(id)arg2;
+- (void)destination:(id)arg1 didPresentNotificationRequest:(id)arg2;
+- (void)destination:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3 requestAuthentication:(bool)arg4 withParameters:(id)arg5 completion:(id /* block */)arg6;
+- (void)destination:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(id /* block */)arg5;
+- (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2;
+- (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
+- (void)destination:(id)arg1 requestsClearingNotificationRequestsFromDate:(id)arg2 toDate:(id)arg3 inSections:(id)arg4;
+- (void)destination:(id)arg1 requestsClearingNotificationRequestsInSections:(id)arg2;
+- (void)destination:(id)arg1 setAllowsCriticalAlerts:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setAllowsDirectMessages:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setAllowsNotifications:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setAllowsTimeSensitive:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setDeliverQuietly:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setMuted:(bool)arg2 untilDate:(id)arg3 forSectionIdentifier:(id)arg4 threadIdentifier:(id)arg5;
+- (void)destination:(id)arg1 setNotificationSystemSettings:(id)arg2;
+- (void)destination:(id)arg1 setScheduledDelivery:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setSystemScheduledDeliveryEnabled:(bool)arg2 scheduledDeliveryTimes:(id)arg3;
+- (void)destination:(id)arg1 willDismissNotificationRequest:(id)arg2;
+- (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2;
+- (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2 suppressAlerts:(bool)arg3;
+- (void)destinationDidBecomeReadyToReceiveNotifications:(id)arg1;
+- (id)destinationsForRequestDestinations:(id)arg1;
+- (id)destinationsRegistry;
+- (id)endpoint;
+- (id)identifier;
+- (id)init;
+- (bool)isAlertDestination;
+- (bool)isRegisteredDestination:(id)arg1;
+- (void)modifyNotificationRequest:(id)arg1;
+- (id)notificationSectionSettingsForDestination:(id)arg1;
+- (id)notificationSectionSettingsForDestination:(id)arg1 forSectionIdentifier:(id)arg2;
+- (id)notificationSystemSettingsForDestination:(id)arg1;
+- (void)postNotificationRequest:(id)arg1;
+- (id)queue;
+- (void)registerDestination:(id)arg1;
+- (void)setCoalescingRequest:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDestination:(id)arg1 enabled:(bool)arg2;
+- (void)setDestination:(id)arg1 ready:(bool)arg2;
+- (void)setDestinationsRegistry:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)unregisterDestination:(id)arg1;
+- (void)updateNotificationSectionSettings:(id)arg1 previousSectionSettings:(id)arg2;
+- (void)withdrawNotificationRequest:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface WLUtilities : NSObject
+
+@end

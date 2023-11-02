@@ -1,0 +1,4 @@
+
+@interface RemoteUILinkFooter : RemoteUISectionFooter
+
+@end

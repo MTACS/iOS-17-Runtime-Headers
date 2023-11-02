@@ -1,0 +1,83 @@
+
+@interface _UISceneLayerHostContainerView : UIView <BSInvalidatable, FBSceneLayerManagerObserver> {
+    _UISceneLayerHostContainerView * _asyncRenderGroupingContainerView;
+    CAContext * _asyncRenderGroupingContext;
+    _UIContextLayerHostView * _asyncRenderGroupingHostView;
+    UIView * _backgroundView;
+    <_UISceneLayerHostContainerViewDataSource> * _dataSource;
+    NSString * _debugDescription;
+    FBSSceneSettings * _effectiveSceneSettings;
+    NSMutableSet * _hiddenLayers;
+    NSMutableOrderedSet * _hostViews;
+    NSMutableOrderedSet * _hostedLayers;
+    UIView * _innerLayerContainer;
+    bool  _invalidated;
+    UIScenePresentationContext * _presentationContext;
+    FBScene * _scene;
+}
+
+@property (nonatomic, readonly) <_UISceneLayerHostContainerViewDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSSet *hostedLayers;
+@property (nonatomic, readonly) NSSet *nonHostedLayers;
+@property (nonatomic, readonly) FBScene *scene;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_adjustHostViewFrameAlignment:(id)arg1;
+- (void)_applyBackgroundViewToHierarchy;
+- (id)_asyncContext;
+- (id)_asyncRenderingContainerView;
+- (id)_asyncRenderingHostView;
+- (id)_backgroundView;
+- (bool)_canShowKeyboardLayer;
+- (id)_createHostViewForLayer:(id)arg1;
+- (id)_filteredLayersToPresent;
+- (long long)_focusedSound;
+- (id)_hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
+- (id)_hostViews;
+- (void)_invalidateAndRemoveAsyncViewsFromHierarchy;
+- (id)_presentationContext;
+- (void)_presentationContextChangedFrom:(id)arg1 toContext:(id)arg2 force:(bool)arg3;
+- (id)_presentationContextForLayer:(id)arg1;
+- (id)_realHostedLayers;
+- (void)_rebuildLayersForAsyncPresentationWithReason:(id)arg1 withFence:(id)arg2;
+- (void)_rebuildLayersForNormalPresentationWithReason:(id)arg1 withFence:(id)arg2;
+- (void)_rebuildLayersForReason:(id)arg1 withFence:(id)arg2;
+- (void)_refreshDataSource;
+- (void)_setBackgroundView:(id)arg1;
+- (void)_setDataSource:(id)arg1;
+- (void)_setPresentationContext:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)_toggleClippingDisabledWithNewContext:(id)arg1;
+- (void)_toggleInheritsSecurityWithNewContext:(id)arg1;
+- (void)_toggleResizesHostedContextWithNewContext:(id)arg1;
+- (void)_toggleStopsHitTestTransformAccumulationWithNewContext:(id)arg1;
+- (void)_updateAsyncDrawingOptionsInAsyncPresentation;
+- (void)_updateRenderingModeForLayersInNormalPresentation;
+- (id)dataSource;
+- (void)dealloc;
+- (id)debugDescription;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)hostedLayers;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithScene:(id)arg1 debugDescription:(id)arg2;
+- (void)invalidate;
+- (id)nonHostedLayers;
+- (void)popDataSource:(id)arg1;
+- (void)pushDataSource:(id)arg1;
+- (void)refreshDataSource:(id)arg1;
+- (id)scene;
+- (void)sceneLayerManagerDidUpdateLayers:(id)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (void)updateForGeometrySettingsChanges:(id)arg1;
+- (id)window;
+
+@end

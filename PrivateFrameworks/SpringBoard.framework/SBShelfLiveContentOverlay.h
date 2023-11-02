@@ -1,0 +1,80 @@
+
+@interface SBShelfLiveContentOverlay : NSObject <SBSceneViewPresentationConfiguring, SBSwitcherLiveContentOverlay, SBUISizeObservingViewDelegate> {
+    unsigned long long  _displayMode;
+    bool  _isInsetForHomeAffordance;
+    bool  _pendingSwitcherSnapshotCacheUpdate;
+    SBDeviceApplicationSceneHandle * _sceneHandle;
+    SBDeviceApplicationSceneView * _sceneView;
+    SBUISizeObservingView * _sizeObservingView;
+    bool  asyncRenderingEnabled;
+    UIView * contentOverlayView;
+    <SBSwitcherLiveContentOverlayDelegate> * delegate;
+    bool  resizesHostedContext;
+    bool  wantsEnhancedWindowingEnabled;
+}
+
+@property (getter=isAsyncRenderingEnabled, nonatomic, readonly) bool asyncRenderingEnabled;
+@property (nonatomic, readonly) UIView *contentOverlayView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBSwitcherLiveContentOverlayDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isDisplayLayoutElementActive, nonatomic) bool displayLayoutElementActive;
+@property (nonatomic) unsigned long long displayMode;
+@property (readonly) unsigned long long hash;
+@property (getter=isInsetForHomeAffordance, nonatomic) bool insetForHomeAffordance;
+@property (getter=isPendingSwitcherSnapshotCacheUpdate, nonatomic) bool pendingSwitcherSnapshotCacheUpdate;
+@property (nonatomic, readonly) bool requiresLegacyRotationSupport;
+@property (nonatomic) bool resizesHostedContext;
+@property (nonatomic, readonly) SBDeviceApplicationSceneHandle *sceneHandle;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long touchBehavior;
+@property (nonatomic) bool wantsEnhancedWindowingEnabled;
+
+- (void).cxx_destruct;
+- (void)_updateSceneViewInSideSizeObservingViewIfNecessary;
+- (id)backgroundActivitiesToSuppress;
+- (id)contentOverlayView;
+- (double)currentStatusBarHeight;
+- (id)delegate;
+- (void)disableAsynchronousRenderingForNextCommit;
+- (unsigned long long)displayMode;
+- (id)initWithSceneHandle:(id)arg1 referenceSize:(struct CGSize { double x1; double x2; })arg2 contentOrientation:(long long)arg3 containerOrientation:(long long)arg4 livePortalView:(id)arg5 isInsetForHomeAffordance:(bool)arg6;
+- (bool)isAsyncRenderingEnabled;
+- (bool)isContentUpdating;
+- (bool)isDisplayLayoutElementActive;
+- (bool)isInsetForHomeAffordance;
+- (bool)isPendingSwitcherSnapshotCacheUpdate;
+- (long long)leadingStatusBarStyle;
+- (id)liveSceneIdentityToken;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
+- (id)overlaySceneHandle;
+- (long long)preferredInterfaceOrientation;
+- (id)prepareOverlayForContentRotation;
+- (bool)requiresLegacyRotationSupport;
+- (bool)resizesHostedContext;
+- (id)sceneHandle;
+- (id)sceneViewPresentationIdentifier:(id)arg1;
+- (long long)sceneViewPresentationPriority:(id)arg1;
+- (void)setAsyncRenderingEnabled:(bool)arg1 withMinificationFilterEnabled:(bool)arg2;
+- (void)setBlurViewIconScale:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDimmed:(bool)arg1;
+- (void)setDisplayLayoutElementActive:(bool)arg1;
+- (void)setDisplayMode:(unsigned long long)arg1;
+- (void)setInsetForHomeAffordance:(bool)arg1;
+- (void)setLiveContentBlurEnabled:(bool)arg1 duration:(double)arg2 blurDelay:(double)arg3 iconViewScale:(double)arg4 began:(id /* block */)arg5 completion:(id /* block */)arg6;
+- (void)setMatchMovedToScene:(bool)arg1;
+- (void)setPendingSwitcherSnapshotCacheUpdate:(bool)arg1;
+- (void)setResizesHostedContext:(bool)arg1;
+- (void)setStatusBarHidden:(bool)arg1 nubViewHidden:(bool)arg2 animator:(id /* block */)arg3;
+- (void)setTouchBehavior:(long long)arg1;
+- (void)setUsesBrightSceneViewBackgroundMaterial:(bool)arg1;
+- (void)setWantsEnhancedWindowingEnabled:(bool)arg1;
+- (void)sizeObservingView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)touchBehavior;
+- (long long)trailingStatusBarStyle;
+- (void)updateDisplayLayoutElementWithBuilder:(id /* block */)arg1;
+- (bool)wantsEnhancedWindowingEnabled;
+
+@end

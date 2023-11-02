@@ -1,0 +1,4 @@
+
+@protocol CRSSessionClientToServerInterface <NSObject>
+
+@end

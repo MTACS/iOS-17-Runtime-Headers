@@ -1,0 +1,4 @@
+
+@interface _TtC14BiometricKitUIP33_C54E2CA4BC1DDD64DC7CA4226A5B1BA119ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

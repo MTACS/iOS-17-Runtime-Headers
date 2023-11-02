@@ -1,0 +1,4 @@
+
+@interface PlaceholderBundleLoader : NSObject
+
+@end

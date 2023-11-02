@@ -1,0 +1,83 @@
+
+@interface PASettings : HCSettings
+
+@property (nonatomic, retain) PAConfiguration *audiogramConfiguration;
+@property (nonatomic) bool configurationCameFromEnrollment;
+@property (nonatomic) bool configurationCameFromUser;
+@property (nonatomic) unsigned long long currentEnrollmentProgress;
+@property (nonatomic) unsigned long long personalAudioAccommodationTypes;
+@property (nonatomic) bool personalMediaAutomationSkipHeadphoneRequirement;
+@property (nonatomic, retain) PAConfiguration *personalMediaConfiguration;
+@property (nonatomic) bool personalMediaDebugMode;
+@property (nonatomic) bool personalMediaEnabled;
+@property (nonatomic) bool personalSoundVisible;
+@property (nonatomic) bool shouldUpdateAccessory;
+@property (nonatomic, retain) NSDictionary *sslEnabled;
+@property (nonatomic, retain) NSDictionary *transparencyAmplification;
+@property (nonatomic, retain) NSDictionary *transparencyBalance;
+@property (nonatomic, retain) NSDictionary *transparencyBeamforming;
+@property (nonatomic, retain) NSDictionary *transparencyCustomized;
+@property (nonatomic, retain) NSDictionary *transparencyNoiseSupressor;
+@property (nonatomic, retain) NSDictionary *transparencyTone;
+
++ (id)sharedInstance;
+
+- (id)audiogramConfiguration;
+- (bool)configurationCameFromEnrollment;
+- (bool)configurationCameFromUser;
+- (id)configurationWithKey:(id)arg1;
+- (unsigned long long)currentEnrollmentProgress;
+- (id)keysToSync;
+- (void)logMessage:(id)arg1;
+- (unsigned long long)personalAudioAccommodationTypes;
+- (bool)personalMediaAutomationSkipHeadphoneRequirement;
+- (id)personalMediaConfiguration;
+- (bool)personalMediaDebugMode;
+- (bool)personalMediaEnabled;
+- (bool)personalSoundVisible;
+- (id)preferenceDomainForPreferenceKey:(id)arg1;
+- (id)preferenceKeyForSelector:(SEL)arg1;
+- (void)setAudiogramConfiguration:(id)arg1;
+- (void)setConfiguration:(id)arg1 forKey:(id)arg2;
+- (void)setConfigurationCameFromEnrollment:(bool)arg1;
+- (void)setConfigurationCameFromUser:(bool)arg1;
+- (void)setCurrentEnrollmentProgress:(unsigned long long)arg1;
+- (void)setPersonalAudioAccommodationTypes:(unsigned long long)arg1;
+- (void)setPersonalMediaAutomationSkipHeadphoneRequirement:(bool)arg1;
+- (void)setPersonalMediaConfiguration:(id)arg1;
+- (void)setPersonalMediaDebugMode:(bool)arg1;
+- (void)setPersonalMediaEnabled:(bool)arg1;
+- (void)setPersonalSoundVisible:(bool)arg1;
+- (void)setShouldUpdateAccessory:(bool)arg1;
+- (void)setSslEnabled:(id)arg1;
+- (void)setSslEnabled:(bool)arg1 forAddress:(id)arg2;
+- (void)setTransparencyAmplification:(id)arg1;
+- (void)setTransparencyAmplification:(double)arg1 forAddress:(id)arg2;
+- (void)setTransparencyBalance:(id)arg1;
+- (void)setTransparencyBalance:(double)arg1 forAddress:(id)arg2;
+- (void)setTransparencyBeamforming:(id)arg1;
+- (void)setTransparencyBeamforming:(bool)arg1 forAddress:(id)arg2;
+- (void)setTransparencyCustomized:(id)arg1;
+- (void)setTransparencyCustomized:(bool)arg1 forAddress:(id)arg2;
+- (void)setTransparencyNoiseSupressor:(id)arg1;
+- (void)setTransparencyNoiseSupressor:(double)arg1 forAddress:(id)arg2;
+- (void)setTransparencyTone:(id)arg1;
+- (void)setTransparencyTone:(double)arg1 forAddress:(id)arg2;
+- (bool)shouldStoreLocally;
+- (bool)shouldUpdateAccessory;
+- (id)sslEnabled;
+- (bool)sslEnabledForAddress:(id)arg1;
+- (id)transparencyAmplification;
+- (double)transparencyAmplificationForAddress:(id)arg1;
+- (id)transparencyBalance;
+- (double)transparencyBalanceForAddress:(id)arg1;
+- (id)transparencyBeamforming;
+- (bool)transparencyBeamformingForAddress:(id)arg1;
+- (id)transparencyCustomized;
+- (bool)transparencyCustomizedForAddress:(id)arg1;
+- (id)transparencyNoiseSupressor;
+- (double)transparencyNoiseSupressorForAddress:(id)arg1;
+- (id)transparencyTone;
+- (double)transparencyToneForAddress:(id)arg1;
+
+@end

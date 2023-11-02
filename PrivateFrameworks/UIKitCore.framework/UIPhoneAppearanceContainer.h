@@ -1,0 +1,4 @@
+
+@interface UIPhoneAppearanceContainer : UIDeviceAppearanceContainer
+
+@end

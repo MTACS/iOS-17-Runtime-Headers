@@ -1,0 +1,4 @@
+
+@interface SKUISocialActivitiesViewElement : SKUIViewElement
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKFZonePrivateExtensions
+
+@end

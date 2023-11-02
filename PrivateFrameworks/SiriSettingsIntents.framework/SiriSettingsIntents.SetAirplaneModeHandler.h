@@ -1,0 +1,7 @@
+
+@interface SiriSettingsIntents.SetAirplaneModeHandler : _TtCs12_SwiftObject {
+    void enableTelemetryForSignpost;
+    void nativeApiClient;
+}
+
+@end

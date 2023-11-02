@@ -1,0 +1,4 @@
+
+@protocol MFDASyncResponseConsumer <MFRequestQueueResponseConsumer>
+
+@end

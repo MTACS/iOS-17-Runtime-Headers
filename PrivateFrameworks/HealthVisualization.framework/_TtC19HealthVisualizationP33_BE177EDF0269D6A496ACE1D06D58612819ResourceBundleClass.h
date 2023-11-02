@@ -1,0 +1,4 @@
+
+@interface _TtC19HealthVisualizationP33_BE177EDF0269D6A496ACE1D06D58612819ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

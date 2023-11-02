@@ -1,0 +1,90 @@
+
+@interface AXSDKShotRecordingManager : NSObject <SNResultsObserving> {
+    AXHARingBuffer * _audioRingBuffer;
+    NSArray * _cachedCurrentAudio;
+    NSArray * _cachedCurrentAudioFile;
+    NSDictionary * _cachedCurrentResults;
+    SNDetectionResult * _cachedDetectionResult;
+    NSString * _currentDetectionType;
+    NSMutableDictionary * _currentDetections;
+    <AXSDKShotRecordingManagerDelegate> * _delegate;
+    NSMutableDictionary * _detectionResultCollection;
+    NSObject<OS_dispatch_queue> * _fileProcessingQueue;
+    bool  _isDetectionInProgress;
+    bool  _isFile;
+    int  _numNonDetections;
+    int  _numObservations;
+    double  _sampleLength;
+    bool  _shouldSendSimilarityWarning;
+    AXSDKShotDetector * _targetDetector;
+    NSTimer * _timer;
+}
+
+@property (nonatomic, retain) NSArray *cachedCurrentAudio;
+@property (nonatomic, retain) NSDictionary *cachedCurrentResults;
+@property (nonatomic, retain) SNDetectionResult *cachedDetectionResult;
+@property (nonatomic, retain) NSString *currentDetectionType;
+@property (nonatomic, retain) NSMutableDictionary *currentDetections;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AXSDKShotRecordingManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isDetectionInProgress;
+@property (nonatomic) int numNonDetections;
+@property (nonatomic) int numObservations;
+@property (nonatomic) bool shouldSendSimilarityWarning;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) AXSDKShotDetector *targetDetector;
+@property (nonatomic, retain) NSTimer *timer;
+
++ (bool)_cleanupKShotFiles:(id)arg1;
++ (id)_retrieveFilesOlderThan:(double)arg1;
++ (void)cleanupKShotFiles;
++ (id)defaults;
++ (id)modelPathForDetector:(id)arg1;
++ (id)requestForDetector:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_cacheResultAndWaitForSave:(id)arg1;
+- (id)_directory;
+- (void)_kShotShouldSaveCurrentSoundDidChange;
+- (void)_recordCachedResultToFile;
+- (id)_saveCachedAudioFileTimer:(id)arg1;
+- (id)audioFileSettings;
+- (id)cachedCurrentAudio;
+- (id)cachedCurrentResults;
+- (id)cachedDetectionResult;
+- (id)currentDetectionType;
+- (id)currentDetections;
+- (id)delegate;
+- (id)initWithSampleLength:(double)arg1 bufferSize:(double)arg2;
+- (bool)isDetectionInProgress;
+- (void)listenEngineFailedToStartWithError:(id)arg1;
+- (unsigned long long)nRecordingsSoFar;
+- (int)numNonDetections;
+- (int)numObservations;
+- (id)path;
+- (void)receivedObservation:(id)arg1 forDetector:(id)arg2;
+- (void)request:(id)arg1 didProduceResult:(id)arg2;
+- (void)reset;
+- (void)saveDetectionResult:(id)arg1;
+- (void)setCachedCurrentAudio:(id)arg1;
+- (void)setCachedCurrentResults:(id)arg1;
+- (void)setCachedDetectionResult:(id)arg1;
+- (void)setCurrentDetectionType:(id)arg1;
+- (void)setCurrentDetections:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setIsDetectionInProgress:(bool)arg1;
+- (void)setNumNonDetections:(int)arg1;
+- (void)setNumObservations:(int)arg1;
+- (void)setShouldSendSimilarityWarning:(bool)arg1;
+- (void)setTargetDetector:(id)arg1;
+- (void)setTimer:(id)arg1;
+- (bool)shouldSendSimilarityWarning;
+- (id)targetDetector;
+- (id)timer;
+- (void)trackBuffer:(id)arg1 atTime:(id)arg2;
+- (void)trackBuffer:(id)arg1 atTime:(id)arg2 isFile:(bool)arg3;
+- (void)updateShouldSendSimilarityWarning:(id)arg1;
+
+@end

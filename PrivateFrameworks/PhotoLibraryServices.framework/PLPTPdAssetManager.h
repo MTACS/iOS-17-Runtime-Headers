@@ -1,0 +1,100 @@
+
+@interface PLPTPdAssetManager : NSObject <PFCameraViewfinderSessionWatcherDelegate, PLManagedObjectContextPTPNotificationDelegate> {
+    NSObject<OS_dispatch_group> * _analyticsAsyncDataGroup;
+    PLPTPAnalyticsData * _analyticsData;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _analyticsDataLock;
+    NSSet * _availableAssetIDs;
+    PFCameraViewfinderSessionWatcher * _cameraWatcher;
+    NSObject<PhotoLibraryPTPDelegate> * _delegate;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _finalizationRequestLock;
+    NSMutableArray * _finalizationRequestLock_assetsRequiringFinalization;
+    PLLazyObject * _finalizationRequestLock_requestInflight;
+    PLPTPdFormatConversionManager * _formatConversionManager;
+    int  _libraryStatus;
+    PLPhotoLibrary * _photoLibrary;
+    NSMutableSet * _ptpDeletedAssets;
+    NSObject<OS_dispatch_queue> * availableAssetsQueue;
+    NSFileManager * fileManager;
+}
+
+@property (nonatomic, readonly) long long cplStorageState;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) NSObject<PhotoLibraryPTPDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSFileManager *fileManager;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) PLManagedObjectContext *managedObjectContext;
+@property (retain) PFMediaCapabilities *peerMediaCapabilities;
+@property (nonatomic, readonly) PLPhotoLibrary *photoLibrary;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_allAssetObjectIDs;
+- (id)_createJPEGThumbnailImageDataFromFileWithPath:(id)arg1 sourceTypeHint:(id)arg2 formatID:(unsigned short)arg3 shouldTransform:(bool)arg4 maxPixelSize:(unsigned long long)arg5;
+- (id)_dataByJPEGCompressingCGImage:(struct CGImage { }*)arg1 orSource:(struct CGImageSource { }*)arg2 toLengthLimit:(long long)arg3 initialCompressionQuality:(float)arg4 size:(struct CGSize { double x1; double x2; })arg5 orientation:(long long)arg6;
+- (id)_dataForThumbnailImageSource:(struct CGImageSource { }*)arg1 options:(id)arg2 originalOrientation:(long long)arg3;
+- (void)_ensureDeferredRenderingIsComplete;
+- (void)_expungeAsset:(id)arg1 withReason:(id)arg2;
+- (id)_generateThumbnailForAsset:(id)arg1 fromOriginalImagePath:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 compressionQuality:(float)arg4;
+- (void)_handleMakeResourceReplyForAssetUUID:(id)arg1 assetObjectID:(id)arg2 moc:(id)arg3 success:(bool)arg4 error:(id)arg5;
+- (void)_inverseAffineTransformForExifOrientation:(long long)arg1 width:(double)arg2 height:(double)arg3 completion:(id /* block */)arg4;
+- (void)_logData:(id)arg1 withPrefix:(id)arg2 scaledOrientation:(long long)arg3 originalOrientation:(long long)arg4;
+- (void)_performBlockAndWait:(id /* block */)arg1;
+- (id)_performResultBlockAndWait:(id /* block */)arg1;
+- (id)_performResultTransactionAndWait:(id /* block */)arg1;
+- (void)_performTransactionAndWait:(id /* block */)arg1;
+- (id)_ptpAssetEnumeratorAllAssets;
+- (id)_ptpAssetsForAssetWithID:(id)arg1;
+- (id)_ptpThumbnailForFullSizeRenderWithAssetID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
+- (id)_ptpThumbnailForOriginalVideoWithAssetID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
+- (id)_ptpThumbnailForOriginalWithAssetID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
+- (id)_ptpThumbnailForPenultimateImageWithAssetID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
+- (id)_ptpThumbnailForSpatialOverCaptureImageWithAssetID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
+- (id)_ptpThumbnailForSpatialOverCaptureVideoWithAssetID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
+- (void)_registerForFirstUnlockNotification;
+- (void)_requestFinalizationOfNextAsset;
+- (id)_sendFinalizationRequestForAssetObjectID:(id)arg1 moc:(id)arg2;
+- (void)_startAnalyticsCollection;
+- (void)_stopAnalyticsCollectionAndReport;
+- (struct CGSize { double x1; double x2; })_validateSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)addAssetsNeedingFinalization:(id)arg1;
+- (id)adjustmentFilePathForAsset:(id)arg1 requiresTemporaryFileCleanup:(bool*)arg2;
+- (id)assetReaderForFormatConvertedPTPAsset:(id)arg1 ofManagedAsset:(id)arg2 path:(id)arg3;
+- (void)beginSignpostForThumbnailGenerationForAsset:(id)arg1 inputResourceTypeLabel:(id)arg2;
+- (void)cameraWatcherDidChangeState:(id)arg1;
+- (long long)cplStorageState;
+- (id)dataForThumbnailFileAtPath:(id)arg1 rotatedToOrientation:(long long)arg2 size:(struct CGSize { double x1; double x2; })arg3 compressionQuality:(float)arg4;
+- (void)dealloc;
+- (id)delegate;
+- (id)embeddedThumbnailDataForAsset:(id)arg1 requestedSize:(struct CGSize { double x1; double x2; })arg2 shouldScale:(bool)arg3;
+- (void)endSignpostForThumbnailGenerationForAsset:(id)arg1;
+- (id)fetchObjectIDsForAssetsExposedToPTPFromObjectIDs:(id)arg1;
+- (id)fileManager;
+- (void)handlePhotoLibraryAvailableNotification;
+- (id)init;
+- (id)initForUnitTestSupportWithPhotoLibrary:(id)arg1;
+- (bool)libraryIsAvailable;
+- (id)managedObjectContext;
+- (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssetIDs:(id)arg2 deletedAssetIDs:(id)arg3 changedAssetIDs:(id)arg4 adjustedAssetIDs:(id)arg5;
+- (struct CGSize { double x1; double x2; })masterThumbSize;
+- (id)peerMediaCapabilities;
+- (id)photoLibrary;
+- (id)popAnalyticsData;
+- (id)ptpAssetReaderForAssetHandle:(id)arg1;
+- (bool)ptpCanDeleteFiles;
+- (bool)ptpDeletePhotoForAssetHandle:(id)arg1;
+- (void)ptpEnumerateAllAssetsUsingBlock:(id /* block */)arg1;
+- (void)ptpEnumerateAssetsWithPrimaryKeys:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)ptpImagePropertiesForAssetHandle:(id)arg1;
+- (id)ptpThumbnailForAssetHandle:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
+- (bool)requestedSize:(struct CGSize { double x1; double x2; })arg1 fitsInSourceSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setFileManager:(id)arg1;
+- (void)setHostCharacteristics:(id)arg1;
+- (void)setPeerMediaCapabilities:(id)arg1;
+
+@end

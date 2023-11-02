@@ -1,0 +1,4 @@
+
+@interface FSItem : FSItemAttributes
+
+@end

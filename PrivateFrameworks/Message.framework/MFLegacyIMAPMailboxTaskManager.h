@@ -1,0 +1,113 @@
+
+@interface MFLegacyIMAPMailboxTaskManager : NSObject <ECIMAPLocalActionReplayerDelegate, EFLoggable, MFIMAPConnectionDelegate, MFIMAPMailboxTaskManager, MFIMAPSequenceIdentifierProvider> {
+    IMAPAccount * _account;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _activeFetchVsReplayLock;
+    MFIMAPConnection * _cachedConnection;
+    NSLock * _cachedConnectionLock;
+    EFCancelationToken * _cancelationToken;
+    unsigned long long  _highestModSequence;
+    unsigned long long  _lastHighestModSequence;
+    MFMailMessageLibrary * _library;
+    NSString * _loggingPrefix;
+    MFMailboxUid * _mailbox;
+    NSString * _mailboxName;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _serverCountLock;
+    unsigned long long  _serverDeletedCount;
+    unsigned long long  _serverMessageCount;
+    bool  _settingServerCount;
+    bool  _shouldUseIDLE;
+    bool  _supportsDollarForwardedFlag;
+    bool  _supportsFlagColorBitFlags;
+    bool  _supportsForwardedFlag;
+}
+
+@property (nonatomic, readonly) IMAPAccount *account;
+@property (nonatomic, readonly) bool canFetchMessageIDs;
+@property (nonatomic, retain) EFCancelationToken *cancelationToken;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) MFMailMessageLibrary *library;
+@property (nonatomic, readonly) MFMailboxUid *mailbox;
+@property (nonatomic, readonly, copy) NSString *mailboxName;
+@property bool shouldUseIDLE;
+@property (readonly) Class superclass;
+
++ (id)log;
+
+- (void).cxx_destruct;
+- (id)_downloadForMessageBodyData:(id)arg1 usingDownloadCache:(id)arg2;
+- (id)_fetchFullMessageDataForMessage:(id)arg1 download:(id*)arg2;
+- (void)_fetchMessagesMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 withOptions:(int)arg3 handler:(id /* block */)arg4;
+- (unsigned long long)_fetchMessagesWithArguments:(id)arg1 idRange:(id)arg2 onConnection:(id)arg3 synchronize:(bool)arg4 limit:(unsigned long long)arg5 topUIDToCompact:(unsigned long long)arg6 topKnownUID:(unsigned long long)arg7 success:(bool*)arg8 examinedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg9 fetchableUIDsFound:(unsigned long long*)arg10 preserveUID:(unsigned long long*)arg11 numFetchedUIDs:(unsigned long long*)arg12;
+- (unsigned long long)_fetchMessagesWithUIDs:(id)arg1 connection:(id)arg2 newCount:(unsigned long long)arg3 flagsToSet:(unsigned long long)arg4 queueClass:(Class)arg5;
+- (void)_fetchServerUnreadCountWithConnection:(id)arg1;
+- (id)_idleConditionsObservable;
+- (id)_newSearchResponseQueueForConnection:(id)arg1 limit:(unsigned int)arg2;
+- (id)_observeChangesInIdleConditions;
+- (void)_performActionsOnConnection:(id)arg1 uidsToFetch:(id*)arg2 uidsToSync:(id*)arg3 messagesToCompact:(id*)arg4 serverMessages:(id)arg5 flagSearchResults:(id)arg6 shouldForce:(bool)arg7 newUIDsToFetch:(unsigned int*)arg8;
+- (id)_performBodyDataDownload:(id)arg1 usingConnection:(id)arg2 downloadCache:(id)arg3 isPartial:(bool*)arg4;
+- (void)_scheduleIdleTransition:(bool)arg1;
+- (id)_searchFlagsForUIDs:(id)arg1 usingConnection:(id)arg2;
+- (bool)_selectMailbox:(id)arg1 withConnection:(id)arg2;
+- (bool)_shouldContinueToPreservedUID:(unsigned long long)arg1;
+- (void)_updateServerUnreadCount:(unsigned long long)arg1;
+- (bool)_waitForDataFromDownload:(id)arg1 uid:(unsigned int)arg2 downloadCache:(id)arg3 connection:(id)arg4;
+- (id)account;
+- (bool)canFetchMessageIDs;
+- (id)cancelationToken;
+- (bool)checkUIDValidity:(unsigned int)arg1 mailboxURL:(id)arg2;
+- (void)close;
+- (void)compact;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2 forCommand:(id)arg3;
+- (bool)connection:(id)arg1 shouldHandleUntaggedResponse:(id)arg2 forCommand:(id)arg3;
+- (void)dealloc;
+- (void)deleteMessagesOlderThanNumberOfDays:(int)arg1 compact:(bool)arg2;
+- (id)deletedMessages;
+- (bool)downloadMimePartNumber:(id)arg1 message:(id)arg2 withProgressBlock:(id /* block */)arg3;
+- (bool)errorIsIMAPError:(id)arg1;
+- (id)fetchDataForMessage:(id)arg1 didDownload:(bool*)arg2;
+- (id)fetchDataForMessage:(id)arg1 partial:(bool*)arg2;
+- (bool)fetchDataForMimePart:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 isComplete:(bool*)arg3 consumer:(id)arg4;
+- (id)fetchHeadersForMessage:(id)arg1;
+- (long long)fetchMessagesWithMessageIDs:(id)arg1 andSetFlags:(unsigned long long)arg2;
+- (long long)fetchNumMessages:(unsigned long long)arg1 preservingUID:(id)arg2 options:(unsigned long long)arg3;
+- (id)flagsForIMAPUIDs:(id)arg1 mailboxURL:(id)arg2;
+- (void)growFetchWindow;
+- (void)handleFlagsChangedForMessages:(id)arg1 flags:(id)arg2 oldFlagsByMessage:(id)arg3;
+- (id)imapMailboxNameForMailboxURL:(id)arg1;
+- (id)initWithMailbox:(id)arg1;
+- (id)library;
+- (id)mailbox;
+- (id)mailboxName;
+- (id)messageDataForMessage:(id)arg1;
+- (id)messageDataForRemoteID:(id)arg1 mailboxURL:(id)arg2;
+- (id)messageIdRollCall:(id)arg1;
+- (bool)moveSupportedFromMailboxURL:(id)arg1 toURL:(id)arg2;
+- (id)offlineCache;
+- (id)offlineCacheIfOffline;
+- (bool)performOperationRequiringConnection:(bool)arg1 withOptions:(int)arg2 failedToSelectMailbox:(bool*)arg3 operation:(id /* block */)arg4;
+- (id)replayAction:(id)arg1;
+- (void)reselectMailbox;
+- (id)sequenceIdentifierForUIDs:(id)arg1;
+- (unsigned long long)serverMessageCount;
+- (void)setCancelationToken:(id)arg1;
+- (void)setHighestModSequence:(unsigned long long)arg1;
+- (void)setLibrary:(id)arg1;
+- (void)setSequenceIdentifier:(id)arg1 forUIDs:(id)arg2;
+- (void)setServerMessageCount:(unsigned long long)arg1;
+- (void)setShouldUseIDLE:(bool)arg1;
+- (bool)shouldStartIdleForConnection:(id)arg1;
+- (bool)shouldUseIDLE;
+- (id)storeSearchResultMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 offset:(id)arg3 error:(id*)arg4;
+- (unsigned long long)syncMessagesWithUIDs:(id)arg1 connection:(id)arg2 serverMessages:(id)arg3 flagSearchResults:(id)arg4;
+- (void)updateDeletedCount;
+- (void)updateDeletedCountWithNotDeletedCount:(unsigned long long)arg1;
+- (void)updateServerUnreadCountClosingConnection:(bool)arg1;
+- (void)willRemoveDelegation:(id)arg1;
+
+@end

@@ -1,0 +1,81 @@
+
+@interface MapsSuggestionsManager : NSObject <MapsSuggestionsLocationUpdaterDelegate, MapsSuggestionsObject, MapsSuggestionsSourceDelegate> {
+    NSMutableDictionary * _additionalFiltersPerSink;
+    GEOAutomobileOptions * _automobileOptions;
+    MapsSuggestionsCompositeSource * _compositeSource;
+    int  _defaultTansportType;
+    MapsSuggestionsCanKicker * _deferredSourcesUpdater;
+    NSDate * _etaValidUntil;
+    MapsSuggestionsCanKicker * _expiredEntryInvalidator;
+    NSObject<OS_dispatch_queue> * _gatheringQueue;
+    NSArray * _latestResults;
+    <MapsSuggestionsLocationUpdater> * _locationUpdater;
+    int  _mapType;
+    CLLocation * _oldLocation;
+    MapsSuggestionsObservers * _sinks;
+    bool  _sourcesRunning;
+    NSMutableDictionary * _storage;
+    NSObject<OS_dispatch_queue> * _storageQueue;
+    <MapsSuggestionsStrategy> * _strategy;
+    MapsSuggestionsTracker * _tracker;
+    MapsSuggestionsCanKicker * _wipeStaleETAWiper;
+}
+
+@property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) <MapsSuggestionsLocationUpdater> *locationUpdater;
+@property (nonatomic) int mapType;
+@property (nonatomic, retain) <MapsSuggestionsStrategy> *strategy;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *uniqueName;
+
+- (void).cxx_destruct;
+- (void)addAdditionalFilter:(id)arg1 forSink:(id)arg2;
+- (unsigned long long)addOrUpdateSuggestionEntries:(id)arg1 source:(id)arg2;
+- (id)additionalFiltersPerSink;
+- (void)attachSink:(id)arg1;
+- (void)attachSource:(id)arg1;
+- (id)automobileOptions;
+- (void)awaitGatheringQueue;
+- (void)awaitStorageQueue;
+- (void)dealloc;
+- (void)detachSink:(id)arg1;
+- (void)detachSource:(id)arg1;
+- (void)didLoseLocationPermission;
+- (void)didUpdateLocation:(id)arg1;
+- (void)feedbackForContact:(id)arg1 action:(long long)arg2;
+- (void)feedbackForEntry:(id)arg1 action:(long long)arg2;
+- (void)feedbackForMapItem:(id)arg1 action:(long long)arg2;
+- (void)hintRefreshOfType:(long long)arg1;
+- (id)initWithStrategy:(id)arg1 locationUpdater:(id)arg2 network:(id)arg3 flightUpdater:(id)arg4 ETARequirements:(id)arg5 virtualGarage:(id)arg6;
+- (bool)loadStorageFromFile:(id)arg1;
+- (BOOL)loadStorageFromFile:(id)arg1 callback:(id /* block */)arg2 callbackQueue:(id)arg3;
+- (id)locationUpdater;
+- (int)mapType;
+- (BOOL)oneShotTopSuggestionsForSink:(id)arg1 count:(unsigned long long)arg2 queue:(id)arg3 handler:(id /* block */)arg4;
+- (BOOL)oneShotTopSuggestionsForSink:(id)arg1 count:(unsigned long long)arg2 transportType:(int)arg3 callback:(id /* block */)arg4 onQueue:(id)arg5;
+- (BOOL)oneShotTopSuggestionsForSink:(id)arg1 transportType:(int)arg2 count:(unsigned long long)arg3 queue:(id)arg4 handler:(id /* block */)arg5;
+- (void)removeAdditionalFilter:(id)arg1 forSink:(id)arg2;
+- (void)removeEntry:(id)arg1;
+- (BOOL)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(id /* block */)arg3;
+- (BOOL)saveStorageToFile:(id)arg1 callback:(id /* block */)arg2;
+- (void)setAutomobileOptions:(id)arg1;
+- (void)setLocationUpdater:(id)arg1;
+- (void)setMapType:(int)arg1;
+- (void)setStrategy:(id)arg1;
+- (id)sinks;
+- (id)sources;
+- (id)storage;
+- (id)storageForSource:(id)arg1;
+- (id)storageQueue;
+- (id)strategy;
+- (BOOL)topSuggestionsForSink:(id)arg1 count:(unsigned long long)arg2 queue:(id)arg3 handler:(id /* block */)arg4;
+- (BOOL)topSuggestionsForSink:(id)arg1 count:(unsigned long long)arg2 transportType:(int)arg3 callback:(id /* block */)arg4 onQueue:(id)arg5;
+- (BOOL)topSuggestionsForSink:(id)arg1 transportType:(int)arg2 count:(unsigned long long)arg3 queue:(id)arg4 handler:(id /* block */)arg5;
+- (id)tracker;
+- (void)trackerRefreshedETAsUntil:(id)arg1;
+- (id)uniqueName;
+
+@end

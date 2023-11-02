@@ -1,0 +1,4 @@
+
+@protocol TSDReplaceableMediaContainer <NSObject>
+
+@end

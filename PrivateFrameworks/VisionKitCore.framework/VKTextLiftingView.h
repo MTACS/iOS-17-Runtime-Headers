@@ -1,0 +1,94 @@
+
+@interface VKTextLiftingView : UIView {
+    bool  __hasFadedOut;
+    bool  __hasLifted;
+    UIVisualEffectView * __highlightView;
+    UIImageView * __imageView;
+    bool  __presentedMenuForLiftedText;
+    UIBezierPath * __rotatedCutoutPath;
+    double  _baselineAngle;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInsets;
+    UIBezierPath * _cutoutPath;
+    <VKTextLiftingViewDelegate> * _delegate;
+    UIBezierPath * _hitTestPath;
+    UIImage * _image;
+    VKCImageAnalysisInteraction * _imageInteraction;
+    double  _maxScale;
+    double  _preferredQuickActionButtonHeight;
+    bool  _presentsMenuForLiftedText;
+    bool  _presentsQuickActions;
+    id /* block */  _quickActionConfigurationUpdateHandler;
+}
+
+@property (setter=_hasFadedOut:, nonatomic) bool _hasFadedOut;
+@property (setter=_hasLifted:, nonatomic) bool _hasLifted;
+@property (nonatomic, readonly) UIVisualEffectView *_highlightView;
+@property (nonatomic, readonly) UIImageView *_imageView;
+@property (setter=_setPresentedMenuForLiftedText:, nonatomic) bool _presentedMenuForLiftedText;
+@property (nonatomic, readonly) UIBezierPath *_rotatedCutoutPath;
+@property (nonatomic, readonly) UIView *actionInfoView;
+@property (nonatomic, readonly) double baselineAngle;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic, readonly) UIBezierPath *cutoutPath;
+@property (nonatomic) <VKTextLiftingViewDelegate> *delegate;
+@property (nonatomic, retain) UIBezierPath *hitTestPath;
+@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, retain) VKCImageAnalysisInteraction *imageInteraction;
+@property (nonatomic) double maxScale;
+@property (nonatomic) double preferredQuickActionButtonHeight;
+@property (nonatomic) bool presentsMenuForLiftedText;
+@property (nonatomic) bool presentsQuickActions;
+@property (nonatomic, copy) id /* block */ quickActionConfigurationUpdateHandler;
+
+- (void).cxx_destruct;
+- (void)_applyConfigurationUpdateHandlerToQuickActions;
+- (void)_applyInteractionToImageViewIfReady;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentBounds;
+- (id)_gaussianBlurFilterWithRadius:(double)arg1;
+- (bool)_hasFadedOut;
+- (void)_hasFadedOut:(bool)arg1;
+- (bool)_hasLifted;
+- (void)_hasLifted:(bool)arg1;
+- (id)_highlightView;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_imageTransformInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)_imageView;
+- (bool)_presentedMenuForLiftedText;
+- (id)_rotatedCutoutPath;
+- (void)_setPresentedMenuForLiftedText:(bool)arg1;
+- (id)_springAnimationForKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
+- (id)actionInfoView;
+- (double)baselineAngle;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (id)cutoutPath;
+- (id)delegate;
+- (void)didMoveToSuperview;
+- (void)fadeOutAndRemoveFromSuperview;
+- (id)hitTestPath;
+- (id)image;
+- (id)imageInteraction;
+- (id)initWithImage:(id)arg1 cutoutPath:(id)arg2;
+- (id)initWithImage:(id)arg1 cutoutPath:(id)arg2 baselineAngle:(double)arg3;
+- (void)layoutSubviews;
+- (double)maxScale;
+- (void)performLiftAnimation;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (double)preferredQuickActionButtonHeight;
+- (bool)presentsMenuForLiftedText;
+- (bool)presentsQuickActions;
+- (id /* block */)quickActionConfigurationUpdateHandler;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHitTestPath:(id)arg1;
+- (void)setImageInteraction:(id)arg1;
+- (void)setMaxScale:(double)arg1;
+- (void)setPreferredQuickActionButtonHeight:(double)arg1;
+- (void)setPresentsMenuForLiftedText:(bool)arg1;
+- (void)setPresentsQuickActions:(bool)arg1;
+- (void)setQuickActionConfigurationUpdateHandler:(id /* block */)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SXBookmark <NSObject>
+
+@end

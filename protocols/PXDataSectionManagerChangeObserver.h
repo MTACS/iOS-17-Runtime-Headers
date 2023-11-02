@@ -1,0 +1,4 @@
+
+@protocol PXDataSectionManagerChangeObserver <PXChangeObserver>
+
+@end

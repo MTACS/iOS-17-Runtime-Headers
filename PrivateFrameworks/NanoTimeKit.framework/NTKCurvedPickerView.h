@@ -1,0 +1,48 @@
+
+@interface NTKCurvedPickerView : UIView <NTKEditOptionContainerView> {
+    unsigned long long  _activeSide;
+    double  _centerAngle;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _circleCenter;
+    double  _circleRadius;
+    double  _currentFraction;
+    bool  _interior;
+    NSMutableDictionary * _sideViews;
+    unsigned long long  _transitioningSide;
+}
+
+@property (nonatomic, readonly) double centerAngle;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } circleCenter;
+@property (nonatomic, readonly) double circleRadius;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool interior;
+@property (nonatomic, readonly) unsigned long long numberOfSides;
+@property (nonatomic, readonly) unsigned long long numberOfVisibleSides;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (double)_alphaForIndex:(unsigned long long)arg1;
+- (double)_angleForIndex:(unsigned long long)arg1;
+- (void)_setCurrentFraction:(double)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForAngle:(double)arg1;
+- (double)centerAngle;
+- (struct CGPoint { double x1; double x2; })circleCenter;
+- (double)circleRadius;
+- (void)enumerateSideViewsWithBlock:(id /* block */)arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)init;
+- (bool)interior;
+- (void)layoutSubviews;
+- (unsigned long long)numberOfSides;
+- (unsigned long long)numberOfVisibleSides;
+- (void)setCircleRadius:(double)arg1 centerAngle:(double)arg2 circleCenter:(struct CGPoint { double x1; double x2; })arg3 interior:(bool)arg4;
+- (void)setView:(id)arg1 forSideAtIndex:(unsigned long long)arg2;
+- (void)transitionToFraction:(double)arg1 fromSideAtIndex:(unsigned long long)arg2 toSideAtIndex:(unsigned long long)arg3;
+- (void)transitionToSideAtIndex:(unsigned long long)arg1;
+- (id)viewForSideAtIndex:(unsigned long long)arg1;
+
+@end

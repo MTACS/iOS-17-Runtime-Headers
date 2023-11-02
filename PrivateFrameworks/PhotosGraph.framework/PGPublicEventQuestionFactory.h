@@ -1,0 +1,10 @@
+
+@interface PGPublicEventQuestionFactory : PGSurveyQuestionFactory
+
+- (double)_publicEventLocalFactoryScoreForMomentNode:(id)arg1;
+- (bool)_shouldAddNewPublicEventQuestionForAssetUUID:(id)arg1;
+- (id)generateQuestionsWithLimit:(unsigned long long)arg1 progressBlock:(id /* block */)arg2;
+- (long long)questionOptions;
+- (unsigned short)questionType;
+
+@end

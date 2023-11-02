@@ -1,0 +1,59 @@
+
+@interface PKAddPaymentPassRequestConfiguration : NSObject <NSSecureCoding> {
+    NSArray * _cardDetails;
+    NSString * _cardholderName;
+    NSString * _encryptionScheme;
+    NSString * _localizedDescription;
+    NSString * _paymentNetwork;
+    NSString * _primaryAccountIdentifier;
+    NSString * _primaryAccountSuffix;
+    NSSet * _productIdentifiers;
+    bool  _requiresFelicaSecureElement;
+    long long  _style;
+}
+
+@property (nonatomic, copy) NSArray *cardDetails;
+@property (nonatomic, copy) NSString *cardholderName;
+@property (nonatomic, readonly, copy) NSString *encryptionScheme;
+@property (nonatomic, copy) NSString *localizedDescription;
+@property (getter=isPaymentAccount, nonatomic, readonly) bool paymentAccount;
+@property (nonatomic, copy) NSString *paymentNetwork;
+@property (nonatomic, copy) NSString *primaryAccountIdentifier;
+@property (nonatomic, copy) NSString *primaryAccountSuffix;
+@property (nonatomic, copy) NSSet *productIdentifiers;
+@property (nonatomic) bool requiresFelicaSecureElement;
+@property (nonatomic) long long style;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)_effectiveDetails;
+- (id)_filterWebServices:(id)arg1 primaryAccountIdentifierRequired:(bool)arg2;
+- (id)cardDetails;
+- (id)cardholderName;
+- (void)dealloc;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)encryptionScheme;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithEncryptionScheme:(id)arg1;
+- (bool)isPaymentAccount;
+- (id)localizedDescription;
+- (id)paymentNetwork;
+- (id)primaryAccountIdentifier;
+- (id)primaryAccountSuffix;
+- (id)productIdentifiers;
+- (bool)requiresFelicaSecureElement;
+- (void)setCardDetails:(id)arg1;
+- (void)setCardholderName:(id)arg1;
+- (void)setLocalizedDescription:(id)arg1;
+- (void)setPaymentNetwork:(id)arg1;
+- (void)setPrimaryAccountIdentifier:(id)arg1;
+- (void)setPrimaryAccountSuffix:(id)arg1;
+- (void)setProductIdentifiers:(id)arg1;
+- (void)setRequiresFelicaSecureElement:(bool)arg1;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
+
+@end

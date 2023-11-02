@@ -1,0 +1,4 @@
+
+@interface PPHighlightedEvent : PPScoredEvent
+
+@end

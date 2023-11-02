@@ -1,0 +1,80 @@
+
+@interface LAPSFetchNewPasscodeViewControllerInput : NSObject {
+    NSOrderedSet * _allowedPasscodeTypes;
+    NSString * _footerRecoveryDisabled;
+    NSString * _footerRecoveryEnabled;
+    bool  _isPasscodeRecoveryEnabled;
+    bool  _isPasscodeRecoveryOptionVisible;
+    bool  _isPasscodeRecoveryRestricted;
+    bool  _isPasscodeRecoverySupported;
+    NSString * _nextButton;
+    NSString * _passcodeOptionsCancelTitle;
+    NSString * _passcodeOptionsTitle;
+    NSString * _passcodeRecoveryDisabledTitle;
+    NSString * _passcodeRecoveryEnabledTitle;
+    NSString * _passcodeRecoveryTitle;
+    LAPSPasscodeType * _passcodeType;
+    NSString * _prompt;
+    NSString * _title;
+    NSString * _verifyNextButton;
+    NSString * _verifyPrompt;
+}
+
+@property (nonatomic, retain) NSOrderedSet *allowedPasscodeTypes;
+@property (nonatomic, retain) NSString *footerRecoveryDisabled;
+@property (nonatomic, retain) NSString *footerRecoveryEnabled;
+@property (nonatomic) bool isPasscodeRecoveryEnabled;
+@property (nonatomic) bool isPasscodeRecoveryOptionVisible;
+@property (nonatomic) bool isPasscodeRecoveryRestricted;
+@property (nonatomic) bool isPasscodeRecoverySupported;
+@property (nonatomic, retain) NSString *nextButton;
+@property (nonatomic, retain) NSString *passcodeOptionsCancelTitle;
+@property (nonatomic, retain) NSString *passcodeOptionsTitle;
+@property (nonatomic, retain) NSString *passcodeRecoveryDisabledTitle;
+@property (nonatomic, retain) NSString *passcodeRecoveryEnabledTitle;
+@property (nonatomic, retain) NSString *passcodeRecoveryTitle;
+@property (nonatomic, retain) LAPSPasscodeType *passcodeType;
+@property (nonatomic, retain) NSString *prompt;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *verifyNextButton;
+@property (nonatomic, retain) NSString *verifyPrompt;
+
+- (void).cxx_destruct;
+- (id)allowedPasscodeTypes;
+- (id)footerRecoveryDisabled;
+- (id)footerRecoveryEnabled;
+- (bool)isPasscodeRecoveryEnabled;
+- (bool)isPasscodeRecoveryOptionVisible;
+- (bool)isPasscodeRecoveryRestricted;
+- (bool)isPasscodeRecoverySupported;
+- (id)nextButton;
+- (id)passcodeOptionsCancelTitle;
+- (id)passcodeOptionsTitle;
+- (id)passcodeRecoveryDisabledTitle;
+- (id)passcodeRecoveryEnabledTitle;
+- (id)passcodeRecoveryTitle;
+- (id)passcodeType;
+- (id)prompt;
+- (void)setAllowedPasscodeTypes:(id)arg1;
+- (void)setFooterRecoveryDisabled:(id)arg1;
+- (void)setFooterRecoveryEnabled:(id)arg1;
+- (void)setIsPasscodeRecoveryEnabled:(bool)arg1;
+- (void)setIsPasscodeRecoveryOptionVisible:(bool)arg1;
+- (void)setIsPasscodeRecoveryRestricted:(bool)arg1;
+- (void)setIsPasscodeRecoverySupported:(bool)arg1;
+- (void)setNextButton:(id)arg1;
+- (void)setPasscodeOptionsCancelTitle:(id)arg1;
+- (void)setPasscodeOptionsTitle:(id)arg1;
+- (void)setPasscodeRecoveryDisabledTitle:(id)arg1;
+- (void)setPasscodeRecoveryEnabledTitle:(id)arg1;
+- (void)setPasscodeRecoveryTitle:(id)arg1;
+- (void)setPasscodeType:(id)arg1;
+- (void)setPrompt:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setVerifyNextButton:(id)arg1;
+- (void)setVerifyPrompt:(id)arg1;
+- (id)title;
+- (id)verifyNextButton;
+- (id)verifyPrompt;
+
+@end

@@ -1,0 +1,95 @@
+
+@interface NNMKProtoMessageContentSync : PBCodable <NSCopying> {
+    NSMutableArray * _attachments;
+    NSData * _dateSynced;
+    unsigned int  _fullSyncVersion;
+    struct { 
+        unsigned int fullSyncVersion : 1; 
+        unsigned int mainAlternativeValid : 1; 
+        unsigned int partiallyLoaded : 1; 
+    }  _has;
+    NSData * _htmlContentData;
+    NSString * _mailboxId;
+    bool  _mainAlternativeValid;
+    NSString * _messageId;
+    NNMKProtoMessage * _notificationMessage;
+    bool  _partiallyLoaded;
+    NSData * _preview;
+    NSData * _text;
+}
+
+@property (nonatomic, retain) NSMutableArray *attachments;
+@property (nonatomic, retain) NSData *dateSynced;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) bool hasDateSynced;
+@property (nonatomic) bool hasFullSyncVersion;
+@property (nonatomic, readonly) bool hasHtmlContentData;
+@property (nonatomic, readonly) bool hasMailboxId;
+@property (nonatomic) bool hasMainAlternativeValid;
+@property (nonatomic, readonly) bool hasMessageId;
+@property (nonatomic, readonly) bool hasNotificationMessage;
+@property (nonatomic) bool hasPartiallyLoaded;
+@property (nonatomic, readonly) bool hasPreview;
+@property (nonatomic, readonly) bool hasText;
+@property (nonatomic, retain) NSData *htmlContentData;
+@property (nonatomic, retain) NSString *mailboxId;
+@property (nonatomic) bool mainAlternativeValid;
+@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic, retain) NNMKProtoMessage *notificationMessage;
+@property (nonatomic) bool partiallyLoaded;
+@property (nonatomic, retain) NSData *preview;
+@property (nonatomic, retain) NSData *text;
+
++ (Class)attachmentType;
+
+- (void).cxx_destruct;
+- (void)addAttachment:(id)arg1;
+- (id)attachmentAtIndex:(unsigned long long)arg1;
+- (id)attachments;
+- (unsigned long long)attachmentsCount;
+- (void)clearAttachments;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dateSynced;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (unsigned int)fullSyncVersion;
+- (bool)hasDateSynced;
+- (bool)hasFullSyncVersion;
+- (bool)hasHtmlContentData;
+- (bool)hasMailboxId;
+- (bool)hasMainAlternativeValid;
+- (bool)hasMessageId;
+- (bool)hasNotificationMessage;
+- (bool)hasPartiallyLoaded;
+- (bool)hasPreview;
+- (bool)hasText;
+- (unsigned long long)hash;
+- (id)htmlContentData;
+- (bool)isEqual:(id)arg1;
+- (id)mailboxId;
+- (bool)mainAlternativeValid;
+- (void)mergeFrom:(id)arg1;
+- (id)messageId;
+- (id)notificationMessage;
+- (bool)partiallyLoaded;
+- (id)preview;
+- (bool)readFrom:(id)arg1;
+- (void)setAttachments:(id)arg1;
+- (void)setDateSynced:(id)arg1;
+- (void)setFullSyncVersion:(unsigned int)arg1;
+- (void)setHasFullSyncVersion:(bool)arg1;
+- (void)setHasMainAlternativeValid:(bool)arg1;
+- (void)setHasPartiallyLoaded:(bool)arg1;
+- (void)setHtmlContentData:(id)arg1;
+- (void)setMailboxId:(id)arg1;
+- (void)setMainAlternativeValid:(bool)arg1;
+- (void)setMessageId:(id)arg1;
+- (void)setNotificationMessage:(id)arg1;
+- (void)setPartiallyLoaded:(bool)arg1;
+- (void)setPreview:(id)arg1;
+- (void)setText:(id)arg1;
+- (id)text;
+- (void)writeTo:(id)arg1;
+
+@end

@@ -1,0 +1,95 @@
+
+@interface AVTPaddleView : UIView {
+    NSArray * _activeConstraints;
+    AVTCircularButton * _addButton;
+    UIView * _addButtonViewContainer;
+    bool  _automaticallyStartsPlaying;
+    <AVTPaddleViewDelegate> * _delegate;
+    AVTTouchDownGestureRecognizer * _dismissGestureRecognizer;
+    long long  _layoutDirection;
+    AVTUILogger * _logger;
+    AVPlayerLooper * _looper;
+    double  _padding;
+    AVPlayer * _player;
+    id /* block */  _preCommitBlock;
+    AVTTouchDownGestureRecognizer * _tapGestureRecognizer;
+    AVPlayerViewController * _videoController;
+    UIView * _videoViewContainer;
+}
+
+@property (nonatomic, retain) NSArray *activeConstraints;
+@property (nonatomic, retain) AVTCircularButton *addButton;
+@property (nonatomic, retain) UIView *addButtonViewContainer;
+@property (nonatomic) bool automaticallyStartsPlaying;
+@property (nonatomic) <AVTPaddleViewDelegate> *delegate;
+@property (nonatomic, retain) AVTTouchDownGestureRecognizer *dismissGestureRecognizer;
+@property (nonatomic, readonly) long long layoutDirection;
+@property (nonatomic, retain) AVTUILogger *logger;
+@property (nonatomic, retain) AVPlayerLooper *looper;
+@property (nonatomic) double padding;
+@property (nonatomic, retain) AVPlayer *player;
+@property (nonatomic, copy) id /* block */ preCommitBlock;
+@property (nonatomic, retain) AVTTouchDownGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, retain) AVPlayerViewController *videoController;
+@property (nonatomic, retain) UIView *videoViewContainer;
+
++ (double)defaultPadding;
++ (id)videoItem;
+
+- (void).cxx_destruct;
+- (void)_configureWithSymbolConfiguration:(id)arg1;
+- (id)activeConstraints;
+- (id)addButton;
+- (id)addButtonViewContainer;
+- (void)attachVideoController:(id)arg1 looper:(id)arg2;
+- (bool)automaticallyStartsPlaying;
+- (void)dealloc;
+- (id)delegate;
+- (void)didMoveToWindow;
+- (void)dismissAnimated:(bool)arg1;
+- (id)dismissGestureRecognizer;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForAddButtonInCoordinateSpace:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForVideoInCoordinateSpace:(id)arg1;
+- (void)handleDismissGesture;
+- (void)handleTapAddButton;
+- (void)handleTapGesture;
+- (id)initWithLayoutDirection:(long long)arg1;
+- (id)initWithLayoutDirection:(long long)arg1 symbolConfiguration:(id)arg2;
+- (bool)isPointInsideTransparentRegion:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)isRTL;
+- (long long)layoutDirection;
+- (void)layoutSubviews;
+- (id)logger;
+- (id)looper;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (double)padding;
+- (void)pauseVideo;
+- (void)playVideo;
+- (id)player;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id /* block */)preCommitBlock;
+- (void)setActiveConstraints:(id)arg1;
+- (void)setAddButton:(id)arg1;
+- (void)setAddButtonViewContainer:(id)arg1;
+- (void)setAutomaticallyStartsPlaying:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDismissGestureRecognizer:(id)arg1;
+- (void)setLogger:(id)arg1;
+- (void)setLooper:(id)arg1;
+- (void)setPadding:(double)arg1;
+- (void)setPlayer:(id)arg1;
+- (void)setPreCommitBlock:(id /* block */)arg1;
+- (void)setTapGestureRecognizer:(id)arg1;
+- (void)setVideoController:(id)arg1;
+- (void)setVideoViewContainer:(id)arg1;
+- (void)showAnimated:(bool)arg1;
+- (void)startPlayingIfNecessary;
+- (void)stopPlayingIfNecessary;
+- (id)tapGestureRecognizer;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateLayoutFromPlusButtonView:(id)arg1 videoView:(id)arg2;
+- (id)videoController;
+- (id)videoViewContainer;
+
+@end

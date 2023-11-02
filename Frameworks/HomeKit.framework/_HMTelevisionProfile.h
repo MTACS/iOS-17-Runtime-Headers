@@ -1,0 +1,28 @@
+
+@interface _HMTelevisionProfile : _HMAccessoryProfile {
+    <_HMTelevisionProfileDelegate> * _delegate;
+    NSArray * _mediaSourceDisplayOrder;
+    bool  _mediaSourceDisplayOrderModifiable;
+}
+
+@property <_HMTelevisionProfileDelegate> *delegate;
+@property (retain) NSArray *mediaSourceDisplayOrder;
+@property (readonly) bool mediaSourceDisplayOrderModifiable;
+
+- (void).cxx_destruct;
+- (void)_handleSourceDisplayOrderUpdated:(id)arg1;
+- (void)_notifyDelegateOfUpdatedSourceDisplayOrder:(id)arg1;
+- (void)_registerNotificationHandlers;
+- (id)delegate;
+- (id)initWithTelevisionService:(id)arg1 linkedServices:(id)arg2;
+- (bool)isMediaSourceDisplayOrderModifiable;
+- (id)mediaSourceDisplayOrder;
+- (bool)mediaSourceDisplayOrderModifiable;
+- (id)messageDestination;
+- (id)messageReceiveQueue;
+- (id)messageTargetUUID;
+- (void)setDelegate:(id)arg1;
+- (void)setMediaSourceDisplayOrder:(id)arg1;
+- (void)updateMediaSourceDisplayOrder:(id)arg1 completionHandler:(id /* block */)arg2;
+
+@end

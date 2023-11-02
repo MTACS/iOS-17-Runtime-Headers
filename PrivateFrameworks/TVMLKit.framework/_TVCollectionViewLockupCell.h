@@ -1,0 +1,38 @@
+
+@interface _TVCollectionViewLockupCell : TVContainerCollectionViewCell <TVAuxiliaryViewSelecting> {
+    UIView<TVAuxiliaryViewSelecting> * __selectingView;
+    <TVCollectionViewLockupCellDelegate> * _delegate;
+    struct { 
+        bool respondsToDidUnfocus; 
+        bool respondsToDidSelect; 
+        bool respondsToLayeredImageContainerLayerWithinCollectionViewCell; 
+    }  _delegateFlags;
+    bool  _pressIsAnimating;
+    bool  _unpressOnEndAnimating;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <TVCollectionViewLockupCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_clearPressState;
+- (bool)_descendantsShouldHighlight;
+- (void)_handleSelect;
+- (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
+- (void)_searchForFocusRegionsInContext:(id)arg1;
+- (id)_selectingView;
+- (void)_showPressState;
+- (id)delegate;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layeredImageContainerLayer;
+- (void)prepareForReuse;
+- (id)selectingView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })selectionMarginsForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+
+@end

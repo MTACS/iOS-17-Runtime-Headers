@@ -1,0 +1,4 @@
+
+@interface _TtC10StocksCoreP33_C33240B85C64332AF541B8E9B4D54DCB10DummyClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol DMCRFSnapshotIdentifier <NSObject>
+
+@end

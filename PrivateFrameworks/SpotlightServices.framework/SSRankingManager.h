@@ -1,0 +1,91 @@
+
+@interface SSRankingManager : NSObject {
+    NSSet * _allowedTopHitSections;
+    double  _blendingTime;
+    bool  _bullseyeRankingEnabled;
+    bool  _isCancelled;
+    NSMutableString * _logValues;
+    NSString * _query;
+    PRSRankingConfiguration * _rankingConfiguration;
+}
+
+@property (retain) NSSet *allowedTopHitSections;
+@property (nonatomic) double blendingTime;
+@property (nonatomic) bool bullseyeRankingEnabled;
+@property bool isCancelled;
+@property (nonatomic, retain) NSMutableString *logValues;
+@property (retain) NSString *query;
+@property (nonatomic, retain) PRSRankingConfiguration *rankingConfiguration;
+
++ (void)determineTopHitsForSafariSection:(id)arg1 forQuery:(id)arg2;
++ (void)extractThresholdABValues:(id)arg1 forLanguage:(id)arg2;
++ (void)fetchDuetValues;
++ (id)getCoreDuetValues;
++ (id)getSuggestionsRankingThresholds;
++ (id)getTopHitItems:(id)arg1;
++ (void)initialize;
++ (id)jsonStringFromDictionary:(id)arg1;
++ (id)keyForIntervalType:(long long)arg1;
++ (void)logSections:(id)arg1 prefix:(id)arg2 query:(id)arg3;
++ (void)moveSafariTopHitsToTopOfSection:(id)arg1;
++ (id)nominateServerTopHitForSection:(id)arg1 queryString:(id)arg2 language:(id)arg3;
++ (void)prepareTopHitsParametersForLanguage:(id)arg1;
++ (id)rankLocalBundles:(id)arg1;
++ (void)rankLocalBundlesUsingL3Score:(id)arg1;
++ (id)rankLocalBundlesUsingOriginalL2ScoreAndRules:(id)arg1;
++ (void)reloadCommittedSearchParametersFromTrial;
++ (void)reloadLocaleSpecificMatchingParameters;
++ (void)reloadRankingParametersFromTrial;
++ (void)reloadRecencyThresholds;
++ (void)reloadSuggestionsRankingThresholds;
++ (void)reloadTopHitsParametersFromTrial;
+
+- (void).cxx_destruct;
+- (id)CEPValuesForTTR;
+- (void)addCEPValuesForTTR;
+- (id)allowedTopHitSections;
+- (void)applyTopHitRankingPolicyToSection:(id)arg1 topResultSection:(id)arg2 maxTopHitCount:(long long)arg3 isShortcut:(bool)arg4;
+- (id)applyTopSectionPolicy:(id)arg1 withTopHitSection:(id)arg2 isPeopleSearch:(bool)arg3 queryKind:(unsigned long long)arg4 correction:(id)arg5 queryLength:(unsigned long long)arg6 ranker:(id)arg7;
+- (double)blendingTime;
+- (bool)bullseyeRankingEnabled;
+- (void)calculateLikelihoodAndPriorForSection:(id)arg1 currentTime:(double)arg2 shortcutResult:(id)arg3 queryId:(unsigned long long)arg4 ranker:(id)arg5 nominateLocalTopHit:(bool)arg6;
+- (void)cancel;
+- (long long)compareDate:(id)arg1 withDate:(id)arg2;
+- (void)finalizeLog;
+- (float)freshnessAdjustmentForAppResult:(id)arg1 section:(id)arg2 freshnessBeforeAdjustment:(float)arg3 topicality:(float)arg4 engagement:(float)arg5 launchCount:(float)arg6 launchCountTotal:(float)arg7 nAppResultsWithLaunchCount:(unsigned long long)arg8 launchPortion:(float*)arg9;
+- (id)groupSectionsByCategory:(id)arg1 genreMap:(id)arg2 topSections:(id)arg3;
+- (id)initWithQuery:(id)arg1;
+- (bool)isCancelled;
+- (id)keyForSection:(id)arg1;
+- (float)likelihoodAdjustmentForMailAndNotesResult:(float)arg1 freshness:(float)arg2 topicality:(float)arg3 engagement:(float)arg4 numQueryTokens:(unsigned long long)arg5 queryLength:(unsigned long long)arg6;
+- (void)logPommesScoringForRankingItem:(id)arg1 queryId:(unsigned long long)arg2 query:(id)arg3 bundleID:(id)arg4 name:(id)arg5 topicality:(float)arg6 freshness:(float)arg7 engagement:(float)arg8 likelihood:(float)arg9 launchPortion:(float)arg10 launchCount:(float)arg11 engagedInSpotlight:(bool)arg12 exactMatchedLaunchString:(bool)arg13 lastUsedDate:(id)arg14 recentEngagementDateInSpotlight:(id)arg15 recentEngagementDateOutSpotlight:(id)arg16;
+- (id)logValues;
+- (id)makeTopHitSectionUsingSections:(id)arg1 withItemRanker:(id)arg2 sectionHeader:(id)arg3 shortcutResult:(id)arg4 isBullseyeNonCommittedSearch:(bool)arg5 isBullseyeCommittedSearch:(bool)arg6 parsecEnabled:(bool)arg7 maxNumAppsInTopHitSection:(unsigned long long)arg8;
+- (id)nominateLocalTopHitsFromSections:(id)arg1 withItemRanker:(id)arg2 sectionHeader:(id)arg3 maxInitiallyVisibleResults:(unsigned long long)arg4 shortcutResult:(id)arg5 isBullseyeNonCommittedSearch:(bool)arg6 isBullseyeCommittedSearch:(bool)arg7 parsecEnabled:(bool)arg8 maxNumAppsInTopHitSection:(unsigned long long)arg9 queryId:(unsigned long long)arg10;
+- (id)query;
+- (id)rankAppsAtTopForScopedSearchWithSections:(id)arg1;
+- (id)rankSectionsUsingBundleIDToSectionMapping:(id)arg1 withRanker:(id)arg2 preferredBundleIds:(id)arg3 isScopedSearch:(bool)arg4 queryId:(unsigned long long)arg5 isCJK:(bool)arg6 isBullseyeNonCommittedSearch:(bool)arg7 isBullseyeCommittedSearch:(bool)arg8 isPeopleSearch:(bool)arg9;
+- (id)rankingConfiguration;
+- (void)refineSectionShowingVisibleResultsWithBetterTextMatches:(id)arg1;
+- (id)relativeRankWithAbsRank:(id)arg1 numberValues:(unsigned long long)arg2;
+- (id)removeBlockListedSectionsForMapping:(id)arg1;
+- (id)removeBlockListedSectionsForMapping:(id)arg1 withRankingConfiguration:(id)arg2;
+- (double)roundedValueForScore:(double)arg1;
+- (bool)sectionContainsOnlyStaleApps:(id)arg1;
+- (bool)sectionDoesNotContainMoreRecentlyUsedApps:(id)arg1 lastUsedDate:(id)arg2;
+- (bool)sectionsContainsOnlyOneAppSection:(id)arg1;
+- (bool)sectionsContainsShortcutResult:(id)arg1 shortcutResult:(id)arg2;
+- (void)sendTTRLogsWithSections:(id)arg1 searchString:(id)arg2 queryKind:(unsigned long long)arg3 isCommittedSearch:(bool)arg4 parsecCameLaterThanSRT:(bool)arg5;
+- (void)setAllowedTopHitSections:(id)arg1;
+- (void)setBlendingTime:(double)arg1;
+- (void)setBullseyeRankingEnabled:(bool)arg1;
+- (void)setIsCancelled:(bool)arg1;
+- (void)setLogValues:(id)arg1;
+- (void)setQuery:(id)arg1;
+- (void)setRankingConfiguration:(id)arg1;
+- (float)topicalityAdjustmentForContactsResult:(id)arg1 topicalityBeforeAdjustment:(float)arg2 freshness:(float)arg3;
+- (void)updateServerScoresUsingBlockOrder:(id)arg1 bundleFeatures:(id)arg2;
+- (void)updateWithNewRankingInfo:(id)arg1;
+- (void)withinSectionTopHitNomination:(id)arg1 withItemRanker:(id)arg2;
+
+@end

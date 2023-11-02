@@ -1,0 +1,78 @@
+
+@interface SPProtoAudioFileQueuePlayer : PBCodable <NSCopying> {
+    SPProtoObjectMessage * _advanceToNextItem;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _appendItem;
+    SPProtoObjectMessage * _destroy;
+    SPProtoObjectMessage * _removeAllItems;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _removeItem;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _replaceCurrentItem;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _setCurrentItem;
+    SPProtoAudioFileQueuePlayerSetRate * _setRate;
+    SPProtoAudioFilePlayerStatus * _setStatus;
+    SPProtoAudioFileQueuePlayerSetItems * _upsertWithItems;
+}
+
+@property (nonatomic, retain) SPProtoObjectMessage *advanceToNextItem;
+@property (nonatomic, retain) SPProtoAudioFilePlayerUpdateContainedIdentifier *appendItem;
+@property (nonatomic, retain) SPProtoObjectMessage *destroy;
+@property (nonatomic, readonly) bool hasAdvanceToNextItem;
+@property (nonatomic, readonly) bool hasAppendItem;
+@property (nonatomic, readonly) bool hasDestroy;
+@property (nonatomic, readonly) bool hasRemoveAllItems;
+@property (nonatomic, readonly) bool hasRemoveItem;
+@property (nonatomic, readonly) bool hasReplaceCurrentItem;
+@property (nonatomic, readonly) bool hasSetCurrentItem;
+@property (nonatomic, readonly) bool hasSetRate;
+@property (nonatomic, readonly) bool hasSetStatus;
+@property (nonatomic, readonly) bool hasUpsertWithItems;
+@property (nonatomic, retain) SPProtoObjectMessage *removeAllItems;
+@property (nonatomic, retain) SPProtoAudioFilePlayerUpdateContainedIdentifier *removeItem;
+@property (nonatomic, retain) SPProtoAudioFilePlayerUpdateContainedIdentifier *replaceCurrentItem;
+@property (nonatomic, retain) SPProtoAudioFilePlayerUpdateContainedIdentifier *setCurrentItem;
+@property (nonatomic, retain) SPProtoAudioFileQueuePlayerSetRate *setRate;
+@property (nonatomic, retain) SPProtoAudioFilePlayerStatus *setStatus;
+@property (nonatomic, retain) SPProtoAudioFileQueuePlayerSetItems *upsertWithItems;
+
+- (void).cxx_destruct;
+- (id)advanceToNextItem;
+- (id)appendItem;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)destroy;
+- (id)dictionaryRepresentation;
+- (bool)hasAdvanceToNextItem;
+- (bool)hasAppendItem;
+- (bool)hasDestroy;
+- (bool)hasRemoveAllItems;
+- (bool)hasRemoveItem;
+- (bool)hasReplaceCurrentItem;
+- (bool)hasSetCurrentItem;
+- (bool)hasSetRate;
+- (bool)hasSetStatus;
+- (bool)hasUpsertWithItems;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)removeAllItems;
+- (id)removeItem;
+- (id)replaceCurrentItem;
+- (void)setAdvanceToNextItem:(id)arg1;
+- (void)setAppendItem:(id)arg1;
+- (id)setCurrentItem;
+- (void)setDestroy:(id)arg1;
+- (id)setRate;
+- (void)setRemoveAllItems:(id)arg1;
+- (void)setRemoveItem:(id)arg1;
+- (void)setReplaceCurrentItem:(id)arg1;
+- (void)setSetCurrentItem:(id)arg1;
+- (void)setSetRate:(id)arg1;
+- (void)setSetStatus:(id)arg1;
+- (id)setStatus;
+- (void)setUpsertWithItems:(id)arg1;
+- (id)sockPuppetMessage;
+- (id)upsertWithItems;
+- (void)writeTo:(id)arg1;
+
+@end

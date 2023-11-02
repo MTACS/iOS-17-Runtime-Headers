@@ -1,0 +1,108 @@
+
+@interface FlexSong : FlexSongBackend {
+    NSDictionary * _analysisData;
+    NSObject<FlexSongAssetProviderProtocol> * _assetProvider;
+    NSString * _audioFileExtension;
+    NSArray * _bodySegments;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _cachedNaturalDuration;
+    NSMutableDictionary * _segmentCache;
+}
+
+@property (nonatomic, readonly) NSObject<FlexSongAssetProviderProtocol> *assetProvider;
+@property (nonatomic, readonly) NSString *audioFileExtension;
+@property (nonatomic, readonly) NSArray *bodySegments;
+@property (nonatomic, readonly) NSArray *crossFadeSegments;
+@property (nonatomic, readonly) NSArray *introSegments;
+@property (nonatomic, readonly) NSArray *mainSegments;
+@property (nonatomic, readonly) NSArray *outroSegments;
+@property (nonatomic, readonly) NSArray *transSegments;
+
++ (long long)_durationInSamplesToReserveForOutroSegment:(id)arg1 withOptions:(id)arg2;
++ (long long)_findEarlyFadeStartOffsetInSamplesForOutroSegment:(id)arg1 withOptions:(id)arg2;
++ (long long)_findMaxLengthInSamplesToReserveForOutroSegment:(id)arg1 withOptions:(id)arg2;
++ (long long)_findMinLengthInSamplesForEarlyFadeOutForOutroSegment:(id)arg1 withOptions:(id)arg2;
++ (bool)_transitionIsPossibleFromSegment:(id)arg1 toSegment:(id)arg2 forBodyClipPlaylist:(id)arg3;
++ (id)loadSongInFolderWithPath:(id)arg1;
++ (id)numberToString:(long long)arg1;
++ (id)outroInfoForClipPlaylist:(id)arg1;
+
+- (void).cxx_destruct;
+- (long long)_actualOutroDurationForAssemblyList:(id)arg1 currentDuration:(long long)arg2;
+- (bool)_addBodySegmentsForAssemblyList:(id)arg1 forDuration:(long long)arg2 unusedDuration:(long long*)arg3 testingContext:(id)arg4 timedOut:(bool*)arg5;
+- (bool)_addIntroSegmentsToAssemblyList:(id)arg1 forDuration:(long long)arg2 testingContext:(id)arg3;
+- (bool)_addOutroSegmentsToAssemblyList:(id)arg1 forDuration:(long long)arg2 allowTrim:(bool)arg3 testingContext:(id)arg4;
+- (bool)_addSegment:(id)arg1 withDuration:(long long)arg2 toAssemblyList:(id)arg3 indexOfNewSegment:(long long*)arg4;
+- (bool)_addSegment:(id)arg1 withDuration:(long long)arg2 toAssemblyList:(id)arg3 timeRemaining:(long long)arg4 reusedSegment:(id*)arg5 indexofNewSegment:(long long*)arg6;
+- (bool)_buildIntroAndOutroOnlySegmentAssemblyList:(id)arg1 forDuration:(long long)arg2 testingContext:(id)arg3;
+- (bool)_buildSegmentAssemblyList:(id)arg1 forDuration:(long long)arg2 withOptions:(id)arg3 testingContext:(id)arg4;
+- (id)_cacheObjectForKey:(id)arg1;
+- (void)_cacheSegmentsByType;
+- (id)_clipPlaylistForDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withOptions:(id)arg2 testingContext:(id)arg3;
+- (id)_decodedMainSegmentsFromCache;
+- (void)_destroyCache;
+- (id)_fullSongLoopedClipPlaylistForDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withOptions:(id)arg2 testingContext:(id)arg3;
+- (unsigned long long)_highestIndexForSegmentType:(unsigned long long)arg1;
+- (void)_loadAnalysisData;
+- (void)_loadSegments;
+- (id)_longestSegmentForType:(unsigned long long)arg1;
+- (id)_longestSegmentsForType:(unsigned long long)arg1;
+- (id)_mainSegmentsFromCache;
+- (long long)_maxIntroDuration;
+- (long long)_maxOutroDuration;
+- (id)_metadataDictFromCache;
+- (long long)_minBodySegmentDuration;
+- (long long)_minIntroDuration;
+- (long long)_minOutroDuration;
+- (long long)_minimumPermittedIntroAndOutroDuration;
+- (id)_naturalDurationAssemblyList;
+- (void)_populateCache;
+- (bool)_rebuildBodySegmentsInAssemblyList:(id)arg1 forDuration:(long long)arg2 unusedDuration:(long long*)arg3 testingContext:(id)arg4;
+- (void)_removeSegmentInfo:(id)arg1 fromAssemblyList:(id)arg2;
+- (bool)_removeUnpermittedTransitionsInAssemblyList:(id)arg1 final:(bool)arg2 testingContext:(id)arg3 removedIndexes:(id)arg4;
+- (bool)_removeUnpermittedTransitionsInAssemblyList:(id)arg1 final:(bool)arg2 testingContext:(id)arg3 removedIndexes:(id)arg4 conflictList:(id)arg5;
+- (long long)_sampleDurationOfClipPlaylist:(id)arg1;
+- (long long)_samplesForDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (id)_segmentsForIndex:(unsigned long long)arg1 andType:(unsigned long long)arg2;
+- (id)_segmentsforType:(unsigned long long)arg1;
+- (void)_sequenceBodySegmentList:(id)arg1 forIndexes:(id)arg2;
+- (void)_setupInitialAssets:(id)arg1;
+- (id)_shortestSegmentForType:(unsigned long long)arg1;
+- (id)_shortestSegmentsForType:(unsigned long long)arg1;
+- (id)_sortFlexSegmentsShortestToLongest:(id)arg1;
+- (id)_transitionSegmentForSegmentInfo:(id)arg1 fromBarIndex:(long long)arg2 inSegmentList:(id)arg3;
+- (id)_transitionSegmentForSegmentInfo:(id)arg1 toSegmentInfo:(id)arg2 fromBarIndex:(long long)arg3 inSegmentList:(id)arg4;
+- (bool)_updateTransitionBodySegmentsForAssemblyList:(id)arg1 usingNewSegment:(id)arg2 indexOfNewTransitionSegment:(id)arg3;
+- (bool)_validateAuthoringIssuesInRendition:(id)arg1 failureReason:(id*)arg2;
+- (bool)_validateStructureForRendition:(id)arg1 failureReason:(id*)arg2;
+- (bool)_validateTransitionsInRendition:(id)arg1 failureReason:(id*)arg2;
+- (bool)_verifyAssetsForSegment:(id)arg1 withFailureReason:(id*)arg2;
+- (id)analysisData;
+- (id)assetProvider;
+- (id)audioFileExtension;
+- (id)bodySegments;
+- (bool)canPlay;
+- (id)crossFadeSegments;
+- (id)description;
+- (id)encodeAsDictionary;
+- (id)idealDurations;
+- (id)initCommonWithUID:(id)arg1 songName:(id)arg2 artistName:(id)arg3 tagIDs:(id)arg4 keywords:(id)arg5 weightedKeywords:(id)arg6 hidden:(bool)arg7 sampleRate:(long long)arg8 mainSegments:(id)arg9 crossFadeSegments:(id)arg10 audioFileExtension:(id)arg11 audioEncoderPresetName:(id)arg12 metadataVersion:(long long)arg13 customOptions:(id)arg14;
+- (id)initWithDictionary:(id)arg1 assets:(id)arg2;
+- (id)initWithUID:(id)arg1 songName:(id)arg2 artistName:(id)arg3 tagIDs:(id)arg4 keywords:(id)arg5 weightedKeywords:(id)arg6 hidden:(bool)arg7 sampleRate:(long long)arg8 mainSegments:(id)arg9 crossFadeSegments:(id)arg10 assets:(id)arg11 audioFileExtension:(id)arg12 audioEncoderPresetName:(id)arg13 metadataVersion:(long long)arg14 customOptions:(id)arg15;
+- (id)introSegments;
+- (bool)isLoaded;
+- (id)mainSegments;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minimumDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })naturalDuration;
+- (id)outroSegments;
+- (id)renditionForDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withOptions:(id)arg2 testingContext:(id)arg3;
+- (id)timedMetadataItemsWithIdentifier:(id)arg1 forRendition:(id)arg2;
+- (id)transSegments;
+- (bool)verifyAssetsWithFailureReason:(id*)arg1;
+- (bool)verifyRendition:(id)arg1 forDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 failureReason:(id*)arg3;
+
+@end

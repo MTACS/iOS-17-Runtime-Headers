@@ -1,0 +1,4 @@
+
+@protocol MDSnapshotMap <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface MCProfileSummaryCell : DMCProfileSummaryCell
+
+@end

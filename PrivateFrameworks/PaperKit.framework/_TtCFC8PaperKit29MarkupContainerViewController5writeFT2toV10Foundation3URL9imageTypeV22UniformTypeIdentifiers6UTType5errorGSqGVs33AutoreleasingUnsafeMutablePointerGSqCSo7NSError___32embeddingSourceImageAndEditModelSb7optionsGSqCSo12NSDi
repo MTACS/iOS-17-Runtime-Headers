@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>_TtCFC8PaperKit29MarkupContainerViewController5writeFT2toV10Foundation3URL9imageTypeV22UniformTypeIdentifiers6UTType5errorGSqGVs33AutoreleasingUnsafeMutablePointerGSqCSo7NSError___32embeddingSourceImageAndEditModelSb7optionsGSqCSo12NSDictionary__SbL_13ResultWrapped.h</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+    body { margin: 1em; }
+    pre { font: 11pt/1.25 ui-monospace, "SF Mono", Menlo, monospace; }
+    a { color: #af52de; }
+    pre { white-space: pre-wrap; }
+    header, footer { color: #8e8e93; }
+    header { white-space: pre; }
+    footer { max-width: 700px; }
+    hr { border: 0; border-top: 1px solid #c6c6c8; }
+    .download { text-decoration: none; }
+    @media (prefers-color-scheme: dark) {
+        body { background: black; color: white; }
+        a { color: #bf5af2; }
+        hr { border-top-color: #333335; }
+    }
+    </style>
+</head>
+<body>
+<pre><header>
+</header><hr>
+
+/PrivateFrameworks/PaperKit.framework/_TtCFC8PaperKit29MarkupContainerViewController5writeFT2toV10Foundation3URL9imageTypeV22UniformTypeIdentifiers6UTType5errorGSqGVs33AutoreleasingUnsafeMutablePointerGSqCSo7NSError___32embeddingSourceImageAndEditModelSb7optionsGSqCSo12NSDictionary__SbL_13ResultWrapped.h
+
+
+@interface _TtCFC8PaperKit29MarkupContainerViewController5writeFT2toV10Foundation3URL9imageTypeV22UniformTypeIdentifiers6UTType5errorGSqGVs33AutoreleasingUnsafeMutablePointerGSqCSo7NSError___32embeddingSourceImageAndEditModelSb7optionsGSqCSo12NSDictionary__SbL_13ResultWrapped : _TtCs12_SwiftObject {
+    void result;
+}
+
+@end

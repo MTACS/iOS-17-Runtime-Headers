@@ -1,0 +1,4 @@
+
+@protocol VMMessageManagerXPCClient <NSObject>
+
+@end

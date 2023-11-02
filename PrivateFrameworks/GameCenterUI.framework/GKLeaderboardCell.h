@@ -1,0 +1,86 @@
+
+@interface GKLeaderboardCell : UICollectionViewCell {
+    NSString * _bundleIdentifier;
+    UIStackView * _containerStackView;
+    UILabel * _countLabel;
+    NSArray * _customBackgroundBlur;
+    NSString * _dataToken;
+    UIVisualEffectView * _effectView;
+    UIView * _iconContainer;
+    NSLayoutConstraint * _iconContainerHeight;
+    UIImageView * _iconView;
+    NSString * _imageName;
+    GKLeaderboard * _leaderboard;
+    GKLeaderboardSet * _leaderboardSet;
+    NSLayoutConstraint * _minimumIconHeight;
+    UIView * _overlayView;
+    UILabel * _titleLabel;
+    UIColor * _titleLabelColor;
+}
+
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, retain) UIStackView *containerStackView;
+@property (nonatomic, retain) UILabel *countLabel;
+@property (nonatomic, retain) NSArray *customBackgroundBlur;
+@property (nonatomic, retain) NSString *dataToken;
+@property (nonatomic, retain) UIVisualEffectView *effectView;
+@property (nonatomic, retain) UIView *iconContainer;
+@property (nonatomic, retain) NSLayoutConstraint *iconContainerHeight;
+@property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic, retain) NSString *imageName;
+@property (nonatomic, retain) GKLeaderboard *leaderboard;
+@property (nonatomic, retain) GKLeaderboardSet *leaderboardSet;
+@property (nonatomic, retain) NSLayoutConstraint *minimumIconHeight;
+@property (nonatomic, retain) UIView *overlayView;
+@property (nonatomic, readonly) UIView *popoverSourceView;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UIColor *titleLabelColor;
+
+- (void).cxx_destruct;
+- (void)addVisualEffect;
+- (void)awakeFromNib;
+- (id)bundleIdentifier;
+- (bool)canBecomeFocused;
+- (id)containerStackView;
+- (id)countLabel;
+- (id)customBackgroundBlur;
+- (id)dataToken;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)effectView;
+- (id)iconContainer;
+- (id)iconContainerHeight;
+- (id)iconView;
+- (id)imageName;
+- (id)leaderboard;
+- (id)leaderboardSet;
+- (id)minimumIconHeight;
+- (id)overlayView;
+- (id)popoverSourceView;
+- (void)setBundleIdentifier:(id)arg1;
+- (void)setContainerStackView:(id)arg1;
+- (void)setCountLabel:(id)arg1;
+- (void)setCustomBackgroundBlur:(id)arg1;
+- (void)setDataToken:(id)arg1;
+- (void)setEffectView:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setIconContainer:(id)arg1;
+- (void)setIconContainerHeight:(id)arg1;
+- (void)setIconView:(id)arg1;
+- (void)setImageName:(id)arg1;
+- (void)setLeaderboard:(id)arg1;
+- (void)setLeaderboardSet:(id)arg1;
+- (void)setMinimumIconHeight:(id)arg1;
+- (void)setOverlayView:(id)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (void)setTitleLabelColor:(id)arg1;
+- (void)setupFallbackIcon;
+- (id)titleLabel;
+- (id)titleLabelColor;
+- (void)updateImage;
+- (void)updateLayout;
+- (void)updateOverlay;
+- (void)updateRank;
+- (void)updateSummary;
+
+@end

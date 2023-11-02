@@ -1,0 +1,41 @@
+
+@interface FCPurchase : NSObject {
+    NSNumber * _appAdamID;
+    NSString * _bundleID;
+    FCIntroductoryOffer * _introductoryOffer;
+    NSString * _offerName;
+    SKMutablePayment * _payment;
+    NSNumber * _price;
+    NSString * _purchaseID;
+    NSNumber * _storeExternalVersion;
+    NSString * _subscriptionPeriodInISO_8601;
+    NSString * _subscriptionPriceFormatted;
+}
+
+@property (nonatomic, readonly) NSNumber *appAdamID;
+@property (nonatomic, readonly) NSString *bundleID;
+@property (getter=isFreeTrialEligible, nonatomic, readonly) bool freeTrialEligible;
+@property (nonatomic, readonly) FCIntroductoryOffer *introductoryOffer;
+@property (nonatomic, readonly) NSString *offerName;
+@property (nonatomic, readonly) SKMutablePayment *payment;
+@property (nonatomic, readonly) NSNumber *price;
+@property (nonatomic, readonly) NSString *purchaseID;
+@property (nonatomic, readonly) NSNumber *storeExternalVersion;
+@property (nonatomic, readonly) NSString *subscriptionPeriodInISO_8601;
+@property (nonatomic, readonly) NSString *subscriptionPriceFormatted;
+
+- (void).cxx_destruct;
+- (id)appAdamID;
+- (id)bundleID;
+- (id)initWithPurchaseID:(id)arg1 appAdamID:(id)arg2 subscriptionPriceFormatted:(id)arg3 subscriptionPeriodInISO_8601:(id)arg4 offerName:(id)arg5 storeExternalVersion:(id)arg6 bundleID:(id)arg7 price:(id)arg8 introOffer:(id)arg9 payment:(id)arg10;
+- (id)introductoryOffer;
+- (bool)isFreeTrialEligible;
+- (id)offerName;
+- (id)payment;
+- (id)price;
+- (id)purchaseID;
+- (id)storeExternalVersion;
+- (id)subscriptionPeriodInISO_8601;
+- (id)subscriptionPriceFormatted;
+
+@end

@@ -1,0 +1,85 @@
+
+@interface MURelatedPlacesSectionController : MUPlaceSectionController <MUPlaceSectionControlling, MUPlaceTilesListViewDelegate, MUPlaceTilesViewDelegate, MUScrollAnalyticActionObserving> {
+    bool  _active;
+    MURelatedPlaceSectionControllerConfiguration * _configuration;
+    bool  _hasFetchedFollowUpRequest;
+    bool  _isFollowUpRequestInProgress;
+    MUPlaceTilesListView * _listView;
+    NSArray * _mapItemList;
+    <MKMapServiceTicket> * _nearbyPlacesTicket;
+    GEORelatedPlaceList * _relatedPlaceListFromFollowUpRequest;
+    <MURelatedPlacesSectionControllerDelegate> * _relatedPlacesDelegate;
+    MUPlaceSectionHeaderViewModel * _sectionHeaderViewModel;
+    MUPlaceSectionView * _sectionView;
+    <MKMapServiceTicket> * _ticket;
+    MUPlaceTilesView * _tilesView;
+}
+
+@property (getter=isActive, nonatomic) bool active;
+@property (nonatomic) <MUInfoCardAnalyticsDelegate> *analyticsDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) GEORelatedPlaceList *effectiveRelatedPlaceList;
+@property (nonatomic, readonly) bool hasContent;
+@property (nonatomic) bool hasFetchedFollowUpRequest;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isFollowUpRequestInProgress;
+@property (nonatomic, readonly) GEORelatedPlaceModuleConfiguration *moduleConfig;
+@property (nonatomic, readonly) bool needsToPerformRefinement;
+@property (nonatomic, retain) GEORelatedPlaceList *relatedPlaceListFromFollowUpRequest;
+@property (nonatomic) <MURelatedPlacesSectionControllerDelegate> *relatedPlacesDelegate;
+@property (nonatomic, readonly) MUPlaceSectionFooterViewModel *sectionFooterViewModel;
+@property (nonatomic, readonly) MUPlaceSectionHeaderViewModel *sectionHeaderViewModel;
+@property (nonatomic, readonly) UIView *sectionView;
+@property (nonatomic, readonly) UIViewController *sectionViewController;
+@property (nonatomic, readonly) NSArray *sectionViews;
+@property (nonatomic, retain) MUPlaceCallToActionAppearance *submissionStatus;
+@property (readonly) Class superclass;
+@property (getter=isVertical, nonatomic, readonly) bool vertical;
+
+- (void).cxx_destruct;
+- (void)_buildInitialContent;
+- (void)_cancelFollowUpRequestIfNeeded;
+- (void)_cancelPlaceRefinementIfNeeded;
+- (void)_displayTilesForViewModels:(id)arg1;
+- (void)_handleViewModel:(id)arg1;
+- (id)_moduleTitle;
+- (void)_notifyDelegateForSeeAll;
+- (void)_notifyDelegateOfSelectedMapItem:(id)arg1;
+- (void)_populateAnalyticsModule:(id)arg1;
+- (void)_refineHikingTrailListWithCompletion:(id /* block */)arg1;
+- (void)_refinePlaceAndNotifyDelegate:(id)arg1;
+- (void)_refineRelatedPlaceListWithCompletion:(id /* block */)arg1;
+- (void)_seeAllTapped;
+- (void)_setupSectionView;
+- (void)_updateSection;
+- (void)_updateWithListFromFollowUpRequest:(id)arg1;
+- (int)analyticsModuleType;
+- (id)effectiveRelatedPlaceList;
+- (bool)hasContent;
+- (bool)hasFetchedFollowUpRequest;
+- (id)initWithMapItem:(id)arg1 configuration:(id)arg2;
+- (bool)isActive;
+- (bool)isFollowUpRequestInProgress;
+- (bool)isImpressionable;
+- (bool)isVertical;
+- (id)moduleConfig;
+- (bool)needsToPerformRefinement;
+- (unsigned long long)numInlineItems;
+- (void)performInstrumentationForScrollLeft;
+- (void)performInstrumentationForScrollRight;
+- (void)performNearbyPlacesFollowUpRequest;
+- (void)placeTileCollectionView:(id)arg1 didTapOnAccessoryViewModel:(id)arg2;
+- (void)placeTileCollectionView:(id)arg1 didTapOnViewModel:(id)arg2;
+- (void)placeTilesListView:(id)arg1 didSelectViewModel:(id)arg2;
+- (id)relatedPlaceListFromFollowUpRequest;
+- (id)relatedPlacesDelegate;
+- (id)sectionHeaderViewModel;
+- (id)sectionView;
+- (void)setActive:(bool)arg1;
+- (void)setHasFetchedFollowUpRequest:(bool)arg1;
+- (void)setIsFollowUpRequestInProgress:(bool)arg1;
+- (void)setRelatedPlaceListFromFollowUpRequest:(id)arg1;
+- (void)setRelatedPlacesDelegate:(id)arg1;
+
+@end

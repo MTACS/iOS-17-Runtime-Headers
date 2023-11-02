@@ -1,0 +1,72 @@
+
+@protocol PXMetadataDetailsContentItem <NSObject>
+
+@required
+
+- (bool)ipx_isFavorite;
+- (NSNumber *)px_FPS;
+- (NSNumber *)px_ISORating;
+- (NSNumber *)px_aperture;
+- (NSString *)px_assetDescription;
+- (unsigned int)px_audioTrackFormat;
+- (NSNumber *)px_bitRate;
+- (NSString *)px_burstUUID;
+- (bool)px_canUseLocation;
+- (NSString *)px_codec;
+- (NSDate *)px_creationDate;
+- (NSNumber *)px_digitalZoomRatio;
+- (NSNumber *)px_duration;
+- (NSNumber *)px_exposureBias;
+- (unsigned short)px_fetchCloudLocalState;
+- (unsigned long long)px_fileType;
+- (NSString *)px_filename;
+- (NSNumber *)px_filesize;
+- (NSNumber *)px_flash;
+- (NSNumber *)px_focalLength;
+- (NSNumber *)px_focalLengthIn35mm;
+- (NSString *)px_formattedCameraModel;
+- (bool)px_hasKeywords;
+- (bool)px_isActionModeVideo;
+- (bool)px_isAudio;
+- (bool)px_isCinematicVideo;
+- (bool)px_isDepthEffect;
+- (bool*)px_isExtendedPropertiesProcessed;
+- (bool)px_isH264;
+- (bool)px_isHEVC;
+- (bool)px_isHidden;
+- (bool)px_isImage;
+- (bool)px_isInTrash;
+- (bool)px_isLivePhoto;
+- (bool)px_isPanorama;
+- (bool)px_isProRes;
+- (bool)px_isScreenRecording;
+- (bool)px_isScreenshot;
+- (bool)px_isSelfie;
+- (bool)px_isSloMo;
+- (bool)px_isTimelapse;
+- (bool)px_isVideo;
+- (NSString *)px_lensModel;
+- (NSString *)px_localizedGeoDescriptionForRTL:(bool)arg1;
+- (NSString *)px_make;
+- (NSNumber *)px_meteringMode;
+- (NSString *)px_model;
+- (NSDate *)px_originalCreationDate;
+- (unsigned long long)px_originalFileType;
+- (CLLocation *)px_originalLocation;
+- (NSTimeZone *)px_originalTimeZone;
+- (unsigned long long)px_originalType;
+- (bool)px_representsBurst;
+- (struct PXIntSize_st { unsigned long long x1; unsigned long long x2; })px_resolution;
+- (bool)px_reverseLocationDataIsValid;
+- (NSNumber *)px_sampleRate;
+- (NSNumber *)px_semanticStylePreset;
+- (bool)px_shotWithNightMode;
+- (NSNumber *)px_shutterSpeed;
+- (bool)px_supportsImageProperties;
+- (NSTimeZone *)px_timeZone;
+- (NSString *)px_title;
+- (unsigned long long)px_type;
+- (NSString *)px_uniformTypeIdentifier;
+- (NSNumber *)px_whiteBalance;
+
+@end

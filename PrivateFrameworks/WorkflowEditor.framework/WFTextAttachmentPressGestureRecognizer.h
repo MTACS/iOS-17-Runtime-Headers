@@ -1,0 +1,4 @@
+
+@interface WFTextAttachmentPressGestureRecognizer : UILongPressGestureRecognizer
+
+@end

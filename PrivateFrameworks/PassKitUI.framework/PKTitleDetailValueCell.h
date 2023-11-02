@@ -1,0 +1,80 @@
+
+@interface PKTitleDetailValueCell : UICollectionViewListCell {
+    unsigned long long  _accessory;
+    UIColor * _backgroundColor;
+    UIImageView * _checkmarkView;
+    UIColor * _defaultDetailColor;
+    UIFont * _defaultDetailFont;
+    UIFont * _defaultTitleFont;
+    UIFont * _defaultValueFont;
+    UIColor * _detailColor;
+    UIFont * _detailFont;
+    UIImage * _detailIcon;
+    NSString * _detailText;
+    double  _horizontalMargin;
+    double  _labelPadding;
+    PKTitleDetailValueTextView * _textView;
+    UIColor * _titleColor;
+    UIFont * _titleFont;
+    NSString * _titleText;
+    UIColor * _valueColor;
+    UIFont * _valueFont;
+    NSString * _valueText;
+    double  _verticalMargin;
+}
+
+@property (nonatomic) unsigned long long accessory;
+@property (nonatomic, retain) UIColor *detailColor;
+@property (nonatomic, retain) UIFont *detailFont;
+@property (nonatomic, retain) UIImage *detailIcon;
+@property (nonatomic, copy) NSString *detailText;
+@property (nonatomic) double horizontalMargin;
+@property (nonatomic) double labelPadding;
+@property (nonatomic, retain) UIColor *titleColor;
+@property (nonatomic, retain) UIFont *titleFont;
+@property (nonatomic, copy) NSString *titleText;
+@property (nonatomic, retain) UIColor *valueColor;
+@property (nonatomic, retain) UIFont *valueFont;
+@property (nonatomic, copy) NSString *valueText;
+@property (nonatomic) double verticalMargin;
+
+- (void).cxx_destruct;
+- (void)_configureView;
+- (struct CGSize { double x1; double x2; })_layoutWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 isTemplateLayout:(bool)arg2;
+- (void)_resetValues;
+- (unsigned long long)accessory;
+- (id)detailColor;
+- (id)detailFont;
+- (id)detailIcon;
+- (id)detailText;
+- (double)horizontalMargin;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)labelPadding;
+- (void)layoutSubviews;
+- (void)prepareForReuse;
+- (void)setAccessory:(unsigned long long)arg1;
+- (void)setDetailColor:(id)arg1;
+- (void)setDetailFont:(id)arg1;
+- (void)setDetailIcon:(id)arg1;
+- (void)setDetailText:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setHorizontalMargin:(double)arg1;
+- (void)setLabelPadding:(double)arg1;
+- (void)setTitleColor:(id)arg1;
+- (void)setTitleFont:(id)arg1;
+- (void)setTitleText:(id)arg1;
+- (void)setValueColor:(id)arg1;
+- (void)setValueFont:(id)arg1;
+- (void)setValueText:(id)arg1;
+- (void)setVerticalMargin:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)titleColor;
+- (id)titleFont;
+- (id)titleText;
+- (id)valueColor;
+- (id)valueFont;
+- (id)valueText;
+- (double)verticalMargin;
+
+@end

@@ -1,0 +1,71 @@
+
+@interface PXPeopleSuggestionView : PXSmartScaleView {
+    NSDateFormatter * _dateFormatter;
+    UILabel * _dateLabel;
+    UIView * _dimView;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _faceRect;
+    PXPersonImageRequest * _imageRequest;
+    UIImageView * _imageView;
+    bool  _needsSpotlightUpdate;
+    CAShapeLayer * _spotlightLayer;
+    <PXPerson> * _suggestion;
+    UIView * _suggestionView;
+    bool  _validSpotlight;
+}
+
+@property (nonatomic, retain) NSDateFormatter *dateFormatter;
+@property (nonatomic, retain) UILabel *dateLabel;
+@property (nonatomic, retain) UIView *dimView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } faceRect;
+@property (nonatomic, retain) PXPersonImageRequest *imageRequest;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic) bool needsSpotlightUpdate;
+@property (nonatomic, retain) CAShapeLayer *spotlightLayer;
+@property (nonatomic, readonly) <PXPerson> *suggestion;
+@property (nonatomic, retain) UIView *suggestionView;
+@property (nonatomic) bool validSpotlight;
+
+- (void).cxx_destruct;
+- (double)_faceScale;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_scaledFaceRect;
+- (void)_updateDateFieldWithSuggestion:(id)arg1;
+- (void)_updateSpotlightAnimated:(bool)arg1;
+- (void)_updateSuggestionImageWithAnimatedSpotlight:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (void)commonInit;
+- (id)dateFormatter;
+- (id)dateLabel;
+- (id)dimView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceRect;
+- (id)imageRequest;
+- (id)imageView;
+- (id)init;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (bool)needsSpotlightUpdate;
+- (void)setDateFormatter:(id)arg1;
+- (void)setDateLabel:(id)arg1;
+- (void)setDimView:(id)arg1;
+- (void)setFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setImageRequest:(id)arg1;
+- (void)setImageView:(id)arg1;
+- (void)setNeedsSpotlightUpdate:(bool)arg1;
+- (void)setSpotlightLayer:(id)arg1;
+- (void)setSuggestion:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
+- (void)setSuggestionView:(id)arg1;
+- (void)setValidSpotlight:(bool)arg1;
+- (id)spotlightLayer;
+- (id)suggestion;
+- (id)suggestionView;
+- (bool)validSpotlight;
+- (void)viewScaleDidChange;
+
+@end

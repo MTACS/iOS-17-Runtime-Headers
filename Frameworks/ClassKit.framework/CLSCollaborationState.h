@@ -1,0 +1,98 @@
+
+@interface CLSCollaborationState : CLSObject <CLSAssetAdopter, CLSRelationable> {
+    NSURL * _assetURL;
+    NSMutableArray * _assetsToAddOrUpdate;
+    NSString * _classID;
+    long long  _domain;
+    long long  _domainVersion;
+    unsigned long long  _flags;
+    NSDictionary * _info;
+    NSString * _note;
+    NSString * _ownerPersonID;
+    NSString * _parentEntityName;
+    NSString * _recipientPersonID;
+    NSString * _senderPersonID;
+    NSString * _serverETag;
+    NSString * _serverExecutionID;
+    long long  _serverStatus;
+    long long  _state;
+    NSArray * assets;
+}
+
+@property (nonatomic, copy) NSURL *assetURL;
+@property (nonatomic, readonly) NSArray *assets;
+@property (nonatomic, retain) NSMutableArray *assetsToAddOrUpdate;
+@property (nonatomic, copy) NSString *classID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) long long domain;
+@property (nonatomic) long long domainVersion;
+@property (nonatomic) unsigned long long flags;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSDictionary *info;
+@property (nonatomic, copy) NSString *note;
+@property (nonatomic, copy) NSString *ownerPersonID;
+@property (nonatomic, copy) NSString *parentEntityName;
+@property (nonatomic, copy) NSString *recipientPersonID;
+@property (nonatomic, copy) NSString *senderPersonID;
+@property (nonatomic, copy) NSString *serverETag;
+@property (nonatomic, copy) NSString *serverExecutionID;
+@property (nonatomic) long long serverStatus;
+@property (nonatomic) long long state;
+@property (readonly) Class superclass;
+
++ (id)identifierForTargetObjectID:(id)arg1 ownerPersonID:(id)arg2 domain:(long long)arg3;
++ (id)relations;
++ (id)supportedInfoDictionaryClasses;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)_init;
+- (id)assetURL;
+- (id)assets;
+- (id)assetsToAddOrUpdate;
+- (id)classID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (long long)domain;
+- (long long)domainVersion;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)flags;
+- (id)friendlyDomainRepresentation;
+- (id)friendlyFlagsRepresentation;
+- (id)friendlyStateRepresentation;
+- (bool)hasServerMetadata;
+- (id)info;
+- (id)initForObject:(id)arg1 ownerPersonID:(id)arg2 domain:(long long)arg3 state:(long long)arg4 flags:(unsigned long long)arg5;
+- (id)initForObjectWithID:(id)arg1 targetClass:(Class)arg2 ownerPersonID:(id)arg3 domain:(long long)arg4 state:(long long)arg5 flags:(unsigned long long)arg6;
+- (id)initWithCoder:(id)arg1;
+- (void)mergeWithObject:(id)arg1;
+- (id)note;
+- (id)ownerPersonID;
+- (id)parentEntityName;
+- (id)recipientPersonID;
+- (id)senderPersonID;
+- (id)serverETag;
+- (id)serverExecutionID;
+- (long long)serverStatus;
+- (void)setAssetURL:(id)arg1;
+- (void)setAssetsToAddOrUpdate:(id)arg1;
+- (void)setClassID:(id)arg1;
+- (void)setDomain:(long long)arg1;
+- (void)setDomainVersion:(long long)arg1;
+- (void)setFlags:(unsigned long long)arg1;
+- (void)setInfo:(id)arg1;
+- (void)setNote:(id)arg1;
+- (void)setOwnerPersonID:(id)arg1;
+- (void)setParentEntityName:(id)arg1;
+- (void)setRecipientPersonID:(id)arg1;
+- (void)setSenderPersonID:(id)arg1;
+- (void)setServerETag:(id)arg1;
+- (void)setServerExecutionID:(id)arg1;
+- (void)setServerStatus:(long long)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
+- (bool)validateObject:(id*)arg1;
+
+@end

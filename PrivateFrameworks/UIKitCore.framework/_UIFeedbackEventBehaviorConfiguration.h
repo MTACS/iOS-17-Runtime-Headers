@@ -1,0 +1,4 @@
+
+@interface _UIFeedbackEventBehaviorConfiguration : _UINotificationFeedbackGeneratorConfiguration
+
+@end

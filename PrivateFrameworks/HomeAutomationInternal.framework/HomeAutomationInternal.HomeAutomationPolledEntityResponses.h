@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.HomeAutomationPolledEntityResponses : HomeAutomationInternal.HomeAutomationEntityResponses
+
+@end

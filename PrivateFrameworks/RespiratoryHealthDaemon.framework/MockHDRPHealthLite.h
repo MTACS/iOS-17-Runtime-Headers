@@ -1,0 +1,4 @@
+
+@interface MockHDRPHealthLite : NSObject
+
+@end

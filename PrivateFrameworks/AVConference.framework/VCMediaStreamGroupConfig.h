@@ -1,0 +1,97 @@
+
+@interface VCMediaStreamGroupConfig : NSObject {
+    <VCMediaCaptureController> * _captureController;
+    int  _captureSource;
+    <VCMediaStreamGroupDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSMutableDictionary * _groupEntries;
+    bool  _hasRepairedStreams;
+    unsigned long long  _idsParticipantID;
+    struct tagVCJBTargetEstimatorSynchronizer { } * _jbTargetEstimatorSynchronizer;
+    NSMutableArray * _mediaStreamInfoArray;
+    NSArray * _mediaStreams;
+    unsigned int  _mediaSubtype;
+    unsigned int  _mediaType;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _mutex;
+    VCNetworkFeedbackController * _networkFeedbackController;
+    NSString * _participantUUID;
+    unsigned int  _rtpTimestampRate;
+    VCSecurityKeyManager * _securityKeyManager;
+    NSString * _sessionUUID;
+    bool  _shouldSetupStreams;
+    unsigned int  _streamGroupID;
+    NSDictionary * _streamIDToMediaStreamMap;
+    long long  _streamToken;
+    unsigned int  _syncGroupID;
+    unsigned int  syncGroupID;
+}
+
+@property (nonatomic, retain) <VCMediaCaptureController> *captureController;
+@property (nonatomic) int captureSource;
+@property (nonatomic, retain) <VCMediaStreamGroupDelegate> *delegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (nonatomic, readonly) NSDictionary *groupEntries;
+@property (nonatomic, readonly) bool hasRepairedStreams;
+@property (nonatomic) unsigned long long idsParticipantID;
+@property (nonatomic) struct tagVCJBTargetEstimatorSynchronizer { }*jbTargetEstimatorSynchronizer;
+@property (nonatomic, readonly) NSArray *mediaStreamInfoArray;
+@property (nonatomic, readonly) NSArray *mediaStreams;
+@property (nonatomic) unsigned int mediaSubtype;
+@property (nonatomic) unsigned int mediaType;
+@property (nonatomic, retain) VCNetworkFeedbackController *networkFeedbackController;
+@property (nonatomic, retain) NSString *participantUUID;
+@property (nonatomic, readonly) unsigned int rtpTimestampRate;
+@property (nonatomic, retain) VCSecurityKeyManager *securityKeyManager;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned int streamGroupID;
+@property (nonatomic, readonly) NSDictionary *streamIDToMediaStreamMap;
+@property (nonatomic) long long streamToken;
+@property (nonatomic) unsigned int syncGroupID;
+
+- (bool)addMediaStreamInfo:(id)arg1;
+- (id)captureController;
+- (int)captureSource;
+- (void)dealloc;
+- (id)delegate;
+- (id)delegateQueue;
+- (id)groupEntries;
+- (bool)hasRepairedStreams;
+- (unsigned long long)idsParticipantID;
+- (id)init;
+- (struct tagVCJBTargetEstimatorSynchronizer { }*)jbTargetEstimatorSynchronizer;
+- (void)lock;
+- (id)mediaStreamInfoArray;
+- (id)mediaStreams;
+- (unsigned int)mediaSubtype;
+- (unsigned int)mediaType;
+- (id)networkFeedbackController;
+- (id)participantUUID;
+- (unsigned int)rtpTimestampRate;
+- (id)securityKeyManager;
+- (id)sessionUUID;
+- (void)setCaptureController:(id)arg1;
+- (void)setCaptureSource:(int)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDelegateQueue:(id)arg1;
+- (void)setIdsParticipantID:(unsigned long long)arg1;
+- (void)setJbTargetEstimatorSynchronizer:(struct tagVCJBTargetEstimatorSynchronizer { }*)arg1;
+- (void)setMediaSubtype:(unsigned int)arg1;
+- (void)setMediaType:(unsigned int)arg1;
+- (void)setNetworkFeedbackController:(id)arg1;
+- (void)setParticipantUUID:(id)arg1;
+- (void)setSecurityKeyManager:(id)arg1;
+- (void)setSessionUUID:(id)arg1;
+- (void)setStreamGroupID:(unsigned int)arg1;
+- (void)setStreamToken:(long long)arg1;
+- (void)setSyncGroupID:(unsigned int)arg1;
+- (void)setupStreams;
+- (unsigned int)streamGroupID;
+- (id)streamIDToMediaStreamMap;
+- (long long)streamToken;
+- (unsigned int)syncGroupID;
+- (void)unlock;
+
+@end

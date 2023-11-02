@@ -1,0 +1,4 @@
+
+@protocol GKComposeControllerDelegate
+
+@end

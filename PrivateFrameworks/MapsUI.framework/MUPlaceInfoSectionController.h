@@ -1,0 +1,80 @@
+
+@interface MUPlaceInfoSectionController : MUPlaceSectionController <MUPlaceHoursSectionViewDelegate, MUPlaceSectionControlling> {
+    <MKPlaceActionManagerProtocol> * _actionDelegate;
+    MUPlaceDataAvailability * _availability;
+    MUContactsViewModelGenerator * _contactsViewModelGenerator;
+    MUPlaceHoursSectionViewConfiguration * _hoursConfig;
+    UIView * _hoursContentView;
+    GEOPlaceDetailsModuleConfiguration * _moduleConfig;
+    bool  _needsUpdate;
+    <MUPlaceInfoSectionControllerDelegate> * _placeInfoDelegate;
+    MUPlaceInfoSectionView * _placeInfoSectionView;
+    <_MKPlaceItem> * _placeItem;
+    unsigned long long  _placeNumberOfReportsInReview;
+    MUDisclosureActionRowView * _rapStatusContentView;
+    MUPlaceSectionFooterViewModel * _sectionFooterViewModel;
+    NSMutableArray * _sectionStackViews;
+    NSArray * _sectionViews;
+    <MUUserInformationProvider> * _userInfoProvider;
+}
+
+@property (getter=isActive, nonatomic) bool active;
+@property (nonatomic) <MUInfoCardAnalyticsDelegate> *analyticsDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasContent;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) MUPlaceHoursSectionViewConfiguration *hoursConfig;
+@property (nonatomic, readonly) GEOInlineRapEnablement *inlineRapEnablement;
+@property (nonatomic) <MUPlaceInfoSectionControllerDelegate> *placeInfoDelegate;
+@property (nonatomic) unsigned long long placeNumberOfReportsInReview;
+@property (nonatomic, readonly) MUPlaceSectionFooterViewModel *sectionFooterViewModel;
+@property (nonatomic, readonly) MUPlaceSectionHeaderViewModel *sectionHeaderViewModel;
+@property (nonatomic, readonly) UIView *sectionView;
+@property (nonatomic, readonly) UIViewController *sectionViewController;
+@property (nonatomic, readonly) NSArray *sectionViews;
+@property (nonatomic, retain) MUPlaceCallToActionAppearance *submissionStatus;
+@property (readonly) Class superclass;
+@property (nonatomic) <MUUserInformationProvider> *userInfoProvider;
+
+- (void).cxx_destruct;
+- (int)_attributionStyle;
+- (void)_buildSections;
+- (id)_createAddressItem;
+- (void)_handleFactoidTap:(id)arg1 withReference:(id)arg2;
+- (id)_loadHoursContentViewIfNeeded;
+- (id)_loadPlaceInfoAddress:(id)arg1 contact:(id)arg2;
+- (id)_loadPlaceInfoContentIfNeeded;
+- (id)_loadRAPStatusViewIfNeeded;
+- (id)_loadViewWithContactMetadata:(id)arg1;
+- (void)_performActionItem:(id)arg1 withOptions:(id)arg2;
+- (void)_populateRevealedAnalyticsModule:(id)arg1;
+- (void)_rapEditPlaceDetailsButtonTapped;
+- (id)_rapEditPlaceDetailsMenu;
+- (void)_refineMapItemForIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (bool)_shouldShowRapEditButton;
+- (void)_tappedAddressItem;
+- (void)_tappedContactOfType:(long long)arg1 withLabeledValue:(id)arg2;
+- (void)_tappedMessageType;
+- (void)_tappedViewRAPReport;
+- (int)analyticsModuleType;
+- (id)draggableContent;
+- (bool)hasContent;
+- (id)hoursConfig;
+- (void)hoursSectionView:(id)arg1 didExpand:(bool)arg2 forConfiguration:(id)arg3;
+- (id)initWithPlaceItem:(id)arg1 moduleConfiguration:(id)arg2 availability:(id)arg3 actionDelegate:(id)arg4 hoursConfiguration:(id)arg5;
+- (id)inlineRapEnablement;
+- (bool)isImpressionable;
+- (id)labeledValuesForContactValues:(id)arg1 type:(long long)arg2;
+- (id)placeInfoDelegate;
+- (unsigned long long)placeNumberOfReportsInReview;
+- (void)refreshContents;
+- (id)sectionFooterViewModel;
+- (id)sectionHeaderViewModel;
+- (id)sectionViews;
+- (void)setPlaceInfoDelegate:(id)arg1;
+- (void)setPlaceNumberOfReportsInReview:(unsigned long long)arg1;
+- (void)setUserInfoProvider:(id)arg1;
+- (id)userInfoProvider;
+
+@end

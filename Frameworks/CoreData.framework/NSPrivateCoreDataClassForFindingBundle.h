@@ -1,0 +1,4 @@
+
+@interface NSPrivateCoreDataClassForFindingBundle : NSObject
+
+@end

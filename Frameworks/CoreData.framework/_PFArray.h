@@ -1,0 +1,55 @@
+
+@interface _PFArray : NSArray <NSCopying, NSMutableCopying, PFObjectIDCollection> {
+    id * _array;
+    int  _cd_rc;
+    unsigned int  _count;
+    struct _PFArrayFlags { 
+        unsigned int shouldRetain : 1; 
+        unsigned int shouldRelease : 1; 
+        unsigned int useExtendedRelease : 1; 
+        unsigned int freeBackingArray : 1; 
+        unsigned int copyBackingArray : 1; 
+        unsigned int managedObjects : 1; 
+        unsigned int _RESERVED : 27; 
+    }  _flags;
+    _PFWeakReference * _weakContext;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (bool)accessInstanceVariablesDirectly;
++ (Class)classForKeyedUnarchiver;
++ (void)initialize;
+
+- (bool)_isDeallocating;
+- (id*)_objectsPointer;
+- (bool)_tryRetain;
+- (id)arrayFromObjectIDs;
+- (Class)classForCoder;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (void)dealloc;
+- (void)getObjects:(id*)arg1;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)indexOfManagedObjectForObjectID:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)indexOfObjectIdenticalTo:(id)arg1;
+- (unsigned long long)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3 andContext:(id)arg4;
+- (id)managedObjectIDAtIndex:(unsigned long long)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)newArrayFromObjectIDs;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (oneway void)release;
+- (id)retain;
+- (unsigned long long)retainCount;
+- (id)subarrayWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+
+@end

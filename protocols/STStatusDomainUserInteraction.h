@@ -1,0 +1,4 @@
+
+@protocol STStatusDomainUserInteraction <STStatusDomainData>
+
+@end

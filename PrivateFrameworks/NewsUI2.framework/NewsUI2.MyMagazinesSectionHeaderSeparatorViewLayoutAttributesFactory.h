@@ -1,0 +1,4 @@
+
+@interface NewsUI2.MyMagazinesSectionHeaderSeparatorViewLayoutAttributesFactory : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface TRITrifactorTypesRoot : TRIPBRootObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol GCSJSONObject <NSObject>
+
+@end

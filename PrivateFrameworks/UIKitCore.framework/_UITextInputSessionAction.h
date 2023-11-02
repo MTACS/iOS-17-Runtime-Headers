@@ -1,0 +1,97 @@
+
+@interface _UITextInputSessionAction : NSObject {
+    NSString * _appBundleId;
+    long long  _flagOptions;
+    long long  _inputActionCountFromMergedActions;
+    NSString * _keyboardLayout;
+    NSString * _keyboardType;
+    NSString * _keyboardVariant;
+    NSString * _language;
+    NSString * _region;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _relativeRangeBefore;
+    long long  _source;
+    long long  _textInputActionsSource;
+    long long  _textInputActionsType;
+}
+
+@property (nonatomic, copy) NSString *appBundleId;
+@property (nonatomic, readonly) _UITextInputSessionBeganAction *asBegan;
+@property (nonatomic, readonly) _UITextInputSessionCopyAction *asCopy;
+@property (nonatomic, readonly) _UITextInputSessionCutAction *asCut;
+@property (nonatomic, readonly) _UITextInputSessionDeletionAction *asDeletion;
+@property (nonatomic, readonly) _UITextInputSessionDictationBeganAction *asDictationBegan;
+@property (nonatomic, readonly) _UITextInputSessionDictationEndedAction *asDictationEnded;
+@property (nonatomic, readonly) _UITextInputSessionEndAction *asEnd;
+@property (nonatomic, readonly) _UITextInputSessionInsertionAction *asInsertion;
+@property (nonatomic, readonly) _UITextInputSessionKeyboardDockItemButtonPressAction *asKeyboardDockItemButtonPress;
+@property (nonatomic, readonly) _UITextInputSessionPasteAction *asPaste;
+@property (nonatomic, readonly) _UITextInputSessionRedoAction *asRedo;
+@property (nonatomic, readonly) _UITextInputSessionReplaceTextAction *asReplaceText;
+@property (nonatomic, readonly) _UITextInputSessionReplaceWithCandidateAction *asReplaceWithCandidate;
+@property (nonatomic, readonly) _UITextInputSessionSelectionAction *asSelection;
+@property (nonatomic, readonly) _UITextInputSessionUndoAction *asUndo;
+@property (nonatomic, readonly) bool changedContent;
+@property (nonatomic) long long flagOptions;
+@property (nonatomic, readonly) long long inputActionCount;
+@property (nonatomic) long long inputActionCountFromMergedActions;
+@property (nonatomic, copy) NSString *keyboardLayout;
+@property (nonatomic, copy) NSString *keyboardType;
+@property (nonatomic, copy) NSString *keyboardVariant;
+@property (nonatomic, copy) NSString *language;
+@property (nonatomic, copy) NSString *region;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } relativeRangeBefore;
+@property (nonatomic) long long source;
+@property (nonatomic) long long textInputActionsSource;
+@property (nonatomic) long long textInputActionsType;
+
+- (void).cxx_destruct;
+- (id)appBundleId;
+- (id)asBegan;
+- (id)asCopy;
+- (id)asCut;
+- (id)asDeletion;
+- (id)asDictationBegan;
+- (id)asDictationEnded;
+- (id)asEnd;
+- (id)asInsertion;
+- (id)asKeyboardDockItemButtonPress;
+- (id)asPaste;
+- (id)asRedo;
+- (id)asReplaceText;
+- (id)asReplaceWithCandidate;
+- (id)asSelection;
+- (id)asUndo;
+- (bool)changedContent;
+- (id)description;
+- (long long)flagOptions;
+- (long long)inputActionCount;
+- (long long)inputActionCountFromMergedActions;
+- (id)inputModeUniqueString;
+- (bool)isMergeableWith:(id)arg1;
+- (id)keyboardLayout;
+- (id)keyboardType;
+- (id)keyboardVariant;
+- (id)language;
+- (long long)mergeActionIfPossible:(id)arg1;
+- (id)region;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })relativeRangeBefore;
+- (void)setAppBundleId:(id)arg1;
+- (void)setFlagOptions:(long long)arg1;
+- (void)setInputActionCountFromMergedActions:(long long)arg1;
+- (void)setKeyboardLayout:(id)arg1;
+- (void)setKeyboardType:(id)arg1;
+- (void)setKeyboardVariant:(id)arg1;
+- (void)setLanguage:(id)arg1;
+- (void)setRegion:(id)arg1;
+- (void)setRelativeRangeBefore:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSource:(long long)arg1;
+- (void)setTextInputActionsSource:(long long)arg1;
+- (void)setTextInputActionsType:(long long)arg1;
+- (long long)source;
+- (long long)textInputActionsSource;
+- (long long)textInputActionsType;
+
+@end

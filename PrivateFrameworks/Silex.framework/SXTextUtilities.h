@@ -1,0 +1,4 @@
+
+@interface SXTextUtilities : TSWPText
+
+@end

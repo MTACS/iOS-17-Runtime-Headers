@@ -1,0 +1,11 @@
+
+@interface APSystemClock : NSObject <APClock>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (id)now;
+
+@end

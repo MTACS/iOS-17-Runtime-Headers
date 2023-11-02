@@ -1,0 +1,4 @@
+
+@interface HMCameraControl : NSObject
+
+@end

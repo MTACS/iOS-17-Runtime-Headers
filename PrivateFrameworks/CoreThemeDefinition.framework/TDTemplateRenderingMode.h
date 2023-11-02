@@ -1,0 +1,4 @@
+
+@interface TDTemplateRenderingMode : TDThemeConstant
+
+@end

@@ -1,0 +1,4 @@
+
+@interface MTRBridgedDeviceBasicClusterShutDownEvent : MTRBridgedDeviceBasicInformationClusterShutDownEvent
+
+@end

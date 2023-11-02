@@ -1,0 +1,4 @@
+
+@interface SBSystemApertureResizeGestureRecognizer : UIPanGestureRecognizer
+
+@end

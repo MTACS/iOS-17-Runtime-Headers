@@ -1,0 +1,50 @@
+
+@interface CBColorFilter : CBModule <CBHIDServiceProtocol> {
+    unsigned long long  _mode;
+    CBColorSample * _sample;
+    unsigned long long  _sensorPolicy;
+    NSMutableArray * _services;
+    NSMutableArray * _validServices;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long mode;
+@property (readonly) CBColorSample *sample;
+@property (nonatomic) unsigned long long sensorPolicy;
+@property (readonly) Class superclass;
+
++ (double)calculateCCTForChromaticity:(struct { double x1; double x2; })arg1;
++ (double)calculateCCTForTristimulus:(struct { double x1; double x2; double x3; })arg1;
++ (struct { double x1; double x2; double x3; })calculateTristimulusForChromaticity:(struct { double x1; double x2; })arg1 andLux:(double)arg2;
+
+- (bool)ALSServiceConformsToPolicy:(id)arg1;
+- (bool)addHIDServiceClient:(struct __IOHIDServiceClient { }*)arg1;
+- (void)dealloc;
+- (unsigned long long)evaluatedFilterMode;
+- (bool)forceSampleUpdate;
+- (bool)handleHIDEvent:(struct __IOHIDEvent { }*)arg1 from:(struct __IOHIDServiceClient { }*)arg2;
+- (bool)hasExtFrontSensor;
+- (bool)hasExtRearSensor;
+- (id)initWithQueue:(id)arg1;
+- (unsigned long long)mode;
+- (id)newColorSampleConditionWeighted;
+- (id)newColorSampleLinearWeightedForSamples:(id)arg1;
+- (id)newColorSampleLinearWeightedForServices:(id)arg1;
+- (id)newColorSampleLogWeighted;
+- (id)newColorSampleLogWeightedForSamples:(id)arg1;
+- (id)newColorSampleWinnerTakesAll;
+- (void)registerNotificationBlock:(id /* block */)arg1;
+- (bool)removeHIDServiceClient:(struct __IOHIDServiceClient { }*)arg1;
+- (void)reportSampleUpdate;
+- (id)sample;
+- (void)sendNotificationForKey:(id)arg1 withValue:(id)arg2;
+- (unsigned long long)sensorPolicy;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setSensorPolicy:(unsigned long long)arg1;
+- (void)unregisterNotificationBlock;
+- (void)updateSample;
+- (void)updateValidServices;
+
+@end

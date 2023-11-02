@@ -1,0 +1,4 @@
+
+@protocol HFUserObserver <HMUserDelegatePrivate>
+
+@end

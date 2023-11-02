@@ -1,0 +1,4 @@
+
+@interface TSDScrollView : TSKScrollView
+
+@end

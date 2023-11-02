@@ -1,0 +1,4 @@
+
+@interface SBHBLongPressGestureRecognizer : UIHBLongClickGestureRecognizer
+
+@end

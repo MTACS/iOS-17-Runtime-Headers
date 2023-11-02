@@ -1,0 +1,80 @@
+
+@interface ICQUpgradeStorageHook : NSObject <ICQPurchaseDelegate, ICQUICloudStorageOffersManagerDelegate, ICQUIServerHook> {
+    NSString * _buttonId;
+    NSDictionary * _clientInfo;
+    ICQUICloudStorageOffersManager * _cloudStorageOffersManager;
+    id /* block */  _completionHandler;
+    <RUIServerHookDelegate> * _delegate;
+    <ICQServerHookDelegate> * _flowDelegate;
+    NSString * _flowtype;
+    bool  _isListeningToAMS;
+    long long  _legacyStatusCode;
+    ICQOffer * _offer;
+    NSString * _presentingSceneBundleIdentifier;
+    NSString * _presentingSceneIdentifier;
+    ICQPurchase * _purchase;
+    RUIElement * _ruiElement;
+    NSURLSession * _session;
+    NSTimer * _stopActivityIndicatorTimer;
+}
+
+@property (nonatomic, retain) NSString *buttonId;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUIServerHookDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *flowtype;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) RUIObjectModel *objectModel;
+@property (nonatomic, copy) NSString *presentingSceneBundleIdentifier;
+@property (nonatomic, copy) NSString *presentingSceneIdentifier;
+@property (nonatomic, retain) ICQPurchase *purchase;
+@property (nonatomic, retain) RUIServerHookResponse *serverHookResponse;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_appGoesToBackground:(id)arg1;
+- (void)_firedStopActivityIndicatorTimer:(id)arg1;
+- (void)_handlePurchaseRequestSucceededNotification;
+- (long long)_statusCode;
+- (void)beginLegacyPurchaseFlow;
+- (void)beginOsloPurchaseFlow;
+- (void)beginPurchaseFlowUsingParameters:(id)arg1 completion:(id /* block */)arg2;
+- (id)buttonId;
+- (id /* block */)completionHandler;
+- (id)continuationResponseBody;
+- (id)delegate;
+- (id)dummyRequestWithAccount:(id)arg1 token:(id)arg2;
+- (id)flowtype;
+- (void)handleAuthenticateRequest:(id)arg1 purchase:(id)arg2 completion:(id /* block */)arg3;
+- (void)handleDialogRequest:(id)arg1 purchase:(id)arg2 completion:(id /* block */)arg3;
+- (void)handleEngagementRequest:(id)arg1 purchase:(id)arg2 completion:(id /* block */)arg3;
+- (id)initWithOffer:(id)arg1 flowDelegate:(id)arg2;
+- (bool)isLiftUIFlow;
+- (void)manager:(id)arg1 didCompleteWithError:(id)arg2;
+- (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
+- (void)manager:(id)arg1 willPresentViewController:(id)arg2;
+- (void)managerDidCancel:(id)arg1;
+- (void)mockPurchaseFlow;
+- (long long)offerAction;
+- (id)presentingSceneBundleIdentifier;
+- (id)presentingSceneIdentifier;
+- (void)processElement:(id)arg1 attributes:(id)arg2 objectModel:(id)arg3 completion:(id /* block */)arg4;
+- (void)processObjectModel:(id)arg1 completion:(id /* block */)arg2;
+- (id)purchase;
+- (void)registerForDarwinNotifications;
+- (id)serverHookResponse;
+- (void)setButtonId:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFlowtype:(id)arg1;
+- (void)setPresentingSceneBundleIdentifier:(id)arg1;
+- (void)setPresentingSceneIdentifier:(id)arg1;
+- (void)setPurchase:(id)arg1;
+- (bool)shouldMatchElement:(id)arg1;
+- (bool)shouldMatchModel:(id)arg1;
+- (void)stopActivityIndicator;
+- (id)storageContextJSONString;
+- (id)upgradeStorageContextHeaderDictionary;
+
+@end

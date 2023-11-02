@@ -1,0 +1,4 @@
+
+@protocol KNTransitionCAAnimator <KNAnimationPluginCARendering>
+
+@end

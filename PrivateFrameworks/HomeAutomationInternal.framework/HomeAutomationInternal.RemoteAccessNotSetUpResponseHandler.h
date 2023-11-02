@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.RemoteAccessNotSetUpResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

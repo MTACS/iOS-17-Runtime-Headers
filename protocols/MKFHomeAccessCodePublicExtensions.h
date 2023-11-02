@@ -1,0 +1,4 @@
+
+@protocol MKFHomeAccessCodePublicExtensions
+
+@end

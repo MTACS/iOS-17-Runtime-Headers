@@ -1,0 +1,4 @@
+
+@interface CPNowPlayingShuffleButton : CPNowPlayingButton
+
+@end

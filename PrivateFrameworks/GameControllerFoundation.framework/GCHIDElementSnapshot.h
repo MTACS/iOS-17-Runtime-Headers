@@ -1,0 +1,93 @@
+
+@interface GCHIDElementSnapshot : NSObject <GCHIDElementAttributes, NSSecureCoding> {
+    int  _collectionType;
+    unsigned int  _elementCookie;
+    unsigned int  _flags;
+    unsigned char  _hasNullState;
+    unsigned char  _hasPreferredState;
+    unsigned char  _isArray;
+    unsigned char  _isNonLinear;
+    unsigned char  _isRelative;
+    unsigned char  _isWrapping;
+    long long  _max;
+    long long  _min;
+    NSString * _name;
+    unsigned int  _reportCount;
+    long long  _reportID;
+    long long  _reportSize;
+    long long  _scaledMax;
+    long long  _scaledMin;
+    long long  _size;
+    int  _type;
+    long long  _unit;
+    long long  _unitExponent;
+    long long  _usage;
+    long long  _usagePage;
+    long long  _usageType;
+    long long  _usageTypeIndex;
+}
+
+@property (readonly) int collectionType;
+@property (readonly) unsigned int elementCookie;
+@property (readonly) unsigned int flags;
+@property (readonly) unsigned char hasNullState;
+@property (readonly) unsigned char hasPreferredState;
+@property (readonly) unsigned char isArray;
+@property (readonly) unsigned char isNonLinear;
+@property (readonly) unsigned char isRelative;
+@property (readonly) unsigned char isWrapping;
+@property (readonly) long long max;
+@property (readonly) long long min;
+@property (readonly) NSString *name;
+@property (readonly) unsigned int reportCount;
+@property (readonly) long long reportID;
+@property (readonly) long long reportSize;
+@property (readonly) long long scaledMax;
+@property (readonly) long long scaledMin;
+@property (readonly) long long size;
+@property (readonly) int type;
+@property (readonly) long long unit;
+@property (readonly) long long unitExponent;
+@property (readonly) long long usage;
+@property (readonly) long long usagePage;
+@property (readonly) long long usageType;
+@property (readonly) long long usageTypeIndex;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (int)collectionType;
+- (id)debugDescription;
+- (unsigned int)elementCookie;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned int)flags;
+- (unsigned char)hasNullState;
+- (unsigned char)hasPreferredState;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithHIDElement:(id)arg1;
+- (unsigned char)isArray;
+- (unsigned char)isNonLinear;
+- (unsigned char)isRelative;
+- (unsigned char)isWrapping;
+- (long long)max;
+- (long long)min;
+- (id)name;
+- (unsigned int)reportCount;
+- (long long)reportID;
+- (long long)reportSize;
+- (long long)scaledMax;
+- (long long)scaledMin;
+- (long long)size;
+- (int)type;
+- (long long)unit;
+- (long long)unitExponent;
+- (long long)usage;
+- (long long)usagePage;
+- (long long)usageType;
+- (long long)usageTypeIndex;
+- (id)valueForElementKey:(id)arg1;
+- (id)valueForKey:(id)arg1;
+
+@end

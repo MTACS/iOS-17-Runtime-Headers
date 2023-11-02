@@ -1,0 +1,4 @@
+
+@interface SynchronousQueueSchedulerCancelationToken : CNCancelationToken
+
+@end

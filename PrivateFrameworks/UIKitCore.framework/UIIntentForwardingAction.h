@@ -1,0 +1,4 @@
+
+@interface UIIntentForwardingAction : UISIntentForwardingAction
+
+@end

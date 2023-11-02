@@ -1,0 +1,4 @@
+
+@interface UIDestroySceneActionResponse : BSActionResponse
+
+@end

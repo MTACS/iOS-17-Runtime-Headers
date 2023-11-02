@@ -1,0 +1,4 @@
+
+@interface _TtC14FamilyControlsP33_2BFD24FC81DA2FC15D428DD571BC482719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

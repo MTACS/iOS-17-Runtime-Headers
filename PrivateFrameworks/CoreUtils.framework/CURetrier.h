@@ -1,0 +1,43 @@
+
+@interface CURetrier : NSObject {
+    id /* block */  _actionHandler;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    double  _interval;
+    bool  _invalidateCalled;
+    id /* block */  _invalidationHandler;
+    double  _leeway;
+    NSObject<OS_dispatch_source> * _retryTimer;
+    double  _startTime;
+}
+
+@property (nonatomic, copy) id /* block */ actionHandler;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic) double interval;
+@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic) double leeway;
+@property (nonatomic) double startTime;
+
+- (void).cxx_destruct;
+- (id /* block */)actionHandler;
+- (id)dispatchQueue;
+- (void)failed;
+- (void)failedDirect;
+- (id)init;
+- (double)interval;
+- (void)invalidate;
+- (void)invalidateDirect;
+- (id /* block */)invalidationHandler;
+- (double)leeway;
+- (void)setActionHandler:(id /* block */)arg1;
+- (void)setDispatchQueue:(id)arg1;
+- (void)setInterval:(double)arg1;
+- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setLeeway:(double)arg1;
+- (void)setStartTime:(double)arg1;
+- (void)start;
+- (void)startDirect;
+- (double)startTime;
+- (void)succeeded;
+- (void)succeededDirect;
+
+@end

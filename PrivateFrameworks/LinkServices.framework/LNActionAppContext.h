@@ -1,0 +1,4 @@
+
+@interface LNActionAppContext : NSObject
+
+@end

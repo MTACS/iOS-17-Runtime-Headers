@@ -1,0 +1,43 @@
+
+@interface HUActivityIndicatorCell : UITableViewCell <HUDisableableCellProtocol> {
+    UIActivityIndicatorView * _activityIndicatorView;
+    bool  _animating;
+    bool  _disabled;
+    UIImageView * _iconImageView;
+    HUTitleDescriptionContentView * _titleDescriptionView;
+}
+
+@property (nonatomic, readonly) UIActivityIndicatorView *activityIndicatorView;
+@property (getter=isAnimating, nonatomic) bool animating;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) <HFStringGenerator> *descriptionText;
+@property (getter=isDisabled, nonatomic) bool disabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIImage *icon;
+@property (nonatomic, readonly) UIImageView *iconImageView;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) HUTitleDescriptionContentView *titleDescriptionView;
+@property (nonatomic, retain) <HFStringGenerator> *titleText;
+
+- (void).cxx_destruct;
+- (void)_setupConstraints;
+- (id)activityIndicatorView;
+- (id)description;
+- (id)descriptionText;
+- (id)icon;
+- (id)iconImageView;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isAnimating;
+- (bool)isDisabled;
+- (void)layoutSubviews;
+- (void)prepareForReuse;
+- (void)setAnimating:(bool)arg1;
+- (void)setDescriptionText:(id)arg1;
+- (void)setDisabled:(bool)arg1;
+- (void)setIcon:(id)arg1;
+- (void)setTitleText:(id)arg1;
+- (id)titleDescriptionView;
+- (id)titleText;
+
+@end

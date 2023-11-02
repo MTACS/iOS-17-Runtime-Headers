@@ -1,0 +1,92 @@
+
+@interface HUBannerView : UIView <HUGridCellProtocol, UIGestureRecognizerDelegate, UITextViewDelegate> {
+    bool  _cellContentsHidden;
+    UIButton * _continueButton;
+    <HUBannerViewDelegate> * _delegate;
+    UILabel * _descriptionLabel;
+    bool  _disableHighlighting;
+    UIButton * _dismissButton;
+    UIView * _footerView;
+    UILabel * _footerViewLabel;
+    UIImageView * _iconImageView;
+    HUIconView * _iconView;
+    HFItem * _item;
+    NSArray * _layoutConstraints;
+    HUGridBannerCellLayoutOptions * _layoutOptions;
+    UIView * _lineView;
+    UILabel * _titleLabel;
+}
+
+@property (getter=areCellContentsHidden, nonatomic) bool cellContentsHidden;
+@property (nonatomic, retain) UIButton *continueButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HUBannerViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UILabel *descriptionLabel;
+@property (nonatomic) bool disableHighlighting;
+@property (nonatomic, retain) UIButton *dismissButton;
+@property (nonatomic, retain) UIView *footerView;
+@property (nonatomic, retain) UILabel *footerViewLabel;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIImageView *iconImageView;
+@property (nonatomic, retain) HUIconView *iconView;
+@property (nonatomic, retain) HFItem *item;
+@property (nonatomic, retain) NSArray *layoutConstraints;
+@property (nonatomic, retain) HUGridBannerCellLayoutOptions *layoutOptions;
+@property (nonatomic, retain) UIView *lineView;
+@property (getter=isPointerInteractionEnabled, nonatomic) bool pointerInteractionEnabled;
+@property (nonatomic) double pointerRegionMargin;
+@property (getter=isRearranging, nonatomic) bool rearranging;
+@property (nonatomic) <HUResizableCellDelegate> *resizingDelegate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UILabel *titleLabel;
+
++ (Class)layoutOptionsClass;
+
+- (void).cxx_destruct;
+- (void)_dismissButtonTapped:(id)arg1;
+- (void)_footerViewTapped:(id)arg1;
+- (void)_subclass_updateConstraints;
+- (bool)areCellContentsHidden;
+- (id)continueButton;
+- (id)delegate;
+- (id)description;
+- (id)descriptionLabel;
+- (bool)disableHighlighting;
+- (id)dismissButton;
+- (id)footerView;
+- (id)footerViewLabel;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (id)iconImageView;
+- (id)iconView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)item;
+- (id)layoutConstraints;
+- (id)layoutOptions;
+- (void)layoutOptionsDidChange;
+- (id)lineView;
+- (void)prepareForReuse;
+- (void)setCellContentsHidden:(bool)arg1;
+- (void)setContinueButton:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDescriptionLabel:(id)arg1;
+- (void)setDisableHighlighting:(bool)arg1;
+- (void)setDismissButton:(id)arg1;
+- (void)setFooterView:(id)arg1;
+- (void)setFooterViewLabel:(id)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setIconImageView:(id)arg1;
+- (void)setIconView:(id)arg1;
+- (void)setItem:(id)arg1;
+- (void)setLayoutConstraints:(id)arg1;
+- (void)setLayoutOptions:(id)arg1;
+- (void)setLineView:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
+- (id)titleLabel;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateConstraints;
+- (void)updateUIWithAnimation:(bool)arg1;
+
+@end

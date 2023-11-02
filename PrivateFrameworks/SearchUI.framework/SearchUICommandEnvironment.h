@@ -1,0 +1,82 @@
+
+@interface SearchUICommandEnvironment : NSObject <NSCopying> {
+    <SearchUICardViewDelegate> * _cardViewDelegate;
+    <SearchUICommandDelegate> * _commandDelegate;
+    <SearchUIFeedbackDelegate> * _feedbackDelegate;
+    SearchUISectionModel * _lastEngagedSection;
+    long long  _modifierFlags;
+    UIViewController * _presentingViewController;
+    unsigned long long  _queryId;
+    <SearchUIResultsViewDelegate> * _resultsViewDelegate;
+    <SearchUIRowModelViewDelegate> * _rowModelViewDelegate;
+    NSString * _searchString;
+    SFResultSection * _section;
+    NSString * _sectionTitle;
+    long long  _selectableGridPunchoutIndex;
+    bool  _shouldUseInsetRoundedSections;
+    bool  _shouldUseStandardSectionInsets;
+    UIView * _sourceView;
+    bool  _threeDTouchEnabled;
+    <SearchUIWatchListDelegate> * _watchListDelegate;
+}
+
+@property (nonatomic) <SearchUICardViewDelegate> *cardViewDelegate;
+@property (nonatomic) <SearchUICommandDelegate> *commandDelegate;
+@property (nonatomic) <SearchUIFeedbackDelegate> *feedbackDelegate;
+@property (nonatomic) SearchUISectionModel *lastEngagedSection;
+@property (nonatomic) long long modifierFlags;
+@property (nonatomic) UIViewController *presentingViewController;
+@property (nonatomic) unsigned long long queryId;
+@property (nonatomic) <SearchUIResultsViewDelegate> *resultsViewDelegate;
+@property (nonatomic) <SearchUIRowModelViewDelegate> *rowModelViewDelegate;
+@property (nonatomic, copy) NSString *searchString;
+@property (nonatomic, retain) SFResultSection *section;
+@property (nonatomic, copy) NSString *sectionTitle;
+@property (nonatomic) long long selectableGridPunchoutIndex;
+@property (nonatomic) bool shouldUseInsetRoundedSections;
+@property (nonatomic) bool shouldUseStandardSectionInsets;
+@property (nonatomic) UIView *sourceView;
+@property (nonatomic) bool threeDTouchEnabled;
+@property (nonatomic) <SearchUIWatchListDelegate> *watchListDelegate;
+
+- (void).cxx_destruct;
+- (id)cardViewDelegate;
+- (id)commandDelegate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)feedbackDelegate;
+- (id)init;
+- (id)lastEngagedSection;
+- (long long)modifierFlags;
+- (id)presentingViewController;
+- (unsigned long long)queryId;
+- (id)resultsViewDelegate;
+- (id)rowModelViewDelegate;
+- (id)searchString;
+- (id)section;
+- (id)sectionTitle;
+- (long long)selectableGridPunchoutIndex;
+- (void)setCardViewDelegate:(id)arg1;
+- (void)setCommandDelegate:(id)arg1;
+- (void)setFeedbackDelegate:(id)arg1;
+- (void)setLastEngagedSection:(id)arg1;
+- (void)setModifierFlags:(long long)arg1;
+- (void)setPresentingViewController:(id)arg1;
+- (void)setQueryId:(unsigned long long)arg1;
+- (void)setResultsViewDelegate:(id)arg1;
+- (void)setRowModelViewDelegate:(id)arg1;
+- (void)setSearchString:(id)arg1;
+- (void)setSection:(id)arg1;
+- (void)setSectionTitle:(id)arg1;
+- (void)setSelectableGridPunchoutIndex:(long long)arg1;
+- (void)setShouldUseInsetRoundedSections:(bool)arg1;
+- (void)setShouldUseStandardSectionInsets:(bool)arg1;
+- (void)setSourceView:(id)arg1;
+- (void)setThreeDTouchEnabled:(bool)arg1;
+- (void)setWatchListDelegate:(id)arg1;
+- (bool)shouldUseInsetRoundedSections;
+- (bool)shouldUseStandardSectionInsets;
+- (id)sourceView;
+- (bool)threeDTouchEnabled;
+- (id)watchListDelegate;
+
+@end

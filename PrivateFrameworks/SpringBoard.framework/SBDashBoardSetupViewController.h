@@ -1,0 +1,88 @@
+
+@interface SBDashBoardSetupViewController : CSCoverSheetViewControllerBase <CSEventHandling, STTelephonyStateObserver, UIGestureRecognizerDelegate> {
+    SBActivationInfoViewController * _activationInfoViewController;
+    NSDictionary * _activationLockStrings;
+    unsigned long long  _componentsToCycle;
+    NSString * _configureKey;
+    CSCoverSheetViewController * _coverSheetViewController;
+    unsigned long long  _currentStringsIndex;
+    NSMutableArray * _currentStringsOrdering;
+    double  _customDelayDuration;
+    NSTimer * _cycleStartTimer;
+    UIHoverGestureRecognizer * _hoverGestureRecognizer;
+    bool  _isActivationLocked;
+    bool  _isCyclingComponents;
+    bool  _isStoreRestricted;
+    NSString * _maskedAppleID;
+    UITapGestureRecognizer * _pointerClickGestureRecognizer;
+    SBSetupRegulatoryInfoViewController * _regulatoryInfoViewController;
+    SBSetupManager * _setupManager;
+    bool  _shouldResetOrderingOnNextCycle;
+    NSDictionary * _storeRestrictedStrings;
+    NSArray * _stringsOrdering;
+    SBTelephonyManager * _telephonyManager;
+    NSString * _telephonyPrimaryLanguage;
+    NSString * _wifiPrimaryLanguage;
+    SBSetupWiFiScanner * _wifiScanner;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_alignedMarketingOrdering;
+- (void)_animateComponentsForNewCycle;
+- (id)_applicableIdentifierForDictionary:(id)arg1 identifier:(id)arg2;
+- (void)_cancelWifiScan;
+- (void)_checkIfActivationLocked;
+- (unsigned long long)_componentsRelevantToPointerSuppression;
+- (unsigned long long)_componentsToStartCycling;
+- (id)_currentActivationLockStringsDictionary;
+- (id)_currentLanguageIdentifier;
+- (id)_currentStoreRestrictedStringsDictionary;
+- (void)_didClickHomeAffordance:(id)arg1;
+- (id)_displayStringForLocalizedString:(id)arg1 fallbackString:(id)arg2;
+- (void)_evaluateUpdatingLanguageForImportantLanguageChanges;
+- (void)_handleHoverEvent:(id)arg1;
+- (bool)_haveImportantLanguagesChangedFrom:(id)arg1;
+- (id)_importantLanguageIdentifiers;
+- (void)_incrementLocalizedStringsForNewCycle;
+- (void)_infoButtonTapped:(id)arg1;
+- (bool)_isSecurityResearchDevice;
+- (void)_regulatoryInfoButtonTapped:(id)arg1;
+- (void)_resetDisplayedLocalizedStringsImmediately:(bool)arg1;
+- (void)_startCyclingComponents:(unsigned long long)arg1 withDelay:(double)arg2;
+- (void)_startWifiScan;
+- (void)_stopCyclingComponents:(unsigned long long)arg1;
+- (id)_subcriptionDataSourceDescription:(long long)arg1;
+- (id)_subscriptionInfoForSubscriptionDataSource:(long long)arg1;
+- (id)_supportedLanguageIdentifierFromRegionalLanguageIdentifier:(id)arg1 countryCode:(id)arg2;
+- (void)_updateDisplayedStrings;
+- (void)_updateForLockInfo:(id)arg1;
+- (void)_updateLanguageFromSubscriptionDataSource:(long long)arg1;
+- (void)_updateLanguageFromTelephony;
+- (void)_updateStringOrderingForLanguageChange;
+- (void)_updateWifiPrimaryLanguageFromDiscoveredCountryCodes:(id)arg1;
+- (void)aggregateAppearance:(id)arg1;
+- (void)aggregateBehavior:(id)arg1;
+- (void)dealloc;
+- (id)firstSupportedLanguageIdentifierInRegionalLanguageIdentifiers:(id)arg1 countryCode:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)handleEvent:(id)arg1;
+- (id)initWithCoverSheetViewController:(id)arg1;
+- (id)initWithCoverSheetViewController:(id)arg1 telephonyManager:(id)arg2;
+- (bool)isCyclingComponents:(unsigned long long)arg1;
+- (void)loadView;
+- (long long)presentationPriority;
+- (long long)presentationType;
+- (id)setupView;
+- (void)subscriptionInfoDidChangeForStateProvider:(id)arg1 slot:(long long)arg2;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

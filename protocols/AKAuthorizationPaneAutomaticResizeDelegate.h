@@ -1,0 +1,4 @@
+
+@protocol AKAuthorizationPaneAutomaticResizeDelegate <NSObject>
+
+@end

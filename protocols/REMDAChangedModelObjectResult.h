@@ -1,0 +1,4 @@
+
+@protocol REMDAChangedModelObjectResult <NSObject>
+
+@end

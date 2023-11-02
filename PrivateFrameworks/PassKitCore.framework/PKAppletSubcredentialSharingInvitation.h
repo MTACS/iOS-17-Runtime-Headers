@@ -1,0 +1,90 @@
+
+@interface PKAppletSubcredentialSharingInvitation : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _activationCode;
+    NSString * _brandIdentifier;
+    NSString * _deviceModel;
+    unsigned long long  _entitlement;
+    bool  _forWatch;
+    NSString * _identifier;
+    NSString * _issuer;
+    PKSharingCarKeyInvitation * _originalInvitationMessage;
+    NSString * _originatorIDSHandle;
+    NSString * _pairedReaderIdentifier;
+    NSString * _partnerIdentifier;
+    NSString * _recipientName;
+    NSUUID * _sharingSessionIdentifier;
+    unsigned long long  _supportedRadioTechnologies;
+    unsigned long long  _type;
+}
+
+@property (nonatomic, retain) NSString *activationCode;
+@property (nonatomic, copy) NSString *brandIdentifier;
+@property (nonatomic, copy) NSString *deviceModel;
+@property (nonatomic) unsigned long long entitlement;
+@property (getter=isForWatch, nonatomic) bool forWatch;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, readonly) bool isThirdPartyCrossPlatformInvitation;
+@property (nonatomic, copy) NSString *issuer;
+@property (nonatomic, readonly, copy) NSString *manufacturerIdentifier;
+@property (nonatomic, retain) PKSharingCarKeyInvitation *originalInvitationMessage;
+@property (nonatomic, copy) NSString *originatorIDSHandle;
+@property (nonatomic, copy) NSString *pairedReaderIdentifier;
+@property (nonatomic, copy) NSString *partnerIdentifier;
+@property (nonatomic, copy) NSString *recipientName;
+@property (nonatomic, retain) NSUUID *sharingSessionIdentifier;
+@property (nonatomic) unsigned long long supportedRadioTechnologies;
+@property (nonatomic, readonly) unsigned long long type;
+
++ (id)invitationFromShare:(id)arg1 entitlement:(id)arg2 withCredential:(id)arg3 pass:(id)arg4;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)activationCode;
+- (id)addCarKeyPassConfiguration;
+- (id)brandIdentifier;
+- (bool)canBeSent;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dataRepresentation;
+- (id)description;
+- (id)deviceModel;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)entitlement;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithCrossPlatformInvitation:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 sharingSessionIdentifier:(id)arg2 originatorIDSHandle:(id)arg3 invitationData:(id)arg4;
+- (id)initWithPartnerIdentifier:(id)arg1 brandIdentifier:(id)arg2 pairedReaderIdentifier:(id)arg3 recipientName:(id)arg4 entitlement:(unsigned long long)arg5 supportedRadioTechnologies:(unsigned long long)arg6;
+- (id)invitationRequestRepresentation;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToInvitation:(id)arg1;
+- (bool)isForWatch;
+- (bool)isSameInvitationAsInvitation:(id)arg1;
+- (bool)isThirdPartyCrossPlatformInvitation;
+- (id)issuer;
+- (id)manufacturerIdentifier;
+- (id)originalInvitationMessage;
+- (id)originatorIDSHandle;
+- (id)pairedReaderIdentifier;
+- (id)partnerIdentifier;
+- (id)recipientName;
+- (void)setActivationCode:(id)arg1;
+- (void)setBrandIdentifier:(id)arg1;
+- (void)setDeviceModel:(id)arg1;
+- (void)setEntitlement:(unsigned long long)arg1;
+- (void)setForWatch:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setIssuer:(id)arg1;
+- (void)setOriginalInvitationMessage:(id)arg1;
+- (void)setOriginatorIDSHandle:(id)arg1;
+- (void)setPairedReaderIdentifier:(id)arg1;
+- (void)setPartnerIdentifier:(id)arg1;
+- (void)setRecipientName:(id)arg1;
+- (void)setSharingSessionIdentifier:(id)arg1;
+- (void)setSupportedRadioTechnologies:(unsigned long long)arg1;
+- (id)sharingConfigurationRepresentation;
+- (id)sharingSessionIdentifier;
+- (unsigned long long)supportedRadioTechnologies;
+- (unsigned long long)type;
+
+@end

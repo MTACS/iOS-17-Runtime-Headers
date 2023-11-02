@@ -1,0 +1,95 @@
+
+@interface BLSHAlwaysOnPresentationEngine : NSObject <BLSFlipbookDiagnosticsProviding, BLSHAlwaysFillFlipbookProvider, BLSHBacklightInactiveEnvironmentSessionObserving, BLSHBacklightSceneHostEnvironmentObserver, BLSHEngineRenderFlipbookSessionDelegate, BLSHEngineRequestDatesOperationDelegate, BLSHFlipbookPowerSavingProviding, BLSHOnSystemSleepActionDelegate, BLSHPseudoFlipbookProvider> {
+    <BLSHAlwaysOnPresentationEngineDelegate> * _delegate;
+    BLSHFlipbookPowerSavingProvider * _flipbookPowerSavingProvider;
+    BLSHFlipbookSpecification * _flipbookSpecification;
+    <BLSHFlipbookTelemetry> * _flipbookTelemetryDelegate;
+    <BLSHInactiveBudgetPolicing_Private> * _inactiveBudgetPolicy;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    bool  _lock_alwaysFillFlipbook;
+    BLSHPresentationUpdates * _lock_cachedFlipbookUpdates;
+    long long  _lock_engineState;
+    long long  _lock_fillFlipbookState;
+    <BLSHFlipbook> * _lock_flipbook;
+    <BLSHRenderedFlipbookFrame> * _lock_frameOnGlassWhenFlipbookLastCancelled;
+    BLSHBacklightInactiveEnvironmentSession * _lock_inactiveSession;
+    BLSHPresentationDateSpecifier * _lock_lastLiveSpecifier;
+    NSDateInterval * _lock_lastRequestInterval;
+    <BLSHPreventSystemSleepAsserting> * _lock_livePowerAssertion;
+    bool  _lock_onStandby;
+    BLSHDateSpecifierModel * _lock_presentationDatesModel;
+    BLSHEngineRenderFlipbookSession * _lock_renderFlipbookSession;
+    <BLSHPreventSystemSleepAsserting> * _lock_renderFlipbookSessionPowerAssertion;
+    BLSHPresentationDateSpecifier * _lock_renderingSpecifier;
+    unsigned long long  _lock_renderingSpecifier_backoffTime;
+    BLSHEngineRequestDatesOperation * _lock_requestDatesOperation;
+    bool  _lock_requestDatesOperationDidTimeout;
+    bool  _lock_restrictedFramerate;
+    NSDate * _lock_serviceNextUpdatesStart;
+    bool  _lock_shouldNotifyFlipbookCurrent;
+    id /* block */  _lock_sleepActionCompletion;
+    double  _lock_sleepRequestedTime;
+    bool  _lock_suppressed;
+    <BSTimerScheduleQuerying><BSInvalidatable> * _lock_timer;
+    bool  _lock_usePseudoFlipbook;
+    <BLSHOSInterfaceProviding> * _osInterfaceProvider;
+    BLSHFlipbookHistory * _renderedFlipbookHistory;
+    BLSHOnSystemSleepAction * _sleepAction;
+    unsigned long long  _stateHandler;
+}
+
+@property (nonatomic) bool alwaysFillFlipbook;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) long long engineState;
+@property (getter=isFlipbookPowerSavingEnabled, nonatomic, readonly) bool flipbookPowerSavingEnabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) BLSHBacklightInactiveEnvironmentSession *inactiveSession;
+@property (getter=isOnStandby, nonatomic) bool onStandby;
+@property (readonly) Class superclass;
+@property (getter=isSuppressed, nonatomic, readonly) bool suppressed;
+@property (getter=isUsingPseudoFlipbook, nonatomic, readonly) bool usePseudoFlipbook;
+
+- (void).cxx_destruct;
+- (id)allFlipbookFrames;
+- (bool)alwaysFillFlipbook;
+- (void)dealloc;
+- (id)debugDescription;
+- (void)decrementDisablePowerSavingUsageCountForReason:(unsigned long long)arg1;
+- (id)description;
+- (void)didEndInactiveEnvironmentSession:(id)arg1;
+- (long long)engineState;
+- (id)frameOnGlassNow;
+- (id)frameOnGlassWhenFlipbookLastCancelled;
+- (id)frameWithUUID:(id)arg1;
+- (void)hostEnvironment:(id)arg1 hostDidSetUnrestrictedFramerateUpdates:(bool)arg2;
+- (void)hostEnvironment:(id)arg1 invalidateContentForReason:(id)arg2;
+- (void)inactiveEnvironmentSession:(id)arg1 didUpdateToPresentation:(id)arg2;
+- (id)inactiveSession;
+- (void)incrementDisablePowerSavingUsageCountForReason:(unsigned long long)arg1;
+- (id)initWithDelegate:(id)arg1 platformProvider:(id)arg2 osInterfaceProvider:(id)arg3 inactiveBudgetPolicy:(id)arg4;
+- (bool)isFlipbookPowerSavingEnabled;
+- (bool)isOnStandby;
+- (bool)isSuppressed;
+- (bool)isUsingPseudoFlipbook;
+- (void)purgeFlipbook;
+- (void)registerHandlersForService:(id)arg1;
+- (void)renderFramesSession:(id)arg1 didRenderFrame:(id)arg2 timedOutEnvironments:(id)arg3;
+- (void)renderFramesSession:(id)arg1 failedToRenderSpecifier:(id)arg2 error:(id)arg3 timedOutEnvironments:(id)arg4;
+- (void)requestDatesOperation:(id)arg1 didTimeoutPendingEnvironments:(id)arg2;
+- (void)requestDatesOperation:(id)arg1 environment:(id)arg2 didProvideSpecifiers:(id)arg3 forPresentationInterval:(id)arg4 isComplete:(bool)arg5;
+- (void)setAlwaysFillFlipbook:(bool)arg1;
+- (void)setInactiveSession:(id)arg1;
+- (void)setOnStandby:(bool)arg1;
+- (void)setSuppressed;
+- (void)setUsePseudoFlipbook:(bool)arg1;
+- (void)startFlipbookAndEnsureCurrent;
+- (void)startLiveUpdates;
+- (id)stopForReason:(id)arg1;
+- (id)suspendForReason:(id)arg1;
+- (void)systemSleepAction:(id)arg1 performWithCompletion:(id /* block */)arg2;
+- (void)systemSleepAction:(id)arg1 systemWillWakeForReason:(id)arg2;
+
+@end

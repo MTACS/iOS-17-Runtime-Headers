@@ -1,0 +1,84 @@
+
+@interface PKAccountUserDetailViewController : PKSettingsTableViewController <PKAccountServiceObserver, PKPaymentServiceDelegate, PKPhysicalCardActionControllerDelegate> {
+    PKAccount * _account;
+    PKAccountService * _accountService;
+    PKAccountUser * _accountUser;
+    PKFeatureApplication * _accountUserInvitation;
+    PKAppleAccountInformation * _appleAccountInformation;
+    PKApplyController * _applyController;
+    PKPeerPaymentAssociatedAccountsController * _associatedAccountsController;
+    PKContactAvatarManager * _avatarManager;
+    CNContact * _contact;
+    PKContactResolver * _contactResolver;
+    PKFamilyMemberCollection * _familyMemberCollection;
+    PKAccountUserDetailHeaderView * _headerView;
+    bool  _hideUserDetailHeader;
+    PKPaymentPass * _paymentPass;
+    PKPaymentService * _paymentService;
+    PKPeerPaymentAccount * _peerPaymentAccount;
+    bool  _performingAction;
+    PKPhysicalCardActionController * _physicalCardActionController;
+    PKPhysicalCardController * _physicalCardController;
+    double  _previousHeaderHeight;
+    long long  _style;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_appendActionsSectionToConfiguration:(id)arg1;
+- (void)_appendNotificationsSectionToConfiguration:(id)arg1;
+- (void)_appendPhysicalCardSectionToConfiguration:(id)arg1;
+- (void)_appendRewardsBalanceToConfiguration:(id)arg1;
+- (void)_appendShowAvailableCreditToConfiguration:(id)arg1;
+- (void)_appendSpendNotificationsSectionToConfiguration:(id)arg1;
+- (void)_appendTransactionLimitToConfiguration:(id)arg1;
+- (id)_currentConfigurationForAccountUser;
+- (id)_currentConfigurationForAccountUserInvitation;
+- (id)_footerForTransactionLimitSection;
+- (id)_footerViewForPeerPaymentAccountSetup;
+- (bool)_hasPhysicalCardAction;
+- (void)_loadPeerPaymentAccount;
+- (void)_presentAccountUserInvitation;
+- (void)_presentCancelInvitationAlert;
+- (void)_presentDisplayableError:(id)arg1;
+- (void)_presentPasswordAuthorizationWithReason:(id)arg1 completion:(id /* block */)arg2;
+- (void)_presentPeerPaymentFamilySharingSetupForFamilyMember:(id)arg1;
+- (void)_presentStopSharingAlert;
+- (void)_setPerformingAction:(bool)arg1 animated:(bool)arg2;
+- (bool)_shouldShowRewardsBalance;
+- (void)_updateConfigurationAnimated:(bool)arg1;
+- (void)_updateContactInfoAndHeaderViewAnimated:(bool)arg1;
+- (void)_updateMonthlySpendLimit:(id)arg1;
+- (void)_updateMonthlySpendNotificationThreshold:(id)arg1;
+- (void)_updateNotificationSettings:(id)arg1;
+- (void)_updatePreferences:(id)arg1;
+- (void)_updateShowAvailableCredit:(bool)arg1;
+- (void)_updateSpendingEnabled:(bool)arg1;
+- (void)_updateTransactionLimit:(id)arg1;
+- (void)_updateTransactionNotificationThreshold:(id)arg1;
+- (void)_updateTransactionNotificationsEnabled:(bool)arg1;
+- (void)accountChanged:(id)arg1;
+- (void)accountUsersChanged:(id)arg1 forAccountIdentifier:(id)arg2;
+- (void)dealloc;
+- (void)featureApplicationChanged:(id)arg1;
+- (void)featureApplicationRemoved:(id)arg1;
+- (id)initWithPaymentPass:(id)arg1 style:(long long)arg2 account:(id)arg3 accountUser:(id)arg4 familyMemberCollection:(id)arg5 avatarManager:(id)arg6 contactResolver:(id)arg7;
+- (id)initWithPaymentPass:(id)arg1 style:(long long)arg2 account:(id)arg3 accountUser:(id)arg4 familyMemberCollection:(id)arg5 avatarManager:(id)arg6 contactResolver:(id)arg7 hideUserDetailHeader:(bool)arg8;
+- (id)initWithPaymentPass:(id)arg1 style:(long long)arg2 account:(id)arg3 accountUserInvitation:(id)arg4 familyMemberCollection:(id)arg5 avatarManager:(id)arg6 contactResolver:(id)arg7;
+- (id)initWithPaymentPass:(id)arg1 style:(long long)arg2 account:(id)arg3 accountUserInvitation:(id)arg4 familyMemberCollection:(id)arg5 avatarManager:(id)arg6 contactResolver:(id)arg7 hideUserDetailHeader:(bool)arg8;
+- (id)initWithPaymentPass:(id)arg1 style:(long long)arg2 account:(id)arg3 familyMemberCollection:(id)arg4 avatarManager:(id)arg5 contactResolver:(id)arg6 hideUserDetailHeader:(bool)arg7;
+- (void)physicalCardActionController:(id)arg1 didChangeToState:(long long)arg2 withError:(id)arg3;
+- (void)physicalCardsChanged:(id)arg1 forAccountIdentifier:(id)arg2;
+- (id)presentationSceneIdentifierForPhysicalCardActionController:(id)arg1;
+- (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+
+@end

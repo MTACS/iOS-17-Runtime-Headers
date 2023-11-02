@@ -1,0 +1,80 @@
+
+@interface AMSPurchaseInfo : NSObject {
+    ACAccount * _account;
+    AMSPurchaseTask * _activePurchaseTask;
+    bool  _addKBSync;
+    NSMutableDictionary * _additionalHeaders;
+    AMSBuyParams * _buyParams;
+    NSString * _clientCorrelationKey;
+    AMSProcessInfo * _clientInfo;
+    <AMSPurchaseDelegate> * _delegate;
+    NSDictionary * _dialog;
+    NSString * _dialogId;
+    NSNumber * _expressCheckoutMode;
+    bool  _hasBeenAuthedForBuy;
+    bool  _hasRetriedOriginalOwnerAccount;
+    NSDictionary * _idmsTokens;
+    LAContext * _localAuthContext;
+    NSURL * _paymentServicesURL;
+    NSString * _paymentToken;
+    AMSPurchase * _purchase;
+}
+
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic) AMSPurchaseTask *activePurchaseTask;
+@property (nonatomic) bool addKBSync;
+@property (nonatomic, retain) NSMutableDictionary *additionalHeaders;
+@property (nonatomic, retain) AMSBuyParams *buyParams;
+@property (nonatomic, readonly) NSString *clientCorrelationKey;
+@property (nonatomic, readonly) AMSProcessInfo *clientInfo;
+@property (nonatomic) <AMSPurchaseDelegate> *delegate;
+@property (nonatomic, retain) NSDictionary *dialog;
+@property (nonatomic, retain) NSString *dialogId;
+@property (nonatomic, retain) NSNumber *expressCheckoutMode;
+@property (nonatomic) bool hasBeenAuthedForBuy;
+@property (nonatomic) bool hasRetriedOriginalOwnerAccount;
+@property (nonatomic, retain) NSDictionary *idmsTokens;
+@property (nonatomic, retain) LAContext *localAuthContext;
+@property (nonatomic, retain) NSURL *paymentServicesURL;
+@property (nonatomic, retain) NSString *paymentToken;
+@property (nonatomic, readonly) AMSPurchase *purchase;
+
+- (void).cxx_destruct;
+- (id)_purchaseStringForType:(long long)arg1;
+- (id)account;
+- (id)activePurchaseTask;
+- (bool)addKBSync;
+- (id)additionalHeaders;
+- (id)buyParams;
+- (id)clientCorrelationKey;
+- (id)clientInfo;
+- (id)delegate;
+- (id)description;
+- (id)dialog;
+- (id)dialogId;
+- (id)expressCheckoutMode;
+- (bool)hasBeenAuthedForBuy;
+- (bool)hasRetriedOriginalOwnerAccount;
+- (id)idmsTokens;
+- (id)initWithPurchase:(id)arg1;
+- (id)localAuthContext;
+- (id)paymentServicesURL;
+- (id)paymentToken;
+- (id)purchase;
+- (void)setAccount:(id)arg1;
+- (void)setActivePurchaseTask:(id)arg1;
+- (void)setAddKBSync:(bool)arg1;
+- (void)setAdditionalHeaders:(id)arg1;
+- (void)setBuyParams:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDialog:(id)arg1;
+- (void)setDialogId:(id)arg1;
+- (void)setExpressCheckoutMode:(id)arg1;
+- (void)setHasBeenAuthedForBuy:(bool)arg1;
+- (void)setHasRetriedOriginalOwnerAccount:(bool)arg1;
+- (void)setIdmsTokens:(id)arg1;
+- (void)setLocalAuthContext:(id)arg1;
+- (void)setPaymentServicesURL:(id)arg1;
+- (void)setPaymentToken:(id)arg1;
+
+@end

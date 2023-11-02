@@ -1,0 +1,4 @@
+
+@interface ISPlaceholderImage : IFPlaceholderImage
+
+@end

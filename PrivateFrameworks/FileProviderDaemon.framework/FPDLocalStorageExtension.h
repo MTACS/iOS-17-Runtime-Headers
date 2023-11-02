@@ -1,0 +1,4 @@
+
+@interface FPDLocalStorageExtension : FPDExtension
+
+@end

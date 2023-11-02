@@ -1,0 +1,4 @@
+
+@interface MTROtaSoftwareUpdateProviderClusterApplyUpdateResponseParams : MTROTASoftwareUpdateProviderClusterApplyUpdateResponseParams
+
+@end

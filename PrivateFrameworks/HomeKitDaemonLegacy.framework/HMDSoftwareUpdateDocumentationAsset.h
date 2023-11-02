@@ -1,0 +1,105 @@
+
+@interface HMDSoftwareUpdateDocumentationAsset : HMFObject <HMFLogging, HMFObject, HMSoftwareUpdateDocumentationAssetExtractorDelegate, HMSoftwareUpdateUrlSessionDelegate, NSSecureCoding> {
+    <HMSoftwareUpdateUrlSession> * _URLSession;
+    id /* block */  _URLSessionFactory;
+    NSInputStream * _archivedFileStream;
+    id /* block */  _dateWithTimeIntervalSinceNowFactory;
+    unsigned long long  _downloadRetryCount;
+    <HMSoftwareUpdateDocumentationAssetExtractor> * _extractor;
+    id /* block */  _extractorFactory;
+    NSUUID * _identifier;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    HMSoftwareUpdateDocumentationMetadata * _metadata;
+    NSDate * _nextPermittedDownloadDate;
+    NSNotificationCenter * _notificationCenter;
+    NSObject<OS_dispatch_queue> * _queue;
+    bool  _shouldAutomaticallyCache;
+    long long  _state;
+}
+
+@property (readonly, copy) NSURL *URL;
+@property (nonatomic, retain) <HMSoftwareUpdateUrlSession> *URLSession;
+@property (readonly) id /* block */ URLSessionFactory;
+@property (nonatomic, retain) NSInputStream *archivedFileStream;
+@property (nonatomic, readonly, copy) NSArray *attributeDescriptions;
+@property (readonly, copy) NSURL *bundleURL;
+@property (readonly) id /* block */ dateWithTimeIntervalSinceNowFactory;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) HMSoftwareUpdateDocumentation *documentation;
+@property unsigned long long downloadRetryCount;
+@property (nonatomic, retain) <HMSoftwareUpdateDocumentationAssetExtractor> *extractor;
+@property (readonly) id /* block */ extractorFactory;
+@property (readonly) unsigned long long hash;
+@property (readonly, copy) NSUUID *identifier;
+@property (readonly) HMSoftwareUpdateDocumentationMetadata *metadata;
+@property (copy) NSDate *nextPermittedDownloadDate;
+@property (readonly) NSNotificationCenter *notificationCenter;
+@property (readonly, copy) NSString *privateDescription;
+@property (readonly, copy) NSString *propertyDescription;
+@property (readonly, copy) NSString *shortDescription;
+@property bool shouldAutomaticallyCache;
+@property (readonly) long long state;
+@property (readonly) Class superclass;
+
++ (id)assetDirectoryURL;
++ (id)assetWithURL:(id)arg1;
++ (id)logCategory;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)URL;
+- (id)URLSession;
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (id /* block */)URLSessionFactory;
+- (id)archiveURL;
+- (id)archivedFileStream;
+- (id)bundleURL;
+- (void)cancelDownload;
+- (void)cancelUnarchive;
+- (id /* block */)dateWithTimeIntervalSinceNowFactory;
+- (id)documentation;
+- (unsigned long long)downloadRetryCount;
+- (void)encodeWithCoder:(id)arg1;
+- (id)extractor;
+- (id /* block */)extractorFactory;
+- (void)finishDownload;
+- (void)finishUnarchive;
+- (unsigned long long)hash;
+- (id)identifier;
+- (void)increaseDownloadRetryCount;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDocumentationMetadata:(id)arg1;
+- (id)initWithDocumentationMetadata:(id)arg1 dateWithTimeIntervalSinceNowFactory:(id /* block */)arg2 URLSessionFactory:(id /* block */)arg3 extractorFactory:(id /* block */)arg4 notificationCenter:(id)arg5;
+- (bool)isDownloadPermitted;
+- (bool)isEqual:(id)arg1;
+- (id)logIdentifier;
+- (id)metadata;
+- (id)metadataURL;
+- (id)nextPermittedDownloadDate;
+- (id)notificationCenter;
+- (id)propertyDescription;
+- (bool)purgeWithError:(id*)arg1;
+- (void)resetDownloadRetryCount;
+- (bool)saveWithError:(id*)arg1;
+- (void)setArchivedFileStream:(id)arg1;
+- (void)setDownloadRetryCount:(unsigned long long)arg1;
+- (void)setExtractionProgress:(double)arg1;
+- (void)setExtractor:(id)arg1;
+- (void)setNextPermittedDownloadDate:(id)arg1;
+- (void)setShouldAutomaticallyCache:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (void)setURLSession:(id)arg1;
+- (id)shortDescription;
+- (bool)shouldAutomaticallyCache;
+- (void)startCaching;
+- (void)startDownload;
+- (void)startUnarchive;
+- (long long)state;
+
+@end

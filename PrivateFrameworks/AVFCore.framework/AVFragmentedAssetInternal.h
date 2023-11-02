@@ -1,0 +1,4 @@
+
+@interface AVFragmentedAssetInternal : NSObject
+
+@end

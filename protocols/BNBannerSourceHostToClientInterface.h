@@ -1,0 +1,4 @@
+
+@protocol BNBannerSourceHostToClientInterface <NSObject>
+
+@end

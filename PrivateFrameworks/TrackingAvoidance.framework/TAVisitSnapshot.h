@@ -1,0 +1,93 @@
+
+@interface TAVisitSnapshot : NSObject <NSSecureCoding> {
+    unsigned long long  _displayEventBufferSizeCap;
+    NSMutableArray * _displayEvents;
+    TADisplayOnCalculator * _displayOnCalculator;
+    NSNumber * _distanceToClosestLoi;
+    NSMutableDictionary * _earliestUtAdvertisements;
+    NSDate * _entryDurationOfConsiderationClosed;
+    NSDate * _exitIntervalBeginning;
+    bool  _isClosed;
+    TALocationLite * _latestLocation;
+    bool  _latestLocationInsideVisit;
+    NSMutableDictionary * _latestUtAdvertisements;
+    unsigned long long  _loiType;
+    NSMutableOrderedSet * _lruUtAdvertisementCache;
+    unsigned long long  _maxNSigmaBetweenLastLocationAndVisit;
+    TACLVisit * _representativeVisit;
+    unsigned long long  _uniqueUTBufferSizeCap;
+}
+
+@property (nonatomic) unsigned long long displayEventBufferSizeCap;
+@property (nonatomic, retain) NSMutableArray *displayEvents;
+@property (nonatomic, retain) TADisplayOnCalculator *displayOnCalculator;
+@property (nonatomic, retain) NSNumber *distanceToClosestLoi;
+@property (nonatomic, readonly) NSMutableDictionary *earliestUtAdvertisements;
+@property (nonatomic, retain) NSDate *entryDurationOfConsiderationClosed;
+@property (nonatomic, retain) NSDate *exitIntervalBeginning;
+@property (nonatomic, readonly) bool isClosed;
+@property (nonatomic, readonly, copy) TALocationLite *latestLocation;
+@property (nonatomic, readonly) bool latestLocationInsideVisit;
+@property (nonatomic, readonly) NSMutableDictionary *latestUtAdvertisements;
+@property (nonatomic, readonly) unsigned long long loiType;
+@property (nonatomic, retain) NSMutableOrderedSet *lruUtAdvertisementCache;
+@property (nonatomic) unsigned long long maxNSigmaBetweenLastLocationAndVisit;
+@property (nonatomic, readonly) TACLVisit *representativeVisit;
+@property (nonatomic) unsigned long long uniqueUTBufferSizeCap;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)addScanState:(id)arg1;
+- (void)addSystemState:(id)arg1;
+- (void)addUTAdvertisement:(id)arg1;
+- (void)calculateExitIntervalWithDisplayOnBudget:(double)arg1;
+- (void)closeSnapshotCleanup;
+- (unsigned long long)displayEventBufferSizeCap;
+- (id)displayEvents;
+- (id)displayOnCalculator;
+- (id)distanceToClosestLoi;
+- (id)earliestUtAdvertisements;
+- (void)encodeWithCoder:(id)arg1;
+- (id)entryDurationOfConsiderationClosed;
+- (unsigned long long)evaluateSnapshotQualityWithMinDwellDuration:(double)arg1 minDisplayOnDuration:(double)arg2;
+- (id)exitIntervalBeginning;
+- (id)getArrivalDelay;
+- (id)getDepartureDelay;
+- (double)getDisplayOnTimeUntilEndDate:(id)arg1;
+- (double)getDurationOfVisitEntryConsideredWithDisplayOnBudget:(double)arg1;
+- (double)getDurationOfVisitExitConsideredWithDisplayOnBudget:(double)arg1;
+- (id)getEntryAdvertisementsWithDisplayOnBudget:(double)arg1;
+- (id)getEntryIntervalEvaluatedUntil;
+- (id)getExitAdvertisementsWithDisplayOnBudget:(double)arg1;
+- (id)getLocationRepresentingSnapshot;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithTACLVisit:(id)arg1 uniqueUTBufferCap:(unsigned long long)arg2 displayEventBufferSizeCap:(unsigned long long)arg3 maxNSigmaBetweenLastLocationAndVisit:(unsigned long long)arg4;
+- (bool)isClosed;
+- (bool)isEqual:(id)arg1;
+- (id)latestLocation;
+- (bool)latestLocationInsideVisit;
+- (id)latestUtAdvertisements;
+- (unsigned long long)loiType;
+- (id)lruUtAdvertisementCache;
+- (unsigned long long)maxNSigmaBetweenLastLocationAndVisit;
+- (id)mostRecentAdvertisementDate;
+- (void)pruneDisplayEvents;
+- (id)representativeVisit;
+- (bool)setDepartureVisit:(id)arg1;
+- (void)setDisplayEventBufferSizeCap:(unsigned long long)arg1;
+- (void)setDisplayEvents:(id)arg1;
+- (void)setDisplayOnCalculator:(id)arg1;
+- (void)setDistanceToClosestLoi:(id)arg1;
+- (void)setEntryDurationOfConsiderationClosed:(id)arg1;
+- (void)setExitIntervalBeginning:(id)arg1;
+- (void)setLruUtAdvertisementCache:(id)arg1;
+- (void)setMaxNSigmaBetweenLastLocationAndVisit:(unsigned long long)arg1;
+- (void)setRepresentativeVisit:(id)arg1;
+- (void)setUniqueUTBufferSizeCap:(unsigned long long)arg1;
+- (unsigned long long)uniqueUTBufferSizeCap;
+- (void)updateEntryIntervalWithDisplayOnBudget:(double)arg1 evaluateToEnd:(bool)arg2;
+- (void)updateLatestLocation:(id)arg1;
+- (void)updateLoiType:(id)arg1;
+
+@end

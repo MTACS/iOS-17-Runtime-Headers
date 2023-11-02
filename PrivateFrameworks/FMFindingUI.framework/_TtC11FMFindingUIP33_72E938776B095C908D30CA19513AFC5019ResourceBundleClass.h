@@ -1,0 +1,4 @@
+
+@interface _TtC11FMFindingUIP33_72E938776B095C908D30CA19513AFC5019ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,87 @@
+
+@interface HUIncomingInvitationTableViewCell : UITableViewCell <HUInvitationHelperDelegate> {
+    CNAvatarView * _avatarView;
+    UIButton * _closeButton;
+    CNContact * _contact;
+    HFContactController * _contactsController;
+    <HUIncomingInvitationTableViewCellDelegate> * _delegate;
+    NSArray * _dynamicConstraints;
+    NSArray * _familyMembers;
+    UILabel * _homeNameLabel;
+    UILabel * _infoLabel;
+    HMIncomingHomeInvitation * _invitation;
+    HUInvitationHelper * _invitationHelper;
+    UIButtonConfiguration * _knownContactViewButtonConfiguration;
+    UIButton * _reportJunkButton;
+    bool  _showSpinner;
+    UIActivityIndicatorView * _spinner;
+    UIButton * _viewButton;
+}
+
+@property (nonatomic, retain) CNAvatarView *avatarView;
+@property (nonatomic, retain) UIButton *closeButton;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic, retain) HFContactController *contactsController;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HUIncomingInvitationTableViewCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *dynamicConstraints;
+@property (nonatomic, retain) NSArray *familyMembers;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UILabel *homeNameLabel;
+@property (nonatomic, retain) UILabel *infoLabel;
+@property (nonatomic, retain) HMIncomingHomeInvitation *invitation;
+@property (nonatomic, retain) HUInvitationHelper *invitationHelper;
+@property (nonatomic, retain) UIButtonConfiguration *knownContactViewButtonConfiguration;
+@property (nonatomic, retain) UIButton *reportJunkButton;
+@property (nonatomic) bool showSpinner;
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIButton *viewButton;
+
+- (void).cxx_destruct;
+- (void)_hideInvitationSpinner;
+- (void)_setupDynamicConstraints;
+- (void)_showInvitationSpinner;
+- (void)_updateInvitationViews;
+- (id)avatarView;
+- (id)closeButton;
+- (void)closeButtonPressed:(id)arg1;
+- (id)contact;
+- (id)contactsController;
+- (void)declineButtonPressed:(id)arg1;
+- (id)delegate;
+- (id)dynamicConstraints;
+- (id)familyMembers;
+- (id)homeNameLabel;
+- (id)infoLabel;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)invitation;
+- (id)invitationHelper;
+- (void)invitationUtilityDidUpdateInformation:(id)arg1;
+- (id)knownContactViewButtonConfiguration;
+- (void)prepareForReuse;
+- (id)reportJunkButton;
+- (void)reportJunkPressed:(id)arg1;
+- (void)setAvatarView:(id)arg1;
+- (void)setCloseButton:(id)arg1;
+- (void)setContact:(id)arg1;
+- (void)setContactsController:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDynamicConstraints:(id)arg1;
+- (void)setFamilyMembers:(id)arg1;
+- (void)setHomeNameLabel:(id)arg1;
+- (void)setInfoLabel:(id)arg1;
+- (void)setInvitation:(id)arg1;
+- (void)setInvitationHelper:(id)arg1;
+- (void)setKnownContactViewButtonConfiguration:(id)arg1;
+- (void)setReportJunkButton:(id)arg1;
+- (void)setShowSpinner:(bool)arg1;
+- (void)setSpinner:(id)arg1;
+- (void)setViewButton:(id)arg1;
+- (bool)showSpinner;
+- (id)spinner;
+- (id)viewButton;
+- (void)viewButtonPressed:(id)arg1;
+
+@end

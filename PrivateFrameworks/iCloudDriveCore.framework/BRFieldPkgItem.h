@@ -1,0 +1,84 @@
+
+@interface BRFieldPkgItem : PBCodable <NSCopying> {
+    struct { 
+        unsigned int mtime : 1; 
+        unsigned int xattrIndex : 1; 
+        unsigned int isExecutable : 1; 
+        unsigned int isWritable : 1; 
+    }  _has;
+    bool  _isExecutable;
+    bool  _isWritable;
+    long long  _mtime;
+    NSString * _path;
+    NSData * _quarantineInfo;
+    NSData * _signature;
+    NSString * _symlinkContent;
+    int  _type;
+    long long  _xattrIndex;
+}
+
+@property (nonatomic) bool hasIsExecutable;
+@property (nonatomic) bool hasIsWritable;
+@property (nonatomic) bool hasMtime;
+@property (nonatomic, readonly) bool hasPath;
+@property (nonatomic, readonly) bool hasQuarantineInfo;
+@property (nonatomic, readonly) bool hasSignature;
+@property (nonatomic, readonly) bool hasSymlinkContent;
+@property (nonatomic) bool hasXattrIndex;
+@property (nonatomic) bool isExecutable;
+@property (nonatomic) bool isWritable;
+@property (nonatomic) long long mtime;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSData *quarantineInfo;
+@property (nonatomic, retain) NSData *signature;
+@property (nonatomic, retain) NSString *symlinkContent;
+@property (nonatomic) int type;
+@property (nonatomic) long long xattrIndex;
+
+- (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
+- (void)clear;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasIsExecutable;
+- (bool)hasIsWritable;
+- (bool)hasMtime;
+- (bool)hasPath;
+- (bool)hasQuarantineInfo;
+- (bool)hasSignature;
+- (bool)hasSymlinkContent;
+- (bool)hasXattrIndex;
+- (unsigned long long)hash;
+- (id)initWithPkgItem:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isExecutable;
+- (bool)isWritable;
+- (void)mergeFrom:(id)arg1;
+- (long long)mtime;
+- (id)path;
+- (id)quarantineInfo;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsExecutable:(bool)arg1;
+- (void)setHasIsWritable:(bool)arg1;
+- (void)setHasMtime:(bool)arg1;
+- (void)setHasXattrIndex:(bool)arg1;
+- (void)setIsExecutable:(bool)arg1;
+- (void)setIsWritable:(bool)arg1;
+- (void)setMtime:(long long)arg1;
+- (void)setPath:(id)arg1;
+- (void)setQuarantineInfo:(id)arg1;
+- (void)setSignature:(id)arg1;
+- (void)setSymlinkContent:(id)arg1;
+- (void)setType:(int)arg1;
+- (void)setXattrIndex:(long long)arg1;
+- (id)signature;
+- (id)symlinkContent;
+- (int)type;
+- (id)typeAsString:(int)arg1;
+- (void)updateWithPkgItem:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (long long)xattrIndex;
+
+@end

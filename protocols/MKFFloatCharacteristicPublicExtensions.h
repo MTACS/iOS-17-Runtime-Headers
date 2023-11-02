@@ -1,0 +1,4 @@
+
+@protocol MKFFloatCharacteristicPublicExtensions
+
+@end

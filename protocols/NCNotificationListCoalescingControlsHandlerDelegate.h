@@ -1,0 +1,15 @@
+
+@protocol NCNotificationListCoalescingControlsHandlerDelegate <NSObject>
+
+@optional
+
+- (UIView *)containerViewForCoalescingControlsHandlerPreviewInteractionPresentedContent:(id <NCNotificationListCoalescingControlsHandler>)arg1;
+- (void)notificationListCoalescingControlsHandler:(id <NCNotificationListCoalescingControlsHandler>)arg1 didTransitionToClearState:(bool)arg2;
+- (void)notificationListCoalescingControlsHandlerDidBeginPreviewInteraction:(id <NCNotificationListCoalescingControlsHandler>)arg1;
+- (void)notificationListCoalescingControlsHandlerDidDismissPreviewInteractionPresentedContent:(id <NCNotificationListCoalescingControlsHandler>)arg1;
+- (void)notificationListCoalescingControlsHandlerDidPresentPreviewInteractionPresentedContent:(id <NCNotificationListCoalescingControlsHandler>)arg1;
+- (void)notificationListCoalescingControlsHandlerRequestsClearingAllNotifications:(id <NCNotificationListCoalescingControlsHandler>)arg1;
+- (void)notificationListCoalescingControlsHandlerRequestsClearingNotifications:(id <NCNotificationListCoalescingControlsHandler>)arg1;
+- (void)notificationListCoalescingControlsHandlerRequestsRestackingNotifications:(id <NCNotificationListCoalescingControlsHandler>)arg1;
+
+@end

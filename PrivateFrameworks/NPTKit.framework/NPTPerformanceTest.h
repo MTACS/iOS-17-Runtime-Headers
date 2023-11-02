@@ -1,0 +1,95 @@
+
+@interface NPTPerformanceTest : NSObject <NPTDownloadDelegate, NPTPingDelegate, NPTUploadDelegate, NSCopying, NSSecureCoding> {
+    NSDictionary * __additionalMetadata;
+    id /* block */  __metadataDidChangeHandler;
+    NPTPerformanceTestConfiguration * _configuration;
+    id  _delegate;
+    bool  _inTimedMode;
+    NPTResults * _results;
+    NPTMetadataCollector * collector;
+    NPTDownload * download;
+    NSObject<OS_nw_activity> * performanceTestActivity;
+    NPTPing * ping;
+    NSMutableDictionary * restoredMetadata;
+    NSMutableDictionary * snapshots;
+    NPTUpload * upload;
+    NSString * uuid;
+}
+
+@property (nonatomic, retain) NSDictionary *_additionalMetadata;
+@property (nonatomic, copy) id /* block */ _metadataDidChangeHandler;
+@property (nonatomic, retain) NPTPerformanceTestConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionary;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool inTimedMode;
+@property (nonatomic, readonly) NSDictionary *metadata;
+@property (nonatomic, copy) id /* block */ metadataDidChangeHandler;
+@property (nonatomic, retain) NPTResults *results;
+@property (readonly) Class superclass;
+
++ (id)performanceTestWithConfiguration:(id)arg1;
++ (id)performanceTestWithDefaultConfiguration;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)NQRatingFromEnum:(long long)arg1;
+- (id)_additionalMetadata;
+- (id /* block */)_metadataDidChangeHandler;
+- (void)activateActivity;
+- (void)cancelAllNetworking;
+- (id)collectorsWithoutCDNDebug;
+- (void)completeActivityWithReason:(int)arg1;
+- (id)configuration;
+- (id)convertDateToISO8601String:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (id)dictionary;
+- (void)download:(id)arg1 didFinishWithError:(id)arg2;
+- (void)download:(id)arg1 didFinishWithResults:(id)arg2;
+- (void)download:(id)arg1 didReceiveSpeedMetric:(id)arg2;
+- (void)downloadWillStart;
+- (void)encodeWithCoder:(id)arg1;
+- (id)fetchAWDMetric;
+- (void)fetchAndSaveWRMMetrics;
+- (id)getDataForCoreAnalytics;
+- (id)getFlattenedDictionary;
+- (id)getFlattenedMetadataDictionary:(id)arg1;
+- (id)getTransformedDataForCoreAnalytics;
+- (bool)inTimedMode;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithConfiguration:(id)arg1;
+- (void)logFrameworkUsage:(int)arg1;
+- (id)metadata;
+- (id /* block */)metadataDidChangeHandler;
+- (void)pingDidFinishWithError:(id)arg1;
+- (void)pingDidFinishWithResults:(id)arg1;
+- (void)pingWillStartPinging;
+- (id)results;
+- (void)save;
+- (void)saveToAWD;
+- (void)setConfiguration:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setInTimedMode:(bool)arg1;
+- (void)setMetadataDidChangeHandler:(id /* block */)arg1;
+- (void)setResults:(id)arg1;
+- (void)set_additionalMetadata:(id)arg1;
+- (void)set_metadataDidChangeHandler:(id /* block */)arg1;
+- (void)startDownloadWithCompletion:(id /* block */)arg1;
+- (void)startMetadataCollectionWithCompletion:(id /* block */)arg1;
+- (void)startPingWithCompletion:(id /* block */)arg1;
+- (void)startTestWithCompletion:(id /* block */)arg1;
+- (void)startUploadWithCompletion:(id /* block */)arg1;
+- (void)stopMetadataCollection;
+- (id)timestampMasked;
+- (id)timestampMaskedString;
+- (void)upload:(id)arg1 didFinishWithError:(id)arg2;
+- (void)upload:(id)arg1 didFinishWithResults:(id)arg2;
+- (void)upload:(id)arg1 didReceiveSpeedMetric:(id)arg2;
+- (void)uploadWillStart;
+
+@end

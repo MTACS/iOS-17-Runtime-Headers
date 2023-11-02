@@ -1,0 +1,103 @@
+
+@interface PPM2AttributedFeedback : PBCodable <NSCopying> {
+    NSString * _activeTreatments;
+    int  _algorithm;
+    int  _category;
+    NSString * _clientId;
+    int  _domain;
+    NSString * _dynamicCategory;
+    struct { 
+        unsigned int algorithm : 1; 
+        unsigned int category : 1; 
+        unsigned int domain : 1; 
+        unsigned int source : 1; 
+        unsigned int type : 1; 
+        unsigned int isRemote : 1; 
+    }  _has;
+    bool  _isRemote;
+    NSString * _mappingId;
+    int  _source;
+    int  _type;
+}
+
+@property (nonatomic, retain) NSString *activeTreatments;
+@property (nonatomic) int algorithm;
+@property (nonatomic) int category;
+@property (nonatomic, retain) NSString *clientId;
+@property (nonatomic) int domain;
+@property (nonatomic, retain) NSString *dynamicCategory;
+@property (nonatomic, readonly) bool hasActiveTreatments;
+@property (nonatomic) bool hasAlgorithm;
+@property (nonatomic) bool hasCategory;
+@property (nonatomic, readonly) bool hasClientId;
+@property (nonatomic) bool hasDomain;
+@property (nonatomic, readonly) bool hasDynamicCategory;
+@property (nonatomic) bool hasIsRemote;
+@property (nonatomic, readonly) bool hasMappingId;
+@property (nonatomic) bool hasSource;
+@property (nonatomic) bool hasType;
+@property (nonatomic) bool isRemote;
+@property (nonatomic, retain) NSString *mappingId;
+@property (nonatomic) int source;
+@property (nonatomic) int type;
+
++ (id)options;
+
+- (void).cxx_destruct;
+- (int)StringAsAlgorithm:(id)arg1;
+- (int)StringAsCategory:(id)arg1;
+- (int)StringAsDomain:(id)arg1;
+- (int)StringAsSource:(id)arg1;
+- (int)StringAsType:(id)arg1;
+- (id)activeTreatments;
+- (int)algorithm;
+- (id)algorithmAsString:(int)arg1;
+- (int)category;
+- (id)categoryAsString:(int)arg1;
+- (id)clientId;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (int)domain;
+- (id)domainAsString:(int)arg1;
+- (id)dynamicCategory;
+- (bool)hasActiveTreatments;
+- (bool)hasAlgorithm;
+- (bool)hasCategory;
+- (bool)hasClientId;
+- (bool)hasDomain;
+- (bool)hasDynamicCategory;
+- (bool)hasIsRemote;
+- (bool)hasMappingId;
+- (bool)hasSource;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isRemote;
+- (id)mappingId;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setActiveTreatments:(id)arg1;
+- (void)setAlgorithm:(int)arg1;
+- (void)setCategory:(int)arg1;
+- (void)setClientId:(id)arg1;
+- (void)setDomain:(int)arg1;
+- (void)setDynamicCategory:(id)arg1;
+- (void)setHasAlgorithm:(bool)arg1;
+- (void)setHasCategory:(bool)arg1;
+- (void)setHasDomain:(bool)arg1;
+- (void)setHasIsRemote:(bool)arg1;
+- (void)setHasSource:(bool)arg1;
+- (void)setHasType:(bool)arg1;
+- (void)setIsRemote:(bool)arg1;
+- (void)setMappingId:(id)arg1;
+- (void)setSource:(int)arg1;
+- (void)setType:(int)arg1;
+- (int)source;
+- (id)sourceAsString:(int)arg1;
+- (int)type;
+- (id)typeAsString:(int)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

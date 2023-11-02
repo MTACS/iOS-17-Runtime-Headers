@@ -1,0 +1,4 @@
+
+@interface _TtC12HomeUICommonP33_78BCEBBF2F90CFED5AA1A32114A6503319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

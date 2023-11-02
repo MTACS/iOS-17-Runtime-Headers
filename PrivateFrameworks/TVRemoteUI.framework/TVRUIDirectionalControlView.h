@@ -1,0 +1,83 @@
+
+@interface TVRUIDirectionalControlView : UIView <UIPointerInteractionDelegate> {
+    UIView * _directionControlsWrapperView;
+    UIImageView * _downImageView;
+    <_TVRUIEventDelegate> * _eventDelegate;
+    TVRButtonHaptic * _haptic;
+    UIView * _highlightedView;
+    NSArray * _interactionViews;
+    UIImageView * _leftImageView;
+    bool  _offsetDirectionalPad;
+    UIImageView * _rightImageView;
+    UIView * _selectIndicator;
+    <TVRUIStyleProvider> * _styleProvider;
+    UIView * _tapHandlingSquareWrapperView;
+    UIImageView * _upImageView;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *directionControlsWrapperView;
+@property (nonatomic, retain) UIImageView *downImageView;
+@property (nonatomic) <_TVRUIEventDelegate> *eventDelegate;
+@property (nonatomic, retain) TVRButtonHaptic *haptic;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) UIView *highlightedView;
+@property (nonatomic, retain) NSArray *interactionViews;
+@property (nonatomic, retain) UIImageView *leftImageView;
+@property (nonatomic) bool offsetDirectionalPad;
+@property (nonatomic, retain) UIImageView *rightImageView;
+@property (nonatomic, retain) UIView *selectIndicator;
+@property (nonatomic, retain) <TVRUIStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *tapHandlingSquareWrapperView;
+@property (nonatomic, retain) UIImageView *upImageView;
+
+- (void).cxx_destruct;
+- (long long)_buttonTypeForLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_configureGesture;
+- (void)_configureLongPressGesture:(id)arg1;
+- (id)_createDirectionalImageViewWithImageName:(id)arg1;
+- (id)_directionalViewForTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_highlightArrowView:(id)arg1;
+- (void)_highlightView:(id)arg1 enabled:(bool)arg2;
+- (void)_layoutHighlightViewForView:(id)arg1;
+- (void)_sendSelectButtonPressBegan;
+- (void)_sendSelectButtonPressEnded;
+- (id)directionControlsWrapperView;
+- (id)downImageView;
+- (id)eventDelegate;
+- (void)handleLongPress:(id)arg1;
+- (void)handleTap:(id)arg1;
+- (id)haptic;
+- (id)highlightedView;
+- (id)initWithStyleProvider:(id)arg1;
+- (id)interactionViews;
+- (void)layoutSubviews;
+- (id)leftImageView;
+- (bool)offsetDirectionalPad;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)rightImageView;
+- (id)selectIndicator;
+- (void)setDirectionControlsWrapperView:(id)arg1;
+- (void)setDownImageView:(id)arg1;
+- (void)setEventDelegate:(id)arg1;
+- (void)setHaptic:(id)arg1;
+- (void)setHighlightedView:(id)arg1;
+- (void)setInteractionViews:(id)arg1;
+- (void)setLeftImageView:(id)arg1;
+- (void)setOffsetDirectionalPad:(bool)arg1;
+- (void)setRightImageView:(id)arg1;
+- (void)setSelectIndicator:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (void)setTapHandlingSquareWrapperView:(id)arg1;
+- (void)setUpImageView:(id)arg1;
+- (id)styleProvider;
+- (id)tapHandlingSquareWrapperView;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (id)upImageView;
+
+@end

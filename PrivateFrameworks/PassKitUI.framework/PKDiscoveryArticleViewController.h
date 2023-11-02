@@ -1,0 +1,115 @@
+
+@interface PKDiscoveryArticleViewController : UIViewController <PKDiscoveryCardViewDelegate, PKPaymentSetupDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate> {
+    UIActivityIndicatorView * _activityIndicator;
+    bool  _animatingCard;
+    PKDiscoveryArticleLayout * _articleLayout;
+    long long  _callToAction;
+    id /* block */  _callToActionTappedOverride;
+    PKDiscoveryCardViewTemplateInformation * _cardTemplateInformation;
+    PKDiscoveryCardView * _cardView;
+    NSMutableDictionary * _cellImageCache;
+    UICollectionView * _collectionView;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInsets;
+    <PKDiscoveryArticleViewControllerDelegate> * _delegate;
+    PKDiscoveryDismissButton * _dismissButton;
+    UILabel * _downloadingLabel;
+    bool  _hasSafeAreaInsetOverride;
+    NSMutableDictionary * _imageDownloads;
+    bool  _isDownloading;
+    NSObject<OS_dispatch_queue> * _loadImageQueue;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lockDownloads;
+    UIPanGestureRecognizer * _panGestureRecognizer;
+    NSString * _referrerIdentifierOverride;
+    bool  _reportedScrolledToBottom;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _safeAreaOverrideInsets;
+    UIScreenEdgePanGestureRecognizer * _screenEdgePanGestureRecognizer;
+    bool  _scrolledToBottom;
+    bool  _shouldHideStatusBar;
+}
+
+@property (getter=isAnimatingCard, nonatomic) bool animatingCard;
+@property (nonatomic, readonly) PKDiscoveryCardView *cardView;
+@property (nonatomic, readonly) UICollectionView *collectionView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKDiscoveryArticleViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasSafeAreaInsetOverride;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } safeAreaOverrideInsets;
+@property (nonatomic) bool shouldHideStatusBar;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_applicationWillResignActive;
+- (void)_applicationWillTerminate;
+- (void)_configureCallToActionShelfView:(id)arg1 forCallToActionShelf:(id)arg2 atIndexPath:(id)arg3;
+- (void)_configureInlineMediaShelfView:(id)arg1 forInlineMediaShelf:(id)arg2 atIndexPath:(id)arg3;
+- (long long)_dismissButtonStyleForCard;
+- (void)_dismissButtonTapped;
+- (void)_dismissForActionCompleted:(bool)arg1 withRelevantPassUniqueIdentifier:(id)arg2;
+- (void)_handlePanGesture:(id)arg1;
+- (bool)_hasCardInGalleryView;
+- (void)_leftScreenEdgePanSwipeGesture:(id)arg1;
+- (void)_loadMedia:(id)arg1 forShelfViewAtIndexPath:(id)arg2 completion:(id /* block */)arg3;
+- (id)_paymentSetupNavigationControllerForProvisioningController:(id)arg1;
+- (void)_performAccountUserInvitationFlowWithCTATapped:(id)arg1 callToAction:(id)arg2;
+- (void)_performProvisioningCTATapped:(id)arg1 callToAction:(id)arg2;
+- (void)_performStandaloneApplyWithCTATapped:(id)arg1 callToAction:(id)arg2;
+- (void)_reportScolledToBottomIfNecessary;
+- (id)_shelfForIndexPath:(id)arg1;
+- (void)_showActivityIndicator:(bool)arg1 view:(id)arg2;
+- (void)_systemTextSizeChanged;
+- (void)_updateDismissButtonIfNecessary;
+- (id)cardView;
+- (id)collectionView;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)dealloc;
+- (id)delegate;
+- (void)discoveryCardViewCTATapped:(id)arg1 callToAction:(id)arg2 itemIdentifier:(id)arg3;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)hasSafeAreaInsetOverride;
+- (id)initWithArticleLayout:(id)arg1 referrerIdentifier:(id)arg2 cardTemplateInformation:(id)arg3;
+- (id)initWithItemIdentifier:(id)arg1 referrerIdentifier:(id)arg2;
+- (bool)isAnimatingCard;
+- (bool)isScrollable;
+- (void)loadView;
+- (long long)modalPresentationStyle;
+- (long long)modalTransitionStyle;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)paymentSetupDidFinish:(id)arg1;
+- (long long)preferredStatusBarUpdateAnimation;
+- (bool)prefersStatusBarHidden;
+- (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaOverrideInsets;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)setAnimatingCard:(bool)arg1;
+- (void)setArticleLayout:(id)arg1 animated:(bool)arg2;
+- (void)setCallToActionTappedOverride:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHasSafeAreaInsetOverride:(bool)arg1;
+- (void)setIsDownloading:(bool)arg1;
+- (void)setSafeAreaOverrideInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setShouldHideStatusBar:(bool)arg1;
+- (bool)shouldHideStatusBar;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+
+@end

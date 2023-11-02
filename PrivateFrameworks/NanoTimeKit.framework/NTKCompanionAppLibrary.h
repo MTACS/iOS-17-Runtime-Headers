@@ -1,0 +1,94 @@
+
+@interface NTKCompanionAppLibrary : NSObject <ACXDeviceConnectionDelegate, LSApplicationWorkspaceObserverProtocol, NTKCompanionAppDelegate, NTKSystemAppStateCache> {
+    NSArray * _allApps;
+    bool  _appConduitLoaded;
+    NSObject<OS_dispatch_queue> * _appProcessingQueue;
+    NSHashTable * _changeObservers;
+    CLKDevice * _device;
+    NSIndexSet * _disabledComplicationTypesCache;
+    NSArray * _firstPartyApps;
+    NSSet * _installedSystemApplicationIdentifiers;
+    NSRecursiveLock * _internalLock;
+    NSObject<OS_dispatch_queue> * _observerCallbackQueue;
+    NSMutableArray * _prewarmCallbacks;
+    NSArray * _thirdPartyApps;
+    NSObject<OS_dispatch_queue> * _updateProcessingQueue;
+    NSArray * _watchSystemApps;
+}
+
+@property (nonatomic, retain) NSArray *allApps;
+@property (nonatomic) bool appConduitLoaded;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *appProcessingQueue;
+@property (nonatomic, retain) NSHashTable *changeObservers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CLKDevice *device;
+@property (nonatomic, copy) NSIndexSet *disabledComplicationTypesCache;
+@property (nonatomic, retain) NSArray *firstPartyApps;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSSet *installedSystemApplicationIdentifiers;
+@property (nonatomic, retain) NSRecursiveLock *internalLock;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *observerCallbackQueue;
+@property (nonatomic, retain) NSMutableArray *prewarmCallbacks;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *thirdPartyApps;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *updateProcessingQueue;
+@property (nonatomic, retain) NSArray *watchSystemApps;
+
++ (id)sharedAppLibrary;
+
+- (void).cxx_destruct;
+- (void)_activeDeviceChanged;
+- (void)_load;
+- (void)_loadApps;
+- (void)_loadWatchApps;
+- (void)_notifyAppAdded:(id)arg1;
+- (void)_notifyAppIconUpdated:(id)arg1;
+- (void)_notifyAppRemoved:(id)arg1;
+- (void)_notifyAppUpdated:(id)arg1;
+- (void)_queue_loadApps;
+- (void)addObserver:(id)arg1;
+- (id)allApps;
+- (bool)appConduitLoaded;
+- (id)appProcessingQueue;
+- (void)applicationDatabaseResyncedForDeviceWithPairingID:(id)arg1;
+- (void)applicationStateDidChange:(id)arg1;
+- (void)applicationsInstalled:(id)arg1 onDeviceWithPairingID:(id)arg2;
+- (void)applicationsUninstalled:(id)arg1 onDeviceWithPairingID:(id)arg2;
+- (void)applicationsUpdated:(id)arg1 onDeviceWithPairingID:(id)arg2;
+- (id)changeObservers;
+- (void)companionAppUpdatedIcon:(id)arg1;
+- (void)companionAppWasUpdated:(id)arg1;
+- (void)dealloc;
+- (id)device;
+- (id)disabledComplicationTypes;
+- (id)disabledComplicationTypesCache;
+- (id)firstPartyApps;
+- (id)init;
+- (id)installedSystemApplicationIdentifiers;
+- (id)internalLock;
+- (bool)isRemovedSystemApp:(id)arg1;
+- (bool)isRestrictedSystemApp:(id)arg1;
+- (id)observerCallbackQueue;
+- (id)prewarmCallbacks;
+- (void)prewarmCompanionDaemonWithCompletion:(id /* block */)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)setAllApps:(id)arg1;
+- (void)setAppConduitLoaded:(bool)arg1;
+- (void)setAppProcessingQueue:(id)arg1;
+- (void)setChangeObservers:(id)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setDisabledComplicationTypesCache:(id)arg1;
+- (void)setFirstPartyApps:(id)arg1;
+- (void)setInstalledSystemApplicationIdentifiers:(id)arg1;
+- (void)setInternalLock:(id)arg1;
+- (void)setObserverCallbackQueue:(id)arg1;
+- (void)setPrewarmCallbacks:(id)arg1;
+- (void)setThirdPartyApps:(id)arg1;
+- (void)setUpdateProcessingQueue:(id)arg1;
+- (void)setWatchSystemApps:(id)arg1;
+- (id)thirdPartyApps;
+- (id)updateProcessingQueue;
+- (id)watchSystemApps;
+
+@end

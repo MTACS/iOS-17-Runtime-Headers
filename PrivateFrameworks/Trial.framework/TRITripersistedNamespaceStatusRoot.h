@@ -1,0 +1,4 @@
+
+@interface TRITripersistedNamespaceStatusRoot : TRIPBRootObject
+
+@end

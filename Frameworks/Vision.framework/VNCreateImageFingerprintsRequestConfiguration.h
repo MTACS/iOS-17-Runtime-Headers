@@ -1,0 +1,4 @@
+
+@interface VNCreateImageFingerprintsRequestConfiguration : VNImageBasedRequestConfiguration
+
+@end

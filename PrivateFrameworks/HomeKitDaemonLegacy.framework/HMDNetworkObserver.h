@@ -1,0 +1,105 @@
+
+@interface HMDNetworkObserver : NSObject <HMDLogEventDailyTaskRunner, HMFTimerDelegate, HMMLogEventObserver> {
+    HMFTimer * _changeDebounceTimer;
+    unsigned long long  _collectionStartSeconds;
+    HMDEventCountersManager * _countersManager;
+    <HMDCurrentResidentDeviceDataSource> * _currentHomeDataSource;
+    HMDLogEventDailyScheduler * _dailyScheduler;
+    HMMDateProvider * _dateProvider;
+    <HMMLogEventDispatching> * _logEventDispatcher;
+    HMFWifiNetworkAssociation * _networkAssociation;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _networkAssociationLock;
+    NSNotificationCenter * _notificationCenter;
+    unsigned long long  _numAPChanges;
+    unsigned long long  _numGatewayChanges;
+    unsigned long long  _numReadErrors;
+    unsigned long long  _numReadWrites;
+    unsigned long long  _numWifiAssociations;
+    unsigned long long  _numWifiDisassociations;
+    unsigned long long  _numWriteErrors;
+    bool  _started;
+    id /* block */  _tickBlock;
+    NSMutableDictionary * _topSessionErrors;
+    NSMutableDictionary * _topWriteErrors;
+    bool  _wifiAssociated;
+    HMFWiFiManager * _wifiManager;
+}
+
+@property (readonly) HMFTimer *changeDebounceTimer;
+@property (readonly) unsigned long long collectionStartSeconds;
+@property (nonatomic, readonly) HMDEventCountersManager *countersManager;
+@property (nonatomic, readonly) <HMDCurrentResidentDeviceDataSource> *currentHomeDataSource;
+@property (nonatomic, readonly) HMDLogEventDailyScheduler *dailyScheduler;
+@property (nonatomic, readonly) HMMDateProvider *dateProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <HMMLogEventDispatching> *logEventDispatcher;
+@property (nonatomic, readonly) HMFWifiNetworkAssociation *networkAssociation;
+@property (nonatomic) struct os_unfair_lock_s { unsigned int x1; } networkAssociationLock;
+@property (nonatomic, readonly) NSNotificationCenter *notificationCenter;
+@property (nonatomic, readonly) unsigned long long numAPChanges;
+@property (nonatomic, readonly) unsigned long long numGatewayChanges;
+@property (nonatomic, readonly) unsigned long long numReadErrors;
+@property (nonatomic, readonly) unsigned long long numReadWrites;
+@property (nonatomic, readonly) unsigned long long numWifiAssociations;
+@property (nonatomic, readonly) unsigned long long numWifiDisassociations;
+@property (nonatomic, readonly) unsigned long long numWriteErrors;
+@property (nonatomic, readonly) bool started;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) id /* block */ tickBlock;
+@property (nonatomic, readonly) NSMutableDictionary *topSessionErrors;
+@property (nonatomic, readonly) NSMutableDictionary *topWriteErrors;
+@property (nonatomic) bool wifiAssociated;
+@property (nonatomic, readonly) HMFWiFiManager *wifiManager;
+
++ (id)supportedEventClasses;
+
+- (void).cxx_destruct;
+- (void)_clearNonPersistentCounters;
+- (void)_handleAccessorySessionEvent:(id)arg1;
+- (void)_handleCurrentNetworkChangedNotification:(id)arg1;
+- (void)_handleReadWriteLogEvent:(id)arg1;
+- (void)_incrementError:(id)arg1 forHistogram:(id)arg2 byValue:(unsigned long long)arg3;
+- (id)_keyOfLargestCountInHistogram:(id)arg1;
+- (id)changeDebounceTimer;
+- (void)checkNetworkChange;
+- (unsigned long long)collectionStartSeconds;
+- (id)counterGroupForName:(id)arg1 homeUUID:(id)arg2 date:(id)arg3;
+- (id)countersManager;
+- (id)currentHomeDataSource;
+- (id)dailyScheduler;
+- (id)dateProvider;
+- (void)deleteCountersAfterDate:(id)arg1;
+- (void)deleteCountersBeforeDate:(id)arg1;
+- (void)didReceiveEventFromDispatcher:(id)arg1;
+- (id)initWithLogEventDispatcher:(id)arg1 countersManager:(id)arg2 dailyScheduler:(id)arg3 currentHomeDataSource:(id)arg4 dateProvider:(id)arg5;
+- (id)initWithLogEventDispatcher:(id)arg1 countersManager:(id)arg2 dailyScheduler:(id)arg3 currentHomeDataSource:(id)arg4 dateProvider:(id)arg5 wifiManager:(id)arg6 notificationCenter:(id)arg7 changeDebounceTimer:(id)arg8 tickBlock:(id /* block */)arg9;
+- (id)logEventDispatcher;
+- (id)logEventForHomeWithUUID:(id)arg1 associatedWithDate:(id)arg2;
+- (id)networkAssociation;
+- (struct os_unfair_lock_s { unsigned int x1; })networkAssociationLock;
+- (id)notificationCenter;
+- (unsigned long long)numAPChanges;
+- (unsigned long long)numGatewayChanges;
+- (unsigned long long)numReadErrors;
+- (unsigned long long)numReadWrites;
+- (unsigned long long)numWifiAssociations;
+- (unsigned long long)numWifiDisassociations;
+- (unsigned long long)numWriteErrors;
+- (void)runDailyTask;
+- (void)setNetworkAssociationLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
+- (void)setWifiAssociated:(bool)arg1;
+- (void)start;
+- (bool)started;
+- (void)stop;
+- (id /* block */)tickBlock;
+- (void)timerDidFire:(id)arg1;
+- (id)topSessionErrors;
+- (id)topWriteErrors;
+- (bool)wifiAssociated;
+- (id)wifiManager;
+
+@end

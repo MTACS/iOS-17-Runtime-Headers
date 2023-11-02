@@ -1,0 +1,4 @@
+
+@protocol OKWidgetSpriteEmitterViewProxyExports <JSExport>
+
+@end

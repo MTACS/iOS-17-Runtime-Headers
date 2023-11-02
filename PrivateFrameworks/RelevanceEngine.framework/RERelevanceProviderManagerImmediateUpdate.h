@@ -1,0 +1,4 @@
+
+@interface RERelevanceProviderManagerImmediateUpdate : RERelevanceProviderManagerUpdate
+
+@end

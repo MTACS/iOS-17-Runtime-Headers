@@ -1,0 +1,6 @@
+
+@interface _PXPhotoKitAssetCollectionToggleFavoriteActionPerformer : _PXPhotoKitAssetCollectionAbstractFavoriteActionPerformer
+
++ (bool)_targetFavoriteStateForAssetCollectionReference:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SBIconModelApplicationDataSource <SBHIconModelApplicationDataSource>
+
+@end

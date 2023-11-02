@@ -1,0 +1,4 @@
+
+@protocol HKGraphSeriesBlockCoordinateInfo <NSObject>
+
+@end

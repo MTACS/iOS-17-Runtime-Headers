@@ -1,0 +1,4 @@
+
+@interface Nothing : NSObject
+
+@end

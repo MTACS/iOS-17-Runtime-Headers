@@ -1,0 +1,81 @@
+
+@interface LiveFSFPEnumeratorDataContainer : NSObject <LiveFSVolumeClientUpdate> {
+    bool  _addParent;
+    bool  _addedToExtension;
+    NSString * _containerID;
+    LiveFSRBTree * _contentsSortedByDate;
+    LiveFSRBTree * _contentsSortedByName;
+    LiveFSFPItemHelper * _enumeratedItem;
+    NSString * _enumeratedItemID;
+    bool  _hasPersistentIDs;
+    bool  _isDir;
+    bool  _isVolumeWide;
+    int  _state;
+    LiveFSFPExtensionHelper * ext;
+    bool  historyReset;
+    bool  isActive;
+    NSPointerArray * ourEnumerators;
+    NSObject<OS_dispatch_queue> * updateQueue;
+}
+
+@property bool addParent;
+@property bool addedToExtension;
+@property (readonly, retain) NSString *containerID;
+@property (readonly, retain) LiveFSRBTree *contentsSortedByDate;
+@property (readonly, retain) LiveFSRBTree *contentsSortedByName;
+@property (readonly) LiveFSFPItemHelper *enumeratedItem;
+@property (retain) NSString *enumeratedItemID;
+@property (readonly) bool hasPersistentIDs;
+@property (readonly) bool isDir;
+@property (readonly) bool isVolumeWide;
+@property int state;
+
+- (void).cxx_destruct;
+- (void)addEnumerator:(id)arg1;
+- (bool)addParent;
+- (bool)addedToExtension;
+- (void)applyAddAcrossEnumerators:(id)arg1 newName:(id)arg2 forSelf:(bool)arg3;
+- (void)applyDeleteAcrossEnumerators:(id)arg1 newTombstone:(id)arg2 toSelf:(bool)arg3;
+- (void)applyParentUpdateAcrossEnumerators;
+- (id)containerID;
+- (id)contentsSortedByDate;
+- (id)contentsSortedByName;
+- (void)dealloc;
+- (void)deletedItem:(id)arg1 name:(id)arg2 how:(int)arg3 interestedItem:(id)arg4;
+- (void)deletedName:(id)arg1 item:(id)arg2 how:(int)arg3 interestedItem:(id)arg4;
+- (void)dispatchOntoUpdateQueue:(id /* block */)arg1;
+- (void)doProcessItemDeleted:(id)arg1;
+- (void)doProcessItemUpdated:(id)arg1;
+- (void)doShutdown;
+- (void)doShutdownOnEnumeratorHelperQueue;
+- (void)dropEnumerator:(id)arg1;
+- (void)dropInterestForEnumeratedItem:(id)arg1;
+- (id)ensureConnectedForUpdates;
+- (id)enumeratedItem;
+- (id)enumeratedItemID;
+- (void)handleEnumeratedItemChanged;
+- (bool)hasPersistentIDs;
+- (void)historyResetItem:(id)arg1 interestedItem:(id)arg2;
+- (void)historyResetName:(id)arg1 interestedItem:(id)arg2;
+- (id)initForExtension:(id)arg1 item:(id)arg2;
+- (id)initWithEnumeratedItem:(id)arg1 fileHandle:(id)arg2 extension:(id)arg3;
+- (void)invalidate;
+- (bool)isDir;
+- (bool)isVolumeWide;
+- (id)loadContents;
+- (void)makeAllEnumeratorsDead;
+- (id)readDirBuffersForBufferBlock:(id /* block */)arg1 andEntryBlock:(id /* block */)arg2;
+- (void)renamedItem:(id)arg1 named:(id)arg2 fromDirectory:(id)arg3 intoDirectory:(id)arg4 newName:(id)arg5 atopItem:(id)arg6;
+- (void)resetAllEnumerators;
+- (void)setAddParent:(bool)arg1;
+- (void)setAddedToExtension:(bool)arg1;
+- (void)setEnumeratedItemID:(id)arg1;
+- (void)setState:(int)arg1;
+- (int)state;
+- (void)updatedItem:(id)arg1 name:(id)arg2 interestedItem:(id)arg3;
+- (void)updatedName:(id)arg1 interestedItem:(id)arg2;
+- (void)updatesDoneFor:(id)arg1;
+- (void)volumeWideDeletedName:(id)arg1 interestedItem:(id)arg2;
+- (void)volumeWideUpdatedName:(id)arg1 interestedItem:(id)arg2;
+
+@end

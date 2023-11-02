@@ -1,0 +1,26 @@
+
+@interface CNAutocompleteNameComponents : NSObject <NSCopying> {
+    NSString * _firstName;
+    NSString * _lastName;
+    NSString * _nameSuffix;
+    NSString * _nickname;
+}
+
+@property (readonly) NSString *firstName;
+@property (readonly) NSString *lastName;
+@property (readonly) NSString *nameSuffix;
+@property (readonly) NSString *nickname;
+
++ (id)contactKeys;
++ (id)nameComponentsWithFirstName:(id)arg1 lastName:(id)arg2 nickname:(id)arg3 nameSuffix:(id)arg4;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)firstName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)lastName;
+- (id)nameSuffix;
+- (id)nickname;
+
+@end

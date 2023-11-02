@@ -1,0 +1,4 @@
+
+@protocol AMUIDataLayerViewControllerDelegate <AMUIAmbientViewControllingDelegate>
+
+@end

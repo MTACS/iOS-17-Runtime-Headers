@@ -1,0 +1,4 @@
+
+@interface ASDDevice : ASDAudioDevice
+
+@end

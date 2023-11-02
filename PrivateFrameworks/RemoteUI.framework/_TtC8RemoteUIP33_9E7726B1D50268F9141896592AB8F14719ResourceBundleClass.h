@@ -1,0 +1,4 @@
+
+@interface _TtC8RemoteUIP33_9E7726B1D50268F9141896592AB8F14719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,98 @@
+
+@interface WFWorkflowFile : NSObject <NSItemProviderWriting, WFRecordStorage> {
+    NSDate * _creationDate;
+    WFFileRepresentation * _file;
+    NSString * _identifier;
+    NSDate * _modificationDate;
+    NSString * _name;
+    WFWorkflowQuarantine * _quarantine;
+    NSMutableDictionary * _rootObject;
+}
+
+@property (nonatomic, copy) NSArray *actions;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool disabledOnLockScreen;
+@property (nonatomic, readonly) unsigned long long estimatedSize;
+@property (nonatomic, readonly) WFFileRepresentation *file;
+@property (nonatomic) bool hasOutputFallback;
+@property (nonatomic) bool hasShortcutInputVariables;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) WFWorkflowIcon *icon;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, copy) NSArray *importQuestions;
+@property (nonatomic, copy) NSArray *inputClasses;
+@property (nonatomic, copy) NSString *lastMigratedClientVersion;
+@property (nonatomic, copy) NSString *minimumClientVersion;
+@property (nonatomic, retain) NSDate *modificationDate;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSDictionary *noInputBehavior;
+@property (nonatomic, copy) NSArray *outputClasses;
+@property (nonatomic, retain) WFWorkflowQuarantine *quarantine;
+@property (nonatomic, copy) NSArray *quickActionSurfacesForSharing;
+@property (nonatomic, readonly) NSDictionary *rootObject;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *workflowTypes;
+@property (nonatomic, readonly, copy) NSArray *writableTypeIdentifiersForItemProvider;
+
++ (id)writableTypeIdentifiersForItemProvider;
+
+- (void).cxx_destruct;
+- (id)actions;
+- (id)creationDate;
+- (id)descriptor;
+- (bool)disabledOnLockScreen;
+- (unsigned long long)estimatedSize;
+- (id)file;
+- (id)fileDataWithError:(id*)arg1;
+- (id)fileDataWithFormat:(unsigned long long)arg1 error:(id*)arg2;
+- (bool)hasOutputFallback;
+- (bool)hasShortcutInputVariables;
+- (id)icon;
+- (id)identifier;
+- (id)importQuestions;
+- (id)init;
+- (id)initWithDescriptor:(id)arg1 error:(id*)arg2;
+- (id)initWithDescriptor:(id)arg1 performMigration:(bool)arg2 error:(id*)arg3;
+- (id)initWithDictionary:(id)arg1 name:(id)arg2;
+- (id)initWithDictionary:(id)arg1 name:(id)arg2 performMigration:(bool)arg3;
+- (id)initWithFileData:(id)arg1 name:(id)arg2 error:(id*)arg3;
+- (id)inputClasses;
+- (bool)isEqual:(id)arg1;
+- (id)lastMigratedClientVersion;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
+- (bool)migrateRootObject;
+- (id)minimumClientVersion;
+- (id)modificationDate;
+- (id)name;
+- (id)noInputBehavior;
+- (id)outputClasses;
+- (id)quarantine;
+- (id)quickActionSurfacesForSharing;
+- (id)recordRepresentationWithError:(id*)arg1;
+- (id)rootObject;
+- (void)setActions:(id)arg1;
+- (void)setCreationDate:(id)arg1;
+- (void)setDisabledOnLockScreen:(bool)arg1;
+- (void)setHasOutputFallback:(bool)arg1;
+- (void)setHasShortcutInputVariables:(bool)arg1;
+- (void)setIcon:(id)arg1;
+- (void)setImportQuestions:(id)arg1;
+- (void)setInputClasses:(id)arg1;
+- (void)setLastMigratedClientVersion:(id)arg1;
+- (void)setMinimumClientVersion:(id)arg1;
+- (void)setModificationDate:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setNoInputBehavior:(id)arg1;
+- (void)setOutputClasses:(id)arg1;
+- (void)setQuarantine:(id)arg1;
+- (void)setQuickActionSurfacesForSharing:(id)arg1;
+- (void)setWorkflowTypes:(id)arg1;
+- (id)workflowTypes;
+- (id)writeToDiskWithError:(id*)arg1;
+- (id)writeToDiskWithFormat:(unsigned long long)arg1 error:(id*)arg2;
+- (bool)writeToFileURL:(id)arg1 format:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)writeToOutputStream:(id)arg1 format:(unsigned long long)arg2 error:(id*)arg3;
+
+@end

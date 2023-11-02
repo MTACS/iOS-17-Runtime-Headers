@@ -1,0 +1,4 @@
+
+@interface IDSMPConversationKey : NSObject
+
+@end

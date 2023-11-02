@@ -1,0 +1,4 @@
+
+@interface TZXPCConstants : NSObject
+
+@end

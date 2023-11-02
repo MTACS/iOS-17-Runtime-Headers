@@ -1,0 +1,94 @@
+
+@interface PageLoadTestStatistics : NSObject {
+    NSDate * _allSubresourcesLoadedDate;
+    id /* block */  _callbackBlock;
+    NSDate * _domContentLoadedDate;
+    NSDate * _firstMeaningfulPaintDate;
+    NSDate * _firstVisualLayoutDate;
+    long long  _framesToLoad;
+    NSDate * _lastOnloadEventDate;
+    NSDate * _lastPageLoadEventDate;
+    NSDate * _lastResourceLoadDate;
+    NSError * _loadError;
+    NSDate * _loadStartDate;
+    NSDate * _mainFrameLoadDate;
+    unsigned long long  _memoryAfterWarning;
+    unsigned long long  _memoryBeforeWarning;
+    WKNavigation * _navigation;
+    long long  _onloadEventsHandled;
+    double  _pageLoadingTimeoutInterval;
+    NSTimer * _pageLoadingTimeoutTimer;
+    bool  _pendingResourceLoad;
+    NSTimer * _waitForNewPageLoadEventsTimer;
+}
+
+@property (nonatomic, retain) NSDate *allSubresourcesLoadedDate;
+@property (nonatomic, copy) id /* block */ callbackBlock;
+@property (nonatomic, retain) NSDate *domContentLoadedDate;
+@property (nonatomic, retain) NSDate *firstMeaningfulPaintDate;
+@property (nonatomic, retain) NSDate *firstVisualLayoutDate;
+@property (nonatomic, retain) NSDate *lastOnloadEventDate;
+@property (nonatomic, retain) NSDate *lastPageLoadEventDate;
+@property (nonatomic, retain) NSDate *lastResourceLoadDate;
+@property (nonatomic, retain) NSError *loadError;
+@property (nonatomic, retain) NSDate *loadStartDate;
+@property (nonatomic, retain) NSDate *mainFrameLoadDate;
+@property (nonatomic) unsigned long long memoryAfterWarning;
+@property (nonatomic) unsigned long long memoryBeforeWarning;
+@property (nonatomic, retain) WKNavigation *navigation;
+@property (nonatomic) double pageLoadingTimeoutInterval;
+
++ (void)setRestInterval:(double)arg1;
+
+- (void).cxx_destruct;
+- (void)_cancelPageLoadingTimeoutTimerIfNeeded;
+- (void)_cancelWaitForNewPageLoadEventsTimer;
+- (void)_maybePageLoadFinishedForTests;
+- (bool)_pageLoadEventsAreStillPending;
+- (void)_pageLoadFinishedForTests;
+- (void)_pageLoadTimeoutTimerFired:(id)arg1;
+- (void)_scheduleWaitForNewPageLoadEventsTimer;
+- (void)_waitForNewPageLoadEventsTimerFired:(id)arg1;
+- (id)allSubresourcesLoadedDate;
+- (id /* block */)callbackBlock;
+- (void)dealloc;
+- (id)domContentLoadedDate;
+- (void)failedNavigation:(id)arg1 withError:(id)arg2;
+- (void)finishedFirstVisualLayout;
+- (void)finishedLoadingResources;
+- (void)finishedNavigation:(id)arg1;
+- (id)firstMeaningfulPaintDate;
+- (id)firstVisualLayoutDate;
+- (void)handledOnloadEvents;
+- (id)initWithCallback:(id /* block */)arg1;
+- (id)lastOnloadEventDate;
+- (id)lastPageLoadEventDate;
+- (id)lastResourceLoadDate;
+- (id)loadError;
+- (id)loadStartDate;
+- (id)mainFrameLoadDate;
+- (unsigned long long)memoryAfterWarning;
+- (unsigned long long)memoryBeforeWarning;
+- (id)navigation;
+- (void)pageLoadFinishedForTestsWK2WithLoadData:(id)arg1;
+- (double)pageLoadingTimeoutInterval;
+- (void)setAllSubresourcesLoadedDate:(id)arg1;
+- (void)setCallbackBlock:(id /* block */)arg1;
+- (void)setDomContentLoadedDate:(id)arg1;
+- (void)setFirstMeaningfulPaintDate:(id)arg1;
+- (void)setFirstVisualLayoutDate:(id)arg1;
+- (void)setLastOnloadEventDate:(id)arg1;
+- (void)setLastPageLoadEventDate:(id)arg1;
+- (void)setLastResourceLoadDate:(id)arg1;
+- (void)setLoadError:(id)arg1;
+- (void)setLoadStartDate:(id)arg1;
+- (void)setMainFrameLoadDate:(id)arg1;
+- (void)setMemoryAfterWarning:(unsigned long long)arg1;
+- (void)setMemoryBeforeWarning:(unsigned long long)arg1;
+- (void)setNavigation:(id)arg1;
+- (void)setPageLoadingTimeoutInterval:(double)arg1;
+- (void)startedLoadingResources;
+- (void)startedNavigation:(id)arg1;
+- (void)startedPageLoad;
+
+@end

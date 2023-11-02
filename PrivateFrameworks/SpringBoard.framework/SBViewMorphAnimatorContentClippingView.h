@@ -1,0 +1,4 @@
+
+@interface SBViewMorphAnimatorContentClippingView : UIView
+
+@end

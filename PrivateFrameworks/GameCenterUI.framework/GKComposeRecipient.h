@@ -1,0 +1,4 @@
+
+@interface GKComposeRecipient : CNComposeRecipient
+
+@end

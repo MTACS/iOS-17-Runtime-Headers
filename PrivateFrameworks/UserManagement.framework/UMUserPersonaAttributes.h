@@ -1,0 +1,92 @@
+
+@interface UMUserPersonaAttributes : NSObject <NSCopying> {
+    NSDate * _creationDate;
+    bool  _isDataSeparatedPersona;
+    bool  _isDefaultPersona;
+    bool  _isDisabled;
+    bool  _isEnterprisePersona;
+    bool  _isGuestPersona;
+    bool  _isPersonalPersona;
+    bool  _isSystemPersona;
+    bool  _isUniversalPersona;
+    NSDate * _lastDisableDate;
+    NSDate * _lastEnableDate;
+    NSDate * _lastLoginDate;
+    NSURL * _personaLayoutPathURL;
+    NSArray * _userPersonaBundleIDList;
+    NSString * _userPersonaDisplayName;
+    unsigned long long  _userPersonaType;
+    NSString * _userPersonaUniqueString;
+    unsigned int  _userPersona_id;
+}
+
+@property (nonatomic, copy) NSDate *creationDate;
+@property (nonatomic) bool isDataSeparatedPersona;
+@property (nonatomic) bool isDefaultPersona;
+@property (nonatomic) bool isDisabled;
+@property (nonatomic) bool isEnterprisePersona;
+@property (nonatomic) bool isGuestPersona;
+@property (nonatomic) bool isPersonalPersona;
+@property (nonatomic) bool isSystemPersona;
+@property (nonatomic) bool isUniversalPersona;
+@property (nonatomic, copy) NSDate *lastDisableDate;
+@property (nonatomic, copy) NSDate *lastEnableDate;
+@property (nonatomic, copy) NSDate *lastLoginDate;
+@property (nonatomic, copy) NSURL *personaLayoutPathURL;
+@property (nonatomic, copy) NSArray *userPersonaBundleIDList;
+@property (nonatomic, copy) NSString *userPersonaDisplayName;
+@property (nonatomic) unsigned long long userPersonaType;
+@property (nonatomic, copy) NSString *userPersonaUniqueString;
+@property (nonatomic) unsigned int userPersona_id;
+
++ (id)currentContextIdentifier;
++ (id)personaAttributes;
++ (id)personaAttributesForIdentifier:(id)arg1;
++ (id)personaAttributesForPersonaType:(unsigned long long)arg1;
++ (id)personaAttributesForPersonaType:(unsigned long long)arg1 withError:(id*)arg2;
++ (id)personaAttributesForPersonaUniqueString:(id)arg1;
++ (id)personaAttributesForPersonaUniqueString:(id)arg1 withError:(id*)arg2;
++ (id)setUpPersonaAttributesWithDictionary:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creationDate;
+- (id)description;
+- (bool)isDataSeparatedPersona;
+- (bool)isDefaultPersona;
+- (bool)isDisabled;
+- (bool)isEnterprisePersona;
+- (bool)isGuestPersona;
+- (bool)isPersonalPersona;
+- (bool)isSystemPersona;
+- (bool)isUniversalPersona;
+- (id)lastDisableDate;
+- (id)lastEnableDate;
+- (id)lastLoginDate;
+- (id)personaLayoutPathURL;
+- (id)sandboxExtensionForPersonaLayoutPath;
+- (void)setCreationDate:(id)arg1;
+- (void)setIsDataSeparatedPersona:(bool)arg1;
+- (void)setIsDefaultPersona:(bool)arg1;
+- (void)setIsDisabled:(bool)arg1;
+- (void)setIsEnterprisePersona:(bool)arg1;
+- (void)setIsGuestPersona:(bool)arg1;
+- (void)setIsPersonalPersona:(bool)arg1;
+- (void)setIsSystemPersona:(bool)arg1;
+- (void)setIsUniversalPersona:(bool)arg1;
+- (void)setLastDisableDate:(id)arg1;
+- (void)setLastEnableDate:(id)arg1;
+- (void)setLastLoginDate:(id)arg1;
+- (void)setPersonaLayoutPathURL:(id)arg1;
+- (void)setUserPersonaBundleIDList:(id)arg1;
+- (void)setUserPersonaDisplayName:(id)arg1;
+- (void)setUserPersonaType:(unsigned long long)arg1;
+- (void)setUserPersonaUniqueString:(id)arg1;
+- (void)setUserPersona_id:(unsigned int)arg1;
+- (id)userPersonaBundleIDList;
+- (id)userPersonaDisplayName;
+- (unsigned long long)userPersonaType;
+- (id)userPersonaUniqueString;
+- (unsigned int)userPersona_id;
+
+@end

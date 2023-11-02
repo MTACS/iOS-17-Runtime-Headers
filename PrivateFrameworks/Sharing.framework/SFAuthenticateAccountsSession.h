@@ -1,0 +1,90 @@
+
+@interface SFAuthenticateAccountsSession : NSObject <AAUIGenericTermsRemoteUIDelegate> {
+    ACAccountStore * _accountStore;
+    int  _accountsState;
+    bool  _activateCalled;
+    SFDeviceOperationCDPSetup * _cdpSetupOperation;
+    int  _cdpState;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    int  _finishState;
+    SFDeviceOperationHomeKitSetup * _homeKitSetupOperation;
+    int  _homeKitSetupState;
+    HMHomeManager * _homeManager;
+    int  _iCloudTermsState;
+    int  _infoExchangeState;
+    bool  _invalidateCalled;
+    int  _pairSetupState;
+    int  _pairVerifyState;
+    SFDevice * _peerDevice;
+    unsigned long long  _peerFeatureFlags;
+    UIViewController * _presentingViewController;
+    unsigned long long  _problemFlags;
+    id /* block */  _progressHandler;
+    id /* block */  _promptForPINHandler;
+    bool  _sessionSecured;
+    SFSession * _sfSession;
+    int  _sfSessionState;
+    unsigned long long  _startTicks;
+    unsigned int  _targetedAccountTypes;
+    AAUIGenericTermsRemoteUI * _termsRemoteUI;
+    bool  _trAuthenticationEnabled;
+    int  _trAuthenticationState;
+    TROperationQueue * _trOperationQueue;
+    NSMutableArray * _trOperations;
+    TRSession * _trSession;
+    int  _trSessionState;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SFDevice *peerDevice;
+@property (nonatomic, retain) UIViewController *presentingViewController;
+@property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic, copy) id /* block */ promptForPINHandler;
+@property (readonly) Class superclass;
+
++ (id)_myGameCenterAccount;
+
+- (void).cxx_destruct;
+- (void)__runFinishWithSFSession:(id)arg1;
+- (int)__validateAccountsWithAccountStore:(id)arg1;
+- (id)_availableAccountsToSignIn;
+- (void)_cleanup;
+- (void)_handleShowTermsUI:(id)arg1 responseHandler:(id /* block */)arg2;
+- (void)_presentiCloudTermsUIWithAccount:(id)arg1;
+- (void)_reportError:(id)arg1;
+- (void)_run;
+- (int)_runFinish;
+- (int)_runHomeKitSetup;
+- (int)_runInfoExchange;
+- (void)_runInfoExchangeRequest;
+- (void)_runInfoExchangeResponse:(id)arg1 error:(id)arg2;
+- (int)_runPairSetup;
+- (int)_runPairVerify;
+- (int)_runRepairCDP;
+- (int)_runSFSessionStart;
+- (int)_runTRAuthentication;
+- (int)_runTRSessionStart;
+- (id)_trTargetedServices;
+- (int)_validateAccounts;
+- (int)_validateiCloudAccountTerms;
+- (void)activate;
+- (void)dealloc;
+- (id)dispatchQueue;
+- (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(bool)arg2;
+- (id)init;
+- (void)invalidate;
+- (void)pairSetupTryPIN:(id)arg1;
+- (id)peerDevice;
+- (id)presentingViewController;
+- (id /* block */)progressHandler;
+- (id /* block */)promptForPINHandler;
+- (void)setDispatchQueue:(id)arg1;
+- (void)setPeerDevice:(id)arg1;
+- (void)setPresentingViewController:(id)arg1;
+- (void)setProgressHandler:(id /* block */)arg1;
+- (void)setPromptForPINHandler:(id /* block */)arg1;
+
+@end

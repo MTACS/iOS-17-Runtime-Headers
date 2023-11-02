@@ -1,0 +1,4 @@
+
+@interface _TtC15PhotosUIPrivateP33_E142BD5348E1E27568BDAE0517DC49BE19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

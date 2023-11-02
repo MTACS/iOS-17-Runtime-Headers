@@ -1,0 +1,91 @@
+
+@interface PKPaper : NSObject <NSCopying, NSSecureCoding> {
+    int  _bottomMargin;
+    NSString * _cachedBaseName;
+    int  _height;
+    int  _leftMargin;
+    NSDictionary * _mediaInfo;
+    NSString * _name;
+    int  _rightMargin;
+    int  _topMargin;
+    int  _width;
+}
+
+@property (readonly) unsigned long long bottomMarginInPoints;
+@property (nonatomic, readonly) int height;
+@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } imageableAreaRect;
+@property (readonly) bool isRoll;
+@property (readonly) NSString *localizedName;
+@property (readonly) unsigned long long maxCutLength;
+@property (readonly) NSDictionary *mediaInfo;
+@property (readonly) NSString *mediaTypeName;
+@property (readonly) unsigned long long minCutLength;
+@property (readonly) struct CGSize { double x1; double x2; } paperSize;
+@property (readonly) unsigned long long topMarginInPoints;
+@property (nonatomic, readonly) int width;
+
++ (id)defaultGenericPaperForLocale:(id)arg1;
++ (id)documentPapers;
++ (id)generic3_5x5Paper;
++ (id)generic4x6Paper;
++ (id)genericA4Paper;
++ (id)genericA6Paper;
++ (id)genericBorderlessWithName:(id)arg1;
++ (id)genericHagakiPaper;
++ (id)genericLegalPaper;
++ (id)genericLetterPaper;
++ (id)genericPRC32KPaper;
++ (id)genericWithName:(id)arg1;
++ (id)mediaNameForWidth:(int)arg1 Height:(int)arg2 mediaType:(id)arg3 Borderless:(bool)arg4 Simplex:(bool)arg5;
++ (id)mediaNameForWidth:(int)arg1 height:(int)arg2 borderless:(bool)arg3 simplex:(bool)arg4;
++ (id)paperWithAttributes:(id)arg1;
++ (id)photoPapers;
++ (bool)supportsSecureCoding;
++ (bool)useMetric;
++ (bool)willAdjustMarginsForDuplexMode:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)addToMediaCol:(id)arg1;
+- (id)baseName;
+- (int)bottomMargin;
+- (unsigned long long)bottomMarginInPoints;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)createMediaColAndDoMargins:(bool)arg1;
+- (id)cutToLength:(double)arg1;
+- (id)cutToPWGLength:(int)arg1;
+- (id)debugDescription;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (int)height;
+- (double)imageableArea;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageableAreaRect;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithWidth:(int)arg1 Height:(int)arg2 Left:(int)arg3 Top:(int)arg4 Right:(int)arg5 Bottom:(int)arg6 localizedName:(id)arg7 codeName:(id)arg8 mediaInfo:(id)arg9;
+- (bool)isBorderless;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualSize:(id)arg1;
+- (bool)isEqualSizeAndMediaType:(id)arg1;
+- (bool)isRoll;
+- (int)leftMargin;
+- (id)localizedName;
+- (id)localizedNameFromDimensions;
+- (unsigned long long)maxCutLength;
+- (int)maxHeight;
+- (id)mediaInfo;
+- (id)mediaType;
+- (id)mediaTypeName;
+- (unsigned long long)minCutLength;
+- (int)minHeight;
+- (id)name;
+- (id)nameWithoutSuffixes:(id)arg1;
+- (struct CGSize { double x1; double x2; })paperSize;
+- (id)paperWithMarginsAdjustedForDuplexMode:(id)arg1;
+- (int)rightMargin;
+- (long long)sizeAndImageableCompare:(id)arg1;
+- (long long)sizeMediaTypeAndImageableCompare:(id)arg1;
+- (int)topMargin;
+- (unsigned long long)topMarginInPoints;
+- (int)width;
+
+@end

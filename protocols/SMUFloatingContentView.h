@@ -1,0 +1,87 @@
+
+@protocol SMUFloatingContentView
+
+@required
+
+- (bool)_disableOutsetShadowPath;
+- (struct CGPath { }*)_shadowPathForSize:(struct CGSize { double x1; double x2; })arg1 radius:(double)arg2;
+- (void)addContentMotionEffect:(UIMotionEffect *)arg1;
+- (struct CGSize { double x1; double x2; })asymmetricFocusedSizeIncrease;
+- (struct CGSize { double x1; double x2; })asymmetricScaleFactor;
+- (UIColor *)backgroundColorForState:(unsigned long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (bool)clipsContentToBounds;
+- (UIView *)contentView;
+- (unsigned long long)controlState;
+- (NSString *)cornerCurve;
+- (double)cornerRadius;
+- (<SMUFocusAnimationConfiguration> *)focusAnimationConfiguration;
+- (struct CGPoint { double x1; double x2; })focusScaleAnchorPoint;
+- (double)focusedSizeIncrease;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (long long)highlightStyle;
+- (bool)isContentOpaque;
+- (bool)isContinuousCornerEnabled;
+- (bool)isShadowEnabled;
+- (void)layoutIfNeeded;
+- (void)removeContentMotionEffect:(UIMotionEffect *)arg1;
+- (bool)roundContentWhenDeselected;
+- (double)scaleFactor;
+- (bool)scalesBackwards;
+- (void)setAsymmetricFocusedSizeIncrease:(struct CGSize { double x1; double x2; })arg1;
+- (void)setAsymmetricScaleFactor:(struct CGSize { double x1; double x2; })arg1;
+- (void)setBackgroundColor:(UIColor *)arg1 forState:(unsigned long long)arg2;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setClipsContentToBounds:(bool)arg1;
+- (void)setContentMotionRotation:(struct CGPoint { double x1; double x2; })arg1 translation:(struct CGPoint { double x1; double x2; })arg2;
+- (void)setContentOpaque:(bool)arg1;
+- (void)setContinuousCornerEnabled:(bool)arg1;
+- (void)setControlState:(unsigned long long)arg1;
+- (void)setControlState:(unsigned long long)arg1 animated:(bool)arg2;
+- (void)setControlState:(unsigned long long)arg1 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg2;
+- (void)setCornerCurve:(NSString *)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setFocusAnimationConfiguration:(id <SMUFocusAnimationConfiguration>)arg1;
+- (void)setFocusScaleAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setFocusedSizeIncrease:(double)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHighlightStyle:(long long)arg1;
+- (void)setRoundContentWhenDeselected:(bool)arg1;
+- (void)setScaleFactor:(double)arg1;
+- (void)setScalesBackwards:(bool)arg1;
+- (void)setShadowContentsCenter:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setShadowEnabled:(bool)arg1;
+- (void)setShadowExpansion:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowImage:(UIImage *)arg1;
+- (void)setShadowImage:(UIImage *)arg1 stretchable:(bool)arg2;
+- (void)setShadowOpacity:(double)arg1;
+- (void)setShadowOpacity:(double)arg1 forUserInterfaceStyle:(long long)arg2;
+- (void)setShadowRadius:(double)arg1;
+- (void)setShadowSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowVerticalOffset:(double)arg1;
+- (void)setShowsHighContrastFocusIndicator:(bool)arg1;
+- (void)setUnfocusedShadowExpansion:(struct CGSize { double x1; double x2; })arg1;
+- (void)setUnfocusedShadowOpacity:(double)arg1;
+- (void)setUnfocusedShadowRadius:(double)arg1;
+- (void)setUnfocusedShadowVerticalOffset:(double)arg1;
+- (void)setUseShadowImage:(bool)arg1;
+- (void)setVisualEffectContainerViewScaleFactor:(double)arg1;
+- (void)set_disableOutsetShadowPath:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shadowContentsCenter;
+- (struct CGSize { double x1; double x2; })shadowExpansion;
+- (UIImage *)shadowImage;
+- (double)shadowOpacity;
+- (double)shadowOpacityForUserInterfaceStyle:(long long)arg1;
+- (double)shadowRadius;
+- (struct CGSize { double x1; double x2; })shadowSize;
+- (double)shadowVerticalOffset;
+- (bool)showsHighContrastFocusIndicator;
+- (struct CGSize { double x1; double x2; })unfocusedShadowExpansion;
+- (double)unfocusedShadowOpacity;
+- (double)unfocusedShadowRadius;
+- (double)unfocusedShadowVerticalOffset;
+- (bool)useShadowImage;
+- (UIView *)visualEffectContainerView;
+- (double)visualEffectContainerViewScaleFactor;
+
+@end

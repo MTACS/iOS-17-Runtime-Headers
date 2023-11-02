@@ -1,0 +1,4 @@
+
+@protocol MRUIControllable <NSObject>
+
+@end

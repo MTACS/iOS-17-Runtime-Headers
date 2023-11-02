@@ -1,0 +1,4 @@
+
+@interface MKFFloatCharacteristicDatabaseID : MKFCharacteristicDatabaseID
+
+@end

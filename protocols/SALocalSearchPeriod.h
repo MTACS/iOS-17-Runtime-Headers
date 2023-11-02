@@ -1,0 +1,4 @@
+
+@protocol SALocalSearchPeriod <SAAceSerializable>
+
+@end

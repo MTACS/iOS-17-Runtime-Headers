@@ -1,0 +1,100 @@
+
+@interface APUIAppPredictionViewController : APUIWidgetViewController <APUIAppIconGridViewDelegate, ATXHomeScreenSuggestionClientObserver, LSApplicationWorkspaceObserverProtocol, SBHLegibility, SBHWidgetContextMenuControlling, SBIconLocationPresenting, SBIconViewQuerying> {
+    NSMutableDictionary * _bundleIdSuggestionMap;
+    <APUIAppPredictionViewControllerDelegate> * _delegate;
+    APUIAppIconGridView * _gridView;
+    NSMutableSet * _installingBundleIds;
+    _UILegibilitySettings * _legibilitySettings;
+    unsigned long long  _mode;
+    bool  _occluded;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _parentLayoutInsets;
+    NSString * _selectedAppLocalizedName;
+    NSString * _selectedBundleId;
+    bool  _showingAlert;
+    bool  _showingContextMenu;
+    NSMutableSet * _usedFallbacks;
+    bool  _userInteracting;
+}
+
+@property (nonatomic, readonly, copy) NSArray *applicationShortcutItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <APUIAppPredictionViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long layoutSize;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic) unsigned long long mode;
+@property (getter=isOccluded, nonatomic) bool occluded;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } parentLayoutInsets;
+@property (nonatomic, readonly, copy) NSSet *presentedIconLocations;
+@property (getter=isShowingAlert, nonatomic) bool showingAlert;
+@property (getter=isShowingContextMenu, nonatomic) bool showingContextMenu;
+@property (readonly) Class superclass;
+@property (getter=isUserInteracting, nonatomic) bool userInteracting;
+
++ (id)_bundleIdentifierSetFromApplicationProxies:(id)arg1;
++ (id)_bundleIdentifierSetFromApplicationRecords:(id)arg1;
+
+- (void).cxx_destruct;
+- (bool)_canDismissSelectedSuggestion;
+- (bool)_canShowWhileLocked;
+- (id)_fallbackBundleIds;
+- (void)_loadAppsInGridView:(id)arg1;
+- (void)_updateGridViewForBundleIds:(id)arg1;
+- (void)_updateLayoutInGridView:(id)arg1;
+- (void)_updateUserInteractingState;
+- (id)appIconGridView:(id)arg1 iconForApplicationWithBundleIdentifier:(id)arg2;
+- (bool)appIconGridView:(id)arg1 launchAppFromIcon:(id)arg2;
+- (bool)appIconGridView:(id)arg1 shouldDisplayBadgeWithBundleIdentifier:(id)arg2;
+- (void)applicationInstallsDidStart:(id)arg1;
+- (void)applicationInstallsDidUpdateIcon:(id)arg1;
+- (id)applicationShortcutItems;
+- (void)applicationsDidInstall:(id)arg1;
+- (void)applicationsDidUninstall:(id)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (void)didSelectApplicationShortcutItem:(id)arg1;
+- (void)enumerateDisplayedIconViewsForIcon:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateDisplayedIconViewsUsingBlock:(id /* block */)arg1;
+- (id)firstIconViewForIcon:(id)arg1;
+- (id)firstIconViewForIcon:(id)arg1 excludingLocations:(id)arg2;
+- (id)firstIconViewForIcon:(id)arg1 inLocations:(id)arg2;
+- (id)iconViewForIcon:(id)arg1 location:(id)arg2;
+- (id)initWithIdentifier:(id)arg1 layoutSize:(unsigned long long)arg2;
+- (id)initWithIdentifier:(id)arg1 layoutSize:(unsigned long long)arg2 mode:(unsigned long long)arg3;
+- (bool)isDisplayingIcon:(id)arg1;
+- (bool)isDisplayingIcon:(id)arg1 inLocation:(id)arg2;
+- (bool)isDisplayingIcon:(id)arg1 inLocations:(id)arg2;
+- (bool)isDisplayingIconView:(id)arg1;
+- (bool)isDisplayingIconView:(id)arg1 inLocation:(id)arg2;
+- (bool)isOccluded;
+- (bool)isPresentingIconLocation:(id)arg1;
+- (bool)isShowingAlert;
+- (bool)isShowingContextMenu;
+- (bool)isUserInteracting;
+- (unsigned long long)layoutSize;
+- (id)legibilitySettings;
+- (bool)matchesWidgetUniqueID:(id)arg1 stackID:(id)arg2;
+- (unsigned long long)mode;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })parentLayoutInsets;
+- (id)presentedIconLocations;
+- (void)setDelegate:(id)arg1;
+- (void)setLayoutSize:(unsigned long long)arg1;
+- (void)setLegibilitySettings:(id)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setOccluded:(bool)arg1;
+- (void)setParentLayoutInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setShowingAlert:(bool)arg1;
+- (void)setShowingContextMenu:(bool)arg1;
+- (void)setUserInteracting:(bool)arg1;
+- (void)suggestionClientDidRefreshProactiveWidgetLayouts:(id)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)willShowContextMenuAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+
+@end

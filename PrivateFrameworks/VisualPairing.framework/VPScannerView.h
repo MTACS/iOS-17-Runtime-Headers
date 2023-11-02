@@ -1,0 +1,85 @@
+
+@interface VPScannerView : UIView <AVCaptureVideoDataOutputSampleBufferDelegate> {
+    long long  _autoFocusRangeRestriction;
+    AVCaptureDevice * _avCaptureDevice;
+    NSObject<OS_dispatch_queue> * _avCaptureQueue;
+    AVCaptureSession * _avCaptureSession;
+    AVCaptureVideoPreviewLayer * _avPreviewLayer;
+    unsigned long long  _extractedCodeLength;
+    bool  _fillLayerBoundsWithVideo;
+    NSDate * _firstCapturedFrameDate;
+    NSDate * _firstScannedCodeDate;
+    long long  _focusMode;
+    bool  _isProxCardType;
+    NSError * _latestError;
+    struct HCImagePerspectiveReader { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; struct InternalDataStructPersp {} *x6; char *x7; bool x8; } * _reader;
+    unsigned long long  _readerHeight;
+    float  _readerLastProgress;
+    unsigned long long  _readerLastWatermarkTicks;
+    unsigned long long  _readerResetCount;
+    unsigned long long  _readerResetTicks;
+    unsigned long long  _readerRowBytes;
+    unsigned long long  _readerWidth;
+    id /* block */  _scannedCodeHandler;
+    bool  _scanning;
+    NSDate * _startDate;
+    CAShapeLayer * _viewfinderBorderLayer;
+    CAShapeLayer * _viewfinderRevealLayer;
+}
+
+@property (nonatomic) long long autoFocusRangeRestriction;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property unsigned long long extractedCodeLength;
+@property (nonatomic) bool fillLayerBoundsWithVideo;
+@property (retain) NSDate *firstCapturedFrameDate;
+@property (retain) NSDate *firstScannedCodeDate;
+@property (nonatomic) long long focusMode;
+@property (readonly) unsigned long long hash;
+@property (retain) NSError *latestError;
+@property unsigned long long readerResetCount;
+@property (nonatomic, copy) id /* block */ scannedCodeHandler;
+@property (retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) double viewFinderDiameter;
+
+- (void).cxx_destruct;
+- (void)_handleCaptureSessionInterrupted:(id)arg1;
+- (void)_handleCaptureSessionInterruptionEnded:(id)arg1;
+- (void)_handleCaptureSessionRuntimeError:(id)arg1;
+- (void)_handleCaptureSessionStarted:(id)arg1;
+- (void)_handleCaptureSessionStopped:(id)arg1;
+- (void)_initCommon;
+- (void)_postMetricAndResetAnalyticsState;
+- (id)_setupCapture;
+- (id)_setupDevice:(id)arg1;
+- (long long)autoFocusRangeRestriction;
+- (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
+- (unsigned long long)extractedCodeLength;
+- (bool)fillLayerBoundsWithVideo;
+- (id)firstCapturedFrameDate;
+- (id)firstScannedCodeDate;
+- (long long)focusMode;
+- (id)initAsProxCard;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)latestError;
+- (void)layoutSubviews;
+- (unsigned long long)readerResetCount;
+- (id /* block */)scannedCodeHandler;
+- (void)setAutoFocusRangeRestriction:(long long)arg1;
+- (void)setExtractedCodeLength:(unsigned long long)arg1;
+- (void)setFillLayerBoundsWithVideo:(bool)arg1;
+- (void)setFirstCapturedFrameDate:(id)arg1;
+- (void)setFirstScannedCodeDate:(id)arg1;
+- (void)setFocusMode:(long long)arg1;
+- (void)setLatestError:(id)arg1;
+- (void)setReaderResetCount:(unsigned long long)arg1;
+- (void)setScannedCodeHandler:(id /* block */)arg1;
+- (void)setStartDate:(id)arg1;
+- (void)start;
+- (id)startDate;
+- (void)stop;
+- (double)viewFinderDiameter;
+
+@end

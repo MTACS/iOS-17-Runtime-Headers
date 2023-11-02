@@ -1,0 +1,4 @@
+
+@interface MKFTimePeriodBulletinConditionDatabaseID : MKFBulletinConditionDatabaseID
+
+@end

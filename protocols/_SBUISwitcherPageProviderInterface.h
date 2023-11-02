@@ -1,0 +1,4 @@
+
+@protocol _SBUISwitcherPageProviderInterface
+
+@end

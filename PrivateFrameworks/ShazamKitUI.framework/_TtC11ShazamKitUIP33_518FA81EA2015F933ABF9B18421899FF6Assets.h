@@ -1,0 +1,4 @@
+
+@interface _TtC11ShazamKitUIP33_518FA81EA2015F933ABF9B18421899FF6Assets : _TtCs12_SwiftObject
+
+@end

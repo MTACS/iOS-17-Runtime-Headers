@@ -1,0 +1,4 @@
+
+@protocol BWJasperColorStillsExecutorControllerDelegate <BWStillImageProcessorControllerDelegate>
+
+@end

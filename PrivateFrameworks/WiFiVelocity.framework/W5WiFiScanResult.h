@@ -1,0 +1,95 @@
+
+@interface W5WiFiScanResult : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _airPortBaseStationModelName;
+    long long  _beaconInterval;
+    NSString * _bssid;
+    W5WiFiChannel * _channel;
+    NSString * _countryCode;
+    bool  _isAppleSWAP;
+    bool  _isIBSS;
+    bool  _isPasspoint;
+    bool  _isPersonalHotspot;
+    long long  _noise;
+    long long  _rssi;
+    NSDictionary * _scanRecord;
+    NSData * _ssid;
+    NSString * _ssidString;
+    int  _supportedPHYModes;
+    NSArray * _supportedSecurityTypes;
+    bool  _supportsTKIPCipher;
+    bool  _supportsWEPCipher;
+}
+
+@property (nonatomic, copy) NSString *airPortBaseStationModelName;
+@property (nonatomic) long long beaconInterval;
+@property (nonatomic, copy) NSString *bssid;
+@property (nonatomic, copy) W5WiFiChannel *channel;
+@property (nonatomic, copy) NSString *countryCode;
+@property (nonatomic) bool isAppleSWAP;
+@property (nonatomic) bool isIBSS;
+@property (nonatomic) bool isPasspoint;
+@property (nonatomic) bool isPersonalHotspot;
+@property (nonatomic) long long noise;
+@property (nonatomic) long long rssi;
+@property (nonatomic, copy) NSDictionary *scanRecord;
+@property (nonatomic, copy) NSData *ssid;
+@property (nonatomic, copy) NSString *ssidString;
+@property (nonatomic) int supportedPHYModes;
+@property (nonatomic, copy) NSArray *supportedSecurityTypes;
+@property (nonatomic) bool supportsTKIPCipher;
+@property (nonatomic) bool supportsWEPCipher;
+
++ (bool)supportsSecureCoding;
+
+- (id)airPortBaseStationModelName;
+- (long long)beaconInterval;
+- (id)bssid;
+- (id)channel;
+- (bool)conformsToProtocol:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)countryCode;
+- (void)dealloc;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (int)fastestSupportedPHYMode;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (bool)isAirPortBaseStation:(out id*)arg1 modelID:(out char *)arg2;
+- (bool)isAppleSWAP;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToScanResult:(id)arg1;
+- (bool)isIBSS;
+- (bool)isPasspoint;
+- (bool)isPersonalHotspot;
+- (long long)noise;
+- (long long)rssi;
+- (id)scanRecord;
+- (void)setAirPortBaseStationModelName:(id)arg1;
+- (void)setBeaconInterval:(long long)arg1;
+- (void)setBssid:(id)arg1;
+- (void)setChannel:(id)arg1;
+- (void)setCountryCode:(id)arg1;
+- (void)setIsAppleSWAP:(bool)arg1;
+- (void)setIsIBSS:(bool)arg1;
+- (void)setIsPasspoint:(bool)arg1;
+- (void)setIsPersonalHotspot:(bool)arg1;
+- (void)setNoise:(long long)arg1;
+- (void)setRssi:(long long)arg1;
+- (void)setScanRecord:(id)arg1;
+- (void)setSsid:(id)arg1;
+- (void)setSsidString:(id)arg1;
+- (void)setSupportedPHYModes:(int)arg1;
+- (void)setSupportedSecurityTypes:(id)arg1;
+- (void)setSupportsTKIPCipher:(bool)arg1;
+- (void)setSupportsWEPCipher:(bool)arg1;
+- (id)ssid;
+- (id)ssidString;
+- (long long)strongestSupportedSecurity;
+- (int)supportedPHYModes;
+- (id)supportedSecurityTypes;
+- (bool)supportsPHYMode:(int)arg1;
+- (bool)supportsSecurity:(long long)arg1;
+- (bool)supportsTKIPCipher;
+- (bool)supportsWEPCipher;
+
+@end

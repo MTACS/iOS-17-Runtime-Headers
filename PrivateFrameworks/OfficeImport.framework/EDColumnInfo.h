@@ -1,0 +1,40 @@
+
+@interface EDColumnInfo : NSObject <EDKeyedObject, NSCopying> {
+    bool  mHidden;
+    unsigned char  mOutlineLevel;
+    EDReference * mRange;
+    EDResources * mResources;
+    unsigned long long  mStyleIndex;
+    int  mWidth;
+    EDWorksheet * mWorksheet;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)columnInfoWithResources:(id)arg1 worksheet:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)initWithResources:(id)arg1 worksheet:(id)arg2;
+- (bool)isHidden;
+- (long long)key;
+- (unsigned char)outlineLevel;
+- (id)range;
+- (void)setHidden:(bool)arg1;
+- (void)setOutlineLevel:(unsigned char)arg1;
+- (void)setRange:(id)arg1;
+- (void)setRangeWithFirstColumn:(int)arg1 lastColumn:(int)arg2;
+- (void)setStyle:(id)arg1;
+- (void)setStyleIndex:(unsigned long long)arg1;
+- (void)setWidth:(double)arg1;
+- (void)setWidthInXlUnits:(int)arg1;
+- (id)style;
+- (unsigned long long)styleIndex;
+- (double)width;
+- (int)widthInXlUnits;
+
+@end

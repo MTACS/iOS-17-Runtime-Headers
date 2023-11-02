@@ -1,0 +1,4 @@
+
+@protocol PLPhotoAnalysisPhotoLibraryServiceProtocol <PLPhotoAnalysisGenericServiceProtocol>
+
+@end

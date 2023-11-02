@@ -1,0 +1,4 @@
+
+@interface SHSheetHostAction : BSAction
+
+@end

@@ -1,0 +1,4 @@
+
+@interface TPSEditingPane : PSEditingPane
+
+@end

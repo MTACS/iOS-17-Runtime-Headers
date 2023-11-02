@@ -1,0 +1,106 @@
+
+@interface FCRecordSource : NSObject <FCCacheCoordinatorDelegate, FCCacheFlushing, FCFetchCoordinatorDelegate, FCJSONEncodableObjectProviding> {
+    NSString * _activeTreatmentID;
+    <FCAppActivityMonitor> * _appActivityMonitor;
+    <FCBackgroundTaskable> * _backgroundTaskable;
+    FCCacheCoordinator * _cacheCoordinator;
+    FCCKContentDatabase * _contentDatabase;
+    NSString * _contentDirectory;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _derivedKeysLock;
+    NSArray * _desiredKeys;
+    NSString * _experimentalizableFieldsPostfix;
+    NSDictionary * _experimentalizedKeysByOriginalKey;
+    FCFetchCoordinator * _fetchCoordinator;
+    FCThreadSafeMutableDictionary * _fetchErrorsByKey;
+    NFUnfairLock * _initializationLock;
+    FCKeyValueStore * _localStore;
+    NSDictionary * _localizedExperimentalizedKeysByOriginalKey;
+    NSDictionary * _localizedKeysByOriginalKey;
+    NSDictionary * _localizedLanguageSpecificKeysByOriginalKey;
+}
+
+@property (nonatomic, readonly) NSString *activeTreatmentID;
+@property (nonatomic, readonly) NSArray *alwaysLocalizedKeys;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *desiredKeys;
+@property (nonatomic, readonly) NSString *experimentalizableFieldsPostfix;
+@property (nonatomic, readonly) NSArray *experimentalizableKeys;
+@property (nonatomic, readonly) NSDictionary *experimentalizedKeysByOriginalKey;
+@property (nonatomic, readonly) FCThreadSafeMutableDictionary *fetchErrorsByKey;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSArray *localizableExperimentalizableKeys;
+@property (nonatomic, readonly) NSArray *localizableKeys;
+@property (nonatomic, readonly) NSArray *localizableLanguageSpecificKeys;
+@property (nonatomic, readonly) NSDictionary *localizedExperimentalizedKeysByOriginalKey;
+@property (nonatomic, readonly) NSDictionary *localizedKeysByOriginalKey;
+@property (nonatomic, readonly) NSDictionary *localizedLanguageSpecificKeysByOriginalKey;
+@property (nonatomic, readonly) NSArray *nonLocalizableKeys;
+@property (readonly) Class superclass;
+
++ (id)canaryRecordName;
++ (id)changeTagFromCKRecord:(id)arg1;
++ (id)defaultCachePolicy;
++ (id)identifierFromCKRecord:(id)arg1;
++ (id)modificationDateFromCKRecord:(id)arg1;
++ (bool)recognizesRecordID:(id)arg1 inRecordIDPrefixes:(id)arg2;
++ (bool)supportsDeletions;
+
+- (void).cxx_destruct;
+- (id)_experimentalizedKeysByOriginalKeyForExperimentPostfix:(id)arg1;
+- (id)_localizedExperimentalizedKeysByOriginalKeyForContentStoreFrontID:(id)arg1 experimentPostfix:(id)arg2;
+- (id)_localizedKeysByOriginalKeyForContentStoreFrontID:(id)arg1;
+- (id)activeTreatmentID;
+- (id)alwaysLocalizedKeys;
+- (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;
+- (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
+- (id)cachedRecordWithID:(id)arg1;
+- (id)cachedRecordsWithIDs:(id)arg1;
+- (id)convertRecords:(id)arg1;
+- (id)deleteRecordsWithIDs:(id)arg1;
+- (id)desiredKeys;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
+- (id)experimentalizableFieldsPostfix;
+- (id)experimentalizableKeys;
+- (id)experimentalizedKeysByOriginalKey;
+- (void)fetchCoordinator:(id)arg1 addFetchOperation:(id)arg2 context:(id)arg3;
+- (id)fetchCoordinator:(id)arg1 fetchOperationForKeys:(id)arg2 context:(id)arg3 qualityOfService:(long long)arg4 relativePriority:(long long)arg5;
+- (void)fetchCoordinator:(id)arg1 filterKeysToFetch:(id)arg2 isFirstAttempt:(bool)arg3 context:(id)arg4;
+- (id)fetchErrorsByKey;
+- (id)fetchOperationForRecordsWithIDs:(id)arg1;
+- (id)fetchOperationForRecordsWithIDs:(id)arg1 ignoreCacheForRecordIDs:(id)arg2;
+- (void)forceRefreshDesiredKeys;
+- (unsigned long long)highThresholdDataSizeLimit;
+- (id)init;
+- (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 appActivityMonitor:(id)arg3 backgroundTaskable:(id)arg4;
+- (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 appActivityMonitor:(id)arg3 backgroundTaskable:(id)arg4 experimentalizableFieldsPostfix:(id)arg5 activeTreatmentID:(id)arg6;
+- (id)interestTokenForRecordIDs:(id)arg1;
+- (bool)isRecordStale:(id)arg1 withCachePolicy:(id)arg2;
+- (id)jsonEncodableObject;
+- (id)keyValueRepresentationOfRecord:(id)arg1;
+- (id)localizableExperimentalizableKeys;
+- (id)localizableKeys;
+- (id)localizableLanguageSpecificKeys;
+- (id)localizedExperimentalizedKeysByOriginalKey;
+- (id)localizedKeysByOriginalKey;
+- (id)localizedLanguageSpecificKeysByOriginalKey;
+- (unsigned long long)lowThresholdDataSizeLimit;
+- (id)nonLocalizableKeys;
+- (int)pbRecordType;
+- (bool)recognizesRecordID:(id)arg1;
+- (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
+- (id)recordIDPrefixes;
+- (id)recordType;
+- (id)resolveLocalizableExperimentalizableFieldforKey:(id)arg1 inRecord:(id)arg2 activeExperimentIDKey:(id)arg3;
+- (id)savePBRecords:(id)arg1;
+- (id)saveRecords:(id)arg1;
+- (id)storeFilename;
+- (unsigned long long)storeVersion;
+- (void)t_startOverridingExperimentalizableFieldsPostfix:(id)arg1 treatmentID:(id)arg2;
+- (void)t_stopOverridingExperimentalizableFieldsPostfixAndTreatmentID;
+- (void)updateFetchDateForRecordIDs:(id)arg1;
+- (id)valueFromCKRecord:(id)arg1 baseKey:(id)arg2 localizedKeys:(id)arg3 localizedLanguageSpecificKeys:(id)arg4;
+
+@end

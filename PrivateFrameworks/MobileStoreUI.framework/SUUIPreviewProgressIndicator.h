@@ -1,0 +1,27 @@
+
+@interface SUUIPreviewProgressIndicator : UIControl {
+    SUUIShapeView * _backgroundView;
+    UIImageView * _cancelImageView;
+    SUUIShapeView * _foregroundView;
+    bool  _isIndeterminate;
+    float  _progress;
+}
+
+@property (getter=isIndeterminate, nonatomic, readonly) bool indeterminate;
+@property (nonatomic) float progress;
+
+- (void).cxx_destruct;
+- (void)_beginIndeterminateAnimation;
+- (id)_newShapeViewWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lineWidth:(double)arg2;
+- (void)beginIndeterminateAnimation;
+- (void)endIndeterminateAnimation;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isIndeterminate;
+- (float)progress;
+- (void)reloadWithPlayerStatus:(id)arg1 animated:(bool)arg2;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setProgress:(float)arg1;
+- (void)setProgress:(float)arg1 animated:(bool)arg2;
+- (void)tintColorDidChange;
+
+@end

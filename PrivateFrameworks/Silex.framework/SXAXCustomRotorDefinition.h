@@ -1,0 +1,4 @@
+
+@interface SXAXCustomRotorDefinition : NSObject
+
+@end

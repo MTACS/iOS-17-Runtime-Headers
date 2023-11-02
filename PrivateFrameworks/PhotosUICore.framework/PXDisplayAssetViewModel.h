@@ -1,0 +1,93 @@
+
+@interface PXDisplayAssetViewModel : PXObservable <PXMutableDisplayAssetViewModel> {
+    bool  _allowsTextSelection;
+    <PXDisplayAsset> * _asset;
+    double  _assetAspectRatio;
+    NSArray * _audioIdentifiersToHighlight;
+    long long  _contentMode;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentSafeAreaInsets;
+    UIImage * _currentImage;
+    NSArray * _humanActionIdentifiersToHighlight;
+    bool  _isDisplayingFullQualityContent;
+    NSError * _loadingError;
+    float  _loadingProgress;
+    NSArray * _personLocalIdentifiersToHighlight;
+    long long  _playbackStyle;
+    NSArray * _sceneIdentifiersToHighlight;
+    NSArray * _stringsToHighlight;
+    PXDisplayAssetViewModelHighlightTimeRangeController * _timeRangeController;
+    NSArray * _timeRangesToHighlight;
+    PXUpdater * _updater;
+    bool  _wantsLivePhotoPlayback;
+}
+
+@property (nonatomic, readonly) bool allowsTextSelection;
+@property (nonatomic, readonly) <PXDisplayAsset> *asset;
+@property (nonatomic, readonly) double assetAspectRatio;
+@property (nonatomic, readonly) NSArray *audioIdentifiersToHighlight;
+@property (nonatomic, readonly) long long contentMode;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentSafeAreaInsets;
+@property (nonatomic, readonly) UIImage *currentImage;
+@property (nonatomic, readonly) NSArray *humanActionIdentifiersToHighlight;
+@property (nonatomic, readonly) bool isDisplayingFullQualityContent;
+@property (nonatomic, readonly) NSError *loadingError;
+@property (nonatomic, readonly) float loadingProgress;
+@property (nonatomic, readonly) NSArray *personLocalIdentifiersToHighlight;
+@property (nonatomic, readonly) long long playbackStyle;
+@property (nonatomic, readonly) NSArray *sceneIdentifiersToHighlight;
+@property (nonatomic, readonly) NSArray *stringsToHighlight;
+@property (nonatomic, readonly) PXDisplayAssetViewModelHighlightTimeRangeController *timeRangeController;
+@property (nonatomic, readonly) NSArray *timeRangesToHighlight;
+@property (nonatomic, readonly) PXUpdater *updater;
+@property (nonatomic, readonly) bool wantsLivePhotoPlayback;
+
+- (void).cxx_destruct;
+- (void)_invalidateAssetAspectRatio;
+- (void)_setNeedsUpdate;
+- (void)_updateAssetAspectRatio;
+- (bool)allowsTextSelection;
+- (id)asset;
+- (double)assetAspectRatio;
+- (id)audioIdentifiersToHighlight;
+- (long long)contentMode;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentSafeAreaInsets;
+- (id)currentImage;
+- (void)didPerformChanges;
+- (id)humanActionIdentifiersToHighlight;
+- (id)init;
+- (bool)isDisplayingFullQualityContent;
+- (id)loadingError;
+- (float)loadingProgress;
+- (void)performChanges:(id /* block */)arg1;
+- (id)personLocalIdentifiersToHighlight;
+- (long long)playbackStyle;
+- (id)sceneIdentifiersToHighlight;
+- (void)setAllowsTextSelection:(bool)arg1;
+- (void)setAsset:(id)arg1;
+- (void)setAssetAspectRatio:(double)arg1;
+- (void)setAudioIdentifiersToHighlight:(id)arg1;
+- (void)setContentMode:(long long)arg1;
+- (void)setContentSafeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setCurrentImage:(id)arg1;
+- (void)setHumanActionIdentifiersToHighlight:(id)arg1;
+- (void)setIsDisplayingFullQualityContent:(bool)arg1;
+- (void)setLoadingError:(id)arg1;
+- (void)setLoadingProgress:(float)arg1;
+- (void)setPersonLocalIdentifiersToHighlight:(id)arg1;
+- (void)setPlaybackStyle:(long long)arg1;
+- (void)setSceneIdentifiersToHighlight:(id)arg1;
+- (void)setStringsToHighlight:(id)arg1;
+- (void)setTimeRangesToHighlight:(id)arg1;
+- (void)setWantsLivePhotoPlayback:(bool)arg1;
+- (id)stringsToHighlight;
+- (id)timeRangeController;
+- (id)timeRangesToHighlight;
+- (id)updater;
+- (bool)wantsLivePhotoPlayback;
+
+@end

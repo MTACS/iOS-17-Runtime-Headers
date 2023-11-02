@@ -1,0 +1,4 @@
+
+@interface PXPlacesPinAnnotationView : MKPinAnnotationView
+
+@end

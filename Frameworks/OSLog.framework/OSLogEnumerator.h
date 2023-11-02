@@ -1,0 +1,4 @@
+
+@interface OSLogEnumerator : NSEnumerator
+
+@end

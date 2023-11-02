@@ -1,0 +1,4 @@
+
+@interface _TtC14FamilyCircleUIP33_F7BB97D28E983F4A59690259378F940519ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

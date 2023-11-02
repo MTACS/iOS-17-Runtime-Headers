@@ -1,0 +1,86 @@
+
+@interface NPKPassesManager : NSObject <NPKPassesDataSource, PKGroupDelegate, PKGroupsControllerDelegate> {
+    NSArray * _currentExpiredPasses;
+    NSArray * _currentPasses;
+    NSArray * _currentPaymentPasses;
+    NSArray * _currentSecureElementPasses;
+    NPKStandaloneFirstUnlockCoordinator * _firstUnlockCoordinator;
+    PKGroupsController * _groupsController;
+    NSObject<OS_dispatch_queue> * _loadImageQueue;
+    int  _notifyToken;
+    NSHashTable * _observers;
+    unsigned long long  _options;
+}
+
+@property (nonatomic, retain) NSArray *currentExpiredPasses;
+@property (nonatomic, retain) NSArray *currentPasses;
+@property (nonatomic, retain) NSArray *currentPaymentPasses;
+@property (nonatomic, retain) NSArray *currentSecureElementPasses;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NPKStandaloneFirstUnlockCoordinator *firstUnlockCoordinator;
+@property (nonatomic, retain) PKGroupsController *groupsController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) int notifyToken;
+@property (nonatomic, retain) NSHashTable *observers;
+@property (nonatomic) unsigned long long options;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_didFinishLoadPasses;
+- (void)_handleObjectSettingsChanged:(id)arg1;
+- (void)_loadContentAndImageSetsForPass:(id)arg1 completion:(id /* block */)arg2;
+- (void)_loadImageSetFromPasses:(id /* block */)arg1;
+- (void)_loadPasses;
+- (void)_notifyObservers:(id /* block */)arg1;
+- (void)_reloadPasses;
+- (void)_reloadPassesWithCompletion:(id /* block */)arg1;
+- (void)_setGroupControllerGroupsDelegate;
+- (void)_updateCurrentPasses;
+- (id)currentExpiredPasses;
+- (id)currentPasses;
+- (id)currentPaymentPasses;
+- (id)currentSecureElementPasses;
+- (void)dealloc;
+- (id)defaultPaymentPass;
+- (void)enableRemoteUpdates;
+- (id)expiredPasses;
+- (id)firstUnlockCoordinator;
+- (void)group:(id)arg1 didInsertPass:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)group:(id)arg1 didMovePassFromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
+- (void)group:(id)arg1 didRemovePass:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)group:(id)arg1 didUpdatePass:(id)arg2 atIndex:(unsigned long long)arg3;
+- (id)groupsController;
+- (void)groupsController:(id)arg1 didInsertGroup:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)groupsController:(id)arg1 didMoveGroup:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
+- (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned long long)arg3;
+- (id)init;
+- (id)initWithOptions:(unsigned long long)arg1;
+- (void)movePassAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
+- (int)notifyToken;
+- (id)observers;
+- (unsigned long long)options;
+- (id)passForUniqueID:(id)arg1;
+- (id)passes;
+- (id)paymentPasses;
+- (void)registerObserver:(id)arg1;
+- (void)reloadPasses;
+- (void)reloadPassesWithCompletion:(id /* block */)arg1;
+- (void)removePass:(id)arg1;
+- (id)secureElementPasses;
+- (void)setCurrentExpiredPasses:(id)arg1;
+- (void)setCurrentPasses:(id)arg1;
+- (void)setCurrentPaymentPasses:(id)arg1;
+- (void)setCurrentSecureElementPasses:(id)arg1;
+- (void)setDefaultPaymentPass:(id)arg1;
+- (void)setFirstUnlockCoordinator:(id)arg1;
+- (void)setGroupsController:(id)arg1;
+- (void)setNotifyToken:(int)arg1;
+- (void)setObservers:(id)arg1;
+- (void)setOptions:(unsigned long long)arg1;
+- (bool)shouldAllowMovingItemAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
+- (void)suppressRemoteUpdates;
+- (void)unarchivePass:(id)arg1;
+- (void)unregisterObserver:(id)arg1;
+
+@end

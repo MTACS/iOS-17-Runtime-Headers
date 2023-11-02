@@ -1,0 +1,4 @@
+
+@interface _TtC13SleepWidgetUIP33_2F213E27B0B08EB3427795138E72411319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

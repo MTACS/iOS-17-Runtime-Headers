@@ -1,0 +1,4 @@
+
+@interface _TtC15SafetyMonitorUIP33_29A240E06FBF64979335498FE79CEF7319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

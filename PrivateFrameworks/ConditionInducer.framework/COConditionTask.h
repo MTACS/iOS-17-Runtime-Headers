@@ -1,0 +1,87 @@
+
+@interface COConditionTask : NSObject {
+    NSArray * _arguments;
+    int  _endStatus;
+    double  _executionTime;
+    NSString * _launchPath;
+    int  _processIdentifier;
+    bool  _running;
+    bool  _slowTimeout;
+    NSFileHandle * _stderrFileHandle;
+    NSString * _stderrFname;
+    NSFileHandle * _stdinFileHandle;
+    NSString * _stdinFname;
+    NSFileHandle * _stdoutFileHandle;
+    NSString * _stdoutFname;
+    NSMutableArray * _taskFileHandleArray;
+    NSObject<OS_dispatch_queue> * _taskQueue;
+    NSObject<OS_dispatch_semaphore> * _termination_sem;
+}
+
+@property (nonatomic, retain) NSArray *arguments;
+@property (nonatomic) int endStatus;
+@property (nonatomic) double executionTime;
+@property (nonatomic, copy) NSString *launchPath;
+@property (nonatomic) int processIdentifier;
+@property bool running;
+@property (nonatomic) bool slowTimeout;
+@property (nonatomic, retain) NSFileHandle *stderrFileHandle;
+@property (nonatomic, retain) NSString *stderrFname;
+@property (nonatomic, retain) NSFileHandle *stdinFileHandle;
+@property (nonatomic, retain) NSString *stdinFname;
+@property (nonatomic, retain) NSFileHandle *stdoutFileHandle;
+@property (nonatomic, retain) NSString *stdoutFname;
+@property (nonatomic, retain) NSMutableArray *taskFileHandleArray;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *taskQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *termination_sem;
+
+- (void).cxx_destruct;
+- (id)arguments;
+- (id)description;
+- (int)endStatus;
+- (double)executionTime;
+- (id)initWithCommand:(id)arg1 arguments:(id)arg2;
+- (void)interrupt;
+- (id)launchPath;
+- (bool)launchTask:(id*)arg1;
+- (int)processIdentifier;
+- (bool)resume;
+- (bool)running;
+- (void)setArguments:(id)arg1;
+- (void)setEndStatus:(int)arg1;
+- (void)setExecutionTime:(double)arg1;
+- (void)setLaunchPath:(id)arg1;
+- (void)setProcessIdentifier:(int)arg1;
+- (void)setRunning:(bool)arg1;
+- (void)setSlowTimeout:(bool)arg1;
+- (void)setStderrFileHandle:(id)arg1;
+- (void)setStderrFname:(id)arg1;
+- (void)setStdinFileHandle:(id)arg1;
+- (void)setStdinFname:(id)arg1;
+- (void)setStdoutFileHandle:(id)arg1;
+- (void)setStdoutFname:(id)arg1;
+- (void)setTaskFileHandleArray:(id)arg1;
+- (void)setTaskQueue:(id)arg1;
+- (void)setTermination_sem:(id)arg1;
+- (int)signalRunningTask:(int)arg1;
+- (bool)slowTimeout;
+- (bool)start;
+- (id)stderrFileHandle;
+- (id)stderrFname;
+- (id)stderrFromResults;
+- (id)stdinFileHandle;
+- (id)stdinFname;
+- (id)stdoutFileHandle;
+- (id)stdoutFname;
+- (id)stdoutFromResults;
+- (void)stop;
+- (void)stopTask;
+- (bool)suspend;
+- (id)taskFileHandleArray;
+- (id)taskQueue;
+- (void)terminate;
+- (id)termination_sem;
+- (void)waitForExitInformation:(int)arg1;
+- (bool)waitForTaskWithTimeout:(unsigned int)arg1;
+
+@end

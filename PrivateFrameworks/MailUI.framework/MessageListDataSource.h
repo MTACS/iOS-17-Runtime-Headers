@@ -1,0 +1,107 @@
+
+@interface MessageListDataSource : NSObject <EFLoggable, MessageListCellDisclosureDelegate, MessageListSectionDataSourceProvider, UICollectionViewDataSourcePrefetching> {
+    UICollectionView * _collectionView;
+    UICollectionViewDiffableDataSource * _dataSource;
+    EFLocked * _dataSourcesForObjectIdentifier;
+    <MessageListDataSourceDelegate> * _delegate;
+    bool  _hasAdditionalSections;
+    EFLocked * _objectIdentifiersForSection;
+    <MessageListDataSourceProvider> * _provider;
+    _Atomic unsigned int  _updateIdentifier;
+    NSObject<OS_dispatch_queue> * _updateQueue;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _updateQueueLock;
+    long long  _updateQueueSuspensionCount;
+    EFLocked * _visibleSections;
+}
+
+@property (nonatomic) UICollectionView *collectionView;
+@property (nonatomic, readonly) UICollectionViewDiffableDataSource *collectionViewDataSource;
+@property (nonatomic, retain) UICollectionViewDiffableDataSource *dataSource;
+@property (nonatomic, retain) EFLocked *dataSourcesForObjectIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MessageListDataSourceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasAdditionalSections;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) EFLocked *objectIdentifiersForSection;
+@property (nonatomic) <MessageListDataSourceProvider> *provider;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *updateQueue;
+@property long long updateQueueSuspensionCount;
+@property (nonatomic, retain) EFLocked *visibleSections;
+
++ (id)log;
+
+- (void).cxx_destruct;
+- (bool)anyExpandedThreadContainsItemID:(id)arg1;
+- (void)applyFilterPredicate:(id)arg1 ignoreMessagesPredicate:(id)arg2;
+- (void)applyFilterPredicate:(id)arg1 ignoreMessagesPredicate:(id)arg2 section:(id)arg3;
+- (id)collectionView;
+- (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
+- (id)collectionViewDataSource;
+- (id)dataSource;
+- (id)dataSourcesForObjectIdentifier;
+- (id)delegate;
+- (void)deleteItemsWithIDs:(id)arg1 animated:(bool)arg2 immediateCompletion:(bool)arg3 completion:(id /* block */)arg4;
+- (void)didScheduleReadInteractionForItemID:(id)arg1;
+- (void)didSelectDisclosureButtonForMessageListItem:(id)arg1 disclosureEnabled:(bool)arg2;
+- (bool)hasAdditionalSections;
+- (id)indexPathForItemIdentifier:(id)arg1;
+- (id)initWithCollectionView:(id)arg1;
+- (bool)isExpandedThread:(id)arg1;
+- (bool)isSection:(id)arg1 atIndex:(long long)arg2;
+- (id)itemIDsInExpandedThread:(id)arg1;
+- (id)itemIdentifierForIndexPath:(id)arg1;
+- (id)itemIdentifiers;
+- (id)messageListAtSectionIndex:(long long)arg1;
+- (id)messageListForMessageListItemWithIdentifier:(id)arg1;
+- (id)messageListForSection:(id)arg1;
+- (id)messageListItemAtIndexPath:(id)arg1;
+- (id)messageListItemForItemID:(id)arg1;
+- (id)messageListItemForItemID:(id)arg1 section:(id)arg2;
+- (id)messageListItemsForItemIDs:(id)arg1;
+- (id)messageListItemsForItemIDs:(id)arg1 section:(id)arg2;
+- (id)messageListItemsInSection:(id)arg1 limit:(unsigned long long)arg2;
+- (id)messageListSectionDataSource:(id)arg1 indexPathForItemIdentifier:(id)arg2;
+- (id)messageListSectionDataSource:(id)arg1 indexPathsForItemIdentifiers:(id)arg2;
+- (id)messageListSectionDataSource:(id)arg1 itemIdentifierForIndexPath:(id)arg2;
+- (id)messageListSectionDataSource:(id)arg1 itemIdentifiersForIndexPaths:(id)arg2;
+- (void)messageListSectionDataSource:(id)arg1 performUpdateAnimated:(bool)arg2 cleanSnapshot:(bool)arg3 prepare:(id /* block */)arg4 update:(id /* block */)arg5 completion:(id /* block */)arg6;
+- (bool)messageListSectionIsVisible:(id)arg1;
+- (id)messagesInMessageListItem:(id)arg1;
+- (long long)numberOfItems;
+- (long long)numberOfItemsAtSectionIndex:(long long)arg1;
+- (long long)numberOfSections;
+- (id)objectIDForItemID:(id)arg1;
+- (id)objectIdentifiersForSection;
+- (id)provider;
+- (void)refresh;
+- (id)relatedItemIDsForSelectedItemID:(id)arg1 atIndexPath:(id)arg2;
+- (void)reloadItemsWithItemIDs:(id)arg1;
+- (void)reloadMessageList:(id)arg1 section:(id)arg2 initialLoadCompletedPromise:(id)arg3 animated:(bool)arg4;
+- (void)reloadVisibleCellsInvalidatingCache:(bool)arg1;
+- (void)removeMessageListSection:(id)arg1 animated:(bool)arg2;
+- (void)resumeUpdates;
+- (long long)sectionIndexForSection:(id)arg1;
+- (void)setCollectionView:(id)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setDataSourcesForObjectIdentifier:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHasAdditionalSections:(bool)arg1;
+- (void)setObjectIdentifiersForSection:(id)arg1;
+- (void)setProvider:(id)arg1;
+- (void)setUpdateQueue:(id)arg1;
+- (void)setUpdateQueueSuspensionCount:(long long)arg1;
+- (void)setVisibleSections:(id)arg1;
+- (bool)shouldDisplayHeaderForSectionAtIndex:(long long)arg1;
+- (void)showMessageListSection:(id)arg1 animated:(bool)arg2;
+- (id)snapshotForMessageListSectionDataSource:(id)arg1;
+- (void)suspendUpdates;
+- (id)threadItemIDForItemInExpandedThread:(id)arg1;
+- (id)updateQueue;
+- (long long)updateQueueSuspensionCount;
+- (id)visibleSections;
+
+@end

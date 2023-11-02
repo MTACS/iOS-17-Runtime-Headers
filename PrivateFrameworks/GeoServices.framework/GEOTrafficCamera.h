@@ -1,0 +1,117 @@
+
+@interface GEOTrafficCamera : PBCodable <NSCopying> {
+    unsigned int  _cameraPriority;
+    unsigned int  _countryCodeStyleId;
+    struct { 
+        unsigned int has_speedThreshold : 1; 
+        unsigned int has_cameraPriority : 1; 
+        unsigned int has_countryCodeStyleId : 1; 
+        unsigned int has_highlightDistance : 1; 
+        unsigned int has_type : 1; 
+        unsigned int read_unknownFields : 1; 
+        unsigned int read_identifier : 1; 
+        unsigned int read_infoCard : 1; 
+        unsigned int read_position : 1; 
+        unsigned int read_speedLimitText : 1; 
+        unsigned int read_speedingCard : 1; 
+        unsigned int wrote_anyField : 1; 
+    }  _flags;
+    unsigned int  _highlightDistance;
+    NSString * _identifier;
+    GEOMiniCard * _infoCard;
+    GEOLatLng * _position;
+    PBDataReader * _reader;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _readerLock;
+    unsigned int  _readerMarkLength;
+    unsigned int  _readerMarkPos;
+    NSString * _speedLimitText;
+    double  _speedThreshold;
+    GEOMiniCard * _speedingCard;
+    int  _type;
+    PBUnknownFields * _unknownFields;
+}
+
+@property (nonatomic) unsigned int cameraPriority;
+@property (nonatomic) unsigned int countryCodeStyleId;
+@property (nonatomic) bool hasCameraPriority;
+@property (nonatomic) bool hasCountryCodeStyleId;
+@property (nonatomic) bool hasHighlightDistance;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasInfoCard;
+@property (nonatomic, readonly) bool hasPosition;
+@property (nonatomic, readonly) bool hasSpeedLimitText;
+@property (nonatomic) bool hasSpeedThreshold;
+@property (nonatomic, readonly) bool hasSpeedingCard;
+@property (nonatomic) bool hasType;
+@property (nonatomic) unsigned int highlightDistance;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) GEOMiniCard *infoCard;
+@property (nonatomic, retain) GEOLatLng *position;
+@property (nonatomic, retain) NSString *speedLimitText;
+@property (nonatomic) double speedThreshold;
+@property (nonatomic, retain) GEOMiniCard *speedingCard;
+@property (nonatomic) int type;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+
++ (bool)isValid:(id)arg1;
+
+- (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
+- (unsigned int)cameraPriority;
+- (void)clearUnknownFields:(bool)arg1;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)countryCodeStyleId;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasCameraPriority;
+- (bool)hasCountryCodeStyleId;
+- (bool)hasGreenTeaWithValue:(bool)arg1;
+- (bool)hasHighlightDistance;
+- (bool)hasIdentifier;
+- (bool)hasInfoCard;
+- (bool)hasPosition;
+- (bool)hasSpeedLimitText;
+- (bool)hasSpeedThreshold;
+- (bool)hasSpeedingCard;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (unsigned int)highlightDistance;
+- (id)identifier;
+- (id)infoCard;
+- (id)init;
+- (id)initWithData:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonRepresentation;
+- (void)mergeFrom:(id)arg1;
+- (id)position;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCameraPriority:(unsigned int)arg1;
+- (void)setCountryCodeStyleId:(unsigned int)arg1;
+- (void)setHasCameraPriority:(bool)arg1;
+- (void)setHasCountryCodeStyleId:(bool)arg1;
+- (void)setHasHighlightDistance:(bool)arg1;
+- (void)setHasSpeedThreshold:(bool)arg1;
+- (void)setHasType:(bool)arg1;
+- (void)setHighlightDistance:(unsigned int)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setInfoCard:(id)arg1;
+- (void)setPosition:(id)arg1;
+- (void)setSpeedLimitText:(id)arg1;
+- (void)setSpeedThreshold:(double)arg1;
+- (void)setSpeedingCard:(id)arg1;
+- (void)setType:(int)arg1;
+- (id)speedLimitText;
+- (double)speedThreshold;
+- (id)speedingCard;
+- (int)type;
+- (id)typeAsString:(int)arg1;
+- (id)unknownFields;
+- (void)writeTo:(id)arg1;
+
+@end

@@ -1,0 +1,95 @@
+
+@interface NEPolicyCondition : NSObject <NEPrettyDescription> {
+    NSString * _accountIdentifier;
+    NSString * _agentDomain;
+    NSString * _agentType;
+    NSUUID * _applicationUUID;
+    unsigned int  _clientFlags;
+    long long  _conditionType;
+    NSString * _customEntitlement;
+    NSString * _domain;
+    unsigned int  _domainFilter;
+    NWAddressEndpoint * _endAddress;
+    bool  _exactMatch;
+    NSString * _interfaceName;
+    unsigned short  _ipProtocol;
+    unsigned int  _minSDKVersion;
+    bool  _negative;
+    unsigned short  _packetFilterTags;
+    int  _pid;
+    int  _pid_version;
+    unsigned int  _platform;
+    unsigned char  _prefix;
+    unsigned short  _schemePort;
+    unsigned int  _sdkVersion;
+    NSString * _signingIdentifier;
+    NWAddressEndpoint * _startAddress;
+    unsigned int  _trafficClassEnd;
+    unsigned int  _trafficClassStart;
+    unsigned int  _uid;
+    NSString * _url;
+}
+
+@property long long conditionType;
+@property bool exactMatch;
+@property (getter=isNegative) bool negative;
+
++ (id)accountIdentifier:(id)arg1;
++ (id)allInterfaces;
++ (id)allowsUnsafeSocketAccess;
++ (id)clientFlags:(unsigned int)arg1;
++ (id)clientProhibitsContrained;
++ (id)clientProhibitsExpensive;
++ (id)customEntitlement:(id)arg1;
++ (id)delegateIsPlatformBinary;
++ (id)domain:(id)arg1;
++ (id)domainFilter:(unsigned long long)arg1;
++ (id)effectiveApplication:(id)arg1;
++ (id)effectivePID:(int)arg1;
++ (id)effectivePID:(int)arg1 version:(int)arg2;
++ (id)entitlement;
++ (id)fallbackTraffic;
++ (id)flowIPProtocol:(unsigned short)arg1;
++ (id)flowLocalAddress:(id)arg1 prefix:(unsigned char)arg2;
++ (id)flowLocalAddressEmpty;
++ (id)flowLocalAddressStart:(id)arg1 end:(id)arg2;
++ (id)flowRemoteAddress:(id)arg1 prefix:(unsigned char)arg2;
++ (id)flowRemoteAddressEmpty;
++ (id)flowRemoteAddressStart:(id)arg1 end:(id)arg2;
++ (id)hasSignedResult;
++ (id)ipProtocol:(unsigned short)arg1;
++ (id)isInbound;
++ (id)isListener;
++ (id)isLoopback;
++ (id)isSystemProxyConnection;
++ (id)localAddress:(id)arg1 prefix:(unsigned char)arg2;
++ (id)localAddressStart:(id)arg1 end:(id)arg2;
++ (id)localNetworks;
++ (id)packetFilterTags:(unsigned short)arg1;
++ (id)platformBinary;
++ (id)realApplication:(id)arg1;
++ (id)realUID:(unsigned int)arg1;
++ (id)remoteAddress:(id)arg1 prefix:(unsigned char)arg2;
++ (id)remoteAddressStart:(id)arg1 end:(id)arg2;
++ (id)requiredAgentDomain:(id)arg1 agentType:(id)arg2;
++ (id)schemeUsingPort:(unsigned short)arg1;
++ (id)scopedInterface:(id)arg1;
++ (id)sdkVersion:(unsigned int)arg1 minSDKVersion:(unsigned int)arg2 platform:(unsigned int)arg3;
++ (id)signingIdentifier:(id)arg1;
++ (id)trafficClassStart:(unsigned int)arg1 end:(unsigned int)arg2;
++ (id)uid:(unsigned int)arg1;
++ (id)url:(id)arg1;
++ (id)usesModernNetworkAPI;
+
+- (void).cxx_destruct;
+- (long long)conditionType;
+- (id)description;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
+- (bool)exactMatch;
+- (id)init;
+- (bool)isNegative;
+- (void)setConditionType:(long long)arg1;
+- (void)setExactMatch:(bool)arg1;
+- (void)setNegative:(bool)arg1;
+
+@end

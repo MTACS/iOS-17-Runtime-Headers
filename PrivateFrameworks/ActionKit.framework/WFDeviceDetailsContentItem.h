@@ -1,0 +1,28 @@
+
+@interface WFDeviceDetailsContentItem : WFContentItem <WFContentItemClass>
+
+@property (nonatomic, readonly) NSDictionary *additionalRepresentationsForSerialization;
+@property (nonatomic, readonly) bool cachesSupportedTypes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) WFDevice *device;
+@property (nonatomic, readonly) bool hasStringOutput;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool includesFileRepresentationInSerializedItem;
+@property (nonatomic, readonly) NSDictionary *metadataForSerialization;
+@property (nonatomic, readonly) WFFileType *preferredFileType;
+@property (nonatomic, readonly) WFObjectType *preferredObjectType;
+@property (readonly) Class superclass;
+
++ (id)contentCategories;
++ (id)countDescription;
++ (id)ownedTypes;
++ (id)pluralTypeDescription;
++ (id)propertyBuilders;
++ (id)typeDescription;
+
+- (id)device;
+- (id)screenHeight;
+- (id)screenWidth;
+
+@end

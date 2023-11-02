@@ -1,0 +1,4 @@
+
+@interface iCloudSubscriptionOptimizerDaemon.MobileAssetDownloadEvent : iCloudSubscriptionOptimizerDaemon.DaemonEvent
+
+@end

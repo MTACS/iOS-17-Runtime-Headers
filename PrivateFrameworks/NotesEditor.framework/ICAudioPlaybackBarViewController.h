@@ -1,0 +1,80 @@
+
+@interface ICAudioPlaybackBarViewController : ICAudioBarViewController {
+    ICAttachment * _audioAttachment;
+    UILabel * _creationDateLabel;
+    ICMediaTimeLabel * _leadingTimeLabel;
+    ICAudioPlayPauseView * _playPauseView;
+    NSLayoutConstraint * _scrubberLeftConstraint;
+    NSLayoutConstraint * _scrubberRightConstraint;
+    ICAudioPlaybackScrubberView * _scrubberView;
+    UIButton * _skipBackwardButton;
+    NSLayoutConstraint * _skipBackwardLeftConstraint;
+    NSLayoutConstraint * _skipBackwardRightConstraint;
+    UIButton * _skipForwardButton;
+    NSLayoutConstraint * _skipForwardRightConstraint;
+    ICMediaTimeLabel * _trailingTimeLabel;
+    NSLayoutConstraint * _trailingTimeWidthConstraint;
+}
+
+@property (nonatomic, retain) ICAttachment *audioAttachment;
+@property (nonatomic, retain) UILabel *creationDateLabel;
+@property (nonatomic, retain) ICMediaTimeLabel *leadingTimeLabel;
+@property (nonatomic, retain) ICAudioPlayPauseView *playPauseView;
+@property (nonatomic, retain) NSLayoutConstraint *scrubberLeftConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *scrubberRightConstraint;
+@property (nonatomic, retain) ICAudioPlaybackScrubberView *scrubberView;
+@property (nonatomic, retain) UIButton *skipBackwardButton;
+@property (nonatomic, retain) NSLayoutConstraint *skipBackwardLeftConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *skipBackwardRightConstraint;
+@property (nonatomic, retain) UIButton *skipForwardButton;
+@property (nonatomic, retain) NSLayoutConstraint *skipForwardRightConstraint;
+@property (nonatomic, retain) ICMediaTimeLabel *trailingTimeLabel;
+@property (nonatomic, retain) NSLayoutConstraint *trailingTimeWidthConstraint;
+
+- (void).cxx_destruct;
+- (void)attachmentWillBeDeletedNotification:(id)arg1;
+- (id)audioAttachment;
+- (void)audioPlaybackTimeChangedNotification:(id)arg1;
+- (id)creationDateLabel;
+- (void)dealloc;
+- (void)done:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (bool)isRegularHorizontalLayout;
+- (id)leadingTimeLabel;
+- (void)noteWillBeDeletedNotification:(id)arg1;
+- (id)playPauseView;
+- (void)refreshTime:(id)arg1;
+- (void)registerForNotifications;
+- (id)scrubberLeftConstraint;
+- (id)scrubberRightConstraint;
+- (void)scrubberValueChangedAction:(id)arg1;
+- (id)scrubberView;
+- (void)setAudioAttachment:(id)arg1;
+- (void)setCreationDateLabel:(id)arg1;
+- (void)setLeadingTimeLabel:(id)arg1;
+- (void)setPlayPauseView:(id)arg1;
+- (void)setScrubberLeftConstraint:(id)arg1;
+- (void)setScrubberRightConstraint:(id)arg1;
+- (void)setScrubberView:(id)arg1;
+- (void)setSkipBackwardButton:(id)arg1;
+- (void)setSkipBackwardLeftConstraint:(id)arg1;
+- (void)setSkipBackwardRightConstraint:(id)arg1;
+- (void)setSkipForwardButton:(id)arg1;
+- (void)setSkipForwardRightConstraint:(id)arg1;
+- (void)setTrailingTimeLabel:(id)arg1;
+- (void)setTrailingTimeWidthConstraint:(id)arg1;
+- (void)skipBackward:(id)arg1;
+- (id)skipBackwardButton;
+- (id)skipBackwardLeftConstraint;
+- (id)skipBackwardRightConstraint;
+- (void)skipForward:(id)arg1;
+- (id)skipForwardButton;
+- (id)skipForwardRightConstraint;
+- (id)trailingTimeLabel;
+- (id)trailingTimeWidthConstraint;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateLayout;
+- (void)updateMediaTimeAccessibilityLabels;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+
+@end

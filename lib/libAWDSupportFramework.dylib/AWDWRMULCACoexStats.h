@@ -1,0 +1,98 @@
+
+@interface AWDWRMULCACoexStats : PBCodable <NSCopying> {
+    struct { 
+        unsigned int timestamp : 1; 
+        unsigned int uLCACriCarDLBW : 1; 
+        unsigned int uLCACriCarDLFreq : 1; 
+        unsigned int uLCACriCarULBW : 1; 
+        unsigned int uLCACriCarULFreq : 1; 
+        unsigned int uLCAPriCarDLBW : 1; 
+        unsigned int uLCAPriCarDLFreq : 1; 
+        unsigned int uLCAPriCarULBW : 1; 
+        unsigned int uLCAPriCarULFreq : 1; 
+        unsigned int uLCAHasCoexBand : 1; 
+    }  _has;
+    unsigned long long  _timestamp;
+    unsigned int  _uLCACriCarDLBW;
+    unsigned int  _uLCACriCarDLFreq;
+    unsigned int  _uLCACriCarULBW;
+    unsigned int  _uLCACriCarULFreq;
+    bool  _uLCAHasCoexBand;
+    unsigned int  _uLCAPriCarDLBW;
+    unsigned int  _uLCAPriCarDLFreq;
+    unsigned int  _uLCAPriCarULBW;
+    unsigned int  _uLCAPriCarULFreq;
+}
+
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasULCACriCarDLBW;
+@property (nonatomic) bool hasULCACriCarDLFreq;
+@property (nonatomic) bool hasULCACriCarULBW;
+@property (nonatomic) bool hasULCACriCarULFreq;
+@property (nonatomic) bool hasULCAHasCoexBand;
+@property (nonatomic) bool hasULCAPriCarDLBW;
+@property (nonatomic) bool hasULCAPriCarDLFreq;
+@property (nonatomic) bool hasULCAPriCarULBW;
+@property (nonatomic) bool hasULCAPriCarULFreq;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int uLCACriCarDLBW;
+@property (nonatomic) unsigned int uLCACriCarDLFreq;
+@property (nonatomic) unsigned int uLCACriCarULBW;
+@property (nonatomic) unsigned int uLCACriCarULFreq;
+@property (nonatomic) bool uLCAHasCoexBand;
+@property (nonatomic) unsigned int uLCAPriCarDLBW;
+@property (nonatomic) unsigned int uLCAPriCarDLFreq;
+@property (nonatomic) unsigned int uLCAPriCarULBW;
+@property (nonatomic) unsigned int uLCAPriCarULFreq;
+
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasTimestamp;
+- (bool)hasULCACriCarDLBW;
+- (bool)hasULCACriCarDLFreq;
+- (bool)hasULCACriCarULBW;
+- (bool)hasULCACriCarULFreq;
+- (bool)hasULCAHasCoexBand;
+- (bool)hasULCAPriCarDLBW;
+- (bool)hasULCAPriCarDLFreq;
+- (bool)hasULCAPriCarULBW;
+- (bool)hasULCAPriCarULFreq;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasULCACriCarDLBW:(bool)arg1;
+- (void)setHasULCACriCarDLFreq:(bool)arg1;
+- (void)setHasULCACriCarULBW:(bool)arg1;
+- (void)setHasULCACriCarULFreq:(bool)arg1;
+- (void)setHasULCAHasCoexBand:(bool)arg1;
+- (void)setHasULCAPriCarDLBW:(bool)arg1;
+- (void)setHasULCAPriCarDLFreq:(bool)arg1;
+- (void)setHasULCAPriCarULBW:(bool)arg1;
+- (void)setHasULCAPriCarULFreq:(bool)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (void)setULCACriCarDLBW:(unsigned int)arg1;
+- (void)setULCACriCarDLFreq:(unsigned int)arg1;
+- (void)setULCACriCarULBW:(unsigned int)arg1;
+- (void)setULCACriCarULFreq:(unsigned int)arg1;
+- (void)setULCAHasCoexBand:(bool)arg1;
+- (void)setULCAPriCarDLBW:(unsigned int)arg1;
+- (void)setULCAPriCarDLFreq:(unsigned int)arg1;
+- (void)setULCAPriCarULBW:(unsigned int)arg1;
+- (void)setULCAPriCarULFreq:(unsigned int)arg1;
+- (unsigned long long)timestamp;
+- (unsigned int)uLCACriCarDLBW;
+- (unsigned int)uLCACriCarDLFreq;
+- (unsigned int)uLCACriCarULBW;
+- (unsigned int)uLCACriCarULFreq;
+- (bool)uLCAHasCoexBand;
+- (unsigned int)uLCAPriCarDLBW;
+- (unsigned int)uLCAPriCarDLFreq;
+- (unsigned int)uLCAPriCarULBW;
+- (unsigned int)uLCAPriCarULFreq;
+- (void)writeTo:(id)arg1;
+
+@end

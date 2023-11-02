@@ -1,0 +1,4 @@
+
+@protocol PKPaymentInformationEventExtensionHostContextProtocol
+
+@end

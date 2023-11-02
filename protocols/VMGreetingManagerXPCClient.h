@@ -1,0 +1,4 @@
+
+@protocol VMGreetingManagerXPCClient <NSObject>
+
+@end

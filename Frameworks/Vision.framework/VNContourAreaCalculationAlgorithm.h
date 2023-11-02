@@ -1,0 +1,4 @@
+
+@interface VNContourAreaCalculationAlgorithm : NSObject
+
+@end

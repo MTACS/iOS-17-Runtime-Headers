@@ -1,0 +1,4 @@
+
+@protocol SBSystemServiceServerDelegate <NSObject>
+
+@end

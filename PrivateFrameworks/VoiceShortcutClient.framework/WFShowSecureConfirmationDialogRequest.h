@@ -1,0 +1,4 @@
+
+@interface WFShowSecureConfirmationDialogRequest : WFShowAlertDialogRequest
+
+@end

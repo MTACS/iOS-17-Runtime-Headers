@@ -1,0 +1,83 @@
+
+@interface SignpostSupportObject : NSObject <SignpostSerializable, SignpostSupportTimeInterval> {
+    NSString * _category;
+    NSString * _subsystem;
+    double  _timebaseRatio;
+}
+
+@property (nonatomic, readonly) NSDate *beginDate;
+@property (nonatomic, retain) NSString *category;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long durationMachContinuousTime;
+@property (nonatomic, readonly) float durationSeconds;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) unsigned long long endMachContinuousTime;
+@property (nonatomic, readonly) unsigned long long endNanoseconds;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long startMachContinuousTime;
+@property (nonatomic, readonly) unsigned long long startNanoseconds;
+@property (nonatomic, retain) NSString *subsystem;
+@property (readonly) Class superclass;
+@property (nonatomic) double timebaseRatio;
+@property (nonatomic, readonly) long long tv_sec;
+@property (nonatomic, readonly) int tv_usec;
+@property (nonatomic, readonly) int tz_dsttime;
+@property (nonatomic, readonly) int tz_minuteswest;
+
++ (id)headerWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2;
++ (id)serializationTypeNumber;
+
+- (void).cxx_destruct;
+- (void)_adjustBeginTimeVal:(struct timeval { long long x1; int x2; }*)arg1;
+- (void)_adjustEndTimeVal:(struct timeval { long long x1; int x2; }*)arg1;
+- (id)_containedObjectsFromArray:(id)arg1;
+- (bool)_containsMCT:(unsigned long long)arg1;
+- (bool)_containsTimeObject:(id)arg1;
+- (id)_descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2 asBegin:(bool)arg3;
+- (id)_descriptionWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2 asBegin:(bool)arg3;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1 shouldRedact:(bool)arg2;
+- (bool)_hasBeginTimeval;
+- (bool)_hasEndTimeval;
+- (bool)_populateTimeStruct:(struct time { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; int x9; }*)arg1 withTimeval:(struct timeval { long long x1; int x2; }*)arg2 withTZString:(id)arg3;
+- (id)_wallTimeStringWithTimeZone:(id)arg1 isBegin:(bool)arg2;
+- (id)beginDate;
+- (bool)beginTimeval:(struct timeval { long long x1; int x2; }*)arg1;
+- (bool)beginTimezone:(struct timezone { int x1; int x2; }*)arg1;
+- (id)beginWallTimeStringWithTimeZoneName:(id)arg1;
+- (id)category;
+- (id)descriptionWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2;
+- (unsigned long long)durationMachContinuousTime;
+- (double)durationMs;
+- (unsigned long long)durationNanoseconds;
+- (float)durationSeconds;
+- (id)endDate;
+- (unsigned long long)endMachContinuousTime;
+- (double)endMs;
+- (unsigned long long)endNanoseconds;
+- (double)endSeconds;
+- (bool)endTimeval:(struct timeval { long long x1; int x2; }*)arg1;
+- (bool)endTimezone:(struct timezone { int x1; int x2; }*)arg1;
+- (id)endWallTimeStringWithTimeZoneName:(id)arg1;
+- (unsigned long long)hash;
+- (id)humanReadableDictionaryRepresentation;
+- (id)humanReadableType;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3;
+- (bool)isEqual:(id)arg1;
+- (id)serializeableDictionaryWithShouldRedact:(bool)arg1;
+- (void)setCategory:(id)arg1;
+- (void)setSubsystem:(id)arg1;
+- (void)setTimebaseRatio:(double)arg1;
+- (unsigned long long)startMachContinuousTime;
+- (double)startMs;
+- (unsigned long long)startNanoseconds;
+- (double)startSeconds;
+- (id)subsystem;
+- (double)timebaseRatio;
+- (long long)tv_sec;
+- (int)tv_usec;
+- (int)tz_dsttime;
+- (int)tz_minuteswest;
+
+@end

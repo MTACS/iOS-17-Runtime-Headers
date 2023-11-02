@@ -1,0 +1,4 @@
+
+@protocol SAReminderPayload <SAAceSerializable>
+
+@end

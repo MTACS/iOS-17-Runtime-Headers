@@ -1,0 +1,100 @@
+
+@interface PHMediaRequestContext : NSObject <PHAdjustmentDataRequestDelegate, PHImageRequestDelegate> {
+    PHAsset * _asset;
+    <PHMediaRequestContextDelegate> * _delegate;
+    PHImageDisplaySpec * _displaySpec;
+    PHImageResourceChooser * _imageResourceChooser;
+    NSMutableSet * _inflightRequestIdentifiers;
+    bool  _isCancelled;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    unsigned long long  _managerID;
+    _Atomic unsigned long long  _nextID;
+    NSError * _prestartError;
+    NSMutableDictionary * _progressByTaskIdentifier;
+    _Atomic int  _repairAttemptCount;
+    int  _requestID;
+    NSMutableArray * _requests;
+    id /* block */  _resultHandler;
+    unsigned long long  _signpostID;
+    unsigned long long  _signpostLayoutID;
+    NSProgress * _totalProgress;
+}
+
+@property (nonatomic, readonly) PHAsset *asset;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PHMediaRequestContextDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PHImageDisplaySpec *displaySpec;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PHImageResourceChooser *imageResourceChooser;
+@property (nonatomic, readonly) unsigned long long managerID;
+@property (nonatomic, retain) NSError *prestartError;
+@property (nonatomic, readonly) int requestID;
+@property (nonatomic) unsigned long long signpostID;
+@property (nonatomic) unsigned long long signpostLayoutID;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long type;
+
++ (id)chooserQueue;
++ (id)contentEditingInputRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 options:(id)arg4 useRAWAsUnadjustedBase:(bool)arg5 resultHandler:(id /* block */)arg6;
++ (id)imageRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 imageRequestOptions:(id)arg4 displaySpec:(id)arg5 resultHandler:(id /* block */)arg6;
++ (void)initialize;
++ (id)livePhotoRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 livePhotoRequestOptions:(id)arg4 displaySpec:(id)arg5 resultHandler:(id /* block */)arg6;
++ (id)videoRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 videoRequestOptions:(id)arg4 intent:(long long)arg5 resultHandler:(id /* block */)arg6;
+
+- (void).cxx_destruct;
+- (id)_produceChildRequestsForRequest:(id)arg1 reportingIsLocallyAvailable:(bool)arg2 isDegraded:(bool)arg3;
+- (id)_produceChildRequestsForRequest:(id)arg1 withResult:(id)arg2;
+- (void)_registerAndStartRequests:(id)arg1;
+- (id)_requestWithIdentifier:(id)arg1;
+- (void)_setupProgressIfNeeded;
+- (void)adjustmentDataRequest:(id)arg1 didReportProgress:(double)arg2 completed:(bool)arg3 error:(id)arg4;
+- (id)asset;
+- (void)beginCustomAsyncWorkWithIdentifier:(id)arg1;
+- (void)cancel;
+- (id)delegate;
+- (id)displaySpec;
+- (void)finishCustomAsyncWorkWithIdentifier:(id)arg1;
+- (void)imageRequest:(id)arg1 isQueryingCacheAndDidWait:(bool*)arg2 didFindImage:(bool*)arg3 resultHandler:(id /* block */)arg4;
+- (void)imageRequest:(id)arg1 isRequestingScheduledWorkBlock:(id /* block */)arg2;
+- (id)imageResourceChooser;
+- (id)initWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 displaySpec:(id)arg4 resultHandler:(id /* block */)arg5;
+- (id)initialRequests;
+- (bool)isCancelled;
+- (bool)isNetworkAccessAllowed;
+- (bool)isSynchronous;
+- (unsigned long long)managerID;
+- (int)maxRepairRequests;
+- (void)mediaRequest:(id)arg1 didFindLocallyAvailableResult:(bool)arg2 isDegraded:(bool)arg3;
+- (void)mediaRequest:(id)arg1 didFinishWithResult:(id)arg2;
+- (void)mediaRequest:(id)arg1 didReportProgress:(id)arg2;
+- (void)mediaRequest:(id)arg1 didRequestRetryWithHintsAllowed:(bool)arg2;
+- (bool)mediaRequestCanRequestRepair:(id)arg1;
+- (void)mediaRequestDidRequestRetry:(id)arg1;
+- (unsigned long long)nextRequestIndex;
+- (id)prestartError;
+- (void)processMediaResult:(id)arg1 forRequest:(id)arg2;
+- (id)produceChildRequestsForRequest:(id)arg1 reportingIsLocallyAvailable:(bool)arg2 isDegraded:(bool)arg3 result:(id)arg4;
+- (id /* block */)progressHandler;
+- (id)progresses;
+- (bool)representsShareableHighQualityResource;
+- (int)requestID;
+- (void)requestWithIdentifier:(id)arg1 didReportProgress:(double)arg2 completed:(bool)arg3 error:(id)arg4;
+- (void)setDelegate:(id)arg1;
+- (void)setDisplaySpec:(id)arg1;
+- (void)setImageResourceChooser:(id)arg1;
+- (void)setPrestartError:(id)arg1;
+- (void)setProgress:(id)arg1 forRequestIdentifier:(id)arg2;
+- (void)setSignpostID:(unsigned long long)arg1;
+- (void)setSignpostLayoutID:(unsigned long long)arg1;
+- (bool)shouldLimitRepairRequestsPerProcess;
+- (bool)shouldReportProgress;
+- (unsigned long long)signpostID;
+- (unsigned long long)signpostLayoutID;
+- (void)start;
+- (double)totalProgressFraction;
+- (long long)type;
+
+@end

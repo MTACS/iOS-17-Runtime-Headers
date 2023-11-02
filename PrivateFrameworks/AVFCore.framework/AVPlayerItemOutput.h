@@ -1,0 +1,22 @@
+
+@interface AVPlayerItemOutput : NSObject {
+    AVPlayerItemOutputInternal * _outputInternal;
+}
+
+@property (nonatomic) bool suppressesPlayerRendering;
+
+- (bool)_attachToPlayerItem:(id)arg1;
+- (struct OpaqueCMTimebase { }*)_copyTimebase;
+- (void)_detachFromPlayerItem;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_itemTimeForHostTimeAsCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_setTimebase:(struct OpaqueCMTimebase { }*)arg1;
+- (id)_weakReference;
+- (void)dealloc;
+- (id)init;
+- (bool)isDefunct;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })itemTimeForHostTime:(double)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })itemTimeForMachAbsoluteTime:(long long)arg1;
+- (void)setSuppressesPlayerRendering:(bool)arg1;
+- (bool)suppressesPlayerRendering;
+
+@end

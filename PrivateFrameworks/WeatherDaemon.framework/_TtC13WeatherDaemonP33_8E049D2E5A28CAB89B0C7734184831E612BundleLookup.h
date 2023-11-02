@@ -1,0 +1,4 @@
+
+@interface _TtC13WeatherDaemonP33_8E049D2E5A28CAB89B0C7734184831E612BundleLookup : _TtCs12_SwiftObject
+
+@end

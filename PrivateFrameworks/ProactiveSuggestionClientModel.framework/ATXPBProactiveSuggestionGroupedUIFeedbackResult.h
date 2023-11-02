@@ -1,0 +1,90 @@
+
+@interface ATXPBProactiveSuggestionGroupedUIFeedbackResult : PBCodable <NSCopying> {
+    double  _endDateOfLastSessionInSeconds;
+    struct { 
+        unsigned int endDateOfLastSessionInSeconds : 1; 
+        unsigned int numAbandonedSuggestions : 1; 
+        unsigned int numEngagedSuggestions : 1; 
+        unsigned int numRejectedSuggestions : 1; 
+        unsigned int numSessionsWithAbandonedSuggestions : 1; 
+        unsigned int numSessionsWithEngagedSuggestions : 1; 
+        unsigned int numSessionsWithRejectedSuggestions : 1; 
+        unsigned int startDateOfFirstSessionInSeconds : 1; 
+        unsigned int isComplete : 1; 
+    }  _has;
+    bool  _isComplete;
+    unsigned long long  _numAbandonedSuggestions;
+    unsigned long long  _numEngagedSuggestions;
+    unsigned long long  _numRejectedSuggestions;
+    unsigned long long  _numSessionsWithAbandonedSuggestions;
+    unsigned long long  _numSessionsWithEngagedSuggestions;
+    unsigned long long  _numSessionsWithRejectedSuggestions;
+    double  _startDateOfFirstSessionInSeconds;
+}
+
+@property (nonatomic) double endDateOfLastSessionInSeconds;
+@property (nonatomic) bool hasEndDateOfLastSessionInSeconds;
+@property (nonatomic) bool hasIsComplete;
+@property (nonatomic) bool hasNumAbandonedSuggestions;
+@property (nonatomic) bool hasNumEngagedSuggestions;
+@property (nonatomic) bool hasNumRejectedSuggestions;
+@property (nonatomic) bool hasNumSessionsWithAbandonedSuggestions;
+@property (nonatomic) bool hasNumSessionsWithEngagedSuggestions;
+@property (nonatomic) bool hasNumSessionsWithRejectedSuggestions;
+@property (nonatomic) bool hasStartDateOfFirstSessionInSeconds;
+@property (nonatomic) bool isComplete;
+@property (nonatomic) unsigned long long numAbandonedSuggestions;
+@property (nonatomic) unsigned long long numEngagedSuggestions;
+@property (nonatomic) unsigned long long numRejectedSuggestions;
+@property (nonatomic) unsigned long long numSessionsWithAbandonedSuggestions;
+@property (nonatomic) unsigned long long numSessionsWithEngagedSuggestions;
+@property (nonatomic) unsigned long long numSessionsWithRejectedSuggestions;
+@property (nonatomic) double startDateOfFirstSessionInSeconds;
+
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (double)endDateOfLastSessionInSeconds;
+- (bool)hasEndDateOfLastSessionInSeconds;
+- (bool)hasIsComplete;
+- (bool)hasNumAbandonedSuggestions;
+- (bool)hasNumEngagedSuggestions;
+- (bool)hasNumRejectedSuggestions;
+- (bool)hasNumSessionsWithAbandonedSuggestions;
+- (bool)hasNumSessionsWithEngagedSuggestions;
+- (bool)hasNumSessionsWithRejectedSuggestions;
+- (bool)hasStartDateOfFirstSessionInSeconds;
+- (unsigned long long)hash;
+- (bool)isComplete;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (unsigned long long)numAbandonedSuggestions;
+- (unsigned long long)numEngagedSuggestions;
+- (unsigned long long)numRejectedSuggestions;
+- (unsigned long long)numSessionsWithAbandonedSuggestions;
+- (unsigned long long)numSessionsWithEngagedSuggestions;
+- (unsigned long long)numSessionsWithRejectedSuggestions;
+- (bool)readFrom:(id)arg1;
+- (void)setEndDateOfLastSessionInSeconds:(double)arg1;
+- (void)setHasEndDateOfLastSessionInSeconds:(bool)arg1;
+- (void)setHasIsComplete:(bool)arg1;
+- (void)setHasNumAbandonedSuggestions:(bool)arg1;
+- (void)setHasNumEngagedSuggestions:(bool)arg1;
+- (void)setHasNumRejectedSuggestions:(bool)arg1;
+- (void)setHasNumSessionsWithAbandonedSuggestions:(bool)arg1;
+- (void)setHasNumSessionsWithEngagedSuggestions:(bool)arg1;
+- (void)setHasNumSessionsWithRejectedSuggestions:(bool)arg1;
+- (void)setHasStartDateOfFirstSessionInSeconds:(bool)arg1;
+- (void)setIsComplete:(bool)arg1;
+- (void)setNumAbandonedSuggestions:(unsigned long long)arg1;
+- (void)setNumEngagedSuggestions:(unsigned long long)arg1;
+- (void)setNumRejectedSuggestions:(unsigned long long)arg1;
+- (void)setNumSessionsWithAbandonedSuggestions:(unsigned long long)arg1;
+- (void)setNumSessionsWithEngagedSuggestions:(unsigned long long)arg1;
+- (void)setNumSessionsWithRejectedSuggestions:(unsigned long long)arg1;
+- (void)setStartDateOfFirstSessionInSeconds:(double)arg1;
+- (double)startDateOfFirstSessionInSeconds;
+- (void)writeTo:(id)arg1;
+
+@end

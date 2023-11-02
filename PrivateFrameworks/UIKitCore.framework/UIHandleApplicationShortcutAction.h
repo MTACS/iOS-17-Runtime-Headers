@@ -1,0 +1,4 @@
+
+@interface UIHandleApplicationShortcutAction : UISHandleApplicationShortcutAction
+
+@end

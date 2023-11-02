@@ -1,0 +1,80 @@
+
+@interface HFHomeKitAccessorySettingItem : HFItem {
+    NSUUID * _accessoryIdentifier;
+    id  _cachedSettingValue;
+    bool  _disabled;
+    unsigned long long  _displayIndex;
+    NSUUID * _homeIdentifier;
+    bool  _isControllable;
+    NSString * _localizedTitle;
+    HMImmutableSetting * _setting;
+    NSDictionary * _settingDict;
+    NSString * _settingKeyPath;
+    HMAccessorySettingsController * _settingsController;
+    HFItem<HFServiceLikeItem> * _sourceItem;
+    NSDictionary * _usageOptions;
+    long long  _userInterfaceType;
+}
+
+@property (nonatomic, retain) NSUUID *accessoryIdentifier;
+@property (nonatomic, retain) id cachedSettingValue;
+@property (getter=isDisabled, nonatomic) bool disabled;
+@property (nonatomic) unsigned long long displayIndex;
+@property (nonatomic, retain) NSUUID *homeIdentifier;
+@property (nonatomic) bool isControllable;
+@property (nonatomic, copy) NSString *localizedTitle;
+@property (nonatomic, retain) HMImmutableSetting *setting;
+@property (nonatomic, retain) NSDictionary *settingDict;
+@property (nonatomic, copy) NSString *settingKeyPath;
+@property (nonatomic, readonly) id settingValue;
+@property (nonatomic, retain) HMAccessorySettingsController *settingsController;
+@property (nonatomic, retain) HFItem<HFServiceLikeItem> *sourceItem;
+@property (nonatomic, readonly, copy) NSString *targetSettingKeyPath;
+@property (nonatomic, retain) NSDictionary *usageOptions;
+@property (nonatomic) long long userInterfaceType;
+
+- (void).cxx_destruct;
+- (void)_decorateOutcomeWithResultKeys:(id)arg1;
+- (id)_formattedValueForSetting;
+- (id)_subclass_updateWithOptions:(id)arg1;
+- (id)accessoryIdentifier;
+- (id)cachedSettingValue;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (unsigned long long)displayIndex;
+- (id)homeIdentifier;
+- (id)initWithDefaultSetting:(id)arg1 sourceItem:(id)arg2 localizedTitle:(id)arg3 settingsController:(id)arg4 homeIdentifier:(id)arg5 accessoryIdentifier:(id)arg6 settingDict:(id)arg7 usageOptions:(id)arg8;
+- (id)initWithSetting:(id)arg1 sourceItem:(id)arg2 localizedTitle:(id)arg3 settingsController:(id)arg4 homeIdentifier:(id)arg5 accessoryIdentifier:(id)arg6 settingDict:(id)arg7 usageOptions:(id)arg8;
+- (id)initWithSettingsController:(id)arg1 localizedTitle:(id)arg2 homeIdentifier:(id)arg3 accessoryIdentifier:(id)arg4 settingDict:(id)arg5 usageOptions:(id)arg6;
+- (id)initWithSourceItem:(id)arg1 localizedTitle:(id)arg2 settingsController:(id)arg3 homeIdentifier:(id)arg4 accessoryIdentifier:(id)arg5 settingDict:(id)arg6 usageOptions:(id)arg7;
+- (bool)isControllable;
+- (bool)isDisabled;
+- (id)localizedTitle;
+- (void)setAccessoryIdentifier:(id)arg1;
+- (void)setCachedSettingValue:(id)arg1;
+- (void)setDisabled:(bool)arg1;
+- (void)setDisplayIndex:(unsigned long long)arg1;
+- (void)setHomeIdentifier:(id)arg1;
+- (void)setIsControllable:(bool)arg1;
+- (void)setLocalizedTitle:(id)arg1;
+- (void)setSetting:(id)arg1;
+- (void)setSettingDict:(id)arg1;
+- (void)setSettingKeyPath:(id)arg1;
+- (void)setSettingsController:(id)arg1;
+- (void)setSourceItem:(id)arg1;
+- (void)setUsageOptions:(id)arg1;
+- (void)setUserInterfaceType:(long long)arg1;
+- (id)setting;
+- (id)settingDict;
+- (id)settingKeyPath;
+- (id)settingValue;
+- (id)settingsController;
+- (id)sourceItem;
+- (id)targetSettingKeyPath;
+- (bool)updateSetting:(id)arg1;
+- (void)updateSettingValue:(id)arg1;
+- (id)updateValue:(id)arg1;
+- (id)usageOptions;
+- (long long)userInterfaceType;
+
+@end

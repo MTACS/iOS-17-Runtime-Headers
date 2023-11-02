@@ -1,0 +1,4 @@
+
+@protocol SBSImplementer <SBSDebugInfoImplementer, SBSProximityHandoffUIImplementer, SBSStereoLeaderRoleImplementer, SBSSysdiagnoseImplementer, SBSSystemImplementer, SBSHomePodControlsImplementer, SBSPowerMonitorImplementer, SBSProfilesImplementer, SBSVolumeEventMonitorImplementer>
+
+@end

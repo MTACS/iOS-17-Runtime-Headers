@@ -1,0 +1,4 @@
+
+@interface _TtC9SharingUIP33_212819B8DD014CCD9C2EBE77BCC433D519ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

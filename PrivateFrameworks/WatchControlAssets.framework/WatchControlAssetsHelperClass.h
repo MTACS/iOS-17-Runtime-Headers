@@ -1,0 +1,4 @@
+
+@interface WatchControlAssetsHelperClass : NSObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface MTRBridgedDeviceBasicClusterLeaveEvent : MTRBridgedDeviceBasicInformationClusterLeaveEvent
+
+@end

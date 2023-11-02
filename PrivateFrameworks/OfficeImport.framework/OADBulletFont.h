@@ -1,0 +1,4 @@
+
+@interface OADBulletFont : NSObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CNOperationQueueSchedulerCancelationToken : CNCancelationToken
+
+@end

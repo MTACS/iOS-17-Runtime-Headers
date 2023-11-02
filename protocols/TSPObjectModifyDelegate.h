@@ -1,0 +1,4 @@
+
+@protocol TSPObjectModifyDelegate <NSObject>
+
+@end

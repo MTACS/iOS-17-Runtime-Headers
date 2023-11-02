@@ -1,0 +1,91 @@
+
+@interface MHSchemaMHStatisticDistributionInfo : SISchemaInstrumentationMessage {
+    unsigned long long  _avg;
+    struct { 
+        unsigned int num : 1; 
+        unsigned int max : 1; 
+        unsigned int min : 1; 
+        unsigned int avg : 1; 
+        unsigned int median : 1; 
+        unsigned int p95 : 1; 
+        unsigned int std : 1; 
+        unsigned int warmup : 1; 
+    }  _has;
+    unsigned long long  _max;
+    unsigned long long  _median;
+    unsigned long long  _min;
+    unsigned int  _num;
+    unsigned long long  _p95;
+    float  _std;
+    unsigned long long  _warmup;
+}
+
+@property (nonatomic) unsigned long long avg;
+@property (nonatomic) bool hasAvg;
+@property (nonatomic) bool hasMax;
+@property (nonatomic) bool hasMedian;
+@property (nonatomic) bool hasMin;
+@property (nonatomic) bool hasNum;
+@property (nonatomic) bool hasP95;
+@property (nonatomic) bool hasStd;
+@property (nonatomic) bool hasWarmup;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) unsigned long long max;
+@property (nonatomic) unsigned long long median;
+@property (nonatomic) unsigned long long min;
+@property (nonatomic) unsigned int num;
+@property (nonatomic) unsigned long long p95;
+@property (nonatomic) float std;
+@property (nonatomic) unsigned long long warmup;
+
+- (unsigned long long)avg;
+- (void)deleteAvg;
+- (void)deleteMax;
+- (void)deleteMedian;
+- (void)deleteMin;
+- (void)deleteNum;
+- (void)deleteP95;
+- (void)deleteStd;
+- (void)deleteWarmup;
+- (id)dictionaryRepresentation;
+- (bool)hasAvg;
+- (bool)hasMax;
+- (bool)hasMedian;
+- (bool)hasMin;
+- (bool)hasNum;
+- (bool)hasP95;
+- (bool)hasStd;
+- (bool)hasWarmup;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (unsigned long long)max;
+- (unsigned long long)median;
+- (unsigned long long)min;
+- (unsigned int)num;
+- (unsigned long long)p95;
+- (bool)readFrom:(id)arg1;
+- (void)setAvg:(unsigned long long)arg1;
+- (void)setHasAvg:(bool)arg1;
+- (void)setHasMax:(bool)arg1;
+- (void)setHasMedian:(bool)arg1;
+- (void)setHasMin:(bool)arg1;
+- (void)setHasNum:(bool)arg1;
+- (void)setHasP95:(bool)arg1;
+- (void)setHasStd:(bool)arg1;
+- (void)setHasWarmup:(bool)arg1;
+- (void)setMax:(unsigned long long)arg1;
+- (void)setMedian:(unsigned long long)arg1;
+- (void)setMin:(unsigned long long)arg1;
+- (void)setNum:(unsigned int)arg1;
+- (void)setP95:(unsigned long long)arg1;
+- (void)setStd:(float)arg1;
+- (void)setWarmup:(unsigned long long)arg1;
+- (float)std;
+- (id)suppressMessageUnderConditions;
+- (unsigned long long)warmup;
+- (void)writeTo:(id)arg1;
+
+@end

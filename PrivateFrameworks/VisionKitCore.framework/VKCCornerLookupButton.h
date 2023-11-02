@@ -1,0 +1,82 @@
+
+@interface VKCCornerLookupButton : VKCTappableView <UIGestureRecognizerDelegate, UIPointerInteractionDelegate> {
+    UIButton * _button;
+    double  _buttonHeight;
+    double  _buttonWidth;
+    NSString * _currentRVItemID;
+    <VKCCornerLookupButtonDelegate> * _delegate;
+    bool  _didProcessResult;
+    bool  _isShowingVisualResultsPane;
+    bool  _observingInteractionDidFinish;
+    VKCVisualSearchResult * _result;
+    VKCVisualSearchResultItem * _resultItem;
+    bool  _shouldShowResultWhenVisible;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+}
+
+@property (nonatomic, retain) UIButton *button;
+@property (nonatomic) double buttonHeight;
+@property (nonatomic) double buttonWidth;
+@property (nonatomic, retain) NSString *currentRVItemID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <VKCCornerLookupButtonDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool didProcessResult;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isShowingVisualResultsPane;
+@property (nonatomic) bool observingInteractionDidFinish;
+@property (nonatomic, retain) VKCVisualSearchResult *result;
+@property (nonatomic, retain) VKCVisualSearchResultItem *resultItem;
+@property (nonatomic) bool shouldShowResultWhenVisible;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
+
+- (void).cxx_destruct;
+- (id)_backgroundColorBehindText;
+- (id)_defaultSymbolName;
+- (void)_didDismissVisualResultsPane:(id)arg1;
+- (id)_queryString;
+- (void)_setupButton;
+- (void)_setupGestures;
+- (id)_symbolNameForItem;
+- (void)_updateImage;
+- (id)button;
+- (double)buttonHeight;
+- (double)buttonWidth;
+- (double)contentSizeScaleFactor;
+- (double)cornerButtonSize;
+- (id)currentRVItemID;
+- (void)dealloc;
+- (id)delegate;
+- (void)didDismissVisualResultsPane;
+- (void)didMoveToWindow;
+- (bool)didProcessResult;
+- (void)didTap;
+- (bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (id)imageForButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 resultItem:(id)arg2;
+- (bool)isShowingVisualResultsPane;
+- (bool)observingInteractionDidFinish;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (id)queryForProcessingResult;
+- (id)result;
+- (id)resultItem;
+- (void)setButton:(id)arg1;
+- (void)setButtonHeight:(double)arg1;
+- (void)setButtonWidth:(double)arg1;
+- (void)setCurrentRVItemID:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDidProcessResult:(bool)arg1;
+- (void)setIsShowingVisualResultsPane:(bool)arg1;
+- (void)setObservingInteractionDidFinish:(bool)arg1;
+- (void)setResult:(id)arg1;
+- (void)setResultItem:(id)arg1;
+- (void)setShouldShowResultWhenVisible:(bool)arg1;
+- (void)setTapGestureRecognizer:(id)arg1;
+- (bool)shouldShowResultWhenVisible;
+- (void)showLookupUIPaneForResultItem;
+- (void)showVisualSearchResultView;
+- (id)tapGestureRecognizer;
+- (void)updateIndicatorDotForState;
+
+@end

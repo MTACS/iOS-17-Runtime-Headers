@@ -1,0 +1,14 @@
+
+@protocol _SetOperable <NSObject>
+
+@required
+
++ (id)setWithArray:(NSArray *)arg1;
+
+- (NSArray *)allObjects;
+- (bool)containsObject:(id)arg1;
+- (long long)count;
+- (id)setByIntersectingSet:(id <_SetOperable>)arg1;
+- (id)setBySubtractingSet:(id <_SetOperable>)arg1;
+
+@end

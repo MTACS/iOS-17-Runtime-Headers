@@ -1,0 +1,80 @@
+
+@interface SiriInteractive.LiveSceneViewController : UIViewController <BSInvalidatable, FBSceneDelegate, FBSceneLayerManagerObserver, UIAdaptivePresentationControllerDelegate> {
+    void $__lazy_storage_$_queue;
+    void _presentationMode;
+    void activatedSceneView;
+    void activityTouchRestrictedRects;
+    void backOffTimer;
+    void cancellables;
+    void context;
+    void delegate;
+    void ensureContentTimer;
+    void isInvalidated;
+    void isSceneForeground;
+    void liveSceneSnapshotView;
+    void modalSceneViewController;
+    void processIdentity;
+    void resolvedMetrics;
+    void scene;
+    void sceneActivated;
+    void sceneActivatedBlocks;
+    void sceneClientAlreadyExitedOnceWithinTimeout;
+    void sceneClientExitTimeout;
+    void sceneClientExitTimer;
+    void scenePresenter;
+    void sceneSpecification;
+    void settingsDiffInspector;
+    void shouldShareTouchesWithHost;
+    void systemProvidedMetrics;
+    void touchDeliveryPolicyAssertions;
+    void viewModel;
+    void waitingForArchiveContentReady;
+    void waitingForArchiveContentReadyBlocks;
+}
+
+@property (nonatomic, copy) NSArray *activityTouchRestrictedRects;
+@property (nonatomic) <_TtP15SiriInteractive31LiveSceneViewControllerDelegate_> *delegate;
+@property (nonatomic, readonly) NSString *description;
+@property (nonatomic) unsigned int presentationMode;
+@property (nonatomic, retain) _TtC15SiriInteractive16LiveSceneMetrics *resolvedMetrics;
+@property (nonatomic) bool shouldShareTouchesWithHost;
+@property (nonatomic, retain) _TtC15SiriInteractive23LiveSceneMetricsRequest *systemProvidedMetrics;
+
+- (void).cxx_destruct;
+- (id)activityTouchRestrictedRects;
+- (id)cancelTouchesForCurrentEventInHostedContent;
+- (void)dealloc;
+- (id)delegate;
+- (id)description;
+- (void)ensureContentWithTimeout:(double)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)invalidate;
+- (void)presentationControllerDidDismiss:(id)arg1;
+- (unsigned int)presentationMode;
+- (id)resolvedMetrics;
+- (void)scene:(id)arg1 didReceiveActions:(id)arg2;
+- (void)scene:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 oldClientSettings:(id)arg3 transitionContext:(id)arg4;
+- (void)sceneContentStateDidChange:(id)arg1;
+- (void)sceneDidActivate:(id)arg1;
+- (void)sceneDidDeactivate:(id)arg1 withError:(id)arg2;
+- (void)sceneDidInvalidate:(id)arg1;
+- (void)sceneLayerManagerDidStartTrackingLayers:(id)arg1;
+- (void)sceneLayerManagerDidStopTrackingLayers:(id)arg1;
+- (void)sceneLayerManagerDidUpdateLayers:(id)arg1;
+- (void)setActivityTouchRestrictedRects:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setPresentationMode:(unsigned int)arg1;
+- (void)setResolvedMetrics:(id)arg1;
+- (void)setShouldShareTouchesWithHost:(bool)arg1;
+- (void)setSystemProvidedMetrics:(id)arg1;
+- (bool)shouldShareTouchesWithHost;
+- (id)systemProvidedMetrics;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+@end

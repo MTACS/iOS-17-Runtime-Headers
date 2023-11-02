@@ -1,0 +1,124 @@
+
+@interface GEORecentLocationHistory : PBCodable <NSCopying> {
+    unsigned int  _baseDistanceToDestination;
+    GEOLatLngE7 * _baseLocation;
+    unsigned long long  _baseTimestamp;
+    NSData * _encodedDistancesToDestination;
+    NSData * _encodedLats;
+    NSData * _encodedLngs;
+    struct { 
+        unsigned int has_baseTimestamp : 1; 
+        unsigned int has_baseDistanceToDestination : 1; 
+        unsigned int has_latlngCount : 1; 
+        unsigned int has_timeResolution : 1; 
+        unsigned int read_unknownFields : 1; 
+        unsigned int read_relativeDistanceToDestinations : 1; 
+        unsigned int read_baseLocation : 1; 
+        unsigned int read_encodedDistancesToDestination : 1; 
+        unsigned int read_encodedLats : 1; 
+        unsigned int read_encodedLngs : 1; 
+        unsigned int read_relativeLocations : 1; 
+        unsigned int wrote_anyField : 1; 
+    }  _flags;
+    unsigned int  _latlngCount;
+    PBDataReader * _reader;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _readerLock;
+    unsigned int  _readerMarkLength;
+    unsigned int  _readerMarkPos;
+    struct { 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
+    }  _relativeDistanceToDestinations;
+    NSMutableArray * _relativeLocations;
+    unsigned int  _timeResolution;
+    PBUnknownFields * _unknownFields;
+}
+
+@property (nonatomic) unsigned int baseDistanceToDestination;
+@property (nonatomic, retain) GEOLatLngE7 *baseLocation;
+@property (nonatomic) unsigned long long baseTimestamp;
+@property (nonatomic, retain) NSData *encodedDistancesToDestination;
+@property (nonatomic, retain) NSData *encodedLats;
+@property (nonatomic, retain) NSData *encodedLngs;
+@property (nonatomic) bool hasBaseDistanceToDestination;
+@property (nonatomic, readonly) bool hasBaseLocation;
+@property (nonatomic) bool hasBaseTimestamp;
+@property (nonatomic, readonly) bool hasEncodedDistancesToDestination;
+@property (nonatomic, readonly) bool hasEncodedLats;
+@property (nonatomic, readonly) bool hasEncodedLngs;
+@property (nonatomic) bool hasLatlngCount;
+@property (nonatomic) bool hasTimeResolution;
+@property (nonatomic) unsigned int latlngCount;
+@property (nonatomic, readonly) int*relativeDistanceToDestinations;
+@property (nonatomic, readonly) unsigned long long relativeDistanceToDestinationsCount;
+@property (nonatomic, retain) NSMutableArray *relativeLocations;
+@property (nonatomic) unsigned int timeResolution;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+
++ (bool)isValid:(id)arg1;
++ (Class)relativeLocationsType;
+
+- (void).cxx_destruct;
+- (void)addRelativeDistanceToDestination:(int)arg1;
+- (void)addRelativeLocations:(id)arg1;
+- (unsigned int)baseDistanceToDestination;
+- (id)baseLocation;
+- (unsigned long long)baseTimestamp;
+- (void)clearRelativeDistanceToDestinations;
+- (void)clearRelativeLocations;
+- (void)clearUnknownFields:(bool)arg1;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)encodedDistancesToDestination;
+- (id)encodedLats;
+- (id)encodedLngs;
+- (bool)hasBaseDistanceToDestination;
+- (bool)hasBaseLocation;
+- (bool)hasBaseTimestamp;
+- (bool)hasEncodedDistancesToDestination;
+- (bool)hasEncodedLats;
+- (bool)hasEncodedLngs;
+- (bool)hasLatlngCount;
+- (bool)hasTimeResolution;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithData:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonRepresentation;
+- (unsigned int)latlngCount;
+- (void)mergeFrom:(id)arg1;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (int)relativeDistanceToDestinationAtIndex:(unsigned long long)arg1;
+- (int*)relativeDistanceToDestinations;
+- (unsigned long long)relativeDistanceToDestinationsCount;
+- (id)relativeLocations;
+- (id)relativeLocationsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)relativeLocationsCount;
+- (void)setBaseDistanceToDestination:(unsigned int)arg1;
+- (void)setBaseLocation:(id)arg1;
+- (void)setBaseTimestamp:(unsigned long long)arg1;
+- (void)setEncodedDistancesToDestination:(id)arg1;
+- (void)setEncodedLats:(id)arg1;
+- (void)setEncodedLngs:(id)arg1;
+- (void)setHasBaseDistanceToDestination:(bool)arg1;
+- (void)setHasBaseTimestamp:(bool)arg1;
+- (void)setHasLatlngCount:(bool)arg1;
+- (void)setHasTimeResolution:(bool)arg1;
+- (void)setLatlngCount:(unsigned int)arg1;
+- (void)setRelativeDistanceToDestinations:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setRelativeLocations:(id)arg1;
+- (void)setTimeResolution:(unsigned int)arg1;
+- (unsigned int)timeResolution;
+- (id)unknownFields;
+- (void)writeTo:(id)arg1;
+
+@end

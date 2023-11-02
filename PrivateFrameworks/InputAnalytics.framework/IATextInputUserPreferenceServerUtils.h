@@ -1,0 +1,4 @@
+
+@interface IATextInputUserPreferenceServerUtils : NSObject
+
+@end

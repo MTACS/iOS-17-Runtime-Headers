@@ -1,0 +1,4 @@
+
+@protocol PUPhotosSectionHeaderViewDelegate <PXPhotosSectionHeaderViewDelegate>
+
+@end

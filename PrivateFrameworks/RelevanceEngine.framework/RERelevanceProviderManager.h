@@ -1,0 +1,97 @@
+
+@interface RERelevanceProviderManager : NSObject <RERelevanceProviderManagerProperties> {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    bool  _dataStoresOpened;
+    NSArray * _effectiveFeatures;
+    RERelevanceProviderEnvironment * _environment;
+    bool  _hasSeperateRelevanceQueue;
+    bool  _implementsPrepareForUpdate;
+    NSDictionary * _inflectionValues;
+    NSString * _loggingHeader;
+    NSHashTable * _providers;
+    NSObject<OS_dispatch_queue> * _relevanceQueue;
+    REPriorityQueue * _scheduledUpdates;
+    REFeatureSet * _supportedFeatures;
+    REUpNextTimer * _updateTimer;
+}
+
+@property (nonatomic, readonly) NSArray *allProviders;
+@property (nonatomic, readonly) NSArray *allRelevanceProviders;
+@property (nonatomic, readonly) bool dataSourcesOpened;
+@property (nonatomic, readonly) NSArray *effectiveFeatures;
+@property (nonatomic) RERelevanceProviderEnvironment *environment;
+@property (nonatomic, readonly) unsigned long long scheduledUpdatesCount;
+@property (nonatomic, retain) REFeatureSet *supportedFeatures;
+
++ (id)_dependencyClasses;
++ (id)_features;
++ (Class)_relevanceProviderClass;
++ (bool)_requiresLocationServices;
++ (bool)_supportsHistoricProviders;
++ (bool)_wantsDelayedUpdate;
++ (bool)_wantsSeperateRelevanceQueue;
++ (id)providerManagerClasses;
++ (void)setProviderManagerClassesLoadingBlock:(id /* block */)arg1;
++ (bool)supportsHistoricProviders;
+
+- (void).cxx_destruct;
+- (void)_accessQueue_appendCompletionHandlerForScheduledUpdate:(id)arg1;
+- (void)_accessQueue_performImmediateUpdate:(id)arg1;
+- (void)_accessQueue_performPendingUpdatesAndScheduleTimerIfNeeded;
+- (void)_accessQueue_performUpdate:(id)arg1;
+- (void)_accessQueue_resetTimer;
+- (void)_accessQueue_scheduleUpdate:(id)arg1;
+- (void)_addedProvider:(id)arg1;
+- (void)_closeDataStoresAndObserveChanges;
+- (bool)_dataSourcesOpened;
+- (void)_enumerateProviders:(id /* block */)arg1;
+- (void)_handleSignificantTimeChange;
+- (bool)_isHistoricProvider:(id)arg1;
+- (bool)_isValidProvider:(id)arg1;
+- (void)_loadLoggingHeader;
+- (id)_manager_queue;
+- (void)_openDataStoresAndObserveChanges;
+- (void)_prepareForUpdate;
+- (void)_prepareForUpdateWithCompletion:(id /* block */)arg1;
+- (float)_relevanceForHistoricProvider:(id)arg1;
+- (float)_relevanceForProvider:(id)arg1;
+- (void)_relevanceQueue_openDataStores;
+- (void)_removeAllPendingUpdates;
+- (void)_removeProvider:(id)arg1;
+- (void)_scheduleUpdate:(id)arg1;
+- (id)_valueForHistoricProvider:(id)arg1 feature:(id)arg2;
+- (id)_valueForProvider:(id)arg1 context:(id)arg2 feature:(id)arg3;
+- (id)_valueForProvider:(id)arg1 feature:(id)arg2;
+- (id)_valuesForProvider:(id)arg1 context:(id)arg2 features:(id)arg3;
+- (void)addProvider:(id)arg1 completion:(id /* block */)arg2;
+- (id)allProviders;
+- (id)allRelevanceProviders;
+- (void)beginActivity:(id)arg1;
+- (void)beginFetchingData;
+- (bool)containsProvider:(id)arg1;
+- (bool)dataSourcesOpened;
+- (void)dealloc;
+- (id)description;
+- (id)effectiveFeatures;
+- (void)endActivity:(id)arg1;
+- (void)enumerateInflectionFeatureValues:(id /* block */)arg1;
+- (id)environment;
+- (void)finishFetchingData;
+- (unsigned long long)hash;
+- (id)initWithQueue:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)isProviderHistoric:(id)arg1 completion:(id /* block */)arg2;
+- (void)pause;
+- (void)pauseWithCompletion:(id /* block */)arg1;
+- (void)relevanceForHistoricProvider:(id)arg1 completion:(id /* block */)arg2;
+- (void)relevanceForProvider:(id)arg1 completion:(id /* block */)arg2;
+- (id)relevanceForProvider:(id)arg1 context:(id)arg2;
+- (void)removeProvider:(id)arg1 completion:(id /* block */)arg2;
+- (void)resume;
+- (void)resumeWithCompletion:(id /* block */)arg1;
+- (unsigned long long)scheduledUpdatesCount;
+- (void)setEnvironment:(id)arg1;
+- (void)setSupportedFeatures:(id)arg1;
+- (id)supportedFeatures;
+
+@end

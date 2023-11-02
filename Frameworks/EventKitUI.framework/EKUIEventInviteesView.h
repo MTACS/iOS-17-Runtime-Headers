@@ -1,0 +1,4 @@
+
+@interface EKUIEventInviteesView : UITableView
+
+@end

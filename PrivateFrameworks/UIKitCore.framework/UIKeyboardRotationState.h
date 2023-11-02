@@ -1,0 +1,4 @@
+
+@interface UIKeyboardRotationState : NSObject
+
+@end

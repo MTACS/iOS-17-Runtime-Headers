@@ -1,0 +1,78 @@
+
+@interface IKJSPlayer : IKJSEventListenerObject <IKJSPlayer> {
+    NSMutableDictionary * _boundaryListeners;
+    IKAppPlayerBridge * _bridge;
+    bool  _holdingSelfReference;
+    long long  _playerState;
+    IKJSPlaylist * _playlist;
+    NSMutableDictionary * _timeListeners;
+    NSMutableDictionary * _timedMetadataListeners;
+}
+
+@property (nonatomic, readonly) IKAppPlayerBridge *bridge;
+@property (nonatomic, copy) NSDictionary *contextMenuData;
+@property (nonatomic, readonly) IKJSMediaItem *currentMediaItem;
+@property (nonatomic, readonly) NSArray *currentMediaItemAccessLogs;
+@property (nonatomic, readonly) NSDate *currentMediaItemDate;
+@property (nonatomic, readonly) NSNumber *currentMediaItemDuration;
+@property (nonatomic, readonly) NSArray *currentMediaItemErrorLogs;
+@property (nonatomic) bool interactiveOverlayDismissable;
+@property (nonatomic, retain) IKDOMDocument *interactiveOverlayDocument;
+@property (nonatomic) bool muted;
+@property (nonatomic, readonly) IKJSMediaItem *nextMediaItem;
+@property (nonatomic, retain) IKDOMDocument *overlayDocument;
+@property (nonatomic) double playbackRate;
+@property (nonatomic, readonly) NSString *playbackState;
+@property (nonatomic, retain) IKJSPlaylist *playlist;
+@property (nonatomic, readonly) IKJSMediaItem *previousMediaItem;
+@property (nonatomic) bool showsResumeMenu;
+@property (nonatomic, retain) NSDictionary *userInfo;
+
+- (void).cxx_destruct;
+- (void)_addManagedReference;
+- (void)_removeManagedReference;
+- (bool)_timedMetadataDidChangeWithExtraInfo:(id)arg1;
+- (void)addEventListener:(id)arg1 :(id)arg2 :(id)arg3;
+- (id)bridge;
+- (void)changeToMediaAtIndex:(unsigned long long)arg1;
+- (id)contextMenuData;
+- (id)currentMediaItem;
+- (id)currentMediaItemAccessLogs;
+- (id)currentMediaItemDate;
+- (id)currentMediaItemDuration;
+- (id)currentMediaItemErrorLogs;
+- (void)dealloc;
+- (bool)dispatchEvent:(id)arg1 userInfo:(id)arg2;
+- (id)init;
+- (id)initWithAppContext:(id)arg1 bridge:(id)arg2;
+- (bool)interactiveOverlayDismissable;
+- (id)interactiveOverlayDocument;
+- (bool)muted;
+- (void)next;
+- (id)nextMediaItem;
+- (id)overlayDocument;
+- (void)pause;
+- (void)play;
+- (double)playbackRate;
+- (id)playbackState;
+- (id)playlist;
+- (void)present;
+- (void)previous;
+- (id)previousMediaItem;
+- (void)removeEventListener:(id)arg1 :(id)arg2;
+- (void)seekToTime:(double)arg1;
+- (void)setContextMenuData:(id)arg1;
+- (void)setInteractiveOverlayDismissable:(bool)arg1;
+- (void)setInteractiveOverlayDocument:(id)arg1;
+- (void)setMuted:(bool)arg1;
+- (void)setOverlayDocument:(id)arg1;
+- (void)setPlaybackRate:(double)arg1;
+- (void)setPlaylist:(id)arg1;
+- (void)setShowsResumeMenu:(bool)arg1;
+- (void)setUserInfo:(id)arg1;
+- (bool)showsResumeMenu;
+- (long long)state;
+- (void)stop;
+- (id)userInfo;
+
+@end

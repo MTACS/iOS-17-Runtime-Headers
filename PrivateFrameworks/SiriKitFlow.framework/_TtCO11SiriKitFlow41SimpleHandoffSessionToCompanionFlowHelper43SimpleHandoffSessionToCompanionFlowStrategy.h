@@ -1,0 +1,4 @@
+
+@interface _TtCO11SiriKitFlow41SimpleHandoffSessionToCompanionFlowHelper43SimpleHandoffSessionToCompanionFlowStrategy : _TtCs12_SwiftObject
+
+@end

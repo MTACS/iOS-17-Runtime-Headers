@@ -1,0 +1,4 @@
+
+@protocol IKJSTabBar <JSExport>
+
+@end

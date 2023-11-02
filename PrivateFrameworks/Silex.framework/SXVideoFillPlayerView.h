@@ -1,0 +1,45 @@
+
+@interface SXVideoFillPlayerView : UIView {
+    unsigned long long  _fillMode;
+    bool  _hasRequestedPlayback;
+    SVAVPlayer * _player;
+    SXPlayerLayer * _playerLayer;
+    bool  _shouldLoop;
+    SXImageView * _stillImageView;
+    SXVideoResource * _videoResource;
+}
+
+@property (nonatomic) unsigned long long fillMode;
+@property (nonatomic) bool hasRequestedPlayback;
+@property (nonatomic, retain) SVAVPlayer *player;
+@property (nonatomic, retain) SXPlayerLayer *playerLayer;
+@property (nonatomic) bool shouldLoop;
+@property (nonatomic, retain) SXImageView *stillImageView;
+@property (nonatomic, retain) SXVideoResource *videoResource;
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (unsigned long long)fillMode;
+- (bool)hasRequestedPlayback;
+- (id)initWithVideoResource:(id)arg1 imageView:(id)arg2;
+- (void)layoutSubviews;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)pause;
+- (void)play;
+- (void)playIfPossible;
+- (id)player;
+- (id)playerLayer;
+- (void)reset;
+- (void)setFillMode:(unsigned long long)arg1;
+- (void)setHasRequestedPlayback:(bool)arg1;
+- (void)setPlayer:(id)arg1;
+- (void)setPlayerLayer:(id)arg1;
+- (void)setShouldLoop:(bool)arg1;
+- (void)setStillImageView:(id)arg1;
+- (void)setVideoResource:(id)arg1;
+- (bool)shouldLoop;
+- (id)stillImageView;
+- (void)switchToPlayer;
+- (id)videoResource;
+
+@end

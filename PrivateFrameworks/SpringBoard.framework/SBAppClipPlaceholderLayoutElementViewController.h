@@ -1,0 +1,82 @@
+
+@interface SBAppClipPlaceholderLayoutElementViewController : SBLayoutElementViewController <SBApplicationSceneStatusBarDescriberProviding, SBApplicationSceneStatusBarDescribing, SBMainDisplaySceneLayoutElementViewControlling, SBSceneLayoutMedusaStatusBarAssertionProviding, SBSceneViewStatusBarAssertionObserver> {
+    NSString * _bundleIdentifier;
+    bool  _isObservingApplicationInstalls;
+    bool  _isPendingUpdate;
+    NSMutableSet * _maskDisplayCornersReasons;
+    SBAppClipOverlayViewController * _placeholderViewController;
+    NSString * _sceneIdentifier;
+    NSMutableArray * _statusBarAssertions;
+    <SBDeviceApplicationSceneStatusBarStateObserver> * _statusBarDelegate;
+}
+
+@property (nonatomic, readonly) NSSet *backgroundActivitiesToSuppress;
+@property (nonatomic, readonly) SBDeviceApplicationSceneStatusBarBreadcrumbProvider *breadcrumbProvider;
+@property (nonatomic, readonly) SBDeviceApplicationSceneHandle *classicApplicationSceneHandleIfExists;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) long long defaultStatusBarStyle;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) _UIStatusBarData *overlayStatusBarData;
+@property (nonatomic, readonly) FBScene *sceneToHandleStatusBarTapIfExists;
+@property (nonatomic, readonly) bool sceneWantsDeviceOrientationEventsEnabled;
+@property (nonatomic, readonly) double statusBarAlpha;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } statusBarAvoidanceFrame;
+@property (nonatomic) <SBDeviceApplicationSceneStatusBarStateObserver> *statusBarDelegate;
+@property (nonatomic, readonly) <SBApplicationSceneStatusBarDescribing> *statusBarDescriber;
+@property (nonatomic, readonly) bool statusBarHidden;
+@property (nonatomic, readonly) long long statusBarOrientation;
+@property (nonatomic, readonly) NSString *statusBarSceneIdentifier;
+@property (nonatomic, readonly) long long statusBarStyle;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)SB_conformsToMainDisplaySceneLayoutElementViewControlling;
+- (bool)SB_conformsToSBApplicationSceneStatusBarDescriberProviding;
+- (bool)SB_conformsToSBApplicationSceneStatusBarDescribing;
+- (bool)SB_conformsToSceneLayoutMedusaStatusBarAssertionProviding;
+- (bool)SB_conformsToSceneLayoutStatusBarAssertionProviding;
+- (id)_aggregateStatusBarOverrideSettings;
+- (void)_beginObservingApplicationInstalls;
+- (void)_beginPollingUpdateStillAvailable;
+- (void)_cleanup;
+- (void)_installedApplicationsDidChange:(id)arg1;
+- (void)_launchApplication:(id)arg1;
+- (id)_newDisplayLayoutElementForEntity:(id)arg1;
+- (void)_statusBarAssertionDidUpdate;
+- (void)_stopObservingApplicationInstalls;
+- (id)backgroundActivitiesToSuppress;
+- (id)breadcrumbProvider;
+- (id)classicApplicationSceneHandleIfExists;
+- (void)configureWithWorkspaceEntity:(id)arg1 forLayoutElement:(id)arg2 layoutState:(id)arg3 referenceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (long long)defaultStatusBarStyle;
+- (void)invalidate;
+- (id)overlayStatusBarData;
+- (void)prepareForReuse;
+- (id)sceneToHandleStatusBarTapIfExists;
+- (bool)sceneWantsDeviceOrientationEventsEnabled;
+- (void)setCornerRadiusConfiguration:(id)arg1;
+- (void)setMaskDisplayCorners:(bool)arg1 forReason:(id)arg2;
+- (void)setShadowOffset:(double)arg1;
+- (void)setShadowOpacity:(double)arg1;
+- (void)setStatusBarDelegate:(id)arg1;
+- (double)statusBarAlpha;
+- (void)statusBarAssertionDidInvalidate:(id)arg1;
+- (void)statusBarAssertionDidUpdate:(id)arg1;
+- (id)statusBarAssertionWithStatusBarHidden:(bool)arg1 atLevel:(unsigned long long)arg2;
+- (id)statusBarAssertionWithStatusBarHidden:(bool)arg1 nubViewHidden:(long long)arg2 atLevel:(unsigned long long)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })statusBarAvoidanceFrame;
+- (id)statusBarDelegate;
+- (id)statusBarDescriber;
+- (bool)statusBarHidden;
+- (long long)statusBarOrientation;
+- (id)statusBarSceneIdentifier;
+- (long long)statusBarStyle;
+- (long long)statusBarStyleForPartWithIdentifier:(id)arg1;
+- (unsigned long long)supportedContentInterfaceOrientations;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

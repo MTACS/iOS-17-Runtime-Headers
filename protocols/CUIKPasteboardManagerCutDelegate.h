@@ -1,0 +1,4 @@
+
+@protocol CUIKPasteboardManagerCutDelegate <CUIKPasteboardManagerDelegate>
+
+@end

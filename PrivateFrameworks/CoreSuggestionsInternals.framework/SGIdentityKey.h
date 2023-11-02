@@ -1,0 +1,43 @@
+
+@interface SGIdentityKey : NSObject <NSCopying> {
+    NSString * _content;
+    unsigned long long  _type;
+}
+
+@property (nonatomic, readonly) NSString *externalId;
+@property (nonatomic, readonly) unsigned long long type;
+
++ (unsigned long long)identityTypeForKeyPart:(id)arg1;
++ (bool)isSupportedEntityType:(long long)arg1;
++ (id)keyForContactExternalId:(int)arg1;
++ (id)keyForContactUniqueId:(id)arg1;
++ (id)keyForEmail:(id)arg1;
++ (id)keyForInstantMessageAddress:(id)arg1;
++ (id)keyForNormalizedEmail:(id)arg1;
++ (id)keyForNormalizedPhone:(id)arg1;
++ (id)keyForPersonHandle:(id)arg1;
++ (id)keyForSocialProfile:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)emailAddress;
+- (id)externalId;
+- (bool)hasEmailAddress;
+- (bool)hasInstantMessageAddress;
+- (bool)hasPhone;
+- (bool)hasSocialProfile;
+- (unsigned long long)hash;
+- (id)identityKey;
+- (id)initWithSerialized:(id)arg1;
+- (id)initWithType:(unsigned long long)arg1 content:(id)arg2;
+- (id)instantMessageAddress;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToIdentityKey:(id)arg1;
+- (id)phone;
+- (id)serialize;
+- (id)socialProfile;
+- (unsigned long long)type;
+- (id)uniqueIdentifier;
+
+@end

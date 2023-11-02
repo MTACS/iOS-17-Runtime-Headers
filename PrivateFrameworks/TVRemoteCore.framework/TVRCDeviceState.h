@@ -1,0 +1,94 @@
+
+@interface TVRCDeviceState : NSObject <NSSecureCoding> {
+    NSDictionary * _alternateIdentifiers;
+    long long  _classification;
+    long long  _connectionState;
+    long long  _connectionType;
+    NSError * _disconnectError;
+    long long  _disconnectReason;
+    NSString * _identifier;
+    TVRCKeyboardState * _keyboardState;
+    NSString * _model;
+    NSString * _name;
+    TVRCNowPlayingInfo * _nowPlayingInfo;
+    bool  _paired;
+    TVRCSiriRemoteInfo * _pairedRemoteInfo;
+    unsigned long long  _pairingCapability;
+    long long  _siriRemoteFindingState;
+    NSString * _sourceVersion;
+    NSSet * _supportedButtons;
+    bool  _supportsFindMyRemote;
+    bool  _supportsTouchEvents;
+}
+
+@property (nonatomic, copy) NSDictionary *alternateIdentifiers;
+@property (nonatomic) long long classification;
+@property (nonatomic) long long connectionState;
+@property (nonatomic) long long connectionType;
+@property (nonatomic, copy) NSError *disconnectError;
+@property (nonatomic) long long disconnectReason;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) TVRCKeyboardState *keyboardState;
+@property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) TVRCNowPlayingInfo *nowPlayingInfo;
+@property (getter=isPaired, nonatomic) bool paired;
+@property (nonatomic, copy) TVRCSiriRemoteInfo *pairedRemoteInfo;
+@property (nonatomic) unsigned long long pairingCapability;
+@property (nonatomic) long long siriRemoteFindingState;
+@property (nonatomic, copy) NSString *sourceVersion;
+@property (nonatomic, copy) NSSet *supportedButtons;
+@property (nonatomic) bool supportsFindMyRemote;
+@property (nonatomic) bool supportsTouchEvents;
+
++ (id)arrayOfStatesFromDevices:(id)arg1;
++ (id)deviceStateFromDevice:(id)arg1;
++ (id)setOfStatesFromDevices:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)alternateIdentifiers;
+- (long long)classification;
+- (long long)connectionState;
+- (long long)connectionType;
+- (id)description;
+- (id)detailedDescription;
+- (id)disconnectError;
+- (long long)disconnectReason;
+- (void)encodeWithCoder:(id)arg1;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDevice:(id)arg1;
+- (bool)isPaired;
+- (id)keyboardState;
+- (id)model;
+- (id)name;
+- (id)nowPlayingInfo;
+- (id)pairedRemoteInfo;
+- (unsigned long long)pairingCapability;
+- (void)setAlternateIdentifiers:(id)arg1;
+- (void)setClassification:(long long)arg1;
+- (void)setConnectionState:(long long)arg1;
+- (void)setConnectionType:(long long)arg1;
+- (void)setDisconnectError:(id)arg1;
+- (void)setDisconnectReason:(long long)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setKeyboardState:(id)arg1;
+- (void)setModel:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setNowPlayingInfo:(id)arg1;
+- (void)setPaired:(bool)arg1;
+- (void)setPairedRemoteInfo:(id)arg1;
+- (void)setPairingCapability:(unsigned long long)arg1;
+- (void)setSiriRemoteFindingState:(long long)arg1;
+- (void)setSourceVersion:(id)arg1;
+- (void)setSupportedButtons:(id)arg1;
+- (void)setSupportsFindMyRemote:(bool)arg1;
+- (void)setSupportsTouchEvents:(bool)arg1;
+- (long long)siriRemoteFindingState;
+- (id)sourceVersion;
+- (id)supportedButtons;
+- (bool)supportsFindMyRemote;
+- (bool)supportsTouchEvents;
+
+@end

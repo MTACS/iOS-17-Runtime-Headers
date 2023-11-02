@@ -1,0 +1,4 @@
+
+@protocol STUIStatusBarDataAggregatorUpdateDelayToken <NSObject>
+
+@end

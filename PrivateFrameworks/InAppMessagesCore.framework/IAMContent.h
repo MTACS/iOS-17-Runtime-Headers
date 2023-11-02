@@ -1,0 +1,32 @@
+
+@interface IAMContent : NSObject <NSCopying> {
+    NSArray * _actions;
+    NSString * _body;
+    NSDictionary * _contentParameters;
+    NSString * _identifier;
+    NSArray * _images;
+    NSString * _subtitle;
+    NSString * _title;
+}
+
+@property (nonatomic, readonly, copy) NSArray *actions;
+@property (nonatomic, readonly, copy) NSString *body;
+@property (nonatomic, readonly) NSDictionary *contentParameters;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly, copy) NSArray *images;
+@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (nonatomic, readonly, copy) NSString *title;
+
+- (void).cxx_destruct;
+- (id)actions;
+- (id)body;
+- (id)contentParameters;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)identifier;
+- (id)images;
+- (id)initWithICMessageContent:(id)arg1;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 body:(id)arg3 images:(id)arg4 actions:(id)arg5 contentParameters:(id)arg6 identifier:(id)arg7;
+- (id)subtitle;
+- (id)title;
+
+@end

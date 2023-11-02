@@ -1,0 +1,4 @@
+
+@protocol MTLLateEvalEvent <MTLSharedEvent>
+
+@end

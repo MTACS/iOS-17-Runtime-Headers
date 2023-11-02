@@ -1,0 +1,87 @@
+
+@interface AFMyriadRecord : NSObject <NSCopying> {
+    NSData * _advertisementData;
+    bool  _advertisementDataIsDirty;
+    unsigned char  _bump;
+    unsigned char  _deviceClass;
+    unsigned char  _deviceGroup;
+    NSUUID * _deviceID;
+    unsigned char  _goodness;
+    unsigned char  _isCollectedFromContextCollector;
+    bool  _isMe;
+    unsigned short  _pHash;
+    unsigned char  _productType;
+    unsigned char  _rawAudioGoodnessScore;
+    unsigned char  _tieBreaker;
+    unsigned char  _userConfidence;
+}
+
+@property (nonatomic, copy) NSData *advertisementData;
+@property (nonatomic) bool advertisementDataIsDirty;
+@property (nonatomic) unsigned char bump;
+@property (nonatomic) unsigned char deviceClass;
+@property (nonatomic) unsigned char deviceGroup;
+@property (nonatomic, copy) NSUUID *deviceID;
+@property (nonatomic) unsigned char goodness;
+@property (nonatomic) unsigned char isCollectedFromContextCollector;
+@property (nonatomic) bool isMe;
+@property (nonatomic) unsigned short pHash;
+@property (nonatomic) unsigned char productType;
+@property (nonatomic) unsigned char rawAudioGoodnessScore;
+@property (nonatomic) unsigned char tieBreaker;
+@property (nonatomic) unsigned char userConfidence;
+
+- (void).cxx_destruct;
+- (void)adjustByMultiplier:(float)arg1 adding:(int)arg2;
+- (id)advertisementData;
+- (bool)advertisementDataIsDirty;
+- (id)asAdvertisementData;
+- (unsigned char)bump;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (unsigned char)deviceClass;
+- (unsigned char)deviceGroup;
+- (id)deviceID;
+- (void)generateRandomConfidence;
+- (void)generateTiebreaker;
+- (unsigned char)goodness;
+- (bool)hasEqualAdvertismentData:(id)arg1;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithAudioData:(id)arg1;
+- (id)initWithDeviceID:(id)arg1 data:(id)arg2;
+- (bool)isAContinuation;
+- (bool)isALateSupressionTrumpFor:(id)arg1;
+- (bool)isATrump;
+- (bool)isAnEmergency;
+- (bool)isAnEmergencyHandled;
+- (bool)isCarplayTrump;
+- (unsigned char)isCollectedFromContextCollector;
+- (bool)isEqual:(id)arg1;
+- (bool)isInEarTrump;
+- (bool)isMe;
+- (bool)isSane;
+- (bool)isSlowdown;
+- (unsigned short)pHash;
+- (unsigned char)productType;
+- (unsigned char)rawAudioGoodnessScore;
+- (void)setAdvertisementData:(id)arg1;
+- (void)setAdvertisementDataIsDirty:(bool)arg1;
+- (void)setBump:(unsigned char)arg1;
+- (void)setDeviceClass:(unsigned char)arg1;
+- (void)setDeviceGroup:(unsigned char)arg1;
+- (void)setDeviceID:(id)arg1;
+- (void)setGoodness:(unsigned char)arg1;
+- (void)setIsCollectedFromContextCollector:(unsigned char)arg1;
+- (void)setIsMe:(bool)arg1;
+- (void)setPHash:(unsigned short)arg1;
+- (void)setProductType:(unsigned char)arg1;
+- (void)setRawAudioGoodnessScore:(unsigned char)arg1;
+- (void)setRawAudioGoodnessScore:(unsigned char)arg1 withBump:(unsigned char)arg2;
+- (void)setTieBreaker:(unsigned char)arg1;
+- (void)setUserConfidence:(unsigned char)arg1;
+- (int)slowdownDelay;
+- (unsigned char)tieBreaker;
+- (unsigned char)userConfidence;
+
+@end

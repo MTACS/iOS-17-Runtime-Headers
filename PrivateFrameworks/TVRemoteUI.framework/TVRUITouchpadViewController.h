@@ -1,0 +1,81 @@
+
+@interface TVRUITouchpadViewController : UIViewController <TVRUIRemoteViewProvider, UIPointerInteractionDelegate, _TVRUIEventDelegate> {
+    UIView * _backgroundView;
+    TVRUIDirectionalControlView * _directionalControlView;
+    bool  _enabled;
+    <_TVRUIEventDelegate> * _eventDelegate;
+    bool  _mediaControlsAreVisible;
+    <TVRUIDevice> * _remoteDevice;
+    <TVRUIStyleProvider> * _styleProvider;
+    <TVRUITouchpadDelegate> * _touchDelegate;
+    <TVRUITouchProcessor> * _touchProcessor;
+    long long  _touchpadMode;
+    TVRUITouchpadView * _touchpadView;
+}
+
+@property (nonatomic, retain) UIView *backgroundView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) TVRUIDirectionalControlView *directionalControlView;
+@property (nonatomic) bool enabled;
+@property (nonatomic) <_TVRUIEventDelegate> *eventDelegate;
+@property (readonly) unsigned long long hash;
+@property (getter=areMediaControlsVisible, nonatomic) bool mediaControlsAreVisible;
+@property (nonatomic, retain) <TVRUIDevice> *remoteDevice;
+@property (getter=isShowingControls, nonatomic) bool showControls;
+@property (nonatomic, retain) <TVRUIStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic) <TVRUITouchpadDelegate> *touchDelegate;
+@property (nonatomic, retain) <TVRUITouchProcessor> *touchProcessor;
+@property (nonatomic) long long touchpadMode;
+@property (nonatomic, retain) TVRUITouchpadView *touchpadView;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (void)_darkenSystemColorsChanged:(id)arg1;
+- (void)_setupDirectionalArrowView;
+- (void)_setupTouchpadView;
+- (void)_simpleRemoteGesturesEnabled:(id)arg1;
+- (void)_toggleControlScale;
+- (void)_transitionToAppropriateView;
+- (void)_transitionToDirectionalControlView;
+- (void)_transitionToTouchpadView;
+- (void)_updateViewState;
+- (bool)areMediaControlsVisible;
+- (id)backgroundView;
+- (id)directionalControlView;
+- (bool)enabled;
+- (id)eventDelegate;
+- (bool)isShowingControls;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (void)pointerInteraction:(id)arg1 willEnterRegion:(id)arg2 animator:(id)arg3;
+- (id)remoteDevice;
+- (void)setBackgroundView:(id)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setDirectionalControlView:(id)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setEventDelegate:(id)arg1;
+- (void)setMediaControlsAreVisible:(bool)arg1;
+- (void)setRemoteDevice:(id)arg1;
+- (void)setShowControls:(bool)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (void)setTouchDelegate:(id)arg1;
+- (void)setTouchProcessor:(id)arg1;
+- (void)setTouchpadMode:(long long)arg1;
+- (void)setTouchpadView:(id)arg1;
+- (id)styleProvider;
+- (id)touchDelegate;
+- (id)touchProcessor;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (long long)touchpadMode;
+- (id)touchpadView;
+- (void)transitonToViewForDeviceType:(long long)arg1;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+
+@end

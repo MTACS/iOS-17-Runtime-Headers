@@ -1,0 +1,4 @@
+
+@interface CRSResponse : NSObject
+
+@end

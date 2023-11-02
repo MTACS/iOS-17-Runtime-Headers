@@ -1,0 +1,4 @@
+
+@interface INCIntentExecutionInfo : INIntentExecutionInfo
+
+@end

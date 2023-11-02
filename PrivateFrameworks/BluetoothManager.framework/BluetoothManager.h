@@ -1,0 +1,112 @@
+
+@interface BluetoothManager : NSObject {
+    struct BTAccessoryManagerImpl { } * _accessoryManager;
+    bool  _airplaneMode;
+    bool  _audioConnected;
+    int  _available;
+    NSMutableDictionary * _btAddrDict;
+    NSMutableDictionary * _btDeviceDict;
+    bool  _denylistEnabled;
+    struct BTDiscoveryAgentImpl { } * _discoveryAgent;
+    struct BTLocalDeviceImpl { } * _localDevice;
+    struct BTPairingAgentImpl { } * _pairingAgent;
+    bool  _scanningEnabled;
+    bool  _scanningInProgress;
+    unsigned int  _scanningServiceMask;
+    struct BTSessionImpl { } * _session;
+    int  _state;
+}
+
+@property (nonatomic) bool denylistEnabled;
+
+// Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
+
++ (int)lastInitError;
++ (void)setSharedInstanceQueue:(id)arg1;
++ (id)sharedInstance;
++ (id)sharedInstanceQueue;
+
+- (struct BTAccessoryManagerImpl { }*)_accessoryManager;
+- (void)_advertisingChanged;
+- (bool)_attach;
+- (void)_cleanup:(bool)arg1;
+- (void)_connectabilityChanged;
+- (void)_connectedStatusChanged;
+- (void)_discoveryStateChanged;
+- (void)_notifyFirstDeviceUnlockCompleted;
+- (void)_pairedStatusChanged;
+- (void)_postNotification:(id)arg1;
+- (void)_postNotificationWithArray:(id)arg1;
+- (void)_powerChanged;
+- (void)_removeDevice:(id)arg1;
+- (void)_restartScan;
+- (void)_scanForServices:(unsigned int)arg1 withMode:(int)arg2;
+- (void)_setScanState:(int)arg1;
+- (bool)_setup:(struct BTSessionImpl { }*)arg1;
+- (void)_updateAirplaneModeStatus;
+- (void)_updateBluetoothState;
+- (void)_updateDenylistMode;
+- (void)acceptSSP:(long long)arg1 forDevice:(id)arg2;
+- (id)addDeviceIfNeeded:(struct BTDeviceImpl { }*)arg1;
+- (bool)audioConnected;
+- (bool)available;
+- (int)bluetoothState;
+- (void)bluetoothStateAction;
+- (void)bluetoothStateActionWithCompletion:(id /* block */)arg1;
+- (void)cancelPairing;
+- (void)connectDevice:(id)arg1;
+- (void)connectDevice:(id)arg1 withServices:(unsigned int)arg2;
+- (bool)connectable;
+- (bool)connected;
+- (id)connectedDeviceNamesThatMayBeDenylisted;
+- (id)connectedDevices;
+- (id)connectingDevices;
+- (void)dealloc;
+- (bool)denylistEnabled;
+- (id)deviceFromAddressString:(id)arg1;
+- (id)deviceFromIdentifier:(id)arg1;
+- (bool)devicePairingEnabled;
+- (bool)deviceScanningEnabled;
+- (bool)deviceScanningInProgress;
+- (void)disconnectDevice:(id)arg1;
+- (void)disconnectDevicePhysicalLink:(id)arg1;
+- (void)enableTestMode;
+- (bool)enabled;
+- (void)endVoiceCommand:(id)arg1;
+- (id)init;
+- (bool)isAnyoneAdvertising;
+- (bool)isAnyoneScanning;
+- (bool)isDiscoverable;
+- (bool)isServiceSupported:(unsigned int)arg1;
+- (id)localAddress;
+- (int)maskLocalDeviceEvents:(unsigned int)arg1;
+- (id)pairedDevices;
+- (id)pairedNonAppleHAEDevices;
+- (void)postNotification:(id)arg1;
+- (void)postNotificationName:(id)arg1 object:(id)arg2;
+- (void)postNotificationName:(id)arg1 object:(id)arg2 error:(id)arg3;
+- (int)powerState;
+- (bool)powered;
+- (void)resetDeviceScanning;
+- (void)scanForConnectableDevices:(unsigned int)arg1;
+- (void)scanForServices:(unsigned int)arg1;
+- (void)setAudioConnected:(bool)arg1;
+- (void)setConnectable:(bool)arg1;
+- (void)setDenylistEnabled:(bool)arg1;
+- (void)setDevicePairingEnabled:(bool)arg1;
+- (void)setDeviceScanningEnabled:(bool)arg1;
+- (void)setDiscoverable:(bool)arg1;
+- (bool)setEnabled:(bool)arg1;
+- (void)setPincode:(id)arg1 forDevice:(id)arg2;
+- (bool)setPowered:(bool)arg1;
+- (void)showPowerPrompt;
+- (bool)spatialAudioPlatformSupport;
+- (void)startVoiceCommand:(id)arg1;
+- (void)unpairDevice:(id)arg1;
+- (bool)wasDeviceDiscovered:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
+
+- (long long)localDeviceSupportsService:(unsigned int)arg1;
+
+@end

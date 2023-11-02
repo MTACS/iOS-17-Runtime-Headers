@@ -1,0 +1,4 @@
+
+@interface SLSendShareableContentAction : SLShareableContentAction
+
+@end

@@ -1,0 +1,90 @@
+
+@interface _CPStartNetworkSearchFeedback : PBCodable <NSSecureCoding, _CPFeedbackUUID, _CPProcessableFeedback, _CPStartFeedback, _CPStartNetworkSearchFeedback> {
+    NSData * _bodyData;
+    unsigned long long  _compressedRequestSize;
+    int  _endpoint;
+    NSString * _experimentId;
+    NSDictionary * _headers;
+    NSString * _input;
+    int  _lookupSelectionType;
+    unsigned long long  _queryId;
+    unsigned long long  _rawRequestSize;
+    int  _searchType;
+    unsigned long long  _timestamp;
+    NSString * _treatmentId;
+    int  _triggerEvent;
+    NSString * _url;
+    NSString * _uuid;
+    unsigned long long  _whichTrigger;
+}
+
+@property (nonatomic, copy) NSData *bodyData;
+@property (nonatomic) unsigned long long compressedRequestSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int endpoint;
+@property (nonatomic, readonly) int endpointType;
+@property (nonatomic, copy) NSString *experimentId;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSDictionary *headers;
+@property (nonatomic, copy) NSString *input;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) int lookupSelectionType;
+@property (nonatomic) unsigned long long queryId;
+@property (nonatomic) unsigned long long rawRequestSize;
+@property (nonatomic) int searchType;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, copy) NSString *treatmentId;
+@property (nonatomic) int triggerEvent;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, readonly, copy) NSString *uuid;
+@property (nonatomic, copy) NSString *uuid;
+@property (nonatomic, readonly) unsigned long long whichTrigger;
+
++ (id)startSearchFeedbackWithUUID;
+
+- (void).cxx_destruct;
+- (id)bodyData;
+- (void)clearTrigger;
+- (unsigned long long)compressedRequestSize;
+- (int)endpoint;
+- (int)endpointType;
+- (id)experimentId;
+- (bool)getHeaders:(id*)arg1 forKey:(id)arg2;
+- (unsigned long long)hash;
+- (id)headers;
+- (id)init;
+- (id)initWithFacade:(id)arg1;
+- (id)input;
+- (bool)isEqual:(id)arg1;
+- (int)lookupSelectionType;
+- (unsigned long long)queryId;
+- (unsigned long long)rawRequestSize;
+- (bool)readFrom:(id)arg1;
+- (int)searchType;
+- (void)setBodyData:(id)arg1;
+- (void)setCompressedRequestSize:(unsigned long long)arg1;
+- (void)setEndpoint:(int)arg1;
+- (void)setExperimentId:(id)arg1;
+- (void)setHeaders:(id)arg1;
+- (void)setHeaders:(id)arg1 forKey:(id)arg2;
+- (void)setInput:(id)arg1;
+- (void)setLookupSelectionType:(int)arg1;
+- (void)setQueryId:(unsigned long long)arg1;
+- (void)setRawRequestSize:(unsigned long long)arg1;
+- (void)setSearchType:(int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTreatmentId:(id)arg1;
+- (void)setTriggerEvent:(int)arg1;
+- (void)setUrl:(id)arg1;
+- (void)setUuid:(id)arg1;
+- (unsigned long long)timestamp;
+- (id)treatmentId;
+- (int)triggerEvent;
+- (id)url;
+- (id)uuid;
+- (unsigned long long)whichTrigger;
+- (void)writeTo:(id)arg1;
+
+@end

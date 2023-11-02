@@ -1,0 +1,4 @@
+
+@interface UIHandleBackgroundURLSessionAction : UISHandleBackgroundURLSessionAction
+
+@end

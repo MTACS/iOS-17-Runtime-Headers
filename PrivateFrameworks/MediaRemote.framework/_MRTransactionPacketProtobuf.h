@@ -1,0 +1,56 @@
+
+@interface _MRTransactionPacketProtobuf : PBCodable <NSCopying> {
+    struct { 
+        unsigned int totalLength : 1; 
+        unsigned int totalWritePosition : 1; 
+    }  _has;
+    NSString * _identifier;
+    _MRTransactionKeyProtobuf * _key;
+    NSData * _packetData;
+    unsigned long long  _totalLength;
+    unsigned long long  _totalWritePosition;
+}
+
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic, readonly) bool hasPacketData;
+@property (nonatomic) bool hasTotalLength;
+@property (nonatomic) bool hasTotalWritePosition;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) _MRTransactionKeyProtobuf *key;
+@property (nonatomic, retain) NSData *packetData;
+@property (nonatomic) unsigned long long totalLength;
+@property (nonatomic) unsigned long long totalWritePosition;
+
++ (void)initialize;
+
+- (void).cxx_destruct;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)customDictionaryRepresentation;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasIdentifier;
+- (bool)hasKey;
+- (bool)hasPacketData;
+- (bool)hasTotalLength;
+- (bool)hasTotalWritePosition;
+- (unsigned long long)hash;
+- (id)identifier;
+- (bool)isEqual:(id)arg1;
+- (id)key;
+- (void)mergeFrom:(id)arg1;
+- (id)packetData;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTotalLength:(bool)arg1;
+- (void)setHasTotalWritePosition:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setKey:(id)arg1;
+- (void)setPacketData:(id)arg1;
+- (void)setTotalLength:(unsigned long long)arg1;
+- (void)setTotalWritePosition:(unsigned long long)arg1;
+- (unsigned long long)totalLength;
+- (unsigned long long)totalWritePosition;
+- (void)writeTo:(id)arg1;
+
+@end

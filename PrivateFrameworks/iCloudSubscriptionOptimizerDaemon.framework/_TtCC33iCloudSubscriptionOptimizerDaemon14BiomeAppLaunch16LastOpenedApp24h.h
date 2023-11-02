@@ -1,0 +1,4 @@
+
+@interface _TtCC33iCloudSubscriptionOptimizerDaemon14BiomeAppLaunch16LastOpenedApp24h : _TtCs12_SwiftObject
+
+@end

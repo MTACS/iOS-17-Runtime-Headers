@@ -1,0 +1,4 @@
+
+@interface CNCardGroupItem : NSObject
+
+@end

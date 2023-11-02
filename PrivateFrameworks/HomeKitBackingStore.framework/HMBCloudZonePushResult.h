@@ -1,0 +1,4 @@
+
+@interface HMBCloudZonePushResult : HMBMirrorOutputResult
+
+@end

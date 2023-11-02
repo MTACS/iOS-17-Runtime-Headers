@@ -1,0 +1,61 @@
+
+@interface CKUserIdentityLookupInfo : NSObject <CKRoughlyEquivalent, CKXPCSuitableString, NSCopying, NSSecureCoding> {
+    NSString * _emailAddress;
+    NSData * _encryptedPersonalInfo;
+    NSString * _phoneNumber;
+    bool  _shouldReportMissingIdentity;
+    CKRecordID * _userRecordID;
+}
+
+@property (copy) NSString *emailAddress;
+@property (copy) NSData *encryptedPersonalInfo;
+@property (nonatomic, readonly) CKRoughlyEquivalentProperties *equivalencyProperties;
+@property (copy) NSString *phoneNumber;
+@property bool shouldReportMissingIdentity;
+@property (copy) CKRecordID *userRecordID;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
++ (void)initialize;
++ (id)lookupInfosWithEmails:(id)arg1;
++ (id)lookupInfosWithPhoneNumbers:(id)arg1;
++ (id)lookupInfosWithRecordIDs:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
+- (id)CKPropertiesDescription;
+- (id)CKXPCSuitableString;
+- (void)_stripPersonalInfo;
+- (id)ckShortDescription;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)emailAddress;
+- (void)encodeWithCoder:(id)arg1;
+- (id)encryptedPersonalInfo;
+- (id)equivalencyProperties;
+- (unsigned long long)hash;
+- (id)initInternal;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithEmailAddress:(id)arg1;
+- (id)initWithPhoneNumber:(id)arg1;
+- (id)initWithUserRecordID:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (long long)lookupField;
+- (id)lookupValue;
+- (id)phoneNumber;
+- (void)setEmailAddress:(id)arg1;
+- (void)setEncryptedPersonalInfo:(id)arg1;
+- (void)setPhoneNumber:(id)arg1;
+- (void)setShouldReportMissingIdentity:(bool)arg1;
+- (void)setUserRecordID:(id)arg1;
+- (bool)shouldReportMissingIdentity;
+- (id)userRecordID;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)_decryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 participantID:(id)arg2 inShareWithID:(id)arg3 pcsManager:(id)arg4;
+- (void)_encryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 participantID:(id)arg2 inShareWithID:(id)arg3 pcsManager:(id)arg4;
+- (bool)hasEncryptedPersonalInfo;
+
+@end

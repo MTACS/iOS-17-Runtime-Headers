@@ -1,0 +1,4 @@
+
+@protocol PXDisplayCollectionList <PXDisplayCollection>
+
+@end

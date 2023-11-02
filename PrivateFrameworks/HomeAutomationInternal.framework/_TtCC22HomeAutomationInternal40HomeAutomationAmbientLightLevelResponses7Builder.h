@@ -1,0 +1,4 @@
+
+@interface _TtCC22HomeAutomationInternal40HomeAutomationAmbientLightLevelResponses7Builder : _TtCC22HomeAutomationInternal36HomeAutomationNumericEntityResponses7Builder
+
+@end

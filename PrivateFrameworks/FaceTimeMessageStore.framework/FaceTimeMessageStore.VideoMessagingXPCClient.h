@@ -1,0 +1,4 @@
+
+@interface FaceTimeMessageStore.VideoMessagingXPCClient : _TtGC20FaceTimeMessageStore9XPCClientOS_23VideoMessagingInterface_
+
+@end

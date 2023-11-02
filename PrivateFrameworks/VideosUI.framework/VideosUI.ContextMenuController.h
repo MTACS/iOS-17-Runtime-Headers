@@ -1,0 +1,15 @@
+
+@interface VideosUI.ContextMenuController : _TtCs12_SwiftObject {
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _itemMenuViewModels;
+    void isFetched;
+    void libContextMenuObserver;
+    void menuDocumentController;
+    void menuViewModel;
+    void prefetchMenuDocumentController;
+    void presentingViewFrame;
+    void viewModel;
+}
+
+- (void)handelUpNextRequestNotificationWithNotification:(id)arg1;
+
+@end

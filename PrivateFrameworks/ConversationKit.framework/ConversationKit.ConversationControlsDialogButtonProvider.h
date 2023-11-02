@@ -1,0 +1,4 @@
+
+@interface ConversationKit.ConversationControlsDialogButtonProvider : ConversationKit.ConversationControlsButtonProvider
+
+@end

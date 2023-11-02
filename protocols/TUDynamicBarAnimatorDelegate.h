@@ -1,0 +1,11 @@
+
+@protocol TUDynamicBarAnimatorDelegate <NSObject>
+
+@required
+
+- (bool)dynamicBarAnimator:(TUDynamicBarAnimator *)arg1 canHideBarsByDraggingWithOffset:(double)arg2;
+- (void)dynamicBarAnimatorOutputsDidChange:(TUDynamicBarAnimator *)arg1;
+- (void)dynamicBarAnimatorWillEnterSteadyState:(TUDynamicBarAnimator *)arg1;
+- (void)dynamicBarAnimatorWillLeaveSteadyState:(TUDynamicBarAnimator *)arg1;
+
+@end

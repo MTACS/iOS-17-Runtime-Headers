@@ -1,0 +1,4 @@
+
+@interface CHEntityMigrationPolicy : NSEntityMigrationPolicy
+
+@end

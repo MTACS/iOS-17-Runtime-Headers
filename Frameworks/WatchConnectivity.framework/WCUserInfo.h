@@ -1,0 +1,28 @@
+
+@interface WCUserInfo : NSObject <NSSecureCoding> {
+    NSDictionary * _clientUserInfo;
+    NSDictionary * _userInfo;
+    NSData * _userInfoData;
+}
+
+@property (nonatomic, copy) NSDictionary *clientUserInfo;
+@property (nonatomic, copy) NSDictionary *userInfo;
+@property (copy) NSData *userInfoData;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)clientUserInfo;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setClientUserInfo:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (void)setUserInfoData:(id)arg1;
+- (bool)updateUserInfo:(id)arg1 error:(id*)arg2;
+- (bool)updateUserInfoData:(id)arg1 error:(id*)arg2;
+- (id)userInfo;
+- (id)userInfoData;
+- (bool)verifyUserInfo;
+
+@end

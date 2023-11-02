@@ -1,0 +1,4 @@
+
+@protocol SBUIPresentableGestureRecognizerPriorityAssertion <SBUIPresentableAssertion>
+
+@end

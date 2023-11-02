@@ -1,0 +1,4 @@
+
+@interface _TtC7ChatKitP33_1D9130B1F0156126470F1B06DEB6BB3919ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

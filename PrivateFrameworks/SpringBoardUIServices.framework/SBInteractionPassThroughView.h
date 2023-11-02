@@ -1,0 +1,4 @@
+
+@interface SBInteractionPassThroughView : SBFTouchPassThroughView
+
+@end

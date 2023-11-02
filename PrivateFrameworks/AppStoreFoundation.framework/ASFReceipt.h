@@ -1,0 +1,96 @@
+
+@interface ASFReceipt : NSObject {
+    NSString * _bundleID;
+    NSData * _bundleIDData;
+    NSString * _bundleVersion;
+    NSString * _cancellationReason;
+    NSDate * _creationDate;
+    NSString * _developerID;
+    NSString * _downloadID;
+    NSDate * _expirationDate;
+    NSString * _frAppVersion;
+    NSNumber * _frToolVersion;
+    NSString * _hwtype;
+    NSArray * _iaps;
+    NSString * _installerVersionID;
+    NSNumber * _itemID;
+    NSMutableArray * _mutableIAPs;
+    NSData * _opaqueDSIDData;
+    NSString * _opaqueDSIDString;
+    NSString * _organizationDisplayName;
+    NSString * _parentalControls;
+    NSString * _path;
+    NSDate * _purchaseDate;
+    NSString * _receiptType;
+    NSDate * _renewalDate;
+    NSData * _sha1;
+    bool  _verbose;
+}
+
+@property (readonly) NSString *bundleID;
+@property (readonly) NSData *bundleIDData;
+@property (readonly) NSString *bundleVersion;
+@property (readonly) NSString *cancellationReason;
+@property (readonly) NSDate *creationDate;
+@property (readonly) NSString *developerID;
+@property (readonly) NSString *downloadID;
+@property (readonly) NSDate *expirationDate;
+@property (readonly) NSString *frAppVersion;
+@property (readonly) NSNumber *frToolVersion;
+@property (readonly) NSString *hwtype;
+@property (readonly) NSArray *iaps;
+@property (readonly) NSString *installerVersionID;
+@property (readonly) bool isDSIDless;
+@property (readonly) bool isRevoked;
+@property (readonly) bool isVPPLicensed;
+@property (readonly) NSNumber *itemID;
+@property (readonly) NSData *opaqueDSIDData;
+@property (readonly) NSString *opaqueDSIDString;
+@property (readonly) NSString *organizationDisplayName;
+@property (readonly) NSString *parentalControls;
+@property (readonly) NSString *path;
+@property (readonly) NSDate *purchaseDate;
+@property (readonly) NSData *receiptData;
+@property (readonly) NSString *receiptDataString;
+@property (readonly) NSString *receiptType;
+@property (readonly) NSDate *renewalDate;
+@property (readonly) NSData *sha1;
+
++ (id)receiptFromBundleAtPath:(id)arg1;
++ (id)receiptFromBundleAtURL:(id)arg1;
++ (id)receiptWithContentsOfFile:(id)arg1;
++ (id)receiptWithData:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)bundleID;
+- (id)bundleIDData;
+- (id)bundleVersion;
+- (id)cancellationReason;
+- (id)creationDate;
+- (id)developerID;
+- (id)downloadID;
+- (id)expirationDate;
+- (id)frAppVersion;
+- (id)frToolVersion;
+- (id)hwtype;
+- (id)iaps;
+- (id)initWithContentsOfFile:(id)arg1;
+- (id)initWithData:(id)arg1;
+- (id)installerVersionID;
+- (bool)isDSIDless;
+- (bool)isRevoked;
+- (bool)isVPPLicensed;
+- (id)itemID;
+- (id)opaqueDSIDData;
+- (id)opaqueDSIDString;
+- (id)organizationDisplayName;
+- (id)parentalControls;
+- (id)path;
+- (id)purchaseDate;
+- (id)receiptData;
+- (id)receiptDataString;
+- (id)receiptType;
+- (id)renewalDate;
+- (id)sha1;
+
+@end

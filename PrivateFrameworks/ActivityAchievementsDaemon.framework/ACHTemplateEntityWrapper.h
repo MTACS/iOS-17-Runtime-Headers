@@ -1,0 +1,25 @@
+
+@interface ACHTemplateEntityWrapper : NSObject <ACHTemplateEntitySyncedTemplatesObserver> {
+    HDProfile * _profile;
+    <ACHTemplateEntitySyncedTemplatesObserver> * _syncedTemplatesObserver;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) HDProfile *profile;
+@property (readonly) Class superclass;
+@property (nonatomic) <ACHTemplateEntitySyncedTemplatesObserver> *syncedTemplatesObserver;
+
+- (void).cxx_destruct;
+- (id)allTemplatesWithError:(id*)arg1;
+- (id)initWithProfile:(id)arg1;
+- (bool)insertTemplates:(id)arg1 provenance:(long long)arg2 databaseContext:(id)arg3 error:(id*)arg4;
+- (id)profile;
+- (bool)removeTemplates:(id)arg1 error:(id*)arg2;
+- (void)setProfile:(id)arg1;
+- (void)setSyncedTemplatesObserver:(id)arg1;
+- (id)syncedTemplatesObserver;
+- (void)templateEntityDidReceiveSyncedTemplates:(id)arg1 provenance:(long long)arg2;
+
+@end

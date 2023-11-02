@@ -1,0 +1,4 @@
+
+@interface SiriOntology.UsoEntityBuilder_commonNotebook_NotebookItemType : SiriOntology.UsoEntityBuilderGlobalArgs
+
+@end

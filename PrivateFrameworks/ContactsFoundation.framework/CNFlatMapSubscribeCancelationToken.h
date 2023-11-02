@@ -1,0 +1,4 @@
+
+@interface CNFlatMapSubscribeCancelationToken : CNCancelationToken
+
+@end

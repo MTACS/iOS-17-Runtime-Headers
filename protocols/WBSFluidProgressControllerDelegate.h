@@ -1,0 +1,4 @@
+
+@protocol WBSFluidProgressControllerDelegate <WBSFluidProgressControllerObserving>
+
+@end

@@ -1,0 +1,16 @@
+
+@interface NEIKEv2IdentifierPayload : NEIKEv2Payload {
+    NEIKEv2Identifier * _identifier;
+    NEIKEv2IKESA * _ikeSA;
+}
+
++ (id)copyTypeDescription;
+
+- (void).cxx_destruct;
+- (id)description;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
+- (bool)generatePayloadData;
+- (bool)hasRequiredFields;
+- (bool)parsePayloadData;
+
+@end

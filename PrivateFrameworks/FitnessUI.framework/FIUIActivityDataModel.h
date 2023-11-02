@@ -1,0 +1,93 @@
+
+@interface FIUIActivityDataModel : NSObject <NSCopying> {
+    NSArray * _activeEnergyChartData;
+    HKQuantity * _activeEnergyGoal;
+    HKQuantity * _activeEnergyTotal;
+    long long  _activityMoveMode;
+    NSArray * _appleExerciseTimeChartData;
+    double  _appleExerciseTimeGoal;
+    double  _appleExerciseTimeTotal;
+    NSArray * _appleMoveTimeChartData;
+    double  _appleMoveTimeGoal;
+    double  _appleMoveTimeTotal;
+    NSArray * _appleStandHourChartData;
+    long long  _appleStandHoursGoal;
+    long long  _appleStandHoursTotal;
+    bool  _areFitnessAppsRestricted;
+    bool  _databaseLoading;
+    NSDate * _date;
+    bool  _deviceLocked;
+    bool  _wheelchairUser;
+}
+
+@property (nonatomic, copy) NSArray *activeEnergyChartData;
+@property (nonatomic, retain) HKQuantity *activeEnergyGoal;
+@property (nonatomic, retain) HKQuantity *activeEnergyTotal;
+@property (nonatomic) long long activityMoveMode;
+@property (nonatomic, copy) NSArray *appleExerciseTimeChartData;
+@property (nonatomic) double appleExerciseTimeGoal;
+@property (nonatomic) double appleExerciseTimeTotal;
+@property (nonatomic, copy) NSArray *appleMoveTimeChartData;
+@property (nonatomic) double appleMoveTimeGoal;
+@property (nonatomic) double appleMoveTimeTotal;
+@property (nonatomic, copy) NSArray *appleStandHourChartData;
+@property (nonatomic) long long appleStandHoursGoal;
+@property (nonatomic) long long appleStandHoursTotal;
+@property (nonatomic) bool areFitnessAppsRestricted;
+@property (nonatomic) bool databaseLoading;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, readonly) bool deviceLocked;
+@property (nonatomic, readonly) bool userHasDoneActivitySetup;
+@property (nonatomic) bool wheelchairUser;
+
++ (id)formattingManager;
++ (id)idealizedModel;
++ (id)lockedModel;
+
+- (void).cxx_destruct;
+- (id)activeEnergyChartData;
+- (double)activeEnergyCompletionPercentage;
+- (id)activeEnergyGoal;
+- (id)activeEnergyTotal;
+- (long long)activityMoveMode;
+- (id)appleExerciseTimeChartData;
+- (double)appleExerciseTimeCompletionPercentage;
+- (double)appleExerciseTimeGoal;
+- (double)appleExerciseTimeTotal;
+- (id)appleMoveTimeChartData;
+- (double)appleMoveTimeCompletionPercentage;
+- (double)appleMoveTimeGoal;
+- (double)appleMoveTimeTotal;
+- (id)appleStandHourChartData;
+- (double)appleStandHourCompletionPercentage;
+- (long long)appleStandHoursGoal;
+- (long long)appleStandHoursTotal;
+- (bool)areFitnessAppsRestricted;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)databaseLoading;
+- (id)date;
+- (id)debugDescription;
+- (id)description;
+- (bool)deviceLocked;
+- (id)loggingString;
+- (void)setActiveEnergyChartData:(id)arg1;
+- (void)setActiveEnergyGoal:(id)arg1;
+- (void)setActiveEnergyTotal:(id)arg1;
+- (void)setActivityMoveMode:(long long)arg1;
+- (void)setAppleExerciseTimeChartData:(id)arg1;
+- (void)setAppleExerciseTimeGoal:(double)arg1;
+- (void)setAppleExerciseTimeTotal:(double)arg1;
+- (void)setAppleMoveTimeChartData:(id)arg1;
+- (void)setAppleMoveTimeGoal:(double)arg1;
+- (void)setAppleMoveTimeTotal:(double)arg1;
+- (void)setAppleStandHourChartData:(id)arg1;
+- (void)setAppleStandHoursGoal:(long long)arg1;
+- (void)setAppleStandHoursTotal:(long long)arg1;
+- (void)setAreFitnessAppsRestricted:(bool)arg1;
+- (void)setDatabaseLoading:(bool)arg1;
+- (void)setDate:(id)arg1;
+- (void)setWheelchairUser:(bool)arg1;
+- (bool)userHasDoneActivitySetup;
+- (bool)wheelchairUser;
+
+@end

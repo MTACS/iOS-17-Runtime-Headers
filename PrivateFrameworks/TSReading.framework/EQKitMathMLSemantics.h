@@ -1,0 +1,4 @@
+
+@interface EQKitMathMLSemantics : EQKitMathMLMRow
+
+@end

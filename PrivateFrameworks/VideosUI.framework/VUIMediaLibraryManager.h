@@ -1,0 +1,56 @@
+
+@interface VUIMediaLibraryManager : NSObject <VUIHomeShareMediaLibraryManagerDelegate> {
+    VUIMediaLibrary * _activeMediaLibrary;
+    VUIAggregateMediaLibrary * _aggregateMediaLibrary;
+    NSObject<OS_dispatch_queue> * _completionDispatchQueue;
+    VUIDeviceMediaLibrary * _deviceMediaLibrary;
+    NSObject<VUIHomeShareMediaLibraryManager> * _homeShareManager;
+    NSObject<OS_dispatch_queue> * _serialProcessingDispatchQueue;
+    VUISidebandMediaLibrary * _sidebandMediaLibrary;
+}
+
+@property (nonatomic, retain) VUIMediaLibrary *activeMediaLibrary;
+@property (nonatomic, retain) VUIAggregateMediaLibrary *aggregateMediaLibrary;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *completionDispatchQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) VUIDeviceMediaLibrary *deviceMediaLibrary;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSObject<VUIHomeShareMediaLibraryManager> *homeShareManager;
+@property (nonatomic, readonly, copy) NSArray *homeShareMediaLibraries;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue;
+@property (nonatomic, retain) VUISidebandMediaLibrary *sidebandMediaLibrary;
+@property (readonly) Class superclass;
+
++ (id)defaultManager;
++ (void)setDeleteAllVideosAndKeysOnInitializationForAppRemoval:(bool)arg1;
+
+- (void).cxx_destruct;
+- (id)_deviceMediaLibrary;
+- (void)_enqueueCompletionQueueBlock:(id /* block */)arg1;
+- (void)_enqueueStrongSelfCompletionQueueBlock:(id /* block */)arg1;
+- (id)_homeShareMediaLibraryManager;
+- (id)_mediaLibraryForIdentifier:(id)arg1;
+- (void)_postHomeShareMediaLibrariesDidChangeNotificationWithMediaLibraries:(id)arg1 andChangeSet:(id)arg2;
+- (id)activeMediaLibrary;
+- (id)aggregateMediaLibrary;
+- (void)beginDiscoveringHomeShareMediaLibraries;
+- (id)completionDispatchQueue;
+- (id)deviceMediaLibrary;
+- (void)endDiscoveringHomeShareMediaLibraries;
+- (id)homeShareManager;
+- (void)homeShareManager:(id)arg1 mediaLibrariesDidUpdate:(id)arg2 withChangeSet:(id)arg3;
+- (id)homeShareMediaLibraries;
+- (id)init;
+- (id)mediaLibraryForIdentifier:(id)arg1;
+- (id)serialProcessingDispatchQueue;
+- (void)setActiveMediaLibrary:(id)arg1;
+- (void)setAggregateMediaLibrary:(id)arg1;
+- (void)setCompletionDispatchQueue:(id)arg1;
+- (void)setDeviceMediaLibrary:(id)arg1;
+- (void)setHomeShareManager:(id)arg1;
+- (void)setSerialProcessingDispatchQueue:(id)arg1;
+- (void)setSidebandMediaLibrary:(id)arg1;
+- (id)sidebandMediaLibrary;
+
+@end

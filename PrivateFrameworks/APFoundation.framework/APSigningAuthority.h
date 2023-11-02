@@ -1,0 +1,94 @@
+
+@interface APSigningAuthority : NSObject <APSigningAuthorizable> {
+    void * _context;
+    unsigned long long  _contextIdx;
+    long long  _failureError;
+    bool  _isPersisted;
+    bool  _isStashed;
+    bool  _isUsed;
+    double  _lastStateChangeTime;
+    NSObject<OS_os_transaction> * _osTransaction;
+    APSigningServerRequestor * _serverRequestor;
+    id /* block */  _setupCompletionHandler;
+    NSObject<OS_dispatch_queue> * _setupQueue;
+    double  _setupStartTime;
+    APSigningContextsStorage * _signingContextsStorage;
+    long long  _state;
+    bool  _tryStashed;
+}
+
+@property (nonatomic) void*context;
+@property (nonatomic) unsigned long long contextIdx;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) long long failureError;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isPersisted;
+@property (nonatomic) bool isStashed;
+@property (nonatomic) bool isUsed;
+@property (nonatomic) double lastStateChangeTime;
+@property (nonatomic, retain) NSObject<OS_os_transaction> *osTransaction;
+@property (nonatomic, retain) APSigningServerRequestor *serverRequestor;
+@property (nonatomic, copy) id /* block */ setupCompletionHandler;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *setupQueue;
+@property (nonatomic) double setupStartTime;
+@property (nonatomic, retain) APSigningContextsStorage *signingContextsStorage;
+@property (nonatomic, readonly) long long state;
+@property (readonly) Class superclass;
+@property (nonatomic) bool tryStashed;
+
++ (bool)_isReboot;
+
+- (void).cxx_destruct;
+- (bool)_createAttribute:(void**)arg1;
+- (id)_createContext;
+- (bool)_createContext:(void**)arg1 withAttribute:(void**)arg2 initRequest:(void**)arg3 initRequestLength:(unsigned int*)arg4;
+- (void)_destroyObject:(void**)arg1 ofType:(long long)arg2;
+- (id)_getEncodedStringFromFPDIDataRef:(void*)arg1 withLength:(unsigned int)arg2;
+- (void)_handleInitResponse:(void*)arg1 length:(unsigned int)arg2 error:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)_handleSetupResponse:(void*)arg1 length:(unsigned int)arg2 error:(id)arg3;
+- (void)_sendInitRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_sendSetupRequest:(id)arg1;
+- (void)_setFailureStateWithError:(long long)arg1;
+- (void)_setup;
+- (id)_signatureForData:(id)arg1 error:(id*)arg2;
+- (void*)context;
+- (unsigned long long)contextIdx;
+- (void)dealloc;
+- (long long)failureError;
+- (id)init;
+- (id)initWithStoredContext:(unsigned long long)arg1;
+- (id)initWithTryStashed:(bool)arg1;
+- (id)initWithTryStashed:(bool)arg1 signingServerRequestor:(id)arg2 setupCompletionHandler:(id /* block */)arg3;
+- (bool)isPersisted;
+- (bool)isStashed;
+- (bool)isUsed;
+- (double)lastStateChangeTime;
+- (id)osTransaction;
+- (id)serverRequestor;
+- (void)setContext:(void*)arg1;
+- (void)setContextIdx:(unsigned long long)arg1;
+- (void)setFailureError:(long long)arg1;
+- (void)setIsPersisted:(bool)arg1;
+- (void)setIsStashed:(bool)arg1;
+- (void)setIsUsed:(bool)arg1;
+- (void)setLastStateChangeTime:(double)arg1;
+- (void)setOsTransaction:(id)arg1;
+- (void)setServerRequestor:(id)arg1;
+- (void)setSetupCompletionHandler:(id /* block */)arg1;
+- (void)setSetupQueue:(id)arg1;
+- (void)setSetupStartTime:(double)arg1;
+- (void)setSigningContextsStorage:(id)arg1;
+- (void)setState:(long long)arg1;
+- (void)setTryStashed:(bool)arg1;
+- (id /* block */)setupCompletionHandler;
+- (id)setupQueue;
+- (double)setupStartTime;
+- (id)signatureForData:(id)arg1 error:(id*)arg2;
+- (id)signatureForRawData:(id)arg1 error:(id*)arg2;
+- (id)signingContextsStorage;
+- (long long)state;
+- (bool)tryStashed;
+- (void)verifyStoredContext;
+
+@end

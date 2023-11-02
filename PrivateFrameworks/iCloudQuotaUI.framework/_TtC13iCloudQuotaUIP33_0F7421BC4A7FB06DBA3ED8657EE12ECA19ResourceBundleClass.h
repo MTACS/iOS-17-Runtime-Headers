@@ -1,0 +1,4 @@
+
+@interface _TtC13iCloudQuotaUIP33_0F7421BC4A7FB06DBA3ED8657EE12ECA19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

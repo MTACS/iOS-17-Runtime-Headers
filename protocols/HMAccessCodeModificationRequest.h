@@ -1,0 +1,4 @@
+
+@protocol HMAccessCodeModificationRequest <NSObject>
+
+@end

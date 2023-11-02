@@ -1,0 +1,4 @@
+
+@protocol SXHorizontalStackContentDisplay <SXContentDisplay>
+
+@end

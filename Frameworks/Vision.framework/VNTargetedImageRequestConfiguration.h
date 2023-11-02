@@ -1,0 +1,4 @@
+
+@interface VNTargetedImageRequestConfiguration : VNImageBasedRequestConfiguration
+
+@end

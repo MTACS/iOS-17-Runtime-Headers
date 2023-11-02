@@ -1,0 +1,4 @@
+
+@interface PIPhotoEffectChromeHDR : PIPhotoEffectHDR
+
+@end

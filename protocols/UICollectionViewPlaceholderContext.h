@@ -1,0 +1,4 @@
+
+@protocol UICollectionViewPlaceholderContext <UICollectionViewDropPlaceholderContext>
+
+@end

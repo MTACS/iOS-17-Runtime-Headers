@@ -1,0 +1,93 @@
+
+@interface TRIClientExperimentArtifact : NSObject <NSSecureCoding> {
+    int  _cloudKitContainer;
+    NSDate * _deploymentDate;
+    int  _deploymentEnvironment;
+    int  _deploymentId;
+    NSData * _encodedExperimentDefinition;
+    NSString * _encodedExperimentDefinitionSignature;
+    NSString * _experimentId;
+    int  _experimentPriority;
+    int  _experimentState;
+    int  _experimentType;
+    bool  _internalBuildOnly;
+    NSArray * _namespaceCompatibilityVersions;
+    NSArray * _namespaces;
+    NSData * _publicCertificate;
+    NSString * _teamId;
+}
+
+@property (nonatomic) int cloudKitContainer;
+@property (nonatomic, retain) NSDate *deploymentDate;
+@property (nonatomic) int deploymentEnvironment;
+@property (nonatomic) int deploymentId;
+@property (nonatomic, retain) NSData *encodedExperimentDefinition;
+@property (nonatomic, retain) NSString *encodedExperimentDefinitionSignature;
+@property (nonatomic, readonly) TRIClientExperiment *experiment;
+@property (readonly) TRIExperimentDeployment *experimentDeployment;
+@property (nonatomic, retain) NSString *experimentId;
+@property (nonatomic) int experimentPriority;
+@property (nonatomic) int experimentState;
+@property (nonatomic) int experimentType;
+@property (readonly) bool hasDeploymentId;
+@property (nonatomic) bool internalBuildOnly;
+@property (nonatomic, retain) NSArray *namespaceCompatibilityVersions;
+@property (nonatomic, retain) NSArray *namespaces;
+@property (nonatomic, retain) NSData *publicCertificate;
+@property (nonatomic, retain) NSString *teamId;
+
++ (id)_convertNamespaceIdsToNames:(id)arg1;
++ (id)allReferencedCKRecordKeys;
++ (id)artifactFromCKRecordResult:(id)arg1 withNamespaceDescriptorProvider:(id)arg2 container:(int)arg3 teamId:(id)arg4 requireDeploymentId:(bool)arg5 completion:(id /* block */)arg6;
++ (id)artifactWithExperiment:(id)arg1;
++ (id)parseFromData:(id)arg1 error:(id*)arg2;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)asPersistedArtifact;
+- (int)cloudKitContainer;
+- (id)data;
+- (id)deploymentDate;
+- (int)deploymentEnvironment;
+- (int)deploymentId;
+- (void)encodeWithCoder:(id)arg1;
+- (id)encodedExperimentDefinition;
+- (id)encodedExperimentDefinitionSignature;
+- (id)experiment;
+- (id)experimentDeployment;
+- (id)experimentId;
+- (int)experimentPriority;
+- (int)experimentState;
+- (int)experimentType;
+- (bool)hasDeploymentId;
+- (bool)hasNamespacesAvailableForExperimentWithDatabase:(id)arg1;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithExperiment:(id)arg1;
+- (bool)internalBuildOnly;
+- (bool)isCompatibleWithNamespaceDescriptorProvider:(id)arg1 error:(id*)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid;
+- (id)namespaceCompatibilityVersions;
+- (id)namespaces;
+- (id)publicCertificate;
+- (bool)saveWithDatabase:(id)arg1 paths:(id)arg2;
+- (void)setCloudKitContainer:(int)arg1;
+- (void)setDeploymentDate:(id)arg1;
+- (void)setDeploymentEnvironment:(int)arg1;
+- (void)setDeploymentId:(int)arg1;
+- (void)setEncodedExperimentDefinition:(id)arg1;
+- (void)setEncodedExperimentDefinitionSignature:(id)arg1;
+- (void)setExperimentId:(id)arg1;
+- (void)setExperimentPriority:(int)arg1;
+- (void)setExperimentState:(int)arg1;
+- (void)setExperimentType:(int)arg1;
+- (void)setInternalBuildOnly:(bool)arg1;
+- (void)setNamespaceCompatibilityVersions:(id)arg1;
+- (void)setNamespaces:(id)arg1;
+- (void)setPublicCertificate:(id)arg1;
+- (void)setTeamId:(id)arg1;
+- (id)teamId;
+
+@end

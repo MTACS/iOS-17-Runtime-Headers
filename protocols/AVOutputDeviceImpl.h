@@ -1,0 +1,87 @@
+
+@protocol AVOutputDeviceImpl <NSObject>
+
+@required
+
+- (long long)HAPConformance;
+- (NSString *)ID;
+- (NSDictionary *)airPlayProperties;
+- (bool)allowsHeadTrackedSpatialAudio;
+- (bool)automaticallyAllowsConnectionsFromPeersInHomeGroup;
+- (NSArray *)availableBluetoothListeningModes;
+- (NSNumber *)batteryLevel;
+- (bool)canAccessAppleMusic;
+- (bool)canAccessRemoteAssets;
+- (bool)canAccessiCloudMusicLibrary;
+- (bool)canBeGroupLeader;
+- (bool)canBeGrouped;
+- (bool)canCommunicateWithAllLogicalDeviceMembers;
+- (bool)canFetchMediaDataFromSender;
+- (bool)canMute;
+- (bool)canPlayEncryptedProgressiveDownloadAssets;
+- (bool)canRelayCommunicationChannel;
+- (bool)canSetVolume;
+- (NSNumber *)caseBatteryLevel;
+- (NSString *)clusterID;
+- (long long)clusterType;
+- (NSArray *)clusteredDeviceDescriptions;
+- (void)configureUsingBlock:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 16: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <AVOutputDeviceConfigurationModification> *, void*, NSDictionary *, id /* block */, void*, void, id /* block */, long long, <AVOutputDeviceConfigurationRetrieval> *, NSString *, NSError *, void*
+- (long long)configuredClusterSize;
+- (NSArray *)connectedPairedDevices;
+- (NSString *)currentBluetoothListeningMode;
+- (void)decreaseVolumeByCount:(long long)arg1;
+- (unsigned long long)deviceFeatures;
+- (long long)deviceSubType;
+- (long long)deviceType;
+- (NSString *)firmwareVersion;
+- (bool)groupContainsGroupLeader;
+- (NSString *)groupID;
+- (NSString *)headTrackedSpatialAudioMode;
+- (NSData *)identifyingMACAddress;
+- (<AVOutputDeviceImplSupport> *)implEventListener;
+- (void)increaseVolumeByCount:(long long)arg1;
+- (bool)isAppleAccessory;
+- (bool)isClusterLeader;
+- (bool)isConversationDetectionEnabled;
+- (bool)isEligibleToBePredictedOutputDevice;
+- (bool)isGroupLeader;
+- (bool)isHeadTrackedSpatialAudioActive;
+- (NSNumber *)isInEar;
+- (bool)isInUseByPairedDevice;
+- (bool)isLogicalDeviceLeader;
+- (bool)isMuted;
+- (NSNumber *)leftBatteryLevel;
+- (NSString *)logicalDeviceID;
+- (NSString *)manufacturer;
+- (NSString *)modelID;
+- (NSString *)name;
+- (bool)onlyAllowsConnectionsFromPeersInHomeGroup;
+- (bool)participatesInGroupPlayback;
+- (bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (bool)producesLowFidelityAudio;
+- (NSString *)proposedGroupID;
+- (bool)requiresAuthorization;
+- (NSNumber *)rightBatteryLevel;
+- (NSString *)serialNumber;
+- (void)setActivatedDeviceClusterMembersVolume:(float)arg1 withRoomID:(NSString *)arg2;
+- (bool)setAllowsHeadTrackedSpatialAudio:(bool)arg1 error:(id*)arg2;
+- (bool)setConversationDetectionEnabled:(bool)arg1 error:(id*)arg2;
+- (bool)setCurrentBluetoothListeningMode:(NSString *)arg1 error:(id*)arg2;
+- (bool)setHeadTrackedSpatialAudioMode:(NSString *)arg1 error:(id*)arg2;
+- (void)setImplEventListener:(id <AVOutputDeviceImplSupport>)arg1;
+- (void)setMuted:(bool)arg1;
+- (void)setSecondDisplayEnabled:(bool)arg1;
+- (void)setSecondDisplayMode:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, NSError *, void*
+- (void)setVolume:(float)arg1;
+- (bool)supportsBluetoothSharing;
+- (bool)supportsBufferedAirPlay;
+- (bool)supportsConversationDetection;
+- (NSNumber *)supportsDataOverACLProtocol;
+- (bool)supportsFitnessDataDestination;
+- (bool)supportsHeadTrackedSpatialAudio;
+- (bool)supportsScreenMirroringControls;
+- (float)volume;
+- (long long)volumeControlType;
+- (float)volumeForActivatedDeviceClusterMembersWithRoomID:(NSString *)arg1;
+
+@end

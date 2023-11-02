@@ -1,0 +1,32 @@
+
+@interface STShowMoreUsageGroupSpecifierProvider : STUsageGroupSpecifierProvider {
+    unsigned long long  _numberOfItemsToShow;
+    PSSpecifier * _showMoreSpecifier;
+    PSSpecifier * _summarySpecifier;
+    unsigned long long  _totalNumberOfItemsToShow;
+    NSArray * _usageItems;
+}
+
+@property (nonatomic) unsigned long long numberOfItemsToShow;
+@property (nonatomic, readonly) PSSpecifier *showMoreSpecifier;
+@property (nonatomic, retain) PSSpecifier *summarySpecifier;
+@property (nonatomic) unsigned long long totalNumberOfItemsToShow;
+@property (nonatomic, copy) NSArray *usageItems;
+
+- (void).cxx_destruct;
+- (id)init;
+- (id)newSpecifierWithUsageItem:(id)arg1;
+- (unsigned long long)numberOfItemsToShow;
+- (void)refreshUsageSpecifiersWithUpdates:(bool)arg1;
+- (void)setNumberOfItemsToShow:(unsigned long long)arg1;
+- (void)setSummarySpecifier:(id)arg1;
+- (void)setTotalNumberOfItemsToShow:(unsigned long long)arg1;
+- (void)setUsageItems:(id)arg1;
+- (void)showMoreItems:(id)arg1;
+- (id)showMoreSpecifier;
+- (id)summarySpecifier;
+- (unsigned long long)totalNumberOfItemsToShow;
+- (void)updateSpecifier:(id)arg1 usageItem:(id)arg2;
+- (id)usageItems;
+
+@end

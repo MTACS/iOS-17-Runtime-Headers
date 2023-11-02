@@ -1,0 +1,4 @@
+
+@protocol SASupportCondition <SAAceSerializable>
+
+@end

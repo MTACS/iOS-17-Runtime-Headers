@@ -1,0 +1,59 @@
+
+@interface TSDMagicMoveAnimationMatch : NSObject {
+    bool  _didUseMorphTexture;
+    bool  _hasBeenTornDown;
+    TSDTextureSet * _incomingTexture;
+    bool  _isMorphMatch;
+    bool  _isTextStyleIdenticalExceptSize;
+    bool  _isUsingMorphTexture;
+    long long  _matchType;
+    TSDTextureSet * _morphQueuedForDeletionTexture;
+    TSDTextureSet * _morphQueuedTexture;
+    TSDTextureSet * _morphTexture;
+    NSLock * _morphTextureUpdateLock;
+    TSDTextureSet * _outgoingTexture;
+    NSDictionary * _outgoingTextureActionBuildFinalAttributes;
+    bool  _shouldDisableTextMorphing;
+    bool  _shouldTearDownTextures;
+}
+
+@property (nonatomic, retain) TSDTextureSet *incomingTexture;
+@property (nonatomic, readonly) bool isMatched;
+@property (nonatomic) bool isMorphMatch;
+@property (nonatomic) bool isTextStyleIdenticalExceptSize;
+@property (nonatomic) long long matchType;
+@property (nonatomic, retain) TSDTextureSet *outgoingTexture;
+@property (nonatomic, retain) NSDictionary *outgoingTextureActionBuildFinalAttributes;
+@property (nonatomic) bool shouldDisableTextMorphing;
+@property (nonatomic) bool shouldTearDownTextures;
+
++ (unsigned long long)magicMoveMorphTexturesPerSecond;
+
+- (void)addMorphTexture:(id)arg1;
+- (void)clearMorphTexture;
+- (void)dealloc;
+- (id)description;
+- (id)incomingTexture;
+- (id)init;
+- (id)initWithMatchType:(long long)arg1 outgoingTexture:(id)arg2 incomingTexture:(id)arg3;
+- (bool)isMatched;
+- (bool)isMorphMatch;
+- (bool)isTextStyleIdenticalExceptSize;
+- (id)lockCurrentMorphTexture;
+- (long long)matchType;
+- (id)outgoingTexture;
+- (id)outgoingTextureActionBuildFinalAttributes;
+- (void)setIncomingTexture:(id)arg1;
+- (void)setIsMorphMatch:(bool)arg1;
+- (void)setIsTextStyleIdenticalExceptSize:(bool)arg1;
+- (void)setMatchType:(long long)arg1;
+- (void)setOutgoingTexture:(id)arg1;
+- (void)setOutgoingTextureActionBuildFinalAttributes:(id)arg1;
+- (void)setShouldDisableTextMorphing:(bool)arg1;
+- (void)setShouldTearDownTextures:(bool)arg1;
+- (bool)shouldDisableTextMorphing;
+- (bool)shouldTearDownTextures;
+- (void)teardown;
+- (void)unlockCurrentMorphTexture;
+
+@end

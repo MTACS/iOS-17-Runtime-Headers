@@ -1,0 +1,4 @@
+
+@interface _TtC10StocksCoreP33_CD4F30EAAE792078F5F71B45EF5034EF19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

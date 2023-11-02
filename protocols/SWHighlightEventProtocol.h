@@ -1,0 +1,4 @@
+
+@protocol SWHighlightEventProtocol <SWHighlightEvent>
+
+@end

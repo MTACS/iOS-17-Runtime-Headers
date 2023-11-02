@@ -1,0 +1,4 @@
+
+@protocol SAUSMarkup <SAAceSerializable>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.DiscoverCapabilityResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC15HealthRecordsUIP33_1F9AD12B7B3E5C1096A516B1C066FA4E19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

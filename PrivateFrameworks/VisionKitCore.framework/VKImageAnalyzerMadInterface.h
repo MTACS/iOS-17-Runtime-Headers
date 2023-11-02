@@ -1,0 +1,91 @@
+
+@interface VKImageAnalyzerMadInterface : NSObject {
+    MADService * __serviceDontUseThisOneDirectly;
+    NSObject<OS_dispatch_queue> * _housekeepingQueue;
+    NSMutableDictionary * _idsToRequests;
+    MADService * _madService;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    int  _requestIDIndex;
+    NSMutableSet * _requestQueueCancelling;
+    NSMutableOrderedSet * _requestQueueProcessing;
+    unsigned long long  _timeoutIndex;
+    NSMutableDictionary * _vkToMadIDs;
+}
+
+@property (nonatomic, retain) MADService *_serviceDontUseThisOneDirectly;
+@property (nonatomic, readonly) bool hasAnyRequests;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *housekeepingQueue;
+@property (nonatomic, retain) NSMutableDictionary *idsToRequests;
+@property (nonatomic, retain) MADService *madService;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *processingQueue;
+@property (nonatomic) int requestIDIndex;
+@property (nonatomic, retain) NSMutableSet *requestQueueCancelling;
+@property (nonatomic, retain) NSMutableOrderedSet *requestQueueProcessing;
+@property (nonatomic, readonly) MADService *service;
+@property (nonatomic) unsigned long long timeoutIndex;
+@property (nonatomic, retain) NSMutableDictionary *vkToMadIDs;
+
++ (id)analyzerDeallocedError;
++ (id)sharedInterface;
+
+- (void).cxx_destruct;
+- (id)VNRequestHandlerForRequest:(id)arg1;
+- (void)_cancelRequest:(id)arg1;
+- (void)_cancelRequestID:(int)arg1;
+- (int)_performMADRequest:(id)arg1 forRequest:(id)arg2 pixelBuffer:(struct __CVBuffer { }*)arg3 cgImage:(struct CGImage { }*)arg4 useCGForMad:(bool)arg5 withCompletion:(id /* block */)arg6;
+- (int)_performMultiStageMADRequest:(id)arg1 forRequest:(id)arg2 pixelBuffer:(struct __CVBuffer { }*)arg3 cgImage:(struct CGImage { }*)arg4 useCGForMad:(bool)arg5 withCompletion:(id /* block */)arg6;
+- (void)_processRequest:(id)arg1 callbackQueue:(id)arg2;
+- (id)_serviceDontUseThisOneDirectly;
+- (unsigned long long)_statusForRequestID:(int)arg1;
+- (id)analysisResultFromMadRequests:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2 durations:(id)arg3;
+- (void)cancelAllRequests;
+- (void)cancelRequestID:(int)arg1;
+- (id)cancelledError;
+- (void)clearCompletedRequest:(id)arg1;
+- (void)createNewIdleTimerIfNecessary;
+- (void)didFinishRequest:(id)arg1 withAnalysis:(id)arg2 analyticsEvent:(id)arg3 error:(id)arg4;
+- (void)didLeaveVisualSearchHints;
+- (void)didShowVisualSearchCachedResultsForQueryID:(unsigned long long)arg1 cachedResultQueryID:(unsigned long long)arg2 item:(id)arg3;
+- (void)didShowVisualSearchHintsForRequest:(id)arg1 invocationType:(long long)arg2;
+- (id)documentObservationFromRequests:(id)arg1 durations:(id)arg2;
+- (void)generateTextualVisualSearchResultForAnalysis:(id)arg1 queryInfo:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)generateVisualSearchResultForRequest:(id)arg1 analysis:(id)arg2 items:(id)arg3 payload:(id)arg4 queryID:(unsigned long long)arg5 completionHandler:(id /* block */)arg6;
+- (void)handleCompletionForMultiPartRequest:(id)arg1 madRequests:(id)arg2 callbackQueue:(id)arg3 error:(id)arg4;
+- (bool)hasAnyRequests;
+- (id)housekeepingQueue;
+- (id)idsToRequests;
+- (id)init;
+- (void)logCollectionsIfNecessary;
+- (id)madService;
+- (id)madSuggestionTypeFromItems:(id)arg1;
+- (id)mrcDDElementsFromRequests:(id)arg1 didParse:(bool*)arg2 durations:(id)arg3;
+- (void)performMADRequest:(id)arg1 forRequest:(id)arg2 withCompletion:(id /* block */)arg3;
+- (int)processRequest:(id)arg1 callbackQueue:(id)arg2;
+- (id)processingQueue;
+- (id)rectangleObservationsFromRequests:(id)arg1 durations:(id)arg2;
+- (void)removeAndNotifyOfCancelledRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)request:(id)arg1 didCompleteWithAnalysis:(id)arg2 analysisEvent:(id)arg3 error:(id)arg4;
+- (id)requestForRequestID:(int)arg1;
+- (int)requestIDIndex;
+- (id)requestQueueCancelling;
+- (id)requestQueueProcessing;
+- (id)service;
+- (void)setHousekeepingQueue:(id)arg1;
+- (void)setIdsToRequests:(id)arg1;
+- (void)setMadService:(id)arg1;
+- (void)setProcessingQueue:(id)arg1;
+- (void)setRequest:(id)arg1 forRequestID:(int)arg2;
+- (void)setRequestIDIndex:(int)arg1;
+- (void)setRequestQueueCancelling:(id)arg1;
+- (void)setRequestQueueProcessing:(id)arg1;
+- (void)setTimeoutIndex:(unsigned long long)arg1;
+- (void)setVkToMadIDs:(id)arg1;
+- (void)set_serviceDontUseThisOneDirectly:(id)arg1;
+- (unsigned long long)sfViewAppearEventFromInvocationType:(long long)arg1 request:(id)arg2;
+- (unsigned long long)statusForRequestID:(int)arg1;
+- (void)submitVisualIntelligenceUserFeedbackForRequest:(id)arg1 reportIdentifier:(id)arg2 userFeedbackPayload:(id)arg3 sfReportData:(id)arg4;
+- (unsigned long long)timeoutIndex;
+- (id)visualSearchResultFromRequests:(id)arg1 durations:(id)arg2;
+- (id)vkToMadIDs;
+
+@end

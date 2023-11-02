@@ -1,0 +1,4 @@
+
+@interface OADClosePathElement : OADPathElement
+
+@end

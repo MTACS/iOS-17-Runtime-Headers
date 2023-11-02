@@ -1,0 +1,4 @@
+
+@interface UIDragPreviewTarget : UIPreviewTarget
+
+@end

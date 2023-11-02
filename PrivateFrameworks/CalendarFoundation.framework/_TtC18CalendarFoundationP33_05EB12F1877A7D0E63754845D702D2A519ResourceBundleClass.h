@@ -1,0 +1,4 @@
+
+@interface _TtC18CalendarFoundationP33_05EB12F1877A7D0E63754845D702D2A519ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

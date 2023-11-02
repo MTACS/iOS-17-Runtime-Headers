@@ -1,0 +1,4 @@
+
+@protocol HomeKitEvents.XPCClientInterface
+
+@end

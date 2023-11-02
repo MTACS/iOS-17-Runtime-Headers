@@ -1,0 +1,8 @@
+
+@protocol PKPaymentSetupPurchaseServiceProviderProductsViewControllerFlowDelegate <NSObject>
+
+@required
+
+- (void)purchaseServiceProviderProductsViewController:(PKPaymentSetupPurchaseServiceProviderProductsViewController *)arg1 didSelectServiceProviderProduct:(PKDigitalIssuanceServiceProviderProduct *)arg2;
+
+@end

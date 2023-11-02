@@ -1,0 +1,4 @@
+
+@interface _TtC17PromotedContentUIP33_0FC2C57614B3A3FABF8436AD46DAB71619ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

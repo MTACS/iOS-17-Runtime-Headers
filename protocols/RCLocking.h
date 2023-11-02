@@ -1,0 +1,4 @@
+
+@protocol RCLocking <NSLocking>
+
+@end

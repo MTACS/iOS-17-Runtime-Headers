@@ -1,0 +1,98 @@
+
+@interface PKDashboardViewController : UICollectionViewController <PKDashboardDataSourceDelegate, PKDashboardViewControllerDelegateFlowLayout, UICollectionViewDataSourcePrefetching> {
+    NSMutableDictionary * _blocksOnVisibilityChange;
+    PKUISpringAnimationFactory * _collectionViewFactory;
+    bool  _contentIsLoaded;
+    UICollectionViewLayout<PKDashboardLayout> * _customLayout;
+    <PKDashboardDataSource> * _dataSource;
+    <PKDashboardDelegate> * _delegate;
+    NSMutableDictionary * _footerTextItemsBySection;
+    bool  _inScrollViewDidScroll;
+    bool  _isHidingContent;
+    bool  _isPresentingContent;
+    double  _lastScrollOffset;
+    bool  _presentationAnimated;
+    NSDictionary * _presenterMethodsIndexPerIdentifier;
+    struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; } * _presentersOptionalMethods;
+    NSDictionary * _presentersPerIdentifier;
+    PKDashboardFooterTextView * _sampleFooterView;
+    PKDashboardTitleHeaderView * _sampleHeaderView;
+    bool  _shouldPresentAllContent;
+    bool  _shouldUseClearNavigationBar;
+    NSMutableDictionary * _titlesForSection;
+    NSSet * _visibleCellsExcludingSafeArea;
+}
+
+@property (nonatomic, readonly) NSArray *actualIndexPathsForSelectedItems;
+@property (nonatomic, readonly) <PKDashboardDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKDashboardDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isPresentingContent;
+@property (nonatomic) bool shouldUseClearNavigationBar;
+@property (readonly) Class superclass;
+
++ (id)backgroundColor;
+
+- (void).cxx_destruct;
+- (id)_actualItemIndexPathForIndexPath:(id)arg1;
+- (id)_footerViewAtIndexPath:(id)arg1 isCell:(bool)arg2;
+- (id)_headerViewAtIndexPath:(id)arg1 isCell:(bool)arg2;
+- (void)_hideAllContentAnimated:(bool)arg1;
+- (id)_internalIndexPathForItemIndexPath:(id)arg1;
+- (bool)_isCellVisibleAtIndexPath:(id)arg1 withTopSafeArea:(double)arg2 contentOffset:(double)arg3;
+- (bool)_isIndexPathAFooter:(id)arg1;
+- (bool)_isIndexPathAHeader:(id)arg1;
+- (bool)_isListSectionAtIndex:(long long)arg1;
+- (void)_presentAllContent;
+- (void)_setupPresenters:(id)arg1;
+- (void)_updateNavigationBarAppearance;
+- (void)_updateNavigationBarVisibility;
+- (id)actualIndexPathsForSelectedItems;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
+- (bool)collectionView:(id)arg1 layout:(id)arg2 hasFooterForSectionAtIndex:(long long)arg3;
+- (bool)collectionView:(id)arg1 layout:(id)arg2 hasHeaderForSectionAtIndex:(long long)arg3;
+- (bool)collectionView:(id)arg1 layout:(id)arg2 isListSectionAtIndex:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 layout:(id)arg2 trailingSwipeActionsConfigurationForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
+- (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)contentIsLoaded;
+- (id)dataSource;
+- (void)dealloc;
+- (id)delegate;
+- (void)deleteItemsAtIndexPaths:(id)arg1;
+- (void)deleteSections:(id)arg1;
+- (id)initWithDataSource:(id)arg1 presenters:(id)arg2 layout:(id)arg3;
+- (void)insertItemsAtIndexPaths:(id)arg1;
+- (void)insertSections:(id)arg1;
+- (bool)isPresentingContent;
+- (void)itemChanged:(id)arg1 atIndexPath:(id)arg2;
+- (bool)itemIsIndependentInCollectionView:(id)arg1 atIndexPath:(id)arg2;
+- (bool)itemIsStackableInCollectionView:(id)arg1 atIndexPath:(id)arg2;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; })methodsForItemIdentifier:(id)arg1;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)performBatchUpdates:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (long long)preferredStatusBarStyle;
+- (void)reloadNavigationBarAnimated:(bool)arg1;
+- (void)reloadSections:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)setActionForVisibilityChange:(id /* block */)arg1 indexPath:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setShouldUseClearNavigationBar:(bool)arg1;
+- (void)shouldPresentAllContent:(bool)arg1 animated:(bool)arg2;
+- (bool)shouldUseClearNavigationBar;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateContent;
+- (void)viewDidLoad;
+
+@end

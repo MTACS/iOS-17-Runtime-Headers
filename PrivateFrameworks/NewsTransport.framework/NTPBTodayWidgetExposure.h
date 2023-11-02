@@ -1,0 +1,101 @@
+
+@interface NTPBTodayWidgetExposure : PBCodable <NSCopying> {
+    long long  _contentFetchDate;
+    NSString * _contentId;
+    struct { 
+        unsigned int contentFetchDate : 1; 
+        unsigned int widgetAppearanceType : 1; 
+        unsigned int widgetArticleCount : 1; 
+        unsigned int widgetExposureStackLocation : 1; 
+        unsigned int widgetHeadlineExposureCount : 1; 
+        unsigned int widgetType : 1; 
+    }  _has;
+    int  _widgetAppearanceType;
+    int  _widgetArticleCount;
+    int  _widgetExposureStackLocation;
+    int  _widgetHeadlineExposureCount;
+    NSString * _widgetIdentifier;
+    NSMutableArray * _widgetPersonalizationFeatureCTRPairs;
+    NSMutableArray * _widgetSectionsArticleCountPairs;
+    int  _widgetType;
+}
+
+@property (nonatomic) long long contentFetchDate;
+@property (nonatomic, retain) NSString *contentId;
+@property (nonatomic) bool hasContentFetchDate;
+@property (nonatomic, readonly) bool hasContentId;
+@property (nonatomic) bool hasWidgetAppearanceType;
+@property (nonatomic) bool hasWidgetArticleCount;
+@property (nonatomic) bool hasWidgetExposureStackLocation;
+@property (nonatomic) bool hasWidgetHeadlineExposureCount;
+@property (nonatomic, readonly) bool hasWidgetIdentifier;
+@property (nonatomic) bool hasWidgetType;
+@property (nonatomic) int widgetAppearanceType;
+@property (nonatomic) int widgetArticleCount;
+@property (nonatomic) int widgetExposureStackLocation;
+@property (nonatomic) int widgetHeadlineExposureCount;
+@property (nonatomic, retain) NSString *widgetIdentifier;
+@property (nonatomic, retain) NSMutableArray *widgetPersonalizationFeatureCTRPairs;
+@property (nonatomic, retain) NSMutableArray *widgetSectionsArticleCountPairs;
+@property (nonatomic) int widgetType;
+
++ (Class)widgetPersonalizationFeatureCTRPairType;
++ (Class)widgetSectionsArticleCountPairType;
+
+- (void).cxx_destruct;
+- (int)StringAsWidgetExposureStackLocation:(id)arg1;
+- (int)StringAsWidgetType:(id)arg1;
+- (void)addWidgetPersonalizationFeatureCTRPair:(id)arg1;
+- (void)addWidgetSectionsArticleCountPair:(id)arg1;
+- (void)clearWidgetPersonalizationFeatureCTRPairs;
+- (void)clearWidgetSectionsArticleCountPairs;
+- (long long)contentFetchDate;
+- (id)contentId;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasContentFetchDate;
+- (bool)hasContentId;
+- (bool)hasWidgetAppearanceType;
+- (bool)hasWidgetArticleCount;
+- (bool)hasWidgetExposureStackLocation;
+- (bool)hasWidgetHeadlineExposureCount;
+- (bool)hasWidgetIdentifier;
+- (bool)hasWidgetType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setContentFetchDate:(long long)arg1;
+- (void)setContentId:(id)arg1;
+- (void)setHasContentFetchDate:(bool)arg1;
+- (void)setHasWidgetAppearanceType:(bool)arg1;
+- (void)setHasWidgetArticleCount:(bool)arg1;
+- (void)setHasWidgetExposureStackLocation:(bool)arg1;
+- (void)setHasWidgetHeadlineExposureCount:(bool)arg1;
+- (void)setHasWidgetType:(bool)arg1;
+- (void)setWidgetAppearanceType:(int)arg1;
+- (void)setWidgetArticleCount:(int)arg1;
+- (void)setWidgetExposureStackLocation:(int)arg1;
+- (void)setWidgetHeadlineExposureCount:(int)arg1;
+- (void)setWidgetIdentifier:(id)arg1;
+- (void)setWidgetPersonalizationFeatureCTRPairs:(id)arg1;
+- (void)setWidgetSectionsArticleCountPairs:(id)arg1;
+- (void)setWidgetType:(int)arg1;
+- (int)widgetAppearanceType;
+- (int)widgetArticleCount;
+- (int)widgetExposureStackLocation;
+- (id)widgetExposureStackLocationAsString:(int)arg1;
+- (int)widgetHeadlineExposureCount;
+- (id)widgetIdentifier;
+- (id)widgetPersonalizationFeatureCTRPairAtIndex:(unsigned long long)arg1;
+- (id)widgetPersonalizationFeatureCTRPairs;
+- (unsigned long long)widgetPersonalizationFeatureCTRPairsCount;
+- (id)widgetSectionsArticleCountPairAtIndex:(unsigned long long)arg1;
+- (id)widgetSectionsArticleCountPairs;
+- (unsigned long long)widgetSectionsArticleCountPairsCount;
+- (int)widgetType;
+- (id)widgetTypeAsString:(int)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

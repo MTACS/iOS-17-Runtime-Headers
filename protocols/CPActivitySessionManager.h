@@ -1,0 +1,4 @@
+
+@protocol CPActivitySessionManager <NSObject>
+
+@end

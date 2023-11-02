@@ -1,0 +1,90 @@
+
+@interface PARSessionSwiftInternal : NSObject <SFCardResourceLoader, SFFeedbackListener, SFImageResourceLoader, SFMoreResultsResourceLoader> {
+    void _bag;
+    void _configuration;
+    void _delegate;
+    void _mapsListener;
+    void _sampleClientTimingEventAllowlist;
+    void _sampled;
+    void activityMonitor;
+    void client;
+    void fileManager;
+    void lock;
+    void session;
+    void skappToken;
+}
+
+@property (nonatomic, retain) PARBag *bag;
+@property (nonatomic, readonly) _TtC10CoreParsec15PARSearchClient *client;
+@property (nonatomic, retain) PARSessionConfiguration *configuration;
+@property (nonatomic, readonly) NSXPCConnection *connection;
+@property (nonatomic, retain) <PARSessionDelegate> *delegate;
+@property (nonatomic, readonly) unsigned long long enabledStatus;
+
+- (void).cxx_destruct;
+- (void)addCompletion:(id)arg1 forInput:(id)arg2;
+- (void)addEngagedResults:(id)arg1;
+- (void)addEngagedResults:(id)arg1 completion:(id /* block */)arg2;
+- (void)allEngagedResultsFor:(id)arg1 maxCount:(long long)arg2 completion:(id /* block */)arg3;
+- (id)bag;
+- (bool)canLoadCard:(id)arg1;
+- (bool)canLoadImage:(id)arg1 context:(id)arg2;
+- (bool)canLoadMoreResults:(id)arg1;
+- (void)cardViewDidAppear:(id)arg1;
+- (void)cardViewDidDisappear:(id)arg1;
+- (void)clearEngagedResults:(id)arg1 completion:(id /* block */)arg2;
+- (void)clearEngagementsFrom:(id)arg1 to:(id)arg2;
+- (void)clearEngagementsWithTitle:(id)arg1 type:(id)arg2;
+- (id)client;
+- (id)configuration;
+- (id)connection;
+- (void)dealloc;
+- (id)delegate;
+- (void)didAppendLateSections:(id)arg1;
+- (void)didClearInput:(id)arg1;
+- (void)didEndSearch:(id)arg1;
+- (void)didEngageCardSection:(id)arg1;
+- (void)didEngageResult:(id)arg1;
+- (void)didEngageSection:(id)arg1;
+- (void)didEngageSuggestion:(id)arg1;
+- (void)didErrorOccur:(id)arg1;
+- (void)didGoToSearch:(id)arg1;
+- (void)didGoToSite:(id)arg1;
+- (void)didGradeLookupHintRelevancy:(id)arg1;
+- (void)didGradeResultRelevancy:(id)arg1;
+- (void)didPerformCommand:(id)arg1;
+- (void)didRankSections:(id)arg1;
+- (void)didReceiveResultsAfterTimeout:(id)arg1;
+- (void)didReportUserResponseFeedback:(id)arg1;
+- (void)didSkipSearch:(int)arg1 input:(id)arg2 queryId:(unsigned long long)arg3;
+- (void)didStartSearch:(id)arg1;
+- (void)didSubmitUserReportFeedback:(id)arg1;
+- (unsigned long long)enabledStatus;
+- (void)fileHandleAndAttributesForResource:(id)arg1 completion:(id /* block */)arg2;
+- (id)init;
+- (id)initWithSession:(id)arg1 configuration:(id)arg2 connection:(id)arg3 delegate:(id)arg4;
+- (void)loadCard:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadImage:(void *)arg1 context:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 45: id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, unsigned short, /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*, unsigned int, /* Warning: Unrecognized filer type: 'm' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'g' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, unsigned short, /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*, unsigned int, /* Warning: Unrecognized filer type: 'm' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'g' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, unsigned char, out in /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'x' using 'void*' */ void*, /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, unsigned short, /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*, unsigned int, /* Warning: Unrecognized filer type: 'm' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'g' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, inout unsigned short, /* Warning: Unrecognized filer type: 'E' using 'void*' */ void*, const const out const /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, /* Warning: Unrecognized filer type: '>' using 'void*' */ void*
+- (void)loadMoreResults:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadWithTask:(id)arg1;
+- (void)reportFeedback:(id)arg1 queryId:(long long)arg2;
+- (void)resultsDidBecomeVisible:(id)arg1;
+- (void)searchViewDidAppear:(id)arg1;
+- (void)searchViewDidDisappear:(id)arg1;
+- (void)sectionHeaderDidBecomeVisible:(id)arg1;
+- (void)send:(id)arg1 completion:(id /* block */)arg2;
+- (void)sendCBAEngagementFeedback:(id)arg1 query:(unsigned long long)arg2;
+- (void)sendCustomFeedback:(id)arg1;
+- (void)setBag:(id)arg1;
+- (void)setConfiguration:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)start;
+- (void)subscribeToChannel:(id)arg1 reply:(id /* block */)arg2;
+- (void)subscriptionStatusForChannel:(id)arg1 reply:(id /* block */)arg2;
+- (void)suggestionsDidBecomeVisible:(id)arg1;
+- (id)taskWith:(id)arg1 completion:(id /* block */)arg2;
+- (void)topEngagedResultsFor:(id)arg1 maxCount:(long long)arg2 completion:(id /* block */)arg3;
+- (void)unsubscribeFromChannel:(id)arg1 reply:(id /* block */)arg2;
+- (void)updateParametersForSmartSearchV1:(id)arg1 smartSearchV2:(id)arg2;
+
+@end

@@ -1,0 +1,7 @@
+
+@interface SiriSettingsIntents.SetWifiNetworkHandler : _TtCs12_SwiftObject {
+    void enableTelemetryForSignpost;
+    void nativeApiClient;
+}
+
+@end

@@ -1,0 +1,94 @@
+
+@interface PPLocationQuery : NSObject <NSCopying, NSSecureCoding> {
+    unsigned long long  _consumer;
+    double  _decayRate;
+    unsigned long long  _deviceFilter;
+    NSSet * _excludingAlgorithms;
+    NSSet * _excludingSourceBundleIds;
+    bool  _excludingWithoutSentiment;
+    bool  _filterByRelevanceDate;
+    NSDate * _fromDate;
+    NSString * _fuzzyMatchingString;
+    unsigned long long  _limit;
+    NSSet * _matchingAlgorithms;
+    NSSet * _matchingCategories;
+    NSString * _matchingContactHandle;
+    NSSet * _matchingSourceBundleIds;
+    bool  _orderByAscendingDate;
+    double  _perRecordDecayRate;
+    NSDate * _scoringDate;
+    NSDate * _toDate;
+}
+
+@property (nonatomic) unsigned long long consumer;
+@property (nonatomic) double decayRate;
+@property (nonatomic) unsigned long long deviceFilter;
+@property (nonatomic, retain) NSSet *excludingAlgorithms;
+@property (nonatomic, retain) NSSet *excludingSourceBundleIds;
+@property (nonatomic) bool excludingWithoutSentiment;
+@property (nonatomic) bool filterByRelevanceDate;
+@property (nonatomic, retain) NSDate *fromDate;
+@property (nonatomic, retain) NSString *fuzzyMatchingString;
+@property (nonatomic) unsigned long long limit;
+@property (nonatomic, retain) NSSet *matchingAlgorithms;
+@property (nonatomic, retain) NSSet *matchingCategories;
+@property (nonatomic, retain) NSString *matchingContactHandle;
+@property (nonatomic, retain) NSSet *matchingSourceBundleIds;
+@property (nonatomic) bool orderByAscendingDate;
+@property (nonatomic) double perRecordDecayRate;
+@property (nonatomic, retain) NSDate *scoringDate;
+@property (nonatomic, retain) NSDate *toDate;
+
++ (id)_algorithmsDescription:(id)arg1;
++ (id)_matchingCategoriesDescription:(id)arg1;
++ (id)queryForMapsWithLimit:(unsigned long long)arg1 fromDate:(id)arg2 consumerType:(unsigned long long)arg3;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (unsigned long long)consumer;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)customizedDescription;
+- (double)decayRate;
+- (id)description;
+- (unsigned long long)deviceFilter;
+- (void)encodeWithCoder:(id)arg1;
+- (id)excludingAlgorithms;
+- (id)excludingSourceBundleIds;
+- (bool)excludingWithoutSentiment;
+- (bool)filterByRelevanceDate;
+- (id)fromDate;
+- (id)fuzzyMatchingString;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLocationQuery:(id)arg1;
+- (unsigned long long)limit;
+- (id)matchingAlgorithms;
+- (id)matchingCategories;
+- (id)matchingContactHandle;
+- (id)matchingSourceBundleIds;
+- (bool)orderByAscendingDate;
+- (double)perRecordDecayRate;
+- (id)scoringDate;
+- (void)setConsumer:(unsigned long long)arg1;
+- (void)setDecayRate:(double)arg1;
+- (void)setDeviceFilter:(unsigned long long)arg1;
+- (void)setExcludingAlgorithms:(id)arg1;
+- (void)setExcludingSourceBundleIds:(id)arg1;
+- (void)setExcludingWithoutSentiment:(bool)arg1;
+- (void)setFilterByRelevanceDate:(bool)arg1;
+- (void)setFromDate:(id)arg1;
+- (void)setFuzzyMatchingString:(id)arg1;
+- (void)setLimit:(unsigned long long)arg1;
+- (void)setMatchingAlgorithms:(id)arg1;
+- (void)setMatchingCategories:(id)arg1;
+- (void)setMatchingContactHandle:(id)arg1;
+- (void)setMatchingSourceBundleIds:(id)arg1;
+- (void)setOrderByAscendingDate:(bool)arg1;
+- (void)setPerRecordDecayRate:(double)arg1;
+- (void)setScoringDate:(id)arg1;
+- (void)setToDate:(id)arg1;
+- (id)toDate;
+
+@end

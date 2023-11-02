@@ -1,0 +1,4 @@
+
+@protocol WLKCoding <NSSecureCoding>
+
+@end

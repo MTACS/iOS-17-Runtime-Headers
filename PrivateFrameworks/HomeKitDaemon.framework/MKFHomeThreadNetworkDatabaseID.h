@@ -1,0 +1,4 @@
+
+@interface MKFHomeThreadNetworkDatabaseID : MKFModelDatabaseID
+
+@end

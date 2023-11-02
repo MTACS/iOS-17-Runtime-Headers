@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmDoubleNinthFestival : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

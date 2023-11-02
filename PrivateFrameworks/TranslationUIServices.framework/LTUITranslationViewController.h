@@ -1,0 +1,98 @@
+
+@interface LTUITranslationViewController : UIViewController <LTUIViewServiceExtensionHostProtocol, _UIRemoteViewControllerContaining> {
+    bool  _consentDisplayOnly;
+    id /* block */  _dismissCompletionHandler;
+    NSArray * _ignoredAttributes;
+    bool  _isSourceEditable;
+    id  _matchingToken;
+    LTUIRemoteViewController * _remoteViewController;
+    id /* block */  _replacementHandler;
+    NSUUID * _requestID;
+    NSLocale * _sourceLocale;
+    LTUISourceMeta * _sourceMeta;
+    NSLocale * _targetLocale;
+    NSAttributedString * _text;
+    bool  _userConsentConfirmed;
+    unsigned long long  cplID;
+    unsigned long long  extensionQueryID;
+}
+
+@property (nonatomic, readonly) _UIRemoteViewController *_containedRemoteViewController;
+@property (nonatomic) bool consentDisplayOnly;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ dismissCompletionHandler;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *ignoredAttributes;
+@property (nonatomic) bool isSourceEditable;
+@property (nonatomic, retain) id matchingToken;
+@property (nonatomic, retain) LTUIRemoteViewController *remoteViewController;
+@property (nonatomic, copy) id /* block */ replacementHandler;
+@property (nonatomic, retain) NSUUID *requestID;
+@property (nonatomic, copy) NSLocale *sourceLocale;
+@property (nonatomic, retain) LTUISourceMeta *sourceMeta;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSLocale *targetLocale;
+@property (nonatomic, copy) NSAttributedString *text;
+@property (nonatomic) bool userConsentConfirmed;
+
++ (void)initialize;
++ (bool)isAvailable;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (id)_containedRemoteViewController;
+- (void)_insertBackground;
+- (void)_presentError:(id)arg1;
+- (void)_presentationController:(id)arg1 prepareAdaptivePresentationController:(id)arg2;
+- (void)_presentationControllerDidDismiss:(id)arg1;
+- (void)_refreshExtensionList;
+- (void)_removeBackground;
+- (void)_setChildController:(id)arg1;
+- (id)_sheetPresentationController;
+- (id)_userInfo;
+- (void)confirmUserConsent;
+- (bool)consentDisplayOnly;
+- (void)didMoveToParentViewController:(id)arg1;
+- (void)didReceiveMemoryWarning;
+- (void)dismiss;
+- (id /* block */)dismissCompletionHandler;
+- (void)expandSheet;
+- (void)finishWithError:(id)arg1;
+- (void)finishWithTranslation:(id)arg1;
+- (id)ignoredAttributes;
+- (id)init;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)invalidate;
+- (bool)isSourceEditable;
+- (id)matchingToken;
+- (void)receiveExtensions:(id)arg1;
+- (void)remoteIsReady;
+- (id)remoteViewController;
+- (id /* block */)replacementHandler;
+- (id)requestID;
+- (void)setConsentDisplayOnly:(bool)arg1;
+- (void)setDismissCompletionHandler:(id /* block */)arg1;
+- (void)setIgnoredAttributes:(id)arg1;
+- (void)setIsSourceEditable:(bool)arg1;
+- (void)setMatchingToken:(id)arg1;
+- (void)setRemoteViewController:(id)arg1;
+- (void)setReplacementHandler:(id /* block */)arg1;
+- (void)setRequestID:(id)arg1;
+- (void)setSourceLocale:(id)arg1;
+- (void)setSourceMeta:(id)arg1;
+- (void)setTargetLocale:(id)arg1;
+- (void)setText:(id)arg1;
+- (void)setUserConsentConfirmed:(bool)arg1;
+- (id)sourceLocale;
+- (id)sourceMeta;
+- (id)targetLocale;
+- (id)text;
+- (bool)userConsentConfirmed;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
+
+@end

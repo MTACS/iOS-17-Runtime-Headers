@@ -1,0 +1,4 @@
+
+@interface SBHomeScreenOverlaySecureWindow : SBFSecureWindow
+
+@end

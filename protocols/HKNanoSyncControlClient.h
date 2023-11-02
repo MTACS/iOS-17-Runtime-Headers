@@ -1,0 +1,4 @@
+
+@protocol HKNanoSyncControlClient <NSObject>
+
+@end

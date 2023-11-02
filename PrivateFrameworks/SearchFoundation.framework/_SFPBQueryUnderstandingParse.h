@@ -1,0 +1,85 @@
+
+@interface _SFPBQueryUnderstandingParse : PBCodable <NSSecureCoding, _SFPBQueryUnderstandingParse> {
+    bool  _hasActionTokens;
+    bool  _hasCaptureDeviceTokens;
+    bool  _hasEventTokens;
+    bool  _hasFavoritedTokens;
+    bool  _hasGenericLocationTokens;
+    bool  _hasLocationTokens;
+    bool  _hasMediaTypeTokens;
+    bool  _hasNounTokens;
+    bool  _hasPersonSenderTokens;
+    bool  _hasPersonTokens;
+    bool  _hasSortCriteriaTokens;
+    bool  _hasSourceAppTokens;
+    bool  _hasTimeTokens;
+    bool  _hasUnspecifiedTokens;
+    bool  _hasVisualQualityTokens;
+    int  _queryIntentType;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasActionTokens;
+@property (nonatomic) bool hasCaptureDeviceTokens;
+@property (nonatomic) bool hasEventTokens;
+@property (nonatomic) bool hasFavoritedTokens;
+@property (nonatomic) bool hasGenericLocationTokens;
+@property (nonatomic) bool hasLocationTokens;
+@property (nonatomic) bool hasMediaTypeTokens;
+@property (nonatomic) bool hasNounTokens;
+@property (nonatomic) bool hasPersonSenderTokens;
+@property (nonatomic) bool hasPersonTokens;
+@property (nonatomic) bool hasSortCriteriaTokens;
+@property (nonatomic) bool hasSourceAppTokens;
+@property (nonatomic) bool hasTimeTokens;
+@property (nonatomic) bool hasUnspecifiedTokens;
+@property (nonatomic) bool hasVisualQualityTokens;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) int queryIntentType;
+@property (readonly) Class superclass;
+
+- (id)dictionaryRepresentation;
+- (bool)hasActionTokens;
+- (bool)hasCaptureDeviceTokens;
+- (bool)hasEventTokens;
+- (bool)hasFavoritedTokens;
+- (bool)hasGenericLocationTokens;
+- (bool)hasLocationTokens;
+- (bool)hasMediaTypeTokens;
+- (bool)hasNounTokens;
+- (bool)hasPersonSenderTokens;
+- (bool)hasPersonTokens;
+- (bool)hasSortCriteriaTokens;
+- (bool)hasSourceAppTokens;
+- (bool)hasTimeTokens;
+- (bool)hasUnspecifiedTokens;
+- (bool)hasVisualQualityTokens;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (int)queryIntentType;
+- (bool)readFrom:(id)arg1;
+- (void)setHasActionTokens:(bool)arg1;
+- (void)setHasCaptureDeviceTokens:(bool)arg1;
+- (void)setHasEventTokens:(bool)arg1;
+- (void)setHasFavoritedTokens:(bool)arg1;
+- (void)setHasGenericLocationTokens:(bool)arg1;
+- (void)setHasLocationTokens:(bool)arg1;
+- (void)setHasMediaTypeTokens:(bool)arg1;
+- (void)setHasNounTokens:(bool)arg1;
+- (void)setHasPersonSenderTokens:(bool)arg1;
+- (void)setHasPersonTokens:(bool)arg1;
+- (void)setHasSortCriteriaTokens:(bool)arg1;
+- (void)setHasSourceAppTokens:(bool)arg1;
+- (void)setHasTimeTokens:(bool)arg1;
+- (void)setHasUnspecifiedTokens:(bool)arg1;
+- (void)setHasVisualQualityTokens:(bool)arg1;
+- (void)setQueryIntentType:(int)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CNCallProvidersChangedCancelationToken : CNCancelationToken
+
+@end

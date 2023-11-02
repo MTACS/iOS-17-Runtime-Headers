@@ -1,0 +1,4 @@
+
+@interface _TtC8RoomPlanP33_D4719066E807CA2EE52BAB75B115461719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

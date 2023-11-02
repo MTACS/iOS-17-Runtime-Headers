@@ -1,0 +1,4 @@
+
+@interface WFMessageRecipientsSubstitutableState : WFContactHandleSubstitutableState
+
+@end

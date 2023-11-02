@@ -1,0 +1,95 @@
+
+@interface SPUIUnifiedFieldViewController : UIViewController <SPUIUnifiedFieldNavigationDelegate> {
+    UIButton * _backButton;
+    <SPUIUnifiedFieldViewControllerDelegate> * _delegate;
+    UIView * _fakeOriginalLeftView;
+    SPUITextField * _fakeTextField;
+    bool  _handlingKeyboardFrameChange;
+    SPUIDynamicKeyboardVisualEffectView * _keyboardVisualEffectView;
+    NSLayoutConstraint * _leadingConstraint;
+    UIView * _originalLeftView;
+    SPUISearchHeader * _searchHeader;
+    SPUINavigationController * _searchNavigationController;
+    CALayer * _searchProtectorLayer;
+    SPUINavigationSwipeRecognizerDelegate * _swipeRecognizer;
+    SBFFeatherBlurView * _topBlur;
+    NSLayoutConstraint * _trailingConstraint;
+    bool  _tryToLayoutForBadFrame;
+}
+
+@property (retain) UIButton *backButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SPUIUnifiedFieldViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) struct CGSize { double x1; double x2; } dockedUnifiedFieldSize;
+@property (retain) UIView *fakeOriginalLeftView;
+@property (retain) SPUITextField *fakeTextField;
+@property bool handlingKeyboardFrameChange;
+@property (readonly) unsigned long long hash;
+@property (readonly) double keyboardProtectorHeight;
+@property (retain) SPUIDynamicKeyboardVisualEffectView *keyboardVisualEffectView;
+@property (retain) NSLayoutConstraint *leadingConstraint;
+@property (retain) UIView *originalLeftView;
+@property (readonly) SPUISearchHeader *searchHeader;
+@property (readonly) SPUINavigationController *searchNavigationController;
+@property (readonly) CALayer *searchProtectorLayer;
+@property (readonly) Class superclass;
+@property (retain) SPUINavigationSwipeRecognizerDelegate *swipeRecognizer;
+@property (retain) SBFFeatherBlurView *topBlur;
+@property (retain) NSLayoutConstraint *trailingConstraint;
+@property bool tryToLayoutForBadFrame;
+@property (readonly) double unifiedFieldCornerRadius;
+@property (getter=isUnifiedFieldDocked, readonly) bool unifiedFieldDocked;
+@property (readonly) struct CGSize { double x1; double x2; } unifiedFieldSize;
+
++ (double)insetMarginsForSearchField;
++ (id)viewIsCanvasForField:(id)arg1;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (id)backButton;
+- (void)dealloc;
+- (id)delegate;
+- (void)dismissSingleLevelViewController;
+- (void)doALayoutPass;
+- (struct CGSize { double x1; double x2; })dockedUnifiedFieldSize;
+- (id)fakeOriginalLeftView;
+- (id)fakeTextField;
+- (id)generateBackButton;
+- (bool)handlingKeyboardFrameChange;
+- (id)initWithNavigationController:(id)arg1;
+- (bool)isUnifiedFieldDocked;
+- (void)keyboardFrameChanged:(id)arg1;
+- (double)keyboardProtectorHeight;
+- (id)keyboardVisualEffectView;
+- (void)keyboardWillHide:(id)arg1;
+- (void)keyboardWillShow:(id)arg1;
+- (id)leadingConstraint;
+- (id)originalLeftView;
+- (long long)preferredUserInterfaceStyle;
+- (void)processStateForeground;
+- (void)resetSearchFieldContentWithSearchToken:(id)arg1 text:(id)arg2 wantsBackButton:(bool)arg3 transitionCoordinator:(id)arg4;
+- (id)searchHeader;
+- (id)searchNavigationController;
+- (id)searchProtectorLayer;
+- (void)setBackButton:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFakeOriginalLeftView:(id)arg1;
+- (void)setFakeTextField:(id)arg1;
+- (void)setHandlingKeyboardFrameChange:(bool)arg1;
+- (void)setKeyboardVisualEffectView:(id)arg1;
+- (void)setLeadingConstraint:(id)arg1;
+- (void)setOriginalLeftView:(id)arg1;
+- (void)setSwipeRecognizer:(id)arg1;
+- (void)setTopBlur:(id)arg1;
+- (void)setTrailingConstraint:(id)arg1;
+- (void)setTryToLayoutForBadFrame:(bool)arg1;
+- (id)swipeRecognizer;
+- (id)topBlur;
+- (id)trailingConstraint;
+- (bool)tryToLayoutForBadFrame;
+- (double)unifiedFieldCornerRadius;
+- (struct CGSize { double x1; double x2; })unifiedFieldSize;
+- (void)viewDidLayoutSubviews;
+
+@end

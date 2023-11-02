@@ -1,0 +1,4 @@
+
+@protocol MTSXPCServerInterface <MTSDevicePairingServerInterface, MTSDeviceSetupServerInterface, MTSSystemCommissionerPairingServerInterface, MTSAuthorizationServerInterface>
+
+@end

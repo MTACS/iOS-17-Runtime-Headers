@@ -1,0 +1,4 @@
+
+@protocol MNNavigationStateInterface <MNNavigationServiceProxy>
+
+@end

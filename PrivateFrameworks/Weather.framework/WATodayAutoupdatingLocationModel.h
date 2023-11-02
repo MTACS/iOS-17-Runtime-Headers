@@ -1,0 +1,83 @@
+
+@interface WATodayAutoupdatingLocationModel : WATodayModel <CLLocationManagerDelegate, SynchronizedDefaultsDelegate> {
+    id /* block */  _WeatherLocationManagerGenerator;
+    unsigned long long  _citySource;
+    unsigned long long  _fallbackCitySource;
+    WFGeocodeRequest * _geocodeRequest;
+    bool  _isLocationTrackingEnabled;
+    NSDate * _lastLocationUpdateDate;
+    WeatherLocationManager * _locationManager;
+    bool  _locationServicesActive;
+    double  _minDistanceChangeInMeters;
+    double  _minTimeBetweenUpdates;
+    WeatherPreferences * _preferences;
+    bool  _stopUpdateIfNeeded;
+}
+
+@property (nonatomic, copy) id /* block */ WeatherLocationManagerGenerator;
+@property (nonatomic) unsigned long long citySource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned long long fallbackCitySource;
+@property (nonatomic, retain) WFGeocodeRequest *geocodeRequest;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isLocationTrackingEnabled;
+@property (nonatomic, retain) NSDate *lastLocationUpdateDate;
+@property (nonatomic, retain) WeatherLocationManager *locationManager;
+@property (nonatomic) bool locationServicesActive;
+@property (nonatomic, readonly) double minDistanceChangeInMeters;
+@property (nonatomic, readonly) double minTimeBetweenUpdates;
+@property (nonatomic, retain) WeatherPreferences *preferences;
+@property (nonatomic) bool stopUpdateIfNeeded;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id /* block */)WeatherLocationManagerGenerator;
+- (void)_executeLocationUpdateForFirstWeatherCityWithCompletion:(id /* block */)arg1;
+- (void)_executeLocationUpdateForLocalWeatherCityWithCompletion:(id /* block */)arg1;
+- (void)_executeLocationUpdateWithCompletion:(id /* block */)arg1;
+- (void)_kickstartLocationManager;
+- (void)_persistStateWithModel:(id)arg1;
+- (bool)_reloadForecastData:(bool)arg1;
+- (void)_teardownLocationManager;
+- (void)_willDeliverForecastModel:(id)arg1;
+- (void)checkIfNeedsToUpdate;
+- (unsigned long long)citySource;
+- (void)clearLocationUpdateState;
+- (void)configureWithInitialCitySource:(unsigned long long)arg1 locationServicesActive:(bool)arg2;
+- (void)configureWithLocationServicesActive:(bool)arg1;
+- (void)dealloc;
+- (unsigned long long)fallbackCitySource;
+- (id)forecastModel;
+- (id)geocodeRequest;
+- (id)init;
+- (id)initWithPreferences:(id)arg1 effectiveBundleIdentifier:(id)arg2;
+- (bool)isLocationTrackingEnabled;
+- (id)lastLocationUpdateDate;
+- (id)locationManager;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (bool)locationServicesActive;
+- (double)minDistanceChangeInMeters;
+- (double)minTimeBetweenUpdates;
+- (id)preferences;
+- (void)setCitySource:(unsigned long long)arg1;
+- (void)setCitySource:(unsigned long long)arg1 fireNotification:(bool)arg2;
+- (void)setFallbackCitySource:(unsigned long long)arg1;
+- (void)setGeocodeRequest:(id)arg1;
+- (void)setIsLocationTrackingEnabled:(bool)arg1;
+- (void)setLastLocationUpdateDate:(id)arg1;
+- (void)setLocationManager:(id)arg1;
+- (void)setLocationServicesActive:(bool)arg1;
+- (void)setPreferences:(id)arg1;
+- (void)setStopUpdateIfNeeded:(bool)arg1;
+- (void)setWeatherLocationManagerGenerator:(id /* block */)arg1;
+- (bool)shouldNotUseUpdatedLocation;
+- (bool)shouldUseNewLocation:(id)arg1 oldLocation:(id)arg2;
+- (bool)stopUpdateIfNeeded;
+- (void)syncLastUpdateTime;
+- (void)ubiquitousDefaultsDidChange:(id)arg1;
+- (bool)updateLocationTrackingStatus;
+- (void)weatherPreferencesWereSynchronized;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.BackToComfortableTemperatureResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

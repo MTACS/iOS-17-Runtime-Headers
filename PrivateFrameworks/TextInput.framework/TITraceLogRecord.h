@@ -1,0 +1,81 @@
+
+@interface TITraceLogRecord : NSObject {
+    NSArray * _context;
+    NSArray * _finalAutocorrectionCandidates;
+    NSArray * _finalCompletionCandidates;
+    NSArray * _finalPredictionCandidates;
+    NSString * _logText;
+    unsigned long long  _logVersion;
+    NSMutableArray * _parsedSections;
+    unsigned long long  _parsingStatus;
+    NSArray * _rawAutocorrectionCandidates;
+    NSArray * _rawCompletionCandidates;
+    NSArray * _rawPredictionCandidates;
+    NSString * _recordType;
+    NSUUID * _recordUUID;
+    NSArray * _removedAutocorrectionCandidates;
+    NSArray * _removedCompletionCandidates;
+    NSArray * _removedPredictionCandidates;
+    NSString * _typedString;
+}
+
+@property (nonatomic, retain) NSArray *context;
+@property (nonatomic, retain) NSArray *finalAutocorrectionCandidates;
+@property (nonatomic, retain) NSArray *finalCompletionCandidates;
+@property (nonatomic, retain) NSArray *finalPredictionCandidates;
+@property (nonatomic, retain) NSString *logText;
+@property (nonatomic, readonly, retain) NSString *logTextWithHeader;
+@property (nonatomic) unsigned long long logVersion;
+@property (nonatomic, readonly, retain) NSArray *parsedSections;
+@property (nonatomic) unsigned long long parsingStatus;
+@property (nonatomic, retain) NSArray *rawAutocorrectionCandidates;
+@property (nonatomic, retain) NSArray *rawCompletionCandidates;
+@property (nonatomic, retain) NSArray *rawPredictionCandidates;
+@property (nonatomic, retain) NSString *recordType;
+@property (nonatomic, retain) NSUUID *recordUUID;
+@property (nonatomic, retain) NSArray *removedAutocorrectionCandidates;
+@property (nonatomic, retain) NSArray *removedCompletionCandidates;
+@property (nonatomic, retain) NSArray *removedPredictionCandidates;
+@property (nonatomic, retain) NSString *typedString;
+
+- (void).cxx_destruct;
+- (void)addParsedSection:(id)arg1;
+- (id)context;
+- (id)finalAutocorrectionCandidates;
+- (id)finalCompletionCandidates;
+- (id)finalPredictionCandidates;
+- (id)initWithRecordUUID:(id)arg1 context:(id)arg2 logText:(id)arg3 logVersion:(unsigned long long)arg4;
+- (id)initWithRecordUUID:(id)arg1 logText:(id)arg2 logVersion:(unsigned long long)arg3;
+- (id)logText;
+- (id)logTextWithHeader;
+- (unsigned long long)logVersion;
+- (unsigned long long)parse;
+- (id)parsedSections;
+- (unsigned long long)parsingStatus;
+- (id)rawAutocorrectionCandidates;
+- (id)rawCompletionCandidates;
+- (id)rawPredictionCandidates;
+- (id)recordType;
+- (id)recordUUID;
+- (id)removedAutocorrectionCandidates;
+- (id)removedCompletionCandidates;
+- (id)removedPredictionCandidates;
+- (void)setContext:(id)arg1;
+- (void)setFinalAutocorrectionCandidates:(id)arg1;
+- (void)setFinalCompletionCandidates:(id)arg1;
+- (void)setFinalPredictionCandidates:(id)arg1;
+- (void)setLogText:(id)arg1;
+- (void)setLogVersion:(unsigned long long)arg1;
+- (void)setParsingStatus:(unsigned long long)arg1;
+- (void)setRawAutocorrectionCandidates:(id)arg1;
+- (void)setRawCompletionCandidates:(id)arg1;
+- (void)setRawPredictionCandidates:(id)arg1;
+- (void)setRecordType:(id)arg1;
+- (void)setRecordUUID:(id)arg1;
+- (void)setRemovedAutocorrectionCandidates:(id)arg1;
+- (void)setRemovedCompletionCandidates:(id)arg1;
+- (void)setRemovedPredictionCandidates:(id)arg1;
+- (void)setTypedString:(id)arg1;
+- (id)typedString;
+
+@end

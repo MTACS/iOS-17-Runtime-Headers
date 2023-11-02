@@ -1,0 +1,88 @@
+
+@interface FBKOSLogViewerDataSource : NSObject <OSLogPersistenceDelegate> {
+    unsigned long long  _eventCountForCurrentPage;
+    id /* block */  _fetchErrorBlock;
+    long long  _fetchWatchdog;
+    bool  _foundCorruptDate;
+    bool  _gotDelegateCallbackInLastFetch;
+    NSURL * _logArchivePath;
+    OSLogPersistence * _loggerLib;
+    unsigned long long  _numberOfEmptyFetches;
+    unsigned long long  _numberOfEventsInLastFetch;
+    unsigned long long  _oldestEventMachTime;
+    NSDate * _oldestEventTimestamp;
+    id /* block */  _pageFetchCompletion;
+    long long  _pageSize;
+    long long  _pendingNextPageRequest;
+    NSMutableArray * _savedEvents;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property unsigned long long eventCountForCurrentPage;
+@property (copy) id /* block */ fetchErrorBlock;
+@property long long fetchWatchdog;
+@property bool foundCorruptDate;
+@property bool gotDelegateCallbackInLastFetch;
+@property (readonly) unsigned long long hash;
+@property (retain) NSURL *logArchivePath;
+@property (retain) OSLogPersistence *loggerLib;
+@property unsigned long long numberOfEmptyFetches;
+@property unsigned long long numberOfEventsInLastFetch;
+@property unsigned long long oldestEventMachTime;
+@property (retain) NSDate *oldestEventTimestamp;
+@property (copy) id /* block */ pageFetchCompletion;
+@property long long pageSize;
+@property long long pendingNextPageRequest;
+@property (retain) NSMutableArray *savedEvents;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (unsigned long long)eventCountForCurrentPage;
+- (id /* block */)fetchErrorBlock;
+- (void)fetchNextBatch;
+- (long long)fetchWatchdog;
+- (bool)foundCorruptDate;
+- (bool)gotDelegateCallbackInLastFetch;
+- (bool)hasMoreLogs;
+- (id)initWithArchive:(id)arg1 pageSize:(long long)arg2 pageCompletion:(id /* block */)arg3 error:(id /* block */)arg4;
+- (bool)isCurrentPageComplete;
+- (bool)lastFetchReturnedZeroEvents;
+- (id)logArchivePath;
+- (id)logAtIndex:(long long)arg1;
+- (id)loggerLib;
+- (id)loggerLibWithArchive:(id)arg1 pageSize:(unsigned long long)arg2;
+- (void)nextPage;
+- (void)nextPageForReal;
+- (unsigned long long)numberOfEmptyFetches;
+- (unsigned long long)numberOfEventsInLastFetch;
+- (long long)numberOfLogs;
+- (unsigned long long)oldestEventMachTime;
+- (id)oldestEventTimestamp;
+- (id /* block */)pageFetchCompletion;
+- (long long)pageSize;
+- (long long)pendingNextPageRequest;
+- (bool)persistence:(id)arg1 results:(id)arg2 error:(id)arg3;
+- (void)persistenceDidFinishReadingForStartDate:(id)arg1 endDate:(id)arg2;
+- (void)prepareForNextDateRangeFetch;
+- (void)prepareForNextPage;
+- (id)savedEvents;
+- (void)setEventCountForCurrentPage:(unsigned long long)arg1;
+- (void)setFetchErrorBlock:(id /* block */)arg1;
+- (void)setFetchWatchdog:(long long)arg1;
+- (void)setFoundCorruptDate:(bool)arg1;
+- (void)setGotDelegateCallbackInLastFetch:(bool)arg1;
+- (void)setLogArchivePath:(id)arg1;
+- (void)setLoggerLib:(id)arg1;
+- (void)setNumberOfEmptyFetches:(unsigned long long)arg1;
+- (void)setNumberOfEventsInLastFetch:(unsigned long long)arg1;
+- (void)setOldestEventMachTime:(unsigned long long)arg1;
+- (void)setOldestEventTimestamp:(id)arg1;
+- (void)setPageFetchCompletion:(id /* block */)arg1;
+- (void)setPageSize:(long long)arg1;
+- (void)setPendingNextPageRequest:(long long)arg1;
+- (void)setSavedEvents:(id)arg1;
+- (bool)shouldContinue;
+
+@end

@@ -1,0 +1,94 @@
+
+@interface EKEventEditViewControllerDefaultImpl : UIViewController <EKCalendarItemEditorDelegate, EKEventEditViewControllerImpl> {
+    bool  _completedWithAction;
+    <EKEventEditViewDelegate> * _editViewDelegate;
+    EKEventEditor * _editor;
+    EKEvent * _event;
+    NSString * _eventId;
+    EKEventStore * _store;
+    EKEventEditViewControllerDefaultImpl * _strongSelf;
+    NSString * _suggestionKey;
+    bool  ignoreUnsavedChanges;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <EKEventEditViewDelegate> *editViewDelegate;
+@property (nonatomic, retain) EKEventEditor *editor;
+@property (nonatomic, retain) UIColor *editorBackgroundColor;
+@property (nonatomic, retain) EKEvent *event;
+@property (nonatomic, retain) NSString *eventCreationMethod;
+@property (nonatomic, retain) EKEventStore *eventStore;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool ignoreUnsavedChanges;
+@property (nonatomic, readonly) id precommitSerializedEvent;
+@property (nonatomic) bool shouldRecordPrecommitEvent;
+@property (nonatomic, retain) EKEventEditViewControllerDefaultImpl *strongSelf;
+@property (nonatomic, retain) NSString *suggestionKey;
+@property (readonly) Class superclass;
+@property (nonatomic) bool timeImplicitlySet;
+
++ (void)setDefaultDatesForEvent:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_confirmDismissAlertExplanationText;
+- (id)_ekEventEditViewController;
+- (id)_eventEditorForTestingOnly;
+- (id)_leftBarButtonItem;
+- (id)_rightBarButtonItem;
+- (void)_storeChanged:(id)arg1;
+- (id)alertIconImage;
+- (void)attemptDisplayReviewPrompt;
+- (void)cancelEditing;
+- (void)cancelEditingWithDelegateNotification:(bool)arg1 forceCancel:(bool)arg2;
+- (void)completeAndSave;
+- (void)completeAndSaveWithContinueBlock:(id /* block */)arg1;
+- (id)confirmDismissAlertController;
+- (id)confirmPendingConferenceDismissAlertController;
+- (id)editViewDelegate;
+- (id)editor;
+- (void)editor:(id)arg1 didCompleteWithAction:(long long)arg2;
+- (void)editor:(id)arg1 prepareCalendarItemForEdit:(id)arg2;
+- (bool)editor:(id)arg1 shouldCompleteWithAction:(long long)arg2;
+- (id)editorBackgroundColor;
+- (id)editorForCalendarItemEditor:(id)arg1;
+- (id)event;
+- (id)eventCreationMethod;
+- (id)eventStore;
+- (void)focusAndSelectStartDate;
+- (void)focusAndSelectTitle;
+- (void)focusTitle;
+- (bool)hasUnsavedChanges;
+- (bool)ignoreUnsavedChanges;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (bool)isModalInPresentation;
+- (void)loadView;
+- (id)pasteboardManagerForCalendarItemEditor:(id)arg1;
+- (id)precommitSerializedEvent;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)presentationControllerDidAttemptToDismiss;
+- (void)presentationControllerDidAttemptToDismissWithPendingConference;
+- (void)refreshStartAndEndDates;
+- (void)setEditViewDelegate:(id)arg1;
+- (void)setEditor:(id)arg1;
+- (void)setEditorBackgroundColor:(id)arg1;
+- (void)setEvent:(id)arg1;
+- (void)setEventCreationMethod:(id)arg1;
+- (void)setEventStore:(id)arg1;
+- (void)setIgnoreUnsavedChanges:(bool)arg1;
+- (void)setShouldOverrideAuthorizationStatus:(bool)arg1 withRemoteUIStatus:(long long)arg2;
+- (void)setShouldRecordPrecommitEvent:(bool)arg1;
+- (void)setStrongSelf:(id)arg1;
+- (void)setSuggestionKey:(id)arg1;
+- (void)setTimeImplicitlySet:(bool)arg1;
+- (bool)shouldRecordPrecommitEvent;
+- (id)strongSelf;
+- (id)suggestionKey;
+- (unsigned long long)supportedInterfaceOrientations;
+- (bool)timeImplicitlySet;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (bool)willPresentDialogOnSave;
+
+@end

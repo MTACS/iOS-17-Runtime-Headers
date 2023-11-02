@@ -1,0 +1,4 @@
+
+@interface WKBokehImageArbiter : NSObject
+
+@end

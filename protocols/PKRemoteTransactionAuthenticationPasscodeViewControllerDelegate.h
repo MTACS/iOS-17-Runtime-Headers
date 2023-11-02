@@ -1,0 +1,4 @@
+
+@protocol PKRemoteTransactionAuthenticationPasscodeViewControllerDelegate <PKRemoteTransactionAuthenticationPasscodeViewControllerProtocol>
+
+@end

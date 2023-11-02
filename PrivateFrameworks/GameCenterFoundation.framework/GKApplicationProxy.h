@@ -1,0 +1,41 @@
+
+@interface GKApplicationProxy : NSObject {
+    LSApplicationProxy * _lsProxy;
+    NSDictionary * _metadata;
+}
+
+@property (nonatomic, readonly, retain) NSNumber *adamID;
+@property (nonatomic, readonly, retain) NSBundle *bundle;
+@property (nonatomic, readonly, retain) NSString *bundleID;
+@property (nonatomic, readonly, retain) NSString *bundleShortVersion;
+@property (nonatomic, readonly, retain) NSString *bundleVersion;
+@property (nonatomic, readonly, retain) NSNumber *externalVersion;
+@property (getter=isGameCenterEnabled, nonatomic, readonly) bool gameCenterEnabled;
+@property (getter=isInstalled, nonatomic, readonly) bool installed;
+@property (nonatomic, retain) LSApplicationProxy *lsProxy;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic, readonly, retain) NSDate *purchaseDate;
+@property (getter=isRestricted, nonatomic, readonly) bool restricted;
+
++ (id)metadataForBundleURL:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)adamID;
+- (id)bundle;
+- (id)bundleID;
+- (id)bundleShortVersion;
+- (id)bundleURL;
+- (id)bundleVersion;
+- (id)externalVersion;
+- (id)initWithBundleID:(id)arg1;
+- (id)initWithProxy:(id)arg1;
+- (bool)isGameCenterEnabled;
+- (bool)isInstalled;
+- (bool)isRestricted;
+- (id)lsProxy;
+- (id)metadata;
+- (id)purchaseDate;
+- (void)setLsProxy:(id)arg1;
+- (void)setMetadata:(id)arg1;
+
+@end

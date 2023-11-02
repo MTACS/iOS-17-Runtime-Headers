@@ -1,0 +1,86 @@
+
+@interface FCOperation : NSOperation <FCOperationCanceling, FCOperationIdentifying, FCOperationPrioritizing> {
+    NSMutableArray * _childOperations;
+    bool  _childOperationsCancelled;
+    NFUnfairLock * _childOperationsLock;
+    _Atomic bool  _executing;
+    _Atomic bool  _finished;
+    NSObject<OS_dispatch_group> * _finishedGroup;
+    bool  _isBackgroundDownloadOperation;
+    NSString * _operationID;
+    double  _operationStartTime;
+    NSString * _purpose;
+    long long  _relativePriority;
+    id  _retentionToken;
+    unsigned long long  _retryCount;
+    NSString * _shortOperationDescription;
+    FCOnce * _startOnce;
+    id /* block */  _timedOutTest;
+    double  _timeoutDuration;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSDictionary *errorUserInfo;
+@property (nonatomic, readonly) bool hasOperationStarted;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isBackgroundDownloadOperation;
+@property (nonatomic, readonly) NSString *longOperationDescription;
+@property (nonatomic, readonly, copy) NSString *operationID;
+@property (nonatomic) double operationStartTime;
+@property (nonatomic, readonly) FCOperation *proxyOperation;
+@property (nonatomic, copy) NSString *purpose;
+@property (nonatomic) long long relativePriority;
+@property (nonatomic) unsigned long long retryCount;
+@property (nonatomic, readonly) NSString *shortOperationDescription;
+@property (readonly) Class superclass;
+@property (nonatomic) double timeoutDuration;
+
+- (void).cxx_destruct;
+- (void)addCompletionHandler:(id /* block */)arg1;
+- (void)associateChildOperation:(id)arg1;
+- (void)associateChildOperations:(id)arg1;
+- (bool)canRetryWithError:(id)arg1 retryAfter:(id*)arg2;
+- (void)cancel;
+- (void)cancelChildOperations;
+- (void)dealloc;
+- (id)errorUserInfo;
+- (void)finishFromEarlyCancellation;
+- (void)finishedPerformingOperationWithError:(id)arg1;
+- (bool)hasOperationStarted;
+- (id)init;
+- (bool)isAsynchronous;
+- (bool)isBackgroundDownloadOperation;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (id)longOperationDescription;
+- (unsigned long long)maxRetries;
+- (void)operationDidFinishWithError:(id)arg1;
+- (id)operationID;
+- (double)operationStartTime;
+- (void)operationWillFinishWithError:(id)arg1;
+- (void)performOperation;
+- (void)prepareOperation;
+- (unsigned long long)propertiesInheritedByChildOperations;
+- (id)proxyOperation;
+- (id)purpose;
+- (long long)relativePriority;
+- (void)resetForRetry;
+- (unsigned long long)retryCount;
+- (void)setIsBackgroundDownloadOperation:(bool)arg1;
+- (void)setOperationStartTime:(double)arg1;
+- (void)setPurpose:(id)arg1;
+- (void)setQualityOfService:(long long)arg1;
+- (void)setRelativePriority:(long long)arg1;
+- (void)setRetryCount:(unsigned long long)arg1;
+- (void)setTimeoutDuration:(double)arg1;
+- (id)shortOperationDescription;
+- (bool)shouldStartThrottlingWithError:(id)arg1 retryAfter:(double*)arg2;
+- (void)start;
+- (void)startIfNeeded;
+- (id)throttleGroup;
+- (double)timeoutDuration;
+- (bool)validateOperation;
+- (bool)waitUntilFinishedWithTimeout:(double)arg1;
+
+@end

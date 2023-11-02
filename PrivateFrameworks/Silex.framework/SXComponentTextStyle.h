@@ -1,0 +1,53 @@
+
+@interface SXComponentTextStyle : SXTextStyle <SXComponentTextStyle>
+
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) SXDropCapStyle *dropCapStyle;
+@property (nonatomic, readonly) long long exactLineHeight;
+@property (nonatomic, readonly) long long firstLineIndent;
+@property (nonatomic, readonly) <SXTextStyleFontAttributes> *fontAttributes;
+@property (nonatomic, readonly) NSString *fontName;
+@property (nonatomic, readonly) bool fontScaling;
+@property (nonatomic, readonly) long long fontSize;
+@property (nonatomic, readonly) bool hangingPunctuation;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long hyphenation;
+@property (nonatomic, readonly) unsigned long long hyphenationMinimumCharactersAfter;
+@property (nonatomic, readonly) unsigned long long hyphenationMinimumCharactersBefore;
+@property (nonatomic, readonly) unsigned long long hyphenationMinimumWordLength;
+@property (nonatomic, readonly) double hyphenationZone;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) bool lineBalancing;
+@property (nonatomic, readonly) long long lineHeight;
+@property (nonatomic, readonly) SXTextStyle *linkStyle;
+@property (nonatomic, readonly) SXJSONArray *listStyle;
+@property (nonatomic, readonly) long long paragraphSpacingAfter;
+@property (nonatomic, readonly) long long paragraphSpacingBefore;
+@property (nonatomic, readonly) double relativeLineHeight;
+@property (nonatomic, readonly) SXTextDecoration *strikethrough;
+@property (nonatomic, readonly) SXTextStroke *stroke;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long textAlignment;
+@property (nonatomic, readonly) UIColor *textColor;
+@property (nonatomic, readonly) SXTextShadow *textShadow;
+@property (nonatomic, readonly) long long textTransform;
+@property (nonatomic, readonly) double tracking;
+@property (nonatomic, readonly) SXTextDecoration *underline;
+@property (nonatomic, readonly) int verticalAlignment;
+
++ (id /* block */)valueClassBlockForPropertyWithName:(id)arg1;
+
+- (long long)exactLineHeightWithValue:(id)arg1 withType:(int)arg2;
+- (bool)fontScalingWithValue:(id)arg1 withType:(int)arg2;
+- (long long)hyphenationMinimumCharactersAfterWithValue:(id)arg1 withType:(int)arg2;
+- (long long)hyphenationMinimumCharactersBeforeWithValue:(id)arg1 withType:(int)arg2;
+- (long long)hyphenationMinimumWordLengthWithValue:(id)arg1 withType:(int)arg2;
+- (long long)hyphenationWithValue:(id)arg1 withType:(int)arg2;
+- (double)hyphenationZoneWithValue:(id)arg1 withType:(int)arg2;
+- (long long)lineHeightWithValue:(id)arg1 withType:(int)arg2;
+- (double)relativeLineHeightWithValue:(id)arg1 withType:(int)arg2;
+- (long long)textAlignmentWithValue:(id)arg1 withType:(int)arg2;
+
+@end

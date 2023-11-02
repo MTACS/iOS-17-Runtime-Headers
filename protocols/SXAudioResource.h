@@ -1,0 +1,4 @@
+
+@protocol SXAudioResource <SXResource>
+
+@end

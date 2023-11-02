@@ -1,0 +1,4 @@
+
+@interface iCloudMailAccountUI.iCloudMailValidationRulesAPIRequest : _TtGC19iCloudMailAccountUI9MSRequestVS_36iCloudMailValidationRulesAPIResponse_
+
+@end

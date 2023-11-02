@@ -1,0 +1,81 @@
+
+@interface PKPaymentSetupHeroViewController : PKExplanationViewController <PKExplanationViewDelegate, PKLoadingUIProviding, PKPaymentSetupHideSetupLaterButtonProtocol> {
+    ACAccountStore * _accountStore;
+    bool  _allowsManualEntry;
+    bool  _checkSecurity;
+    <PKPaymentSetupViewControllerDelegate> * _delegate;
+    NSString * _deviceRegion;
+    NSArray * _featuredImages;
+    <PKPaymentSetupHeroViewControllerFlowDelegate> * _flowDelegate;
+    bool  _hasFelicaSecureElement;
+    PKPaymentHeroImageController * _heroImageController;
+    bool  _hidePrivacyView;
+    bool  _nextButtonPushed;
+    long long  _paymentSetupMode;
+    bool  _preflightComplete;
+    PKPaymentSetupProduct * _product;
+    PKPaymentProvisioningController * _provisioningController;
+    bool  _showChinaPrivacyDisclosure;
+    bool  _showSouthKoreaPrivacyDisclosure;
+    PKPaymentSetupHeroView * _splashView;
+}
+
+@property (nonatomic) bool allowsManualEntry;
+@property (nonatomic) bool checkSecurity;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPaymentSetupViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <PKPaymentSetupHeroViewControllerFlowDelegate> *flowDelegate;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) PKPaymentHeroImageController *heroImageController;
+@property (nonatomic) bool hidePrivacyView;
+@property (nonatomic) long long paymentSetupMode;
+@property (nonatomic, readonly) PKPaymentProvisioningController *provisioningController;
+@property (nonatomic) bool showChinaPrivacyDisclosure;
+@property (nonatomic) bool showSouthKoreaPrivacyDisclosure;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PKPaymentWebService *webService;
+
+- (void).cxx_destruct;
+- (id)_bodyText;
+- (void)_configureDock;
+- (void)_preflightWithCompletion:(id /* block */)arg1;
+- (bool)_readerModeIsSupported;
+- (void)_setShowActivityIndicator:(bool)arg1;
+- (void)_setUserInteractionEnabled:(bool)arg1;
+- (void)_terminateSetupFlow;
+- (void)_transferExistingCardTapped;
+- (bool)allowsManualEntry;
+- (bool)checkSecurity;
+- (id)delegate;
+- (void)didTapFooterLink:(id)arg1;
+- (void)explanationViewDidSelectContinue:(id)arg1;
+- (void)explanationViewDidSelectSetupLater:(id)arg1;
+- (id)flowDelegate;
+- (id)heroImageController;
+- (bool)hidePrivacyView;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 delegate:(id)arg3 product:(id)arg4 allowsManualEntry:(bool)arg5;
+- (void)loadView;
+- (long long)paymentSetupMode;
+- (id)provisioningController;
+- (void)setAllowsManualEntry:(bool)arg1;
+- (void)setCheckSecurity:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFeaturedHeroImages:(id)arg1;
+- (void)setFlowDelegate:(id)arg1;
+- (void)setHidePrivacyView:(bool)arg1;
+- (void)setHideSetupLaterButton:(bool)arg1;
+- (void)setPaymentSetupMode:(long long)arg1;
+- (void)setShowChinaPrivacyDisclosure:(bool)arg1;
+- (void)setShowSouthKoreaPrivacyDisclosure:(bool)arg1;
+- (bool)showChinaPrivacyDisclosure;
+- (void)showLoadingUI:(bool)arg1 animated:(bool)arg2;
+- (bool)showSouthKoreaPrivacyDisclosure;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+- (id)webService;
+
+@end

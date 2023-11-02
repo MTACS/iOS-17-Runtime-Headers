@@ -1,0 +1,97 @@
+
+@interface SBHLibraryPodFolderController : SBFolderController <SBHLibraryCategoriesFolderDataSourceObserver, SBHLibraryChildViewController, SBHLibraryPodIconZoomAnimationContaining, SBHLibrarySearchControllerContentViewControllerScrollViewProvider, UIGestureRecognizerDelegate> {
+    SBHLibraryCategoriesFolderDataSource * _dataSource;
+    SBHIconImageCache * _iconImageCache;
+    SBHLibraryCategoryMap * _libraryCategoryMap;
+    <SBIconListLayoutProvider> * _listLayoutProvider;
+    ATXAppDirectoryClient * _loggingClient;
+    <SBHLibraryPodFolderControllerDelegate> * _podFolderControllerDelegate;
+    UITapGestureRecognizer * _tapToDismissRecognizer;
+}
+
+@property (nonatomic, readonly) UIWindow *animationWindow;
+@property (nonatomic, readonly) UIView *containerView;
+@property (nonatomic, readonly) SBIconListView *currentIconListView;
+@property (nonatomic, readonly) SBHLibraryCategoriesFolderDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) SBIconListView *dockIconListView;
+@property (nonatomic, readonly) UIView *fallbackIconContainerView;
+@property (nonatomic, retain) SBFolderIconImageCache *folderIconImageCache;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SBHIconImageCache *iconImageCache;
+@property (nonatomic, readonly) SBHIconModel *iconModel;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, retain) SBHLibraryCategoryMap *libraryCategoryMap;
+@property (nonatomic) <BSUIScrollViewDelegate> *librarySearchControllerScrollViewDelegate;
+@property (nonatomic, retain) <SBIconListLayoutProvider> *listLayoutProvider;
+@property (nonatomic, readonly) ATXAppDirectoryClient *loggingClient;
+@property (nonatomic) <SBHLibraryPodFolderControllerDelegate> *podFolderControllerDelegate;
+@property (nonatomic, readonly, copy) NSSet *presentedIconLocations;
+@property (nonatomic, retain) SBRootFolder *rootFolder;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITapGestureRecognizer *tapToDismissRecognizer;
+
++ (Class)_contentViewClass;
++ (Class)configurationClass;
++ (id)iconLocation;
+
+- (void).cxx_destruct;
+- (bool)_isViewControllerVisible;
+- (id)_nestingViewControllerForPushing;
+- (bool)_ourFolderContainsFolder:(id)arg1;
+- (void)_reloadAppIcons;
+- (void)categoriesDataSource:(id)arg1 shouldAnimateLayoutForCategories:(id)arg2;
+- (void)categoriesDataSourceNeedsAnimatedReload:(id)arg1;
+- (void)configureInnerFolderControllerConfiguration:(id)arg1;
+- (id)containerView;
+- (id)contentScrollView;
+- (Class)controllerClassForFolder:(id)arg1;
+- (id)currentIconListView;
+- (id)dataSource;
+- (void)enumerateDisplayedIconViewsForIcon:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateDisplayedIconViewsUsingBlock:(id /* block */)arg1;
+- (void)enumerateNonSuggestionsOrRecentsViewControllersUsingBlock:(id /* block */)arg1;
+- (void)enumerateViewControllersUsingBlock:(id /* block */)arg1;
+- (id)firstIconViewForIcon:(id)arg1;
+- (id)firstIconViewForIcon:(id)arg1 excludingLocations:(id)arg2;
+- (id)firstIconViewForIcon:(id)arg1 inLocations:(id)arg2;
+- (id)firstNonSuggestionsOrRecentsIconViewForIcon:(id)arg1;
+- (id)folderIconViewForIcon:(id)arg1 folderRelativeIconIndexPath:(id*)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)handleTapGesture:(id)arg1;
+- (id)iconImageCache;
+- (void)iconListView:(id)arg1 didAddIconView:(id)arg2;
+- (void)iconListView:(id)arg1 didRemoveIconView:(id)arg2;
+- (void)iconViewDidHandleTap:(id)arg1;
+- (id)iconViewForIcon:(id)arg1 location:(id)arg2;
+- (id)iconViewForIcon:(id)arg1 location:(id)arg2 options:(unsigned long long)arg3;
+- (id)initWithConfiguration:(id)arg1;
+- (bool)isDisplayingIcon:(id)arg1;
+- (bool)isDisplayingIcon:(id)arg1 inLocation:(id)arg2;
+- (bool)isDisplayingIcon:(id)arg1 inLocations:(id)arg2;
+- (bool)isDisplayingIconView:(id)arg1;
+- (bool)isDisplayingIconView:(id)arg1 inLocation:(id)arg2;
+- (bool)isOpen;
+- (bool)isPresentingIconLocation:(id)arg1;
+- (id)libraryCategoryMap;
+- (id)librarySearchControllerScrollViewDelegate;
+- (id)listLayoutProvider;
+- (id)loggingClient;
+- (id)podFolderControllerDelegate;
+- (id)podFolderView;
+- (id)presentedIconLocations;
+- (void)pushNestedViewController:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
+- (void)setContentAlpha:(double)arg1;
+- (void)setIconImageCache:(id)arg1;
+- (void)setLibraryCategoryMap:(id)arg1;
+- (void)setLibrarySearchControllerScrollViewDelegate:(id)arg1;
+- (void)setListLayoutProvider:(id)arg1;
+- (void)setPodFolderControllerDelegate:(id)arg1;
+- (bool)shouldOpenFolderIcon:(id)arg1;
+- (id)tapToDismissRecognizer;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+
+@end

@@ -1,0 +1,102 @@
+
+@interface ASVTurntableGestureRecognizer : ASVUnifiedGestureRecognizer <ASVTurntableSingleFingerGestureDelegate, ASVTurntableTwoFingerGestureDelegate> {
+    float  _initialAssetPitch;
+    void _initialPanLocation;
+    float  _lastOverallDeltaX;
+    void _lastPanLocation;
+    double  _lastPanTime;
+    float  _lastRubberBandedPitch;
+    bool  _panThresholdPassed;
+    ASVDeceleration * _pitchDeceleration;
+    void _pitchThresholdLocation;
+    bool  _pitchThresholdPassed;
+    ASVVelocitySample2D * _previousVelocitySample;
+    ASVRubberBand * _rubberBand;
+    <ASVTurntableGestureRecognizerDelegate> * _turntableDelegate;
+    ASVVelocitySample2D * _velocitySample;
+    ASVDeceleration * _yawDeceleration;
+    void _yawThresholdLocation;
+    bool  _yawThresholdPassed;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) float decelerationPitchDelta;
+@property (nonatomic, readonly) float decelerationYawDelta;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) float initialAssetPitch;
+@property (nonatomic) void initialPanLocation;
+@property (nonatomic) float lastOverallDeltaX;
+@property (nonatomic) void lastPanLocation;
+@property (nonatomic) double lastPanTime;
+@property (nonatomic) float lastRubberBandedPitch;
+@property (nonatomic, readonly) float maximumObjectScale;
+@property (nonatomic, readonly) float minimumObjectScale;
+@property (nonatomic) bool panThresholdPassed;
+@property (nonatomic, retain) ASVDeceleration *pitchDeceleration;
+@property (nonatomic) void pitchThresholdLocation;
+@property (nonatomic) bool pitchThresholdPassed;
+@property (nonatomic, retain) ASVVelocitySample2D *previousVelocitySample;
+@property (nonatomic, retain) ASVRubberBand *rubberBand;
+@property (readonly) Class superclass;
+@property (nonatomic) <ASVTurntableGestureRecognizerDelegate> *turntableDelegate;
+@property (nonatomic, retain) ASVVelocitySample2D *velocitySample;
+@property (nonatomic, retain) ASVDeceleration *yawDeceleration;
+@property (nonatomic) void yawThresholdLocation;
+@property (nonatomic) bool yawThresholdPassed;
+
+- (void).cxx_destruct;
+- (void)cancelDeceleration;
+- (float)clampedScaleForScale:(float)arg1;
+- (float)decelerationPitchDelta;
+- (float)decelerationYawDelta;
+- (void)gesture:(void *)arg1 beganPanningAtScreenPoint:(void *)arg2; // needs 2 arg types, found 1: id
+- (void)gesture:(void *)arg1 pannedToScreenPoint:(void *)arg2; // needs 2 arg types, found 1: id
+- (void)gestureEndedPanning:(id)arg1;
+- (id)initWithTurntableDelegate:(id)arg1 feedbackGenerator:(id)arg2;
+- (float)initialAssetPitch;
+- (void)initialPanLocation;
+- (bool)isDecelerating;
+- (float)lastOverallDeltaX;
+- (void)lastPanLocation;
+- (double)lastPanTime;
+- (float)lastRubberBandedPitch;
+- (float)maximumObjectScale;
+- (float)minimumObjectScale;
+- (bool)panThresholdPassed;
+- (id)pitchDeceleration;
+- (void)pitchRangeWithMinPitch:(float*)arg1 maxPitch:(float*)arg2;
+- (void)pitchThresholdLocation;
+- (bool)pitchThresholdPassed;
+- (id)previousVelocitySample;
+- (id)rubberBand;
+- (void)setEnabledGestureTypes:(unsigned long long)arg1;
+- (void)setInitialAssetPitch:(float)arg1;
+- (void)setInitialPanLocation;
+- (void)setLastOverallDeltaX:(float)arg1;
+- (void)setLastPanLocation;
+- (void)setLastPanTime:(double)arg1;
+- (void)setLastRubberBandedPitch:(float)arg1;
+- (void)setPanThresholdPassed:(bool)arg1;
+- (void)setPitchDeceleration:(id)arg1;
+- (void)setPitchThresholdLocation;
+- (void)setPitchThresholdPassed:(bool)arg1;
+- (void)setPreviousVelocitySample:(id)arg1;
+- (void)setRubberBand:(id)arg1;
+- (void)setTurntableDelegate:(id)arg1;
+- (void)setVelocitySample:(id)arg1;
+- (void)setYawDeceleration:(id)arg1;
+- (void)setYawThresholdLocation;
+- (void)setYawThresholdPassed:(bool)arg1;
+- (id)singleFingerGestureForTouch:(id)arg1 dataSource:(id)arg2 enabledGestureTypes:(unsigned long long)arg3;
+- (void)startSnappingPitch;
+- (void)startSpinningPitchWithInitialVelocity:(float)arg1;
+- (void)startSpinningYawWithInitialVelocity:(float)arg1;
+- (id)turntableDelegate;
+- (id)twoFingerGestureForFirstTouch:(id)arg1 secondTouch:(id)arg2 dataSource:(id)arg3;
+- (id)velocitySample;
+- (id)yawDeceleration;
+- (void)yawThresholdLocation;
+- (bool)yawThresholdPassed;
+
+@end

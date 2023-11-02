@@ -1,0 +1,81 @@
+
+@interface DocumentUnderstanding.FoundInEventDataDetectorsOutput : NSObject <NSCoding, NSCopying> {
+    void addressComponents;
+    void carrier;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  detectedDate;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  detectedEndDate;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  detectedEndTimeZone;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  detectedTimeZone;
+    void emailAddress;
+    void flightAirline;
+    void flightNumber;
+    void len;
+    void phoneNumber;
+    void phoneNumberLabel;
+    void start;
+    void text;
+    void trackingNumber;
+    void type;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  url;
+}
+
+@property (nonatomic, copy) NSDictionary *addressComponents;
+@property (nonatomic, copy) NSString *carrier;
+@property (nonatomic, copy) NSDateComponents *detectedDate;
+@property (nonatomic, copy) NSDateComponents *detectedEndDate;
+@property (nonatomic, copy) NSTimeZone *detectedEndTimeZone;
+@property (nonatomic, copy) NSTimeZone *detectedTimeZone;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSString *flightAirline;
+@property (nonatomic, copy) NSString *flightNumber;
+@property (nonatomic) long long len;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *phoneNumberLabel;
+@property (nonatomic) long long start;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *trackingNumber;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSURL *url;
+
+- (void).cxx_destruct;
+- (id)addressComponents;
+- (id)carrier;
+- (id)copyWithZone:(void*)arg1;
+- (id)detectedDate;
+- (id)detectedEndDate;
+- (id)detectedEndTimeZone;
+- (id)detectedTimeZone;
+- (id)emailAddress;
+- (void)encodeWithCoder:(id)arg1;
+- (id)flightAirline;
+- (id)flightNumber;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (long long)len;
+- (id)phoneNumber;
+- (id)phoneNumberLabel;
+- (void)setAddressComponents:(id)arg1;
+- (void)setCarrier:(id)arg1;
+- (void)setDetectedDate:(id)arg1;
+- (void)setDetectedEndDate:(id)arg1;
+- (void)setDetectedEndTimeZone:(id)arg1;
+- (void)setDetectedTimeZone:(id)arg1;
+- (void)setEmailAddress:(id)arg1;
+- (void)setFlightAirline:(id)arg1;
+- (void)setFlightNumber:(id)arg1;
+- (void)setLen:(long long)arg1;
+- (void)setPhoneNumber:(id)arg1;
+- (void)setPhoneNumberLabel:(id)arg1;
+- (void)setStart:(long long)arg1;
+- (void)setText:(id)arg1;
+- (void)setTrackingNumber:(id)arg1;
+- (void)setType:(id)arg1;
+- (void)setUrl:(id)arg1;
+- (long long)start;
+- (id)text;
+- (id)trackingNumber;
+- (id)type;
+- (id)url;
+
+@end

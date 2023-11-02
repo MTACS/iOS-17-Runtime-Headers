@@ -1,0 +1,4 @@
+
+@interface LiveFSServiceClient : LiveFSVolumeClient
+
+@end

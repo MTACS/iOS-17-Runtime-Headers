@@ -1,0 +1,4 @@
+
+@interface ICMentionAttachmentView : ICInlineAttachmentView
+
+@end

@@ -1,0 +1,83 @@
+
+@interface NCNotificationListSupplementaryHostingView : NCDimmableView <NCAuxiliaryOptionsSupporting, NCMaterialDisplaying, PLContentSizeCategoryAdjusting, UIGestureRecognizerDelegate> {
+    bool  _adjustsFontForContentSizeCategory;
+    NSArray * _auxiliaryOptionActions;
+    NSString * _auxiliaryOptionsSummaryText;
+    UIColor * _auxiliaryOptionsTextColor;
+    NCAuxiliaryOptionsView * _auxiliaryOptionsView;
+    NCNotificationListStackBackgroundDimmingView * _backgroundTintView;
+    <NCNotificationListSupplementaryHostingViewDelegate> * _delegate;
+    UIView * _hostedView;
+    bool  _hostedViewUserInteractionEnabled;
+    NSString * _materialGroupNameBase;
+    long long  _materialRecipe;
+    UIColor * _materialTintColor;
+    PLPlatterView * _platterView;
+    UIView * _viewToBlockOutOfProcessUIInteractions;
+}
+
+@property (nonatomic) bool adjustsFontForContentSizeCategory;
+@property (nonatomic, retain) NSArray *auxiliaryOptionActions;
+@property (nonatomic, readonly) NSArray *auxiliaryOptionButtons;
+@property (nonatomic, copy) NSString *auxiliaryOptionsSummaryText;
+@property (nonatomic, copy) UIColor *auxiliaryOptionsTextColor;
+@property (nonatomic, readonly) NCAuxiliaryOptionsView *auxiliaryOptionsView;
+@property (nonatomic) bool auxiliaryOptionsVisible;
+@property (getter=hasContentForAuxiliaryOptions, nonatomic, readonly) bool contentForAuxiliaryOptions;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NCNotificationListSupplementaryHostingViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIView *hostedView;
+@property (getter=isHostedViewUserInteractionEnabled, nonatomic) bool hostedViewUserInteractionEnabled;
+@property (nonatomic, copy) NSString *materialGroupNameBase;
+@property (nonatomic) long long materialRecipe;
+@property (nonatomic, copy) UIColor *materialTintColor;
+@property (nonatomic, readonly) PLPlatterView *platterView;
+@property (nonatomic, copy) NSString *preferredContentSizeCategory;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_blockOutOfProcessUIInteractions:(bool)arg1;
+- (void)_configureAuxiliaryOptionsViewIfNecessary;
+- (void)_configureBackgroundTintViewIfNecessary;
+- (void)_configurePlatterViewIfNecessary;
+- (void)_configureViewToBlockOutOfProcessUIInteractionsIfNecessary;
+- (void)_layoutAuxiliaryOptionsView;
+- (void)_layoutHostedView;
+- (void)_setContinuousCornerRadius:(double)arg1;
+- (void)_tapGestureRecognized:(id)arg1;
+- (bool)adjustForContentSizeCategoryChange;
+- (bool)adjustsFontForContentSizeCategory;
+- (id)auxiliaryOptionActions;
+- (id)auxiliaryOptionButtons;
+- (id)auxiliaryOptionsSummaryText;
+- (id)auxiliaryOptionsTextColor;
+- (id)auxiliaryOptionsView;
+- (bool)auxiliaryOptionsVisible;
+- (id)delegate;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)hasContentForAuxiliaryOptions;
+- (id)hostedView;
+- (id)init;
+- (bool)isHostedViewUserInteractionEnabled;
+- (void)layoutSubviews;
+- (id)materialGroupNameBase;
+- (long long)materialRecipe;
+- (id)materialTintColor;
+- (id)platterView;
+- (void)setAdjustsFontForContentSizeCategory:(bool)arg1;
+- (void)setAuxiliaryOptionActions:(id)arg1;
+- (void)setAuxiliaryOptionsSummaryText:(id)arg1;
+- (void)setAuxiliaryOptionsTextColor:(id)arg1;
+- (void)setAuxiliaryOptionsVisible:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHostedView:(id)arg1;
+- (void)setHostedViewUserInteractionEnabled:(bool)arg1;
+- (void)setMaterialGroupNameBase:(id)arg1;
+- (void)setMaterialRecipe:(long long)arg1;
+- (void)setMaterialTintColor:(id)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+
+@end

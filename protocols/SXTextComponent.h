@@ -1,0 +1,4 @@
+
+@protocol SXTextComponent <SXTextComponentProperties>
+
+@end

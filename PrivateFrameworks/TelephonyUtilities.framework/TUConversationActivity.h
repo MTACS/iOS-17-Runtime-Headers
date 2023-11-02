@@ -1,0 +1,96 @@
+
+@interface TUConversationActivity : NSObject <NSCopying, NSSecureCoding> {
+    NSUUID * _UUID;
+    NSString * _activityIdentifier;
+    NSData * _applicationContext;
+    NSString * _bundleIdentifier;
+    NSString * _fallbackApplicationName;
+    TUConversationActivityMetadata * _metadata;
+    TUHandle * _originator;
+    bool  _startWhenStaged;
+    NSString * _staticIdentifier;
+    bool  _supported;
+    bool  _systemActivity;
+    NSDate * _timestamp;
+    TUHandle * _trustedFromHandle;
+}
+
+@property (nonatomic, retain) NSUUID *UUID;
+@property (nonatomic, readonly, copy) TUConversationActivityContext *activityContext;
+@property (nonatomic, copy) NSString *activityIdentifier;
+@property (nonatomic, copy) NSData *applicationContext;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (getter=isEligibleForHandoff, nonatomic, readonly) bool eligibleForHandoff;
+@property (getter=isEligibleForWebBrowser, nonatomic, readonly) bool eligibleForWebBrowser;
+@property (nonatomic, copy) NSString *fallbackApplicationName;
+@property (nonatomic, retain) TUConversationActivityMetadata *metadata;
+@property (nonatomic, copy) TUHandle *originator;
+@property (getter=isPlaceholderActivity, nonatomic, readonly) bool placeholderActivity;
+@property (nonatomic, readonly, copy) NSString *representativeBundleIdentifier;
+@property (nonatomic) bool startWhenStaged;
+@property (nonatomic, copy) NSString *staticIdentifier;
+@property (getter=isSupported, nonatomic) bool supported;
+@property (getter=isSystemActivity, nonatomic) bool systemActivity;
+@property (nonatomic, copy) NSDate *timestamp;
+@property (nonatomic, copy) TUHandle *trustedFromHandle;
+
++ (id)lookupApplicationNameForBundleIdentifier:(id)arg1;
++ (id)placeholderActivity;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)UUID;
+- (id)activityContext;
+- (id)activityIdentifier;
+- (id)applicationContext;
+- (id)bundleIdentifier;
+- (id)concatenatedDescription;
+- (id)concatenatedMetadataDescription;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)fallbackApplicationName;
+- (unsigned long long)hash;
+- (id)initWithBundleIdentifier:(id)arg1 metadata:(id)arg2 applicationContext:(id)arg3 uuid:(id)arg4 activityIdentifier:(id)arg5;
+- (id)initWithBundleIdentifier:(id)arg1 metadata:(id)arg2 applicationContext:(id)arg3 uuid:(id)arg4 activityIdentifier:(id)arg5 fallbackApplicationName:(id)arg6;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithCreationRequest:(id)arg1 bundleIdentifier:(id)arg2 systemActivity:(bool)arg3;
+- (id)initWithMetadata:(id)arg1 applicationContext:(id)arg2 uuid:(id)arg3 activityIdentifier:(id)arg4;
+- (bool)isEligibleForHandoff;
+- (bool)isEligibleForWebBrowser;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToConversationActivity:(id)arg1;
+- (bool)isEquivalentToActivity:(id)arg1;
+- (bool)isPlaceholderActivity;
+- (bool)isScreenSharingActivity;
+- (bool)isStaticActivity;
+- (bool)isSupported;
+- (bool)isSystemActivity;
+- (id)localizedApplicationName;
+- (id)metadata;
+- (id)originator;
+- (id)platformScreenSharingBundleIdentifier;
+- (id)representativeBundleIdentifier;
+- (id)representativeDisplayName;
+- (id)sanitizedCopy;
+- (id)sanitizedCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)setActivityContext:(id)arg1;
+- (void)setActivityIdentifier:(id)arg1;
+- (void)setApplicationContext:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
+- (void)setFallbackApplicationName:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setOriginator:(id)arg1;
+- (void)setStartWhenStaged:(bool)arg1;
+- (void)setStaticIdentifier:(id)arg1;
+- (void)setSupported:(bool)arg1;
+- (void)setSystemActivity:(bool)arg1;
+- (void)setTimestamp:(id)arg1;
+- (void)setTrustedFromHandle:(id)arg1;
+- (void)setUUID:(id)arg1;
+- (bool)startWhenStaged;
+- (id)staticIdentifier;
+- (id)timestamp;
+- (id)trustedFromHandle;
+
+@end

@@ -1,0 +1,16 @@
+
+@protocol PKPerformActionViewDelegate <NSObject>
+
+@required
+
+- (void)setRightBarButtonEnabled:(bool)arg1;
+- (void)shakeCard;
+
+@optional
+
+- (void)didTapSetUpAutoReloadButton;
+- (void)performActionView:(UIView<PKPerformActionView> *)arg1 requestsPresentViewController:(UIViewController *)arg2;
+- (void)performActionViewDidPerformAction:(UIView<PKPerformActionView> *)arg1;
+- (void)performActionViewRequestsPerformNextStepForAction:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: UIView<PKPerformActionView> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+
+@end

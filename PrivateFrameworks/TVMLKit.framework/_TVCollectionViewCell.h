@@ -1,0 +1,18 @@
+
+@interface _TVCollectionViewCell : TVContainerCollectionViewCell <TVAuxiliaryViewSelecting> {
+    UIView<TVAuxiliaryViewSelecting> * _selectingView;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) UIView<TVAuxiliaryViewSelecting> *selectingView;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)layoutSubviews;
+- (id)selectingView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })selectionMarginsForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSelectingView:(id)arg1;
+
+@end

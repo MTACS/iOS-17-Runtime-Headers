@@ -1,0 +1,4 @@
+
+@interface VNCreateDetectionprintRequestConfiguration : VNImageBasedRequestConfiguration
+
+@end

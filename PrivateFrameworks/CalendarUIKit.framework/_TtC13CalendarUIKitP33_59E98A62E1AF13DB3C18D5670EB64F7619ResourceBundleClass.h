@@ -1,0 +1,4 @@
+
+@interface _TtC13CalendarUIKitP33_59E98A62E1AF13DB3C18D5670EB64F7619ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

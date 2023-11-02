@@ -1,0 +1,91 @@
+
+@interface WFPBAddAutomationEvent : PBCodable <NSCopying> {
+    unsigned int  _actionCount;
+    NSString * _activityType;
+    NSString * _appBundleIdentifier;
+    NSString * _automationSuggestionsTrialIdentifier;
+    struct { 
+        unsigned int actionCount : 1; 
+        unsigned int requiresRuntimeConfirmation : 1; 
+        unsigned int showsNotification : 1; 
+    }  _has;
+    NSString * _intentType;
+    NSString * _key;
+    bool  _requiresRuntimeConfirmation;
+    NSString * _shortcutIdentifier;
+    bool  _showsNotification;
+    NSString * _source;
+    NSString * _triggerType;
+}
+
+@property (nonatomic) unsigned int actionCount;
+@property (nonatomic, retain) NSString *activityType;
+@property (nonatomic, retain) NSString *appBundleIdentifier;
+@property (nonatomic, retain) NSString *automationSuggestionsTrialIdentifier;
+@property (nonatomic) bool hasActionCount;
+@property (nonatomic, readonly) bool hasActivityType;
+@property (nonatomic, readonly) bool hasAppBundleIdentifier;
+@property (nonatomic, readonly) bool hasAutomationSuggestionsTrialIdentifier;
+@property (nonatomic, readonly) bool hasIntentType;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic) bool hasRequiresRuntimeConfirmation;
+@property (nonatomic, readonly) bool hasShortcutIdentifier;
+@property (nonatomic) bool hasShowsNotification;
+@property (nonatomic, readonly) bool hasSource;
+@property (nonatomic, readonly) bool hasTriggerType;
+@property (nonatomic, retain) NSString *intentType;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic) bool requiresRuntimeConfirmation;
+@property (nonatomic, retain) NSString *shortcutIdentifier;
+@property (nonatomic) bool showsNotification;
+@property (nonatomic, retain) NSString *source;
+@property (nonatomic, retain) NSString *triggerType;
+
+- (void).cxx_destruct;
+- (unsigned int)actionCount;
+- (id)activityType;
+- (id)appBundleIdentifier;
+- (id)automationSuggestionsTrialIdentifier;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasActionCount;
+- (bool)hasActivityType;
+- (bool)hasAppBundleIdentifier;
+- (bool)hasAutomationSuggestionsTrialIdentifier;
+- (bool)hasIntentType;
+- (bool)hasKey;
+- (bool)hasRequiresRuntimeConfirmation;
+- (bool)hasShortcutIdentifier;
+- (bool)hasShowsNotification;
+- (bool)hasSource;
+- (bool)hasTriggerType;
+- (unsigned long long)hash;
+- (id)intentType;
+- (bool)isEqual:(id)arg1;
+- (id)key;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (bool)requiresRuntimeConfirmation;
+- (void)setActionCount:(unsigned int)arg1;
+- (void)setActivityType:(id)arg1;
+- (void)setAppBundleIdentifier:(id)arg1;
+- (void)setAutomationSuggestionsTrialIdentifier:(id)arg1;
+- (void)setHasActionCount:(bool)arg1;
+- (void)setHasRequiresRuntimeConfirmation:(bool)arg1;
+- (void)setHasShowsNotification:(bool)arg1;
+- (void)setIntentType:(id)arg1;
+- (void)setKey:(id)arg1;
+- (void)setRequiresRuntimeConfirmation:(bool)arg1;
+- (void)setShortcutIdentifier:(id)arg1;
+- (void)setShowsNotification:(bool)arg1;
+- (void)setSource:(id)arg1;
+- (void)setTriggerType:(id)arg1;
+- (id)shortcutIdentifier;
+- (bool)showsNotification;
+- (id)source;
+- (id)triggerType;
+- (void)writeTo:(id)arg1;
+
+@end

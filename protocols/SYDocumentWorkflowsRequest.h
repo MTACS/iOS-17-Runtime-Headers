@@ -1,0 +1,4 @@
+
+@protocol SYDocumentWorkflowsRequest <NSObject>
+
+@end

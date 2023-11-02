@@ -1,0 +1,6 @@
+
+@interface NewsFeed.FormatVideoPlayerReuseManagerCache : _TtCs12_SwiftObject {
+    void cache;
+}
+
+@end

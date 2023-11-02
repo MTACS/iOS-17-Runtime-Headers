@@ -1,0 +1,4 @@
+
+@interface HealthExperienceUI.OnboardingAddToFavoritesViewController : HealthExperienceUI.OnboardingTableViewController
+
+@end

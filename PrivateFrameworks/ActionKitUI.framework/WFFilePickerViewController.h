@@ -1,0 +1,82 @@
+
+@interface WFFilePickerViewController : UIViewController <UIContextMenuInteractionDelegate, UISearchControllerDelegate, UISearchResultsUpdating, WFRemoteFileListViewDelegate, WFRemoteFileStatusViewDelegate> {
+    bool  _allowsMultipleSelection;
+    NSError * _error;
+    WFRemoteFileListView * _fileListView;
+    NSArray * _files;
+    bool  _hideSearchBar;
+    bool  _loading;
+    long long  _mode;
+    NSString * _path;
+    id /* block */  _pickCompletionHandler;
+    id /* block */  _saveCompletionHandler;
+    UISearchController * _searchController;
+    NSMutableOrderedSet * _selectedFiles;
+    <WFFileStorageService> * _service;
+    WFRemoteFileStatusView * _statusView;
+}
+
+@property (nonatomic, readonly) bool allowsMultipleSelection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSError *error;
+@property (nonatomic, readonly) WFRemoteFileListView *fileListView;
+@property (nonatomic, copy) NSArray *files;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideSearchBar;
+@property (nonatomic) bool loading;
+@property (nonatomic, readonly) long long mode;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) id /* block */ pickCompletionHandler;
+@property (nonatomic, readonly) id /* block */ saveCompletionHandler;
+@property (nonatomic, readonly) UISearchController *searchController;
+@property (nonatomic, copy) NSMutableOrderedSet *selectedFiles;
+@property (nonatomic, readonly) <WFFileStorageService> *service;
+@property (nonatomic, readonly) WFRemoteFileStatusView *statusView;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)allowsMultipleSelection;
+- (void)cancel;
+- (bool)caseInsensitiveArray:(id)arg1 isEqualToArray:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
+- (void)didDismissSearchController:(id)arg1;
+- (void)didPresentSearchController:(id)arg1;
+- (id)error;
+- (id)fileListView;
+- (void)fileListView:(id)arg1 didSelectFile:(id)arg2;
+- (bool)fileListView:(id)arg1 shouldDisplayCheckmarkForFile:(id)arg2;
+- (bool)fileListView:(id)arg1 shouldSelectFile:(id)arg2;
+- (id)files;
+- (void)finish;
+- (bool)hideSearchBar;
+- (id)initForPickingFilesAtPath:(id)arg1 service:(id)arg2 allowsMultipleSelection:(bool)arg3 completionHandler:(id /* block */)arg4;
+- (id)initForSavingFilesAtPath:(id)arg1 service:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)initWithPath:(id)arg1 selectedFiles:(id)arg2 service:(id)arg3 mode:(long long)arg4 allowsMultipleSelection:(bool)arg5 pickCompletionHandler:(id /* block */)arg6 saveCompletionHandler:(id /* block */)arg7;
+- (void)loadFiles;
+- (void)loadView;
+- (bool)loading;
+- (long long)mode;
+- (void)navigateToSubdirectoryAtPath:(id)arg1;
+- (id)path;
+- (id /* block */)pickCompletionHandler;
+- (id /* block */)saveCompletionHandler;
+- (id)searchController;
+- (id)selectedFiles;
+- (id)service;
+- (void)setError:(id)arg1;
+- (void)setFiles:(id)arg1;
+- (void)setHideSearchBar:(bool)arg1;
+- (void)setLoading:(bool)arg1;
+- (void)setSelectedFiles:(id)arg1;
+- (void)setStatusViewToEmpty;
+- (id)statusView;
+- (void)statusViewDidPressRecoveryButton:(id)arg1;
+- (void)updateSearchResultsForSearchController:(id)arg1;
+- (void)updateStatusViewAnimated:(bool)arg1;
+- (void)updateToolbar;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+
+@end

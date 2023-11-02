@@ -1,0 +1,4 @@
+
+@interface SUUIDecorationImageViewElement : SUUIImageViewElement
+
+@end

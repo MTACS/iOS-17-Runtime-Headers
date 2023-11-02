@@ -1,0 +1,4 @@
+
+@interface DTProcessControlApplicationMemoryWarning : DTProcessControlEvent
+
+@end

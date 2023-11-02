@@ -1,0 +1,90 @@
+
+@interface TUConversationMember : NSObject <NSCopying, NSSecureCoding> {
+    TUConversationMemberAssociation * _association;
+    TUVoucher * _associationVoucher;
+    NSDate * _dateInitiatedLetMeIn;
+    NSDate * _dateReceivedLetMeIn;
+    TUHandle * _handle;
+    bool  _isLightweightMember;
+    bool  _isOtherInvitedHandle;
+    bool  _joinedFromLetMeIn;
+    TUHandle * _lightweightPrimary;
+    unsigned long long  _lightweightPrimaryParticipantIdentifier;
+    NSString * _nickname;
+    long long  _validationSource;
+}
+
+@property (nonatomic, copy) TUConversationMemberAssociation *association;
+@property (nonatomic, retain) TUVoucher *associationVoucher;
+@property (nonatomic, retain) NSDate *dateInitiatedLetMeIn;
+@property (nonatomic, retain) NSDate *dateReceivedLetMeIn;
+@property (nonatomic, readonly) TUHandle *handle;
+@property (nonatomic, readonly, copy) NSSet *handles;
+@property (nonatomic, readonly, copy) NSString *idsDestination;
+@property (nonatomic, readonly, copy) NSArray *idsDestinations;
+@property (nonatomic, readonly, copy) NSString *idsFromID;
+@property (nonatomic) bool isLightweightMember;
+@property (nonatomic) bool isOtherInvitedHandle;
+@property (nonatomic) bool isSplitSessionMember;
+@property (nonatomic) bool joinedFromLetMeIn;
+@property (nonatomic, copy) TUHandle *lightweightPrimary;
+@property (nonatomic) unsigned long long lightweightPrimaryParticipantIdentifier;
+@property (nonatomic, copy) NSString *nickname;
+@property (nonatomic, copy) TUHandle *splitSessionPrimary;
+@property (getter=isValidated, nonatomic, readonly) bool validated;
+@property (nonatomic) long long validationSource;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)association;
+- (id)associationVoucher;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dateInitiatedLetMeIn;
+- (id)dateReceivedLetMeIn;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)handle;
+- (id)handles;
+- (unsigned long long)hash;
+- (id)idsDestination;
+- (id)idsDestinations;
+- (id)idsFromID;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithContact:(id)arg1;
+- (id)initWithContact:(id)arg1 additionalHandles:(id)arg2;
+- (id)initWithDestination:(id)arg1;
+- (id)initWithDestinations:(id)arg1;
+- (id)initWithHandle:(id)arg1;
+- (id)initWithHandle:(id)arg1 nickname:(id)arg2;
+- (id)initWithHandle:(id)arg1 nickname:(id)arg2 joinedFromLetMeIn:(bool)arg3;
+- (id)initWithHandles:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToMember:(id)arg1;
+- (bool)isLightweightMember;
+- (bool)isOtherInvitedHandle;
+- (bool)isSplitSessionMember;
+- (bool)isValidated;
+- (bool)joinedFromLetMeIn;
+- (id)lightweightPrimary;
+- (unsigned long long)lightweightPrimaryParticipantIdentifier;
+- (id)nickname;
+- (bool)pseudonym;
+- (bool)representsSameMemberAs:(id)arg1;
+- (void)setAssociation:(id)arg1;
+- (void)setAssociationVoucher:(id)arg1;
+- (void)setDateInitiatedLetMeIn:(id)arg1;
+- (void)setDateReceivedLetMeIn:(id)arg1;
+- (void)setIsLightweightMember:(bool)arg1;
+- (void)setIsOtherInvitedHandle:(bool)arg1;
+- (void)setIsSplitSessionMember:(bool)arg1;
+- (void)setJoinedFromLetMeIn:(bool)arg1;
+- (void)setLightweightPrimary:(id)arg1;
+- (void)setLightweightPrimaryParticipantIdentifier:(unsigned long long)arg1;
+- (void)setNickname:(id)arg1;
+- (void)setSplitSessionPrimary:(id)arg1;
+- (void)setValidationSource:(long long)arg1;
+- (id)splitSessionPrimary;
+- (long long)validationSource;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol AMUIInfographViewControllerDelegate <AMUIAmbientViewControllingDelegate>
+
+@end

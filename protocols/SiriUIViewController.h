@@ -1,0 +1,4 @@
+
+@protocol SiriUIViewController <SiriSharedUIViewControlling>
+
+@end

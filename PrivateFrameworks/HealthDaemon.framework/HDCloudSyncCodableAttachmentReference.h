@@ -1,0 +1,93 @@
+
+@interface HDCloudSyncCodableAttachmentReference : PBCodable <NSCopying> {
+    NSString * _attachmentIdentifier;
+    double  _creationDate;
+    NSString * _deviceName;
+    struct { 
+        unsigned int creationDate : 1; 
+        unsigned int options : 1; 
+        unsigned int schemaVersion : 1; 
+        unsigned int type : 1; 
+    }  _has;
+    NSData * _metadata;
+    NSString * _objectIdentifier;
+    long long  _options;
+    NSString * _productType;
+    NSString * _schemaIdentifier;
+    long long  _schemaVersion;
+    NSString * _systemBuildVersion;
+    long long  _type;
+}
+
+@property (nonatomic, retain) NSString *attachmentIdentifier;
+@property (nonatomic) double creationDate;
+@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, readonly) bool hasAttachmentIdentifier;
+@property (nonatomic) bool hasCreationDate;
+@property (nonatomic, readonly) bool hasDeviceName;
+@property (nonatomic, readonly) bool hasMetadata;
+@property (nonatomic, readonly) bool hasObjectIdentifier;
+@property (nonatomic) bool hasOptions;
+@property (nonatomic, readonly) bool hasProductType;
+@property (nonatomic, readonly) bool hasSchemaIdentifier;
+@property (nonatomic) bool hasSchemaVersion;
+@property (nonatomic, readonly) bool hasSystemBuildVersion;
+@property (nonatomic) bool hasType;
+@property (nonatomic, retain) NSData *metadata;
+@property (nonatomic, retain) NSString *objectIdentifier;
+@property (nonatomic) long long options;
+@property (nonatomic, retain) NSString *productType;
+@property (nonatomic, retain) NSString *schemaIdentifier;
+@property (nonatomic) long long schemaVersion;
+@property (nonatomic, retain) NSString *systemBuildVersion;
+@property (nonatomic) long long type;
+
+- (void).cxx_destruct;
+- (id)attachmentIdentifier;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)creationDate;
+- (id)description;
+- (id)deviceName;
+- (id)dictionaryRepresentation;
+- (bool)hasAttachmentIdentifier;
+- (bool)hasCreationDate;
+- (bool)hasDeviceName;
+- (bool)hasMetadata;
+- (bool)hasObjectIdentifier;
+- (bool)hasOptions;
+- (bool)hasProductType;
+- (bool)hasSchemaIdentifier;
+- (bool)hasSchemaVersion;
+- (bool)hasSystemBuildVersion;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)metadata;
+- (id)objectIdentifier;
+- (long long)options;
+- (id)productType;
+- (bool)readFrom:(id)arg1;
+- (id)schemaIdentifier;
+- (long long)schemaVersion;
+- (void)setAttachmentIdentifier:(id)arg1;
+- (void)setCreationDate:(double)arg1;
+- (void)setDeviceName:(id)arg1;
+- (void)setHasCreationDate:(bool)arg1;
+- (void)setHasOptions:(bool)arg1;
+- (void)setHasSchemaVersion:(bool)arg1;
+- (void)setHasType:(bool)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setObjectIdentifier:(id)arg1;
+- (void)setOptions:(long long)arg1;
+- (void)setProductType:(id)arg1;
+- (void)setSchemaIdentifier:(id)arg1;
+- (void)setSchemaVersion:(long long)arg1;
+- (void)setSystemBuildVersion:(id)arg1;
+- (void)setType:(long long)arg1;
+- (id)systemBuildVersion;
+- (long long)type;
+- (void)writeTo:(id)arg1;
+
+@end

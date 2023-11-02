@@ -1,0 +1,86 @@
+
+@interface FCArticleMetadata : NSObject <FCHeadlineMetadata> {
+    NSDictionary * _dictionary;
+    NSDate * _displayDate;
+    NSString * _identifier;
+    NSString * _rapidUpdate;
+}
+
+@property (nonatomic, readonly) NSString *articleID;
+@property (nonatomic, readonly) long long contentType;
+@property (nonatomic, readonly) NSString *contentURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDictionary *dictionary;
+@property (nonatomic, retain) NSDate *displayDate;
+@property (nonatomic, readonly) FCHeadlineThumbnailMetadata *formatThumbnail;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, readonly) bool isPaid;
+@property (nonatomic, readonly) bool isTreatedAsNew;
+@property (nonatomic, readonly) NSDate *publishDate;
+@property (nonatomic, readonly) NSString *rapidUpdate;
+@property (nonatomic, readonly) NSString *routeURL;
+@property (nonatomic, readonly) NSString *shortExcerpt;
+@property (nonatomic, readonly) NSString *sourceChannelTagID;
+@property (nonatomic, readonly) NSArray *sportsEventIDs;
+@property (nonatomic, readonly) NSString *storyType;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *thumbnail;
+@property (nonatomic, readonly) NSString *thumbnailAccentColor;
+@property (nonatomic, readonly) NSString *thumbnailBackgroundColor;
+@property (nonatomic, readonly) long long thumbnailFocalFrame;
+@property (nonatomic, readonly) NSString *thumbnailHQ;
+@property (nonatomic, readonly) long long thumbnailHQMetadata;
+@property (nonatomic, readonly) NSString *thumbnailMedium;
+@property (nonatomic, readonly) long long thumbnailMediumMetadata;
+@property (nonatomic, readonly) long long thumbnailMetadata;
+@property (nonatomic, readonly) NSString *thumbnailPrimaryColor;
+@property (nonatomic, readonly) NSString *thumbnailTextColor;
+@property (nonatomic, readonly) NSString *thumbnailUltraHQ;
+@property (nonatomic, readonly) long long thumbnailUltraHQMetadata;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSString *videoType;
+@property (nonatomic, readonly) NSString *videoURL;
+
+- (void).cxx_destruct;
+- (id)articleID;
+- (long long)contentType;
+- (id)contentURL;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionary;
+- (id)displayDate;
+- (id)identifier;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 identifier:(id)arg2;
+- (bool)isPaid;
+- (bool)isTreatedAsNew;
+- (id)publishDate;
+- (id)publisherID;
+- (id)rapidUpdate;
+- (id)routeURL;
+- (void)setDictionary:(id)arg1;
+- (void)setDisplayDate:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (id)shortExcerpt;
+- (id)sourceChannelTagID;
+- (id)sportsEventIDs;
+- (id)storyType;
+- (id)thumbnail;
+- (id)thumbnailAccentColor;
+- (id)thumbnailBackgroundColor;
+- (long long)thumbnailFocalFrame;
+- (id)thumbnailHQ;
+- (long long)thumbnailHQMetadata;
+- (id)thumbnailMedium;
+- (long long)thumbnailMediumMetadata;
+- (long long)thumbnailMetadata;
+- (id)thumbnailPrimaryColor;
+- (id)thumbnailTextColor;
+- (id)thumbnailUltraHQ;
+- (long long)thumbnailUltraHQMetadata;
+- (id)title;
+- (id)videoType;
+- (id)videoURL;
+
+@end

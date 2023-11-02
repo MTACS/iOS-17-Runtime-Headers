@@ -1,0 +1,86 @@
+
+@interface SBFluidSwitcherAppClipLiveContentOverlay : NSObject <SBFullScreenSwitcherSceneLiveContentOverlay, SBSDisplayLayoutElementProviding, SBUISizeObservingViewDelegate> {
+    bool  _asyncRenderingEnabled;
+    NSString * _bundleIdentifier;
+    SBUISizeObservingView * _containerView;
+    <SBSwitcherLiveContentOverlayDelegate> * _delegate;
+    SBSDisplayLayoutElement * _displayLayoutElement;
+    <BSInvalidatable> * _displayLayoutElementAssertion;
+    bool  _isInsetForHomeAffordance;
+    bool  _isPendingUpdate;
+    SBAppClipOverlayViewController * _placeholderViewController;
+    bool  _resizesHostedContext;
+    SBWindowScene * _sbWindowScene;
+    NSString * _sceneIdentifier;
+    UIStatusBar * _statusBar;
+    bool  _wantsEnhancedWindowingEnabled;
+}
+
+@property (getter=isAsyncRenderingEnabled, nonatomic, readonly) bool asyncRenderingEnabled;
+@property (nonatomic, readonly) UIView *contentOverlayView;
+@property (nonatomic, readonly) UIViewController *contentViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBSwitcherLiveContentOverlayDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isDisplayLayoutElementActive, nonatomic) bool displayLayoutElementActive;
+@property (readonly) unsigned long long hash;
+@property (getter=isInsetForHomeAffordance, nonatomic) bool insetForHomeAffordance;
+@property (nonatomic, readonly) bool requiresLegacyRotationSupport;
+@property (nonatomic) bool resizesHostedContext;
+@property (getter=_sbWindowScene, nonatomic, readonly) SBWindowScene *sbWindowScene;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long touchBehavior;
+@property (nonatomic) bool wantsEnhancedWindowingEnabled;
+
+- (void).cxx_destruct;
+- (void)_beginPollingUpdateStillAvailable;
+- (void)_createAndConfigureStatusBar;
+- (void)_installedApplicationsDidChange:(id)arg1;
+- (void)_launchApplication:(id)arg1;
+- (id)_sbWindowScene;
+- (id)_statusBarReusePool;
+- (id)backgroundActivitiesToSuppress;
+- (void)configureWithWorkspaceEntity:(id)arg1 referenceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 contentOrientation:(long long)arg3 containerOrientation:(long long)arg4 layoutRole:(long long)arg5 sbsDisplayLayoutRole:(long long)arg6 spaceConfiguration:(long long)arg7 floatingConfiguration:(long long)arg8 hasClassicAppOrientationMismatch:(bool)arg9 sizingPolicy:(long long)arg10;
+- (id)contentOverlayView;
+- (id)contentViewController;
+- (double)currentStatusBarHeight;
+- (void)dealloc;
+- (id)delegate;
+- (void)disableAsynchronousRenderingForNextCommit;
+- (id)initWithPlaceholderEntity:(id)arg1 windowScene:(id)arg2;
+- (void)invalidate;
+- (bool)isAsyncRenderingEnabled;
+- (bool)isContentUpdating;
+- (bool)isDisplayLayoutElementActive;
+- (bool)isInsetForHomeAffordance;
+- (long long)leadingStatusBarStyle;
+- (id)liveSceneIdentityToken;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
+- (id)overlaySceneHandle;
+- (long long)overlayType;
+- (long long)preferredInterfaceOrientation;
+- (id)prepareOverlayForContentRotation;
+- (bool)requiresLegacyRotationSupport;
+- (bool)resizesHostedContext;
+- (void)setAsyncRenderingEnabled:(bool)arg1 withMinificationFilterEnabled:(bool)arg2;
+- (void)setBlurViewIconScale:(double)arg1;
+- (void)setContentReferenceSize:(struct CGSize { double x1; double x2; })arg1 interfaceOrientation:(long long)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setDimmed:(bool)arg1;
+- (void)setDisplayLayoutElementActive:(bool)arg1;
+- (void)setInsetForHomeAffordance:(bool)arg1;
+- (void)setLiveContentBlurEnabled:(bool)arg1 duration:(double)arg2 blurDelay:(double)arg3 iconViewScale:(double)arg4 began:(id /* block */)arg5 completion:(id /* block */)arg6;
+- (void)setMatchMovedToScene:(bool)arg1;
+- (void)setResizesHostedContext:(bool)arg1;
+- (void)setStatusBarHidden:(bool)arg1 nubViewHidden:(bool)arg2 animator:(id /* block */)arg3;
+- (void)setTouchBehavior:(long long)arg1;
+- (void)setUsesBrightSceneViewBackgroundMaterial:(bool)arg1;
+- (void)setWantsEnhancedWindowingEnabled:(bool)arg1;
+- (void)sizeObservingView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)touchBehavior;
+- (long long)trailingStatusBarStyle;
+- (void)updateDisplayLayoutElementWithBuilder:(id /* block */)arg1;
+- (bool)wantsEnhancedWindowingEnabled;
+
+@end

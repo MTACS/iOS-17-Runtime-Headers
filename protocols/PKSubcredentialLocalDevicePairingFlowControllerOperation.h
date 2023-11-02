@@ -1,0 +1,8 @@
+
+@protocol PKSubcredentialLocalDevicePairingFlowControllerOperation <PKSubcredentialPairingFlowControllerOperation, PKSubcredentialProvisioningControllerDelegate>
+
+@required
+
+- (PKAppletSubcredentialPairingSession *)pairingSessionWithDelegate:(id <PKAppletSubcredentialPairingSessionDelegate>)arg1;
+
+@end

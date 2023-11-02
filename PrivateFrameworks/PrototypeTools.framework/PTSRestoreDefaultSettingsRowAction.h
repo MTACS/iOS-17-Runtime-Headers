@@ -1,0 +1,4 @@
+
+@interface PTSRestoreDefaultSettingsRowAction : PTRestoreDefaultSettingsRowAction
+
+@end

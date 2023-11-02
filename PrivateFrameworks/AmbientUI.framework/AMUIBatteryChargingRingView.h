@@ -1,0 +1,86 @@
+
+@interface AMUIBatteryChargingRingView : AMUIBatteryChargingView {
+    AMUIRingLayer * _batteryLevelRing;
+    UILabel * _chargePercentLabel;
+    CALayer * _chargeRingLayer;
+    CALayer * _chargingBoltGlyph;
+    UIView * _chargingContainerView;
+    AMUIBatteryChargingUIConfiguration * _configuration;
+    PLPlatterView * _grabberView;
+    BCBatteryDevice * _internalBattery;
+    AMUIPowerStatus * _internalStatus;
+    CALayer * _magSafeLayer;
+    PLPlatterView * _platterView;
+    CALayer * _ringContainerLayer;
+    CALayer * _ringLayer;
+    AMUIRingLayer * _trackFillRingLayer;
+}
+
+@property (nonatomic, retain) AMUIRingLayer *batteryLevelRing;
+@property (nonatomic, retain) UILabel *chargePercentLabel;
+@property (nonatomic, retain) CALayer *chargeRingLayer;
+@property (nonatomic, retain) CALayer *chargingBoltGlyph;
+@property (nonatomic, retain) UIView *chargingContainerView;
+@property (nonatomic, retain) AMUIBatteryChargingUIConfiguration *configuration;
+@property (nonatomic, retain) PLPlatterView *grabberView;
+@property (nonatomic, retain) BCBatteryDevice *internalBattery;
+@property (nonatomic, retain) AMUIPowerStatus *internalStatus;
+@property (nonatomic, retain) CALayer *magSafeLayer;
+@property (nonatomic, readonly) PLPlatterView *platterView;
+@property (nonatomic, retain) CALayer *ringContainerLayer;
+@property (nonatomic, retain) CALayer *ringLayer;
+@property (nonatomic, retain) AMUIRingLayer *trackFillRingLayer;
+
+- (void).cxx_destruct;
+- (void)_addGaussianBlurToLayerIfNeeded:(id)arg1 inputRadius:(double)arg2;
+- (struct CGPoint { double x1; double x2; })_initialRingCenterPosition;
+- (bool)_isDarkerSystemColorsEnabled;
+- (bool)_isRTL;
+- (bool)_isReduceMotionEnabled;
+- (bool)_layerHasGaussianBlurFilter:(id)arg1;
+- (struct CGPath { }*)_pathForRingConfiguration:(id)arg1;
+- (id)_powerStatusForBattery:(id)arg1;
+- (void)_removeAllAnimations;
+- (void)_removeAllAnimations:(bool)arg1;
+- (id)_ringLayerForRingConfiguration:(id)arg1;
+- (struct CGPoint { double x1; double x2; })_ringOrigin;
+- (void)_runBatteryLevelAnimation;
+- (id)_springAnimationForKeyPath:(id)arg1 duration:(double)arg2 delay:(double)arg3 fromValue:(id)arg4 toValue:(id)arg5 fillMode:(id)arg6 stiffness:(double)arg7 mass:(double)arg8 damping:(double)arg9;
+- (id)_trackRingForRingConfiguration:(id)arg1 withBlendMode:(id)arg2;
+- (void)_updateForPowerStatus:(id)arg1;
+- (id)batteryLevelRing;
+- (id)chargePercentLabel;
+- (id)chargeRingLayer;
+- (id)chargingBoltGlyph;
+- (id)chargingContainerView;
+- (id)configuration;
+- (id)grabberView;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 configuration:(id)arg2;
+- (id)internalBattery;
+- (id)internalStatus;
+- (void)layoutSubviews;
+- (id)magSafeLayer;
+- (id)platterView;
+- (void)presentChargingViewWithCompletionHandler:(id /* block */)arg1;
+- (id)ringContainerLayer;
+- (id)ringLayer;
+- (void)setBatteryLevelRing:(id)arg1;
+- (void)setChargePercentLabel:(id)arg1;
+- (void)setChargeRingLayer:(id)arg1;
+- (void)setChargingBoltGlyph:(id)arg1;
+- (void)setChargingContainerView:(id)arg1;
+- (void)setConfiguration:(id)arg1;
+- (void)setGrabberView:(id)arg1;
+- (void)setInternalBattery:(id)arg1;
+- (void)setInternalStatus:(id)arg1;
+- (void)setLegibilitySettings:(id)arg1;
+- (void)setMagSafeLayer:(id)arg1;
+- (void)setRingContainerLayer:(id)arg1;
+- (void)setRingLayer:(id)arg1;
+- (void)setTrackFillRingLayer:(id)arg1;
+- (id)trackFillRingLayer;
+- (void)updateWithBattery:(id)arg1;
+
+@end

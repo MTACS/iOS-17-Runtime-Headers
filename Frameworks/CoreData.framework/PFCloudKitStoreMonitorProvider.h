@@ -1,0 +1,4 @@
+
+@interface PFCloudKitStoreMonitorProvider : NSObject
+
+@end

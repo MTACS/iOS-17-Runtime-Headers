@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.HomeAutomationSecuritySystemResponses : HomeAutomationInternal.HomeAutomationEntityResponses
+
+@end

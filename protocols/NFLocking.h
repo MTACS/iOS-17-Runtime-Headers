@@ -1,0 +1,4 @@
+
+@protocol NFLocking <NSLocking>
+
+@end

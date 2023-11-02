@@ -1,0 +1,4 @@
+
+@interface DBBooksLeafIconDataSource : DBLeafIconDataSource
+
+@end

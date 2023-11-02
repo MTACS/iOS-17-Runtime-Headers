@@ -1,0 +1,93 @@
+
+@interface PSESchemaPSEMediaUserFollowupAction : SISchemaInstrumentationMessage {
+    struct { 
+        unsigned int state : 1; 
+        unsigned int mediaContentDurationBucket : 1; 
+        unsigned int isSameAppUsed : 1; 
+        unsigned int isFirstPartyAppUsedForFollowup : 1; 
+        unsigned int isAirPlay : 1; 
+        unsigned int mediaType : 1; 
+        unsigned int isSubscriber : 1; 
+    }  _has;
+    bool  _hasMediaEntitySimilarity;
+    bool  _isAirPlay;
+    bool  _isFirstPartyAppUsedForFollowup;
+    bool  _isSameAppUsed;
+    bool  _isSubscriber;
+    int  _mediaContentDurationBucket;
+    PSESchemaPSEMediaEntitySimilarity * _mediaEntitySimilarity;
+    int  _mediaType;
+    int  _state;
+}
+
+@property (nonatomic) bool hasIsAirPlay;
+@property (nonatomic) bool hasIsFirstPartyAppUsedForFollowup;
+@property (nonatomic) bool hasIsSameAppUsed;
+@property (nonatomic) bool hasIsSubscriber;
+@property (nonatomic) bool hasMediaContentDurationBucket;
+@property (nonatomic) bool hasMediaEntitySimilarity;
+@property (nonatomic) bool hasMediaType;
+@property (nonatomic) bool hasState;
+@property (nonatomic) bool isAirPlay;
+@property (nonatomic) bool isFirstPartyAppUsedForFollowup;
+@property (nonatomic) bool isSameAppUsed;
+@property (nonatomic) bool isSubscriber;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) int mediaContentDurationBucket;
+@property (nonatomic, retain) PSESchemaPSEMediaEntitySimilarity *mediaEntitySimilarity;
+@property (nonatomic) int mediaType;
+@property (nonatomic) int state;
+
+- (void).cxx_destruct;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (void)deleteIsAirPlay;
+- (void)deleteIsFirstPartyAppUsedForFollowup;
+- (void)deleteIsSameAppUsed;
+- (void)deleteIsSubscriber;
+- (void)deleteMediaContentDurationBucket;
+- (void)deleteMediaEntitySimilarity;
+- (void)deleteMediaType;
+- (void)deleteState;
+- (id)dictionaryRepresentation;
+- (bool)hasIsAirPlay;
+- (bool)hasIsFirstPartyAppUsedForFollowup;
+- (bool)hasIsSameAppUsed;
+- (bool)hasIsSubscriber;
+- (bool)hasMediaContentDurationBucket;
+- (bool)hasMediaEntitySimilarity;
+- (bool)hasMediaType;
+- (bool)hasState;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isAirPlay;
+- (bool)isEqual:(id)arg1;
+- (bool)isFirstPartyAppUsedForFollowup;
+- (bool)isSameAppUsed;
+- (bool)isSubscriber;
+- (id)jsonData;
+- (int)mediaContentDurationBucket;
+- (id)mediaEntitySimilarity;
+- (int)mediaType;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsAirPlay:(bool)arg1;
+- (void)setHasIsFirstPartyAppUsedForFollowup:(bool)arg1;
+- (void)setHasIsSameAppUsed:(bool)arg1;
+- (void)setHasIsSubscriber:(bool)arg1;
+- (void)setHasMediaContentDurationBucket:(bool)arg1;
+- (void)setHasMediaEntitySimilarity:(bool)arg1;
+- (void)setHasMediaType:(bool)arg1;
+- (void)setHasState:(bool)arg1;
+- (void)setIsAirPlay:(bool)arg1;
+- (void)setIsFirstPartyAppUsedForFollowup:(bool)arg1;
+- (void)setIsSameAppUsed:(bool)arg1;
+- (void)setIsSubscriber:(bool)arg1;
+- (void)setMediaContentDurationBucket:(int)arg1;
+- (void)setMediaEntitySimilarity:(id)arg1;
+- (void)setMediaType:(int)arg1;
+- (void)setState:(int)arg1;
+- (int)state;
+- (id)suppressMessageUnderConditions;
+- (void)writeTo:(id)arg1;
+
+@end

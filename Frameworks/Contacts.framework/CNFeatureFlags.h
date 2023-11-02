@@ -1,0 +1,4 @@
+
+@interface CNFeatureFlags : NSObject
+
+@end

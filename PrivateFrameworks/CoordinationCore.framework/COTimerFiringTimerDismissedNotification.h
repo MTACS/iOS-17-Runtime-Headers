@@ -1,0 +1,4 @@
+
+@interface COTimerFiringTimerDismissedNotification : COTimerNotification
+
+@end

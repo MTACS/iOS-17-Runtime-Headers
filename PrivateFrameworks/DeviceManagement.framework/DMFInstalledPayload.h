@@ -1,0 +1,4 @@
+
+@interface DMFInstalledPayload : DMFProfilePayload
+
+@end

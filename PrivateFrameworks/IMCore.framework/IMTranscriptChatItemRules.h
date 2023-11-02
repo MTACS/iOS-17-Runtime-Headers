@@ -1,0 +1,96 @@
+
+@interface IMTranscriptChatItemRules : NSObject <IMChatItemRules> {
+    IMChat * _chat;
+    NSMutableArray * _chatItems;
+    NSArray * _items;
+    NSDate * _nextStaleTime;
+}
+
+@property (nonatomic) IMChat *chat;
+@property (nonatomic, retain) NSMutableArray *chatItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSArray *items;
+@property (nonatomic, retain) NSDate *nextStaleTime;
+@property (readonly) Class superclass;
+
++ (bool)testShouldShowReportSpamForChat:(id)arg1 items:(id)arg2;
++ (bool)testShouldShowSMSSpamForChat:(id)arg1 items:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)_attributionChatItemForChatItem:(id)arg1;
+- (id)_chatItems;
+- (id)_chatItemsForItem:(id)arg1 previousItem:(id)arg2;
+- (id)_chatItemsWithReplyCountsForNewChatItems:(id)arg1 parentItem:(id)arg2 threadOriginatorItem:(id)arg3;
+- (id)_currentChatSubscriptionLabel;
+- (void)_didProcessChatItems:(id)arg1;
+- (id)_editedStatusItemForEditedMessagePartChatItem:(id)arg1 combiningStatusType:(long long)arg2;
+- (id)_effectControlForChatItem:(id)arg1;
+- (id)_filteredChatItemsForNewChatItems:(id)arg1;
+- (bool)_hasEarlierMessagesToLoad;
+- (bool)_hasMultipleActiveSubscriptions;
+- (bool)_hasRecentMessagesToLoad;
+- (id)_historyToDisplayForMessageItem:(id)arg1 partIndex:(long long)arg2;
+- (id)_initWithChat:(id)arg1;
+- (void)_invalidateSpamIndicatorCachedValues;
+- (id)_itemWithChatItemsDeleted:(id)arg1 fromItem:(id)arg2 indexesOfItemsDeleted:(id*)arg3 indexToRangeMapOfItemsDeleted:(id*)arg4;
+- (id)_items;
+- (long long)_lastItemIndexExcludingWatchReplyOptions:(id)arg1;
+- (void)_manageMomentShareAndAggregateItemsForChatItems:(id)arg1;
+- (id)_newDeliveredChatItemWithStatusType:(long long)arg1 atIndex:(long long)arg2 chatItems:(id)arg3;
+- (id)_nextStaleTime;
+- (void)_processChatItemsForAttribution:(id)arg1;
+- (void)_processChatItemsForBreadcrumbs:(id)arg1;
+- (void)_processChatItemsForEditedStatus:(id)arg1;
+- (void)_processChatItemsForExpandedEditedMessageHistory:(id)arg1;
+- (void)_processChatItemsForIsShowingEditHistory:(id)arg1;
+- (void)_processChatItemsForJunkRecoveryItem:(id)arg1 inChat:(id)arg2;
+- (void)_processChatItemsForMessageStatusSequenceNumber:(id)arg1;
+- (void)_processChatItemsForReplayButton:(id)arg1;
+- (void)_processChatItemsForStewieResumeButtons:(id)arg1 inChat:(id)arg2;
+- (void)_processChatItemsForUnavailabilityIndicator:(id)arg1;
+- (id)_replyCountChatItemForChatItem:(id)arg1 parentItem:(id)arg2 threadIdentifier:(id)arg3 replyMessageGUID:(id)arg4 replyIsFromMe:(bool)arg5 threadOriginatorMessageItem:(id)arg6;
+- (id)_replyCountChatItemForChatItem:(id)arg1 parentItem:(id)arg2 threadOriginatorMessageItem:(id)arg3;
+- (void)_setItems:(id)arg1;
+- (void)_setNextStaleTime:(id)arg1;
+- (bool)_shouldAdjustNewDeliveredItemIndex:(long long)arg1 chatItems:(id)arg2;
+- (bool)_shouldAppendBlockContacts;
+- (bool)_shouldAppendDateForItem:(id)arg1 previousItem:(id)arg2;
+- (bool)_shouldAppendNumberChangedForItem:(id)arg1 previousItem:(id)arg2 lastChatItem:(id)arg3 outPhoneNumber:(id*)arg4;
+- (bool)_shouldAppendReplyContextForItem:(id)arg1 previousItem:(id)arg2 chatStyle:(unsigned char)arg3;
+- (bool)_shouldAppendReplyCountIfNeeded;
+- (bool)_shouldAppendServiceForItem:(id)arg1 previousItem:(id)arg2 chatStyle:(unsigned char)arg3;
+- (bool)_shouldAppendStewieSharingSummaryForChat:(id)arg1 item:(id)arg2 previousItem:(id)arg3;
+- (bool)_shouldAppendStoppedSharingForChat:(id)arg1 item:(id)arg2 previousItem:(id)arg3;
+- (bool)_shouldDisplayAttributionInfo:(id)arg1;
+- (bool)_shouldRegenerateChatItemsForItem:(id)arg1 previousItem:(id)arg2 oldPreviousItem:(id)arg3;
+- (bool)_shouldReloadChatItem:(id)arg1 oldChatItem:(id)arg2;
+- (bool)_shouldReloadChatItemWithAssociatedChatItems:(id)arg1 oldAssociatedChatItems:(id)arg2;
+- (bool)_shouldShowBlockContactForChat:(id)arg1 withItems:(id)arg2;
+- (bool)_shouldShowEffectPlayButtonForMessage:(id)arg1;
+- (bool)_shouldShowReportSpamForChat:(id)arg1 withItems:(id)arg2;
+- (bool)_shouldShowStewieResumeButtonsForChat:(id)arg1;
+- (bool)_supportsContiguousChatItems;
+- (bool)_updateAggregateAttachmentMessagePartAssociatedItems:(id)arg1 map:(id)arg2;
+- (id)_updateOrRemoveDeliveredStatusItemMovingFromOldIndex:(long long)arg1 chatItems:(id)arg2;
+- (void)addChatItem:(id)arg1 toChatItemsAtEndButBeforeWatchReplyItems:(id)arg2;
+- (id)chat;
+- (id)chatItemForIMChatItem:(id)arg1;
+- (id)chatItems;
+- (id)inlineReplyController;
+- (bool)isDeliveredStatusItem:(id)arg1;
+- (bool)isDeliveredStatusType:(long long)arg1;
+- (bool)isReadStatusItem:(id)arg1;
+- (bool)isReadStatusType:(long long)arg1;
+- (id)items;
+- (id)nextStaleTime;
+- (void)setChat:(id)arg1;
+- (void)setChatItems:(id)arg1;
+- (void)setItems:(id)arg1;
+- (void)setNextStaleTime:(id)arg1;
+- (bool)shouldShowExpressiveMessageTextAsText:(id)arg1;
+- (bool)shouldShowRaiseMessageStatus;
+- (id)testChatItems;
+
+@end

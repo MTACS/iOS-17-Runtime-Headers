@@ -1,0 +1,4 @@
+
+@protocol ABActionSelectorContent <NSObject>
+
+@end

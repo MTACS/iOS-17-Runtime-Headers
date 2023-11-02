@@ -1,0 +1,91 @@
+
+@interface ASDAppReviewAppMetadata : NSObject <ASDAppMetadata, NSCopying, NSSecureCoding> {
+    NSURL * _artworkURL;
+    NSDictionary * _backgroundAssetMetadata;
+    bool  _beta;
+    NSString * _bundleID;
+    NSNumber * _externalVersionIdentifier;
+    bool  _hasMessagesExtension;
+    NSNumber * _initialODRSize;
+    NSNumber * _itemID;
+    NSString * _itemName;
+    bool  _launchProhibited;
+    NSURL * _messagesArtworkURL;
+    NSData * _onDemandResourceManifest;
+    NSData * _packageDPInfo;
+    NSData * _packageSINF;
+    NSURL * _packageURL;
+    MIStoreMetadata * _storeMetadata;
+    NSString * _variantID;
+    NSString * _vendorName;
+}
+
+@property (nonatomic, copy) NSURL *artworkURL;
+@property (nonatomic, copy) NSDictionary *backgroundAssetMetadata;
+@property (getter=isBeta, nonatomic) bool beta;
+@property (nonatomic, readonly) NSString *bundleID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSNumber *externalVersionIdentifier;
+@property (nonatomic) bool hasMessagesExtension;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSNumber *initialODRSize;
+@property (nonatomic, copy) NSNumber *itemID;
+@property (nonatomic, copy) NSString *itemName;
+@property (getter=isLaunchProhibited, nonatomic) bool launchProhibited;
+@property (nonatomic, copy) NSURL *messagesArtworkURL;
+@property (readonly) long long metadataType;
+@property (nonatomic, copy) NSData *onDemandResourceManifest;
+@property (nonatomic, copy) NSData *packageDPInfo;
+@property (nonatomic, copy) NSData *packageSINF;
+@property (nonatomic, copy) NSURL *packageURL;
+@property (nonatomic, copy) MIStoreMetadata *storeMetadata;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *variantID;
+@property (nonatomic, copy) NSString *vendorName;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)artworkURL;
+- (id)backgroundAssetMetadata;
+- (id)bundleID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)externalVersionIdentifier;
+- (bool)hasMessagesExtension;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithStoreMetadata:(id)arg1;
+- (id)initialODRSize;
+- (bool)isBeta;
+- (bool)isLaunchProhibited;
+- (id)itemID;
+- (id)itemName;
+- (id)messagesArtworkURL;
+- (long long)metadataType;
+- (id)onDemandResourceManifest;
+- (id)packageDPInfo;
+- (id)packageSINF;
+- (id)packageURL;
+- (void)setArtworkURL:(id)arg1;
+- (void)setBackgroundAssetMetadata:(id)arg1;
+- (void)setBeta:(bool)arg1;
+- (void)setExternalVersionIdentifier:(id)arg1;
+- (void)setHasMessagesExtension:(bool)arg1;
+- (void)setInitialODRSize:(id)arg1;
+- (void)setItemID:(id)arg1;
+- (void)setItemName:(id)arg1;
+- (void)setLaunchProhibited:(bool)arg1;
+- (void)setMessagesArtworkURL:(id)arg1;
+- (void)setOnDemandResourceManifest:(id)arg1;
+- (void)setPackageDPInfo:(id)arg1;
+- (void)setPackageSINF:(id)arg1;
+- (void)setPackageURL:(id)arg1;
+- (void)setStoreMetadata:(id)arg1;
+- (void)setVariantID:(id)arg1;
+- (void)setVendorName:(id)arg1;
+- (id)storeMetadata;
+- (id)variantID;
+- (id)vendorName;
+
+@end

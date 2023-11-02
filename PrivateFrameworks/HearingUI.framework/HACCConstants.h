@@ -1,0 +1,4 @@
+
+@interface HACCConstants : NSObject
+
+@end

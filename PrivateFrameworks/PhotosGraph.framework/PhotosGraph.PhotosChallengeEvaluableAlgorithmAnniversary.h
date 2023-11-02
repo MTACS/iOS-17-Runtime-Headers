@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmAnniversary : PhotosGraph.PhotosChallengeEvaluableMeaningAlgorithm
+
+@end

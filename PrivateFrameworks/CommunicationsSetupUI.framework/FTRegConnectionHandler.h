@@ -1,0 +1,45 @@
+
+@interface FTRegConnectionHandler : NSObject {
+    unsigned int  _caps;
+    struct { 
+        unsigned int listeningForNotifications : 1; 
+    }  _handlerFlags;
+    NSString * _listenerID;
+    NSString * _logName;
+    NSString * _name;
+    long long  _serviceType;
+}
+
+@property (setter=_setListenerID:, nonatomic, copy) NSString *_listenerID;
+@property (nonatomic, retain) NSString *_logName;
+@property (nonatomic, readonly, retain) NSString *_serviceName;
+@property (nonatomic) unsigned int caps;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) long long serviceType;
+
+- (void).cxx_destruct;
+- (void)_disconnectFromDaemon;
+- (void)_handleDaemonConnected:(id)arg1;
+- (void)_handleDaemonDisconnected:(id)arg1;
+- (bool)_isServiceSupported;
+- (id)_listenerID;
+- (id)_logName;
+- (id)_serviceName;
+- (void)_setListenerID:(id)arg1;
+- (void)_startListeningForNotifications;
+- (void)_stopListeningForNotifications;
+- (unsigned int)caps;
+- (bool)connectToDaemon;
+- (bool)connectToDaemon:(bool)arg1;
+- (void)dealloc;
+- (id)initWithServiceType:(long long)arg1 name:(id)arg2;
+- (id)initWithServiceType:(long long)arg1 name:(id)arg2 capabilities:(unsigned int)arg3;
+- (bool)isConnectedToDaemon;
+- (id)name;
+- (long long)serviceType;
+- (void)setCaps:(unsigned int)arg1;
+- (void)setName:(id)arg1;
+- (void)setServiceType:(long long)arg1;
+- (void)set_logName:(id)arg1;
+
+@end

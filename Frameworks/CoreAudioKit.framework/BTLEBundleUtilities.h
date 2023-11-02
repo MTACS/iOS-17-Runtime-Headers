@@ -1,0 +1,4 @@
+
+@interface BTLEBundleUtilities : NSObject
+
+@end

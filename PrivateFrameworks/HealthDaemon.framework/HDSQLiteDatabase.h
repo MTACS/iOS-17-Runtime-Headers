@@ -1,0 +1,108 @@
+
+@interface HDSQLiteDatabase : NSObject {
+    NSMutableArray * _beforeCommitBlocks;
+    long long  _cacheScope;
+    bool  _checkpointRequired;
+    NSError * _corruptionError;
+    struct sqlite3 { } * _db;
+    <HDSQLiteDatabaseDelegate> * _delegate;
+    bool  _encounteredOutOfSpace;
+    NSString * _fileProtectionType;
+    NSURL * _fileURL;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _interruptionLock;
+    bool  _isHandlingTransactionBeforeCommit;
+    bool  _isHandlingTransactionEnd;
+    bool  _isInTransaction;
+    NSMutableArray * _onCommitBlocks;
+    NSMutableArray * _onRollbackBlocks;
+    bool  _permitWritesInReadTransaction;
+    bool  _requiresRollback;
+    HDSQLiteStatementCache * _statementCache;
+    _Atomic bool  _transactionInterruptRequested;
+    long long  _transactionType;
+    bool  _writer;
+}
+
+@property (nonatomic) long long cacheScope;
+@property (nonatomic) bool checkpointRequired;
+@property (nonatomic, readonly, copy) NSError *corruptionError;
+@property (nonatomic) <HDSQLiteDatabaseDelegate> *delegate;
+@property (nonatomic) bool encounteredOutOfSpace;
+@property (nonatomic, copy) NSString *fileProtectionType;
+@property (nonatomic, readonly, copy) NSURL *fileURL;
+@property (nonatomic, readonly, copy) NSNumber *lastInsertRowID;
+@property (getter=isOpen, nonatomic, readonly) bool open;
+@property (nonatomic) bool permitWritesInReadTransaction;
+@property (nonatomic, readonly) HDSQLiteStatementCache *statementCache;
+@property bool transactionInterruptRequested;
+@property (getter=isWriter, nonatomic) bool writer;
+
++ (bool)databaseSchemas:(id)arg1 containTable:(id)arg2;
++ (id)highFrequencyDatabaseURLWithProfileDirectoryPath:(id)arg1;
++ (id)mainDatabaseURLWithProfileDirectoryPath:(id)arg1;
++ (id)memoryDatabaseFromURL:(id)arg1;
++ (id)protectedDatabaseURLWithProfileDirectoryPath:(id)arg1;
+
+- (void).cxx_destruct;
+- (bool)_executeStatementWithError:(id*)arg1 statementProvider:(id /* block */)arg2 bindingHandler:(id /* block */)arg3 enumerationHandler:(id /* block */)arg4;
+- (void)accessDatabaseUsingBlock:(id /* block */)arg1;
+- (bool)accessHFDForReadingWithError:(id*)arg1 block:(id /* block */)arg2;
+- (bool)accessHFDForWritingWithError:(id*)arg1 block:(id /* block */)arg2;
+- (void)beforeCommit:(id /* block */)arg1;
+- (long long)cacheScope;
+- (bool)checkpointRequired;
+- (void)close;
+- (bool)columnIsNullable:(id)arg1 inTable:(id)arg2 error:(id*)arg3;
+- (id)corruptionError;
+- (void)dealloc;
+- (id)delegate;
+- (bool)deleteDataEntitySubclassTable:(id)arg1 intermediateTables:(id)arg2 error:(id*)arg3;
+- (bool)deleteDataEntitySubclassTablesIfExist:(id)arg1 intermediateTables:(id)arg2 error:(id*)arg3;
+- (bool)deleteRowsFromDataEntitySubclassTable:(id)arg1 intermediateTables:(id)arg2 error:(id*)arg3;
+- (id)dumpSchemaWithError:(id*)arg1;
+- (bool)enableIncrementalAutovacuumForDatabaseWithName:(id)arg1 error:(id*)arg2;
+- (bool)encounteredOutOfSpace;
+- (bool)executeCachedStatementForKey:(const char *)arg1 error:(id*)arg2 SQLGenerator:(id /* block */)arg3 bindingHandler:(id /* block */)arg4 enumerationHandler:(id /* block */)arg5;
+- (bool)executeSQL:(id)arg1 error:(id*)arg2 bindingHandler:(id /* block */)arg3 enumerationHandler:(id /* block */)arg4;
+- (bool)executeSQLStatements:(id)arg1 error:(id*)arg2;
+- (bool)executeUncachedSQL:(id)arg1 error:(id*)arg2;
+- (bool)executeUncachedSQL:(id)arg1 error:(id*)arg2 bindingHandler:(id /* block */)arg3 enumerationHandler:(id /* block */)arg4;
+- (id)fileProtectionType;
+- (id)fileURL;
+- (bool)foreignKeyExistsFromTable:(id)arg1 column:(id)arg2 toTable:(id)arg3 column:(id)arg4 error:(id*)arg5;
+- (int)getChangesCount;
+- (id)getLastErrorWithStatement:(struct sqlite3_stmt { }*)arg1 context:(id)arg2;
+- (id)highFrequencyDataStore;
+- (bool)incrementalVacuumDatabaseIfNeeded:(id)arg1 error:(id*)arg2;
+- (id)initMemoryDatabase;
+- (id)initWithDatabaseURL:(id)arg1;
+- (bool)isOpen;
+- (bool)isWriter;
+- (id)lastInsertRowID;
+- (void)onCommit:(id /* block */)arg1 orRollback:(id /* block */)arg2;
+- (int)openForReadingWithError:(id*)arg1;
+- (int)openWithError:(id*)arg1;
+- (bool)performIntegrityCheckOnDatabase:(id)arg1 error:(id*)arg2 integrityErrorHandler:(id /* block */)arg3;
+- (bool)performTransactionWithType:(long long)arg1 error:(id*)arg2 usingBlock:(id /* block */)arg3;
+- (bool)permitWritesInReadTransaction;
+- (void)requireRollback;
+- (void)setCacheScope:(long long)arg1;
+- (void)setCheckpointRequired:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEncounteredOutOfSpace:(bool)arg1;
+- (void)setFileProtectionType:(id)arg1;
+- (void)setPermitWritesInReadTransaction:(bool)arg1;
+- (void)setTransactionInterruptRequested:(bool)arg1;
+- (bool)setUserVersion:(long long)arg1 withDatabaseName:(id)arg2 error:(id*)arg3;
+- (void)setWriter:(bool)arg1;
+- (id)statementCache;
+- (bool)table:(id)arg1 hasColumnWithName:(id)arg2 error:(id*)arg3;
+- (bool)transactionInterruptRequested;
+- (id)typeOfColumn:(id)arg1 inTable:(id)arg2 error:(id*)arg3;
+- (void)unitTest_setCorruptionError:(id)arg1;
+- (long long)userVersionWithDatabaseName:(id)arg1 error:(id*)arg2;
+- (long long)validateForeignKeysForTable:(id)arg1 databaseName:(id)arg2 error:(id*)arg3;
+
+@end

@@ -1,0 +1,82 @@
+
+@interface AXSSMotionTrackingInputManager : NSObject <AXSSMotionTrackingCameraManagerDelegate, AXSSMotionTrackingHIDManagerDelegate, AXSSMotionTrackingVideoFileInputManagerDelegate> {
+    NSMutableArray * __allCameraInputs;
+    NSMutableArray * __allInputs;
+    AXSSMotionTrackingCameraManager * __cameraManager;
+    NSMutableArray * __compatibleCameraInputs;
+    NSMutableArray * __compatibleInputs;
+    NSMutableArray * __hidInputs;
+    AXSSMotionTrackingHIDManager * __hidManager;
+    bool  __monitoring;
+    AXSSMotionTrackingVideoFileInputManager * __videoFileInputManager;
+    NSMutableArray * __videoFileInputs;
+    AXSSMotionTrackingInputConfiguration * _configuration;
+    <AXSSMotionTrackingInputManagerDelegate> * _delegate;
+    AXSSMotionTrackingInput * _inputToUse;
+}
+
+@property (nonatomic, retain) NSMutableArray *_allCameraInputs;
+@property (nonatomic, retain) NSMutableArray *_allInputs;
+@property (nonatomic, retain) AXSSMotionTrackingCameraManager *_cameraManager;
+@property (nonatomic, retain) NSMutableArray *_compatibleCameraInputs;
+@property (nonatomic, retain) NSMutableArray *_compatibleInputs;
+@property (nonatomic, retain) NSMutableArray *_hidInputs;
+@property (nonatomic, retain) AXSSMotionTrackingHIDManager *_hidManager;
+@property (nonatomic) bool _monitoring;
+@property (nonatomic, readonly) bool _supportsCameraInputs;
+@property (nonatomic, readonly) bool _supportsHIDInputs;
+@property (nonatomic, retain) AXSSMotionTrackingVideoFileInputManager *_videoFileInputManager;
+@property (nonatomic, retain) NSMutableArray *_videoFileInputs;
+@property (nonatomic, readonly, copy) NSArray *allInputs;
+@property (nonatomic, readonly, copy) NSArray *compatibleInputs;
+@property (nonatomic, copy) AXSSMotionTrackingInputConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AXSSMotionTrackingInputManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) AXSSMotionTrackingInput *inputToUse;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_allCameraInputs;
+- (id)_allInputs;
+- (id)_cameraManager;
+- (id)_compatibleCameraInputMatchingCaptureDeviceUniqueID:(id)arg1;
+- (id)_compatibleCameraInputs;
+- (id)_compatibleInputs;
+- (id)_hidInputs;
+- (id)_hidManager;
+- (void)_inputUpdated;
+- (bool)_monitoring;
+- (bool)_supportsCameraInputs;
+- (bool)_supportsHIDInputs;
+- (bool)_supportsMotionTrackingType:(unsigned long long)arg1;
+- (void)_updateMonitoring;
+- (id)_videoFileInputManager;
+- (id)_videoFileInputs;
+- (id)allInputs;
+- (id)compatibleInputs;
+- (id)configuration;
+- (id)delegate;
+- (id)initWithConfiguration:(id)arg1;
+- (id)inputToUse;
+- (void)motionTrackingCameraManager:(id)arg1 updatedCompatibleCaptureDevices:(id)arg2;
+- (void)motionTrackingHIDManager:(id)arg1 updatedDevices:(id)arg2;
+- (void)motionTrackingVideoFileInputManager:(id)arg1 updatedVideoFileInputNames:(id)arg2;
+- (void)setConfiguration:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setInputToUse:(id)arg1;
+- (void)set_allCameraInputs:(id)arg1;
+- (void)set_allInputs:(id)arg1;
+- (void)set_cameraManager:(id)arg1;
+- (void)set_compatibleCameraInputs:(id)arg1;
+- (void)set_compatibleInputs:(id)arg1;
+- (void)set_hidInputs:(id)arg1;
+- (void)set_hidManager:(id)arg1;
+- (void)set_monitoring:(bool)arg1;
+- (void)set_videoFileInputManager:(id)arg1;
+- (void)set_videoFileInputs:(id)arg1;
+- (void)startMonitoring;
+- (void)stopMonitoring;
+
+@end

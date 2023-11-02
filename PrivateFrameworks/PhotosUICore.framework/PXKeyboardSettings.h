@@ -1,0 +1,98 @@
+
+@interface PXKeyboardSettings : PXSettings {
+    long long  _allPhotosAspectFillFocusAnimationStyle;
+    double  _allPhotosAspectFillFocusPadding;
+    long long  _allPhotosAspectFitFocusAnimationStyle;
+    double  _allPhotosAspectFitFocusPadding;
+    double  _animationDuration;
+    double  _dampingRatio;
+    long long  _daysFocusAnimationStyle;
+    double  _daysFocusPadding;
+    double  _detailsViewOverlayAlpha;
+    double  _dimmingFactor;
+    bool  _enableShadow;
+    bool  _enableTungstenFocusEnvironmentSupport;
+    bool  _enableTungstenKeyboardNavigation;
+    long long  _monthsFocusAnimationStyle;
+    double  _monthsFocusPadding;
+    double  _shadowBlurRadius;
+    double  _shadowOpacity;
+    double  _shadowYOffset;
+    long long  _yearsFocusAnimationStyle;
+    double  _yearsFocusPadding;
+}
+
+@property (nonatomic) long long allPhotosAspectFillFocusAnimationStyle;
+@property (nonatomic) double allPhotosAspectFillFocusPadding;
+@property (nonatomic) long long allPhotosAspectFitFocusAnimationStyle;
+@property (nonatomic) double allPhotosAspectFitFocusPadding;
+@property (nonatomic) double animationDuration;
+@property (nonatomic) double dampingRatio;
+@property (nonatomic) long long daysFocusAnimationStyle;
+@property (nonatomic) double daysFocusPadding;
+@property (nonatomic) double detailsViewOverlayAlpha;
+@property (nonatomic) double dimmingFactor;
+@property (nonatomic) bool enableShadow;
+@property (nonatomic) bool enableTungstenFocusEnvironmentSupport;
+@property (nonatomic) bool enableTungstenKeyboardNavigation;
+@property (nonatomic) long long monthsFocusAnimationStyle;
+@property (nonatomic) double monthsFocusPadding;
+@property (nonatomic) double shadowBlurRadius;
+@property (nonatomic) double shadowOpacity;
+@property (nonatomic) double shadowYOffset;
+@property (nonatomic) long long yearsFocusAnimationStyle;
+@property (nonatomic) double yearsFocusPadding;
+
++ (id)_makeAnimationStyleChoiceRowWithTitle:(id)arg1 valueKeyPath:(id)arg2;
++ (id)_makeGlobalFocusAnimationSection;
++ (id)_makeLocalFocusAnimationSection;
++ (id)settingsControllerModule;
++ (id)sharedInstance;
+
+- (long long)allPhotosAspectFillFocusAnimationStyle;
+- (double)allPhotosAspectFillFocusPadding;
+- (long long)allPhotosAspectFitFocusAnimationStyle;
+- (double)allPhotosAspectFitFocusPadding;
+- (double)animationDuration;
+- (void)applyArchiveValue:(id)arg1 forKey:(id)arg2;
+- (id)archiveValueForKey:(id)arg1;
+- (double)dampingRatio;
+- (long long)daysFocusAnimationStyle;
+- (double)daysFocusPadding;
+- (double)detailsViewOverlayAlpha;
+- (double)dimmingFactor;
+- (bool)enableShadow;
+- (bool)enableTungstenFocusEnvironmentSupport;
+- (bool)enableTungstenKeyboardNavigation;
+- (id)globalFocusAnimationShadow;
+- (long long)monthsFocusAnimationStyle;
+- (double)monthsFocusPadding;
+- (id)parentSettings;
+- (void)setAllPhotosAspectFillFocusAnimationStyle:(long long)arg1;
+- (void)setAllPhotosAspectFillFocusPadding:(double)arg1;
+- (void)setAllPhotosAspectFitFocusAnimationStyle:(long long)arg1;
+- (void)setAllPhotosAspectFitFocusPadding:(double)arg1;
+- (void)setAnimationDuration:(double)arg1;
+- (void)setDampingRatio:(double)arg1;
+- (void)setDaysFocusAnimationStyle:(long long)arg1;
+- (void)setDaysFocusPadding:(double)arg1;
+- (void)setDefaultValues;
+- (void)setDetailsViewOverlayAlpha:(double)arg1;
+- (void)setDimmingFactor:(double)arg1;
+- (void)setEnableShadow:(bool)arg1;
+- (void)setEnableTungstenFocusEnvironmentSupport:(bool)arg1;
+- (void)setEnableTungstenKeyboardNavigation:(bool)arg1;
+- (void)setMonthsFocusAnimationStyle:(long long)arg1;
+- (void)setMonthsFocusPadding:(double)arg1;
+- (void)setShadowBlurRadius:(double)arg1;
+- (void)setShadowOpacity:(double)arg1;
+- (void)setShadowYOffset:(double)arg1;
+- (void)setYearsFocusAnimationStyle:(long long)arg1;
+- (void)setYearsFocusPadding:(double)arg1;
+- (double)shadowBlurRadius;
+- (double)shadowOpacity;
+- (double)shadowYOffset;
+- (long long)yearsFocusAnimationStyle;
+- (double)yearsFocusPadding;
+
+@end

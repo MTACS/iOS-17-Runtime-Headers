@@ -1,0 +1,4 @@
+
+@protocol ARDaemonSecureCoding <NSSecureCoding>
+
+@end

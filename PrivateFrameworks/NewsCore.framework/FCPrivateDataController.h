@@ -1,0 +1,97 @@
+
+@interface FCPrivateDataController : NSObject <FCAppActivityObserving, FCCKZonePruningAssistant, FCCKZoneRestorationSource, FCCommandQueueDelegate, FCJSONEncodableObjectProviding, FCPrivateRecordSyncManagerDelegate, FCPrivateZoneSyncManagerDelegate> {
+    unsigned long long  _changeCount;
+    FCCommandQueue * _commandQueue;
+    FCCloudContext * _context;
+    FCKeyValueStore * _localStore;
+    NSHashTable * _observers;
+    bool  _preparedForUse;
+    FCPushNotificationCenter * _pushNotificationCenter;
+    NSHashTable * _stateObservers;
+    NSString * _storeDirectory;
+    NSArray * _syncManagers;
+    FCAsyncSerialQueue * _syncQueue;
+    bool  _syncingEnabled;
+    bool  _waitingForFirstSync;
+}
+
+@property (nonatomic, readonly) FCCloudContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDirty, nonatomic, readonly) bool dirty;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) FCKeyValueStore *localStore;
+@property (nonatomic, readonly) NSHashTable *observers;
+@property (readonly) Class superclass;
+@property (getter=isSyncingEnabled, nonatomic) bool syncingEnabled;
+@property (getter=isSyncingEnabled, nonatomic, readonly) bool syncingEnabled;
+@property (getter=isWaitingForFirstSync, readonly) bool waitingForFirstSync;
+
++ (id)backingRecordIDs;
++ (id)backingRecordZoneIDs;
++ (long long)commandQueueUrgency;
++ (id)commandStoreFileName;
++ (id)commandsToMergeLocalDataToCloud:(id)arg1 privateDataDirectory:(id)arg2;
++ (void)configureKeyValueStoreForJSONHandling:(id)arg1;
++ (id)desiredKeys;
++ (id)internalLocalStoreKeys;
++ (bool)isLocalStoreKeyInternal:(id)arg1;
++ (id)localStoreFilename;
++ (unsigned long long)localStoreVersion;
++ (void)populateLocalStoreClassRegistry:(id)arg1;
++ (bool)requiresBatchedSync;
++ (bool)requiresHighPriorityFirstSync;
++ (bool)requiresPushNotificationSupport;
+
+- (void).cxx_destruct;
+- (void)_possiblySimulateCrashWithMessage:(id)arg1;
+- (void)activityObservingApplicationWindowDidBecomeForeground;
+- (void)addCommandToCommandQueue:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (void)addStateObserver:(id)arg1;
+- (id)allKnownRecordNamesWithinRecordZoneWithID:(id)arg1;
+- (void)assertReadyForUse;
+- (bool)canHelpPruneZoneName:(id)arg1;
+- (bool)canHelpRestoreZoneName:(id)arg1;
+- (id)context;
+- (void)createLocalStore;
+- (void)dealloc;
+- (void)disableSyncing;
+- (void)enableSyncing;
+- (void)forceSyncWithCompletion:(id /* block */)arg1;
+- (void)handleSyncCompletion;
+- (void)handleSyncDidResetLocalDataForRecordZoneWithID:(id)arg1;
+- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
+- (id)init;
+- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;
+- (bool)isBackedByAnyRecordZoneIDsInSet:(id)arg1;
+- (bool)isDirty;
+- (bool)isSyncingEnabled;
+- (bool)isWaitingForFirstSync;
+- (id)jsonEncodableObject;
+- (void)loadLocalCachesFromStore;
+- (id)localStore;
+- (id)localStoreMigrator;
+- (void)markAsDirty;
+- (void)mergeLocalStoreWithCloudWithPrivateDataDirectory:(id)arg1;
+- (id)observers;
+- (void)performFirstSyncWithCallbackQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)performFirstSyncWithCompletion:(id /* block */)arg1;
+- (void)prepareForUse;
+- (id)pruneRecords:(id)arg1 forZoneName:(id)arg2;
+- (long long)qualityOfServiceForNextCommandInCommandQueue:(id)arg1;
+- (void)recordSyncManager:(id)arg1 stateDidChange:(id)arg2;
+- (void)recordSyncManagerNotifyObservers:(id)arg1;
+- (id)recordsForRestoringZoneName:(id)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)removeStateObserver:(id)arg1;
+- (void)saveWithCompletion:(id /* block */)arg1;
+- (void)setSyncingEnabled:(bool)arg1;
+- (double)softMaxRecordAgeWhenMigratingZoneName:(id)arg1;
+- (unsigned long long)softMaxRecordCountWhenMigratingZoneName:(id)arg1;
+- (void)syncWithCallbackQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)syncWithCompletion:(id /* block */)arg1;
+- (void)zoneSyncManager:(id)arg1 stateDidChange:(id)arg2;
+- (void)zoneSyncManagerNotifyObservers:(id)arg1;
+
+@end

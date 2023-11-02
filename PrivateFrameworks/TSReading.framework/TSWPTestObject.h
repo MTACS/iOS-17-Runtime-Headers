@@ -1,0 +1,4 @@
+
+@interface TSWPTestObject : TSPObject
+
+@end

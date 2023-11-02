@@ -1,0 +1,4 @@
+
+@protocol REPipedLocationDonor <NSObject>
+
+@end

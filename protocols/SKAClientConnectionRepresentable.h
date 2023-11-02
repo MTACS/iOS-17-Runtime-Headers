@@ -1,0 +1,4 @@
+
+@protocol SKAClientConnectionRepresentable <NSObject>
+
+@end

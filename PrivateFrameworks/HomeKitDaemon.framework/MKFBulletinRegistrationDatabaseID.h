@@ -1,0 +1,4 @@
+
+@interface MKFBulletinRegistrationDatabaseID : MKFModelDatabaseID
+
+@end

@@ -1,0 +1,95 @@
+
+@interface NPKSubcredentialInvitationCoordinator : NSObject <PKSubcredentialProvisioningControllerDelegate> {
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    id /* block */  _completion;
+    NPKStandaloneFirstUnlockCoordinator * _firstUnlockCoordinator;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    PKPaymentService * _paymentService;
+    PKAppletSubcredentialSharingSession * _sharingSession;
+    PKSubcredentialProvisioningController * _subcredentialProvisioningController;
+    NPKWatchSubcredentialProvisioningService * _subcredentialProvisioningService;
+}
+
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, copy) id /* block */ completion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NPKStandaloneFirstUnlockCoordinator *firstUnlockCoordinator;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic, retain) PKPaymentService *paymentService;
+@property (nonatomic, retain) PKAppletSubcredentialSharingSession *sharingSession;
+@property (nonatomic, retain) PKSubcredentialProvisioningController *subcredentialProvisioningController;
+@property (nonatomic, retain) NPKWatchSubcredentialProvisioningService *subcredentialProvisioningService;
+@property (readonly) Class superclass;
+
++ (bool)canAddSecureElementPassWithConfiguration:(id)arg1 outError:(id*)arg2;
++ (bool)canAddSecureElementPassWithInvitation:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_endProvisioningWithPassForInvitation:(id)arg1 error:(id)arg2;
+- (id)_errorWithCode:(long long)arg1 message:(id)arg2;
+- (void)_fetchInvitationMatchingInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (void)_fetchInvitationWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handleProvisioningAttemptForConfiguration:(id)arg1 error:(id)arg2;
+- (void)_invokeCompletionWithPassForInvitation:(id)arg1 error:(id)arg2;
+- (bool)_isInvitationUniqueForPairedReaderIdentifier:(id)arg1;
+- (void)_makeConfigurationForInvitation:(id)arg1 session:(id)arg2 metadata:(id)arg3 paymentWebService:(id)arg4 completion:(id /* block */)arg5;
+- (id)_paymentWebService;
+- (void)_performBlockFollowingFirstUnlockWithBlock:(id /* block */)arg1;
+- (void)_queue_accountAttestationAnonymizationSaltWithCompletion:(id /* block */)arg1;
+- (void)_queue_canAcceptInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_declineRelatedInvitationsIfNecessaryForInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_deviceContainsInvitationMatchingInvitation:(id)arg1 withTimeout:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)_queue_fetchOrInitializeAccountAttestationAnonymizationSaltIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)_queue_listSubcredentialInvitationsWithCompletion:(id /* block */)arg1;
+- (void)_queue_registerCredentialsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_removeSharingInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_requestSubcredentialInvitation:(id)arg1 fromIDSHandle:(id)arg2 completion:(id /* block */)arg3;
+- (void)_queue_revokeCredentialsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_setAccountAttestationAnonymizationSalt:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_updateSubcredentialMetadataOnPass:(id)arg1 withCredential:(id)arg2 completion:(id /* block */)arg3;
+- (void)_setUpSharingSessionWithSubcredentialProvisioningController:(id)arg1 forInvitation:(id)arg2;
+- (void)_setUpSubcredentialProvisioningController;
+- (void)_startProvisioningForProvisioningController:(id)arg1 withConfiguration:(id)arg2;
+- (void)accountAttestationAnonymizationSaltWithCompletion:(id /* block */)arg1;
+- (id)callbackQueue;
+- (void)canAcceptInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (void)canAcceptInvitationOnRemoteDeviceForInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (id /* block */)completion;
+- (void)declineRelatedInvitationsIfNecessaryForInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (void)deviceContainsInvitationMatchingInvitation:(id)arg1 withTimeout:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)fetchOrInitializeAccountAttestationAnonymizationSaltIfNecessaryWithCompletion:(id /* block */)arg1;
+- (id)firstUnlockCoordinator;
+- (id)init;
+- (id)initWithCallbackQueue:(id)arg1;
+- (id)internalQueue;
+- (void)listSubcredentialInvitationsWithCompletion:(id /* block */)arg1;
+- (id)paymentService;
+- (void)registerCredentialsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (void)removeSharingInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (void)requestSubcredentialInvitation:(id)arg1 completion:(id /* block */)arg2;
+- (void)revokeCredentialsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (void)setAccountAttestationAnonymizationSalt:(id)arg1 completion:(id /* block */)arg2;
+- (void)setCallbackQueue:(id)arg1;
+- (void)setCompletion:(id /* block */)arg1;
+- (void)setFirstUnlockCoordinator:(id)arg1;
+- (void)setInternalQueue:(id)arg1;
+- (void)setPaymentService:(id)arg1;
+- (void)setSharingSession:(id)arg1;
+- (void)setSubcredentialProvisioningController:(id)arg1;
+- (void)setSubcredentialProvisioningService:(id)arg1;
+- (id)sharingSession;
+- (void)startProvisioningWithInvitation:(id)arg1 metadata:(id)arg2 completion:(id /* block */)arg3;
+- (void)startProvisioningWithInvitationIdentifier:(id)arg1 metadata:(id)arg2 completion:(id /* block */)arg3;
+- (void)startProvisioningWithMailboxAddress:(id)arg1 activationCode:(id)arg2 completion:(id /* block */)arg3;
+- (void)startSubcredentialProvisioningOnLocalDeviceMatchingInvitation:(id)arg1 shouldFetchAnonymizationSaltFromRemoteDevice:(bool)arg2 completion:(id /* block */)arg3;
+- (void)startSubcredentialProvisioningOnRemoteDeviceForInvitation:(id)arg1;
+- (void)startSubcredentialProvisioningOnRemoteDeviceForMailboxAddress:(id)arg1 activationCode:(id)arg2;
+- (id)subcredentialProvisioningController;
+- (void)subcredentialProvisioningController:(id)arg1 didFinishWithError:(id)arg2 inState:(long long)arg3;
+- (void)subcredentialProvisioningController:(id)arg1 didFinishWithPass:(id)arg2;
+- (id)subcredentialProvisioningService;
+- (void)updateSubcredentialMetadataOnPass:(id)arg1 withCredential:(id)arg2 completion:(id /* block */)arg3;
+
+@end

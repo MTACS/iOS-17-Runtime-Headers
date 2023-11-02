@@ -1,0 +1,100 @@
+
+@interface PKLinkedApplication : NSObject <SKStoreProductViewControllerDelegate> {
+    NSObject<OS_dispatch_queue> * _appLookupQueue;
+    NSArray * _applicationIdentifiers;
+    NSMutableArray * _completionHandlers;
+    NSString * _customProductPageIdentifier;
+    NSURL * _defaultLaunchURL;
+    SSSoftwareLibraryItem * _foundLibraryItem;
+    AMSLookupItem * _foundStoreItem;
+    LSApplicationRecord * _foundSystemAppRecord;
+    UIImage * _iconImage;
+    bool  _loaded;
+    bool  _loading;
+    NSHashTable * _observers;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _pendingLock;
+    <PKCancelable> * _pendingUpdate;
+    SKStoreProductViewController * _presentedViewController;
+    bool  _shouldApplyBorder;
+    bool  _shouldApplyMask;
+    NSArray * _storeIDs;
+    NSArray * _systemAppBundleIdentifiers;
+    bool  _useSmallIcon;
+}
+
+@property (nonatomic, copy) NSArray *applicationIdentifiers;
+@property (nonatomic, readonly) NSNumber *averageRating;
+@property (nonatomic, copy) NSString *customProductPageIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSURL *defaultLaunchURL;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } expectedIconSize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) UIImage *iconImage;
+@property (getter=isInstalled, nonatomic, readonly) bool installed;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *price;
+@property (nonatomic, readonly) NSString *publisher;
+@property (nonatomic) bool shouldApplyBorder;
+@property (nonatomic) bool shouldApplyMask;
+@property (nonatomic, readonly) long long state;
+@property (nonatomic, copy) NSArray *storeIDs;
+@property (nonatomic, readonly) NSNumber *storeIdentifier;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *systemAppBundleIdentifiers;
+@property (nonatomic) bool useSmallIcon;
+
++ (id)_openOptionsWithURL:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_iconImageDescriptorForScale:(double)arg1;
+- (void)_notifyObserversOfStateChange;
+- (void)_reloadApplicationStateWithCompletion:(id /* block */)arg1;
+- (void)_unloadApplicationState;
+- (void)_updateApplicationStateWithCompletion:(id /* block */)arg1;
+- (bool)_useLibraryItem;
+- (void)addObserver:(id)arg1;
+- (id)applicationIdentifiers;
+- (id)averageRating;
+- (id)customProductPageIdentifier;
+- (void)dealloc;
+- (id)defaultLaunchURL;
+- (struct CGSize { double x1; double x2; })expectedIconSize;
+- (id)iconImage;
+- (id)init;
+- (id)initWithApplicationIdentifiers:(id)arg1 storeIDs:(id)arg2 defaultLaunchURL:(id)arg3;
+- (id)initWithPass:(id)arg1;
+- (id)initWithStoreIDs:(id)arg1 defaultLaunchURL:(id)arg2;
+- (id)initWithStoreIDs:(id)arg1 systemAppBundleIdentifiers:(id)arg2 defaultLaunchURL:(id)arg3;
+- (id)initWithStoreIDs:(id)arg1 systemAppBundleIdentifiers:(id)arg2 defaultLaunchURL:(id)arg3 applicationIdentifiers:(id)arg4;
+- (void)installedApplicationsDidChangeNotification:(id)arg1;
+- (bool)isInstalled;
+- (id)name;
+- (void)openApplication:(id)arg1;
+- (void)openApplication:(id)arg1 withLaunchOptions:(unsigned long long)arg2;
+- (void)openApplication:(id)arg1 withLaunchOptions:(unsigned long long)arg2 launchURL:(id)arg3;
+- (id)price;
+- (void)productViewControllerDidFinish:(id)arg1;
+- (id)publisher;
+- (void)reloadApplicationStateIfNecessary;
+- (void)reloadApplicationStateIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)setApplicationIdentifiers:(id)arg1;
+- (void)setCustomProductPageIdentifier:(id)arg1;
+- (void)setDefaultLaunchURL:(id)arg1;
+- (void)setShouldApplyBorder:(bool)arg1;
+- (void)setShouldApplyMask:(bool)arg1;
+- (void)setStoreIDs:(id)arg1;
+- (void)setSystemAppBundleIdentifiers:(id)arg1;
+- (void)setUseSmallIcon:(bool)arg1;
+- (bool)shouldApplyBorder;
+- (bool)shouldApplyMask;
+- (long long)state;
+- (id)storeIDs;
+- (id)storeIdentifier;
+- (id)systemAppBundleIdentifiers;
+- (bool)useSmallIcon;
+
+@end

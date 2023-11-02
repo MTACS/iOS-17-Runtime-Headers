@@ -1,0 +1,4 @@
+
+@protocol FLExtensionHostInterface <NSObject>
+
+@end

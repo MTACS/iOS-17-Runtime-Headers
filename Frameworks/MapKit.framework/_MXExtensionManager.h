@@ -1,0 +1,60 @@
+
+@interface _MXExtensionManager : NSObject {
+    <_MXExtensionManagerDelegate> * _delegate;
+    _MXExtensionProvider * _extensionProvider;
+    <_MXExtensionLookupPolicy> * _lookupPolicy;
+    id  _matchingContext;
+}
+
+@property (nonatomic) <_MXExtensionManagerDelegate> *delegate;
+@property (nonatomic, retain) _MXExtensionProvider *extensionProvider;
+@property (nonatomic, readonly) <_MXExtensionLookupPolicy> *lookupPolicy;
+@property (nonatomic, retain) id matchingContext;
+
++ (id)_extensionsWithLookupPolicy:(id)arg1;
++ (id)_lookupPolicyForAllExtensions;
++ (id)_lookupPolicyForExtensionSupportsIntentClassNames:(id)arg1;
++ (id)_lookupPolicyForExtensionWithContainingAppIdentifier:(id)arg1 supportsIntentClassNames:(id)arg2;
++ (id)_lookupPolicyForExtensionWithContainingAppIdentifiers:(id)arg1 supportsIntentClassNames:(id)arg2;
++ (id)_lookupPolicyForExtensionWithIdentifier:(id)arg1;
++ (id)_lookupPolicyForIntentsExtensions;
++ (id)_lookupPolicyForNonUIExtension;
++ (id)_lookupPolicyForUIExtension;
++ (id)_lookupPolicyWithBlock:(id /* block */)arg1;
++ (id)_lookupPolicyWithExtensionPointNames:(id)arg1;
++ (id)_maps_lookupPolicyForEnabledRidesharingNonUIExtensions;
++ (id)_maps_lookupPolicyForRidesharingNonUIExtensions;
++ (id)_maps_ridesharingAllIntentClassesForNonUIHandling;
++ (id)_maps_ridesharingIntentClassesForUIInteraction;
++ (id)_maps_ridesharingOptionalIntentClassesForNonUIHandling;
++ (id)_maps_ridesharingRequiredIntentClassesForNonUIHandling;
++ (void)_maps_updateRideBookingExtensions:(id)arg1;
++ (id)_queue;
++ (void)imageForKey:(id)arg1 extension:(id)arg2 completion:(id /* block */)arg3;
++ (id)lookupPolicyForExtensionWithCapabilities:(id)arg1;
++ (id)lookupPolicyForExtensionWithCapability:(id)arg1;
++ (id)lookupPolicyForRestaurantQueueingExtensionWithContainingAppIdentifier:(id)arg1;
++ (id)lookupPolicyForRestaurantQueueingExtensions;
++ (id)lookupPolicyForRestaurantReservationExtensionWithContainingAppIdentifier:(id)arg1;
++ (id)lookupPolicyForRestaurantReservationExtensionWithContainingAppIdentifiers:(id)arg1;
++ (id)lookupPolicyForRestaurantReservationExtensions;
++ (id)managerWithExtensionLookupPolicy:(id)arg1 updateHandler:(id /* block */)arg2;
++ (id)managerWithLookupPolicy:(id)arg1 delegate:(id)arg2;
++ (id)restaurantQueueingIntentClassNames;
++ (id)restaurantReservationIntentClassNames;
+
+- (void).cxx_destruct;
+- (id)_applyExtensionPredicateWithExtensionsIfNeeded:(id)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (id)extensionProvider;
+- (id)initWithLookupPolicy:(id)arg1 delegate:(id)arg2;
+- (id)initWithLookupPolicy:(id)arg1 delegate:(id)arg2 extensionProvider:(id)arg3;
+- (void)invalidate;
+- (id)lookupPolicy;
+- (id)matchingContext;
+- (void)setDelegate:(id)arg1;
+- (void)setExtensionProvider:(id)arg1;
+- (void)setMatchingContext:(id)arg1;
+
+@end

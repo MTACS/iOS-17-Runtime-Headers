@@ -1,0 +1,90 @@
+
+@interface HMDRemoteLoginHandler : HMFObject <HMDHomeMessageReceiver, HMFLogging, HMFStagedValueDelegate, NSSecureCoding> {
+    HMDAppleMediaAccessory * _accessory;
+    ACAccountStore * _accountStore;
+    HMDRemoteLoginAnisetteDataHandler * _anisetteDataHandler;
+    <HMEEventForwarder> * _eventForwarder;
+    <HMELastEventStoreReadHandle> * _eventStoreReadHandle;
+    HMDRemoteLoginInitiator * _initiator;
+    ACAccount * _loggedInAccount;
+    HMFMessageDispatcher * _msgDispatcher;
+    HMDRemoteLoginReceiver * _receiver;
+    HMFStagedValue * _stagedLoggedInAccount;
+    bool  _targetSupportsAccounts;
+    NSUUID * _uuid;
+    NSObject<OS_dispatch_queue> * _workQueue;
+}
+
+@property (nonatomic, readonly) HMDAppleMediaAccessory *accessory;
+@property (readonly) ACAccountStore *accountStore;
+@property (nonatomic, readonly) HMDRemoteLoginAnisetteDataHandler *anisetteDataHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) <HMEEventForwarder> *eventForwarder;
+@property (retain) <HMELastEventStoreReadHandle> *eventStoreReadHandle;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HMDRemoteLoginInitiator *initiator;
+@property (nonatomic, retain) ACAccount *loggedInAccount;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
+@property (nonatomic, readonly) HMDRemoteLoginReceiver *receiver;
+@property (readonly) HMFStagedValue *stagedLoggedInAccount;
+@property (readonly) Class superclass;
+@property (readonly) bool targetSupportsAccounts;
+@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
+
++ (bool)hasMessageReceiverChildren;
++ (id)logCategory;
++ (id)remoteMessages;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)_handleRemoteLoginAccount:(id)arg1 message:(id)arg2;
+- (void)_handleUpdateLoggedInAccountMessage:(id)arg1;
+- (void)_postAccountInfoFromAccountStore;
+- (void)_postUpdatedAccountInfo:(id)arg1;
+- (void)_registerForUsernameUpdates;
+- (void)_sendAccountUpdateNotification:(id)arg1;
+- (void)_updateLoggedInAccount:(id)arg1;
+- (id)accessory;
+- (id)accountInfoForAccount:(id)arg1;
+- (id)accountInfoFromLastEvent;
+- (id)accountStore;
+- (id)anisetteDataHandler;
+- (void)configureWithWorkQueue:(id)arg1 messageDispatcher:(id)arg2 eventStoreReadHandle:(id)arg3 eventForwarder:(id)arg4;
+- (void)encodeWithCoder:(id)arg1;
+- (id)eventForwarder;
+- (id)eventSource;
+- (id)eventStoreReadHandle;
+- (id)eventTopicForAccountInfo;
+- (void)handleAccountUsernameUpdatedOnCurrentDevice:(id)arg1;
+- (id)initWithAccessory:(id)arg1 loggedInAccountData:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithUUID:(id)arg1 accessory:(id)arg2 loggedInAccount:(id)arg3;
+- (id)initWithUUID:(id)arg1 accessory:(id)arg2 loggedInAccount:(id)arg3 accountStore:(id)arg4 targetSupportsAccounts:(bool)arg5;
+- (id)initiator;
+- (id)logIdentifier;
+- (id)loggedInAccount;
+- (id)messageReceiveQueue;
+- (id)messageReceiverChildren;
+- (id)messageTargetUUID;
+- (id)msgDispatcher;
+- (id)receiver;
+- (void)registerForMessages;
+- (void)setEventForwarder:(id)arg1;
+- (void)setEventStoreReadHandle:(id)arg1;
+- (void)setLoggedInAccount:(id)arg1;
+- (void)setMsgDispatcher:(id)arg1;
+- (void)setWorkQueue:(id)arg1;
+- (void)stageLoggedInAccount:(id)arg1;
+- (id)stagedLoggedInAccount;
+- (void)stagedValue:(id)arg1 didExpireValue:(id)arg2;
+- (bool)targetSupportsAccounts;
+- (void)updateFrameworkWithReason:(id)arg1;
+- (id)uuid;
+- (id)workQueue;
+
+@end

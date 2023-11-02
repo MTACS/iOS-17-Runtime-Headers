@@ -1,0 +1,4 @@
+
+@interface _TtCV16SiriVideoIntents21NowPlayingUsageSignal17KnowledgeProvider : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SABackgroundContextObject <SAAceSerializable>
+
+@end

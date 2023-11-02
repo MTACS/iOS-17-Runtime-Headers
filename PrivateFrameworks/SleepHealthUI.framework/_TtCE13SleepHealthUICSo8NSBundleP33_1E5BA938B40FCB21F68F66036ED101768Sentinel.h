@@ -1,0 +1,4 @@
+
+@interface _TtCE13SleepHealthUICSo8NSBundleP33_1E5BA938B40FCB21F68F66036ED101768Sentinel : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol CARAppHistoryServerToClientInterface <NSObject>
+
+@end

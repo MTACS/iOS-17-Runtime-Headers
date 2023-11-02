@@ -1,0 +1,95 @@
+
+@interface AutocorrectionResult : NSObject <NSSecureCoding> {
+    NSDictionary * _aggdStatistics;
+    NSString * _context;
+    NSNumber * _corpusId;
+    NSArray * _corrected;
+    NSDictionary * _debugData;
+    NSArray * _documentStates;
+    NSArray * _inlineCompletions;
+    NSArray * _input;
+    NSArray * _inserted;
+    NSArray * _intended;
+    NSArray * _intendedTransliteration;
+    NSNumber * _numberOfTouches;
+    NSDictionary * _pathsForWords;
+    NSArray * _predicted;
+    NSNumber * _rank;
+    NSString * _seed;
+    NSDictionary * _sourceMetadata;
+    NSArray * _tags;
+    NSArray * _touchEvents;
+    NSArray * _touched;
+}
+
+@property (nonatomic, retain) NSDictionary *aggdStatistics;
+@property (nonatomic, retain) NSString *context;
+@property (nonatomic, retain) NSNumber *corpusId;
+@property (nonatomic, retain) NSArray *corrected;
+@property (nonatomic, retain) NSDictionary *debugData;
+@property (nonatomic, retain) NSArray *documentStates;
+@property (nonatomic, retain) NSArray *inlineCompletions;
+@property (nonatomic, retain) NSArray *input;
+@property (nonatomic, retain) NSArray *inserted;
+@property (nonatomic, retain) NSArray *intended;
+@property (nonatomic, retain) NSArray *intendedTransliteration;
+@property (nonatomic, retain) NSNumber *numberOfTouches;
+@property (nonatomic, retain) NSDictionary *pathsForWords;
+@property (nonatomic, retain) NSArray *predicted;
+@property (nonatomic, retain) NSNumber *rank;
+@property (nonatomic, retain) NSString *seed;
+@property (nonatomic, retain) NSDictionary *sourceMetadata;
+@property (nonatomic, retain) NSArray *tags;
+@property (nonatomic, retain) NSArray *touchEvents;
+@property (nonatomic, retain) NSArray *touched;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)aggdStatistics;
+- (id)context;
+- (id)corpusId;
+- (id)corrected;
+- (id)debugData;
+- (id)description;
+- (id)documentStates;
+- (void)encodeWithCoder:(id)arg1;
+- (void)extractDataFromTypingLog:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)inlineCompletions;
+- (id)input;
+- (id)inserted;
+- (id)intended;
+- (id)intendedTransliteration;
+- (id)numberOfTouches;
+- (id)pathsForWords;
+- (id)predicted;
+- (id)rank;
+- (id)seed;
+- (void)setAggdStatistics:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setCorpusId:(id)arg1;
+- (void)setCorrected:(id)arg1;
+- (void)setDebugData:(id)arg1;
+- (void)setDocumentStates:(id)arg1;
+- (void)setInlineCompletions:(id)arg1;
+- (void)setInput:(id)arg1;
+- (void)setInserted:(id)arg1;
+- (void)setIntended:(id)arg1;
+- (void)setIntendedTransliteration:(id)arg1;
+- (void)setNumberOfTouches:(id)arg1;
+- (void)setPathsForWords:(id)arg1;
+- (void)setPredicted:(id)arg1;
+- (void)setRank:(id)arg1;
+- (void)setSeed:(id)arg1;
+- (void)setSourceMetadata:(id)arg1;
+- (void)setTags:(id)arg1;
+- (void)setTagsFromClassifiers:(id)arg1;
+- (void)setTouchEvents:(id)arg1;
+- (void)setTouched:(id)arg1;
+- (id)sourceMetadata;
+- (id)tags;
+- (id)touchEvents;
+- (id)touched;
+
+@end

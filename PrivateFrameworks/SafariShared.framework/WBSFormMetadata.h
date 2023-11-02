@@ -1,0 +1,95 @@
+
+@interface WBSFormMetadata : NSObject <NSSecureCoding> {
+    NSURL * _action;
+    bool  _allowsAutocomplete;
+    NSDictionary * _annotations;
+    bool  _bestForPageLevelAutoFill;
+    bool  _bestForStreamlinedLogin;
+    NSString * _confirmPasswordElementUniqueID;
+    bool  _containsActiveElement;
+    NSNumber * _containsAtLeastOneSecureTextField;
+    NSArray * _controls;
+    bool  _eligibleForAutomaticLogin;
+    NSString * _firstCreditCardCardholderFieldOrCreditCardNumberFieldUniqueID;
+    bool  _isSearchForm;
+    NSString * _logicalFormElementSelector;
+    NSString * _oldPasswordElementUniqueID;
+    NSString * _passwordElementUniqueID;
+    NSDictionary * _passwordRequirements;
+    unsigned long long  _requestType;
+    NSString * _textSample;
+    unsigned long long  _type;
+    long long  _uniqueID;
+    NSString * _userNameElementUniqueID;
+    bool  _usesGeneratedPassword;
+    bool  _usesRelAsync;
+    bool  _visible;
+}
+
+@property (nonatomic, readonly) NSURL *action;
+@property (nonatomic, readonly) bool allowsAutocomplete;
+@property (nonatomic, readonly, copy) NSDictionary *annotations;
+@property (getter=isBestForPageLevelAutoFill, nonatomic, readonly) bool bestForPageLevelAutoFill;
+@property (getter=isBestForStreamlinedLogin, nonatomic, readonly) bool bestForStreamlinedLogin;
+@property (nonatomic, readonly, copy) NSString *confirmPasswordElementUniqueID;
+@property (nonatomic, readonly) bool containsActiveElement;
+@property (nonatomic, readonly) bool containsAtLeastOneSecureTextField;
+@property (nonatomic, readonly, copy) NSArray *controls;
+@property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
+@property (getter=isEligibleForAutomaticLogin, nonatomic, readonly) bool eligibleForAutomaticLogin;
+@property (nonatomic, readonly, copy) NSString *firstCreditCardCardholderFieldOrCreditCardNumberFieldUniqueID;
+@property (nonatomic, readonly) bool isSearchForm;
+@property (nonatomic, readonly) NSString *logicalFormElementSelector;
+@property (nonatomic, readonly, copy) NSString *oldPasswordElementUniqueID;
+@property (nonatomic, readonly, copy) NSString *passwordElementUniqueID;
+@property (nonatomic, copy) NSDictionary *passwordRequirements;
+@property (nonatomic, readonly) unsigned long long requestType;
+@property (nonatomic, readonly, copy) NSData *serializedData;
+@property (nonatomic, readonly, copy) NSString *textSample;
+@property (nonatomic, readonly) unsigned long long type;
+@property (nonatomic, readonly) long long uniqueID;
+@property (nonatomic, readonly, copy) NSString *userNameElementUniqueID;
+@property (nonatomic, readonly) bool usesGeneratedPassword;
+@property (nonatomic, readonly) bool usesRelAsync;
+@property (getter=isVisible, nonatomic, readonly) bool visible;
+
++ (id)formMetadataFromSerializedData:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)_init;
+- (id)action;
+- (bool)allowsAutocomplete;
+- (id)annotations;
+- (id)confirmPasswordElementUniqueID;
+- (bool)containsActiveElement;
+- (bool)containsAtLeastOneSecureTextField;
+- (id)controls;
+- (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
+- (id)firstCreditCardCardholderFieldOrCreditCardNumberFieldUniqueID;
+- (id)formMetadataByReplacingControlsWith:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithJSValue:(id)arg1;
+- (bool)isBestForPageLevelAutoFill;
+- (bool)isBestForStreamlinedLogin;
+- (bool)isEligibleForAutomaticLogin;
+- (bool)isEqual:(id)arg1;
+- (bool)isSearchForm;
+- (bool)isVisible;
+- (id)logicalFormElementSelector;
+- (id)oldPasswordElementUniqueID;
+- (id)passwordElementUniqueID;
+- (id)passwordRequirements;
+- (unsigned long long)requestType;
+- (id)serializedData;
+- (void)setPasswordRequirements:(id)arg1;
+- (id)textSample;
+- (unsigned long long)type;
+- (long long)uniqueID;
+- (id)userNameElementUniqueID;
+- (bool)usesGeneratedPassword;
+- (bool)usesRelAsync;
+
+@end

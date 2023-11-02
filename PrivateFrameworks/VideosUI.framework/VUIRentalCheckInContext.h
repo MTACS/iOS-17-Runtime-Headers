@@ -1,0 +1,17 @@
+
+@interface VUIRentalCheckInContext : NSObject {
+    NSNumber * _dsid;
+    NSNumber * _rentalID;
+}
+
+@property (nonatomic, readonly) NSNumber *dsid;
+@property (nonatomic, readonly) NSNumber *rentalID;
+
+- (void).cxx_destruct;
+- (id)dsid;
+- (unsigned long long)hash;
+- (id)initWithRentalID:(id)arg1 dsid:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (id)rentalID;
+
+@end

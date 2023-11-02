@@ -1,0 +1,4 @@
+
+@protocol HFMediaAccessoryLikeItem <HFServiceLikeItem, HFServiceLikeBuilderCreating, HFItemBuilderItem, HFGroupableItemProtocol, HFSoftwareUpdatableItemProtocol, HFHomeKitSettingsVendorProvider, HFAccessoryProfileVendor>
+
+@end

@@ -1,0 +1,85 @@
+
+@interface HDCloudSyncZone : NSObject {
+    NSMutableArray * _authorizationRecords;
+    HDCloudSyncDataUploadRequestRecord * _dataUploadRequestRecord;
+    bool  _hasFutureSchemaRecord;
+    bool  _hasLostIdentity;
+    HDCloudSyncMasterRecord * _masterRecord;
+    NSMutableArray * _orphanedSequenceRecords;
+    NSMutableArray * _participantRecords;
+    long long  _purpose;
+    NSMutableArray * _records;
+    HDCloudSyncRegistryRecord * _registryRecord;
+    HDCloudSyncRepository * _repository;
+    HDCloudSyncStore * _store;
+    NSMutableArray * _storeRecords;
+    NSMutableArray * _transactionRecords;
+    bool  _validatedForSharing;
+    HDCloudSyncZoneIdentifier * _zoneIdentifier;
+    CKShare * _zoneShare;
+    long long  _zoneType;
+}
+
+@property (nonatomic, readonly) NSArray *authorizationRecords;
+@property (nonatomic, readonly) HDCloudSyncDataUploadRequestRecord *dataUploadRequestRecord;
+@property (nonatomic) bool hasFutureSchemaRecord;
+@property (nonatomic) bool hasLostIdentity;
+@property (nonatomic, readonly) bool hasOrphanedSequenceRecords;
+@property (nonatomic, readonly) bool isEmpty;
+@property (nonatomic, readonly) HDCloudSyncMasterRecord *masterRecord;
+@property (nonatomic, readonly) NSArray *participantRecords;
+@property (nonatomic) long long purpose;
+@property (nonatomic, readonly) long long recordCount;
+@property (nonatomic, readonly, copy) NSArray *recordNames;
+@property (nonatomic, readonly, copy) NSArray *records;
+@property (nonatomic, readonly) HDCloudSyncRegistryRecord *registryRecord;
+@property (nonatomic, readonly) HDCloudSyncRepository *repository;
+@property (nonatomic, retain) HDCloudSyncStore *store;
+@property (nonatomic, readonly, copy) NSUUID *storeIdentifier;
+@property (nonatomic, readonly) HDCloudSyncStoreRecord *storeRecord;
+@property (nonatomic, readonly, copy) NSArray *storeRecords;
+@property (nonatomic, readonly) NSArray *transactionRecords;
+@property (nonatomic) bool validatedForSharing;
+@property (nonatomic, readonly, copy) HDCloudSyncZoneIdentifier *zoneIdentifier;
+@property (nonatomic, retain) CKShare *zoneShare;
+@property (nonatomic, readonly, copy) CKRecordID *zoneShareRecordID;
+@property (nonatomic, readonly) long long zoneType;
+
+- (void).cxx_destruct;
+- (bool)_addSubscriptionRecord:(id)arg1 error:(id*)arg2;
+- (bool)addRecord:(id)arg1 error:(id*)arg2;
+- (id)authorizationRecords;
+- (id)dataUploadRequestRecord;
+- (id)description;
+- (bool)hasFutureSchemaRecord;
+- (bool)hasLostIdentity;
+- (bool)hasOrphanedSequenceRecords;
+- (id)initForZoneIdentifier:(id)arg1 repository:(id)arg2 type:(long long)arg3;
+- (bool)isEmpty;
+- (id)masterRecord;
+- (id)participantRecords;
+- (long long)purpose;
+- (long long)recordCount;
+- (id)recordNames;
+- (id)records;
+- (id)registryRecord;
+- (void)removeRecord:(id)arg1;
+- (id)repository;
+- (void)setHasFutureSchemaRecord:(bool)arg1;
+- (void)setHasLostIdentity:(bool)arg1;
+- (void)setPurpose:(long long)arg1;
+- (void)setStore:(id)arg1;
+- (void)setValidatedForSharing:(bool)arg1;
+- (void)setZoneShare:(id)arg1;
+- (id)store;
+- (id)storeIdentifier;
+- (id)storeRecord;
+- (id)storeRecords;
+- (id)transactionRecords;
+- (bool)validatedForSharing;
+- (id)zoneIdentifier;
+- (id)zoneShare;
+- (id)zoneShareRecordID;
+- (long long)zoneType;
+
+@end

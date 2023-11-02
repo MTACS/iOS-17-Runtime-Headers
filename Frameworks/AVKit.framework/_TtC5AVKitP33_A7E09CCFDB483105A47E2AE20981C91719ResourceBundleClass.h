@@ -1,0 +1,4 @@
+
+@interface _TtC5AVKitP33_A7E09CCFDB483105A47E2AE20981C91719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

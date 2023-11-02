@@ -1,0 +1,81 @@
+
+@interface _UIButtonBarItemGroupLayout : _UIButtonBarLayout {
+    bool  _compact;
+    double  _compactWidth;
+    NSMutableArray * _configuredItemLayouts;
+    bool  _critical;
+    double  _expandedWidth;
+    bool  _fixed;
+    UIBarButtonItemGroup * _group;
+    UILayoutGuide * _groupSizeGuide;
+    NSMapTable * _itemLayoutMap;
+    NSMutableArray * _itemLayouts;
+    id /* block */  _itemViewGenerator;
+    _UIButtonBarSpacerLayout * _leadingSpacerLayout;
+    long long  _leadingSpacerType;
+    _UIButtonBarLayout * _representativeLayout;
+    bool  _spilled;
+    bool  _suppressCustomSpacing;
+    bool  _suppressSpacing;
+    bool  _useGroupSizing;
+}
+
+@property (nonatomic) bool compact;
+@property (nonatomic, readonly) double compactWidth;
+@property (nonatomic) bool critical;
+@property (nonatomic, readonly) double expandedWidth;
+@property (nonatomic) bool fixed;
+@property (nonatomic, readonly) UIBarButtonItemGroup *group;
+@property (nonatomic, readonly) UILayoutGuide *groupSizeGuide;
+@property (nonatomic, copy) id /* block */ itemViewGenerator;
+@property (nonatomic) long long leadingSpacerType;
+@property (nonatomic) bool spilled;
+@property (nonatomic) bool suppressCustomSpacing;
+@property (nonatomic) bool suppressSpacing;
+@property (nonatomic) bool useGroupSizing;
+
+- (void).cxx_destruct;
+- (void)_addConstraintsToActivate:(id)arg1 toDeactivate:(id)arg2;
+- (void)_addLayoutGuides:(id)arg1;
+- (void)_addLayoutViews:(id)arg1;
+- (void)_configure;
+- (id)_itemLayouts;
+- (void)_iterateConfiguredLayouts:(id /* block */)arg1;
+- (id)_newLayoutForBarButtonItem:(id)arg1 useGroupSizing:(bool)arg2;
+- (id)_representativeLayout;
+- (bool)compact;
+- (double)compactWidth;
+- (bool)critical;
+- (id)description;
+- (void)dirtyLayoutForPlainAppearanceChange:(bool)arg1 doneAppearanceChanged:(bool)arg2;
+- (double)expandedWidth;
+- (bool)fixed;
+- (id)group;
+- (id)groupSizeGuide;
+- (id)initWithLayoutMetrics:(id)arg1;
+- (id)initWithLayoutMetrics:(id)arg1 barButtonItemGroup:(id)arg2;
+- (bool)isGroupLayout;
+- (bool)isSpaceLayout;
+- (id /* block */)itemViewGenerator;
+- (id)layoutForBarButtonItem:(id)arg1;
+- (id)layoutsForSpacerItem:(id)arg1;
+- (long long)leadingSpacerType;
+- (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
+- (void)recalculateLayoutWidthsGivenItemSpaceWidth:(double)arg1;
+- (void)setCompact:(bool)arg1;
+- (void)setCritical:(bool)arg1;
+- (void)setFixed:(bool)arg1;
+- (void)setItemViewGenerator:(id /* block */)arg1;
+- (void)setLeadingSpacerType:(long long)arg1;
+- (void)setSpilled:(bool)arg1;
+- (void)setSuppressCustomSpacing:(bool)arg1;
+- (void)setSuppressSpacing:(bool)arg1;
+- (void)setUseGroupSizing:(bool)arg1;
+- (bool)shouldHorizontallyCenterView:(id)arg1;
+- (bool)spilled;
+- (id)subLayouts;
+- (bool)suppressCustomSpacing;
+- (bool)suppressSpacing;
+- (bool)useGroupSizing;
+
+@end

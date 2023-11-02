@@ -1,0 +1,96 @@
+
+@interface MPCloudServiceStatusController : NSObject <ICEnvironmentMonitorObserver> {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    unsigned long long  _cloudLibraryObservationCount;
+    long long  _cloudLibraryStatus;
+    NSObject<OS_dispatch_queue> * _cloudLibraryStatusAccessQueue;
+    bool  _hasLoadedMatchStatus;
+    bool  _hasLoadedSubscriptionAvailability;
+    bool  _hasSubscriptionLease;
+    ICMusicSubscriptionFairPlayKeyStatus * _lastKnownSubscriptionFairPlayKeyStatus;
+    unsigned long long  _matchStatus;
+    unsigned long long  _matchStatusObservationCount;
+    bool  _observingNetworkReachability;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    bool  _shouldPlaybackRequireSubscriptionLease;
+    bool  _subscriptionAvailable;
+    SSVSubscriptionStatus * _subscriptionStatus;
+    ICMusicSubscriptionStatusMonitor * _subscriptionStatusMonitor;
+    <NSCopying> * _subscriptionStatusObservationToken;
+    ICUserIdentity * _userIdentity;
+}
+
+@property (getter=isCloudLibraryEnabled, nonatomic, readonly) bool cloudLibraryEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasLoadedSubscriptionAvailability;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SSVFairPlaySubscriptionStatus *lastKnownFairPlaySubscriptionStatus;
+@property (nonatomic, readonly) ICMusicSubscriptionFairPlayKeyStatus *lastKnownSubscriptionFairPlayKeyStatus;
+@property (nonatomic, readonly) unsigned long long matchStatus;
+@property (nonatomic, readonly, copy) ICMusicSubscriptionStatus *musicSubscriptionStatus;
+@property (getter=isPurchaseHistoryEnabled, nonatomic, readonly) bool purchaseHistoryEnabled;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
+@property (nonatomic, readonly) bool shouldPlaybackRequireSubscriptionLease;
+@property (getter=isSubscriptionAvailable, nonatomic, readonly) bool subscriptionAvailable;
+@property (nonatomic, readonly, copy) SSVSubscriptionStatus *subscriptionStatus;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) ICUserIdentity *userIdentity;
+
++ (id)_cloudServiceStatusControllerWithUserIdentity:(id)arg1 createIfRequired:(bool)arg2;
++ (void)_postNotificationName:(id)arg1 controller:(id)arg2;
++ (void)_postNotificationName:(id)arg1 controller:(id)arg2 userInfo:(id)arg3;
++ (id)cloudServiceStatusControllerWithUserIdentity:(id)arg1;
++ (id)controllers;
++ (id)globalSerialQueue;
++ (id)sharedController;
+
+- (void).cxx_destruct;
+- (void)_allowsMusicSubscriptionDidChange:(id)arg1;
+- (void)_beginObservingCloudLibraryEnabled;
+- (void)_beginObservingMatchStatus;
+- (bool)_calculateShouldPlaybackRequireSubscriptionLeaseReturningLikelyToReachRemoteServer:(bool*)arg1;
+- (void)_cloudClientAuthenticationDidChange;
+- (void)_copyObservationStateFrom:(id)arg1;
+- (bool)_currentCloudLibraryEnabled;
+- (bool)_currentPurchaseHistoryEnabled;
+- (void)_enableICMLErrorReasonChange:(id)arg1;
+- (void)_endObservingCloudLibraryEnabled;
+- (void)_endObservingMatchStatus;
+- (bool)_handlesSameAccountAs:(id)arg1;
+- (id)_initWithUserIdentity:(id)arg1;
+- (void)_performBlockOnControllerHandlingTheSameAccount:(id /* block */)arg1;
+- (void)_updateMatchStatus;
+- (void)_updateSubscriptionAvailability;
+- (void)_updateSubscriptionAvailabilityWithValue:(bool)arg1;
+- (void)_userIdentityStoreDidChange:(id)arg1;
+- (void)beginObservingCloudLibraryEnabled;
+- (void)beginObservingFairPlaySubscriptionStatus;
+- (void)beginObservingMatchStatus;
+- (void)beginObservingPurchaseHistoryEnabled;
+- (void)beginObservingSubscriptionAvailability;
+- (void)dealloc;
+- (id)description;
+- (void)endObservingCloudLibraryEnabled;
+- (void)endObservingFairPlaySubscriptionStatus;
+- (void)endObservingMatchStatus;
+- (void)endObservingPurchaseHistoryEnabled;
+- (void)endObservingSubscriptionAvailability;
+- (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
+- (bool)hasLoadedSubscriptionAvailability;
+- (id)init;
+- (bool)isCloudLibraryEnabled;
+- (bool)isPurchaseHistoryEnabled;
+- (bool)isSubscriptionAvailable;
+- (id)lastKnownFairPlaySubscriptionStatus;
+- (id)lastKnownSubscriptionFairPlayKeyStatus;
+- (unsigned long long)matchStatus;
+- (id)musicSubscriptionStatus;
+- (void)refreshMusicSubscriptionStatus;
+- (id)serialQueue;
+- (bool)shouldPlaybackRequireSubscriptionLease;
+- (id)subscriptionStatus;
+- (id)userIdentity;
+
+@end

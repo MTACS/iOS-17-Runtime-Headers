@@ -1,0 +1,87 @@
+
+@interface NDOAppleCareViewController : UIViewController <NDOAppleCareAMSUIViewPresenterProtocol, NDOAppleCareWebViewPresenterProtocol> {
+    UILabel * _acHeaderLabel;
+    UIStackView * _buttonStackView;
+    UIStackView * _comboStackView;
+    UIButton * _continueButton;
+    NSString * _deeplinkParams;
+    UILabel * _detailsText2Label;
+    UILabel * _detailsTextLabel;
+    NDODeviceInfo * _deviceInfo;
+    NSLayoutConstraint * _leadingConstraint;
+    UIButton * _notNowButton;
+    unsigned long long  _presentationType;
+    <NDOAppleCareFlowDelegate> * _presentor;
+    UILabel * _promoTextLabel;
+    NSString * _source;
+    NSLayoutConstraint * _trailingConstraint;
+}
+
+@property (nonatomic) UILabel *acHeaderLabel;
+@property (nonatomic) UIStackView *buttonStackView;
+@property (nonatomic) UIStackView *comboStackView;
+@property (nonatomic) UIButton *continueButton;
+@property (retain) NSString *deeplinkParams;
+@property (nonatomic) UILabel *detailsText2Label;
+@property (nonatomic) UILabel *detailsTextLabel;
+@property (retain) NDODeviceInfo *deviceInfo;
+@property (nonatomic) NSLayoutConstraint *leadingConstraint;
+@property (nonatomic) UIButton *notNowButton;
+@property unsigned long long presentationType;
+@property <NDOAppleCareFlowDelegate> *presentor;
+@property (nonatomic) UILabel *promoTextLabel;
+@property (retain) NSString *source;
+@property (nonatomic) NSLayoutConstraint *trailingConstraint;
+
+- (void).cxx_destruct;
+- (id)acHeaderLabel;
+- (void)amsUIViewFinishedWithCompletion:(unsigned long long)arg1;
+- (void)amsUIViewFinishedWithCompletion:(unsigned long long)arg1 params:(id)arg2;
+- (id)buttonStackView;
+- (void)cancelPressed:(id)arg1;
+- (id)comboStackView;
+- (void)completeWithStatus:(unsigned long long)arg1;
+- (void)completeWithStatus:(unsigned long long)arg1 params:(id)arg2;
+- (id)continueButton;
+- (id)deeplinkParams;
+- (id)detailsText2Label;
+- (id)detailsTextLabel;
+- (id)deviceInfo;
+- (void)getAppleCarePressed:(id)arg1;
+- (id)initWithDeviceInfo:(id)arg1 presentationType:(unsigned long long)arg2;
+- (id)initWithDeviceInfo:(id)arg1 presentationType:(unsigned long long)arg2 source:(id)arg3 deeplinkParams:(id)arg4;
+- (id)initWithWarranty:(id)arg1;
+- (id)initWithWarranty:(id)arg1 presentationType:(unsigned long long)arg2;
+- (id)initWithWarranty:(id)arg1 presentationType:(unsigned long long)arg2 serialNumber:(id)arg3;
+- (id)leadingConstraint;
+- (void)loadView;
+- (id)notNowButton;
+- (void)notNowPressed:(id)arg1;
+- (void)okButtonPressed;
+- (unsigned long long)presentationType;
+- (id)presentor;
+- (id)promoTextLabel;
+- (void)setAcHeaderLabel:(id)arg1;
+- (void)setButtonStackView:(id)arg1;
+- (void)setComboStackView:(id)arg1;
+- (void)setContinueButton:(id)arg1;
+- (void)setDeeplinkParams:(id)arg1;
+- (void)setDetailsText2Label:(id)arg1;
+- (void)setDetailsTextLabel:(id)arg1;
+- (void)setDeviceInfo:(id)arg1;
+- (void)setLeadingConstraint:(id)arg1;
+- (void)setNotNowButton:(id)arg1;
+- (void)setPresentationType:(unsigned long long)arg1;
+- (void)setPresentor:(id)arg1;
+- (void)setPromoTextLabel:(id)arg1;
+- (void)setSource:(id)arg1;
+- (void)setTrailingConstraint:(id)arg1;
+- (id)source;
+- (unsigned long long)supportedInterfaceOrientations;
+- (id)trailingConstraint;
+- (void)updatePromotionLabelWithWarranty:(id)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)webviewFinishedWithCompletion:(unsigned long long)arg1;
+
+@end

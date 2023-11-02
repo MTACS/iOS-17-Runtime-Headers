@@ -1,0 +1,4 @@
+
+@interface CMTableGridInfo : NSObject
+
+@end

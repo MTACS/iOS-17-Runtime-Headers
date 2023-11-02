@@ -1,0 +1,69 @@
+
+@interface SFLeadingTrailingCardSection : SFCardSection <NSCopying, NSSecureCoding, SFLeadingTrailingCardSection> {
+    struct { 
+        unsigned int leadingToTrailingRatio : 1; 
+    }  _has;
+    NSArray * _leadingCardSections;
+    double  _leadingToTrailingRatio;
+    NSArray * _trailingCardSections;
+    NSString * _type;
+}
+
+@property (nonatomic, retain) SFColor *backgroundColor;
+@property (nonatomic) bool canBeHidden;
+@property (nonatomic, retain) NSString *cardSectionDetail;
+@property (nonatomic, copy) NSString *cardSectionId;
+@property (nonatomic, retain) SFCommand *command;
+@property (nonatomic, retain) NSString *commandDetail;
+@property (nonatomic, copy) NSArray *commands;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (readonly) NSArray *embeddedCards;
+@property (nonatomic) bool hasBottomPadding;
+@property (nonatomic) bool hasTopPadding;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideDivider;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSArray *leadingCardSections;
+@property (nonatomic, copy) NSArray *leadingSwipeButtonItems;
+@property (nonatomic) double leadingToTrailingRatio;
+@property (nonatomic, retain) SFCard *nextCard;
+@property (nonatomic, copy) NSArray *parameterKeyPaths;
+@property (nonatomic, copy) NSArray *previewButtonItems;
+@property (nonatomic, retain) NSString *previewButtonItemsTitle;
+@property (nonatomic, retain) SFCommand *previewCommand;
+@property (nonatomic, copy) NSArray *punchoutOptions;
+@property (nonatomic, copy) NSString *punchoutPickerDismissText;
+@property (nonatomic, copy) NSString *punchoutPickerTitle;
+@property (nonatomic, copy) NSString *resultIdentifier;
+@property (nonatomic) int separatorStyle;
+@property (nonatomic) bool shouldHideInAmbientMode;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *trailingCardSections;
+@property (nonatomic, copy) NSArray *trailingSwipeButtonItems;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasLeadingToTrailingRatio;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithProtobuf:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (id)leadingCardSections;
+- (double)leadingToTrailingRatio;
+- (void)setLeadingCardSections:(id)arg1;
+- (void)setLeadingToTrailingRatio:(double)arg1;
+- (void)setTrailingCardSections:(id)arg1;
+- (void)setType:(id)arg1;
+- (id)trailingCardSections;
+- (id)type;
+
+@end

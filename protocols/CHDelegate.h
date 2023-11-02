@@ -1,0 +1,4 @@
+
+@protocol CHDelegate <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC11ShazamKitUIP33_79EAA3A5248821C348CB5E30E7A6942719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

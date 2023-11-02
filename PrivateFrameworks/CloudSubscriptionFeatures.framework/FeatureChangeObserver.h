@@ -1,0 +1,4 @@
+
+@interface FeatureChangeObserver : NSObject
+
+@end

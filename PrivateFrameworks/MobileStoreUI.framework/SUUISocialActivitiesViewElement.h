@@ -1,0 +1,4 @@
+
+@interface SUUISocialActivitiesViewElement : SUUIViewElement
+
+@end

@@ -1,0 +1,92 @@
+
+@interface PXPhotoKitAssetsDataSource : PXAssetsDataSource {
+    NSCache * _assetReferenceNearestToAssetCache;
+    PXPhotosDataSourceChange * _change;
+    NSCache * _fetchedKeyAssetByAssetCollectionLocalIdentifierCache;
+    NSMutableDictionary * _layoutItemByAssetCache;
+    PXPhotosDataSource * _photosDataSource;
+    NSDictionary * _userInfo;
+}
+
+@property (nonatomic, readonly) PXPhotosDataSourceChange *change;
+@property (nonatomic, readonly) PXPhotosDataSource *photosDataSource;
+@property (nonatomic, retain) NSDictionary *userInfo;
+
++ (id)dataSourceWithAsset:(id)arg1;
++ (id)dataSourceWithAssetCollections:(id)arg1;
++ (id)dataSourceWithAssets:(id)arg1;
++ (id)dataSourceWithAssets:(id)arg1 userInfo:(id)arg2 transientIdentifier:(id)arg3;
+
+- (void).cxx_destruct;
+- (id)_assetCollectionReferenceNearestToObjectReferenceAssumingSortedByIncreasingCreationDate:(id)arg1;
+- (id)_assetReferenceReferenceNearestToAssetReferenceUsingExhaustiveSearch:(id)arg1;
+- (id)_fastKeyCuratedAssetForAssetCollection:(id)arg1;
+- (struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })_indexPathForObjectReference:(id)arg1 restrictedToSection:(long long)arg2;
+- (struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })_indexPathForSavedSyndicatedAssetReference:(id)arg1;
+- (bool)areAllSectionsConsideredAccurate;
+- (id)assetCollectionReferenceNearestToObjectReference:(id)arg1;
+- (id)assetCollectionReferencesWithParentAssetCollectionReference:(id)arg1;
+- (id)assetCollectionReferencesWithParentAssetCollectionReference:(id)arg1 assetCollectionReferenceWithSameKeyAssetAsParent:(id*)arg2;
+- (id)assetIdentifierAtItemIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)change;
+- (id)containerCollection;
+- (bool)containsAnyItems;
+- (bool)containsMultipleItems;
+- (bool)couldObjectReferenceAppear:(id)arg1;
+- (id)description;
+- (unsigned long long)estimatedAssetCountForSectionIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (long long)estimatedAssetsCountWithEnrichmentState:(unsigned short)arg1;
+- (unsigned long long)estimatedOtherCount;
+- (unsigned long long)estimatedPhotosCount;
+- (unsigned long long)estimatedVideosCount;
+- (id)fetchAllItemObjects;
+- (id)filterPredicate;
+- (id)firstAssetCollection;
+- (bool)getAssetCounts:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg1 guestAssetCounts:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg2 allowFetch:(bool)arg3;
+- (bool)hasCurationForAssetCollection:(id)arg1;
+- (long long)identifier;
+- (bool)ignoreSharedLibraryFilters;
+- (struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })indexPathForObjectID:(id)arg1;
+- (struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })indexPathForObjectReference:(id)arg1;
+- (id)indexPathSetForObjectIDs:(id)arg1;
+- (id)initWithImmutablePhotosDataSource:(id)arg1 withChange:(id)arg2;
+- (id)inputForItem:(id)arg1;
+- (bool)isAssetAtIndexPathPartOfCuratedSet:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (bool)isFiltered;
+- (bool)isFilteringAssetCollection:(id)arg1;
+- (bool)isFilteringDisabledForAssetCollection:(id)arg1;
+- (bool)isSorted;
+- (struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })keyAssetIndexPathForSectionIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)keyAssetsForAssetCollection:(id)arg1;
+- (id)keyAssetsInSectionIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)lastAssetCollection;
+- (long long)libraryFilter;
+- (long long)numberOfCuratedItemsInAssetCollection:(id)arg1;
+- (long long)numberOfCuratedItemsInSectionIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (long long)numberOfItemsInSection:(long long)arg1;
+- (long long)numberOfSections;
+- (long long)numberOfSectionsWithEnrichmentState:(unsigned short)arg1;
+- (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
+- (long long)numberOfUncuratedItemsInAssetCollection:(id)arg1;
+- (long long)numberOfUncuratedItemsInSectionIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)objectAtIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)objectReferenceAtIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)objectReferenceNearestToObjectReference:(id)arg1;
+- (id)objectReferenceNearestToObjectReference:(id)arg1 inSection:(long long)arg2;
+- (id)objectsInIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)photosDataSource;
+- (id)photosGraphSuggestedContributions;
+- (void)prefetchIndexPaths:(id)arg1;
+- (void)prefetchIndexPaths:(id)arg1 level:(unsigned long long)arg2;
+- (void)prefetchSections:(id)arg1;
+- (id)primaryFaceForAssetAtItemIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)selectionSnapshotForAsset:(id)arg1 assetCollection:(id)arg2;
+- (id)selectionSnapshotForAssetsByAssetCollection:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (id)startingAssetReference;
+- (long long)startingSection;
+- (bool)startsAtEnd;
+- (id)uncuratedAssetsInSectionIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)userInfo;
+
+@end

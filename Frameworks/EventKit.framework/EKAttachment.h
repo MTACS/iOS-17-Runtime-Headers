@@ -1,0 +1,85 @@
+
+@interface EKAttachment : EKObject
+
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, retain) NSURL *URLForPendingFileCopy;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic) bool autoArchived;
+@property (readonly, retain) NSString *contentType;
+@property (nonatomic, retain) NSString *externalID;
+@property (nonatomic, retain) NSString *externalModificationTag;
+@property (nonatomic, retain) NSString *fileFormat;
+@property (nonatomic, readonly) NSString *fileName;
+@property (nonatomic, retain) NSString *fileNameRaw;
+@property (nonatomic, retain) NSNumber *fileSize;
+@property (nonatomic) bool isBinary;
+@property (nonatomic, readonly) NSString *localRelativePath;
+@property (nonatomic, readonly) NSURL *localURL;
+@property (nonatomic, readonly) NSURL *localURLForArchivedData;
+@property (nonatomic, readonly) NSURL *urlOnDisk;
+
++ (id)_copyFileAtURLToTemporaryDirectory:(id)arg1;
++ (bool)canonicalizedEqualityTestValue1:(id)arg1 value2:(id)arg2 key:(id)arg3 object1:(id)arg4 object2:(id)arg5;
++ (id)createTempDestinationURLWithExtension:(id)arg1;
++ (Class)frozenClass;
++ (id)knownIdentityKeysForComparison;
++ (id)knownRelationshipWeakKeys;
++ (id)knownSingleValueKeysForComparison;
+
+- (id)URL;
+- (id)URLForPendingFileCopy;
+- (id)URLString;
+- (id)UUID;
+- (id)XPropertiesData;
+- (bool)_flagValueWithMask:(unsigned int)arg1;
+- (void)_setFlagValue:(bool)arg1 withMask:(unsigned int)arg2;
+- (void)assignIdentity:(id)arg1;
+- (void)assignNewIdentity;
+- (bool)autoArchived;
+- (long long)compareFileNames:(id)arg1;
+- (id)contentType;
+- (bool)copyLocalFileToNewSource;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)duplicateWithNewIdentity;
+- (id)externalID;
+- (id)externalModificationTag;
+- (id)fileFormat;
+- (id)fileName;
+- (id)fileNameRaw;
+- (id)fileSize;
+- (unsigned int)flags;
+- (id)init;
+- (id)initWithFilepath:(id)arg1;
+- (id)initWithUUID:(id)arg1;
+- (void)invalidateLocalFilePropertiesForNewCopiedFile;
+- (bool)isBinary;
+- (id)localRelativePath;
+- (id)localURL;
+- (id)localURLForArchivedData;
+- (void)markCopiedFileAsDownloaded;
+- (bool)save:(id*)arg1;
+- (id)securityScopedLocalURLForArchivedDataWrapper;
+- (id)securityScopedLocalURLWrapper;
+- (id)securityScopedURLWrapperForPendingFileCopy;
+- (void)setAutoArchived:(bool)arg1;
+- (void)setExternalID:(id)arg1;
+- (void)setExternalModificationTag:(id)arg1;
+- (void)setFileFormat:(id)arg1;
+- (void)setFileNameRaw:(id)arg1;
+- (void)setFileSize:(id)arg1;
+- (void)setFlags:(unsigned int)arg1;
+- (void)setIsBinary:(bool)arg1;
+- (void)setLocalRelativePath:(id)arg1;
+- (void)setSecurityScopedURLWrapperForPendingFileCopy:(id)arg1;
+- (void)setShouldSetQuarantineAttributesOnCopiedFile:(bool)arg1;
+- (void)setURL:(id)arg1;
+- (void)setURLForPendingFileCopy:(id)arg1;
+- (void)setURLString:(id)arg1;
+- (void)setUUID:(id)arg1;
+- (void)setXPropertiesData:(id)arg1;
+- (bool)shouldSetQuarantineAttributesOnCopiedFile;
+- (id)urlOnDisk;
+- (bool)validateWithOwner:(id)arg1 error:(id*)arg2;
+
+@end

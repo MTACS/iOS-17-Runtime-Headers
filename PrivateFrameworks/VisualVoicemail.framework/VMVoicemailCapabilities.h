@@ -1,0 +1,26 @@
+
+@interface VMVoicemailCapabilities : NSObject <NSCopying, NSSecureCoding> {
+    bool  _transcriptionEnabled;
+}
+
+@property (getter=isTranscriptionEnabled, nonatomic, readonly) bool transcriptionEnabled;
+
++ (bool)supportsSecureCoding;
++ (id)unarchivedObjectClasses;
++ (id)unarchivedObjectFromData:(id)arg1 error:(id*)arg2;
+
+- (id)archivedDataWithError:(id*)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)debugDescription;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithCapabilities:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithTranscriptionEnabled:(bool)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToCapabilities:(id)arg1;
+- (bool)isTranscriptionEnabled;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol DOCLocation
+
+@end

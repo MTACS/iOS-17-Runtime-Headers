@@ -1,0 +1,33 @@
+
+@interface VUIAppInstallCoordinator : NSObject {
+    VUIAccessViewController * _accessViewController;
+    WLKChannelDetails * _channelDetails;
+    NSString * _contentTitle;
+    VUIAppInstallerViewController * _installerViewController;
+    NSUUID * _uuid;
+}
+
+@property (nonatomic, retain) VUIAccessViewController *accessViewController;
+@property (nonatomic, retain) WLKChannelDetails *channelDetails;
+@property (nonatomic, retain) NSString *contentTitle;
+@property (nonatomic, retain) VUIAppInstallerViewController *installerViewController;
+@property (nonatomic, retain) NSUUID *uuid;
+
+- (void).cxx_destruct;
+- (void)_installAppWithChannel:(id)arg1 punchoutURL:(id)arg2 completion:(id /* block */)arg3;
+- (id)accessViewController;
+- (id)channelDetails;
+- (id)contentTitle;
+- (unsigned long long)hash;
+- (id)initWithChannelDetails:(id)arg1 contentTitle:(id)arg2;
+- (void)installAppWithPunchoutURL:(id)arg1 completion:(id /* block */)arg2;
+- (id)installerViewController;
+- (bool)isEqual:(id)arg1;
+- (void)setAccessViewController:(id)arg1;
+- (void)setChannelDetails:(id)arg1;
+- (void)setContentTitle:(id)arg1;
+- (void)setInstallerViewController:(id)arg1;
+- (void)setUuid:(id)arg1;
+- (id)uuid;
+
+@end

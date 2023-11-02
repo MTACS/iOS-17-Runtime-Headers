@@ -1,0 +1,31 @@
+
+@interface AAFamilyEligibilityResponse : AAResponse {
+    NSArray * _familyFeaturePrimaryDescriptions;
+    NSArray * _familyFeatureSecondaryDescriptions;
+    NSString * _familyFeatureSecondaryTitle;
+    bool  _hasPendingInvites;
+    NSString * _underageEligibilityAlertMessage;
+    NSString * _underageEligibilityAlertTitle;
+}
+
+@property (nonatomic, readonly) long long eligibilityStatus;
+@property (nonatomic, readonly) bool eligible;
+@property (nonatomic, readonly) NSArray *familyFeaturePrimaryDescriptions;
+@property (nonatomic, readonly) NSArray *familyFeatureSecondaryDescriptions;
+@property (nonatomic, readonly) NSString *familyFeatureSecondaryTitle;
+@property (nonatomic, readonly) bool hasPendingInvites;
+@property (nonatomic, readonly) NSString *underageEligibilityAlertMessage;
+@property (nonatomic, readonly) NSString *underageEligibilityAlertTitle;
+
+- (void).cxx_destruct;
+- (long long)eligibilityStatus;
+- (bool)eligible;
+- (id)familyFeaturePrimaryDescriptions;
+- (id)familyFeatureSecondaryDescriptions;
+- (id)familyFeatureSecondaryTitle;
+- (bool)hasPendingInvites;
+- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)underageEligibilityAlertMessage;
+- (id)underageEligibilityAlertTitle;
+
+@end

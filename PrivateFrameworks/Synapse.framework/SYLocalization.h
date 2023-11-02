@@ -1,0 +1,4 @@
+
+@interface SYLocalization : NSObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol HFAudioControlObserver <HMAudioControlDelegate>
+
+@end

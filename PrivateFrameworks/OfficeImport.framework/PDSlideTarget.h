@@ -1,0 +1,4 @@
+
+@interface PDSlideTarget : PDAnimationTarget
+
+@end

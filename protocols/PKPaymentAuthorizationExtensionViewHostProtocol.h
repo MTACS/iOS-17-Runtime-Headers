@@ -1,0 +1,4 @@
+
+@protocol PKPaymentAuthorizationExtensionViewHostProtocol <PKPaymentAuthorizationExtensionViewProtocol>
+
+@end

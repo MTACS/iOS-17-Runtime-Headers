@@ -1,0 +1,4 @@
+
+@interface _TtC15RemindersUICoreP33_7778178985B36884DF8BBDC1C7FB164919ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

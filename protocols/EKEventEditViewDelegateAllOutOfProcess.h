@@ -1,0 +1,4 @@
+
+@protocol EKEventEditViewDelegateAllOutOfProcess <EKEventEditViewDelegatePrivate, EKEventEditViewDelegateOutOfProcessOnly>
+
+@end

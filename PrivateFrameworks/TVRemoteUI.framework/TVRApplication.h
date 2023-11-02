@@ -1,0 +1,4 @@
+
+@interface TVRApplication : INObject
+
+@end

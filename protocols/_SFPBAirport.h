@@ -1,0 +1,32 @@
+
+@protocol _SFPBAirport <NSObject>
+
+@required
+
+- (NSString *)city;
+- (NSString *)code;
+- (NSString *)country;
+- (NSString *)countryCode;
+- (NSString *)district;
+- (id)initWithDictionary:(NSDictionary *)arg1;
+- (id)initWithJSON:(NSData *)arg1;
+- (NSData *)jsonData;
+- (_SFPBLatLng *)location;
+- (NSString *)name;
+- (NSString *)postalCode;
+- (void)setCity:(NSString *)arg1;
+- (void)setCode:(NSString *)arg1;
+- (void)setCountry:(NSString *)arg1;
+- (void)setCountryCode:(NSString *)arg1;
+- (void)setDistrict:(NSString *)arg1;
+- (void)setLocation:(_SFPBLatLng *)arg1;
+- (void)setName:(NSString *)arg1;
+- (void)setPostalCode:(NSString *)arg1;
+- (void)setState:(NSString *)arg1;
+- (void)setStreet:(NSString *)arg1;
+- (void)setTimezone:(_SFPBTimeZone *)arg1;
+- (NSString *)state;
+- (NSString *)street;
+- (_SFPBTimeZone *)timezone;
+
+@end

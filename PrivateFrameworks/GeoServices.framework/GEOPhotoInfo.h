@@ -1,0 +1,46 @@
+
+@interface GEOPhotoInfo : PBCodable <NSCopying> {
+    struct { 
+        unsigned int has_size : 1; 
+    }  _flags;
+    int  _size;
+    PBUnknownFields * _unknownFields;
+    NSString * _url;
+}
+
+@property (nonatomic) bool hasSize;
+@property (nonatomic, readonly) bool hasUrl;
+@property (nonatomic) int size;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic, retain) NSString *url;
+
++ (bool)isValid:(id)arg1;
+
+- (void).cxx_destruct;
+- (int)StringAsSize:(id)arg1;
+- (void)clearUnknownFields:(bool)arg1;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasSize;
+- (bool)hasUrl;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (id)initWithPlaceDataPhotoContent:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonRepresentation;
+- (void)mergeFrom:(id)arg1;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasSize:(bool)arg1;
+- (void)setSize:(int)arg1;
+- (void)setUrl:(id)arg1;
+- (int)size;
+- (id)sizeAsString:(int)arg1;
+- (id)unknownFields;
+- (id)url;
+- (void)writeTo:(id)arg1;
+
+@end

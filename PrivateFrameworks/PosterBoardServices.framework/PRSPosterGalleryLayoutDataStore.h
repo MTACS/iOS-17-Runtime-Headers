@@ -1,0 +1,4 @@
+
+@interface PRSPosterGalleryLayoutDataStore : NSObject
+
+@end

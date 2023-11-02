@@ -1,0 +1,4 @@
+
+@protocol HMELastEventStoreWriter <NSObject>
+
+@end

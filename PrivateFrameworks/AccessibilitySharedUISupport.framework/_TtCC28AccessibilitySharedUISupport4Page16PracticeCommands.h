@@ -1,0 +1,4 @@
+
+@interface _TtCC28AccessibilitySharedUISupport4Page16PracticeCommands : _TtCC28AccessibilitySharedUISupport4Page8Practice
+
+@end

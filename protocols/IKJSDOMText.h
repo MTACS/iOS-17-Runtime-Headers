@@ -1,0 +1,4 @@
+
+@protocol IKJSDOMText <JSExport>
+
+@end

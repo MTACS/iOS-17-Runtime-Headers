@@ -1,0 +1,4 @@
+
+@protocol VIQueryHandling <VICancellable>
+
+@end

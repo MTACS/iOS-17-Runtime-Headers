@@ -1,0 +1,4 @@
+
+@interface RBSLimitation : RBSAttribute
+
+@end

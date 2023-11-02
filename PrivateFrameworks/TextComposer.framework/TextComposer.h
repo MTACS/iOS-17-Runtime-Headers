@@ -1,0 +1,4 @@
+
+@interface TextComposer : NSObject
+
+@end

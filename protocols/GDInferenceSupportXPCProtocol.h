@@ -1,0 +1,4 @@
+
+@protocol GDInferenceSupportXPCProtocol <GDAssetRegistryXPCBaseProtocol>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtCO7VFXCore14CodeGeneration11ParameterIn : _TtCO7VFXCore14CodeGeneration13ParameterBase
+
+@end

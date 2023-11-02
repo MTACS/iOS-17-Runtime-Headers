@@ -1,0 +1,4 @@
+
+@protocol PLPlatterInternal <PLPlatter>
+
+@end

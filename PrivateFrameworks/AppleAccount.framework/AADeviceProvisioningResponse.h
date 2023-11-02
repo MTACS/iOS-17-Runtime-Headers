@@ -1,0 +1,4 @@
+
+@interface AADeviceProvisioningResponse : AAResponse
+
+@end

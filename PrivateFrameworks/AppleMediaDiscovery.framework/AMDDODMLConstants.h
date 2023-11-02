@@ -1,0 +1,4 @@
+
+@interface AMDDODMLConstants : NSObject
+
+@end

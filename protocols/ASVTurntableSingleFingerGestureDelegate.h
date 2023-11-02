@@ -1,0 +1,4 @@
+
+@protocol ASVTurntableSingleFingerGestureDelegate <ASVTurntableGestureDelegate, ASVSingleFingerGestureDelegate>
+
+@end

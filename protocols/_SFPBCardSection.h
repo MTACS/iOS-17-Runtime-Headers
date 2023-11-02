@@ -1,0 +1,82 @@
+
+@protocol _SFPBCardSection <NSObject>
+
+@required
+
+- (void)addCommands:(_SFPBAbstractCommand *)arg1;
+- (void)addLeadingSwipeButtonItems:(_SFPBButtonItem *)arg1;
+- (void)addParameterKeyPaths:(NSString *)arg1;
+- (void)addPreviewButtonItems:(_SFPBButtonItem *)arg1;
+- (void)addPunchoutOptions:(_SFPBPunchout *)arg1;
+- (void)addTrailingSwipeButtonItems:(_SFPBButtonItem *)arg1;
+- (_SFPBColor *)backgroundColor;
+- (bool)canBeHidden;
+- (NSString *)cardSectionDetail;
+- (NSString *)cardSectionId;
+- (void)clearCommands;
+- (void)clearLeadingSwipeButtonItems;
+- (void)clearParameterKeyPaths;
+- (void)clearPreviewButtonItems;
+- (void)clearPunchoutOptions;
+- (void)clearTrailingSwipeButtonItems;
+- (_SFPBCommand *)command;
+- (NSArray *)commands;
+- (_SFPBAbstractCommand *)commandsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)commandsCount;
+- (bool)hasBottomPadding;
+- (bool)hasTopPadding;
+- (id)initWithDictionary:(NSDictionary *)arg1;
+- (id)initWithJSON:(NSData *)arg1;
+- (NSData *)jsonData;
+- (NSArray *)leadingSwipeButtonItems;
+- (_SFPBButtonItem *)leadingSwipeButtonItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)leadingSwipeButtonItemsCount;
+- (_SFPBCard *)nextCard;
+- (NSArray *)parameterKeyPaths;
+- (NSString *)parameterKeyPathsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)parameterKeyPathsCount;
+- (NSArray *)previewButtonItems;
+- (_SFPBButtonItem *)previewButtonItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)previewButtonItemsCount;
+- (NSString *)previewButtonItemsTitle;
+- (_SFPBCommand *)previewCommand;
+- (NSArray *)punchoutOptions;
+- (_SFPBPunchout *)punchoutOptionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)punchoutOptionsCount;
+- (NSString *)punchoutPickerDismissText;
+- (NSString *)punchoutPickerTitle;
+- (NSString *)resultIdentifier;
+- (int)separatorStyle;
+- (void)setBackgroundColor:(_SFPBColor *)arg1;
+- (void)setCanBeHidden:(bool)arg1;
+- (void)setCardSectionDetail:(NSString *)arg1;
+- (void)setCardSectionId:(NSString *)arg1;
+- (void)setCommand:(_SFPBCommand *)arg1;
+- (void)setCommands:(NSArray *)arg1;
+- (void)setHasBottomPadding:(bool)arg1;
+- (void)setHasTopPadding:(bool)arg1;
+- (void)setLeadingSwipeButtonItems:(NSArray *)arg1;
+- (void)setNextCard:(_SFPBCard *)arg1;
+- (void)setParameterKeyPaths:(NSArray *)arg1;
+- (void)setPreviewButtonItems:(NSArray *)arg1;
+- (void)setPreviewButtonItemsTitle:(NSString *)arg1;
+- (void)setPreviewCommand:(_SFPBCommand *)arg1;
+- (void)setPunchoutOptions:(NSArray *)arg1;
+- (void)setPunchoutPickerDismissText:(NSString *)arg1;
+- (void)setPunchoutPickerTitle:(NSString *)arg1;
+- (void)setResultIdentifier:(NSString *)arg1;
+- (void)setSeparatorStyle:(int)arg1;
+- (void)setShouldHideInAmbientMode:(bool)arg1;
+- (void)setTrailingSwipeButtonItems:(NSArray *)arg1;
+- (void)setType:(int)arg1;
+- (void)setUserReportRequest:(_SFPBUserReportRequest *)arg1;
+- (void)setValue:(_SFPBCardSectionValue *)arg1;
+- (bool)shouldHideInAmbientMode;
+- (NSArray *)trailingSwipeButtonItems;
+- (_SFPBButtonItem *)trailingSwipeButtonItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)trailingSwipeButtonItemsCount;
+- (int)type;
+- (_SFPBUserReportRequest *)userReportRequest;
+- (_SFPBCardSectionValue *)value;
+
+@end

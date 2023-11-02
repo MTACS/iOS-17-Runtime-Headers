@@ -1,0 +1,4 @@
+
+@protocol TSXgPTPManagerClientProtocol <NSObject>
+
+@end

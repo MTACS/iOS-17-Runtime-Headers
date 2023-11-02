@@ -1,0 +1,4 @@
+
+@protocol HMDOPACKValue <NSObject>
+
+@end

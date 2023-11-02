@@ -1,0 +1,4 @@
+
+@interface TRIPBFieldMaskRoot : TRIPBRootObject
+
+@end

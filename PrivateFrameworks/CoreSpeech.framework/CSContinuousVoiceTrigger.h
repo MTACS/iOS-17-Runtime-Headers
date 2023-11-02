@@ -1,0 +1,86 @@
+
+@interface CSContinuousVoiceTrigger : NSObject {
+    unsigned long long  _activeChannel;
+    unsigned long long  _analyzedSampleCount;
+    CSAudioRecordContext * _audioRecordContext;
+    CSAudioTimeConverter * _audioTimeConverter;
+    CSAsset * _currentAsset;
+    CSContinuousVoiceTriggerConfig * _cvtConfig;
+    <CSContinuousVoiceTriggerDelegate> * _delegate;
+    bool  _hasResetShotAnalyzerBestScore;
+    unsigned long long  _heartbeatFactor;
+    CSKeywordAnalyzerNDAPI * _keywordAnalyzer;
+    float  _keywordThreshold;
+    NSMutableDictionary * _lastVoiceTriggerScores;
+    long long  _mode;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned long long  _triggerEndSampleCount;
+    unsigned long long  _twoShotDecisionWaitSamples;
+    float  _twoShotThreshold;
+}
+
+@property (nonatomic) unsigned long long activeChannel;
+@property (nonatomic) unsigned long long analyzedSampleCount;
+@property (nonatomic, retain) CSAudioRecordContext *audioRecordContext;
+@property (nonatomic, retain) CSAudioTimeConverter *audioTimeConverter;
+@property (nonatomic, retain) CSAsset *currentAsset;
+@property (nonatomic, retain) CSContinuousVoiceTriggerConfig *cvtConfig;
+@property (nonatomic) <CSContinuousVoiceTriggerDelegate> *delegate;
+@property (nonatomic) bool hasResetShotAnalyzerBestScore;
+@property (nonatomic) unsigned long long heartbeatFactor;
+@property (nonatomic, retain) CSKeywordAnalyzerNDAPI *keywordAnalyzer;
+@property (nonatomic) float keywordThreshold;
+@property (nonatomic, retain) NSMutableDictionary *lastVoiceTriggerScores;
+@property (nonatomic) long long mode;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) unsigned long long triggerEndSampleCount;
+@property (nonatomic) unsigned long long twoShotDecisionWaitSamples;
+@property (nonatomic) float twoShotThreshold;
+
+- (void).cxx_destruct;
+- (void)_keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3 lastVoiceTriggerScore:(float)arg4 phId:(unsigned long long)arg5;
+- (void)_reset;
+- (void)_setAsset:(id)arg1;
+- (void)_shotAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
+- (unsigned long long)activeChannel;
+- (unsigned long long)analyzedSampleCount;
+- (id)audioRecordContext;
+- (id)audioTimeConverter;
+- (id)currentAsset;
+- (id)cvtConfig;
+- (id)delegate;
+- (bool)hasResetShotAnalyzerBestScore;
+- (unsigned long long)heartbeatFactor;
+- (id)init;
+- (id)keywordAnalyzer;
+- (float)keywordThreshold;
+- (id)lastVoiceTriggerScores;
+- (long long)mode;
+- (void)processAudioSamples:(id)arg1;
+- (id)queue;
+- (void)resetWithAudioRecordContext:(id)arg1;
+- (void)setActiveChannel:(unsigned long long)arg1;
+- (void)setAnalyzedSampleCount:(unsigned long long)arg1;
+- (void)setAsset:(id)arg1;
+- (void)setAudioRecordContext:(id)arg1;
+- (void)setAudioTimeConverter:(id)arg1;
+- (void)setCurrentAsset:(id)arg1;
+- (void)setCvtConfig:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHasResetShotAnalyzerBestScore:(bool)arg1;
+- (void)setHeartbeatFactor:(unsigned long long)arg1;
+- (void)setKeywordAnalyzer:(id)arg1;
+- (void)setKeywordThreshold:(float)arg1;
+- (void)setLastVoiceTriggerScores:(id)arg1;
+- (void)setMode:(long long)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setTriggerEndSampleCount:(unsigned long long)arg1;
+- (void)setTwoShotDecisionWaitSamples:(unsigned long long)arg1;
+- (void)setTwoShotThreshold:(float)arg1;
+- (void)start;
+- (void)startDetectTwoShot:(id)arg1;
+- (unsigned long long)triggerEndSampleCount;
+- (unsigned long long)twoShotDecisionWaitSamples;
+- (float)twoShotThreshold;
+
+@end

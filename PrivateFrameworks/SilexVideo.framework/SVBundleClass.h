@@ -1,0 +1,4 @@
+
+@interface SVBundleClass : NSObject
+
+@end

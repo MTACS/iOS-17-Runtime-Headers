@@ -1,0 +1,122 @@
+
+@interface PXCuratedAssetCollectionDiagnosticsViewController : UIViewController <PXDiagnosticsHighlightCurationSettingsViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate> {
+    NSMutableArray * _addedAssets;
+    PHFetchResult * _allAssets;
+    NSDictionary * _assetByUUID;
+    UICollectionView * _collectionView;
+    UIView * _contentView;
+    bool  _curationComparisonEnabled;
+    NSObject<OS_dispatch_queue> * _curationDebugFetchQueue;
+    NSDictionary * _curationDebugInformation;
+    UIView * _curationSettingsView;
+    UIView * _curationTypeView;
+    long long  _currentCurationType;
+    NSDictionary * _dedupedSymbolIndexByItemIdentifier;
+    PXDiagnosticsHighlightCurationSettingsViewController * _editSettingsViewController;
+    NSString * _hostLayoutDiagnosticDescription;
+    NSString * _hostViewDiagnosticDescription;
+    PHCachingImageManager * _imageManager;
+    bool  _initiallyShowCuration;
+    bool  _isReady;
+    UIView * _itemDetailsView;
+    NSString * _keyAssetUUID;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _previousPreheatRect;
+    UIActivityIndicatorView * _progressView;
+    NSMutableArray * _removedAssets;
+    NSURL * _screenshotURL;
+    NSArray * _sectionTitles;
+    UISegmentedControl * _segmentedControl;
+    bool  _shouldPresentTapToRadar;
+    NSArray * _sortedVisibleAssetUUIDs;
+    NSDictionary * _tableContent;
+    UITableView * _tableView;
+    long long  _thumbnailContentMode;
+    PHImageRequestOptions * _thumbnailOptions;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _thumbnailSize;
+    NSArray * _visibleAssets;
+}
+
+@property (nonatomic) long long currentCurationType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *hostLayoutDiagnosticDescription;
+@property (nonatomic, copy) NSString *hostViewDiagnosticDescription;
+@property (nonatomic) bool initiallyShowCuration;
+@property (nonatomic) bool shouldPresentTapToRadar;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_closeAction:(id)arg1;
+- (id)_curationTypeKeys;
+- (void)_editSettings:(id)arg1;
+- (void)_enumerateDifferencesBetweenRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 andRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 usingBlock:(id /* block */)arg3;
+- (void)_switchLogsAction:(id)arg1;
+- (void)_tapToRadar:(id)arg1;
+- (id)_tapToRadarViewControllerWithScreenshot:(bool)arg1;
+- (void)_updateCachedAssets;
+- (void)_updateUIElementsVisibility;
+- (void)addAssetUUIDsTo:(id)arg1 from:(id)arg2;
+- (void)applySettings:(id)arg1 globally:(bool)arg2;
+- (id)assetsForCurationType:(long long)arg1;
+- (void)changeCurationType:(id)arg1;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (id)curationDebugInformationForCurationType:(long long)arg1;
+- (id)curationDebugInformationWithOptions:(id)arg1;
+- (long long)currentCurationType;
+- (void)displayCurrentCurationType;
+- (id)fullCurationDebugInformation;
+- (bool)generateSectionTitles:(out id*)arg1 andTableContent:(out id*)arg2 forIndex:(long long)arg3;
+- (void)hideCurationSettings:(id)arg1;
+- (void)hideItemDetails:(id)arg1;
+- (void)hideToolbarItems;
+- (id)hostLayoutDiagnosticDescription;
+- (id)hostViewDiagnosticDescription;
+- (id)init;
+- (bool)initiallyShowCuration;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)presentTapToRadarIfNeeded;
+- (id)radarAttachmentURLs;
+- (id)radarComponentInfoForRoute:(id)arg1;
+- (id)radarDescriptionTemplate;
+- (id)radarRoutes;
+- (id)radarTitleTemplate;
+- (void)reloadCuration;
+- (void)requestCurationDebugInfoWithOptions:(id)arg1 setGlobally:(bool)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)setCurrentCurationType:(long long)arg1;
+- (void)setHostLayoutDiagnosticDescription:(id)arg1;
+- (void)setHostViewDiagnosticDescription:(id)arg1;
+- (void)setInitiallyShowCuration:(bool)arg1;
+- (void)setShouldPresentTapToRadar:(bool)arg1;
+- (bool)shouldPresentTapToRadar;
+- (void)showCurationSettings:(id)arg1;
+- (void)showInfo:(id)arg1;
+- (void)showItemDetailsWithDebugInfo:(id)arg1;
+- (void)showToolbarItems;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (void)toggleCurationComparison:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+
+@end

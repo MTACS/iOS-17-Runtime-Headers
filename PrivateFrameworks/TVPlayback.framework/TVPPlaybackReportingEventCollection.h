@@ -1,0 +1,58 @@
+
+@interface TVPPlaybackReportingEventCollection : NSObject {
+    bool  _complete;
+    NSMutableArray * _eventArray;
+    bool  _initialFPSRequestsComplete;
+    bool  _isDownloaded;
+    bool  _isGroupActivity;
+    bool  _isGroupActivityOriginator;
+    NSMutableDictionary * _openEvents;
+    long long  _videoType;
+}
+
+@property (nonatomic) bool complete;
+@property (nonatomic, retain) NSMutableArray *eventArray;
+@property (nonatomic) bool initialFPSRequestsComplete;
+@property (nonatomic) bool isDownloaded;
+@property (nonatomic) bool isGroupActivity;
+@property (nonatomic) bool isGroupActivityOriginator;
+@property (nonatomic, retain) NSMutableDictionary *openEvents;
+@property (nonatomic, readonly) NSDictionary *rtcReportingEventDict;
+@property (nonatomic) long long videoType;
+
++ (double)_totalTimeSpentDoingFPSFetchesFromEndEvents:(id)arg1;
++ (void)initialize;
+
+- (void).cxx_destruct;
+- (void)_addEventWithName:(id)arg1 type:(long long)arg2 identifier:(id)arg3 value:(id)arg4 timestamp:(id)arg5 forceAdd:(bool)arg6 isUIInteraction:(bool)arg7;
+- (void)_closeOpenEvents;
+- (void)_setError:(id)arg1 inEventDict:(id)arg2 errorCodeKey:(id)arg3 errorDomainKey:(id)arg4;
+- (void)addEndEventWithName:(id)arg1;
+- (void)addEndEventWithName:(id)arg1 identifier:(id)arg2;
+- (void)addEndEventWithName:(id)arg1 identifier:(id)arg2 timestamp:(id)arg3;
+- (void)addOrReplaceStartEventWithName:(id)arg1 date:(id)arg2;
+- (void)addSingleShotEventWithName:(id)arg1 value:(id)arg2;
+- (void)addStartEventWithName:(id)arg1;
+- (void)addStartEventWithName:(id)arg1 identifier:(id)arg2;
+- (void)addStartEventWithName:(id)arg1 isUIInteraction:(bool)arg2;
+- (bool)complete;
+- (bool)containsEventWithName:(id)arg1;
+- (id)eventArray;
+- (id)init;
+- (bool)initialFPSRequestsComplete;
+- (bool)isDownloaded;
+- (bool)isGroupActivity;
+- (bool)isGroupActivityOriginator;
+- (id)openEvents;
+- (id)rtcReportingEventDict;
+- (void)setComplete:(bool)arg1;
+- (void)setEventArray:(id)arg1;
+- (void)setInitialFPSRequestsComplete:(bool)arg1;
+- (void)setIsDownloaded:(bool)arg1;
+- (void)setIsGroupActivity:(bool)arg1;
+- (void)setIsGroupActivityOriginator:(bool)arg1;
+- (void)setOpenEvents:(id)arg1;
+- (void)setVideoType:(long long)arg1;
+- (long long)videoType;
+
+@end

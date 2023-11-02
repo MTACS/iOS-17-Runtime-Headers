@@ -1,0 +1,4 @@
+
+@interface MTEnvironmentUIKitStoreDelegate : MTEnvironmentStoreDelegate
+
+@end

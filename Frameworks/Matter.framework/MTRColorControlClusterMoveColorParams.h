@@ -1,0 +1,35 @@
+
+@interface MTRColorControlClusterMoveColorParams : NSObject <NSCopying> {
+    NSNumber * _optionsMask;
+    NSNumber * _optionsOverride;
+    NSNumber * _rateX;
+    NSNumber * _rateY;
+    NSNumber * _serverSideProcessingTimeout;
+    NSNumber * _timedInvokeTimeoutMs;
+}
+
+@property (nonatomic, copy) NSNumber *optionsMask;
+@property (nonatomic, copy) NSNumber *optionsOverride;
+@property (nonatomic, copy) NSNumber *rateX;
+@property (nonatomic, copy) NSNumber *rateY;
+@property (nonatomic, copy) NSNumber *serverSideProcessingTimeout;
+@property (nonatomic, copy) NSNumber *timedInvokeTimeoutMs;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)init;
+- (id)optionsMask;
+- (id)optionsOverride;
+- (id)rateX;
+- (id)rateY;
+- (id)serverSideProcessingTimeout;
+- (void)setOptionsMask:(id)arg1;
+- (void)setOptionsOverride:(id)arg1;
+- (void)setRateX:(id)arg1;
+- (void)setRateY:(id)arg1;
+- (void)setServerSideProcessingTimeout:(id)arg1;
+- (void)setTimedInvokeTimeoutMs:(id)arg1;
+- (id)timedInvokeTimeoutMs;
+
+@end

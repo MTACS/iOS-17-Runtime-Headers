@@ -1,0 +1,4 @@
+
+@interface _TtCC26DeepThoughtBiomeFoundation13EventFeatures16POICategoryEvent : _TtCs12_SwiftObject
+
+@end

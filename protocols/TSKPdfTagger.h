@@ -1,0 +1,4 @@
+
+@protocol TSKPdfTagger <NSObject>
+
+@end

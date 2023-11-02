@@ -1,0 +1,4 @@
+
+@protocol MERemoteExtensionProtocol <MEComposeSessionHandler_Private, MEMessageActionHandler_Private, MEMessageSecurityHandler_Private, MEContentBlocker_Private>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CAMTextRegionIndicatorView : CEKSubjectIndicatorView
+
+@end

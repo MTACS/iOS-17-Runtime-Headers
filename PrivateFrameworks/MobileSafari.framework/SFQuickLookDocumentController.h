@@ -1,0 +1,27 @@
+
+@interface SFQuickLookDocumentController : NSObject <SFQuickLookDocumentViewDelegate> {
+    NSArray * _buttonActions;
+    UIDocumentInteractionController * _documentInteractionController;
+    SFQuickLookDocumentView * _documentView;
+    SFQuickLookDocument * _quickLookDocument;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIView *documentView;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_actionTitleForType:(long long)arg1 withActionCount:(unsigned long long)arg2;
+- (id)_supportedApplications;
+- (void)_updateActionButtons;
+- (long long)dataOwnerForQuickLookDocumentView:(id)arg1;
+- (id)documentView;
+- (id)init;
+- (id)itemProviderForQuickLookDocumentView:(id)arg1;
+- (void)presentDocumentInteractionControllerFromSource:(id)arg1;
+- (void)quickLookDocumentView:(id)arg1 didSelectActionAtIndex:(long long)arg2;
+- (void)updateWithQuickLookDocument:(id)arg1;
+
+@end

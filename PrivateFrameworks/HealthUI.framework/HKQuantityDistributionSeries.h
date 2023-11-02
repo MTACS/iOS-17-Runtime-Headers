@@ -1,0 +1,92 @@
+
+@interface HKQuantityDistributionSeries : HKGraphSeries {
+    bool  _excludeDistributionStorage;
+    double  _hollowLineRatioStorage;
+    HKStrokeStyle * _inactiveStrokeStyleStorage;
+    HKAxisLabelStyle * _minMaxLabelStyleStorage;
+    HKStrokeStyle * _minMaxPointStyleStorage;
+    HKAxisLabelStyle * _minMaxValueStyleStorage;
+    HKStrokeStyle * _selectedStrokeStyleStorage;
+    NSLock * _seriesMutableStateLock;
+    HKStrokeStyle * _unselectedStrokeStyleStorage;
+    long long  _zeroCountForGapStorage;
+}
+
+@property (nonatomic) bool excludeDistribution;
+@property (nonatomic) bool excludeDistributionStorage;
+@property (nonatomic) double hollowLineRatio;
+@property (nonatomic) double hollowLineRatioStorage;
+@property (nonatomic, copy) HKStrokeStyle *inactiveStrokeStyle;
+@property (nonatomic, copy) HKStrokeStyle *inactiveStrokeStyleStorage;
+@property (nonatomic, copy) HKAxisLabelStyle *minMaxLabelStyle;
+@property (nonatomic, copy) HKAxisLabelStyle *minMaxLabelStyleStorage;
+@property (nonatomic, copy) HKStrokeStyle *minMaxPointStyle;
+@property (nonatomic, copy) HKStrokeStyle *minMaxPointStyleStorage;
+@property (nonatomic, copy) HKAxisLabelStyle *minMaxValueStyle;
+@property (nonatomic, copy) HKAxisLabelStyle *minMaxValueStyleStorage;
+@property (nonatomic, copy) HKStrokeStyle *selectedStrokeStyle;
+@property (nonatomic, copy) HKStrokeStyle *selectedStrokeStyleStorage;
+@property (nonatomic, readonly) NSLock *seriesMutableStateLock;
+@property (nonatomic, copy) HKStrokeStyle *unselectedStrokeStyle;
+@property (nonatomic, copy) HKStrokeStyle *unselectedStrokeStyleStorage;
+@property (nonatomic) long long zeroCountForGap;
+@property (nonatomic) long long zeroCountForGapStorage;
+
++ (id)segmentsFromChartPoint:(id)arg1 minY:(double)arg2 maxY:(double)arg3 zeroCountForGap:(long long)arg4;
++ (id)segmentsFromChartPoint:(id)arg1 zeroCountForGap:(long long)arg2;
++ (id)transformedSegmentsFromChartPoint:(id)arg1 forX:(double)arg2 minY:(double)arg3 maxY:(double)arg4 zeroCountForGap:(long long)arg5;
+
+- (void).cxx_destruct;
+- (void)_drawMinMaxLabelsForMin:(struct CGPoint { double x1; double x2; })arg1 max:(struct CGPoint { double x1; double x2; })arg2 pointTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 context:(struct CGContext { }*)arg5;
+- (id)_quickDate:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_textRectForSize:(struct CGSize { double x1; double x2; })arg1 location:(struct CGPoint { double x1; double x2; })arg2 screenRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 yOffset:(double)arg4;
+- (bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
+- (bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
+- (id)coordinatesForBlock:(id)arg1 blockPath:(struct HKGraphSeriesDataBlockPath { long long x1; long long x2; long long x3; })arg2 xAxis:(id)arg3 yAxis:(id)arg4;
+- (double)distanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 renderContext:(struct CGContext { }*)arg5 secondaryRenderContext:(id)arg6 seriesRenderingDelegate:(id)arg7;
+- (bool)excludeDistribution;
+- (bool)excludeDistributionStorage;
+- (double)hollowLineRatio;
+- (double)hollowLineRatioStorage;
+- (id)inactiveStrokeStyle;
+- (id)inactiveStrokeStyleStorage;
+- (id)init;
+- (id)marginsForYAxis:(id)arg1 xAxisRange:(id)arg2 zoomLevel:(long long)arg3 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (id)minMaxLabelStyle;
+- (id)minMaxLabelStyleStorage;
+- (id)minMaxPointStyle;
+- (id)minMaxPointStyleStorage;
+- (id)minMaxValueStyle;
+- (id)minMaxValueStyleStorage;
+- (long long)resolutionForTimeScope:(long long)arg1 traitResolution:(long long)arg2;
+- (id)selectedStrokeStyle;
+- (id)selectedStrokeStyleStorage;
+- (id)seriesMutableStateLock;
+- (void)setExcludeDistribution:(bool)arg1;
+- (void)setExcludeDistributionStorage:(bool)arg1;
+- (void)setHollowLineRatio:(double)arg1;
+- (void)setHollowLineRatioStorage:(double)arg1;
+- (void)setInactiveStrokeStyle:(id)arg1;
+- (void)setInactiveStrokeStyleStorage:(id)arg1;
+- (void)setMinMaxLabelStyle:(id)arg1;
+- (void)setMinMaxLabelStyleStorage:(id)arg1;
+- (void)setMinMaxPointStyle:(id)arg1;
+- (void)setMinMaxPointStyleStorage:(id)arg1;
+- (void)setMinMaxValueStyle:(id)arg1;
+- (void)setMinMaxValueStyleStorage:(id)arg1;
+- (void)setSelectedStrokeStyle:(id)arg1;
+- (void)setSelectedStrokeStyleStorage:(id)arg1;
+- (void)setUnselectedStrokeStyle:(id)arg1;
+- (void)setUnselectedStrokeStyleStorage:(id)arg1;
+- (void)setZeroCountForGap:(long long)arg1;
+- (void)setZeroCountForGapStorage:(long long)arg1;
+- (bool)supportsMultiTouchSelection;
+- (id)unselectedStrokeStyle;
+- (id)unselectedStrokeStyleStorage;
+- (double)xAxisDistanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (double)yAxisDifferenceToPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (long long)zeroCountForGap;
+- (long long)zeroCountForGapStorage;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CPSAuthenticationResponse : NSObject
+
+@end

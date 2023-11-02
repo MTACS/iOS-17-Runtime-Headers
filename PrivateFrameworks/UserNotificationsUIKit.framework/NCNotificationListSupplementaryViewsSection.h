@@ -1,0 +1,97 @@
+
+@interface NCNotificationListSupplementaryViewsSection : NSObject <NCNotificationListBaseComponent, NCNotificationListSupplementaryViewsContaining, NCNotificationListSupplementaryViewsGroupDelegate, NCNotificationListViewDataSource> {
+    bool  _adjustsFontForContentSizeCategory;
+    <NCNotificationListBaseComponentDelegate> * _delegate;
+    NSString * _descriptionString;
+    id /* block */  _groupSortComparator;
+    NSString * _identifier;
+    NCNotificationListView * _listView;
+    NCNotificationListCache * _notificationListCache;
+    NSMutableArray * _orderedSupplementaryViewsGroups;
+    <NCNotificationListSupplementaryViewsContainingDelegate> * _supplementaryContainerDelegate;
+    bool  _supportsViewGrouping;
+    id /* block */  _viewControllerSortComparator;
+}
+
+@property (nonatomic) bool adjustsFontForContentSizeCategory;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } allowedSupplementaryViewSize;
+@property (nonatomic, readonly) unsigned long long count;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NCNotificationListBaseComponentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *descriptionString;
+@property (nonatomic, copy) id /* block */ groupSortComparator;
+@property (nonatomic, readonly) NSArray *groupingIdentifiers;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NCNotificationListView *listView;
+@property (nonatomic, retain) NCNotificationListCache *notificationListCache;
+@property (nonatomic, retain) NSMutableArray *orderedSupplementaryViewsGroups;
+@property (nonatomic, copy) NSString *preferredContentSizeCategory;
+@property (readonly) Class superclass;
+@property (nonatomic) <NCNotificationListSupplementaryViewsContainingDelegate> *supplementaryContainerDelegate;
+@property (nonatomic, readonly) NSArray *supplementaryViewControllers;
+@property (nonatomic, readonly) NSDictionary *supplementaryViewControllersByGroupingIdentifiers;
+@property (nonatomic, readonly) unsigned long long supplementaryViewControllersCount;
+@property (nonatomic) bool supportsViewGrouping;
+@property (nonatomic, copy) id /* block */ viewControllerSortComparator;
+
++ (id)presentableTypes;
+
+- (void).cxx_destruct;
+- (unsigned long long)_indexOfExistingSupplementaryViewsGroupForGroupingIdentifier:(id)arg1;
+- (unsigned long long)_indexOfExistingSupplementaryViewsGroupForSupplementaryViewController:(id)arg1;
+- (id)_logDescription;
+- (unsigned long long)_sortedIndexForGroupingIdentifier:(id)arg1;
+- (void)_updatePositionOfGroupAtIndex:(unsigned long long)arg1;
+- (bool)adjustForContentSizeCategoryChange;
+- (void)adjustForLegibilitySettingsChange:(id)arg1;
+- (bool)adjustsFontForContentSizeCategory;
+- (struct CGSize { double x1; double x2; })allowedSupplementaryViewSize;
+- (void)cancelTouchesOnHostedViews:(bool)arg1;
+- (void)clearAll;
+- (void)collapseAllExpandedSupplementaryViewsGroups;
+- (unsigned long long)count;
+- (id)delegate;
+- (id)descriptionString;
+- (void)forwardInvocation:(id)arg1;
+- (id /* block */)groupSortComparator;
+- (id)groupingIdentifiers;
+- (id)hostingPlatterViewForSupplementaryViewController:(id)arg1;
+- (id)identifier;
+- (id)init;
+- (void)insertSupplementaryViewController:(id)arg1 withConfiguration:(id)arg2;
+- (id)listView;
+- (id)notificationListCache;
+- (void)notificationListPresentableGroup:(id)arg1 requestsScrollToTopOfCollectionWithCompletion:(id /* block */)arg2;
+- (void)notificationListSupplementaryViewsGroup:(id)arg1 cancelTouches:(bool)arg2 onHostedViewController:(id)arg3;
+- (double)notificationListView:(id)arg1 heightForItemAtIndex:(unsigned long long)arg2 withWidth:(double)arg3;
+- (id)notificationListView:(id)arg1 viewForItemAtIndex:(unsigned long long)arg2;
+- (unsigned long long)notificationListViewNumberOfItems:(id)arg1;
+- (id)orderedSupplementaryViewsGroups;
+- (void)presentViewControllerModally:(id)arg1 fromSupplementaryViewController:(id)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
+- (void)recycleView:(id)arg1;
+- (void)removeSupplementaryViewController:(id)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
+- (void)setAdjustsFontForContentSizeCategory:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDescriptionString:(id)arg1;
+- (void)setGroupSortComparator:(id /* block */)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setListView:(id)arg1;
+- (void)setNotificationListCache:(id)arg1;
+- (void)setOrderedSupplementaryViewsGroups:(id)arg1;
+- (void)setSupplementaryContainerDelegate:(id)arg1;
+- (void)setSupportsViewGrouping:(bool)arg1;
+- (void)setViewControllerSortComparator:(id /* block */)arg1;
+- (bool)shouldAllowRestackingForNotificationListPresentableGroup:(id)arg1;
+- (id)supplementaryContainerDelegate;
+- (id)supplementaryViewControllers;
+- (id)supplementaryViewControllersByGroupingIdentifiers;
+- (unsigned long long)supplementaryViewControllersCount;
+- (bool)supportsViewGrouping;
+- (void)updatePositionIfNeededForSupplementaryViewController:(id)arg1;
+- (void)updateSupplementaryViewController:(id)arg1 withConfiguration:(id)arg2;
+- (id /* block */)viewControllerSortComparator;
+
+@end

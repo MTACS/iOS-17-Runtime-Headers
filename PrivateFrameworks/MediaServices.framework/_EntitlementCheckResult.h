@@ -1,0 +1,25 @@
+
+@interface _EntitlementCheckResult : NSObject {
+    bool  _entitled;
+    NSString * _entitlement;
+    NSError * _error;
+    NSString * _group;
+}
+
+@property (getter=isEntitled, nonatomic) bool entitled;
+@property (nonatomic, copy) NSString *entitlement;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, copy) NSString *group;
+
+- (void).cxx_destruct;
+- (id)entitlement;
+- (id)error;
+- (id)group;
+- (id)initWithEntitlement:(id)arg1 group:(id)arg2;
+- (bool)isEntitled;
+- (void)setEntitled:(bool)arg1;
+- (void)setEntitlement:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setGroup:(id)arg1;
+
+@end

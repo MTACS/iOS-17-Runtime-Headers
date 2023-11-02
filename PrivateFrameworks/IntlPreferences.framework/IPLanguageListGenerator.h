@@ -1,0 +1,4 @@
+
+@interface IPLanguageListGenerator : IPLanguageListManager
+
+@end

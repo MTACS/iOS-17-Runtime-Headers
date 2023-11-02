@@ -1,0 +1,20 @@
+
+@protocol SBRemoteTransientOverlayHostContentAdapterDelegate <NSObject>
+
+@required
+
+- (long long)defaultPreferredInterfaceOrientationForPresentationForRemoteTransientOverlayHostContentAdapter:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+- (void)remoteTransientOverlayHostContentAdapter:(SBRemoteTransientOverlayHostContentAdapter *)arg1 didTerminateWithError:(NSError *)arg2;
+- (void)remoteTransientOverlayHostContentAdapter:(SBRemoteTransientOverlayHostContentAdapter *)arg1 needsStatusBarAppearanceUpdateWithAnimationSettings:(BSAnimationSettings *)arg2;
+- (SBUIRemoteAlertButtonAction *)remoteTransientOverlayHostContentAdapter:(SBRemoteTransientOverlayHostContentAdapter *)arg1 requestsActionForHandlingButtonEvents:(unsigned long long)arg2;
+- (void)remoteTransientOverlayHostContentAdapter:(SBRemoteTransientOverlayHostContentAdapter *)arg1 requestsWallpaperEffectUpdateWithAnimationSettings:(BSAnimationSettings *)arg2;
+- (void)remoteTransientOverlayHostContentAdapterDidChangeContentOpaque:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+- (void)remoteTransientOverlayHostContentAdapterDidChangeFeaturePolicy:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+- (void)remoteTransientOverlayHostContentAdapterDidChangeGestureDismissalStyles:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+- (void)remoteTransientOverlayHostContentAdapterDidChangePreferredSceneDeactivationReasonValue:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+- (void)remoteTransientOverlayHostContentAdapterDidChangeShouldDisableOrientationUpdates:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+- (void)remoteTransientOverlayHostContentAdapterDidChangeSupportedInterfaceOrientations:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+- (void)remoteTransientOverlayHostContentAdapterRequestsDeactivation:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+- (void)remoteTransientOverlayHostContentAdapterRequestsInvalidation:(SBRemoteTransientOverlayHostContentAdapter *)arg1;
+
+@end

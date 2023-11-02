@@ -1,0 +1,4 @@
+
+@interface FLConstants : NSObject
+
+@end

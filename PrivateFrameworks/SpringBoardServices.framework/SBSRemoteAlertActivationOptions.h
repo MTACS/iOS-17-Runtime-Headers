@@ -1,0 +1,4 @@
+
+@interface SBSRemoteAlertActivationOptions : SBSRemoteAlertActivationContext
+
+@end

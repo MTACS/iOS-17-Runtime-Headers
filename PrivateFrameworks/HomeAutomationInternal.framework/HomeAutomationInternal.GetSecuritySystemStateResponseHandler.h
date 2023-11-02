@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.GetSecuritySystemStateResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

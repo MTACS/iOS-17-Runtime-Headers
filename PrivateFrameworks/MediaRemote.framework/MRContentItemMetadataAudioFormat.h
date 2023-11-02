@@ -1,0 +1,83 @@
+
+@interface MRContentItemMetadataAudioFormat : NSObject <NSCopying> {
+    NSString * _audioChannelLayoutDescription;
+    long long  _bitDepth;
+    long long  _bitrate;
+    unsigned int  _channelLayout;
+    unsigned int  _codec;
+    NSString * _groupID;
+    bool  _hasBitDepth;
+    bool  _hasBitrate;
+    bool  _hasChannelLayout;
+    bool  _hasCodec;
+    bool  _hasMultiChannel;
+    bool  _hasSampleRate;
+    bool  _hasSpatialized;
+    bool  _hasTier;
+    bool  _multiChannel;
+    long long  _sampleRate;
+    bool  _spatialized;
+    NSString * _stableVariantID;
+    long long  _tier;
+}
+
+@property (nonatomic, retain) NSString *audioChannelLayoutDescription;
+@property (nonatomic) long long bitDepth;
+@property (nonatomic) long long bitrate;
+@property (nonatomic) unsigned int channelLayout;
+@property (nonatomic) unsigned int codec;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, retain) NSString *groupID;
+@property (nonatomic, readonly) bool hasBitDepth;
+@property (nonatomic, readonly) bool hasBitrate;
+@property (nonatomic, readonly) bool hasChannelLayout;
+@property (nonatomic, readonly) bool hasCodec;
+@property (nonatomic, readonly) bool hasMultiChannel;
+@property (nonatomic, readonly) bool hasSampleRate;
+@property (nonatomic, readonly) bool hasSpatialized;
+@property (nonatomic, readonly) bool hasTier;
+@property (getter=isMultiChannel, nonatomic) bool multiChannel;
+@property (nonatomic, readonly) _MRAudioFormatProtobuf *protobuf;
+@property (nonatomic) long long sampleRate;
+@property (getter=isSpatialized, nonatomic) bool spatialized;
+@property (nonatomic, retain) NSString *stableVariantID;
+@property (nonatomic) long long tier;
+
+- (void).cxx_destruct;
+- (id)audioChannelLayoutDescription;
+- (long long)bitDepth;
+- (long long)bitrate;
+- (unsigned int)channelLayout;
+- (unsigned int)codec;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionaryRepresentation;
+- (id)groupID;
+- (bool)hasBitDepth;
+- (bool)hasBitrate;
+- (bool)hasChannelLayout;
+- (bool)hasCodec;
+- (bool)hasMultiChannel;
+- (bool)hasSampleRate;
+- (bool)hasSpatialized;
+- (bool)hasTier;
+- (id)initWithProtobuf:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isMultiChannel;
+- (bool)isSpatialized;
+- (id)protobuf;
+- (long long)sampleRate;
+- (void)setAudioChannelLayoutDescription:(id)arg1;
+- (void)setBitDepth:(long long)arg1;
+- (void)setBitrate:(long long)arg1;
+- (void)setChannelLayout:(unsigned int)arg1;
+- (void)setCodec:(unsigned int)arg1;
+- (void)setGroupID:(id)arg1;
+- (void)setMultiChannel:(bool)arg1;
+- (void)setSampleRate:(long long)arg1;
+- (void)setSpatialized:(bool)arg1;
+- (void)setStableVariantID:(id)arg1;
+- (void)setTier:(long long)arg1;
+- (id)stableVariantID;
+- (long long)tier;
+
+@end

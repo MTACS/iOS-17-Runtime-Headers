@@ -1,0 +1,4 @@
+
+@interface _TtCV8StocksUI22WatchlistCreationAlertP33_C057E2C45A4DC822F2D38DA8050DE37312Localization : _TtCs12_SwiftObject
+
+@end

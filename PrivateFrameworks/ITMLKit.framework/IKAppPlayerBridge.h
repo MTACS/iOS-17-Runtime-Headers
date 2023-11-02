@@ -1,0 +1,95 @@
+
+@interface IKAppPlayerBridge : NSObject <IKDOMFeature> {
+    IKAppContext * _appContext;
+    <IKAppPlayer> * _appPlayer;
+    NSDictionary * _contextMenuData;
+    NSString * _featureName;
+    bool  _interactiveOverlayDismissable;
+    IKDOMDocument * _interactiveOverlayDocument;
+    IKJSPlayer * _jsPlayer;
+    bool  _muted;
+    IKDOMDocument * _overlayDocument;
+    _IKPlaceholderAppPlayer * _placeholderAppPlayer;
+    IKAppPlaylistBridge * _playlist;
+    bool  _showsResumeMenu;
+    NSDictionary * _userInfo;
+}
+
+@property (nonatomic, readonly) IKAppContext *appContext;
+@property (nonatomic) <IKAppPlayer> *appPlayer;
+@property (nonatomic, copy) NSDictionary *contextMenuData;
+@property (nonatomic, readonly) IKAppMediaItemBridge *currentMediaItem;
+@property (nonatomic, readonly) NSArray *currentMediaItemAccessLogs;
+@property (nonatomic, readonly) NSDate *currentMediaItemDate;
+@property (nonatomic, readonly) NSNumber *currentMediaItemDuration;
+@property (nonatomic, readonly) NSArray *currentMediaItemErrorLogs;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSString *featureName;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool interactiveOverlayDismissable;
+@property (nonatomic, retain) IKDOMDocument *interactiveOverlayDocument;
+@property (nonatomic) IKJSPlayer *jsPlayer;
+@property (nonatomic) bool muted;
+@property (nonatomic, readonly) IKAppMediaItemBridge *nextMediaItem;
+@property (nonatomic, retain) IKDOMDocument *overlayDocument;
+@property (nonatomic, retain) IKAppPlaylistBridge *playlist;
+@property (nonatomic, readonly) IKAppMediaItemBridge *previousMediaItem;
+@property (nonatomic, readonly) double scanRate;
+@property (nonatomic) bool showsResumeMenu;
+@property (nonatomic, readonly) long long state;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSDictionary *userInfo;
+
++ (id)makeFeatureJSObjectForFeature:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_evaluateDelegateBlockSync:(id /* block */)arg1;
+- (id)appContext;
+- (id)appPlayer;
+- (void)changeToMediaAtIndex:(unsigned long long)arg1;
+- (void)cleanup;
+- (id)contextMenuData;
+- (id)currentMediaItem;
+- (id)currentMediaItemAccessLogs;
+- (id)currentMediaItemDate;
+- (id)currentMediaItemDuration;
+- (id)currentMediaItemErrorLogs;
+- (void)dispatchEvent:(id)arg1 userInfo:(id)arg2 completion:(id /* block */)arg3;
+- (id)featureName;
+- (id)initWithAppContext:(id)arg1 jsPlayer:(id)arg2;
+- (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
+- (bool)interactiveOverlayDismissable;
+- (id)interactiveOverlayDocument;
+- (id)jsPlayer;
+- (bool)muted;
+- (void)next;
+- (id)nextMediaItem;
+- (id)overlayDocument;
+- (void)pause;
+- (void)play;
+- (id)playlist;
+- (void)present;
+- (void)previous;
+- (id)previousMediaItem;
+- (void)scan:(double)arg1;
+- (double)scanRate;
+- (void)setAppPlayer:(id)arg1;
+- (void)setContextMenuData:(id)arg1;
+- (void)setElapsedTime:(double)arg1;
+- (void)setInteractiveOverlayDismissable:(bool)arg1;
+- (void)setInteractiveOverlayDocument:(id)arg1;
+- (void)setJsPlayer:(id)arg1;
+- (void)setMuted:(bool)arg1;
+- (void)setOverlayDocument:(id)arg1;
+- (void)setPlaylist:(id)arg1;
+- (void)setShowsResumeMenu:(bool)arg1;
+- (void)setUserInfo:(id)arg1;
+- (bool)showsResumeMenu;
+- (void)startObservingEvent:(id)arg1 extraInfo:(id)arg2;
+- (long long)state;
+- (void)stop;
+- (void)stopObservingEvent:(id)arg1;
+- (id)userInfo;
+
+@end

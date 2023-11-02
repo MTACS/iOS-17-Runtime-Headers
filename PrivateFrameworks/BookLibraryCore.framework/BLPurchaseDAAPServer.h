@@ -1,0 +1,92 @@
+
+@interface BLPurchaseDAAPServer : NSObject {
+    NSDate * _DAAPReconnectAt;
+    BKPurchaseDAAPBackoff * _backoff;
+    NSObject<OS_dispatch_queue> * _backoffQueue;
+    BUBag * _bag;
+    NSNumber * _bagDatabaseID;
+    bool  _clientExpired;
+    <BLPurchaseDAAPServerDelegate> * _delegate;
+    NSNumber * _dsid;
+    bool  _isServerSetup;
+    bool  _isServerSetupPending;
+    NSDate * _lastPolledAt;
+    bool  _primaryAccount;
+    long long  _requestReasonCode;
+    NSNumber * _sessionID;
+    NSMutableSet * _setupCompletionHandlers;
+    NSObject<OS_dispatch_queue> * _updateItemsQueue;
+}
+
+@property (nonatomic, retain) NSNumber *bagDatabaseID;
+@property (nonatomic) <BLPurchaseDAAPServerDelegate> *delegate;
+@property (nonatomic, retain) NSNumber *dsid;
+@property (nonatomic) bool isServerSetup;
+@property (nonatomic) bool isServerSetupPending;
+@property (getter=isPrimaryAccount, nonatomic, readonly) bool primaryAccount;
+@property (setter=_setSessionID:, nonatomic, retain) NSNumber *sessionID;
+
++ (id)_clientIdentifier;
++ (id)sharedSession;
+
+- (void).cxx_destruct;
+- (bool)_canMakeDAAPRequest;
+- (void)_configureWithReason:(long long)arg1 completion:(id /* block */)arg2;
+- (id)_dataForArtRequest:(bool)arg1;
+- (id)_dataForHideItemsRequestWithStoreIDs:(id)arg1;
+- (id)_dataForItemsRequestWithLocalVersion:(id)arg1 serverVersion:(id)arg2 tokenPairs:(id)arg3;
+- (void)_fetchDatabaseWithReason:(long long)arg1 localServerRevision:(id)arg2 latestVersion:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_fetchDatabaseWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_fetchItemsWithLocalVersion:(id)arg1 serverVersion:(id)arg2 reason:(long long)arg3 tokenPairs:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)_localServerDatabaseRevisionInMoc:(id)arg1;
+- (void)_loginWithReason:(long long)arg1 completion:(id /* block */)arg2;
+- (void)_loginWithRequest:(id)arg1 completion:(id /* block */)arg2;
+- (id)_newDefaultAuthenticateOptions;
+- (void)_pollLatestRevisionWithReason:(long long)arg1 completion:(id /* block */)arg2;
+- (void)_preProcessResponse:(id)arg1 error:(id)arg2 responseBlock:(id /* block */)arg3;
+- (id)_processResponse:(id)arg1;
+- (bool)_saveInMoc:(id)arg1 error:(id*)arg2;
+- (void)_sendHandlers:(id)arg1 success:(bool)arg2;
+- (void)_sendSetupConfigurationHandlersWithSuccess:(bool)arg1;
+- (void)_setSessionID:(id)arg1;
+- (void)_shouldMakeRequest:(id /* block */)arg1;
+- (id)_updatePersistentDatabase:(id)arg1 server:(id)arg2 moc:(id)arg3 error:(id*)arg4;
+- (id)_updatePersistentItems:(id)arg1 moc:(id)arg2 database:(id)arg3 error:(id*)arg4;
+- (bool)_updatePersistentServerRevision:(id)arg1 database:(id)arg2 items:(id)arg3 error:(id*)arg4;
+- (id)_updatePersistentServerRevision:(id)arg1 moc:(id)arg2 error:(id*)arg3;
+- (void)_updateVersionAfterHideRequest:(id)arg1;
+- (id)additionalAudiobookInfoKeys;
+- (void)appRefreshesOnLaunchWithCompletionHandler:(id /* block */)arg1;
+- (id)bagDatabaseID;
+- (id)bookletKeys;
+- (void)contextDidSave:(id)arg1;
+- (id)daapMetaDataFilterString;
+- (id)daapQueryFilterString;
+- (void)databaseIDWithCompletionHandler:(id /* block */)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (id)dsid;
+- (void)fetchAllItemsPolitely:(bool)arg1 reason:(long long)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
+- (void)forcedRefreshFrequencyWithCompletionHandler:(id /* block */)arg1;
+- (void)handleClientExpired;
+- (void)hideItemsWithStoreIDs:(id)arg1 completion:(id /* block */)arg2;
+- (id)initWithDSID:(id)arg1 delegate:(id)arg2;
+- (bool)isPrimaryAccount;
+- (bool)isServerSetup;
+- (bool)isServerSetupPending;
+- (void)pollingFrequencyWithCompletionHandler:(id /* block */)arg1;
+- (void)resetWithQueue:(id)arg1;
+- (void)serverParametersWithCompletionHandler:(id /* block */)arg1;
+- (id)sessionID;
+- (void)setBagDatabaseID:(id)arg1;
+- (void)setDAAPReconnectToTimeIntervalSinceNow:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDsid:(id)arg1;
+- (void)setIsServerSetup:(bool)arg1;
+- (void)setIsServerSetupPending:(bool)arg1;
+- (void)setupWithReason:(long long)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (void)timeIntervalFromDAAPBagKey:(id)arg1 completion:(id /* block */)arg2;
+- (void)updateItemImageURLsIgnoringCache:(bool)arg1 completion:(id /* block */)arg2;
+- (void)valueForDAAPBagKey:(id)arg1 completion:(id /* block */)arg2;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol WidgetKit.ExtensionToHostXPCInterface
+
+@end

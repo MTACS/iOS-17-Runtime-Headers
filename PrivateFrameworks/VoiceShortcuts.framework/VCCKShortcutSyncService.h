@@ -1,0 +1,96 @@
+
+@interface VCCKShortcutSyncService : NSObject <CKSyncEngineDataSource, WFDatabaseObjectObserver, WFShortcutsSyncService> {
+    VCCKApplicationStateObserver * _applicationObserver;
+    WFDatabase * _database;
+    NSMutableDictionary * _filesReferencedUntilSaved;
+    CKSyncEngine * _syncEngine;
+}
+
+@property (nonatomic, readonly) VCCKApplicationStateObserver *applicationObserver;
+@property (nonatomic, readonly) WFDatabase *database;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSMutableDictionary *filesReferencedUntilSaved;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) CKRecordZoneID *shortcutsZoneID;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) CKSyncEngine *syncEngine;
+
+- (void).cxx_destruct;
+- (void)addRecordIDsToSave:(id)arg1 recordIDsToDelete:(id)arg2;
+- (id)applicationObserver;
+- (void)applyLegacyOrderedWorkflowIDsToRootCollection:(id)arg1;
+- (id)autoShortcutsPreferencesRecordForRecordID:(id)arg1;
+- (id)autoShortcutsPreferencesWithCloudKitAutoShortcutsPreferences:(id)arg1;
+- (id)calculateSubsetForRemoteOrdering:(id)arg1 withLocalOrdering:(id)arg2;
+- (id)collectionIdentifierForRecordID:(id)arg1;
+- (void)createShortcutsZone;
+- (id)database;
+- (void)databaseDidChange:(id)arg1 modified:(id)arg2 inserted:(id)arg3 removed:(id)arg4;
+- (void)dealloc;
+- (void)fetchAndModifyChangesInShortcutsZone;
+- (void)fetchAndModifyChangesInShortcutsZoneWithCompletion:(id /* block */)arg1;
+- (void)fetchChangesInShortcutsZone;
+- (void)fetchChangesInShortcutsZoneWithCompletion:(id /* block */)arg1;
+- (id)filesReferencedUntilSaved;
+- (id)folderRecordForRecordID:(id)arg1;
+- (void)forceReceiveAndSendAllChangesWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 10: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, inout unsigned short, /* Warning: Unrecognized filer type: 'E' using 'void*' */ void*, const const out const /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, /* Warning: Unrecognized filer type: '>' using 'void*' */ void*
+- (void)handleDeletedRecordWithID:(id)arg1;
+- (void)handleFetchedAutoShortcutsPreferencesRecord:(id)arg1;
+- (void)handleFetchedCollectionOrderingRecord:(id)arg1;
+- (void)handleFetchedDeletionOfAutoShortcutsPreferencesWithRecordID:(id)arg1;
+- (void)handleFetchedDeletionOfRecordWithID:(id)arg1;
+- (void)handleFetchedFolderRecord:(id)arg1;
+- (void)handleFetchedLegacyOrderingRecord:(id)arg1;
+- (void)handleFetchedSyncFlagsRecord:(id)arg1;
+- (void)handleFetchedWorkflowRecord:(id)arg1;
+- (void)handleNameConflictsForFetchedWorkflowRecord:(id)arg1 identifier:(id)arg2 shouldMarkFetchedRecordAsTombstone:(bool*)arg3;
+- (void)handleSavedAutoShortcutsPreferencesRecord:(id)arg1;
+- (void)handleSavedFolderRecord:(id)arg1;
+- (void)handleSavedSyncFlagsRecord:(id)arg1;
+- (void)handleSavedWorkflowOrderingRecord:(id)arg1;
+- (void)handleSavedWorkflowRecord:(id)arg1;
+- (void)handleSendAutoShortcutsPreferencesConflictWithClientRecord:(id)arg1 serverRecord:(id)arg2 ancestorRecord:(id)arg3;
+- (void)handleSendFolderConflictWithClientRecord:(id)arg1 serverRecord:(id)arg2 ancestorRecord:(id)arg3;
+- (void)handleSendSyncFlagsConflictWithClientRecord:(id)arg1 serverRecord:(id)arg2 ancestorRecord:(id)arg3;
+- (void)handleSendWorkflowConflictWithClientRecord:(id)arg1 serverRecord:(id)arg2 ancestorRecord:(id)arg3;
+- (void)handleSendWorkflowOrderingConflictWithClientRecord:(id)arg1 serverRecord:(id)arg2 ancestorRecord:(id)arg3;
+- (void)handleServerRecordChangedError:(id)arg1;
+- (void)handleUnknownItemErrorForRecord:(id)arg1;
+- (id)initWithContainer:(id)arg1 database:(id)arg2 applicationObserver:(id)arg3;
+- (bool)mergeLocalOrderingChangesWithRemoteOrderingChangesFromOrderingRecord:(id)arg1;
+- (id)mergedOrderingFromLocalOrdering:(id)arg1 previousOrdering:(id)arg2 remoteOrdering:(id)arg3;
+- (void)modifyPendingChangesInShortcutsZoneWithCompletion:(id /* block */)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)rootCollectionRecord;
+- (void)sendChangedFolders;
+- (void)sendChangedWorkflows;
+- (void)sendSyncFlagsIfNeeded;
+- (void)sendWorkflowOrderingsIfNeeded;
+- (id)shortcutsZoneID;
+- (void)start;
+- (void)startObservingUserDefaults;
+- (void)stopObservingUserDefaults;
+- (id)syncEngine;
+- (void)syncEngine:(id)arg1 didDeleteRecordWithID:(id)arg2;
+- (void)syncEngine:(id)arg1 didDeleteRecordZoneWithID:(id)arg2;
+- (void)syncEngine:(id)arg1 didFetchRecord:(id)arg2;
+- (void)syncEngine:(id)arg1 didSaveRecord:(id)arg2;
+- (void)syncEngine:(id)arg1 didSaveRecordZone:(id)arg2;
+- (void)syncEngine:(id)arg1 didUpdateMetadata:(id)arg2;
+- (void)syncEngine:(id)arg1 failedToDeleteRecordWithID:(id)arg2 error:(id)arg3;
+- (void)syncEngine:(id)arg1 failedToDeleteRecordZoneWithID:(id)arg2 error:(id)arg3;
+- (void)syncEngine:(id)arg1 failedToSaveRecord:(id)arg2 error:(id)arg3;
+- (void)syncEngine:(id)arg1 failedToSaveRecordZone:(id)arg2 error:(id)arg3;
+- (id)syncEngine:(id)arg1 recordToSaveForRecordID:(id)arg2;
+- (void)syncEngine:(id)arg1 recordWithIDWasDeleted:(id)arg2 recordType:(id)arg3;
+- (void)syncEngine:(id)arg1 zoneWithIDChanged:(id)arg2;
+- (void)syncEngine:(id)arg1 zoneWithIDWasDeleted:(id)arg2;
+- (void)syncEngine:(id)arg1 zoneWithIDWasPurged:(id)arg2;
+- (id)syncFlagsRecord;
+- (void)updateSyncTokenInDatabaseWithBlock:(id /* block */)arg1;
+- (id)workflowOrderingRecordForRecordID:(id)arg1;
+- (id)workflowRecordForRecordID:(id)arg1;
+- (id)workflowRecordForReference:(id)arg1 properties:(id)arg2;
+
+@end

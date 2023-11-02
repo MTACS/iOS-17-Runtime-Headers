@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.AsyncGenericErrorResponseHandler : HomeAutomationInternal.BaseAsyncResponseHandler
+
+@end

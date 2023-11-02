@@ -1,0 +1,82 @@
+
+@interface DSNSSizerOutput : NSObject {
+    long long  _conflictPhysicalDelta;
+    unsigned int  _conflicts;
+    NSString * _destinationPath;
+    long long  _fsItemCount;
+    long long  _logicalBytesTotal;
+    unsigned long long  _maxFileSize;
+    long long  _mergeDestinationItemsNotInSourceCount;
+    long long  _mergeDestinationNewerConflictsBytes;
+    long long  _mergeDestinationNewerConflictsCount;
+    long long  _mergeDiffMetaDataFilesCount;
+    long long  _mergeMatchedFilesBytes;
+    long long  _mergeMatchedFilesCount;
+    long long  _mergePhysicalDelta;
+    long long  _mergeSourceItemsNotInDestinationCount;
+    long long  _mergeSourceNewerConflictsCount;
+    long long  _physicalBytesTotal;
+    NSString * _sourcePath;
+    long long  _userVisibleItemCount;
+}
+
+@property (nonatomic) long long conflictPhysicalDelta;
+@property (nonatomic) unsigned int conflicts;
+@property (nonatomic, retain) NSString *destinationPath;
+@property (nonatomic) long long fsItemCount;
+@property (nonatomic) long long logicalBytesTotal;
+@property (nonatomic) unsigned long long maxFileSize;
+@property (nonatomic) long long mergeDestinationItemsNotInSourceCount;
+@property (nonatomic) long long mergeDestinationNewerConflictsBytes;
+@property (nonatomic) long long mergeDestinationNewerConflictsCount;
+@property (nonatomic) long long mergeDiffMetaDataFilesCount;
+@property (nonatomic) long long mergeMatchedFilesBytes;
+@property (nonatomic) long long mergeMatchedFilesCount;
+@property (nonatomic) long long mergePhysicalDelta;
+@property (nonatomic) long long mergeSourceItemsNotInDestinationCount;
+@property (nonatomic) long long mergeSourceNewerConflictsCount;
+@property (nonatomic) long long physicalBytesTotal;
+@property (nonatomic, retain) NSString *sourcePath;
+@property (nonatomic) long long userVisibleItemCount;
+
+- (void).cxx_destruct;
+- (long long)conflictPhysicalDelta;
+- (unsigned int)conflicts;
+- (id)destinationPath;
+- (long long)fsItemCount;
+- (id)initWithSizerOutput:(struct TSizerOutput { long long x1; long long x2; long long x3; long long x4; long long x5; long long x6; long long x7; long long x8; long long x9; long long x10; long long x11; long long x12; long long x13; long long x14; struct TString { struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> { struct __CFString {} *x_1_2_1; } x_15_1_1; } x15; struct TString { struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> { struct __CFString {} *x_1_2_1; } x_16_1_1; } x16; long long x17; unsigned long long x18; unsigned int x19; bool x20; bool x21; bool x22; bool x23; bool x24; })arg1;
+- (id)initWithSpaceNeeds:(struct DestinationSpaceNeeds { long long x1; long long x2; long long x3; long long x4; long long x5; long long x6; long long x7; long long x8; long long x9; long long x10; long long x11; long long x12; long long x13; BOOL x14[1024]; BOOL x15[1024]; long long x16; unsigned long long x17; bool x18; unsigned int x19; int x20; })arg1;
+- (long long)logicalBytesTotal;
+- (unsigned long long)maxFileSize;
+- (long long)mergeDestinationItemsNotInSourceCount;
+- (long long)mergeDestinationNewerConflictsBytes;
+- (long long)mergeDestinationNewerConflictsCount;
+- (long long)mergeDiffMetaDataFilesCount;
+- (long long)mergeMatchedFilesBytes;
+- (long long)mergeMatchedFilesCount;
+- (long long)mergePhysicalDelta;
+- (long long)mergeSourceItemsNotInDestinationCount;
+- (long long)mergeSourceNewerConflictsCount;
+- (long long)physicalBytesTotal;
+- (void)setConflictPhysicalDelta:(long long)arg1;
+- (void)setConflicts:(unsigned int)arg1;
+- (void)setDestinationPath:(id)arg1;
+- (void)setFsItemCount:(long long)arg1;
+- (void)setLogicalBytesTotal:(long long)arg1;
+- (void)setMaxFileSize:(unsigned long long)arg1;
+- (void)setMergeDestinationItemsNotInSourceCount:(long long)arg1;
+- (void)setMergeDestinationNewerConflictsBytes:(long long)arg1;
+- (void)setMergeDestinationNewerConflictsCount:(long long)arg1;
+- (void)setMergeDiffMetaDataFilesCount:(long long)arg1;
+- (void)setMergeMatchedFilesBytes:(long long)arg1;
+- (void)setMergeMatchedFilesCount:(long long)arg1;
+- (void)setMergePhysicalDelta:(long long)arg1;
+- (void)setMergeSourceItemsNotInDestinationCount:(long long)arg1;
+- (void)setMergeSourceNewerConflictsCount:(long long)arg1;
+- (void)setPhysicalBytesTotal:(long long)arg1;
+- (void)setSourcePath:(id)arg1;
+- (void)setUserVisibleItemCount:(long long)arg1;
+- (id)sourcePath;
+- (long long)userVisibleItemCount;
+
+@end

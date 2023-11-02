@@ -1,0 +1,4 @@
+
+@interface _SBSystemApertureContainerViewScalingContentView : _SBSystemApertureContainerViewContentView
+
+@end

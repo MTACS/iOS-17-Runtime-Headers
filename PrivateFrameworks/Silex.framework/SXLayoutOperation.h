@@ -1,0 +1,67 @@
+
+@interface SXLayoutOperation : NSOperation <SXLayouterDelegate> {
+    <SXDOMObjectProviding> * _DOMObjectProvider;
+    id /* block */  _afterBlock;
+    id /* block */  _beforeBlock;
+    <SXComponentSizerEngine> * _componentSizerEngine;
+    double  _duration;
+    bool  _executing;
+    bool  _finished;
+    SXLayoutBlueprint * _layoutBlueprint;
+    <SXLayoutBlueprintFactory> * _layoutBlueprintFactory;
+    SXColumnLayouter * _layouter;
+    double  _startTime;
+    SXLayoutTask * _task;
+}
+
+@property (nonatomic, readonly) <SXDOMObjectProviding> *DOMObjectProvider;
+@property (setter=afterLayout:, nonatomic, copy) id /* block */ afterBlock;
+@property (setter=beforeLayout:, nonatomic, copy) id /* block */ beforeBlock;
+@property (nonatomic, readonly) <SXComponentSizerEngine> *componentSizerEngine;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property bool executing;
+@property bool finished;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SXLayoutBlueprint *layoutBlueprint;
+@property (nonatomic, readonly) <SXLayoutBlueprintFactory> *layoutBlueprintFactory;
+@property (nonatomic, readonly) SXColumnLayouter *layouter;
+@property (nonatomic, readonly) double startTime;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SXLayoutTask *task;
+
+- (void).cxx_destruct;
+- (id)DOMObjectProvider;
+- (id /* block */)afterBlock;
+- (void)afterLayout:(id /* block */)arg1;
+- (id /* block */)beforeBlock;
+- (void)beforeLayout:(id /* block */)arg1;
+- (void)cancelOperation;
+- (id)componentSizerEngine;
+- (id)createLayoutBlueprintForComponents:(id)arg1;
+- (double)duration;
+- (bool)executing;
+- (void)finishBookKeeping;
+- (bool)finished;
+- (id)initWithTask:(id)arg1 layouter:(id)arg2 DOMObjectProvider:(id)arg3 componentSizerEngine:(id)arg4 layoutBlueprintFactory:(id)arg5;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (id)layoutBlueprint;
+- (bool)layoutBlueprint:(id)arg1 containsComponents:(id)arg2;
+- (id)layoutBlueprintFactory;
+- (id)layoutWithBlueprint:(id)arg1;
+- (id)layouter;
+- (void)layouter:(id)arg1 didFinishLayoutForComponentBlueprint:(id)arg2 layoutBlueprint:(id)arg3 shouldContinueLayout:(bool*)arg4;
+- (void)prepareLayoutBlueprint:(id)arg1;
+- (void)registerComponent:(id)arg1 layoutBlueprint:(id)arg2 componentIndex:(unsigned long long)arg3;
+- (void)setExecuting:(bool)arg1;
+- (void)setFinished:(bool)arg1;
+- (void)start;
+- (void)startBookKeeping;
+- (double)startTime;
+- (id)task;
+- (void)updateLayoutBlueprint:(id)arg1 components:(id)arg2 requiresInvalidation:(bool*)arg3;
+
+@end

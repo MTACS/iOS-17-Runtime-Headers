@@ -1,0 +1,4 @@
+
+@interface _TtC17PasswordManagerUIP33_0E9977BBD94F4A8E909B989452AC41E219ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

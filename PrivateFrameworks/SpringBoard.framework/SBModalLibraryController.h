@@ -1,0 +1,81 @@
+
+@interface SBModalLibraryController : NSObject <SBHLibraryViewControllerObserver, SBHModalLibraryPresentationDelegate, SBHModalLibraryPresentationObserver, SBIdleTimerProviding, SBLayoutStateTransitionObserver> {
+    SBFloatingDockBehaviorAssertion * _floatingDockBehaviorAssertion;
+    SBFloatingDockController * _floatingDockController;
+    SBHIconManager * _iconManager;
+    SBMedusaHostedKeyboardWindowLevelAssertion * _keyboardWindowLevelAssertion;
+    <BSInvalidatable> * _libraryDisplayLayoutElementAssertion;
+    SBHModalLibraryPresenter * _libraryPresenter;
+    SBHLibraryViewController * _libraryViewController;
+    <BSInvalidatable> * _libraryWindowKeyboardFocusAssertion;
+    bool  _presentingOrTransitioningSearch;
+    UIApplicationSceneDeactivationAssertion * _resignActiveAssertion;
+    SBSceneManager * _sceneManager;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SBFloatingDockBehaviorAssertion *floatingDockBehaviorAssertion;
+@property (nonatomic, readonly) SBFloatingDockController *floatingDockController;
+@property (nonatomic, readonly) bool hasIdleTimerBehaviors;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SBHIconManager *iconManager;
+@property (nonatomic, retain) SBMedusaHostedKeyboardWindowLevelAssertion *keyboardWindowLevelAssertion;
+@property (nonatomic, retain) <BSInvalidatable> *libraryDisplayLayoutElementAssertion;
+@property (nonatomic, readonly) SBHModalLibraryPresenter *libraryPresenter;
+@property (nonatomic, readonly) SBHLibraryViewController *libraryViewController;
+@property (nonatomic, retain) <BSInvalidatable> *libraryWindowKeyboardFocusAssertion;
+@property (getter=isPresentingLibrary, nonatomic, readonly) bool presentingLibrary;
+@property (getter=isPresentingLibraryInForeground, nonatomic, readonly) bool presentingLibraryInForeground;
+@property (getter=isPresentingOrTransitioningSearch, nonatomic) bool presentingOrTransitioningSearch;
+@property (nonatomic, readonly) UIApplicationSceneDeactivationAssertion *resignActiveAssertion;
+@property (nonatomic, readonly) SBSceneManager *sceneManager;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_configureFloatingDockBehaviorAssertionForPresented:(bool)arg1;
+- (void)_didCompleteTransitionWithLibraryToPresented:(bool)arg1;
+- (void)_evaluateKeyboardWindowLevelAssertion;
+- (void)_evaluateResignActiveAssertion;
+- (void)_evaluateWindowStatus;
+- (void)_prepareLibraryViewControllerForDismissal:(id)arg1;
+- (void)_setLibraryDisplayLayoutElementActive:(bool)arg1;
+- (void)_willPerformTransitionWithLibraryToPresented:(bool)arg1;
+- (id)coordinatorRequestedIdleTimerBehavior:(id)arg1;
+- (void)dealloc;
+- (void)dismissLibraryAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (id)floatingDockBehaviorAssertion;
+- (id)floatingDockController;
+- (bool)hasIdleTimerBehaviors;
+- (id)iconManager;
+- (id)initWithIconManager:(id)arg1 libraryViewController:(id)arg2 floatingDockController:(id)arg3 sceneManager:(id)arg4;
+- (bool)isPresentingLibrary;
+- (bool)isPresentingLibraryInForeground;
+- (bool)isPresentingOrTransitioningSearch;
+- (id)keyboardWindowLevelAssertion;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
+- (id)libraryDisplayLayoutElementAssertion;
+- (id)libraryPresenter;
+- (id)libraryViewController;
+- (void)libraryViewController:(id)arg1 didDismissSearchController:(id)arg2;
+- (void)libraryViewController:(id)arg1 willPresentSearchController:(id)arg2;
+- (id)libraryWindowKeyboardFocusAssertion;
+- (void)modalLibraryPresenter:(id)arg1 didDismissLibrary:(id)arg2;
+- (void)modalLibraryPresenter:(id)arg1 didPassCriticalDismissalPoint:(id)arg2;
+- (void)modalLibraryPresenter:(id)arg1 didPresentLibrary:(id)arg2;
+- (void)modalLibraryPresenter:(id)arg1 willDismissLibrary:(id)arg2;
+- (void)modalLibraryPresenter:(id)arg1 willPresentLibrary:(id)arg2;
+- (bool)modalLibraryPresenterShouldAllowSwipeToDismissGesture:(id)arg1;
+- (void)presentLibraryAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (void)presentLibraryCategoryPodForCategoryIdentifier:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (id)resignActiveAssertion;
+- (id)sceneManager;
+- (void)setFloatingDockBehaviorAssertion:(id)arg1;
+- (void)setKeyboardWindowLevelAssertion:(id)arg1;
+- (void)setLibraryDisplayLayoutElementAssertion:(id)arg1;
+- (void)setLibraryWindowKeyboardFocusAssertion:(id)arg1;
+- (void)setPresentingOrTransitioningSearch:(bool)arg1;
+- (void)toggleLibraryPresentedAnimated:(bool)arg1 completion:(id /* block */)arg2;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol TRINotificationToken <NSObject>
+
+@end

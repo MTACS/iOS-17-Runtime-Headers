@@ -1,0 +1,4 @@
+
+@protocol CRKKeychainItem <NSObject>
+
+@end

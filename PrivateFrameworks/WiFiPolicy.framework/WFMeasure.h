@@ -1,0 +1,84 @@
+
+@interface WFMeasure : NSObject {
+    id /* block */  _completionHandler;
+    NSObject<OS_dispatch_queue> * _completionQueue;
+    NSObject<OS_dispatch_group> * _dispatchGroup;
+    NSMutableSet * _dnsServers;
+    NSString * _gatewayAddress;
+    NSString * _interfaceName;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    bool  _isInProgress;
+    bool  _isParis;
+    bool  _isPeriodicTest;
+    unsigned long long  _options;
+    NPTPerformanceTest * _performanceTest;
+    NSString * _publicDNSAddress;
+    WFMeasureResult * _result;
+    NSString * _testDNSHostname;
+    NSString * _testReason;
+}
+
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *completionQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *dispatchGroup;
+@property (nonatomic, retain) NSMutableSet *dnsServers;
+@property (nonatomic, retain) NSString *gatewayAddress;
+@property (nonatomic, retain) NSString *interfaceName;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic) bool isInProgress;
+@property (nonatomic) bool isParis;
+@property (nonatomic) bool isPeriodicTest;
+@property (nonatomic) unsigned long long options;
+@property (nonatomic, retain) NPTPerformanceTest *performanceTest;
+@property (nonatomic, retain) NSString *publicDNSAddress;
+@property (nonatomic, retain) WFMeasureResult *result;
+@property (nonatomic, retain) NSString *testDNSHostname;
+@property (nonatomic, retain) NSString *testReason;
+
+- (void).cxx_destruct;
+- (void)abort;
+- (id /* block */)completionHandler;
+- (id)completionQueue;
+- (id)description;
+- (void)dispatchDNSTest:(id)arg1;
+- (id)dispatchGroup;
+- (void)dispatchPingTest:(unsigned long long)arg1;
+- (void)dispatchThroughputTest;
+- (id)dnsServers;
+- (bool)doDNSResolution:(id)arg1 timeout:(long long)arg2;
+- (bool)doPing:(id)arg1 count:(long long)arg2 timeout:(long long)arg3 size:(long long)arg4 class:(long long)arg5 minRTT:(long long*)arg6 maxRTT:(long long*)arg7 successCount:(long long*)arg8;
+- (void)doThroughputTest;
+- (id)gatewayAddress;
+- (void)getLazyNSNumberPreference:(id)arg1 exists:(id /* block */)arg2;
+- (id)initWithType:(unsigned long long)arg1 andReason:(id)arg2 andInterfaceName:(id)arg3;
+- (id)interfaceName;
+- (id)internalQueue;
+- (bool)isInProgress;
+- (bool)isParis;
+- (bool)isPeriodicTest;
+- (unsigned long long)options;
+- (id)performanceTest;
+- (id)publicDNSAddress;
+- (id)result;
+- (void)retrieveNetworkConfigurations;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionQueue:(id)arg1;
+- (void)setDispatchGroup:(id)arg1;
+- (void)setDnsServers:(id)arg1;
+- (void)setGatewayAddress:(id)arg1;
+- (void)setInterfaceName:(id)arg1;
+- (void)setInternalQueue:(id)arg1;
+- (void)setIsInProgress:(bool)arg1;
+- (void)setIsParis:(bool)arg1;
+- (void)setIsPeriodicTest:(bool)arg1;
+- (void)setOptions:(unsigned long long)arg1;
+- (void)setPerformanceTest:(id)arg1;
+- (void)setPublicDNSAddress:(id)arg1;
+- (void)setResult:(id)arg1;
+- (void)setTestDNSHostname:(id)arg1;
+- (void)setTestReason:(id)arg1;
+- (bool)start:(id /* block */)arg1 withCompletionQueue:(id)arg2;
+- (id)testDNSHostname;
+- (id)testReason;
+
+@end

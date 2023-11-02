@@ -1,0 +1,4 @@
+
+@protocol TSSThemedObject <TSKModel>
+
+@end

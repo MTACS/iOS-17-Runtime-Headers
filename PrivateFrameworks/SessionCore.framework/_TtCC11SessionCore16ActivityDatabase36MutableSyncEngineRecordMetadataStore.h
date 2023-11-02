@@ -1,0 +1,4 @@
+
+@interface _TtCC11SessionCore16ActivityDatabase36MutableSyncEngineRecordMetadataStore : _TtCC11SessionCore16ActivityDatabase29SyncEngineRecordMetadataStore
+
+@end

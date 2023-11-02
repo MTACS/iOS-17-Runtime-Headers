@@ -1,0 +1,4 @@
+
+@interface SUDownloadPolicy : SUDefaultDownloadPolicy
+
+@end

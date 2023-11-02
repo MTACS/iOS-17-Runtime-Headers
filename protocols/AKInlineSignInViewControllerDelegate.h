@@ -1,0 +1,4 @@
+
+@protocol AKInlineSignInViewControllerDelegate <AKSignInViewControllerDelegate>
+
+@end

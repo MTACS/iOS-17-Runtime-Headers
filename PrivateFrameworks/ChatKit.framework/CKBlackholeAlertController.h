@@ -1,0 +1,4 @@
+
+@interface CKBlackholeAlertController : CKAlertController
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol CUIKPasteboardManagerCopyDelegate <CUIKPasteboardManagerDelegate>
+
+@end

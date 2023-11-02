@@ -1,0 +1,84 @@
+
+@interface FCPaidBundleViaOfferConfig : NSObject {
+    bool  _appLaunchUpsellEnabled;
+    bool  _iconBadgeEnabled;
+    long long  _iconBadgeMaxNumberOfPresentations;
+    bool  _iconBadgeMercuryEnabled;
+    long long  _iconBadgeQuiescenceInterval;
+    NSString * _localNotificationBody;
+    long long  _localNotificationDelay;
+    bool  _localNotificationEnabled;
+    long long  _localNotificationMaxNumberOfPresentations;
+    long long  _localNotificationQuiescenceInterval;
+    NSString * _localNotificationSubtitle;
+    NSString * _localNotificationTitle;
+    NSString * _localNotificationURL;
+    bool  _mastheadBannerEnabled;
+    bool  _paywallsEnabled;
+    bool  _subscriptionsDeeplinkEnabled;
+    long long  _upsellBestOfferRefreshQuiescenceInterval;
+    bool  _upsellEnabled;
+    long long  _upsellMaxNumberOfPresentations;
+    long long  _upsellQuiescenceInterval;
+    NSArray * _vendorAdHocOfferIds;
+}
+
+@property (nonatomic, readonly) bool appLaunchUpsellEnabled;
+@property (nonatomic, readonly) bool iconBadgeEnabled;
+@property (nonatomic) long long iconBadgeMaxNumberOfPresentations;
+@property (nonatomic, readonly) bool iconBadgeMercuryEnabled;
+@property (nonatomic) long long iconBadgeQuiescenceInterval;
+@property (nonatomic, copy) NSString *localNotificationBody;
+@property (nonatomic) long long localNotificationDelay;
+@property (nonatomic, readonly) bool localNotificationEnabled;
+@property (nonatomic) long long localNotificationMaxNumberOfPresentations;
+@property (nonatomic) long long localNotificationQuiescenceInterval;
+@property (nonatomic, copy) NSString *localNotificationSubtitle;
+@property (nonatomic, copy) NSString *localNotificationTitle;
+@property (nonatomic, copy) NSString *localNotificationURL;
+@property (nonatomic, readonly) bool mastheadBannerEnabled;
+@property (nonatomic, readonly) bool paywallsEnabled;
+@property (nonatomic, readonly) bool subscriptionsDeeplinkEnabled;
+@property (nonatomic, readonly) long long upsellBestOfferRefreshQuiescenceInterval;
+@property (nonatomic, readonly) bool upsellEnabled;
+@property (nonatomic) long long upsellMaxNumberOfPresentations;
+@property (nonatomic) long long upsellQuiescenceInterval;
+@property (nonatomic, retain) NSArray *vendorAdHocOfferIds;
+
+- (void).cxx_destruct;
+- (bool)appLaunchUpsellEnabled;
+- (bool)iconBadgeEnabled;
+- (long long)iconBadgeMaxNumberOfPresentations;
+- (bool)iconBadgeMercuryEnabled;
+- (long long)iconBadgeQuiescenceInterval;
+- (id)initWithConfigDictionary:(id)arg1;
+- (id)localNotificationBody;
+- (long long)localNotificationDelay;
+- (bool)localNotificationEnabled;
+- (long long)localNotificationMaxNumberOfPresentations;
+- (long long)localNotificationQuiescenceInterval;
+- (id)localNotificationSubtitle;
+- (id)localNotificationTitle;
+- (id)localNotificationURL;
+- (bool)mastheadBannerEnabled;
+- (bool)paywallsEnabled;
+- (void)setIconBadgeMaxNumberOfPresentations:(long long)arg1;
+- (void)setIconBadgeQuiescenceInterval:(long long)arg1;
+- (void)setLocalNotificationBody:(id)arg1;
+- (void)setLocalNotificationDelay:(long long)arg1;
+- (void)setLocalNotificationMaxNumberOfPresentations:(long long)arg1;
+- (void)setLocalNotificationQuiescenceInterval:(long long)arg1;
+- (void)setLocalNotificationSubtitle:(id)arg1;
+- (void)setLocalNotificationTitle:(id)arg1;
+- (void)setLocalNotificationURL:(id)arg1;
+- (void)setUpsellMaxNumberOfPresentations:(long long)arg1;
+- (void)setUpsellQuiescenceInterval:(long long)arg1;
+- (void)setVendorAdHocOfferIds:(id)arg1;
+- (bool)subscriptionsDeeplinkEnabled;
+- (long long)upsellBestOfferRefreshQuiescenceInterval;
+- (bool)upsellEnabled;
+- (long long)upsellMaxNumberOfPresentations;
+- (long long)upsellQuiescenceInterval;
+- (id)vendorAdHocOfferIds;
+
+@end

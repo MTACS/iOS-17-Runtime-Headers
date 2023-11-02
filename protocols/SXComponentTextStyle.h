@@ -1,0 +1,4 @@
+
+@protocol SXComponentTextStyle <SXComponentTextStyleProperties>
+
+@end

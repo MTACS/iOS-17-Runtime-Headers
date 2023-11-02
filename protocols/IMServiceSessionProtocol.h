@@ -1,0 +1,92 @@
+
+@protocol IMServiceSessionProtocol
+
+@optional
+
+- (void)_blastDoorProcessingWithIMMessageItem:(void *)arg1 chat:(void *)arg2 account:(void *)arg3 fromToken:(void *)arg4 fromIDSID:(void *)arg5 fromIdentifier:(void *)arg6 toIdentifier:(void *)arg7 participants:(void *)arg8 groupName:(void *)arg9 groupID:(void *)arg10 isEncrypted:(void *)arg11 isFromMe:(void *)arg12 isLastFromStorage:(void *)arg13 isFromStorage:(void *)arg14 hideLockScreenNotification:(void *)arg15 wantsCheckpointing:(void *)arg16 needsDeliveryReceipt:(void *)arg17 messageBalloonPayloadAttachmentDictionary:(void *)arg18 inlineAttachments:(void *)arg19 attributionInfoArray:(void *)arg20 nicknameDictionary:(void *)arg21 availabilityVerificationRecipientChannelIDPrefix:(void *)arg22 availabilityVerificationRecipientEncryptionValidationToken:(void *)arg23 idsService:(void *)arg24 messageContext:(void *)arg25 isFromTrustedSender:(void *)arg26 completionBlock:(void *)arg27; // needs 27 arg types, found 31: IMMessageItem *, IMDChat *, IMDAccount *, NSData *, NSString *, NSString *, NSString *, NSArray *, NSString *, NSString *, bool, bool, bool, bool, bool, bool, NSNumber *, NSDictionary *, NSDictionary *, NSArray *, NSDictionary *, NSString *, NSString *, IDSService *, id, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)acceptSubscriptionRequest:(bool)arg1 from:(NSString *)arg2;
+- (void)addAliases:(NSArray *)arg1 account:(NSString *)arg2;
+- (void)authenticateAccount:(NSString *)arg1;
+- (void)autoLogin;
+- (void)autoReconnect;
+- (void)autoReconnectWithAccount:(IMDAccount *)arg1;
+- (void)cancelVCRequestWithPerson:(NSString *)arg1 properties:(NSDictionary *)arg2 conference:(NSString *)arg3 reason:(NSNumber *)arg4;
+- (void)changeGroup:(NSString *)arg1 changes:(NSDictionary *)arg2;
+- (void)changeGroups:(NSDictionary *)arg1;
+- (void)closeSessionChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
+- (void)declineInvitationToChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
+- (void)eagerUploadCancel:(NSURL *)arg1;
+- (void)eagerUploadTransfer:(NSDictionary *)arg1 recipients:(NSArray *)arg2;
+- (void)enrollDeviceInSMSRelay:(NSString *)arg1;
+- (void)enrollSelfDeviceInSMSRelay;
+- (void)holdBuddyUpdates;
+- (void)importMessage:(NSDictionary *)arg1 isRead:(bool)arg2;
+- (void)invitePersonInfo:(NSDictionary *)arg1 withMessage:(IMMessageItem *)arg2 toChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
+- (void)invitePersonInfoToiMessageChat:(NSDictionary *)arg1 withMessage:(IMMessageItem *)arg2 toChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
+- (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 groupID:(NSString *)arg5 lastAddressedHandle:(NSString *)arg6 lastAddressedSIMID:(NSString *)arg7 joinProperties:(NSDictionary *)arg8;
+- (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 joinProperties:(NSDictionary *)arg5;
+- (void)leaveChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
+- (void)leaveiMessageChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
+- (void)login;
+- (void)loginWithAccount:(IMDAccount *)arg1;
+- (void)logout;
+- (void)logoutWithAccount:(IMDAccount *)arg1;
+- (void)passwordUpdatedWithAccount:(NSString *)arg1;
+- (bool)reflectMarkUnreadToPeerDevicesForMessageGUID:(NSString *)arg1;
+- (bool)reflectRecoverChatToPeerDevicesForMessageGUID:(NSString *)arg1;
+- (void)registerAccount:(NSString *)arg1;
+- (void)relay:(NSString *)arg1 sendCancel:(NSDictionary *)arg2 toPerson:(NSString *)arg3;
+- (void)relay:(NSString *)arg1 sendInitateRequest:(NSDictionary *)arg2 toPerson:(NSString *)arg3;
+- (void)relay:(NSString *)arg1 sendUpdate:(NSDictionary *)arg2 toPerson:(NSString *)arg3;
+- (void)removeAliases:(NSArray *)arg1 account:(NSString *)arg2;
+- (void)removeChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
+- (void)removePersonInfo:(NSDictionary *)arg1 chatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
+- (void)removePersonInfoFromiMessageChat:(NSDictionary *)arg1 chatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
+- (void)renameGroup:(NSString *)arg1 to:(NSString *)arg2;
+- (void)requestGroupPhotoIfNecessary:(IMDChat *)arg1 incomingGroupPhotoCreationTime:(NSNumber *)arg2 toIdentifier:(NSString *)arg3 fromIdentifier:(NSString *)arg4 messageIsFromStorage:(bool)arg5;
+- (void)requestGroups;
+- (void)requestProperty:(NSString *)arg1 ofPerson:(NSString *)arg2;
+- (void)requestSubscriptionTo:(NSString *)arg1;
+- (void)requestVCWithPerson:(NSString *)arg1 properties:(NSDictionary *)arg2 conference:(NSString *)arg3;
+- (void)respondToVCInvitationWithPerson:(NSString *)arg1 properties:(NSDictionary *)arg2 conference:(NSString *)arg3;
+- (void)resumeBuddyUpdates;
+- (void)retryGroupPhotoUpload:(NSString *)arg1 toChatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 account:(NSString *)arg5;
+- (void)sendAVMessageToPerson:(NSString *)arg1 sessionID:(unsigned int)arg2 type:(unsigned int)arg3 userInfo:(NSDictionary *)arg4 conference:(NSString *)arg5;
+- (void)sendCommand:(NSNumber *)arg1 withProperties:(NSDictionary *)arg2 toPerson:(NSString *)arg3;
+- (void)sendCommand:(NSNumber *)arg1 withProperties:(NSDictionary *)arg2 toPerson:(NSString *)arg3 toChatID:(NSString *)arg4 identifier:(NSString *)arg5 style:(unsigned char)arg6;
+- (void)sendCounterProposalToPerson:(NSString *)arg1 properties:(NSDictionary *)arg2 conference:(NSString *)arg3;
+- (void)sendDeleteCommand:(NSDictionary *)arg1 forChatGUID:(NSString *)arg2;
+- (void)sendDeliveredQuietlyReceiptForMessage:(void *)arg1 forIncomingMessageFromIDSID:(void *)arg2 toChatGuid:(void *)arg3 identifier:(void *)arg4 style:(void *)arg5 withWillSendToDestinationsHandler:(void *)arg6; // needs 6 arg types, found 11: IMMessageItem *, NSString *, NSString *, NSString *, unsigned char, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)sendDeliveryReceiptForMessageID:(NSString *)arg1 toID:(NSString *)arg2 deliveryContext:(NSDictionary *)arg3 needsDeliveryReceipt:(NSNumber *)arg4 callerID:(NSString *)arg5 account:(IDSAccount *)arg6;
+- (void)sendEditedMessage:(IMMessageItem *)arg1 previousMessage:(IMMessageItem *)arg2 partIndex:(long long)arg3 editType:(unsigned long long)arg4 toChatIdentifier:(NSString *)arg5 style:(unsigned char)arg6 account:(NSString *)arg7 backwardCompatabilityText:(NSAttributedString *)arg8;
+- (void)sendGroupPhotoUpdate:(NSString *)arg1 toChatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 account:(NSString *)arg5;
+- (void)sendJunkReportMessage:(IMMessageItem *)arg1;
+- (void)sendLogDumpMessageAtFilePath:(void *)arg1 toRecipient:(void *)arg2 shouldDeleteFile:(void *)arg3 withCompletion:(void *)arg4; // needs 4 arg types, found 9: NSString *, NSString *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)sendMessage:(IMMessageItem *)arg1 toChatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
+- (void)sendNicknameInfoToURIs:(NSArray *)arg1 chatGUID:(NSString *)arg2;
+- (bool)sendNicknameUpdatesToPeerDevices:(NSDictionary *)arg1 toDestinations:(NSArray *)arg2;
+- (void)sendNotifyRecipientCommandForMessage:(IMMessageItem *)arg1 toChatGuid:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
+- (void)sendPlayedReceiptForMessage:(IMMessageItem *)arg1 toChatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
+- (void)sendReadReceiptForMessage:(IMMessageItem *)arg1 toChatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
+- (void)sendRecoverCommand:(NSDictionary *)arg1 forChatGUID:(NSString *)arg2;
+- (void)sendSavedReceiptForMessage:(IMMessageItem *)arg1 toChatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
+- (void)sendSyndicationAction:(IMSyndicationAction *)arg1 toChatsWithIdentifiers:(NSArray *)arg2;
+- (void)sendUpdatedCollaborationMetadata:(_SWCollaborationMetadata *)arg1 toChatsWithIdentifiers:(NSArray *)arg2 forMessageGUID:(NSString *)arg3;
+- (void)sendVCUpdate:(NSData *)arg1 toPerson:(NSString *)arg2 conference:(NSString *)arg3;
+- (void)setAllowList:(NSArray *)arg1;
+- (void)setBlockIdleStatus:(bool)arg1;
+- (void)setBlockList:(NSArray *)arg1;
+- (void)setBlockingMode:(unsigned int)arg1;
+- (void)setProperties:(NSDictionary *)arg1 ofParticipant:(NSString *)arg2 inChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
+- (void)setValue:(id)arg1 ofProperty:(NSString *)arg2 ofPerson:(NSString *)arg3;
+- (void)startWatchingBuddy:(NSString *)arg1;
+- (void)stopWatchingBuddy:(NSString *)arg1;
+- (void)unEnrollDeviceInSMSRelay:(NSString *)arg1;
+- (void)unregisterAccount:(NSString *)arg1;
+- (void)unvalidateAliases:(NSArray *)arg1 account:(NSString *)arg2;
+- (void)updateAuthorizationCredentials:(NSString *)arg1 token:(NSString *)arg2 account:(NSString *)arg3;
+- (void)updateDisplayName:(NSString *)arg1 fromDisplayName:(NSString *)arg2 forChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
+- (void)validateAliases:(NSArray *)arg1 account:(NSString *)arg2;
+- (void)validateProfileWithAccount:(NSString *)arg1;
+
+@end

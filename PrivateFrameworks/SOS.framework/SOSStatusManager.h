@@ -1,0 +1,92 @@
+
+@interface SOSStatusManager : NSObject <NSXPCListenerDelegate, SOSPairedDeviceStatusObserver, SOSStatusManagerServerProtocol> {
+    TUCall * _activeSOSCall;
+    NSXPCConnection * _clientConnection;
+    <SOSCoreAnalyticsReporting> * _coreAnalyticsReporter;
+    NSTimer * _currentDeviceStatusClearTimer;
+    NSTimer * _handoffFallbackTimer;
+    long long  _handoffTrigger;
+    NSUUID * _handoffTriggerUUID;
+    bool  _hasActiveSOSCall;
+    bool  _inSOSFlow;
+    bool  _inSOSFlowOnCurrentDevice;
+    long long  _mostRecentTriggerSource;
+    NSTimer * _pairedDeviceStatusClearTimer;
+}
+
+@property (nonatomic, retain) TUCall *activeSOSCall;
+@property (nonatomic, retain) NSXPCConnection *clientConnection;
+@property (nonatomic, retain) <SOSCoreAnalyticsReporting> *coreAnalyticsReporter;
+@property (nonatomic, retain) NSTimer *currentDeviceStatusClearTimer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSTimer *handoffFallbackTimer;
+@property (nonatomic) long long handoffTrigger;
+@property (nonatomic, retain) NSUUID *handoffTriggerUUID;
+@property (nonatomic) bool hasActiveSOSCall;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool inSOSFlow;
+@property (nonatomic) bool inSOSFlowOnCurrentDevice;
+@property (nonatomic) long long mostRecentTriggerSource;
+@property (nonatomic, retain) NSTimer *pairedDeviceStatusClearTimer;
+@property (readonly) Class superclass;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (void)_reportSOSEvent:(id)arg1 callDuration:(long long)arg2;
+- (id)activeSOSCall;
+- (void)cancelCurrentDeviceClearStatusTimer;
+- (void)cancelHandoffFallbackTimer;
+- (void)cancelPairedDeviceClearStatusTimer;
+- (void)checkHandoffFallback;
+- (void)checkSOSStatusOnLaunch;
+- (void)clearHandoffFallbackState;
+- (id)clientConnection;
+- (id)coreAnalyticsReporter;
+- (id)currentDeviceStatusClearTimer;
+- (void)endAudioSession;
+- (void)flowEnded;
+- (void)flowEndedOnBothDevices;
+- (void)flowEndedOnCurrentDevice;
+- (void)flowStarted;
+- (void)flowStartedOnCurrentDevice;
+- (void)flowStartedOnEitherDevice;
+- (void)handleLostStatusReporterConnection;
+- (void)handleSOSCallStatusChange:(id)arg1;
+- (id)handoffFallbackTimer;
+- (long long)handoffTrigger;
+- (id)handoffTriggerUUID;
+- (bool)hasActiveSOSCall;
+- (bool)inSOSFlow;
+- (bool)inSOSFlowOnCurrentDevice;
+- (id)init;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (long long)mostRecentTriggerSource;
+- (void)pairedDeviceSOSStatusDidUpdate:(id)arg1 progression:(long long)arg2 shouldHandleThirdParty:(bool)arg3;
+- (id)pairedDeviceStatusClearTimer;
+- (void)setActiveSOSCall:(id)arg1;
+- (void)setClientConnection:(id)arg1;
+- (void)setCoreAnalyticsReporter:(id)arg1;
+- (void)setCurrentDeviceStatusClearTimer:(id)arg1;
+- (void)setHandoffFallbackTimer:(id)arg1;
+- (void)setHandoffTrigger:(long long)arg1;
+- (void)setHandoffTriggerUUID:(id)arg1;
+- (void)setHasActiveSOSCall:(bool)arg1;
+- (void)setInSOSFlow:(bool)arg1;
+- (void)setInSOSFlowOnCurrentDevice:(bool)arg1;
+- (void)setMostRecentTriggerSource:(long long)arg1;
+- (void)setPairedDeviceStatusClearTimer:(id)arg1;
+- (void)sosTriggerDisabledWithUUID:(id)arg1 trigger:(long long)arg2;
+- (void)sosTriggerPushedToPairedDeviceWithUUID:(id)arg1 trigger:(long long)arg2;
+- (void)sosTriggeredOnPairedDevice:(id)arg1;
+- (void)sosTriggeredWithUUID:(id)arg1 trigger:(long long)arg2 source:(long long)arg3;
+- (void)startAudioSession;
+- (void)startCurrentDeviceClearStatusTimer;
+- (void)startHandoffFallbackTimer;
+- (void)startPairedDeviceClearStatusTimer;
+- (void)triggerHandoffFallback;
+- (void)updatePairedDeviceSOSStatus:(id)arg1;
+- (void)updateSOSFlowState:(long long)arg1;
+
+@end

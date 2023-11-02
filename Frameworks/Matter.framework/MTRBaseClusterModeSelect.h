@@ -1,0 +1,93 @@
+
+@interface MTRBaseClusterModeSelect : MTRCluster {
+    MTRBaseDevice * _device;
+    unsigned short  _endpoint;
+}
+
+@property (nonatomic, readonly) MTRBaseDevice *device;
+@property (nonatomic, readonly) unsigned short endpoint;
+
++ (void)readAttributeAcceptedCommandListWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeAcceptedCommandListWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeAttributeListWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeAttributeListWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeClusterRevisionWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeClusterRevisionWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeCurrentModeWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeCurrentModeWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeDescriptionWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeDescriptionWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeFeatureMapWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeFeatureMapWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeGeneratedCommandListWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeGeneratedCommandListWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeOnModeWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeOnModeWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeStandardNamespaceWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeStandardNamespaceWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeStartUpModeWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeStartUpModeWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
++ (void)readAttributeSupportedModesWithAttributeCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)readAttributeSupportedModesWithClusterStateCache:(id)arg1 endpoint:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
+
+- (void).cxx_destruct;
+- (void)changeToModeWithParams:(id)arg1 completion:(id /* block */)arg2;
+- (void)changeToModeWithParams:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)device;
+- (unsigned short)endpoint;
+- (id)initWithDevice:(id)arg1 endpoint:(unsigned short)arg2 queue:(id)arg3;
+- (id)initWithDevice:(id)arg1 endpointID:(id)arg2 queue:(id)arg3;
+- (void)readAttributeAcceptedCommandListWithCompletion:(id /* block */)arg1;
+- (void)readAttributeAcceptedCommandListWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeAttributeListWithCompletion:(id /* block */)arg1;
+- (void)readAttributeAttributeListWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeClusterRevisionWithCompletion:(id /* block */)arg1;
+- (void)readAttributeClusterRevisionWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeCurrentModeWithCompletion:(id /* block */)arg1;
+- (void)readAttributeCurrentModeWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeDescriptionWithCompletion:(id /* block */)arg1;
+- (void)readAttributeDescriptionWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeFeatureMapWithCompletion:(id /* block */)arg1;
+- (void)readAttributeFeatureMapWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeGeneratedCommandListWithCompletion:(id /* block */)arg1;
+- (void)readAttributeGeneratedCommandListWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeOnModeWithCompletion:(id /* block */)arg1;
+- (void)readAttributeOnModeWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeStandardNamespaceWithCompletion:(id /* block */)arg1;
+- (void)readAttributeStandardNamespaceWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeStartUpModeWithCompletion:(id /* block */)arg1;
+- (void)readAttributeStartUpModeWithCompletionHandler:(id /* block */)arg1;
+- (void)readAttributeSupportedModesWithCompletion:(id /* block */)arg1;
+- (void)readAttributeSupportedModesWithCompletionHandler:(id /* block */)arg1;
+- (void)subscribeAttributeAcceptedCommandListWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeAcceptedCommandListWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeAttributeListWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeAttributeListWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeClusterRevisionWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeClusterRevisionWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeCurrentModeWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeCurrentModeWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeDescriptionWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeDescriptionWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeFeatureMapWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeFeatureMapWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeGeneratedCommandListWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeGeneratedCommandListWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeOnModeWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeOnModeWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeStandardNamespaceWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeStandardNamespaceWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeStartUpModeWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeStartUpModeWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)subscribeAttributeSupportedModesWithMinInterval:(id)arg1 maxInterval:(id)arg2 params:(id)arg3 subscriptionEstablished:(id /* block */)arg4 reportHandler:(id /* block */)arg5;
+- (void)subscribeAttributeSupportedModesWithParams:(id)arg1 subscriptionEstablished:(id /* block */)arg2 reportHandler:(id /* block */)arg3;
+- (void)writeAttributeOnModeWithValue:(id)arg1 completion:(id /* block */)arg2;
+- (void)writeAttributeOnModeWithValue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)writeAttributeOnModeWithValue:(id)arg1 params:(id)arg2 completion:(id /* block */)arg3;
+- (void)writeAttributeOnModeWithValue:(id)arg1 params:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)writeAttributeStartUpModeWithValue:(id)arg1 completion:(id /* block */)arg2;
+- (void)writeAttributeStartUpModeWithValue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)writeAttributeStartUpModeWithValue:(id)arg1 params:(id)arg2 completion:(id /* block */)arg3;
+- (void)writeAttributeStartUpModeWithValue:(id)arg1 params:(id)arg2 completionHandler:(id /* block */)arg3;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface FCFileCoordinatedDictionaryUtilities : NSObject
+
+@end

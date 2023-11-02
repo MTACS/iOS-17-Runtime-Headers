@@ -1,0 +1,4 @@
+
+@interface _TtC8NewsFeedP33_842F67689E126A116CEEE66F0E4EC65B31InternalErrorGroupLayoutFactory : _TtCs12_SwiftObject
+
+@end

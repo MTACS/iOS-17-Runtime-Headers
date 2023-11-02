@@ -1,0 +1,83 @@
+
+@interface CalCalendarMigrationCalDAVPrincipal : NSObject <CalCalendarMigrationPrincipal> {
+    NSString * _defaultCalendarPath;
+    bool  _delegate;
+    bool  _expandPropertyReportSupported;
+    NSString * _fullName;
+    NSString * _homePath;
+    NSString * _homePushKey;
+    NSString * _inboxPath;
+    NSString * _login;
+    NSString * _notificationCollectionPath;
+    NSString * _outboxPath;
+    NSString * _ownerUid;
+    NSArray * _preferredCalendarUserAddresses;
+    NSURL * _principalURL;
+    NSDictionary * _pushTransports;
+    NSString * _uid;
+    bool  _writable;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSString *defaultCalendarPath;
+@property (getter=isDelegate, nonatomic) bool delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isExpandPropertyReportSupported, nonatomic) bool expandPropertyReportSupported;
+@property (nonatomic, retain) NSString *fullName;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSString *homePath;
+@property (nonatomic, retain) NSString *homePushKey;
+@property (nonatomic, retain) NSString *inboxPath;
+@property (nonatomic, retain) NSString *login;
+@property (nonatomic, retain) NSString *notificationCollectionPath;
+@property (nonatomic, retain) NSString *outboxPath;
+@property (nonatomic, retain) NSString *ownerUid;
+@property (nonatomic, retain) NSArray *preferredCalendarUserAddresses;
+@property (nonatomic, readonly) NSString *principalPath;
+@property (nonatomic, retain) NSURL *principalURL;
+@property (nonatomic, retain) NSDictionary *pushTransports;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *uid;
+@property (getter=isWritable, nonatomic) bool writable;
+
+- (void).cxx_destruct;
+- (id)_absoluteURLStringWithBaseComponents:(id)arg1 andPath:(id)arg2;
+- (bool)_anyCalendarUserAddressIsEquivalentToURL:(id)arg1;
+- (id)_packedPreferredCalendarUserAddresses;
+- (bool)addressIsAccountOwner:(id)arg1;
+- (id)defaultCalendarPath;
+- (id)dictionaryForAccountProperties;
+- (id)fullName;
+- (id)homePath;
+- (id)homePushKey;
+- (id)inboxPath;
+- (id)initWithUid:(id)arg1;
+- (bool)isDelegate;
+- (bool)isExpandPropertyReportSupported;
+- (bool)isWritable;
+- (id)login;
+- (id)notificationCollectionPath;
+- (id)outboxPath;
+- (id)ownerUid;
+- (id)preferredCalendarUserAddresses;
+- (id)principalPath;
+- (id)principalURL;
+- (id)pushTransports;
+- (void)setDefaultCalendarPath:(id)arg1;
+- (void)setDelegate:(bool)arg1;
+- (void)setExpandPropertyReportSupported:(bool)arg1;
+- (void)setFullName:(id)arg1;
+- (void)setHomePath:(id)arg1;
+- (void)setHomePushKey:(id)arg1;
+- (void)setInboxPath:(id)arg1;
+- (void)setLogin:(id)arg1;
+- (void)setNotificationCollectionPath:(id)arg1;
+- (void)setOutboxPath:(id)arg1;
+- (void)setOwnerUid:(id)arg1;
+- (void)setPreferredCalendarUserAddresses:(id)arg1;
+- (void)setPrincipalURL:(id)arg1;
+- (void)setPushTransports:(id)arg1;
+- (void)setWritable:(bool)arg1;
+- (id)uid;
+
+@end

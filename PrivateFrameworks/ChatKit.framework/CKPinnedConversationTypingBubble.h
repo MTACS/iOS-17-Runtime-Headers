@@ -1,0 +1,102 @@
+
+@interface CKPinnedConversationTypingBubble : UIView <CKPinnedConversationActivityItemView> {
+    long long  _activityItemViewContentScale;
+    <CKPinnedConversationActivityItemViewDelegate> * _activityItemViewDelegate;
+    CKPinnedConversationActivityItemViewBackdropLayer * _backdropLayer;
+    CAShapeLayer * _backdropMaskShapeLayer;
+    CKPinnedConversationActivityItemViewShadowLayer * _broadShadowLayer;
+    long long  _originationDirection;
+    long long  _originationHorizontalDirection;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _originationPoint;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _parentAvatarViewSize;
+    double  _preferredTailAttachmentPointXCoordinate;
+    CAShapeLayer * _thinkingDot;
+    CALayer * _thinkingDotContainer;
+    CAReplicatorLayer * _thinkingDots;
+    CKPinnedConversationActivityItemViewShadowLayer * _tightShadowLayer;
+    CKPinnedConversationTypingBubbleActivityItem * _typingBubbleActivityItem;
+}
+
+@property (nonatomic, retain) <CKPinnedConversationActivityItem> *activityItem;
+@property (nonatomic) long long activityItemViewContentScale;
+@property (nonatomic) <CKPinnedConversationActivityItemViewDelegate> *activityItemViewDelegate;
+@property (nonatomic, retain) CKPinnedConversationActivityItemViewBackdropLayer *backdropLayer;
+@property (nonatomic, retain) CAShapeLayer *backdropMaskShapeLayer;
+@property (nonatomic, retain) CKPinnedConversationActivityItemViewShadowLayer *broadShadowLayer;
+@property (nonatomic) long long originationDirection;
+@property (nonatomic) long long originationHorizontalDirection;
+@property (nonatomic) struct CGPoint { double x1; double x2; } originationPoint;
+@property (nonatomic) struct CGSize { double x1; double x2; } parentAvatarViewSize;
+@property (nonatomic) double preferredTailAttachmentPointXCoordinate;
+@property (nonatomic, readonly) bool supportsActivityItemViewContentScale;
+@property (nonatomic, readonly) bool supportsAlignmentWithOriginationSubAvatarFrame;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } tailAttachmentPoint;
+@property (nonatomic, retain) CAShapeLayer *thinkingDot;
+@property (nonatomic, retain) CALayer *thinkingDotContainer;
+@property (nonatomic, retain) CAReplicatorLayer *thinkingDots;
+@property (nonatomic, retain) CKPinnedConversationActivityItemViewShadowLayer *tightShadowLayer;
+@property (nonatomic, readonly) CKPinnedConversationTypingBubbleActivityItem *typingBubbleActivityItem;
+
+- (void).cxx_destruct;
+- (void)_updateThinkingDotColor;
+- (void)_updateUserInterfaceStyles;
+- (id)activityItem;
+- (double)activityItemToContactItemVerticalOverlap;
+- (long long)activityItemViewContentScale;
+- (id)activityItemViewDelegate;
+- (id)backdropLayer;
+- (id)backdropMaskShapeLayer;
+- (id)broadShadowLayer;
+- (void)calculateBezierPathWithOutputsForPath:(id*)arg1 largeBubbleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 mediumBubbleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 smallBubbleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
+- (id)initWithActivityItem:(id)arg1;
+- (double)largeBubbleCornerRadius;
+- (struct CGSize { double x1; double x2; })largeBubbleSize;
+- (void)layoutSubviews;
+- (struct CGPoint { double x1; double x2; })mediumBubbleOffset;
+- (struct CGSize { double x1; double x2; })mediumBubbleSize;
+- (long long)originationDirection;
+- (long long)originationHorizontalDirection;
+- (struct CGPoint { double x1; double x2; })originationPoint;
+- (struct CGSize { double x1; double x2; })parentAvatarViewSize;
+- (double)preferredTailAttachmentPointXCoordinate;
+- (void)setActivityItem:(id)arg1;
+- (void)setActivityItemViewContentScale:(long long)arg1;
+- (void)setActivityItemViewDelegate:(id)arg1;
+- (void)setBackdropLayer:(id)arg1;
+- (void)setBackdropMaskShapeLayer:(id)arg1;
+- (void)setBroadShadowLayer:(id)arg1;
+- (void)setOriginationDirection:(long long)arg1;
+- (void)setOriginationHorizontalDirection:(long long)arg1;
+- (void)setOriginationPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setParentAvatarViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredTailAttachmentPointXCoordinate:(double)arg1;
+- (void)setThinkingDot:(id)arg1;
+- (void)setThinkingDotContainer:(id)arg1;
+- (void)setThinkingDots:(id)arg1;
+- (void)setTightShadowLayer:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })smallBubbleOffset;
+- (struct CGSize { double x1; double x2; })smallBubbleSize;
+- (bool)supportsActivityItemViewContentScale;
+- (bool)supportsAlignmentWithOriginationSubAvatarFrame;
+- (struct CGPoint { double x1; double x2; })tailAttachmentPoint;
+- (unsigned long long)tailCornerAnchor;
+- (id)thinkingDot;
+- (id)thinkingDotColor;
+- (id)thinkingDotContainer;
+- (struct CGSize { double x1; double x2; })thinkingDotContainerSize;
+- (double)thinkingDotDiameter;
+- (double)thinkingDotOpacity;
+- (double)thinkingDotSpace;
+- (id)thinkingDots;
+- (id)tightShadowLayer;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)typingBubbleActivityItem;
+
+@end

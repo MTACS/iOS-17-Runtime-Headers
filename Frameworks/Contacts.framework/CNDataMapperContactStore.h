@@ -1,0 +1,95 @@
+
+@interface CNDataMapperContactStore : CNContactStore {
+    bool  _isContactsProvider;
+    <CNContactsLogger> * _logger;
+    <CNDataMapper> * _mapper;
+    <CNQueryAnalyticsLogger> * _queryAnalyticsLogger;
+    <CNRegulatoryLogger> * _regulatoryLogger;
+    bool  _shouldLogPrivacyAccountingAccessEvents;
+}
+
+@property (nonatomic, readonly) bool isContactsProvider;
+@property (nonatomic, readonly) <CNContactsLogger> *logger;
+@property (nonatomic, readonly, retain) NSObject<CNDataMapper> *mapper;
+@property (nonatomic, readonly) <CNQueryAnalyticsLogger> *queryAnalyticsLogger;
+@property (nonatomic, readonly) <CNRegulatoryLogger> *regulatoryLogger;
+@property (nonatomic, readonly) bool shouldLogPrivacyAccountingAccessEvents;
+
++ (Class)dataMapperClassForConfiguration:(id)arg1;
++ (bool)hasEnvironmentSettingsEnabledContactsOutOfProcess;
+
+- (void).cxx_destruct;
+- (void)_logContactsAccessWasDeniedForAccessType:(unsigned long long)arg1 error:(id)arg2;
+- (void)_logContactsAccessWasGrantedForAccessType:(unsigned long long)arg1;
+- (void)_logGreenTeaForAccessType:(unsigned long long)arg1;
+- (void)_logPrivacyAccountingForAccessType:(unsigned long long)arg1;
+- (bool)_requestDataMapperAccessType:(unsigned long long)arg1 error:(id*)arg2;
+- (id)accountsMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (id)changeHistoryWithFetchRequest:(id)arg1 error:(id*)arg2;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id*)arg2;
+- (id)contactIdentifierWithMatchingDictionary:(id)arg1;
+- (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
+- (id)contactsForFetchRequest:(id)arg1 matchInfos:(id*)arg2 error:(id*)arg3;
+- (id)contactsInContainerWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
+- (id)containersMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (id)currentHistoryAnchor;
+- (id)currentHistoryToken;
+- (id)defaultContainerIdentifier;
+- (id)description;
+- (id)descriptorForRequiredKeysForMatchingDictionary;
+- (bool)enumerateContactsAndMatchInfoWithFetchRequest:(id)arg1 error:(id*)arg2 usingBlock:(id /* block */)arg3;
+- (bool)executeChangeHistoryClearRequest:(id)arg1 error:(id*)arg2;
+- (id)executeFetchRequest:(id)arg1 progressiveResults:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (bool)executeSaveRequest:(id)arg1 error:(id*)arg2;
+- (bool)executeSaveRequest:(id)arg1 response:(id*)arg2 authorizationContext:(id)arg3 error:(id*)arg4;
+- (id)groupWithIdentifier:(id)arg1 error:(id*)arg2;
+- (id)groupsMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (bool)hasGroups;
+- (bool)hasMultipleGroupsOrAccounts;
+- (id)iOSMapper;
+- (id)identifierWithError:(id*)arg1;
+- (id)init;
+- (id)initWithConfiguration:(id)arg1;
+- (id)initWithDataMapper:(id)arg1 dataMapperConfiguration:(id)arg2;
+- (id)initWithEnvironment:(id)arg1;
+- (id)initWithEnvironment:(id)arg1 managedConfiguration:(id)arg2;
+- (bool)isContactsProvider;
+- (bool)isValidSaveRequest:(id)arg1 authorizationContext:(id)arg2 error:(id*)arg3;
+- (id)legacyTetheredSyncComputerAnchor;
+- (id)legacyTetheredSyncDeviceAnchor;
+- (id)logger;
+- (id)mapper;
+- (id)matchingDictionaryForContact:(id)arg1;
+- (id)meContactIdentifiers:(id*)arg1;
+- (id)membersOfGroupWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
+- (bool)moveContacts:(id)arg1 fromContainer:(id)arg2 toContainer:(id)arg3 error:(id*)arg4;
+- (id)policyWithDescription:(id)arg1 error:(id*)arg2;
+- (id)queryAnalyticsLogger;
+- (bool)registerChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id*)arg3;
+- (id)regulatoryLogger;
+- (id)requestAccessForEntityType:(long long)arg1;
+- (bool)requestContactsReadAccessWithError:(id*)arg1;
+- (bool)requestContactsWriteAccessWithError:(id*)arg1;
+- (id)requestExtensionCommand:(id)arg1 error:(id*)arg2;
+- (bool)requestMetadataAccessWithError:(id*)arg1;
+- (void)requestReadAccessForEntityType:(long long)arg1 completionHandler:(id /* block */)arg2;
+- (bool)resetSortDataIfNeededWithError:(id*)arg1;
+- (int)saveSequenceCount;
+- (id)sectionListOffsetsForSortOrder:(long long)arg1 error:(id*)arg2;
+- (id)serverSearchContainersMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (bool)setBestMeIfNeededForGivenName:(id)arg1 familyName:(id)arg2 email:(id)arg3 error:(id*)arg4;
+- (bool)setDefaultAccountIdentifier:(id)arg1 error:(id*)arg2;
+- (void)setLegacyTetheredSyncComputerAnchor:(id)arg1;
+- (void)setLegacyTetheredSyncDeviceAnchor:(id)arg1;
+- (bool)setMeContact:(id)arg1 error:(id*)arg2;
+- (bool)setMeContact:(id)arg1 forContainer:(id)arg2 error:(id*)arg3;
+- (bool)shouldLogPrivacyAccountingAccessEvents;
+- (id)subgroupsOfGroupWithIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)supportsMatchingDictionaries;
+- (id)unifiedContactCountWithError:(id*)arg1;
+- (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
+- (bool)unregisterChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id*)arg3;
+- (id)usedLabelsForPropertyWithKey:(id)arg1 error:(id*)arg2;
+- (id)userActivityUserInfoForContact:(id)arg1;
+
+@end

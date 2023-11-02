@@ -1,0 +1,4 @@
+
+@protocol HFPersonManagerObserver <HMPersonManagerObserver>
+
+@end

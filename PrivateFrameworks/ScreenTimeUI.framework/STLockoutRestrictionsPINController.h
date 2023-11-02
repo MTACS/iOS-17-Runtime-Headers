@@ -1,0 +1,4 @@
+
+@interface STLockoutRestrictionsPINController : STRemotePasscodeController
+
+@end

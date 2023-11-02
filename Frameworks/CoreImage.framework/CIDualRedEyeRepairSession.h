@@ -1,0 +1,96 @@
+
+@interface CIDualRedEyeRepairSession : NSObject {
+    struct __CVBuffer { } * _output;
+    struct __CVBuffer { } * _primary;
+    struct __CVBuffer { } * _secondary;
+    <MTLCommandBuffer> * commandBuffer;
+    <MTLCommandQueue> * commandQueue;
+    CIContext * context;
+    CIRenderDestination * destination;
+    NSArray * faces;
+    NSDictionary * imageProperties;
+    NSDictionary * metadata;
+    NSArray * observations;
+    <MTLTexture> * outputTexture;
+    CIImage * primaryImage;
+    <MTLTexture> * primaryTexture;
+    CIImage * secondaryImage;
+    <MTLTexture> * secondaryTexture;
+    NSDate * timestamp;
+    CIDualRedEyeRepairTuning * tuning;
+    NSDictionary * tuningParametersByPortType;
+}
+
+@property (nonatomic, retain) <MTLCommandBuffer> *commandBuffer;
+@property (nonatomic, retain) <MTLCommandQueue> *commandQueue;
+@property (nonatomic, retain) CIContext *context;
+@property (nonatomic, retain) CIRenderDestination *destination;
+@property (nonatomic, retain) NSArray *faces;
+@property (nonatomic, retain) NSDictionary *imageProperties;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic, retain) NSArray *observations;
+@property (nonatomic, retain) <MTLTexture> *outputTexture;
+@property (nonatomic, retain) CIImage *primaryImage;
+@property (nonatomic, retain) <MTLTexture> *primaryTexture;
+@property (nonatomic, retain) CIImage *secondaryImage;
+@property (nonatomic, retain) <MTLTexture> *secondaryTexture;
+@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, retain) CIDualRedEyeRepairTuning *tuning;
+@property (nonatomic, retain) NSDictionary *tuningParametersByPortType;
+
++ (id)_contextRGBAh;
+
+- (bool)_repairPrimaryWithSecondary:(struct __CVBuffer { }*)arg1 to:(struct __CVBuffer { }*)arg2;
+- (void)cleanupState;
+- (id)commandBuffer;
+- (id)commandQueue;
+- (id)context;
+- (void)customizeRepairFilter:(id)arg1 forFace:(id)arg2;
+- (void)dealloc;
+- (id)destination;
+- (void)dumpInputs;
+- (void)dumpObservation:(id)arg1 index:(int)arg2;
+- (void)dumpSecondary;
+- (id)faces;
+- (id)imageProperties;
+- (id)init;
+- (id)metadata;
+- (id)observations;
+- (id)outputTexture;
+- (bool)prepareRepair;
+- (bool)prepareRepairWithTuningParametersByPortType:(id)arg1;
+- (bool)prewarm;
+- (id)primaryImage;
+- (id)primaryTexture;
+- (id)redEyeFaceFromObservation:(id)arg1 exifOrientation:(int)arg2;
+- (bool)renderUsingPixelBuffers;
+- (bool)renderUsingProvidedCommandQueue;
+- (bool)repairFace:(id)arg1 filter:(id)arg2;
+- (bool)repairPrimaryWithSecondary:(struct __CVBuffer { }*)arg1;
+- (id)secondaryImage;
+- (id)secondaryTexture;
+- (void)setCommandBuffer:(id)arg1;
+- (void)setCommandQueue:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setDestination:(id)arg1;
+- (void)setFaces:(id)arg1;
+- (void)setImageProperties:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setObservations:(id)arg1;
+- (void)setOutputTexture:(id)arg1;
+- (bool)setPrimary:(struct __CVBuffer { }*)arg1 observations:(id)arg2 metadata:(id)arg3;
+- (void)setPrimaryImage:(id)arg1;
+- (void)setPrimaryTexture:(id)arg1;
+- (void)setSecondaryImage:(id)arg1;
+- (void)setSecondaryTexture:(id)arg1;
+- (void)setTimestamp:(id)arg1;
+- (void)setTuning:(id)arg1;
+- (void)setTuningParametersByPortType:(id)arg1;
+- (id)timestamp;
+- (id)tuning;
+- (id)tuningParametersByPortType;
+- (bool)validateRenderState;
+- (int)validateRepair;
+- (int)validateSetPrimary;
+
+@end

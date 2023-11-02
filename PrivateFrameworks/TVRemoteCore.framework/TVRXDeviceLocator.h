@@ -1,0 +1,25 @@
+
+@interface TVRXDeviceLocator : NSObject <TVRXDeviceQueryDelegate> {
+    TVRXDeviceQuery * _query;
+    NSMutableDictionary * _searches;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) TVRXDeviceQuery *query;
+@property (nonatomic, retain) NSMutableDictionary *searches;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_timerExpired:(id)arg1;
+- (void)cancelSearchForDeviceWithIdentifier:(id)arg1;
+- (void)deviceQueryDidUpdateDevices:(id)arg1;
+- (void)findDeviceWithIdentifier:(id)arg1 timeout:(double)arg2 completion:(id /* block */)arg3;
+- (id)init;
+- (id)query;
+- (id)searches;
+- (void)setQuery:(id)arg1;
+- (void)setSearches:(id)arg1;
+
+@end

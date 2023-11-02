@@ -1,0 +1,95 @@
+
+@interface CLPIndoorEvent : PBCodable <NSCopying> {
+    CLPBundleId * _bundleId;
+    CLPIndoorCMAttitude * _cmAttitude;
+    CLPIndoorCMPedometer * _cmPedometer;
+    struct { 
+        unsigned int type : 1; 
+    }  _has;
+    CLPInertialOdometry * _inertialOdometry;
+    CLPLocation * _location;
+    CLPIndoorMotionActivity * _motionActivity;
+    CLPIndoorPressure * _pressure;
+    int  _type;
+    CLPLOGENTRYVISIONVIOEstimation * _vioEstimation;
+    CLPLOGENTRYVISIONVLLocalizationResult * _vlLocalizationResult;
+    CLPIndoorWifiScan * _wifiScan;
+    CLPWorkoutUpdateMotionActivity * _workoutUpdateMotionActivity;
+}
+
+@property (nonatomic, retain) CLPBundleId *bundleId;
+@property (nonatomic, retain) CLPIndoorCMAttitude *cmAttitude;
+@property (nonatomic, retain) CLPIndoorCMPedometer *cmPedometer;
+@property (nonatomic, readonly) bool hasBundleId;
+@property (nonatomic, readonly) bool hasCmAttitude;
+@property (nonatomic, readonly) bool hasCmPedometer;
+@property (nonatomic, readonly) bool hasInertialOdometry;
+@property (nonatomic, readonly) bool hasLocation;
+@property (nonatomic, readonly) bool hasMotionActivity;
+@property (nonatomic, readonly) bool hasPressure;
+@property (nonatomic) bool hasType;
+@property (nonatomic, readonly) bool hasVioEstimation;
+@property (nonatomic, readonly) bool hasVlLocalizationResult;
+@property (nonatomic, readonly) bool hasWifiScan;
+@property (nonatomic, readonly) bool hasWorkoutUpdateMotionActivity;
+@property (nonatomic, retain) CLPInertialOdometry *inertialOdometry;
+@property (nonatomic, retain) CLPLocation *location;
+@property (nonatomic, retain) CLPIndoorMotionActivity *motionActivity;
+@property (nonatomic, retain) CLPIndoorPressure *pressure;
+@property (nonatomic) int type;
+@property (nonatomic, retain) CLPLOGENTRYVISIONVIOEstimation *vioEstimation;
+@property (nonatomic, retain) CLPLOGENTRYVISIONVLLocalizationResult *vlLocalizationResult;
+@property (nonatomic, retain) CLPIndoorWifiScan *wifiScan;
+@property (nonatomic, retain) CLPWorkoutUpdateMotionActivity *workoutUpdateMotionActivity;
+
+- (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
+- (id)bundleId;
+- (id)cmAttitude;
+- (id)cmPedometer;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasBundleId;
+- (bool)hasCmAttitude;
+- (bool)hasCmPedometer;
+- (bool)hasInertialOdometry;
+- (bool)hasLocation;
+- (bool)hasMotionActivity;
+- (bool)hasPressure;
+- (bool)hasType;
+- (bool)hasVioEstimation;
+- (bool)hasVlLocalizationResult;
+- (bool)hasWifiScan;
+- (bool)hasWorkoutUpdateMotionActivity;
+- (unsigned long long)hash;
+- (id)inertialOdometry;
+- (bool)isEqual:(id)arg1;
+- (id)location;
+- (void)mergeFrom:(id)arg1;
+- (id)motionActivity;
+- (id)pressure;
+- (bool)readFrom:(id)arg1;
+- (void)setBundleId:(id)arg1;
+- (void)setCmAttitude:(id)arg1;
+- (void)setCmPedometer:(id)arg1;
+- (void)setHasType:(bool)arg1;
+- (void)setInertialOdometry:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setMotionActivity:(id)arg1;
+- (void)setPressure:(id)arg1;
+- (void)setType:(int)arg1;
+- (void)setVioEstimation:(id)arg1;
+- (void)setVlLocalizationResult:(id)arg1;
+- (void)setWifiScan:(id)arg1;
+- (void)setWorkoutUpdateMotionActivity:(id)arg1;
+- (int)type;
+- (id)typeAsString:(int)arg1;
+- (id)vioEstimation;
+- (id)vlLocalizationResult;
+- (id)wifiScan;
+- (id)workoutUpdateMotionActivity;
+- (void)writeTo:(id)arg1;
+
+@end

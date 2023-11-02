@@ -1,0 +1,88 @@
+
+@interface SBFullScreenSwitcherLiveContentOverlayCoordinator : NSObject <SBFullScreenSwitcherSceneLiveContentOverlayDelegate, SBSwitcherLiveContentOverlayCoordinating> {
+    NSMutableDictionary * _appLayoutToLiveContentOverlayContext;
+    NSString * _bundleIDForTargetOfKeyboardShortcuts;
+    long long  _containerOrientation;
+    SBSwitcherCoordinatedLayoutStateTransitionContext * _currentCoordinatedLayoutStateTransitionContext;
+    <SBSwitcherLiveContentOverlayCoordinatorDelegate> * _delegate;
+    NSString * _keyboardFocusSceneID;
+    bool  _liveContentOverlayUpdatesSuspended;
+    NSString * _sceneIDForTargetOfKeyboardShortcuts;
+    SBSwitcherController * _switcherController;
+    NSMutableArray * _visibleAlwaysLiveAppLayouts;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *appLayoutToLiveContentOverlayContext;
+@property (nonatomic, copy) NSString *bundleIDForTargetOfKeyboardShortcuts;
+@property (nonatomic) long long containerOrientation;
+@property (nonatomic, retain) SBSwitcherCoordinatedLayoutStateTransitionContext *currentCoordinatedLayoutStateTransitionContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBSwitcherLiveContentOverlayCoordinatorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *keyboardFocusSceneID;
+@property (getter=areLiveContentOverlayUpdatesSuspended, nonatomic) bool liveContentOverlayUpdatesSuspended;
+@property (getter=_sbWindowScene, nonatomic, readonly) SBWindowScene *sbWindowScene;
+@property (nonatomic, copy) NSString *sceneIDForTargetOfKeyboardShortcuts;
+@property (getter=_sceneManager, nonatomic, readonly) SBSceneManager *sceneManager;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SBSwitcherController *switcherController;
+@property (nonatomic, retain) NSMutableArray *visibleAlwaysLiveAppLayouts;
+
+- (void).cxx_destruct;
+- (void)_addOverlay:(id)arg1 forAppLayout:(id)arg2 animated:(bool)arg3;
+- (long long)_calculateSBSDisplayLayoutElementRoleForDisplayItem:(id)arg1 inAppLayout:(id)arg2;
+- (bool)_canTransitionToOverlayType:(long long)arg1 forAppLayout:(id)arg2;
+- (void)_configureLiveContentOverlayView:(id)arg1 forTransitionContext:(id)arg2 layoutRole:(long long)arg3 sbsDisplayLayoutRole:(long long)arg4;
+- (long long)_existingOverlayTypeForAppLayout:(id)arg1;
+- (bool)_layoutStateContainsElementBlockedForScreenTimeExpiration:(id)arg1;
+- (id)_newLiveContentOverlayForApplicationContext:(id)arg1 layoutRole:(long long)arg2 sbsDisplayLayoutRole:(long long)arg3;
+- (void)_presentTransientErrorMessageIfNeededForLayoutStateTransitionContext:(id)arg1 medusaViewController:(id)arg2;
+- (void)_removeOverlayForAppLayout:(id)arg1 animated:(bool)arg2;
+- (id)_sbWindowScene;
+- (id)_sceneManager;
+- (bool)_shouldAnimateAddingLiveContentOverlayForTransitionContext:(id)arg1 leafAppLayout:(id)arg2;
+- (bool)_shouldShowMultipleWindowsNotSupportedMessageForLayoutStateTransitionContext:(id)arg1 medusaViewController:(id)arg2;
+- (bool)_shouldShowSplitViewNotSupportedMessageForLayoutStateTransitionContext:(id)arg1 medusaViewController:(id)arg2;
+- (void)_updateAlwaysLiveSceneContentOverlays;
+- (void)_updateFullScreenDisplayLayoutElementsForActiveAppLayouts:(id)arg1 inAppLayout:(id)arg2;
+- (void)_updatePortaledSceneLiveContentOverlays;
+- (void)appLayoutDidBecomeHidden:(id)arg1;
+- (id)appLayoutForKeyboardFocusedScene;
+- (id)appLayoutToLiveContentOverlayContext;
+- (void)appLayoutWillBecomeVisible:(id)arg1;
+- (bool)areLiveContentOverlayUpdatesSuspended;
+- (id)bundleIDForTargetOfKeyboardShortcuts;
+- (void)cleanUpAfterCoordinatedLayoutStateTransitionWithContext:(id)arg1;
+- (long long)containerOrientation;
+- (id)currentCoordinatedLayoutStateTransitionContext;
+- (id)delegate;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1 toInterfaceOrientation:(long long)arg2;
+- (void)fullScreenSwitcherSceneLiveContentOverlay:(id)arg1 tappedStatusBar:(id)arg2 tapActionType:(long long)arg3;
+- (id)initWithSwitcherController:(id)arg1;
+- (void)invalidate;
+- (void)itemContainerForAppLayout:(id)arg1 willBeReusedForAppLayout:(id)arg2;
+- (id)keyboardFocusSceneID;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionWillEndWithTransitionContext:(id)arg2;
+- (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
+- (bool)performSwitcherKeyboardShortcutAction:(long long)arg1;
+- (void)prepareForCoordinatedLayoutStateTransitionWithContext:(id)arg1;
+- (id)sceneIDForTargetOfKeyboardShortcuts;
+- (void)setAppLayoutToLiveContentOverlayContext:(id)arg1;
+- (void)setBundleIDForTargetOfKeyboardShortcuts:(id)arg1;
+- (void)setContainerOrientation:(long long)arg1;
+- (void)setCurrentCoordinatedLayoutStateTransitionContext:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setKeyboardFocusSceneID:(id)arg1;
+- (void)setLiveContentOverlayUpdatesSuspended:(bool)arg1;
+- (void)setSceneIDForTargetOfKeyboardShortcuts:(id)arg1;
+- (void)setVisibleAlwaysLiveAppLayouts:(id)arg1;
+- (id)switcherController;
+- (id)visibleAlwaysLiveAppLayouts;
+- (bool)wantsEdgeProtectForHomeGestureForAppLayout:(id)arg1;
+- (bool)wantsHomeAffordanceAutoHideForAppLayout:(id)arg1;
+- (void)willRotateFromInterfaceOrientation:(long long)arg1 toInterfaceOrientation:(long long)arg2 alongsideContainerView:(id)arg3 animated:(bool)arg4;
+
+@end

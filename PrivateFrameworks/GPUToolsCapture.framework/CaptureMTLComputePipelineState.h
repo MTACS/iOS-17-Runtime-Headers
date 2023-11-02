@@ -1,0 +1,82 @@
+
+@interface CaptureMTLComputePipelineState : NSObject <CaptureMTLObject, MTLComputePipelineStateSPI> {
+    <MTLComputePipelineStateSPI> * _baseObject;
+    CaptureMTLComputePipelineState * _captureComputePipelineState;
+    CaptureMTLDevice * _captureDevice;
+    MTLComputePipelineDescriptor * _descriptor;
+    <MTLFunction> * _function;
+    NSMapTable * _functionHandleMap;
+    MTLComputePipelineReflection * _reflection;
+    struct GTTraceContext { struct _opaque_pthread_mutex_t { long long x_1_1_1; BOOL x_1_1_2[56]; } x1; struct GTTraceStore {} *x2; _Atomic unsigned long long x3; _Atomic unsigned long long x4; struct apr_hash_t {} *x5; union { /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*x_6_1_1; const void*x_6_1_2; void*x_6_1_3; inout out double x_6_1_4; void*x_6_1_5; } *x6; _Atomic int x7; BOOL x8[4]; struct GTTraceStream {} *x9; _Atomic bool x10; BOOL x11[7]; struct GTTraceStoreList { union { void*x_1_2_1; void*x_1_2_2; void*x_1_2_3; const void*x_1_2_4; BOOL x_1_2_5; void*x_1_2_6; unsigned short x_1_2_7; void*x_1_2_8; out const void*x_1_2_9; inout out double x_1_2_10; void*x_1_2_11; } *x_12_1_1; union { void*x_2_2_1; void*x_2_2_2; void*x_2_2_3; const void*x_2_2_4; BOOL x_2_2_5; void*x_2_2_6; unsigned short x_2_2_7; void*x_2_2_8; out const void*x_2_2_9; inout out double x_2_2_10; void*x_2_2_11; } *x_12_1_2; _Atomic int x_12_1_3; _Atomic int x_12_1_4; } x12[16]; } * _traceContext;
+    struct GTTraceStream { unsigned long long x1; unsigned long long x2; unsigned long long x3; struct GTTraceMemPool {} *x4; struct GTTraceStoreList { union { /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_1_2_1; void*x_1_2_2; void*x_1_2_3; const void*x_1_2_4; BOOL x_1_2_5; void*x_1_2_6; unsigned short x_1_2_7; void*x_1_2_8; out const void*x_1_2_9; inout out double x_1_2_10; void*x_1_2_11; } *x_5_1_1; union { void*x_2_2_1; void*x_2_2_2; void*x_2_2_3; const void*x_2_2_4; BOOL x_2_2_5; void*x_2_2_6; unsigned short x_2_2_7; void*x_2_2_8; out const void*x_2_2_9; inout out double x_2_2_10; void*x_2_2_11; } *x_5_1_2; _Atomic int x_5_1_3; _Atomic int x_5_1_4; } x5; _Atomic unsigned long long x6; } * _traceStream;
+}
+
+@property (nonatomic, readonly) unsigned long long allocatedSize;
+@property (readonly) <MTLComputePipelineState> *baseObject;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly, retain) MTLDebugInstrumentationData *debugInstrumentationData;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) MTLComputePipelineDescriptor *descriptor;
+@property (readonly) <MTLDevice> *device;
+@property (nonatomic, retain) <MTLFunction> *function;
+@property (nonatomic, readonly) unsigned long long gpuAddress;
+@property (readonly) unsigned long long gpuHandle;
+@property (readonly) struct MTLResourceID { unsigned long long x1; } gpuResourceID;
+@property (readonly) unsigned long long hash;
+@property (readonly) NSString *label;
+@property (readonly) unsigned long long maxTotalThreadsPerThreadgroup;
+@property (nonatomic, retain) MTLComputePipelineReflection *reflection;
+@property (nonatomic, readonly) unsigned long long resourceIndex;
+@property (readonly) unsigned long long staticThreadgroupMemoryLength;
+@property (readonly) unsigned long long streamReference;
+@property (readonly) Class superclass;
+@property (readonly) bool supportIndirectCommandBuffers;
+@property (readonly) long long textureWriteRoundingMode;
+@property (readonly) unsigned long long threadExecutionWidth;
+@property (readonly) struct GTTraceContext { struct _opaque_pthread_mutex_t { long long x_1_1_1; BOOL x_1_1_2[56]; } x1; struct GTTraceStore {} *x2; _Atomic unsigned long long x3; _Atomic unsigned long long x4; struct apr_hash_t {} *x5; union { /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*x_6_1_1; const void*x_6_1_2; void*x_6_1_3; inout out double x_6_1_4; void*x_6_1_5; } *x6; _Atomic int x7; BOOL x8[4]; struct GTTraceStream {} *x9; _Atomic bool x10; BOOL x11[7]; struct GTTraceStoreList { union { void*x_1_2_1; void*x_1_2_2; void*x_1_2_3; const void*x_1_2_4; BOOL x_1_2_5; void*x_1_2_6; unsigned short x_1_2_7; void*x_1_2_8; out const void*x_1_2_9; inout out double x_1_2_10; void*x_1_2_11; } *x_12_1_1; union { void*x_2_2_1; void*x_2_2_2; void*x_2_2_3; const void*x_2_2_4; BOOL x_2_2_5; void*x_2_2_6; unsigned short x_2_2_7; void*x_2_2_8; out const void*x_2_2_9; inout out double x_2_2_10; void*x_2_2_11; } *x_12_1_2; _Atomic int x_12_1_3; _Atomic int x_12_1_4; } x12[16]; }*traceContext;
+@property (readonly) struct GTTraceStream { unsigned long long x1; unsigned long long x2; unsigned long long x3; struct GTTraceMemPool {} *x4; struct GTTraceStoreList { union { /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_1_2_1; void*x_1_2_2; void*x_1_2_3; const void*x_1_2_4; BOOL x_1_2_5; void*x_1_2_6; unsigned short x_1_2_7; void*x_1_2_8; out const void*x_1_2_9; inout out double x_1_2_10; void*x_1_2_11; } *x_5_1_1; union { void*x_2_2_1; void*x_2_2_2; void*x_2_2_3; const void*x_2_2_4; BOOL x_2_2_5; void*x_2_2_6; unsigned short x_2_2_7; void*x_2_2_8; out const void*x_2_2_9; inout out double x_2_2_10; void*x_2_2_11; } *x_5_1_2; _Atomic int x_5_1_3; _Atomic int x_5_1_4; } x5; _Atomic unsigned long long x6; }*traceStream;
+@property (readonly) unsigned long long uniqueIdentifier;
+
+- (void).cxx_destruct;
+- (unsigned long long)allocatedSize;
+- (id)baseObject;
+- (bool)conformsToProtocol:(id)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)descriptor;
+- (id)device;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)function;
+- (id)functionHandleMap;
+- (id)functionHandleWithFunction:(id)arg1;
+- (unsigned int)getComputeKernelTelemetryID;
+- (unsigned long long)gpuAddress;
+- (unsigned long long)gpuHandle;
+- (struct MTLResourceID { unsigned long long x1; })gpuResourceID;
+- (unsigned long long)imageblockMemoryLengthForDimensions:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
+- (id)initWithBaseObject:(id)arg1 captureComputePipelineState:(id)arg2;
+- (id)initWithBaseObject:(id)arg1 captureDevice:(id)arg2;
+- (id)label;
+- (unsigned long long)maxTotalThreadsPerThreadgroup;
+- (id)newComputePipelineStateWithAdditionalBinaryFunctions:(id)arg1 error:(id*)arg2;
+- (bool)newFunctionHandle:(out id*)arg1 associatedWithBaseFunctionHandle:(id)arg2 captureFunction:(id)arg3;
+- (id)newIntersectionFunctionTableWithDescriptor:(id)arg1;
+- (id)newVisibleFunctionTableWithDescriptor:(id)arg1;
+- (id)originalObject;
+- (id)reflection;
+- (unsigned long long)resourceIndex;
+- (bool)respondsToSelector:(SEL)arg1;
+- (void)setDescriptor:(id)arg1;
+- (void)setFunction:(id)arg1;
+- (void)setReflection:(id)arg1;
+- (unsigned long long)staticThreadgroupMemoryLength;
+- (unsigned long long)streamReference;
+- (bool)supportIndirectCommandBuffers;
+- (long long)textureWriteRoundingMode;
+- (unsigned long long)threadExecutionWidth;
+- (void)touch;
+- (struct GTTraceContext { struct _opaque_pthread_mutex_t { long long x_1_1_1; BOOL x_1_1_2[56]; } x1; struct GTTraceStore {} *x2; _Atomic unsigned long long x3; _Atomic unsigned long long x4; struct apr_hash_t {} *x5; union { /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*x_6_1_1; const void*x_6_1_2; void*x_6_1_3; inout out double x_6_1_4; void*x_6_1_5; } *x6; _Atomic int x7; BOOL x8[4]; struct GTTraceStream {} *x9; _Atomic bool x10; BOOL x11[7]; struct GTTraceStoreList { union { void*x_1_2_1; void*x_1_2_2; void*x_1_2_3; const void*x_1_2_4; BOOL x_1_2_5; void*x_1_2_6; unsigned short x_1_2_7; void*x_1_2_8; out const void*x_1_2_9; inout out double x_1_2_10; void*x_1_2_11; } *x_12_1_1; union { void*x_2_2_1; void*x_2_2_2; void*x_2_2_3; const void*x_2_2_4; BOOL x_2_2_5; void*x_2_2_6; unsigned short x_2_2_7; void*x_2_2_8; out const void*x_2_2_9; inout out double x_2_2_10; void*x_2_2_11; } *x_12_1_2; _Atomic int x_12_1_3; _Atomic int x_12_1_4; } x12[16]; }*)traceContext;
+- (struct GTTraceStream { unsigned long long x1; unsigned long long x2; unsigned long long x3; struct GTTraceMemPool {} *x4; struct GTTraceStoreList { union { /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_1_2_1; void*x_1_2_2; void*x_1_2_3; const void*x_1_2_4; BOOL x_1_2_5; void*x_1_2_6; unsigned short x_1_2_7; void*x_1_2_8; out const void*x_1_2_9; inout out double x_1_2_10; void*x_1_2_11; } *x_5_1_1; union { void*x_2_2_1; void*x_2_2_2; void*x_2_2_3; const void*x_2_2_4; BOOL x_2_2_5; void*x_2_2_6; unsigned short x_2_2_7; void*x_2_2_8; out const void*x_2_2_9; inout out double x_2_2_10; void*x_2_2_11; } *x_5_1_2; _Atomic int x_5_1_3; _Atomic int x_5_1_4; } x5; _Atomic unsigned long long x6; }*)traceStream;
+- (unsigned long long)uniqueIdentifier;
+
+@end

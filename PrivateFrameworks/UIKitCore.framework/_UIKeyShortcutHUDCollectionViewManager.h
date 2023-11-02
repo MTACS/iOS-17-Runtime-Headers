@@ -1,0 +1,82 @@
+
+@interface _UIKeyShortcutHUDCollectionViewManager : NSObject <UICollectionViewDelegate, UIScrollViewDelegate> {
+    _UIKeyShortcutHUDIndexPath * _categoryVisibleIndexPath;
+    _UIKeyShortcutHUDIndexPath * _highlightedIndexPath;
+    _UIKeyShortcutHUDViewController * _hudVC;
+    <_UIKeyShortcutHUDCollectionViewManagerClient> * _menu;
+    bool  _nextFocusUpdatePrefersTopSearchResult;
+    <_UIKeyShortcutHUDCollectionViewManagerClient> * _searchButton;
+    _UIKeyShortcutHUDIndexPath * _selectedIndexPath;
+    <_UIKeyShortcutHUDCollectionViewManagerClient> * _toolbar;
+}
+
+@property (nonatomic, readonly) NSArray *allClients;
+@property (nonatomic, retain) _UIKeyShortcutHUDIndexPath *categoryVisibleIndexPath;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) _UIKeyShortcutHUDIndexPath *highlightedIndexPath;
+@property (nonatomic) _UIKeyShortcutHUDViewController *hudVC;
+@property (nonatomic) <_UIKeyShortcutHUDCollectionViewManagerClient> *menu;
+@property (nonatomic) bool nextFocusUpdatePrefersTopSearchResult;
+@property (nonatomic, readonly) NSArray *preferredFocusEnvironments;
+@property (nonatomic) <_UIKeyShortcutHUDCollectionViewManagerClient> *searchButton;
+@property (nonatomic, retain) _UIKeyShortcutHUDIndexPath *selectedIndexPath;
+@property (readonly) Class superclass;
+@property (nonatomic) <_UIKeyShortcutHUDCollectionViewManagerClient> *toolbar;
+
+- (void).cxx_destruct;
+- (void)_client:(id)arg1 deselectCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 highlightCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 performBookkeepingForDeselectingCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 performBookkeepingForHighlightingCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 performBookkeepingForRemovingCategoryVisibleForCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 performBookkeepingForSelectingCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 performBookkeepingForSettingCategoryVisibleForCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 performBookkeepingForUnhighlightingCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 removeCategoryVisibleForCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 selectCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 setCategoryVisibleForCellAtIndexPath:(id)arg2;
+- (void)_client:(id)arg1 unhighlightCellAtIndexPath:(id)arg2;
+- (id)_clientForCollectionView:(id)arg1;
+- (void)_collectionView:(id)arg1 performActionForSelectingCellAtIndexPath:(id)arg2;
+- (void)_collectionView:(id)arg1 updateSeparatorVisibilityForCellAtIndexPath:(id)arg2;
+- (void)_configureCollectionView:(id)arg1;
+- (id)allClients;
+- (id)categoryVisibleIndexPath;
+- (void)client:(id)arg1 flashCellIfPossibleAtIndexPath:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)client:(id)arg1 highlightCellAtIndexPath:(id)arg2;
+- (bool)client:(id)arg1 isCategoryVisibleForCellAtIndexPath:(id)arg2;
+- (void)client:(id)arg1 reloadSeparatorAtIndexPath:(id)arg2;
+- (void)client:(id)arg1 selectCellAtIndexPath:(id)arg2;
+- (void)client:(id)arg1 setCategoryVisibleForCellAtIndexPath:(id)arg2;
+- (bool)client:(id)arg1 shouldHideSeparatorAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
+- (bool)collectionView:(id)arg1 selectionFollowsFocusForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
+- (void)deselectCurrentlySelectedCell;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)highlightedIndexPath;
+- (id)hudVC;
+- (id)menu;
+- (bool)nextFocusUpdatePrefersTopSearchResult;
+- (id)preferredFocusEnvironments;
+- (void)reloadAllVisibleSeparatorsForClient:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (id)searchButton;
+- (id)selectedIndexPath;
+- (void)setCategoryVisibleIndexPath:(id)arg1;
+- (void)setHighlightedIndexPath:(id)arg1;
+- (void)setHudVC:(id)arg1;
+- (void)setMenu:(id)arg1;
+- (void)setNextFocusUpdatePrefersTopSearchResult:(bool)arg1;
+- (void)setSearchButton:(id)arg1;
+- (void)setSelectedIndexPath:(id)arg1;
+- (void)setToolbar:(id)arg1;
+- (id)toolbar;
+
+@end

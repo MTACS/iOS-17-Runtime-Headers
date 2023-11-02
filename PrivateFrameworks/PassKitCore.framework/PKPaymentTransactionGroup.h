@@ -1,0 +1,93 @@
+
+@interface PKPaymentTransactionGroup : NSObject <NSSecureCoding> {
+    PKAccountUser * _accountUser;
+    NSDate * _endDate;
+    PKFamilyMember * _familyMember;
+    NSArray * _groups;
+    NSSet * _handles;
+    PKMerchant * _merchant;
+    long long  _merchantCategory;
+    NSArray * _regions;
+    PKSearchQuery * _searchQuery;
+    unsigned long long  _secondaryGroupCount;
+    unsigned long long  _secondaryType;
+    NSDate * _startDate;
+    PKPaymentTransactionTag * _tag;
+    PKCurrencyAmount * _totalAmount;
+    unsigned long long  _transactionCount;
+    NSArray * _transactionTypes;
+    NSArray * _transactions;
+    unsigned long long  _type;
+}
+
+@property (nonatomic, retain) PKAccountUser *accountUser;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) PKFamilyMember *familyMember;
+@property (nonatomic, retain) NSArray *groups;
+@property (nonatomic, retain) NSSet *handles;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) PKMerchant *merchant;
+@property (nonatomic) long long merchantCategory;
+@property (nonatomic, retain) NSArray *regions;
+@property (nonatomic, retain) PKSearchQuery *searchQuery;
+@property (nonatomic) unsigned long long secondaryGroupCount;
+@property (nonatomic) unsigned long long secondaryType;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, retain) PKPaymentTransactionTag *tag;
+@property (nonatomic, retain) PKCurrencyAmount *totalAmount;
+@property (nonatomic) unsigned long long transactionCount;
+@property (nonatomic, retain) NSArray *transactionTypes;
+@property (nonatomic, retain) NSArray *transactions;
+@property (nonatomic) unsigned long long type;
+@property (nonatomic, readonly) CNContact *userContact;
+@property (nonatomic, readonly) NSString *userDisplayName;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)accountUser;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)endDate;
+- (id)familyMember;
+- (id)groups;
+- (id)handles;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)merchant;
+- (long long)merchantCategory;
+- (id)regions;
+- (id)searchQuery;
+- (unsigned long long)secondaryGroupCount;
+- (unsigned long long)secondaryType;
+- (void)setAccountUser:(id)arg1;
+- (void)setEndDate:(id)arg1;
+- (void)setFamilyMember:(id)arg1;
+- (void)setGroups:(id)arg1;
+- (void)setHandles:(id)arg1;
+- (void)setMerchant:(id)arg1;
+- (void)setMerchantCategory:(long long)arg1;
+- (void)setRegions:(id)arg1;
+- (void)setSearchQuery:(id)arg1;
+- (void)setSecondaryGroupCount:(unsigned long long)arg1;
+- (void)setSecondaryType:(unsigned long long)arg1;
+- (void)setStartDate:(id)arg1;
+- (void)setTag:(id)arg1;
+- (void)setTotalAmount:(id)arg1;
+- (void)setTransactionCount:(unsigned long long)arg1;
+- (void)setTransactionTypes:(id)arg1;
+- (void)setTransactions:(id)arg1;
+- (void)setType:(unsigned long long)arg1;
+- (id)startDate;
+- (id)tag;
+- (id)totalAmount;
+- (unsigned long long)transactionCount;
+- (id)transactionTypes;
+- (id)transactions;
+- (unsigned long long)type;
+- (id)userContact;
+- (id)userDisplayName;
+
+@end

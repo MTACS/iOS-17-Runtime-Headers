@@ -1,0 +1,4 @@
+
+@interface _TtCCC6Speech25SFCustomLanguageModelData20PhraseCountGenerator8Iterator : _TtCs12_SwiftObject
+
+@end

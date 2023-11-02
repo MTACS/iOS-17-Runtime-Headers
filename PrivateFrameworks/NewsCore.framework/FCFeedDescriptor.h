@@ -1,0 +1,82 @@
+
+@interface FCFeedDescriptor : NSObject <FCFeedAdMetadataProviding, NSCopying> {
+    FCFeedDescriptor * _alternativeFeedDescriptor;
+    <FCContentContext> * _context;
+    long long  _feedType;
+    NSString * _identifier;
+    NSArray * _otherArticleIDs;
+}
+
+@property (nonatomic, readonly) FCFeedDescriptor *alternativeFeedDescriptor;
+@property (nonatomic, readonly) <FCChannelProviding> *backingChannel;
+@property (nonatomic, readonly) NSString *backingChannelID;
+@property (nonatomic, readonly) NSString *backingSectionID;
+@property (nonatomic, readonly) <FCTagProviding> *backingTag;
+@property (nonatomic, readonly) NSString *backingTopicID;
+@property (nonatomic, retain) <FCContentContext> *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long feedConfiguration;
+@property (nonatomic, readonly) unsigned long long feedFilterOptions;
+@property (nonatomic, readonly) long long feedPersonalizationConfigurationSet;
+@property (nonatomic, readonly) long long feedSortMethod;
+@property (nonatomic, readonly) long long feedType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hideAccessoryText;
+@property (nonatomic, readonly) NSArray *iAdCategories;
+@property (nonatomic, readonly) long long iAdContentProvider;
+@property (nonatomic, readonly) NSString *iAdFeedID;
+@property (nonatomic, readonly) NSString *iAdIdentifier;
+@property (nonatomic, readonly) NSArray *iAdKeywords;
+@property (nonatomic, readonly) NSString *iAdPrimaryAudience;
+@property (nonatomic, readonly) NSString *iAdSectionID;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) bool isSubscribable;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, retain) NSArray *otherArticleIDs;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) <FCFeedTheming> *theme;
+
+- (void).cxx_destruct;
+- (id)alternativeFeedDescriptor;
+- (id)associateAlternativeFeedDescriptor:(id)arg1;
+- (id)backingChannel;
+- (id)backingChannelID;
+- (id)backingSectionID;
+- (id)backingTag;
+- (id)backingTopicID;
+- (id)context;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (unsigned long long)feedConfiguration;
+- (unsigned long long)feedFilterOptions;
+- (long long)feedPersonalizationConfigurationSet;
+- (long long)feedSortMethod;
+- (long long)feedType;
+- (id)fetchOperationForHeadlinesWithIDs:(id)arg1 context:(id)arg2;
+- (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
+- (unsigned long long)hash;
+- (bool)hideAccessoryText;
+- (id)iAdCategories;
+- (long long)iAdContentProvider;
+- (id)iAdFeedID;
+- (id)iAdIdentifier;
+- (id)iAdKeywords;
+- (id)iAdPrimaryAudience;
+- (id)iAdSectionID;
+- (id)identifier;
+- (id)init;
+- (id)initWithIdentifier:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isSubscribable;
+- (bool)isSubscribedToWithSubscriptionController:(id)arg1;
+- (id)latestHeadlineResultsWithContext:(id)arg1;
+- (id)name;
+- (id)otherArticleIDs;
+- (void)setContext:(id)arg1;
+- (void)setOtherArticleIDs:(id)arg1;
+- (id)streamOfHeadlinesWithIDs:(id)arg1 context:(id)arg2 cachedOnly:(bool)arg3 maxCachedAge:(double)arg4;
+- (id)streamOfLatestHeadlinesWithContext:(id)arg1;
+- (id)theme;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SRSensorKitServiceClientPruning <SRSensorKitServiceClientProtocol>
+
+@end

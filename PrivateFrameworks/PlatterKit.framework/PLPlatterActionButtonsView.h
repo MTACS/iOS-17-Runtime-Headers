@@ -1,0 +1,86 @@
+
+@interface PLPlatterActionButtonsView : UIView <MTMaterialGrouping, PLContentSizeCategoryAdjusting> {
+    bool  _adjustsFontForContentSizeCategory;
+    long long  _backgroundMaterialRecipe;
+    UIColor * _backgroundTintColor;
+    UIStackView * _buttonsStackView;
+    UIView * _clippingView;
+    UIAction * _defaultAction;
+    PLPlatterActionButton * _defaultActionButton;
+    _UIStatesFeedbackGenerator * _defaultActionFeedbackGenerator;
+    double  _defaultWidth;
+    bool  _didPlayHaptic;
+    bool  _highlightDefaultActionButton;
+    NSString * _materialGroupNameBase;
+    double  _stretchedWidth;
+    UIColor * _textColor;
+    bool  _verticallyStacked;
+}
+
+@property (nonatomic) bool adjustsFontForContentSizeCategory;
+@property (nonatomic) long long backgroundMaterialRecipe;
+@property (nonatomic, retain) UIColor *backgroundTintColor;
+@property (nonatomic, retain) UIStackView *buttonsStackView;
+@property (nonatomic, retain) UIView *clippingView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) UIAction *defaultAction;
+@property (nonatomic, retain) PLPlatterActionButton *defaultActionButton;
+@property (nonatomic, retain) _UIStatesFeedbackGenerator *defaultActionFeedbackGenerator;
+@property (nonatomic, readonly) double defaultWidth;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool didPlayHaptic;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool highlightDefaultActionButton;
+@property (nonatomic, copy) NSString *materialGroupNameBase;
+@property (nonatomic, copy) NSString *preferredContentSizeCategory;
+@property (nonatomic) double stretchedWidth;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *textColor;
+@property (getter=isVerticallyStacked, nonatomic, readonly) bool verticallyStacked;
+
+- (void).cxx_destruct;
+- (void)_actuateFeedbackForDefaultActionLockedIfNecessary;
+- (void)_actuateFeedbackForDefaultActionUnlockedIfNecessary;
+- (void)_configureDefaultActionFeedbackIfNecessary;
+- (void)_hideNonDefaultActionButtons;
+- (void)_layoutButtonsStackView;
+- (void)_layoutClippingView;
+- (double)_maxAllowedButtonWidth;
+- (void)_performNonDefaultActionButtonsHideRevealAnimation:(id /* block */)arg1;
+- (void)_revealNonDefaultActionButtons;
+- (unsigned long long)_widthMultipleForVerticallyStackedButtonsWithCount:(unsigned long long)arg1;
+- (bool)adjustForContentSizeCategoryChange;
+- (bool)adjustsFontForContentSizeCategory;
+- (long long)backgroundMaterialRecipe;
+- (id)backgroundTintColor;
+- (id)buttonsStackView;
+- (id)clippingView;
+- (id)defaultAction;
+- (id)defaultActionButton;
+- (id)defaultActionFeedbackGenerator;
+- (double)defaultWidth;
+- (bool)didPlayHaptic;
+- (bool)highlightDefaultActionButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 actions:(id)arg2 cornerRadius:(double)arg3 shouldVerticallyStack:(bool)arg4;
+- (bool)isVerticallyStacked;
+- (void)layoutSubviews;
+- (id)materialGroupNameBase;
+- (id)senderForActionWithIdentifier:(id)arg1;
+- (void)setAdjustsFontForContentSizeCategory:(bool)arg1;
+- (void)setBackgroundMaterialRecipe:(long long)arg1;
+- (void)setBackgroundTintColor:(id)arg1;
+- (void)setButtonsStackView:(id)arg1;
+- (void)setClippingView:(id)arg1;
+- (void)setDefaultActionButton:(id)arg1;
+- (void)setDefaultActionFeedbackGenerator:(id)arg1;
+- (void)setDidPlayHaptic:(bool)arg1;
+- (void)setHighlightDefaultActionButton:(bool)arg1;
+- (void)setMaterialGroupNameBase:(id)arg1;
+- (void)setStretchedWidth:(double)arg1;
+- (void)setTextColor:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (double)stretchedWidth;
+- (id)textColor;
+- (void)willMoveToSuperview:(id)arg1;
+
+@end

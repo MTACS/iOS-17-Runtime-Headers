@@ -1,0 +1,4 @@
+
+@interface INCExecutionInfo : INExecutionInfo
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol NANavigationControl <NUNavigationControl>
+
+@end

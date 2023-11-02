@@ -1,0 +1,4 @@
+
+@protocol MKFBulletinConditionPrivateExtensions
+
+@end

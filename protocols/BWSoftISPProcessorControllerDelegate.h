@@ -1,0 +1,4 @@
+
+@protocol BWSoftISPProcessorControllerDelegate <BWStillImageProcessorControllerDelegate>
+
+@end

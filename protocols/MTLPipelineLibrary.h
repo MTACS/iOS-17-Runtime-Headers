@@ -1,0 +1,4 @@
+
+@protocol MTLPipelineLibrary <NSObject>
+
+@end

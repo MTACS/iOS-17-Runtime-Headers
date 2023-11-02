@@ -1,0 +1,4 @@
+
+@interface SiriPrivateLearningInference.PhoneCallContactPartialRepetitionDefinition : _TtCs12_SwiftObject
+
+@end

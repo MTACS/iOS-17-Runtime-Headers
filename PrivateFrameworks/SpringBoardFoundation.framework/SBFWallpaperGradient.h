@@ -1,0 +1,4 @@
+
+@interface SBFWallpaperGradient : PBUIWallpaperGradient
+
+@end

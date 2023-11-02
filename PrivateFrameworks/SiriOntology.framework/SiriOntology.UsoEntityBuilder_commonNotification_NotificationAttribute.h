@@ -1,0 +1,4 @@
+
+@interface SiriOntology.UsoEntityBuilder_commonNotification_NotificationAttribute : SiriOntology.UsoEntityBuilderGlobalArgs
+
+@end

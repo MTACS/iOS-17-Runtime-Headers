@@ -1,0 +1,4 @@
+
+@interface RSOutsideObjectRemoval : NSObject
+
+@end

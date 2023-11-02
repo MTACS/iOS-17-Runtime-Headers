@@ -1,0 +1,4 @@
+
+@interface _TtC18PreviewsFoundationP33_DDC9AA6270E0D384365E24FEE5F0A92315AnyEquatableBox : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol UITextCursorAssertion <UITextInteractionAssertion>
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol CREquatable <CRDataType>
+
+@end

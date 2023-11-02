@@ -1,0 +1,80 @@
+
+@interface PUCropButtonTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUBrowsingViewModelChangeObserver, PUOneUpCropButtonDelegate> {
+    PUAssetViewModel * _assetViewModel;
+    PUBrowsingViewModel * _browsingViewModel;
+    PUOneUpCropButton * _button;
+    <PUCropButtonTileViewControllerDelegate> * _delegate;
+    bool  _hasShownButtonForCurrentAsset;
+    NSTimer * _invisibilityTimer;
+    bool  _presentMenuForTip;
+    bool  _presentingTip;
+    bool  _preventDismissal;
+    unsigned long long  _preventDismissalReasons;
+    bool  _showingButton;
+}
+
+@property (nonatomic, retain) PUAssetViewModel *assetViewModel;
+@property (nonatomic, retain) PUBrowsingViewModel *browsingViewModel;
+@property (nonatomic, retain) PUOneUpCropButton *button;
+@property (nonatomic, readonly) UIView *cropButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUCropButtonTileViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasShownButtonForCurrentAsset;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSTimer *invisibilityTimer;
+@property (nonatomic) bool presentMenuForTip;
+@property (nonatomic) bool presentingTip;
+@property (nonatomic) bool preventDismissal;
+@property (nonatomic) unsigned long long preventDismissalReasons;
+@property (getter=isShowingButton, nonatomic) bool showingButton;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_canShowButton;
+- (void)_createButtonIfNeeded;
+- (void)_didChangeChromeVisible:(bool)arg1;
+- (void)_didChangeCurrentAsset;
+- (void)_didChangeModelTileTransform:(id)arg1;
+- (void)_dismissButtonAfterDelay;
+- (bool)_hasUserZoomedIn;
+- (void)_invalidateTimers;
+- (void)_layoutSubviews;
+- (void)_showButton:(bool)arg1 animated:(bool)arg2;
+- (void)_updatePreventDismissalReason:(unsigned long long)arg1 activate:(bool)arg2;
+- (void)_updatePreventDismissalReasons;
+- (void)applyLayoutInfo:(id)arg1;
+- (id)assetViewModel;
+- (void)becomeReusable;
+- (id)browsingViewModel;
+- (id)button;
+- (id)cropButton;
+- (void)dealloc;
+- (id)delegate;
+- (bool)hasShownButtonForCurrentAsset;
+- (id)invisibilityTimer;
+- (bool)isShowingButton;
+- (void)oneUpCropButton:(id)arg1 didSelectAspectRatio:(struct CGSize { double x1; double x2; })arg2;
+- (void)oneUpCropButton:(id)arg1 menuPresentedDidChange:(bool)arg2;
+- (void)oneUpCropButton:(id)arg1 pointerTargetDidChange:(bool)arg2;
+- (struct CGSize { double x1; double x2; })oneUpCropButtonBoundingSize:(id)arg1;
+- (struct CGSize { double x1; double x2; })oneUpCropButtonCurrentAspectRatio:(id)arg1;
+- (struct CGSize { double x1; double x2; })oneUpCropButtonOriginalAspectRatio:(id)arg1;
+- (bool)presentMenuForTip;
+- (bool)presentingTip;
+- (bool)preventDismissal;
+- (unsigned long long)preventDismissalReasons;
+- (void)setAssetViewModel:(id)arg1;
+- (void)setBrowsingViewModel:(id)arg1;
+- (void)setButton:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHasShownButtonForCurrentAsset:(bool)arg1;
+- (void)setInvisibilityTimer:(id)arg1;
+- (void)setPresentMenuForTip:(bool)arg1;
+- (void)setPresentingTip:(bool)arg1;
+- (void)setPreventDismissal:(bool)arg1;
+- (void)setPreventDismissalReasons:(unsigned long long)arg1;
+- (void)setShowingButton:(bool)arg1;
+- (void)viewModel:(id)arg1 didChange:(id)arg2;
+
+@end

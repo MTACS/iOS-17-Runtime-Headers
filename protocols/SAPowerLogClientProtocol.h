@@ -1,0 +1,4 @@
+
+@protocol SAPowerLogClientProtocol
+
+@end

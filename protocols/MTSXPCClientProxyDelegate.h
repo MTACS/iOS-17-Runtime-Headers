@@ -1,0 +1,4 @@
+
+@protocol MTSXPCClientProxyDelegate <MTSXPCDeviceSetupClientProxyDelegate, MTSXPCDevicePairingClientProxyDelegate, MTSXPCSystemCommissionerPairingClientProxyDelegate, MTSXPCAuthorizationClientProxyDelegate>
+
+@end

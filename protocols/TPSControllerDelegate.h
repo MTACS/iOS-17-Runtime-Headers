@@ -1,0 +1,4 @@
+
+@protocol TPSControllerDelegate <NSObject>
+
+@end

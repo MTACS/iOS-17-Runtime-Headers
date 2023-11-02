@@ -1,0 +1,4 @@
+
+@protocol MTLFenceSPI <MTLFence>
+
+@end

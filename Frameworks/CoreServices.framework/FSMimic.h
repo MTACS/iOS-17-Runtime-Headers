@@ -1,0 +1,101 @@
+
+@interface FSMimic : NSObject <FSNodePropertyProviding, NSSecureCoding> {
+    NSMutableDictionary * _baseProperties;
+    unsigned int  _creator;
+    struct { 
+        unsigned int HFSTypesSet : 1; 
+        unsigned int HFSTypesUnavailable : 1; 
+    }  _flags;
+    unsigned int  _hfsType;
+    NSMutableSet * _relativePathsThatExist;
+    NSMutableDictionary * _resourceValues;
+    NSURL * _url;
+}
+
+@property (getter=isAVCHDCollection, readonly) bool AVCHDCollection;
+@property (getter=isAliasFile, nonatomic, readonly) bool aliasFile;
+@property (getter=isBusyDirectory, nonatomic, readonly) bool busyDirectory;
+@property (nonatomic, readonly) bool canIssueIO;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDirectory, nonatomic, readonly) bool directory;
+@property (getter=isExecutable, nonatomic, readonly) bool executable;
+@property (getter=isExecutableModeFile, nonatomic, readonly) bool executableModeFile;
+@property (nonatomic, readonly) bool hasHiddenExtension;
+@property (nonatomic, readonly) bool hasPackageBit;
+@property (readonly) unsigned long long hash;
+@property (getter=isHidden, nonatomic, readonly) bool hidden;
+@property (getter=isMountTrigger, nonatomic, readonly) bool mountTrigger;
+@property (getter=isOnDiskImage, nonatomic, readonly) bool onDiskImage;
+@property (getter=isOnLocalVolume, nonatomic, readonly) bool onLocalVolume;
+@property (getter=isRegularFile, nonatomic, readonly) bool regularFile;
+@property (getter=isResolvable, nonatomic, readonly) bool resolvable;
+@property (getter=isSecuredSystemContent, nonatomic, readonly) bool securedSystemContent;
+@property (getter=isSideFault, nonatomic, readonly) bool sideFault;
+@property (readonly) Class superclass;
+@property (getter=isSymbolicLink, nonatomic, readonly) bool symbolicLink;
+@property (getter=isVolume, nonatomic, readonly) bool volume;
+
++ (id)basePropertyClasses;
++ (void)checkSelectors;
++ (id)resourceValueClassesWithNull;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)URL;
+- (void)askedForMissingResourceKey:(id)arg1;
+- (void)askedForMissingSelector:(SEL)arg1;
+- (bool)canIssueIO;
+- (id)canonicalPathWithError:(id*)arg1;
+- (bool)childNodeWithRelativePathExists:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)extensionWithError:(id*)arg1;
+- (bool)getCachedResourceValueIfPresent:(id*)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (bool)getContentModificationDate:(double*)arg1 error:(id*)arg2;
+- (bool)getCreationDate:(double*)arg1 error:(id*)arg2;
+- (bool)getDeviceNumber:(int*)arg1 error:(id*)arg2;
+- (bool)getDeviceRefNum:(unsigned long long*)arg1 error:(id*)arg2;
+- (bool)getFileIdentifier:(unsigned long long*)arg1 error:(id*)arg2;
+- (bool)getFileSystemRepresentation:(BOOL)arg1 error:(id*)arg2;
+- (bool)getHFSType:(unsigned int*)arg1 creator:(unsigned int*)arg2 error:(id*)arg3;
+- (bool)getInodeNumber:(unsigned long long*)arg1 error:(id*)arg2;
+- (bool)getLength:(unsigned long long*)arg1 error:(id*)arg2;
+- (bool)getOwnerUID:(unsigned int*)arg1 error:(id*)arg2;
+- (bool)getResourceValue:(id*)arg1 forKey:(id)arg2 options:(unsigned char)arg3 error:(id*)arg4;
+- (bool)getVolumeIdentifier:(unsigned long long*)arg1 error:(id*)arg2;
+- (bool)hasHiddenExtension;
+- (bool)hasObjectValueForSelector:(SEL)arg1;
+- (bool)hasPackageBit;
+- (bool)hasResourceValueForKey:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (bool)isAVCHDCollection;
+- (bool)isAliasFile;
+- (bool)isBusyDirectory;
+- (bool)isDataContainer;
+- (bool)isDirectory;
+- (bool)isExecutable;
+- (bool)isExecutableModeFile;
+- (bool)isHidden;
+- (bool)isInTrash;
+- (bool)isMountTrigger;
+- (bool)isOnDiskImage;
+- (bool)isOnLocalVolume;
+- (bool)isOnTimeMachineVolume;
+- (bool)isRegularFile;
+- (bool)isResolvable;
+- (bool)isSecuredSystemContent;
+- (bool)isSideFault;
+- (bool)isSymbolicLink;
+- (bool)isTrashFolder;
+- (bool)isVolume;
+- (id)nameWithError:(id*)arg1;
+- (void)noteExtantChildNodeWithRelativePath:(id)arg1;
+- (id)pathWithError:(id*)arg1;
+- (void)setHFSType:(unsigned int)arg1 creator:(unsigned int)arg2;
+- (void)setHFSTypesUnavailable;
+- (void)setObjectValue:(id)arg1 forSelector:(SEL)arg2;
+- (void)setResourceValue:(id)arg1 forKey:(id)arg2;
+- (id)sideFaultResourceValuesWithError:(id*)arg1;
+
+@end

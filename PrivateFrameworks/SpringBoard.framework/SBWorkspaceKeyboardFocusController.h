@@ -1,0 +1,114 @@
+
+@interface SBWorkspaceKeyboardFocusController : NSObject <PTSettingsKeyObserver, SBMultiDisplayUserInteractionCoordinatorActiveWindowSceneObserver, SBSceneManagerObserver, _UIEventDeferringSystemShellBehaviorDelegate, _UIKeyboardArbiterOmniscientDelegate> {
+    bool  _addingSpringBoardPreferredFocusWindowScene;
+    BSCompoundAssertion * _appFocusRedirections;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _arbiterLock;
+    <_UIKeyboardArbiterAdvisor> * _arbiterLock_keyboardArbiterAdvisor;
+    unsigned long long  _eventBufferingRequestGeneration;
+    SBExternalDisplaySettings * _externalDisplaySettings;
+    NSSet * _externalSceneIdentities;
+    FBScene * _externalSceneWithFocus;
+    NSMutableDictionary * _focusServiceEventDeferralRequests;
+    bool  _focusServiceEventDeferralRequestsUpdated;
+    NSMutableArray * _focusServiceRequestedKeyboardFocusRules;
+    FBSceneManager * _frontBoardSceneManager;
+    bool  _handlingFocusLockAssertionStateChange;
+    FBScene * _highPrioritySceneToFocusInNextPolicyUpdate;
+    SBInputUISceneController * _inputUISceneController;
+    BKSHIDEventDeferringTarget * _keyboardFocusTarget;
+    FBScene * _lastAcceptedArbiterSceneSuggestion;
+    <BSInvalidatable> * _localToRemoteKeyboardFocusRule;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    _SBKeyboardFocusPolicy * _lock_effectivePolicy;
+    bool  _lock_overlayUIRequestingFocus;
+    BKSHIDEventDeferringPredicate * _lock_rootSceneKeyboardFocusPredicate;
+    FBSSceneIdentityToken * _lock_springBoardLayoutSceneIdentityToken;
+    BSCompoundAssertion * _observers;
+    BSCompoundAssertion * _preventFocusForSceneAssertion;
+    _SBRecentlyUsedSceneIdentityCache * _recentlyUsedScenes;
+    <BSInvalidatable> * _rootSceneKeyboardFocusRule;
+    <BSInvalidatable> * _rootSceneSystemKeyCommandOverlayFocusRule;
+    SBSceneManagerCoordinator * _sceneCoordinator;
+    UIWindow * _sentKeyboardFocusPredicateWindow;
+    BKSHIDEventDeferringTarget * _sentKeyboardFocusTarget;
+    <BSInvalidatable> * _spotlightSystemShortcutFocusRule;
+    BSCompoundAssertion * _springBoardFocusLockAssertions;
+    BSCompoundAssertion * _springBoardFocusRedirections;
+    BSCompoundAssertion * _springBoardWindowFocusStealingAssertions;
+    BSCompoundAssertion * _suppressKeyboardFocusEvaluationAssertion;
+    FBScene * _targetSceneForKeyboardFocusDeferring;
+    FBSScene * _targetSceneForRootKeyboardFocusRule;
+    BKSHIDEventDeferringToken * _tokenForSystemKeyCommandOverlayFocusRule;
+    unsigned long long  _userFocusRequestGeneration;
+    NSMutableArray * _userFocusRequestRuleUpdateCompletionHandlers;
+    NSMapTable * _windowSceneForSpringBoardFocusLockReasonMap;
+    SBWindowSceneManager * _windowSceneManager;
+    SBWindowScene * _windowSceneWithFocus;
+    SBMainWorkspace * _workspace;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (copy) NSSet *externalSceneIdentities;
+@property (nonatomic, readonly) FBScene *externalSceneWithFocus;
+@property (nonatomic) bool handlingFocusLockAssertionStateChange;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SBInputUISceneController *inputUISceneController;
+@property (nonatomic, readonly) FBScene *sceneWithFocusIncludingSpringBoard;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long userFocusRequestGeneration;
+@property (nonatomic, readonly) SBWindowScene *windowSceneWithFocus;
+
++ (id)new;
+
+- (void).cxx_destruct;
+- (id)_filterFocusedSceneIdentityToken:(id)arg1 focusedPID:(int)arg2 resultBlock:(id /* block */)arg3;
+- (id)_initWithWorkspace:(id)arg1 sceneCoordinator:(id)arg2 frontBoardSceneManager:(id)arg3 windowSceneManager:(id)arg4 installUIKitDependencies:(bool)arg5 initializeKeyboardArbiter:(bool)arg6 defaultSpringBoardLayoutSceneIdentityToken:(id)arg7;
+- (void)_reevaluatePolicyAndUpdateRulesFromKeyWindowNotification;
+- (bool)_setKeyboardFocusPolicy:(id)arg1;
+- (void)_updateAccessibilityDeferringRulesUnderstandingSpringBoardIsForeground:(bool)arg1;
+- (id)addKeyboardFocusObserver:(id)arg1;
+- (id)bufferEventsForSpringBoardScene:(id)arg1 reason:(id)arg2;
+- (id)deferAdditionalEnvironments:(id)arg1 whenSceneTargetHasKeyboardFocus:(id)arg2;
+- (id)description;
+- (bool)eventDeferringManagerSystemShellBehavior:(id)arg1 shouldSuppressRemoteRuleForOwningElement:(id)arg2 inEnvironment:(id)arg3;
+- (bool)eventDeferringManagerSystemShellBehaviorWantsLocalCompatibilityRules;
+- (void)explainWhyYouAreFocusingAnInvalidatedScene;
+- (id)externalSceneIdentities;
+- (id)externalSceneWithFocus;
+- (bool)handlingFocusLockAssertionStateChange;
+- (id)init;
+- (id)initWithWorkspace:(id)arg1 windowSceneManager:(id)arg2;
+- (id)inputUISceneController;
+- (id)keyboardArbiterAdvisor:(id)arg1 requestedSceneFocusDeliberationForFocusedPid:(int)arg2;
+- (id)lockFocusToSpringBoardWindowScene:(id)arg1 forReason:(id)arg2;
+- (void)multiDisplayUserInteractionCoordinator:(id)arg1 updatedActiveWindowScene:(id)arg2;
+- (int)presentingKeyboardProcessIdentifier;
+- (id)preventFocusForSceneWithIdentityToken:(id)arg1 reason:(id)arg2;
+- (id)redirectFocusForReason:(id)arg1 fromProcessIdentifier:(int)arg2 fromDeferringToken:(id)arg3 toProcessidentifier:(int)arg4 toDeferringToken:(id)arg5;
+- (id)redirectSpringBoardLockFocusForReason:(id)arg1 toProcessidentifier:(int)arg2 toDeferringToken:(id)arg3;
+- (void)removeKeyboardFocusFromScene:(id)arg1;
+- (id)requestFocusStealingForSpringBoardWindow:(id)arg1 forReason:(id)arg2;
+- (void)sceneManager:(id)arg1 didAddExternalForegroundApplicationSceneHandle:(id)arg2;
+- (void)sceneManager:(id)arg1 didRemoveExternalForegroundApplicationSceneHandle:(id)arg2;
+- (void)sceneManager:(id)arg1 willRemoveExternalForegroundApplicationSceneHandle:(id)arg2 withReason:(long long)arg3;
+- (id)sceneWithFocusIncludingSpringBoard;
+- (void)setExternalSceneIdentities:(id)arg1;
+- (void)setHandlingFocusLockAssertionStateChange:(bool)arg1;
+- (void)setUserFocusRequestGeneration:(unsigned long long)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (bool)shouldAllowInteractionTrackingKeyboardFocusUpdateForWindow:(id)arg1;
+- (bool)shouldKeyboardBeWindowSizedForHostWithIdentity:(id)arg1;
+- (id)suppressKeyboardFocusEvaluationForReason:(id)arg1;
+- (void)updateKeyboardFocusDeferringRules;
+- (void)userFocusRequestForScene:(id)arg1 reason:(id)arg2 completion:(id /* block */)arg3;
+- (unsigned long long)userFocusRequestGeneration;
+- (void)windowSceneDidConnect:(id)arg1;
+- (void)windowSceneDidDisconnect:(id)arg1;
+- (id)windowSceneWithFocus;
+
+@end

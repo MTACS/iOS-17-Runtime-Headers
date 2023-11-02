@@ -1,0 +1,4 @@
+
+@interface MTRTestClusterClusterSimpleStructEchoRequestParams : MTRUnitTestingClusterSimpleStructEchoRequestParams
+
+@end

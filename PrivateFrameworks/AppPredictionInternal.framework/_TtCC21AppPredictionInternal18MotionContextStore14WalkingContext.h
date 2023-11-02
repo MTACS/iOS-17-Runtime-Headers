@@ -1,0 +1,4 @@
+
+@interface _TtCC21AppPredictionInternal18MotionContextStore14WalkingContext : AppPredictionInternal.MotionContext
+
+@end

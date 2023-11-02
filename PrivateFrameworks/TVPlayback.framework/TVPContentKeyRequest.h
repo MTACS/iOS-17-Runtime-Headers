@@ -1,0 +1,144 @@
+
+@interface TVPContentKeyRequest : NSObject {
+    NSString * _adamID;
+    NSDictionary * _additionalRequestParams;
+    NSDictionary * _additionalRequestParamsFromResponse;
+    bool  _allowManualRenewal;
+    AVContentKeyRequest * _avContentKeyRequest;
+    NSDate * _availabilityEndDate;
+    NSString * _contentID;
+    TVPContentKeySession * _contentKeySession;
+    id  _context;
+    NSError * _error;
+    NSString * _eventReportingID;
+    NSDate * _expirationDate;
+    bool  _isLowValueKey;
+    bool  _isRenewal;
+    NSArray * _keyFormatVersions;
+    NSURL * _keyIdentifier;
+    NSData * _keyRequestData;
+    NSData * _keyResponseData;
+    NSData * _offlineKeyData;
+    NSNumber * _playbackDuration;
+    NSDate * _renewalDate;
+    NSNumber * _renewalInterval;
+    NSDate * _requestEndDate;
+    unsigned long long  _requestID;
+    NSDate * _requestStartDate;
+    NSData * _secureInvalidationNonceData;
+    NSDate * _serverRequestStartDate;
+    long long  _type;
+    NSMutableDictionary * _userInfo;
+    bool  _wantsOfflineKeysIfPossible;
+}
+
+@property (nonatomic, retain) NSString *adamID;
+@property (nonatomic, retain) NSDictionary *additionalRequestParams;
+@property (nonatomic, retain) NSDictionary *additionalRequestParamsFromResponse;
+@property (nonatomic) bool allowManualRenewal;
+@property (nonatomic, readonly) AVContentKeyRequest *avContentKeyRequest;
+@property (nonatomic, retain) NSDate *availabilityEndDate;
+@property (nonatomic, retain) NSString *contentID;
+@property (nonatomic) TVPContentKeySession *contentKeySession;
+@property (nonatomic, retain) id context;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, readonly) NSString *eventReportingID;
+@property (nonatomic, retain) NSDate *expirationDate;
+@property (nonatomic, readonly) bool isCancelled;
+@property (nonatomic) bool isLowValueKey;
+@property (nonatomic) bool isRenewal;
+@property (nonatomic, retain) NSArray *keyFormatVersions;
+@property (nonatomic, retain) NSURL *keyIdentifier;
+@property (nonatomic, retain) NSData *keyRequestData;
+@property (nonatomic, retain) NSData *keyResponseData;
+@property (nonatomic, retain) NSData *offlineKeyData;
+@property (nonatomic) long long offlineKeyRenewalPolicy;
+@property (nonatomic, retain) NSNumber *playbackDuration;
+@property (nonatomic, retain) NSDate *renewalDate;
+@property (nonatomic, retain) NSNumber *renewalInterval;
+@property (nonatomic, retain) NSDate *requestEndDate;
+@property (nonatomic, readonly) unsigned long long requestID;
+@property (nonatomic, retain) NSDate *requestStartDate;
+@property (nonatomic, retain) NSData *secureInvalidationNonceData;
+@property (nonatomic, retain) NSDate *serverRequestStartDate;
+@property (nonatomic) long long type;
+@property (nonatomic, readonly) NSMutableDictionary *userInfo;
+@property (nonatomic) bool wantsOfflineKeysIfPossible;
+
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
++ (void)initialize;
++ (id)secureInvalidationRequestForIdentifier:(id)arg1 offlineKeyData:(id)arg2 additionalRequestParams:(id)arg3 contentID:(id)arg4;
+
+- (void).cxx_destruct;
+- (id)adamID;
+- (id)additionalRequestParams;
+- (id)additionalRequestParamsFromResponse;
+- (bool)allowManualRenewal;
+- (id)avContentKeyRequest;
+- (id)availabilityEndDate;
+- (id)contentID;
+- (id)contentKeySession;
+- (id)context;
+- (id)description;
+- (id)error;
+- (id)eventReportingID;
+- (id)expirationDate;
+- (void)finish;
+- (void)finishByRequestingOfflineKeysIfPossible;
+- (id)initWithAVContentKeyRequest:(id)arg1;
+- (bool)isCancelled;
+- (bool)isLowValueKey;
+- (bool)isRenewal;
+- (id)keyFormatVersions;
+- (id)keyIdentifier;
+- (id)keyRequestData;
+- (id)keyResponseData;
+- (void)makeKeyRequestDataForCertificateData:(id)arg1 assetIDData:(id)arg2 completion:(id /* block */)arg3;
+- (id)offlineKeyData;
+- (void)offlineKeyDataFromServerKeyData:(id)arg1 completion:(id /* block */)arg2;
+- (id)offlineKeyDataFromServerKeyData:(id)arg1 error:(id*)arg2;
+- (id)playbackDuration;
+- (id)renewalDate;
+- (id)renewalInterval;
+- (id)requestEndDate;
+- (unsigned long long)requestID;
+- (id)requestStartDate;
+- (id)secureInvalidationNonceData;
+- (id)serverRequestStartDate;
+- (void)setAdamID:(id)arg1;
+- (void)setAdditionalRequestParams:(id)arg1;
+- (void)setAdditionalRequestParamsFromResponse:(id)arg1;
+- (void)setAllowManualRenewal:(bool)arg1;
+- (void)setAvailabilityEndDate:(id)arg1;
+- (void)setContentID:(id)arg1;
+- (void)setContentKeySession:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setExpirationDate:(id)arg1;
+- (void)setIsLowValueKey:(bool)arg1;
+- (void)setIsRenewal:(bool)arg1;
+- (void)setKeyFormatVersions:(id)arg1;
+- (void)setKeyIdentifier:(id)arg1;
+- (void)setKeyRequestData:(id)arg1;
+- (void)setKeyResponseData:(id)arg1;
+- (void)setOfflineKeyData:(id)arg1;
+- (void)setPlaybackDuration:(id)arg1;
+- (void)setRenewalDate:(id)arg1;
+- (void)setRenewalInterval:(id)arg1;
+- (void)setRequestEndDate:(id)arg1;
+- (void)setRequestStartDate:(id)arg1;
+- (void)setSecureInvalidationNonceData:(id)arg1;
+- (void)setServerRequestStartDate:(id)arg1;
+- (void)setType:(long long)arg1;
+- (void)setWantsOfflineKeysIfPossible:(bool)arg1;
+- (long long)type;
+- (id)userInfo;
+- (bool)wantsOfflineKeysIfPossible;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
+- (long long)offlineKeyRenewalPolicy;
+- (void)setOfflineKeyRenewalPolicy:(long long)arg1;
+
+@end

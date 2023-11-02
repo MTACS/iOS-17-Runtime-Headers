@@ -1,0 +1,4 @@
+
+@interface _TtC8SearchUIP33_DD077CBABD93B8DB16A5EDCA81F3981519ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

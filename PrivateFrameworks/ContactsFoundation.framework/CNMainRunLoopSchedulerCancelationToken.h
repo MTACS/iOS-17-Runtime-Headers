@@ -1,0 +1,4 @@
+
+@interface CNMainRunLoopSchedulerCancelationToken : CNCancelationToken
+
+@end

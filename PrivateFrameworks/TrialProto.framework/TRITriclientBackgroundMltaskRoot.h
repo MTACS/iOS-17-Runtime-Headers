@@ -1,0 +1,4 @@
+
+@interface TRITriclientBackgroundMltaskRoot : TRIPBRootObject
+
+@end

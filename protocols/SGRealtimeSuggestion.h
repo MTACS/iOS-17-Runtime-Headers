@@ -1,0 +1,4 @@
+
+@protocol SGRealtimeSuggestion <NSObject>
+
+@end

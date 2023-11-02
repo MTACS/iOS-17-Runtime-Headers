@@ -1,0 +1,4 @@
+
+@protocol HKSignedClinicalDataStoreClientInterface <NSObject>
+
+@end

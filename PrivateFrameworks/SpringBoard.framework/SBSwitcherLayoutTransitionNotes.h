@@ -1,0 +1,87 @@
+
+@interface SBSwitcherLayoutTransitionNotes : NSObject <BSDescriptionProviding> {
+    bool  _changingApps;
+    bool  _fromApp;
+    SBAppLayout * _fromAppLayout;
+    bool  _fromAppToHomeScreen;
+    bool  _fromHomeScreen;
+    bool  _fromHomeScreenToApp;
+    bool  _fromManyApps;
+    bool  _fromNoAppToApp;
+    bool  _fromSwitcher;
+    bool  _inAnySwitcher;
+    bool  _inApp;
+    SBAppLayout * _inAppLayout;
+    bool  _inHomeScreen;
+    bool  _inManyApps;
+    bool  _isHomeButtonInitiated;
+    bool  _isPIPRestore;
+    bool  _isSystemGesture;
+    bool  _movingFromManyApps;
+    bool  _movingToManyApps;
+    bool  _movingToSingleApp;
+    bool  _stableInAppOrMovingBetweenSingleApp;
+    bool  _stableInHomeScreen;
+    bool  _stableInSameApp;
+}
+
+@property (nonatomic, readonly) bool changingApps;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool fromApp;
+@property (nonatomic, readonly) SBAppLayout *fromAppLayout;
+@property (nonatomic, readonly) bool fromAppToHomeScreen;
+@property (nonatomic, readonly) bool fromHomeScreen;
+@property (nonatomic, readonly) bool fromHomeScreenToApp;
+@property (nonatomic, readonly) bool fromManyApps;
+@property (nonatomic, readonly) bool fromNoAppToApp;
+@property (nonatomic, readonly) bool fromSwitcher;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool inAnySwitcher;
+@property (nonatomic, readonly) bool inApp;
+@property (nonatomic, readonly) SBAppLayout *inAppLayout;
+@property (nonatomic, readonly) bool inHomeScreen;
+@property (nonatomic, readonly) bool inManyApps;
+@property (nonatomic, readonly) bool isHomeButtonInitiated;
+@property (nonatomic, readonly) bool isPIPRestore;
+@property (nonatomic, readonly) bool isSystemGesture;
+@property (nonatomic, readonly) bool movingFromManyApps;
+@property (nonatomic, readonly) bool movingToManyApps;
+@property (nonatomic, readonly) bool movingToSingleApp;
+@property (nonatomic, readonly) bool stableInAppOrMovingBetweenSingleApp;
+@property (nonatomic, readonly) bool stableInHomeScreen;
+@property (nonatomic, readonly) bool stableInSameApp;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)changingApps;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (bool)fromApp;
+- (id)fromAppLayout;
+- (bool)fromAppToHomeScreen;
+- (bool)fromHomeScreen;
+- (bool)fromHomeScreenToApp;
+- (bool)fromManyApps;
+- (bool)fromNoAppToApp;
+- (bool)fromSwitcher;
+- (bool)inAnySwitcher;
+- (bool)inApp;
+- (id)inAppLayout;
+- (bool)inHomeScreen;
+- (bool)inManyApps;
+- (id)initWithFromPreviousState:(id)arg1 currentLayoutState:(id)arg2 transitionRequest:(id)arg3;
+- (bool)isHomeButtonInitiated;
+- (bool)isPIPRestore;
+- (bool)isSystemGesture;
+- (bool)movingFromManyApps;
+- (bool)movingToManyApps;
+- (bool)movingToSingleApp;
+- (bool)stableInAppOrMovingBetweenSingleApp;
+- (bool)stableInHomeScreen;
+- (bool)stableInSameApp;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+
+@end

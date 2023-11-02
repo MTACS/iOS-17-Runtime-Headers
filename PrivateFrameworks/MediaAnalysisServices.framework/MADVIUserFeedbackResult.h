@@ -1,0 +1,4 @@
+
+@interface MADVIUserFeedbackResult : MADResult
+
+@end

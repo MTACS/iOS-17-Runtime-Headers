@@ -1,0 +1,4 @@
+
+@interface LPKLoginEvent : LPKUserSwitchEvent
+
+@end

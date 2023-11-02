@@ -1,0 +1,4 @@
+
+@protocol BBServerConduitClientInterface <NSObject>
+
+@end

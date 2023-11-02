@@ -1,0 +1,4 @@
+
+@interface WBSCyclerTabGroupRepresentation : WBSCyclerItemListRepresentation
+
+@end

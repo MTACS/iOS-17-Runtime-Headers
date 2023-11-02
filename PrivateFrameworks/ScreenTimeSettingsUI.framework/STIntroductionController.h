@@ -1,0 +1,81 @@
+
+@interface STIntroductionController : NSObject {
+    bool  _allowParentalControls;
+    NSString * _altDSID;
+    bool  _askForRecoveryAppleID;
+    NSNumber * _childAge;
+    NSString * _childName;
+    bool  _childOrNotSignedIntoiCloud;
+    id /* block */  _completionBlock;
+    NSNumber * _dsid;
+    bool  _forceParentalControls;
+    STIntroductionViewModel * _introductionModel;
+    bool  _isModalPresentation;
+    UINavigationController * _navigationController;
+    _TtC20ScreenTimeSettingsUI23SettingsPresetViewModel * _settingsPresetViewModel;
+    bool  _showCommunicationSafetyPane;
+    bool  _skipAppLimitsPane;
+    bool  _updateExistingSettings;
+    NSURL * _userURI;
+}
+
+@property bool allowParentalControls;
+@property (readonly, copy) NSString *altDSID;
+@property bool askForRecoveryAppleID;
+@property (readonly, copy) NSNumber *childAge;
+@property (copy) NSString *childName;
+@property (getter=isChildOrNotSignedIntoiCloud) bool childOrNotSignedIntoiCloud;
+@property (copy) id /* block */ completionBlock;
+@property (readonly, copy) NSNumber *dsid;
+@property bool forceParentalControls;
+@property (readonly) UIViewController *initialViewController;
+@property (readonly) STIntroductionViewModel *introductionModel;
+@property (nonatomic) bool isModalPresentation;
+@property (retain) UINavigationController *navigationController;
+@property (nonatomic, retain) _TtC20ScreenTimeSettingsUI23SettingsPresetViewModel *settingsPresetViewModel;
+@property bool showCommunicationSafetyPane;
+@property bool skipAppLimitsPane;
+@property bool updateExistingSettings;
+@property (copy) NSURL *userURI;
+
+- (void).cxx_destruct;
+- (void)_endIntroductionFlowWithEnablingScreenTime;
+- (void)_endIntroductionFlowWithoutEnablingScreenTime;
+- (void)_viewControllerCompleted:(id)arg1;
+- (id)_viewControllerFollowingViewController:(id)arg1;
+- (bool)allowParentalControls;
+- (id)altDSID;
+- (bool)askForRecoveryAppleID;
+- (id)childAge;
+- (id)childName;
+- (id /* block */)completionBlock;
+- (id)dsid;
+- (bool)forceParentalControls;
+- (id)initWithDSID:(id)arg1 childAge:(id)arg2 childName:(id)arg3 updateExistingSettings:(bool)arg4 restrictionsDataSource:(id)arg5;
+- (id)initWithNewUserRootViewModelCoordinator:(id)arg1;
+- (id)initialViewController;
+- (id)introductionModel;
+- (bool)isChildOrNotSignedIntoiCloud;
+- (bool)isModalPresentation;
+- (id)navigationController;
+- (void)presentOverViewController:(id)arg1;
+- (void)setAllowParentalControls:(bool)arg1;
+- (void)setAskForRecoveryAppleID:(bool)arg1;
+- (void)setChildName:(id)arg1;
+- (void)setChildOrNotSignedIntoiCloud:(bool)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setForceParentalControls:(bool)arg1;
+- (void)setIsModalPresentation:(bool)arg1;
+- (void)setNavigationController:(id)arg1;
+- (void)setSettingsPresetViewModel:(id)arg1;
+- (void)setShowCommunicationSafetyPane:(bool)arg1;
+- (void)setSkipAppLimitsPane:(bool)arg1;
+- (void)setUpdateExistingSettings:(bool)arg1;
+- (void)setUserURI:(id)arg1;
+- (id)settingsPresetViewModel;
+- (bool)showCommunicationSafetyPane;
+- (bool)skipAppLimitsPane;
+- (bool)updateExistingSettings;
+- (id)userURI;
+
+@end

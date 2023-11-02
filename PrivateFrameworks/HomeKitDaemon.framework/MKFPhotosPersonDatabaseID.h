@@ -1,0 +1,4 @@
+
+@interface MKFPhotosPersonDatabaseID : MKFPersonDatabaseID
+
+@end

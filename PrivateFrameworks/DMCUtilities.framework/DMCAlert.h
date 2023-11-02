@@ -1,0 +1,53 @@
+
+@interface DMCAlert : NSObject {
+    NSString * _alternateButtonText;
+    id /* block */  _completionBlock;
+    NSString * _defaultButtonText;
+    double  _dismissAfterTimeInterval;
+    bool  _dismissOnLock;
+    bool  _displayOnLockScreen;
+    NSString * _message;
+    id  _notification;
+    NSString * _otherButtonText;
+    NSString * _summary;
+    NSString * _title;
+}
+
+@property (nonatomic, retain) NSString *alternateButtonText;
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, retain) NSString *defaultButtonText;
+@property (nonatomic) double dismissAfterTimeInterval;
+@property (nonatomic) bool dismissOnLock;
+@property (nonatomic) bool displayOnLockScreen;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic, retain) id notification;
+@property (nonatomic, retain) NSString *otherButtonText;
+@property (nonatomic, retain) NSString *summary;
+@property (nonatomic, retain) NSString *title;
+
+- (void).cxx_destruct;
+- (id)alternateButtonText;
+- (id /* block */)completionBlock;
+- (id)defaultButtonText;
+- (double)dismissAfterTimeInterval;
+- (bool)dismissOnLock;
+- (bool)displayOnLockScreen;
+- (id)message;
+- (id)notification;
+- (id)notificationParametersOutFlags:(unsigned long long*)arg1;
+- (id)otherButtonText;
+- (void)setAlternateButtonText:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setDefaultButtonText:(id)arg1;
+- (void)setDismissAfterTimeInterval:(double)arg1;
+- (void)setDismissOnLock:(bool)arg1;
+- (void)setDisplayOnLockScreen:(bool)arg1;
+- (void)setMessage:(id)arg1;
+- (void)setNotification:(id)arg1;
+- (void)setOtherButtonText:(id)arg1;
+- (void)setSummary:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)summary;
+- (id)title;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol DTXAllowedRPC <NSObject>
+
+@end

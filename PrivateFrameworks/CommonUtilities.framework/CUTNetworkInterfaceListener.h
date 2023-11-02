@@ -1,0 +1,35 @@
+
+@interface CUTNetworkInterfaceListener : NSObject {
+    NSSet * _IPv4Addresses;
+    NSSet * _IPv6Addresses;
+    int  _cellState;
+    NSHashTable * _delegateMap;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    void * _dynamicStore;
+    int  _wifiState;
+}
+
+@property (nonatomic, readonly) NSSet *IPv4Addresses;
+@property (nonatomic, readonly) NSSet *IPv6Addresses;
+@property (nonatomic, readonly) int cellState;
+@property (nonatomic, readonly) int wifiState;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (id)IPv4Addresses;
+- (id)IPv6Addresses;
+- (void)_handleNetworkChange:(id)arg1;
+- (void)_notifyDelegatesOfAddressChange:(id)arg1 isIPv6:(bool)arg2;
+- (void)_notifyDelegatesOfCellChange:(int)arg1;
+- (void)_notifyDelegatesOfWifiChange:(int)arg1;
+- (void)addDelegate:(id)arg1;
+- (id)allocWithZone:(struct _NSZone { }*)arg1;
+- (int)cellState;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)removeDelegate:(id)arg1;
+- (int)wifiState;
+
+@end

@@ -1,0 +1,83 @@
+
+@interface HULockupView : UIView <HUCellProtocol, HUExpandableTextViewDelegate> {
+    <HULockupViewDelegate> * _delegate;
+    HUExpandableTextView * _descriptionExpandableTextView;
+    UILabel * _detailLabel;
+    HUDownloadControl * _downloadControl;
+    NSLayoutConstraint * _downloadControlCenterYConstraint;
+    NSLayoutConstraint * _downloadControlTopConstraint;
+    NSLayoutConstraint * _downloadControlWidthConstraint;
+    unsigned long long  _iconSize;
+    UIView * _iconView;
+    <HULockupInternalResizingDelegate> * _internalViewResizingDelegate;
+    HFItem * _item;
+    UIStackView * _labelStackView;
+    UILabel * _secondaryDetailLabel;
+    UIStackView * _stackView;
+    UILabel * _titleLabel;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HULockupViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) HUExpandableTextView *descriptionExpandableTextView;
+@property (nonatomic, retain) UILabel *detailLabel;
+@property (nonatomic, retain) HUDownloadControl *downloadControl;
+@property (nonatomic, retain) NSLayoutConstraint *downloadControlCenterYConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *downloadControlTopConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *downloadControlWidthConstraint;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long iconSize;
+@property (nonatomic, retain) UIView *iconView;
+@property (nonatomic) <HULockupInternalResizingDelegate> *internalViewResizingDelegate;
+@property (nonatomic, retain) HFItem *item;
+@property (nonatomic, retain) UIStackView *labelStackView;
+@property (nonatomic) <HUResizableCellDelegate> *resizingDelegate;
+@property (nonatomic, retain) UILabel *secondaryDetailLabel;
+@property (nonatomic, retain) UIStackView *stackView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UILabel *titleLabel;
+
+- (void).cxx_destruct;
+- (void)_buttonTapped:(id)arg1;
+- (double)_maxPossibleTitleLengthForDownloadControl;
+- (id)delegate;
+- (id)descriptionExpandableTextView;
+- (id)detailLabel;
+- (id)downloadControl;
+- (id)downloadControlCenterYConstraint;
+- (id)downloadControlTopConstraint;
+- (id)downloadControlWidthConstraint;
+- (void)expandableTextViewDidCollapse:(id)arg1;
+- (void)expandableTextViewDidExpand:(id)arg1;
+- (unsigned long long)iconSize;
+- (id)iconView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initializeIconViewWithSize:(unsigned long long)arg1;
+- (id)internalViewResizingDelegate;
+- (id)item;
+- (id)labelStackView;
+- (void)resetDownloadControlVerticalConstraint;
+- (id)secondaryDetailLabel;
+- (void)setDelegate:(id)arg1;
+- (void)setDescriptionExpandableTextView:(id)arg1;
+- (void)setDetailLabel:(id)arg1;
+- (void)setDownloadControl:(id)arg1;
+- (void)setDownloadControlCenterYConstraint:(id)arg1;
+- (void)setDownloadControlTopConstraint:(id)arg1;
+- (void)setDownloadControlWidthConstraint:(id)arg1;
+- (void)setIconSize:(unsigned long long)arg1;
+- (void)setIconView:(id)arg1;
+- (void)setInternalViewResizingDelegate:(id)arg1;
+- (void)setItem:(id)arg1;
+- (void)setLabelStackView:(id)arg1;
+- (void)setSecondaryDetailLabel:(id)arg1;
+- (void)setStackView:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (id)stackView;
+- (id)titleLabel;
+- (void)updateDescriptionExpandableTextView:(id)arg1 animate:(bool)arg2;
+- (void)updateIconView:(id)arg1 animate:(bool)arg2;
+- (void)updateUIWithAnimation:(bool)arg1;
+
+@end

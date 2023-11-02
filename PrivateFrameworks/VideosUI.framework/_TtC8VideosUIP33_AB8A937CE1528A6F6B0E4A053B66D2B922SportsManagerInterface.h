@@ -1,0 +1,4 @@
+
+@interface _TtC8VideosUIP33_AB8A937CE1528A6F6B0E4A053B66D2B922SportsManagerInterface : _TtCs12_SwiftObject
+
+@end

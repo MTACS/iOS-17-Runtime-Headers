@@ -1,0 +1,92 @@
+
+@interface AFLanguageDetectionUserContext : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _currentKeyboard;
+    NSNumber * _dictationInputOrigin;
+    NSMutableDictionary * _dictationLanguageMappingCache;
+    NSArray * _dictationLanguages;
+    NSArray * _finalDictationLanguages;
+    NSString * _globalLastUsedKeyboard;
+    NSDictionary * _keyboardConversationLanguagePriors;
+    NSArray * _keyboardConvoRecentMessages;
+    NSDictionary * _keyboardGlobalLanguagePriors;
+    NSDictionary * _languageCodeOverrides;
+    bool  _languageToggled;
+    NSMutableDictionary * _lidUserContext;
+    NSArray * _multiLingualKeyboardLanguages;
+    NSString * _prevMessageLanguage;
+    NSString * _primaryLanguageCode;
+    bool  _simulateLanguageDetectorAssetsAvailability;
+    NSArray * _simulatingLanguageCodes;
+    unsigned int  _userContextChangeBit;
+}
+
+@property (nonatomic, copy) NSString *currentKeyboard;
+@property (nonatomic, copy) NSNumber *dictationInputOrigin;
+@property (nonatomic, copy) NSArray *dictationLanguages;
+@property (nonatomic, copy) NSString *globalLastUsedKeyboard;
+@property (nonatomic, copy) NSDictionary *keyboardConversationLanguagePriors;
+@property (nonatomic, copy) NSArray *keyboardConvoRecentMessages;
+@property (nonatomic, copy) NSDictionary *keyboardGlobalLanguagePriors;
+@property (nonatomic, copy) NSDictionary *languageCodeOverrides;
+@property (getter=wasLanguageToggled, setter=setWasLanguageToggled:, nonatomic) bool languageToggled;
+@property (nonatomic, copy) NSArray *multiLingualKeyboardLanguages;
+@property (nonatomic, copy) NSString *prevMessageLanguage;
+@property (nonatomic, copy) NSString *primaryLanguageCode;
+
++ (id)defaultContextWithPrimaryLanguage:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)_removeContextValueForKey:(id)arg1 context:(id)arg2;
+- (void)_setContextValue:(id)arg1 forKey:(id)arg2 context:(id)arg3;
+- (void)_setDictationLanguageCodeMappingCache:(id)arg1;
+- (void)_setFinalFilteredDictationLanguages:(id)arg1;
+- (void)_setLanguageDetectorContext:(id)arg1;
+- (void)_setUserContextChangeBit:(unsigned int)arg1;
+- (void)_updateContextValue:(id)arg1 forKey:(id)arg2 context:(id)arg3;
+- (id)context;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentKeyboard;
+- (id)description;
+- (id)dictationInputOrigin;
+- (id)dictationLanguages;
+- (void)encodeWithCoder:(id)arg1;
+- (id)finalFilteredDictationLanguages;
+- (id)getContextForAnalytics;
+- (id)getDictationLanguagesForSupportedLocales:(id)arg1 error:(id*)arg2;
+- (id)getSiriDictationLanguagesFromLanguages:(id)arg1;
+- (id)globalLastUsedKeyboard;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)isUpdateAvailableForLanguageDetectorContext;
+- (id)keyboardConversationLanguagePriors;
+- (id)keyboardConvoRecentMessages;
+- (id)keyboardGlobalLanguagePriors;
+- (id)languageCodeOverrides;
+- (unsigned int)languageDetectorContextChangeBits;
+- (id)languageDetectorUserContext;
+- (id)multiLingualKeyboardLanguages;
+- (id)prevMessageLanguage;
+- (id)primaryLanguageCode;
+- (id)priorsByReplacingKeyboardLanguage:(id)arg1;
+- (void)setCurrentKeyboard:(id)arg1;
+- (void)setDictationInputOrigin:(id)arg1;
+- (void)setDictationLanguages:(id)arg1;
+- (void)setGlobalLastUsedKeyboard:(id)arg1;
+- (void)setKeyboardConversationLanguagePriors:(id)arg1;
+- (void)setKeyboardConvoRecentMessages:(id)arg1;
+- (void)setKeyboardGlobalLanguagePriors:(id)arg1;
+- (void)setLanguageCodeOverrides:(id)arg1;
+- (void)setMultiLingualKeyboardLanguages:(id)arg1;
+- (void)setPrevMessageLanguage:(id)arg1;
+- (void)setPrimaryLanguageCode:(id)arg1;
+- (void)setShouldSimulateLanguageDetectorAssetsAvailability:(bool)arg1;
+- (void)setSimulatingLanguageCodes:(id)arg1;
+- (void)setWasLanguageToggled:(bool)arg1;
+- (bool)shouldSimulateLanguageDetectorAssetsAvailability;
+- (id)simulatingLanguageCodes;
+- (id)siriDictationLanguageForLanguage:(id)arg1;
+- (id)userContextLanguageCodeForKeyboardLangauge:(id)arg1 overrideLanguageCode:(id)arg2;
+- (bool)wasLanguageToggled;
+
+@end

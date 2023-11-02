@@ -1,0 +1,4 @@
+
+@protocol MKFCharacteristicRangeEventPrivateExtensions
+
+@end

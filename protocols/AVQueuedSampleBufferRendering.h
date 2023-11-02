@@ -1,0 +1,14 @@
+
+@protocol AVQueuedSampleBufferRendering <NSObject>
+
+@required
+
+- (void)enqueueSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)flush;
+- (bool)hasSufficientMediaDataForReliablePlaybackStart;
+- (bool)isReadyForMoreMediaData;
+- (void)requestMediaDataWhenReadyOnQueue:(void *)arg1 usingBlock:(void *)arg2; // needs 2 arg types, found 6: NSObject<OS_dispatch_queue> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)stopRequestingMediaData;
+- (struct OpaqueCMTimebase { }*)timebase;
+
+@end

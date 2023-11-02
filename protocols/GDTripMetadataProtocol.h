@@ -1,0 +1,4 @@
+
+@protocol GDTripMetadataProtocol <NSObject>
+
+@end

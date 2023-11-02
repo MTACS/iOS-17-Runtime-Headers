@@ -1,0 +1,4 @@
+
+@protocol CRTextRecognizerDecodingTransientResult <NSObject>
+
+@end

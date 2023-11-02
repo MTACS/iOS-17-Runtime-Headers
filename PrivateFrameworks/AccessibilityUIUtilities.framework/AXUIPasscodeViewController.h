@@ -1,0 +1,86 @@
+
+@interface AXUIPasscodeViewController : DevicePINController <AXUIPasscodePaneContainingNavigationControllerDelegate, UIPopoverPresentationControllerDelegate> {
+    bool  _asynchronouslyCheckedPinWasValid;
+    <AXUIPasscodeViewControllerDelegate> * _delegate;
+    UINavigationController * _hostingNavigationController;
+    NSString * _passcode;
+    bool  _passcodeViewVisible;
+    int  _pinLength;
+    NSString * _pinViewTitle;
+    int  _presentationStyle;
+    UIViewController * _presentorViewController;
+}
+
+@property (nonatomic) bool asynchronouslyCheckedPinWasValid;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AXUIPasscodeViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UINavigationController *hostingNavigationController;
+@property (nonatomic, copy) NSString *passcode;
+@property (getter=isPasscodeViewVisible, nonatomic) bool passcodeViewVisible;
+@property (nonatomic) int pinLength;
+@property (nonatomic, retain) NSString *pinViewTitle;
+@property (nonatomic) int presentationStyle;
+@property (nonatomic, retain) UIViewController *presentorViewController;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (long long)_activeInterfaceOrientation;
+- (bool)_canShowWhileLocked;
+- (void)_didFinishDismissingPasscodeViewWithReason:(long long)arg1;
+- (void)_dismissPasscodeViewAnimated:(bool)arg1 withReason:(long long)arg2;
+- (void)_notifyDelegateOfPasscodeViewDismissalWithReason:(long long)arg1;
+- (void)_notifyDelegateOfPasscodeViewVisibilityChange;
+- (void)_presentPasscodeViewWithParentViewController:(id)arg1 animated:(bool)arg2;
+- (bool)_shouldAllowMultipleEntryAttempts;
+- (bool)_shouldShowCancelButton;
+- (void)_slidePasscodeField;
+- (void)_updateErrorTextAndFailureCount:(bool)arg1;
+- (bool)asynchronouslyCheckedPinWasValid;
+- (long long)axui_activeInterfaceOrientationForNavigationController:(id)arg1;
+- (void)cancelButtonTapped;
+- (id)delegate;
+- (void)didAcceptEnteredPIN;
+- (void)didAcceptSetPIN;
+- (void)dismissPasscodeViewAnimated:(bool)arg1 reason:(long long)arg2;
+- (id)hostingNavigationController;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithPresentationStyle:(int)arg1 forSetup:(bool)arg2 pinLength:(unsigned long long)arg3;
+- (bool)isNumericPIN;
+- (bool)isPasscodeViewVisible;
+- (void)loadView;
+- (long long)navigationControllerPreferredInterfaceOrientationForPresentation:(id)arg1;
+- (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
+- (id)passcode;
+- (void)pinEntered:(id)arg1;
+- (bool)pinIsAcceptable:(id)arg1 outError:(id*)arg2;
+- (int)pinLength;
+- (id)pinViewTitle;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)presentPasscodeViewWithParentViewController:(id)arg1 animated:(bool)arg2;
+- (void)presentationControllerDidDismiss:(id)arg1;
+- (bool)presentationControllerShouldDismiss:(id)arg1;
+- (int)presentationStyle;
+- (id)presentorViewController;
+- (bool)requiresKeyboard;
+- (void)setAsynchronouslyCheckedPinWasValid:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHostingNavigationController:(id)arg1;
+- (void)setPIN:(id)arg1;
+- (void)setPasscode:(id)arg1;
+- (void)setPasscodeViewVisible:(bool)arg1;
+- (void)setPinLength:(int)arg1;
+- (void)setPinViewTitle:(id)arg1;
+- (void)setPresentationStyle:(int)arg1;
+- (void)setPresentorViewController:(id)arg1;
+- (bool)simplePIN;
+- (id)stringsBundle;
+- (unsigned long long)supportedInterfaceOrientations;
+- (bool)switchFromKeypadToKeyboard;
+- (bool)useProgressiveDelays;
+- (bool)validatePIN:(id)arg1;
+- (void)viewWillLayoutSubviews;
+
+@end

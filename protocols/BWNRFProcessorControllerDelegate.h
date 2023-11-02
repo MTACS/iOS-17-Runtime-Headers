@@ -1,0 +1,4 @@
+
+@protocol BWNRFProcessorControllerDelegate <BWNoiseReductionAndFusionProcessorDelegate>
+
+@end

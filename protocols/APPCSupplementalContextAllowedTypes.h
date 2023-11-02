@@ -1,0 +1,4 @@
+
+@protocol APPCSupplementalContextAllowedTypes <NSSecureCoding>
+
+@end

@@ -1,0 +1,88 @@
+
+@interface SBRecordingIndicatorManager : NSObject <PTSettingsKeyObserver, SBRecordingIndicatorViewControllerDelegate, SBSensorActivityObserver, SBUIActiveOrientationObserver, SBWindowSceneStatusBarAssertionManagerObserver> {
+    NSSet * _activeCameraAndMicrophoneActivityAttributions;
+    SBSensorActivityDataProvider * _dataProvider;
+    unsigned long long  _displayMode;
+    NSDate * _indicatorDisplayTime;
+    bool  _indicatorIsHiddenForControlCenter;
+    bool  _indicatorStatusBarPartIsHidden;
+    bool  _indicatorVisible;
+    bool  _indicatorVisibleAtStatusBarLocation;
+    NSTimer * _minimumTimeOnScreenTimer;
+    SBRecordingIndicatorSystemApertureElement * _recordingIndicatorElement;
+    <SAInvalidatable> * _recordingIndicatorElementAssertion;
+    SBRecordingIndicatorViewController * _recordingIndicatorViewController;
+    SBRecordingIndicatorViewController * _recordingIndicatorViewControllerSystemAperturePortal;
+    SBRecordingIndicatorViewController * _recordingIndicatorViewControllerUIKitStatusBarPortal;
+    UIWindow * _recordingIndicatorWindow;
+    UIWindow * _recordingIndicatorWindowSystemAperturePortal;
+    UIWindow * _recordingIndicatorWindowUIKitStatusBarPortal;
+    bool  _systemApertureEmpty;
+    bool  _systemApertureIsSoLargeThatTheStatusBarIsProbablyHidden;
+    bool  _visibilityIsForcedByPrototypeSettings;
+    SBWindowScene * _windowScene;
+}
+
+@property (nonatomic, retain) NSSet *activeCameraAndMicrophoneActivityAttributions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long displayMode;
+@property (readonly) unsigned long long hash;
+@property (getter=isIndicatorVisible, nonatomic, readonly) bool indicatorVisible;
+@property (getter=isIndicatorVisibleAtStatusBarLocation, nonatomic, readonly) bool indicatorVisibleAtStatusBarLocation;
+@property (nonatomic, retain) SBRecordingIndicatorSystemApertureElement *recordingIndicatorElement;
+@property (nonatomic, retain) <SAInvalidatable> *recordingIndicatorElementAssertion;
+@property (readonly) Class superclass;
+@property (getter=isSystemApertureEmpty, nonatomic) bool systemApertureEmpty;
+@property (nonatomic) bool systemApertureIsSoLargeThatTheStatusBarIsProbablyHidden;
+@property (nonatomic) SBWindowScene *windowScene;
+
+- (void).cxx_destruct;
+- (void)_createRecordingIndicatorForStandaloneLocation;
+- (void)_createRecordingIndicatorForStatusBarLocation;
+- (void)_createRecordingIndicatorForSystemApertureLocation;
+- (void)_dataProviderDidUpdate:(id)arg1;
+- (id)_indicatorColorForSensorType:(long long)arg1;
+- (id)_indicatorIdentifierForSensorType:(long long)arg1;
+- (unsigned long long)_indicatorShapeForSensorType:(long long)arg1;
+- (void)_setIndicatorVisible:(bool)arg1 atLocation:(unsigned long long)arg2;
+- (bool)_supportsStatusBarItem;
+- (void)_updateIndicatorStyleForSensorActivityAttributions:(id)arg1;
+- (void)_updateIndicatorViewForSensorType:(long long)arg1;
+- (void)_updateRecordingIndicatorForStatusBarChanges;
+- (void)_updateRecordingIndicatorLocationIfNecessary;
+- (void)_updateSystemApertureElementAssertion;
+- (id)activeCameraAndMicrophoneActivityAttributions;
+- (void)activeInterfaceOrientationDidChangeToOrientation:(long long)arg1 willAnimateWithDuration:(double)arg2 fromOrientation:(long long)arg3;
+- (void)activeInterfaceOrientationWillChangeToOrientation:(long long)arg1;
+- (void)activityDidChangeForSensorActivityDataProvider:(id)arg1;
+- (void)controlCenterDidDismiss:(id)arg1;
+- (void)controlCenterWillPresent:(id)arg1;
+- (void)dealloc;
+- (void)differentiateWithoutColorDidChange:(id)arg1;
+- (unsigned long long)displayMode;
+- (id)initWithWindowScene:(id)arg1;
+- (bool)isIndicatorVisible;
+- (bool)isIndicatorVisibleAtStatusBarLocation;
+- (bool)isSystemApertureEmpty;
+- (id)recordingIndicatorElement;
+- (id)recordingIndicatorElementAssertion;
+- (void)recordingIndicatorViewController:(id)arg1 didUpdateIndicatorState:(unsigned long long)arg2;
+- (void)setActiveCameraAndMicrophoneActivityAttributions:(id)arg1;
+- (void)setIndicatorVisible:(bool)arg1;
+- (void)setIndicatorVisibleAtStatusBarLocation:(bool)arg1;
+- (void)setRecordingIndicatorElement:(id)arg1;
+- (void)setRecordingIndicatorElementAssertion:(id)arg1;
+- (void)setSystemApertureEmpty:(bool)arg1;
+- (void)setSystemApertureIsSoLargeThatTheStatusBarIsProbablyHidden:(bool)arg1;
+- (void)setWindowScene:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (void)statusBarAssertionManager:(id)arg1 addStatusBarSettingsAssertion:(id)arg2;
+- (void)statusBarAssertionManager:(id)arg1 removeStatusBarSettingsAssertion:(id)arg2;
+- (bool)systemApertureIsSoLargeThatTheStatusBarIsProbablyHidden;
+- (void)systemApertureLayoutDidChange:(id)arg1;
+- (void)updateRecordingIndicatorForStatusBarChanges;
+- (void)updateRecordingIndicatorLocationIfNecessary;
+- (id)windowScene;
+
+@end

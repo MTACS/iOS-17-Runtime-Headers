@@ -1,0 +1,84 @@
+
+@interface CDRichComplicationImageView : UIView <CDRichComplicationTintedPlatterColorOverridable, CLKMonochromeComplicationView, CLKMonochromeFilterProvider> {
+    CLKDevice * _device;
+    <CLKMonochromeFilterProvider> * _filterProvider;
+    UIFontDescriptor * _fontDescriptor;
+    double  _fontSizeFactor;
+    bool  _hostingOverrideView;
+    CLKFullColorImageProvider * _imageProvider;
+    double  _inMonochromeModeFraction;
+    long long  _monochromeFilterType;
+    CDStackedImagesComplicationImageView * _monochromeImageView;
+    bool  _paused;
+    bool  _prefersFilterOverTransition;
+    UIView * _richComplicationImageView;
+    NSNumber * _tritiumUpdateMode;
+    bool  _useAccentColor;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CLKDevice *device;
+@property (nonatomic) <CLKMonochromeFilterProvider> *filterProvider;
+@property (nonatomic, copy) UIFontDescriptor *fontDescriptor;
+@property (nonatomic) double fontSizeFactor;
+@property (readonly) unsigned long long hash;
+@property (getter=isHostingOverrideView, nonatomic) bool hostingOverrideView;
+@property (nonatomic, retain) CLKFullColorImageProvider *imageProvider;
+@property (nonatomic) double inMonochromeModeFraction;
+@property (nonatomic) long long monochromeFilterType;
+@property (nonatomic) CDStackedImagesComplicationImageView *monochromeImageView;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (nonatomic) bool prefersFilterOverTransition;
+@property (nonatomic) UIView *richComplicationImageView;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSNumber *tritiumUpdateMode;
+@property (nonatomic, readonly) bool useAccentColor;
+
+- (void).cxx_destruct;
+- (id)_createMonochromeImageView;
+- (long long)_filterStyle;
+- (bool)_isSymbolImageProvider;
+- (bool)_isSymbolImageProviderWithoutSpecificSize;
+- (id)colorForView:(id)arg1 accented:(bool)arg2;
+- (id)device;
+- (id)filterForView:(id)arg1 style:(long long)arg2;
+- (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)filterProvider;
+- (id)filtersForView:(id)arg1 style:(long long)arg2;
+- (id)filtersForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)fontDescriptor;
+- (double)fontSizeFactor;
+- (id)imageProvider;
+- (double)inMonochromeModeFraction;
+- (id)initWithDevice:(id)arg1 useAccentColor:(bool)arg2;
+- (id)interpolatedColorForView:(id)arg1;
+- (bool)isHostingOverrideView;
+- (bool)isPaused;
+- (void)layoutSubviews;
+- (long long)monochromeFilterType;
+- (id)monochromeImageView;
+- (bool)prefersFilterOverTransition;
+- (void)renderSynchronouslyWithImageQueueDiscard:(bool)arg1 inGroup:(id)arg2;
+- (id)richComplicationImageView;
+- (void)setFilterProvider:(id)arg1;
+- (void)setFontDescriptor:(id)arg1;
+- (void)setFontSizeFactor:(double)arg1;
+- (void)setHostingOverrideView:(bool)arg1;
+- (void)setImageProvider:(id)arg1;
+- (void)setImageProvider:(id)arg1 reason:(long long)arg2;
+- (void)setInMonochromeModeFraction:(double)arg1;
+- (void)setMonochromeFilterType:(long long)arg1;
+- (void)setMonochromeImageView:(id)arg1;
+- (void)setPaused:(bool)arg1;
+- (void)setPrefersFilterOverTransition:(bool)arg1;
+- (void)setRichComplicationImageView:(id)arg1;
+- (void)setTintedFraction:(double)arg1;
+- (void)setTintedPlatterColor:(id)arg1;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (id)tritiumUpdateMode;
+- (void)updateMonochromeColor;
+- (bool)useAccentColor;
+- (bool)viewShouldIgnoreTwoPieceImage:(id)arg1;
+
+@end

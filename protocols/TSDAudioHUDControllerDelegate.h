@@ -1,0 +1,4 @@
+
+@protocol TSDAudioHUDControllerDelegate <NSObject>
+
+@end

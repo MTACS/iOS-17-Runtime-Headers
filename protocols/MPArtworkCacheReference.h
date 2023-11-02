@@ -1,0 +1,4 @@
+
+@protocol MPArtworkCacheReference
+
+@end

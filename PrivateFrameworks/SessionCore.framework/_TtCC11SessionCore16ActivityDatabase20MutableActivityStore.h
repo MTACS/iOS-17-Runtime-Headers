@@ -1,0 +1,4 @@
+
+@interface _TtCC11SessionCore16ActivityDatabase20MutableActivityStore : _TtCC11SessionCore16ActivityDatabase13ActivityStore
+
+@end

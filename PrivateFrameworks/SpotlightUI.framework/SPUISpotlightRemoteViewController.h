@@ -1,0 +1,82 @@
+
+@interface SPUISpotlightRemoteViewController : UIViewController <FBApplicationUpdateScenesTransactionObserver, FBProcessWatchdogProviding, FBSceneObserver, SPUISpotlightSceneManagerDelegate> {
+    bool  _crashedWhileForeground;
+    long long  _currentOrientation;
+    bool  _delayPresentationTillSceneContentIsReady;
+    FBSDisplayConfiguration * _displayConfiguration;
+    UIView<UIScenePresentation> * _hostView;
+    _UILegibilitySettings * _legibilitySettings;
+    <UIScenePresenter> * _presenter;
+    bool  _prewarmSceneInTheBackground;
+    FBScene * _scene;
+    NSMutableArray * _sceneEventsQueue;
+    NSString * _sceneIdentifier;
+    FBApplicationUpdateScenesTransaction * _transaction;
+}
+
+@property (nonatomic) bool crashedWhileForeground;
+@property (nonatomic) long long currentOrientation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) FBSDisplayConfiguration *displayConfiguration;
+@property (readonly) unsigned long long hash;
+@property (retain) UIView<UIScenePresentation> *hostView;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (retain) <UIScenePresenter> *presenter;
+@property (nonatomic, readonly) bool prewarmSceneInTheBackground;
+@property (retain) FBScene *scene;
+@property (retain) NSMutableArray *sceneEventsQueue;
+@property (retain) NSString *sceneIdentifier;
+@property (readonly) Class superclass;
+@property (retain) FBApplicationUpdateScenesTransaction *transaction;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (void)addOrExecuteEventAsNeeded:(id /* block */)arg1;
+- (void)clearEventQueue;
+- (bool)crashedWhileForeground;
+- (void)createSceneIfNeededWithPriority:(long long)arg1;
+- (void)createSceneWithPriority:(long long)arg1;
+- (long long)currentOrientation;
+- (void)didInvalidateSceneWhenForeground;
+- (id)displayConfiguration;
+- (id)hostView;
+- (id)initWithSceneIdentifier:(id)arg1;
+- (struct CGSize { double x1; double x2; })initialFittingSize;
+- (id)legibilitySettings;
+- (id)presenter;
+- (bool)prewarmSceneInTheBackground;
+- (id)scene;
+- (void)sceneContentStateDidChange:(id)arg1;
+- (void)sceneDidInvalidate:(id)arg1;
+- (id)sceneEventsQueue;
+- (id)sceneIdentifier;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sceneSettingsFrameFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)sceneSpecification;
+- (void)setCrashedWhileForeground:(bool)arg1;
+- (void)setCurrentOrientation:(long long)arg1;
+- (void)setDisplayConfiguration:(id)arg1;
+- (void)setForeground:(bool)arg1;
+- (void)setHostView:(id)arg1;
+- (void)setLegibilitySettings:(id)arg1;
+- (void)setPresenter:(id)arg1;
+- (void)setScene:(id)arg1;
+- (void)setSceneEventsQueue:(id)arg1;
+- (bool)setSceneFrameOnRotation;
+- (void)setSceneIdentifier:(id)arg1;
+- (void)setTransaction:(id)arg1;
+- (id)transaction;
+- (void)transaction:(id)arg1 didCreateScene:(id)arg2;
+- (void)updateSafeAreasOnSettings:(id)arg1;
+- (void)updateSceneToOrientation:(long long)arg1 withTransitionCoordinator:(id)arg2;
+- (void)updateTraitCollection;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
+- (id)watchdogTerminationRequestForProcess:(id)arg1 error:(id)arg2;
+- (void)willLaunchSpotlightInBackground;
+
+@end

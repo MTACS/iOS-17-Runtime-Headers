@@ -1,0 +1,83 @@
+
+@interface SOExtension : NSObject <POExtensionRegistrationHostProtocol, SORemoteExtensionViewControllerDelegate> {
+    NSArray * _associatedDomains;
+    NSExtension * _extension;
+    NSMapTable * _extensionDelegates;
+    NSObject<OS_dispatch_queue> * _pssoQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    SORemoteExtensionViewController * _remoteViewController;
+    int  _requestCount;
+    NSUUID * _sessionID;
+}
+
+@property (nonatomic, retain) NSArray *associatedDomains;
+@property (nonatomic, readonly) NSArray *authenticationMethods;
+@property (nonatomic, readonly) NSString *containerAppBundleIdentifier;
+@property (nonatomic, readonly) NSString *containerAppPath;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSExtension *extension;
+@property (nonatomic, readonly) NSString *extensionBundleIdentifier;
+@property (nonatomic, readonly) long long extensionRequestsMode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *localizedExtensionDisplayName;
+@property (nonatomic, readonly) int requestCount;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_beginAuthorizationWithRequestParameters:(id)arg1 completion:(id /* block */)arg2;
+- (void)_beginAuthorizationWithServiceXPCEndpoint:(id)arg1 completion:(id /* block */)arg2;
+- (void)_connectContextToSessionWithRequestIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (id)_contextForSession;
+- (void)_finishAuthorization:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_finishedSettingUpSession:(id)arg1;
+- (void)_setupExtension;
+- (void)_setupNonUISessionIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)_setupNonUISessionWithCompletion:(id /* block */)arg1;
+- (void)_setupSessionHelperForIOSWithCompletion:(id /* block */)arg1;
+- (void)_setupSessionIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)_setupSessionWithCompletion:(id /* block */)arg1;
+- (id)associatedDomains;
+- (struct { unsigned int x1[8]; })auditTokenForSession;
+- (id)authenticationMethods;
+- (void)authorization:(id)arg1 didCompleteWithCredential:(id)arg2 error:(id)arg3;
+- (void)beginAuthorizationWithRequestParameters:(id)arg1 completion:(id /* block */)arg2;
+- (void)beginAuthorizationWithServiceXPCEndpoint:(id)arg1 completion:(id /* block */)arg2;
+- (void)beginDeviceRegistrationUsingOptions:(long long)arg1 extensionData:(id)arg2 completion:(id /* block */)arg3;
+- (void)beginUserRegistrationUsingUserName:(id)arg1 authenticationMethod:(int)arg2 options:(long long)arg3 extensionData:(id)arg4 completion:(id /* block */)arg5;
+- (void)canPerformRegistrationCompletion:(id /* block */)arg1;
+- (void)cancelAuthorization:(id)arg1 completion:(id /* block */)arg2;
+- (void)checkAssociatedDomains;
+- (id)containerAppBundleIdentifier;
+- (id)containerAppPath;
+- (void)decrementRequestCount;
+- (id)description;
+- (id)extension;
+- (id)extensionBundleIdentifier;
+- (long long)extensionRequestsMode;
+- (id)findDelegateForIdentifier:(id)arg1;
+- (void)finishAuthorization:(id)arg1 completion:(id /* block */)arg2;
+- (bool)hasAssociatedDomainsApproved;
+- (bool)hasURLApprovedAssociatedDomain:(id)arg1;
+- (void)incrementRequestCount;
+- (id)initWithExtension:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToExtension:(id)arg1;
+- (id)localizedExtensionDisplayName;
+- (void)presentAuthorizationViewControllerWithHints:(id)arg1 requestIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)protocolVersionCompletion:(id /* block */)arg1;
+- (void)registrationDidCancelWithCompletion:(id /* block */)arg1;
+- (void)registrationDidCompleteWithCompletion:(id /* block */)arg1;
+- (void)removeDelegateForRequestIdentifier:(id)arg1;
+- (void)requestAuthorizationViewControllerWithCompletion:(id /* block */)arg1;
+- (int)requestCount;
+- (void)requestReauthenticationWithRequestIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)saveDelegate:(id)arg1 forRequestIdentifier:(id)arg2;
+- (void)setAssociatedDomains:(id)arg1;
+- (void)setExtension:(id)arg1;
+- (void)setupNonUISessionWithCompletion:(id /* block */)arg1;
+- (void)supportedGrantTypesCompletion:(id /* block */)arg1;
+- (void)unload;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
+
+@end

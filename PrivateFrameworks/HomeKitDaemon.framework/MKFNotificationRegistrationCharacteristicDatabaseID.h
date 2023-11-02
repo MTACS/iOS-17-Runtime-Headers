@@ -1,0 +1,4 @@
+
+@interface MKFNotificationRegistrationCharacteristicDatabaseID : MKFNotificationRegistrationDatabaseID
+
+@end

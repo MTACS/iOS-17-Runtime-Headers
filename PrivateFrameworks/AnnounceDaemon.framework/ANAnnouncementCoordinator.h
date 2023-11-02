@@ -1,0 +1,96 @@
+
+@interface ANAnnouncementCoordinator : NSObject <ANAnnouncementManagerDelegte, ANCompanionConnectionDelegate, ANMessengerDelegate, ANPlaybackManagerDataSource, ANPlaybackManagerDelegate> {
+    NSMutableDictionary * _announcementManagers;
+    ANCompanionConnection * _companionConnection;
+    NSMapTable * _delegatesToQueues;
+    NSObject<OS_os_log> * _log;
+    ANMessenger * _messenger;
+    NSMutableDictionary * _playbackManagers;
+    ANAnnouncementStatePublisher * _playbackStatePublisher;
+    NSObject<OS_dispatch_queue> * _queue;
+    <ANRemotePlaybackStatusProvider> * _remotePlaybackStatusProvider;
+    _TtC14AnnounceDaemon31SiriReferenceResolutionDonation * _siriRRDonation;
+}
+
+@property (nonatomic, readonly) NSMutableDictionary *announcementManagers;
+@property (nonatomic, retain) ANCompanionConnection *companionConnection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSMapTable *delegatesToQueues;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) ANParticipant *localParticipant;
+@property (nonatomic, readonly) NSObject<OS_os_log> *log;
+@property (nonatomic, readonly) ANMessenger *messenger;
+@property (nonatomic, readonly) NSMutableDictionary *playbackManagers;
+@property (nonatomic, retain) ANAnnouncementStatePublisher *playbackStatePublisher;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) <ANRemotePlaybackStatusProvider> *remotePlaybackStatusProvider;
+@property (nonatomic, readonly) NSSet *scanningDeviceCandidates;
+@property (nonatomic, readonly) _TtC14AnnounceDaemon31SiriReferenceResolutionDonation *siriRRDonation;
+@property (readonly) Class superclass;
+
++ (id)localDeviceIdentifier;
++ (id)sharedCoordinator;
+
+- (void).cxx_destruct;
+- (id)_createAnnouncementManagerForIdentifier:(id)arg1;
+- (id)_createPlaybackManagerForIdentifier:(id)arg1;
+- (id)_endpointIDForAnnouncementManager:(id)arg1;
+- (id)_endpointIDForPlaybackManager:(id)arg1;
+- (void)_executeBlockForDelegates:(id /* block */)arg1;
+- (void)_handleReceivedAnnouncement:(id)arg1;
+- (void)_initializeManagers;
+- (void)_notifyDidReceiveAnnouncement:(id)arg1 forEndpointID:(id)arg2;
+- (bool)_removeAnnouncementManagerForIdentifier:(id)arg1;
+- (void)_removeManagersForIdentifier:(id)arg1;
+- (bool)_removePlaybackManagerForIdentifier:(id)arg1;
+- (void)addAnnouncement:(id)arg1 forEndpointID:(id)arg2 completion:(id /* block */)arg3;
+- (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (id)allAnnouncementsSortedByReceiptForEndpointID:(id)arg1;
+- (id)announcementForID:(id)arg1 endpointID:(id)arg2;
+- (void)announcementManager:(id)arg1 announcements:(id)arg2 didChangeForGroupID:(id)arg3;
+- (id)announcementManagers;
+- (id)announcementsForGroupID:(id)arg1 endpointID:(id)arg2;
+- (id)announcementsForIDs:(id)arg1 endpointID:(id)arg2;
+- (id)announcementsForPlaybackManager:(id)arg1;
+- (void)cleanForExit;
+- (void)cleanUpOldAnnouncementsForPlaybackManager:(id)arg1;
+- (id)companionConnection;
+- (void)companionDidPlayAnnouncement:(id)arg1;
+- (id)delegatesToQueues;
+- (void)failedToDeliverAnnouncement:(id)arg1 error:(id)arg2;
+- (id)init;
+- (id)lastPlayedAnnouncementInfoForEndpointID:(id)arg1;
+- (id)localParticipant;
+- (id)log;
+- (id)messenger;
+- (void)mockAnnouncement:(id)arg1 playbackDeadline:(id)arg2 sentHandler:(id /* block */)arg3;
+- (void)pauseAllTimersForEndpointID:(id)arg1;
+- (void)performPlaybackCommand:(id)arg1 endpointID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)playbackManager:(id)arg1 announcementsForIdentifiers:(id)arg2;
+- (void)playbackManager:(id)arg1 didFinishPlayingAnnouncement:(id)arg2 withOptions:(unsigned long long)arg3;
+- (void)playbackManager:(id)arg1 didStartPlayingAnnouncement:(id)arg2;
+- (void)playbackManager:(id)arg1 didStartPlayingAnnouncementsAtMachAbsoluteTime:(unsigned long long)arg2;
+- (void)playbackManager:(id)arg1 didUpdatePlaybackState:(unsigned long long)arg2 announcement:(id)arg3;
+- (void)playbackManagerDidFinishPlayingAnnouncements:(id)arg1;
+- (id)playbackManagers;
+- (unsigned long long)playbackStateForEndpointID:(id)arg1;
+- (id)playbackStatePublisher;
+- (id)queue;
+- (void)receivedAnnouncement:(id)arg1;
+- (id)remotePlaybackStatusProvider;
+- (void)removeOldAnnouncementsForEndpointID:(id)arg1;
+- (void)resetAllTimersForEndpointID:(id)arg1;
+- (id)resolveIdentifier:(id)arg1;
+- (void)resumeAllTimersForEndpointID:(id)arg1;
+- (id)scanningDeviceCandidates;
+- (void)sendRequest:(id)arg1 sentHandler:(id /* block */)arg2;
+- (void)setCompanionConnection:(id)arg1;
+- (void)setPlaybackStartedForAnnouncement:(id)arg1 endpointID:(id)arg2;
+- (void)setPlaybackStatePublisher:(id)arg1;
+- (void)setPlaybackStoppedForAnnouncement:(id)arg1 endpointID:(id)arg2;
+- (void)setRemotePlaybackStatusProvider:(id)arg1;
+- (id)siriRRDonation;
+- (void)updateAnnouncement:(id)arg1 statusFlags:(unsigned long long)arg2 endpointID:(id)arg3;
+
+@end

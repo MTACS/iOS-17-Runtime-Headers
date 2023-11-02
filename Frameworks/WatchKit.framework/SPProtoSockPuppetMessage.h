@@ -1,0 +1,31 @@
+
+@interface SPProtoSockPuppetMessage : PBCodable <NSCopying> {
+    SPProtoAudioFilePlayerMessage * _audioFilePlayerMessage;
+    SPProtoSockPuppetPlist * _plist;
+}
+
+@property (nonatomic, retain) SPProtoAudioFilePlayerMessage *audioFilePlayerMessage;
+@property (nonatomic, readonly) bool hasAudioFilePlayerMessage;
+@property (nonatomic, readonly) bool hasPlist;
+@property (nonatomic, retain) SPProtoSockPuppetPlist *plist;
+
++ (id)sockPuppetMessageWithSubMessage:(id)arg1 setterSelector:(SEL)arg2;
+
+- (void).cxx_destruct;
+- (id)audioFilePlayerMessage;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasAudioFilePlayerMessage;
+- (bool)hasPlist;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)plist;
+- (bool)readFrom:(id)arg1;
+- (void)setAudioFilePlayerMessage:(id)arg1;
+- (void)setPlist:(id)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

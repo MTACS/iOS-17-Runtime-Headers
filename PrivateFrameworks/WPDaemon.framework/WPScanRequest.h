@@ -1,0 +1,100 @@
+
+@interface WPScanRequest : NSObject <NSSecureCoding> {
+    bool  _activeScanning;
+    long long  _advBuffer;
+    bool  _allowDuplicates;
+    NSData * _blobValue;
+    unsigned char  _clientType;
+    bool  _holdVoucher;
+    NSData * _maskValue;
+    long long  _nearbyScanMode;
+    NSDictionary * _options;
+    NSArray * _peers;
+    bool  _priorityCritical;
+    bool  _range;
+    bool  _retainDuplicates;
+    NSNumber * _rssiThreshold;
+    bool  _scanCache;
+    bool  _scanWhenLocked;
+    struct { 
+        long long screenOnInterval; 
+        long long screenOffInterval; 
+        long long window; 
+    }  _scanningRates;
+    bool  _startPending;
+    double  _updateTime;
+    NSArray * _useCaseList;
+}
+
+@property bool activeScanning;
+@property long long advBuffer;
+@property bool allowDuplicates;
+@property (nonatomic, retain) NSData *blobValue;
+@property unsigned char clientType;
+@property bool holdVoucher;
+@property (nonatomic, retain) NSData *maskValue;
+@property long long nearbyScanMode;
+@property (retain) NSDictionary *options;
+@property (retain) NSArray *peers;
+@property bool priorityCritical;
+@property bool range;
+@property bool retainDuplicates;
+@property (retain) NSNumber *rssiThreshold;
+@property bool scanCache;
+@property bool scanWhenLocked;
+@property struct { long long x1; long long x2; long long x3; } scanningRates;
+@property bool startPending;
+@property double updateTime;
+@property (retain) NSArray *useCaseList;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (bool)activeScanning;
+- (long long)advBuffer;
+- (bool)allowDuplicates;
+- (id)blobValue;
+- (unsigned char)clientType;
+- (id)convertUseCaseToString:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)holdVoucher;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)maskValue;
+- (long long)nearbyScanMode;
+- (id)options;
+- (id)peers;
+- (bool)priorityCritical;
+- (bool)range;
+- (bool)retainDuplicates;
+- (id)rssiThreshold;
+- (bool)scanCache;
+- (bool)scanWhenLocked;
+- (struct { long long x1; long long x2; long long x3; })scanningRates;
+- (void)setActiveScanning:(bool)arg1;
+- (void)setAdvBuffer:(long long)arg1;
+- (void)setAllowDuplicates:(bool)arg1;
+- (void)setBlobValue:(id)arg1;
+- (void)setClientType:(unsigned char)arg1;
+- (void)setHoldVoucher:(bool)arg1;
+- (void)setMaskValue:(id)arg1;
+- (void)setNearbyScanMode:(long long)arg1;
+- (void)setOptions:(id)arg1;
+- (void)setPeers:(id)arg1;
+- (void)setPriorityCritical:(bool)arg1;
+- (void)setRange:(bool)arg1;
+- (void)setRetainDuplicates:(bool)arg1;
+- (void)setRssiThreshold:(id)arg1;
+- (void)setScanCache:(bool)arg1;
+- (void)setScanWhenLocked:(bool)arg1;
+- (void)setScanningRates:(struct { long long x1; long long x2; long long x3; })arg1;
+- (void)setStartPending:(bool)arg1;
+- (void)setUpdateTime:(double)arg1;
+- (void)setUseCaseList:(id)arg1;
+- (bool)startPending;
+- (double)updateTime;
+- (id)useCaseList;
+
+@end

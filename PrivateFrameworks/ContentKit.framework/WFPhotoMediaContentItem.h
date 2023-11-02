@@ -1,0 +1,98 @@
+
+@interface WFPhotoMediaContentItem : WFGenericFileContentItem <WFContentItemClass> {
+    long long  _library;
+    WFFileType * _preferredFileType;
+}
+
+@property (nonatomic, readonly) NSDictionary *additionalRepresentationsForSerialization;
+@property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, readonly) bool cachesSupportedTypes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasStringOutput;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool includesFileRepresentationInSerializedItem;
+@property (nonatomic) long long library;
+@property (nonatomic, readonly) NSDictionary *metadataForSerialization;
+@property (nonatomic, readonly) WFFileType *preferredFileType;
+@property (nonatomic, readonly) WFObjectType *preferredObjectType;
+@property (readonly) Class superclass;
+
++ (id)contentCategories;
++ (id)countDescription;
++ (id)fetchOptionsForLibrary:(long long)arg1;
++ (id)filterDescription;
++ (bool)hasLibrary;
++ (bool)isAvailableOnPlatform:(long long)arg1;
++ (id)itemWithAssetIdentifier:(id)arg1;
++ (id)itemWithAssetIdentifier:(id)arg1 assetFile:(id)arg2;
++ (id)itemWithAssetIdentifier:(id)arg1 library:(long long)arg2;
++ (id)itemWithAssetIdentifier:(id)arg1 library:(long long)arg2 assetFile:(id)arg3;
++ (id)itemWithAssetIdentifier:(id)arg1 library:(long long)arg2 assetFile:(id)arg3 nameIfKnown:(id)arg4;
++ (id)itemWithAssetIdentifier:(id)arg1 library:(long long)arg2 assetFile:(id)arg3 nameIfKnown:(id)arg4 attributionSet:(id)arg5 cachingIdentifier:(id)arg6;
++ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3 attributionSet:(id)arg4 cachingIdentifier:(id)arg5;
++ (id)itemsWithBurstIdentifier:(id)arg1;
++ (id)outputTypes;
++ (id)ownedPasteboardTypes;
++ (id)ownedTypes;
++ (id)photoAlbums;
++ (id)pluralFilterDescription;
++ (id)pluralTypeDescription;
++ (id)propertyBuilders;
++ (id)remoteItemWithAssetIdentifier:(id)arg1 named:(id)arg2;
++ (void)runQuery:(id)arg1 withItems:(id)arg2 permissionRequestor:(id)arg3 completionHandler:(id /* block */)arg4;
++ (id)stringConversionBehavior;
++ (bool)supportedTypeMustBeDeterminedByInstance:(id)arg1;
++ (id)typeDescription;
+
+- (void).cxx_destruct;
+- (id)additionalRepresentationsForSerialization;
+- (id)asset;
+- (id)assetRepresentationTypes;
+- (id)assetResourceManager;
+- (bool)canGenerateRepresentationForType:(id)arg1;
+- (void)copyStateToItem:(id)arg1;
+- (id)defaultSourceForRepresentation:(id)arg1;
+- (id)duration;
+- (id)fullSizeAssetResourcesInResources:(id)arg1;
+- (void)generateAVAsset:(id /* block */)arg1 networkAccessAllowed:(bool)arg2;
+- (void)generateFileRepresentation:(id /* block */)arg1 options:(id)arg2 forType:(id)arg3;
+- (void)generateObjectRepresentation:(id /* block */)arg1 options:(id)arg2 forClass:(Class)arg3;
+- (id)generateObjectRepresentationForClass:(Class)arg1 options:(id)arg2 error:(id*)arg3;
+- (void)getFrameRate:(id /* block */)arg1;
+- (bool)getListAltText:(id /* block */)arg1;
+- (bool)getListSubtitle:(id /* block */)arg1;
+- (bool)getListThumbnail:(id /* block */)arg1 forSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)getMetadata:(id /* block */)arg1;
+- (void)getPreferredFileExtension:(id /* block */)arg1;
+- (void)getPreferredFileSize:(id /* block */)arg1;
+- (void)getThumbnail:(id /* block */)arg1 ofSize:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)hash;
+- (id)height;
+- (id)imageManager;
+- (id)intermediaryTypesForCoercionToItemClass:(Class)arg1;
+- (id)isBurst;
+- (bool)isEqual:(id)arg1;
+- (id)isFavorite;
+- (id)isHidden;
+- (id)isLivePhoto;
+- (bool)isPhotoType:(id)arg1;
+- (bool)isScreenRecording;
+- (bool)isScreenshot;
+- (long long)library;
+- (id)make;
+- (id)mediaType;
+- (id)metadataIfLocallyAvailable;
+- (id)model;
+- (id)orientation;
+- (id)outputTypes;
+- (id)photoTypes;
+- (id)preferredAssetResourceForType:(id)arg1;
+- (id)preferredFileType;
+- (void)retrieveAssetResource:(id)arg1 withNetworkAccess:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)retrieveFileWithImageManager:(id /* block */)arg1 forType:(id)arg2;
+- (void)setLibrary:(long long)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (id)width;
+
+@end

@@ -1,0 +1,81 @@
+
+@interface CNVisualIdentityEditablePrimaryAvatarViewController : UIViewController <CNVisualIdentityPrimaryAvatarProvider, UITextViewDelegate> {
+    CAShapeLayer * _clippingLayer;
+    <CNVisualIdentityEditablePrimaryAvatarViewControllerDelegate> * _delegate;
+    double  _desiredFontSize;
+    UIImageView * _imageContainerView;
+    UIView * _imageContentView;
+    UIFont * _originalFont;
+    CNPhotoPickerProviderItem * _providerItem;
+    CNVisualIdentityEditablePrimaryAvatarTextField * _textField;
+    CNPhotoPickerVariantsManager * _variantsManager;
+}
+
+@property (nonatomic, retain) CAShapeLayer *clippingLayer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CNVisualIdentityEditablePrimaryAvatarViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double desiredFontSize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIImageView *imageContainerView;
+@property (nonatomic, retain) UIView *imageContentView;
+@property (nonatomic, retain) UIFont *originalFont;
+@property (nonatomic, retain) CNPhotoPickerProviderItem *providerItem;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, retain) CNVisualIdentityEditablePrimaryAvatarTextField *textField;
+@property (nonatomic, retain) CNPhotoPickerVariantsManager *variantsManager;
+
+- (void).cxx_destruct;
+- (void)adjustFontSizeToFitWidthForText:(id)arg1;
+- (void)beginEditing;
+- (id)clippingLayer;
+- (id)delegate;
+- (double)desiredFontSize;
+- (void)endEditing;
+- (bool)exceedsMaxCharacterCount:(long long)arg1 containsEmoji:(bool)arg2;
+- (bool)hasValidInputTypeForText:(id)arg1;
+- (id)imageContainerView;
+- (id)imageContentView;
+- (id)initWithProviderItem:(id)arg1 variantsManager:(id)arg2;
+- (id)initWithVariantsManager:(id)arg1;
+- (bool)isEmojiProviderItemType;
+- (bool)isMonogramProviderItemType;
+- (void)layoutPrimaryAvatar;
+- (double)maxTextFieldSize;
+- (id)originalFont;
+- (void)populateViewWithTextEditableProviderItem:(id)arg1 imageType:(unsigned long long)arg2;
+- (bool)primaryAvatarShouldDisplay;
+- (id)providerItem;
+- (void)setClippingLayer:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDesiredFontSize:(double)arg1;
+- (void)setImageContainerView:(id)arg1;
+- (void)setImageContentView:(id)arg1;
+- (void)setOriginalFont:(id)arg1;
+- (void)setProviderItem:(id)arg1;
+- (void)setTextField:(id)arg1;
+- (void)setUpFirstResponderForProviderItem:(id)arg1;
+- (void)setVariantsManager:(id)arg1;
+- (void)setupImageContainerView;
+- (void)setupTextField;
+- (id)text;
+- (id)textField;
+- (bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(id)arg3;
+- (void)textViewDidEndEditing:(id)arg1;
+- (void)trimTextFieldTextIfNeeded:(id)arg1;
+- (void)trimTextFieldTextIfNeeded:(id)arg1 containsEmoji:(bool)arg2;
+- (void)updateContainerViewMask;
+- (void)updatePrimaryAvatarForVisualIdentity:(id)arg1;
+- (void)updateTextFieldFontSize:(double)arg1;
+- (void)updateViewWithProviderItem:(id)arg1;
+- (void)updateWithProviderItem:(id)arg1;
+- (id)updatedProviderItem;
+- (id)updatedProviderItemWithText:(id)arg1;
+- (id)variantsManager;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (id)viewForPrimaryAvatar;
+
+@end

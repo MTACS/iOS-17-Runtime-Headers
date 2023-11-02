@@ -1,0 +1,4 @@
+
+@interface SSRVTUIHelperFunctionsForSwift : NSObject
+
+@end

@@ -1,0 +1,28 @@
+
+@interface CKTriple : NSObject <NSSecureCoding> {
+    void value;
+}
+
+@property (nonatomic, readonly) NSString *description;
+@property (nonatomic, readonly) long long hash;
+@property (nonatomic, readonly) NSString *object;
+@property (nonatomic, readonly) NSString *predicate;
+@property (nonatomic, readonly) NSString *subject;
+@property (nonatomic, readonly) long long weight;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (long long)hash;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithSubject:(id)arg1 predicate:(id)arg2 object:(id)arg3 weight:(long long)arg4;
+- (bool)isEqual:(id)arg1;
+- (id)object;
+- (id)predicate;
+- (id)subject;
+- (long long)weight;
+
+@end

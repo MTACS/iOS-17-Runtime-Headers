@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.AsyncFailedScenesResponseHandler : HomeAutomationInternal.BaseAsyncResponseHandler
+
+@end

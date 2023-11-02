@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.GetCarbonOxideSensorStateResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

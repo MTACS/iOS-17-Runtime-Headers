@@ -1,0 +1,4 @@
+
+@interface InvalidMethodCalledException : NSException
+
+@end

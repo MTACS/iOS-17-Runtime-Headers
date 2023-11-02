@@ -1,0 +1,90 @@
+
+@interface _UICollectionViewMultiSelectController : NSObject <UIMultiSelectInteractionDelegate_Internal> {
+    UICollectionView * _collectionView;
+    long long  _computedAxisConstraint;
+    NSMapTable * _contentMaskCache;
+    struct { 
+        unsigned int visibleCellsDirtied : 1; 
+        unsigned int prewarmingCellCache : 1; 
+    }  _flags;
+    UIMultiSelectInteraction * _multiSelectInteraction;
+    UIMultiSelectInteractionState * _selectionState;
+}
+
+@property (nonatomic) UICollectionView *collectionView;
+@property (nonatomic, retain) NSMapTable *contentMaskCache;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (getter=isInMultiselectInteraction, nonatomic, readonly) bool inMultiselectInteraction;
+@property (nonatomic, retain) UIMultiSelectInteraction *multiSelectInteraction;
+@property (nonatomic, retain) UIMultiSelectInteractionState *selectionState;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_allowsBandSelectionStartingAtPoint:(struct CGPoint { double x1; double x2; })arg1 multiSelectInteraction:(id)arg2;
+- (bool)_allowsPanningAcrossConstrainedAxisToBeginMultiSelectInteractionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)_antecedentIndexPathsForLayoutAttributes:(id)arg1 inDirection:(double)arg2;
+- (id)_autoScrollAssistantForIndexPaths:(id)arg1;
+- (void)_autoScrollAtIndexPaths:(id)arg1 fromPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_boundingScrollViewForIndexPath:(id)arg1;
+- (id)_collectionViewDelegate;
+- (void)_deselectIndexPaths:(id)arg1;
+- (void)_extendSelectionToPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (long long)_hitTestForSystemEditControlAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)_indexPathsWithinRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)_isUsingTableLayoutSPI;
+- (void)_performWithPrewarmingCache:(id /* block */)arg1;
+- (bool)_point:(struct CGPoint { double x1; double x2; })arg1 liesBeyondFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inDirection:(double)arg3;
+- (void)_selectIndexPaths:(id)arg1;
+- (bool)_shouldBeginInteractionAtIndexPath:(id)arg1;
+- (bool)_shouldBeginInteractionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)_testTouchPolicyAtPoint:(struct CGPoint { double x1; double x2; })arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2;
+- (void)_updateContentMasksForVisibleCells;
+- (void)automaticallyTransitionToMultiSelectModeKeepingCurrentSelection:(bool)arg1;
+- (long long)axisConstraintAtIndexPath:(id)arg1;
+- (long long)axisConstraintAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (long long)axisConstraintForSingleFingerPanGestureAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)childScrollViewAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)clearSelectionState;
+- (id)collectionView;
+- (void)collectionViewDidUpdateVisibleCells;
+- (id)contentMaskCache;
+- (void)dealloc;
+- (void)didCancelMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)didEndMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (id)indexPathsBetweenIndexPath:(id)arg1 andIndexPath:(id)arg2;
+- (id)initWithCollectionView:(id)arg1;
+- (bool)interaction:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint { double x1; double x2; })arg2 withVelocity:(struct CGPoint { double x1; double x2; })arg3;
+- (bool)isInMultiSelectMode;
+- (bool)isInMultiselectInteraction;
+- (id)keyCommandsForSelectionExtension;
+- (id)multiSelectInteraction;
+- (void)multiSelectInteraction:(id)arg1 appendSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)multiSelectInteraction:(id)arg1 extendSelectionInDirection:(unsigned long long)arg2;
+- (void)multiSelectInteraction:(id)arg1 selectItemsWithinRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 leadingPoint:(struct CGPoint { double x1; double x2; })arg3;
+- (bool)multiSelectInteraction:(id)arg1 shouldShowBandForSelectionStartingAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)multiSelectInteraction:(id)arg1 shouldStartBandSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)multiSelectInteraction:(id)arg1 toggleSelectionStateUpToPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)multiSelectInteraction:(id)arg1 toggleSelectionWithinRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 leadingPoint:(struct CGPoint { double x1; double x2; })arg3;
+- (bool)multiSelectInteractionGestureShouldPreventDragLiftGesture:(id)arg1;
+- (void)selectedIndexPathsChanged:(id)arg1;
+- (id)selectionEndIndexPath;
+- (id)selectionStartIndexPath;
+- (id)selectionState;
+- (void)setCollectionView:(id)arg1;
+- (void)setContentMaskCache:(id)arg1;
+- (void)setMultiSelectInteraction:(id)arg1;
+- (void)setSelectionState:(id)arg1;
+- (bool)shouldAllowSelectionAppendageAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)shouldAllowSelectionExtensionAtIndexPath:(id)arg1;
+- (bool)shouldAllowSelectionExtensionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)shouldBeginMultiSelectInteraction:(id)arg1 ofType:(long long)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3 withVelocity:(struct CGPoint { double x1; double x2; })arg4;
+- (bool)supportsKeyboardSelectionExtension;
+- (bool)supportsMultiSelectInteraction:(id)arg1;
+- (id)targetForKeyCommands;
+- (void)uninstallFromCollectionView;
+- (void)updateSelectedIndexPaths:(id)arg1;
+- (void)willBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 keepCurrentSelection:(bool)arg3;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface VNImageAnalyzerMultiDetectorPotentialLandmarkClassificationConfiguration : _VNImageAnalyzerMultiDetectorPostProcessingConfiguration
+
+@end

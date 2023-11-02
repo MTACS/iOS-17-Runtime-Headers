@@ -1,0 +1,4 @@
+
+@interface _TtC11ShazamKitUIP33_6E20AEE7F2EA3679A6BE99805EDABA2718LocalizationBundle : _TtCs12_SwiftObject
+
+@end

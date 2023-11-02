@@ -1,0 +1,4 @@
+
+@interface _TtC12FindMyLocateP33_C88EE02B845E6230ED0D1CC23C09D49612BundleHelper : _TtCs12_SwiftObject
+
+@end

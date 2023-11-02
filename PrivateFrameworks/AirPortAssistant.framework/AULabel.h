@@ -1,0 +1,4 @@
+
+@interface AULabel : UILabel
+
+@end

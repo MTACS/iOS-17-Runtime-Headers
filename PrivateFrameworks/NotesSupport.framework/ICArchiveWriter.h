@@ -1,0 +1,35 @@
+
+@interface ICArchiveWriter : NSObject {
+    struct archive { } * _archive;
+    NSString * _basePath;
+    NSURL * _destinationURL;
+    bool  _flatten;
+    NSString * _flattenFolderName;
+    bool  _usesCompression;
+}
+
+@property (nonatomic, retain) NSString *basePath;
+@property (nonatomic, retain) NSURL *destinationURL;
+@property (nonatomic) bool flatten;
+@property (nonatomic, copy) NSString *flattenFolderName;
+@property (nonatomic) bool usesCompression;
+
+- (void).cxx_destruct;
+- (id)basePath;
+- (void)dealloc;
+- (id)destinationURL;
+- (bool)finish:(id*)arg1;
+- (bool)flatten;
+- (id)flattenFolderName;
+- (id)initWithDestinationURL:(id)arg1 baseURL:(id)arg2;
+- (bool)open:(id*)arg1;
+- (void)setBasePath:(id)arg1;
+- (void)setDestinationURL:(id)arg1;
+- (void)setFlatten:(bool)arg1;
+- (void)setFlattenFolderName:(id)arg1;
+- (void)setUsesCompression:(bool)arg1;
+- (bool)usesCompression;
+- (bool)writeURL:(id)arg1 isDirectory:(bool)arg2 error:(id*)arg3;
+- (bool)writeURLs:(id)arg1 error:(id*)arg2;
+
+@end

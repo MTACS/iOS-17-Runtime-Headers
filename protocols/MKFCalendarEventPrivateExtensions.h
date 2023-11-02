@@ -1,0 +1,4 @@
+
+@protocol MKFCalendarEventPrivateExtensions
+
+@end

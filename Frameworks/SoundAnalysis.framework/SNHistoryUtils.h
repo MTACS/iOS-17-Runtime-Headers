@@ -1,0 +1,4 @@
+
+@interface SNHistoryUtils : NSObject
+
+@end

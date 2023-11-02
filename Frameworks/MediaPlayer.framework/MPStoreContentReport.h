@@ -1,0 +1,38 @@
+
+@interface MPStoreContentReport : NSObject <NSCopying> {
+    NSString * _aucType;
+    NSString * _commentText;
+    long long  _concernItemType;
+    NSString * _concernTypeID;
+    NSString * _contentID;
+    NSString * _displayText;
+    NSString * _userID;
+}
+
+@property (nonatomic, copy) NSString *aucType;
+@property (nonatomic, copy) NSString *commentText;
+@property (nonatomic) long long concernItemType;
+@property (nonatomic, copy) NSString *concernTypeID;
+@property (nonatomic, copy) NSString *contentID;
+@property (nonatomic, copy) NSString *displayText;
+@property (nonatomic, copy) NSString *userID;
+
+- (void).cxx_destruct;
+- (id)aucType;
+- (id)commentText;
+- (long long)concernItemType;
+- (id)concernTypeID;
+- (id)contentID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)displayText;
+- (void)setAucType:(id)arg1;
+- (void)setCommentText:(id)arg1;
+- (void)setConcernItemType:(long long)arg1;
+- (void)setConcernTypeID:(id)arg1;
+- (void)setContentID:(id)arg1;
+- (void)setDisplayText:(id)arg1;
+- (void)setUserID:(id)arg1;
+- (id)userID;
+
+@end

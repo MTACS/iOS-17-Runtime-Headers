@@ -1,0 +1,4 @@
+
+@protocol SBChainableModifierContext <NSObject>
+
+@end

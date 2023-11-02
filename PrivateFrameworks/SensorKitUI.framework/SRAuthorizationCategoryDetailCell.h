@@ -1,0 +1,91 @@
+
+@interface SRAuthorizationCategoryDetailCell : UITableViewCell {
+    bool  _OBKStyle;
+    UILabel * _appUsageBodyLabel;
+    UIStackView * _appUsageStack;
+    UILabel * _appUsageTitleLabel;
+    UIFont * _bodyFont;
+    UIStackView * _categoryStack;
+    UILabel * _categorySubTitleLabel;
+    UILabel * _categoryTitleLabel;
+    NSArray * _collectedLabels;
+    UILabel * _collectedTitleLabel;
+    UIColor * _fontColor;
+    NSArray * _notCollectedLabels;
+    UILabel * _notCollectedTitleLabel;
+    long long  _numberOfCollectedLabels;
+    long long  _numberOfNotCollectedLabels;
+    long long  _numberOfWhenSharedLabels;
+    bool  _showAppUsage;
+    UIStackView * _stacks;
+    UIFont * _titleFont;
+    NSArray * _whenSharedLabels;
+    UILabel * _whenSharedTitleLabel;
+}
+
+@property (nonatomic) bool OBKStyle;
+@property (nonatomic, readonly) UILabel *appUsageBodyLabel;
+@property (nonatomic, retain) UIStackView *appUsageStack;
+@property (nonatomic, readonly) UILabel *appUsageTitleLabel;
+@property (nonatomic, retain) UIFont *bodyFont;
+@property (nonatomic, retain) UIStackView *categoryStack;
+@property (nonatomic, readonly) UILabel *categorySubTitleLabel;
+@property (nonatomic, readonly) UILabel *categoryTitleLabel;
+@property (nonatomic, retain) NSArray *collectedLabels;
+@property (nonatomic, readonly) UILabel *collectedTitleLabel;
+@property (nonatomic, retain) UIColor *fontColor;
+@property (nonatomic, retain) NSArray *notCollectedLabels;
+@property (nonatomic, readonly) UILabel *notCollectedTitleLabel;
+@property (nonatomic) long long numberOfCollectedLabels;
+@property (nonatomic) long long numberOfNotCollectedLabels;
+@property (nonatomic) long long numberOfWhenSharedLabels;
+@property (nonatomic) bool showAppUsage;
+@property (nonatomic, retain) UIStackView *stacks;
+@property (nonatomic, retain) UIFont *titleFont;
+@property (nonatomic, retain) NSArray *whenSharedLabels;
+@property (nonatomic, readonly) UILabel *whenSharedTitleLabel;
+
++ (id)categoryDetailCellForAuthGroup:(id)arg1 bundle:(id)arg2 titleFont:(id)arg3 bodyFont:(id)arg4 textColor:(id)arg5 OBKStyle:(bool)arg6;
+
+- (bool)OBKStyle;
+- (id)addBulletStackViewForTitleLabel:(id)arg1 count:(long long)arg2;
+- (id)appUsageBodyLabel;
+- (id)appUsageStack;
+- (id)appUsageTitleLabel;
+- (id)bodyFont;
+- (id)categoryStack;
+- (id)categorySubTitleLabel;
+- (id)categoryTitleLabel;
+- (id)collectedLabels;
+- (id)collectedTitleLabel;
+- (void)dealloc;
+- (id)dynamicHeightLabel;
+- (id)fontColor;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 titleFont:(id)arg3 bodyFont:(id)arg4 fontColor:(id)arg5 OBKStyle:(bool)arg6;
+- (id)notCollectedLabels;
+- (id)notCollectedTitleLabel;
+- (long long)numberOfCollectedLabels;
+- (long long)numberOfNotCollectedLabels;
+- (long long)numberOfWhenSharedLabels;
+- (void)setAppUsageStack:(id)arg1;
+- (void)setBodyFont:(id)arg1;
+- (void)setCategoryStack:(id)arg1;
+- (void)setCollectedLabels:(id)arg1;
+- (void)setFontColor:(id)arg1;
+- (void)setNotCollectedLabels:(id)arg1;
+- (void)setNumberOfCollectedLabels:(long long)arg1;
+- (void)setNumberOfNotCollectedLabels:(long long)arg1;
+- (void)setNumberOfWhenSharedLabels:(long long)arg1;
+- (void)setOBKStyle:(bool)arg1;
+- (void)setShowAppUsage:(bool)arg1;
+- (void)setStacks:(id)arg1;
+- (void)setTitleFont:(id)arg1;
+- (void)setWhenSharedLabels:(id)arg1;
+- (bool)showAppUsage;
+- (id)stackViewForSubviews:(id)arg1 spacing:(double)arg2;
+- (id)stacks;
+- (id)titleFont;
+- (id)whenSharedLabels;
+- (id)whenSharedTitleLabel;
+
+@end

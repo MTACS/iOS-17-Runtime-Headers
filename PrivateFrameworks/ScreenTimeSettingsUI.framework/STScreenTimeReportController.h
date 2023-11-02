@@ -1,0 +1,85 @@
+
+@interface STScreenTimeReportController : UIViewController <PSController, STAllowanceDetailListControllerDelegate, STDebouncerDelegate> {
+    NSString * _context;
+    NSObject<STRootViewModelCoordinator> * _coordinator;
+    STDatePickerBar * _datePickerBar;
+    NSLayoutConstraint * _datePickerBottomConstraint;
+    STDebouncer * _datePickerHiddenDebouncer;
+    NSLayoutConstraint * _datePickerTopConstraint;
+    STNotificationSettingsGateway * _notificationSettingsGateway;
+    UIViewController<PSController> * _parentController;
+    STPINListViewController * _pinControllerDelegate;
+    UIViewController<STScreenTimeReportFiltering> * _reportViewController;
+    PSRootController * _rootController;
+    PSSpecifier * _specifier;
+}
+
+@property (readonly) NSString *context;
+@property (nonatomic, retain) NSObject<STRootViewModelCoordinator> *coordinator;
+@property (readonly) STDatePickerBar *datePickerBar;
+@property (retain) NSLayoutConstraint *datePickerBottomConstraint;
+@property (getter=isDatePickerHidden) bool datePickerHidden;
+@property (readonly) STDebouncer *datePickerHiddenDebouncer;
+@property (retain) NSLayoutConstraint *datePickerTopConstraint;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) STNotificationSettingsGateway *notificationSettingsGateway;
+@property (readonly) STPINListViewController *pinControllerDelegate;
+@property (readonly) UIViewController<STScreenTimeReportFiltering> *reportViewController;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_dateModeDidChange:(id)arg1;
+- (void)_dateModePickerDidAppear:(id)arg1;
+- (void)_dateModePickerDidDisappear:(id)arg1;
+- (void)_devicesDidChangeFrom:(id)arg1 to:(id)arg2;
+- (void)_didPressAddApplicationLimitButton:(id)arg1;
+- (void)_didPressAddCategoryLimitButton:(id)arg1;
+- (void)_didPressAddWebDomainLimitButton:(id)arg1;
+- (void)_didTapApplicationLink:(id)arg1;
+- (void)_didTapBarMark:(id)arg1;
+- (void)_didTapCategoryLink:(id)arg1;
+- (void)_didTapEditLimitLink:(id)arg1;
+- (void)_didTapNotificationsLink:(id)arg1;
+- (void)_didTapPickupsLink:(id)arg1;
+- (void)_didTapWebDomainLink:(id)arg1;
+- (void)_editLimit:(id)arg1 isNewLimit:(bool)arg2;
+- (void)_selectedCoreDuetIdentifierDidChange:(id)arg1;
+- (void)_selectedUsageReportDidChangeFrom:(id)arg1 to:(id)arg2;
+- (void)allowanceDetailController:(id)arg1 didDeleteAllowance:(id)arg2;
+- (void)allowanceDetailController:(id)arg1 didSaveAllowance:(id)arg2;
+- (void)allowanceDetailControllerDidCancel:(id)arg1;
+- (bool)canBeShownFromSuspendedState;
+- (id)context;
+- (id)coordinator;
+- (id)datePickerBar;
+- (id)datePickerBottomConstraint;
+- (id)datePickerHiddenDebouncer;
+- (id)datePickerTopConstraint;
+- (void)dealloc;
+- (void)debouncer:(id)arg1 didDebounce:(id)arg2;
+- (void)handleURL:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)initWithTitle:(id)arg1 coordinator:(id)arg2 context:(id)arg3 pinControllerDelegate:(id)arg4;
+- (bool)isDatePickerHidden;
+- (id)notificationSettingsGateway;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)parentController;
+- (id)pinControllerDelegate;
+- (id)readPreferenceValue:(id)arg1;
+- (id)reportViewController;
+- (id)rootController;
+- (void)setCoordinator:(id)arg1;
+- (void)setDatePickerBottomConstraint:(id)arg1;
+- (void)setDatePickerHidden:(bool)arg1;
+- (void)setDatePickerTopConstraint:(id)arg1;
+- (void)setParentController:(id)arg1;
+- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+- (void)setRootController:(id)arg1;
+- (void)setSpecifier:(id)arg1;
+- (void)showController:(id)arg1;
+- (void)showController:(id)arg1 animate:(bool)arg2;
+- (id)specifier;
+- (void)viewDidLoad;
+
+@end

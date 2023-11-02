@@ -1,0 +1,17 @@
+
+@interface PXCMMPublishActionPerformer : PXCMMActionPerformer {
+    NSURL * _publishedURL;
+}
+
+@property (nonatomic, retain) NSURL *publishedURL;
+
+- (void).cxx_destruct;
+- (void)_completePublishActionWithSuccess:(bool)arg1 error:(id)arg2 shareOrigin:(long long)arg3 completionHandler:(id /* block */)arg4;
+- (void)cancelActionWithCompletionHandler:(id /* block */)arg1;
+- (id)createActionProgress;
+- (bool)isCancellable;
+- (id)performPublishActionWithSession:(id)arg1 shareOrigin:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (id)publishedURL;
+- (void)setPublishedURL:(id)arg1;
+
+@end

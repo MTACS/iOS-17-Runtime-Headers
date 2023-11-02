@@ -1,0 +1,4 @@
+
+@protocol PXPlacesMapAnnotationViewFadable <NSObject>
+
+@end

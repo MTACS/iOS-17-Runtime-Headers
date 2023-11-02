@@ -1,0 +1,4 @@
+
+@interface OSLogEventLiveSource : NSObject
+
+@end

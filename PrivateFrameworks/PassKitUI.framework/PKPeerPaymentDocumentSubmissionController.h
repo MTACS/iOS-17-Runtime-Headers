@@ -1,0 +1,29 @@
+
+@interface PKPeerPaymentDocumentSubmissionController : PKPaymentDocumentSubmissionController <PKPeerPaymentAccountResolutionControllerDelegate> {
+    PKPeerPaymentAccountResolutionController * _accountResolutionController;
+    PKPeerPaymentIdentityVerificationResponse * _identityVerificationResponse;
+    PKPeerPaymentWebService * _webService;
+}
+
+@property (nonatomic, retain) PKPeerPaymentAccountResolutionController *accountResolutionController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PKPeerPaymentIdentityVerificationResponse *identityVerificationResponse;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PKPeerPaymentWebService *webService;
+
+- (void).cxx_destruct;
+- (id)accountResolutionController;
+- (void)contactApplePressed;
+- (id)identityVerificationResponse;
+- (id)initWithPeerPaymentWebService:(id)arg1 identityVerificationResponse:(id)arg2 setupDelegate:(id)arg3 context:(long long)arg4;
+- (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(bool)arg2;
+- (void)peerPaymentAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(bool)arg3;
+- (void)setAccountResolutionController:(id)arg1;
+- (void)setIdentityVerificationResponse:(id)arg1;
+- (void)setWebService:(id)arg1;
+- (void)uploadID;
+- (id)webService;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SRRemoteAuthorizationPromptViewControllerDelegate <SRAuthorizationPromptClientInterface>
+
+@end

@@ -1,0 +1,118 @@
+
+@interface VKCStickerEffect : NSObject {
+    bool  _applyBrushBeforeStroke;
+    bool  _applyIridescenceBeforeStroke;
+    bool  _forceSmallStrokeRadiusMultiplier;
+    unsigned long long  _iridescence;
+    bool  _isBrushed;
+    bool  _isComicEnabled;
+    bool  _isCurlEnabled;
+    bool  _isInkEnabled;
+    bool  _isPuffy;
+    bool  _isStroked;
+    double  _normalsRadius;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _shadowOffset;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _shadowParallax;
+    double  _shadowRadius;
+    float  _smallShadowAlphaMultiplier;
+    float  _smallShadowSizeMultiplier;
+    float  _smallStrokeRadiusMultiplier;
+    float  _strokeBlurRadius;
+    double  _strokeRadius;
+    unsigned long long  _type;
+    VKCStickerEffectView * _viewForRendering;
+}
+
+@property (nonatomic) bool applyBrushBeforeStroke;
+@property (nonatomic) bool applyIridescenceBeforeStroke;
+@property (nonatomic) bool forceSmallStrokeRadiusMultiplier;
+@property (nonatomic, readonly) _VKStickerEffectInternal *internalEffect;
+@property (nonatomic) unsigned long long iridescence;
+@property (nonatomic) bool isBrushed;
+@property (nonatomic) bool isComicEnabled;
+@property (nonatomic) bool isCurlEnabled;
+@property (nonatomic) bool isInkEnabled;
+@property (nonatomic) bool isPuffy;
+@property (nonatomic) bool isStroked;
+@property (nonatomic) double normalsRadius;
+@property (nonatomic, readonly) bool requiresDeviceMotion;
+@property (nonatomic) struct CGPoint { double x1; double x2; } shadowOffset;
+@property (nonatomic) struct CGPoint { double x1; double x2; } shadowParallax;
+@property (nonatomic) double shadowRadius;
+@property (nonatomic) float smallShadowAlphaMultiplier;
+@property (nonatomic) float smallShadowSizeMultiplier;
+@property (nonatomic) float smallStrokeRadiusMultiplier;
+@property (nonatomic) float strokeBlurRadius;
+@property (nonatomic) double strokeRadius;
+@property (nonatomic) unsigned long long type;
+@property (nonatomic, retain) VKCStickerEffectView *viewForRendering;
+
++ (id)comicEffect;
++ (id)effectFromInternalEffect:(id)arg1;
++ (id)effectWithType:(unsigned long long)arg1;
++ (int)internalIridescenceFromVKC:(unsigned long long)arg1;
++ (id)iridescentEffect;
++ (id)noneEffect;
++ (id)puffyEffect;
++ (id)strokeEffect;
++ (unsigned long long)vkcIridescenceFromInternal:(int)arg1;
+
+- (void).cxx_destruct;
+- (void)_applyToImage:(id)arg1 completion:(id /* block */)arg2;
+- (void)_applyToImageSequence:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (bool)applyBrushBeforeStroke;
+- (bool)applyIridescenceBeforeStroke;
+- (void)applyToImage:(id)arg1 completion:(id /* block */)arg2;
+- (void)applyToImageSequence:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (id)description;
+- (bool)forceSmallStrokeRadiusMultiplier;
+- (id)initInternal;
+- (id)internalEffect;
+- (unsigned long long)iridescence;
+- (bool)isBrushed;
+- (bool)isComicEnabled;
+- (bool)isCurlEnabled;
+- (bool)isInkEnabled;
+- (bool)isPuffy;
+- (bool)isStroked;
+- (double)normalsRadius;
+- (bool)requiresDeviceMotion;
+- (void)setApplyBrushBeforeStroke:(bool)arg1;
+- (void)setApplyIridescenceBeforeStroke:(bool)arg1;
+- (void)setForceSmallStrokeRadiusMultiplier:(bool)arg1;
+- (void)setIridescence:(unsigned long long)arg1;
+- (void)setIsBrushed:(bool)arg1;
+- (void)setIsComicEnabled:(bool)arg1;
+- (void)setIsCurlEnabled:(bool)arg1;
+- (void)setIsInkEnabled:(bool)arg1;
+- (void)setIsPuffy:(bool)arg1;
+- (void)setIsStroked:(bool)arg1;
+- (void)setNormalsRadius:(double)arg1;
+- (void)setShadowOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setShadowParallax:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setShadowRadius:(double)arg1;
+- (void)setSmallShadowAlphaMultiplier:(float)arg1;
+- (void)setSmallShadowSizeMultiplier:(float)arg1;
+- (void)setSmallStrokeRadiusMultiplier:(float)arg1;
+- (void)setStrokeBlurRadius:(float)arg1;
+- (void)setStrokeRadius:(double)arg1;
+- (void)setType:(unsigned long long)arg1;
+- (void)setViewForRendering:(id)arg1;
+- (struct CGPoint { double x1; double x2; })shadowOffset;
+- (struct CGPoint { double x1; double x2; })shadowParallax;
+- (double)shadowRadius;
+- (float)smallShadowAlphaMultiplier;
+- (float)smallShadowSizeMultiplier;
+- (float)smallStrokeRadiusMultiplier;
+- (float)strokeBlurRadius;
+- (double)strokeRadius;
+- (unsigned long long)type;
+- (id)viewForRendering;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtCO10Accelerate4BNNS19FullyConnectedLayer : _TtCO10Accelerate4BNNS16ConvolutionLayer
+
+@end

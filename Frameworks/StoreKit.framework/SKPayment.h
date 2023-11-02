@@ -1,0 +1,40 @@
+
+@interface SKPayment : NSObject <NSCopying, NSMutableCopying> {
+    id  _internal;
+}
+
+@property (nonatomic, readonly, copy) SKPaymentAppleIDAuthorizationRequest *appleIDAuthorizationClientInfo;
+@property (nonatomic, readonly, copy) NSString *applicationUsername;
+@property (nonatomic, readonly) bool isStoreOriginated;
+@property (nonatomic, readonly, copy) NSString *partnerIdentifier;
+@property (nonatomic, readonly, copy) NSString *partnerTransactionIdentifier;
+@property (nonatomic, readonly, copy) SKPaymentDiscount *paymentDiscount;
+@property (nonatomic, readonly, copy) NSString *productIdentifier;
+@property (nonatomic, readonly) long long quantity;
+@property (nonatomic, readonly, copy) NSData *requestData;
+@property (nonatomic, readonly, copy) NSDictionary *requestParameters;
+@property (nonatomic, readonly) bool simulatesAskToBuyInSandbox;
+
++ (id)paymentFromPurchaseIntentWithProduct:(id)arg1;
++ (id)paymentWithProduct:(id)arg1;
++ (id)paymentWithProductIdentifier:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)appleIDAuthorizationClientInfo;
+- (id)applicationUsername;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)hash;
+- (id)init;
+- (bool)isEqual:(id)arg1;
+- (bool)isStoreOriginated;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)partnerIdentifier;
+- (id)partnerTransactionIdentifier;
+- (id)paymentDiscount;
+- (id)productIdentifier;
+- (long long)quantity;
+- (id)requestData;
+- (id)requestParameters;
+- (bool)simulatesAskToBuyInSandbox;
+
+@end

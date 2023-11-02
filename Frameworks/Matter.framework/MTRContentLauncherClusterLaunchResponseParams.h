@@ -1,0 +1,4 @@
+
+@interface MTRContentLauncherClusterLaunchResponseParams : MTRContentLauncherClusterLauncherResponseParams
+
+@end

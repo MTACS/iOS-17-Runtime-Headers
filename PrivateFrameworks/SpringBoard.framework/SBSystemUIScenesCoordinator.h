@@ -1,0 +1,94 @@
+
+@interface SBSystemUIScenesCoordinator : NSObject <SBFSceneWorkspaceControlling, SBSystemUISceneBindingProviding> {
+    SBAccessibilityUIServerUISceneController * _accessibilityUIServerUISceneController;
+    NSMutableArray * _allKnownProcessIdentities;
+    SBAssistiveTouchUISceneController * _assistiveTouchUISceneController;
+    SBSystemUISceneDefaultPresenter * _customBinderPresenter;
+    SBDruidUISceneController * _druidUISceneController;
+    SBEnsembleUISceneController * _ensembleUISceneController;
+    SBEyedropperUISceneController * _eyedropperUISceneController;
+    SBFullKeyboardAccessUISceneController * _fullKeyboardAccessUISceneController;
+    SBInputUISceneController * _inputUISceneController;
+    SBInternalPerfPowerHUDSceneController * _internalPerfPowerHUDUISceneController;
+    SBLiveTranscriptionUISceneController * _liveTranscriptionUISceneController;
+    SBMomentsUISceneController * _momentsUISceneController;
+    SBOverlayUISceneController * _overlayUISceneController;
+    SBPerfPowerHUDSceneController * _perfPowerHUDUISceneController;
+    NSMutableArray * _sceneControllers;
+    SBSystemUISceneDefaultPresenter * _springboardMainBinderPresenter;
+    SBVoiceControlUISceneController * _voiceControlUISceneController;
+}
+
+@property (nonatomic, retain) SBAccessibilityUIServerUISceneController *accessibilityUIServerUISceneController;
+@property (nonatomic, retain) SBAssistiveTouchUISceneController *assistiveTouchUISceneController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SBDruidUISceneController *druidUISceneController;
+@property (nonatomic, retain) SBEnsembleUISceneController *ensembleUISceneController;
+@property (nonatomic, retain) SBEyedropperUISceneController *eyedropperUISceneController;
+@property (nonatomic, retain) SBFullKeyboardAccessUISceneController *fullKeyboardAccessUISceneController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SBInputUISceneController *inputUISceneController;
+@property (nonatomic, retain) SBInternalPerfPowerHUDSceneController *internalPerfPowerHUDUISceneController;
+@property (nonatomic, retain) SBLiveTranscriptionUISceneController *liveTranscriptionUISceneController;
+@property (nonatomic, retain) SBMomentsUISceneController *momentsUISceneController;
+@property (nonatomic, retain) SBOverlayUISceneController *overlayUISceneController;
+@property (nonatomic, retain) SBPerfPowerHUDSceneController *perfPowerHUDUISceneController;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SBVoiceControlUISceneController *voiceControlUISceneController;
+
++ (id)_configurationForSystemUISceneSessionRoles;
++ (bool)_isSystemUISceneBoundClientIdentity:(id)arg1;
++ (id)_sceneControllersConfigurations;
++ (id)_systemUISceneBoundProcessIdentities;
++ (id)_systemUISceneBundleIdentifiers;
++ (id)_systemUISceneSessionRoles;
++ (bool)isSystemUISceneBundleIdentifier:(id)arg1;
++ (bool)isSystemUISceneClient:(id)arg1;
++ (bool)isSystemUISceneClientPID:(int)arg1;
+
+- (void).cxx_destruct;
+- (void)_createSceneWorkspaceControllerForProcessIdentity:(id)arg1 jobLabel:(id)arg2 sessionRole:(id)arg3;
+- (void)_createSystemUISceneControllerForConfiguration:(id)arg1;
+- (id)accessibilityUIServerUISceneController;
+- (void)activateSceneForProcessIdentity:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
+- (void)addSystemUISceneToPresentationBinder:(id)arg1 forDisplayIdentity:(id)arg2;
+- (id)assistiveTouchUISceneController;
+- (void)destroyScenesWithPersistentIdentifiers:(id)arg1 processIdentity:(id)arg2 completion:(id /* block */)arg3;
+- (id)druidUISceneController;
+- (id)ensembleUISceneController;
+- (bool)enumerateScenesWithBlock:(id /* block */)arg1;
+- (id)eyedropperUISceneController;
+- (id)fullKeyboardAccessUISceneController;
+- (void)handleSceneRequestForProcessIdentity:(id)arg1 handle:(id)arg2 withOptions:(id)arg3 completion:(id /* block */)arg4;
+- (id)init;
+- (id)inputUISceneController;
+- (id)internalPerfPowerHUDUISceneController;
+- (bool)isSystemUISceneSessionRole:(id)arg1;
+- (id)liveTranscriptionUISceneController;
+- (id)momentsUISceneController;
+- (id)overlayUISceneController;
+- (id)perfPowerHUDUISceneController;
+- (void)removeSystemUISceneFromPresentationBinder:(id)arg1 forDisplayIdentity:(id)arg2;
+- (id)sceneFromIdentityToken:(id)arg1;
+- (id)sceneFromIdentityTokenStringRepresentation:(id)arg1;
+- (id)sceneWorkspaceControllerForProcessIdentity:(id)arg1;
+- (void)setAccessibilityUIServerUISceneController:(id)arg1;
+- (void)setAssistiveTouchUISceneController:(id)arg1;
+- (void)setDruidUISceneController:(id)arg1;
+- (void)setEnsembleUISceneController:(id)arg1;
+- (void)setEyedropperUISceneController:(id)arg1;
+- (void)setFullKeyboardAccessUISceneController:(id)arg1;
+- (void)setInputUISceneController:(id)arg1;
+- (void)setInternalPerfPowerHUDUISceneController:(id)arg1;
+- (void)setLiveTranscriptionUISceneController:(id)arg1;
+- (void)setMomentsUISceneController:(id)arg1;
+- (void)setOverlayUISceneController:(id)arg1;
+- (void)setPerfPowerHUDUISceneController:(id)arg1;
+- (void)setVoiceControlUISceneController:(id)arg1;
+- (bool)shouldHandleRequestForProcessIdentity:(id)arg1 withOptions:(id)arg2;
+- (id)voiceControlUISceneController;
+- (void)windowSceneDidConnect:(id)arg1;
+- (void)windowSceneDidDisconnect:(id)arg1;
+
+@end

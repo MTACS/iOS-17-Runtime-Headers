@@ -1,0 +1,88 @@
+
+@interface CDMCATIManifest : NSObject {
+    NSString * _GUID;
+    float  _confidenceScoreThreshold;
+    NSString * _date;
+    int  _expectedPositiveUtterances;
+    NSDictionary * _intentLookup;
+    bool  _isPreGuidVersion;
+    NSString * _locale;
+    NSDictionary * _manifest;
+    bool  _manifestValid;
+    float  _multiturnConfidenceScoreThreshold;
+    NSDictionary * _positiveOverrides;
+    NSString * _usoEdge;
+    int  _usoElementId;
+    NSString * _usoEntity;
+    NSString * _usoVerb;
+    NSString * _version;
+    NSDictionary * _weights;
+}
+
+@property (retain) NSString *GUID;
+@property float confidenceScoreThreshold;
+@property (retain) NSString *date;
+@property int expectedPositiveUtterances;
+@property (retain) NSDictionary *intentLookup;
+@property bool isPreGuidVersion;
+@property (retain) NSString *locale;
+@property (retain) NSDictionary *manifest;
+@property bool manifestValid;
+@property float multiturnConfidenceScoreThreshold;
+@property (retain) NSDictionary *positiveOverrides;
+@property (retain) NSString *usoEdge;
+@property int usoElementId;
+@property (retain) NSString *usoEntity;
+@property (retain) NSString *usoVerb;
+@property (retain) NSString *version;
+@property (retain) NSDictionary *weights;
+
+- (void).cxx_destruct;
+- (id)GUID;
+- (float)confidenceScoreThreshold;
+- (id)date;
+- (int)expectedPositiveUtterances;
+- (void)extractWeightsAndOverridesFromManifest:(id)arg1;
+- (int)getExpectedPositiveUtterancesValue:(id)arg1;
+- (float)getMultiturnThresholdValue:(id)arg1;
+- (id)getPositiveOverrideGuidsForModelType:(unsigned long long)arg1;
+- (float)getThresholdValue:(id)arg1;
+- (int)getUsoElementId:(id)arg1;
+- (id)getWeightGuidsForModelType:(unsigned long long)arg1;
+- (void)getWeightsAndOverridesAtIntentKeyFromManifest:(id)arg1;
+- (void)getWeightsAndOverridesWithLegacyKeysFromManifest:(id)arg1;
+- (id)initWithPath:(id)arg1;
+- (id)intentLookup;
+- (bool)isPreGuidVersion;
+- (id)locale;
+- (id)manifest;
+- (bool)manifestValid;
+- (float)multiturnConfidenceScoreThreshold;
+- (id)positiveOverrides;
+- (void)readCatiManifest:(id)arg1;
+- (void)setConfidenceScoreThreshold:(float)arg1;
+- (void)setDate:(id)arg1;
+- (void)setExpectedPositiveUtterances:(int)arg1;
+- (void)setGUID:(id)arg1;
+- (void)setIntentLookup:(id)arg1;
+- (void)setIsPreGuidVersion:(bool)arg1;
+- (void)setLocale:(id)arg1;
+- (void)setManifest:(id)arg1;
+- (void)setManifestValid:(bool)arg1;
+- (void)setMultiturnConfidenceScoreThreshold:(float)arg1;
+- (void)setPositiveOverrides:(id)arg1;
+- (void)setUsoEdge:(id)arg1;
+- (void)setUsoElementId:(int)arg1;
+- (void)setUsoEntity:(id)arg1;
+- (void)setUsoVerb:(id)arg1;
+- (void)setVersion:(id)arg1;
+- (void)setWeights:(id)arg1;
+- (id)usoEdge;
+- (int)usoElementId;
+- (id)usoEntity;
+- (id)usoVerb;
+- (bool)validateManifest;
+- (id)version;
+- (id)weights;
+
+@end

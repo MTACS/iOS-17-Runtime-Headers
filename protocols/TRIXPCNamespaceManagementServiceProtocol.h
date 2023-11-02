@@ -1,0 +1,19 @@
+
+@protocol TRIXPCNamespaceManagementServiceProtocol
+
+@required
+
+- (void)deregisterNamespaceWithNamespaceName:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)immediateDownloadForNamespaceNames:(void *)arg1 allowExpensiveNetworking:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSSet *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)loadNamespaceMetadataForNamespaceName:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, TRIClientNamespaceMetadata *, NSError *, void*
+- (void)promoteFactorPackId:(void *)arg1 forNamespaceName:(void *)arg2 rolloutDeployment:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: NSString<TRIFactorPackId> *, NSString *, TRIRolloutDeployment *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)registerNamespaceWithNamespaceName:(void *)arg1 compatibilityVersion:(void *)arg2 defaultsFileURL:(void *)arg3 applicationGroup:(void *)arg4 cloudKitContainerId:(void *)arg5 completion:(void *)arg6; // needs 6 arg types, found 12: NSString *, unsigned int, NSURL *, NSString *, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)rejectFactorPackId:(void *)arg1 forNamespaceName:(void *)arg2 rolloutDeployment:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: NSString<TRIFactorPackId> *, NSString *, TRIRolloutDeployment *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)removeLevelsForFactors:(void *)arg1 withNamespace:(void *)arg2 factorsState:(void *)arg3 removeImmediately:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: NSArray *, NSString *, TRIFactorsState *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)setProvisionalFactorPackId:(void *)arg1 forNamespaceName:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString<TRIFactorPackId> *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)setPurgeabilityLevelsForFactors:(void *)arg1 forNamespaceName:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSDictionary *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)startDownloadLevelsForFactors:(void *)arg1 withNamespace:(void *)arg2 factorsState:(void *)arg3 options:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 11: NSArray *, NSString *, TRIFactorsState *, TRIDownloadOptions *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSError *, void*
+- (void)startDownloadNamespaceWithName:(void *)arg1 options:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, TRIDownloadOptions *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)statusOfDownloadForFactors:(void *)arg1 withNamespace:(void *)arg2 factorsState:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 11: NSArray *, NSString *, TRIFactorsState *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSString *, NSError *, void*
+
+@end

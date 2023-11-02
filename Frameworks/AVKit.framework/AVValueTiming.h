@@ -1,0 +1,32 @@
+
+@interface AVValueTiming : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
+
+@property (nonatomic, readonly) double anchorTimeStamp;
+@property (nonatomic, readonly) double anchorValue;
+@property (nonatomic, readonly) double currentValue;
+@property (nonatomic, readonly) double rate;
+
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (double)currentTimeStamp;
++ (bool)supportsSecureCoding;
++ (id)valueTimingWithAnchorValue:(double)arg1 anchorTimeStamp:(double)arg2 rate:(double)arg3;
+
+- (struct { double x1; double x2; })_timing;
+- (double)anchorTimeStamp;
+- (double)anchorValue;
+- (Class)classForCoder;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)currentValue;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithAnchorValue:(double)arg1 anchorTimeStamp:(double)arg2 rate:(double)arg3;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithValueTiming:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToValueTiming:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (double)rate;
+- (double)timeStampForValue:(double)arg1;
+- (double)valueForTimeStamp:(double)arg1;
+
+@end

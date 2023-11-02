@@ -1,0 +1,95 @@
+
+@interface HMDHomeLightBrightnessLogger : HMFObject <HMDDevicePreferenceDataSource, HMDLogEventDailyTaskRunner, HMFLogging, HMMLogEventObserver> {
+    BMStoreConfig * _biomeStoreConfig;
+    NSDictionary * _characteristicTypesToCollectForHMServiceType;
+    NSString * _clientIdentifier;
+    bool  _currentDevicePrimaryResident;
+    HMDLogEventDailyScheduler * _dailyScheduler;
+    unsigned long long  _eventOrder;
+    NSSet * _hmServiceTypesToCollect;
+    HMDHome * _home;
+    bool  _isBiomeDonationEnabled;
+    bool  _isCoreAnalyticsSubmissionEnabled;
+    <HMMLogEventSubmitting> * _logEventSubmitter;
+    NSNotificationCenter * _notificationCenter;
+    NSMapTable * _notificationEnabledCharacteristicsByAccessory;
+    BMStreamDatastorePruner * _pruner;
+    BMSource * _source;
+    BMStoreStream * _stream;
+    NSObject<OS_dispatch_queue> * _workQueue;
+}
+
+@property (readonly) BMStoreConfig *biomeStoreConfig;
+@property (nonatomic, readonly) NSDictionary *characteristicTypesToCollectForHMServiceType;
+@property (readonly) NSString *clientIdentifier;
+@property (getter=isCurrentDevicePrimaryResident) bool currentDevicePrimaryResident;
+@property (nonatomic, readonly) HMDLogEventDailyScheduler *dailyScheduler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned long long eventOrder;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSSet *hmServiceTypesToCollect;
+@property (readonly) HMDHome *home;
+@property (readonly) bool isBiomeDonationEnabled;
+@property (readonly) bool isCoreAnalyticsSubmissionEnabled;
+@property (nonatomic, readonly) <HMMLogEventSubmitting> *logEventSubmitter;
+@property (readonly, copy) NSString *logIdentifier;
+@property (readonly) NSNotificationCenter *notificationCenter;
+@property (readonly) NSMapTable *notificationEnabledCharacteristicsByAccessory;
+@property (readonly) BMStreamDatastorePruner *pruner;
+@property (readonly) BMSource *source;
+@property (readonly) BMStoreStream *stream;
+@property (readonly) Class superclass;
+@property (readonly) NSObject<OS_dispatch_queue> *workQueue;
+
++ (id)handleDifferentType:(id)arg1;
++ (id)logCategory;
+
+- (void).cxx_destruct;
+- (id)biomeStoreConfig;
+- (id)brightnessSensorsValue;
+- (id)characteristicTypesToCollectForHMServiceType;
+- (id)clientIdentifier;
+- (void)configureLogger;
+- (id)dailyScheduler;
+- (void)didReceiveEventFromDispatcher:(id)arg1;
+- (unsigned long long)eventOrder;
+- (id)findCharacteristicsToRegisterForNotificationsFromHAPAccessory:(id)arg1;
+- (id)generateTimeStampUpToMinute;
+- (id)generateTimeStampUpToSecond;
+- (id)getApproximateCurrentLocationRange;
+- (void)handleAccessoryAdded:(id)arg1;
+- (void)handleAccessoryRemovedNotification:(id)arg1;
+- (void)handleCharacteristicWriteLogEvent:(id)arg1;
+- (void)handleCharacteristicsValueUpdated:(id)arg1;
+- (void)handleCurrentDevicePrimaryResidentChangedWithReason:(id)arg1;
+- (void)handlePrimaryResidentUpdateNotification:(id)arg1;
+- (id)hmServiceTypesToCollect;
+- (id)home;
+- (id)initWithHome:(id)arg1 logEventSubmitter:(id)arg2 dailyScheduler:(id)arg3 workQueue:(id)arg4;
+- (id)initWithHome:(id)arg1 logEventSubmitter:(id)arg2 dailyScheduler:(id)arg3 workQueue:(id)arg4 shouldDonateToBiome:(bool)arg5 shouldSubmitToCoreAnalytics:(bool)arg6;
+- (bool)isBiomeDonationEnabled;
+- (bool)isCoreAnalyticsSubmissionEnabled;
+- (bool)isCurrentDevicePrimaryResident;
+- (id)logEventSubmitter;
+- (id)logIdentifier;
+- (id)notificationCenter;
+- (id)notificationEnabledCharacteristicsByAccessory;
+- (void)processCharacteristicsAndSubmitCoreAnalyticsEvents:(id)arg1 subscriptionEventType:(unsigned long long)arg2 triggerSource:(id)arg3 bundleId:(id)arg4 userUUID:(id)arg5;
+- (id)pruner;
+- (void)runDailyTask;
+- (void)setCurrentDevicePrimaryResident:(bool)arg1;
+- (void)setEventOrder:(unsigned long long)arg1;
+- (id)source;
+- (id)stream;
+- (void)submitCoreAnalyticsEventForBrightness:(id)arg1 accessoryUUID:(id)arg2 characteristicUUID:(id)arg3 homeUUID:(id)arg4 eventOrder:(long long)arg5 homePresence:(bool)arg6 luxLevel:(id)arg7 triggerSource:(id)arg8 bundleId:(id)arg9 userUUID:(id)arg10;
+- (void)submitCoreAnalyticsEventForDoors:(id)arg1 accessoryUUID:(id)arg2 characteristicUUID:(id)arg3 homeUUID:(id)arg4 homePresence:(bool)arg5 triggerSource:(id)arg6 bundleId:(id)arg7 userUUID:(id)arg8;
+- (void)submitCoreAnalyticsEventForGarageDoorOpener:(id)arg1 accessoryUUID:(id)arg2 characteristicUUID:(id)arg3 homeUUID:(id)arg4 homePresence:(bool)arg5 triggerSource:(id)arg6 bundleId:(id)arg7 userUUID:(id)arg8;
+- (void)submitCoreAnalyticsEventForHumiditySensorCharacteristicValue:(id)arg1 accessoryUUIDString:(id)arg2 serviceUUIDString:(id)arg3 characteristicUUIDString:(id)arg4 homeUUID:(id)arg5 homePresence:(bool)arg6 subscriptionEventTypeString:(id)arg7 triggerSource:(id)arg8 bundleId:(id)arg9 userUUID:(id)arg10;
+- (void)submitCoreAnalyticsEventForLocks:(id)arg1 accessoryUUID:(id)arg2 characteristicUUID:(id)arg3 homeUUID:(id)arg4 homePresence:(bool)arg5 triggerSource:(id)arg6 bundleId:(id)arg7 userUUID:(id)arg8;
+- (void)submitCoreAnalyticsEventForMotionSensor:(id)arg1 accessoryUUID:(id)arg2 characteristicUUID:(id)arg3 homeUUID:(id)arg4 homePresence:(bool)arg5 triggerSource:(id)arg6 bundleId:(id)arg7 userUUID:(id)arg8;
+- (void)submitCoreAnalyticsEventForTemperatureSensorCharacteristicValue:(id)arg1 accessoryUUIDString:(id)arg2 serviceUUIDString:(id)arg3 characteristicUUIDString:(id)arg4 homeUUID:(id)arg5 homePresence:(bool)arg6 subscriptionEventTypeString:(id)arg7 triggerSource:(id)arg8 bundleId:(id)arg9 userUUID:(id)arg10;
+- (void)submitCoreAnalyticsEventForThermostatCharacteristicValue:(id)arg1 accessoryUUIDString:(id)arg2 serviceUUIDString:(id)arg3 characteristicUUIDString:(id)arg4 homeUUID:(id)arg5 homePresence:(bool)arg6 subscriptionEventTypeString:(id)arg7 triggerSource:(id)arg8 bundleId:(id)arg9 userUUID:(id)arg10;
+- (id)workQueue;
+
+@end

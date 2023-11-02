@@ -1,0 +1,4 @@
+
+@protocol AFKeyValueObserving <AFInvalidating>
+
+@end

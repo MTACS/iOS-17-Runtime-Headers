@@ -1,0 +1,14 @@
+
+@interface SXBlueprintAnalyzer : NSObject <SXBlueprintAnalyzer>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void)analyzeBlueprint:(id)arg1 DOMObjectProvider:(id)arg2 onMarkerFound:(id /* block */)arg3 then:(id /* block */)arg4 onEndReached:(id /* block */)arg5;
+- (bool)componentPlacedAboveComponentBlueprint:(id)arg1 blueprint:(id)arg2;
+- (void)iterateMarkers:(id)arg1 onMarkerFound:(id /* block */)arg2 then:(id /* block */)arg3 onEndReached:(id /* block */)arg4;
+- (id)markersFromBlueprint:(id)arg1 components:(id)arg2 DOMObjectProvider:(id)arg3 cursor:(id)arg4;
+
+@end

@@ -1,0 +1,94 @@
+
+@interface CUBluetoothDevice : NSObject {
+    struct { 
+        unsigned char bytes[6]; 
+    }  _address;
+    NSString * _addressString;
+    int  _colorCode;
+    unsigned int  _connectedServices;
+    unsigned int  _deviceFlags;
+    unsigned int  _deviceType;
+    int  _disconnectReason;
+    NSString * _firmwareVersion;
+    NSUUID * _identifier;
+    bool  _magicPaired;
+    NSString * _manufacturer;
+    NSString * _modelNumber;
+    NSString * _name;
+    bool  _present;
+    int  _primaryPlacement;
+    unsigned int  _productIdentifier;
+    int  _secondaryPlacement;
+    int  _streamState;
+    bool  _supportsAACPService;
+    unsigned int  _versionID;
+}
+
+@property (nonatomic) struct { unsigned char x1[6]; } address;
+@property (copy) NSString *addressString;
+@property (nonatomic) int colorCode;
+@property (nonatomic) unsigned int connectedServices;
+@property (nonatomic) unsigned int deviceFlags;
+@property (nonatomic) unsigned int deviceType;
+@property (nonatomic) int disconnectReason;
+@property (copy) NSString *firmwareVersion;
+@property (copy) NSUUID *identifier;
+@property (nonatomic) bool magicPaired;
+@property (copy) NSString *manufacturer;
+@property (copy) NSString *modelNumber;
+@property (copy) NSString *name;
+@property (nonatomic) bool present;
+@property (nonatomic) int primaryPlacement;
+@property (nonatomic) unsigned int productIdentifier;
+@property (nonatomic) int secondaryPlacement;
+@property (nonatomic) int streamState;
+@property (nonatomic) bool supportsAACPService;
+@property (nonatomic) unsigned int versionID;
+
+- (void).cxx_destruct;
+- (struct { unsigned char x1[6]; })address;
+- (id)addressString;
+- (int)colorCode;
+- (unsigned int)connectedServices;
+- (id)description;
+- (unsigned int)deviceFlags;
+- (unsigned int)deviceType;
+- (int)disconnectReason;
+- (id)firmwareVersion;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)init;
+- (bool)isEqual:(id)arg1;
+- (bool)magicPaired;
+- (id)manufacturer;
+- (id)modelNumber;
+- (id)name;
+- (bool)present;
+- (int)primaryPlacement;
+- (unsigned int)productIdentifier;
+- (int)secondaryPlacement;
+- (void)setAddress:(struct { unsigned char x1[6]; })arg1;
+- (void)setAddressString:(id)arg1;
+- (void)setColorCode:(int)arg1;
+- (void)setConnectedServices:(unsigned int)arg1;
+- (void)setDeviceFlags:(unsigned int)arg1;
+- (void)setDeviceType:(unsigned int)arg1;
+- (void)setDisconnectReason:(int)arg1;
+- (void)setFirmwareVersion:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setMagicPaired:(bool)arg1;
+- (void)setManufacturer:(id)arg1;
+- (void)setModelNumber:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setPresent:(bool)arg1;
+- (void)setPrimaryPlacement:(int)arg1;
+- (void)setProductIdentifier:(unsigned int)arg1;
+- (void)setSecondaryPlacement:(int)arg1;
+- (void)setStreamState:(int)arg1;
+- (void)setSupportsAACPService:(bool)arg1;
+- (void)setVersionID:(unsigned int)arg1;
+- (int)streamState;
+- (bool)supportsAACPService;
+- (unsigned int)versionID;
+
+@end

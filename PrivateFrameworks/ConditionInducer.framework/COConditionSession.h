@@ -1,0 +1,94 @@
+
+@interface COConditionSession : NSObject {
+    NSArray * _additionalArguments;
+    COConditionBundle * _bundle;
+    NSURL * _bundleURL;
+    NSMutableDictionary * _classDict;
+    COCondition * _condition;
+    id /* block */  _notifyTeardownBeganCallback;
+    NSString * _selectedCondition;
+    NSString * _selectedProfile;
+    NSObject<OS_dispatch_queue> * _setUpQueue;
+    COStatusBar * _statusBar;
+    id /* block */  _statusBarPopupFinishedTeardownCallback;
+    NSObject<OS_dispatch_queue> * _tearDownQueue;
+    NSString * _warning;
+}
+
+@property (nonatomic, readonly) NSArray *additionalArguments;
+@property (nonatomic, retain) COConditionBundle *bundle;
+@property (nonatomic, retain) NSURL *bundleURL;
+@property (nonatomic, retain) NSMutableDictionary *classDict;
+@property (nonatomic, retain) COCondition *condition;
+@property (nonatomic, copy) id /* block */ notifyTeardownBeganCallback;
+@property (nonatomic, readonly, copy) NSString *selectedCondition;
+@property (nonatomic, readonly, copy) NSString *selectedProfile;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *setUpQueue;
+@property (nonatomic, retain) COStatusBar *statusBar;
+@property (nonatomic, copy) id /* block */ statusBarPopupFinishedTeardownCallback;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *tearDownQueue;
+@property (nonatomic, retain) NSString *warning;
+
++ (id)_loadExternalConditionBundleInfo:(id)arg1 supportedConditionData:(id)arg2 error:(id*)arg3;
++ (id)bundleToDict:(id)arg1;
++ (bool)conditionIsBundledWithFramework:(id)arg1;
++ (id)conditionsBundledWithFramework;
++ (id)findBundleURLForConditionClass:(id)arg1 andError:(id*)arg2;
++ (id)getActiveConditions;
++ (id)getBootSessionUUID;
++ (id)getBundleURLsAtPath:(id)arg1;
++ (id)listAvailableConditions;
++ (id)loadConditionCacheWithError:(id*)arg1;
++ (id)loadInformationDict;
++ (void)logSignpostWithConditionStates;
++ (id)prepareInfoDictForBuiltInCondition:(id)arg1 error:(id*)arg2;
++ (id)removeStaleConditions:(id)arg1;
++ (bool)tearDownAllConditionsWithErrors:(id*)arg1;
++ (bool)updateConditionCache:(bool)arg1 forCondition:(id)arg2 additionalArguments:(id)arg3 conditionBundle:(id)arg4 error:(id*)arg5;
++ (bool)writeConditionCache:(id)arg1 toFileDescriptor:(int)arg2 error:(id*)arg3;
+
+- (void).cxx_destruct;
+- (bool)_setupBundleAtPath:(id)arg1 withError:(id*)arg2;
+- (id)additionalArguments;
+- (id)bundle;
+- (id)bundleURL;
+- (id)classDict;
+- (id)className;
+- (id)condition;
+- (id)copyLoadedConditionClassName;
+- (bool)createStatusBar:(id)arg1 conditionClassDescription:(id)arg2 withProfileDescription:(id)arg3 error:(id*)arg4;
+- (void)dealloc;
+- (void)freeStatusBar;
+- (bool)hasActiveCondition;
+- (id)initWithConditionIdentifier:(id)arg1 profile:(id)arg2;
+- (id)initWithConditionIdentifier:(id)arg1 profile:(id)arg2 additionalArgs:(id)arg3;
+- (bool)loadBundleWithPath:(id)arg1 andError:(id*)arg2;
+- (bool)loadProfileForBundle:(id)arg1 withError:(id*)arg2;
+- (id /* block */)notifyTeardownBeganCallback;
+- (id)selectedCondition;
+- (id)selectedProfile;
+- (void)setBundle:(id)arg1;
+- (void)setBundleURL:(id)arg1;
+- (void)setClassDict:(id)arg1;
+- (void)setCondition:(id)arg1;
+- (void)setNotifyTeardownBeganCallback:(id /* block */)arg1;
+- (void)setSetUpQueue:(id)arg1;
+- (void)setStatusBar:(id)arg1;
+- (void)setStatusBarPopupFinishedTeardownCallback:(id /* block */)arg1;
+- (void)setTearDownQueue:(id)arg1;
+- (id)setUpQueue;
+- (bool)setUpWithError:(id*)arg1;
+- (void)setWarning:(id)arg1;
+- (bool)startConditionWithCallback:(id /* block */)arg1;
+- (bool)startConditionWithCallback:(id /* block */)arg1 andStatusBarNotificationCallback:(id /* block */)arg2;
+- (bool)startConditionWithCallback:(id /* block */)arg1 teardownStartedCallback:(id /* block */)arg2 teardownFinishedCallback:(id /* block */)arg3;
+- (id)statusBar;
+- (id /* block */)statusBarPopupFinishedTeardownCallback;
+- (bool)stopConditionWithCallback:(id /* block */)arg1;
+- (id)tearDownQueue;
+- (bool)tearDownWithError:(id*)arg1;
+- (id)userFriendlyNameForSelectedCondition;
+- (id)userFriendlyNameForSelectedProfile;
+- (id)warning;
+
+@end

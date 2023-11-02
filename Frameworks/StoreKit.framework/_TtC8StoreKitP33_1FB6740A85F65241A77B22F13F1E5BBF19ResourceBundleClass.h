@@ -1,0 +1,4 @@
+
+@interface _TtC8StoreKitP33_1FB6740A85F65241A77B22F13F1E5BBF19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

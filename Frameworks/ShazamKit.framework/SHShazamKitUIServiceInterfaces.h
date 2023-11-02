@@ -1,0 +1,4 @@
+
+@interface SHShazamKitUIServiceInterfaces : NSObject
+
+@end

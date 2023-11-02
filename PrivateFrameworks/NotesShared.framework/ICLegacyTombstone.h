@@ -1,0 +1,37 @@
+
+@interface ICLegacyTombstone : ICCloudSyncingObject
+
+@property (nonatomic, retain) ICAccount *account;
+@property (nonatomic, retain) NSString *contentHashAtImport;
+@property (nonatomic, retain) NSDate *modificationDateAtImport;
+@property (nonatomic) short type;
+
++ (void)addLegacyTombstoneForFolder:(id)arg1;
++ (void)addLegacyTombstoneForNote:(id)arg1;
++ (id)addLegacyTombstoneWithObjectIdentifier:(id)arg1 type:(short)arg2 account:(id)arg3;
++ (id)allLegacyTombstonesInContext:(id)arg1;
++ (id)existingCloudObjectForRecordID:(id)arg1 accountID:(id)arg2 context:(id)arg3;
++ (bool)hasTombstonePrefix:(id)arg1;
++ (id)legacyTombstoneWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)legacyTombstonesMatchingPredicate:(id)arg1 context:(id)arg2;
++ (id)newCloudObjectForRecord:(id)arg1 accountID:(id)arg2 context:(id)arg3;
++ (id)newLegacyTombstoneWithIdentifier:(id)arg1 type:(short)arg2 account:(id)arg3;
++ (void)removeLegacyTombstoneForFolder:(id)arg1;
++ (void)removeLegacyTombstoneForNote:(id)arg1;
++ (void)removeLegacyTombstoneWithObjectIdentifier:(id)arg1 type:(short)arg2 context:(id)arg3;
++ (id)tombstoneIdentifierForObjectIdentifier:(id)arg1 type:(short)arg2;
++ (short)tombstoneTypeFromRecordName:(id)arg1;
+
+- (id)cloudAccount;
+- (void)deleteFromLocalDatabase;
+- (bool)hasAllMandatoryFields;
+- (id)ic_loggingValues;
+- (bool)isInICloudAccount;
+- (id)makeCloudKitRecordForApproach:(long long)arg1 mergeableFieldState:(id)arg2;
+- (bool)mergeCloudKitRecord:(id)arg1 accountID:(id)arg2 approach:(long long)arg3 mergeableFieldState:(id)arg4;
+- (void)objectWasDeletedFromCloud;
+- (void)objectWasDeletedFromCloudByAnotherDevice;
+- (id)recordType;
+- (id)recordZoneName;
+
+@end

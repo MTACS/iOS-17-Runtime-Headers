@@ -1,0 +1,103 @@
+
+@interface HDCodableRacingCluster : PBCodable <NSCopying> {
+    int  _activityType;
+    HDCodableRacingMetrics * _bestWorkoutMetrics;
+    int  _clusterSize;
+    NSMutableArray * _eligibleClusterUUIDs;
+    bool  _final;
+    struct { 
+        unsigned int relevance : 1; 
+        unsigned int activityType : 1; 
+        unsigned int clusterSize : 1; 
+        unsigned int final : 1; 
+    }  _has;
+    HDCodableRacingMetrics * _lastWorkoutMetrics;
+    double  _relevance;
+    NSString * _routeLabel;
+    NSData * _routeSnapshot;
+    HDCodableSyncIdentity * _syncIdentity;
+    NSData * _uuid;
+    NSData * _workoutClusterUUID;
+}
+
+@property (nonatomic) int activityType;
+@property (nonatomic, retain) HDCodableRacingMetrics *bestWorkoutMetrics;
+@property (nonatomic) int clusterSize;
+@property (nonatomic, retain) NSMutableArray *eligibleClusterUUIDs;
+@property (nonatomic) bool final;
+@property (nonatomic) bool hasActivityType;
+@property (nonatomic, readonly) bool hasBestWorkoutMetrics;
+@property (nonatomic) bool hasClusterSize;
+@property (nonatomic) bool hasFinal;
+@property (nonatomic, readonly) bool hasLastWorkoutMetrics;
+@property (nonatomic) bool hasRelevance;
+@property (nonatomic, readonly) bool hasRouteLabel;
+@property (nonatomic, readonly) bool hasRouteSnapshot;
+@property (nonatomic, readonly) bool hasSyncIdentity;
+@property (nonatomic, readonly) bool hasUuid;
+@property (nonatomic, readonly) bool hasWorkoutClusterUUID;
+@property (nonatomic, retain) HDCodableRacingMetrics *lastWorkoutMetrics;
+@property (nonatomic) double relevance;
+@property (nonatomic, retain) NSString *routeLabel;
+@property (nonatomic, retain) NSData *routeSnapshot;
+@property (nonatomic, retain) HDCodableSyncIdentity *syncIdentity;
+@property (nonatomic, retain) NSData *uuid;
+@property (nonatomic, retain) NSData *workoutClusterUUID;
+
++ (Class)eligibleClusterUUIDsType;
+
+- (void).cxx_destruct;
+- (int)activityType;
+- (void)addEligibleClusterUUIDs:(id)arg1;
+- (id)bestWorkoutMetrics;
+- (void)clearEligibleClusterUUIDs;
+- (int)clusterSize;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)eligibleClusterUUIDs;
+- (id)eligibleClusterUUIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)eligibleClusterUUIDsCount;
+- (bool)final;
+- (bool)hasActivityType;
+- (bool)hasBestWorkoutMetrics;
+- (bool)hasClusterSize;
+- (bool)hasFinal;
+- (bool)hasLastWorkoutMetrics;
+- (bool)hasRelevance;
+- (bool)hasRouteLabel;
+- (bool)hasRouteSnapshot;
+- (bool)hasSyncIdentity;
+- (bool)hasUuid;
+- (bool)hasWorkoutClusterUUID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)lastWorkoutMetrics;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (double)relevance;
+- (id)routeLabel;
+- (id)routeSnapshot;
+- (void)setActivityType:(int)arg1;
+- (void)setBestWorkoutMetrics:(id)arg1;
+- (void)setClusterSize:(int)arg1;
+- (void)setEligibleClusterUUIDs:(id)arg1;
+- (void)setFinal:(bool)arg1;
+- (void)setHasActivityType:(bool)arg1;
+- (void)setHasClusterSize:(bool)arg1;
+- (void)setHasFinal:(bool)arg1;
+- (void)setHasRelevance:(bool)arg1;
+- (void)setLastWorkoutMetrics:(id)arg1;
+- (void)setRelevance:(double)arg1;
+- (void)setRouteLabel:(id)arg1;
+- (void)setRouteSnapshot:(id)arg1;
+- (void)setSyncIdentity:(id)arg1;
+- (void)setUuid:(id)arg1;
+- (void)setWorkoutClusterUUID:(id)arg1;
+- (id)syncIdentity;
+- (id)uuid;
+- (id)workoutClusterUUID;
+- (void)writeTo:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface MKFServiceGroupDatabaseID : MKFModelDatabaseID
+
+@end

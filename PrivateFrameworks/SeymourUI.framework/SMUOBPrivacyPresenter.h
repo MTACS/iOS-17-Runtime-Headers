@@ -1,0 +1,4 @@
+
+@interface SMUOBPrivacyPresenter : OBPrivacyPresenter
+
+@end

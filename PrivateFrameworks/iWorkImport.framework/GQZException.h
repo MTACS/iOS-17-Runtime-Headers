@@ -1,0 +1,4 @@
+
+@interface GQZException : NSException
+
+@end

@@ -1,0 +1,4 @@
+
+@interface PlaceholderForCFX : NSObject
+
+@end

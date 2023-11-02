@@ -1,0 +1,4 @@
+
+@protocol SNRequest <NSObject>
+
+@end

@@ -1,0 +1,6 @@
+
+@interface VNSaliencyAHeatmapBoundingBoxGenerator : VNSaliencyHeatmapBoundingBoxGenerator
+
++ (id)espressoModelFileNameForConfigurationOptions:(id)arg1;
+
+@end

@@ -1,0 +1,6 @@
+
+@interface _TtCC7SwiftUI37ClarityUIListLayoutSettingsDiffActionP33_29E232EF04ED72B576A9E93C8C0E932F21SettingsDiffInspector : UIApplicationSceneSettingsDiffInspector
+
+- (id)init;
+
+@end

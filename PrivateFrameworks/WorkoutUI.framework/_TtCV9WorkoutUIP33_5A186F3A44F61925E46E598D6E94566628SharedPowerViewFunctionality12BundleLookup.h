@@ -1,0 +1,4 @@
+
+@interface _TtCV9WorkoutUIP33_5A186F3A44F61925E46E598D6E94566628SharedPowerViewFunctionality12BundleLookup : _TtCs12_SwiftObject
+
+@end

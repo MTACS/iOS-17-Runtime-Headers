@@ -1,0 +1,4 @@
+
+@interface _TtC10WeatherKitP33_1D999C2980F3DD691D6C028F635E9A6012BundleLookup : _TtCs12_SwiftObject
+
+@end

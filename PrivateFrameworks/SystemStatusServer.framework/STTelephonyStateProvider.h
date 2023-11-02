@@ -1,0 +1,82 @@
+
+@interface STTelephonyStateProvider : NSObject <BSDebugDescriptionProviding, BSInvalidatable, CTStewieStateMonitorDelegate, CoreTelephonyClientCarrierBundleDelegate, CoreTelephonyClientDataDelegate, CoreTelephonyClientDelegate, CoreTelephonyClientRegistrationDelegate, CoreTelephonyClientSubscriberDelegate, CoreTelephonyClientSuppServicesDelegate, RadiosPreferencesDelegate> {
+    bool  _airplaneModeEnabled;
+    NSObject<OS_dispatch_queue> * _backgroundQueryQueue;
+    NSArray * _cachedCTContexts;
+    bool  _cachedDualSIMEnabled;
+    long long  _cachedNeedsUserIdentificationModule;
+    bool  _cachedRadioModuleDead;
+    long long  _cachedSuppressesCellDataIndicator;
+    long long  _cachedSuppressesCellIndicators;
+    bool  _containsCellularRadio;
+    CoreTelephonyClient * _coreTelephonyClient;
+    bool  _hasCellularTelephony;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSHashTable * _observers;
+    RadiosPreferences * _radiosPreferences;
+    struct __CTServerConnection { } * _serverConnection;
+    STTelephonySubscriptionContext * _slot1SubscriptionContext;
+    STTelephonySubscriptionContext * _slot2SubscriptionContext;
+    CTStewieState * _stewieState;
+    CTStewieStateMonitor * _stewieStateMonitor;
+    bool * _telephonyDaemonRestartHandlerCanceled;
+}
+
+@property (getter=isCellularRadioCapabilityActive, nonatomic, readonly) bool cellularRadioCapabilityActive;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDualSIMEnabled, nonatomic, readonly) bool dualSIMEnabled;
+@property (nonatomic, readonly) bool hasCellularTelephony;
+@property (readonly) unsigned long long hash;
+@property (getter=isInactiveSOSEnabled, nonatomic, readonly) bool inactiveSOSEnabled;
+@property (nonatomic, readonly) bool needsUserIdentificationModule;
+@property (getter=isRadioModuleDead, nonatomic, readonly) bool radioModuleDead;
+@property (readonly) Class superclass;
+@property (getter=isUsingStewieForSOS, nonatomic, readonly) bool usingStewieForSOS;
+
+- (void).cxx_destruct;
+- (void)addObserver:(id)arg1;
+- (void)airplaneModeChanged;
+- (void)carrierBundleChange:(id)arg1;
+- (id)carrierBundleInfoForSlot:(long long)arg1;
+- (void)cellChanged:(id)arg1 cell:(id)arg2;
+- (void)currentDataSimChanged:(id)arg1;
+- (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;
+- (void)dealloc;
+- (id)debugDescription;
+- (id)debugDescriptionWithMultilinePrefix:(id)arg1;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (void)displayStatusChanged:(id)arg1 status:(id)arg2;
+- (void)dualSimCapabilityDidChange;
+- (bool)hasCellularTelephony;
+- (id)init;
+- (void)invalidate;
+- (bool)isCellularRadioCapabilityActive;
+- (bool)isDualSIMEnabled;
+- (bool)isInactiveSOSEnabled;
+- (bool)isRadioModuleDead;
+- (bool)isSIMPresentForSlot:(long long)arg1;
+- (bool)isUsingStewieForSOS;
+- (id)mobileEquipmentInfoForSlot:(long long)arg1;
+- (bool)needsUserIdentificationModule;
+- (void)networkReselectionNeeded:(id)arg1;
+- (void)networkSelected:(id)arg1 success:(bool)arg2 mode:(id)arg3;
+- (void)operatorBundleChange:(id)arg1;
+- (void)operatorNameChanged:(id)arg1 name:(id)arg2;
+- (void)preferredDataSimChanged:(id)arg1;
+- (void)rejectCauseCodeChanged:(id)arg1 causeCode:(id)arg2;
+- (void)removeObserver:(id)arg1;
+- (void)servingNetworkChanged:(id)arg1;
+- (void)signalStrengthChanged:(id)arg1 info:(id)arg2;
+- (void)simStatusDidChange:(id)arg1 status:(id)arg2;
+- (void)stateChanged:(id)arg1;
+- (void)subscriptionInfoDidChange;
+- (id)subscriptionInfoForSlot:(long long)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (void)suppServicesEvent:(id)arg1 event:(int)arg2 settingsType:(int)arg3 data:(id)arg4;
+
+@end

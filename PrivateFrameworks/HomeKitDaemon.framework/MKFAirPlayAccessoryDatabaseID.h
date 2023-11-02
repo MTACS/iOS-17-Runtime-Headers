@@ -1,0 +1,4 @@
+
+@interface MKFAirPlayAccessoryDatabaseID : MKFMediaAccessoryDatabaseID
+
+@end

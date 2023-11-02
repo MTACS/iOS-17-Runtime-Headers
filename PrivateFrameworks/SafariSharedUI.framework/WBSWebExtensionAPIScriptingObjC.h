@@ -1,0 +1,4 @@
+
+@interface WBSWebExtensionAPIScriptingObjC : WBSWebExtensionAPIObject
+
+@end

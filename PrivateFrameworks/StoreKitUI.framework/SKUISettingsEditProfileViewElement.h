@@ -1,0 +1,4 @@
+
+@interface SKUISettingsEditProfileViewElement : SKUIViewElement
+
+@end

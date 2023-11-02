@@ -1,0 +1,4 @@
+
+@interface _TtCC26DeepThoughtBiomeFoundation13EventFeatures14SleepModeEvent : _TtCs12_SwiftObject
+
+@end

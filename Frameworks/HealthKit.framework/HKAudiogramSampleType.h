@@ -1,0 +1,4 @@
+
+@interface HKAudiogramSampleType : HKSampleType
+
+@end

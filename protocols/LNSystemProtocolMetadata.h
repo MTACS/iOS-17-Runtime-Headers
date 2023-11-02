@@ -1,0 +1,4 @@
+
+@protocol LNSystemProtocolMetadata <NSObject>
+
+@end

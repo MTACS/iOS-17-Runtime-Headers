@@ -1,0 +1,4 @@
+
+@interface NTKCompanionUtilities : NSObject
+
+@end

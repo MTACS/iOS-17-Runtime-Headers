@@ -1,0 +1,92 @@
+
+@interface WBSPrivacyReportData : NSObject <WBSPrivacyReportDataProvider> {
+    NSArray * _blockedKnownTrackers;
+    NSObject<OS_dispatch_queue> * _dataPrefetchQueue;
+    NSDate * _dataWindowEndDate;
+    NSDate * _dataWindowStartDate;
+    NSSet * _firstPartiesFromHistory;
+    NSSet * _histories;
+    WBSKnownTrackerFilter * _knownTrackerFilter;
+    NSArray * _knownTrackers;
+    NSArray * _knownTrackersSortDescriptors;
+    WBSKnownTrackingThirdParty * _mostSeenKnownTracker;
+    NSMutableArray * _prefetchCompletionHandlers;
+    long long  _prefetchState;
+    NSArray * _preventedKnownTrackers;
+    NSSet * _profileIdentifiers;
+    double  _ratioOfTrackedFirstPartiesToAllVisited;
+    NSArray * _trackedFirstParties;
+    NSArray * _trackedFirstPartiesSortDescriptors;
+    NSSet * _trackerOwnerNames;
+    WKWebView * _webView;
+    NSString * _webViewFirstPartyHighLevelDomainFromHost;
+    NSArray * _webViewLoadedThirdParties;
+}
+
+@property (nonatomic, readonly) NSArray *blockedKnownTrackers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasData;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSSet *histories;
+@property (nonatomic, readonly) NSArray *knownTrackers;
+@property (nonatomic, copy) NSArray *knownTrackersSortDescriptors;
+@property (nonatomic, readonly) WBSKnownTrackingThirdParty *mostSeenKnownTracker;
+@property (nonatomic, readonly) NSArray *preventedKnownTrackers;
+@property (nonatomic, readonly, copy) NSSet *profileIdentifiers;
+@property (nonatomic, readonly) double ratioOfTrackedFirstPartiesToAllVisited;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *trackedFirstParties;
+@property (nonatomic, copy) NSArray *trackedFirstPartiesSortDescriptors;
+@property (nonatomic, readonly) NSSet *trackerOwnerNames;
+@property (nonatomic) WKWebView *webView;
+
++ (void)_clearCachedDataWithStrategy:(long long)arg1 profiles:(id)arg2;
++ (id)cachedNumberOfTrackersOnStartPageForProfileWithIdentifier:(id)arg1;
++ (void)clearCachedDataForProfilesWithIdentifiers:(id)arg1;
++ (void)clearCachedDataForProfilesWithIdentifiersNotInSet:(id)arg1;
++ (void)getKnownTrackingDomainsForWebView:(id)arg1 after:(id)arg2 before:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)setCachedNumberOfTrackersOnStartPage:(id)arg1 forProfileWithIdentifier:(id)arg2;
+
+- (void).cxx_destruct;
+- (void)_addPrefetchCompletionHandler:(id /* block */)arg1;
+- (void)_computeStatistics;
+- (id)_dataWindowStartWithBlockedThirdParties:(id)arg1 boundBy:(id)arg2;
+- (id)_dataWindowStartWithLoadedThirdParties:(id)arg1 boundBy:(id)arg2 earliestFirstParty:(id*)arg3;
+- (void)_discardPrefetchedData;
+- (void)_executePrefetchCompletionHandlers;
+- (void)_getHighLevelHTTPFamilyDomainsFromHistoryVisitedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_getResourceLoadStatisticsDataSummary:(id /* block */)arg1;
+- (void)_ingestPreventedThirdParties:(id)arg1 blockedThirdParties:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)_lastHistoryVisitForHighLevelDomain:(id)arg1;
+- (void)_loadDataForWebViewWithCompletionHandler:(id /* block */)arg1;
+- (void)_loadDataWithCompletionHandler:(id /* block */)arg1;
+- (void)_prefetchData;
+- (void)_resetKnownTrackersSortDescriptors;
+- (void)_resetTrackedFirstPartiesSortDescriptors;
+- (void)_sortKnownTrackers;
+- (void)_sortTrackedFirstParties;
+- (id)blockedKnownTrackers;
+- (void)discardPrefetchedData;
+- (id)getRecentFirstPartiesFromThirdParty:(id)arg1;
+- (bool)hasData;
+- (id)histories;
+- (id)initWithProfileIdentifiers:(id)arg1 histories:(id)arg2;
+- (id)knownTrackers;
+- (id)knownTrackersSortDescriptors;
+- (void)loadDataFromStartDate:(id)arg1 toEndDate:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)loadDataWithCompletionHandler:(id /* block */)arg1;
+- (id)mostSeenKnownTracker;
+- (void)prefetchData;
+- (id)preventedKnownTrackers;
+- (id)profileIdentifiers;
+- (double)ratioOfTrackedFirstPartiesToAllVisited;
+- (void)setKnownTrackersSortDescriptors:(id)arg1;
+- (void)setTrackedFirstPartiesSortDescriptors:(id)arg1;
+- (void)setWebView:(id)arg1;
+- (id)trackedFirstParties;
+- (id)trackedFirstPartiesSortDescriptors;
+- (id)trackerOwnerNames;
+- (id)webView;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC14AppleIDSetupUIP33_52E3B066522877185BFD967D8EBABE2619ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

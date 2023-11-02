@@ -1,0 +1,4 @@
+
+@protocol SBSceneLayoutWorkspaceTransactionObserver <FBApplicationUpdateScenesTransactionObserver>
+
+@end

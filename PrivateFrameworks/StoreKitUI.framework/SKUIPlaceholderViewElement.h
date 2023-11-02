@@ -1,0 +1,4 @@
+
+@interface SKUIPlaceholderViewElement : SKUIViewElement
+
+@end

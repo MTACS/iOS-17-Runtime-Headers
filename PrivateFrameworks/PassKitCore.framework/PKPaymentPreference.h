@@ -1,0 +1,61 @@
+
+@interface PKPaymentPreference : NSObject {
+    NSMutableDictionary * _errors;
+    NSString * _footer;
+    id /* block */  _footerLinkActionBlock;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _footerLinkRange;
+    bool  _isReadOnly;
+    unsigned long long  _pendingIndex;
+    NSArray * _preferences;
+    unsigned long long  _selectedIndex;
+    bool  _supportsDeletion;
+    NSString * _title;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *errors;
+@property (nonatomic, copy) NSString *footer;
+@property (nonatomic, copy) id /* block */ footerLinkActionBlock;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } footerLinkRange;
+@property (nonatomic) bool isReadOnly;
+@property (nonatomic) unsigned long long pendingIndex;
+@property (nonatomic, copy) NSArray *preferences;
+@property (nonatomic) unsigned long long selectedIndex;
+@property (nonatomic, readonly) bool supportsDeletion;
+@property (nonatomic, copy) NSString *title;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
+- (void).cxx_destruct;
+- (void)clearAllErrors;
+- (id)errors;
+- (id)errorsForPreference:(id)arg1;
+- (id)footer;
+- (id /* block */)footerLinkActionBlock;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })footerLinkRange;
+- (id)initWithTitle:(id)arg1 preferences:(id)arg2 selectedIndex:(unsigned long long)arg3 readOnly:(bool)arg4;
+- (bool)isReadOnly;
+- (unsigned long long)pendingIndex;
+- (bool)preferenceObject:(id)arg1 representsContact:(id)arg2;
+- (id)preferences;
+- (unsigned long long)selectedIndex;
+- (void)setErrors:(id)arg1;
+- (void)setErrors:(id)arg1 forPreference:(id)arg2;
+- (void)setFooter:(id)arg1;
+- (void)setFooterLinkActionBlock:(id /* block */)arg1;
+- (void)setFooterLinkRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setIsReadOnly:(bool)arg1;
+- (void)setPendingIndex:(unsigned long long)arg1;
+- (void)setPreferences:(id)arg1;
+- (void)setSelectedIndex:(unsigned long long)arg1;
+- (void)setTitle:(id)arg1;
+- (bool)supportsDeletion;
+- (id)title;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (bool)supportsInlineEditing;
+
+@end

@@ -1,0 +1,26 @@
+
+@interface PKDiscoveryRelevantDateRange : NSObject <NSCopying, NSSecureCoding> {
+    NSDate * _endDate;
+    NSDate * _startDate;
+}
+
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSDate *startDate;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)endDate;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithStartDate:(id)arg1 endDate:(id)arg2;
+- (bool)isExpiredForDate:(id)arg1;
+- (bool)isValidForTime:(id)arg1;
+- (void)setEndDate:(id)arg1;
+- (void)setStartDate:(id)arg1;
+- (id)startDate;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKFServiceGroupPrivateExtensions
+
+@end

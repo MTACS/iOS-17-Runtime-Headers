@@ -1,0 +1,121 @@
+
+@interface SBSwitcherShelfViewController : SBFTouchPassThroughViewController <SBAssistantObserver, SBAttentionAwarenessClientDelegate, SBLayoutStateTransitionObserver, SBShelfLiveContentOverlayCoordinatorDelegate, SBSwitcherContentViewControllerDataSource, SBSwitcherContentViewControllerDelegate, SBTransientUIIndirectPanToDismissParticipant, SBTransientUITapToDismissParticipant> {
+    long long  _activePresentationAndDismissalAnimations;
+    unsigned long long  _animationStyle;
+    NSArray * _appLayouts;
+    unsigned long long  _contentOptions;
+    long long  _contentOrientation;
+    SBFluidSwitcherViewController * _contentViewController;
+    <SBSwitcherShelfViewControllerDelegate> * _delegate;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _halfHalfSize;
+    SBPortalView * _homeAffordancePortalView;
+    SBAttentionAwarenessClient * _idleTouchAwarenessClient;
+    NSSet * _ignoredDisplayItems;
+    SBShelfLiveContentOverlayCoordinator * _liveContentOverlayCoordinator;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _presentationTargetFrame;
+    bool  _presented;
+    SBShelfRootSwitcherModifier * _rootModifier;
+    SBSwitcherShelf * _shelf;
+    SBSwitcherController * _switcherController;
+}
+
+@property (nonatomic, readonly) unsigned long long animationStyle;
+@property (nonatomic, readonly, copy) NSArray *appLayouts;
+@property (nonatomic) unsigned long long contentOptions;
+@property (nonatomic) long long contentOrientation;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <SBSwitcherShelfViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSSet *focusedDisplayItems;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SBPortalView *homeAffordancePortalView;
+@property (nonatomic, copy) NSSet *ignoredDisplayItems;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } presentationTargetFrame;
+@property (nonatomic, readonly) bool presented;
+@property (getter=isPresentingOrDismissing, nonatomic, readonly) bool presentingOrDismissing;
+@property (nonatomic, readonly) SBSwitcherShelf *shelf;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SBSwitcherController *switcherController;
+@property (nonatomic, retain) SBSwitcherShelfView *view;
+
+- (void).cxx_destruct;
+- (bool)_dismissShelfIfNeededWithLocation:(struct CGPoint { double x1; double x2; })arg1 window:(id)arg2;
+- (void)_dockHeightWillChange:(id)arg1;
+- (void)_performNewWindowRequestForBundleIdentifier:(id)arg1;
+- (void)_performSwitcherTransitionRequest:(id)arg1;
+- (void)_rebuildCachedAppLayouts;
+- (unsigned long long)animationStyle;
+- (id)appLayouts;
+- (id)appLayoutsForSwitcherContentController:(id)arg1;
+- (void)assistantWillAppear:(id)arg1 windowScene:(id)arg2;
+- (id)beginHidingAppLayout:(id)arg1 forReason:(id)arg2;
+- (void)client:(id)arg1 attentionLostTimeoutDidExpire:(double)arg2 forConfigurationGeneration:(unsigned long long)arg3 withAssociatedObject:(id)arg4;
+- (void)clientDidResetForUserAttention:(id)arg1;
+- (unsigned long long)contentOptions;
+- (long long)contentOrientation;
+- (void)dealloc;
+- (id)delegate;
+- (void)dismissShelfForAccessibilityTransition;
+- (void)dismissShelfForShelfTransition;
+- (void)dismissShelfWithTransitionSource:(long long)arg1;
+- (id)focusedDisplayItems;
+- (id)homeAffordancePortalView;
+- (id)ignoredDisplayItems;
+- (id)initWithSwitcherController:(id)arg1 shelf:(id)arg2 delegate:(id)arg3;
+- (bool)isPresentingOrDismissing;
+- (double)itemCornerRadiusForAppLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })itemFrameForAppLayout:(id)arg1;
+- (double)itemScaleForAppLayout:(id)arg1;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionWillEndWithTransitionContext:(id)arg2;
+- (void)loadView;
+- (void)performKeyboardShortcutAction:(long long)arg1;
+- (void)performTransitionWithContext:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationTargetFrame;
+- (bool)presented;
+- (long long)sbActiveInterfaceOrientation;
+- (void)setContentOptions:(unsigned long long)arg1;
+- (void)setContentOrientation:(long long)arg1;
+- (void)setFocusedDisplayItems:(id)arg1;
+- (void)setHomeAffordancePortalView:(id)arg1;
+- (void)setIgnoredDisplayItems:(id)arg1;
+- (void)setPresented:(bool)arg1 withTargetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 style:(unsigned long long)arg3 completion:(id /* block */)arg4;
+- (id)shelf;
+- (id)shelfLiveContentOverlayCoordinator:(id)arg1 liveViewForAppLayout:(id)arg2;
+- (id)shelfLiveContentOverlayCoordinatorAppLayouts:(id)arg1;
+- (id)shelfLiveContentOverlayCoordinatorSnapshotCache:(id)arg1;
+- (void)switcherContentController:(id)arg1 deletedDisplayItem:(id)arg2 inAppLayout:(id)arg3 forReason:(long long)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })switcherContentController:(id)arg1 frameForCenterItemWithConfiguration:(long long)arg2 interfaceOrientation:(long long)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })switcherContentController:(id)arg1 frameForFloatingAppLayoutInInterfaceOrientation:(long long)arg2 floatingConfiguration:(long long)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })switcherContentController:(id)arg1 frameForItemWithRole:(long long)arg2 inMainAppLayout:(id)arg3 interfaceOrientation:(long long)arg4;
+- (void)switcherContentController:(id)arg1 performTransitionWithRequest:(id)arg2 gestureInitiated:(bool)arg3;
+- (void)switcherContentController:(id)arg1 requestNewWindowForBundleIdentifier:(id)arg2;
+- (void)switcherContentController:(id)arg1 setContentOrientation:(long long)arg2;
+- (bool)switcherContentController:(id)arg1 shouldSkipNonAnimatedLayoutPassAfterTransition:(id)arg2;
+- (bool)switcherContentController:(id)arg1 supportsTitleItemsForAppLayout:(id)arg2;
+- (id)switcherContentController:(id)arg1 transitionEventForContext:(id)arg2 identifier:(id)arg3 phase:(unsigned long long)arg4 animated:(bool)arg5;
+- (id)switcherContentController:(id)arg1 transitionEventForLayoutState:(id)arg2 identifier:(id)arg3 phase:(unsigned long long)arg4 animated:(bool)arg5;
+- (id)switcherController;
+- (long long)switcherInterfaceOrientationForContentController:(id)arg1;
+- (void)transientUI:(id)arg1 wasIndirectPannedToDismissFromGestureRecognizer:(id)arg2;
+- (bool)transientUIHandledTouch:(id)arg1 withSystemGestureRecognizer:(id)arg2;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface VCVideoStreamReceiveGroupConfig : VCMediaStreamGroupConfig
+
+@end

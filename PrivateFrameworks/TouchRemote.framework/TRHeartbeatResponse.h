@@ -1,0 +1,4 @@
+
+@interface TRHeartbeatResponse : TRResponseMessage
+
+@end

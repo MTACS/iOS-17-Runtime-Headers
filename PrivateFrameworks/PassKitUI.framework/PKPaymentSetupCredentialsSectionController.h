@@ -1,0 +1,81 @@
+
+@interface PKPaymentSetupCredentialsSectionController : PKPaymentSetupListSectionController <PKPaymentProvisioningControllerDelegate> {
+    NSMutableDictionary * _allCredentials;
+    <PKDynamicListDataChangeDelegate> * _dataChangeDelegate;
+    <PKPaymentSetupCredentialsSectionControllerDelegate> * _delegate;
+    NSDictionary * _footerForSectionIdentifier;
+    bool  _isEditing;
+    NSString * _lastBackedUpDefaultPaymentPassSerialNumber;
+    unsigned long long  _maximumNumberOfSelectableCredentials;
+    PKPaymentSetupProduct * _product;
+    PKPaymentProvisioningController * _provisioningController;
+    NSArray * _sectionIdentifiers;
+    NSHashTable * _selectedCredentialsBeforeEditing;
+    long long  _setupContext;
+    PKPassSnapshotCoordinator * _snapshotCoordinator;
+    PKProvisioningSEStorageSnapshot * _storageSnapshot;
+}
+
+@property (nonatomic) <PKDynamicListDataChangeDelegate> *dataChangeDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPaymentSetupCredentialsSectionControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long maximumNumberOfSelectableCredentials;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_canSelectedCredential:(id)arg1;
+- (id)_cardArtForCredentialItem:(id)arg1;
+- (id)_credentialItemForCredential:(id)arg1;
+- (id)_credentialItemFromIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })_defaultCardSize;
+- (id)_detailTextForCredential:(id)arg1;
+- (bool)_enumerateCredentials:(id /* block */)arg1;
+- (bool)_hasCredentialsToShow;
+- (bool)_isCarKeyProduct;
+- (void)_loadCredentials:(id)arg1 create:(bool)arg2;
+- (unsigned long long)_numberOfSelectedCredentials;
+- (unsigned long long)_numberOfSelectedPeerPaymentCredentials;
+- (void)_primeItemSelectionAndReloadData:(bool)arg1;
+- (void)_promptToDeleteItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)_removeCredentialItem:(id)arg1;
+- (void)_replaceAndReloadItem:(id)arg1 withNewItem:(id)arg2;
+- (bool)_setCredential:(id)arg1 selected:(bool)arg2 silently:(bool)arg3;
+- (void)_sortCredentialItems:(id)arg1;
+- (id)_titleTextForCredential:(id)arg1;
+- (void)_updateMaximumSelectableCredentials;
+- (void)_updateRemoteCredentialCache;
+- (id)availableCredentialRequiringAction;
+- (void)configureSupplementaryRegistration:(id)arg1 elementKind:(id)arg2 sectionIdentifier:(id)arg3;
+- (struct { bool x1; bool x2; })credentialSelectionState;
+- (id)dataChangeDelegate;
+- (void)dealloc;
+- (id)decoratePaymentSetListCell:(id)arg1 forItem:(id)arg2;
+- (id)delegate;
+- (void)deleteItem:(id)arg1;
+- (void)didSelectItem:(id)arg1;
+- (bool)doesContainCredentialThatRequiresAuth:(id)arg1;
+- (id)footerForSectionIdentifier:(id)arg1;
+- (bool)hasSelectedCredentials;
+- (id)headerForSectionIdentifier:(id)arg1;
+- (id)identifiers;
+- (id)initWithCredentials:(id)arg1 provisioningController:(id)arg2 context:(long long)arg3 product:(id)arg4;
+- (id)layoutWithLayoutEnvironment:(id)arg1 sectionIdentifier:(id)arg2;
+- (unsigned long long)maximumNumberOfSelectableCredentials;
+- (void)paymentPassUpdatedOnCredential:(id)arg1;
+- (void)provisioningControllerUpdatedPendingProvisioning:(id)arg1;
+- (void)reloadCredentialStores;
+- (id)selectedCredentials;
+- (void)setCredential:(id)arg1 selected:(bool)arg2;
+- (void)setDataChangeDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEditing:(bool)arg1;
+- (void)setMaximumNumberOfSelectableCredentials:(unsigned long long)arg1;
+- (bool)shouldHighlightItem:(id)arg1;
+- (bool)shouldShowEditButton;
+- (id)snapshotForSectionIdentifier:(id)arg1;
+- (id)snapshotWithPreviousSnapshot:(id)arg1 forSectionIdentifier:(id)arg2;
+- (id)unselectedCredentialRequiringAction;
+
+@end

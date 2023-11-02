@@ -1,0 +1,84 @@
+
+@interface GKDashboardRequest : NSObject {
+    GKAchievement * _achievement;
+    NSString * _achievementID;
+    NSString * _activityIdentifier;
+    NSString * _gameBundleID;
+    GKGameRecord * _gameRecord;
+    bool  _isArcade;
+    bool  _launchedFromAccessPoint;
+    GKLeaderboard * _leaderboard;
+    NSString * _leaderboardID;
+    long long  _leaderboardPlayerScope;
+    long long  _leaderboardTimeScope;
+    NSString * _leaderboardTitle;
+    NSString * _playerAlias;
+    NSString * _playerID;
+    bool  _shouldShowPlayForChallenge;
+    bool  _shouldShowPlayForTurnBasedMatch;
+    bool  _shouldShowQuitForTurnBasedMatch;
+    long long  _state;
+    UIVisualEffectView * _visualEffectView;
+}
+
+@property (nonatomic, retain) GKAchievement *achievement;
+@property (nonatomic, retain) NSString *achievementID;
+@property (nonatomic, retain) NSString *activityIdentifier;
+@property (nonatomic, retain) NSString *gameBundleID;
+@property (nonatomic, retain) GKGameRecord *gameRecord;
+@property (nonatomic) bool isArcade;
+@property (nonatomic) bool launchedFromAccessPoint;
+@property (nonatomic, retain) GKLeaderboard *leaderboard;
+@property (nonatomic, retain) NSString *leaderboardID;
+@property (nonatomic) long long leaderboardPlayerScope;
+@property (nonatomic) long long leaderboardTimeScope;
+@property (nonatomic, retain) NSString *leaderboardTitle;
+@property (nonatomic, retain) NSString *playerAlias;
+@property (nonatomic, retain) NSString *playerID;
+@property (nonatomic) bool shouldShowPlayForChallenge;
+@property (nonatomic) bool shouldShowPlayForTurnBasedMatch;
+@property (nonatomic) bool shouldShowQuitForTurnBasedMatch;
+@property (nonatomic) long long state;
+@property (nonatomic, retain) UIVisualEffectView *visualEffectView;
+
+- (void).cxx_destruct;
+- (id)achievement;
+- (id)achievementID;
+- (id)activityIdentifier;
+- (id)gameBundleID;
+- (id)gameRecord;
+- (bool)isArcade;
+- (bool)launchedFromAccessPoint;
+- (id)leaderboard;
+- (id)leaderboardID;
+- (long long)leaderboardPlayerScope;
+- (long long)leaderboardTimeScope;
+- (id)leaderboardTitle;
+- (id)playerAlias;
+- (id)playerID;
+- (void)setAchievement:(id)arg1;
+- (void)setAchievementID:(id)arg1;
+- (void)setActivityIdentifier:(id)arg1;
+- (void)setGameBundleID:(id)arg1;
+- (void)setGameRecord:(id)arg1;
+- (void)setIsArcade:(bool)arg1;
+- (void)setLaunchedFromAccessPoint:(bool)arg1;
+- (void)setLeaderboard:(id)arg1;
+- (void)setLeaderboardID:(id)arg1;
+- (void)setLeaderboardPlayerScope:(long long)arg1;
+- (void)setLeaderboardTimeScope:(long long)arg1;
+- (void)setLeaderboardTitle:(id)arg1;
+- (void)setPlayerAlias:(id)arg1;
+- (void)setPlayerID:(id)arg1;
+- (void)setShouldShowPlayForChallenge:(bool)arg1;
+- (void)setShouldShowPlayForTurnBasedMatch:(bool)arg1;
+- (void)setShouldShowQuitForTurnBasedMatch:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (void)setVisualEffectView:(id)arg1;
+- (bool)shouldShowPlayForChallenge;
+- (bool)shouldShowPlayForTurnBasedMatch;
+- (bool)shouldShowQuitForTurnBasedMatch;
+- (long long)state;
+- (id)visualEffectView;
+
+@end

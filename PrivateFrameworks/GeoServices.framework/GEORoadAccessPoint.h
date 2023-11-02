@@ -1,0 +1,102 @@
+
+@interface GEORoadAccessPoint : PBCodable <NSCopying> {
+    int  _cyclingDirection;
+    int  _drivingDirection;
+    struct { 
+        unsigned int has_cyclingDirection : 1; 
+        unsigned int has_drivingDirection : 1; 
+        unsigned int has_significance : 1; 
+        unsigned int has_source : 1; 
+        unsigned int has_transitDirection : 1; 
+        unsigned int has_walkingDirection : 1; 
+        unsigned int has_isApproximate : 1; 
+    }  _flags;
+    bool  _isApproximate;
+    GEOLatLng * _location;
+    unsigned int  _significance;
+    int  _source;
+    int  _transitDirection;
+    PBUnknownFields * _unknownFields;
+    int  _walkingDirection;
+}
+
+@property (nonatomic) int cyclingDirection;
+@property (nonatomic) int drivingDirection;
+@property (nonatomic) bool hasCyclingDirection;
+@property (nonatomic) bool hasDrivingDirection;
+@property (nonatomic) bool hasIsApproximate;
+@property (nonatomic, readonly) bool hasLocation;
+@property (nonatomic) bool hasSignificance;
+@property (nonatomic) bool hasSource;
+@property (nonatomic) bool hasTransitDirection;
+@property (nonatomic) bool hasWalkingDirection;
+@property (nonatomic) bool isApproximate;
+@property (nonatomic, retain) GEOLatLng *location;
+@property (nonatomic) unsigned int significance;
+@property (nonatomic) int source;
+@property (nonatomic) int transitDirection;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic) int walkingDirection;
+
++ (bool)isValid:(id)arg1;
+
+- (void).cxx_destruct;
+- (int)StringAsCyclingDirection:(id)arg1;
+- (int)StringAsDrivingDirection:(id)arg1;
+- (int)StringAsSource:(id)arg1;
+- (int)StringAsTransitDirection:(id)arg1;
+- (int)StringAsWalkingDirection:(id)arg1;
+- (void)clearUnknownFields:(bool)arg1;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)cyclingDirection;
+- (id)cyclingDirectionAsString:(int)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (int)drivingDirection;
+- (id)drivingDirectionAsString:(int)arg1;
+- (bool)hasCyclingDirection;
+- (bool)hasDrivingDirection;
+- (bool)hasGreenTeaWithValue:(bool)arg1;
+- (bool)hasIsApproximate;
+- (bool)hasLocation;
+- (bool)hasSignificance;
+- (bool)hasSource;
+- (bool)hasTransitDirection;
+- (bool)hasWalkingDirection;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isApproximate;
+- (bool)isEqual:(id)arg1;
+- (id)jsonRepresentation;
+- (id)location;
+- (void)mergeFrom:(id)arg1;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCyclingDirection:(int)arg1;
+- (void)setDrivingDirection:(int)arg1;
+- (void)setHasCyclingDirection:(bool)arg1;
+- (void)setHasDrivingDirection:(bool)arg1;
+- (void)setHasIsApproximate:(bool)arg1;
+- (void)setHasSignificance:(bool)arg1;
+- (void)setHasSource:(bool)arg1;
+- (void)setHasTransitDirection:(bool)arg1;
+- (void)setHasWalkingDirection:(bool)arg1;
+- (void)setIsApproximate:(bool)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setSignificance:(unsigned int)arg1;
+- (void)setSource:(int)arg1;
+- (void)setTransitDirection:(int)arg1;
+- (void)setWalkingDirection:(int)arg1;
+- (unsigned int)significance;
+- (int)source;
+- (id)sourceAsString:(int)arg1;
+- (int)transitDirection;
+- (id)transitDirectionAsString:(int)arg1;
+- (id)unknownFields;
+- (int)walkingDirection;
+- (id)walkingDirectionAsString:(int)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

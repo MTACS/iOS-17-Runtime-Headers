@@ -1,0 +1,4 @@
+
+@interface DOMEntityReference : DOMNode
+
+@end

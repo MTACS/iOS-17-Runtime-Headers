@@ -1,0 +1,88 @@
+
+@interface AVAppStorePlayerView : UIView {
+    bool  _allowsEnteringFullScreen;
+    bool  _canPausePlaybackWhenExitingFullScreen;
+    UIView * _contentOverlayView;
+    AVObservationController * _observationController;
+    id /* block */  _playButtonHandlerForLazyPlayerLoading;
+    AVPlayer * _player;
+    AVAppStorePlayerLayerView * _playerLayerView;
+    AVPlayerViewController * _playerViewController;
+    <AVPlayerViewControllerDelegate> * _playerViewControllerDelegate;
+    long long  _preferredUnobscuredArea;
+    AVButton * _prominentPlayButton;
+    AVLayoutView * _prominentPlayButtonLayoutView;
+    bool  _showsMinimalPlaybackControlsWhenEmbeddedInline;
+    bool  _showsPlaybackControls;
+    AVMobileChromeControlsStyleSheet * _styleSheet;
+    bool  _updatesNowPlayingInfoCenter;
+    NSString * _videoGravity;
+    NSMutableDictionary * _videoGravityForLayoutClassDictionary;
+}
+
+@property (nonatomic) bool allowsEnteringFullScreen;
+@property (nonatomic) bool canPausePlaybackWhenExitingFullScreen;
+@property (nonatomic, readonly) UIView *contentOverlayView;
+@property (nonatomic, readonly) AVObservationController *observationController;
+@property (nonatomic, copy) id /* block */ playButtonHandlerForLazyPlayerLoading;
+@property (nonatomic, retain) AVPlayer *player;
+@property (nonatomic, retain) AVAppStorePlayerLayerView *playerLayerView;
+@property (nonatomic, retain) AVPlayerViewController *playerViewController;
+@property (nonatomic) <AVPlayerViewControllerDelegate> *playerViewControllerDelegate;
+@property (nonatomic) long long preferredUnobscuredArea;
+@property (nonatomic, retain) AVButton *prominentPlayButton;
+@property (nonatomic, retain) AVLayoutView *prominentPlayButtonLayoutView;
+@property (nonatomic) bool showsMinimalPlaybackControlsWhenEmbeddedInline;
+@property (nonatomic) bool showsPlaybackControls;
+@property (nonatomic, retain) AVMobileChromeControlsStyleSheet *styleSheet;
+@property (nonatomic) bool updatesNowPlayingInfoCenter;
+@property (nonatomic, copy) NSString *videoGravity;
+@property (nonatomic, retain) NSMutableDictionary *videoGravityForLayoutClassDictionary;
+
+- (void).cxx_destruct;
+- (void)_makeActualVideoViewWithPlayerIfNeeded:(id)arg1;
+- (void)_makePlayerLayerViewWithPlayer:(id)arg1;
+- (void)_makePlayerViewControllerWithPlayer:(id)arg1;
+- (void)_prominentPlayButtonTouchUpInside:(id)arg1;
+- (void)_setContinuousCornerRadius:(double)arg1;
+- (bool)allowsEnteringFullScreen;
+- (bool)canPausePlaybackWhenExitingFullScreen;
+- (id)contentOverlayView;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)observationController;
+- (id /* block */)playButtonHandlerForLazyPlayerLoading;
+- (id)player;
+- (id)playerLayerView;
+- (id)playerViewController;
+- (id)playerViewControllerDelegate;
+- (long long)preferredUnobscuredArea;
+- (id)prominentPlayButton;
+- (id)prominentPlayButtonLayoutView;
+- (void)setAllowsEnteringFullScreen:(bool)arg1;
+- (void)setCanPausePlaybackWhenExitingFullScreen:(bool)arg1;
+- (void)setClipsToBounds:(bool)arg1;
+- (void)setPlayButtonHandlerForLazyPlayerLoading:(id /* block */)arg1;
+- (void)setPlayer:(id)arg1;
+- (void)setPlayerLayerView:(id)arg1;
+- (void)setPlayerViewController:(id)arg1;
+- (void)setPlayerViewControllerDelegate:(id)arg1;
+- (void)setPreferredUnobscuredArea:(long long)arg1;
+- (void)setProminentPlayButton:(id)arg1;
+- (void)setProminentPlayButtonLayoutView:(id)arg1;
+- (void)setShowsMinimalPlaybackControlsWhenEmbeddedInline:(bool)arg1;
+- (void)setShowsPlaybackControls:(bool)arg1;
+- (void)setStyleSheet:(id)arg1;
+- (void)setUpdatesNowPlayingInfoCenter:(bool)arg1;
+- (void)setVideoGravity:(id)arg1;
+- (void)setVideoGravity:(id)arg1 forLayoutClass:(unsigned long long)arg2;
+- (void)setVideoGravityForLayoutClassDictionary:(id)arg1;
+- (bool)showsMinimalPlaybackControlsWhenEmbeddedInline;
+- (bool)showsPlaybackControls;
+- (id)styleSheet;
+- (bool)updatesNowPlayingInfoCenter;
+- (id)videoGravity;
+- (id)videoGravityForLayoutClassDictionary;
+
+@end

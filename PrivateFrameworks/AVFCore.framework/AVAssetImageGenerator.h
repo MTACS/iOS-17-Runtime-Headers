@@ -1,0 +1,55 @@
+
+@interface AVAssetImageGenerator : NSObject {
+    AVAssetImageGeneratorInternal * _priv;
+}
+
+@property (nonatomic, copy) NSString *apertureMode;
+@property (nonatomic) bool appliesPreferredTrackTransform;
+@property (nonatomic, readonly) AVAsset *asset;
+@property (nonatomic, readonly) <AVVideoCompositing> *customVideoCompositor;
+@property (nonatomic) struct CGSize { double x1; double x2; } maximumSize;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } requestedTimeToleranceAfter;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } requestedTimeToleranceBefore;
+@property (nonatomic, copy) AVVideoComposition *videoComposition;
+
++ (id)assetImageGeneratorWithAsset:(id)arg1;
+
+- (id)_NSErrorForError:(int)arg1;
+- (struct CGImage { }*)_copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 usingAssetReader:(id)arg2 error:(id*)arg3;
+- (void)_didGenerateCGImage:(id)arg1;
+- (bool)_ensureFigAssetImageGeneratorAllowingSynchronousPropertyLoad:(bool)arg1 error:(id*)arg2;
+- (void)_failedToGenerateCGImage:(id)arg1;
+- (id)_makeAutoreleasedAssetReader;
+- (id)_optionsDictionary;
+- (id)_requestWithRequestID:(id)arg1;
+- (struct CGSize { double x1; double x2; })_scaledSizeForRenderSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_serverDied;
+- (id)_videoSettingWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)apertureMode;
+- (bool)appliesPreferredTrackTransform;
+- (id)asset;
+- (void)cancelAllCGImageGeneration;
+- (struct CGImage { }*)copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 actualTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 error:(id*)arg3;
+- (id)customVideoCompositor;
+- (void)dealloc;
+- (void)generateCGImageAsynchronouslyForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
+- (void)generateCGImagesAsynchronouslyForTimes:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)init;
+- (id)initWithAsset:(id)arg1;
+- (bool)isDefunct;
+- (struct CGSize { double x1; double x2; })maximumSize;
+- (bool)prefersStandardDynamicRange;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceAfter;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceBefore;
+- (void)setApertureMode:(id)arg1;
+- (void)setAppliesPreferredTrackTransform:(bool)arg1;
+- (void)setMaximumSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPrefersStandardDynamicRange:(bool)arg1;
+- (void)setRequestedTimeToleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setRequestedTimeToleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setUseSWDecoderForAV1:(bool)arg1;
+- (void)setVideoComposition:(id)arg1;
+- (bool)useSWDecoderForAV1;
+- (id)videoComposition;
+
+@end

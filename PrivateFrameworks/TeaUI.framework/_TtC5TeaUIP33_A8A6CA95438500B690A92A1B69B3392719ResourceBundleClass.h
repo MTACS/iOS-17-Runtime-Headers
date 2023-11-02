@@ -1,0 +1,4 @@
+
+@interface _TtC5TeaUIP33_A8A6CA95438500B690A92A1B69B3392719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface AKHeartAnnotationEventHandler : AKRectangularAnnotationEventHandler
+
+@end

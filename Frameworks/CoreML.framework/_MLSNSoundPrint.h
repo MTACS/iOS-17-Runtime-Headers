@@ -1,0 +1,14 @@
+
+@interface _MLSNSoundPrint : NSObject <MLCustomModel> {
+    <MLCustomModel> * _featureEmbeddingModel;
+    MLModelDescription * _modelDescription;
+}
+
+@property (nonatomic, readonly) MLModelDescription *modelDescription;
+
+- (void).cxx_destruct;
+- (id)initWithModelDescription:(id)arg1 parameterDictionary:(id)arg2 error:(id*)arg3;
+- (id)modelDescription;
+- (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id*)arg3;
+
+@end

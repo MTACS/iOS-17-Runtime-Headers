@@ -1,0 +1,80 @@
+
+@interface _PIParallaxLayerStackJob : NURenderJob <PIParallaxFilterCache, _PIParallaxLayerStackRenderer> {
+    <NUImageBuffer> * _backgroundBuffer;
+    CIImage * _backgroundImage;
+    NSMutableArray * _cachedImageEntries;
+    _PIParallaxLayerStackDebugImageCollector * _debugImageCollector;
+    <NUImageBuffer> * _foregroundBuffer;
+    CIImage * _foregroundImage;
+    NSArray * _layers;
+    PFPosterOrientedLayout * _layout;
+}
+
+@property (nonatomic, retain) <NUImageBuffer> *backgroundBuffer;
+@property (nonatomic, retain) CIImage *backgroundImage;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) _PIParallaxLayerStackDebugImageCollector *debugImageCollector;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) <NUImageBuffer> *foregroundBuffer;
+@property (nonatomic, retain) CIImage *foregroundImage;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *layers;
+@property (nonatomic, retain) PFPosterOrientedLayout *layout;
+@property (nonatomic, readonly) long long mode;
+@property (nonatomic, readonly) PFPosterOrientedLayout *requestLayout;
+@property (nonatomic, readonly) <PISegmentationItem> *segmentationItem;
+@property (nonatomic, readonly) bool shouldUseVideoFrame;
+@property (nonatomic, readonly) PIParallaxStyle *style;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)backfillScalePolicy;
+- (id)backgroundBuffer;
+- (id)backgroundImage;
+- (id)cacheImage:(id)arg1 key:(id)arg2 format:(id)arg3 colorSpace:(id)arg4;
+- (id)cachedImage:(id)arg1 forKey:(id)arg2;
+- (bool)complete:(out id*)arg1;
+- (id)debugImageCollector;
+- (id)debugTintedImage:(id)arg1 isBackfill:(bool)arg2;
+- (id)deviceScalePolicy;
+- (id)effectiveLayout;
+- (id)foregroundBuffer;
+- (id)foregroundImage;
+- (id)imageByCachingImage:(id)arg1 format:(id)arg2 colorSpace:(id)arg3 key:(id)arg4;
+- (id)initWithParallaxLayerStackRequest:(id)arg1;
+- (id)initWithRequest:(id)arg1;
+- (bool)isBackfillRequest;
+- (bool)isDebugRequest;
+- (bool)isInactiveRequest;
+- (bool)isMainRequest;
+- (bool)isPreviewRequest;
+- (id)layerForBuffer:(id)arg1 image:(id)arg2 zPosition:(double)arg3 identifier:(id)arg4;
+- (id)layerForVideoData:(id)arg1 zPosition:(double)arg2 identifier:(id)arg3;
+- (id)layerStackRequest;
+- (id)layers;
+- (id)layout;
+- (long long)mode;
+- (id)newRenderPipelineStateForEvaluationMode:(long long)arg1;
+- (id)newRenderedPixelBufferFromImage:(id)arg1 hasAlpha:(bool)arg2 error:(out id*)arg3;
+- (bool)prepare:(out id*)arg1;
+- (bool)render:(out id*)arg1;
+- (id)requestLayout;
+- (id)result;
+- (id)scalePolicy;
+- (id)segmentationItem;
+- (void)setBackgroundBuffer:(id)arg1;
+- (void)setBackgroundImage:(id)arg1;
+- (void)setDebugImageCollector:(id)arg1;
+- (void)setForegroundBuffer:(id)arg1;
+- (void)setForegroundImage:(id)arg1;
+- (void)setLayers:(id)arg1;
+- (void)setLayout:(id)arg1;
+- (bool)shouldUseVideoFrame;
+- (id)style;
+- (id)targetColorSpace;
+- (bool)wantsCompleteStage;
+- (bool)wantsOutputGeometry;
+- (bool)wantsOutputImage;
+- (bool)wantsRenderStage;
+
+@end

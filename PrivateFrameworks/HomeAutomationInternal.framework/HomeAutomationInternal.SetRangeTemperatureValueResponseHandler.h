@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.SetRangeTemperatureValueResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

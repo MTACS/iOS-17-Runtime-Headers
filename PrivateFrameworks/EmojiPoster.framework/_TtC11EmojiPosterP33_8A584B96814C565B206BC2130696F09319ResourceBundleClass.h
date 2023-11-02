@@ -1,0 +1,4 @@
+
+@interface _TtC11EmojiPosterP33_8A584B96814C565B206BC2130696F09319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

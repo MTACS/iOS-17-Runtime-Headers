@@ -1,0 +1,4 @@
+
+@interface DADeviceEvent : DAEventDevice
+
+@end

@@ -1,0 +1,4 @@
+
+@interface IntelligencePlatformCore.PartOfDayBehaviorHistogram : IntelligencePlatformCore.BehaviorHistogramBase
+
+@end

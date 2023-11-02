@@ -1,0 +1,4 @@
+
+@protocol HKWorkoutControlClient <NSObject>
+
+@end

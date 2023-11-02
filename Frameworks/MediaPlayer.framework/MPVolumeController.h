@@ -1,0 +1,66 @@
+
+@interface MPVolumeController : NSObject <MPVolumeControllerDataSourceDelegate> {
+    <MPVolumeControllerDataSource> * _dataSource;
+    <MPVolumeControllerDelegate> * _delegate;
+    int  _volumeChangeCoalescingCount;
+}
+
+@property (nonatomic, readonly) float EUVolumeLimit;
+@property (nonatomic, retain) <MPVolumeControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPVolumeControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (getter=isMuted, nonatomic) bool muted;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *volumeAudioCategory;
+@property (nonatomic, readonly) unsigned int volumeCapabilities;
+@property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
+@property (nonatomic, readonly, copy) NSString *volumeControlLabel;
+@property (nonatomic) float volumeValue;
+@property (nonatomic, readonly) bool volumeWarningEnabled;
+@property (nonatomic, readonly) long long volumeWarningState;
+
++ (id)descriptionForWarningState:(long long)arg1;
+
+- (void).cxx_destruct;
+- (float)EUVolumeLimit;
+- (void)adjustVolumeValue:(float)arg1;
+- (void)beginDecreasingRelativeVolume;
+- (void)beginIncreasingRelativeVolume;
+- (id)dataSource;
+- (void)decreaseVolume;
+- (id)delegate;
+- (void)endDecreasingRelativeVolume;
+- (void)endIncreasingRelativeVolume;
+- (void)getVolumeValueWithCompletion:(id /* block */)arg1;
+- (void)increaseVolume;
+- (id)init;
+- (id)initWithDataSource:(id)arg1;
+- (bool)isMuted;
+- (bool)isVolumeControlAvailable;
+- (bool)muted;
+- (void)setDataSource:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setMuted:(bool)arg1;
+- (void)setVolume:(float)arg1 withNoticationDelay:(float)arg2;
+- (void)setVolume:(float)arg1 withNotificationDelay:(float)arg2;
+- (void)setVolumeAudioCategory:(id)arg1;
+- (void)setVolumeValue:(float)arg1;
+- (void)updateVolumeValue;
+- (void)updateVolumeWarningState;
+- (id)volumeAudioCategory;
+- (unsigned int)volumeCapabilities;
+- (id)volumeControlLabel;
+- (void)volumeControllerDataSource:(id)arg1 didChangeMuted:(bool)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolume:(float)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolume:(float)arg2 silenceVolumeHUD:(bool)arg3;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeAudioCategory:(id)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeCapabilities:(unsigned int)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeControlAvailability:(bool)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeLabel:(id)arg2;
+- (float)volumeValue;
+- (bool)volumeWarningEnabled;
+- (long long)volumeWarningState;
+
+@end

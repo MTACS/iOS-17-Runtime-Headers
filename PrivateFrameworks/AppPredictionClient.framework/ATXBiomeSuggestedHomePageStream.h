@@ -1,0 +1,19 @@
+
+@interface ATXBiomeSuggestedHomePageStream : NSObject <BMSourceStream, BMStream> {
+    BMStoreStream * _inner;
+}
+
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) BMStoreStream *inner;
+
+- (void).cxx_destruct;
+- (id)identifier;
+- (id)init;
+- (id)initWithStoreConfig:(id)arg1;
+- (id)inner;
+- (id)publisherFromStartTime:(double)arg1;
+- (void)sendEvent:(id)arg1;
+- (void)setInner:(id)arg1;
+- (id)source;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol IKDOMCDATASection <JSExport>
+
+@end

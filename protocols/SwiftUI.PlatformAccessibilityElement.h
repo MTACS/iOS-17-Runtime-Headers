@@ -1,0 +1,4 @@
+
+@protocol SwiftUI.PlatformAccessibilityElement
+
+@end

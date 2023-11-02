@@ -1,0 +1,4 @@
+
+@interface _TtC19SiriCalendarIntentsP33_2FEFC6492FA06DAAC208D1C1A299F73E27SiriCalendarFrameworkBundle : _TtCs12_SwiftObject
+
+@end

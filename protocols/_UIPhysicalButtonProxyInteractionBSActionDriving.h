@@ -1,0 +1,4 @@
+
+@protocol _UIPhysicalButtonProxyInteractionBSActionDriving <_UIPhysicalButtonInteractionBSActionDriving>
+
+@end

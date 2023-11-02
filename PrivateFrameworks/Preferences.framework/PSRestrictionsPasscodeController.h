@@ -1,0 +1,4 @@
+
+@interface PSRestrictionsPasscodeController : SFRestrictionsPasscodeController
+
+@end

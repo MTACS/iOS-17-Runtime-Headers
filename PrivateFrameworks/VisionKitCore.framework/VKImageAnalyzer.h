@@ -1,0 +1,4 @@
+
+@interface VKImageAnalyzer : VKCImageAnalyzer
+
+@end

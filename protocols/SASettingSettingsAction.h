@@ -1,0 +1,4 @@
+
+@protocol SASettingSettingsAction <SAAceSerializable>
+
+@end

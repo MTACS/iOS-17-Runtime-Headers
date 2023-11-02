@@ -1,0 +1,4 @@
+
+@interface _TtCE8HealthUICSo8NSBundleP33_7A9B953751CB748CF5CECB5742EA24168Sentinel : _TtCs12_SwiftObject
+
+@end

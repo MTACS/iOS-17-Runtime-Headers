@@ -1,0 +1,4 @@
+
+@interface STUIStatusBarExpandedPillBackgroundActivityItem : STUIStatusBarPillBackgroundActivityItem
+
+@end

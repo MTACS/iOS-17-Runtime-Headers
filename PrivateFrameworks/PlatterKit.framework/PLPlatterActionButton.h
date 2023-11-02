@@ -1,0 +1,80 @@
+
+@interface PLPlatterActionButton : UIControl <MTMaterialGrouping, PLContentSizeCategoryAdjusting> {
+    bool  _adjustsFontForContentSizeCategory;
+    long long  _backgroundMaterialRecipe;
+    UIColor * _backgroundTintColor;
+    UIView * _backgroundTintColoringView;
+    MTMaterialView * _backgroundView;
+    double  _cornerRadius;
+    UIFont * _font;
+    BSUIFontProvider * _fontProvider;
+    NSString * _materialGroupNameBase;
+    NSString * _preferredContentSizeCategory;
+    UIColor * _textColor;
+    NSString * _title;
+    UILabel * _titleLabel;
+    MTVisualStylingProvider * _titleLabelVisualStylingProvider;
+}
+
+@property (nonatomic) bool adjustsFontForContentSizeCategory;
+@property (nonatomic) long long backgroundMaterialRecipe;
+@property (nonatomic, copy) UIColor *backgroundTintColor;
+@property (nonatomic, retain) MTMaterialView *backgroundView;
+@property (nonatomic) double cornerRadius;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) UIFont *font;
+@property (getter=_fontProvider, setter=_setFontProvider:, nonatomic, retain) BSUIFontProvider *fontProvider;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *materialGroupNameBase;
+@property (nonatomic, copy) NSString *preferredContentSizeCategory;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) UIColor *textColor;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) MTVisualStylingProvider *titleLabelVisualStylingProvider;
+
+- (void).cxx_destruct;
+- (void)_configureBackgroundColoringViewIfNecessary;
+- (void)_configureBackgroundViewIfNecessary;
+- (void)_configureTitleLabelEffects;
+- (void)_configureTitleLabelIfNecessary;
+- (id)_fontProvider;
+- (void)_handleHoverGestureRecognizerEvent:(id)arg1;
+- (void)_layoutBackgroundView;
+- (void)_layoutTitleLabel;
+- (void)_setFontProvider:(id)arg1;
+- (void)_updateTitleLabelFont;
+- (long long)_wordCountForText:(id)arg1;
+- (bool)adjustForContentSizeCategoryChange;
+- (bool)adjustsFontForContentSizeCategory;
+- (long long)backgroundMaterialRecipe;
+- (id)backgroundTintColor;
+- (id)backgroundView;
+- (double)cornerRadius;
+- (id)font;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)materialGroupNameBase;
+- (id)preferredContentSizeCategory;
+- (void)setAdjustsFontForContentSizeCategory:(bool)arg1;
+- (void)setBackgroundMaterialRecipe:(long long)arg1;
+- (void)setBackgroundTintColor:(id)arg1;
+- (void)setBackgroundView:(id)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setFont:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setMaterialGroupNameBase:(id)arg1;
+- (void)setPreferredContentSizeCategory:(id)arg1;
+- (void)setTextColor:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (void)setTitleLabelVisualStylingProvider:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)textColor;
+- (id)title;
+- (id)titleLabel;
+- (id)titleLabelVisualStylingProvider;
+- (void)willMoveToSuperview:(id)arg1;
+
+@end

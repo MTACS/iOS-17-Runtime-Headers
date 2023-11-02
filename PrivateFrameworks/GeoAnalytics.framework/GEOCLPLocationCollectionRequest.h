@@ -1,0 +1,4 @@
+
+@interface GEOCLPLocationCollectionRequest : CLPLocationCollectionRequest
+
+@end

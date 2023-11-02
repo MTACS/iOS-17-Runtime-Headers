@@ -1,0 +1,4 @@
+
+@interface _TtC19ReminderKitInternalP33_255C7DF2D224A241D5942E95740EB31743DefaultUniversalLinkAppIconBundleIDResolver : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol CHSWidgetRefreshStrategy <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC23ProximityAppleIDSetupUIP33_9B2CAF3E9EB118850AA875970A9405B319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

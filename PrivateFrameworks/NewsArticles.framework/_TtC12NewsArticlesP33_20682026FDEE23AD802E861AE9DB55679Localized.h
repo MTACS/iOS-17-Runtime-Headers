@@ -1,0 +1,4 @@
+
+@interface _TtC12NewsArticlesP33_20682026FDEE23AD802E861AE9DB55679Localized : _TtCs12_SwiftObject
+
+@end

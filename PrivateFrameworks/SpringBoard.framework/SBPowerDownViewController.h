@@ -1,0 +1,85 @@
+
+@interface SBPowerDownViewController : SBTransientOverlayViewController <SBPasscodeEntryTransientOverlayViewControllerDelegate, SBPowerDownViewDelegate> {
+    unsigned long long  _aggdStartTime;
+    SPBeaconManager * _beaconManager;
+    <SBPowerDownViewControllerDelegate> * _delegate;
+    NSMutableArray * _externalDisplayDimmingWindows;
+    <SBFLockOutStatusProvider> * _lockOutController;
+    SBPasscodeEntryTransientOverlayViewController * _passcodeEntryTransientOverlayViewController;
+    SBPowerDownView * _powerDownView;
+    SBFUserAuthenticationController * _userAuthController;
+    bool  _userWantsFindMySuppressed;
+    SBWindowSceneManager * _windowSceneManager;
+}
+
+@property (nonatomic, retain) SPBeaconManager *beaconManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBPowerDownViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableArray *externalDisplayDimmingWindows;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <SBFLockOutStatusProvider> *lockOutController;
+@property (nonatomic, retain) SBPasscodeEntryTransientOverlayViewController *passcodeEntryTransientOverlayViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SBFUserAuthenticationController *userAuthController;
+@property (nonatomic) bool userWantsFindMySuppressed;
+@property (nonatomic, retain) SBWindowSceneManager *windowSceneManager;
+
+- (void).cxx_destruct;
+- (void)_beginTimeTracking;
+- (bool)_canShowWhileLocked;
+- (void)_endTimeTrackingIncludingReportWithKey:(id)arg1;
+- (void)_incrementCountForKey:(id)arg1;
+- (int)_preferredStatusBarVisibility;
+- (void)_setPasscodeVisible:(bool)arg1 animated:(bool)arg2;
+- (bool)allowsStackingOverlayContentAbove;
+- (id)beaconManager;
+- (id)delegate;
+- (void)didTapTemporarilyDisableFindMy;
+- (id)externalDisplayDimmingWindows;
+- (bool)handleLockButtonPress;
+- (long long)idleTimerMode;
+- (id)initWithWindowSceneManager:(id)arg1;
+- (id)lockOutController;
+- (id)newTransientOverlayDismissalTransitionCoordinator;
+- (id)newTransientOverlayPresentationTransitionCoordinator;
+- (id)passcodeEntryTransientOverlayViewController;
+- (bool)passcodeEntryTransientOverlayViewController:(id)arg1 authenticatePasscode:(id)arg2;
+- (void)passcodeEntryTransientOverlayViewControllerRequestsDismissal:(id)arg1;
+- (id)passcodeEntryTransientOverlayViewControllerStatusSubtitleText;
+- (id)passcodeEntryTransientOverlayViewControllerStatusText;
+- (void)powerDownViewAnimateOutCompleted:(id)arg1;
+- (void)powerDownViewDidCancelSlide:(id)arg1;
+- (void)powerDownViewDidCompleteSlide:(id)arg1;
+- (void)powerDownViewDidFireIdleTimer:(id)arg1;
+- (void)powerDownViewDidReceiveCancelButtonAction:(id)arg1;
+- (void)powerDownViewRequestCancel:(id)arg1;
+- (void)powerDownViewRequestPowerDown:(id)arg1;
+- (void)powerDownViewWillAnimateIn:(id)arg1;
+- (void)powerDownViewWillAnimateOut:(id)arg1;
+- (bool)prefersEmbeddedDisplayPresentation;
+- (void)setBeaconManager:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setExternalDisplayDimmingWindows:(id)arg1;
+- (void)setLockOutController:(id)arg1;
+- (void)setPasscodeEntryTransientOverlayViewController:(id)arg1;
+- (void)setUserAuthController:(id)arg1;
+- (void)setUserWantsFindMySuppressed:(bool)arg1;
+- (void)setWindowSceneManager:(id)arg1;
+- (bool)shouldDisableBanners;
+- (bool)shouldDisableControlCenter;
+- (bool)shouldDisableSiri;
+- (bool)shouldPendAlertItems;
+- (void)showPowerDownFindMyAlert;
+- (void)showPowerDownFindMyAlertWithProceed:(id /* block */)arg1 cancelCompletion:(id /* block */)arg2;
+- (void)userAcknowledgedFindMyInfo;
+- (id)userAuthController;
+- (bool)userWantsFindMySuppressed;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (id)windowSceneManager;
+
+@end

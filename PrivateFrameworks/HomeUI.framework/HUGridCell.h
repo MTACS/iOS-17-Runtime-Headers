@@ -1,0 +1,97 @@
+
+@interface HUGridCell : UICollectionViewCell <HUGridCellProtocol, HUReorderableCellProtocol, UIPointerInteractionDelegate> {
+    bool  _cellContentsHidden;
+    UIVisualEffect * _contentEffect;
+    CAShapeLayer * _dashedBorderLayer;
+    HUGridCellBackgroundView * _gridBackgroundView;
+    UIVisualEffectView * _gridForegroundView;
+    HFItem * _item;
+    HUGridCellLayoutOptions * _layoutOptions;
+    UIPointerInteraction * _pointerInteraction;
+    bool  _pointerInteractionEnabled;
+    double  _pointerRegionMargin;
+    long long  _primaryState;
+    bool  _rearranging;
+    double  _secondaryContentDimmingFactor;
+    UIVisualEffect * _secondaryContentEffect;
+}
+
+@property (nonatomic, readonly) unsigned long long backgroundState;
+@property (getter=areCellContentsHidden, nonatomic) bool cellContentsHidden;
+@property (nonatomic, retain) UIVisualEffect *contentEffect;
+@property (nonatomic, retain) CAShapeLayer *dashedBorderLayer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) HUGridCellBackgroundView *gridBackgroundView;
+@property (nonatomic, readonly) UIView *gridForegroundContentView;
+@property (nonatomic, retain) UIVisualEffectView *gridForegroundView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long iconDisplayStyle;
+@property (nonatomic, retain) HFItem *item;
+@property (nonatomic, retain) HUGridCellLayoutOptions *layoutOptions;
+@property (nonatomic, readonly) bool managesOwnBackgroundViewLayout;
+@property (nonatomic, retain) UIPointerInteraction *pointerInteraction;
+@property (getter=isPointerInteractionEnabled, nonatomic) bool pointerInteractionEnabled;
+@property (nonatomic) double pointerRegionMargin;
+@property (nonatomic) long long primaryState;
+@property (getter=isRearranging, nonatomic) bool rearranging;
+@property (nonatomic) bool reorderable;
+@property (nonatomic) <HUResizableCellDelegate> *resizingDelegate;
+@property (nonatomic) double secondaryContentDimmingFactor;
+@property (nonatomic, retain) UIVisualEffect *secondaryContentEffect;
+@property (readonly) Class superclass;
+
++ (Class)layoutOptionsClass;
+
+- (void).cxx_destruct;
+- (void)_removeDashedBorderLayer;
+- (void)_setupCommonCellAppearance;
+- (void)_updateForegroundStyle;
+- (void)_updateTintColorSettingsForSubviewsOfView:(id)arg1 desiredDisplayStyle:(unsigned long long)arg2;
+- (void)applyLayoutAttributes:(id)arg1;
+- (bool)areCellContentsHidden;
+- (unsigned long long)backgroundState;
+- (id)contentEffect;
+- (id)dashedBorderLayer;
+- (void)displayStyleDidChange;
+- (id)gridBackgroundView;
+- (id)gridForegroundContentView;
+- (id)gridForegroundView;
+- (unsigned long long)iconDisplayStyle;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isPointerInteractionEnabled;
+- (bool)isRearranging;
+- (id)item;
+- (id)layoutOptions;
+- (void)layoutOptionsDidChange;
+- (void)layoutSubviews;
+- (bool)managesOwnBackgroundViewLayout;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)pointerInteraction;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (double)pointerRegionMargin;
+- (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
+- (void)prepareForReuse;
+- (long long)primaryState;
+- (double)secondaryContentDimmingFactor;
+- (id)secondaryContentEffect;
+- (void)setCellContentsHidden:(bool)arg1;
+- (void)setContentEffect:(id)arg1;
+- (void)setDashedBorderLayer:(id)arg1;
+- (void)setGridBackgroundView:(id)arg1;
+- (void)setGridForegroundView:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setItem:(id)arg1;
+- (void)setLayoutOptions:(id)arg1;
+- (void)setPointerInteraction:(id)arg1;
+- (void)setPointerInteractionEnabled:(bool)arg1;
+- (void)setPointerRegionMargin:(double)arg1;
+- (void)setPrimaryState:(long long)arg1;
+- (void)setRearranging:(bool)arg1;
+- (void)setSecondaryContentDimmingFactor:(double)arg1;
+- (void)setSecondaryContentEffect:(id)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
+
+@end

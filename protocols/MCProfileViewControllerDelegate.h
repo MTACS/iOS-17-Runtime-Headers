@@ -1,0 +1,4 @@
+
+@protocol MCProfileViewControllerDelegate <DMCProfileViewControllerDelegate>
+
+@end

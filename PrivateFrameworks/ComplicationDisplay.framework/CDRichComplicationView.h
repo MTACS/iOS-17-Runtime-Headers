@@ -1,0 +1,83 @@
+
+@interface CDRichComplicationView : UIView <CDComplicationDisplay, CLKMonochromeComplicationView, CLKMonochromeFilterProvider, CLKUITimeTravel> {
+    CLKDevice * _device;
+    bool  _editing;
+    long long  _family;
+    <CLKMonochromeFilterProvider> * _filterProvider;
+    UIFontDescriptor * _fontDescriptor;
+    double  _fontSizeFactor;
+    long long  _fontStyle;
+    UIColor * _foregroundColor;
+    bool  _highlighted;
+    bool  _paused;
+    NSDate * _timeTravelDate;
+    bool  canUseCurvedText;
+    <CDComplicationDisplayObserver> * displayObserver;
+}
+
+@property (nonatomic) bool canUseCurvedText;
+@property (nonatomic, readonly) NSDate *complicationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CLKDevice *device;
+@property (nonatomic) <CDComplicationDisplayObserver> *displayObserver;
+@property (nonatomic, readonly) long long family;
+@property (nonatomic) <CLKMonochromeFilterProvider> *filterProvider;
+@property (nonatomic, readonly) UIFontDescriptor *fontDescriptor;
+@property (nonatomic, readonly) double fontSizeFactor;
+@property (nonatomic) long long fontStyle;
+@property (nonatomic, retain) UIColor *foregroundColor;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic) bool paused;
+@property (nonatomic) bool shouldUseTemplateColors;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDate *timeTravelDate;
+
+- (void).cxx_destruct;
+- (void)_applyPausedUpdate;
+- (void)_editingDidEnd;
+- (void)_enumerateLabelsWithBlock:(id /* block */)arg1;
+- (id)_fontWithSize:(double)arg1 withFontDescriptor:(id)arg2;
+- (void)_setFontConfiguration:(struct CDRichComplicationFontConfiguration { bool x1; id x2; double x3; })arg1;
+- (void)_setWhistlerAnalogEditingAlphaTransitonFraction:(double)arg1 direction:(long long)arg2 position:(long long)arg3;
+- (void)_transitThemeFromTheme:(long long)arg1 toTheme:(long long)arg2 fraction:(double)arg3;
+- (void)_transitToHighlightState:(bool)arg1 fraction:(double)arg2;
+- (void)_updateColoringLabel:(id)arg1 withFontDescriptor:(id)arg2 andSizeFactor:(double)arg3;
+- (bool)canUseCurvedText;
+- (id)colorForView:(id)arg1 accented:(bool)arg2;
+- (id)complicationDate;
+- (id)device;
+- (id)displayObserver;
+- (long long)family;
+- (id)filterForView:(id)arg1 style:(long long)arg2;
+- (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)filterProvider;
+- (id)filtersForView:(id)arg1 style:(long long)arg2;
+- (id)filtersForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)fontDescriptor;
+- (double)fontSizeFactor;
+- (long long)fontStyle;
+- (id)foregroundColor;
+- (id)initWithFamily:(long long)arg1;
+- (id)interpolatedColorForView:(id)arg1;
+- (bool)paused;
+- (void)renderSynchronouslyWithImageQueueDiscard:(bool)arg1 inGroup:(id)arg2;
+- (void)setCanUseCurvedText:(bool)arg1;
+- (void)setDisplayObserver:(id)arg1;
+- (void)setEditing:(bool)arg1;
+- (void)setFilterProvider:(id)arg1;
+- (void)setFontStyle:(long long)arg1;
+- (void)setForegroundColor:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setPaused:(bool)arg1;
+- (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;
+- (id)timeTravelDate;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)transitThemeFromTheme:(long long)arg1 toTheme:(long long)arg2 fraction:(double)arg3;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (long long)tritiumUpdateMode;
+- (void)updateMonochromeColor;
+- (bool)viewShouldIgnoreTwoPieceImage:(id)arg1;
+
+@end

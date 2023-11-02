@@ -1,0 +1,4 @@
+
+@interface _TtC8FeedbackP33_9482B6287B05A208531DAF502091D54A19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

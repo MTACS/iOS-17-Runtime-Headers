@@ -1,0 +1,93 @@
+
+@interface USOSchemaUSOEntitySpan : SISchemaInstrumentationMessage {
+    unsigned int  _endIndex;
+    struct { 
+        unsigned int nodeIndex : 1; 
+        unsigned int sourceComponent : 1; 
+        unsigned int startIndex : 1; 
+        unsigned int endIndex : 1; 
+        unsigned int originAppBundleIdType : 1; 
+    }  _has;
+    bool  _hasLabel;
+    bool  _hasMatchInfo;
+    bool  _hasPayloadAttachmentInfo;
+    NSString * _label;
+    USOSchemaUSOMatchInfo * _matchInfo;
+    unsigned int  _nodeIndex;
+    int  _originAppBundleIdType;
+    USOSchemaUSOPayloadAttachmentInfo * _payloadAttachmentInfo;
+    int  _sourceComponent;
+    unsigned int  _startIndex;
+}
+
+@property (nonatomic) unsigned int endIndex;
+@property (nonatomic) bool hasEndIndex;
+@property (nonatomic) bool hasLabel;
+@property (nonatomic) bool hasMatchInfo;
+@property (nonatomic) bool hasNodeIndex;
+@property (nonatomic) bool hasOriginAppBundleIdType;
+@property (nonatomic) bool hasPayloadAttachmentInfo;
+@property (nonatomic) bool hasSourceComponent;
+@property (nonatomic) bool hasStartIndex;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, retain) USOSchemaUSOMatchInfo *matchInfo;
+@property (nonatomic) unsigned int nodeIndex;
+@property (nonatomic) int originAppBundleIdType;
+@property (nonatomic, retain) USOSchemaUSOPayloadAttachmentInfo *payloadAttachmentInfo;
+@property (nonatomic) int sourceComponent;
+@property (nonatomic) unsigned int startIndex;
+
+- (void).cxx_destruct;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (void)deleteEndIndex;
+- (void)deleteLabel;
+- (void)deleteMatchInfo;
+- (void)deleteNodeIndex;
+- (void)deleteOriginAppBundleIdType;
+- (void)deletePayloadAttachmentInfo;
+- (void)deleteSourceComponent;
+- (void)deleteStartIndex;
+- (id)dictionaryRepresentation;
+- (unsigned int)endIndex;
+- (bool)hasEndIndex;
+- (bool)hasLabel;
+- (bool)hasMatchInfo;
+- (bool)hasNodeIndex;
+- (bool)hasOriginAppBundleIdType;
+- (bool)hasPayloadAttachmentInfo;
+- (bool)hasSourceComponent;
+- (bool)hasStartIndex;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (id)label;
+- (id)matchInfo;
+- (unsigned int)nodeIndex;
+- (int)originAppBundleIdType;
+- (id)payloadAttachmentInfo;
+- (bool)readFrom:(id)arg1;
+- (void)setEndIndex:(unsigned int)arg1;
+- (void)setHasEndIndex:(bool)arg1;
+- (void)setHasLabel:(bool)arg1;
+- (void)setHasMatchInfo:(bool)arg1;
+- (void)setHasNodeIndex:(bool)arg1;
+- (void)setHasOriginAppBundleIdType:(bool)arg1;
+- (void)setHasPayloadAttachmentInfo:(bool)arg1;
+- (void)setHasSourceComponent:(bool)arg1;
+- (void)setHasStartIndex:(bool)arg1;
+- (void)setLabel:(id)arg1;
+- (void)setMatchInfo:(id)arg1;
+- (void)setNodeIndex:(unsigned int)arg1;
+- (void)setOriginAppBundleIdType:(int)arg1;
+- (void)setPayloadAttachmentInfo:(id)arg1;
+- (void)setSourceComponent:(int)arg1;
+- (void)setStartIndex:(unsigned int)arg1;
+- (int)sourceComponent;
+- (unsigned int)startIndex;
+- (id)suppressMessageUnderConditions;
+- (void)writeTo:(id)arg1;
+
+@end

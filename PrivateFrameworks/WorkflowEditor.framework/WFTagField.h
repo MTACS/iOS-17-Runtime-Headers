@@ -1,0 +1,94 @@
+
+@interface WFTagField : UIView <UITextViewDelegate, WFTagPickerViewControllerDelegate> {
+    bool  _allowsTextEntry;
+    long long  _autocapitalizationType;
+    long long  _autocorrectionType;
+    <WFTagFieldDelegate> * _delegate;
+    bool  _editable;
+    NSString * _fieldTitle;
+    UIButton * _plusButton;
+    WFTextScrollView * _scrollView;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _selectedRange;
+    NSArray * _suggestedTags;
+    NSString * _tags;
+    WFTagTextView * _textView;
+    id /* block */  _updateBlock;
+}
+
+@property (nonatomic) bool allowsTextEntry;
+@property (nonatomic) long long autocapitalizationType;
+@property (nonatomic) long long autocorrectionType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WFTagFieldDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEditable, nonatomic) bool editable;
+@property (nonatomic, copy) NSString *fieldTitle;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long keyboardAppearance;
+@property (nonatomic) long long keyboardType;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic) UIButton *plusButton;
+@property (nonatomic) WFTextScrollView *scrollView;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } selectedRange;
+@property (nonatomic, copy) NSArray *suggestedTags;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *tags;
+@property (nonatomic) long long textAlignment;
+@property (nonatomic) WFTagTextView *textView;
+@property (nonatomic, copy) id /* block */ updateBlock;
+
+- (void).cxx_destruct;
+- (bool)allowsTextEntry;
+- (long long)autocapitalizationType;
+- (long long)autocorrectionType;
+- (id)containingViewController;
+- (id)delegate;
+- (id)fieldTitle;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 showsAddButton:(bool)arg2;
+- (void)insertTag:(id)arg1;
+- (bool)isEditable;
+- (long long)keyboardAppearance;
+- (long long)keyboardType;
+- (void)layoutSubviews;
+- (id)placeholder;
+- (id)plusButton;
+- (id)scrollView;
+- (void)selectTag;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })selectedRange;
+- (void)setAllowsTextEntry:(bool)arg1;
+- (void)setAutocapitalizationType:(long long)arg1;
+- (void)setAutocorrectionType:(long long)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEditable:(bool)arg1;
+- (void)setFieldTitle:(id)arg1;
+- (void)setKeyboardAppearance:(long long)arg1;
+- (void)setKeyboardType:(long long)arg1;
+- (void)setPlaceholder:(id)arg1;
+- (void)setPlusButton:(id)arg1;
+- (void)setScrollView:(id)arg1;
+- (void)setSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSuggestedTags:(id)arg1;
+- (void)setTags:(id)arg1;
+- (void)setTextAlignment:(long long)arg1;
+- (void)setTextView:(id)arg1;
+- (void)setUpdateBlock:(id /* block */)arg1;
+- (id)suggestedTags;
+- (void)tagPicker:(id)arg1 didSelectTags:(id)arg2;
+- (void)tagPickerDidCancel:(id)arg1;
+- (id)tags;
+- (long long)textAlignment;
+- (id)textView;
+- (bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(id)arg3;
+- (void)textViewDidChange:(id)arg1;
+- (void)textViewDidChangeSelection:(id)arg1;
+- (void)textViewDidEndEditing:(id)arg1;
+- (bool)tokenizeFreeTextFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id /* block */)updateBlock;
+- (void)updateEditableState;
+- (void)updateTags;
+
+@end

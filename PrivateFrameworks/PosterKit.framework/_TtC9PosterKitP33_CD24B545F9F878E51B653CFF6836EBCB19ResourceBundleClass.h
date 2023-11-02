@@ -1,0 +1,4 @@
+
+@interface _TtC9PosterKitP33_CD24B545F9F878E51B653CFF6836EBCB19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol HMDIDSActivityMonitorDataSource <HMDIDSActivityMonitorObserverRegistrationManager, HMDIDSActivityMonitorBroadcasterPushTokenDataSource>
+
+@end

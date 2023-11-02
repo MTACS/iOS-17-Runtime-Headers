@@ -1,0 +1,25 @@
+
+@interface MPCModelGenericAVItemMediaRedownloadOperation : MPAsyncOperation {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    MPCModelGenericAVItemAssetLoadProperties * _assetLoadProperties;
+    ICMediaRedownloadRequest * _mediaDownloadRequest;
+    ICStoreRequestContext * _requestContext;
+    id /* block */  _responseHandler;
+}
+
+@property (nonatomic, retain) MPCModelGenericAVItemAssetLoadProperties *assetLoadProperties;
+@property (nonatomic, copy) ICStoreRequestContext *requestContext;
+@property (nonatomic, copy) id /* block */ responseHandler;
+
+- (void).cxx_destruct;
+- (id)assetLoadProperties;
+- (void)cancel;
+- (void)execute;
+- (id)init;
+- (id)requestContext;
+- (id /* block */)responseHandler;
+- (void)setAssetLoadProperties:(id)arg1;
+- (void)setRequestContext:(id)arg1;
+- (void)setResponseHandler:(id /* block */)arg1;
+
+@end

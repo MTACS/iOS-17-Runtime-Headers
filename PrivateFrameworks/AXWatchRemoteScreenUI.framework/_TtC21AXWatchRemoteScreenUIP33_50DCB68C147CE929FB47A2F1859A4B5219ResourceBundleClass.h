@@ -1,0 +1,4 @@
+
+@interface _TtC21AXWatchRemoteScreenUIP33_50DCB68C147CE929FB47A2F1859A4B5219ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

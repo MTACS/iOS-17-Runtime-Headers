@@ -1,0 +1,31 @@
+
+@interface MRGameControllerDaemonProxy : NSObject <GameControllerDaemonListener> {
+    NSXPCConnection * _connection;
+    MRGameControllerDelayedEvents * _delayedEvents;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)defaultGameControllerDaemonProxy;
+
+- (void).cxx_destruct;
+- (bool)_delayEvent:(unsigned long long)arg1 setValue:(float)arg2 forElement:(int)arg3 withUpDelay:(double)arg4;
+- (void)_openConnection;
+- (void)addController:(id)arg1;
+- (id)addEmulatedControllerWithProperties:(id)arg1;
+- (void)controllerID:(unsigned long long)arg1 setArrayValueX:(float)arg2 y:(float)arg3 z:(float)arg4 w:(float)arg5 forElement:(int)arg6;
+- (void)controllerID:(unsigned long long)arg1 setDigitizerX:(float)arg2 digitizerY:(float)arg3 withTimeStamp:(unsigned long long)arg4 touchDown:(bool)arg5;
+- (void)controllerID:(unsigned long long)arg1 setValue:(float)arg2 forElement:(int)arg3;
+- (void)controllerID:(unsigned long long)arg1 setValue:(float)arg2 forElement:(int)arg3 withUpDelay:(double)arg4;
+- (void)controllerWithUDID:(unsigned long long)arg1 setData:(id)arg2;
+- (void)controllerWithUDID:(unsigned long long)arg1 setValue:(float)arg2 forElement:(int)arg3;
+- (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned long long)arg3 touchDown:(bool)arg4;
+- (void)microControllerWithUDID:(unsigned long long)arg1 setDigitizerX:(float)arg2 digitizerY:(float)arg3 withTimeStamp:(unsigned long long)arg4 touchDown:(bool)arg5;
+- (void)removeController:(id)arg1;
+- (void)removeEmulatedController:(id)arg1;
+- (void)replyConnectedHosts:(id)arg1;
+
+@end

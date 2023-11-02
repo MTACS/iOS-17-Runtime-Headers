@@ -1,0 +1,6 @@
+
+@interface PGInvariantSonMemoryNodeFeatureExtractor : PGGraphMemoryNodeFeatureExtractor
+
+- (id)initWithError:(id*)arg1;
+
+@end

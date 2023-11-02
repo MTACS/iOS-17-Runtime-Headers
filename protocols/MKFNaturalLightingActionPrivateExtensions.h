@@ -1,0 +1,4 @@
+
+@protocol MKFNaturalLightingActionPrivateExtensions
+
+@end

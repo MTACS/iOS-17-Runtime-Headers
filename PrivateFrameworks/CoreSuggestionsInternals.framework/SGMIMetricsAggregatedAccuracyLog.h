@@ -1,0 +1,90 @@
+
+@interface SGMIMetricsAggregatedAccuracyLog : PBCodable <NSCopying> {
+    struct { 
+        unsigned int ignorablePredictedAsIgnorable : 1; 
+        unsigned int ignorablePredictedAsNeutral : 1; 
+        unsigned int ignorablePredictedAsSalient : 1; 
+        unsigned int neutralPredictedAsIgnorable : 1; 
+        unsigned int neutralPredictedAsNeutral : 1; 
+        unsigned int neutralPredictedAsSalient : 1; 
+        unsigned int salientPredictedAsIgnorable : 1; 
+        unsigned int salientPredictedAsNeutral : 1; 
+        unsigned int salientPredictedAsSalient : 1; 
+    }  _has;
+    unsigned int  _ignorablePredictedAsIgnorable;
+    unsigned int  _ignorablePredictedAsNeutral;
+    unsigned int  _ignorablePredictedAsSalient;
+    unsigned int  _neutralPredictedAsIgnorable;
+    unsigned int  _neutralPredictedAsNeutral;
+    unsigned int  _neutralPredictedAsSalient;
+    unsigned int  _salientPredictedAsIgnorable;
+    unsigned int  _salientPredictedAsNeutral;
+    unsigned int  _salientPredictedAsSalient;
+}
+
+@property (nonatomic) bool hasIgnorablePredictedAsIgnorable;
+@property (nonatomic) bool hasIgnorablePredictedAsNeutral;
+@property (nonatomic) bool hasIgnorablePredictedAsSalient;
+@property (nonatomic) bool hasNeutralPredictedAsIgnorable;
+@property (nonatomic) bool hasNeutralPredictedAsNeutral;
+@property (nonatomic) bool hasNeutralPredictedAsSalient;
+@property (nonatomic) bool hasSalientPredictedAsIgnorable;
+@property (nonatomic) bool hasSalientPredictedAsNeutral;
+@property (nonatomic) bool hasSalientPredictedAsSalient;
+@property (nonatomic) unsigned int ignorablePredictedAsIgnorable;
+@property (nonatomic) unsigned int ignorablePredictedAsNeutral;
+@property (nonatomic) unsigned int ignorablePredictedAsSalient;
+@property (nonatomic) unsigned int neutralPredictedAsIgnorable;
+@property (nonatomic) unsigned int neutralPredictedAsNeutral;
+@property (nonatomic) unsigned int neutralPredictedAsSalient;
+@property (nonatomic) unsigned int salientPredictedAsIgnorable;
+@property (nonatomic) unsigned int salientPredictedAsNeutral;
+@property (nonatomic) unsigned int salientPredictedAsSalient;
+
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasIgnorablePredictedAsIgnorable;
+- (bool)hasIgnorablePredictedAsNeutral;
+- (bool)hasIgnorablePredictedAsSalient;
+- (bool)hasNeutralPredictedAsIgnorable;
+- (bool)hasNeutralPredictedAsNeutral;
+- (bool)hasNeutralPredictedAsSalient;
+- (bool)hasSalientPredictedAsIgnorable;
+- (bool)hasSalientPredictedAsNeutral;
+- (bool)hasSalientPredictedAsSalient;
+- (unsigned long long)hash;
+- (unsigned int)ignorablePredictedAsIgnorable;
+- (unsigned int)ignorablePredictedAsNeutral;
+- (unsigned int)ignorablePredictedAsSalient;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (unsigned int)neutralPredictedAsIgnorable;
+- (unsigned int)neutralPredictedAsNeutral;
+- (unsigned int)neutralPredictedAsSalient;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)salientPredictedAsIgnorable;
+- (unsigned int)salientPredictedAsNeutral;
+- (unsigned int)salientPredictedAsSalient;
+- (void)setHasIgnorablePredictedAsIgnorable:(bool)arg1;
+- (void)setHasIgnorablePredictedAsNeutral:(bool)arg1;
+- (void)setHasIgnorablePredictedAsSalient:(bool)arg1;
+- (void)setHasNeutralPredictedAsIgnorable:(bool)arg1;
+- (void)setHasNeutralPredictedAsNeutral:(bool)arg1;
+- (void)setHasNeutralPredictedAsSalient:(bool)arg1;
+- (void)setHasSalientPredictedAsIgnorable:(bool)arg1;
+- (void)setHasSalientPredictedAsNeutral:(bool)arg1;
+- (void)setHasSalientPredictedAsSalient:(bool)arg1;
+- (void)setIgnorablePredictedAsIgnorable:(unsigned int)arg1;
+- (void)setIgnorablePredictedAsNeutral:(unsigned int)arg1;
+- (void)setIgnorablePredictedAsSalient:(unsigned int)arg1;
+- (void)setNeutralPredictedAsIgnorable:(unsigned int)arg1;
+- (void)setNeutralPredictedAsNeutral:(unsigned int)arg1;
+- (void)setNeutralPredictedAsSalient:(unsigned int)arg1;
+- (void)setSalientPredictedAsIgnorable:(unsigned int)arg1;
+- (void)setSalientPredictedAsNeutral:(unsigned int)arg1;
+- (void)setSalientPredictedAsSalient:(unsigned int)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

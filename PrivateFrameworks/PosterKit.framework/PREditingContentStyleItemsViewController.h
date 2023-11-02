@@ -1,0 +1,87 @@
+
+@interface PREditingContentStyleItemsViewController : UIViewController {
+    NSArray * _allItemViews;
+    NSArray * _allViews;
+    PREditingColorWell * _colorWell;
+    PREditingColorWellView * _colorWellView;
+    PREditorContentStylePickerConfiguration * _configuration;
+    double  _configuredViewWidth;
+    double  _contentsLuminance;
+    <PREditingContentStyleItemsDataSource> * _dataSource;
+    <PREditingContentStyleItemsViewControllerDelegate> * _delegate;
+    NSArray * _horizontalStackViews;
+    double  _interitemSpacing;
+    PREditingPosterContentStyleCoordinator * _selectedContentStyleCoordinator;
+    PREditingContentStyleItemView * _selectedContentStyleItemView;
+    UIStackView * _stackView;
+    NSLayoutConstraint * _stackViewLeadingConstraint;
+    NSLayoutConstraint * _stackViewTrailingConstraint;
+    PREditingPosterContentStyleCoordinator * _uiKitColorPickerStyleCoordinator;
+}
+
+@property (nonatomic, retain) NSArray *allItemViews;
+@property (nonatomic, retain) NSArray *allViews;
+@property (nonatomic, retain) PREditingColorWell *colorWell;
+@property (nonatomic, retain) PREditingColorWellView *colorWellView;
+@property (nonatomic, readonly) PREditorContentStylePickerConfiguration *configuration;
+@property (nonatomic) double configuredViewWidth;
+@property (nonatomic) double contentsLuminance;
+@property (nonatomic, retain) <PREditingContentStyleItemsDataSource> *dataSource;
+@property (nonatomic) <PREditingContentStyleItemsViewControllerDelegate> *delegate;
+@property (nonatomic, retain) NSArray *horizontalStackViews;
+@property (nonatomic) double interitemSpacing;
+@property (nonatomic, retain) PREditingPosterContentStyleCoordinator *selectedContentStyleCoordinator;
+@property (nonatomic, retain) PREditingContentStyleItemView *selectedContentStyleItemView;
+@property (nonatomic, retain) UIStackView *stackView;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewLeadingConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewTrailingConstraint;
+@property (nonatomic, retain) PREditingPosterContentStyleCoordinator *uiKitColorPickerStyleCoordinator;
+
+- (void).cxx_destruct;
+- (id)allItemViews;
+- (id)allViews;
+- (id)colorWell;
+- (void)colorWellDidUpdateColor:(id)arg1;
+- (id)colorWellView;
+- (id)configuration;
+- (double)configuredViewWidth;
+- (double)contentsLuminance;
+- (id)dataSource;
+- (id)delegate;
+- (void)deselectSelectedContentStyle;
+- (void)didSelectContentStyleCoordinator:(id)arg1;
+- (void)didTapContentStyleItem:(id)arg1;
+- (double)estimatedHeight;
+- (id)horizontalStackViews;
+- (id)initWithDataSource:(id)arg1 configuration:(id)arg2;
+- (double)interitemSpacing;
+- (void)layoutWithItemViews:(id)arg1;
+- (id)selectedContentStyleCoordinator;
+- (id)selectedContentStyleItemView;
+- (void)setAllItemViews:(id)arg1;
+- (void)setAllViews:(id)arg1;
+- (void)setColorWell:(id)arg1;
+- (void)setColorWellView:(id)arg1;
+- (void)setConfiguredViewWidth:(double)arg1;
+- (void)setContentsLuminance:(double)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHorizontalStackViews:(id)arg1;
+- (void)setInteritemSpacing:(double)arg1;
+- (void)setSelectedContentStyle:(id)arg1 fromUIKitPicker:(bool)arg2;
+- (void)setSelectedContentStyleCoordinator:(id)arg1;
+- (void)setSelectedContentStyleItemView:(id)arg1;
+- (void)setStackView:(id)arg1;
+- (void)setStackViewLeadingConstraint:(id)arg1;
+- (void)setStackViewTrailingConstraint:(id)arg1;
+- (void)setUiKitColorPickerStyleCoordinator:(id)arg1;
+- (void)setupItemViews;
+- (id)stackView;
+- (id)stackViewLeadingConstraint;
+- (id)stackViewTrailingConstraint;
+- (id)uiKitColorPickerStyleCoordinator;
+- (void)updateLayoutForCurrentSize;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+
+@end

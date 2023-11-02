@@ -1,0 +1,103 @@
+
+@interface SMBNode : NSObject {
+    unsigned long long  _cmpdNextCmdOffset;
+    struct { 
+        unsigned long long fid_persistent; 
+        unsigned long long fid_volatile; 
+    }  _fid;
+    int  _isCmpd;
+    unsigned int  _isOpen;
+    unsigned int  _marshallPos;
+    NSString * _name;
+    unsigned int  _onEncryptedShare;
+    unsigned int  _parsePos;
+    SMBPiston * _pd;
+    unsigned int  _shareID;
+    NSString * _streamName;
+    unsigned int  _treeID;
+    SMB_rq * rqp;
+}
+
+@property unsigned long long cmpdNextCmdOffset;
+@property struct { unsigned long long x1; unsigned long long x2; } fid;
+@property int isCmpd;
+@property unsigned int isOpen;
+@property unsigned int marshallPos;
+@property (copy) NSString *name;
+@property unsigned int onEncryptedShare;
+@property unsigned int parsePos;
+@property (retain) SMBPiston *pd;
+@property unsigned int shareID;
+@property (copy) NSString *streamName;
+@property unsigned int treeID;
+
++ (void)nodeForCmpd:(id)arg1 onShareID:(unsigned int)arg2 callBack:(id /* block */)arg3;
++ (void)nodeWithParameters:(struct smb_create { unsigned long long x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; void *x9; unsigned int x10; unsigned int x11; unsigned char x12; unsigned char x13; unsigned int x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; unsigned long long x19; unsigned long long x20; unsigned int x21; unsigned int x22; struct { unsigned long long x_23_1_1; unsigned long long x_23_1_2; } x23; struct smb_resolve_id { unsigned long long x_24_1_1; unsigned int x_24_1_2; } x24; struct smb_dur_handle { unsigned long long x_25_1_1; unsigned long long x_25_1_2; unsigned int x_25_1_3; unsigned long long x_25_1_4; unsigned long long x_25_1_5; unsigned short x_25_1_6; unsigned int x_25_1_7; unsigned char x_25_1_8[16]; struct { unsigned long long x_9_2_1; unsigned long long x_9_2_2; } x_25_1_9; unsigned long long x_25_1_10; unsigned int x_25_1_11; unsigned int x_25_1_12; } x25; }*)arg1 onPiston:(id)arg2 onShareID:(unsigned int)arg3 withName:(id)arg4 withStreamName:(id)arg5 callBack:(id /* block */)arg6;
+
+- (void).cxx_destruct;
+- (void)changeNotify:(struct smb_change_notify { unsigned int x1; }*)arg1 withFlags:(unsigned short)arg2 withFilter:(unsigned int)arg3 returnDataIn:(id)arg4 callBack:(id /* block */)arg5;
+- (void)close:(struct smb_close { unsigned int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; }*)arg1 withFlags:(unsigned short)arg2 callBack:(id /* block */)arg3;
+- (int)cmpdAddClose:(struct smb_close { unsigned int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; }*)arg1 withFlags:(unsigned short)arg2;
+- (int)cmpdAddCreate:(struct smb_create { unsigned long long x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; void *x9; unsigned int x10; unsigned int x11; unsigned char x12; unsigned char x13; unsigned int x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; unsigned long long x19; unsigned long long x20; unsigned int x21; unsigned int x22; struct { unsigned long long x_23_1_1; unsigned long long x_23_1_2; } x23; struct smb_resolve_id { unsigned long long x_24_1_1; unsigned int x_24_1_2; } x24; struct smb_dur_handle { unsigned long long x_25_1_1; unsigned long long x_25_1_2; unsigned int x_25_1_3; unsigned long long x_25_1_4; unsigned long long x_25_1_5; unsigned short x_25_1_6; unsigned int x_25_1_7; unsigned char x_25_1_8[16]; struct { unsigned long long x_9_2_1; unsigned long long x_9_2_2; } x_25_1_9; unsigned long long x_25_1_10; unsigned int x_25_1_11; unsigned int x_25_1_12; } x25; }*)arg1 withName:(id)arg2 withStreamName:(id)arg3;
+- (int)cmpdAddIoctl:(struct smb_ioctl { unsigned int x1; unsigned int x2; unsigned short x3; unsigned int x4; struct smb_valid_neg { unsigned int x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4[8]; unsigned char x_5_1_5[16]; unsigned int x_5_1_6; unsigned short x_5_1_7; unsigned short x_5_1_8; unsigned short x_5_1_9[8]; unsigned char x_5_1_10[16]; } x5; }*)arg1 getReparsePoint:(id)arg2;
+- (int)cmpdAddIoctl:(struct smb_ioctl { unsigned int x1; unsigned int x2; unsigned short x3; unsigned int x4; struct smb_valid_neg { unsigned int x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4[8]; unsigned char x_5_1_5[16]; unsigned int x_5_1_6; unsigned short x_5_1_7; unsigned short x_5_1_8; unsigned short x_5_1_9[8]; unsigned char x_5_1_10[16]; } x5; }*)arg1 pipeTransceive:(id)arg2 withRecvData:(id)arg3;
+- (int)cmpdAddIoctl:(struct smb_ioctl { unsigned int x1; unsigned int x2; unsigned short x3; unsigned int x4; struct smb_valid_neg { unsigned int x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4[8]; unsigned char x_5_1_5[16]; unsigned int x_5_1_6; unsigned short x_5_1_7; unsigned short x_5_1_8; unsigned short x_5_1_9[8]; unsigned char x_5_1_10[16]; } x5; }*)arg1 setReparsePoint:(id)arg2;
+- (int)cmpdAddQueryDirectory:(struct smb_query_dir { unsigned char x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 onDir:(id)arg2 returnDataIn:(id)arg3;
+- (int)cmpdAddQueryInformation:(struct smb_query_info { unsigned char x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; struct FILE_FS_ATTRIBUTE_INFORMATION { unsigned int x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned char x_6_1_5[1024]; } x6; struct FILE_FS_SIZE_INFORMATION { unsigned long long x_7_1_1; unsigned long long x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; } x7; struct FILE_STREAM_INFORMATION { unsigned long long x_8_1_1; unsigned long long x_8_1_2; unsigned long long x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; unsigned long long x_8_1_6; unsigned long long x_8_1_7; } x8; unsigned long long x9; }*)arg1 withStreamName:(id)arg2 forFileAllInfo:(id)arg3 withInputBuffer:(id)arg4 withOutputBuffer:(id)arg5;
+- (int)cmpdAddRead:(struct smb_read_write { unsigned long long x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 intoBuffer:(id)arg2;
+- (int)cmpdAddSetInformation:(struct smb_setinfo { unsigned int x1; unsigned char x2; unsigned char x3; unsigned int x4; struct { unsigned long long x_5_1_1; unsigned long long x_5_1_2; } x5; unsigned long long x6; struct smb2_file_basic_info { unsigned long long x_7_1_1; unsigned long long x_7_1_2; unsigned long long x_7_1_3; unsigned long long x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; } x7; unsigned int x8; unsigned int x9; }*)arg1 withInputBuffer:(id)arg2 withRenameTarget:(id)arg3;
+- (int)cmpdAddWrite:(struct smb_read_write { unsigned long long x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 fromBuffer:(id)arg2;
+- (unsigned long long)cmpdNextCmdOffset;
+- (int)cmpdParseClose:(struct smb_close { unsigned int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; }*)arg1 withFlags:(unsigned short)arg2;
+- (int)cmpdParseCreate:(struct smb_create { unsigned long long x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; void *x9; unsigned int x10; unsigned int x11; unsigned char x12; unsigned char x13; unsigned int x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; unsigned long long x19; unsigned long long x20; unsigned int x21; unsigned int x22; struct { unsigned long long x_23_1_1; unsigned long long x_23_1_2; } x23; struct smb_resolve_id { unsigned long long x_24_1_1; unsigned int x_24_1_2; } x24; struct smb_dur_handle { unsigned long long x_25_1_1; unsigned long long x_25_1_2; unsigned int x_25_1_3; unsigned long long x_25_1_4; unsigned long long x_25_1_5; unsigned short x_25_1_6; unsigned int x_25_1_7; unsigned char x_25_1_8[16]; struct { unsigned long long x_9_2_1; unsigned long long x_9_2_2; } x_25_1_9; unsigned long long x_25_1_10; unsigned int x_25_1_11; unsigned int x_25_1_12; } x25; }*)arg1;
+- (int)cmpdParseIoctl:(struct smb_ioctl { unsigned int x1; unsigned int x2; unsigned short x3; unsigned int x4; struct smb_valid_neg { unsigned int x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4[8]; unsigned char x_5_1_5[16]; unsigned int x_5_1_6; unsigned short x_5_1_7; unsigned short x_5_1_8; unsigned short x_5_1_9[8]; unsigned char x_5_1_10[16]; } x5; }*)arg1 reparsePoint:(id)arg2 sendInputBuffer:(id)arg3 rcvOutputBuffer:(id)arg4;
+- (int)cmpdParseQueryDirectory:(struct smb_query_dir { unsigned char x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 returnDataIn:(id)arg2;
+- (int)cmpdParseQueryInformation:(struct smb_query_info { unsigned char x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; struct FILE_FS_ATTRIBUTE_INFORMATION { unsigned int x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned char x_6_1_5[1024]; } x6; struct FILE_FS_SIZE_INFORMATION { unsigned long long x_7_1_1; unsigned long long x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; } x7; struct FILE_STREAM_INFORMATION { unsigned long long x_8_1_1; unsigned long long x_8_1_2; unsigned long long x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; unsigned long long x_8_1_6; unsigned long long x_8_1_7; } x8; unsigned long long x9; }*)arg1 withStreamName:(id)arg2 forFileAllInfo:(id)arg3 withOutputBuffer:(id)arg4;
+- (int)cmpdParseRead:(struct smb_read_write { unsigned long long x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 intoBuffer:(id)arg2;
+- (int)cmpdParseSetInformation:(struct smb_setinfo { unsigned int x1; unsigned char x2; unsigned char x3; unsigned int x4; struct { unsigned long long x_5_1_1; unsigned long long x_5_1_2; } x5; unsigned long long x6; struct smb2_file_basic_info { unsigned long long x_7_1_1; unsigned long long x_7_1_2; unsigned long long x_7_1_3; unsigned long long x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; } x7; unsigned int x8; unsigned int x9; }*)arg1;
+- (int)cmpdParseWrite:(struct smb_read_write { unsigned long long x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1;
+- (int)commonInit:(id)arg1 onShareID:(unsigned int)arg2;
+- (int)commonInit:(id)arg1 onShareID:(unsigned int)arg2 name:(id)arg3 streamName:(id)arg4;
+- (void)dealloc;
+- (struct { unsigned long long x1; unsigned long long x2; })fid;
+- (void)flush:(struct smb_flush { unsigned int x1; unsigned int x2; }*)arg1 callBack:(id /* block */)arg2;
+- (id)init:(id)arg1;
+- (id)init:(struct smb_create { unsigned long long x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; void *x9; unsigned int x10; unsigned int x11; unsigned char x12; unsigned char x13; unsigned int x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; unsigned long long x19; unsigned long long x20; unsigned int x21; unsigned int x22; struct { unsigned long long x_23_1_1; unsigned long long x_23_1_2; } x23; struct smb_resolve_id { unsigned long long x_24_1_1; unsigned int x_24_1_2; } x24; struct smb_dur_handle { unsigned long long x_25_1_1; unsigned long long x_25_1_2; unsigned int x_25_1_3; unsigned long long x_25_1_4; unsigned long long x_25_1_5; unsigned short x_25_1_6; unsigned int x_25_1_7; unsigned char x_25_1_8[16]; struct { unsigned long long x_9_2_1; unsigned long long x_9_2_2; } x_25_1_9; unsigned long long x_25_1_10; unsigned int x_25_1_11; unsigned int x_25_1_12; } x25; }*)arg1 onPiston:(id)arg2 onShareID:(unsigned int)arg3 withName:(id)arg4 withStreamName:(id)arg5 callBack:(id /* block */)arg6;
+- (id)initForCmpd:(id)arg1 onShareID:(unsigned int)arg2;
+- (void)ioctl:(struct smb_ioctl { unsigned int x1; unsigned int x2; unsigned short x3; unsigned int x4; struct smb_valid_neg { unsigned int x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4[8]; unsigned char x_5_1_5[16]; unsigned int x_5_1_6; unsigned short x_5_1_7; unsigned short x_5_1_8; unsigned short x_5_1_9[8]; unsigned char x_5_1_10[16]; } x5; }*)arg1 getReparsePoint:(id)arg2 callBack:(id /* block */)arg3;
+- (void)ioctl:(struct smb_ioctl { unsigned int x1; unsigned int x2; unsigned short x3; unsigned int x4; struct smb_valid_neg { unsigned int x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4[8]; unsigned char x_5_1_5[16]; unsigned int x_5_1_6; unsigned short x_5_1_7; unsigned short x_5_1_8; unsigned short x_5_1_9[8]; unsigned char x_5_1_10[16]; } x5; }*)arg1 pipeTransceive:(id)arg2 withRecvData:(id)arg3 callBack:(id /* block */)arg4;
+- (void)ioctl:(struct smb_ioctl { unsigned int x1; unsigned int x2; unsigned short x3; unsigned int x4; struct smb_valid_neg { unsigned int x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4[8]; unsigned char x_5_1_5[16]; unsigned int x_5_1_6; unsigned short x_5_1_7; unsigned short x_5_1_8; unsigned short x_5_1_9[8]; unsigned char x_5_1_10[16]; } x5; }*)arg1 setReparsePoint:(id)arg2 callBack:(id /* block */)arg3;
+- (int)isCmpd;
+- (unsigned int)isOpen;
+- (void)lockUnlock:(struct smb_lock { unsigned int x1; unsigned long long x2; unsigned long long x3; unsigned int x4; }*)arg1 callBack:(id /* block */)arg2;
+- (unsigned int)marshallPos;
+- (id)name;
+- (unsigned int)onEncryptedShare;
+- (int)parseNextHeader:(unsigned short)arg1 retNTStatus:(unsigned int*)arg2 retMdpp:(struct mdchain {}**)arg3;
+- (unsigned int)parsePos;
+- (id)pd;
+- (void)queryDirectory:(struct smb_query_dir { unsigned char x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 onDir:(id)arg2 returnDataIn:(id)arg3 callBack:(id /* block */)arg4;
+- (void)queryInformation:(struct smb_query_info { unsigned char x1; unsigned char x2; unsigned int x3; unsigned int x4; unsigned int x5; struct FILE_FS_ATTRIBUTE_INFORMATION { unsigned int x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned char x_6_1_5[1024]; } x6; struct FILE_FS_SIZE_INFORMATION { unsigned long long x_7_1_1; unsigned long long x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; } x7; struct FILE_STREAM_INFORMATION { unsigned long long x_8_1_1; unsigned long long x_8_1_2; unsigned long long x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; unsigned long long x_8_1_6; unsigned long long x_8_1_7; } x8; unsigned long long x9; }*)arg1 withStreamName:(id)arg2 forFileAllInfo:(id)arg3 withInputBuffer:(id)arg4 withOutputBuffer:(id)arg5 callBack:(id /* block */)arg6;
+- (void)read:(struct smb_read_write { unsigned long long x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 intoBuffer:(id)arg2 callBack:(id /* block */)arg3;
+- (int)resetCmpdRequest;
+- (void)sendCmpdRequest:(id /* block */)arg1;
+- (void)setCmpdNextCmdOffset:(unsigned long long)arg1;
+- (void)setFid:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setInformation:(struct smb_setinfo { unsigned int x1; unsigned char x2; unsigned char x3; unsigned int x4; struct { unsigned long long x_5_1_1; unsigned long long x_5_1_2; } x5; unsigned long long x6; struct smb2_file_basic_info { unsigned long long x_7_1_1; unsigned long long x_7_1_2; unsigned long long x_7_1_3; unsigned long long x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; } x7; unsigned int x8; unsigned int x9; }*)arg1 withInputBuffer:(id)arg2 withRenameTarget:(id)arg3 callBack:(id /* block */)arg4;
+- (void)setIsCmpd:(int)arg1;
+- (void)setIsOpen:(unsigned int)arg1;
+- (void)setMarshallPos:(unsigned int)arg1;
+- (void)setName:(id)arg1;
+- (void)setOnEncryptedShare:(unsigned int)arg1;
+- (void)setParsePos:(unsigned int)arg1;
+- (void)setPd:(id)arg1;
+- (void)setShareID:(unsigned int)arg1;
+- (void)setStreamName:(id)arg1;
+- (void)setTreeID:(unsigned int)arg1;
+- (unsigned int)shareID;
+- (id)streamName;
+- (unsigned int)treeID;
+- (int)updateCmpdHdr;
+- (void)write:(struct smb_read_write { unsigned long long x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 fromBuffer:(id)arg2 callBack:(id /* block */)arg3;
+
+@end

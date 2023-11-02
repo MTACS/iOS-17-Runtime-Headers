@@ -1,0 +1,84 @@
+
+@interface CKMacRecipientsController : CKViewController <CKDetailsContactsManagerDelegate, CNComposeRecipientTextViewDelegate> {
+    CKManualUpdater * _addressBookNotificationUpdater;
+    bool  _allowedByScreenTime;
+    CKDetailsContactsManager * _contactsManager;
+    CKConversation * _conversation;
+    STConversationContext * _currentConversationContext;
+    <CKMacRecipientsControllerDelegate> * _delegate;
+    UIView * _detailsPopoverPresentationSourceView;
+    unsigned long long  _numberOfRowsInToField;
+    CNComposeRecipientTextView * _toField;
+    UIScrollView * _toFieldScrollView;
+}
+
+@property (nonatomic, retain) CKManualUpdater *addressBookNotificationUpdater;
+@property (nonatomic) bool allowedByScreenTime;
+@property (nonatomic, retain) CKDetailsContactsManager *contactsManager;
+@property (nonatomic) CKConversation *conversation;
+@property (nonatomic, retain) STConversationContext *currentConversationContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKMacRecipientsControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *detailsPopoverPresentationSourceView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long numberOfRowsInToField;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) CNComposeRecipientTextView *toField;
+@property (nonatomic, retain) UIScrollView *toFieldScrollView;
+
+- (void).cxx_destruct;
+- (unsigned long long)_atomPresentationOptionsForRecipient:(id)arg1;
+- (void)_handleAddressBookChangedNotification:(id)arg1;
+- (void)_handleAddressBookPartialChangedNotification:(id)arg1;
+- (void)_handleConversationPreferredServiceDidChangeNotification:(id)arg1;
+- (void)_notifyDelegatesToFieldHeightHasChanged;
+- (void)_reloadCurrentRecipientData;
+- (bool)_shouldEnableScrolling;
+- (void)_showContactCardForEntity:(id)arg1 sourceView:(id)arg2;
+- (double)_toolbarHeightForNumberOfRows:(unsigned long long)arg1;
+- (void)_updateToFieldFrame;
+- (void)addRecipients:(id)arg1;
+- (id)addressBookNotificationUpdater;
+- (bool)allowedByScreenTime;
+- (id)composeRecipientView:(id)arg1 contextMenuConfigurationForAtom:(id)arg2;
+- (void)composeRecipientView:(id)arg1 disambiguateRecipientForAtom:(id)arg2;
+- (id)contactsManager;
+- (void)contactsManagerViewModelsDidChange:(id)arg1;
+- (id)conversation;
+- (id)currentConversationContext;
+- (void)dealloc;
+- (id)delegate;
+- (id)detailsPopoverPresentationSourceView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })detailsToolbarItemFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceTimeJoinCallToolbarItemFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceTimeStartOrLaunchCallToolbarItemFrame;
+- (id)handlesForScreenTimePolicyCheck;
+- (id)initWithConversation:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })innermostToolbarItemFrame;
+- (bool)isEditable;
+- (void)loadView;
+- (unsigned long long)numberOfRowsInToField;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (double)preferredMacToolbarHeight;
+- (unsigned long long)presentationOptionsForRecipient:(id)arg1;
+- (id)recipients;
+- (void)refreshRecipients;
+- (void)reset;
+- (void)setAddressBookNotificationUpdater:(id)arg1;
+- (void)setAllowedByScreenTime:(bool)arg1;
+- (void)setContactsManager:(id)arg1;
+- (void)setConversation:(id)arg1;
+- (void)setCurrentConversationContext:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDetailsPopoverPresentationSourceView:(id)arg1;
+- (void)setNumberOfRowsInToField:(unsigned long long)arg1;
+- (void)setToFieldScrollView:(id)arg1;
+- (bool)shouldShowVerifiedIconForRecipient:(id)arg1;
+- (id)toField;
+- (id)toFieldScrollView;
+- (void)updateScreenTimePolicy;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+
+@end

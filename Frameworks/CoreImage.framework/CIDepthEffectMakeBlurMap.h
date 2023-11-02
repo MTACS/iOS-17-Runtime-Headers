@@ -1,0 +1,97 @@
+
+@interface CIDepthEffectMakeBlurMap : CIFilter {
+    NSNumber * inputAperture;
+    id  inputAuxDataMetadata;
+    AVCameraCalibrationData * inputCalibrationData;
+    NSString * inputCaptureFolderMiscPath;
+    CIVector * inputChinPosition;
+    NSNumber * inputDraftMode;
+    CIVector * inputFaceMidPoint;
+    CIVector * inputFocusRect;
+    CIImage * inputGainMap;
+    CIImage * inputGlassesImage;
+    CIImage * inputHairImage;
+    CIImage * inputImage;
+    CIVector * inputLeftEyePosition;
+    CIImage * inputMatteImage;
+    CIVector * inputRightEyePosition;
+    NSNumber * inputScale;
+    CIImage * inputShiftmapImage;
+    float  simulatedAperture;
+    NSDictionary * tuningParameters;
+}
+
+@property (nonatomic, copy) NSNumber *inputAperture;
+@property (nonatomic, retain) id inputAuxDataMetadata;
+@property (nonatomic, retain) AVCameraCalibrationData *inputCalibrationData;
+@property (nonatomic, retain) NSString *inputCaptureFolderMiscPath;
+@property (retain) CIVector *inputChinPosition;
+@property (nonatomic, retain) NSNumber *inputDraftMode;
+@property (retain) CIVector *inputFaceMidPoint;
+@property (nonatomic, retain) CIVector *inputFocusRect;
+@property (retain) CIImage *inputGainMap;
+@property (retain) CIImage *inputGlassesImage;
+@property (retain) CIImage *inputHairImage;
+@property (retain) CIImage *inputImage;
+@property (retain) CIVector *inputLeftEyePosition;
+@property (retain) CIImage *inputMatteImage;
+@property (retain) CIVector *inputRightEyePosition;
+@property (nonatomic, copy) NSNumber *inputScale;
+@property (retain) CIImage *inputShiftmapImage;
+
++ (id)customAttributes;
+
+- (id)blurMapV2:(id)arg1;
+- (id)blurMapV3:(id)arg1 shiftmap:(id)arg2 alphaImage:(id)arg3;
+- (id)blurMapV4:(id)arg1 shiftmap:(id)arg2 alphaImage:(id)arg3 hairImage:(id)arg4;
+- (id)calibrationData;
+- (id)faceMaskApply:(id)arg1 blurMap:(id)arg2;
+- (id)faceMaskDelta:(id)arg1 extent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 parameters:(id)arg3 distanceToAdd:(float*)arg4;
+- (id)faceMaskParams:(id)arg1 useNormalizedCoords:(bool)arg2;
+- (id)inputAperture;
+- (id)inputAuxDataMetadata;
+- (id)inputCalibrationData;
+- (id)inputCaptureFolderMiscPath;
+- (id)inputChinPosition;
+- (id)inputDraftMode;
+- (id)inputFaceMidPoint;
+- (id)inputFocusRect;
+- (id)inputGainMap;
+- (id)inputGlassesImage;
+- (id)inputHairImage;
+- (id)inputImage;
+- (id)inputLeftEyePosition;
+- (id)inputMatteImage;
+- (id)inputRightEyePosition;
+- (id)inputScale;
+- (id)inputShiftmapImage;
+- (float)intrinsicMatrixFocalLength;
+- (id)lensModelApply:(id)arg1 shiftMap:(id)arg2;
+- (id)lensModelParams:(id)arg1;
+- (bool)needToRunFaceMask;
+- (struct CGSize { double x1; double x2; })originalShiftMapSize;
+- (id)outputImage;
+- (id)refineShiftMapV3WithMainImage:(id)arg1 shiftmap:(id)arg2 lensModel:(id)arg3;
+- (void)setInputAperture:(id)arg1;
+- (void)setInputAuxDataMetadata:(id)arg1;
+- (void)setInputCalibrationData:(id)arg1;
+- (void)setInputCaptureFolderMiscPath:(id)arg1;
+- (void)setInputChinPosition:(id)arg1;
+- (void)setInputDraftMode:(id)arg1;
+- (void)setInputFaceMidPoint:(id)arg1;
+- (void)setInputFocusRect:(id)arg1;
+- (void)setInputGainMap:(id)arg1;
+- (void)setInputGlassesImage:(id)arg1;
+- (void)setInputHairImage:(id)arg1;
+- (void)setInputImage:(id)arg1;
+- (void)setInputLeftEyePosition:(id)arg1;
+- (void)setInputMatteImage:(id)arg1;
+- (void)setInputRightEyePosition:(id)arg1;
+- (void)setInputScale:(id)arg1;
+- (void)setInputShiftmapImage:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)smoothShiftMapV2:(id)arg1;
+- (id)unifiedRenderingOutputImage:(struct CGImageMetadata { }*)arg1;
+- (id)upsampledShiftMap:(id)arg1;
+
+@end

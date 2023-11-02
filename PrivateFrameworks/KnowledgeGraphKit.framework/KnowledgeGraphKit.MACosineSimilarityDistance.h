@@ -1,0 +1,4 @@
+
+@interface KnowledgeGraphKit.MACosineSimilarityDistance : KnowledgeGraphKit.MACommonNeighborsSimilarityDistance
+
+@end

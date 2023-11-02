@@ -1,0 +1,98 @@
+
+@interface AVOutputContext : NSObject <NSSecureCoding> {
+    AVOutputContextInternal * _outputContext;
+}
+
+@property (nonatomic, readonly) NSString *deviceName;
+@property (nonatomic, readonly) struct OpaqueFigRoutingContext { }*figRoutingContext;
+
++ (id)addSharedAudioOutputContext;
++ (id)allSharedAudioOutputContexts;
++ (id)auxiliaryOutputContext;
++ (id /* block */)commChannelUUIDCommunicationChannelManagerCreator;
++ (id /* block */)defaultCommunicationChannelManagerCreator;
++ (Class)defaultOutputContextImplClass;
++ (id)defaultSharedOutputContext;
++ (id)iTunesAudioContext;
++ (void)initialize;
++ (id)outputContext;
++ (bool)outputContextExistsWithRemoteOutputDevice;
++ (id)outputContextForControllingOutputDeviceGroupWithID:(id)arg1;
++ (id)outputContextForControllingOutputDeviceGroupWithID:(id)arg1 options:(id)arg2;
++ (id)outputContextForID:(id)arg1;
++ (id)outputContextWithFigRoutingContextCreator:(id /* block */)arg1;
++ (id)outputContextWithFigRoutingContextCreator:(id /* block */)arg1 communicationChannelManagerCreator:(id /* block */)arg2;
++ (id)outputContextWithFigRoutingContextCreator:(id /* block */)arg1 outputDeviceTranslator:(id)arg2;
++ (id)outputContextWithFigRoutingContextCreator:(id /* block */)arg1 volumeController:(struct OpaqueFigVolumeControllerState { }*)arg2;
++ (id)preferredOutputDevicesForAudioSession:(id)arg1;
++ (void)resetOutputDeviceForAllOutputContexts;
++ (id)sharedAudioPresentationOutputContext;
++ (id)sharedSystemAudioContext;
++ (id)sharedSystemRemotePoolContext;
++ (id)sharedSystemScreenContext;
++ (bool)supportsSecureCoding;
+
+- (id)ID;
+- (void)addOutputDevice:(id)arg1;
+- (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
+- (int)applicationProcessID;
+- (bool)canMute;
+- (bool)canSetVolume;
+- (id)communicationChannelDelegate;
+- (id)contextID;
+- (void)dealloc;
+- (void)decreaseVolumeByCount:(long long)arg1;
+- (id)description;
+- (id)deviceName;
+- (void)encodeWithCoder:(id)arg1;
+- (struct OpaqueFigRoutingContext { }*)figRoutingContext;
+- (bool)getApplicationProcessID:(int*)arg1;
+- (unsigned long long)hash;
+- (id)impl;
+- (void)increaseVolumeByCount:(long long)arg1;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithOutputContextImpl:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isMuted;
+- (id)openCommunicationChannelWithOptions:(id)arg1 error:(id*)arg2;
+- (id)outgoingCommunicationChannel;
+- (void)outputContextImpl:(id)arg1 didChangeOutputDeviceWithInitiator:(id)arg2;
+- (void)outputContextImpl:(id)arg1 didChangeOutputDevicesWithInitiator:(id)arg2 reason:(id)arg3 deviceID:(id)arg4 previousDeviceIDs:(id)arg5;
+- (void)outputContextImpl:(id)arg1 didCloseCommunicationChannel:(id)arg2;
+- (void)outputContextImpl:(id)arg1 didExpireWithReplacement:(id)arg2;
+- (void)outputContextImpl:(id)arg1 didInitiateDestinationChange:(id)arg2;
+- (void)outputContextImpl:(id)arg1 didReceiveData:(id)arg2 fromCommunicationChannel:(id)arg3;
+- (void)outputContextImplDidChangeCanMute:(id)arg1;
+- (void)outputContextImplDidChangeCanSetVolume:(id)arg1;
+- (void)outputContextImplDidChangeGlobalOutputDeviceConfiguration:(id)arg1;
+- (void)outputContextImplDidChangeMute:(id)arg1;
+- (void)outputContextImplDidChangePredictedOutputDevice:(id)arg1;
+- (void)outputContextImplDidChangeProvidesControlForAllVolumeFeatures:(id)arg1;
+- (void)outputContextImplDidChangeVolume:(id)arg1;
+- (void)outputContextImplDidChangeVolumeControlType:(id)arg1;
+- (void)outputContextImplOutgoingCommunicationChannelDidBecomeAvailable:(id)arg1;
+- (id)outputContextType;
+- (id)outputDevice;
+- (unsigned long long)outputDeviceFeatures;
+- (id)outputDevices;
+- (id)predictedOutputDevice;
+- (bool)providesControlForAllVolumeFeatures;
+- (void)removeOutputDevice:(id)arg1;
+- (void)removeOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)resetPredictedOutputDevice;
+- (void)setApplicationProcessID:(int)arg1;
+- (void)setCommunicationChannelDelegate:(id)arg1;
+- (void)setMuted:(bool)arg1;
+- (bool)setOutputDevice:(id)arg1 forFeatures:(unsigned long long)arg2;
+- (void)setOutputDevice:(id)arg1 options:(id)arg2;
+- (void)setOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setOutputDevices:(id)arg1;
+- (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setVolume:(float)arg1;
+- (bool)supportsMultipleBluetoothOutputDevices;
+- (bool)supportsMultipleOutputDevices;
+- (float)volume;
+- (long long)volumeControlType;
+
+@end

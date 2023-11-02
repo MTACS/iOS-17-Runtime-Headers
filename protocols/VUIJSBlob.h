@@ -1,0 +1,4 @@
+
+@protocol VUIJSBlob <JSExport>
+
+@end

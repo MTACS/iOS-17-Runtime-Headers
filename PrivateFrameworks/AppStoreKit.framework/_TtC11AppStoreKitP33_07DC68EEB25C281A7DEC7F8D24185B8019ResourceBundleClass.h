@@ -1,0 +1,4 @@
+
+@interface _TtC11AppStoreKitP33_07DC68EEB25C281A7DEC7F8D24185B8019ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

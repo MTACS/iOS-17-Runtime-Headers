@@ -1,0 +1,4 @@
+
+@protocol ENAccountPublicKey <ENKey>
+
+@end

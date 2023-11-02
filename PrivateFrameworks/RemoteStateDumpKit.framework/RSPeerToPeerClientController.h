@@ -1,0 +1,21 @@
+
+@interface RSPeerToPeerClientController : RSPeerToPeerConnectionController <MCNearbyServiceBrowserDelegate> {
+    MCNearbyServiceBrowser * _serviceBrowser;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) MCNearbyServiceBrowser *serviceBrowser;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)abort;
+- (void)browser:(id)arg1 didNotStartBrowsingForPeers:(id)arg2;
+- (void)browser:(id)arg1 foundPeer:(id)arg2 withDiscoveryInfo:(id)arg3;
+- (void)browser:(id)arg1 lostPeer:(id)arg2;
+- (void)prepareForConnection;
+- (id)serviceBrowser;
+- (void)setServiceBrowser:(id)arg1;
+
+@end

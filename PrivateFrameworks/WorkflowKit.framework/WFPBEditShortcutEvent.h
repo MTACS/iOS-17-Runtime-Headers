@@ -1,0 +1,91 @@
+
+@interface WFPBEditShortcutEvent : PBCodable <NSCopying> {
+    unsigned int  _actionCount;
+    NSString * _addToSiriBundleIdentifier;
+    NSString * _galleryIdentifier;
+    struct { 
+        unsigned int actionCount : 1; 
+        unsigned int numberOfEngagedSuggestions : 1; 
+        unsigned int numberOfManuallyAddedActions : 1; 
+        unsigned int numberOfRejectedSuggestions : 1; 
+        unsigned int numberOfShownSuggestions : 1; 
+        unsigned int startingActionCount : 1; 
+    }  _has;
+    NSString * _key;
+    unsigned int  _numberOfEngagedSuggestions;
+    unsigned int  _numberOfManuallyAddedActions;
+    unsigned int  _numberOfRejectedSuggestions;
+    unsigned int  _numberOfShownSuggestions;
+    NSString * _shortcutSource;
+    unsigned int  _startingActionCount;
+}
+
+@property (nonatomic) unsigned int actionCount;
+@property (nonatomic, retain) NSString *addToSiriBundleIdentifier;
+@property (nonatomic, retain) NSString *galleryIdentifier;
+@property (nonatomic) bool hasActionCount;
+@property (nonatomic, readonly) bool hasAddToSiriBundleIdentifier;
+@property (nonatomic, readonly) bool hasGalleryIdentifier;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic) bool hasNumberOfEngagedSuggestions;
+@property (nonatomic) bool hasNumberOfManuallyAddedActions;
+@property (nonatomic) bool hasNumberOfRejectedSuggestions;
+@property (nonatomic) bool hasNumberOfShownSuggestions;
+@property (nonatomic, readonly) bool hasShortcutSource;
+@property (nonatomic) bool hasStartingActionCount;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic) unsigned int numberOfEngagedSuggestions;
+@property (nonatomic) unsigned int numberOfManuallyAddedActions;
+@property (nonatomic) unsigned int numberOfRejectedSuggestions;
+@property (nonatomic) unsigned int numberOfShownSuggestions;
+@property (nonatomic, retain) NSString *shortcutSource;
+@property (nonatomic) unsigned int startingActionCount;
+
+- (void).cxx_destruct;
+- (unsigned int)actionCount;
+- (id)addToSiriBundleIdentifier;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)galleryIdentifier;
+- (bool)hasActionCount;
+- (bool)hasAddToSiriBundleIdentifier;
+- (bool)hasGalleryIdentifier;
+- (bool)hasKey;
+- (bool)hasNumberOfEngagedSuggestions;
+- (bool)hasNumberOfManuallyAddedActions;
+- (bool)hasNumberOfRejectedSuggestions;
+- (bool)hasNumberOfShownSuggestions;
+- (bool)hasShortcutSource;
+- (bool)hasStartingActionCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)key;
+- (void)mergeFrom:(id)arg1;
+- (unsigned int)numberOfEngagedSuggestions;
+- (unsigned int)numberOfManuallyAddedActions;
+- (unsigned int)numberOfRejectedSuggestions;
+- (unsigned int)numberOfShownSuggestions;
+- (bool)readFrom:(id)arg1;
+- (void)setActionCount:(unsigned int)arg1;
+- (void)setAddToSiriBundleIdentifier:(id)arg1;
+- (void)setGalleryIdentifier:(id)arg1;
+- (void)setHasActionCount:(bool)arg1;
+- (void)setHasNumberOfEngagedSuggestions:(bool)arg1;
+- (void)setHasNumberOfManuallyAddedActions:(bool)arg1;
+- (void)setHasNumberOfRejectedSuggestions:(bool)arg1;
+- (void)setHasNumberOfShownSuggestions:(bool)arg1;
+- (void)setHasStartingActionCount:(bool)arg1;
+- (void)setKey:(id)arg1;
+- (void)setNumberOfEngagedSuggestions:(unsigned int)arg1;
+- (void)setNumberOfManuallyAddedActions:(unsigned int)arg1;
+- (void)setNumberOfRejectedSuggestions:(unsigned int)arg1;
+- (void)setNumberOfShownSuggestions:(unsigned int)arg1;
+- (void)setShortcutSource:(id)arg1;
+- (void)setStartingActionCount:(unsigned int)arg1;
+- (id)shortcutSource;
+- (unsigned int)startingActionCount;
+- (void)writeTo:(id)arg1;
+
+@end

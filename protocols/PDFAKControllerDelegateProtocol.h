@@ -1,0 +1,4 @@
+
+@protocol PDFAKControllerDelegateProtocol <NSObject>
+
+@end

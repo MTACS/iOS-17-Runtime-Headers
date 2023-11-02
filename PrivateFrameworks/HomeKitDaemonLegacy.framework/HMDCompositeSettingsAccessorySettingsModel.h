@@ -1,0 +1,85 @@
+
+@interface HMDCompositeSettingsAccessorySettingsModel : HMBModel <HMDCompositeSettingsModel>
+
+@property (nonatomic, copy) NSString *root_airPlay_airPlayEnabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_airPlay_airPlayEnabled_value;
+@property (nonatomic, copy) NSString *root_airPlay_airPlayEnabled_writeVersion;
+@property (nonatomic, copy) NSString *root_announce_enabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_announce_enabled_value;
+@property (nonatomic, copy) NSString *root_announce_enabled_writeVersion;
+@property (nonatomic, copy) NSString *root_doorbellChime_enabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_doorbellChime_enabled_value;
+@property (nonatomic, copy) NSString *root_doorbellChime_enabled_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_holdDuration_enabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_interaction_holdDuration_enabled_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_holdDuration_enabled_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_holdDuration_seconds_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_interaction_holdDuration_seconds_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_holdDuration_seconds_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_ignoreRepeat_enabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_interaction_ignoreRepeat_enabled_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_ignoreRepeat_enabled_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_ignoreRepeat_seconds_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_interaction_ignoreRepeat_seconds_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_ignoreRepeat_seconds_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_tapAssistance_selection_readVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_tapAssistance_selection_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_tapAssistance_selection_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_touchAccommodations_enabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_interaction_touchAccommodations_enabled_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_interaction_touchAccommodations_enabled_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_vision_doubleTapSettings_timeoutSettings_timeoutInterval_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_vision_doubleTapSettings_timeoutSettings_timeoutInterval_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_vision_doubleTapSettings_timeoutSettings_timeoutInterval_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_vision_speakingRateSection_speakingRate_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_vision_speakingRateSection_speakingRate_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_vision_speakingRateSection_speakingRate_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_vision_voiceOver_audioDuckingEnabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_vision_voiceOver_audioDuckingEnabled_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_vision_voiceOver_audioDuckingEnabled_writeVersion;
+@property (nonatomic, copy) NSString *root_general_accessibility_vision_voiceOver_enabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_accessibility_vision_voiceOver_enabled_value;
+@property (nonatomic, copy) NSString *root_general_accessibility_vision_voiceOver_enabled_writeVersion;
+@property (nonatomic, copy) NSString *root_general_analytics_shareSiriAnalytics_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_analytics_shareSiriAnalytics_value;
+@property (nonatomic, copy) NSString *root_general_analytics_shareSiriAnalytics_writeVersion;
+@property (nonatomic, copy) NSString *root_general_analytics_shareSpeakerAnalytics_readVersion;
+@property (nonatomic, copy) NSNumber *root_general_analytics_shareSpeakerAnalytics_value;
+@property (nonatomic, copy) NSString *root_general_analytics_shareSpeakerAnalytics_writeVersion;
+@property (nonatomic, copy) NSString *root_home_dismissedHomePodHasNonMemberMediaAccountWarning_readVersion;
+@property (nonatomic, copy) NSNumber *root_home_dismissedHomePodHasNonMemberMediaAccountWarning_value;
+@property (nonatomic, copy) NSString *root_home_dismissedHomePodHasNonMemberMediaAccountWarning_writeVersion;
+@property (nonatomic, copy) NSString *root_locationServices_enabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_locationServices_enabled_value;
+@property (nonatomic, copy) NSString *root_locationServices_enabled_writeVersion;
+@property (nonatomic, copy) NSString *root_music_allowExplicitContent_readVersion;
+@property (nonatomic, copy) NSNumber *root_music_allowExplicitContent_value;
+@property (nonatomic, copy) NSString *root_music_allowExplicitContent_writeVersion;
+@property (nonatomic, copy) NSString *root_siriEndpoint_enabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_siriEndpoint_enabled_value;
+@property (nonatomic, copy) NSString *root_siriEndpoint_enabled_writeVersion;
+@property (nonatomic, copy) NSString *root_siri_language_inputLanguageCodeValueName;
+@property (nonatomic, copy) NSString *root_siri_language_outputLanguageGenderCodeValueName;
+@property (nonatomic, copy) NSString *root_siri_language_outputLanguageVoiceCodeValueName;
+@property (nonatomic, copy) NSString *root_siri_language_readVersion;
+@property (nonatomic, copy) NSString *root_siri_language_voiceNameValueName;
+@property (nonatomic, copy) NSString *root_siri_language_writeVersion;
+@property (nonatomic, copy) NSString *root_siri_lightWhenUsingSiri_readVersion;
+@property (nonatomic, copy) NSNumber *root_siri_lightWhenUsingSiri_value;
+@property (nonatomic, copy) NSString *root_siri_lightWhenUsingSiri_writeVersion;
+@property (nonatomic, copy) NSString *root_siri_siriEnabled_readVersion;
+@property (nonatomic, copy) NSNumber *root_siri_siriEnabled_value;
+@property (nonatomic, copy) NSString *root_siri_siriEnabled_writeVersion;
+@property (nonatomic, copy) NSString *root_siri_soundAlert_readVersion;
+@property (nonatomic, copy) NSNumber *root_siri_soundAlert_value;
+@property (nonatomic, copy) NSString *root_siri_soundAlert_writeVersion;
+
++ (id)allKeyPaths;
++ (id)hmbProperties;
+
+- (id)keyPathsToSettingMetadata;
+- (id)keyPathsToSettings;
+- (id)keyPathsToSettingsForMigration;
+- (void)setSetting:(id)arg1 forKeyPath:(id)arg2 withError:(id*)arg3;
+
+@end

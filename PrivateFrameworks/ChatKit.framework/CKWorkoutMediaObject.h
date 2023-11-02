@@ -1,0 +1,34 @@
+
+@interface CKWorkoutMediaObject : CKMediaObject {
+    BOOL  _cachedOrientation;
+    double  _cachedWidth;
+    LPLinkMetadata * _linkMetadata;
+}
+
+@property (nonatomic) BOOL cachedOrientation;
+@property (nonatomic) double cachedWidth;
+@property (nonatomic, retain) LPLinkMetadata *linkMetadata;
+
++ (id)UTITypes;
++ (bool)canGeneratePreviewInMVSHostProcess;
++ (bool)isPreviewable;
++ (bool)shouldUseTranscoderGeneratedPreviewSize;
+
+- (void).cxx_destruct;
+- (bool)_isCachedFileLocationValid;
+- (id)attachmentSummary:(unsigned long long)arg1;
+- (Class)balloonViewClass;
+- (BOOL)cachedOrientation;
+- (double)cachedWidth;
+- (bool)generatePreviewOutOfProcess;
+- (id)linkMetadata;
+- (id)linkMetadataForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (int)mediaType;
+- (id)metricsCollectorMediaType;
+- (Class)placeholderBalloonViewClass;
+- (Class)previewBalloonViewClass;
+- (void)setCachedOrientation:(BOOL)arg1;
+- (void)setCachedWidth:(double)arg1;
+- (void)setLinkMetadata:(id)arg1;
+
+@end

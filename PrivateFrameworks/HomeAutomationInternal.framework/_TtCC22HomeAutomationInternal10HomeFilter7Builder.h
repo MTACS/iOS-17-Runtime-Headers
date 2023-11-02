@@ -1,0 +1,4 @@
+
+@interface _TtCC22HomeAutomationInternal10HomeFilter7Builder : _TtCE22HomeAutomationInternalCSo12INHomeFilter7Builder
+
+@end

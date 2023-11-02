@@ -1,0 +1,23 @@
+
+@interface CRKClassroomLockScreenMonitor_iOS : NSObject <CRKClassroomLockScreenMonitoring> {
+    bool  _classroomLockScreenVisible;
+    int  mDidAppearObserver;
+    int  mDidDismissObserver;
+}
+
+@property (getter=isClassroomLockScreenVisible, nonatomic) bool classroomLockScreenVisible;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void)dealloc;
+- (void)dismissClassroomLockScreen;
+- (void)displayClassroomLockScreenWithLabel:(id)arg1 passcode:(id)arg2;
+- (void)endObserving;
+- (id)init;
+- (bool)isClassroomLockScreenVisible;
+- (void)setClassroomLockScreenVisible:(bool)arg1;
+- (void)startObserving;
+
+@end

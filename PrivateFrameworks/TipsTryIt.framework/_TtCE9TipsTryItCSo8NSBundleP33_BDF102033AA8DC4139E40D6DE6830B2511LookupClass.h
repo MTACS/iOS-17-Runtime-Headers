@@ -1,0 +1,4 @@
+
+@interface _TtCE9TipsTryItCSo8NSBundleP33_BDF102033AA8DC4139E40D6DE6830B2511LookupClass : _TtCs12_SwiftObject
+
+@end

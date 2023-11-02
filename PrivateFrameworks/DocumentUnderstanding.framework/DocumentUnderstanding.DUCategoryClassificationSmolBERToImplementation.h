@@ -1,0 +1,4 @@
+
+@interface DocumentUnderstanding.DUCategoryClassificationSmolBERToImplementation : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,41 @@
+
+@interface MCNearbyDiscoveryPeer : NSObject {
+    MCNearbyDiscoveryPeerConnection * _connection;
+    NSNetService * _netService;
+    MCPeerID * _peerID;
+    NSMutableArray * _sendDataBuffer;
+    int  _state;
+    MCNearbyDiscoveryPeerConnection * _trialConnection;
+}
+
+@property (nonatomic, retain) MCNearbyDiscoveryPeerConnection *connection;
+@property (nonatomic, retain) NSNetService *netService;
+@property (nonatomic, copy) MCPeerID *peerID;
+@property (nonatomic, retain) NSMutableArray *sendDataBuffer;
+@property (nonatomic) int state;
+@property (nonatomic, retain) MCNearbyDiscoveryPeerConnection *trialConnection;
+
+- (void)attachConnection:(id)arg1;
+- (void)closeConnection;
+- (id)connection;
+- (void)dealloc;
+- (id)description;
+- (void)flushDataBuffer;
+- (id)init;
+- (id)initWithPeerID:(id)arg1;
+- (void)invalidate;
+- (id)netService;
+- (id)peerID;
+- (void)sendData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)sendDataBuffer;
+- (void)setConnection:(id)arg1;
+- (void)setNetService:(id)arg1;
+- (void)setPeerID:(id)arg1;
+- (void)setSendDataBuffer:(id)arg1;
+- (void)setState:(int)arg1;
+- (void)setTrialConnection:(id)arg1;
+- (int)state;
+- (id)stringForState:(int)arg1;
+- (id)trialConnection;
+
+@end

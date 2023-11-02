@@ -1,0 +1,141 @@
+
+@interface CKFetchRecordZoneChangesOperation : CKDatabaseOperation <CKFetchRecordZoneChangesOperationCallbacks> {
+    unsigned long long  _assetBackedMergeableDeltaCount;
+    NSDictionary * _assetTransferOptionsByRecordTypeAndKey;
+    NSDictionary * _configurationsByRecordZoneID;
+    long long  _errorReportingStyle;
+    bool  _fetchAllChanges;
+    id /* block */  _fetchRecordZoneChangesCompletionBlock;
+    id /* block */  _fetchRecordZoneChangesCompletionBlock_wrapper;
+    unsigned long long  _mergeableDeltaCount;
+    unsigned long long  _mergeableValueCount;
+    NSMutableDictionary * _perItemErrors;
+    id /* block */  _perRecordChangeCompletionBlock;
+    id /* block */  _recordChangedBlock;
+    id /* block */  _recordWasChangedBlock;
+    id /* block */  _recordWasChangedBlock_wrapper;
+    id /* block */  _recordWithIDWasDeletedBlock;
+    id /* block */  _recordWithIDWasDeletedBlock_wrapper;
+    id /* block */  _recordZoneChangeTokensUpdatedBlock;
+    id /* block */  _recordZoneFetchCompletionBlock;
+    id /* block */  _recordZoneFetchCompletionBlock_wrapper;
+    NSArray * _recordZoneIDs;
+    bool  _shouldFetchAssetContents;
+    bool  _shouldReportAllPerItemFailures;
+    NSMutableDictionary * _statusByZoneID;
+    NSDictionary * _supplementalChangeTokenByZoneID;
+    NSMutableSet * _zoneIDsWithPendingArchivedRecords;
+    NSMutableSet * _zoneIDsWithSyncObligations;
+}
+
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
+@property (nonatomic, readonly) <CKFetchRecordZoneChangesOperationCallbacks> *clientOperationCallbackProxy;
+@property (nonatomic, copy) NSDictionary *configurationsByRecordZoneID;
+@property (nonatomic) long long errorReportingStyle;
+@property (nonatomic) bool fetchAllChanges;
+@property (nonatomic, copy) id /* block */ fetchRecordZoneChangesCompletionBlock;
+@property (nonatomic, copy) id /* block */ fetchRecordZoneChangesCompletionBlock_wrapper;
+@property (nonatomic, readonly) CKFetchRecordZoneChangesOperationInfo *operationInfo;
+@property (nonatomic, copy) NSDictionary *optionsByRecordZoneID;
+@property (nonatomic, retain) NSMutableDictionary *perItemErrors;
+@property (nonatomic, copy) id /* block */ perRecordChangeCompletionBlock;
+@property (nonatomic, copy) id /* block */ recordChangedBlock;
+@property (nonatomic, copy) id /* block */ recordWasChangedBlock;
+@property (nonatomic, copy) id /* block */ recordWasChangedBlock_wrapper;
+@property (nonatomic, copy) id /* block */ recordWithIDWasDeletedBlock;
+@property (nonatomic, copy) id /* block */ recordWithIDWasDeletedBlock_wrapper;
+@property (nonatomic, copy) id /* block */ recordZoneChangeTokensUpdatedBlock;
+@property (nonatomic, copy) id /* block */ recordZoneFetchCompletionBlock;
+@property (nonatomic, copy) id /* block */ recordZoneFetchCompletionBlock_wrapper;
+@property (nonatomic, copy) NSArray *recordZoneIDs;
+@property (nonatomic) bool shouldFetchAssetContents;
+@property (nonatomic) bool shouldReportAllPerItemFailures;
+@property (nonatomic, retain) NSMutableDictionary *statusByZoneID;
+@property (nonatomic, copy) NSDictionary *supplementalChangeTokenByZoneID;
+@property (nonatomic, retain) NSMutableSet *zoneIDsWithPendingArchivedRecords;
+@property (nonatomic, retain) NSMutableSet *zoneIDsWithSyncObligations;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
++ (void)applyDaemonCallbackInterfaceTweaks:(id)arg1;
++ (SEL)daemonInvocationSelector;
+
+- (void).cxx_destruct;
+- (bool)CKOperationShouldRun:(id*)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
+- (id)activityCreate;
+- (id)assetTransferOptionsByRecordTypeAndKey;
+- (long long)changeTypesFromSetCallbacks;
+- (void)ckSignpostBegin;
+- (void)ckSignpostEndWithError:(id)arg1;
+- (id)configurationsByRecordZoneID;
+- (long long)errorReportingStyle;
+- (bool)fetchAllChanges;
+- (id /* block */)fetchRecordZoneChangesCompletionBlock;
+- (id /* block */)fetchRecordZoneChangesCompletionBlock_wrapper;
+- (void)fillFromOperationInfo:(id)arg1;
+- (void)fillOutOperationInfo:(id)arg1;
+- (void)handleChangeForRecordID:(id)arg1 record:(id)arg2 error:(id)arg3;
+- (void)handleChangeSetCompletionForRecordZoneID:(id)arg1 serverChangeToken:(id)arg2 clientChangeTokenData:(id)arg3 recordChangesStatus:(long long)arg4 hasPendingArchivedRecords:(bool)arg5 syncObligationZoneIDs:(id)arg6 error:(id)arg7 reply:(id /* block */)arg8;
+- (void)handleDeleteForRecordID:(id)arg1 recordType:(id)arg2;
+- (bool)hasCKOperationCallbacksSet;
+- (id)init;
+- (id)initWithRecordZoneIDs:(id)arg1 configurationsByRecordZoneID:(id)arg2;
+- (id)initWithRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2;
+- (id)optionsByRecordZoneID;
+- (id)partialFailureForItemsInZone:(id)arg1;
+- (id)perItemErrors;
+- (id /* block */)perRecordChangeCompletionBlock;
+- (void)performCKOperation;
+- (id /* block */)recordChangedBlock;
+- (id /* block */)recordWasChangedBlock;
+- (id /* block */)recordWasChangedBlock_wrapper;
+- (id /* block */)recordWithIDWasDeletedBlock;
+- (id /* block */)recordWithIDWasDeletedBlock_wrapper;
+- (id /* block */)recordZoneChangeTokensUpdatedBlock;
+- (id)recordZoneChangesStatusByZoneID;
+- (id /* block */)recordZoneFetchCompletionBlock;
+- (id /* block */)recordZoneFetchCompletionBlock_wrapper;
+- (id)recordZoneIDs;
+- (id)recordZoneIDsWithPendingArchivedRecords;
+- (id)recordZoneIDsWithSyncObligations;
+- (id)relevantZoneIDs;
+- (void)setAssetTransferOptionsByRecordTypeAndKey:(id)arg1;
+- (void)setConfigurationsByRecordZoneID:(id)arg1;
+- (void)setErrorReportingStyle:(long long)arg1;
+- (void)setFetchAllChanges:(bool)arg1;
+- (void)setFetchRecordZoneChangesCompletionBlock:(id /* block */)arg1;
+- (void)setFetchRecordZoneChangesCompletionBlock_wrapper:(id /* block */)arg1;
+- (void)setOptionsByRecordZoneID:(id)arg1;
+- (void)setPerItemErrors:(id)arg1;
+- (void)setPerRecordChangeCompletionBlock:(id /* block */)arg1;
+- (void)setRecordChangedBlock:(id /* block */)arg1;
+- (void)setRecordWasChangedBlock:(id /* block */)arg1;
+- (void)setRecordWasChangedBlock_wrapper:(id /* block */)arg1;
+- (void)setRecordWithIDWasDeletedBlock:(id /* block */)arg1;
+- (void)setRecordWithIDWasDeletedBlock_wrapper:(id /* block */)arg1;
+- (void)setRecordZoneChangeTokensUpdatedBlock:(id /* block */)arg1;
+- (void)setRecordZoneFetchCompletionBlock:(id /* block */)arg1;
+- (void)setRecordZoneFetchCompletionBlockIVar:(id /* block */)arg1;
+- (void)setRecordZoneFetchCompletionBlock_wrapper:(id /* block */)arg1;
+- (void)setRecordZoneIDs:(id)arg1;
+- (void)setShouldFetchAssetContents:(bool)arg1;
+- (void)setShouldReportAllPerItemFailures:(bool)arg1;
+- (void)setStatusByZoneID:(id)arg1;
+- (void)setSupplementalChangeTokenByZoneID:(id)arg1;
+- (void)setZoneIDsWithPendingArchivedRecords:(id)arg1;
+- (void)setZoneIDsWithSyncObligations:(id)arg1;
+- (bool)shouldFetchAssetContents;
+- (bool)shouldReportAllPerItemFailures;
+- (id)statusByZoneID;
+- (id)supplementalChangeTokenByZoneID;
+- (id)zoneIDsWithPendingArchivedRecords;
+- (id)zoneIDsWithSyncObligations;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)ic_loggingValues;
+- (void)ic_removeAllCompletionBlocks;
+- (id)ic_shortLoggingDescription;
+
+@end

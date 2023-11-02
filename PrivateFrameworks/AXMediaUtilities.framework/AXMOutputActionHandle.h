@@ -1,0 +1,4 @@
+
+@interface AXMOutputActionHandle : NSObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKFRemovedUserAccessCodePrivateExtensions
+
+@end

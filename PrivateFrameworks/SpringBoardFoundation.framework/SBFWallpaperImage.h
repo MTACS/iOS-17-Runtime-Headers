@@ -1,0 +1,4 @@
+
+@interface SBFWallpaperImage : PBUIWallpaperImage
+
+@end

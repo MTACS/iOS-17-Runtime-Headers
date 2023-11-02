@@ -1,0 +1,4 @@
+
+@protocol SAGetSingleClientState <SAClientBoundCommand>
+
+@end

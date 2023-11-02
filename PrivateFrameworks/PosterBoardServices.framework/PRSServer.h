@@ -1,0 +1,84 @@
+
+@interface PRSServer : NSObject <BSServiceConnectionListenerDelegate, PRSClientToServerInterface> {
+    BSServiceConnectionListener * _connectionListener;
+    NSMutableArray * _connections;
+    <PRSServerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PRSServerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_queue_addConnection:(id)arg1;
+- (void)_queue_removeConnection:(id)arg1;
+- (void)activate;
+- (oneway void)associateConfigurationMatchingUUID:(id)arg1 focusModeActivityUUID:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)clearMigrationFlags:(id /* block */)arg1;
+- (oneway void)createPosterConfigurationForProviderIdentifier:(id)arg1 posterDescriptorIdentifier:(id)arg2 role:(id)arg3 completion:(id /* block */)arg4;
+- (id)delegate;
+- (oneway void)deleteArchivedDataStoreNamed:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)deleteDataStoreWithCompletion:(id /* block */)arg1;
+- (oneway void)deletePosterConfigurationsMatchingUUID:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)deletePosterDescriptorsForExtension:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)deleteSnapshots:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)deleteTransientDataWithCompletion:(id /* block */)arg1;
+- (oneway void)exportArchivedDataStoreNamed:(id)arg1 completion:(id /* block */)arg2;
+- (void)exportCurrentDataStoreToURL:(id)arg1 options:(id)arg2 sandboxToken:(id)arg3 error:(out id*)arg4;
+- (oneway void)exportPosterConfigurationMatchingUUID:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchActivePosterForRole:(id)arg1 completion:(id /* block */)arg2;
+- (id)fetchActivePosterForRole:(id)arg1 error:(out id*)arg2;
+- (oneway void)fetchArchivedDataStoreNamesWithCompletion:(id /* block */)arg1;
+- (oneway void)fetchAssociatedHomeScreenPosterConfigurationUUID:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchChargerIdentifierRelationshipsWithCompletion:(id /* block */)arg1;
+- (oneway void)fetchContentCutoutBoundsForPosterConfiguration:(id)arg1 orientation:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)fetchContentObstructionBoundsForPosterConfiguration:(id)arg1 orientation:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)fetchExtensionIdentifiersWithCompletion:(id /* block */)arg1;
+- (oneway void)fetchFocusUUIDForConfiguration:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchGallery:(id /* block */)arg1;
+- (oneway void)fetchLimitedOcclusionBoundsForPosterConfiguration:(id)arg1 orientation:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)fetchMaximalContentCutoutBoundsForOrientation:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchObscurableBoundsForPosterConfiguration:(id)arg1 orientation:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)fetchPosterConfigurationsForExtension:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchPosterConfigurationsForRole:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchPosterDescriptorsForExtension:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchPosterSnapshotsWithRequest:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchRuntimeAssertionState:(id /* block */)arg1;
+- (oneway void)fetchSelectedPosterForRole:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)fetchStaticPosterDescriptorsForExtension:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)gatherDataFreshnessState:(id /* block */)arg1;
+- (oneway void)importPosterConfigurationFromArchiveData:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)ingestSnapshotCollection:(id)arg1 forPosterConfigurationUUID:(id)arg2 completion:(id /* block */)arg3;
+- (id)init;
+- (void)invalidate;
+- (oneway void)invalidateDataStoreWithCompletion:(id /* block */)arg1;
+- (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
+- (oneway void)notifyActiveChargerIdentifierDidUpdate:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)notifyAvailableFocusModesDidChange:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)notifyFocusModeDidChange:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)notifyPosterBoardOfApplicationUpdatesWithCompletion:(id /* block */)arg1;
+- (oneway void)overnightUpdateWithCompletion:(id /* block */)arg1;
+- (oneway void)prewarmWithCompletion:(id /* block */)arg1;
+- (oneway void)pushPosterGalleryUpdate:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)pushToProactiveWithCompletion:(id /* block */)arg1;
+- (oneway void)refreshPosterConfigurationMatchingUUID:(id)arg1 sessionInfo:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)refreshPosterDescriptorsForExtension:(id)arg1 sessionInfo:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)refreshSnapshotForGalleryItemsMatchingDescriptorIdentifier:(id)arg1 extensionIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)refreshSnapshotForPosterConfigurationMatchUUID:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)removeAllFocusConfigurationsMatchingFocusUUID:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)resetRole:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)restoreArchivedDataStoreNamed:(id)arg1 backupExistingDataStore:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)retrieveGallery:(id /* block */)arg1;
+- (oneway void)runMigration:(id)arg1 completion:(id /* block */)arg2;
+- (void)setDelegate:(id)arg1;
+- (oneway void)stashCurrentDataStoreWithName:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)terminate;
+- (oneway void)triggerMessedUpDataProtectionWithCompletion:(id /* block */)arg1;
+- (oneway void)updatePosterConfiguration:(id)arg1 updates:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)updatePosterConfigurationMatchingUUID:(id)arg1 updates:(id)arg2 completion:(id /* block */)arg3;
+- (oneway void)updateToSelectedPosterMatchingUUID:(id)arg1 role:(id)arg2 completion:(id /* block */)arg3;
+
+@end

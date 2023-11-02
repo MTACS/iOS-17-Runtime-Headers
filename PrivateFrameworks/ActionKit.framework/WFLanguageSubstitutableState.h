@@ -1,0 +1,4 @@
+
+@interface WFLanguageSubstitutableState : WFStringSubstitutableState
+
+@end

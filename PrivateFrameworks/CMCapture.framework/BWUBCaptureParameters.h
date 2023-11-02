@@ -1,0 +1,86 @@
+
+@interface BWUBCaptureParameters : NSObject {
+    NSArray * _afWindowParams;
+    bool  _alwaysUseAFTimeout;
+    int  _deepFusionBracketedCaptureReferenceFrameIndex;
+    double  _deepFusionEffectiveIntegrationTimeThreshold;
+    double  _deepFusionEnhancedResolutionQuadraLongEffectiveIntegrationTimeThreshold;
+    NSArray * _deepFusionHDREVZeroCountByEffectiveIntegrationTime;
+    double  _digitalFlashAvailableEffectiveIntegrationTimeThreshold;
+    float  _digitalFlashBacklitRecommendRegularFlashAERelativeDifferenceThreshold;
+    float  _digitalFlashBacklitRecommendRegularFlashSNRThreshold;
+    bool  _digitalFlashHighlightRecoveryEnabled;
+    float  _digitalFlashRecommendRegularFlashSNRThreshold;
+    double  _digitalFlashRecommendedEffectiveIntegrationTimeThreshold;
+    double  _learnedNRUltraHighResolutionDowngradeEffectiveIntegrationTimeThreshold;
+    double  _longWithoutSphereEffectiveIntegrationTimeThreshold;
+    double  _lowLightEffectiveIntegrationTimeThreshold;
+    float  _lowLightHDRWithoutSIFRISPDGainThreshold;
+    int  _maxNumberOfFramesForAdaptiveBracketing;
+    NSArray * _motionAndFocusScoreWeights;
+    float  _nightModeMinGainThreshold;
+    bool  _nonHDRBrightLightCapturesEnabled;
+    NSString * _portType;
+    bool  _preserveBlackLevel;
+    double  _redSaturationMainEffectiveIntegrationTimeThreshold;
+    float  _redSaturationSIFRGainThreshold;
+    int  _referenceFrameSelectionMethod;
+    float  _sifrGainThreshold;
+    double  _sifrMainEffectiveIntegrationTimeThreshold;
+    double  _stationaryDigitalFlashRecommendedEffectiveIntegrationTimeThreshold;
+    int  _toneCurveBehavior;
+    bool  _usePreviousSIFR;
+}
+
+@property (nonatomic, readonly) NSArray *afWindowParams;
+@property (nonatomic, readonly) bool alwaysUseAFTimeout;
+@property (nonatomic, readonly) int deepFusionBracketedCaptureReferenceFrameIndex;
+@property (nonatomic, readonly) double deepFusionEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) double deepFusionEnhancedResolutionQuadraLongEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) double learnedNRUltraHighResolutionDowngradeEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) double longWithoutSphereEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) double lowLightEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) float lowLightHDRWithoutSIFRISPDGainThreshold;
+@property (nonatomic, readonly) float nightModeMinGainThreshold;
+@property (nonatomic, readonly) bool nonHDRBrightLightCapturesEnabled;
+@property (nonatomic, readonly) bool preserveBlackLevel;
+@property (nonatomic, readonly) double redSaturationMainEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) float redSaturationSIFRGainThreshold;
+@property (nonatomic, readonly) float sifrGainThreshold;
+@property (nonatomic, readonly) double sifrMainEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) int toneCurveBehavior;
+
+- (id)afWindowParams;
+- (bool)alwaysUseAFTimeout;
+- (void)dealloc;
+- (int)deepFusionBracketedCaptureReferenceFrameIndex;
+- (double)deepFusionEffectiveIntegrationTimeThreshold;
+- (double)deepFusionEnhancedResolutionQuadraLongEffectiveIntegrationTimeThreshold;
+- (int)deepFusionHDREVZeroCountForEffectiveIntegrationTime:(double)arg1;
+- (id)description;
+- (double)digitalFlashAvailableEffectiveIntegrationTimeThreshold;
+- (float)digitalFlashBacklitRecommendRegularFlashAERelativeDifferenceThreshold;
+- (float)digitalFlashBacklitRecommendRegularFlashSNRThreshold;
+- (bool)digitalFlashHighlightRecoveryEnabled;
+- (float)digitalFlashRecommendRegularFlashSNRThreshold;
+- (double)digitalFlashRecommendedEffectiveIntegrationTimeThreshold;
+- (id)initWithPortType:(id)arg1 sensorIDDictionary:(id)arg2;
+- (double)learnedNRUltraHighResolutionDowngradeEffectiveIntegrationTimeThreshold;
+- (double)longWithoutSphereEffectiveIntegrationTimeThreshold;
+- (double)lowLightEffectiveIntegrationTimeThreshold;
+- (float)lowLightHDRWithoutSIFRISPDGainThreshold;
+- (int)maxNumberOfFramesForAdaptiveBracketing;
+- (id)motionAndFocusScoreWeights;
+- (float)nightModeMinGainThreshold;
+- (bool)nonHDRBrightLightCapturesEnabled;
+- (bool)preserveBlackLevel;
+- (double)redSaturationMainEffectiveIntegrationTimeThreshold;
+- (float)redSaturationSIFRGainThreshold;
+- (int)referenceFrameSelectionMethod;
+- (float)sifrGainThreshold;
+- (double)sifrMainEffectiveIntegrationTimeThreshold;
+- (double)stationaryDigitalFlashRecommendedEffectiveIntegrationTimeThreshold;
+- (int)toneCurveBehavior;
+- (bool)usePreviousSIFR;
+
+@end

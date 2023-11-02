@@ -1,0 +1,4 @@
+
+@interface _TtC27AppleMediaServicesUIDynamicP33_D36A1E4383CBB6A06E81A4C8CC9FE62319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

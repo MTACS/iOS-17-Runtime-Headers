@@ -1,0 +1,4 @@
+
+@interface ICSearchIndexConfiguration : NSObject
+
+@end

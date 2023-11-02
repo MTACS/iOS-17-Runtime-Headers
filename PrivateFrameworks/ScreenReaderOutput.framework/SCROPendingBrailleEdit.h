@@ -1,0 +1,4 @@
+
+@interface SCROPendingBrailleEdit : NSObject
+
+@end

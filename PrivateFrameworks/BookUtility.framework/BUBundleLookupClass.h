@@ -1,0 +1,4 @@
+
+@interface BUBundleLookupClass : NSObject
+
+@end

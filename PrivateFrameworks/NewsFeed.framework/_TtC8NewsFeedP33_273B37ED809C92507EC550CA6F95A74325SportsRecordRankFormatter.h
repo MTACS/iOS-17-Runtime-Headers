@@ -1,0 +1,4 @@
+
+@interface _TtC8NewsFeedP33_273B37ED809C92507EC550CA6F95A74325SportsRecordRankFormatter : _TtCs12_SwiftObject
+
+@end

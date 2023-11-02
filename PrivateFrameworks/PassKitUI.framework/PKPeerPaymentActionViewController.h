@@ -1,0 +1,93 @@
+
+@interface PKPeerPaymentActionViewController : UIViewController <PKPeerPaymentActionControllerDelegate> {
+    PKPeerPaymentAccount * _account;
+    PKPeerPaymentActionController * _actionController;
+    NSDecimalNumber * _cardBalance;
+    long long  _context;
+    NSDecimalNumber * _currentAmount;
+    <PKPeerPaymentActionViewControllerDelegate> * _delegate;
+    bool  _dismissingViewController;
+    NSDecimalNumber * _maxBalance;
+    NSDecimalNumber * _maxLoadAmount;
+    NSDecimalNumber * _minBalance;
+    NSDecimalNumber * _minLoadAmount;
+    PKPaymentPass * _pass;
+    <PKPassLibraryDataProvider> * _passLibraryDataProvider;
+    bool  _showCancelButton;
+    bool  _viewHasAppeared;
+    PKPeerPaymentWebService * _webService;
+}
+
+@property (nonatomic, retain) PKPeerPaymentAccount *account;
+@property (nonatomic, readonly) PKPeerPaymentActionController *actionController;
+@property (nonatomic, copy) NSDecimalNumber *cardBalance;
+@property (nonatomic, readonly) long long context;
+@property (nonatomic) unsigned long long controllerAction;
+@property (nonatomic, copy) NSDecimalNumber *currentAmount;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPeerPaymentActionViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) PKPeerPaymentAccountFeatureDescriptor *feature;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSDecimalNumber *maxBalance;
+@property (nonatomic, copy) NSDecimalNumber *maxLoadAmount;
+@property (nonatomic, copy) NSDecimalNumber *minBalance;
+@property (nonatomic, copy) NSDecimalNumber *minLoadAmount;
+@property (nonatomic, readonly) PKPaymentPass *pass;
+@property (nonatomic) <PKPassLibraryDataProvider> *passLibraryDataProvider;
+@property (nonatomic) bool showCancelButton;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PKPeerPaymentWebService *webService;
+
++ (id)navigationBarBackgroundColor;
++ (id)peerPaymentActionViewControllerForAction:(unsigned long long)arg1 paymentPass:(id)arg2 webService:(id)arg3 passLibraryDataProvider:(id)arg4 context:(long long)arg5;
+
+- (void).cxx_destruct;
+- (id)_cancelBarButton;
+- (void)_cancelButtonPressed:(id)arg1;
+- (void)_cancelledAction;
+- (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;
+- (void)_handlePeerPaymentAccountDidChangeNotification:(id)arg1;
+- (void)_performedAction;
+- (id)account;
+- (id)actionController;
+- (id)cardBalance;
+- (long long)context;
+- (unsigned long long)controllerAction;
+- (id)currentAmount;
+- (void)dealloc;
+- (id)delegate;
+- (id)feature;
+- (id)initWithPaymentPass:(id)arg1 webService:(id)arg2 passLibraryDataProvider:(id)arg3 context:(long long)arg4;
+- (void)loadView;
+- (id)maxBalance;
+- (id)maxLoadAmount;
+- (id)minBalance;
+- (id)minLoadAmount;
+- (id)pass;
+- (id)passLibraryDataProvider;
+- (void)peerPaymentActionController:(id)arg1 hasChangedState:(unsigned long long)arg2;
+- (void)peerPaymentActionController:(id)arg1 requestPresentViewController:(id)arg2;
+- (bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
+- (id)presentationSceneBundleIdentifierForPeerPaymentActionController:(id)arg1;
+- (id)presentationSceneIdentifierForPeerPaymentActionController:(id)arg1;
+- (void)setAccount:(id)arg1;
+- (void)setCardBalance:(id)arg1;
+- (void)setControllerAction:(unsigned long long)arg1;
+- (void)setCurrentAmount:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setMaxBalance:(id)arg1;
+- (void)setMaxLoadAmount:(id)arg1;
+- (void)setMinBalance:(id)arg1;
+- (void)setMinLoadAmount:(id)arg1;
+- (void)setPassLibraryDataProvider:(id)arg1;
+- (void)setShowCancelButton:(bool)arg1;
+- (bool)showCancelButton;
+- (void)updateAccountValues;
+- (void)updateFirstResponder;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (id)webService;
+- (void)willDismissViewController;
+
+@end

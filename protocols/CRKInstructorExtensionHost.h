@@ -1,0 +1,4 @@
+
+@protocol CRKInstructorExtensionHost <NSObject>
+
+@end

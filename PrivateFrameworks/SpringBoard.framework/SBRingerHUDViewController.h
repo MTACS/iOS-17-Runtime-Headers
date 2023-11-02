@@ -1,0 +1,81 @@
+
+@interface SBRingerHUDViewController : UIViewController <BNPresentable, SBRingerNoticeUICoordinating> {
+    <SBRingerHUDViewControllerDelegate> * _delegate;
+    NSTimer * _dismissalTimer;
+    bool  _lastEventIsAVolumeChange;
+    double  _overshoot;
+    SBRingerPillView * _pillView;
+    bool  _presentableAppearingOrAppeared;
+    bool  _ringerSilent;
+    bool  _shouldExtendDismissalTimerUponDidAppear;
+    float  _volume;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBRingerHUDViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSTimer *dismissalTimer;
+@property (getter=isDraggingDismissalEnabled, nonatomic, readonly) bool draggingDismissalEnabled;
+@property (getter=isDraggingInteractionEnabled, nonatomic, readonly) bool draggingInteractionEnabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool lastEventIsAVolumeChange;
+@property (nonatomic) double overshoot;
+@property (nonatomic, retain) SBRingerPillView *pillView;
+@property (getter=isPresentableAppearingOrAppeared, nonatomic) bool presentableAppearingOrAppeared;
+@property (nonatomic, readonly) long long presentableBehavior;
+@property (nonatomic) <BNPresentableContext> *presentableContext;
+@property (nonatomic, readonly) long long presentableType;
+@property (getter=isPresented, nonatomic, readonly) bool presented;
+@property (nonatomic, readonly, copy) NSString *requestIdentifier;
+@property (nonatomic, readonly, copy) NSString *requesterIdentifier;
+@property (getter=isRingerSilent, nonatomic) bool ringerSilent;
+@property (nonatomic) bool shouldExtendDismissalTimerUponDidAppear;
+@property (readonly) Class superclass;
+@property (getter=isTouchOutsideDismissalEnabled, nonatomic, readonly) bool touchOutsideDismissalEnabled;
+@property (nonatomic, readonly) UIViewController *viewController;
+@property (nonatomic) float volume;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (void)_dismiss;
+- (void)_extendDismissalTimer;
+- (void)_layoutPillView;
+- (void)_updateStateAnimated:(bool)arg1 invert:(bool)arg2;
+- (void)_updateVolumeSliderAnimated:(bool)arg1;
+- (void)buttonReleased;
+- (id)delegate;
+- (id)dismissalTimer;
+- (bool)isPresentableAppearingOrAppeared;
+- (bool)isPresented;
+- (bool)isRingerSilent;
+- (bool)lastEventIsAVolumeChange;
+- (void)nudgeUp:(bool)arg1;
+- (double)overshoot;
+- (id)pillView;
+- (void)presentForMuteChange:(bool)arg1;
+- (long long)presentableBehavior;
+- (id)presentableDescription;
+- (void)presentableDidAppearAsBanner:(id)arg1;
+- (void)presentableDidDisappearAsBanner:(id)arg1 withReason:(id)arg2;
+- (void)presentableWillAppearAsBanner:(id)arg1;
+- (void)presentableWillDisappearAsBanner:(id)arg1 withReason:(id)arg2;
+- (id)requestIdentifier;
+- (id)requesterIdentifier;
+- (void)setDelegate:(id)arg1;
+- (void)setDismissalTimer:(id)arg1;
+- (void)setLastEventIsAVolumeChange:(bool)arg1;
+- (void)setOvershoot:(double)arg1;
+- (void)setPillView:(id)arg1;
+- (void)setPresentableAppearingOrAppeared:(bool)arg1;
+- (void)setRingerSilent:(bool)arg1;
+- (void)setShouldExtendDismissalTimerUponDidAppear:(bool)arg1;
+- (void)setVolume:(float)arg1;
+- (void)setVolume:(float)arg1 animated:(bool)arg2 forKeyPress:(bool)arg3;
+- (bool)shouldExtendDismissalTimerUponDidAppear;
+- (id)viewController;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (float)volume;
+
+@end

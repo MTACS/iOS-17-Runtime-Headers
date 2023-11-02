@@ -1,0 +1,32 @@
+
+@interface PKAccountServiceBillingAddressViewController : PKSectionTableViewController <PKAddressEditorViewControllerDelegate> {
+    PKAccount * _account;
+    unsigned long long  _accountFeatureIdentifier;
+    PKAccountService * _accountService;
+    CNContact * _currentBillingAddress;
+    long long  _detailViewStyle;
+    id /* block */  _handler;
+    bool  _loadingNewBillingContact;
+}
+
+- (void).cxx_destruct;
+- (id)_currentBillingAddressCellForRowIndex:(long long)arg1 tableView:(id)arg2;
+- (void)_didSelectChangeAddress;
+- (id)_enterNewBillingAddressCellForRowIndex:(long long)arg1 tableView:(id)arg2;
+- (void)addressEditorViewController:(id)arg1 selectedContact:(id)arg2;
+- (void)addressEditorViewControllerDidCancel:(id)arg1;
+- (id)initWithBillingAddress:(id)arg1 account:(id)arg2 accountService:(id)arg3 detailViewStyle:(long long)arg4 handler:(id /* block */)arg5;
+- (long long)modalPresentationStyle;
+- (id)requiredBillingAddressKeys;
+- (bool)shouldMapSection:(unsigned long long)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 contextMenuConfigurationForRowAtIndexPath:(id)arg2 point:(struct CGPoint { double x1; double x2; })arg3;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (void)viewDidLoad;
+
+@end

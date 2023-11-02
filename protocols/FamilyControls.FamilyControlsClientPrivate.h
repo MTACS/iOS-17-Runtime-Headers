@@ -1,0 +1,4 @@
+
+@protocol FamilyControls.FamilyControlsClientPrivate
+
+@end

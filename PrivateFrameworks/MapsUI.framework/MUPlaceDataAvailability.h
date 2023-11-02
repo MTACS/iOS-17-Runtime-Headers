@@ -1,0 +1,88 @@
+
+@interface MUPlaceDataAvailability : NSObject {
+    MKMapItem * _mapItem;
+    unsigned long long  _placeCardOptions;
+}
+
+@property (nonatomic, readonly) bool allowTransitLineSelection;
+@property (nonatomic, readonly) bool canShowDirections;
+@property (nonatomic, readonly) bool hasRatingsOrReviews;
+@property (nonatomic, readonly) bool isTransitItem;
+@property (nonatomic, readonly) bool shouldShowRatingsAndReviewsModule;
+@property (nonatomic, readonly) bool showEditAddressForHome;
+@property (nonatomic, readonly) bool suportsOfficialApp;
+@property (nonatomic, readonly) bool supportsAddingPhotos;
+@property (nonatomic, readonly) bool supportsAmenities;
+@property (nonatomic, readonly) bool supportsAnnotatedPhotos;
+@property (nonatomic, readonly) bool supportsAnnotatedTextList;
+@property (nonatomic, readonly) bool supportsAppleRatings;
+@property (nonatomic, readonly) bool supportsBrowseCategory;
+@property (nonatomic, readonly) bool supportsCallToAction;
+@property (nonatomic, readonly) bool supportsCuratedGuidesCarousel;
+@property (nonatomic, readonly) bool supportsEVCharging;
+@property (nonatomic, readonly) bool supportsEncyclopedicDescription;
+@property (nonatomic, readonly) bool supportsHeaderContainment;
+@property (nonatomic, readonly) bool supportsHikingTrails;
+@property (nonatomic, readonly) bool supportsHours;
+@property (nonatomic, readonly) bool supportsInlineMap;
+@property (nonatomic, readonly) bool supportsInlinePOIMap;
+@property (nonatomic, readonly) bool supportsInlineRatings;
+@property (nonatomic, readonly) bool supportsInlineReportAnIssue;
+@property (nonatomic, readonly) bool supportsMessageHours;
+@property (nonatomic, readonly) bool supportsMessagesForBusiness;
+@property (nonatomic, readonly) bool supportsPhotoOnlyDataCollection;
+@property (nonatomic, readonly) bool supportsPhotoSlider;
+@property (nonatomic, readonly) bool supportsPlaceAttribution;
+@property (nonatomic, readonly) bool supportsPlaceDescription;
+@property (nonatomic, readonly) bool supportsPlaceEnrichment;
+@property (nonatomic, readonly) bool supportsRelatedPlaces;
+@property (nonatomic, readonly) bool supportsReportAnIssue;
+@property (nonatomic, readonly) bool supportsReportsInReview;
+@property (nonatomic, readonly) bool supportsSharing;
+@property (nonatomic, readonly) bool supportsShowingCoordinates;
+@property (nonatomic, readonly) bool supportsVenueTextInfo;
+@property (nonatomic, readonly) bool supportsWebContent;
+
+- (void).cxx_destruct;
+- (bool)_hasAppleRatingsCategories;
+- (bool)allowTransitLineSelection;
+- (bool)canShowDirections;
+- (bool)hasRatingsOrReviews;
+- (id)initWithMapItem:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isTransitItem;
+- (bool)shouldShowRatingsAndReviewsModule;
+- (bool)showEditAddressForHome;
+- (bool)suportsOfficialApp;
+- (bool)supportsAddingPhotos;
+- (bool)supportsAmenities;
+- (bool)supportsAnnotatedPhotos;
+- (bool)supportsAnnotatedTextList;
+- (bool)supportsAppleRatings;
+- (bool)supportsBrowseCategory;
+- (bool)supportsCallToAction;
+- (bool)supportsCuratedGuidesCarousel;
+- (bool)supportsEVCharging;
+- (bool)supportsEncyclopedicDescription;
+- (bool)supportsHeaderContainment;
+- (bool)supportsHikingTrails;
+- (bool)supportsHours;
+- (bool)supportsInlineMap;
+- (bool)supportsInlinePOIMap;
+- (bool)supportsInlineRatings;
+- (bool)supportsInlineReportAnIssue;
+- (bool)supportsMessageHours;
+- (bool)supportsMessagesForBusiness;
+- (bool)supportsPhotoOnlyDataCollection;
+- (bool)supportsPhotoSlider;
+- (bool)supportsPlaceAttribution;
+- (bool)supportsPlaceDescription;
+- (bool)supportsPlaceEnrichment;
+- (bool)supportsRelatedPlaces;
+- (bool)supportsReportAnIssue;
+- (bool)supportsReportsInReview;
+- (bool)supportsSharing;
+- (bool)supportsShowingCoordinates;
+- (bool)supportsVenueTextInfo;
+- (bool)supportsWebContent;
+
+@end

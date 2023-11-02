@@ -1,0 +1,4 @@
+
+@protocol PRUISPosterEditingContext <NSObject>
+
+@end

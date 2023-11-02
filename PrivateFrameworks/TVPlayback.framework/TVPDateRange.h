@@ -1,0 +1,23 @@
+
+@interface TVPDateRange : NSObject {
+    double  _durationInSeconds;
+    NSDate * _endDate;
+    NSDate * _startDate;
+}
+
+@property (nonatomic, readonly) double durationInSeconds;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSDate *startDate;
+
+- (void).cxx_destruct;
+- (bool)containsDate:(id)arg1;
+- (id)dateRangeByIntersectingDateRange:(id)arg1;
+- (id)description;
+- (double)durationInSeconds;
+- (id)endDate;
+- (unsigned long long)hash;
+- (id)initWithStartDate:(id)arg1 duration:(double)arg2;
+- (bool)isEqual:(id)arg1;
+- (id)startDate;
+
+@end

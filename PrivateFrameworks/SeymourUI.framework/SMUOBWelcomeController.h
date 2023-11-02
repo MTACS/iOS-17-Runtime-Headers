@@ -1,0 +1,4 @@
+
+@interface SMUOBWelcomeController : OBWelcomeController
+
+@end

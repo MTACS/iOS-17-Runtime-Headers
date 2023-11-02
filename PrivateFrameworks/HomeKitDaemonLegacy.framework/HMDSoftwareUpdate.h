@@ -1,0 +1,105 @@
+
+@interface HMDSoftwareUpdate : HMFObject <HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, HMFLogging, HMFObject, NSSecureCoding> {
+    HMDAccessory * _accessory;
+    bool  _allowExtraUpdate;
+    <HMDSoftwareUpdateDataSource> * _dataSource;
+    HMSoftwareUpdateDocumentationMetadata * _documentationMetadata;
+    unsigned long long  _downloadSize;
+    NSUUID * _identifier;
+    double  _installDuration;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    HMFMessageDispatcher * _messageDispatcher;
+    unsigned long long  _needsAttentionReasons;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDate * _releaseDate;
+    long long  _state;
+    unsigned long long  _updateType;
+    HMFSoftwareVersion * _version;
+}
+
+@property HMDAccessory *accessory;
+@property bool allowExtraUpdate;
+@property (nonatomic, readonly, copy) NSArray *attributeDescriptions;
+@property <HMDSoftwareUpdateDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) HMSoftwareUpdateDocumentationMetadata *documentationMetadata;
+@property (readonly) unsigned long long downloadSize;
+@property (readonly) unsigned long long hash;
+@property (copy) NSUUID *identifier;
+@property (readonly) double installDuration;
+@property (nonatomic, retain) HMFMessageDispatcher *messageDispatcher;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (readonly, copy) HMDSoftwareUpdateModel *model;
+@property unsigned long long needsAttentionReasons;
+@property (readonly, copy) NSString *privateDescription;
+@property (readonly, copy) NSString *propertyDescription;
+@property (readonly) NSDate *releaseDate;
+@property (readonly, copy) NSString *shortDescription;
+@property (readonly) long long state;
+@property (readonly) Class superclass;
+@property (readonly) unsigned long long updateType;
+@property (readonly, copy) HMFSoftwareVersion *version;
+
++ (bool)hasMessageReceiverChildren;
++ (id)logCategory;
++ (id)modelNamespace;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)_handleDocumentationRequest:(id)arg1;
+- (void)_handleDocumentationStateNotification:(id)arg1;
+- (void)_handleNeedsAttentionReasonsRequest:(id)arg1;
+- (void)_handleUpdateDocumentationMetadata:(id)arg1;
+- (void)_handleUpdateState:(id)arg1;
+- (void)_updateState:(long long)arg1 message:(id)arg2 options:(id)arg3;
+- (id)accessory;
+- (bool)allowExtraUpdate;
+- (void)configureWithAccessory:(id)arg1 dataSource:(id)arg2 messageDispatcher:(id)arg3;
+- (id)dataSource;
+- (void)dealloc;
+- (id)documentationMetadata;
+- (unsigned long long)downloadSize;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithModel:(id)arg1;
+- (id)initWithVersion:(id)arg1 downloadSize:(unsigned long long)arg2 state:(long long)arg3 installDuration:(double)arg4 documentationMetadata:(id)arg5 releaseDate:(id)arg6;
+- (double)installDuration;
+- (void)invalidate;
+- (bool)isEqual:(id)arg1;
+- (id)logIdentifier;
+- (id)messageDestination;
+- (id)messageDispatcher;
+- (id)messageReceiveQueue;
+- (id)messageTargetUUID;
+- (id)model;
+- (unsigned long long)needsAttentionReasons;
+- (id)propertyDescription;
+- (void)registerForMessages;
+- (id)releaseDate;
+- (void)setAccessory:(id)arg1;
+- (void)setAllowExtraUpdate:(bool)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setDocumentationMetadata:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setMessageDispatcher:(id)arg1;
+- (void)setNeedsAttentionReasons:(unsigned long long)arg1;
+- (void)setReleaseDate:(id)arg1;
+- (void)setState:(long long)arg1;
+- (void)setUpdateType:(unsigned long long)arg1;
+- (long long)state;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (id)transactionWithObjectChangeType:(unsigned long long)arg1;
+- (id)transactionWithObjectChangeType:(unsigned long long)arg1 forAccessoryUUID:(id)arg2;
+- (void)updateLocalState:(long long)arg1;
+- (unsigned long long)updateType;
+- (id)version;
+
+@end

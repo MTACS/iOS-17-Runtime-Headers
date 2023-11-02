@@ -1,0 +1,4 @@
+
+@interface TVPBackgroundQueuePlayer : AVQueuePlayer
+
+@end

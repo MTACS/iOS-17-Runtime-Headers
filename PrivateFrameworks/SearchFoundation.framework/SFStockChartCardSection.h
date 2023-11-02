@@ -1,0 +1,67 @@
+
+@interface SFStockChartCardSection : SFCardSection <NSCopying, NSSecureCoding, SFStockChartCardSection> {
+    NSData * _chartData;
+    NSURL * _thirdPartyContentURL;
+    NSString * _type;
+}
+
+@property (nonatomic, retain) SFColor *backgroundColor;
+@property (nonatomic) bool canBeHidden;
+@property (nonatomic, retain) NSString *cardSectionDetail;
+@property (nonatomic, copy) NSString *cardSectionId;
+@property (nonatomic, copy) NSData *chartData;
+@property (nonatomic, retain) SFCommand *command;
+@property (nonatomic, retain) NSString *commandDetail;
+@property (nonatomic, copy) NSArray *commands;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (readonly) NSArray *embeddedCards;
+@property (nonatomic) bool hasBottomPadding;
+@property (nonatomic) bool hasTopPadding;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideDivider;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSArray *leadingSwipeButtonItems;
+@property (nonatomic, retain) SFCard *nextCard;
+@property (nonatomic, copy) NSArray *parameterKeyPaths;
+@property (nonatomic, copy) NSArray *previewButtonItems;
+@property (nonatomic, retain) NSString *previewButtonItemsTitle;
+@property (nonatomic, retain) SFCommand *previewCommand;
+@property (nonatomic, copy) NSArray *punchoutOptions;
+@property (nonatomic, copy) NSString *punchoutPickerDismissText;
+@property (nonatomic, copy) NSString *punchoutPickerTitle;
+@property (nonatomic, copy) NSString *resultIdentifier;
+@property (nonatomic) int separatorStyle;
+@property (nonatomic) bool shouldHideInAmbientMode;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *thirdPartyContentURL;
+@property (nonatomic, copy) NSArray *trailingSwipeButtonItems;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)chartData;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithProtobuf:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (void)setChartData:(id)arg1;
+- (void)setThirdPartyContentURL:(id)arg1;
+- (void)setType:(id)arg1;
+- (id)thirdPartyContentURL;
+- (id)type;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtCC11SessionCore16ActivityDatabase21MutableAssertionStore : _TtCC11SessionCore16ActivityDatabase14AssertionStore
+
+@end

@@ -1,0 +1,20 @@
+
+@protocol TSDiOSCanvasViewControllerDelegate <NSObject>
+
+@optional
+
+- (bool)allowEditMenuToAppear;
+- (bool)allowTouchOutsideCanvasView:(UITouch *)arg1 forGesture:(UIGestureRecognizer *)arg2;
+- (UIColor *)backgroundColorForDragUIPlatter;
+- (Class)canvasViewClassOverride;
+- (bool)canvasViewController:(TSDiOSCanvasViewController *)arg1 enableSwipeGestureWithNumberOfTouches:(unsigned long long)arg2;
+- (bool)canvasViewController:(TSDiOSCanvasViewController *)arg1 shouldBeginTapHoldDragAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)canvasViewControllerShouldShowScaleFeedback:(TSDiOSCanvasViewController *)arg1;
+- (void)handleFindTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)inFindReplaceMode;
+- (bool)isPopoverGestureInFlight;
+- (bool)shouldIgnoreTextGestures;
+- (UIViewController *)viewControllerForPresentingAnnotationAuthorUI;
+- (UIView *)viewForGestureRecognizer:(UIGestureRecognizer *)arg1;
+
+@end

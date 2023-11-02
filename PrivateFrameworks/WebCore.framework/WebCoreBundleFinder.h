@@ -1,0 +1,4 @@
+
+@interface WebCoreBundleFinder : NSObject
+
+@end

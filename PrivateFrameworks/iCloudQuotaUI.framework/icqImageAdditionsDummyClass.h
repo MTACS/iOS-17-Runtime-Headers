@@ -1,0 +1,4 @@
+
+@interface icqImageAdditionsDummyClass : NSObject
+
+@end

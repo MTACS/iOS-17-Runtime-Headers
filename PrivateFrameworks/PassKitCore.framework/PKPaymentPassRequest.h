@@ -1,0 +1,18 @@
+
+@interface PKPaymentPassRequest : PKPaymentWebServiceRequest {
+    NSString * _passTypeID;
+    NSString * _serialNumber;
+}
+
+@property (nonatomic, copy) NSString *passTypeID;
+@property (nonatomic, copy) NSString *serialNumber;
+
+- (void).cxx_destruct;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
+- (id)initWithPassTypeID:(id)arg1 serialNumber:(id)arg2;
+- (id)passTypeID;
+- (id)serialNumber;
+- (void)setPassTypeID:(id)arg1;
+- (void)setSerialNumber:(id)arg1;
+
+@end

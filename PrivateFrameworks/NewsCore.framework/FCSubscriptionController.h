@@ -1,0 +1,88 @@
+
+@interface FCSubscriptionController : NSObject <FCAppActivityObserving, FCSubscriptionListObserving> {
+    <FCNewsAppConfigurationManager> * _appConfigurationManager;
+    <FCCoreConfigurationManager> * _configurationManager;
+    <FCLocalChannelsProvider> * _localChannelsProvider;
+    FCNotificationController * _notificationController;
+    NSHashTable * _observers;
+    <FCPurchaseProviderType> * _purchaseProvider;
+    FCPuzzleTypeController * _puzzleTypeController;
+    FCThreadSafeMutableDictionary * _subscribedTagsByTagID;
+    FCSubscriptionList * _subscriptionList;
+    FCTagController * _tagController;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <FCLocalChannelsProvider> *localChannelsProvider;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_purchaseListDidAddTagIDs:(id)arg1;
+- (void)_purchaseListDidRemoveTagIDs:(id)arg1;
+- (void)activityObservingApplicationDidEnterBackground;
+- (void)addAutoFavoriteSubscriptionForTagIDs:(id)arg1 groupableSubscriptionForTagIDs:(id)arg2 originProvider:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (bool)addIgnoredSubscriptionForTagID:(id)arg1;
+- (bool)addIgnoredSubscriptionForTagID:(id)arg1 groupID:(id)arg2;
+- (bool)addMutedSubscriptionForTagID:(id)arg1;
+- (bool)addMutedSubscriptionForTagID:(id)arg1 groupID:(id)arg2;
+- (void)addObserver:(id)arg1;
+- (bool)addSubscriptionToTag:(id)arg1 error:(id*)arg2;
+- (bool)addSubscriptionToTag:(id)arg1 notificationsEnabled:(bool)arg2 error:(id*)arg3;
+- (bool)addSubscriptionToTag:(id)arg1 options:(long long)arg2 error:(id*)arg3;
+- (id)allSubscribedTagIDs;
+- (bool)appendSubscriptionToTag:(id)arg1 notificationsEnabled:(bool)arg2 error:(id*)arg3;
+- (id)appleNewsNotificationChannelIDs;
+- (id)autoFavoriteTagIDs;
+- (id)cachedSubscribedTags;
+- (bool)canAddSubscription;
+- (bool)canAddSubscriptionWithError:(id*)arg1;
+- (void)fetchAllTagsWithCallbackQueue:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(long long)arg3 completion:(id /* block */)arg4;
+- (void)fetchSubscribedTagsWithCallbackQueue:(id)arg1 preferCache:(bool)arg2 completion:(id /* block */)arg3;
+- (id)groupableTagIDs;
+- (bool)hasAutoFavoriteSubscriptionForTagID:(id)arg1;
+- (bool)hasIgnoredSubscriptionForTagID:(id)arg1;
+- (bool)hasMutedSubscriptionForTagID:(id)arg1;
+- (bool)hasNotificationsEnabledForTag:(id)arg1;
+- (bool)hasSubscriptionToTag:(id)arg1;
+- (bool)hasSubscriptionToTagID:(id)arg1;
+- (id)ignoredTagIDs;
+- (id)init;
+- (id)initWithSubscriptionList:(id)arg1 tagController:(id)arg2 puzzleTypeController:(id)arg3 notificationController:(id)arg4 purchaseProvider:(id)arg5 configurationManager:(id)arg6 appConfigurationManager:(id)arg7 appActivityMonitor:(id)arg8;
+- (bool)isAppleNewsNotificationForTagID:(id)arg1;
+- (bool)isChannelPermanentForTagID:(id)arg1;
+- (id)localChannelsProvider;
+- (bool)moveSubscriptionForTagID:(id)arg1 beforeTagID:(id)arg2;
+- (id)mutedTagIDs;
+- (id)newlySubscribedTagIDsInDateRange:(id)arg1;
+- (id)orderedCachedSubscribedTags;
+- (id)permanentChannelIDs;
+- (id)portraitExcludedAutoFavoriteTagIDs;
+- (void)prewarmFromCacheWithCallbackQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)refreshAndNotifyAboutSubscribedTags;
+- (void)removeAllAutoFavoriteSubscriptions:(id /* block */)arg1;
+- (bool)removeIgnoredSubscriptionForTagID:(id)arg1;
+- (bool)removeIgnoredSubscriptionForTagID:(id)arg1 groupID:(id)arg2;
+- (void)removeObserver:(id)arg1;
+- (void)removeSubscriptionForTagID:(id)arg1 type:(unsigned long long)arg2;
+- (void)removeSubscriptionToTag:(id)arg1;
+- (void)setLocalChannelsProvider:(id)arg1;
+- (bool)setNotificationsEnabled:(bool)arg1 forTag:(id)arg2 error:(id*)arg3;
+- (bool)setNotificationsEnabled:(bool)arg1 forTagID:(id)arg2 error:(id*)arg3;
+- (id)subscribedTagForTagID:(id)arg1;
+- (id)subscribedTagIDs;
+- (id)subscribedTagIDsWithNotificationsEnabled;
+- (id)subscriptionForTag:(id)arg1;
+- (id)subscriptionForTagID:(id)arg1;
+- (void)subscriptionList:(id)arg1 didAddSubscriptions:(id)arg2 changeSubscriptions:(id)arg3 moveSubscriptions:(id)arg4 removeSubscriptions:(id)arg5;
+- (void)subscriptionListDidResetToEmpty:(id)arg1;
+- (void)subscriptionListDidStopSyncingRemoteChanges:(id)arg1;
+- (void)subscriptionListWillStartSyncingRemoteChanges:(id)arg1;
+- (id)subscriptionSurfacingHeadline:(id)arg1;
+- (id)subscriptions;
+- (void)subscriptionsWithCompletion:(id /* block */)arg1;
+- (id)subscriptionsWithType:(unsigned long long)arg1;
+- (id)tagIDsWithType:(unsigned long long)arg1;
+
+@end

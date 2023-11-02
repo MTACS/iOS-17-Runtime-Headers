@@ -1,0 +1,85 @@
+
+@interface SFUnifiedTabBarItem : SFUnifiedBarItem <SFNavigationBarItemObserver, SFTabHoverPreviewItem> {
+    NSUUID * _UUID;
+    double  _downloadProgress;
+    UIImage * _icon;
+    NSDate * _lastReloadDate;
+    unsigned long long  _mediaStateIcon;
+    unsigned long long  _menuButtonBadges;
+    <SFMenuConfiguring> * _menuButtonConfigurator;
+    SFNavigationBarItem * _navigationBarItem;
+    NSArray * _shareParticipants;
+    bool  _showsBadgeOnExtensionsButton;
+    NSString * _title;
+    bool  _unread;
+}
+
+@property (nonatomic, retain) NSUUID *UUID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double downloadProgress;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIImage *icon;
+@property (nonatomic, readonly) SFUnifiedTabBarItemView *itemView;
+@property (nonatomic, retain) NSDate *lastReloadDate;
+@property (nonatomic) unsigned long long mediaStateIcon;
+@property (nonatomic) unsigned long long menuButtonBadges;
+@property (nonatomic) <SFMenuConfiguring> *menuButtonConfigurator;
+@property (nonatomic, retain) SFNavigationBarItem *navigationBarItem;
+@property (nonatomic, copy) NSArray *shareParticipants;
+@property (nonatomic) bool showsBadgeOnExtensionsButton;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (getter=isUnread, nonatomic) bool unread;
+
+- (void).cxx_destruct;
+- (id)UUID;
+- (void)_configureItemView:(id)arg1 isPreview:(bool)arg2;
+- (void)_showReaderAvailabilityLabelIfNeeded;
+- (void)_showTranslationAvailabilityLabelIfNeeded;
+- (void)configureItemView:(id)arg1 isPreview:(bool)arg2;
+- (void)dismissAvailabilityOverlays;
+- (double)downloadProgress;
+- (id)icon;
+- (id)init;
+- (bool)isUnread;
+- (id)itemView;
+- (id)lastReloadDate;
+- (unsigned long long)mediaStateIcon;
+- (unsigned long long)menuButtonBadges;
+- (id)menuButtonConfigurator;
+- (id)menuElementRepresentationWithSelectionHandler:(id /* block */)arg1;
+- (id)navigationBarItem;
+- (void)navigationBarItemDidUpdateExtensionButtonConfiguration:(id)arg1;
+- (void)navigationBarItemDidUpdateFormatButtonSelected:(id)arg1;
+- (void)navigationBarItemDidUpdateSecurityAnnotation:(id)arg1;
+- (void)navigationBarItemDidUpdateShowsLockIcon:(id)arg1;
+- (void)navigationBarItemDidUpdateShowsReaderButton:(id)arg1;
+- (void)navigationBarItemDidUpdateShowsSearchIndicator:(id)arg1;
+- (void)navigationBarItemDidUpdateShowsSiriReaderPlayingIcon:(id)arg1;
+- (void)navigationBarItemDidUpdateShowsStopReloadButtons:(id)arg1;
+- (void)navigationBarItemDidUpdateShowsTranslationButton:(id)arg1;
+- (void)navigationBarItemDidUpdateShowsTranslationIcon:(id)arg1;
+- (void)navigationBarItemDidUpdateShowsVoiceSearchButton:(id)arg1;
+- (void)navigationBarItemDidUpdateStopReloadButtonShowsStop:(id)arg1;
+- (void)navigationBarItemDidUpdateText:(id)arg1;
+- (void)setDownloadProgress:(double)arg1;
+- (void)setDownloadProgress:(double)arg1 animated:(bool)arg2;
+- (void)setIcon:(id)arg1;
+- (void)setLastReloadDate:(id)arg1;
+- (void)setMediaStateIcon:(unsigned long long)arg1;
+- (void)setMenuButtonBadges:(unsigned long long)arg1;
+- (void)setMenuButtonConfigurator:(id)arg1;
+- (void)setNavigationBarItem:(id)arg1;
+- (void)setReusableView:(id)arg1;
+- (void)setShareParticipants:(id)arg1;
+- (void)setShowsBadgeOnExtensionsButton:(bool)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setUUID:(id)arg1;
+- (void)setUnread:(bool)arg1;
+- (id)shareParticipants;
+- (bool)showsBadgeOnExtensionsButton;
+- (id)title;
+- (void)toggleExtensionBadge;
+
+@end

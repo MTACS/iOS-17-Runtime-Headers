@@ -1,0 +1,90 @@
+
+@interface BKUIPeriocularEnableSplashViewController : OBTableWelcomeController <UITableViewDataSource, UITableViewDelegate> {
+    OBAnimationController * _animationController;
+    BKUIPeriocularSelectionCell * _cellBottom;
+    BKUIPeriocularSelectionCell * _cellTop;
+    OBTrayButton * _continueButton;
+    BKDevice * _device;
+    id /* block */  _endEnrollActionPrimary;
+    id /* block */  _endEnrollActionSecondary;
+    bool  _inBuddy;
+    OBPrivacyLinkController * _linkController;
+    double  _maxCellHeight;
+    OBTrayButton * _skipButton;
+    <UITraitChangeRegistration> * _traitChangeRegistration;
+    bool  _upsell;
+    id /* block */  _userSkippedAction;
+}
+
+@property (nonatomic, retain) OBAnimationController *animationController;
+@property (nonatomic, retain) BKUIPeriocularSelectionCell *cellBottom;
+@property (nonatomic, retain) BKUIPeriocularSelectionCell *cellTop;
+@property (nonatomic, retain) OBTrayButton *continueButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) BKDevice *device;
+@property (nonatomic, copy) id /* block */ endEnrollActionPrimary;
+@property (nonatomic, copy) id /* block */ endEnrollActionSecondary;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool inBuddy;
+@property (nonatomic, retain) OBPrivacyLinkController *linkController;
+@property (nonatomic) double maxCellHeight;
+@property (nonatomic, retain) OBTrayButton *skipButton;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) <UITraitChangeRegistration> *traitChangeRegistration;
+@property (nonatomic) bool upsell;
+@property (nonatomic, copy) id /* block */ userSkippedAction;
+
++ (void)setPeriocularFaceIDMatchEnabledForUserConfigurationWithDevice:(id)arg1 credentialSet:(id)arg2 authContext:(id)arg3 enabled:(bool)arg4 completion:(id /* block */)arg5;
++ (void)setPeriocularFaceIDMatchEnabledForUserConfigurationWithDevice:(id)arg1 credentialSet:(id)arg2 enabled:(bool)arg3;
+
+- (void).cxx_destruct;
+- (void)_continuePressed:(id)arg1;
+- (id)_createCellForIndexPath:(id)arg1;
+- (void)_enrollSkipped:(id)arg1;
+- (void)_showPrivacyLink;
+- (id)animationController;
+- (id)cellBottom;
+- (id)cellTop;
+- (id)continueButton;
+- (id)device;
+- (id /* block */)endEnrollActionPrimary;
+- (id /* block */)endEnrollActionSecondary;
+- (double)headerViewBottomToTableViewTopPadding;
+- (bool)inBuddy;
+- (id)initInBuddy:(bool)arg1 bkDevice:(id)arg2 upsell:(bool)arg3 withEndEnrollmentActionPrimary:(id /* block */)arg4 enrollmentActionSecondary:(id /* block */)arg5;
+- (id)linkController;
+- (double)maxCellHeight;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (long long)preferredStatusBarStyle;
+- (void)setAnimationController:(id)arg1;
+- (void)setCellBottom:(id)arg1;
+- (void)setCellTop:(id)arg1;
+- (void)setContinueButton:(id)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setEndEnrollActionPrimary:(id /* block */)arg1;
+- (void)setEndEnrollActionSecondary:(id /* block */)arg1;
+- (void)setInBuddy:(bool)arg1;
+- (void)setLinkController:(id)arg1;
+- (void)setMaxCellHeight:(double)arg1;
+- (void)setSkipButton:(id)arg1;
+- (void)setTraitChangeRegistration:(id)arg1;
+- (void)setUpsell:(bool)arg1;
+- (void)setUserSkippedAction:(id /* block */)arg1;
+- (id)skipButton;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (id)traitChangeRegistration;
+- (bool)upsell;
+- (id /* block */)userSkippedAction;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+
+@end

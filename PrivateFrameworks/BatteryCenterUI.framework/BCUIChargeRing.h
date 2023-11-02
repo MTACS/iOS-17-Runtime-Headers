@@ -1,0 +1,85 @@
+
+@interface BCUIChargeRing : UIView <BCUIBatteryDeviceDisplaying, MTVisualStylingRequiring> {
+    BCUIRingView * _baseRing;
+    MTVisualStylingProvider * _baseRingVisualStylingProvider;
+    UIImageView * _boltImageView;
+    UIImageView * _boltMaskImageView;
+    CABackdropLayer * _captureBackdrop;
+    BCUIRingView * _chargeRing;
+    bool  _charging;
+    UIImage * _glyph;
+    UIImageView * _glyphImageView;
+    double  _lineWidth;
+    bool  _lowCharge;
+    bool  _lowPowerModeEnabled;
+    long long  _percentCharge;
+    BCUIRingCapShadow * _ringCapShadow;
+    double  _ringScale;
+    double  _scaleFactor;
+    <UIViewControllerTransitionCoordinator> * _transitionCoordinator;
+    MTVisualStylingProvider * _visualStylingProvider;
+}
+
+@property (getter=isCharging, nonatomic) bool charging;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEmpty, nonatomic) bool empty;
+@property (nonatomic, retain) UIImage *glyph;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double lineWidth;
+@property (getter=isLowCharge, nonatomic) bool lowCharge;
+@property (getter=isLowPowerModeEnabled, nonatomic) bool lowPowerModeEnabled;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) long long percentCharge;
+@property (nonatomic, readonly, copy) NSArray *requiredVisualStyleCategories;
+@property (nonatomic) double ringScale;
+@property (nonatomic) double scaleFactor;
+@property (readonly) Class superclass;
+@property (nonatomic) <UIViewControllerTransitionCoordinator> *transitionCoordinator;
+
+- (void).cxx_destruct;
+- (id)_baseRing;
+- (void)_beginAutomaticallyUpdatingPrimaryVisualStylingForView:(id)arg1 observerBlock:(id /* block */)arg2;
+- (void)_beginAutomaticallyUpdatingVisualStylingForCategory:(long long)arg1;
+- (id)_chargeRing;
+- (void)_configureBoltImageViewIfNecessary;
+- (void)_configureBoltMaskImageViewIfNecessary;
+- (void)_configureCaptureBackdropIfNecessary;
+- (void)_configureRingCapShadowIfNecessary;
+- (void)_dynamicUserInterfaceTraitDidChange;
+- (id)_glyphImageView;
+- (bool)_isPastThresholdForRingCapShadow;
+- (id)_ringVisualStylingProvider;
+- (bool)_shouldShowRingCapShadow;
+- (void)_stopAutomaticallyUpdatingVisualStylingForCategory:(long long)arg1;
+- (void)_updateVisualStylingForBaseRingIfNecessary;
+- (void)_updateVisualStylingForBolt;
+- (void)_updateVisualStylingWithProvidersFromStylingProvider:(id)arg1;
+- (id)_visualStylingProviderForCategory:(long long)arg1;
+- (void)didMoveToSuperview;
+- (void)didMoveToWindow;
+- (id)glyph;
+- (id)init;
+- (bool)isCharging;
+- (bool)isLowCharge;
+- (bool)isLowPowerModeEnabled;
+- (void)layoutSubviews;
+- (double)lineWidth;
+- (long long)percentCharge;
+- (id)requiredVisualStyleCategories;
+- (double)ringScale;
+- (double)scaleFactor;
+- (void)setCharging:(bool)arg1;
+- (void)setGlyph:(id)arg1;
+- (void)setLineWidth:(double)arg1;
+- (void)setLowCharge:(bool)arg1;
+- (void)setLowPowerModeEnabled:(bool)arg1;
+- (void)setPercentCharge:(long long)arg1;
+- (void)setRingScale:(double)arg1;
+- (void)setScaleFactor:(double)arg1;
+- (void)setTransitionCoordinator:(id)arg1;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)transitionCoordinator;
+
+@end

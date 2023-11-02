@@ -1,0 +1,83 @@
+
+@interface PXCuratedLibraryEventTracker : PXMediaViewControllerEventTracker <PXChangeObserver, PXCuratedLibraryEventTracker> {
+    float  _analysisProgress;
+    NSString * _currentAllPhotosZoomStateName;
+    long long  _currentAllPhotosZoomStateSignpost;
+    long long  _currentZoomLevelSignpost;
+    long long  _currentlyViewedZoomLevel;
+    PXSectionedObjectReference * _dominantObjectReference;
+    float  _firstTimeExperienceAnalysisProgress;
+    long long  _firstTimeExperienceLibraryItemsCount;
+    PXCuratedLibraryLayout * _layout;
+    long long  _libraryItemsCount;
+    bool  _loggedFirstTimeExperience;
+    NSTimer * _slowScrollRegimeTimer;
+    unsigned long long  _userEventSource;
+    PXCuratedLibraryViewModel * _viewModel;
+}
+
+@property (nonatomic) float analysisProgress;
+@property (nonatomic, retain) NSString *currentAllPhotosZoomStateName;
+@property (nonatomic) long long currentAllPhotosZoomStateSignpost;
+@property (nonatomic) long long currentZoomLevelSignpost;
+@property (nonatomic) long long currentlyViewedZoomLevel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PXSectionedObjectReference *dominantObjectReference;
+@property (nonatomic) float firstTimeExperienceAnalysisProgress;
+@property (nonatomic) long long firstTimeExperienceLibraryItemsCount;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) PXCuratedLibraryLayout *layout;
+@property (nonatomic) long long libraryItemsCount;
+@property (nonatomic, copy) NSMutableDictionary *payload;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long userEventSource;
+@property (nonatomic, readonly) PXCuratedLibraryViewModel *viewModel;
+
+- (void).cxx_destruct;
+- (void)_configureTimerForSlowScrollRegimeUpdatesIfNeeded;
+- (void)_invalidateCurrentAllPhotosZoomState;
+- (void)_invalidateCurrentlyViewedZoomLevel;
+- (void)_invalidateDominantObjectReference;
+- (void)_invalidateFirstTimeExperienceReadinessLogging;
+- (void)_invalidateUserEventSource;
+- (void)_logDidEndViewingAllPhotosZoomStateName:(id)arg1;
+- (void)_logDidEndViewingZoomLevel:(long long)arg1;
+- (void)_logDidStartViewingAllPhotosZoomStateName:(id)arg1;
+- (void)_logDidStartViewingZoomLevel:(long long)arg1;
+- (void)_updateCurrentAllPhotosZoomState;
+- (void)_updateCurrentlyViewedZoomLevel;
+- (void)_updateDominantObjectReference;
+- (void)_updateFirstTimeExperienceReadinessLogging;
+- (void)_updateUserEventSource;
+- (float)analysisProgress;
+- (id)currentAllPhotosZoomStateName;
+- (long long)currentAllPhotosZoomStateSignpost;
+- (long long)currentZoomLevelSignpost;
+- (long long)currentlyViewedZoomLevel;
+- (void)dealloc;
+- (id)dominantObjectReference;
+- (float)firstTimeExperienceAnalysisProgress;
+- (long long)firstTimeExperienceLibraryItemsCount;
+- (id)initWithViewModel:(id)arg1 layout:(id)arg2;
+- (id)initWithViewName:(id)arg1;
+- (id)layout;
+- (long long)libraryItemsCount;
+- (void)logAnalysisProgress:(float)arg1;
+- (void)logLibraryItemsCount:(long long)arg1;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (void)setAnalysisProgress:(float)arg1;
+- (void)setCurrentAllPhotosZoomStateName:(id)arg1;
+- (void)setCurrentAllPhotosZoomStateSignpost:(long long)arg1;
+- (void)setCurrentZoomLevelSignpost:(long long)arg1;
+- (void)setCurrentlyViewedZoomLevel:(long long)arg1;
+- (void)setDominantObjectReference:(id)arg1;
+- (void)setFirstTimeExperienceAnalysisProgress:(float)arg1;
+- (void)setFirstTimeExperienceLibraryItemsCount:(long long)arg1;
+- (void)setLibraryItemsCount:(long long)arg1;
+- (void)setUserEventSource:(unsigned long long)arg1;
+- (unsigned long long)userEventSource;
+- (id)userEventTracker;
+- (id)viewModel;
+
+@end

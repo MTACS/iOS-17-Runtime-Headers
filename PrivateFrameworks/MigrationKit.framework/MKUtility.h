@@ -1,0 +1,4 @@
+
+@interface MKUtility : NSObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol DNDRemoteMonitorServerProtocol <NSObject, DNDRemoteMonitorServerModeAssertionProtocol, DNDRemoteMonitorServerStateProtocol, DNDRemoteMonitorServerSettingsProtocol, DNDRemoteMonitorServerModeSelectionProtocol, DNDRemoteMonitorServerGlobalConfigurationProtocol, DNDRemoteMonitorServerMeDeviceStateProtocol>
+
+@end

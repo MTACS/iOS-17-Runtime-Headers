@@ -1,0 +1,8 @@
+
+@protocol SBHRecentsDocumentExtensionWrappingViewControllerDelegate
+
+@required
+
+- (bool)recentsDocumentExtensionWrappingViewControllerHasTransparentContent:(SBHRecentsDocumentExtensionWrappingViewController *)arg1;
+
+@end

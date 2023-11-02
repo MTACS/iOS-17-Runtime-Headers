@@ -1,0 +1,78 @@
+
+@protocol TabGroupProvider <NSObject>
+
+@required
+
+- (NSString *)activeLibraryType;
+- (WBProfile *)activeProfile;
+- (NSString *)activeProfileIdentifier;
+- (WBTabGroup *)activeTabGroup;
+- (NSString *)activeTabGroupUUID;
+- (NSArray *)allSyntheticBookmarkFolders;
+- (NSArray *)allTabGroups;
+- (BrowserController *)browserControllerContainingLocalTabGroupUUID:(NSUUID *)arg1;
+- (void)closeTabGroup:(WBTabGroup *)arg1;
+- (void)closeTabs:(NSArray *)arg1 inInactiveTabGroup:(WBTabGroup *)arg2;
+- (UIContextMenuConfiguration *)contextMenuConfigurationForTab:(WBTab *)arg1 inTabGroup:(WBTabGroup *)arg2;
+- (UIContextMenuConfiguration *)contextMenuConfigurationForTabGroup:(WBTabGroup *)arg1 variant:(long long)arg2;
+- (WebBookmark *)copyBookmark:(WebBookmark *)arg1 toPerTabGroupBookmarkFolderWithID:(int)arg2;
+- (void)createNewTabGroup;
+- (bool)createTabGroupAlertIsPresented;
+- (void)createTabGroupFromExistingTabs:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WBTabGroup *, void*
+- (void)deleteScopedBookmarkWithUUID:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (NSString *)deviceIdentifier;
+- (UIDragItem *)dragItemForTab:(WBTab *)arg1 inTabGroup:(WBTabGroup *)arg2;
+- (bool)hasMultipleProfiles;
+- (UIImage *)iconForTabUUID:(NSString *)arg1;
+- (UIImage *)imageForProfile:(WBProfile *)arg1;
+- (UIImage *)imageForTabGroup:(WBTabGroup *)arg1;
+- (void)insertPerTabGroupBookmark:(WebBookmark *)arg1 inPerTabGroupBookmarkFolderWithID:(int)arg2;
+- (bool)isTabGroupUUIDExpanded:(NSString *)arg1;
+- (bool)isTabUUIDActive:(NSString *)arg1;
+- (UIMenu *)menuForSwitchingProfiles;
+- (UIMenu *)menuForTabGroup:(WBTabGroup *)arg1 variant:(long long)arg2;
+- (NSString *)moveLocalTabsToNewGroupTitle;
+- (void)moveTab:(WBTab *)arg1 fromTabGroupWithUUID:(NSString *)arg2 toTabGroupWithUUID:(NSString *)arg3 afterTab:(WBTab *)arg4;
+- (void)moveTabDocument:(TabDocument *)arg1 toTabGroupWithUUID:(NSString *)arg2;
+- (void)moveTabGroup:(WBTabGroup *)arg1 beforeOrAfterTabGroup:(WBTabGroup *)arg2;
+- (void)moveTabGroup:(WBTabGroup *)arg1 toProfile:(WBProfile *)arg2;
+- (bool)moveTabWithUUID:(NSString *)arg1 fromForeignLocalGroupWithUUIDIntoActiveGroup:(NSString *)arg2;
+- (NSArray *)namedTabGroups;
+- (NSSet *)nonActiveTabGroupsInCurrentBrowsingMode;
+- (void)openBookmark:(WebBookmark *)arg1 inTabGroup:(WBTabGroup *)arg2;
+- (UIMenu *)openInTabGroupMenuWithNewTabGroupName:(void *)arg1 URL:(void *)arg2 descendantCount:(void *)arg3 handler:(void *)arg4; // needs 4 arg types, found 8: NSString *, NSURL *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)openURL:(NSURL *)arg1 inTabGroup:(WBTabGroup *)arg2;
+- (WebBookmarkList *)perTabGroupBookmarkListForFolderID:(int)arg1 filteredUsingString:(NSString *)arg2;
+- (void)presentAlertToCreateTabGroupFromTabs:(void *)arg1 withTitle:(void *)arg2 message:(void *)arg3 suggestedName:(void *)arg4 okActionTitle:(void *)arg5 completionHandler:(void *)arg6; // needs 6 arg types, found 11: NSArray *, NSString *, NSString *, NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WBTabGroup *, void*
+- (WBTabGroup *)privateTabGroupIfAvailable;
+- (NSArray *)profiles;
+- (NSArray *)profilesMenuElementsWithOptions:(void *)arg1 movingSelectedTabGroups:(void *)arg2 actionHandler:(void *)arg3; // needs 3 arg types, found 8: unsigned long long, NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WBProfile *, void*
+- (void)registerTabGroupManagerObserver:(id <WBTabGroupManagerObserver>)arg1;
+- (void)removeSingleBlankTabFromActiveTabGroup;
+- (void)removeSingleBlankTabFromInactiveTabGroup:(WBTabGroup *)arg1;
+- (void)renameTabGroup:(WBTabGroup *)arg1;
+- (void)reorderScopedBookmarkWithUUID:(NSString *)arg1 afterBookmarkWithUUID:(NSString *)arg2 notify:(bool)arg3;
+- (void)setActiveProfileIdentifier:(NSString *)arg1;
+- (void)setActiveTabGroupUUID:(NSString *)arg1;
+- (void)setTabGroupOverviewIsPresented:(bool)arg1;
+- (void)sortTabsInInactiveTabGroup:(WBTabGroup *)arg1 withSortMode:(long long)arg2;
+- (NSString *)startPageBackgroundImageIdentifier;
+- (UISwipeActionsConfiguration *)swipeActionsConfigurationForTab:(WBTab *)arg1 inTabGroup:(WBTabGroup *)arg2;
+- (UISwipeActionsConfiguration *)swipeActionsConfigurationForTabGroup:(WBTabGroup *)arg1 forPickerSheet:(bool)arg2;
+- (void)switchOutOfSyncedTabGroup;
+- (bool)switchToTabWithUUID:(NSUUID *)arg1 inTabGroupWithUUID:(NSUUID *)arg2;
+- (SFSyntheticBookmarkFolder *)syntheticBookmarkFolderForTabGroup:(WBTabGroup *)arg1 withAttribution:(bool)arg2;
+- (NSArray *)syntheticBookmarkFoldersIncludingActiveTabGroup:(bool)arg1;
+- (bool)tabGroupOverviewIsPresented;
+- (NSArray *)tabGroups;
+- (NSArray *)tabGroupsForProfileWithIdentifier:(NSString *)arg1;
+- (NSArray *)tabGroupsMenuElementsWithOptions:(void *)arg1 newTabGroupName:(void *)arg2 hostTitle:(void *)arg3 descendantCount:(void *)arg4 movingSelectedTabs:(void *)arg5 actionHandler:(void *)arg6; // needs 6 arg types, found 11: unsigned long long, NSString *, NSString *, long long, NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WBTabGroup *, void*
+- (void)togglePinningTab:(WBTab *)arg1 inInactiveTabGroup:(WBTabGroup *)arg2;
+- (void)toggleTabGroupUUIDExpanded:(NSString *)arg1;
+- (WebBookmarkList *)topScopedBookmarkListForActiveTabGroup;
+- (WBTabGroup *)unnamedTabGroup;
+- (NSArray *)unnamedTabGroups;
+- (WBProfile *)updateProfileWithIdentifier:(void *)arg1 persist:(void *)arg2 usingBlock:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 14: NSString *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WBMutableProfile *, void*, id /* block */, void*, void, id /* block */, bool, void*
+- (void)updateScopedBookmarkWithUUID:(NSString *)arg1 title:(NSString *)arg2 address:(NSString *)arg3;
+
+@end

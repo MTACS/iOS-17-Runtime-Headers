@@ -1,0 +1,4 @@
+
+@interface REMReminderCreationHostExtensionContext : NSExtensionContext
+
+@end

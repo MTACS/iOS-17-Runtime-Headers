@@ -1,0 +1,4 @@
+
+@interface _TtC14NeuralNetworksP33_6A6C2A2EDC5A375BED04F3B11ACF72D045TensorOperationCompatibleDeviceTargetSetCache : _TtCs12_SwiftObject
+
+@end

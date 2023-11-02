@@ -1,0 +1,86 @@
+
+@interface IMAVSecureKeyLoader : NSObject <AVContentKeySessionDelegate> {
+    ACAccount * _account;
+    NSString * _contentAdamId;
+    AVContentKeySession * _contentKeySession;
+    <IMAVSecureKeyLoaderDelegate> * _delegate;
+    bool  _isRenewal;
+    NSObject<OS_dispatch_queue> * _keyLoaderQueue;
+    id /* block */  _pendingCompletion;
+    AVURLAsset * _recipient;
+    NSData * _savedRequestDataToUseForStopping;
+    MTContentKeyRequest * _savedRequestToUseForStopping;
+    <MTSecureKeyRequestHandler> * _secureKeyRequestHandler;
+    <MTSecureKeyRequestStorage> * _secureKeyRequestStorage;
+    <NSURLSessionDelegate><AMSURLProtocolDelegate> * _urlProtocolDelegate;
+    unsigned long long  _useCase;
+}
+
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, retain) NSString *contentAdamId;
+@property (nonatomic, retain) AVContentKeySession *contentKeySession;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <IMAVSecureKeyLoaderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isRenewal;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *keyLoaderQueue;
+@property (nonatomic, copy) id /* block */ pendingCompletion;
+@property (nonatomic, retain) AVURLAsset *recipient;
+@property (nonatomic, retain) NSData *savedRequestDataToUseForStopping;
+@property (nonatomic, retain) MTContentKeyRequest *savedRequestToUseForStopping;
+@property (nonatomic, retain) <MTSecureKeyRequestHandler> *secureKeyRequestHandler;
+@property (nonatomic, retain) <MTSecureKeyRequestStorage> *secureKeyRequestStorage;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) <NSURLSessionDelegate><AMSURLProtocolDelegate> *urlProtocolDelegate;
+@property (nonatomic) unsigned long long useCase;
+
+- (void).cxx_destruct;
+- (bool)_isOfflineAsset;
+- (id)account;
+- (void)cleanupAfterContentKeyRequestForOfflineRenewal:(bool)arg1 withError:(id)arg2;
+- (void)cleanupAfterContentKeyRequestWithError:(id)arg1;
+- (id)contentAdamId;
+- (id)contentKeySession;
+- (void)contentKeySession:(id)arg1 contentKeyRequest:(id)arg2 didFailWithError:(id)arg3;
+- (void)contentKeySession:(id)arg1 contentKeyRequestDidSucceed:(id)arg2;
+- (void)contentKeySession:(id)arg1 didProvideContentKeyRequest:(id)arg2;
+- (void)contentKeySession:(id)arg1 didProvidePersistableContentKeyRequest:(id)arg2;
+- (void)contentKeySession:(id)arg1 didProvideRenewingContentKeyRequest:(id)arg2;
+- (id)delegate;
+- (void)finishContentKeyRequest:(id)arg1 forOfflineRenewal:(bool)arg2 withResponse:(id)arg3;
+- (void)finishContentKeyRequest:(id)arg1 withResponse:(id)arg2;
+- (id)initWithRecipient:(id)arg1 useCase:(unsigned long long)arg2 account:(id)arg3 urlProtocolDelegate:(id)arg4;
+- (void)invalidateAndCancel;
+- (bool)isRenewal;
+- (id)keyLoaderQueue;
+- (id /* block */)pendingCompletion;
+- (id)recipient;
+- (void)requestKeyResponseFromContentKeyRequest:(id)arg1 requestType:(long long)arg2 completion:(id /* block */)arg3;
+- (id)savedRequestDataToUseForStopping;
+- (id)savedRequestToUseForStopping;
+- (id)secureKeyRequestHandler;
+- (id)secureKeyRequestStorage;
+- (void)securelyInvalidateOfflineDataForRequests:(id)arg1 completion:(id /* block */)arg2;
+- (void)sendStopRequestForStreamingLicenseIfNecessary;
+- (void)setAccount:(id)arg1;
+- (void)setContentAdamId:(id)arg1;
+- (void)setContentKeySession:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setIsRenewal:(bool)arg1;
+- (void)setKeyLoaderQueue:(id)arg1;
+- (void)setPendingCompletion:(id /* block */)arg1;
+- (void)setRecipient:(id)arg1;
+- (void)setSavedRequestDataToUseForStopping:(id)arg1;
+- (void)setSavedRequestToUseForStopping:(id)arg1;
+- (void)setSecureKeyRequestHandler:(id)arg1;
+- (void)setSecureKeyRequestStorage:(id)arg1;
+- (void)setUrlProtocolDelegate:(id)arg1;
+- (void)setUseCase:(unsigned long long)arg1;
+- (void)startKeyLoadingProcessWithKeyIdentifier:(id)arg1 contentAdamId:(id)arg2 isRenewal:(bool)arg3 completion:(id /* block */)arg4;
+- (void)startKeyLoadingProcessWithKeyRequestData:(id)arg1 isRenewal:(bool)arg2 completion:(id /* block */)arg3;
+- (void)timeoutKeyRequest;
+- (id)urlProtocolDelegate;
+- (unsigned long long)useCase;
+
+@end

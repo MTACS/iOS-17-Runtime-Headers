@@ -1,0 +1,82 @@
+
+@interface HUQuickControlCollectionViewController : HUItemCollectionViewController <HFAccessoryObserver, HUQuickControlCollectionViewDelegateLayout, HUQuickControlContentCharacteristicWriting, HUQuickControlContentHelper, HUQuickControlInteractiveContentContaining, HUQuickControlItemUpdating, HUQuickControlTouchContinuing> {
+    HUQuickControlContentCharacteristicWritingUpdateAdapter * _characteristicWritingAdapter;
+    <HUQuickControlContentCharacteristicWritingDelegate> * _characteristicWritingDelegate;
+    bool  _disableItemUpdatesForOverrideCharacteristicValueChanges;
+    HUQuickControlCollectionViewControllerLayoutOptions * _layoutOptions;
+    <HULayoutAnchorProviding> * _preferredFrameLayoutGuide;
+    <HUQuickControlContentHosting> * _quickControlHost;
+    bool  _userInteractionEnabled;
+    NSMapTable * _viewControllersKeyedByItem;
+}
+
+@property (nonatomic, readonly, copy) NSSet *affectedCharacteristics;
+@property (nonatomic, readonly) HUQuickControlContentCharacteristicWritingUpdateAdapter *characteristicWritingAdapter;
+@property (nonatomic) <HUQuickControlContentCharacteristicWritingDelegate> *characteristicWritingDelegate;
+@property (nonatomic, retain) HUQuickControlCollectionViewLayout *collectionViewLayout;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool disableItemUpdatesForOverrideCharacteristicValueChanges;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HFItemManager<HUQuickControlCollectionItemManaging> *itemManager;
+@property (nonatomic, retain) HUQuickControlCollectionViewControllerLayoutOptions *layoutOptions;
+@property (nonatomic, retain) <HULayoutAnchorProviding> *preferredFrameLayoutGuide;
+@property (nonatomic) <HUQuickControlContentHosting> *quickControlHost;
+@property (readonly) Class superclass;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
+@property (nonatomic, readonly) NSMapTable *viewControllersKeyedByItem;
+
+- (void).cxx_destruct;
+- (id)_allContentViewControllers;
+- (id)_allViewControllers;
+- (bool)_canShowWhileLocked;
+- (id)_controlItemsForItem:(id)arg1;
+- (id)_createCellContainerForViewController:(id)arg1 forItem:(id)arg2;
+- (unsigned long long)_determineReachabilityForIndexPath:(id)arg1;
+- (void)_fetchReachabilityStateForMediaAccessory:(id)arg1 accessType:(unsigned long long)arg2 itemSectionIdentifier:(id)arg3;
+- (void)_handleCoordinationReachableStatusChanged:(id)arg1;
+- (void)_propagateInteractiveContentStateForChildViewControllers:(id)arg1;
+- (void)_reconfigureLayoutOptions;
+- (void)_setReachabilityForHeaderForIdentifier:(id)arg1 to:(bool)arg2;
+- (unsigned long long)_titlePositionForItem:(id)arg1;
+- (id)_viewControllerForItem:(id)arg1;
+- (void)accessoryDidUpdateControllable:(id)arg1;
+- (id)affectedCharacteristics;
+- (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
+- (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
+- (id)characteristicWritingAdapter;
+- (id)characteristicWritingDelegate;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (void)configureCell:(id)arg1 forItem:(id)arg2;
+- (void)diffableDataItemManager:(id)arg1 didUpdateItems:(id)arg2 addItems:(id)arg3 removeItems:(id)arg4;
+- (bool)disableItemUpdatesForOverrideCharacteristicValueChanges;
+- (double)heightForSupplementaryViewAtIndexPath:(id)arg1;
+- (id)initWithItemManager:(id)arg1;
+- (id)initWithItemManager:(id)arg1 collectionViewLayout:(id)arg2;
+- (id)intrinsicSizeDescriptorForItemAtIndexPath:(id)arg1 itemSize:(unsigned long long)arg2;
+- (void)invalidateContentViewLayout;
+- (bool)isUserInteractionEnabled;
+- (void)itemManager:(id)arg1 didRemoveItem:(id)arg2 atIndexPath:(id)arg3;
+- (void)itemManager:(id)arg1 didUpdateResultsForItem:(id)arg2 atIndexPath:(id)arg3;
+- (id)layoutOptions;
+- (void)loadView;
+- (id)overrideValueForCharacteristic:(id)arg1;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (id)preferredFrameLayoutGuide;
+- (id)quickControlHost;
+- (void)quickControlItemHost:(id)arg1 didUpdateVisibility:(bool)arg2;
+- (void)setCharacteristicWritingDelegate:(id)arg1;
+- (void)setDisableItemUpdatesForOverrideCharacteristicValueChanges:(bool)arg1;
+- (void)setLayoutOptions:(id)arg1;
+- (void)setPreferredFrameLayoutGuide:(id)arg1;
+- (void)setQuickControlHost:(id)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
+- (void)shouldHideQuickControlHeaderButton:(bool)arg1 forSectionIdentifier:(id)arg2;
+- (void)shouldHideQuickControlHeaderText:(bool)arg1 forSectionIdentifier:(id)arg2;
+- (id)viewControllersKeyedByItem;
+- (void)viewDidLoad;
+- (id)viewForTouchContinuation;
+- (void)viewLayoutMarginsDidChange;
+- (void)viewWillDismiss;
+
+@end

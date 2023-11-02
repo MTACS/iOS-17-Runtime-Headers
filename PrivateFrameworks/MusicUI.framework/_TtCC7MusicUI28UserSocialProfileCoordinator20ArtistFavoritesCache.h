@@ -1,0 +1,4 @@
+
+@interface _TtCC7MusicUI28UserSocialProfileCoordinator20ArtistFavoritesCache : _TtGC7MusicUI20ObservableDictionarySSVCS_28UserSocialProfileCoordinator25ArtistFavoritesCacheEntry_
+
+@end

@@ -1,0 +1,48 @@
+
+@interface CUTFileCopier : NSObject {
+    void * _BOMCopier;
+    <CUTFileCopierDelegate> * _delegate;
+    bool  _didErrorOccur;
+    id  _identifier;
+    bool  _inProgress;
+    NSURL * _inputURL;
+    unsigned int  _operation;
+    NSURL * _outputURL;
+    bool  _shouldCancel;
+}
+
+@property void*_BOMCopier;
+@property <CUTFileCopierDelegate> *delegate;
+@property (nonatomic, readonly) bool didErrorOccur;
+@property (readonly) id identifier;
+@property bool inProgress;
+@property (readonly, copy) NSURL *inputURL;
+@property unsigned int operation;
+@property (readonly, copy) NSURL *outputURL;
+@property (nonatomic, readonly) bool wasCancelled;
+
+- (void).cxx_destruct;
+- (void*)_BOMCopier;
+- (void)_fillOutputURLFromInputURL;
+- (void)_main_copierFinishedWithResult:(id)arg1;
+- (id)_temporaryCopierPath;
+- (void)_worker_doCopy;
+- (void)cancel;
+- (void)cleanup;
+- (void)dealloc;
+- (id)delegate;
+- (bool)didErrorOccur;
+- (id)identifier;
+- (bool)inProgress;
+- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
+- (id)inputURL;
+- (unsigned int)operation;
+- (id)outputURL;
+- (void)setDelegate:(id)arg1;
+- (void)setInProgress:(bool)arg1;
+- (void)setOperation:(unsigned int)arg1;
+- (void)set_BOMCopier:(void*)arg1;
+- (void)start;
+- (bool)wasCancelled;
+
+@end

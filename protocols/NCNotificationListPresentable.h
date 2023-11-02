@@ -1,0 +1,4 @@
+
+@protocol NCNotificationListPresentable <NSObject>
+
+@end

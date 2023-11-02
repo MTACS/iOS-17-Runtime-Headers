@@ -1,0 +1,4 @@
+
+@interface ICQAlertController : UIAlertController
+
+@end

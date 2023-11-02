@@ -1,0 +1,4 @@
+
+@interface NUSwiftApplicationFrameworkAssembly : NUApplicationFrameworkAssembly
+
+@end

@@ -1,0 +1,82 @@
+
+@interface TVRUIControlPanelViewController : UIViewController <TVRUIRemoteViewProvider, _TVRUIEventDelegate> {
+    NSMutableSet * _allButtonPanels;
+    UIView * _backgroundView;
+    <_TVRUIEventDelegate> * _buttonActionsDelegate;
+    TVRUIButtonPanelView * _currentButtonPanel;
+    bool  _enabled;
+    TVRUIButtonPanelView * _genericButtonPanel;
+    TVRUIButtonPanelView * _legacyButtonPanel;
+    TVRUIButtonPanelView * _legacyPanelWithKeyboardButton;
+    TVRUIButtonPanelView * _panelWithKeyboardButton;
+    <TVRUIDevice> * _remoteDevice;
+    <TVRUIStyleProvider> * _styleProvider;
+    TVRUIButtonPanelView * _touchpadButtonPanel;
+}
+
+@property (nonatomic, retain) NSMutableSet *allButtonPanels;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic) <_TVRUIEventDelegate> *buttonActionsDelegate;
+@property (nonatomic, retain) TVRUIButtonPanelView *currentButtonPanel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool enabled;
+@property (nonatomic, retain) TVRUIButtonPanelView *genericButtonPanel;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) TVRUIButtonPanelView *legacyButtonPanel;
+@property (nonatomic, retain) TVRUIButtonPanelView *legacyPanelWithKeyboardButton;
+@property (nonatomic, retain) TVRUIButtonPanelView *panelWithKeyboardButton;
+@property (nonatomic, retain) <TVRUIDevice> *remoteDevice;
+@property (nonatomic, retain) <TVRUIStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) TVRUIButtonPanelView *touchpadButtonPanel;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (void)_createButtonPanelWithKeyboard;
+- (void)_createGenericControlButtonPanel;
+- (void)_createLegacyButtonPanel;
+- (void)_createLegacyPanelWithkeyboard;
+- (id)_createPagedViewWithPrimaryButtonType:(long long)arg1 leftButtonTypes:(id)arg2;
+- (void)_createTouchpadButtonPanel;
+- (id)_createViewWithPrimaryButtonType:(long long)arg1 leftButtonTypes:(id)arg2 rightButtonTypes:(id)arg3;
+- (void)_disableControls;
+- (void)_enableControls;
+- (void)_transitionToButtonPanelAndCreateIfNeeded;
+- (void)_transitionToPanelView:(id)arg1;
+- (void)_transitionToTouchpadPanelAndCreateIfNeeded;
+- (void)_updateViewState;
+- (id)allButtonPanels;
+- (id)backgroundView;
+- (id)buttonActionsDelegate;
+- (id)currentButtonPanel;
+- (void)disableSearchButton;
+- (void)enableSearchButton;
+- (bool)enabled;
+- (id)genericButtonPanel;
+- (void)hideKeyboardButton;
+- (id)legacyButtonPanel;
+- (id)legacyPanelWithKeyboardButton;
+- (id)panelWithKeyboardButton;
+- (id)remoteDevice;
+- (void)setAllButtonPanels:(id)arg1;
+- (void)setBackgroundView:(id)arg1;
+- (void)setButtonActionsDelegate:(id)arg1;
+- (void)setCurrentButtonPanel:(id)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setGenericButtonPanel:(id)arg1;
+- (void)setLegacyButtonPanel:(id)arg1;
+- (void)setLegacyPanelWithKeyboardButton:(id)arg1;
+- (void)setPanelWithKeyboardButton:(id)arg1;
+- (void)setRemoteDevice:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (void)setTouchpadButtonPanel:(id)arg1;
+- (void)showKeyboardButton;
+- (id)styleProvider;
+- (id)touchpadButtonPanel;
+- (void)transitonToViewForDeviceType:(long long)arg1;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+
+@end

@@ -1,0 +1,52 @@
+
+@interface CUBonjourDevice : NSObject {
+    unsigned char  _deviceIDBytes;
+    NSDictionary * _deviceInfo;
+    NSUUID * _identifier;
+    NSString * _identifierStr;
+    NSUUID * _identifierUUID;
+    NSString * _model;
+    NSString * _name;
+    NSString * _serviceType;
+    NSData * _txtData;
+    NSDictionary * _txtDictionary;
+}
+
+@property (nonatomic, copy) NSDictionary *deviceInfo;
+@property (nonatomic, copy) NSUUID *identifier;
+@property (nonatomic, copy) NSString *identifierStr;
+@property (nonatomic, copy) NSUUID *identifierUUID;
+@property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *serviceType;
+@property (nonatomic, copy) NSData *txtData;
+@property (nonatomic, readonly, copy) NSDictionary *txtDictionary;
+
+- (void).cxx_destruct;
+- (void)_updateTXTDictionary:(id)arg1;
+- (id)copyConnectionInfoWithFlags:(unsigned long long)arg1 interfaceName:(id)arg2 error:(id*)arg3;
+- (id)copyConnectionStringWithFlags:(unsigned long long)arg1 error:(id*)arg2;
+- (id)description;
+- (id)descriptionWithLevel:(int)arg1;
+- (id)deviceInfo;
+- (id)identifier;
+- (id)identifierStr;
+- (id)identifierUUID;
+- (id)model;
+- (id)name;
+- (void)reconfirm;
+- (id)serviceType;
+- (void)setDeviceInfo:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setIdentifierStr:(id)arg1;
+- (void)setIdentifierUUID:(id)arg1;
+- (void)setModel:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setServiceType:(id)arg1;
+- (void)setTxtData:(id)arg1;
+- (id)shortDescription;
+- (id)txtData;
+- (id)txtDictionary;
+- (unsigned int)updateWithBonjourDeviceInfo:(id)arg1;
+
+@end

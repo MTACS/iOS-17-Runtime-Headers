@@ -1,0 +1,4 @@
+
+@protocol HFSiriEndpointProfileObserver <HMSiriEndpointProfileDelegate>
+
+@end

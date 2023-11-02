@@ -1,0 +1,4 @@
+
+@interface _TtC15ConversationKitP33_DEEFA710A9B7D6885957E3F611B4291E19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

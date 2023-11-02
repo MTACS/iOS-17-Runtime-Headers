@@ -1,0 +1,86 @@
+
+@interface SSRSpeakerRecognitionContext : NSObject {
+    unsigned long long  _activeChannel;
+    CSAsset * _asset;
+    float  _combinationWeight;
+    NSString * _configVersion;
+    NSString * _debugUtteranceAudioFile;
+    NSString * _debugUtteranceMetaFile;
+    NSUUID * _endpointUUID;
+    NSDictionary * _expModelsContext;
+    NSString * _locale;
+    SSRLoggingAggregator * _logAggregator;
+    unsigned long long  _maxAllowedAudioSamples;
+    NSDictionary * _modelsContext;
+    bool  _osTransactionReqd;
+    unsigned long long  _recognitionStyle;
+    NSURL * _resourceFilePath;
+    unsigned long long  _scoreType;
+    NSString * _sessionId;
+    unsigned long long  _spIdType;
+    NSURL * _vadResourcePath;
+    NSArray * _voiceProfileArray;
+    NSDictionary * _vtEventInfo;
+}
+
+@property (nonatomic, readonly) unsigned long long activeChannel;
+@property (nonatomic, retain) CSAsset *asset;
+@property (nonatomic, readonly) float combinationWeight;
+@property (nonatomic, readonly) NSString *configVersion;
+@property (nonatomic, readonly) NSString *debugUtteranceAudioFile;
+@property (nonatomic, readonly) NSString *debugUtteranceMetaFile;
+@property (nonatomic, retain) NSUUID *endpointUUID;
+@property (nonatomic, readonly) NSDictionary *expModelsContext;
+@property (nonatomic, retain) NSString *locale;
+@property (nonatomic, retain) SSRLoggingAggregator *logAggregator;
+@property (nonatomic, readonly) unsigned long long maxAllowedAudioSamples;
+@property (nonatomic, readonly) NSDictionary *modelsContext;
+@property (nonatomic, readonly) NSDictionary *numEnrollmentUtterances;
+@property (nonatomic, readonly) bool osTransactionReqd;
+@property (nonatomic, readonly) unsigned long long recognitionStyle;
+@property (nonatomic, readonly) NSURL *resourceFilePath;
+@property (nonatomic, readonly) unsigned long long scoreType;
+@property (nonatomic, readonly) NSString *sessionId;
+@property (nonatomic) unsigned long long spIdType;
+@property (nonatomic, readonly) NSURL *vadResourcePath;
+@property (nonatomic, retain) NSArray *voiceProfileArray;
+@property (nonatomic, readonly) NSDictionary *vtEventInfo;
+
+- (void).cxx_destruct;
+- (bool)_checkIfModelsPresentForProfiles:(id)arg1 forSpIdType:(unsigned long long)arg2 forAsset:(id)arg3;
+- (unsigned long long)activeChannel;
+- (id)asset;
+- (float)combinationWeight;
+- (void)composeModelContextsForProfiles:(id)arg1 forSpIdType:(unsigned long long)arg2 forAsset:(id)arg3 completion:(id /* block */)arg4;
+- (id)configVersion;
+- (void)dealloc;
+- (id)debugUtteranceAudioFile;
+- (id)debugUtteranceMetaFile;
+- (id)description;
+- (id)endpointUUID;
+- (id)expModelsContext;
+- (id)initWithVoiceRecognitionContext:(id)arg1 error:(id*)arg2;
+- (id)locale;
+- (id)logAggregator;
+- (unsigned long long)maxAllowedAudioSamples;
+- (id)modelsContext;
+- (id)numEnrollmentUtterances;
+- (bool)osTransactionReqd;
+- (id)pickAssetForProfiles:(id)arg1 forSpIdType:(unsigned long long)arg2;
+- (id)pickAssetForProfiles:(id)arg1 forSpIdType:(unsigned long long)arg2 withAssetArray:(id)arg3;
+- (unsigned long long)recognitionStyle;
+- (id)resourceFilePath;
+- (unsigned long long)scoreType;
+- (id)sessionId;
+- (void)setAsset:(id)arg1;
+- (void)setEndpointUUID:(id)arg1;
+- (void)setLocale:(id)arg1;
+- (void)setLogAggregator:(id)arg1;
+- (void)setSpIdType:(unsigned long long)arg1;
+- (void)setVoiceProfileArray:(id)arg1;
+- (unsigned long long)spIdType;
+- (id)vadResourcePath;
+- (id)voiceProfileArray;
+- (id)vtEventInfo;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface HKConceptStoreServerConfiguration : HKTaskConfiguration
+
+@end

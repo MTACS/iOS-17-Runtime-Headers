@@ -1,0 +1,83 @@
+
+@interface PKThresholdTopUpSetupViewController : PKPaymentSetupOptionsViewController <PKDashboardMessageSectionControllerDelegate, PKPaymentMethodSelectionViewControllerDelegate, PKThresholdTopUpActionsSectionControllerDelegate, PKThresholdTopUpSelectionSectionControllerDelegate> {
+    PKThresholdTopUpActionsSectionController * _actionController;
+    NSString * _amountTitle;
+    NSString * _cancelTitle;
+    <PKThresholdTopUpSetupViewControllerDelegate> * _delegate;
+    bool  _editingUnavailable;
+    bool  _editingValues;
+    PKDashboardMessageSectionController * _messageSectionController;
+    NSOrderedSet * _messages;
+    long long  _mode;
+    NSString * _paymentMethodIdentifier;
+    NSString * _paymentMethodName;
+    NSString * _paymentMethodTitle;
+    PKPaymentRequest * _paymentRequest;
+    PKThresholdTopUpSelectionSectionController * _sectionController;
+    PKPaymentPass * _selectedPass;
+    NSString * _thresholdTitle;
+    long long  _viewStyle;
+}
+
+@property (nonatomic, retain) NSString *amountTitle;
+@property (nonatomic, retain) NSString *cancelTitle;
+@property (nonatomic, readonly) NSDecimalNumber *currentAmount;
+@property (nonatomic, readonly) NSDecimalNumber *currentThreshold;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool editingUnavailable;
+@property (nonatomic) bool editingValues;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSOrderedSet *messages;
+@property (nonatomic) long long mode;
+@property (nonatomic, retain) NSString *paymentMethodIdentifier;
+@property (nonatomic, retain) NSString *paymentMethodTitle;
+@property (nonatomic, retain) PKPaymentRequest *paymentRequest;
+@property (nonatomic, readonly) PKPaymentPass *selectedPass;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *thresholdTitle;
+
+- (void).cxx_destruct;
+- (void)_continuousButtonPressed:(id)arg1;
+- (void)_setupCreateNavigationItem;
+- (void)_setupDefaultNavigationItem;
+- (void)_setupEditNavigationItem;
+- (void)_skipButtonPressed:(id)arg1;
+- (id)amountTitle;
+- (void)cancel:(id)arg1;
+- (id)cancelTitle;
+- (void)changeEditMode:(id)arg1;
+- (id)currentAmount;
+- (id)currentThreshold;
+- (void)didSelectPaymentMethod;
+- (bool)editingUnavailable;
+- (bool)editingValues;
+- (id)initWithAmountSuggestions:(id)arg1 selectedAmount:(id)arg2 thresholdSuggestions:(id)arg3 selectedThreshold:(id)arg4 currencyCode:(id)arg5 paymentMethodName:(id)arg6 paymentMethodIdentifier:(id)arg7 mode:(long long)arg8 viewStyle:(long long)arg9 delegate:(id)arg10;
+- (id)messages;
+- (long long)mode;
+- (id)paymentMethodIdentifier;
+- (void)paymentMethodSelectionViewController:(id)arg1 didSelectPaymentMethod:(id)arg2;
+- (void)paymentMethodSelectionViewController:(id)arg1 didToggleUseAppleCashBalance:(bool)arg2;
+- (id)paymentMethodTitle;
+- (id)paymentRequest;
+- (void)performedCancelWithCompletion:(id /* block */)arg1;
+- (void)reloadItem:(id)arg1 animated:(bool)arg2;
+- (id)selectedPass;
+- (void)setAmountTitle:(id)arg1;
+- (void)setCancelTitle:(id)arg1;
+- (void)setEditingUnavailable:(bool)arg1;
+- (void)setEditingValues:(bool)arg1;
+- (void)setMessages:(id)arg1;
+- (void)setMode:(long long)arg1;
+- (void)setPaymentMethodIdentifier:(id)arg1;
+- (void)setPaymentMethodTitle:(id)arg1;
+- (void)setPaymentRequest:(id)arg1;
+- (void)setShowNavigationBarSpinner:(bool)arg1;
+- (void)setThresholdTitle:(id)arg1;
+- (id)thresholdTitle;
+- (void)triggerUpdate:(id)arg1;
+- (void)turnOn:(id)arg1;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+
+@end

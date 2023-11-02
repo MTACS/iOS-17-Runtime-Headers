@@ -1,0 +1,91 @@
+
+@interface SISchemaKeyboardDismissed : SISchemaInstrumentationMessage {
+    int  _editDistance;
+    bool  _emojiUsed;
+    struct { 
+        unsigned int keyboardUsed : 1; 
+        unsigned int lengthInWords : 1; 
+        unsigned int lengthInChars : 1; 
+        unsigned int numCharsAdded : 1; 
+        unsigned int numCharsDeleted : 1; 
+        unsigned int editDistance : 1; 
+        unsigned int emojiUsed : 1; 
+        unsigned int keyboardLocale : 1; 
+    }  _has;
+    int  _keyboardLocale;
+    bool  _keyboardUsed;
+    int  _lengthInChars;
+    int  _lengthInWords;
+    int  _numCharsAdded;
+    int  _numCharsDeleted;
+}
+
+@property (nonatomic) int editDistance;
+@property (nonatomic) bool emojiUsed;
+@property (nonatomic) bool hasEditDistance;
+@property (nonatomic) bool hasEmojiUsed;
+@property (nonatomic) bool hasKeyboardLocale;
+@property (nonatomic) bool hasKeyboardUsed;
+@property (nonatomic) bool hasLengthInChars;
+@property (nonatomic) bool hasLengthInWords;
+@property (nonatomic) bool hasNumCharsAdded;
+@property (nonatomic) bool hasNumCharsDeleted;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) int keyboardLocale;
+@property (nonatomic) bool keyboardUsed;
+@property (nonatomic) int lengthInChars;
+@property (nonatomic) int lengthInWords;
+@property (nonatomic) int numCharsAdded;
+@property (nonatomic) int numCharsDeleted;
+
+- (void)deleteEditDistance;
+- (void)deleteEmojiUsed;
+- (void)deleteKeyboardLocale;
+- (void)deleteKeyboardUsed;
+- (void)deleteLengthInChars;
+- (void)deleteLengthInWords;
+- (void)deleteNumCharsAdded;
+- (void)deleteNumCharsDeleted;
+- (id)dictionaryRepresentation;
+- (int)editDistance;
+- (bool)emojiUsed;
+- (bool)hasEditDistance;
+- (bool)hasEmojiUsed;
+- (bool)hasKeyboardLocale;
+- (bool)hasKeyboardUsed;
+- (bool)hasLengthInChars;
+- (bool)hasLengthInWords;
+- (bool)hasNumCharsAdded;
+- (bool)hasNumCharsDeleted;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (int)keyboardLocale;
+- (bool)keyboardUsed;
+- (int)lengthInChars;
+- (int)lengthInWords;
+- (int)numCharsAdded;
+- (int)numCharsDeleted;
+- (bool)readFrom:(id)arg1;
+- (void)setEditDistance:(int)arg1;
+- (void)setEmojiUsed:(bool)arg1;
+- (void)setHasEditDistance:(bool)arg1;
+- (void)setHasEmojiUsed:(bool)arg1;
+- (void)setHasKeyboardLocale:(bool)arg1;
+- (void)setHasKeyboardUsed:(bool)arg1;
+- (void)setHasLengthInChars:(bool)arg1;
+- (void)setHasLengthInWords:(bool)arg1;
+- (void)setHasNumCharsAdded:(bool)arg1;
+- (void)setHasNumCharsDeleted:(bool)arg1;
+- (void)setKeyboardLocale:(int)arg1;
+- (void)setKeyboardUsed:(bool)arg1;
+- (void)setLengthInChars:(int)arg1;
+- (void)setLengthInWords:(int)arg1;
+- (void)setNumCharsAdded:(int)arg1;
+- (void)setNumCharsDeleted:(int)arg1;
+- (id)suppressMessageUnderConditions;
+- (void)writeTo:(id)arg1;
+
+@end

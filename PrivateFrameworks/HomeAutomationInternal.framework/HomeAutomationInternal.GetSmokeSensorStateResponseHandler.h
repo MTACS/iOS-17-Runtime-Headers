@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.GetSmokeSensorStateResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

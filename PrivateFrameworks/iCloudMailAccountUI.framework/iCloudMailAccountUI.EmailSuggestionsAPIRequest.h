@@ -1,0 +1,4 @@
+
+@interface iCloudMailAccountUI.EmailSuggestionsAPIRequest : _TtGC19iCloudMailAccountUI9MSRequestVS_27EmailSuggestionsAPIResponse_
+
+@end

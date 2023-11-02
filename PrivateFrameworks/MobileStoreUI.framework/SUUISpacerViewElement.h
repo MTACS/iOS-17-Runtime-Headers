@@ -1,0 +1,4 @@
+
+@interface SUUISpacerViewElement : SUUIViewElement
+
+@end

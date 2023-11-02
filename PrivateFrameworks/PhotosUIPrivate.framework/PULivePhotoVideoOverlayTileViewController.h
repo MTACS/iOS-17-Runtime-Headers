@@ -1,0 +1,93 @@
+
+@interface PULivePhotoVideoOverlayTileViewController : PUTileViewController <ISChangeObserver, PHLivePhotoViewDelegate, PUBrowsingViewModelChangeObserver, PXChangeObserver> {
+    PUBrowsingViewModel * _browsingViewModel;
+    UIView * _containerView;
+    <PULivePhotoVideoOverlayTileViewControllerDelegate> * _delegate;
+    UIImpactFeedbackGenerator * _feedbackGenerator;
+    PXImageModulationManager * _imageModulationManager;
+    bool  _isPresentedForSecondScreen;
+    PHLivePhotoView * _livePhotoView;
+    PXLivePhotoViewModulator * _livePhotoViewModulator;
+    PUMergedLivePhotosVideo * _mergedVideo;
+    PUOneUpMergedVideoProvider * _mergedVideoProvider;
+    PUModelTileTransform * _modelTileTransform;
+    PUAssetReference * _playbackAssetReference;
+    NSArray * _playbackGestureRecognizers;
+    ISWrappedAVPlayer * _videoPlayer;
+    id  _videoPlayerTimeObserver;
+    bool  _willEndCurrentPlayback;
+}
+
+@property (nonatomic, retain) PUBrowsingViewModel *browsingViewModel;
+@property (nonatomic, readonly) UIView *containerView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PULivePhotoVideoOverlayTileViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIImpactFeedbackGenerator *feedbackGenerator;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PXImageModulationManager *imageModulationManager;
+@property (nonatomic) bool isPresentedForSecondScreen;
+@property (nonatomic, readonly) PHLivePhotoView *livePhotoView;
+@property (nonatomic, retain) PXLivePhotoViewModulator *livePhotoViewModulator;
+@property (nonatomic, readonly) PUMergedLivePhotosVideo *mergedVideo;
+@property (nonatomic, retain) PUOneUpMergedVideoProvider *mergedVideoProvider;
+@property (nonatomic, retain) PUModelTileTransform *modelTileTransform;
+@property (nonatomic, retain) PUAssetReference *playbackAssetReference;
+@property (nonatomic, readonly) NSArray *playbackGestureRecognizers;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) ISWrappedAVPlayer *videoPlayer;
+@property (nonatomic, retain) id videoPlayerTimeObserver;
+@property (nonatomic) bool willEndCurrentPlayback;
+
++ (id)srlCompensationLoadingQueue;
+
+- (void).cxx_destruct;
+- (void)_handleLoadedSRLCompensationAmount:(id)arg1 forAsset:(id)arg2;
+- (void)_updateLivePhotoViewFrame;
+- (void)_updateLivePhotoViewModulator;
+- (void)_updateLivePhotoViewModulatorInput;
+- (void)_updateLivePhotoViewPhoto;
+- (void)_updateMergedVideo;
+- (void)_updatePlaybackEnabled;
+- (void)_updateSRLCompensation;
+- (void)_videoCurrentTimeDidChange:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)becomeReusable;
+- (id)browsingViewModel;
+- (id)containerView;
+- (void)dealloc;
+- (id)delegate;
+- (id)feedbackGenerator;
+- (id)gestureRecognizers;
+- (id)imageModulationManager;
+- (bool)isPresentedForSecondScreen;
+- (id)livePhotoView;
+- (bool)livePhotoView:(id)arg1 canBeginPlaybackWithStyle:(long long)arg2;
+- (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(long long)arg2;
+- (double)livePhotoView:(id)arg1 extraMinimumTouchDurationForTouch:(id)arg2 withStyle:(long long)arg3;
+- (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(long long)arg2;
+- (id)livePhotoViewModulator;
+- (id)loadView;
+- (id)mergedVideo;
+- (id)mergedVideoProvider;
+- (id)modelTileTransform;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (id)playbackAssetReference;
+- (id)playbackGestureRecognizers;
+- (void)setBrowsingViewModel:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setImageModulationManager:(id)arg1;
+- (void)setIsPresentedForSecondScreen:(bool)arg1;
+- (void)setLivePhotoViewModulator:(id)arg1;
+- (void)setMergedVideo:(id)arg1;
+- (void)setMergedVideoProvider:(id)arg1;
+- (void)setModelTileTransform:(id)arg1;
+- (void)setPlaybackAssetReference:(id)arg1;
+- (void)setVideoPlayer:(id)arg1;
+- (void)setVideoPlayerTimeObserver:(id)arg1;
+- (void)setWillEndCurrentPlayback:(bool)arg1;
+- (id)videoPlayer;
+- (id)videoPlayerTimeObserver;
+- (void)viewModel:(id)arg1 didChange:(id)arg2;
+- (bool)willEndCurrentPlayback;
+
+@end

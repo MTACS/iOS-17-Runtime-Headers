@@ -1,0 +1,4 @@
+
+@protocol PHAActivity
+
+@end

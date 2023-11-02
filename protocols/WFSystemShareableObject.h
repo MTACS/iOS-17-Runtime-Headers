@@ -1,0 +1,4 @@
+
+@protocol WFSystemShareableObject <NSObject>
+
+@end

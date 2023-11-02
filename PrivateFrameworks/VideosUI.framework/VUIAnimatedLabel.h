@@ -1,0 +1,85 @@
+
+@interface VUIAnimatedLabel : VUILabel {
+    bool  _animating;
+    NSArray * _attributedStrings;
+    double  _crossfadeDuration;
+    bool  _crossfading;
+    unsigned long long  _currentAttributedStringIndex;
+    __TVAnimatedImageView * _currentMarqueeView;
+    UIImage * _marqueeContentImage;
+    double  _marqueeDelay;
+    bool  _marqueeNeeded;
+    bool  _marqueeing;
+    double  _maskCapWidth;
+    CALayer * _maskLayer;
+    __TVAnimatedImageView * _nextMarqueeView;
+    bool  _paused;
+    double  _replicationPadding;
+    float  _scrollRate;
+    bool  _starting;
+    bool  _stopping;
+    double  _underPosterOutset;
+}
+
+@property (getter=isAnimating, nonatomic) bool animating;
+@property (nonatomic, readonly) double animationDuration;
+@property (nonatomic, copy) NSArray *attributedStrings;
+@property (nonatomic) double crossfadeDuration;
+@property (nonatomic, readonly) unsigned long long currentAttributedStringIndex;
+@property (nonatomic, readonly) __TVAnimatedImageView *currentMarqueeView;
+@property (nonatomic, retain) UIImage *marqueeContentImage;
+@property (nonatomic) double marqueeDelay;
+@property (nonatomic) double maskCapWidth;
+@property (nonatomic, readonly) __TVAnimatedImageView *nextMarqueeView;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (nonatomic) double replicationPadding;
+@property (nonatomic) float scrollRate;
+@property (nonatomic) double underPosterOutset;
+
+- (void).cxx_destruct;
+- (void)_clearAnimations;
+- (void)_clearAttributedStrings;
+- (bool)_isRTL;
+- (void)_prepareNextMarqueeWithDelay:(double)arg1;
+- (id)_rasterizedTextWithMarquee:(bool)arg1;
+- (bool)_shouldCycle;
+- (void)_startMarqueeIfNeeded;
+- (double)animationDuration;
+- (id)attributedStrings;
+- (double)crossfadeDuration;
+- (unsigned long long)currentAttributedStringIndex;
+- (id)currentMarqueeView;
+- (void)dealloc;
+- (void)didMoveToWindow;
+- (void)drawTextInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAnimating;
+- (bool)isPaused;
+- (id)marqueeContentImage;
+- (double)marqueeDelay;
+- (double)maskCapWidth;
+- (id)nextMarqueeView;
+- (double)replicationPadding;
+- (float)scrollRate;
+- (void)setAnimating:(bool)arg1;
+- (void)setAttributedStrings:(id)arg1;
+- (void)setAttributedText:(id)arg1;
+- (void)setCrossfadeDuration:(double)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setMarqueeContentImage:(id)arg1;
+- (void)setMarqueeDelay:(double)arg1;
+- (void)setMarqueeEnabled:(bool)arg1;
+- (void)setMarqueeRunning:(bool)arg1;
+- (void)setMaskCapWidth:(double)arg1;
+- (void)setNeedsDisplay;
+- (void)setPaused:(bool)arg1;
+- (void)setReplicationPadding:(double)arg1;
+- (void)setScrollRate:(float)arg1;
+- (void)setText:(id)arg1;
+- (void)setUnderPosterOutset:(double)arg1;
+- (void)stopAndResetScrollWithDuration:(double)arg1;
+- (void)stopAnimating;
+- (void)stopAnimatingWithoutResetWithDuration:(double)arg1;
+- (double)underPosterOutset;
+
+@end

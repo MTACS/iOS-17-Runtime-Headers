@@ -1,0 +1,4 @@
+
+@interface HMDAppleMediaAccessorySensorModel : HMDHAPAccessoryTransaction
+
+@end

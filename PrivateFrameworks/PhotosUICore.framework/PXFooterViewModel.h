@@ -1,0 +1,87 @@
+
+@interface PXFooterViewModel : PXObservable {
+    UIView * _accessoryView;
+    id /* block */  _action;
+    NSString * _actionConfirmationAlertButtonTitle;
+    NSString * _actionConfirmationAlertSubtitle;
+    NSString * _actionConfirmationAlertTitle;
+    long long  _actionStyle;
+    NSString * _actionTitle;
+    long long  _animatedIconMode;
+    NSString * _extendedSystemImageName;
+    NSString * _extendedTitle;
+    UIView * _filterView;
+    bool  _hasImportantInformation;
+    NSString * _internalMessageSubtitle;
+    bool  _isPaused;
+    float  _progress;
+    NSString * _subtitle1;
+    NSString * _subtitle2;
+    NSString * _title;
+    UIView * _topAccessoryView;
+}
+
+@property (nonatomic, readonly) UIView *accessoryView;
+@property (nonatomic, readonly, copy) id /* block */ action;
+@property (nonatomic, readonly) NSString *actionConfirmationAlertButtonTitle;
+@property (nonatomic, readonly) NSString *actionConfirmationAlertSubtitle;
+@property (nonatomic, readonly) NSString *actionConfirmationAlertTitle;
+@property (nonatomic, readonly) long long actionStyle;
+@property (nonatomic, readonly) NSString *actionTitle;
+@property (nonatomic, readonly) long long animatedIconMode;
+@property (nonatomic, readonly) NSString *extendedSystemImageName;
+@property (nonatomic, readonly) NSString *extendedTitle;
+@property (nonatomic, readonly) UIView *filterView;
+@property (nonatomic, readonly) bool hasImportantInformation;
+@property (nonatomic, readonly) NSString *internalMessageSubtitle;
+@property (nonatomic, readonly) bool isPaused;
+@property (nonatomic, readonly) float progress;
+@property (nonatomic, readonly) NSString *subtitle1;
+@property (nonatomic, readonly) NSString *subtitle2;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) UIView *topAccessoryView;
+
+- (void).cxx_destruct;
+- (id)accessoryView;
+- (id /* block */)action;
+- (id)actionConfirmationAlertButtonTitle;
+- (id)actionConfirmationAlertSubtitle;
+- (id)actionConfirmationAlertTitle;
+- (long long)actionStyle;
+- (id)actionTitle;
+- (long long)animatedIconMode;
+- (id)extendedSystemImageName;
+- (id)extendedTitle;
+- (id)filterView;
+- (void)footerAnimationCrossedGridCycleBoundary;
+- (bool)hasImportantInformation;
+- (id)init;
+- (id)internalMessageSubtitle;
+- (bool)isPaused;
+- (id)mutableChangeObject;
+- (void)performChanges:(id /* block */)arg1;
+- (float)progress;
+- (void)setAccessoryView:(id)arg1;
+- (void)setAction:(id /* block */)arg1;
+- (void)setActionConfirmationAlertButtonTitle:(id)arg1;
+- (void)setActionConfirmationAlertSubtitle:(id)arg1;
+- (void)setActionConfirmationAlertTitle:(id)arg1;
+- (void)setActionTitle:(id)arg1;
+- (void)setAnimatedIconMode:(long long)arg1;
+- (void)setExtendedSystemImageName:(id)arg1;
+- (void)setExtendedTitle:(id)arg1;
+- (void)setFilterView:(id)arg1;
+- (void)setHasImportantInformation:(bool)arg1;
+- (void)setInternalMessageSubtitle:(id)arg1;
+- (void)setIsPaused:(bool)arg1;
+- (void)setProgress:(float)arg1;
+- (void)setSubtitle1:(id)arg1;
+- (void)setSubtitle2:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setTopAccessoryView:(id)arg1;
+- (id)subtitle1;
+- (id)subtitle2;
+- (id)title;
+- (id)topAccessoryView;
+
+@end

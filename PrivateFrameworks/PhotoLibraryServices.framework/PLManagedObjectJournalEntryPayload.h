@@ -1,0 +1,98 @@
+
+@interface PLManagedObjectJournalEntryPayload : NSObject <PLManagedObjectJournalEntryPayloadClass> {
+    NSMutableSet * _nilAttributes;
+    NSMutableDictionary * _payloadAttributes;
+    <PLJournalEntryPayloadID> * _payloadID;
+    unsigned int  _payloadVersion;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSSet *nilProperties;
+@property (nonatomic, readonly) <PLJournalEntryPayloadID> *payloadID;
+@property (nonatomic, readonly) unsigned int payloadVersion;
+@property (readonly) Class superclass;
+
++ (void)_populateAddtionalEntityNames:(id)arg1 fromModelProperties:(id)arg2;
++ (void)_populatePersistedPropertyNamesForAdditionalEntityNames:(id)arg1 fromModelProperties:(id)arg2;
++ (id)_populateRelationshipKeyPathsForPrefetching:(id)arg1 currentKeyPath:(id)arg2 usingModelProperties:(id)arg3;
++ (void)_populateValidationProperties:(id)arg1 fromEntityDescription:(id)arg2;
++ (void)_validateModelProperties:(id)arg1 nonPersistedModelProperties:(id)arg2 forEntityDescription:(id)arg3;
++ (id)additionalEntityNames;
++ (void)applyPayloadProperty:(id)arg1 toManagedObject:(id)arg2 key:(id)arg3 payloadAttributesToUpdate:(id)arg4 payloadDictionary:(id)arg5;
++ (id)entityName;
++ (id)fetchRelationshipPropertyValuesForRelationshipName:(id)arg1 fromManagedObject:(id)arg2 usingPayloadProperty:(id)arg3;
++ (bool)isValidForPersistenceWithObjectDictionary:(id)arg1 additionalEntityName:(id)arg2;
++ (void)loadModelPropertiesDescription:(id)arg1 parentPayloadProperty:(id)arg2;
++ (unsigned int)minimumSnapshotPayloadVersion;
++ (id)modelProperties;
++ (id)modelPropertiesDescription;
++ (id)nonPersistedModelPropertiesDescription;
++ (id)payloadAdapterForManagedObject:(id)arg1;
++ (id)payloadClassID;
++ (unsigned int)payloadVersion;
++ (id)payloadWithData:(id)arg1 forPayloadID:(id)arg2 version:(unsigned int)arg3 andNilProperties:(id)arg4 error:(id*)arg5;
++ (id)persistedPropertyNamesForEntityNames;
++ (id)persistedPropertyNamesForEntityNamesFromModelProperties;
++ (void)populateValidationPropertiesFromManagedObjectModel:(id)arg1;
++ (id)relationshipKeyPathsForPrefetching;
++ (id)relationshipKeyPathsForPrefetchingWithModelProperties:(id)arg1 outUUIDPropertyName:(id*)arg2;
++ (bool)shouldPersistForChangedKeys:(id)arg1 entityName:(id)arg2;
++ (id)snapshotSortDescriptors;
++ (id)sortedObjectsToAddWithUUIDs:(id)arg1 uuidKey:(id)arg2 andExistingObjects:(id)arg3 fetchBlock:(id /* block */)arg4;
++ (void)validatePayloadPropertiesForManagedObjectModel:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)UUIDDataForString:(id)arg1;
+- (id)UUIDStringForData:(id)arg1;
+- (void)_applyModelProperties:(id)arg1 toPayloadAttributes:(id)arg2 andNilAttributes:(id)arg3 forManagedObject:(id)arg4 changedKeys:(id)arg5;
+- (void)_applyPayloadToManagedObject:(id)arg1 forModelProperties:(id)arg2 payloadAttributesToUpdate:(id)arg3;
+- (id)_attributesForPayloadAttributes:(id)arg1 usingModelProperties:(id)arg2;
+- (bool)_comparePayloadAttributes:(id)arg1 toObjectDictionary:(id)arg2 currentKeyPath:(id)arg3 usingModelProperties:(id)arg4 errorDescriptions:(id)arg5;
+- (bool)_decodePayloadAttributesFromData:(id)arg1 error:(id*)arg2;
+- (id)_payloadAttributesListForSubRelationshipProperty:(id)arg1 withManagedObjects:(id)arg2;
+- (void)_resolveRelationshipsInObjectDictionary:(id)arg1 atKeyPath:(id)arg2 forPayloadProperty:(id)arg3;
+- (void)_updateNilAttributes:(id)arg1 withModelProperties:(id)arg2;
+- (void)addAttributesDescriptionToBuilder:(id)arg1;
+- (void)addNilAttributesToBuilder:(id)arg1;
+- (void)appendAttributeKey:(id)arg1 value:(id)arg2 toDescriptionBuilder:(id)arg3;
+- (void)applyPayloadProperty:(id)arg1 toManagedObject:(id)arg2 key:(id)arg3 payloadAttributesToUpdate:(id)arg4;
+- (void)applyPayloadToManagedObject:(id)arg1 payloadAttributesToUpdate:(id)arg2;
+- (bool)comparePayloadToObjectDictionary:(id)arg1 usingModelProperties:(id)arg2 errorDescriptions:(id)arg3;
+- (bool)comparePayloadValue:(id)arg1 toObjectDictionaryValue:(id)arg2 forPayloadProperty:(id)arg3;
+- (bool)containsAttributeForKey:(id)arg1;
+- (id)debugDescription;
+- (id)description;
+- (id)descriptionForEntry:(id)arg1;
+- (id)descriptionForEntry:(id)arg1 withBuilder:(id)arg2;
+- (id)descriptionWithBuilder:(id)arg1;
+- (id)encodedDataForUUIDStringArray:(id)arg1;
+- (id)encodedDataForUUIDStringOrderedSet:(id)arg1;
+- (id)encodedDataForUUIDStringSet:(id)arg1;
+- (id)initWithInsertAdapter:(id)arg1 changedKeys:(id)arg2;
+- (id)initWithManagedObject:(id)arg1 changedKeys:(id)arg2;
+- (id)initWithPayloadID:(id)arg1 payloadVersion:(unsigned int)arg2 managedObject:(id)arg3 changedKeys:(id)arg4 modelProperties:(id)arg5;
+- (id)initWithPayloadID:(id)arg1 payloadVersion:(unsigned int)arg2 nilAttributes:(id)arg3;
+- (id)initWithPayloadID:(id)arg1 payloadVersion:(unsigned int)arg2 nilAttributes:(id)arg3 managedObject:(id)arg4 changedKeys:(id)arg5 modelProperties:(id)arg6;
+- (void)mergePayload:(id)arg1;
+- (void)migrateMergedPayloadWithUpdatePayloads:(id)arg1;
+- (void)migratePayloadAttributes:(id)arg1 andNilAttributes:(id)arg2;
+- (id)nilProperties;
+- (id)orderedSetForUUIDEncodedData:(id)arg1;
+- (id)payloadAttributes;
+- (id)payloadDataWithError:(id*)arg1;
+- (id)payloadID;
+- (id)payloadValueFromAttributes:(id)arg1 forPayloadProperty:(id)arg2;
+- (unsigned int)payloadVersion;
+- (bool)payloadVersionIsLessThanVersion:(unsigned int)arg1 forKey:(id)arg2 inUpdatePayloads:(id)arg3;
+- (id)prettyDescriptionForEntry:(id)arg1 indent:(long long)arg2;
+- (id)rawPayloadAttributeForKey:(id)arg1;
+- (id)rawPayloadAttributes;
+- (id)setForUUIDEncodedData:(id)arg1;
+- (void)setRawPayloadAttribute:(id)arg1 forKey:(id)arg2;
+- (void)setRawPayloadAttributes:(id)arg1;
+- (void)updatePayloadAttributes:(id)arg1 andNilAttributes:(id)arg2 forPayloadProperty:(id)arg3 withUUIDStringData:(id)arg4;
+- (bool)updatePayloadAttributes:(id)arg1 andNilAttributes:(id)arg2 withManagedObject:(id)arg3 forPayloadProperty:(id)arg4;
+
+@end

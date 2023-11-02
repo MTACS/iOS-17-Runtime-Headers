@@ -1,0 +1,144 @@
+
+@interface CSSmartSiriVolume : NSObject <CSAudioServerCrashMonitorDelegate, CSAudioStreamProvidingDelegate, CSMediaPlayingMonitorDelegate, CSSiriClientBehaviorMonitorDelegate, CSSmartSiriVolumeProcessor> {
+    unsigned long long  _LKFSChannelBitset;
+    unsigned int  _LKFSLowerPercentile;
+    float  _LKFSMicSensitivityOffset;
+    float  _LKFSTTSMappingInputRangeHigh;
+    float  _LKFSTTSMappingInputRangeLow;
+    float  _LKFSTTSMappingOutputRangeHigh;
+    float  _LKFSTTSMappingOutputRangeLow;
+    float  _LKFSTimeConstant;
+    unsigned int  _LKFSUpperPercentile;
+    float  _TTSVolumeLowerLimitDB;
+    float  _TTSVolumeUpperLimitDB;
+    bool  _alarmSoundIsFiring;
+    float  _alarmVolume;
+    CSAudioStream * _audioStream;
+    CSAsset * _currentAsset;
+    NSUserDefaults * _defaults;
+    CSPolicy * _enablePolicy;
+    unsigned int  _energyBufferSize;
+    struct vector<float, std::allocator<float>> { 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::allocator<float>> { 
+            float *__value_; 
+        } __end_cap_; 
+    }  _floatBuffer;
+    bool  _isListenPollingStarting;
+    bool  _isStartSampleCountMarked;
+    NSObject<OS_dispatch_source> * _listenPollingTimer;
+    long long  _listenPollingTimerCount;
+    bool  _mediaIsPlaying;
+    float  _musicVolumeDB;
+    unsigned long long  _noiseLevelChannelBitset;
+    unsigned int  _noiseLowerPercentile;
+    float  _noiseMicSensitivityOffset;
+    float  _noiseMicSensitivityOffsetDeviceSimple;
+    float  _noiseTTSMappingInputRangeHigh;
+    float  _noiseTTSMappingInputRangeLow;
+    float  _noiseTTSMappingOutputRangeHigh;
+    float  _noiseTTSMappingOutputRangeLow;
+    float  _noiseTimeConstant;
+    unsigned int  _noiseUpperPercentile;
+    float  _noiseWeight;
+    unsigned long long  _processedSampleCount;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned long long  _samplesFed;
+    bool  _shouldPauseLKFSProcess;
+    bool  _shouldPauseSSVProcess;
+    struct unique_ptr<SmartSiriVolume, std::default_delete<SmartSiriVolume>> { 
+        struct __compressed_pair<SmartSiriVolume *, std::default_delete<SmartSiriVolume>> { 
+            struct SmartSiriVolume {} *__value_; 
+        } __ptr_; 
+    }  _smartSiriVolumeLKFS;
+    struct unique_ptr<SmartSiriVolume, std::default_delete<SmartSiriVolume>> { 
+        struct __compressed_pair<SmartSiriVolume *, std::default_delete<SmartSiriVolume>> { 
+            struct SmartSiriVolume {} *__value_; 
+        } __ptr_; 
+    }  _smartSiriVolumeNoiseLevel;
+    CSPolicy * _ssvEnablePolicy;
+    unsigned long long  _startAnalyzeSampleCount;
+    bool  _timerSoundIsFiring;
+    float  _userOffsetInputRangeHigh;
+    float  _userOffsetInputRangeLow;
+    float  _userOffsetOutputRangeHigh;
+    float  _userOffsetOutputRangeLow;
+}
+
+@property (nonatomic, retain) CSAudioStream *audioStream;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CSPolicy *enablePolicy;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *listenPollingTimer;
+@property (nonatomic) long long listenPollingTimerCount;
+@property (readonly) Class superclass;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
+- (void)CSMediaPlayingMonitor:(id)arg1 didReceiveMediaPlayingChanged:(long long)arg2;
+- (float)_combineResultsWithOptimalFromNoise:(float)arg1 andOptimalFromLkfs:(float)arg2 withUserOffset:(float)arg3;
+- (float)_convertDB2Mag:(float)arg1;
+- (float)_deviceSpecificDBToLinearVolumeMappingCSSSVDeviceSimple:(float)arg1;
+- (float)_deviceSpecificLinearVolumeToDBMappingCSSSVDeviceSimple:(float)arg1;
+- (float)_estimatedTTSVolume:(float)arg1 lowerLimit:(float)arg2 upperLimit:(float)arg3 TTSmappingInputRangeLow:(float)arg4 TTSmappingInputRangeHigh:(float)arg5 TTSmappingOutputRangeLow:(float)arg6 TTSmappingOutputRangeHigh:(float)arg7;
+- (float)_getDeviceSimpleOutputLinearVolumeFordBFSValue:(float)arg1;
+- (float)_getDeviceSimpledBFSForOutputLinearVolume:(float)arg1;
+- (float)_getDevicedBFSForInputLinearVolume:(float)arg1;
+- (float*)_getFloatBufferData:(id)arg1;
+- (float)_getMusicVolumeDBCSSSVDeviceDefault:(float)arg1;
+- (float)_getMusicVolumeDBCSSSVDeviceSimple:(float)arg1;
+- (float)_getUserOffsetFromMusicVolumeDB:(float)arg1;
+- (void)_pauseSSVProcessing;
+- (void)_prepareSoundLevelBufferFromSamples:(unsigned int)arg1 soundType:(long long)arg2;
+- (void)_processAudioChunk:(id)arg1 soundType:(long long)arg2;
+- (void)_reset;
+- (void)_resetStartAnalyzeTime;
+- (void)_resumeSSVProcessing;
+- (float)_scaleInputWithInRangeOutRange:(float)arg1 minIn:(float)arg2 maxIn:(float)arg3 minOut:(float)arg4 maxOut:(float)arg5;
+- (void)_setAsset:(id)arg1;
+- (void)_setDefaultParameters;
+- (void)_setStartAnalyzeTime:(unsigned long long)arg1;
+- (void)_startListenPolling;
+- (void)_startListenPollingWithInterval:(double)arg1 completion:(id /* block */)arg2;
+- (void)_startListenWithCompletion:(id /* block */)arg1;
+- (void)_stopListening;
+- (id)audioStream;
+- (void)audioStreamProvider:(id)arg1 audioBufferAvailable:(id)arg2;
+- (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
+- (void)audioStreamProvider:(id)arg1 didStopStreamUnexpectedly:(long long)arg2;
+- (void)didDetectKeywordWithResult:(id)arg1;
+- (void)didReceiveAlarmChanged:(long long)arg1;
+- (void)didReceiveAlarmVolumeChanged:(float)arg1;
+- (void)didReceiveMusicVolumeChanged:(float)arg1;
+- (void)didReceiveTimerChanged:(long long)arg1;
+- (id)enablePolicy;
+- (float)estimateSoundLevelbySoundType:(long long)arg1;
+- (float)estimatedTTSVolumeForNoiseLevelAndLKFS:(float)arg1 LKFS:(float)arg2;
+- (void)fetchInitSystemVolumes;
+- (id)getVolumeForTTSType:(unsigned long long)arg1 withOverrideMediaVolume:(id)arg2 WithRequestTime:(unsigned long long)arg3;
+- (id)initWithSamplingRate:(float)arg1;
+- (void)initializeAlarmState;
+- (void)initializeMediaPlayingState;
+- (void)initializeTimerState;
+- (id)listenPollingTimer;
+- (long long)listenPollingTimerCount;
+- (void)prepareSoundLevelBufferFromSamples:(id)arg1 soundType:(long long)arg2 firedVoiceTriggerEvent:(bool)arg3 triggerStartTimeSampleOffset:(unsigned long long)arg4 triggerEndTimeSampleOffset:(unsigned long long)arg5;
+- (void)reset;
+- (void)setAsset:(id)arg1;
+- (void)setAudioStream:(id)arg1;
+- (void)setEnablePolicy:(id)arg1;
+- (void)setListenPollingTimer:(id)arg1;
+- (void)setListenPollingTimerCount:(long long)arg1;
+- (void)setPermanentVolumeOffsetWithDirection:(bool)arg1;
+- (void)setSmartSiriVolumeDirection:(bool)arg1;
+- (void)setSmartSiriVolumePercentage:(float)arg1;
+- (void)siriClientBehaviorMonitor:(id)arg1 didStartStreamWithContext:(id)arg2 successfully:(bool)arg3 option:(id)arg4 withEventUUID:(id)arg5;
+- (void)siriClientBehaviorMonitor:(id)arg1 didStopStream:(id)arg2 withEventUUID:(id)arg3;
+- (void)siriClientBehaviorMonitor:(id)arg1 willStartStreamWithContext:(id)arg2 option:(id)arg3;
+- (void)siriClientBehaviorMonitor:(id)arg1 willStopStream:(id)arg2 reason:(unsigned long long)arg3;
+- (void)startSmartSiriVolume;
+
+@end

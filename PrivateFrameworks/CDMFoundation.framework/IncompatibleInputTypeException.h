@@ -1,0 +1,4 @@
+
+@interface IncompatibleInputTypeException : NSException
+
+@end

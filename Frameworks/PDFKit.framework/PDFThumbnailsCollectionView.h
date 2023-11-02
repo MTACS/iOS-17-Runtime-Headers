@@ -1,0 +1,83 @@
+
+@interface PDFThumbnailsCollectionView : UIView <PDFThumbnailCollectionViewInterface, UICollectionViewDelegate, UICollectionViewDragDelegate, UICollectionViewDropDelegate, UIContextMenuInteractionDelegate> {
+    UIView * _backgroundOnePixelView;
+    NSCache * _cache;
+    UICollectionView * _collectionView;
+    UICollectionViewDiffableDataSource * _dataSource;
+    PDFThumbnailView * _thumbnailView;
+}
+
+@property (nonatomic) bool allowsPageReordering;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)_canEditDocument;
+- (long long)_collectionView:(id)arg1 dataOwnerForDragSession:(id)arg2 atIndexPath:(id)arg3;
+- (void)_insertFileAtURL:(id)arg1 type:(id)arg2 atIndex:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
+- (void)_insertImageWithURL:(id)arg1 atIndex:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)_insertPDFDocumentWithURL:(id)arg1 atIndex:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (unsigned long long)_insertPagesFromProvidedPDFDocument:(id)arg1 atPageIndex:(unsigned long long)arg2;
+- (id)_pasteActionIfAvailableAfterPage:(id)arg1;
+- (void)_reloadPage:(id)arg1;
+- (void)_selectAndScrollToCurrentPageIfNeeded;
+- (void)_updateActionsButtonVisibilityAtIndexPath:(id)arg1;
+- (void)_updateScrubber;
+- (bool)allowsPageReordering;
+- (void)applySnapshotWithAnimation:(bool)arg1;
+- (id)cacheKeyForPage:(id)arg1;
+- (id)cachedImageForPage:(id)arg1 displayBox:(long long)arg2 thumbnailView:(id)arg3;
+- (id)collectionView:(id)arg1 contextMenuConfigurationForItemAtIndexPath:(id)arg2 point:(struct CGPoint { double x1; double x2; })arg3;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 dragSessionDidEnd:(id)arg2;
+- (void)collectionView:(id)arg1 dragSessionWillBegin:(id)arg2;
+- (id)collectionView:(id)arg1 dropSessionDidUpdate:(id)arg2 withDestinationIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 itemsForAddingToDragSession:(id)arg2 atIndexPath:(id)arg3 point:(struct CGPoint { double x1; double x2; })arg4;
+- (id)collectionView:(id)arg1 itemsForBeginningDragSession:(id)arg2 atIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 performDropWithCoordinator:(id)arg2;
+- (id)collectionView:(id)arg1 previewForDismissingContextMenuWithConfiguration:(id)arg2;
+- (id)collectionView:(id)arg1 previewForHighlightingContextMenuWithConfiguration:(id)arg2;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)configureCell:(id)arg1 withPage:(id)arg2 indexPath:(id)arg3;
+- (id)contextMenuForBackgroundAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (id)contextMenuForPage:(id)arg1;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
+- (void)copyPage:(id)arg1;
+- (id)currentPage;
+- (void)currentPageChanged:(id)arg1;
+- (id)datasourceQueue;
+- (id)defaultContextMenuForPage:(id)arg1;
+- (void)documentChanged:(id)arg1;
+- (void)documentMutated:(id)arg1;
+- (id)imageDrawingOperationQueue;
+- (id)initFromThumbnailView:(id)arg1;
+- (void)insertPages:(id)arg1 atIndexes:(id)arg2;
+- (void)itemProvider:(id)arg1 registerDataRepresentationForPage:(id)arg2 draggedPages:(id)arg3;
+- (void)itemProvider:(id)arg1 registerFileRepresentationForPage:(id)arg2 draggedPages:(id)arg3;
+- (id)itemsForDragWithSession:(id)arg1 atIndexPath:(id)arg2;
+- (void)loadImageWithPage:(id)arg1 displayBox:(long long)arg2 thumbnailView:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)makeDatasource;
+- (void)movePage:(id)arg1 toIndex:(unsigned long long)arg2;
+- (void)movePageWithTransaction:(id)arg1;
+- (void)pageChanged:(id)arg1;
+- (void)pasteAfterPage:(id)arg1;
+- (id)previewForCollectionView:(id)arg1 contextMenuInteraction:(id)arg2;
+- (id)previewForCollectionView:(id)arg1 indexPath:(id)arg2;
+- (void)removePages:(id)arg1;
+- (void)setAllowsPageReordering:(bool)arg1;
+- (bool)shouldDisplayActionButtonForPage:(id)arg1;
+- (id)supportedUTTypes;
+- (struct CGSize { double x1; double x2; })thumbnailSizeForPage:(id)arg1;
+- (struct CGSize { double x1; double x2; })thumbnailSizeForPage:(id)arg1 displayBox:(long long)arg2;
+- (struct CGSize { double x1; double x2; })thumbnailSizeForPage:(id)arg1 displayBox:(long long)arg2 thumbnailView:(id)arg3;
+- (void)updateCacheForPage:(id)arg1 withImage:(id)arg2;
+- (void)updateIconsImages;
+- (void)updateImageForCell:(id)arg1 atIndexPath:(id)arg2;
+- (void)updateImageForCell:(id)arg1 indexPath:(id)arg2 page:(id)arg3;
+- (void)writePDFDocumentFromPages:(id)arg1 completionHandler:(id /* block */)arg2;
+
+@end

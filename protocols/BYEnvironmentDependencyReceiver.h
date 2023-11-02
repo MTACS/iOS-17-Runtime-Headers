@@ -1,0 +1,107 @@
+
+@protocol BYEnvironmentDependencyReceiver <NSObject>
+
+@optional
+
+- (BuddyActivationRecord *)activationRecord;
+- (BuddyActivationState *)activationState;
+- (BYAnalyticsEventAppearance *)analyticsEventAppearance;
+- (BYAnalyticsManager *)analyticsManager;
+- (AppearanceModeProvider *)appearanceModeProvider;
+- (BFFBackupDeviceController *)backupDeviceController;
+- (BuddyBetaEnrollmentStateManager *)betaEnrollmentStateManager;
+- (BYPreferencesController *)buddyPreferences;
+- (BYPreferencesController *)buddyPreferencesExcludedFromBackup;
+- (BuddyButtonMonitor *)buttonMonitor;
+- (<BYCapabilities> *)capabilities;
+- (BuddyChildSetupPresenter *)childSetupPresenter;
+- (BYChronicle *)chronicle;
+- (<BuddyCombinedTermsProvider> *)combinedTermsProvider;
+- (<BYDeviceConfiguration> *)deviceConfiguration;
+- (<BYDeviceProvider> *)deviceProvider;
+- (BuddyDisplayZoomExecutor *)displayZoomExecutor;
+- (id /* block */)doesRestartFlowCauseEraseBlock:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
+- (<BuddyEmergencyExecutor> *)emergencyExecutor;
+- (BuddyEnrollmentCoordinator *)enrollmentCoordinator;
+- (BuddyExistingSettings *)existingSettings;
+- (id /* block */)exitBuddyForDemoSetUpBlock:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
+- (<BuddyFeatureFlags> *)featureFlags;
+- (BuddyFlowItemDispositionProvider *)flowItemDispositionProvider;
+- (BYFlowSkipController *)flowSkipController;
+- (<LockdownModeProvider> *)lockdownModeProvider;
+- (MCProfileConnection *)managedConfiguration;
+- (DMCReturnToServiceController *)mdmReturnToServiceController;
+- (id /* block */)menuButtonPressedBlock:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
+- (BuddyMiscState *)miscState;
+- (<BuddyNetworkProvider> *)networkProvider;
+- (BYPaneFeatureAnalyticsManager *)paneFeatureAnalyticsManager;
+- (BuddyPasscodeCacheManager *)passcodeCacheManager;
+- (BuddyPendingRestoreState *)pendingRestoreState;
+- (id /* block */)prepareForCloudRestoreRebootBlock:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
+- (id /* block */)prepareForDeviceMigrationBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, bool, void*, id, SEL
+- (BuddyProximityAutomatedDeviceEnrollmentController *)proximityAutomatedDeviceEnrollmentController;
+- (ProximitySetupController *)proximitySetupController;
+- (<BYRunState> *)runState;
+- (BYSeedProgramManager *)seedProgramManager;
+- (void)setActivationRecord:(BuddyActivationRecord *)arg1;
+- (void)setActivationState:(BuddyActivationState *)arg1;
+- (void)setAnalyticsEventAppearance:(BYAnalyticsEventAppearance *)arg1;
+- (void)setAnalyticsManager:(BYAnalyticsManager *)arg1;
+- (void)setAppearanceModeProvider:(AppearanceModeProvider *)arg1;
+- (void)setBackupDeviceController:(BFFBackupDeviceController *)arg1;
+- (void)setBetaEnrollmentStateManager:(BuddyBetaEnrollmentStateManager *)arg1;
+- (void)setBuddyPreferences:(BYPreferencesController *)arg1;
+- (void)setBuddyPreferencesExcludedFromBackup:(BYPreferencesController *)arg1;
+- (void)setButtonMonitor:(BuddyButtonMonitor *)arg1;
+- (void)setCapabilities:(id <BYCapabilities>)arg1;
+- (void)setChildSetupPresenter:(BuddyChildSetupPresenter *)arg1;
+- (void)setChronicle:(BYChronicle *)arg1;
+- (void)setCombinedTermsProvider:(id <BuddyCombinedTermsProvider>)arg1;
+- (void)setDeviceConfiguration:(id <BYDeviceConfiguration>)arg1;
+- (void)setDeviceProvider:(id <BYDeviceProvider>)arg1;
+- (void)setDisplayZoomExecutor:(BuddyDisplayZoomExecutor *)arg1;
+- (void)setDoesRestartFlowCauseEraseBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, bool, id /* block */, void*
+- (void)setEmergencyExecutor:(id <BuddyEmergencyExecutor>)arg1;
+- (void)setEnrollmentCoordinator:(BuddyEnrollmentCoordinator *)arg1;
+- (void)setExistingSettings:(BuddyExistingSettings *)arg1;
+- (void)setExitBuddyForDemoSetUpBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)setFeatureFlags:(id <BuddyFeatureFlags>)arg1;
+- (void)setFlowItemDispositionProvider:(BuddyFlowItemDispositionProvider *)arg1;
+- (void)setFlowSkipController:(BYFlowSkipController *)arg1;
+- (void)setLockdownModeProvider:(id <LockdownModeProvider>)arg1;
+- (void)setManagedConfiguration:(MCProfileConnection *)arg1;
+- (void)setMdmReturnToServiceController:(DMCReturnToServiceController *)arg1;
+- (void)setMenuButtonPressedBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)setMiscState:(BuddyMiscState *)arg1;
+- (void)setNetworkProvider:(id <BuddyNetworkProvider>)arg1;
+- (void)setPaneFeatureAnalyticsManager:(BYPaneFeatureAnalyticsManager *)arg1;
+- (void)setPasscodeCacheManager:(BuddyPasscodeCacheManager *)arg1;
+- (void)setPendingRestoreState:(BuddyPendingRestoreState *)arg1;
+- (void)setPrepareForCloudRestoreRebootBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)setPrepareForDeviceMigrationBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)setProximityAutomatedDeviceEnrollmentController:(BuddyProximityAutomatedDeviceEnrollmentController *)arg1;
+- (void)setProximitySetupController:(ProximitySetupController *)arg1;
+- (void)setRunState:(id <BYRunState>)arg1;
+- (void)setSeedProgramManager:(BYSeedProgramManager *)arg1;
+- (void)setSettingsManager:(BFFSettingsManager *)arg1;
+- (void)setSetupMethod:(BuddySetupMethod *)arg1;
+- (void)setShowModalWiFiSettingsBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)setSoftwareUpdateCache:(BYSoftwareUpdateCache *)arg1;
+- (void)setStartDeviceMigrationBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)setSuspendTask:(BuddySuspendTask *)arg1;
+- (void)setSystemTimeUpdateManager:(BuddySystemTimeUpdateManager *)arg1;
+- (void)setUserDispositionProvider:(SetupUserDispositionProvider *)arg1;
+- (void)setWillPerformSoftwareUpdateBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)setWriteGreenInformedDefaultPlistIfNecessaryBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (BFFSettingsManager *)settingsManager;
+- (BuddySetupMethod *)setupMethod;
+- (id /* block */)showModalWiFiSettingsBlock:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
+- (BYSoftwareUpdateCache *)softwareUpdateCache;
+- (id /* block */)startDeviceMigrationBlock:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
+- (BuddySuspendTask *)suspendTask;
+- (BuddySystemTimeUpdateManager *)systemTimeUpdateManager;
+- (SetupUserDispositionProvider *)userDispositionProvider;
+- (id /* block */)willPerformSoftwareUpdateBlock:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
+- (id /* block */)writeGreenInformedDefaultPlistIfNecessaryBlock:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
+
+@end

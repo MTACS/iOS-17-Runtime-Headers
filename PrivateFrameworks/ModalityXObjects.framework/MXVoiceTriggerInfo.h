@@ -1,0 +1,97 @@
+
+@interface MXVoiceTriggerInfo : PBCodable <NSCopying> {
+    NSString * _configVersion;
+    double  _extraSamplesAtStart;
+    double  _hardwareSampleRate;
+    struct { 
+        unsigned int extraSamplesAtStart : 1; 
+        unsigned int hardwareSampleRate : 1; 
+        unsigned int recognizerScore : 1; 
+        unsigned int recognizerThresholdOffset : 1; 
+        unsigned int satScore : 1; 
+        unsigned int satThreshold : 1; 
+        unsigned int triggerEnd : 1; 
+        unsigned int triggerScore : 1; 
+        unsigned int triggerThreshold : 1; 
+    }  _has;
+    double  _recognizerScore;
+    double  _recognizerThresholdOffset;
+    double  _satScore;
+    double  _satThreshold;
+    double  _triggerEnd;
+    double  _triggerScore;
+    double  _triggerThreshold;
+}
+
+@property (nonatomic, retain) NSString *configVersion;
+@property (nonatomic) double extraSamplesAtStart;
+@property (nonatomic) double hardwareSampleRate;
+@property (nonatomic, readonly) bool hasConfigVersion;
+@property (nonatomic) bool hasExtraSamplesAtStart;
+@property (nonatomic) bool hasHardwareSampleRate;
+@property (nonatomic) bool hasRecognizerScore;
+@property (nonatomic) bool hasRecognizerThresholdOffset;
+@property (nonatomic) bool hasSatScore;
+@property (nonatomic) bool hasSatThreshold;
+@property (nonatomic) bool hasTriggerEnd;
+@property (nonatomic) bool hasTriggerScore;
+@property (nonatomic) bool hasTriggerThreshold;
+@property (nonatomic) double recognizerScore;
+@property (nonatomic) double recognizerThresholdOffset;
+@property (nonatomic) double satScore;
+@property (nonatomic) double satThreshold;
+@property (nonatomic) double triggerEnd;
+@property (nonatomic) double triggerScore;
+@property (nonatomic) double triggerThreshold;
+
+- (void).cxx_destruct;
+- (id)configVersion;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (double)extraSamplesAtStart;
+- (double)hardwareSampleRate;
+- (bool)hasConfigVersion;
+- (bool)hasExtraSamplesAtStart;
+- (bool)hasHardwareSampleRate;
+- (bool)hasRecognizerScore;
+- (bool)hasRecognizerThresholdOffset;
+- (bool)hasSatScore;
+- (bool)hasSatThreshold;
+- (bool)hasTriggerEnd;
+- (bool)hasTriggerScore;
+- (bool)hasTriggerThreshold;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (double)recognizerScore;
+- (double)recognizerThresholdOffset;
+- (double)satScore;
+- (double)satThreshold;
+- (void)setConfigVersion:(id)arg1;
+- (void)setExtraSamplesAtStart:(double)arg1;
+- (void)setHardwareSampleRate:(double)arg1;
+- (void)setHasExtraSamplesAtStart:(bool)arg1;
+- (void)setHasHardwareSampleRate:(bool)arg1;
+- (void)setHasRecognizerScore:(bool)arg1;
+- (void)setHasRecognizerThresholdOffset:(bool)arg1;
+- (void)setHasSatScore:(bool)arg1;
+- (void)setHasSatThreshold:(bool)arg1;
+- (void)setHasTriggerEnd:(bool)arg1;
+- (void)setHasTriggerScore:(bool)arg1;
+- (void)setHasTriggerThreshold:(bool)arg1;
+- (void)setRecognizerScore:(double)arg1;
+- (void)setRecognizerThresholdOffset:(double)arg1;
+- (void)setSatScore:(double)arg1;
+- (void)setSatThreshold:(double)arg1;
+- (void)setTriggerEnd:(double)arg1;
+- (void)setTriggerScore:(double)arg1;
+- (void)setTriggerThreshold:(double)arg1;
+- (double)triggerEnd;
+- (double)triggerScore;
+- (double)triggerThreshold;
+- (void)writeTo:(id)arg1;
+
+@end

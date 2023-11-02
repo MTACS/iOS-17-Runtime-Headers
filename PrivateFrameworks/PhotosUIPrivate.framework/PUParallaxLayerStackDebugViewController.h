@@ -1,0 +1,115 @@
+
+@interface PUParallaxLayerStackDebugViewController : UIViewController <PXChangeObserver> {
+    PHAsset * _asset;
+    UIStackView * _buttonStackView;
+    UIButton * _colorPaletteButton;
+    PUWallpaperPosterDateView * _dateTimeView;
+    PUProgressIndicatorView * _downloadProgressIndicator;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _initialVisibleRect;
+    UIButton * _layerListButton;
+    PUParallaxLayerStackView * _layerStackView;
+    UIButton * _looksButton;
+    UIButton * _parallaxEnabledButton;
+    PUProgressIndicatorView * _progressIndicator;
+    UIButton * _radarButton;
+    UIButton * _shareButton;
+    unsigned long long  _signpost;
+    PUParallaxLayerStackViewModel * _viewModel;
+    PUParallaxLayerStackViewModelUpdater * _viewModelUpdater;
+}
+
+@property (nonatomic, retain) PHAsset *asset;
+@property (nonatomic, retain) UIStackView *buttonStackView;
+@property (nonatomic, retain) UIButton *colorPaletteButton;
+@property (nonatomic, retain) PUWallpaperPosterDateView *dateTimeView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PUProgressIndicatorView *downloadProgressIndicator;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialVisibleRect;
+@property (nonatomic, retain) UIButton *layerListButton;
+@property (nonatomic, retain) PUParallaxLayerStackView *layerStackView;
+@property (nonatomic, retain) UIButton *looksButton;
+@property (nonatomic, retain) UIButton *parallaxEnabledButton;
+@property (nonatomic, retain) PUProgressIndicatorView *progressIndicator;
+@property (nonatomic, retain) UIButton *radarButton;
+@property (nonatomic, retain) UIButton *shareButton;
+@property (nonatomic, readonly) unsigned long long signpost;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PUParallaxLayerStackViewModel *viewModel;
+@property (nonatomic, retain) PUParallaxLayerStackViewModelUpdater *viewModelUpdater;
+
+- (void).cxx_destruct;
+- (void)_dismissSheetController:(id)arg1;
+- (id)_newButtonWithSystemImageName:(id)arg1;
+- (void)_presentSheetController:(id)arg1;
+- (void)_updateDateTimeView;
+- (id)asset;
+- (id)buttonStackView;
+- (id)colorPaletteButton;
+- (id)dateTimeView;
+- (id)downloadProgressIndicator;
+- (void)hideDowloadProgressIndicator;
+- (void)hideProgressIndicator;
+- (id)init;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialVisibleRect;
+- (id)layerListButton;
+- (id)layerStackView;
+- (void)loadLayerStack:(id)arg1;
+- (void)loadLayerStack:(id)arg1 segmentationItem:(id)arg2;
+- (void)loadPHAsset:(id)arg1;
+- (void)loadPartialSegmentationItem:(id)arg1 loadingState:(unsigned long long)arg2;
+- (void)loadSegmentationItem:(id)arg1;
+- (id)looksButton;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (void)panGesture:(id)arg1;
+- (id)parallaxEnabledButton;
+- (void)pinchGesture:(id)arg1;
+- (id)progressIndicator;
+- (id)radarButton;
+- (void)renderAfterStyleChange;
+- (void)renderAfterVisibleFrameChange;
+- (void)setAsset:(id)arg1;
+- (void)setButtonStackView:(id)arg1;
+- (void)setColorPaletteButton:(id)arg1;
+- (void)setDateTimeView:(id)arg1;
+- (void)setDownloadProgressIndicator:(id)arg1;
+- (void)setInitialVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setLayerListButton:(id)arg1;
+- (void)setLayerStackView:(id)arg1;
+- (void)setLooksButton:(id)arg1;
+- (void)setParallaxEnabledButton:(id)arg1;
+- (void)setProgressIndicator:(id)arg1;
+- (void)setRadarButton:(id)arg1;
+- (void)setShareButton:(id)arg1;
+- (void)setViewModel:(id)arg1;
+- (void)setViewModelUpdater:(id)arg1;
+- (id)shareButton;
+- (void)shareLayerStack:(id)arg1;
+- (void)showColorPalettes:(id)arg1;
+- (void)showDownloadProgressIndicator;
+- (void)showLayerList:(id)arg1;
+- (void)showLooks:(id)arg1;
+- (void)showProgressIndicator:(id)arg1;
+- (unsigned long long)signpost;
+- (void)tapToRadar:(id)arg1;
+- (void)toggleParallaxEnabled:(id)arg1;
+- (void)updateDownloadProgressIndicator:(double)arg1;
+- (void)updateProgressIndicator:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (id)viewModel;
+- (id)viewModelUpdater;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

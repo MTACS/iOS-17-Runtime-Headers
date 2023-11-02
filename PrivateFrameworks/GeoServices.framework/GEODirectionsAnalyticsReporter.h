@@ -1,0 +1,4 @@
+
+@interface GEODirectionsAnalyticsReporter : NSObject
+
+@end

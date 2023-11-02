@@ -1,0 +1,4 @@
+
+@protocol EKEventViewDelegatePrivateAllInProcess <EKEventViewDelegatePrivate, EKEventViewDelegatePrivateInProcessOnly>
+
+@end

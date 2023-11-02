@@ -1,0 +1,4 @@
+
+@interface FPDCloudDocsExtension : FPDExtension
+
+@end

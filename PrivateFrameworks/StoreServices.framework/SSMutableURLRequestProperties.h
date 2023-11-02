@@ -1,0 +1,93 @@
+
+@interface SSMutableURLRequestProperties : SSURLRequestProperties
+
+@property (copy) NSData *HTTPBody;
+@property (retain) NSInputStream *HTTPBodyStream;
+@property (copy) NSDictionary *HTTPHeaders;
+@property (copy) NSString *HTTPMethod;
+@property (getter=isITunesStoreRequest) bool ITunesStoreRequest;
+@property long long KBSyncType;
+@property (retain) NSURL *URL;
+@property (copy) NSString *URLBagKey;
+@property long long URLBagType;
+@property (copy) id /* block */ URLBagURLBlock;
+@property (copy) NSArray *URLs;
+@property (copy) NSDictionary *additionalMetrics;
+@property long long allowedRetryCount;
+@property bool allowsBootstrapCellularData;
+@property unsigned long long cachePolicy;
+@property (copy) NSString *clientAuditBundleIdentifier;
+@property (copy) NSData *clientAuditTokenData;
+@property (copy) NSString *clientIdentifier;
+@property long long expectedContentLength;
+@property (getter=isLargeDownload) bool largeDownload;
+@property long long machineDataStyle;
+@property unsigned long long networkServiceType;
+@property (copy) NSDictionary *requestParameters;
+@property bool requiresCellularDataNetwork;
+@property bool requiresExtendedValidationCertificates;
+@property bool requiresExternal;
+@property bool requiresHTTPS;
+@property bool shouldAddKBSyncData;
+@property bool shouldDecodeResponse;
+@property bool shouldDisableCellular;
+@property bool shouldDisableCellularFallback;
+@property bool shouldDisableReversePush;
+@property bool shouldDisableReversePushSampling;
+@property bool shouldProcessProtocol;
+@property bool shouldSendSecureToken;
+@property bool shouldSetCookies;
+@property double timeoutInterval;
+@property (copy) NSArray *userAgentComponents;
+
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setAdditionalMetrics:(id)arg1;
+- (void)setAllowedRetryCount:(long long)arg1;
+- (void)setAllowsBootstrapCellularData:(bool)arg1;
+- (void)setCachePolicy:(unsigned long long)arg1;
+- (void)setClientAuditBundleIdentifier:(id)arg1;
+- (void)setClientAuditTokenData:(id)arg1;
+- (void)setClientIdentifier:(id)arg1;
+- (void)setExpectedContentLength:(long long)arg1;
+- (void)setHTTPBody:(id)arg1;
+- (void)setHTTPBodyStream:(id)arg1;
+- (void)setHTTPHeaders:(id)arg1;
+- (void)setHTTPMethod:(id)arg1;
+- (void)setITunesStoreRequest:(bool)arg1;
+- (void)setKBSyncType:(long long)arg1;
+- (void)setLargeDownload:(bool)arg1;
+- (void)setMachineDataStyle:(long long)arg1;
+- (void)setMultiPartFormDataWithDictionary:(id)arg1;
+- (void)setNetworkServiceType:(unsigned long long)arg1;
+- (void)setRequestParameters:(id)arg1;
+- (void)setRequiresCellularDataNetwork:(bool)arg1;
+- (void)setRequiresExtendedValidationCertificates:(bool)arg1;
+- (void)setRequiresExternal:(bool)arg1;
+- (void)setRequiresHTTPS:(bool)arg1;
+- (void)setShouldAddKBSyncData:(bool)arg1;
+- (void)setShouldDecodeResponse:(bool)arg1;
+- (void)setShouldDisableCellular:(bool)arg1;
+- (void)setShouldDisableCellularFallback:(bool)arg1;
+- (void)setShouldDisableReversePush:(bool)arg1;
+- (void)setShouldDisableReversePushSampling:(bool)arg1;
+- (void)setShouldProcessProtocol:(bool)arg1;
+- (void)setShouldSendSecureToken:(bool)arg1;
+- (void)setShouldSetCookies:(bool)arg1;
+- (void)setTimeoutInterval:(double)arg1;
+- (void)setURL:(id)arg1;
+- (void)setURLBagKey:(id)arg1;
+- (void)setURLBagType:(long long)arg1;
+- (void)setURLBagURLBlock:(id /* block */)arg1;
+- (void)setURLs:(id)arg1;
+- (void)setUserAgentComponents:(id)arg1;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
+
++ (id)newForRadioRequestURL:(id)arg1;
++ (id)newForRadioRequestURL:(id)arg1 accountUniqueIdentifier:(id)arg2;
+
+@end

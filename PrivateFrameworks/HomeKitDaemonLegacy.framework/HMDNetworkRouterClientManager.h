@@ -1,0 +1,100 @@
+
+@interface HMDNetworkRouterClientManager : NSObject <HMDDevicePreferenceDataSource, HMDNetworkRouterFirewallRuleManagerClient, HMFLogging> {
+    NSMutableSet * _accessoriesInReconfiguration;
+    <HMDNetworkRouterFirewallRuleManager> * _firewallRuleManager;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    bool  _managedNetworkEnabled;
+    HMDHAPAccessory * _networkRouterAccessory;
+    NSNotificationCenter * _notificationCenter;
+    bool  _staleClientIdentifiersResetInProgress;
+    bool  _staleClientIdentifiersResetNeeded;
+    bool  _startPending;
+    bool  _started;
+    NSObject<OS_dispatch_queue> * _workQueue;
+}
+
+@property (readonly) NSMutableSet *accessoriesInReconfiguration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <HMDNetworkRouterFirewallRuleManager> *firewallRuleManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) HMDHome *home;
+@property (nonatomic) bool managedNetworkEnabled;
+@property HMDHAPAccessory *networkRouterAccessory;
+@property (readonly) NSNotificationCenter *notificationCenter;
+@property (readonly) HMDNetworkRouterController *routerController;
+@property (nonatomic) bool staleClientIdentifiersResetInProgress;
+@property (nonatomic) bool staleClientIdentifiersResetNeeded;
+@property (nonatomic) bool startPending;
+@property (nonatomic) bool started;
+@property (readonly) Class superclass;
+@property (readonly) NSObject<OS_dispatch_queue> *workQueue;
+
++ (id)logCategory;
+
+- (void).cxx_destruct;
+- (void)__deregisterForNetworkRouterAccessoryReachable:(id)arg1;
+- (void)__registerForNetworkRouterAccessoryReachable:(id)arg1;
+- (void)_createClientConfigurationForAccessory:(id)arg1 credential:(id)arg2 clientStatus:(id)arg3 clientReconfigurationAllowed:(bool)arg4;
+- (void)_deregisterForChangesToManagedAccessory:(id)arg1;
+- (void)_evaluateManagement;
+- (void)_fetchFirewallRulesForAccessory:(id)arg1 completion:(id /* block */)arg2;
+- (void)_getNetworkConfigurationForAccessory:(id)arg1 targetProtectionMode:(long long)arg2 completion:(id /* block */)arg3;
+- (void)_handleRouterAccessoryReachable:(id)arg1;
+- (void)_migrateAccessory:(id)arg1 withConfiguration:(id)arg2 clientStatus:(id)arg3 fromCredentialType:(long long)arg4 toCredentialType:(long long)arg5 rotate:(bool)arg6 completion:(id /* block */)arg7;
+- (void)_reconcileClientConfigurationForAccessory:(id)arg1 clientStatus:(id)arg2 networkRouterUUID:(id)arg3 clientReconfigurationAllowed:(bool)arg4;
+- (void)_reconcileClientConfigurationForReachableAccessory:(id)arg1 clientReconfigurationAllowed:(bool)arg2;
+- (void)_registerForChangesToManagedAccessory:(id)arg1;
+- (void)_registerForNetworkProtectionChangesToGroup:(id)arg1;
+- (void)_replaceClientConfigurationForAccessory:(id)arg1 credential:(id)arg2 clientStatus:(id)arg3 clientReconfigurationAllowed:(bool)arg4;
+- (void)_replaceNetworkClientIdentifierForAccessory:(id)arg1 networkClientIdentifier:(id)arg2 networkRouterUUID:(id)arg3 clientStatus:(id)arg4 clientReconfigurationAllowed:(bool)arg5;
+- (void)_resetStaleClientIdentifiersBeforeStart;
+- (void)_start;
+- (void)_startManagingAccessory:(id)arg1 initialHomeSetup:(bool)arg2;
+- (void)_stop;
+- (id)_transactionBlockForAccessoriesWithStaleClientIdentifier;
+- (void)_unregisterForNetworkProtectionChangesToGroup:(id)arg1;
+- (void)_updateClientConfiguration:(id)arg1 forAccessory:(id)arg2 protectionMode:(long long)arg3 clientStatus:(id)arg4 skipIfFingerprintMatches:(bool)arg5 clientReconfigurationAllowed:(bool)arg6;
+- (void)_updateClientConfigurationForAllAccessoriesWithClientReconfigurationAllowed:(bool)arg1;
+- (void)_updateExistingClientConfiguration:(id)arg1 forAccessory:(id)arg2 clientStatus:(id)arg3 clientReconfigurationAllowed:(bool)arg4;
+- (void)_updateOrCreateClientConfigurationForAccessory:(id)arg1 preferReconcile:(bool)arg2 clientReconfigurationAllowed:(bool)arg3;
+- (id)accessoriesInReconfiguration;
+- (id)description;
+- (void)evaluateManagement;
+- (id)firewallRuleManager;
+- (void)handleAccessoryAdded:(id)arg1;
+- (void)handleAccessoryConfigured:(id)arg1;
+- (void)handleAccessoryFirmwareVersionUpdated:(id)arg1;
+- (void)handleAccessoryRemoved:(id)arg1;
+- (void)handleFirewallRulesUpdated:(id)arg1;
+- (void)handleHomeNetworkProtectionChanged:(id)arg1;
+- (void)handleNetworkProtectionGroupActivated:(id)arg1;
+- (void)handleNetworkProtectionGroupDeactivated:(id)arg1;
+- (void)handleNetworkProtectionGroupProtectionChanged:(id)arg1;
+- (void)handleRouterAccessoryReachable:(id)arg1;
+- (id)home;
+- (id)initWithNetworkRouterAccessory:(id)arg1 workQueue:(id)arg2 firewallRuleManager:(id)arg3 notificationCenter:(id)arg4;
+- (bool)managedNetworkEnabled;
+- (void)migrateAccessory:(id)arg1 toCredentialType:(long long)arg2 rotate:(bool)arg3 completion:(id /* block */)arg4;
+- (id)networkRouterAccessory;
+- (id)notificationCenter;
+- (void)replaceActiveNetworkRouterAccessory:(id)arg1;
+- (id)routerController;
+- (void)setManagedNetworkEnabled:(bool)arg1;
+- (void)setNetworkRouterAccessory:(id)arg1;
+- (void)setStaleClientIdentifiersResetInProgress:(bool)arg1;
+- (void)setStaleClientIdentifiersResetNeeded:(bool)arg1;
+- (void)setStartPending:(bool)arg1;
+- (void)setStarted:(bool)arg1;
+- (bool)staleClientIdentifiersResetInProgress;
+- (bool)staleClientIdentifiersResetNeeded;
+- (bool)startPending;
+- (bool)started;
+- (void)stop;
+- (bool)supportsDeviceWithCapabilities:(id)arg1;
+- (id)watchedAccessoryIdentifiersForFirewallRuleManager:(id)arg1;
+- (id)workQueue;
+
+@end

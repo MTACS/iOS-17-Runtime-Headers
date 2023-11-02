@@ -1,0 +1,4 @@
+
+@protocol HKHeadphoneAudioExposureControlClient <NSObject>
+
+@end

@@ -1,0 +1,83 @@
+
+@interface FCConfigurationManager : NSObject <FCAudioFeedConfigManager, FCCoreConfigurationManager, FCFeldsparIDProviderObserving, FCMagazinesConfigurationManager, FCNewsAppConfigurationManager, FCTodayFeedConfigurationManager> {
+    NFUnfairLock * _accessLock;
+    NSHashTable * _appConfigObservers;
+    NSString * _appShortVersionString;
+    bool  _attemptedAppConfigFetch;
+    NSString * _buildNumberString;
+    NSDictionary * _cachedWidgetConfigurationDict;
+    FCContextConfiguration * _contextConfiguration;
+    NSHashTable * _coreConfigObservers;
+    FCNewsAppConfig * _currentAppConfiguration;
+    NSData * _currentAudioFeedConfiguration;
+    NSData * _currentMagazinesConfiguration;
+    NSData * _currentTodayFeedConfiguration;
+    <FCFeldsparIDProvider> * _feldsparIDProvider;
+    NSDate * _lastModificationDate;
+    FCKeyValueStore * _localStore;
+    FCNetworkBehaviorMonitor * _networkBehaviorMonitor;
+    FCAsyncSerialQueue * _remoteAppConfigSerialQueue;
+    FCAsyncSerialQueue * _remoteAudioConfigSerialQueue;
+    RCConfigurationManager * _remoteConfigurationManager;
+    FCAsyncSerialQueue * _remoteMagazineConfigSerialQueue;
+    FCAsyncSerialQueue * _remoteTodayConfigSerialQueue;
+    FCAsyncSerialQueue * _remoteWidgetConfigSerialQueue;
+    bool  _runningUnitTests;
+    NSArray * _segmentSetIDs;
+    bool  _shouldIgnoreCache;
+    NSArray * _treatmentIDs;
+    NSObject<OS_dispatch_queue> * _workQueue;
+}
+
+@property (nonatomic, readonly) <FCNewsAppConfiguration> *appConfiguration;
+@property (nonatomic, readonly) NSData *audioFeedConfigData;
+@property (nonatomic, readonly) <FCCoreConfiguration> *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSString *feldsparID;
+@property (nonatomic, readonly) <FCNewsAppConfiguration> *fetchedAppConfiguration;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <FCNewsAppConfiguration><FCJSONEncodableObjectProviding> *jsonEncodableAppConfiguration;
+@property (nonatomic, readonly) NSData *magazinesConfigurationData;
+@property (nonatomic, readonly) <FCNewsAppConfiguration> *possiblyUnfetchedAppConfiguration;
+@property (nonatomic, copy) NSArray *segmentSetIDs;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSData *todayFeedConfigurationData;
+@property (nonatomic, copy) NSArray *treatmentIDs;
+
+- (void).cxx_destruct;
+- (void)addAppConfigObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (id)appConfiguration;
+- (id)audioFeedConfigData;
+- (id)configuration;
+- (id)feldsparID;
+- (void)feldsparIDProviderDidChangeFeldsparID:(id)arg1;
+- (void)fetchAppConfigurationIfNeededWithCompletion:(id /* block */)arg1;
+- (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchAppWidgetConfigurationWithAdditionalFields:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchAudioFeedConfigIfNeededWithCompletionQueue:(id)arg1 formatVersion:(id)arg2 completion:(id /* block */)arg3;
+- (void)fetchConfigurationIfNeededWithCompletion:(id /* block */)arg1;
+- (void)fetchConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchMagazinesConfigurationIfNeededWithCompletionQueue:(id)arg1 formatVersion:(id)arg2 completion:(id /* block */)arg3;
+- (void)fetchTodayFeedConfigurationIfNeededWithCompletionQueue:(id)arg1 feedType:(unsigned long long)arg2 formatVersion:(id)arg3 completion:(id /* block */)arg4;
+- (id)fetchedAppConfiguration;
+- (id)init;
+- (id)initForTesting;
+- (id)initWithContextConfiguration:(id)arg1 contentHostDirectoryFileURL:(id)arg2 feldsparIDProvider:(id)arg3;
+- (id)initWithContextConfiguration:(id)arg1 contentHostDirectoryFileURL:(id)arg2 feldsparIDProvider:(id)arg3 appShortVersionString:(id)arg4 buildNumberString:(id)arg5 networkBehaviorMonitor:(id)arg6;
+- (id)initWithContextConfiguration:(id)arg1 contentHostDirectoryFileURL:(id)arg2 feldsparIDProvider:(id)arg3 appShortVersionString:(id)arg4 networkBehaviorMonitor:(id)arg5;
+- (id)initWithContextConfiguration:(id)arg1 contentHostDirectoryFileURL:(id)arg2 feldsparIDProvider:(id)arg3 networkBehaviorMonitor:(id)arg4;
+- (id)jsonEncodableAppConfiguration;
+- (id)magazinesConfigurationData;
+- (id)possiblyUnfetchedAppConfiguration;
+- (void)refreshAppConfigurationIfNeededWithCompletionQueue:(id)arg1 refreshCompletion:(id /* block */)arg2;
+- (void)removeAppConfigObserver:(id)arg1;
+- (void)removeObserver:(id)arg1;
+- (id)segmentSetIDs;
+- (void)setSegmentSetIDs:(id)arg1;
+- (void)setTreatmentIDs:(id)arg1;
+- (id)todayFeedConfigurationData;
+- (id)treatmentIDs;
+
+@end

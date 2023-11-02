@@ -1,0 +1,4 @@
+
+@protocol PLAssetsdPhotoKitAddServiceProtocol <PLAssetsdPhotoKitCommonServiceProtocol>
+
+@end

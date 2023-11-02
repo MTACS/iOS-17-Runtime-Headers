@@ -1,0 +1,4 @@
+
+@interface BRCDatabaseNeedsReset : NSException
+
+@end

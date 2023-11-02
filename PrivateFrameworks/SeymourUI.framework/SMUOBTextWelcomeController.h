@@ -1,0 +1,4 @@
+
+@interface SMUOBTextWelcomeController : OBTextWelcomeController
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol ASDEventServiceExtensionXPCInterface <NSObject>
+
+@end

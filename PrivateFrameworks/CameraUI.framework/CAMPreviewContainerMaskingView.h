@@ -1,0 +1,4 @@
+
+@interface CAMPreviewContainerMaskingView : UIView
+
+@end

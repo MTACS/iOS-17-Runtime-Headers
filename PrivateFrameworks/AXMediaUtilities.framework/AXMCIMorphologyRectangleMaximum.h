@@ -1,0 +1,4 @@
+
+@interface AXMCIMorphologyRectangleMaximum : AXMCIMorphologyRectangle
+
+@end

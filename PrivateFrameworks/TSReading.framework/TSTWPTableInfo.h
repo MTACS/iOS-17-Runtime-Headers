@@ -1,0 +1,4 @@
+
+@interface TSTWPTableInfo : TSTTableInfo
+
+@end

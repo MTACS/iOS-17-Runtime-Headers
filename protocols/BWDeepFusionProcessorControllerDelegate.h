@@ -1,0 +1,4 @@
+
+@protocol BWDeepFusionProcessorControllerDelegate <BWStillImageProcessorControllerDelegate>
+
+@end

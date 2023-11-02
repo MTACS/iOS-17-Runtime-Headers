@@ -1,0 +1,4 @@
+
+@protocol WFCatalystContentService <NSObject>
+
+@end

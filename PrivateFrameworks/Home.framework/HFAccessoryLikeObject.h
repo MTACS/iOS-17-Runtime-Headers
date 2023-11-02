@@ -1,0 +1,90 @@
+
+@interface HFAccessoryLikeObject : NSObject <HFAccessoryRepresentable, HFFavoritable, HFServiceNameComponentsProviding, HFShowInHomeDashboard> {
+    <HFAccessoryLikeObjectRootHomeKitObjectProvider><HFAccessoryRepresentable><HFFavoritable><HFShowInHomeDashboard><HFIncludedContextProtocol> * _dataSource;
+}
+
+@property (nonatomic, readonly) NSSet *accessories;
+@property (nonatomic, readonly) HFAccessoryType *accessoryType;
+@property (nonatomic, readonly) <HFAccessoryLikeObjectRootHomeKitObjectProvider><HFAccessoryRepresentable><HFFavoritable><HFShowInHomeDashboard><HFIncludedContextProtocol> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HFAccessoryType *hf_accessoryType;
+@property (nonatomic, readonly) NSSet *hf_associatedAccessories;
+@property (nonatomic, readonly) bool hf_canSpanMultipleRooms;
+@property (nonatomic, readonly) NSSet *hf_containedCharacteristics;
+@property (nonatomic, readonly) NSSet *hf_containedProfiles;
+@property (nonatomic, readonly) NSSet *hf_containedServices;
+@property (nonatomic, readonly) bool hf_effectiveIsFavorite;
+@property (nonatomic, readonly) bool hf_effectiveShowInHomeDashboard;
+@property (nonatomic, readonly) bool hf_hasSetFavorite;
+@property (nonatomic, readonly) bool hf_hasSetShowInHomeDashboard;
+@property (nonatomic, readonly) bool hf_hasSetVisibleInHomeStatus;
+@property (nonatomic, readonly) <HFHomeKitObject> *hf_homeKitObject;
+@property (nonatomic, readonly) bool hf_isFavorite;
+@property (nonatomic, readonly) bool hf_isForcedVisibleInHomeStatus;
+@property (nonatomic, readonly) bool hf_isIdentifiable;
+@property (nonatomic, readonly) bool hf_isVisibleInHomeStatus;
+@property (nonatomic, readonly) Class hf_itemClass;
+@property (nonatomic, readonly) HMRoom *hf_safeRoom;
+@property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
+@property (nonatomic, readonly) bool hf_shouldShowInFavorites;
+@property (nonatomic, readonly) bool hf_showInHomeDashboard;
+@property (nonatomic, readonly) bool hf_supportsHomeStatus;
+@property (nonatomic, readonly) NSString *hf_tileSize;
+@property (nonatomic, readonly) <HFHomeKitObject><HFAccessoryRepresentable> *homeKitObject;
+@property (nonatomic, readonly) NSSet *profiles;
+@property (nonatomic, readonly) HMRoom *room;
+@property (nonatomic, readonly) NSSet *services;
+@property (readonly) Class superclass;
+
++ (id)_accessoryLikeObjectForObject:(id)arg1;
++ (void)_invalidateObjectMap;
++ (id)accessoryLikeObjectsForAccessoryRepresentable:(id)arg1;
++ (id)objectMap;
+
+- (void).cxx_destruct;
+- (id)accessories;
+- (id)accessoryType;
+- (id)dataSource;
+- (id)debugDescription;
+- (id)description;
+- (id)hf_accessoryType;
+- (id)hf_associatedAccessories;
+- (bool)hf_canSpanMultipleRooms;
+- (id)hf_containedCharacteristics;
+- (id)hf_containedProfiles;
+- (id)hf_containedServices;
+- (bool)hf_effectiveIsFavorite;
+- (bool)hf_effectiveShowInHomeDashboard;
+- (bool)hf_hasSetFavorite;
+- (bool)hf_hasSetShowInHomeDashboard;
+- (bool)hf_hasSetVisibleInHomeStatus;
+- (id)hf_homeKitObject;
+- (bool)hf_isFavorite;
+- (bool)hf_isForcedVisibleInHomeStatus;
+- (bool)hf_isIdentifiable;
+- (bool)hf_isInRoom:(id)arg1;
+- (bool)hf_isVisibleInHomeStatus;
+- (Class)hf_itemClass;
+- (id)hf_moveToRoom:(id)arg1;
+- (id)hf_parentRoom;
+- (id)hf_representableAccessoryLikeObject;
+- (id)hf_safeRoom;
+- (id)hf_serviceNameComponents;
+- (id)hf_setTileSize:(id)arg1;
+- (bool)hf_shouldShowInFavorites;
+- (bool)hf_showInHomeDashboard;
+- (bool)hf_supportsHomeStatus;
+- (id)hf_tileSize;
+- (id)hf_updateIsFavorite:(bool)arg1;
+- (id)hf_updateIsVisibleInHomeStatus:(bool)arg1;
+- (id)hf_updateShowInHomeDashboard:(bool)arg1;
+- (id)homeKitObject;
+- (id)initWithHomeKitObject:(id)arg1;
+- (Class)itemClass;
+- (id)profiles;
+- (id)room;
+- (id)services;
+
+@end

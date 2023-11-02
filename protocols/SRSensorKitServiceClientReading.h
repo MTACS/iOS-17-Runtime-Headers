@@ -1,0 +1,4 @@
+
+@protocol SRSensorKitServiceClientReading <SRSensorKitServiceClientProtocol>
+
+@end

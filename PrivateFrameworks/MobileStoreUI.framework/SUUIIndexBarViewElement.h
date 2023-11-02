@@ -1,0 +1,4 @@
+
+@interface SUUIIndexBarViewElement : SUUIViewElement
+
+@end

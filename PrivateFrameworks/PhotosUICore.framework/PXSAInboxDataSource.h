@@ -1,0 +1,4 @@
+
+@interface PXSAInboxDataSource : PXInboxModelDataSource
+
+@end

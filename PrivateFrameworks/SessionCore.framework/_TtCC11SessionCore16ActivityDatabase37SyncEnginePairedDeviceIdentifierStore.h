@@ -1,0 +1,4 @@
+
+@interface _TtCC11SessionCore16ActivityDatabase37SyncEnginePairedDeviceIdentifierStore : _TtCC11SessionCore16ActivityDatabase16DatabaseAccessor
+
+@end

@@ -1,0 +1,98 @@
+
+@interface NMSSHSession : NSObject {
+    struct _LIBSSH2_AGENT { } * _agent;
+    NSString * _banner;
+    NMSSHChannel * _channel;
+    bool  _connected;
+    <NMSSHSessionDelegate> * _delegate;
+    long long  _fingerprintHash;
+    NSString * _host;
+    NMSSHHostConfig * _hostConfig;
+    id /* block */  _kbAuthenticationBlock;
+    NSNumber * _port;
+    struct _LIBSSH2_SESSION { } * _session;
+    NMSFTP * _sftp;
+    struct __CFSocket { } * _socket;
+    NSString * _username;
+}
+
+@property (nonatomic) struct _LIBSSH2_AGENT { }*agent;
+@property (getter=isAuthorized, nonatomic, readonly) bool authorized;
+@property (nonatomic, retain) NSString *banner;
+@property (nonatomic, retain) NMSSHChannel *channel;
+@property (getter=isConnected, nonatomic) bool connected;
+@property (nonatomic) <NMSSHSessionDelegate> *delegate;
+@property (nonatomic) long long fingerprintHash;
+@property (nonatomic, retain) NSString *host;
+@property (nonatomic, retain) NMSSHHostConfig *hostConfig;
+@property (nonatomic, copy) id /* block */ kbAuthenticationBlock;
+@property (nonatomic, readonly) NSError *lastError;
+@property (nonatomic, retain) NSNumber *port;
+@property (nonatomic, readonly) NSString *remoteBanner;
+@property (getter=rawSession, nonatomic) struct _LIBSSH2_SESSION { }*session;
+@property (nonatomic, retain) NMSFTP *sftp;
+@property (nonatomic, readonly) struct __CFSocket { }*socket;
+@property (nonatomic, retain) NSNumber *timeout;
+@property (nonatomic, retain) NSString *username;
+
++ (id)URLForHost:(id)arg1;
++ (id)connectToHost:(id)arg1 port:(long long)arg2 withUsername:(id)arg3;
++ (id)connectToHost:(id)arg1 withUsername:(id)arg2;
+
+- (void).cxx_destruct;
+- (bool)addKnownHostName:(id)arg1 port:(long long)arg2 toFile:(id)arg3 withSalt:(id)arg4;
+- (struct _LIBSSH2_AGENT { }*)agent;
+- (id)applicationSupportDirectory;
+- (bool)authenticateByInMemoryPublicKey:(id)arg1 privateKey:(id)arg2 andPassword:(id)arg3;
+- (bool)authenticateByKeyboardInteractive;
+- (bool)authenticateByKeyboardInteractiveUsingBlock:(id /* block */)arg1;
+- (bool)authenticateByPassword:(id)arg1;
+- (bool)authenticateByPublicKey:(id)arg1 privateKey:(id)arg2 andPassword:(id)arg3;
+- (id)banner;
+- (id)channel;
+- (bool)connect;
+- (bool)connectToAgent;
+- (bool)connectWithTimeout:(id)arg1;
+- (id)delegate;
+- (void)disconnect;
+- (id)fingerprint:(long long)arg1;
+- (long long)fingerprintHash;
+- (id)host;
+- (id)hostConfig;
+- (id)hostIPAddresses;
+- (id)initWithHost:(id)arg1 andUsername:(id)arg2;
+- (id)initWithHost:(id)arg1 configs:(id)arg2 withDefaultPort:(long long)arg3 defaultUsername:(id)arg4;
+- (id)initWithHost:(id)arg1 port:(long long)arg2 andUsername:(id)arg3;
+- (bool)isAuthorized;
+- (bool)isConnected;
+- (id /* block */)kbAuthenticationBlock;
+- (id)keyboardInteractiveRequest:(id)arg1;
+- (long long)knownHostStatusInFiles:(id)arg1;
+- (long long)knownHostStatusWithFile:(id)arg1;
+- (id)lastError;
+- (id)port;
+- (struct _LIBSSH2_SESSION { }*)rawSession;
+- (id)remoteBanner;
+- (void)setAgent:(struct _LIBSSH2_AGENT { }*)arg1;
+- (void)setBanner:(id)arg1;
+- (void)setChannel:(id)arg1;
+- (void)setConnected:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFingerprintHash:(long long)arg1;
+- (void)setHost:(id)arg1;
+- (void)setHostConfig:(id)arg1;
+- (void)setKbAuthenticationBlock:(id /* block */)arg1;
+- (void)setPort:(id)arg1;
+- (void)setSession:(struct _LIBSSH2_SESSION { }*)arg1;
+- (void)setSftp:(id)arg1;
+- (void)setTimeout:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (id)sftp;
+- (struct __CFSocket { }*)socket;
+- (id)supportedAuthenticationMethods;
+- (bool)supportsAuthenticationMethod:(id)arg1;
+- (id)timeout;
+- (id)userKnownHostsFileName;
+- (id)username;
+
+@end

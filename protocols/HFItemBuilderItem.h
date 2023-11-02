@@ -1,0 +1,4 @@
+
+@protocol HFItemBuilderItem <NSCopying>
+
+@end

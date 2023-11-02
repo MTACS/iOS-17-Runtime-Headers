@@ -1,0 +1,4 @@
+
+@protocol SBSSwitcherDemoCommandsServerToClientInterface <NSObject>
+
+@end

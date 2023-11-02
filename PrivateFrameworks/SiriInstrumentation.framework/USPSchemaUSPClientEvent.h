@@ -1,0 +1,92 @@
+
+@interface USPSchemaUSPClientEvent : SISchemaTopLevelUnionType <SISchemaInnerEventContainer> {
+    USPSchemaUSPClientEventMetadata * _eventMetadata;
+    bool  _hasEventMetadata;
+    bool  _hasIterationEnded;
+    bool  _hasIterationStarted;
+    bool  _hasLoggingInitialized;
+    bool  _hasLoggingReported;
+    bool  _hasMeasureEnded;
+    bool  _hasMeasureStarted;
+    USPSchemaUSPIterationEnded * _iterationEnded;
+    USPSchemaUSPIterationStarted * _iterationStarted;
+    USPSchemaUSPLoggingInitalized * _loggingInitialized;
+    USPSchemaUSPLoggingReported * _loggingReported;
+    USPSchemaUSPMeasureEnded * _measureEnded;
+    USPSchemaUSPMeasureStarted * _measureStarted;
+    unsigned long long  _whichEvent_Type;
+}
+
+@property (nonatomic, retain) USPSchemaUSPClientEventMetadata *eventMetadata;
+@property (nonatomic) bool hasEventMetadata;
+@property (nonatomic) bool hasIterationEnded;
+@property (nonatomic) bool hasIterationStarted;
+@property (nonatomic) bool hasLoggingInitialized;
+@property (nonatomic) bool hasLoggingReported;
+@property (nonatomic) bool hasMeasureEnded;
+@property (nonatomic) bool hasMeasureStarted;
+@property (nonatomic, readonly) SISchemaInstrumentationMessage *innerEvent;
+@property (nonatomic, retain) USPSchemaUSPIterationEnded *iterationEnded;
+@property (nonatomic, retain) USPSchemaUSPIterationStarted *iterationStarted;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, retain) USPSchemaUSPLoggingInitalized *loggingInitialized;
+@property (nonatomic, retain) USPSchemaUSPLoggingReported *loggingReported;
+@property (nonatomic, retain) USPSchemaUSPMeasureEnded *measureEnded;
+@property (nonatomic, retain) USPSchemaUSPMeasureStarted *measureStarted;
+@property (nonatomic, readonly) unsigned long long whichEvent_Type;
+
++ (int)joinability;
+
+- (void).cxx_destruct;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (void)deleteEventMetadata;
+- (void)deleteIterationEnded;
+- (void)deleteIterationStarted;
+- (void)deleteLoggingInitialized;
+- (void)deleteLoggingReported;
+- (void)deleteMeasureEnded;
+- (void)deleteMeasureStarted;
+- (id)dictionaryRepresentation;
+- (id)eventMetadata;
+- (int)getAnyEventType;
+- (id)getComponentId;
+- (bool)hasEventMetadata;
+- (bool)hasIterationEnded;
+- (bool)hasIterationStarted;
+- (bool)hasLoggingInitialized;
+- (bool)hasLoggingReported;
+- (bool)hasMeasureEnded;
+- (bool)hasMeasureStarted;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (id)innerEvent;
+- (bool)isEqual:(id)arg1;
+- (id)iterationEnded;
+- (id)iterationStarted;
+- (id)jsonData;
+- (id)loggingInitialized;
+- (id)loggingReported;
+- (id)measureEnded;
+- (id)measureStarted;
+- (id)qualifiedMessageName;
+- (bool)readFrom:(id)arg1;
+- (void)setEventMetadata:(id)arg1;
+- (void)setHasEventMetadata:(bool)arg1;
+- (void)setHasIterationEnded:(bool)arg1;
+- (void)setHasIterationStarted:(bool)arg1;
+- (void)setHasLoggingInitialized:(bool)arg1;
+- (void)setHasLoggingReported:(bool)arg1;
+- (void)setHasMeasureEnded:(bool)arg1;
+- (void)setHasMeasureStarted:(bool)arg1;
+- (void)setIterationEnded:(id)arg1;
+- (void)setIterationStarted:(id)arg1;
+- (void)setLoggingInitialized:(id)arg1;
+- (void)setLoggingReported:(id)arg1;
+- (void)setMeasureEnded:(id)arg1;
+- (void)setMeasureStarted:(id)arg1;
+- (id)suppressMessageUnderConditions;
+- (unsigned long long)whichEvent_Type;
+- (void)writeTo:(id)arg1;
+
+@end

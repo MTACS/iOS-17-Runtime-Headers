@@ -1,0 +1,4 @@
+
+@protocol OKWidgetLabelViewProxyExports <JSExport>
+
+@end

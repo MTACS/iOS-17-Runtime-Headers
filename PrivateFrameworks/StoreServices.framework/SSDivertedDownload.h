@@ -1,0 +1,4 @@
+
+@interface SSDivertedDownload : SSDownload
+
+@end

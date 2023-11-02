@@ -1,0 +1,4 @@
+
+@protocol ManagedSettingsUI.ShieldConfigurationExtensionHost
+
+@end

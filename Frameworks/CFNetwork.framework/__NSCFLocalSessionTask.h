@@ -1,0 +1,108 @@
+
+@interface __NSCFLocalSessionTask : NSURLSessionTask <NSURLSessionDataTaskSubclass, NSURLSessionTaskSubclass, __NSCFURLSessionConnectionDelegate> {
+    id /* block */  _async_initialization;
+    __NSCFURLSessionConnection * _cfConn;
+    void * _connKey;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _connKeyLock;
+    struct shared_ptr<TransportConnection> { 
+        struct TransportConnection {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _connectionForUpgrade;
+    NSOperationQueue * _connectionWorkQueue;
+    int  _connectionWorkQueueSuspensionCount;
+    id /* block */  _dataTaskCompletion;
+    NSObject<OS_dispatch_data> * _dataTaskData;
+    bool  _didCheckMixedReplace;
+    bool  _didIssueDidFinish;
+    bool  _didIssueWaitingForConnectivity;
+    NSObject<OS_dispatch_data> * _extraBytes;
+    bool  _isMixedReplace;
+    NSObject<OS_dispatch_source> * _payloadTransmissionTimer;
+    NSObject<OS_dispatch_data> * _pendingResponseBytes;
+    bool  _pendingResponseDisposition;
+    bool  _pendingResponseDisposition_didFinish;
+    NSObject<OS_dispatch_source> * _resourceTimeout;
+    bool  _sentDidFinishCollectingMetrics;
+    NSInputStream * _socketReadStreamForUpgrade;
+    NSOutputStream * _socketWriteStreamForUpgrade;
+    double  _startTimeoutTime;
+    NSObject<OS_dispatch_source> * _startTimeoutTimer;
+    unsigned long long  _suspendCount;
+    bool  _suspendedForDisposition;
+    NSURL * _uploadFile;
+    NSObject<OS_dispatch_source> * _willSendRequestTimer;
+}
+
+@property (retain) __NSCFURLSessionConnection *cfConn;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)_didSendMetrics;
+- (bool)_needSendingMetrics;
+- (void)_onSessionQueue_disavow;
+- (void)_onqueue_adjustBytesPerSecondLimit:(long long)arg1;
+- (void)_onqueue_adjustLoadingPoolPriority;
+- (void)_onqueue_adjustPoolPriority;
+- (void)_onqueue_adjustPriorityHint:(float)arg1 incremental:(bool)arg2;
+- (void)_onqueue_alternatePathAvailable:(int)arg1;
+- (void)_onqueue_cancel;
+- (void)_onqueue_cancel_with_error:(id)arg1;
+- (void)_onqueue_completeInitialization;
+- (void)_onqueue_conditionalRequirementsChanged:(bool)arg1;
+- (void)_onqueue_connectionWaitingWithReason:(long long)arg1;
+- (void)_onqueue_didFinishWithError:(id)arg1;
+- (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)_onqueue_didReceiveDispatchData:(id)arg1 completion:(id /* block */)arg2;
+- (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id /* block */)arg2;
+- (void)_onqueue_didReceiveResponse:(id)arg1 redirectRequest:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)_onqueue_didSendBodyBytes:(long long)arg1 totalBytesSent:(long long)arg2 totalBytesExpectedToSend:(long long)arg3;
+- (void)_onqueue_expectedProgressTargetChanged;
+- (void)_onqueue_needNewBodyStream:(id)arg1 fromOffset:(long long)arg2 withCompletion:(id /* block */)arg3;
+- (void)_onqueue_needNewBodyStream:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_onqueue_resume;
+- (void)_onqueue_setupNextEffectiveConfigurationWithCompletionHandler:(id /* block */)arg1;
+- (id)_onqueue_strippedMutableRequest;
+- (void)_onqueue_suspend;
+- (void)_onqueue_willCacheResponse:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_onqueue_willSendRequestForEstablishedConnection:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_private_onqueue_didReceiveResponseDisposition:(long long)arg1 completion:(id /* block */)arg2;
+- (void)_setConnectionCacheKey:(void*)arg1;
+- (void)_task_onqueue_didFinish;
+- (void)_task_onqueue_didReceiveDispatchData:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cancel_with_error:(id)arg1;
+- (id)cfConn;
+- (void)connection:(id)arg1 _conditionalRequirementsChanged:(bool)arg2;
+- (void)connection:(id)arg1 _willSendRequestForEstablishedConnection:(id)arg2 completion:(id /* block */)arg3;
+- (void)connection:(id)arg1 alternatePathAvailable:(int)arg2;
+- (void)connection:(id)arg1 challenged:(id)arg2 authCallback:(id /* block */)arg3;
+- (void)connection:(id)arg1 didFinishLoadingWithError:(id)arg2;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2 completion:(id /* block */)arg3;
+- (void)connection:(id)arg1 didReceiveInformationalResponse:(id)arg2;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2 completion:(id /* block */)arg3;
+- (void)connection:(id)arg1 didReceiveSocketInputStream:(id)arg2 outputStream:(id)arg3;
+- (void)connection:(id)arg1 didReceiveTCPConnection:(struct shared_ptr<TransportConnection> { struct TransportConnection {} *x1; struct __shared_weak_count {} *x2; })arg2 extraBytes:(id)arg3;
+- (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamCallback:(id /* block */)arg3;
+- (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamFromOffset:(long long)arg3 callback:(id /* block */)arg4;
+- (void)connection:(id)arg1 sentBodyBytes:(id)arg2 totalBytes:(id)arg3 expectedBytes:(id)arg4;
+- (void)connection:(id)arg1 waitingWithReason:(long long)arg2;
+- (void)connection:(id)arg1 wasRedirected:(id)arg2 newRequest:(id)arg3 responseCallback:(id /* block */)arg4;
+- (void)connection:(id)arg1 willCacheResponse:(id)arg2 responseCallback:(id /* block */)arg3;
+- (void)connectionWillFinishLoading:(id)arg1;
+- (void)dealloc;
+- (id)error:(id)arg1 code:(long long)arg2;
+- (id)initWithBackgroundTaskInfo:(id)arg1 taskGroup:(id)arg2;
+- (id)initWithOriginalRequest:(id)arg1 ident:(unsigned long long)arg2 taskGroup:(id)arg3;
+- (id)resourceTimeoutError;
+- (void)setCfConn:(id)arg1;
+- (void)set_TLSMaximumSupportedProtocolVersion:(unsigned short)arg1;
+- (void)set_TLSMinimumSupportedProtocolVersion:(unsigned short)arg1;
+- (void)set_timeoutIntervalForResource:(double)arg1;
+- (void)startResourceTimer;
+
+@end

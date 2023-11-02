@@ -1,0 +1,91 @@
+
+@protocol PXMutablePhotosViewModel <NSObject>
+
+@required
+
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })additionalAspectFitEdgeMargins;
+- (bool)attemptSetInSelectMode:(bool)arg1;
+- (bool)captionsVisible;
+- (void)clickSelectAssetReference:(PXAssetReference *)arg1 updateCursorIndexPath:(bool)arg2;
+- (void)clickSelectIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1 updateCursorIndexPath:(bool)arg2;
+- (PXContentFilterState *)contentFilterState;
+- (Class)cplActionManagerClass;
+- (void)deselectAll;
+- (bool)dismissRequested;
+- (NSSet *)draggedAssetReferences;
+- (PXAssetReference *)dropTargetAssetReference;
+- (id /* block */)effectProvider:(void *)arg1; // needs 1 arg types, found 6: id /* block */, PXGEntityManager *, <PXDisplayAsset> *, void*, id, SEL
+- (double)floatingTitleOpacity;
+- (bool)footerHasImportantInformation;
+- (long long)footerVisibilityStyle;
+- (bool)hasScrollableContent;
+- (double)headerTitleTopInset;
+- (bool)hidesNavbar;
+- (bool)hidesToolbar;
+- (bool)isAppearing;
+- (bool)isContentBelowTitle;
+- (bool)isFaceModeEnabled;
+- (bool)isInCompactMode;
+- (bool)isInSelectMode;
+- (bool)isScrolledToTop;
+- (bool)isShowingAlternateContent;
+- (bool)keepsTabBarAlwaysHidden;
+- (NSString *)noContentPlaceholderFallbackMessage;
+- (NSString *)noContentPlaceholderFallbackTitle;
+- (long long)numberOfZoomSteps;
+- (void)selectAll;
+- (void)setAdditionalAspectFitEdgeMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setAspectRatioToggleAllowed:(bool)arg1 forReason:(NSString *)arg2;
+- (void)setCaptionsVisible:(bool)arg1;
+- (void)setContentBelowTitle:(bool)arg1;
+- (void)setContentFilterState:(PXContentFilterState *)arg1;
+- (void)setCplActionManagerClass:(Class)arg1;
+- (void)setDismissRequested:(bool)arg1;
+- (void)setDraggedAssetReferences:(NSSet *)arg1;
+- (void)setDropTargetAssetReference:(PXAssetReference *)arg1;
+- (void)setEffectProvider:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, PXGEffect *, id /* block */, PXGEntityManager *, <PXDisplayAsset> *, void*
+- (void)setEnterSelectModeAllowed:(bool)arg1 forReason:(NSString *)arg2;
+- (void)setFaceModeEnabled:(bool)arg1;
+- (void)setFloatingTitleOpacity:(double)arg1;
+- (void)setFooterHasImportantInformation:(bool)arg1;
+- (void)setFooterVisibilityStyle:(long long)arg1;
+- (void)setHasScrollableContent:(bool)arg1;
+- (void)setHeaderTitleTopInset:(double)arg1;
+- (void)setHideSurroundingContent:(bool)arg1 forReason:(NSString *)arg2;
+- (void)setHidesNavbar:(bool)arg1;
+- (void)setHidesToolbar:(bool)arg1;
+- (void)setIsAppearing:(bool)arg1;
+- (void)setIsInCompactMode:(bool)arg1;
+- (void)setIsInSelectMode:(bool)arg1;
+- (void)setKeepsTabBarAlwaysHidden:(bool)arg1;
+- (void)setNoContentPlaceholderFallbackMessage:(NSString *)arg1;
+- (void)setNoContentPlaceholderFallbackTitle:(NSString *)arg1;
+- (void)setNumberOfZoomSteps:(long long)arg1;
+- (void)setOneUpPresentationAllowed:(bool)arg1 forReason:(NSString *)arg2;
+- (void)setScrolledToTop:(bool)arg1;
+- (void)setShouldAlwaysRespectToolbarActionPlacementPreference:(bool)arg1;
+- (void)setShowLoadingPlaceholderWhenEmpty:(bool)arg1;
+- (void)setShowingAlternateContent:(bool)arg1;
+- (void)setTapbackStatusManager:(id <PXTapbackStatusManager>)arg1;
+- (void)setTitleBackgroundOpacity:(double)arg1;
+- (void)setUserWantsAspectFitContent:(NSNumber *)arg1;
+- (void)setViewBasedDecorationsEnabled:(bool)arg1;
+- (void)setWantsContentFilterIndicatorVisible:(bool)arg1;
+- (void)setWantsContentFilterVisible:(bool)arg1;
+- (void)setZoomStep:(double)arg1 isInteractive:(bool)arg2 shouldAnimate:(bool)arg3 anchorAssetReference:(PXAssetReference *)arg4;
+- (bool)shouldAlwaysRespectToolbarActionPlacementPreference;
+- (bool)showLoadingPlaceholderWhenEmpty;
+- (<PXTapbackStatusManager> *)tapbackStatusManager;
+- (double)titleBackgroundOpacity;
+- (void)toggleSelectionForAssetCollectionReference:(PXAssetCollectionReference *)arg1;
+- (void)toggleSelectionForAssetReference:(PXAssetReference *)arg1;
+- (void)toggleSelectionForAssetReference:(PXAssetReference *)arg1 updateCursorIndexPath:(bool)arg2;
+- (void)toggleSelectionForIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1;
+- (void)toggleSelectionForIndexPath:(struct PXSimpleIndexPath { long long x1; long long x2; long long x3; long long x4; })arg1 updateCursorIndexPath:(bool)arg2;
+- (NSNumber *)userWantsAspectFitContent;
+- (bool)viewBasedDecorationsEnabled;
+- (NSMutableOrderedSet *)visibleAssetCollections;
+- (bool)wantsContentFilterIndicatorVisible;
+- (bool)wantsContentFilterVisible;
+
+@end

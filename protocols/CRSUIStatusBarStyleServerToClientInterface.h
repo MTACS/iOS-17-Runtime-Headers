@@ -1,0 +1,4 @@
+
+@protocol CRSUIStatusBarStyleServerToClientInterface <NSObject>
+
+@end

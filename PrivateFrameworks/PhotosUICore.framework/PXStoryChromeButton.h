@@ -1,0 +1,127 @@
+
+@interface PXStoryChromeButton : UIButton <PXGReusableView, UIPointerInteractionDelegate> {
+    UIImage * _assetImage;
+    UIImageView * _assetImageView;
+    UIView * _backgroundView;
+    UIImageView * _badgeSystemImageView;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _clippingRect;
+    UIContextMenuInteraction * _customContextMenuInteraction;
+    UIVisualEffectView * _effectView;
+    long long  _imageRequestID;
+    bool  _isHovered;
+    bool  _isMenuOpen;
+    UILabel * _label;
+    NSObject<OS_os_log> * _log;
+    UIPointerInteraction * _pointerInteraction;
+    UIImageView * _systemImageView;
+    UIVisualEffectView * _systemImageVisualEffectView;
+    PXUpdater * _updater;
+    PXStoryChromeButtonConfiguration * _userData;
+}
+
+@property (nonatomic, retain) UIImage *assetImage;
+@property (nonatomic, readonly) UIImageView *assetImageView;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, readonly) UIImageView *badgeSystemImageView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } clippingRect;
+@property (nonatomic, retain) UIContextMenuInteraction *customContextMenuInteraction;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIVisualEffectView *effectView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long imageRequestID;
+@property (nonatomic) bool isHovered;
+@property (nonatomic) bool isMenuOpen;
+@property (nonatomic, readonly) UILabel *label;
+@property (nonatomic, readonly) NSObject<OS_os_log> *log;
+@property (nonatomic, retain) UIPointerInteraction *pointerInteraction;
+@property (nonatomic, readonly) bool shouldReuseWhenInvisible;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIImageView *systemImageView;
+@property (nonatomic, readonly) UIVisualEffectView *systemImageVisualEffectView;
+@property (nonatomic, readonly) PXUpdater *updater;
+@property (nonatomic, copy) PXStoryChromeButtonConfiguration *userData;
+
++ (id)_createBadgeSystemImageView;
++ (id)_createSystemImageView;
++ (id)_createSystemImageVisualEffectView;
++ (struct CGSize { double x1; double x2; })_sizeForAttributedLabel:(id)arg1;
++ (struct CGSize { double x1; double x2; })sizeWithConfiguration:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_badgeImageWithSystemName:(id)arg1;
+- (void)_configureActions;
+- (void)_configureBackgroundView:(id)arg1;
+- (void)_configureVisualEffectView:(id)arg1;
+- (id)_createAssetImageView;
+- (id)_createLabel;
+- (void)_handleImageResult:(id)arg1 info:(id)arg2 forDisplayAsset:(id)arg3 requestID:(long long)arg4 synchronous:(bool)arg5;
+- (id)_imageWithSystemName:(id)arg1;
+- (id)_imageWithSystemName:(id)arg1 symbolConfiguration:(id)arg2;
+- (void)_invalidateAppearance;
+- (void)_invalidateAssetImage;
+- (void)_px_invalidatePointerInteraction;
+- (void)_setEffectViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setNeedsUpdate;
+- (void)_updateAppearance;
+- (void)_updateAssetImage;
+- (void)_updateAssetImageView;
+- (void)_updateBackgroundView;
+- (void)_updateBackgroundViewCornerRadius;
+- (void)_updateBadgeSytemImageView;
+- (void)_updateEffectViewCornerRadius;
+- (void)_updateLabel;
+- (void)_updateSystemImageView;
+- (void)_updateSystemImageVisualEffectView;
+- (void)_updateVisualEffectView;
+- (id)accessibilityLabel;
+- (id)assetImage;
+- (id)assetImageView;
+- (id)backgroundView;
+- (id)badgeSystemImageView;
+- (void)becomeReusable;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clippingRect;
+- (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
+- (void)contextMenuInteraction:(id)arg1 willEndForConfiguration:(id)arg2 animator:(id)arg3;
+- (id)customContextMenuInteraction;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)effectView;
+- (long long)imageRequestID;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isHovered;
+- (bool)isMenuOpen;
+- (id)label;
+- (void)layoutSubviews;
+- (id)log;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)pointerInteraction;
+- (id)pointerInteraction:(id)arg1 regionForRequest:(id)arg2 defaultRegion:(id)arg3;
+- (id)pointerInteraction:(id)arg1 styleForRegion:(id)arg2;
+- (void)prepareForReuse;
+- (void)setAlpha:(double)arg1;
+- (void)setAssetImage:(id)arg1;
+- (void)setBackgroundView:(id)arg1;
+- (void)setClippingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCustomContextMenuInteraction:(id)arg1;
+- (void)setEffectView:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setImageRequestID:(long long)arg1;
+- (void)setIsHovered:(bool)arg1;
+- (void)setIsMenuOpen:(bool)arg1;
+- (void)setPointerInteraction:(id)arg1;
+- (void)setUserData:(id)arg1;
+- (id)systemImageView;
+- (id)systemImageVisualEffectView;
+- (id)updater;
+- (id)userData;
+
+@end

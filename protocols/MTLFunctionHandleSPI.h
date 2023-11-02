@@ -1,0 +1,4 @@
+
+@protocol MTLFunctionHandleSPI <MTLFunctionHandle>
+
+@end

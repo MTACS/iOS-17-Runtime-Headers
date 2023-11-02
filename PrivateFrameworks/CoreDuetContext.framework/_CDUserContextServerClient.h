@@ -1,0 +1,93 @@
+
+@interface _CDUserContextServerClient : NSObject <_CDUserContextServer> {
+    NSObject<OS_dispatch_queue> * _activateMonitorQueue;
+    NSXPCConnection * _clientConnection;
+    NSMutableDictionary * _devicesToActivateByRemoteUserContextProxySourceDeviceUUID;
+    NSMutableSet * _nonWakingRegistration;
+    NSObject<OS_dispatch_queue> * _queue;
+    _CDUserContextService * _service;
+    _CDInMemoryUserContext * _userContext;
+    NSMutableSet * _wakingRegistrations;
+}
+
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *activateMonitorQueue;
+@property (nonatomic, retain) NSXPCConnection *clientConnection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableDictionary *devicesToActivateByRemoteUserContextProxySourceDeviceUUID;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSMutableSet *nonWakingRegistration;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) _CDUserContextService *service;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) _CDInMemoryUserContext *userContext;
+@property (nonatomic, retain) NSMutableSet *wakingRegistrations;
+
++ (id)clientInterface;
++ (id)clientOfService:(id)arg1 withConnection:(id)arg2 andContext:(id)arg3;
++ (id)serverInterface;
+
+- (void).cxx_destruct;
+- (void)_hasKnowledgeOfPath:(id)arg1 handler:(id /* block */)arg2;
+- (void)_propertiesOfPath:(id)arg1 handler:(id /* block */)arg2;
+- (void)_propertiesOfRemotePath:(id)arg1 handler:(id /* block */)arg2;
+- (bool)_shouldUpdateWebUsageForCurrentUser;
+- (void)_valueForPath:(id)arg1 handler:(id /* block */)arg2;
+- (void)_valueForRemotePath:(id)arg1 handler:(id /* block */)arg2;
+- (void)_valuesForPaths:(id)arg1 handler:(id /* block */)arg2;
+- (void)activateDevices:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2;
+- (id)activateMonitorQueue;
+- (void)addObjects:(id)arg1 andRemoveObjects:(id)arg2 forArrayAtPath:(id)arg3 handler:(id /* block */)arg4;
+- (void)addObjects:(id)arg1 toArrayAtPath:(id)arg2 handler:(id /* block */)arg3;
+- (id)clientConnection;
+- (void)deactivateDevices:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2;
+- (void)dealloc;
+- (void)deregisterAllCallbacks:(bool)arg1;
+- (void)deregisterCallback:(id)arg1;
+- (id)deviceIDsForDeviceTypes:(unsigned long long)arg1;
+- (id)deviceIDsSortedByRemoteUserContextProxySourceDeviceUUIDFromDeviceIDs:(id)arg1;
+- (id)devicesToActivateByRemoteUserContextProxySourceDeviceUUID;
+- (void)evaluatePredicate:(id)arg1 handler:(id /* block */)arg2;
+- (void)fetchPropertiesOfRemoteKeyPaths:(id)arg1 handler:(id /* block */)arg2;
+- (void)fetchPropertiesOfRemoteKeyPaths:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2 handler:(id /* block */)arg3;
+- (void)handlePreviouslyFiredRegistration:(id)arg1 info:(id)arg2;
+- (void)hasKnowledgeOfPath:(id)arg1 handler:(id /* block */)arg2;
+- (id)initForService:(id)arg1 withConnection:(id)arg2 andContext:(id)arg3;
+- (bool)isMDCSNeededForKeyPath:(id)arg1;
+- (bool)isMDCSNeededForKeyPathInKeyPaths:(id)arg1;
+- (id)keyPathsSortedByDeviceID:(id)arg1;
+- (id)nonWakingRegistration;
+- (void)performRegistrationCallbackWithRegistration:(id)arg1 info:(id)arg2;
+- (void)propertiesOfPath:(id)arg1 handler:(id /* block */)arg2;
+- (void)propertiesOfRemotePath:(id)arg1 handler:(id /* block */)arg2;
+- (void)proxyTokenDidUpdate;
+- (id)queue;
+- (void)registerCallback:(id)arg1;
+- (id)remoteDeviceIDs;
+- (id)remoteDeviceIDsForRemoteUserContextProxySourceDeviceUUID:(id)arg1;
+- (id)remoteDevices;
+- (id)remoteDevicesForRemoteUserContextProxySourceDeviceUUID:(id)arg1;
+- (id)remoteUserContextProxySourceDeviceUUIDByDeviceID;
+- (id)remoteUserContextProxySourceDeviceUUIDForKeyPath:(id)arg1;
+- (void)removeObjects:(id)arg1 fromArrayAtPath:(id)arg2 handler:(id /* block */)arg3;
+- (void)removeObjectsMatchingPredicate:(id)arg1 fromArrayAtPath:(id)arg2 handler:(id /* block */)arg3;
+- (id)service;
+- (void)setActivateMonitorQueue:(id)arg1;
+- (void)setClientConnection:(id)arg1;
+- (void)setDevicesToActivateByRemoteUserContextProxySourceDeviceUUID:(id)arg1;
+- (void)setNonWakingRegistration:(id)arg1;
+- (void)setObject:(id)arg1 forPath:(id)arg2 handler:(id /* block */)arg3;
+- (void)setObject:(id)arg1 lastModifiedDate:(id)arg2 forContextualKeyPath:(id)arg3 handler:(id /* block */)arg4;
+- (void)setQueue:(id)arg1;
+- (void)setService:(id)arg1;
+- (void)setUserContext:(id)arg1;
+- (void)setWakingRegistrations:(id)arg1;
+- (void)subscribeToContextValueNotificationsWithRegistration:(id)arg1 deviceIDs:(id)arg2;
+- (void)subscribeToDeviceStatusChangeNotificationsForDeviceTypes:(unsigned long long)arg1;
+- (void)unsubscribeFromContextValueNotificationsWithRegistration:(id)arg1 deviceIDs:(id)arg2;
+- (id)userContext;
+- (void)valuesForPaths:(id)arg1 handler:(id /* block */)arg2;
+- (void)valuesForPaths:(id)arg1 inContextsMatching:(id)arg2 handler:(id /* block */)arg3;
+- (id)wakingRegistrations;
+
+@end

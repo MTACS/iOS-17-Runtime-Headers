@@ -1,0 +1,4 @@
+
+@protocol SAAceSerializable <AceObject>
+
+@end

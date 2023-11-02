@@ -1,0 +1,4 @@
+
+@protocol BWInferenceEngineControllerDelegate <BWStillImageProcessorControllerDelegate, BWInferencePixelBufferPoolProvider>
+
+@end

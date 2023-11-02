@@ -1,0 +1,85 @@
+
+@interface PKAccountWebServiceFinancingOptionsRequest : PKAccountWebServiceRequest {
+    NSString * _accountIdentifier;
+    NSNumber * _adamIdentifier;
+    NSDecimalNumber * _amount;
+    NSURL * _baseURL;
+    unsigned long long  _channel;
+    NSString * _countryCode;
+    NSString * _currencyCode;
+    PKCurrencyAmount * _dueNext30Days;
+    bool  _isMerchantTokenRequest;
+    bool  _isMultiTokenRequest;
+    NSString * _merchantIdentifier;
+    NSString * _merchantName;
+    NSString * _originURL;
+    NSString * _referrerIdentifier;
+    NSString * _sessionIdentifier;
+    NSArray * _supportedNetworks;
+    long long  _suppressionMode;
+    NSString * _webMerchantIdentifier;
+    NSString * _webMerchantName;
+}
+
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic, copy) NSNumber *adamIdentifier;
+@property (nonatomic, copy) NSDecimalNumber *amount;
+@property (nonatomic, retain) NSURL *baseURL;
+@property (nonatomic) unsigned long long channel;
+@property (nonatomic, copy) NSString *countryCode;
+@property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic, retain) PKCurrencyAmount *dueNext30Days;
+@property (nonatomic) bool isMerchantTokenRequest;
+@property (nonatomic) bool isMultiTokenRequest;
+@property (nonatomic, copy) NSString *merchantIdentifier;
+@property (nonatomic, copy) NSString *merchantName;
+@property (nonatomic, copy) NSString *originURL;
+@property (nonatomic, copy) NSString *referrerIdentifier;
+@property (nonatomic, copy) NSString *sessionIdentifier;
+@property (nonatomic, copy) NSArray *supportedNetworks;
+@property (nonatomic) long long suppressionMode;
+@property (nonatomic, copy) NSString *webMerchantIdentifier;
+@property (nonatomic, copy) NSString *webMerchantName;
+
+- (void).cxx_destruct;
+- (id)_urlRequestWithAppleAccountInformation:(id)arg1;
+- (id)accountIdentifier;
+- (id)adamIdentifier;
+- (id)amount;
+- (id)baseURL;
+- (unsigned long long)channel;
+- (id)countryCode;
+- (id)currencyCode;
+- (id)dueNext30Days;
+- (bool)isMerchantTokenRequest;
+- (bool)isMultiTokenRequest;
+- (id)merchantIdentifier;
+- (id)merchantName;
+- (id)originURL;
+- (id)referrerIdentifier;
+- (id)sessionIdentifier;
+- (void)setAccountIdentifier:(id)arg1;
+- (void)setAdamIdentifier:(id)arg1;
+- (void)setAmount:(id)arg1;
+- (void)setBaseURL:(id)arg1;
+- (void)setChannel:(unsigned long long)arg1;
+- (void)setCountryCode:(id)arg1;
+- (void)setCurrencyCode:(id)arg1;
+- (void)setDueNext30Days:(id)arg1;
+- (void)setIsMerchantTokenRequest:(bool)arg1;
+- (void)setIsMultiTokenRequest:(bool)arg1;
+- (void)setMerchantIdentifier:(id)arg1;
+- (void)setMerchantName:(id)arg1;
+- (void)setOriginURL:(id)arg1;
+- (void)setReferrerIdentifier:(id)arg1;
+- (void)setSessionIdentifier:(id)arg1;
+- (void)setSupportedNetworks:(id)arg1;
+- (void)setSuppressionMode:(long long)arg1;
+- (void)setWebMerchantIdentifier:(id)arg1;
+- (void)setWebMerchantName:(id)arg1;
+- (id)supportedNetworks;
+- (long long)suppressionMode;
+- (id)webMerchantIdentifier;
+- (id)webMerchantName;
+
+@end

@@ -1,0 +1,110 @@
+
+@interface UIListContentConfiguration : NSObject <NSSecureCoding, UIContentConfiguration> {
+    unsigned long long  _axesPreservingSuperviewLayoutMargins;
+    struct { 
+        unsigned int hasCustomizedAxesPreservingSuperviewLayoutMargins : 1; 
+        unsigned int hasCustomizedDirectionalLayoutMargins : 1; 
+        unsigned int hasCustomizedPrefersSideBySideTextAndSecondaryText : 1; 
+        unsigned int hasCustomizedImageToTextPadding : 1; 
+        unsigned int hasCustomizedTextToSecondaryTextHorizontalPadding : 1; 
+        unsigned int hasCustomizedTextToSecondaryTextVerticalPadding : 1; 
+        unsigned int hasCustomizedEnforcesMinimumHeight : 1; 
+    }  _configurationFlags;
+    long long  _defaultStyle;
+    struct NSDirectionalEdgeInsets { 
+        double top; 
+        double leading; 
+        double bottom; 
+        double trailing; 
+    }  _directionalLayoutMargins;
+    bool  _enforcesMinimumHeight;
+    UIListContentImageProperties * _imageProperties;
+    double  _imageToTextPadding;
+    bool  _prefersSideBySideTextAndSecondaryText;
+    UIListContentTextProperties * _secondaryTextProperties;
+    UIListContentTextProperties * _textProperties;
+    double  _textToSecondaryTextHorizontalPadding;
+    double  _textToSecondaryTextVerticalPadding;
+}
+
+@property (setter=_setEnforcesMinimumHeight:, nonatomic) bool _enforcesMinimumHeight;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic) unsigned long long axesPreservingSuperviewLayoutMargins;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; } directionalLayoutMargins;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) UIListContentImageProperties *imageProperties;
+@property (nonatomic) double imageToTextPadding;
+@property (nonatomic) bool prefersSideBySideTextAndSecondaryText;
+@property (nonatomic, copy) NSAttributedString *secondaryAttributedText;
+@property (nonatomic, copy) NSString *secondaryText;
+@property (nonatomic, readonly) UIListContentTextProperties *secondaryTextProperties;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, readonly) UIListContentTextProperties *textProperties;
+@property (nonatomic) double textToSecondaryTextHorizontalPadding;
+@property (nonatomic) double textToSecondaryTextVerticalPadding;
+
++ (id)_defaultInsetGroupedCellConfiguration;
++ (id)_interactiveInsetGroupedHeaderConfiguration;
++ (id)_prominentInsetGroupedHeaderConfiguration;
++ (id)accompaniedSidebarCellConfiguration;
++ (id)accompaniedSidebarSubtitleCellConfiguration;
++ (id)cellConfiguration;
++ (id)extraProminentInsetGroupedHeaderConfiguration;
++ (id)groupedFooterConfiguration;
++ (id)groupedHeaderConfiguration;
++ (id)plainFooterConfiguration;
++ (id)plainHeaderConfiguration;
++ (id)prominentInsetGroupedHeaderConfiguration;
++ (id)sidebarCellConfiguration;
++ (id)sidebarHeaderConfiguration;
++ (id)sidebarSubtitleCellConfiguration;
++ (id)subtitleCellConfiguration;
++ (bool)supportsSecureCoding;
++ (id)valueCellConfiguration;
+
+- (void).cxx_destruct;
+- (bool)_enforcesMinimumHeight;
+- (double)_minimumHeightForTraitCollection:(id)arg1;
+- (void)_setEnforcesMinimumHeight:(bool)arg1;
+- (void)_setSwiftBridgingImageProperties:(id)arg1;
+- (void)_setSwiftBridgingSecondaryTextProperties:(id)arg1;
+- (void)_setSwiftBridgingTextProperties:(id)arg1;
+- (id)attributedText;
+- (unsigned long long)axesPreservingSuperviewLayoutMargins;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })directionalLayoutMargins;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)image;
+- (id)imageProperties;
+- (double)imageToTextPadding;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)makeContentView;
+- (bool)prefersSideBySideTextAndSecondaryText;
+- (id)secondaryAttributedText;
+- (id)secondaryText;
+- (id)secondaryTextProperties;
+- (void)setAttributedText:(id)arg1;
+- (void)setAxesPreservingSuperviewLayoutMargins:(unsigned long long)arg1;
+- (void)setDirectionalLayoutMargins:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setImage:(id)arg1;
+- (void)setImageToTextPadding:(double)arg1;
+- (void)setPrefersSideBySideTextAndSecondaryText:(bool)arg1;
+- (void)setSecondaryAttributedText:(id)arg1;
+- (void)setSecondaryText:(id)arg1;
+- (void)setText:(id)arg1;
+- (void)setTextToSecondaryTextHorizontalPadding:(double)arg1;
+- (void)setTextToSecondaryTextVerticalPadding:(double)arg1;
+- (id)text;
+- (id)textProperties;
+- (double)textToSecondaryTextHorizontalPadding;
+- (double)textToSecondaryTextVerticalPadding;
+- (id)updatedConfigurationForState:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.HomeAutomationAirPurifierResponses : HomeAutomationInternal.HomeAutomationEntityResponses
+
+@end

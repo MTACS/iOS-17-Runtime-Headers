@@ -1,0 +1,4 @@
+
+@interface HKTokenObfuscator : NSObject
+
+@end

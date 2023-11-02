@@ -1,0 +1,4 @@
+
+@interface SiriMessageTypes.EndUnderstandingDictationSessionMessage : SiriMessageTypes.EndSpeechDictationSessionMessage
+
+@end

@@ -1,0 +1,102 @@
+
+@interface CPLSyncSession : NSObject <CPLSyncSessionPredictorObserver> {
+    unsigned long long  _currentState;
+    NSObject<OS_xpc_object> * _detachedActivity;
+    NSDate * _expectedDate;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    CPLSyncSessionPredictor * _predictor;
+    NSDate * _proposedRescheduleDate;
+    unsigned long long  _requiredStateAtEndOfSyncSession;
+    <CPLSyncSessionRescheduler> * _rescheduler;
+    CPLEngineScheduler * _scheduler;
+    CPLScopeFilter * _scopeFilter;
+    NSMutableSet * _scopeIdentifiersExcludedFromMingling;
+    NSMutableSet * _scopeIdentifiersExcludedFromPushToTransport;
+    unsigned long long  _sequenceNumber;
+    NSMutableArray * _sessionInformation;
+    bool  _shouldRescheduleASyncSession;
+    bool  _watchingPredictor;
+}
+
+@property (nonatomic, readonly) long long activityState;
+@property (readonly) unsigned long long currentState;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDetached, nonatomic, readonly) bool detached;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *detachedActivity;
+@property (nonatomic, readonly) NSDate *expectedDate;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool mightNeedForegroundToStart;
+@property (nonatomic, readonly) CPLSyncSessionPredictor *predictor;
+@property (nonatomic, readonly) NSDate *proposedRescheduleDate;
+@property (nonatomic, readonly) unsigned long long requiredStateAtEndOfSyncSession;
+@property (nonatomic, retain) <CPLSyncSessionRescheduler> *rescheduler;
+@property (nonatomic, readonly) CPLEngineScheduler *scheduler;
+@property (nonatomic, readonly) CPLScopeFilter *scopeFilter;
+@property (nonatomic, readonly) NSSet *scopeIdentifiersExcludedFromMingling;
+@property (nonatomic, readonly) NSSet *scopeIdentifiersExcludedFromPushToTransport;
+@property (nonatomic, readonly) unsigned long long sequenceNumber;
+@property (nonatomic, readonly) bool shouldBeDiscretionary;
+@property (nonatomic, readonly) bool shouldDefer;
+@property (nonatomic, readonly) bool shouldRescheduleASyncSession;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *whenItWillStartDescription;
+
++ (id)detachedSyncSessionWithScheduler:(id)arg1 scopeFilter:(id)arg2;
++ (id)scopeIdentifierToAutomaticallyExcludeFromMingling;
++ (void)setScopeIdentifierToAutomaticallyExcludeFromMingling:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_unwatchPredictor;
+- (void)_updatePrediction:(id)arg1;
+- (void)_watchOrUnwatchPredictorIfNecessary;
+- (void)_watchPredictor;
+- (long long)activityState;
+- (unsigned long long)currentState;
+- (void)deferWithBlock:(id /* block */)arg1;
+- (id)description;
+- (id)detachedActivity;
+- (void)dropExpectedDate;
+- (void)engineIsClosing;
+- (void)excludeScopeIdentifierFromMingling:(id)arg1;
+- (void)excludeScopeIdentifierFromPushToTransport:(id)arg1;
+- (id)expectedDate;
+- (void)includeScopeIdentifierInMingling:(id)arg1;
+- (void)includeScopeIdentifierInPushToTransport:(id)arg1;
+- (id)initWithSequenceNumber:(unsigned long long)arg1 expectedDate:(id)arg2 scheduler:(id)arg3 scopeFilter:(id)arg4;
+- (bool)isAfterDate:(id)arg1;
+- (bool)isBeforeDate:(id)arg1;
+- (bool)isDetached;
+- (bool)isInLessThanTimeInterval:(double)arg1;
+- (bool)isInMoreThanTimeInverval:(double)arg1;
+- (bool)mightNeedForegroundToStart;
+- (void)noteSyncSessionInformation:(id)arg1;
+- (void)noteSyncSessionInformation:(id)arg1 arguments:(char *)arg2;
+- (void)noteSyncSessionMovedToState:(unsigned long long)arg1;
+- (id)popSessionInformation;
+- (id)predictor;
+- (void)predictor:(id)arg1 changedPrediction:(id)arg2;
+- (id)proposedRescheduleDate;
+- (id)redactedDescription;
+- (void)requestSyncStateAtEndOfSyncSession:(unsigned long long)arg1 reschedule:(bool)arg2;
+- (void)requestSyncStateAtEndOfSyncSession:(unsigned long long)arg1 reschedule:(bool)arg2 proposedRescheduleDate:(id)arg3;
+- (unsigned long long)requiredStateAtEndOfSyncSession;
+- (id)rescheduler;
+- (id)scheduler;
+- (id)scopeFilter;
+- (id)scopeIdentifiersExcludedFromMingling;
+- (id)scopeIdentifiersExcludedFromPushToTransport;
+- (unsigned long long)sequenceNumber;
+- (void)sessionIsDone;
+- (void)sessionWillStart;
+- (void)sessionWontHappen;
+- (void)setDetachedActivity:(id)arg1;
+- (void)setRescheduler:(id)arg1;
+- (bool)shouldBeDiscretionary;
+- (bool)shouldDefer;
+- (bool)shouldRescheduleASyncSession;
+- (id)whenItWillStartDescription;
+
+@end

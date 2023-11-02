@@ -1,0 +1,97 @@
+
+@interface MNTransitInstruction : NSObject {
+    long long  _context;
+    <GEOServerFormattedString> * _countStopsFormattedString;
+    GEOComposedString * _countStopsString;
+    int  _departureBarFormatStyle;
+    <GEOServerFormattedString> * _departureBarInstruction;
+    GEOComposedString * _departureBarInstructionString;
+    long long  _departureBarStyle;
+    <GEOServerFormattedString> * _expandableListFormattedString;
+    GEOComposedString * _expandableListString;
+    bool  _hideTimeInstructionsWhenCollapsed;
+    NSArray * _majorFormattedInstruction;
+    NSArray * _majorInstructionStrings;
+    NSArray * _minorFormattedInstruction;
+    NSArray * _minorInstructionStrings;
+    <GEOServerFormattedString> * _primaryTimeInstruction;
+    GEOComposedString * _primaryTimeInstructionString;
+    GEOComposedString * _secondaryTimeInstructionString;
+    <GEOServerFormattedString> * _secondaryTimeinstruction;
+    NSArray * _tertiaryFormattedInstruction;
+    NSArray * _tertiaryInstructionStrings;
+}
+
+@property (nonatomic, readonly) long long context;
+@property (nonatomic, retain) <GEOServerFormattedString> *countStopsFormattedString;
+@property (nonatomic, retain) GEOComposedString *countStopsString;
+@property (nonatomic) int departureBarFormatStyle;
+@property (nonatomic, retain) <GEOServerFormattedString> *departureBarInstruction;
+@property (nonatomic, retain) GEOComposedString *departureBarInstructionString;
+@property (nonatomic) long long departureBarStyle;
+@property (nonatomic, retain) <GEOServerFormattedString> *expandableListFormattedString;
+@property (nonatomic, retain) GEOComposedString *expandableListString;
+@property (nonatomic) bool hideTimeInstructionsWhenCollapsed;
+@property (nonatomic, copy) NSArray *majorFormattedInstruction;
+@property (nonatomic, retain) NSArray *majorInstructionStrings;
+@property (nonatomic, copy) NSArray *minorFormattedInstruction;
+@property (nonatomic, retain) NSArray *minorInstructionStrings;
+@property (nonatomic, retain) <GEOServerFormattedString> *primaryTimeInstruction;
+@property (nonatomic, retain) GEOComposedString *primaryTimeInstructionString;
+@property (nonatomic, retain) GEOComposedString *secondaryTimeInstructionString;
+@property (nonatomic, retain) <GEOServerFormattedString> *secondaryTimeinstruction;
+@property (nonatomic, copy) NSArray *tertiaryFormattedInstruction;
+@property (nonatomic, retain) NSArray *tertiaryInstructionStrings;
+
++ (id)instructionForUncertainArrivalToStationStep:(id)arg1 context:(long long)arg2;
+
+- (void).cxx_destruct;
+- (void)_fillInInstructions;
+- (long long)context;
+- (id)countStopsFormattedString;
+- (id)countStopsString;
+- (int)departureBarFormatStyle;
+- (id)departureBarInstruction;
+- (id)departureBarInstructionString;
+- (long long)departureBarStyle;
+- (id)expandableListFormattedString;
+- (id)expandableListString;
+- (id)formattedInstructionForType:(long long)arg1;
+- (bool)hideTimeInstructionsWhenCollapsed;
+- (id)initWithContext:(long long)arg1;
+- (id)instructionSet;
+- (id)instructionSetsForInstructionType:(long long)arg1;
+- (id)instructionStringForType:(long long)arg1;
+- (id)majorFormattedInstruction;
+- (id)majorInstructionStrings;
+- (id)minorFormattedInstruction;
+- (id)minorInstructionStrings;
+- (id)overridenInstructionsMapping;
+- (id)primaryTimeInstruction;
+- (id)primaryTimeInstructionString;
+- (void)refreshInstructionStrings;
+- (id)secondaryTimeInstructionString;
+- (id)secondaryTimeinstruction;
+- (void)setCountStopsFormattedString:(id)arg1;
+- (void)setCountStopsString:(id)arg1;
+- (void)setDepartureBarFormatStyle:(int)arg1;
+- (void)setDepartureBarInstruction:(id)arg1;
+- (void)setDepartureBarInstructionString:(id)arg1;
+- (void)setDepartureBarStyle:(long long)arg1;
+- (void)setExpandableListFormattedString:(id)arg1;
+- (void)setExpandableListString:(id)arg1;
+- (void)setHideTimeInstructionsWhenCollapsed:(bool)arg1;
+- (void)setMajorFormattedInstruction:(id)arg1;
+- (void)setMajorInstructionStrings:(id)arg1;
+- (void)setMinorFormattedInstruction:(id)arg1;
+- (void)setMinorInstructionStrings:(id)arg1;
+- (void)setPrimaryTimeInstruction:(id)arg1;
+- (void)setPrimaryTimeInstructionString:(id)arg1;
+- (void)setSecondaryTimeInstructionString:(id)arg1;
+- (void)setSecondaryTimeinstruction:(id)arg1;
+- (void)setTertiaryFormattedInstruction:(id)arg1;
+- (void)setTertiaryInstructionStrings:(id)arg1;
+- (id)tertiaryFormattedInstruction;
+- (id)tertiaryInstructionStrings;
+
+@end

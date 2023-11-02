@@ -1,0 +1,94 @@
+
+@interface PREditingFontPickerComponentViewController : UIViewController {
+    NSArray * _cellViews;
+    double  _configuredViewWidth;
+    <PREditingFontPickerComponentViewControllerDelegate> * _delegate;
+    double  _fontSize;
+    double  _fontWeight;
+    UISlider * _fontWeightSlider;
+    NSArray * _heightCellConstraints;
+    NSArray * _items;
+    double  _largestItemHeight;
+    NSLocale * _locale;
+    NSString * _role;
+    PREditingFontPickerCellView * _selectedCellView;
+    PREditingFontPickerItem * _selectedItem;
+    NSLayoutConstraint * _stackViewLeadingConstraint;
+    NSLayoutConstraint * _stackViewTrailingConstraint;
+    NSString * _titleString;
+    bool  _usingSmallerSizing;
+    NSArray * _widthCellConstraints;
+}
+
+@property (nonatomic, copy) NSArray *cellViews;
+@property (nonatomic) double configuredViewWidth;
+@property (nonatomic) <PREditingFontPickerComponentViewControllerDelegate> *delegate;
+@property (nonatomic) double fontSize;
+@property (nonatomic) double fontWeight;
+@property (nonatomic, retain) UISlider *fontWeightSlider;
+@property (nonatomic, copy) NSArray *heightCellConstraints;
+@property (nonatomic, readonly, copy) NSArray *items;
+@property (nonatomic) double largestItemHeight;
+@property (nonatomic, retain) NSLocale *locale;
+@property (nonatomic, retain) NSString *role;
+@property (nonatomic, retain) PREditingFontPickerCellView *selectedCellView;
+@property (nonatomic, retain) PREditingFontPickerItem *selectedItem;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewLeadingConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewTrailingConstraint;
+@property (nonatomic, retain) NSString *titleString;
+@property (getter=isUsingSmallerSizing, nonatomic) bool usingSmallerSizing;
+@property (nonatomic, copy) NSArray *widthCellConstraints;
+
++ (id)defaultFontIdentifiersForRole:(id)arg1 titleString:(id)arg2;
++ (id)defaultItemsForRole:(id)arg1 titleString:(id)arg2;
+
+- (void).cxx_destruct;
+- (bool)_shouldShowWeightSlider;
+- (void)_updateWeightSliderVisibility;
+- (id)cellViews;
+- (id)configureFontPickerViewIfNecessary;
+- (double)configuredViewWidth;
+- (id)contentStringForFont:(id)arg1;
+- (id)contentStringNumberFormatter;
+- (id)delegate;
+- (double)estimatedHeight;
+- (void)filterFontViewsByLocale;
+- (double)fontSize;
+- (void)fontSliderDidUpdateWeight:(id)arg1;
+- (double)fontWeight;
+- (id)fontWeightSlider;
+- (id)heightCellConstraints;
+- (id)initWithItems:(id)arg1 selectedItem:(id)arg2 role:(id)arg3 titleString:(id)arg4;
+- (bool)isUsingSmallerSizing;
+- (id)items;
+- (double)largestItemHeight;
+- (void)loadView;
+- (id)locale;
+- (id)role;
+- (id)selectedCellView;
+- (id)selectedItem;
+- (void)setCellViews:(id)arg1;
+- (void)setConfiguredViewWidth:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFontSize:(double)arg1;
+- (void)setFontWeight:(double)arg1;
+- (void)setFontWeightSlider:(id)arg1;
+- (void)setHeightCellConstraints:(id)arg1;
+- (void)setLargestItemHeight:(double)arg1;
+- (void)setLocale:(id)arg1;
+- (void)setRole:(id)arg1;
+- (void)setSelectedCellView:(id)arg1;
+- (void)setSelectedItem:(id)arg1;
+- (void)setStackViewLeadingConstraint:(id)arg1;
+- (void)setStackViewTrailingConstraint:(id)arg1;
+- (void)setTitleString:(id)arg1;
+- (void)setUsingSmallerSizing:(bool)arg1;
+- (void)setWidthCellConstraints:(id)arg1;
+- (id)stackViewLeadingConstraint;
+- (id)stackViewTrailingConstraint;
+- (id)titleString;
+- (void)updateLayoutForCurrentSize;
+- (void)viewDidLayoutSubviews;
+- (id)widthCellConstraints;
+
+@end

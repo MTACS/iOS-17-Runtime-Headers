@@ -1,0 +1,4 @@
+
+@interface CHDUnsupportedType : CHDChartType
+
+@end

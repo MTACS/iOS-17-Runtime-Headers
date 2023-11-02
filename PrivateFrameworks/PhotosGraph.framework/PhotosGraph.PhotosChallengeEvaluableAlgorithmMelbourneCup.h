@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmMelbourneCup : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

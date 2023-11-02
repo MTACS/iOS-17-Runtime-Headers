@@ -1,0 +1,4 @@
+
+@interface TRDeviceSetupLegacyFinishAction : TRDeviceSetupLegacyAction
+
+@end

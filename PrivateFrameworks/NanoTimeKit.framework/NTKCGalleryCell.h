@@ -1,0 +1,94 @@
+
+@interface NTKCGalleryCell : UITableViewCell <NTKGalleryCollectionDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+    bool  _allSnapshotsLoaded;
+    NTKGalleryCollection * _collection;
+    UICollectionView * _collectionView;
+    UIStackView * _contentStack;
+    NSLayoutConstraint * _cvHeightConstraint;
+    <NTKCGalleryCellDelegate> * _delegate;
+    UILabel * _footer;
+    UIStackView * _footerStack;
+    UICollectionViewFlowLayout * _layout;
+    long long  _selectedIndex;
+    bool  _showFooterInCollectionView;
+    NSArray * _snapshotRequests;
+    UILabel * _title;
+    UIStackView * _titleStack;
+}
+
+@property (nonatomic) bool allSnapshotsLoaded;
+@property (nonatomic, retain) NTKGalleryCollection *collection;
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
+@property (nonatomic, retain) UIStackView *contentStack;
+@property (nonatomic, retain) NSLayoutConstraint *cvHeightConstraint;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NTKCGalleryCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UILabel *footer;
+@property (nonatomic, retain) UIStackView *footerStack;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UICollectionViewFlowLayout *layout;
+@property (nonatomic) long long selectedIndex;
+@property (nonatomic) bool showFooterInCollectionView;
+@property (nonatomic, copy) NSArray *snapshotRequests;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UILabel *title;
+@property (nonatomic, retain) UIStackView *titleStack;
+
++ (double)estimatedRowHeight;
++ (id)reuseIdentifier;
+
+- (void).cxx_destruct;
+- (void)_configureViews;
+- (struct CGPoint { double x1; double x2; })_contentInsetPoint;
+- (void)_fontSizeDidChange;
+- (void)_resetSnapshotRequests;
+- (bool)allSnapshotsLoaded;
+- (void)clearSelectedFaces;
+- (id)collection;
+- (id)collectionView;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (id)containerViewForFace:(id)arg1;
+- (struct CGPoint { double x1; double x2; })contentOffset;
+- (id)contentStack;
+- (id)cvHeightConstraint;
+- (void)dealloc;
+- (id)delegate;
+- (id)faceForLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (id)footer;
+- (id)footerStack;
+- (void)galleryCollectionDidChange:(id)arg1 shouldUpdateSnaphots:(bool)arg2;
+- (id)init;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)layout;
+- (void)layoutSubviews;
+- (void)prepareForReuse;
+- (void)selectFace:(id)arg1;
+- (long long)selectedIndex;
+- (void)setAllSnapshotsLoaded:(bool)arg1;
+- (void)setCollection:(id)arg1;
+- (void)setCollectionView:(id)arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setContentStack:(id)arg1;
+- (void)setCvHeightConstraint:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFooter:(id)arg1;
+- (void)setFooterStack:(id)arg1;
+- (void)setLayout:(id)arg1;
+- (void)setSelectedIndex:(long long)arg1;
+- (void)setShowFooterInCollectionView:(bool)arg1;
+- (void)setSnapshotRequests:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setTitleStack:(id)arg1;
+- (bool)showFooterInCollectionView;
+- (id)snapshotRequests;
+- (id)title;
+- (id)titleStack;
+- (void)updateFaceAtIndex:(unsigned long long)arg1;
+
+@end

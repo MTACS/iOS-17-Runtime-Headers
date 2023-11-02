@@ -1,0 +1,4 @@
+
+@interface _TtC12TipKitLegacyP33_436CB83EAE2630D645C3BD11B6A85A4A19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

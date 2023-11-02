@@ -1,0 +1,9 @@
+
+@interface _TtCVV24IntelligencePlatformCore17EventStreamsEvent8CalendarP33_7174862ACAB430BBEAFA26978F3B6B9A13_StorageClass : _TtCs12_SwiftObject {
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _calendarContainsTitleWork;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _isAffectingAvailability;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _numAttendees;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _supportsLocationDirectorySearches;
+}
+
+@end

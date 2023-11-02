@@ -1,0 +1,93 @@
+
+@interface CKImpactEffectManager : NSObject <CKAudioControllerDelegate, CKSendAnimationManager> {
+    NSString * _animatingIdentifier;
+    CKAudioController * _audioController;
+    <CKSendAnimationManagerDelegate> * _delegate;
+    CABackdropLayer * _expressiveSendAnimationBackdrop;
+    CKBalloonView * _expressiveSendAnimationBalloon;
+    UIWindow * _expressiveSendAnimationWindow;
+    UIScrollView * _expressiveSendScrollView;
+    bool  _isAnimating;
+    bool  _isDisabled;
+    CKBalloonView * _originalBalloonView;
+    NSIndexSet * _undoSendChatItems;
+    <CKSendAnimationBalloonProvider> * sendAnimationBalloonProvider;
+    <CKSendAnimationManagerDelegate> * sendAnimationManagerDelegate;
+}
+
+@property (nonatomic, readonly) NSString *animatingIdentifier;
+@property (nonatomic, retain) CKAudioController *audioController;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKSendAnimationManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CABackdropLayer *expressiveSendAnimationBackdrop;
+@property (nonatomic, retain) CKBalloonView *expressiveSendAnimationBalloon;
+@property (nonatomic, retain) UIWindow *expressiveSendAnimationWindow;
+@property (nonatomic, retain) UIScrollView *expressiveSendScrollView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isAnimating;
+@property (nonatomic) bool isDisabled;
+@property (nonatomic, retain) CKBalloonView *originalBalloonView;
+@property (nonatomic) <CKSendAnimationBalloonProvider> *sendAnimationBalloonProvider;
+@property (nonatomic) <CKSendAnimationManagerDelegate> *sendAnimationManagerDelegate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSIndexSet *undoSendChatItems;
+
++ (id)effectIdentifiers;
++ (bool)identifierIsAnimatedImpactEffect:(id)arg1;
++ (bool)identifierIsValidImpactEffect:(id)arg1;
++ (bool)identifierShouldPlayInWindow:(id)arg1;
++ (id)localizedEffectNameForEffectWithIdentifier:(id)arg1;
++ (id)maskingStringForID:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_animateLastMessage:(id)arg1 withEffectIdentifier:(id)arg2 beginAnimationFromTranscriptPresentedState:(bool)arg3;
+- (void)_audioSessionOptionsWillChange:(id)arg1;
+- (void)_cleanupExpressiveSendComponents;
+- (void)_renderEffectInView;
+- (void)_renderEffectInWindow;
+- (id)_sendAnimationContextForIdentifier:(id)arg1 message:(id)arg2 isSender:(bool)arg3 beginAnimationFromTranscriptPresentedState:(bool)arg4;
+- (void)_sizeAnimationWindow;
+- (void)_visibleCells:(id*)arg1 aboveItem:(id)arg2;
+- (void)animateMessages:(id)arg1;
+- (void)animateMessages:(id)arg1 withEffectIdentifier:(id)arg2 beginAnimationFromTranscriptPresentedState:(bool)arg3;
+- (id)animatingIdentifier;
+- (void)animationDidFinishWithContext:(id)arg1;
+- (void)animationWillBeginWithContext:(id)arg1;
+- (id)audioController;
+- (id)cloneBalloonForAnimationWithChatItem:(id)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (id)expressiveSendAnimationBackdrop;
+- (id)expressiveSendAnimationBalloon;
+- (id)expressiveSendAnimationWindow;
+- (id)expressiveSendScrollView;
+- (id)init;
+- (bool)isAnimating;
+- (bool)isDisabled;
+- (void)matchScrollViewOffset:(id)arg1;
+- (id)originalBalloonView;
+- (void)playSoundForEffectIdentifier:(id)arg1;
+- (void)playSoundForPopAnimation;
+- (void)playUndoSendAnimationForChatItem:(id)arg1;
+- (void)popAnimationDidBegin;
+- (id)sendAnimationBalloonProvider;
+- (id)sendAnimationManagerDelegate;
+- (void)setAudioController:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setExpressiveSendAnimationBackdrop:(id)arg1;
+- (void)setExpressiveSendAnimationBalloon:(id)arg1;
+- (void)setExpressiveSendAnimationWindow:(id)arg1;
+- (void)setExpressiveSendScrollView:(id)arg1;
+- (void)setIsAnimating:(bool)arg1;
+- (void)setIsDisabled:(bool)arg1;
+- (void)setOriginalBalloonView:(id)arg1;
+- (void)setSendAnimationBalloonProvider:(id)arg1;
+- (void)setSendAnimationManagerDelegate:(id)arg1;
+- (void)setUndoSendChatItems:(id)arg1;
+- (void)setupAudioPlayerWithURL:(id)arg1;
+- (void)stopAllEffects;
+- (void)stopPlayingSound;
+- (id)undoSendChatItems;
+
+@end

@@ -1,0 +1,27 @@
+
+@interface SKUIAttributedStringIndexBarEntry : SKUIIndexBarEntry {
+    NSAttributedString * _attributedString;
+    NSDictionary * _defaultTextAttributes;
+    bool  _hasValidSynthesizedAttributedString;
+    NSAttributedString * _synthesizedAttributedString;
+}
+
+@property (nonatomic, readonly, copy) NSAttributedString *attributedString;
+@property (nonatomic, copy) NSDictionary *defaultTextAttributes;
+
+- (void).cxx_destruct;
+- (struct CGSize { double x1; double x2; })_calculatedContentSize;
+- (void)_drawContentInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_invalidateSynthesizedAttributedString;
+- (id)_synthesizedAttributedString;
+- (void)_tintColorDidChange;
+- (id)attributedString;
+- (id)defaultTextAttributes;
+- (id)description;
+- (id)entryAttributedString;
+- (unsigned long long)hash;
+- (id)initWithAttributedString:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setDefaultTextAttributes:(id)arg1;
+
+@end

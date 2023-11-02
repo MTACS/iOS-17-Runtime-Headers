@@ -1,0 +1,98 @@
+
+@interface REUIDonatedElementProperties : NSObject <NSCopying, NSSecureCoding> {
+    unsigned long long  _actionIdentifier;
+    UIImage * _appIcon;
+    NSString * _appName;
+    UIImage * _bodyImage;
+    NSString * _bundleIdentifier;
+    bool  _displayAppName;
+    unsigned long long  _donationType;
+    UIImage * _fullsizeAppIcon;
+    INIntent * _intent;
+    INInteraction * _interaction;
+    bool  _isUsingPlaceholderArtwork;
+    NSString * _localBundleIdentifier;
+    bool  _localDonation;
+    UIImage * _monochromeBodyImage;
+    INRelevantShortcut * _relevantShortcut;
+    NSString * _remoteBundleIdentifier;
+    NSString * _subtitle;
+    NSString * _title;
+    NSUserActivity * _userActivity;
+}
+
+@property (nonatomic, readonly) unsigned long long actionIdentifier;
+@property (nonatomic, readonly) UIImage *appIcon;
+@property (nonatomic, readonly) NSString *appName;
+@property (nonatomic, readonly) UIImage *bodyImage;
+@property (nonatomic, readonly) NSString *bodyImageCompositingFilter;
+@property (nonatomic, readonly) NSString *bundleIdentifier;
+@property (nonatomic, readonly) bool displayAppName;
+@property (nonatomic, readonly) unsigned long long donationType;
+@property (nonatomic, readonly) UIImage *fullsizeAppIcon;
+@property (nonatomic, readonly) INIntent *intent;
+@property (nonatomic, readonly) INInteraction *interaction;
+@property (nonatomic, readonly) bool isBeginWorkoutDonation;
+@property (nonatomic, readonly) bool isEndWorkoutDonation;
+@property (nonatomic, readonly) bool isMediaDonation;
+@property (nonatomic, readonly) bool isRunWorkflowDonation;
+@property (nonatomic, readonly) bool isWorkoutDonation;
+@property (nonatomic, readonly) NSString *localBundleIdentifier;
+@property (getter=isLocalDonation, nonatomic, readonly) bool localDonation;
+@property (nonatomic, readonly) UIImage *monochromeBodyImage;
+@property (nonatomic, readonly) INRelevantShortcut *relevantShortcut;
+@property (nonatomic, readonly) NSString *remoteBundleIdentifier;
+@property (nonatomic, readonly) bool requiresRemoteExecution;
+@property (nonatomic, readonly) NSString *subtitle;
+@property (nonatomic, readonly) bool supportsBackgroundExecution;
+@property (nonatomic, readonly) bool supportsLocalIntentExecution;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSUserActivity *userActivity;
+
++ (void)createWithDonatedAction:(id)arg1 completion:(id /* block */)arg2;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (bool)_hasLocalExtensionForIntentExecution;
+- (bool)_isMusicDonation;
+- (bool)_isPodcastsDonation;
+- (void)_loadAppContentPropertiesWithCompletion:(id /* block */)arg1;
+- (void)_loadContentForIntent:(id)arg1 completion:(id /* block */)arg2;
+- (void)_loadContentForRelevantShortcut:(id)arg1 completion:(id /* block */)arg2;
+- (void)_loadContentForUserActivity:(id)arg1 completion:(id /* block */)arg2;
+- (void)_loadContentForUserActivityOnShortcut:(id)arg1 completion:(id /* block */)arg2;
+- (id)_placeholderImageNameForBundleID:(id)arg1;
+- (id)_scaleImageForDisplay:(id)arg1;
+- (unsigned long long)actionIdentifier;
+- (id)appIcon;
+- (id)appName;
+- (id)bodyImage;
+- (id)bodyImageCompositingFilter;
+- (id)bundleIdentifier;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)displayAppName;
+- (unsigned long long)donationType;
+- (void)encodeWithCoder:(id)arg1;
+- (id)fullsizeAppIcon;
+- (id)initWithCoder:(id)arg1;
+- (id)intent;
+- (id)interaction;
+- (bool)isBeginWorkoutDonation;
+- (bool)isEndWorkoutDonation;
+- (bool)isLocalDonation;
+- (bool)isMediaDonation;
+- (bool)isRunWorkflowDonation;
+- (bool)isWorkoutDonation;
+- (void)loadForAction:(id)arg1 completion:(id /* block */)arg2;
+- (id)localBundleIdentifier;
+- (id)monochromeBodyImage;
+- (id)relevantShortcut;
+- (id)remoteBundleIdentifier;
+- (bool)requiresRemoteExecution;
+- (id)subtitle;
+- (bool)supportsBackgroundExecution;
+- (bool)supportsLocalIntentExecution;
+- (id)title;
+- (id)userActivity;
+
+@end

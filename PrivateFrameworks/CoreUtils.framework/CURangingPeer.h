@@ -1,0 +1,23 @@
+
+@interface CURangingPeer : NSObject {
+    NSData * _deviceAddress;
+    NSData * _deviceIRK;
+    NSString * _deviceModel;
+}
+
+@property (nonatomic, copy) NSData *deviceAddress;
+@property (nonatomic, copy) NSData *deviceIRK;
+@property (nonatomic, copy) NSString *deviceModel;
+
+- (void).cxx_destruct;
+- (id)description;
+- (id)deviceAddress;
+- (id)deviceIRK;
+- (id)deviceModel;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)setDeviceAddress:(id)arg1;
+- (void)setDeviceIRK:(id)arg1;
+- (void)setDeviceModel:(id)arg1;
+
+@end

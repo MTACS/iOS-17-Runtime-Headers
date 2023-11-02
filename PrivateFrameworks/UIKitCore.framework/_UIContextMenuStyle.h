@@ -1,0 +1,133 @@
+
+@interface _UIContextMenuStyle : NSObject <NSCopying> {
+    bool  __allowsImmediateSelection;
+    long long  __backgroundInteractionStyle;
+    bool  __orderMenuBasedOnPriority;
+    <_UITraitEnvironmentInternal> * __parentTraitEnvironmentForUserInterfaceStyle;
+    struct { 
+        unsigned long long attachment; 
+        unsigned long long alignment; 
+        double attachmentOffset; 
+        double alignmentOffset; 
+        long long gravity; 
+    }  __preferredAnchor;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  __preferredMenuAttachmentPoint;
+    double  __preferredMenuWidth;
+    bool  __shouldAvoidInputViews;
+    UIView * _containerView;
+    bool  _hasInteractivePreview;
+    bool  _ignoresContainerSizeChange;
+    bool  _ignoresDefaultSizingRules;
+    bool  _keepsInputViewsVisible;
+    unsigned long long  _preferredAttachmentEdge;
+    UIColor * _preferredBackgroundColor;
+    NSArray * _preferredBackgroundEffects;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _preferredBackgroundInsets;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _preferredEdgeInsets;
+    unsigned long long  _preferredLayout;
+    UITraitCollection * _preferredTraitCollection;
+    bool  _prefersStackedHierarchy;
+    bool  _preventPreviewRasterization;
+    bool  _previewOverlapsMenu;
+}
+
+@property (nonatomic) bool _allowsImmediateSelection;
+@property (nonatomic) long long _backgroundInteractionStyle;
+@property (nonatomic, readonly) bool _layoutAllowsMenu;
+@property (nonatomic, readonly) bool _layoutAllowsPreview;
+@property (nonatomic) bool _orderMenuBasedOnPriority;
+@property (nonatomic) <_UITraitEnvironmentInternal> *_parentTraitEnvironmentForUserInterfaceStyle;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; double x3; double x4; long long x5; } _preferredAnchor;
+@property (nonatomic) struct CGPoint { double x1; double x2; } _preferredMenuAttachmentPoint;
+@property (nonatomic) double _preferredMenuWidth;
+@property (nonatomic) bool _shouldAvoidInputViews;
+@property (nonatomic, retain) UIView *containerView;
+@property (nonatomic) bool hasInteractivePreview;
+@property (nonatomic) bool ignoresContainerSizeChange;
+@property (nonatomic) bool ignoresDefaultSizingRules;
+@property (nonatomic) bool keepsInputViewsVisible;
+@property (nonatomic) unsigned long long preferredAttachmentEdge;
+@property (nonatomic, retain) UIColor *preferredBackgroundColor;
+@property (nonatomic, retain) NSArray *preferredBackgroundEffects;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } preferredBackgroundInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } preferredEdgeInsets;
+@property (nonatomic) unsigned long long preferredLayout;
+@property (nonatomic, retain) UITraitCollection *preferredTraitCollection;
+@property (nonatomic) bool prefersCenteredPreviewWhenActionsAreAbsent;
+@property (nonatomic) bool prefersStackedHierarchy;
+@property (nonatomic) bool preventPreviewRasterization;
+@property (nonatomic) bool previewOverlapsMenu;
+@property (nonatomic) bool reversesActionOrderWhenAttachedToTop;
+
++ (id)defaultStyle;
+
+- (void).cxx_destruct;
+- (bool)_allowsImmediateSelection;
+- (long long)_backgroundInteractionStyle;
+- (bool)_layoutAllowsMenu;
+- (bool)_layoutAllowsPreview;
+- (bool)_orderMenuBasedOnPriority;
+- (id)_parentTraitEnvironmentForUserInterfaceStyle;
+- (struct { unsigned long long x1; unsigned long long x2; double x3; double x4; long long x5; })_preferredAnchor;
+- (struct CGPoint { double x1; double x2; })_preferredMenuAttachmentPoint;
+- (double)_preferredMenuWidth;
+- (bool)_shouldAvoidInputViews;
+- (id)containerView;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)hasInteractivePreview;
+- (bool)ignoresContainerSizeChange;
+- (bool)ignoresDefaultSizingRules;
+- (bool)keepsInputViewsVisible;
+- (unsigned long long)preferredAttachmentEdge;
+- (id)preferredBackgroundColor;
+- (id)preferredBackgroundEffects;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredBackgroundInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredEdgeInsets;
+- (unsigned long long)preferredLayout;
+- (id)preferredTraitCollection;
+- (bool)prefersCenteredPreviewWhenActionsAreAbsent;
+- (bool)prefersStackedHierarchy;
+- (bool)preventPreviewRasterization;
+- (bool)previewOverlapsMenu;
+- (bool)reversesActionOrderWhenAttachedToTop;
+- (void)setAllowsBackgroundInteractionAcrossProccesses:(bool)arg1;
+- (void)setContainerView:(id)arg1;
+- (void)setHasInteractivePreview:(bool)arg1;
+- (void)setIgnoresContainerSizeChange:(bool)arg1;
+- (void)setIgnoresDefaultSizingRules:(bool)arg1;
+- (void)setKeepsInputViewsVisible:(bool)arg1;
+- (void)setPreferredAttachmentEdge:(unsigned long long)arg1;
+- (void)setPreferredBackgroundColor:(id)arg1;
+- (void)setPreferredBackgroundEffects:(id)arg1;
+- (void)setPreferredBackgroundInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreferredEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreferredLayout:(unsigned long long)arg1;
+- (void)setPreferredTraitCollection:(id)arg1;
+- (void)setPrefersCenteredPreviewWhenActionsAreAbsent:(bool)arg1;
+- (void)setPrefersStackedHierarchy:(bool)arg1;
+- (void)setPreventPreviewRasterization:(bool)arg1;
+- (void)setPreviewOverlapsMenu:(bool)arg1;
+- (void)setReversesActionOrderWhenAttachedToTop:(bool)arg1;
+- (void)set_allowsImmediateSelection:(bool)arg1;
+- (void)set_backgroundInteractionStyle:(long long)arg1;
+- (void)set_orderMenuBasedOnPriority:(bool)arg1;
+- (void)set_parentTraitEnvironmentForUserInterfaceStyle:(id)arg1;
+- (void)set_preferredAnchor:(struct { unsigned long long x1; unsigned long long x2; double x3; double x4; long long x5; })arg1;
+- (void)set_preferredMenuAttachmentPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)set_preferredMenuWidth:(double)arg1;
+- (void)set_shouldAvoidInputViews:(bool)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKFCharacteristicPrivateExtensions
+
+@end

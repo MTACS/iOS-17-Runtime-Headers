@@ -1,0 +1,84 @@
+
+@interface WFRichContentItemCellView : UIView {
+    NSString * _accessibilityLabel;
+    UILabel * _altLabel;
+    bool  _alwaysLeftAlign;
+    NSArray * _firstRowConstraintsWithAltText;
+    NSArray * _firstRowConstraintsWithoutAltText;
+    bool  _hasImage;
+    NSLayoutConstraint * _imageHeightConstraint;
+    NSLayoutConstraint * _imageLeadingConstraint;
+    unsigned long long  _imageRoundingStyle;
+    UIImageView * _imageView;
+    NSLayoutConstraint * _imageWidthConstraint;
+    WFContentItem * _item;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
+    NSArray * _verticalConstraintsWithSubtitle;
+    NSArray * _verticalConstraintsWithoutSubtitle;
+}
+
+@property (nonatomic, readonly) NSString *accessibilityLabel;
+@property (nonatomic) UILabel *altLabel;
+@property (nonatomic) bool alwaysLeftAlign;
+@property (nonatomic, copy) NSArray *firstRowConstraintsWithAltText;
+@property (nonatomic, copy) NSArray *firstRowConstraintsWithoutAltText;
+@property (nonatomic) bool hasImage;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) NSLayoutConstraint *imageHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *imageLeadingConstraint;
+@property (nonatomic) unsigned long long imageRoundingStyle;
+@property (nonatomic) UIImageView *imageView;
+@property (nonatomic, retain) NSLayoutConstraint *imageWidthConstraint;
+@property (nonatomic, retain) WFContentItem *item;
+@property (nonatomic) UILabel *subtitleLabel;
+@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, copy) NSArray *verticalConstraintsWithSubtitle;
+@property (nonatomic, copy) NSArray *verticalConstraintsWithoutSubtitle;
+
+- (void).cxx_destruct;
+- (id)accessibilityLabel;
+- (id)altLabel;
+- (bool)alwaysLeftAlign;
+- (id)firstRowConstraintsWithAltText;
+- (id)firstRowConstraintsWithoutAltText;
+- (bool)hasImage;
+- (id)image;
+- (double)imageDimension;
+- (id)imageHeightConstraint;
+- (id)imageLeadingConstraint;
+- (unsigned long long)imageRoundingStyle;
+- (id)imageView;
+- (id)imageWidthConstraint;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)item;
+- (void)layoutSubviews;
+- (void)setAltLabel:(id)arg1;
+- (void)setAlwaysLeftAlign:(bool)arg1;
+- (void)setAttributedAlertButton:(id)arg1;
+- (void)setContentAlertButton:(id)arg1;
+- (void)setFirstRowConstraintsWithAltText:(id)arg1;
+- (void)setFirstRowConstraintsWithoutAltText:(id)arg1;
+- (void)setHasImage:(bool)arg1;
+- (void)setImage:(id)arg1;
+- (void)setImage:(id)arg1 options:(id)arg2;
+- (void)setImageHeightConstraint:(id)arg1;
+- (void)setImageLeadingConstraint:(id)arg1;
+- (void)setImageRoundingStyle:(unsigned long long)arg1;
+- (void)setImageView:(id)arg1;
+- (void)setImageWidthConstraint:(id)arg1;
+- (void)setItem:(id)arg1;
+- (void)setSelectableAlertButton:(id)arg1;
+- (void)setSubtitle:(id)arg1;
+- (void)setSubtitleLabel:(id)arg1;
+- (void)setVerticalConstraintsWithSubtitle:(id)arg1;
+- (void)setVerticalConstraintsWithoutSubtitle:(id)arg1;
+- (id)subtitleLabel;
+- (void)tintColorDidChange;
+- (id)titleLabel;
+- (void)updateConstraints;
+- (void)updateImageCornerRadius;
+- (id)verticalConstraintsWithSubtitle;
+- (id)verticalConstraintsWithoutSubtitle;
+
+@end

@@ -1,0 +1,82 @@
+
+@interface MFMessageReferenceContext : NSObject {
+    <ECEmailAddressConvertible> * _bcc;
+    NSArray * _bccList;
+    <ECEmailAddressConvertible> * _cc;
+    NSArray * _ccList;
+    unsigned long long * _conversationFlagsRef;
+    long long  _conversationIDHash;
+    double  _dateSentInterval;
+    long long  _libraryID;
+    long long  _mailboxID;
+    MFMailMessage * _message;
+    long long  _messageIDHash;
+    NSMutableDictionary * _messageIDsBySubject;
+    EFMutableInt64Set * _references;
+    <ECEmailAddressConvertible> * _sender;
+    NSArray * _senderList;
+    ECSubject * _subject;
+    <ECEmailAddressConvertible> * _to;
+    NSArray * _toList;
+}
+
+@property (nonatomic, copy) <ECEmailAddressConvertible> *bcc;
+@property (nonatomic, copy) NSArray *bccList;
+@property (nonatomic, copy) <ECEmailAddressConvertible> *cc;
+@property (nonatomic, copy) NSArray *ccList;
+@property (nonatomic) unsigned long long*conversationFlagsRef;
+@property (nonatomic) long long conversationIDHash;
+@property (nonatomic) double dateSentInterval;
+@property (nonatomic) long long libraryID;
+@property (nonatomic) long long mailboxID;
+@property (nonatomic, retain) MFMailMessage *message;
+@property (nonatomic) long long messageIDHash;
+@property (nonatomic, retain) NSMutableDictionary *messageIDsBySubject;
+@property (nonatomic, readonly) NSSet *participants;
+@property (nonatomic, retain) EFMutableInt64Set *references;
+@property (nonatomic, copy) <ECEmailAddressConvertible> *sender;
+@property (nonatomic, copy) NSArray *senderList;
+@property (nonatomic, copy) ECSubject *subject;
+@property (nonatomic, copy) <ECEmailAddressConvertible> *to;
+@property (nonatomic, copy) NSArray *toList;
+
+- (void).cxx_destruct;
+- (id)bcc;
+- (id)bccList;
+- (id)cc;
+- (id)ccList;
+- (unsigned long long*)conversationFlagsRef;
+- (long long)conversationIDHash;
+- (double)dateSentInterval;
+- (long long)libraryID;
+- (long long)mailboxID;
+- (id)message;
+- (long long)messageIDHash;
+- (id)messageIDsBySubject;
+- (id)participants;
+- (id)references;
+- (id)sender;
+- (id)senderList;
+- (void)setBcc:(id)arg1;
+- (void)setBccList:(id)arg1;
+- (void)setCc:(id)arg1;
+- (void)setCcList:(id)arg1;
+- (void)setConversationFlagsRef:(unsigned long long*)arg1;
+- (void)setConversationIDHash:(long long)arg1;
+- (void)setDateSentInterval:(double)arg1;
+- (void)setLibraryID:(long long)arg1;
+- (void)setMailboxID:(long long)arg1;
+- (void)setMessage:(id)arg1;
+- (void)setMessageIDHash:(long long)arg1;
+- (void)setMessageIDsBySubject:(id)arg1;
+- (void)setReferences:(id)arg1;
+- (void)setSender:(id)arg1;
+- (void)setSenderList:(id)arg1;
+- (void)setSubject:(id)arg1;
+- (void)setTo:(id)arg1;
+- (void)setToList:(id)arg1;
+- (id)subject;
+- (id)to;
+- (id)toList;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol MKFMediaAccessoryPrivateExtensions
+
+@end

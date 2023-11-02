@@ -1,0 +1,4 @@
+
+@interface MKFCharacteristicValueEventDatabaseID : MKFCharacteristicEventDatabaseID
+
+@end

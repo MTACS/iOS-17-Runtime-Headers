@@ -1,0 +1,48 @@
+
+@interface SFChargingUICoordinator : SFXPCClient {
+    bool  _activateCalled;
+    bool  _animationSPIAdopted;
+    long long  _defaultDuration;
+    bool  _invalidateCalled;
+    bool  _runningAsCarry;
+    id /* block */  _uiUpdateHandler;
+    NSDate * _uiUpdateMaxDate;
+    bool  _uiUpdateMinTimeElapsed;
+    NSDate * _uiUpdateRequestDate;
+    bool  _uiUpdateShouldDismiss;
+    NSObject<OS_dispatch_source> * _uiUpdateTimer;
+}
+
+@property (nonatomic) long long defaultDuration;
+
+- (void).cxx_destruct;
+- (void)_activate;
+- (void)_dismissUI;
+- (void)_initialViewControllerDidAppear;
+- (void)_initialViewControllerDidDisappear;
+- (void)_invalidate;
+- (void)_requestToDismissUIHandler:(id /* block */)arg1;
+- (void)_requestToStartAnimationAtDate:(id)arg1;
+- (void)_sendDismissUIWithReason:(long long)arg1;
+- (void)_timingInvalidateMinTimer;
+- (void)_timingRestartMinTimer;
+- (void)activate;
+- (long long)defaultDuration;
+- (id)exportedInterface;
+- (void)initialViewControllerDidAppear;
+- (void)initialViewControllerDidDisappear;
+- (void)invalidate;
+- (id)machServiceName;
+- (void)onqueue_connectionEstablished;
+- (void)onqueue_connectionInterrupted;
+- (void)onqueue_connectionInvalidated;
+- (id)remoteObjectInterface;
+- (void)requestAnimationDateWithCompletion:(id /* block */)arg1;
+- (void)requestToDismissUIHandler:(id /* block */)arg1;
+- (void)requestToShowUIWithHandler:(id /* block */)arg1;
+- (void)requestToStartAnimationAtDate:(id)arg1;
+- (void)sendDismissUIWithReason:(long long)arg1;
+- (void)setDefaultDuration:(long long)arg1;
+- (bool)shouldEscapeXpcTryCatch;
+
+@end

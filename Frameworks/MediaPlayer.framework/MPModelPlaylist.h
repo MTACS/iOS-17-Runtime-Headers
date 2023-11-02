@@ -1,0 +1,183 @@
+
+@interface MPModelPlaylist : MPModelObject {
+    bool  _isFavoriteSongsPlaylist;
+}
+
+@property (nonatomic, copy) id /* block */ artworkCatalogBlock;
+@property (nonatomic, copy) NSString *cloudVersionHash;
+@property (nonatomic, copy) NSURL *collaborationInvitationURL;
+@property (nonatomic, copy) NSDate *collaborationInvitationURLExpirationDate;
+@property (getter=isCollaborationJoinRequestPending, nonatomic) bool collaborationJoinRequestIsPending;
+@property (nonatomic) long long collaborationMode;
+@property (nonatomic) long long collaborationSharingMode;
+@property (getter=isCollaborative, nonatomic) bool collaborative;
+@property (nonatomic) unsigned long long collaboratorPermissions;
+@property (nonatomic, copy) NSString *coverArtworkRecipe;
+@property (nonatomic, copy) MPModelCurator *curator;
+@property (getter=isCuratorPlaylist, nonatomic) bool curatorPlaylist;
+@property (nonatomic, copy) NSDate *dateFavorited;
+@property (nonatomic, copy) NSString *descriptionText;
+@property (nonatomic, readonly, copy) NSDate *downloadedDate;
+@property (nonatomic, copy) NSString *editorNotes;
+@property (nonatomic, copy) id /* block */ editorialArtworkCatalogBlock;
+@property (nonatomic, readonly) bool favoriteSongsPlaylist;
+@property (nonatomic) bool hasCleanContent;
+@property (nonatomic) bool hasExplicitContent;
+@property (nonatomic) bool isDisliked;
+@property (nonatomic) bool isFavorite;
+@property (nonatomic) bool isFavoriteSongsPlaylist;
+@property (nonatomic) unsigned long long keepLocalConstraints;
+@property (nonatomic) long long keepLocalEnableState;
+@property (nonatomic) long long keepLocalManagedStatus;
+@property (nonatomic) unsigned long long keepLocalManagedStatusReason;
+@property (nonatomic, copy) NSDate *lastDevicePlaybackDate;
+@property (nonatomic, copy) NSDateComponents *lastModifiedDateComponents;
+@property (getter=isLibraryAdded, nonatomic) bool libraryAdded;
+@property (nonatomic, copy) NSDate *libraryAddedDate;
+@property (nonatomic, copy) NSString *name;
+@property (getter=isOwner, nonatomic) bool owner;
+@property (getter=isPublicPlaylist, nonatomic) bool publicPlaylist;
+@property (nonatomic, copy) NSDateComponents *releaseDateComponents;
+@property (nonatomic, copy) NSURL *shareShortURL;
+@property (nonatomic, copy) NSURL *shareURL;
+@property (nonatomic, copy) NSString *shortEditorNotes;
+@property (getter=isSubscribed, nonatomic) bool subscribed;
+@property (nonatomic, copy) id /* block */ tiledArtworkCatalogBlock;
+@property (nonatomic) unsigned long long trackCount;
+@property (nonatomic) unsigned long long traits;
+@property (nonatomic) long long type;
+@property (nonatomic) long long userEditableComponents;
+@property (nonatomic, copy) NSString *versionHash;
+@property (getter=isVisiblePlaylist, nonatomic) bool visiblePlaylist;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (void)__MPModelPropertyPlaylistArtwork__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCloudVersionHash__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCollaborationInvitationURLExpirationDate__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCollaborationInvitationURL__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCollaborationJoinRequestIsPending__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCollaborationMode__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCollaborationSharingMode__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCollaboratorPermissions__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCoverArtworkRecipe__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistCuratorPlaylist__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistDateFavorited__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistDescriptionText__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistDownloadedDate__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistEditorNotes__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistEditorialArtwork__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistHasCleanContent__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistHasExplicitContent__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistIsCollaborative__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistIsDisliked__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistIsFavoriteSongsPlaylist__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistIsFavorite__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistIsOwner__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistKeepLocalConstraints__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistKeepLocalEnableState__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistKeepLocalManagedStatusReason__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistKeepLocalManagedStatus__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistLastDevicePlaybackDate__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistLastModifiedDateComponents__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistLibraryAddedDate__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistLibraryAdded__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistName__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistPublicPlaylist__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistReleaseDateComponents__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistShareShortURL__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistShareURL__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistShortEditorNotes__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistSubscribed__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistTrackCount__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistTracksTiledArtwork__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistTraits__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistType__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistUserEditableComponents__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistVersionHash__MAPPING_MISSING__;
++ (void)__MPModelPropertyPlaylistVisiblePlaylist__MAPPING_MISSING__;
++ (void)__MPModelRelationshipPlaylistCurator__MAPPING_MISSING__;
++ (id)__artworkCatalogBlock_KEY;
++ (id)__cloudVersionHash_KEY;
++ (id)__collaborationInvitationURLExpirationDate_KEY;
++ (id)__collaborationInvitationURL_KEY;
++ (id)__collaborationJoinRequestIsPending_KEY;
++ (id)__collaborationMode_KEY;
++ (id)__collaborationSharingMode_KEY;
++ (id)__collaborative_KEY;
++ (id)__collaboratorPermissions_KEY;
++ (id)__coverArtworkRecipe_KEY;
++ (id)__curatorPlaylist_KEY;
++ (id)__curator_KEY;
++ (id)__dateFavorited_KEY;
++ (id)__descriptionText_KEY;
++ (id)__downloadedDate_KEY;
++ (id)__editorNotes_KEY;
++ (id)__editorialArtworkCatalogBlock_KEY;
++ (id)__favoriteSongsPlaylist_KEY;
++ (id)__hasCleanContent_KEY;
++ (id)__hasExplicitContent_KEY;
++ (id)__isDisliked_KEY;
++ (id)__isFavorite_KEY;
++ (id)__keepLocalConstraints_KEY;
++ (id)__keepLocalEnableState_KEY;
++ (id)__keepLocalManagedStatusReason_KEY;
++ (id)__keepLocalManagedStatus_KEY;
++ (id)__lastDevicePlaybackDate_KEY;
++ (id)__lastModifiedDateComponents_KEY;
++ (id)__libraryAddedDate_KEY;
++ (id)__libraryAdded_KEY;
++ (id)__name_KEY;
++ (id)__owner_KEY;
++ (id)__publicPlaylist_KEY;
++ (id)__releaseDateComponents_KEY;
++ (id)__shareShortURL_KEY;
++ (id)__shareURL_KEY;
++ (id)__shortEditorNotes_KEY;
++ (id)__subscribed_KEY;
++ (id)__tiledArtworkCatalogBlock_KEY;
++ (id)__trackCount_KEY;
++ (id)__traits_KEY;
++ (id)__type_KEY;
++ (id)__userEditableComponents_KEY;
++ (id)__versionHash_KEY;
++ (id)__visiblePlaylist_KEY;
++ (long long)genericObjectType;
++ (id)kindWithPlaylistEntryKind:(id)arg1 options:(unsigned long long)arg2;
++ (id)kindWithVariants:(unsigned long long)arg1 playlistEntryKind:(id)arg2 options:(unsigned long long)arg3;
++ (id)requiredKeepLocalStatusObservationProperties;
++ (id)requiredLibraryAddStatusObservationProperties;
++ (id)requiredLibraryRemovalProperties;
++ (id)requiredStoreLibraryPersonalizationProperties;
++ (bool)supportsKeepLocalStatusObservation;
++ (bool)supportsLibraryAddStatusObservation;
++ (bool)supportsLibraryRemoval;
+
+- (id)artworkCatalog;
+- (id)contentItemCollectionInfo;
+- (id)editorialArtworkCatalog;
+- (id)humanDescription;
+- (bool)isFavoriteSongsPlaylist;
+- (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })libraryAddStatusObserverConfiguration;
+- (long long)libraryRemovalSupportedOptions;
+- (id)newKeepLocalStatusObserverConfiguration;
+- (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;
+- (id)personalizationScopedPropertiesForProperties:(id)arg1;
+- (id)relativeModelObjectForStoreLibraryPersonalization;
+- (void)setIsFavoriteSongsPlaylist:(bool)arg1;
+- (id)tracksTiledArtworkCatalogWithRows:(unsigned long long)arg1 columns:(unsigned long long)arg2;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
++ (id)mqf_requiredSectionPlaybackProperties;
+
+- (id)msp_shortDescription;
+
+// Image: /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
+
+- (id)_stringForDayOfWeek:(long long)arg1 compact:(bool)arg2;
+- (id)nms_compactLastUpdatedString;
+- (id)nms_lastUpdatedString;
+- (bool)nms_shouldShowLastUpdatedString;
+
+@end

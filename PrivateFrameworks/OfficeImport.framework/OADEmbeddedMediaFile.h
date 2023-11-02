@@ -1,0 +1,4 @@
+
+@interface OADEmbeddedMediaFile : OADMovie
+
+@end

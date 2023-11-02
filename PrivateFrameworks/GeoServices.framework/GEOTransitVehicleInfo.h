@@ -1,0 +1,125 @@
+
+@interface GEOTransitVehicleInfo : PBCodable <NSCopying> {
+    GEOTransitVehicleTime * _arrivalTime;
+    struct { 
+        unsigned int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
+    }  _clusteredRouteLineArtworkIndexs;
+    unsigned int  _departureFrequencyMax;
+    unsigned int  _departureFrequencyMin;
+    GEOTransitVehicleTime * _departureTime;
+    struct { 
+        unsigned int has_tripMuid : 1; 
+        unsigned int has_departureFrequencyMax : 1; 
+        unsigned int has_departureFrequencyMin : 1; 
+        unsigned int has_lineIndex : 1; 
+        unsigned int has_pickupDropoffType : 1; 
+        unsigned int has_routeLineArtworkIndex : 1; 
+        unsigned int read_unknownFields : 1; 
+        unsigned int read_clusteredRouteLineArtworkIndexs : 1; 
+        unsigned int read_arrivalTime : 1; 
+        unsigned int read_departureTime : 1; 
+        unsigned int read_vehicleNumber : 1; 
+        unsigned int wrote_anyField : 1; 
+    }  _flags;
+    unsigned int  _lineIndex;
+    int  _pickupDropoffType;
+    PBDataReader * _reader;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _readerLock;
+    unsigned int  _readerMarkLength;
+    unsigned int  _readerMarkPos;
+    unsigned int  _routeLineArtworkIndex;
+    unsigned long long  _tripMuid;
+    PBUnknownFields * _unknownFields;
+    NSString * _vehicleNumber;
+}
+
+@property (nonatomic, retain) GEOTransitVehicleTime *arrivalTime;
+@property (nonatomic, readonly) unsigned int*clusteredRouteLineArtworkIndexs;
+@property (nonatomic, readonly) unsigned long long clusteredRouteLineArtworkIndexsCount;
+@property (nonatomic) unsigned int departureFrequencyMax;
+@property (nonatomic) unsigned int departureFrequencyMin;
+@property (nonatomic, retain) GEOTransitVehicleTime *departureTime;
+@property (nonatomic, readonly) bool hasArrivalTime;
+@property (nonatomic) bool hasDepartureFrequencyMax;
+@property (nonatomic) bool hasDepartureFrequencyMin;
+@property (nonatomic, readonly) bool hasDepartureTime;
+@property (nonatomic) bool hasLineIndex;
+@property (nonatomic) bool hasPickupDropoffType;
+@property (nonatomic) bool hasRouteLineArtworkIndex;
+@property (nonatomic) bool hasTripMuid;
+@property (nonatomic, readonly) bool hasVehicleNumber;
+@property (nonatomic) unsigned int lineIndex;
+@property (nonatomic) int pickupDropoffType;
+@property (nonatomic) unsigned int routeLineArtworkIndex;
+@property (nonatomic) unsigned long long tripMuid;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic, retain) NSString *vehicleNumber;
+
++ (bool)isValid:(id)arg1;
+
+- (void).cxx_destruct;
+- (int)StringAsPickupDropoffType:(id)arg1;
+- (void)addClusteredRouteLineArtworkIndex:(unsigned int)arg1;
+- (id)arrivalTime;
+- (void)clearClusteredRouteLineArtworkIndexs;
+- (void)clearUnknownFields:(bool)arg1;
+- (unsigned int)clusteredRouteLineArtworkIndexAtIndex:(unsigned long long)arg1;
+- (unsigned int*)clusteredRouteLineArtworkIndexs;
+- (unsigned long long)clusteredRouteLineArtworkIndexsCount;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (unsigned int)departureFrequencyMax;
+- (unsigned int)departureFrequencyMin;
+- (id)departureTime;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasArrivalTime;
+- (bool)hasDepartureFrequencyMax;
+- (bool)hasDepartureFrequencyMin;
+- (bool)hasDepartureTime;
+- (bool)hasLineIndex;
+- (bool)hasPickupDropoffType;
+- (bool)hasRouteLineArtworkIndex;
+- (bool)hasTripMuid;
+- (bool)hasVehicleNumber;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithData:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonRepresentation;
+- (unsigned int)lineIndex;
+- (void)mergeFrom:(id)arg1;
+- (int)pickupDropoffType;
+- (id)pickupDropoffTypeAsString:(int)arg1;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)routeLineArtworkIndex;
+- (void)setArrivalTime:(id)arg1;
+- (void)setClusteredRouteLineArtworkIndexs:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setDepartureFrequencyMax:(unsigned int)arg1;
+- (void)setDepartureFrequencyMin:(unsigned int)arg1;
+- (void)setDepartureTime:(id)arg1;
+- (void)setHasDepartureFrequencyMax:(bool)arg1;
+- (void)setHasDepartureFrequencyMin:(bool)arg1;
+- (void)setHasLineIndex:(bool)arg1;
+- (void)setHasPickupDropoffType:(bool)arg1;
+- (void)setHasRouteLineArtworkIndex:(bool)arg1;
+- (void)setHasTripMuid:(bool)arg1;
+- (void)setLineIndex:(unsigned int)arg1;
+- (void)setPickupDropoffType:(int)arg1;
+- (void)setRouteLineArtworkIndex:(unsigned int)arg1;
+- (void)setTripMuid:(unsigned long long)arg1;
+- (void)setVehicleNumber:(id)arg1;
+- (unsigned long long)tripMuid;
+- (id)unknownFields;
+- (id)vehicleNumber;
+- (void)writeTo:(id)arg1;
+
+@end

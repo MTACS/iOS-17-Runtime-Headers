@@ -1,0 +1,19 @@
+
+@interface AFUIASPCoverView : UIView {
+    CAGradientLayer * _gradientLayer;
+}
+
+@property (nonatomic, retain) CAGradientLayer *gradientLayer;
+
++ (id)ASPCoverViewColor;
++ (id)coverForeground:(bool)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 isRightToLeft:(bool)arg3 withTextWidth:(double)arg4;
++ (double)screenScale;
+
+- (void).cxx_destruct;
+- (id)gradientLayer;
+- (id)initCoverBackgroundViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 isRightToLeft:(bool)arg2;
+- (id)initCoverViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 isRightToLeft:(bool)arg2 withTextWidth:(double)arg3;
+- (void)layoutSubviews;
+- (void)setGradientLayer:(id)arg1;
+
+@end

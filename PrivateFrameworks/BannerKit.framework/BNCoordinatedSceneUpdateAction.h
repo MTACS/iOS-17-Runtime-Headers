@@ -1,0 +1,4 @@
+
+@interface BNCoordinatedSceneUpdateAction : BSAction
+
+@end

@@ -1,0 +1,93 @@
+
+@interface POMMESSchemaPOMMESPegasusRequestArguments : SISchemaInstrumentationMessage {
+    POMMESSchemaPOMMESClientConversationMetadata * _clientConversationMetadata;
+    unsigned int  _conversationContextBytesLength;
+    NSString * _featureFlag;
+    struct { 
+        unsigned int isDataOnlyRequest : 1; 
+        unsigned int conversationContextBytesLength : 1; 
+    }  _has;
+    bool  _hasClientConversationMetadata;
+    bool  _hasFeatureFlag;
+    bool  _hasPersonalDomainFallback;
+    bool  _hasQueryMetadata;
+    bool  _hasSiriPegasusMetadata;
+    bool  _isDataOnlyRequest;
+    NSString * _personalDomainFallback;
+    NSArray * _queries;
+    POMMESSchemaPOMMESPegasusQueryMetadata * _queryMetadata;
+    POMMESSchemaPOMMESSiriPegasusMetadata * _siriPegasusMetadata;
+}
+
+@property (nonatomic, retain) POMMESSchemaPOMMESClientConversationMetadata *clientConversationMetadata;
+@property (nonatomic) unsigned int conversationContextBytesLength;
+@property (nonatomic, copy) NSString *featureFlag;
+@property (nonatomic) bool hasClientConversationMetadata;
+@property (nonatomic) bool hasConversationContextBytesLength;
+@property (nonatomic) bool hasFeatureFlag;
+@property (nonatomic) bool hasIsDataOnlyRequest;
+@property (nonatomic) bool hasPersonalDomainFallback;
+@property (nonatomic) bool hasQueryMetadata;
+@property (nonatomic) bool hasSiriPegasusMetadata;
+@property (nonatomic) bool isDataOnlyRequest;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSString *personalDomainFallback;
+@property (nonatomic, copy) NSArray *queries;
+@property (nonatomic, retain) POMMESSchemaPOMMESPegasusQueryMetadata *queryMetadata;
+@property (nonatomic, retain) POMMESSchemaPOMMESSiriPegasusMetadata *siriPegasusMetadata;
+
+- (void).cxx_destruct;
+- (void)addQueries:(id)arg1;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (void)clearQueries;
+- (id)clientConversationMetadata;
+- (unsigned int)conversationContextBytesLength;
+- (void)deleteClientConversationMetadata;
+- (void)deleteConversationContextBytesLength;
+- (void)deleteFeatureFlag;
+- (void)deleteIsDataOnlyRequest;
+- (void)deletePersonalDomainFallback;
+- (void)deleteQueries;
+- (void)deleteQueryMetadata;
+- (void)deleteSiriPegasusMetadata;
+- (id)dictionaryRepresentation;
+- (id)featureFlag;
+- (bool)hasClientConversationMetadata;
+- (bool)hasConversationContextBytesLength;
+- (bool)hasFeatureFlag;
+- (bool)hasIsDataOnlyRequest;
+- (bool)hasPersonalDomainFallback;
+- (bool)hasQueryMetadata;
+- (bool)hasSiriPegasusMetadata;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isDataOnlyRequest;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (id)personalDomainFallback;
+- (id)queries;
+- (id)queriesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)queriesCount;
+- (id)queryMetadata;
+- (bool)readFrom:(id)arg1;
+- (void)setClientConversationMetadata:(id)arg1;
+- (void)setConversationContextBytesLength:(unsigned int)arg1;
+- (void)setFeatureFlag:(id)arg1;
+- (void)setHasClientConversationMetadata:(bool)arg1;
+- (void)setHasConversationContextBytesLength:(bool)arg1;
+- (void)setHasFeatureFlag:(bool)arg1;
+- (void)setHasIsDataOnlyRequest:(bool)arg1;
+- (void)setHasPersonalDomainFallback:(bool)arg1;
+- (void)setHasQueryMetadata:(bool)arg1;
+- (void)setHasSiriPegasusMetadata:(bool)arg1;
+- (void)setIsDataOnlyRequest:(bool)arg1;
+- (void)setPersonalDomainFallback:(id)arg1;
+- (void)setQueries:(id)arg1;
+- (void)setQueryMetadata:(id)arg1;
+- (void)setSiriPegasusMetadata:(id)arg1;
+- (id)siriPegasusMetadata;
+- (id)suppressMessageUnderConditions;
+- (void)writeTo:(id)arg1;
+
+@end

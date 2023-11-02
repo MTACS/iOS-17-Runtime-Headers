@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmStMartinsDay : PhotosGraph.PhotosChallengeEvaluableHolidayAlgorithm
+
+@end

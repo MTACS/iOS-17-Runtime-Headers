@@ -1,0 +1,4 @@
+
+@interface AXMCaptureVideoDataOutput : AVCaptureVideoDataOutput
+
+@end

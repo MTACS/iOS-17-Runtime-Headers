@@ -1,0 +1,4 @@
+
+@interface IMDCNSaveWallpaper : NSObject
+
+@end

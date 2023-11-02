@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.MediaSceneFailureResponseHandler : HomeAutomationInternal.BaseResponseHandler
+
+@end

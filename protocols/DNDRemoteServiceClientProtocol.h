@@ -1,0 +1,4 @@
+
+@protocol DNDRemoteServiceClientProtocol <NSObject, DNDRemoteServiceClientModeAssertionProtocol, DNDRemoteServiceClientStateProtocol, DNDRemoteServiceClientSettingsProtocol, DNDRemoteServiceClientModeSelectionProtocol, DNDRemoteServiceClientGlobalConfigurationProtocol, DNDRemoteServiceClientMeDeviceStateProtocol>
+
+@end

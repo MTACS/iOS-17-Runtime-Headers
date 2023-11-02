@@ -1,0 +1,96 @@
+
+@interface PXPlacesSnapshotFactory : NSObject <PHPhotoLibraryChangeObserver> {
+    NSTimer * _assetCountChangedTimer;
+    PHFetchResult * _assetCountFetchResult;
+    long long  _cachedCount;
+    NSString * _cachedFilePathDark;
+    NSString * _cachedFilePathLight;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _cachedIvarLock;
+    UIImage * _cachedPlaceholderImage;
+    UIImage * _cachedSnapshotImageDark;
+    NSString * _cachedSnapshotImageIdentifier;
+    UIImage * _cachedSnapshotImageLight;
+    NSObject<OS_dispatch_queue> * _concurrentQueue;
+    bool  _countCacheInvalidated;
+    long long  _countLabelStyle;
+    long long  _currentUserInterfaceStyle;
+    <PXPlacesSnapshotFactoryDelegate> * _delegate;
+    bool  _isRegisteredForPhotoLibraryChanges;
+    PXLibraryFilterState * _libraryFilterState;
+    NSMutableArray * _localSearches;
+    PHPhotoLibrary * _photoLibrary;
+    PHFetchResult * _placesAssetsFetchResult;
+    PHAssetCollection * _placesCollection;
+    NSMutableArray * _requestedCompletionBlocks;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    PHAsset * _snapshottedAsset;
+}
+
+@property (nonatomic, retain) NSTimer *assetCountChangedTimer;
+@property (nonatomic, retain) PHFetchResult *assetCountFetchResult;
+@property (nonatomic) bool countCacheInvalidated;
+@property (nonatomic, readonly) long long countLabelStyle;
+@property (nonatomic) long long currentUserInterfaceStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PXPlacesSnapshotFactoryDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isRegisteredForPhotoLibraryChanges;
+@property (nonatomic, readonly) PXLibraryFilterState *libraryFilterState;
+@property (nonatomic, retain) NSMutableArray *localSearches;
+@property (nonatomic, readonly) PHPhotoLibrary *photoLibrary;
+@property (nonatomic, retain) PHFetchResult *placesAssetsFetchResult;
+@property (nonatomic, retain) PHAssetCollection *placesCollection;
+@property (nonatomic, retain) PHAsset *snapshottedAsset;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_addLocalSearch:(id)arg1;
+- (void)_fetchImageOfAsset:(id)arg1 withSnapshotOptions:(id)arg2 andCompletion:(id /* block */)arg3;
+- (void)_handleAsyncPlacesLibraryAlbumSnapshotWithSnapshotOptions:(id)arg1 andCompletion:(id /* block */)arg2;
+- (bool)_imageExistsWithLocalIdentifier:(id)arg1;
+- (id)_placeHolderImageForExtendedTraitCollection:(id)arg1;
+- (void)_removeLocalSearch:(id)arg1;
+- (id)_representativeAsset;
+- (void)_saveImage:(id)arg1 ofAsset:(id)arg2 atPath:(id)arg3;
+- (id)assetCountChangedTimer;
+- (id)assetCountFetchResult;
+- (long long)assetCountWithForcedRefresh:(bool)arg1;
+- (bool)countCacheInvalidated;
+- (long long)countLabelStyle;
+- (long long)currentUserInterfaceStyle;
+- (void)dealloc;
+- (id)delegate;
+- (id)init;
+- (id)initWithPhotoLibrary:(id)arg1;
+- (bool)isRegisteredForPhotoLibraryChanges;
+- (id)libraryFilterState;
+- (id)localSearches;
+- (id)photoLibrary;
+- (void)photoLibraryDidChange:(id)arg1;
+- (id)placesAssetsFetchResult;
+- (id)placesCollection;
+- (void)removePreviousCachedImages;
+- (void)requestAssetCountWithForcedRefresh:(bool)arg1 completion:(id /* block */)arg2;
+- (void)requestBoundingRegionForQuery:(id)arg1 completion:(id /* block */)arg2;
+- (void)requestMapSnapshotForQuery:(id)arg1 snapshotOptions:(id)arg2 completion:(id /* block */)arg3;
+- (void)requestMapSnapshotOfRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 snapshotOptions:(id)arg2 completion:(id /* block */)arg3;
+- (void)requestMapSnapshotWithAssets:(id)arg1 snapshotOptions:(id)arg2 popoverImageOptions:(unsigned long long)arg3 completion:(id /* block */)arg4;
+- (void)requestPlacesImageOfAsset:(id)arg1 withSnapshotOptions:(id)arg2 andCompletion:(id /* block */)arg3;
+- (void)requestPlacesLibraryAlbumSnapshotWithSnapshotOptions:(id)arg1 andCompletion:(id /* block */)arg2;
+- (void)setAssetCountChangedTimer:(id)arg1;
+- (void)setAssetCountFetchResult:(id)arg1;
+- (void)setCountCacheInvalidated:(bool)arg1;
+- (void)setCurrentUserInterfaceStyle:(long long)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setIsRegisteredForPhotoLibraryChanges:(bool)arg1;
+- (void)setLocalSearches:(id)arg1;
+- (void)setPlacesAssetsFetchResult:(id)arg1;
+- (void)setPlacesCollection:(id)arg1;
+- (void)setSnapshottedAsset:(id)arg1;
+- (id)snapshottedAsset;
+- (void)tickAssetCountChangedTimer:(id)arg1;
+
+@end

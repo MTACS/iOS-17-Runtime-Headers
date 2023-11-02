@@ -1,0 +1,4 @@
+
+@protocol SUSUICommandLineToolClientInterface <NSObject>
+
+@end

@@ -1,0 +1,87 @@
+
+@interface AWDLibnetcoreStatsReport : PBCodable <NSCopying> {
+    struct { 
+        unsigned int timestamp : 1; 
+        unsigned int reportReason : 1; 
+    }  _has;
+    AWDLibnetcoreMbufStatsReport * _mbufStatisticsReport;
+    AWDLibnetcoreMPTCPStatsReport * _mptcpStatisticsReport;
+    AWDLibnetcoreNetworkdStatsReport * _networkdStatisticsReport;
+    AWDNWAPIUsage * _nwAPIUsageReport;
+    unsigned int  _reportReason;
+    NSMutableArray * _tcpECNInterfaceReports;
+    AWDLibnetcoreTCPECNStatsReport * _tcpECNStatisticsReport;
+    AWDLibnetcoreTCPStatsReport * _tcpStatisticsReport;
+    AWDLibnetcoreTCPTFOStatsReport * _tcpTFOStatisticsReport;
+    unsigned long long  _timestamp;
+}
+
+@property (nonatomic, readonly) bool hasMbufStatisticsReport;
+@property (nonatomic, readonly) bool hasMptcpStatisticsReport;
+@property (nonatomic, readonly) bool hasNetworkdStatisticsReport;
+@property (nonatomic, readonly) bool hasNwAPIUsageReport;
+@property (nonatomic) bool hasReportReason;
+@property (nonatomic, readonly) bool hasTcpECNStatisticsReport;
+@property (nonatomic, readonly) bool hasTcpStatisticsReport;
+@property (nonatomic, readonly) bool hasTcpTFOStatisticsReport;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, retain) AWDLibnetcoreMbufStatsReport *mbufStatisticsReport;
+@property (nonatomic, retain) AWDLibnetcoreMPTCPStatsReport *mptcpStatisticsReport;
+@property (nonatomic, retain) AWDLibnetcoreNetworkdStatsReport *networkdStatisticsReport;
+@property (nonatomic, retain) AWDNWAPIUsage *nwAPIUsageReport;
+@property (nonatomic) unsigned int reportReason;
+@property (nonatomic, retain) NSMutableArray *tcpECNInterfaceReports;
+@property (nonatomic, retain) AWDLibnetcoreTCPECNStatsReport *tcpECNStatisticsReport;
+@property (nonatomic, retain) AWDLibnetcoreTCPStatsReport *tcpStatisticsReport;
+@property (nonatomic, retain) AWDLibnetcoreTCPTFOStatsReport *tcpTFOStatisticsReport;
+@property (nonatomic) unsigned long long timestamp;
+
++ (Class)tcpECNInterfaceReportType;
+
+- (void)addTcpECNInterfaceReport:(id)arg1;
+- (void)clearTcpECNInterfaceReports;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasMbufStatisticsReport;
+- (bool)hasMptcpStatisticsReport;
+- (bool)hasNetworkdStatisticsReport;
+- (bool)hasNwAPIUsageReport;
+- (bool)hasReportReason;
+- (bool)hasTcpECNStatisticsReport;
+- (bool)hasTcpStatisticsReport;
+- (bool)hasTcpTFOStatisticsReport;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)mbufStatisticsReport;
+- (void)mergeFrom:(id)arg1;
+- (id)mptcpStatisticsReport;
+- (id)networkdStatisticsReport;
+- (id)nwAPIUsageReport;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)reportReason;
+- (void)setHasReportReason:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setMbufStatisticsReport:(id)arg1;
+- (void)setMptcpStatisticsReport:(id)arg1;
+- (void)setNetworkdStatisticsReport:(id)arg1;
+- (void)setNwAPIUsageReport:(id)arg1;
+- (void)setReportReason:(unsigned int)arg1;
+- (void)setTcpECNInterfaceReports:(id)arg1;
+- (void)setTcpECNStatisticsReport:(id)arg1;
+- (void)setTcpStatisticsReport:(id)arg1;
+- (void)setTcpTFOStatisticsReport:(id)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (id)tcpECNInterfaceReportAtIndex:(unsigned long long)arg1;
+- (id)tcpECNInterfaceReports;
+- (unsigned long long)tcpECNInterfaceReportsCount;
+- (id)tcpECNStatisticsReport;
+- (id)tcpStatisticsReport;
+- (id)tcpTFOStatisticsReport;
+- (unsigned long long)timestamp;
+- (void)writeTo:(id)arg1;
+
+@end

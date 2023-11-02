@@ -1,0 +1,174 @@
+
+@interface HKDisplayType : NSObject <NSCopying> {
+    bool  __wheelchairUser;
+    HKDisplayTypeBehavior * _behavior;
+    long long  _categoryIdentifier;
+    NSDictionary * _chartingPredicatesByTimeScope;
+    HKDisplayTypeChartingRules * _chartingRules;
+    HKValueRange * _defaultAxisRangeOverride;
+    NSPredicate * _defaultChartingPredicate;
+    UIImage * _detailImage;
+    long long  _displayTypeIdentifier;
+    UIImage * _listIcon;
+    HKDisplayTypeLocalization * _localization;
+    HKObjectType * _objectType;
+    HKDisplayTypePresentation * _presentation;
+    NSArray * _secondaryCategoryIdentifiers;
+}
+
+@property (getter=_isWheelchairUser, setter=_setWheelchairUser:) bool _wheelchairUser;
+@property (nonatomic, readonly) bool allowsManualEntry;
+@property (nonatomic, readonly, copy) HKDisplayTypeBehavior *behavior;
+@property (nonatomic, readonly) long long categoryIdentifier;
+@property (nonatomic, readonly) HKDisplayTypeChartingRules *chartingRules;
+@property (nonatomic, readonly, copy) HKValueRange *defaultAxisRangeOverride;
+@property (nonatomic, readonly) UIImage *detailImage;
+@property (nonatomic, readonly) HKDisplayCategory *displayCategory;
+@property (nonatomic, readonly) UIImage *displayTypeIcon;
+@property (nonatomic, readonly) long long displayTypeIdentifier;
+@property (nonatomic, readonly) NSString *displayTypeIdentifierString;
+@property (nonatomic, readonly) bool isActivitySummary;
+@property (nonatomic, readonly) bool isCharacteristic;
+@property (nonatomic, readonly) bool isDocument;
+@property (nonatomic, readonly) UIImage *listIcon;
+@property (nonatomic, readonly, copy) NSString *listIconImageName;
+@property (nonatomic, readonly, copy) HKDisplayTypeLocalization *localization;
+@property (nonatomic, readonly) HKObjectType *objectType;
+@property (nonatomic, readonly, copy) HKDisplayTypePresentation *presentation;
+@property (nonatomic, readonly) HKSampleType *recordSampleType;
+@property (nonatomic, readonly) unsigned long long roundingMode;
+@property (nonatomic, readonly) HKSampleType *sampleType;
+@property (nonatomic, readonly, copy) NSArray *secondaryCategoryIdentifiers;
+@property (nonatomic, readonly, copy) NSArray *secondaryDisplayCategories;
+@property (nonatomic, readonly) UIImage *shareIcon;
+@property (nonatomic, readonly) UIImage *unitIcon;
+@property (nonatomic, readonly) Class wd_addDataViewControllerClass;
+@property (nonatomic, readonly, copy) NSNumber *wd_defaultValueForAddDataViewController;
+@property (nonatomic, readonly, copy) NSArray *wd_valueOrderForAddDataViewController;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)builtinDisplayTypes;
++ (id)displayTypeWithIdentifier:(long long)arg1;
++ (id)hk_enumeratedValueLabelsWithDisplayTypeIdentifier:(long long)arg1;
+
+- (void).cxx_destruct;
+- (void)_assignAFibBurdenAxisForSeries:(id)arg1 standardAxisConfiguration:(id)arg2 externalAxisConfigurationOverrides:(id)arg3;
+- (id)_audioLevelDataSourceForTypeIdentifier:(id)arg1 withHealthStore:(id)arg2 attenuatesExposureData:(bool)arg3 unitController:(id)arg4;
+- (struct CGSize { double x1; double x2; })_barCornerRadiusForCurrentDevice;
+- (id)_dataSourceForTimeScope:(long long)arg1 dataCacheController:(id)arg2;
+- (id)_generateAFibBurdenLineSeriesWithColor:(id)arg1;
+- (id)_generateBarSeriesWithFillStyle:(id)arg1;
+- (id)_generateBloodPressureSeriesWithColor:(id)arg1;
+- (id)_generateGraphSeriesForTimeScope:(long long)arg1 displayCategory:(id)arg2 unitController:(id)arg3 standardAxisConfiguration:(id)arg4 externalAxisConfigurationOverrides:(id)arg5 chartSizeClass:(long long)arg6;
+- (id)_generateHandwashingBarSeriesWithDisplayCategory:(id)arg1;
+- (id)_generateInsulinBarSeriesWithDisplayCategory;
+- (id)_generateJulianIndexedSevenDayQuantitySeriesWithColor:(id)arg1;
+- (id)_generateLevelCategorySeriesWithColor:(id)arg1 numericAxisConfigurationOverrides:(id)arg2;
+- (id)_generateMinMaxSeriesWithColor:(id)arg1 opacity:(double)arg2 unselectedPointStyle:(long long)arg3 selectedPointStyle:(long long)arg4;
+- (id)_generateRelativeLineSeriesWithColor:(id)arg1 timeScope:(long long)arg2 valueAxisAnnotationFormatter:(id)arg3 chartSizeClass:(long long)arg4;
+- (id)_generateSingleLineSeriesWithColor:(id)arg1 timeScope:(long long)arg2 numericAxisConfigurationOverrides:(id)arg3;
+- (id)_generateStackedSeriesWithColor:(id)arg1 numericAxisConfigurationOverrides:(id)arg2;
+- (bool)_isWheelchairUser;
+- (void)_setWheelchairUser:(bool)arg1;
+- (id /* block */)_singleValueUserInfoBlockWithUnitController:(id)arg1 displayType:(id)arg2 statisticsOption:(unsigned long long)arg3;
+- (bool)_supportsDayTimeScope;
+- (bool)_supportsFiveYearTimeScope;
+- (bool)_supportsHourTimeScope;
+- (bool)_supportsMonthTimeScope;
+- (bool)_supportsSixMonthTimeScope;
+- (bool)_supportsWeekTimeScope;
+- (bool)_supportsYearTimeScope;
+- (bool)allowsManualEntry;
+- (id)behavior;
+- (id)cardioFitnessDataSourceWithUnitController:(id)arg1 healthStore:(id)arg2;
+- (long long)categoryIdentifier;
+- (id)chartingPredicateForTimeScope:(long long)arg1;
+- (id)chartingRules;
+- (id)color;
+- (bool)contextItemShouldDisplayEventCountForDistributionStyle:(long long)arg1;
+- (bool)contextItemShouldUseTightSpacingBetweenValueAndUnit;
+- (id)copyWithDefaultAxisRangeOverride:(id)arg1;
+- (id)copyWithIsWheelchairUser:(bool)arg1;
+- (id)copyWithLocalization:(id)arg1;
+- (id)copyWithPresentation:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)defaultAxisRangeOverride;
+- (id)defaultDataRange;
+- (id)defaultValuePredicate;
+- (id)description;
+- (id)detailImage;
+- (id)displayCategory;
+- (id)displayTypeIcon;
+- (long long)displayTypeIdentifier;
+- (id)displayTypeIdentifierString;
+- (id)generateDistributionSeriesWithColor:(id)arg1 numberFormatter:(id)arg2 hasMinMaxOverlay:(bool)arg3;
+- (id)generateDistributionSeriesWithColor:(id)arg1 numberFormatter:(id)arg2 lineWidth:(double)arg3 hasMinMaxOverlay:(bool)arg4;
+- (id)generateLineSeriesWithColor:(id)arg1 timeScope:(long long)arg2;
+- (id)generateLineSeriesWithColor:(id)arg1 timeScope:(long long)arg2 valueAxisAnnotationFormatter:(id)arg3;
+- (id)generateScatterPlotSeriesWithColor:(id)arg1;
+- (unsigned long long)hash;
+- (id)hk_axisScalingRuleForChartSizeClass:(long long)arg1 unitController:(id)arg2;
+- (unsigned long long)hk_chartCalendarUnitForTimeScope:(long long)arg1;
+- (id)hk_customSeriesPointIntervalComponentsForTimeScope:(long long)arg1 resolution:(long long)arg2;
+- (id)hk_dashboardChartBoundStringFromValue:(id)arg1 defaultNumberFormatter:(id)arg2 unitController:(id)arg3;
+- (id)hk_defaultChartAxisBoundStringFromValue:(id)arg1 defaultNumberFormatter:(id)arg2 unitController:(id)arg3;
+- (id)hk_dimensionForChartAxisWithUnitController:(id)arg1;
+- (id)hk_enumeratedValueLabels;
+- (id)hk_healthQueryChartCacheDataSourceForTimeScope:(long long)arg1 healthStore:(id)arg2 unitController:(id)arg3;
+- (bool)hk_healthQueryChartDataSourceDependsOnTimeScope;
+- (id)hk_interactiveChartAxisStringFromValue:(id)arg1 defaultNumberFormatter:(id)arg2 unitController:(id)arg3;
+- (unsigned long long)hk_interactiveChartOptions;
+- (id)hk_interactiveChartsFormatterForTimeScope:(long long)arg1;
+- (bool)hk_isSupportedTimeScope:(long long)arg1;
+- (id)hk_numberFormatterForUnit:(id)arg1;
+- (id)hk_numberFormatterForUnit:(id)arg1 formattingContext:(long long)arg2;
+- (long long)hk_stackedChartSectionsCountForTimeScope:(long long)arg1;
+- (id)hk_standardInteractiveChartsFormatterForTimeScope:(long long)arg1;
+- (id)hk_standardSeriesForTimeScope:(long long)arg1 displayCategory:(id)arg2 unitController:(id)arg3 dataCacheController:(id)arg4;
+- (id)hk_standardSeriesForTimeScope:(long long)arg1 displayCategory:(id)arg2 unitController:(id)arg3 dataCacheController:(id)arg4 numericAxisConfigurationOverrides:(id)arg5;
+- (id)hk_standardSeriesForTimeScope:(long long)arg1 displayCategory:(id)arg2 unitController:(id)arg3 dataCacheController:(id)arg4 numericAxisConfigurationOverrides:(id)arg5 chartSizeClass:(long long)arg6;
+- (id)hk_standardSeriesForTimeScope:(long long)arg1 graphSeriesDataSource:(id)arg2 displayCategory:(id)arg3 unitController:(id)arg4 dataCacheController:(id)arg5;
+- (id)hk_standardSeriesForTimeScope:(long long)arg1 graphSeriesDataSource:(id)arg2 displayCategory:(id)arg3 unitController:(id)arg4 dataCacheController:(id)arg5 numericAxisConfigurationOverrides:(id)arg6;
+- (id)hk_standardSeriesForTimeScope:(long long)arg1 graphSeriesDataSource:(id)arg2 displayCategory:(id)arg3 unitController:(id)arg4 dataCacheController:(id)arg5 numericAxisConfigurationOverrides:(id)arg6 chartSizeClass:(long long)arg7;
+- (id /* block */)hk_startOfDayTransform;
+- (bool)hk_supportsMinMaxOverlayForChartSizeClass:(long long)arg1;
+- (id)hk_valueFormatterForUnit:(id)arg1;
+- (id)hk_valueFormatterForUnit:(id)arg1 formattingContext:(long long)arg2;
+- (id)hk_valueOrderForStackedCharts;
+- (id)initWithDisplayTypeIdentifier:(long long)arg1 categoryIdentifier:(long long)arg2 secondaryCategoryIdentifiers:(id)arg3 objectType:(id)arg4 behavior:(id)arg5 presentation:(id)arg6 localization:(id)arg7 chartingRules:(id)arg8 defaultChartingPredicate:(id)arg9 chartingPredicatesByTimeScope:(id)arg10;
+- (bool)isActivitySummary;
+- (bool)isCharacteristic;
+- (bool)isDocument;
+- (bool)isEqual:(id)arg1;
+- (id)listIcon;
+- (id)listIconImageName;
+- (id)localization;
+- (id)localizedStringSuffixForWheelchairUser:(bool)arg1;
+- (id)objectType;
+- (id)presentation;
+- (id)recordSampleType;
+- (unsigned long long)roundingMode;
+- (id)sampleType;
+- (id)secondaryCategoryIdentifiers;
+- (id)secondaryDisplayCategories;
+- (id)shareIcon;
+- (id)unitIcon;
+- (id)unitNameForValue:(id)arg1 unitPreferenceController:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/HealthExperienceUI.framework/HealthExperienceUI
+
+- (Class)wd_addDataViewControllerClass;
+- (id)wd_addDataViewControllerWithHealthStore:(id)arg1 healthToolBox:(id)arg2 initialStartDate:(id)arg3;
+- (id)wd_addDataViewControllerWithHealthStore:(id)arg1 unitController:(id)arg2 initialStartDate:(id)arg3 dateCache:(id)arg4;
+- (id)wd_defaultValueForAddDataViewController;
+- (id)wd_outOfRangeAlertDisplayName;
+- (id)wd_valueOrderForAddDataViewController;
+
+// Image: /System/Library/PrivateFrameworks/HealthToolbox.framework/HealthToolbox
+
+- (id)wd_dataListViewControllerWithProfile:(id)arg1 unitController:(id)arg2;
+- (id)wd_listViewControllerDataProviderWithProfile:(id)arg1 unitController:(id)arg2;
+- (id)wd_listViewControllerDataProviderWithProfile:(id)arg1 unitController:(id)arg2 isHierarchical:(bool)arg3;
+
+@end

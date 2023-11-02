@@ -1,0 +1,12 @@
+
+@protocol PLExpandedPlatterPresentationControllerDelegate <NSObject>
+
+@optional
+
+- (<PLKeyboardHomeAffordanceAssertion> *)expandedPlatterPresentationController:(PLExpandedPlatterPresentationController *)arg1 keyboardAssertionForGestureWindow:(UIWindow *)arg2;
+- (bool)expandedPlatterPresentationControllerShouldAllowKeyboardOnAppearance:(PLExpandedPlatterPresentationController *)arg1;
+- (BSAnimationSettings *)hideHomeAffordanceAnimationSettingsForExpandedPlatterPresentationController:(PLExpandedPlatterPresentationController *)arg1;
+- (<UIViewSpringAnimationBehaviorDescribing> *)settleHomeAffordanceAnimationBehaviorDescriptionForExpandedPlatterPresentationController:(PLExpandedPlatterPresentationController *)arg1;
+- (BSAnimationSettings *)unhideHomeAffordanceAnimationSettingsForExpandedPlatterPresentationController:(PLExpandedPlatterPresentationController *)arg1;
+
+@end

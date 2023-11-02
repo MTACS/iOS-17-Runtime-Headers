@@ -1,0 +1,4 @@
+
+@protocol DDUIEndpointPairingListeningTransport <DDUIEndpointPairingTransport>
+
+@end

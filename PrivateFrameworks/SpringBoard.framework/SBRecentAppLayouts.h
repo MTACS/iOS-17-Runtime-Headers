@@ -1,0 +1,86 @@
+
+@interface SBRecentAppLayouts : NSObject <SBApplicationRestrictionObserver> {
+    NSDictionary * _allRecentDisplayItemsForBundleIdentifiers;
+    NSMutableArray * _allRecents;
+    NSDictionary * _allRecentsForBundleIdentifiers;
+    NSMutableDictionary * _allowHiddenAppAssertions;
+    SBApplicationController * _applicationController;
+    SBAppSwitcherDefaults * _defaults;
+    <SBRecentAppLayoutsDelegate> * _delegate;
+    SBIconController * _iconController;
+    NSMapTable * _layoutAttributesMapsByKey;
+    SBRecentAppLayoutsPersister * _persister;
+    SBApplicationPlaceholderController * _placeholderController;
+    SBMainDisplaySceneManager * _sceneManager;
+    <BSInvalidatable> * _stateCaptureInvalidatable;
+    NSDictionary * _unhiddenRecentDisplayItemsForBundleIdentifiers;
+    NSMutableArray * _unhiddenRecents;
+    NSDictionary * _unhiddenRecentsForBundleIdentifiers;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBRecentAppLayoutsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_acquireAllowHiddenAppAssertionForBundleIdentifier:(id)arg1 reason:(id)arg2;
+- (void)_addAllAppsToModel;
+- (void)_addAllowHiddenAppAssertionForBundleIdentifier:(id)arg1 requestIdentifier:(id)arg2;
+- (id)_changeDescriptionForFilteringAppLayouts:(id)arg1 withDisplayItemTest:(id /* block */)arg2;
+- (id)_changeDescriptionForFilteringRestrictedOrUnsupportedAppsFromAppLayouts:(id)arg1;
+- (id)_changeDescriptionForFilteringRestrictedUnsupportedAndInvalidAppsFromAppLayouts:(id)arg1;
+- (id)_displayItemLayoutRolesFromLegacyPrefsForLoadedDisplayItems:(id)arg1;
+- (void)_filterRestrictedOrUnsupportedAppsFromRecents;
+- (void)_filterRestrictedUnsupportedAndInvalidAppsFromRecents;
+- (void)_iconVisibilityDidChange:(id)arg1;
+- (bool)_ignoresAppHiddenForDisplayItem:(id)arg1;
+- (void)_initializeRecents;
+- (void)_installedApplicationsDidChange:(id)arg1;
+- (bool)_isApplicationSupported:(id)arg1;
+- (bool)_isDisplayItemRestrictedOrUnsupported:(id)arg1;
+- (bool)_isExistingSceneIdentifierValidForClaimedMultiwindowSupportInDisplayItem:(id)arg1;
+- (long long)_lastInteractionTime;
+- (id)_legacyAppLayoutForItem:(id)arg1 layoutRole:(long long)arg2;
+- (id)_legacyAppLayoutsForDisplayItems:(id)arg1 layoutRolesMapping:(id)arg2;
+- (bool)_loadStashedModelAtPath:(id)arg1;
+- (id)_migrateDisplayItemIfNeeded:(id)arg1;
+- (long long)_nextInteractionTime;
+- (id)_nonPreferredDisplayItemLayoutAttributesMapForAppLayout:(id)arg1;
+- (long long)_nonPreferredDisplayOrdinalForAppLayout:(id)arg1;
+- (void)_persistSoon;
+- (void)_persistSynchronously;
+- (id)_ppt_currentModel;
+- (id)_ppt_loadStashedModel;
+- (void)_ppt_setModel:(id)arg1;
+- (id)_recentDisplayItemsFromLegacyPrefs;
+- (id)_recentsFromPrefs;
+- (void)_removeAllowHiddenAppAssertionForBundleIdentifier:(id)arg1 requestIdentifier:(id)arg2;
+- (void)_saveRecents;
+- (void)_setRecents:(id)arg1 notifyForChangeDescription:(id)arg2;
+- (void)_setUpStashedModelSettingsOutlets;
+- (bool)_stashModelToPath:(id)arg1;
+- (bool)_transitionContextRepresentsAmbiguousLaunch:(id)arg1 forApplicationSceneEntity:(id)arg2;
+- (void)_validateAndUpdateRecents:(id)arg1;
+- (void)addAppLayout:(id)arg1 afterAppLayout:(id)arg2;
+- (void)addAppLayout:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)addToFront:(id)arg1;
+- (void)applicationRestrictionController:(id)arg1 didUpdateVisibleTags:(id)arg2 hiddenTags:(id)arg3;
+- (id)bestLastDisplayItemLayoutAttributesMapForAppLayout:(id)arg1 displayOrdinal:(long long)arg2;
+- (void)dealloc;
+- (id)delegate;
+- (void)hide:(id)arg1;
+- (id)init;
+- (id)initWithUserDefaults:(id)arg1 persister:(id)arg2 iconController:(id)arg3 applicationController:(id)arg4 placeholderController:(id)arg5 sceneManager:(id)arg6;
+- (id)mostRecentAppLayoutIncludingHiddenAppLayouts:(bool)arg1 passingTest:(id /* block */)arg2;
+- (void)noteDisplayItemLayoutAttributesMapChangedForAppLayout:(id)arg1 displayOrdinal:(long long)arg2;
+- (id)recentDisplayItemsForBundleIdentifier:(id)arg1 includingHiddenAppLayouts:(bool)arg2;
+- (id)recentsForBundleIdentifier:(id)arg1 includingHiddenAppLayouts:(bool)arg2;
+- (id)recentsIncludingHiddenAppLayouts:(bool)arg1;
+- (void)remove:(id)arg1;
+- (void)removeAppLayouts:(id)arg1;
+- (void)replaceAppLayout:(id)arg1 withAppLayout:(id)arg2;
+- (void)setDelegate:(id)arg1;
+
+@end

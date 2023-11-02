@@ -1,0 +1,96 @@
+
+@interface AVTCoreDataStoreServer : NSObject <AVTAvatarStoreServer, AVTAvatarsDaemonServerDelegate, AVTCoreDataCloudKitMirroringHandlerDelegate, AVTPushNotificationsSupportDelegate> {
+    <AVTStoreBackend> * _backend;
+    NSObject<OS_dispatch_queue> * _backgroundQueue;
+    <AVTBlockScheduler> * _blockScheduler;
+    <AVTAvatarRecordChangeTracker> * _changeTracker;
+    <AVTCoreDataPersistentStoreLocalConfiguration> * _configuration;
+    <AVTAvatarsDaemonServer> * _daemonServer;
+    AVTCoreEnvironment * _environment;
+    <AVTPBackendImageHandlingDelegate> * _imageHandlingDelegate;
+    <AVTUILogger> * _logger;
+    id /* block */  _migrationActivityCompletion;
+    id /* block */  _migratorProvider;
+    <AVTCoreDataCloudKitMirroringHandler> * _mirroringHandler;
+    <AVTPushNotificationsSupport> * _pushNotificationsSupport;
+    <AVTCoreDataRemoteChangesObserver> * _remoteChangesObserver;
+    <AVTSyncSchedulingAuthority> * _schedulingAuthority;
+    NSXPCStoreServer * _server;
+    bool  _setupCompleted;
+    AVTStickerChangeObserver * _stickerChangeObserver;
+    <AVTCoreDataStoreMaintenance> * _storeMaintenance;
+    id /* block */  _userRequestedBackupActivityCompletion;
+}
+
+@property (nonatomic, readonly) <AVTStoreBackend> *backend;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *backgroundQueue;
+@property (nonatomic, readonly) <AVTBlockScheduler> *blockScheduler;
+@property (nonatomic, readonly) <AVTAvatarRecordChangeTracker> *changeTracker;
+@property (nonatomic, readonly) <AVTCoreDataPersistentStoreLocalConfiguration> *configuration;
+@property (nonatomic, readonly) <AVTAvatarsDaemonServer> *daemonServer;
+@property (nonatomic, readonly) AVTCoreEnvironment *environment;
+@property (nonatomic, readonly) <AVTPBackendImageHandlingDelegate> *imageHandlingDelegate;
+@property (nonatomic, readonly) <AVTUILogger> *logger;
+@property (nonatomic, copy) id /* block */ migrationActivityCompletion;
+@property (nonatomic, readonly, copy) id /* block */ migratorProvider;
+@property (nonatomic, readonly) <AVTCoreDataCloudKitMirroringHandler> *mirroringHandler;
+@property (nonatomic, readonly) <AVTPushNotificationsSupport> *pushNotificationsSupport;
+@property (nonatomic, readonly) <AVTCoreDataRemoteChangesObserver> *remoteChangesObserver;
+@property (nonatomic, readonly) <AVTSyncSchedulingAuthority> *schedulingAuthority;
+@property (nonatomic, retain) NSXPCStoreServer *server;
+@property (nonatomic) bool setupCompleted;
+@property (nonatomic, readonly) AVTStickerChangeObserver *stickerChangeObserver;
+@property (nonatomic, readonly) <AVTCoreDataStoreMaintenance> *storeMaintenance;
+@property (nonatomic, copy) id /* block */ userRequestedBackupActivityCompletion;
+
++ (bool)resetSyncShouldPreserveContentForReason:(unsigned long long)arg1;
+
+- (void).cxx_destruct;
+- (id)backend;
+- (id)backgroundQueue;
+- (id)blockScheduler;
+- (id)changeTracker;
+- (void)clientDidCheckInForServer:(id)arg1;
+- (void)completeMigrationActivityIfNeeded;
+- (void)completeUserRequestedBackupActivityIfNeeded;
+- (id)configuration;
+- (id)daemonServer;
+- (void)deleteStickerRecents;
+- (void)didReceivePushNotification:(id)arg1;
+- (id)environment;
+- (id)imageHandlingDelegate;
+- (void)importSetupUserDataIfNeeded;
+- (id)initWithEnvironment:(id)arg1 imageHandlingDelegate:(id)arg2;
+- (id)initWithLocalBackend:(id)arg1 configuration:(id)arg2 migratorProvider:(id /* block */)arg3 pushSupport:(id)arg4 mirroringHandler:(id)arg5 schedulingAuthority:(id)arg6 remoteChangesObserver:(id)arg7 stickerChangeObserver:(id)arg8 changeTracker:(id)arg9 daemonServer:(id)arg10 storeMaintenance:(id)arg11 backgroundQueue:(id)arg12 environment:(id)arg13 imageHandlingDelegate:(id)arg14;
+- (id)logger;
+- (void)migrate;
+- (id /* block */)migrationActivityCompletion;
+- (id /* block */)migratorProvider;
+- (id)mirroringHandler;
+- (void)mirroringHandler:(id)arg1 didResetSyncWithReason:(unsigned long long)arg2;
+- (void)mirroringHandler:(id)arg1 willResetSyncWithReason:(unsigned long long)arg2;
+- (bool)processInternalSettingsChanges:(id /* block */)arg1;
+- (id)pushNotificationsSupport;
+- (id)remoteChangesObserver;
+- (void)scheduleExportWithManagedObjectContext:(id)arg1 discretionary:(bool)arg2 completion:(id /* block */)arg3;
+- (void)scheduleImportDiscretionary:(bool)arg1 completionBlock:(id /* block */)arg2;
+- (void)scheduleImportExportIfRequiredWithPostImportHandler:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)scheduleMigrationThen:(id /* block */)arg1;
+- (void)scheduleSetupThen:(id /* block */)arg1;
+- (void)scheduleUpdateThumbnails;
+- (id)schedulingAuthority;
+- (id)server;
+- (void)setImageHandlingDelegate:(id)arg1;
+- (void)setMigrationActivityCompletion:(id /* block */)arg1;
+- (void)setServer:(id)arg1;
+- (void)setSetupCompleted:(bool)arg1;
+- (void)setUserRequestedBackupActivityCompletion:(id /* block */)arg1;
+- (bool)setupCompleted;
+- (void)setupThen:(id /* block */)arg1;
+- (void)startListening;
+- (id)stickerChangeObserver;
+- (id)storeMaintenance;
+- (void)updateThumbnails;
+- (id /* block */)userRequestedBackupActivityCompletion;
+
+@end

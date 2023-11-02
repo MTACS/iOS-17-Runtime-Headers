@@ -1,0 +1,4 @@
+
+@protocol UIFocusDebuggerOutput <NSObject>
+
+@end

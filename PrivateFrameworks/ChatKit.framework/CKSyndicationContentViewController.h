@@ -1,0 +1,95 @@
+
+@interface CKSyndicationContentViewController : OBWelcomeController {
+    UIView * _combinedHighlightsView;
+    NSMutableArray * _constraints;
+    CAGradientLayer * _gradientLayer;
+    UIView * _gradientView;
+    UIView * _highlightsView1;
+    UIView * _highlightsView2;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxContentSize;
+    UILabel * _micropillView1;
+    UILabel * _micropillView2;
+    UIView * _musicLinkBalloonView;
+    unsigned long long  _onboardingPage;
+    double  _photoLongSide;
+    double  _photoShortSide;
+    UIView * _podcastLinkBalloonView;
+    UIView * _podcastPinIconView;
+    CKSyndicationSharedWithYouViewController * _sharedWithYouViewController;
+    UIView * _tvLinkBalloonView;
+    UIView * _tvPinIconView;
+}
+
+@property (nonatomic, retain) UIView *combinedHighlightsView;
+@property (nonatomic, retain) NSMutableArray *constraints;
+@property (nonatomic, retain) CAGradientLayer *gradientLayer;
+@property (nonatomic, retain) UIView *gradientView;
+@property (nonatomic, retain) UIView *highlightsView1;
+@property (nonatomic, retain) UIView *highlightsView2;
+@property (nonatomic) struct CGSize { double x1; double x2; } maxContentSize;
+@property (nonatomic, retain) UILabel *micropillView1;
+@property (nonatomic, retain) UILabel *micropillView2;
+@property (nonatomic, retain) UIView *musicLinkBalloonView;
+@property (nonatomic) unsigned long long onboardingPage;
+@property (nonatomic) double photoLongSide;
+@property (nonatomic) double photoShortSide;
+@property (nonatomic, retain) UIView *podcastLinkBalloonView;
+@property (nonatomic, retain) UIView *podcastPinIconView;
+@property (nonatomic, retain) CKSyndicationSharedWithYouViewController *sharedWithYouViewController;
+@property (nonatomic, retain) UIView *tvLinkBalloonView;
+@property (nonatomic, retain) UIView *tvPinIconView;
+
+- (void).cxx_destruct;
+- (id)_setUpPhotosMicropillForAvatarImage:(id)arg1 forName:(id)arg2;
+- (id)combinedHighlightsView;
+- (id)constraints;
+- (id)getPinIcon;
+- (id)gradientLayer;
+- (id)gradientView;
+- (id)highlightsView1;
+- (id)highlightsView2;
+- (id)initWithIndex:(unsigned long long)arg1;
+- (void)loadView;
+- (struct CGSize { double x1; double x2; })maxContentSize;
+- (id)micropillView1;
+- (id)micropillView2;
+- (id)musicLinkBalloonView;
+- (unsigned long long)onboardingPage;
+- (double)photoLongSide;
+- (double)photoShortSide;
+- (id)podcastLinkBalloonView;
+- (id)podcastPinIconView;
+- (void)setCombinedHighlightsView:(id)arg1;
+- (void)setConstraints:(id)arg1;
+- (void)setGradientLayer:(id)arg1;
+- (void)setGradientView:(id)arg1;
+- (void)setHighlightsView1:(id)arg1;
+- (void)setHighlightsView2:(id)arg1;
+- (void)setMaxContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMicropillView1:(id)arg1;
+- (void)setMicropillView2:(id)arg1;
+- (void)setMusicLinkBalloonView:(id)arg1;
+- (void)setOnboardingPage:(unsigned long long)arg1;
+- (void)setPhotoLongSide:(double)arg1;
+- (void)setPhotoShortSide:(double)arg1;
+- (void)setPodcastLinkBalloonView:(id)arg1;
+- (void)setPodcastPinIconView:(id)arg1;
+- (void)setSharedWithYouViewController:(id)arg1;
+- (void)setTvLinkBalloonView:(id)arg1;
+- (void)setTvPinIconView:(id)arg1;
+- (void)setUpHighlightsContent;
+- (void)setUpPhotosContent;
+- (void)setUpSharedWithYouContentCollectionView;
+- (id)sharedWithYouViewController;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)tvLinkBalloonView;
+- (id)tvPinIconView;
+- (void)updateMaxContentSize;
+- (void)updateViewConstraints;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+
+@end

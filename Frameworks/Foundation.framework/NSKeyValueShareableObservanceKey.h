@@ -1,0 +1,4 @@
+
+@interface NSKeyValueShareableObservanceKey : NSKeyValueObservance
+
+@end

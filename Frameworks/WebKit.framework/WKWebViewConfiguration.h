@@ -1,0 +1,432 @@
+
+@interface WKWebViewConfiguration : NSObject <NSCopying, NSSecureCoding> {
+    struct RetainPtr<NSArray<NSString *>> { 
+        void *m_ptr; 
+    }  _additionalSupportedImageTypes;
+    bool  _allowMediaContentTypesRequiringHardwareSupportAsFallback;
+    bool  _allowTopNavigationToDataURLs;
+    bool  _allowUniversalAccessFromFileURLs;
+    bool  _allowsAirPlayForMediaPlayback;
+    bool  _allowsInlineMediaPlayback;
+    bool  _allowsInlineMediaPlaybackAfterFullscreen;
+    bool  _allowsInlinePredictions;
+    bool  _allowsJavaScriptMarkup;
+    bool  _allowsMetaRefresh;
+    bool  _allowsPictureInPictureMediaPlayback;
+    struct WeakObjCPtr<WKWebView> { 
+        id m_weakReference; 
+    }  _alternateWebViewForNavigationGestures;
+    bool  _appHighlightsEnabled;
+    bool  _applePayEnabled;
+    struct optional<WTF::RetainPtr<NSString>> { 
+        union { 
+            BOOL __null_state_; 
+            struct RetainPtr<NSString> { 
+                void *m_ptr; 
+            } __val_; 
+        } ; 
+        bool __engaged_; 
+    }  _applicationNameForUserAgent;
+    bool  _attachmentElementEnabled;
+    Class  _attachmentFileWrapperClass;
+    bool  _attachmentWideLayoutEnabled;
+    bool  _colorFilterEnabled;
+    struct LazyInitialized<WTF::RetainPtr<WKWebViewContentProviderRegistry>> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKWebViewContentProviderRegistry> { 
+            void *m_ptr; 
+        } m_value; 
+    }  _contentProviderRegistry;
+    bool  _controlledByAutomation;
+    bool  _convertsPositionStyleOnCopy;
+    unsigned long long  _dataDetectorTypes;
+    struct LazyInitialized<WTF::RetainPtr<WKWebpagePreferences>> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKWebpagePreferences> { 
+            void *m_ptr; 
+        } m_value; 
+    }  _defaultWebpagePreferences;
+    unsigned long long  _dragLiftDelay;
+    bool  _drawsBackground;
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
+    }  _groupIdentifier;
+    bool  _ignoresViewportScaleLimits;
+    bool  _incompleteImageBorderEnabled;
+    double  _incrementalRenderingSuppressionTimeout;
+    bool  _inlineMediaPlaybackRequiresPlaysInlineAttribute;
+    bool  _invisibleAutoplayNotPermitted;
+    bool  _legacyEncryptedMediaAPIEnabled;
+    bool  _longPressActionsEnabled;
+    bool  _mainContentUserGestureOverrideEnabled;
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
+    }  _mediaContentTypesRequiringHardwareSupport;
+    bool  _mediaDataLoadsAutomatically;
+    unsigned long long  _mediaTypesRequiringUserActionForPlayback;
+    bool  _needsStorageAccessFromFileURLsQuirk;
+    struct RefPtr<API::PageConfiguration, WTF::RawPtrTraits<API::PageConfiguration>, WTF::DefaultRefDerefTraits<API::PageConfiguration>> { 
+        struct PageConfiguration {} *m_ptr; 
+    }  _pageConfiguration;
+    struct LazyInitialized<WTF::RetainPtr<WKPreferences>> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKPreferences> { 
+            void *m_ptr; 
+        } m_value; 
+    }  _preferences;
+    struct LazyInitialized<WTF::RetainPtr<WKProcessPool>> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKProcessPool> { 
+            void *m_ptr; 
+        } m_value; 
+    }  _processPool;
+    struct WeakObjCPtr<WKWebView> { 
+        id m_weakReference; 
+    }  _relatedWebView;
+    bool  _respectsImageOrientation;
+    double  _sampledPageTopColorMaxDifference;
+    double  _sampledPageTopColorMinHeight;
+    long long  _selectionGranularity;
+    bool  _shouldDecidePolicyBeforeLoadingQuickLookPreview;
+    bool  _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
+    bool  _suppressesIncrementalRendering;
+    bool  _systemPreviewEnabled;
+    bool  _textInteractionGesturesEnabled;
+    bool  _undoManagerAPIEnabled;
+    struct LazyInitialized<WTF::RetainPtr<WKUserContentController>> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKUserContentController> { 
+            void *m_ptr; 
+        } m_value; 
+    }  _userContentController;
+    struct LazyInitialized<WTF::RetainPtr<_WKVisitedLinkStore>> { 
+        bool m_isInitialized; 
+        struct RetainPtr<_WKVisitedLinkStore> { 
+            void *m_ptr; 
+        } m_value; 
+    }  _visitedLinkStore;
+    bool  _waitsForPaintAfterViewDidMoveToWindow;
+    struct WeakObjCPtr<_WKWebExtensionController> { 
+        id m_weakReference; 
+    }  _weakWebExtensionController;
+    struct RetainPtr<_WKWebExtensionController> { 
+        void *m_ptr; 
+    }  _webExtensionController;
+    struct WeakObjCPtr<WKWebView> { 
+        id m_weakReference; 
+    }  _webViewToCloneSessionStorageFrom;
+    struct LazyInitialized<WTF::RetainPtr<WKWebsiteDataStore>> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKWebsiteDataStore> { 
+            void *m_ptr; 
+        } m_value; 
+    }  _websiteDataStore;
+}
+
+@property (setter=_setAdditionalSupportedImageTypes:, nonatomic, copy) NSArray *_additionalSupportedImageTypes;
+@property (setter=_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:, nonatomic) bool _allowMediaContentTypesRequiringHardwareSupportAsFallback;
+@property (setter=_setAllowTestOnlyIPC:, nonatomic) bool _allowTestOnlyIPC;
+@property (setter=_setAllowTopNavigationToDataURLs:, nonatomic) bool _allowTopNavigationToDataURLs;
+@property (setter=_setAllowUniversalAccessFromFileURLs:, nonatomic) bool _allowUniversalAccessFromFileURLs;
+@property (setter=_setAllowedNetworkHosts:, nonatomic, copy) NSSet *_allowedNetworkHosts;
+@property (setter=_setAllowsInlineMediaPlaybackAfterFullscreen:, nonatomic) bool _allowsInlineMediaPlaybackAfterFullscreen;
+@property (setter=_setAllowsJavaScriptMarkup:, nonatomic) bool _allowsJavaScriptMarkup;
+@property (setter=_setAllowsMetaRefresh:, nonatomic) bool _allowsMetaRefresh;
+@property (setter=_setAlternateWebViewForNavigationGestures:, nonatomic) WKWebView *_alternateWebViewForNavigationGestures;
+@property (setter=_setAlwaysRunsAtForegroundPriority:, nonatomic) bool _alwaysRunsAtForegroundPriority;
+@property (setter=_setAppHighlightsEnabled:, nonatomic) bool _appHighlightsEnabled;
+@property (setter=_setAppInitiatedOverrideValueForTesting:, nonatomic) unsigned long long _appInitiatedOverrideValueForTesting;
+@property (setter=_setApplePayEnabled:, nonatomic) bool _applePayEnabled;
+@property (setter=_setApplicationManifest:, nonatomic) _WKApplicationManifest *_applicationManifest;
+@property (nonatomic, readonly) NSString *_applicationNameForDesktopUserAgent;
+@property (setter=_setAttachmentElementEnabled:, nonatomic) bool _attachmentElementEnabled;
+@property (setter=_setAttachmentFileWrapperClass:, nonatomic) Class _attachmentFileWrapperClass;
+@property (setter=_setAttachmentWideLayoutEnabled:, nonatomic) bool _attachmentWideLayoutEnabled;
+@property (setter=_setAttributedBundleIdentifier:, nonatomic) NSString *_attributedBundleIdentifier;
+@property (setter=_setCanShowWhileLocked:, nonatomic) bool _canShowWhileLocked;
+@property (setter=_setClickInteractionDriverForTesting:, nonatomic) <_UIClickInteractionDriving> *_clickInteractionDriverForTesting;
+@property (setter=_setClientNavigationsRunAtForegroundPriority:, nonatomic) bool _clientNavigationsRunAtForegroundPriority;
+@property (setter=_setColorFilterEnabled:, nonatomic) bool _colorFilterEnabled;
+@property (setter=_setContentProviderRegistry:, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
+@property (setter=_setContentSecurityPolicyModeForExtension:, nonatomic) unsigned long long _contentSecurityPolicyModeForExtension;
+@property (getter=_isControlledByAutomation, setter=_setControlledByAutomation:, nonatomic) bool _controlledByAutomation;
+@property (setter=_setConvertsPositionStyleOnCopy:, nonatomic) bool _convertsPositionStyleOnCopy;
+@property (setter=_setCORSDisablingPatterns:, nonatomic, copy) NSArray *_corsDisablingPatterns;
+@property (setter=_setCrossOriginAccessControlCheckEnabled:, nonatomic) bool _crossOriginAccessControlCheckEnabled;
+@property (setter=_setDeferrableUserScriptsShouldWaitUntilNotification:, nonatomic) bool _deferrableUserScriptsShouldWaitUntilNotification;
+@property (setter=_setDelaysWebProcessLaunchUntilFirstLoad:, nonatomic) bool _delaysWebProcessLaunchUntilFirstLoad;
+@property (setter=_setDragLiftDelay:, nonatomic) unsigned long long _dragLiftDelay;
+@property (setter=_setDrawsBackground:, nonatomic) bool _drawsBackground;
+@property (setter=_setGroupIdentifier:, nonatomic, copy) NSString *_groupIdentifier;
+@property (setter=_setIgnoresAppBoundDomains:, nonatomic) bool _ignoresAppBoundDomains;
+@property (setter=_setIncompleteImageBorderEnabled:, nonatomic) bool _incompleteImageBorderEnabled;
+@property (setter=_setIncrementalRenderingSuppressionTimeout:, nonatomic) double _incrementalRenderingSuppressionTimeout;
+@property (setter=_setInitialCapitalizationEnabled:, nonatomic) bool _initialCapitalizationEnabled;
+@property (setter=_setInlineMediaPlaybackRequiresPlaysInlineAttribute:, nonatomic) bool _inlineMediaPlaybackRequiresPlaysInlineAttribute;
+@property (setter=_setInvisibleAutoplayNotPermitted:, nonatomic) bool _invisibleAutoplayNotPermitted;
+@property (setter=_setLegacyEncryptedMediaAPIEnabled:, nonatomic) bool _legacyEncryptedMediaAPIEnabled;
+@property (setter=_setLoadsFromNetwork:, nonatomic) bool _loadsFromNetwork;
+@property (setter=_setLoadsSubresources:, nonatomic) bool _loadsSubresources;
+@property (setter=_setLongPressActionsEnabled:, nonatomic) bool _longPressActionsEnabled;
+@property (setter=_setMainContentUserGestureOverrideEnabled:, nonatomic) bool _mainContentUserGestureOverrideEnabled;
+@property (setter=_setMarkedTextInputEnabled:, nonatomic) bool _markedTextInputEnabled;
+@property (setter=_setMaskedURLSchemes:, nonatomic, copy) NSSet *_maskedURLSchemes;
+@property (setter=_setMediaCaptureEnabled:, nonatomic) bool _mediaCaptureEnabled;
+@property (setter=_setMediaContentTypesRequiringHardwareSupport:, nonatomic) NSString *_mediaContentTypesRequiringHardwareSupport;
+@property (setter=_setMediaDataLoadsAutomatically:, nonatomic) bool _mediaDataLoadsAutomatically;
+@property (setter=_setNeedsStorageAccessFromFileURLsQuirk:, nonatomic) bool _needsStorageAccessFromFileURLsQuirk;
+@property (setter=_setOverrideContentSecurityPolicy:, nonatomic) NSString *_overrideContentSecurityPolicy;
+@property (setter=_setPrintsBackgrounds:, nonatomic) bool _printsBackgrounds;
+@property (setter=_setProcessDisplayName:, nonatomic) NSString *_processDisplayName;
+@property (setter=_setRelatedWebView:, nonatomic) WKWebView *_relatedWebView;
+@property (setter=_setRequiresUserActionForAudioPlayback:, nonatomic) bool _requiresUserActionForAudioPlayback;
+@property (setter=_setRequiresUserActionForVideoPlayback:, nonatomic) bool _requiresUserActionForVideoPlayback;
+@property (setter=_setRespectsImageOrientation:, nonatomic) bool _respectsImageOrientation;
+@property (setter=_setSampledPageTopColorMaxDifference:, nonatomic) double _sampledPageTopColorMaxDifference;
+@property (setter=_setSampledPageTopColorMinHeight:, nonatomic) double _sampledPageTopColorMinHeight;
+@property (setter=_setShouldDecidePolicyBeforeLoadingQuickLookPreview:, nonatomic) bool _shouldDecidePolicyBeforeLoadingQuickLookPreview;
+@property (setter=_setShouldDeferAsynchronousScriptsUntilAfterDocumentLoad:, nonatomic) bool _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
+@property (setter=_setShouldRelaxThirdPartyCookieBlocking:, nonatomic) bool _shouldRelaxThirdPartyCookieBlocking;
+@property (nonatomic, readonly) _WKWebExtensionController *_strongWebExtensionController;
+@property (setter=_setSystemPreviewEnabled:, nonatomic) bool _systemPreviewEnabled;
+@property (setter=_setTextInteractionGesturesEnabled:, nonatomic) bool _textInteractionGesturesEnabled;
+@property (setter=_setUndoManagerAPIEnabled:, nonatomic) bool _undoManagerAPIEnabled;
+@property (setter=_setVisitedLinkStore:, nonatomic, retain) _WKVisitedLinkStore *_visitedLinkStore;
+@property (setter=_setWaitsForPaintAfterViewDidMoveToWindow:, nonatomic) bool _waitsForPaintAfterViewDidMoveToWindow;
+@property (setter=_setWeakWebExtensionController:, nonatomic) _WKWebExtensionController *_weakWebExtensionController;
+@property (setter=_setWebExtensionController:, nonatomic, retain) _WKWebExtensionController *_webExtensionController;
+@property (setter=_setWebViewToCloneSessionStorageFrom:, nonatomic) WKWebView *_webViewToCloneSessionStorageFrom;
+@property (nonatomic, readonly) WKWebsiteDataStore *_websiteDataStoreIfExists;
+@property (nonatomic) bool allowsAirPlayForMediaPlayback;
+@property (nonatomic) bool allowsInlineMediaPlayback;
+@property (nonatomic) bool allowsInlinePredictions;
+@property (nonatomic) bool allowsPictureInPictureMediaPlayback;
+@property (nonatomic, copy) NSString *applicationNameForUserAgent;
+@property (nonatomic) unsigned long long dataDetectorTypes;
+@property (nonatomic, copy) WKWebpagePreferences *defaultWebpagePreferences;
+@property (nonatomic) bool ignoresViewportScaleLimits;
+@property (nonatomic) bool limitsNavigationsToAppBoundDomains;
+@property (nonatomic) bool mediaPlaybackAllowsAirPlay;
+@property (nonatomic) bool mediaPlaybackRequiresUserAction;
+@property (nonatomic) unsigned long long mediaTypesRequiringUserActionForPlayback;
+@property (nonatomic, retain) WKPreferences *preferences;
+@property (nonatomic, retain) WKProcessPool *processPool;
+@property (nonatomic) bool requiresUserActionForMediaPlayback;
+@property (nonatomic) long long selectionGranularity;
+@property (nonatomic) bool suppressesIncrementalRendering;
+@property (nonatomic) bool upgradeKnownHostsToHTTPS;
+@property (nonatomic, retain) WKUserContentController *userContentController;
+@property (nonatomic, retain) WKWebsiteDataStore *websiteDataStore;
+
+// Image: /System/Library/Frameworks/WebKit.framework/WebKit
+
++ (bool)supportsSecureCoding;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)_additionalSupportedImageTypes;
+- (bool)_allowMediaContentTypesRequiringHardwareSupportAsFallback;
+- (bool)_allowTestOnlyIPC;
+- (bool)_allowTopNavigationToDataURLs;
+- (bool)_allowUniversalAccessFromFileURLs;
+- (id)_allowedNetworkHosts;
+- (bool)_allowsInlineMediaPlaybackAfterFullscreen;
+- (bool)_allowsJavaScriptMarkup;
+- (bool)_allowsMetaRefresh;
+- (id)_alternateWebViewForNavigationGestures;
+- (bool)_alwaysRunsAtForegroundPriority;
+- (bool)_appHighlightsEnabled;
+- (unsigned long long)_appInitiatedOverrideValueForTesting;
+- (bool)_applePayEnabled;
+- (id)_applicationManifest;
+- (id)_applicationNameForDesktopUserAgent;
+- (bool)_attachmentElementEnabled;
+- (Class)_attachmentFileWrapperClass;
+- (bool)_attachmentWideLayoutEnabled;
+- (id)_attributedBundleIdentifier;
+- (bool)_canShowWhileLocked;
+- (id)_clickInteractionDriverForTesting;
+- (bool)_clientNavigationsRunAtForegroundPriority;
+- (bool)_colorFilterEnabled;
+- (id)_contentProviderRegistry;
+- (unsigned long long)_contentSecurityPolicyModeForExtension;
+- (bool)_convertsPositionStyleOnCopy;
+- (id)_corsDisablingPatterns;
+- (bool)_crossOriginAccessControlCheckEnabled;
+- (bool)_deferrableUserScriptsShouldWaitUntilNotification;
+- (bool)_delaysWebProcessLaunchUntilFirstLoad;
+- (unsigned long long)_dragLiftDelay;
+- (bool)_drawsBackground;
+- (id)_groupIdentifier;
+- (bool)_ignoresAppBoundDomains;
+- (bool)_incompleteImageBorderEnabled;
+- (double)_incrementalRenderingSuppressionTimeout;
+- (bool)_initialCapitalizationEnabled;
+- (bool)_inlineMediaPlaybackRequiresPlaysInlineAttribute;
+- (bool)_invisibleAutoplayNotPermitted;
+- (bool)_isControlledByAutomation;
+- (bool)_legacyEncryptedMediaAPIEnabled;
+- (bool)_loadsFromNetwork;
+- (bool)_loadsSubresources;
+- (bool)_longPressActionsEnabled;
+- (bool)_mainContentUserGestureOverrideEnabled;
+- (bool)_markedTextInputEnabled;
+- (id)_maskedURLSchemes;
+- (bool)_mediaCaptureEnabled;
+- (id)_mediaContentTypesRequiringHardwareSupport;
+- (bool)_mediaDataLoadsAutomatically;
+- (bool)_needsStorageAccessFromFileURLsQuirk;
+- (id)_overrideContentSecurityPolicy;
+- (bool)_printsBackgrounds;
+- (id)_processDisplayName;
+- (id)_relatedWebView;
+- (bool)_requiresUserActionForAudioPlayback;
+- (bool)_requiresUserActionForVideoPlayback;
+- (bool)_respectsImageOrientation;
+- (double)_sampledPageTopColorMaxDifference;
+- (double)_sampledPageTopColorMinHeight;
+- (void)_setAdditionalSupportedImageTypes:(id)arg1;
+- (void)_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:(bool)arg1;
+- (void)_setAllowTestOnlyIPC:(bool)arg1;
+- (void)_setAllowTopNavigationToDataURLs:(bool)arg1;
+- (void)_setAllowUniversalAccessFromFileURLs:(bool)arg1;
+- (void)_setAllowedNetworkHosts:(id)arg1;
+- (void)_setAllowsInlineMediaPlaybackAfterFullscreen:(bool)arg1;
+- (void)_setAllowsJavaScriptMarkup:(bool)arg1;
+- (void)_setAllowsMetaRefresh:(bool)arg1;
+- (void)_setAlternateWebViewForNavigationGestures:(id)arg1;
+- (void)_setAlwaysRunsAtForegroundPriority:(bool)arg1;
+- (void)_setAppHighlightsEnabled:(bool)arg1;
+- (void)_setAppInitiatedOverrideValueForTesting:(unsigned long long)arg1;
+- (void)_setApplePayEnabled:(bool)arg1;
+- (void)_setApplicationManifest:(id)arg1;
+- (void)_setAttachmentElementEnabled:(bool)arg1;
+- (void)_setAttachmentFileWrapperClass:(Class)arg1;
+- (void)_setAttachmentWideLayoutEnabled:(bool)arg1;
+- (void)_setAttributedBundleIdentifier:(id)arg1;
+- (void)_setCORSDisablingPatterns:(id)arg1;
+- (void)_setCanShowWhileLocked:(bool)arg1;
+- (void)_setClickInteractionDriverForTesting:(id)arg1;
+- (void)_setClientNavigationsRunAtForegroundPriority:(bool)arg1;
+- (void)_setColorFilterEnabled:(bool)arg1;
+- (void)_setContentProviderRegistry:(id)arg1;
+- (void)_setContentSecurityPolicyModeForExtension:(unsigned long long)arg1;
+- (void)_setControlledByAutomation:(bool)arg1;
+- (void)_setConvertsPositionStyleOnCopy:(bool)arg1;
+- (void)_setCrossOriginAccessControlCheckEnabled:(bool)arg1;
+- (void)_setDeferrableUserScriptsShouldWaitUntilNotification:(bool)arg1;
+- (void)_setDelaysWebProcessLaunchUntilFirstLoad:(bool)arg1;
+- (void)_setDragLiftDelay:(unsigned long long)arg1;
+- (void)_setDrawsBackground:(bool)arg1;
+- (void)_setGroupIdentifier:(id)arg1;
+- (void)_setIgnoresAppBoundDomains:(bool)arg1;
+- (void)_setIncompleteImageBorderEnabled:(bool)arg1;
+- (void)_setIncrementalRenderingSuppressionTimeout:(double)arg1;
+- (void)_setInitialCapitalizationEnabled:(bool)arg1;
+- (void)_setInlineMediaPlaybackRequiresPlaysInlineAttribute:(bool)arg1;
+- (void)_setInvisibleAutoplayNotPermitted:(bool)arg1;
+- (void)_setLegacyEncryptedMediaAPIEnabled:(bool)arg1;
+- (void)_setLoadsFromNetwork:(bool)arg1;
+- (void)_setLoadsSubresources:(bool)arg1;
+- (void)_setLongPressActionsEnabled:(bool)arg1;
+- (void)_setMainContentUserGestureOverrideEnabled:(bool)arg1;
+- (void)_setMarkedTextInputEnabled:(bool)arg1;
+- (void)_setMaskedURLSchemes:(id)arg1;
+- (void)_setMediaCaptureEnabled:(bool)arg1;
+- (void)_setMediaContentTypesRequiringHardwareSupport:(id)arg1;
+- (void)_setMediaDataLoadsAutomatically:(bool)arg1;
+- (void)_setNeedsStorageAccessFromFileURLsQuirk:(bool)arg1;
+- (void)_setOverrideContentSecurityPolicy:(id)arg1;
+- (void)_setPrintsBackgrounds:(bool)arg1;
+- (void)_setProcessDisplayName:(id)arg1;
+- (void)_setRelatedWebView:(id)arg1;
+- (void)_setRequiresUserActionForAudioPlayback:(bool)arg1;
+- (void)_setRequiresUserActionForVideoPlayback:(bool)arg1;
+- (void)_setRespectsImageOrientation:(bool)arg1;
+- (void)_setSampledPageTopColorMaxDifference:(double)arg1;
+- (void)_setSampledPageTopColorMinHeight:(double)arg1;
+- (void)_setShouldDecidePolicyBeforeLoadingQuickLookPreview:(bool)arg1;
+- (void)_setShouldDeferAsynchronousScriptsUntilAfterDocumentLoad:(bool)arg1;
+- (void)_setShouldRelaxThirdPartyCookieBlocking:(bool)arg1;
+- (void)_setSystemPreviewEnabled:(bool)arg1;
+- (void)_setTextInteractionGesturesEnabled:(bool)arg1;
+- (void)_setUndoManagerAPIEnabled:(bool)arg1;
+- (void)_setVisitedLinkProvider:(id)arg1;
+- (void)_setVisitedLinkStore:(id)arg1;
+- (void)_setWaitsForPaintAfterViewDidMoveToWindow:(bool)arg1;
+- (void)_setWeakWebExtensionController:(id)arg1;
+- (void)_setWebExtensionController:(id)arg1;
+- (void)_setWebViewToCloneSessionStorageFrom:(id)arg1;
+- (bool)_shouldDecidePolicyBeforeLoadingQuickLookPreview;
+- (bool)_shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
+- (bool)_shouldRelaxThirdPartyCookieBlocking;
+- (id)_strongWebExtensionController;
+- (bool)_systemPreviewEnabled;
+- (bool)_textInteractionGesturesEnabled;
+- (bool)_undoManagerAPIEnabled;
+- (id)_visitedLinkProvider;
+- (id)_visitedLinkStore;
+- (bool)_waitsForPaintAfterViewDidMoveToWindow;
+- (id)_weakWebExtensionController;
+- (id)_webExtensionController;
+- (id)_webViewToCloneSessionStorageFrom;
+- (id)_websiteDataStoreIfExists;
+- (bool)allowsAirPlayForMediaPlayback;
+- (bool)allowsInlineMediaPlayback;
+- (bool)allowsInlinePredictions;
+- (bool)allowsPictureInPictureMediaPlayback;
+- (id)applicationNameForUserAgent;
+- (struct Ref<API::PageConfiguration, WTF::RawPtrTraits<API::PageConfiguration>> { struct PageConfiguration {} *x1; })copyPageConfiguration;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)dataDetectorTypes;
+- (id)defaultWebpagePreferences;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)ignoresViewportScaleLimits;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)limitsNavigationsToAppBoundDomains;
+- (bool)mediaPlaybackAllowsAirPlay;
+- (bool)mediaPlaybackRequiresUserAction;
+- (unsigned long long)mediaTypesRequiringUserActionForPlayback;
+- (id)preferences;
+- (id)processPool;
+- (bool)requiresUserActionForMediaPlayback;
+- (long long)selectionGranularity;
+- (void)setAllowsAirPlayForMediaPlayback:(bool)arg1;
+- (void)setAllowsInlineMediaPlayback:(bool)arg1;
+- (void)setAllowsInlinePredictions:(bool)arg1;
+- (void)setAllowsPictureInPictureMediaPlayback:(bool)arg1;
+- (void)setApplicationNameForUserAgent:(id)arg1;
+- (void)setDataDetectorTypes:(unsigned long long)arg1;
+- (void)setDefaultWebpagePreferences:(id)arg1;
+- (void)setIgnoresViewportScaleLimits:(bool)arg1;
+- (void)setLimitsNavigationsToAppBoundDomains:(bool)arg1;
+- (void)setMediaPlaybackAllowsAirPlay:(bool)arg1;
+- (void)setMediaPlaybackRequiresUserAction:(bool)arg1;
+- (void)setMediaTypesRequiringUserActionForPlayback:(unsigned long long)arg1;
+- (void)setPreferences:(id)arg1;
+- (void)setProcessPool:(id)arg1;
+- (void)setRequiresUserActionForMediaPlayback:(bool)arg1;
+- (void)setSelectionGranularity:(long long)arg1;
+- (void)setSuppressesIncrementalRendering:(bool)arg1;
+- (void)setURLSchemeHandler:(id)arg1 forURLScheme:(id)arg2;
+- (void)setUpgradeKnownHostsToHTTPS:(bool)arg1;
+- (void)setUserContentController:(id)arg1;
+- (void)setWebsiteDataStore:(id)arg1;
+- (bool)suppressesIncrementalRendering;
+- (bool)upgradeKnownHostsToHTTPS;
+- (id)urlSchemeHandlerForURLScheme:(id)arg1;
+- (id)userContentController;
+- (id)websiteDataStore;
+
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+
+- (id)_sharedDataStoreForBundleIdentifier:(id)arg1;
+- (id)ql_initWithForegroundPriorityAndSourceBundleIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/InAppMessages.framework/InAppMessages
+
++ (id)sharedMessagesConfiguration;
+
+@end

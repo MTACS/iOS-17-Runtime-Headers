@@ -1,0 +1,4 @@
+
+@interface STUIStatusBarDataStringEntry : STStatusBarDataStringEntry
+
+@end

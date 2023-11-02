@@ -1,0 +1,4 @@
+
+@protocol HKMenstrualCyclesStoreInterface <NSObject>
+
+@end

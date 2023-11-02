@@ -1,0 +1,4 @@
+
+@interface PLBatteryUIExternalData : NSObject
+
+@end

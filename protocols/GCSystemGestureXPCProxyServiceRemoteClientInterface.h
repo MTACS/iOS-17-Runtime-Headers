@@ -1,0 +1,4 @@
+
+@protocol GCSystemGestureXPCProxyServiceRemoteClientInterface
+
+@end

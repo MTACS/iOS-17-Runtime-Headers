@@ -1,0 +1,4 @@
+
+@interface ARPlaceholderMLDepthData : ARMLDepthData
+
+@end

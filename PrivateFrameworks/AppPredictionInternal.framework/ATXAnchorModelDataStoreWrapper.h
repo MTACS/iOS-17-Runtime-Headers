@@ -1,0 +1,96 @@
+
+@interface ATXAnchorModelDataStoreWrapper : NSObject <ATXAnchorModelDataStoreWrapperProtocol> {
+    ATXCachedCandidateCounter * _cachedAppLaunchCounter;
+    ATXCachedCandidateCounter * _cachedModeCounter;
+    NSDate * _dateOfOldestAllowedCandidateOccurrenceForCandidateGeneration;
+    NSMutableDictionary * _numCandidateOccurrencesInAllContextsForCandidateTypeCache;
+    _ATXDataStore * _store;
+    NSDate * _twentyOneDaysAgo;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)actionCandidateFeaturesFromActionEvent:(id)arg1 actionMetadata:(id)arg2 actionOccurred:(bool)arg3 actionEngaged:(bool)arg4;
++ (id)actionDetailsFromActionCandidateId:(id)arg1;
++ (id)actionKeyFromActionCandidateId:(id)arg1;
++ (id)anchorFeaturesForAnchorOccurrence:(id)arg1 anchor:(id)arg2 anchorMetadata:(id)arg3;
++ (id)appCandidateFeaturesFromAppLaunchEvent:(id)arg1 appMetadata:(id)arg2 appWasLaunched:(bool)arg3 appEngaged:(bool)arg4;
++ (id)candidateIdFromAppIntentDuetEvent:(id)arg1;
++ (id)candidateIdFromAppLaunchBiomeEvent:(id)arg1;
++ (id)candidateIdFromAppLaunchDuetEvent:(id)arg1;
++ (id)candidateIdFromBiomeEvent:(id)arg1;
++ (id)candidateIdFromLinkActionBiomeEvent:(id)arg1;
++ (id)candidateIdFromModeBiomeEvent:(id)arg1;
++ (long long)dayOfWeekIntegerFromATXAnchorModelPBDayOfWeek:(int)arg1;
++ (long long)isWeekendFromATXAnchorModelPBDayOfWeek:(int)arg1;
++ (id)linkActionCandidateFeaturesFromLinkActionEvent:(id)arg1 actionMetadata:(id)arg2 actionOccurred:(bool)arg3 actionEngaged:(bool)arg4;
++ (id)linkActionDetailsFromLinkActionCandidateId:(id)arg1;
++ (id)modeCandidateFeaturesFromModeEvent:(id)arg1 modeMetadata:(id)arg2 modeOccurred:(bool)arg3 modeEngaged:(bool)arg4;
++ (id)modeDetailsFromModeCandidateId:(id)arg1;
++ (id)populateCandidateOccurrencesForFeatures:(id)arg1 withLaunchHistoryMetadata:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)appIntentDuetEventFromCandidateId:(id)arg1 date:(id)arg2;
+- (id)appIntentDuetEventsFromCandidateIds:(id)arg1 date:(id)arg2;
+- (id)appLaunchDuetEventFromCandidateId:(id)arg1 date:(id)arg2;
+- (id)appLaunchDuetEventsFromCandidateIds:(id)arg1 date:(id)arg2;
+- (void)assignMetricsForTrainingResult:(id)arg1 anchorType:(id)arg2 anchorEventIdentifier:(id)arg3 candidateId:(id)arg4;
+- (id)candidateIdFromActionMetadata:(id)arg1;
+- (id)candidateTypeForCandidateId:(id)arg1;
+- (id)dateAnchorModelWasLastTrainedForAnchor:(id)arg1;
+- (id)dateOfFirstPositiveCandidateOccurrence:(id)arg1 anchor:(id)arg2 startDate:(id)arg3 limit:(unsigned long long)arg4;
+- (unsigned long long)deleteSamplesForBundleIdsNotInList:(id)arg1;
+- (unsigned long long)deleteSamplesThatAreMoreThan28DaysOld;
+- (id)historicalAnchorOccurrenceDatesForAnchor:(id)arg1;
+- (id)init;
+- (id)initWithDataStore:(id)arg1;
+- (void)insertAnchorOccurrence:(id)arg1 anchor:(id)arg2 featureMetadata:(id)arg3;
+- (void)insertAnchorSuggestionOutcome:(unsigned long long)arg1 date:(id)arg2 anchorType:(id)arg3 anchorEventIdentifier:(id)arg4 candidateId:(id)arg5;
+- (long long)latestAlogIdForCandidateId:(id)arg1;
+- (id)linkActionBiomeEventFromCandidateId:(id)arg1 date:(id)arg2;
+- (id)linkActionBiomeEventsFromCandidateIds:(id)arg1 date:(id)arg2;
+- (id)minSlotResolutionParametersFromALogId:(long long)arg1 paramHash:(long long)arg2;
+- (id)modeBiomeEventFromCandidateId:(id)arg1 date:(id)arg2;
+- (id)modeBiomeEventsFromCandidateIds:(id)arg1 date:(id)arg2;
+- (long long)numActionOccurrencesInAllContexts;
+- (long long)numActionOccurrencesInAllContextsForActionId:(id)arg1;
+- (long long)numAppLaunchOccurrencesInAllContexts;
+- (long long)numAppLaunchOccurrencesInAllContextsForAppLaunchCandidateId:(id)arg1;
+- (long long)numCandidateIdOccurrencesInJointAnchorContext:(id)arg1 anchor:(id)arg2 anchorMetadata:(id)arg3;
+- (long long)numCandidateOccurrencesInAllContextsForCandidate:(id)arg1;
+- (long long)numCandidateOccurrencesInAllContextsForCandidateType:(id)arg1;
+- (long long)numCandidateOccurrencesInAnchorContextForCandidate:(id)arg1 anchor:(id)arg2;
+- (long long)numCandidateOccurrencesInAnchorContextForCandidateType:(id)arg1 anchor:(id)arg2;
+- (long long)numLinkActionOccurrencesInAllContexts;
+- (long long)numLinkActionOccurrencesInAllContextsForCandidateId:(id)arg1;
+- (long long)numModeOccurrencesInAllContexts;
+- (long long)numModeOccurrencesInAllContextsForModeId:(id)arg1;
+- (long long)numUniqueAnchorOccurrencesForAnchor:(id)arg1 candidateId:(id)arg2;
+- (long long)numUniqueAnchorOccurrencesForCandidate:(id)arg1 anchor:(id)arg2;
+- (long long)numUniqueAnchorOccurrencesForGenericCandidateId:(id)arg1 anchor:(id)arg2;
+- (long long)numUniqueAnchorOccurrencesWithUniqueCandidateOccurrenceForCandidate:(id)arg1 anchor:(id)arg2;
+- (long long)numUniqueAnchorOccurrencesWithUniqueCandidateOccurrenceForGenericCandidateId:(id)arg1 anchor:(id)arg2;
+- (void)populateCachedCountsForCandidateIds:(id)arg1;
+- (id)scoredActionFromAnchorModelPrediction:(id)arg1;
+- (id)secondsAfterAnchorWhenCandidateOccurredForAnchor:(id)arg1 candidateId:(id)arg2 onlyConsiderFirstOccurrencePerAnchor:(bool)arg3;
+- (double)timestampOfMostRecentRecordedAnchorOccurrenceForAnchor:(id)arg1;
+- (id)trainingDataForCandidate:(id)arg1 anchor:(id)arg2 replacementStringForNilStringValues:(id)arg3;
+- (id)trainingResultsForAnchor:(id)arg1;
+- (id)uniqueAnchorEventIdentifiersForAnchor:(id)arg1;
+- (id)uniqueCandidateIdsThatOccurredAfterAnchor:(id)arg1;
+- (id)uniqueCandidateIdsThatOccurredAfterAnchor:(id)arg1 candidateType:(id)arg2;
+- (id)uniqueCandidateIdsThatOccurredAfterAnchor:(id)arg1 candidateType:(id)arg2 minOccurrences:(long long)arg3;
+- (void)updateOrInsertActionTrainingSample:(id)arg1 featurizedAction:(id)arg2 actionOccurred:(bool)arg3 actionEngaged:(bool)arg4 anchorEvent:(id)arg5 anchor:(id)arg6;
+- (void)updateOrInsertAnchorEvent:(id)arg1 anchor:(id)arg2 featureMetadata:(id)arg3;
+- (void)updateOrInsertAnchorModelTrainingResults:(id)arg1 anchor:(id)arg2;
+- (void)updateOrInsertAnchorType:(id)arg1;
+- (void)updateOrInsertAppTrainingSample:(id)arg1 featurizedApp:(id)arg2 appWasLaunched:(bool)arg3 appEngaged:(bool)arg4 anchorEvent:(id)arg5 anchor:(id)arg6;
+- (void)updateOrInsertCandidateEventToDatabaseWithCandidateFeatures:(id)arg1 anchor:(id)arg2 anchorEvent:(id)arg3;
+- (void)updateOrInsertLinkActionTrainingSample:(id)arg1 featurizedAction:(id)arg2 actionOccurred:(bool)arg3 actionEngaged:(bool)arg4 anchorEvent:(id)arg5 anchor:(id)arg6;
+- (void)updateOrInsertLocation:(id)arg1;
+- (void)updateOrInsertModeTrainingSample:(id)arg1 featurizedMode:(id)arg2 modeOccurred:(bool)arg3 modeEngaged:(bool)arg4 anchorEvent:(id)arg5 anchor:(id)arg6;
+
+@end

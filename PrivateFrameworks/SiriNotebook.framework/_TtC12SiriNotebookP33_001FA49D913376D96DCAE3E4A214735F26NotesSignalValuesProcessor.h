@@ -1,0 +1,4 @@
+
+@interface _TtC12SiriNotebookP33_001FA49D913376D96DCAE3E4A214735F26NotesSignalValuesProcessor : _TtCs12_SwiftObject
+
+@end

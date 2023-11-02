@@ -1,0 +1,4 @@
+
+@interface _TtCV9WorkoutUIP33_FD897410C5DD714B72C7B064058BD47232SharedHeartRateViewFunctionality12BundleLookup : _TtCs12_SwiftObject
+
+@end

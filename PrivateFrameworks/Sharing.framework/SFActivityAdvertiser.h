@@ -1,0 +1,30 @@
+
+@interface SFActivityAdvertiser : SFXPCClient <SFActivityAdvertiserClient> {
+    <SFActivityAdvertiserDelegate> * _delegate;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property <SFActivityAdvertiserDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)sharedAdvertiser;
+
+- (void)_getRemoteObjectProxyOnQueue:(id /* block */)arg1;
+- (void)activityPayloadForAdvertisementPayload:(id)arg1 command:(id)arg2 requestedByDevice:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)advertiseAdvertisementPayload:(id)arg1 options:(id)arg2;
+- (id)delegate;
+- (void)didSendPayloadForActivityIdentifier:(id)arg1 toDevice:(id)arg2 error:(id)arg3;
+- (id)exportedInterface;
+- (void)fetchLoginIDWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchPeerForUUID:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)fetchSFPeerDevicesWithCompletionHandler:(id /* block */)arg1;
+- (id)init;
+- (id)machServiceName;
+- (void)pairedDevicesChanged:(id)arg1;
+- (id)remoteObjectInterface;
+- (void)setDelegate:(id)arg1;
+- (bool)shouldEscapeXpcTryCatch;
+
+@end

@@ -1,0 +1,63 @@
+
+@interface PKDiscoveryDriver : NSObject <PKApplicationWorkspaceObserverProtocol> {
+    int  _annotationNotifyToken;
+    NSDictionary * _attributes;
+    unsigned long long  _flags;
+    PKHost * _host;
+    NSSet * _lastResults;
+    PKDiscoveryLSWatcher * _lsWatcher;
+    id  _mcNotificationToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_os_activity> * _relatedActivity;
+    id /* block */  _report;
+    NSObject<OS_dispatch_queue> * _sync;
+}
+
+@property int annotationNotifyToken;
+@property (retain) NSDictionary *attributes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property unsigned long long flags;
+@property (readonly) unsigned long long hash;
+@property (retain) PKHost *host;
+@property (retain) NSSet *lastResults;
+@property (retain) PKDiscoveryLSWatcher *lsWatcher;
+@property (retain) id mcNotificationToken;
+@property (retain) NSObject<OS_dispatch_queue> *queue;
+@property (retain) NSObject<OS_os_activity> *relatedActivity;
+@property (copy) id /* block */ report;
+@property (readonly) Class superclass;
+@property (retain) NSObject<OS_dispatch_queue> *sync;
+
+- (void).cxx_destruct;
+- (void)_performWithPreviousResults:(id)arg1 forceNotify:(bool)arg2 uninstalledProxies:(id)arg3;
+- (int)annotationNotifyToken;
+- (id)attributes;
+- (void)cancel;
+- (void)dealloc;
+- (unsigned long long)flags;
+- (id)host;
+- (id)initWithAttributes:(id)arg1 flags:(unsigned long long)arg2 host:(id)arg3 report:(id /* block */)arg4;
+- (void)installWatchers;
+- (id)lastResults;
+- (id)lsWatcher;
+- (id)mcNotificationToken;
+- (void)performWithPreviousResults:(id)arg1 forceNotify:(bool)arg2;
+- (id)queue;
+- (id)relatedActivity;
+- (void)removeWatchers;
+- (id /* block */)report;
+- (void)setAnnotationNotifyToken:(int)arg1;
+- (void)setAttributes:(id)arg1;
+- (void)setFlags:(unsigned long long)arg1;
+- (void)setHost:(id)arg1;
+- (void)setLastResults:(id)arg1;
+- (void)setLsWatcher:(id)arg1;
+- (void)setMcNotificationToken:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setRelatedActivity:(id)arg1;
+- (void)setReport:(id /* block */)arg1;
+- (void)setSync:(id)arg1;
+- (id)sync;
+
+@end

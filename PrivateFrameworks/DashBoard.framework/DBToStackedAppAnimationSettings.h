@@ -1,0 +1,4 @@
+
+@interface DBToStackedAppAnimationSettings : DBAnimationSettings
+
+@end

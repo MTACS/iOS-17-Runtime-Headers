@@ -1,0 +1,84 @@
+
+@interface FCUIFocusEnablementIndicatorSystemApertureElement : NSObject <SAAlertBehavior, SAElement, SAUIElementViewProviding, SAUILayoutSpecifying, SBUISystemApertureContentViewContaining> {
+    <FCActivityDescribing> * _activityDescription;
+    bool  _activityEnabled;
+    UIButton * _activityIconButton;
+    UIImageView * _activityIconImageView;
+    FCUICAPackageView * _activityIconPackageView;
+    FCActivityManager * _activityManager;
+    UILabel * _activityOnOffLabel;
+    UILabel * _activityTitleLabel;
+    <SAAlertHosting> * _alertHost;
+    <SAUILayoutHosting> * _layoutHost;
+    long long  _layoutMode;
+    UIView * _leadingView;
+    SBUISystemApertureTextContentProvider * _onOffTrailingTextProvider;
+    long long  _preferredLayoutMode;
+}
+
+@property (nonatomic, readonly, copy) <FCActivityDescribing> *activityDescription;
+@property (getter=isActivityEnabled, nonatomic) bool activityEnabled;
+@property (nonatomic) <SAAlertHosting> *alertHost;
+@property (nonatomic, readonly, copy) NSString *clientIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIView *detachedMinimalView;
+@property (nonatomic, readonly) <SAElement> *element;
+@property (nonatomic) <SAElementHosting> *elementHost;
+@property (nonatomic, readonly, copy) NSString *elementIdentifier;
+@property (readonly) unsigned long long hash;
+@property (getter=isInteractiveDismissalEnabled, nonatomic, readonly) bool interactiveDismissalEnabled;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } intrinsicCompactContainerSize;
+@property (nonatomic) unsigned long long layoutAxis;
+@property (nonatomic) <SAUILayoutHosting> *layoutHost;
+@property (nonatomic, readonly) long long layoutMode;
+@property (nonatomic, readonly) UIView *leadingView;
+@property (nonatomic, readonly) long long maximumSupportedLayoutMode;
+@property (getter=isMinimalPresentationPossible, nonatomic, readonly) bool minimalPresentationPossible;
+@property (nonatomic, readonly) UIView *minimalView;
+@property (nonatomic, readonly) long long minimumSupportedLayoutMode;
+@property (nonatomic, readonly) long long preferredLayoutMode;
+@property (getter=isRequestingMenuPresentation, nonatomic, readonly) bool requestingMenuPresentation;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIView *trailingView;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (void)_configureCustomViewsIfNecessary;
+- (id)_customLayoutFont;
+- (id)_enablementText;
+- (void)_layoutCustomActivityButtonInContainerView:(id)arg1;
+- (void)_layoutCustomTextViewsInContainerView:(id)arg1;
+- (void)_layoutHuggingObstructionForLabel:(id)arg1 x:(double)arg2 width:(double)arg3 maxLabelHeight:(double)arg4;
+- (id)_primaryColor;
+- (void)_updateOnOffTrailingLabelAnimated:(bool)arg1;
+- (void)_updateVisualStylingAnimated:(bool)arg1;
+- (id)activityDescription;
+- (id)alertHost;
+- (id)clientIdentifier;
+- (void)contentProviderWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 inContainerView:(id)arg2 transitionCoordinator:(id)arg3;
+- (id)element;
+- (id)elementIdentifier;
+- (bool)hasAlertBehavior;
+- (id)initWithActivityDescription:(id)arg1 enabled:(bool)arg2;
+- (bool)isActivityEnabled;
+- (id)keyColor;
+- (id)layoutHost;
+- (void)layoutHostContainerViewDidLayoutSubviews:(id)arg1;
+- (long long)layoutMode;
+- (id)leadingView;
+- (long long)maximumSupportedLayoutMode;
+- (id)minimalView;
+- (long long)minimumSupportedLayoutMode;
+- (void)preferredContentSizeDidInvalidateForContentViewProvider:(id)arg1;
+- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })preferredEdgeOutsetsForLayoutMode:(long long)arg1 suggestedOutsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg2 maximumOutsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
+- (long long)preferredLayoutMode;
+- (void)setActivityEnabled:(bool)arg1;
+- (void)setAlertHost:(id)arg1;
+- (void)setLayoutHost:(id)arg1;
+- (void)setLayoutMode:(long long)arg1 reason:(long long)arg2;
+- (bool)shouldSuppressElementWhileOnCoversheet;
+- (id)trailingView;
+- (id)viewProvider;
+
+@end

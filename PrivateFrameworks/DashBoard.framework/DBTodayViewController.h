@@ -1,0 +1,96 @@
+
+@interface DBTodayViewController : UIViewController <BSInvalidatable, DBEnvironmentConfigurationObserving, DBLayoutHelperViewDelegate, DBNavigationStateObserving, DBProcessMonitorObserving, SBHLegibility> {
+    DBTodayViewSynchronizedAnimationManager * _animationManager;
+    NSArray * _currentConstraints;
+    unsigned long long  _currentLayoutType;
+    <DBEnvironment> * _environment;
+    NSArray * _landscapeConstraints;
+    NSLayoutConstraint * _landscapeContainerWidthConstraint;
+    DBLayoutHelperView * _layoutHelperView;
+    DBMapsNavigationWidgetViewController * _mapsNavigationWidgetController;
+    NSString * _navigationWidgetBundleIdentifier;
+    NSArray * _portraitConstraints;
+    unsigned long long  _preferredFocusHeading;
+    NSMutableSet * _sceneWidgetsDisabledRequesters;
+    NSArray * _squareConstraints;
+    NSLayoutConstraint * _squareContainerHeightConstraint;
+    DBWidgetContainerViewController * _widgetContainerViewController;
+    _UILegibilitySettings * legibilitySettings;
+}
+
+@property (nonatomic, retain) DBTodayViewSynchronizedAnimationManager *animationManager;
+@property (nonatomic, retain) NSArray *currentConstraints;
+@property (nonatomic) unsigned long long currentLayoutType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <DBEnvironment> *environment;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSArray *landscapeConstraints;
+@property (nonatomic, retain) NSLayoutConstraint *landscapeContainerWidthConstraint;
+@property (nonatomic, retain) DBLayoutHelperView *layoutHelperView;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, retain) DBMapsNavigationWidgetViewController *mapsNavigationWidgetController;
+@property (nonatomic, retain) NSString *navigationWidgetBundleIdentifier;
+@property (nonatomic, retain) NSArray *portraitConstraints;
+@property (nonatomic) unsigned long long preferredFocusHeading;
+@property (nonatomic, retain) NSMutableSet *sceneWidgetsDisabledRequesters;
+@property (nonatomic, retain) NSArray *squareConstraints;
+@property (nonatomic, retain) NSLayoutConstraint *squareContainerHeightConstraint;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) DBWidgetContainerViewController *widgetContainerViewController;
+
++ (bool)isEnabledAndSupportedForIconProvider:(id)arg1;
+
+- (void).cxx_destruct;
+- (unsigned long long)_layout;
+- (void)_updateNavigationWidgetsForIdentifier:(id)arg1;
+- (id)animationManager;
+- (id)currentConstraints;
+- (unsigned long long)currentLayoutType;
+- (void)didChangeLayout:(id)arg1;
+- (id)environment;
+- (id)initWithEnvironment:(id)arg1;
+- (void)invalidate;
+- (id)landscapeConstraints;
+- (id)landscapeContainerWidthConstraint;
+- (id)layoutHelperView;
+- (id)legibilitySettings;
+- (id)linearFocusItems;
+- (id)mapsNavigationWidgetController;
+- (void)navigationStateProvider:(id)arg1 frontmostIdentifierDidChange:(id)arg2;
+- (void)navigationStateProvider:(id)arg1 navigatingIdentifiersDidChange:(id)arg2;
+- (id)navigationWidgetBundleIdentifier;
+- (id)portraitConstraints;
+- (id)preferredFocusEnvironments;
+- (unsigned long long)preferredFocusHeading;
+- (void)processMonitor:(id)arg1 didHandleDeathOfBundleIdentifier:(id)arg2;
+- (void)processMonitor:(id)arg1 shouldHandleDeathOfBundleIdentifier:(id)arg2 isCrash:(bool)arg3;
+- (void)reloadConstraints;
+- (id)sceneWidgetsDisabledRequesters;
+- (void)setActive:(bool)arg1;
+- (void)setAnimationManager:(id)arg1;
+- (void)setCurrentConstraints:(id)arg1;
+- (void)setCurrentLayoutType:(unsigned long long)arg1;
+- (void)setEnvironment:(id)arg1;
+- (void)setForeground:(bool)arg1;
+- (void)setLandscapeConstraints:(id)arg1;
+- (void)setLandscapeContainerWidthConstraint:(id)arg1;
+- (void)setLayoutHelperView:(id)arg1;
+- (void)setLegibilitySettings:(id)arg1;
+- (void)setMapsNavigationWidgetController:(id)arg1;
+- (void)setNavigationWidgetBundleIdentifier:(id)arg1;
+- (void)setPortraitConstraints:(id)arg1;
+- (void)setPreferredFocusHeading:(unsigned long long)arg1;
+- (void)setSceneWidgetsDisabled:(bool)arg1 forRequester:(id)arg2;
+- (void)setSceneWidgetsDisabledRequesters:(id)arg1;
+- (void)setSmartWidgetCanChangeVisibilityDisabled:(bool)arg1 forRequester:(id)arg2;
+- (void)setSquareConstraints:(id)arg1;
+- (void)setSquareContainerHeightConstraint:(id)arg1;
+- (void)setWidgetContainerViewController:(id)arg1;
+- (id)squareConstraints;
+- (id)squareContainerHeightConstraint;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLoad;
+- (id)widgetContainerViewController;
+
+@end

@@ -1,0 +1,27 @@
+
+@interface NPKProtoProvisionPassForRemoteCredentialWithTypeAndIdentifierRequest : PBRequest <NSCopying> {
+    NSString * _credentialIdentifier;
+    long long  _credentialType;
+}
+
+@property (nonatomic, retain) NSString *credentialIdentifier;
+@property (nonatomic) long long credentialType;
+@property (nonatomic, readonly) bool hasCredentialIdentifier;
+
+- (void).cxx_destruct;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)credentialIdentifier;
+- (long long)credentialType;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasCredentialIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCredentialIdentifier:(id)arg1;
+- (void)setCredentialType:(long long)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

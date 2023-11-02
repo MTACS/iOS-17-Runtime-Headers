@@ -1,0 +1,4 @@
+
+@protocol HDSQLiteDatabaseDelegate <NSObject>
+
+@end

@@ -1,0 +1,80 @@
+
+@interface SHSheetActivityPerformer : NSObject {
+    UIActivity * _activity;
+    NSOperationQueue * _activityItemProviderOperationQueue;
+    NSArray * _activityItemProviderOperations;
+    UIActivityViewController * _activityViewController;
+    unsigned long long  _backgroundTaskIdentifier;
+    unsigned long long  _beginPerformingActivityTimestamp;
+    id /* block */  _completionHandler;
+    <SHSheetActivityPerformerDelegate> * _delegate;
+    <SHSheetActivityPerformerPresentationInterface> * _presentationController;
+    SHSheetActivityPerformerResult * _result;
+    UIActivityViewController * _retainedActivityViewController;
+    SHSheetSession * _session;
+    long long  _state;
+}
+
+@property (nonatomic, readonly) UIActivity *activity;
+@property (nonatomic, retain) NSOperationQueue *activityItemProviderOperationQueue;
+@property (nonatomic, retain) NSArray *activityItemProviderOperations;
+@property (nonatomic) UIActivityViewController *activityViewController;
+@property (nonatomic) unsigned long long backgroundTaskIdentifier;
+@property (nonatomic) unsigned long long beginPerformingActivityTimestamp;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic) <SHSheetActivityPerformerDelegate> *delegate;
+@property (nonatomic, readonly) bool isRunning;
+@property (nonatomic) <SHSheetActivityPerformerPresentationInterface> *presentationController;
+@property (nonatomic, retain) SHSheetActivityPerformerResult *result;
+@property (nonatomic, retain) UIActivityViewController *retainedActivityViewController;
+@property (nonatomic, readonly) SHSheetSession *session;
+@property (nonatomic) long long state;
+
+- (void).cxx_destruct;
+- (void)_completePerformingActivityWithState:(long long)arg1 returnedItems:(id)arg2 error:(id)arg3;
+- (void)_configureActivityAfterPreparation;
+- (void)_configureActivityBeforePreparation;
+- (void)_didFinishAllBackgroundOperations;
+- (bool)_enqueueBackgroundOperationsIfNeeded;
+- (void)_executeActivity;
+- (void)_finishWithState:(long long)arg1;
+- (void)_handlePresentationCompletion;
+- (void)_performPresentationWithViewController:(id)arg1;
+- (void)_prepareActivityPresentation;
+- (void)_prepareActivityWithCompletion:(id /* block */)arg1;
+- (bool)_presentPopoverContentViewController;
+- (id)_resolvedActivityItems;
+- (bool)_shouldExecuteItemOperation:(id)arg1;
+- (void)_start;
+- (id)activity;
+- (id)activityItemProviderOperationQueue;
+- (id)activityItemProviderOperations;
+- (id)activityViewController;
+- (unsigned long long)backgroundTaskIdentifier;
+- (unsigned long long)beginPerformingActivityTimestamp;
+- (void)cancel;
+- (id /* block */)completionHandler;
+- (void)dealloc;
+- (id)delegate;
+- (void)finishWithSuccess:(bool)arg1;
+- (id)initWithActivity:(id)arg1 session:(id)arg2;
+- (bool)isRunning;
+- (void)performWithCompletionHandler:(id /* block */)arg1;
+- (id)presentationController;
+- (id)result;
+- (id)retainedActivityViewController;
+- (id)session;
+- (void)setActivityItemProviderOperationQueue:(id)arg1;
+- (void)setActivityItemProviderOperations:(id)arg1;
+- (void)setActivityViewController:(id)arg1;
+- (void)setBackgroundTaskIdentifier:(unsigned long long)arg1;
+- (void)setBeginPerformingActivityTimestamp:(unsigned long long)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setPresentationController:(id)arg1;
+- (void)setResult:(id)arg1;
+- (void)setRetainedActivityViewController:(id)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
+
+@end

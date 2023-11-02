@@ -1,0 +1,4 @@
+
+@interface SBHBAcceleratedSinglePressUpGestureRecognizer : UIHBClickGestureRecognizer
+
+@end

@@ -1,0 +1,98 @@
+
+@interface HMDAccessorySessionMetric : HMFObject <HMFLogging> {
+    HMDAccessory * _accessory;
+    NSString * _accessoryTransport;
+    double  _activeSessionDurationSec;
+    NSMutableDictionary * _errorCounts;
+    bool  _hasActiveSession;
+    bool  _isFromPrimary;
+    bool  _isReachable;
+    NSDate * _metricCollectionStartTime;
+    double  _reachableDurationSec;
+    NSDate * _reachableStartTime;
+    unsigned long long  _sessionFailures;
+    HAP2AccessorySessionInfo * _sessionInfo;
+    NSDate * _sessionStartTime;
+    double  _submissionIntervalSec;
+    unsigned long long  _successfulSessionRetries;
+    NSObject<OS_dispatch_queue> * _workQueue;
+}
+
+@property (readonly) HMDAccessory *accessory;
+@property (nonatomic, copy) NSString *accessoryTransport;
+@property (nonatomic) double activeSessionDurationSec;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSMutableDictionary *errorCounts;
+@property (nonatomic) bool hasActiveSession;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isFromPrimary;
+@property (nonatomic, readonly) bool isHomeThreadCapable;
+@property (nonatomic, readonly) bool isPrimaryResidentThreadCapable;
+@property (nonatomic) bool isReachable;
+@property (nonatomic, readonly) bool isThreadNetworkUp;
+@property (nonatomic, copy) NSDate *metricCollectionStartTime;
+@property (nonatomic) double reachableDurationSec;
+@property (nonatomic, copy) NSDate *reachableStartTime;
+@property (nonatomic, readonly) double sessionCheckIntervalSec;
+@property (nonatomic) unsigned long long sessionFailures;
+@property (nonatomic, copy) HAP2AccessorySessionInfo *sessionInfo;
+@property (nonatomic, copy) NSDate *sessionStartTime;
+@property (nonatomic) double submissionIntervalSec;
+@property (nonatomic) unsigned long long successfulSessionRetries;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSError *topError;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
+
++ (id)logCategory;
+
+- (void).cxx_destruct;
+- (void)_resetSessionMetric;
+- (void)_submitMetric;
+- (id)accessory;
+- (id)accessoryTransport;
+- (double)activeSessionDurationSec;
+- (id)attributeDescriptions;
+- (id)errorCounts;
+- (id)expectedTransport;
+- (bool)hasActiveSession;
+- (id)initWithAccessory:(id)arg1 workQueue:(id)arg2;
+- (bool)isCurrentPrimaryResident;
+- (bool)isFromPrimary;
+- (bool)isHomeThreadCapable;
+- (bool)isPrimaryResidentThreadCapable;
+- (bool)isReachable;
+- (bool)isThreadNetworkUp;
+- (id)logIdentifier;
+- (id)metricCollectionStartTime;
+- (double)reachableDurationSec;
+- (id)reachableStartTime;
+- (void)resetSessionMetric;
+- (double)sessionCheckIntervalSec;
+- (unsigned long long)sessionFailures;
+- (id)sessionInfo;
+- (id)sessionStartTime;
+- (void)setAccessoryTransport:(id)arg1;
+- (void)setActiveSessionDurationSec:(double)arg1;
+- (void)setErrorCounts:(id)arg1;
+- (void)setHasActiveSession:(bool)arg1;
+- (void)setIsFromPrimary:(bool)arg1;
+- (void)setIsReachable:(bool)arg1;
+- (void)setMetricCollectionStartTime:(id)arg1;
+- (void)setReachableDurationSec:(double)arg1;
+- (void)setReachableStartTime:(id)arg1;
+- (void)setSessionFailures:(unsigned long long)arg1;
+- (void)setSessionInfo:(id)arg1;
+- (void)setSessionStartTime:(id)arg1;
+- (void)setSubmissionIntervalSec:(double)arg1;
+- (void)setSuccessfulSessionRetries:(unsigned long long)arg1;
+- (id)state;
+- (double)submissionIntervalSec;
+- (void)submitMetric;
+- (unsigned long long)successfulSessionRetries;
+- (id)topError;
+- (void)updateReachableState:(bool)arg1;
+- (void)updateSessionState:(bool)arg1 linkLayerType:(long long)arg2 sessionInfo:(id)arg3 withError:(id)arg4;
+- (id)workQueue;
+
+@end

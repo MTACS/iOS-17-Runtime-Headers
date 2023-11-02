@@ -1,0 +1,44 @@
+
+@interface BYBuddyDaemonProximityTargetClient : NSObject <BYBuddyDaemonProximityTargetProtocol> {
+    NSXPCConnection * _connection;
+    <BYBuddyDaemonProximityTargetProtocol> * _delegate;
+}
+
+@property (retain) NSXPCConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property <BYBuddyDaemonProximityTargetProtocol> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)proximityTargetClientInterface;
+
+- (void).cxx_destruct;
+- (void)beginAdvertisingProximitySetup;
+- (void)connectToDaemon;
+- (id)connection;
+- (id)delegate;
+- (void)dismissProximityPinCode;
+- (void)displayProximityPinCode:(id)arg1 visual:(bool)arg2;
+- (void)endAdvertisingProximitySetup;
+- (void)endDeviceToDeviceMigration;
+- (void)endPairing;
+- (id)fileTransferSessionTemplate;
+- (void)hasConnection:(id /* block */)arg1;
+- (id)init;
+- (void)proximityConnectionInitiated;
+- (void)proximityConnectionPreparing:(id)arg1;
+- (void)proximityConnectionReconnected;
+- (void)proximityConnectionTerminated;
+- (void)proximitySetupCompleted:(id)arg1;
+- (void)receivedLanguages:(id)arg1 locale:(id)arg2 model:(id)arg3 deviceClass:(id)arg4 accessibilitySettings:(id)arg5;
+- (void)resumeProximitySetup:(id /* block */)arg1;
+- (void)sendData:(id)arg1;
+- (void)setConnection:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)showMigrationInterfaceOnSource;
+- (void)storeHandshake:(id)arg1;
+- (void)storeInformation:(id)arg1;
+- (void)suspendConnectionForSoftwareUpdate:(id /* block */)arg1;
+
+@end

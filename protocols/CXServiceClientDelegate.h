@@ -1,0 +1,4 @@
+
+@protocol CXServiceClientDelegate <NSObject>
+
+@end

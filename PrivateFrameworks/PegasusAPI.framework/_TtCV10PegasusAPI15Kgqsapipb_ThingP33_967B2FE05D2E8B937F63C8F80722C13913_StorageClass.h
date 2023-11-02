@@ -1,0 +1,62 @@
+
+@interface _TtCV10PegasusAPI15Kgqsapipb_ThingP33_967B2FE05D2E8B937F63C8F80722C13913_StorageClass : _TtCs12_SwiftObject {
+    void _alternativeReadings;
+    void _anchorText;
+    void _birthDate;
+    void _birthPlaces;
+    void _capitalcity;
+    void _children;
+    void _currency;
+    void _date;
+    void _dbpediaClasses;
+    void _deathDate;
+    void _deathPlaces;
+    void _disambiguations;
+    void _disambiguationsCleaned;
+    void _englishLanguageLink;
+    void _foundingDate;
+    void _governingBody;
+    void _height;
+    void _homepageurl;
+    void _id;
+    void _index;
+    void _indexedTimestamp;
+    void _ingredient;
+    void _isDisputedTerritory;
+    void _languages;
+    void _largestCity;
+    void _latitude;
+    void _length;
+    void _locale;
+    void _longitude;
+    void _modtimeSecs;
+    void _mottos;
+    void _nationalAnthem;
+    void _nearestCity;
+    void _numberOfEmployees;
+    void _numberOfStudents;
+    void _numberOfVisitors;
+    void _pageviews;
+    void _parents;
+    void _population;
+    void _redirects;
+    void _redirectsCleaned;
+    void _releaseDate;
+    void _revID;
+    void _runtime;
+    void _shortAbstract;
+    void _spouses;
+    void _thumbNail3XURL;
+    void _thumbNailNanoURLN27;
+    void _thumbNailNanoURLN28;
+    void _thumbnailurl;
+    void _title;
+    void _titleCleaned;
+    void _titleQualifier;
+    void _visitYear;
+    void _width;
+    void _wikipageurl;
+    void _wikipediaCategories;
+}
+
+@end

@@ -1,0 +1,81 @@
+
+@protocol PowerUISmartChargeClientManaging <NSObject>
+
+@required
+
+- (NSNumber *)batteryGaugingStatus:(id*)arg1;
+- (NSDate *)cecFullChargeDeadline:(id*)arg1;
+- (void)cecFullChargeDeadlineWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDate *, NSError *, void*
+- (unsigned long long)currentChargeLimit:(id*)arg1;
+- (bool)disableCEC:(id*)arg1;
+- (void)disableCECWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)disableDEoC:(id*)arg1;
+- (void)disableDEoCWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)disableMCL:(id*)arg1;
+- (void)disableMCLWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)disableMCM:(id*)arg1;
+- (void)disableMCMWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)disableSmartCharging:(id*)arg1;
+- (void)disableSmartChargingWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)enableCEC:(id*)arg1;
+- (void)enableCECWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)enableDEoC:(id*)arg1;
+- (void)enableDEoCWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)enableMCL:(id*)arg1;
+- (void)enableMCLWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)enableMCM:(id*)arg1;
+- (void)enableMCMWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)enableSmartCharging:(id*)arg1;
+- (void)enableSmartChargingWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)enterDevelopmentMode;
+- (void)forceModelUpdate;
+- (NSDate *)fullChargeDeadline:(id*)arg1;
+- (void)fullChargeDeadlineWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDate *, NSError *, void*
+- (NSDictionary *)getDEoCPredictions:(id*)arg1;
+- (void)getDEoCPredictionsWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
+- (id)initWithClientName:(NSString *)arg1;
+- (unsigned long long)isCECCurrentlyEnabled:(id*)arg1;
+- (void)isCECCurrentlyEnabledWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSError *, void*
+- (bool)isCECSupported;
+- (void)isCECSupportedWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (unsigned long long)isDEoCCurrentlyEnabled:(id*)arg1;
+- (void)isDEoCCurrentlyEnabledWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSError *, void*
+- (bool)isDEoCSupported;
+- (void)isDEoCSupportedWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (unsigned long long)isMCLCurrentlyEnabled:(id*)arg1;
+- (void)isMCLCurrentlyEnabledWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSError *, void*
+- (bool)isMCLSupported;
+- (void)isMCLSupportedWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (unsigned long long)isMCMCurrentlyEnabled:(id*)arg1;
+- (void)isMCMCurrentlyEnabledWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSError *, void*
+- (bool)isOBCEngaged:(id*)arg1;
+- (bool)isOBCEngaged:(bool*)arg1 asDesktopDevice:(bool*)arg2 chargingOverrideAllowed:(bool*)arg3 withError:(id*)arg4;
+- (bool)isOBCEngaged:(bool*)arg1 chargeLimit:(unsigned long long*)arg2 chargingOverrideAllowed:(bool*)arg3 withError:(id*)arg4;
+- (bool)isOBCEngaged:(bool*)arg1 isMaxChargeLimited:(bool*)arg2 chargingOverrideAllowed:(bool*)arg3 withError:(id*)arg4;
+- (bool)isOBCEngagedAsDesktopDevice:(bool*)arg1 chargingOverrideAllowed:(bool*)arg2 withError:(id*)arg3;
+- (void)isOBCEngagedAsDesktopDeviceWithHandler:(void *)arg1; // needs 1 arg types, found 9: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, bool, bool, NSError *, void*
+- (void)isOBCEngagedOrChargeLimitedWithHandler:(void *)arg1; // needs 1 arg types, found 9: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, unsigned long long, bool, NSError *, void*
+- (bool)isOBCSupported;
+- (void)isOBCSupportedWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (unsigned long long)isSmartChargingCurrentlyEnabled:(id*)arg1;
+- (void)isSmartChargingCurrentlyEnabledWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSError *, void*
+- (NSNumber *)lastUsedLeewayWithError:(id*)arg1;
+- (void)legacy_client_isOBCEngagedWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)listMonitorSignals;
+- (NSDictionary *)powerLogStatus;
+- (void)resetDevelopmentMode;
+- (bool)shouldMCMBeDisplayed:(id*)arg1;
+- (void)shouldMCMBeDisplayedWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (NSDate *)simulateCurrentOutputAsOfDate:(NSDate *)arg1 overrideAllSignals:(bool)arg2 withError:(id*)arg3;
+- (bool)smartChargingUIState:(unsigned long long*)arg1 chargeLimit:(unsigned long long*)arg2 chargingOverrideAllowed:(bool*)arg3 withError:(id*)arg4;
+- (NSDictionary *)status;
+- (bool)temporarilyDisableCEC:(id*)arg1;
+- (void)temporarilyDisableCECWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)temporarilyDisableMCM:(id*)arg1;
+- (void)temporarilyDisableMCMWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)temporarilyDisableSmartCharging:(id*)arg1;
+- (void)temporarilyDisableSmartChargingWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)temporarilyEnableCharging:(id*)arg1;
+- (void)temporarilyEnableChargingWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+
+@end

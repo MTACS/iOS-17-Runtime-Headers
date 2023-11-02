@@ -1,0 +1,4 @@
+
+@protocol SXRepeatableImageFillViewFactory
+
+@end

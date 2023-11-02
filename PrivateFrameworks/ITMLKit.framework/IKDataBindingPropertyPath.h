@@ -1,0 +1,23 @@
+
+@interface IKDataBindingPropertyPath : IKDataBindingValue {
+    NSArray * _accessorSequence;
+    NSString * _string;
+}
+
+@property (nonatomic, readonly, copy) NSArray *accessorSequence;
+@property (nonatomic, readonly, copy) NSString *string;
+
++ (id)pathStringForAccessorSequence:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)_initWithAccessorSequence:(id)arg1;
+- (id)accessorSequence;
+- (unsigned long long)hash;
+- (id)initWithAccessorSequence:(id)arg1;
+- (id)initWithString:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)propertyPathByCombiningAccessorSequence:(id)arg1;
+- (id)propertyPathByRemovingFirstAccessor;
+- (id)string;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface PDRootTimeNode : PDParallelTimeNode
+
+@end

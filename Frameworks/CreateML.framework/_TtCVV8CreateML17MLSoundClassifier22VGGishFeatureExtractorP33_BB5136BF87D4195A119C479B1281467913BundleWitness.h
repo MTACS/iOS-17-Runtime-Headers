@@ -1,0 +1,4 @@
+
+@interface _TtCVV8CreateML17MLSoundClassifier22VGGishFeatureExtractorP33_BB5136BF87D4195A119C479B1281467913BundleWitness : _TtCs12_SwiftObject
+
+@end

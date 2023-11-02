@@ -1,0 +1,84 @@
+
+@interface HMEMessageDatagramClient : HMERouterClient {
+    NSUUID * _connectedServerIdentifier;
+    long long  _connectionMode;
+    <HMETimerIntervalProvider> * _connectionRetryIntervalProvider;
+    <HMETimer> * _connectionRetryTimer;
+    <HMEMessageDatagramClientDataSource> * _dataSource;
+    bool  _dormantFetchConditionsMet;
+    <HMETimer> * _dormantFetchTimer;
+    double  _dormatFetchTimerInterval;
+    bool  _hasPendingRequest;
+    bool  _hasPendingServerChangeRequest;
+    bool  _isConnected;
+    bool  _isWaitingForFetchConditionsWhenDormant;
+    double  _keepAliveInterval;
+    <HMETimer> * _keepAliveTimer;
+    NSObject<OS_os_log> * _logger;
+    HMEPendingTopicsCombiner * _pendingTopicsCombiner;
+    <HMETimerProvider> * _timerProvider;
+}
+
+@property (nonatomic, retain) NSUUID *connectedServerIdentifier;
+@property (nonatomic) long long connectionMode;
+@property (readonly) <HMETimerIntervalProvider> *connectionRetryIntervalProvider;
+@property (nonatomic, retain) <HMETimer> *connectionRetryTimer;
+@property (nonatomic) <HMEMessageDatagramClientDataSource> *dataSource;
+@property <HMEMessageDatagramClientDelegate> *delegate;
+@property (nonatomic) bool dormantFetchConditionsMet;
+@property (nonatomic, retain) <HMETimer> *dormantFetchTimer;
+@property (readonly) double dormatFetchTimerInterval;
+@property (nonatomic) bool hasPendingRequest;
+@property (nonatomic) bool hasPendingServerChangeRequest;
+@property (nonatomic) bool isConnected;
+@property (nonatomic) bool isWaitingForFetchConditionsWhenDormant;
+@property (readonly) double keepAliveInterval;
+@property (nonatomic, retain) <HMETimer> *keepAliveTimer;
+@property (readonly) HMEPendingTopicsCombiner *pendingTopicsCombiner;
+@property (readonly) <HMETimerProvider> *timerProvider;
+
+- (void).cxx_destruct;
+- (id)connectedServerIdentifier;
+- (void)connectionCapabilityDidChange;
+- (long long)connectionMode;
+- (id)connectionRetryIntervalProvider;
+- (id)connectionRetryTimer;
+- (id)dataSource;
+- (id)delegate;
+- (void)didReceiveMessageWithCachedEvents:(id)arg1 serverIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)didReceiveMessageWithEvents:(id)arg1 serverIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (bool)dormantFetchConditionsMet;
+- (id)dormantFetchTimer;
+- (double)dormatFetchTimerInterval;
+- (id)dumpStateDescription;
+- (id)forwardingTopicsForTopics:(id)arg1;
+- (bool)handleChangeRegistrationsWithTopicFilterAdditions:(id)arg1 removals:(id)arg2;
+- (bool)hasPendingRequest;
+- (bool)hasPendingServerChangeRequest;
+- (id)initWithQueue:(id)arg1 timerProvider:(id)arg2 keepAliveInterval:(double)arg3 dormantFetchTimerInterval:(double)arg4 retryIntervalProvider:(id)arg5;
+- (id)initWithQueue:(id)arg1 timerProvider:(id)arg2 keepAliveInterval:(double)arg3 dormantFetchTimerInterval:(double)arg4 retryIntervalProvider:(id)arg5 storeReadHandle:(id)arg6 storeWriteHandle:(id)arg7 logCategory:(const char *)arg8;
+- (bool)isConnected;
+- (bool)isWaitingForFetchConditionsWhenDormant;
+- (double)keepAliveInterval;
+- (id)keepAliveTimer;
+- (id)pendingTopicsCombiner;
+- (void)resetReconnectTimerToInitialState;
+- (void)serverDidChangeWithServerIdentifier:(id)arg1;
+- (void)setConnectedServerIdentifier:(id)arg1;
+- (void)setConnectionMode:(long long)arg1;
+- (void)setConnectionRetryTimer:(id)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDormantFetchConditionsMet:(bool)arg1;
+- (void)setDormantFetchTimer:(id)arg1;
+- (void)setHasPendingRequest:(bool)arg1;
+- (void)setHasPendingServerChangeRequest:(bool)arg1;
+- (void)setIsConnected:(bool)arg1;
+- (void)setIsWaitingForFetchConditionsWhenDormant:(bool)arg1;
+- (void)setKeepAliveTimer:(id)arg1;
+- (id)timerProvider;
+- (void)updateConnectionMode:(long long)arg1 completion:(id /* block */)arg2;
+- (void)updateDormantFetchCondition:(long long)arg1 completion:(id /* block */)arg2;
+- (id)upstreamTopicsForTopic:(id)arg1;
+
+@end

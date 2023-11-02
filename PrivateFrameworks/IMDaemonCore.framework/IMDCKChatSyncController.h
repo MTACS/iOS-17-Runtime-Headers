@@ -1,0 +1,93 @@
+
+@interface IMDCKChatSyncController : IMDCKAbstractSyncController {
+    IMDCKChatSyncCKOperationFactory * _CKOperationFactory;
+    IMDChatRegistry * _chatRegistry;
+    NSObject<OS_dispatch_queue> * _ckQueue;
+    bool  _fetchedChatsDuringLastSync;
+    CKServerChangeToken * _latestSyncToken;
+    CKRecord * _lockRecord;
+    IMDRecordZoneManager * _recordZoneManager;
+    <SyncTokenStoreProviding> * _syncTokenStore;
+}
+
+@property (nonatomic, retain) IMDCKChatSyncCKOperationFactory *CKOperationFactory;
+@property (nonatomic, retain) IMDChatRegistry *chatRegistry;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *ckQueue;
+@property (nonatomic) bool fetchedChatsDuringLastSync;
+@property (nonatomic, retain) CKServerChangeToken *latestSyncToken;
+@property (nonatomic, retain) CKRecord *lockRecord;
+@property (nonatomic, retain) IMDRecordZoneManager *recordZoneManager;
+@property (nonatomic, retain) <SyncTokenStoreProviding> *syncTokenStore;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (id)CKOperationFactory;
+- (void)__syncChatsWithCloudKit:(long long)arg1 attemptCount:(unsigned long long)arg2 activity:(id)arg3 withCompletion:(id /* block */)arg4;
+- (void)_anyChatExistsOnServerWithResultsLimit:(int)arg1 changeToken:(id)arg2 activity:(id)arg3 completion:(id /* block */)arg4;
+- (id)_changeTokenKey;
+- (bool)_chatZoneCreated;
+- (id)_chatZoneID;
+- (id)_copyChatsToUploadWithLimit:(unsigned long long)arg1;
+- (id)_copyRecordIDsToDelete;
+- (void)_deleteChatRecordsWithRecordIDs:(id)arg1 completion:(id /* block */)arg2;
+- (bool)_eligibleForTruthZone;
+- (id)_fetchChatRecordOperationWithActivity:(id)arg1;
+- (void)_filterRecordIDsToChatsWithNoRecentModifications:(id)arg1 completion:(id /* block */)arg2;
+- (id)_generateLockRecord;
+- (void)_handleChatDeletionCompletionForRecordIDs:(id)arg1 error:(id)arg2;
+- (void)_hasMarkedAllChatsAsNeedingSync;
+- (void)_kickOffWriteIfNeededForSyncType:(long long)arg1 activity:(id)arg2 completion:(id /* block */)arg3;
+- (void)_kickOffWriteOnCKQueueWithActivity:(id)arg1 completion:(id /* block */)arg2;
+- (bool)_lockRecordHadConflict:(id)arg1;
+- (void)_logGreenTeaLogsForChats:(id)arg1;
+- (void)_markChatAsDefferedForSyncingUsingRecord:(id)arg1;
+- (void)_migrateServerChangeToken;
+- (void)_needsToMarkAllChatsAsNeedingSync;
+- (id)_newckRecordsFromChats:(id)arg1;
+- (unsigned long long)_numberOfChatsToFetch;
+- (unsigned long long)_numberOfChatsToWrite;
+- (void)_processFetchRecordChangesCompleted:(id)arg1 activity:(id)arg2 completion:(id /* block */)arg3 syncType:(long long)arg4;
+- (void)_processModifyPerRecordCallBack:(id)arg1 error:(id)arg2 recordIDtoGUIDmap:(id)arg3;
+- (void)_processModifyRecordCompletion:(id)arg1 deletedRecordIDs:(id)arg2 error:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)_processRecordChanged:(id)arg1;
+- (void)_processRecordDeletion:(id)arg1;
+- (void)_processRecordZoneChangeTokenUpdated:(id)arg1 zoneID:(id)arg2 clienChangeToken:(id)arg3;
+- (void)_processRecordZoneFetchCompletion:(id)arg1 zoneID:(id)arg2 clientChangeTokenData:(id)arg3 moreComing:(bool)arg4 error:(id)arg5;
+- (id)_randomSalt;
+- (id)_recordKeyManagerSharedInstance;
+- (void)_resolveChatConflictUsingCKRecord:(id)arg1 localGUID:(id)arg2;
+- (void)_scheduleOperation:(id)arg1;
+- (bool)_shouldMarkAllChatsAsNeedingSync;
+- (bool)_shouldResyncChatsForError:(id)arg1;
+- (void)_syncChatsWithCloudKitWithCompletionType:(long long)arg1 activity:(id)arg2 syncChatsCompletionBlock:(id /* block */)arg3;
+- (void)_updateChatUsingCKRecord:(id)arg1 onRead:(bool)arg2 didSucceed:(bool)arg3 dispatchToMain:(bool)arg4;
+- (void)_writeCKRecordsToChatZone:(id)arg1 activity:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)_writeDirtyChatsToCloudKitWithActivity:(id)arg1 completion:(id /* block */)arg2;
+- (void)anyChatExistsOnServerWithActivity:(id)arg1 completion:(id /* block */)arg2;
+- (id)chatRegistry;
+- (id)ckQueue;
+- (void)clearLocalSyncState:(unsigned long long)arg1;
+- (void)deleteChatSyncToken;
+- (void)deleteChatZone;
+- (bool)fetchedChatsDuringLastSync;
+- (id)init;
+- (id)initWithSyncTokenStore:(id)arg1;
+- (id)latestSyncToken;
+- (id)lockRecord;
+- (id)recordStore;
+- (id)recordZoneManager;
+- (void)setCKOperationFactory:(id)arg1;
+- (void)setChatRegistry:(id)arg1;
+- (void)setCkQueue:(id)arg1;
+- (void)setFetchedChatsDuringLastSync:(bool)arg1;
+- (void)setLatestSyncToken:(id)arg1;
+- (void)setLockRecord:(id)arg1;
+- (void)setRecordZoneManager:(id)arg1;
+- (void)setSyncTokenStore:(id)arg1;
+- (void)syncChatsWithType:(long long)arg1 withActivity:(id)arg2 completion:(id /* block */)arg3;
+- (long long)syncControllerRecordType;
+- (void)syncPendingDeletionWithCompletion:(id /* block */)arg1;
+- (id)syncTokenStore;
+
+@end

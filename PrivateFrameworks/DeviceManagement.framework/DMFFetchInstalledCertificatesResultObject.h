@@ -1,0 +1,4 @@
+
+@interface DMFFetchInstalledCertificatesResultObject : DMFFetchCertificatesResultObject
+
+@end

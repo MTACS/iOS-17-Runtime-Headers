@@ -1,0 +1,4 @@
+
+@protocol SKStatusPublishingDaemonDelegateProtocol <NSObject>
+
+@end

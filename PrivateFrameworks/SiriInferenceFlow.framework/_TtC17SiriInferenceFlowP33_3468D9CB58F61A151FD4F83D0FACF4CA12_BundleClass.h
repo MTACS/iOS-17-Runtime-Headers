@@ -1,0 +1,4 @@
+
+@interface _TtC17SiriInferenceFlowP33_3468D9CB58F61A151FD4F83D0FACF4CA12_BundleClass : _TtCs12_SwiftObject
+
+@end

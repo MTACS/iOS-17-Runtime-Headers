@@ -1,0 +1,4 @@
+
+@protocol TSDMediaControlsHostRep <NSObject>
+
+@end

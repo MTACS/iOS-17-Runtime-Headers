@@ -1,0 +1,4 @@
+
+@protocol IKJSLegacyPlayer <JSExport>
+
+@end

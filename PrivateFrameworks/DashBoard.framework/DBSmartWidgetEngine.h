@@ -1,0 +1,83 @@
+
+@interface DBSmartWidgetEngine : NSObject <DBDashboardStateObserver, DBSmartWidgetResourceProvider, DBSmartWidgetSourceDelegate> {
+    NSArray * _currentPredictions;
+    <DBEnvironment> * _environment;
+    DBHomeManager * _homeManager;
+    NSDate * _lastRefreshRequest;
+    NSDate * _nextRefresh;
+    CARObserverHashTable * _observers;
+    bool  _predictionsFresh;
+    NSTimer * _refreshTimer;
+    NSArray * _sources;
+    NSTimer * _stoppingTimer;
+    bool  _updatesPending;
+}
+
+@property (nonatomic, readonly) bool active;
+@property (nonatomic, readonly) NSArray *currentPredictions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <DBEnvironment> *environment;
+@property (nonatomic, readonly) bool hasHighPriorityPrediction;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) DBHomeManager *homeManager;
+@property (nonatomic, retain) NSDate *lastRefreshRequest;
+@property (nonatomic, retain) NSDate *nextRefresh;
+@property (nonatomic, retain) CARObserverHashTable *observers;
+@property (nonatomic) bool predictionsFresh;
+@property (nonatomic, retain) NSTimer *refreshTimer;
+@property (nonatomic, retain) NSArray *sources;
+@property (nonatomic, retain) NSTimer *stoppingTimer;
+@property (readonly) Class superclass;
+@property (nonatomic) bool updatesPending;
+
+- (void).cxx_destruct;
+- (void)_postUpdatedCurrentPredictionsIfNeeded;
+- (void)_resetCurrentPredictions;
+- (id)_sourceForPrediction:(id)arg1;
+- (void)_start;
+- (void)_stop;
+- (void)_updatePredictionsFresh;
+- (void)_updateWithDashboardStateProvider:(id)arg1;
+- (bool)_useRangeEnd:(id)arg1 refreshDate:(id)arg2;
+- (bool)_useRangeStart:(id)arg1 now:(id)arg2 refreshDate:(id)arg3;
+- (bool)active;
+- (void)addObserver:(id)arg1;
+- (id)currentPredictions;
+- (void)dashboardStateProvider:(id)arg1 didChangeActiveBundleIdentifier:(id)arg2;
+- (void)dashboardStateProvider:(id)arg1 didChangeConnectionReady:(bool)arg2;
+- (void)dashboardStateProvider:(id)arg1 didChangeHomeScreenPageType:(unsigned long long)arg2;
+- (void)dashboardStateProvider:(id)arg1 didChangeLockoutState:(unsigned long long)arg2;
+- (void)dealloc;
+- (id)description;
+- (id)environment;
+- (void)handleEvent:(id)arg1;
+- (bool)hasHighPriorityPrediction;
+- (id)homeManager;
+- (id)initWithEnvironment:(id)arg1;
+- (id)lastRefreshRequest;
+- (id)nextRefresh;
+- (id)observers;
+- (bool)predictionsFresh;
+- (void)refreshDisabled;
+- (void)refreshGarageDoors;
+- (void)refreshPredictions;
+- (id)refreshTimer;
+- (void)removeObserver:(id)arg1;
+- (void)setHomeManager:(id)arg1;
+- (void)setLastRefreshRequest:(id)arg1;
+- (void)setNextRefresh:(id)arg1;
+- (void)setObservers:(id)arg1;
+- (void)setPredictionsFresh:(bool)arg1;
+- (void)setRefreshTimer:(id)arg1;
+- (void)setSources:(id)arg1;
+- (void)setStoppingTimer:(id)arg1;
+- (void)setUpdatesPending:(bool)arg1;
+- (void)sourceDidRefresh:(id)arg1 predictionsUpdated:(bool)arg2;
+- (id)sources;
+- (void)startIfNeeded;
+- (void)stopIfNeeded;
+- (id)stoppingTimer;
+- (bool)updatesPending;
+
+@end

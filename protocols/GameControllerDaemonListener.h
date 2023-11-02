@@ -1,0 +1,4 @@
+
+@protocol GameControllerDaemonListener <GameControllerDaemonControllerListener, GameControllerDaemonRequestListener>
+
+@end

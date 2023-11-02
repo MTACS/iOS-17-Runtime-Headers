@@ -1,0 +1,4 @@
+
+@interface NSSQLDerivedAttributeSQLGenerator : NSObject
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol WKContentControlled <NSObject>
+
+@end

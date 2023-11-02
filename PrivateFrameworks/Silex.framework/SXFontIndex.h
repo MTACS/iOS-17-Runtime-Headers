@@ -1,0 +1,31 @@
+
+@interface SXFontIndex : NSObject <SXFontIndex> {
+    NSCache * _attributeToFontIndex;
+    NSMutableArray * _fontFamilyProviders;
+    NSCache * _fontToAttributeIndex;
+    NSDictionary * _fonts;
+}
+
+@property (nonatomic, readonly) NSCache *attributeToFontIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSMutableArray *fontFamilyProviders;
+@property (nonatomic, readonly) NSCache *fontToAttributeIndex;
+@property (nonatomic, readonly) NSDictionary *fonts;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)addFontFamilyProvider:(id)arg1;
+- (id)attributeToFontIndex;
+- (id)fontAttributesForFontName:(id)arg1;
+- (id)fontFaceForFontAttributes:(id)arg1 size:(long long)arg2;
+- (bool)fontFamilyName:(id)arg1 matchesFontAttributes:(id)arg2;
+- (id)fontFamilyProviders;
+- (id)fontNameForFontAttributes:(id)arg1 size:(long long)arg2;
+- (id)fontToAttributeIndex;
+- (id)fonts;
+- (id)fontsForFamilyProviders:(id)arg1;
+- (id)initWithFontFamilyProviders:(id)arg1;
+
+@end

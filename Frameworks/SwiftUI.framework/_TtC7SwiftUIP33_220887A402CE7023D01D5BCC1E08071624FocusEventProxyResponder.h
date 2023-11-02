@@ -1,0 +1,4 @@
+
+@interface _TtC7SwiftUIP33_220887A402CE7023D01D5BCC1E08071624FocusEventProxyResponder : SwiftUI.DefaultLayoutViewResponder
+
+@end

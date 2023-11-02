@@ -1,0 +1,4 @@
+
+@interface SiriPrivateLearningInference.PICSStoreCoreDataWithMigrations : SiriPrivateLearningInference.PICSStoreCoreData
+
+@end

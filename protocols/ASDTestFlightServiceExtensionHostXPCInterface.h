@@ -1,0 +1,4 @@
+
+@protocol ASDTestFlightServiceExtensionHostXPCInterface <ASDTestFlightServiceExtensionXPCInterface>
+
+@end

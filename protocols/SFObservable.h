@@ -1,0 +1,4 @@
+
+@protocol SFObservable <NSObject>
+
+@end

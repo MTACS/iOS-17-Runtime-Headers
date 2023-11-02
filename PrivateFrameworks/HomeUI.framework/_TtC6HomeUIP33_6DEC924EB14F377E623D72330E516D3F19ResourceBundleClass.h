@@ -1,0 +1,4 @@
+
+@interface _TtC6HomeUIP33_6DEC924EB14F377E623D72330E516D3F19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

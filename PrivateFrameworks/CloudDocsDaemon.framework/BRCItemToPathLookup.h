@@ -1,0 +1,51 @@
+
+@interface BRCItemToPathLookup : NSObject {
+    bool  _cleanupFaults;
+    struct { 
+        unsigned int byFileID : 1; 
+        unsigned int byDocumentID : 1; 
+        unsigned int byPath : 1; 
+        unsigned int parent : 1; 
+    }  _fetched;
+    bool  _fileSystemIDMayStillExist;
+    BRCLocalItem * _item;
+    BRCRelativePath * _matchByDocumentID;
+    BRCRelativePath * _matchByFileID;
+    BRCRelativePath * _matchByPath;
+    unsigned long long  _parentFileID;
+    BRCRelativePath * _parentPath;
+    BRCServerItem * _serverItem;
+    BRCServerZone * _serverZone;
+}
+
+@property (nonatomic, readonly) BRCRelativePath *byFileSystemID;
+@property (nonatomic, readonly) BRCRelativePath *byPath;
+@property (nonatomic, readonly) NSURL *coordinatedReadURL;
+@property (nonatomic, readonly) BRCAppLibrary *coordinatedURLAppLibrary;
+@property (nonatomic, readonly) NSURL *coordinatedWriteURL;
+@property (nonatomic, readonly) bool fileSystemIDMayStillExist;
+@property (nonatomic, readonly) BRCRelativePath *parentPath;
+
++ (id)lookupForItem:(id)arg1;
++ (id)lookupForServerItem:(id)arg1 cleanupFaults:(bool)arg2;
+
+- (void).cxx_destruct;
+- (bool)_fetchByDocumentID;
+- (bool)_fetchByFileID;
+- (bool)_fetchByPath;
+- (void)_fetchParent;
+- (id)byFileSystemID;
+- (id)byPath;
+- (void)closePaths;
+- (bool)computeLogicalPath:(id*)arg1 physicalPath:(id*)arg2 isDirectory:(bool*)arg3;
+- (id)coordinatedReadURL;
+- (id)coordinatedURLAppLibrary;
+- (id)coordinatedWriteURL;
+- (void)dealloc;
+- (id)description;
+- (bool)fileSystemIDMayStillExist;
+- (id)initWithItem:(id)arg1;
+- (id)initWithServerItem:(id)arg1 cleanupFaults:(bool)arg2;
+- (id)parentPath;
+
+@end

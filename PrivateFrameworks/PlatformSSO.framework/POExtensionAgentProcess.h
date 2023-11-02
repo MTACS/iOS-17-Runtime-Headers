@@ -1,0 +1,82 @@
+
+@interface POExtensionAgentProcess : NSObject <POServiceLoginManagerProtocol> {
+    NSMutableDictionary * __analytics;
+    POAgentAuthenticationProcess * _agentProcess;
+    id /* block */  _authenticationCompletion;
+    NSObject * _authenticationObserver;
+    SOConfigurationHost * _configurationHost;
+    POConfigurationManager * _configurationManager;
+    id /* block */  _invalidationHandler;
+    NSMutableArray * _keyProxies;
+    POKeychainHelper * _keychainHelper;
+    NSXPCConnection * _xpcConnection;
+}
+
+@property (retain) NSMutableDictionary *_analytics;
+@property (retain) POAgentAuthenticationProcess *agentProcess;
+@property (copy) id /* block */ authenticationCompletion;
+@property (retain) NSObject *authenticationObserver;
+@property (retain) SOConfigurationHost *configurationHost;
+@property (retain) POConfigurationManager *configurationManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (copy) id /* block */ invalidationHandler;
+@property (retain) NSMutableArray *keyProxies;
+@property (retain) POKeychainHelper *keychainHelper;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_analytics;
+- (void)addEvent:(id)arg1;
+- (void)addEvent:(id)arg1 forKeyType:(long long)arg2;
+- (id)agentProcess;
+- (void)attestKey:(long long)arg1 clientDataHash:(id)arg2 completion:(id /* block */)arg3;
+- (id /* block */)authenticationCompletion;
+- (id)authenticationObserver;
+- (id)bundleIdentiferForXPCConnection:(id)arg1;
+- (id)configurationHost;
+- (id)configurationManager;
+- (void)connectionInvalidated;
+- (void)copyDeviceAttestationCertificateWithCompletion:(id /* block */)arg1;
+- (void)deviceRegistrationsNeedsRepairWithCompletion:(id /* block */)arg1;
+- (id)identityForKeyType:(long long)arg1;
+- (id)initWithXPCConnection:(id)arg1 authenticationProcess:(id)arg2;
+- (void)invalidateAllKeyProxies;
+- (id /* block */)invalidationHandler;
+- (bool)isCallerCurrentSSOExtension;
+- (void)isDeviceRegisteredWithCompletion:(id /* block */)arg1;
+- (bool)isURL:(id)arg1 validForProfile:(id)arg2;
+- (void)isUserRegisteredWithCompletion:(id /* block */)arg1;
+- (id)keyProxies;
+- (id)keyProxyEndpointForKeyType:(long long)arg1;
+- (id)keychainHelper;
+- (void)loginConfigurationWithCompletion:(id /* block */)arg1;
+- (void)loginUserNameWithCompletion:(id /* block */)arg1;
+- (void)presentRegistrationViewControllerWithCompletion:(id /* block */)arg1;
+- (void)registrationTokenWithCompletion:(id /* block */)arg1;
+- (void)resetDeviceKeysWithCompletion:(id /* block */)arg1;
+- (void)resetUserSecureEnclaveKeyWithCompletion:(id /* block */)arg1;
+- (void)secIdentityProxyEndpointForKeyType:(long long)arg1 completion:(id /* block */)arg2;
+- (void)secKeyProxyEndpointForKeyType:(long long)arg1 completion:(id /* block */)arg2;
+- (void)setAgentProcess:(id)arg1;
+- (void)setAuthenticationCompletion:(id /* block */)arg1;
+- (void)setAuthenticationObserver:(id)arg1;
+- (void)setCertificateData:(id)arg1 keyType:(long long)arg2 completion:(id /* block */)arg3;
+- (void)setConfigurationHost:(id)arg1;
+- (void)setConfigurationManager:(id)arg1;
+- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setKeyProxies:(id)arg1;
+- (void)setKeychainHelper:(id)arg1;
+- (void)setLoginConfiguration:(id)arg1 completion:(id /* block */)arg2;
+- (void)setLoginUserName:(id)arg1 completion:(id /* block */)arg2;
+- (void)setRegistrationToken:(id)arg1 completion:(id /* block */)arg2;
+- (void)setSsoTokens:(id)arg1 completion:(id /* block */)arg2;
+- (void)setUserLoginConfiguration:(id)arg1 completion:(id /* block */)arg2;
+- (void)set_analytics:(id)arg1;
+- (void)ssoTokensWithCompletion:(id /* block */)arg1;
+- (void)userLoginConfigurationWithCompletion:(id /* block */)arg1;
+- (void)userNeedsReauthenticationWithCompletion:(id /* block */)arg1;
+- (void)userRegistrationsNeedsRepairWithCompletion:(id /* block */)arg1;
+
+@end

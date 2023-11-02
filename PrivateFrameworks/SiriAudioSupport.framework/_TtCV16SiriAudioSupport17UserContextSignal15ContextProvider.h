@@ -1,0 +1,4 @@
+
+@interface _TtCV16SiriAudioSupport17UserContextSignal15ContextProvider : _TtCs12_SwiftObject
+
+@end

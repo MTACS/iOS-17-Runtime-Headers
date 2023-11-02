@@ -1,0 +1,86 @@
+
+@interface WFLibraryRunCoordinator : NSObject <WFWorkflowRunnerClientDelegate> {
+    id /* block */  _completionHandler;
+    WFAction * _currentlyRunningAction;
+    WFDatabase * _database;
+    <WFLibraryRunCoordinatorDelegate> * _delegate;
+    WFDialogTransformer * _dialogTransformer;
+    NSHashTable * _observers;
+    float  _progress;
+    WFWorkflowRunEvent * _runEvent;
+    WFWorkflowRunViewSource * _runViewSource;
+    WFExecutableAutoShortcut * _runningAutoShortcut;
+    WFWorkflowReference * _runningWorkflow;
+    NSProgress * _runningWorkflowProgress;
+    NSString * _source;
+    bool  _waiting;
+    WFShortcutsAppRunnerClient * _workflowRunnerClient;
+}
+
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, retain) WFAction *currentlyRunningAction;
+@property (nonatomic, readonly) WFDatabase *database;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WFLibraryRunCoordinatorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) WFDialogTransformer *dialogTransformer;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSHashTable *observers;
+@property (nonatomic) float progress;
+@property (nonatomic, retain) WFWorkflowRunEvent *runEvent;
+@property (nonatomic, retain) WFWorkflowRunViewSource *runViewSource;
+@property (nonatomic, retain) WFExecutableAutoShortcut *runningAutoShortcut;
+@property (nonatomic, retain) WFWorkflowReference *runningWorkflow;
+@property (nonatomic, retain) NSProgress *runningWorkflowProgress;
+@property (nonatomic, readonly, copy) NSString *source;
+@property (readonly) Class superclass;
+@property (nonatomic) bool waiting;
+@property (nonatomic, retain) WFShortcutsAppRunnerClient *workflowRunnerClient;
+
+- (void).cxx_destruct;
+- (void)accessibilityAnnounce:(id)arg1;
+- (id /* block */)completionHandler;
+- (id)currentlyRunningAction;
+- (id)database;
+- (void)dealloc;
+- (id)delegate;
+- (id)dialogTransformer;
+- (void)didFinishRunningWorkflow:(id)arg1 withError:(id)arg2;
+- (id)initWithSource:(id)arg1 database:(id)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)observers;
+- (void)openWorkflowReferenceAndRun:(id)arg1 fromSource:(id)arg2 withInput:(id)arg3 state:(id)arg4 requestOutput:(bool)arg5 runViewSource:(id)arg6 completionHandler:(id /* block */)arg7;
+- (float)progress;
+- (void)registerObserver:(id)arg1;
+- (void)resumeWorkflowReference:(id)arg1 fromSource:(id)arg2 withState:(id)arg3;
+- (void)runAutoShortcut:(id)arg1 withLNAction:(id)arg2 andMetadata:(id)arg3;
+- (void)runContextualAction:(id)arg1;
+- (id)runEvent;
+- (id)runViewSource;
+- (void)runWorkflowReference:(id)arg1 fromSource:(id)arg2 withInput:(id)arg3 requestOutput:(bool)arg4 runViewSource:(id)arg5 completionHandler:(id /* block */)arg6;
+- (id)runningAutoShortcut;
+- (id)runningWorkflow;
+- (id)runningWorkflowProgress;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCurrentlyRunningAction:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDialogTransformer:(id)arg1;
+- (void)setProgress:(float)arg1;
+- (void)setRunEvent:(id)arg1;
+- (void)setRunViewSource:(id)arg1;
+- (void)setRunningAutoShortcut:(id)arg1;
+- (void)setRunningWorkflow:(id)arg1;
+- (void)setRunningWorkflowProgress:(id)arg1;
+- (void)setWaiting:(bool)arg1;
+- (void)setWorkflowRunnerClient:(id)arg1;
+- (id)source;
+- (void)stop;
+- (void)unregisterObserver:(id)arg1;
+- (void)updateProgress:(double)arg1 waiting:(bool)arg2 cancelled:(bool)arg3 forWorkflow:(id)arg4;
+- (id)view;
+- (bool)waiting;
+- (id)workflowRunnerClient;
+- (void)workflowRunnerClient:(id)arg1 didFinishRunningWorkflowWithOutput:(id)arg2 error:(id)arg3 cancelled:(bool)arg4;
+- (void)workflowRunnerClient:(id)arg1 didStartRunningWorkflowWithProgress:(id)arg2;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol TSPFileCoordinatorDelegate <NSObject>
+
+@end

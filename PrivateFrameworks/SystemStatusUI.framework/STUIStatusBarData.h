@@ -1,0 +1,4 @@
+
+@interface STUIStatusBarData : STMutableStatusBarData
+
+@end

@@ -1,0 +1,112 @@
+
+@interface GEOClientNetworkMetrics : PBCodable <NSCopying> {
+    struct { 
+        unsigned int has_requestEnd : 1; 
+        unsigned int has_requestStart : 1; 
+        unsigned int has_httpResponseCode : 1; 
+        unsigned int has_redirectCount : 1; 
+        unsigned int has_requestDataSize : 1; 
+        unsigned int has_responseDataSize : 1; 
+        unsigned int has_rnfTriggered : 1; 
+        unsigned int read_unknownFields : 1; 
+        unsigned int read_serviceIpAddress : 1; 
+        unsigned int read_transactionMetrics : 1; 
+        unsigned int wrote_anyField : 1; 
+    }  _flags;
+    int  _httpResponseCode;
+    PBDataReader * _reader;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _readerLock;
+    unsigned int  _readerMarkLength;
+    unsigned int  _readerMarkPos;
+    int  _redirectCount;
+    int  _requestDataSize;
+    double  _requestEnd;
+    double  _requestStart;
+    int  _responseDataSize;
+    bool  _rnfTriggered;
+    NSString * _serviceIpAddress;
+    NSMutableArray * _transactionMetrics;
+    PBUnknownFields * _unknownFields;
+}
+
+@property (nonatomic) bool hasHttpResponseCode;
+@property (nonatomic) bool hasRedirectCount;
+@property (nonatomic) bool hasRequestDataSize;
+@property (nonatomic) bool hasRequestEnd;
+@property (nonatomic) bool hasRequestStart;
+@property (nonatomic) bool hasResponseDataSize;
+@property (nonatomic) bool hasRnfTriggered;
+@property (nonatomic, readonly) bool hasServiceIpAddress;
+@property (nonatomic) int httpResponseCode;
+@property (nonatomic) int redirectCount;
+@property (nonatomic) int requestDataSize;
+@property (nonatomic) double requestEnd;
+@property (nonatomic) double requestStart;
+@property (nonatomic) int responseDataSize;
+@property (nonatomic) bool rnfTriggered;
+@property (nonatomic, retain) NSString *serviceIpAddress;
+@property (nonatomic, retain) NSMutableArray *transactionMetrics;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+
++ (bool)isValid:(id)arg1;
++ (Class)transactionMetricsType;
+
+- (void).cxx_destruct;
+- (void)addTransactionMetrics:(id)arg1;
+- (void)clearTransactionMetrics;
+- (void)clearUnknownFields:(bool)arg1;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasHttpResponseCode;
+- (bool)hasRedirectCount;
+- (bool)hasRequestDataSize;
+- (bool)hasRequestEnd;
+- (bool)hasRequestStart;
+- (bool)hasResponseDataSize;
+- (bool)hasRnfTriggered;
+- (bool)hasServiceIpAddress;
+- (unsigned long long)hash;
+- (int)httpResponseCode;
+- (id)init;
+- (id)initWithData:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonRepresentation;
+- (void)mergeFrom:(id)arg1;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (int)redirectCount;
+- (int)requestDataSize;
+- (double)requestEnd;
+- (double)requestStart;
+- (int)responseDataSize;
+- (bool)rnfTriggered;
+- (id)serviceIpAddress;
+- (void)setHasHttpResponseCode:(bool)arg1;
+- (void)setHasRedirectCount:(bool)arg1;
+- (void)setHasRequestDataSize:(bool)arg1;
+- (void)setHasRequestEnd:(bool)arg1;
+- (void)setHasRequestStart:(bool)arg1;
+- (void)setHasResponseDataSize:(bool)arg1;
+- (void)setHasRnfTriggered:(bool)arg1;
+- (void)setHttpResponseCode:(int)arg1;
+- (void)setRedirectCount:(int)arg1;
+- (void)setRequestDataSize:(int)arg1;
+- (void)setRequestEnd:(double)arg1;
+- (void)setRequestStart:(double)arg1;
+- (void)setResponseDataSize:(int)arg1;
+- (void)setRnfTriggered:(bool)arg1;
+- (void)setServiceIpAddress:(id)arg1;
+- (void)setTransactionMetrics:(id)arg1;
+- (id)transactionMetrics;
+- (id)transactionMetricsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)transactionMetricsCount;
+- (id)unknownFields;
+- (void)writeTo:(id)arg1;
+
+@end

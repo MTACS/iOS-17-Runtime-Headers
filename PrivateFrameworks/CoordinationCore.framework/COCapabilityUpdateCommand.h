@@ -1,0 +1,4 @@
+
+@interface COCapabilityUpdateCommand : COMeshCommand
+
+@end

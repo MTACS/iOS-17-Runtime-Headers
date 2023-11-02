@@ -1,0 +1,95 @@
+
+@interface CLKUIAnalogHandsView : UIView {
+    NSTimer * _animationUpdateTimer;
+    NSCalendar * _calendar;
+    <CLKUIAnalogHandsViewDelegate> * _delegate;
+    CLKDevice * _device;
+    UIView * _directionalShadowContainerView;
+    bool  _frozen;
+    CLKUIHandView * _hourHandView;
+    UIColor * _inlayColor;
+    double  _minuteHandDotDiameter;
+    CLKUIHandView * _minuteHandView;
+    bool  _secondHandDisabled;
+    double  _secondHandDotDiameter;
+    CLKUIHandView * _secondHandView;
+    NSTimeZone * _timeZone;
+    bool  _useDirectionalShadows;
+}
+
+@property (nonatomic, readonly) NSCalendar *calendar;
+@property (nonatomic) <CLKUIAnalogHandsViewDelegate> *delegate;
+@property (nonatomic, readonly) CLKDevice *device;
+@property (nonatomic, readonly) UIView *directionalShadowContainerView;
+@property (getter=isFrozen, nonatomic) bool frozen;
+@property (nonatomic, retain) CLKUIHandView *hourHandView;
+@property (nonatomic, retain) UIColor *inlayColor;
+@property (nonatomic, readonly) UIView *minuteHandDot;
+@property (nonatomic) double minuteHandDotDiameter;
+@property (nonatomic, retain) CLKUIHandView *minuteHandView;
+@property (getter=isSecondHandDisabled, nonatomic) bool secondHandDisabled;
+@property (nonatomic, readonly) UIView *secondHandDot;
+@property (nonatomic) double secondHandDotDiameter;
+@property (nonatomic, retain) CLKUIHandView *secondHandView;
+@property (nonatomic, retain) NSTimeZone *timeZone;
+
++ (Class)handViewClass;
++ (double)hourHandAngleForDate:(id)arg1;
++ (double)minuteHandAngleForDate:(id)arg1;
+
+- (void).cxx_destruct;
+- (bool)_canRunTimeAnimation;
+- (void)_enumerateHandViews:(id /* block */)arg1;
+- (void)_enumerateHourHandViewsWithBlock:(id /* block */)arg1;
+- (void)_enumerateMinuteHandViewsWithBlock:(id /* block */)arg1;
+- (void)_enumerateSecondHandViewsWithBlock:(id /* block */)arg1;
+- (void)_enumerateShadowViews:(id /* block */)arg1;
+- (void)_significantTimeChanged;
+- (void)_startNewTimeAnimation;
+- (void)_stopTimeAnimation;
+- (double)_timeAnimationFramesPerSecondForDevice:(id)arg1;
+- (void)applyHourMinuteHandsStrokeColor:(id)arg1 fillColor:(id)arg2;
+- (void)applySecondHandColor:(id)arg1;
+- (id)calendar;
+- (id)createHourHandView;
+- (id)createMinuteHandView;
+- (id)createSecondHandView;
+- (void)dealloc;
+- (id)delegate;
+- (id)device;
+- (void)didMoveToWindow;
+- (id)directionalShadowContainerView;
+- (id)displayTime;
+- (id)hourHandConfiguration;
+- (id)hourHandView;
+- (id)initForDevice:(id)arg1;
+- (id)inlayColor;
+- (bool)isFrozen;
+- (bool)isSecondHandDisabled;
+- (void)layoutHandViews;
+- (void)layoutShadowViews;
+- (void)layoutSubviews;
+- (id)minuteHandConfiguration;
+- (id)minuteHandDot;
+- (double)minuteHandDotDiameter;
+- (id)minuteHandView;
+- (id)secondHandConfiguration;
+- (id)secondHandDot;
+- (double)secondHandDotDiameter;
+- (id)secondHandView;
+- (void)setDelegate:(id)arg1;
+- (void)setFrozen:(bool)arg1;
+- (void)setHourHandView:(id)arg1;
+- (void)setInlayColor:(id)arg1;
+- (void)setMinuteHandDotDiameter:(double)arg1;
+- (void)setMinuteHandView:(id)arg1;
+- (void)setSecondHandDisabled:(bool)arg1;
+- (void)setSecondHandDotDiameter:(double)arg1;
+- (void)setSecondHandView:(id)arg1;
+- (void)setTimeZone:(id)arg1;
+- (void)setUseDirectionalShadows:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)timeZone;
+- (bool)useDirectionalShadows;
+
+@end

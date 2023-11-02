@@ -1,0 +1,107 @@
+
+@interface TTSWrappedAudioQueue : NSObject <TTSSynthesisProviderAudioOutput> {
+    struct OpaqueAudioQueue { } * _aqRef;
+    struct OpaqueAudioQueueTimeline { } * _aqTimeline;
+    bool  _audioQueueActive;
+    unsigned int  _audioQueueFlags;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _audioQueueLock;
+    AVAudioSession * _audioSession;
+    NSMutableOrderedSet * _availableBuffers;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _bufferLock;
+    NSCondition * _buffersAvailable;
+    AVAudioConverter * _cachedAudioConverter;
+    NSArray * _channels;
+    NSObject<OS_dispatch_queue> * _deferredStopQueue;
+    NSObject<OS_dispatch_source> * _deferredStopSource;
+    AVAudioFormat * _format;
+    NSMutableOrderedSet * _inflightBuffers;
+    AVAudioFormat * _queueFormat;
+    bool  _shouldRebuildAudioQueue;
+    double  _startedOn;
+    unsigned long long  _state;
+    bool  _usingSharedSession;
+}
+
+@property (nonatomic) struct OpaqueAudioQueue { }*aqRef;
+@property (nonatomic) struct OpaqueAudioQueueTimeline { }*aqTimeline;
+@property bool audioQueueActive;
+@property (nonatomic) unsigned int audioQueueFlags;
+@property (nonatomic, retain) AVAudioSession *audioSession;
+@property (nonatomic, retain) NSMutableOrderedSet *availableBuffers;
+@property (nonatomic, retain) NSCondition *buffersAvailable;
+@property (nonatomic, retain) AVAudioConverter *cachedAudioConverter;
+@property (nonatomic, retain) NSArray *channels;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *deferredStopQueue;
+@property (retain) NSObject<OS_dispatch_source> *deferredStopSource;
+@property (nonatomic, retain) AVAudioFormat *format;
+@property (nonatomic, retain) NSMutableOrderedSet *inflightBuffers;
+@property (nonatomic, retain) AVAudioFormat *queueFormat;
+@property (nonatomic) bool shouldRebuildAudioQueue;
+@property (nonatomic) double startedOn;
+@property (nonatomic) unsigned long long state;
+@property (nonatomic) bool usingSharedSession;
+
+- (void).cxx_destruct;
+- (bool)_attemptQueueStart;
+- (void)_buildAudioQueue;
+- (unsigned long long)_minimumBufferByteSize;
+- (void)_rebuildAudioQueue;
+- (void)_reconfigureQueueFormatForMultiChannelOutputIfNecessary;
+- (void)_scheduleDeferredStop;
+- (void)_selectChannels:(struct OpaqueAudioQueue { }*)arg1;
+- (bool)_startQueueWithRetry;
+- (void)_tearDownAudioQueue;
+- (struct OpaqueAudioQueue { }*)aqRef;
+- (struct OpaqueAudioQueueTimeline { }*)aqTimeline;
+- (bool)audioQueueActive;
+- (unsigned int)audioQueueFlags;
+- (id)audioSession;
+- (id)availableBuffers;
+- (void)bufferCallback:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1;
+- (id)buffersAvailable;
+- (id)cachedAudioConverter;
+- (id)channels;
+- (id)convertBufferIfNecessary:(id)arg1;
+- (void)dealloc;
+- (id)deferredStopQueue;
+- (id)deferredStopSource;
+- (id)format;
+- (void)handleMediaServicesReset;
+- (id)inflightBuffers;
+- (id)init;
+- (bool)isRunning;
+- (void)pause;
+- (bool)play;
+- (id)queueFormat;
+- (void)scheduleBuffer:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)scheduleBuffer:(id)arg1 completionHandler:(id /* block */)arg2 lastBuffer:(bool)arg3;
+- (void)setAqRef:(struct OpaqueAudioQueue { }*)arg1;
+- (void)setAqTimeline:(struct OpaqueAudioQueueTimeline { }*)arg1;
+- (void)setAudioQueueActive:(bool)arg1;
+- (void)setAudioQueueFlags:(unsigned int)arg1;
+- (void)setAudioSession:(id)arg1;
+- (void)setAvailableBuffers:(id)arg1;
+- (void)setBuffersAvailable:(id)arg1;
+- (void)setCachedAudioConverter:(id)arg1;
+- (void)setChannels:(id)arg1;
+- (void)setDeferredStopQueue:(id)arg1;
+- (void)setDeferredStopSource:(id)arg1;
+- (void)setFormat:(id)arg1;
+- (void)setInflightBuffers:(id)arg1;
+- (void)setOutputFormat:(id)arg1;
+- (void)setQueueFormat:(id)arg1;
+- (void)setShouldRebuildAudioQueue:(bool)arg1;
+- (void)setStartedOn:(double)arg1;
+- (void)setState:(unsigned long long)arg1;
+- (void)setUsingSharedSession:(bool)arg1;
+- (bool)shouldRebuildAudioQueue;
+- (double)startedOn;
+- (unsigned long long)state;
+- (void)stop;
+- (bool)usingSharedSession;
+
+@end

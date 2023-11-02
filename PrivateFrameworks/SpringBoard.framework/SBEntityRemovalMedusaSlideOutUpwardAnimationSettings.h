@@ -1,0 +1,4 @@
+
+@interface SBEntityRemovalMedusaSlideOutUpwardAnimationSettings : SBEntityRemovalMedusaSlideOutAnimationSettings
+
+@end

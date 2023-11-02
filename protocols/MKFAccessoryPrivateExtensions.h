@@ -1,0 +1,4 @@
+
+@protocol MKFAccessoryPrivateExtensions
+
+@end

@@ -1,0 +1,17 @@
+
+@interface PKAccountWebServiceCertificatesRequest : PKAccountWebServiceRequest {
+    NSURL * _baseURL;
+    unsigned long long  _destination;
+}
+
+@property (nonatomic, retain) NSURL *baseURL;
+@property (nonatomic) unsigned long long destination;
+
+- (void).cxx_destruct;
+- (id)_urlRequestWithAppleAccountInformation:(id)arg1;
+- (id)baseURL;
+- (unsigned long long)destination;
+- (void)setBaseURL:(id)arg1;
+- (void)setDestination:(unsigned long long)arg1;
+
+@end

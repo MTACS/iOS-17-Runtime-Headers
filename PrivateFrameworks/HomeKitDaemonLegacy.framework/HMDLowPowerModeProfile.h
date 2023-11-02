@@ -1,0 +1,93 @@
+
+@interface HMDLowPowerModeProfile : HMDAccessoryProfile <HMFTimerDelegate> {
+    HMFTimer * _backoffTimer;
+    NSString * _clientIdentifier;
+    <HMDLowPowerModeProfileDelegate> * _delegate;
+    unsigned long long  _internalOldState;
+    unsigned long long  _internalState;
+    id /* block */  _pendingWakeBlock;
+    unsigned long long  _retryCount;
+    HAPSuspendedAccessory * _suspendedAccessory;
+    HMFTimer * _waitForWakeTimer;
+}
+
+@property (nonatomic, retain) HMFTimer *backoffTimer;
+@property (nonatomic, retain) NSString *clientIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HMDLowPowerModeProfileDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long internalOldState;
+@property (nonatomic) unsigned long long internalState;
+@property (nonatomic, copy) id /* block */ pendingWakeBlock;
+@property (nonatomic) unsigned long long retryCount;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) HAPSuspendedAccessory *suspendedAccessory;
+@property (nonatomic, retain) HMFTimer *waitForWakeTimer;
+
++ (id)WoWLANInfoForSupportedSleepConfiguration:(id)arg1;
++ (id)logCategory;
+
+- (void).cxx_destruct;
+- (bool)_canEnterNewState:(unsigned long long)arg1;
+- (void)_configureAccessoryWithCompletion:(id /* block */)arg1;
+- (void)_enterState:(unsigned long long)arg1;
+- (void)_processSelectedSleepConfigurationParametersWithCharacteristic:(id)arg1;
+- (void)_processSupportedSleepConfigurationParametersWithCharacteristic:(id)arg1;
+- (void)_queryAccessoryWithOperation:(long long)arg1 completion:(id /* block */)arg2;
+- (void)_readAccessorySelectedConfigWithCompletion:(id /* block */)arg1;
+- (void)_readFromCharacteristic:(id)arg1 completion:(id /* block */)arg2;
+- (void)_readInitialRequiredCharacteristics;
+- (void)_resetStateMachine;
+- (void)_runStateMachine;
+- (bool)_shouldManageAccessoryLPM;
+- (void)_startTimerForType:(unsigned long long)arg1;
+- (void)_stateMachine_Idle;
+- (void)_stateMachine_backoffOperation;
+- (void)_stateMachine_configureAccessory;
+- (void)_stateMachine_readAccessoryConfiguration;
+- (void)_stateMachine_unconfigureAccessory;
+- (void)_stopBackoffTimerForType:(unsigned long long)arg1;
+- (void)_unconfigureAccessoryWithCompletion:(id /* block */)arg1;
+- (void)_updateCharacteristicsNotifications:(bool)arg1;
+- (void)_wakeSuspendedAccessory:(id)arg1 activity:(id)arg2 completion:(id /* block */)arg3;
+- (void)_writeToCharacteristic:(id)arg1 value:(id)arg2 completion:(id /* block */)arg3;
+- (id)backoffTimer;
+- (id)clientIdentifier;
+- (id)connectivityInfo;
+- (void)dealloc;
+- (id)delegate;
+- (id)description;
+- (void)enterState:(unsigned long long)arg1;
+- (void)handleAccessoryCharacteristicsChanged:(id)arg1;
+- (void)handleAccessoryConfigurationChanged:(id)arg1;
+- (void)handleInitialState;
+- (id)hapAccessory;
+- (id)initWithAccessory:(id)arg1 powerManagementservice:(id)arg2 workQueue:(id)arg3;
+- (unsigned long long)internalOldState;
+- (unsigned long long)internalState;
+- (id)newHAPSuspendedAccessoryFromAccessoryConnectivityInfoWithType:(unsigned long long)arg1;
+- (id /* block */)pendingWakeBlock;
+- (id)powerManagementService;
+- (void)registerForMessages;
+- (unsigned long long)retryCount;
+- (id)selectedSleepConfigurationCharacteristic;
+- (void)setBackoffTimer:(id)arg1;
+- (void)setClientIdentifier:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setInternalOldState:(unsigned long long)arg1;
+- (void)setInternalState:(unsigned long long)arg1;
+- (void)setPendingWakeBlock:(id /* block */)arg1;
+- (void)setRetryCount:(unsigned long long)arg1;
+- (void)setSuspendedAccessory:(id)arg1;
+- (void)setWaitForWakeTimer:(id)arg1;
+- (id)supportedSleepConfigurationCharacteristic;
+- (id)suspendedAccessory;
+- (unsigned long long)suspendedState;
+- (void)timerDidFire:(id)arg1;
+- (void)unconfigure;
+- (id)waitForWakeTimer;
+- (void)wakeSuspendedAccessoryWithCompletion:(id /* block */)arg1;
+- (void)wakeSuspendedAccessoryWithType:(unsigned long long)arg1 completion:(id /* block */)arg2;
+
+@end

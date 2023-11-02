@@ -1,0 +1,91 @@
+
+@interface BAGConfig : NSObject <BAGResource, NSSecureCoding> {
+    NSDictionary * _configuration;
+    unsigned long long  _defaultKeyType;
+    BAGResourceOptions * _options;
+}
+
+@property (nonatomic, retain) NSDictionary *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned long long defaultKeyType;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) BAGResourceOptions *options;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long type;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)_boolNumberFromString:(id)arg1;
+- (id)_checkIsArrayObject:(id)arg1 typeBlock:(id /* block */)arg2;
+- (bool)_checkIsBoolObject:(id)arg1;
+- (id)_checkIsDataObject:(id)arg1;
+- (id)_checkIsDictionaryObject:(id)arg1 typeBlock:(id /* block */)arg2;
+- (id)_checkIsNumberObject:(id)arg1;
+- (id)_checkIsStringObject:(id)arg1;
+- (id)_traverseKeyList:(id)arg1;
+- (id)arrayForKey:(id)arg1;
+- (id)arrayForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)arrayForKeyList:(id)arg1;
+- (id)arrayForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)arrayOfDataForKey:(id)arg1;
+- (id)arrayOfDataForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)arrayOfDataForKeyList:(id)arg1;
+- (id)arrayOfDataForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)arrayOfNumbersForKey:(id)arg1;
+- (id)arrayOfNumbersForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)arrayOfNumbersForKeyList:(id)arg1;
+- (id)arrayOfNumbersForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)arrayOfStringsForKey:(id)arg1;
+- (id)arrayOfStringsForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)arrayOfStringsForKeyList:(id)arg1;
+- (id)arrayOfStringsForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (bool)boolForKey:(id)arg1;
+- (bool)boolForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (bool)boolForKeyList:(id)arg1;
+- (bool)boolForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)configuration;
+- (id)dataForKey:(id)arg1;
+- (id)dataForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)dataForKeyList:(id)arg1;
+- (id)dataForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)debugDescription;
+- (unsigned long long)defaultKeyType;
+- (id)description;
+- (id)dictionaryForKey:(id)arg1;
+- (id)dictionaryForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)dictionaryForKeyList:(id)arg1;
+- (id)dictionaryForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)dictionaryOfDataForKey:(id)arg1;
+- (id)dictionaryOfDataForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)dictionaryOfDataForKeyList:(id)arg1;
+- (id)dictionaryOfDataForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)dictionaryOfNumbersForKey:(id)arg1;
+- (id)dictionaryOfNumbersForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)dictionaryOfNumbersForKeyList:(id)arg1;
+- (id)dictionaryOfNumbersForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)dictionaryOfStringsForKey:(id)arg1;
+- (id)dictionaryOfStringsForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)dictionaryOfStringsForKeyList:(id)arg1;
+- (id)dictionaryOfStringsForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1 options:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (id)numberForKey:(id)arg1;
+- (id)numberForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)numberForKeyList:(id)arg1;
+- (id)numberForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)options;
+- (void)setConfiguration:(id)arg1;
+- (void)setDefaultKeyType:(unsigned long long)arg1;
+- (void)setOptions:(id)arg1;
+- (id)stringForKey:(id)arg1;
+- (id)stringForKey:(id)arg1 keyType:(unsigned long long)arg2;
+- (id)stringForKeyList:(id)arg1;
+- (id)stringForKeyList:(id)arg1 keyType:(unsigned long long)arg2;
+- (unsigned long long)type;
+
+@end

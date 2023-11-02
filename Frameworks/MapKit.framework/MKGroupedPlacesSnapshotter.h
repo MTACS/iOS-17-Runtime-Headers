@@ -1,0 +1,4 @@
+
+@interface MKGroupedPlacesSnapshotter : MKAnnotatedMapSnapshotter
+
+@end

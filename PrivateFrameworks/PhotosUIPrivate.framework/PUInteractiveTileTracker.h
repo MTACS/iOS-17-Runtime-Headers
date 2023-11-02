@@ -1,0 +1,63 @@
+
+@interface PUInteractiveTileTracker : NSObject {
+    long long  __state;
+    PUTileHider * __tileHider;
+    struct PUDisplayVelocity { 
+        double x; 
+        double y; 
+        double scale; 
+        double rotation; 
+    }  _currentVelocity;
+    <PUInteractiveTileTrackerDelegate> * _delegate;
+    struct { 
+        bool respondsToWillStartTrackingTileController; 
+        bool respondsToDidStopTrackingTileController; 
+    }  _delegateFlags;
+    double  _progress;
+    bool  _shouldEnd;
+    bool  _shouldFinish;
+    PUTilingView * _tilingView;
+    PUTileController * _trackedTileController;
+}
+
+@property (setter=_setState:, nonatomic) long long _state;
+@property (setter=_setTileHider:, nonatomic, retain) PUTileHider *_tileHider;
+@property (nonatomic) struct PUDisplayVelocity { double x1; double x2; double x3; double x4; } currentVelocity;
+@property (nonatomic) <PUInteractiveTileTrackerDelegate> *delegate;
+@property (nonatomic) double progress;
+@property (nonatomic) bool shouldEnd;
+@property (nonatomic) bool shouldFinish;
+@property (nonatomic, readonly) PUTilingView *tilingView;
+@property (nonatomic, readonly) PUTileController *trackedTileController;
+
+- (void).cxx_destruct;
+- (void)_setState:(long long)arg1;
+- (void)_setTileHider:(id)arg1;
+- (void)_setTrackedTileController:(id)arg1;
+- (long long)_state;
+- (id)_tileHider;
+- (void)_updateTrackedTileController;
+- (void)completeTracking;
+- (void)configureTileReattachmentContext:(id)arg1;
+- (struct PUDisplayVelocity { double x1; double x2; double x3; double x4; })currentVelocity;
+- (id)delegate;
+- (id)init;
+- (id)initWithTilingView:(id)arg1;
+- (double)progress;
+- (void)setCurrentVelocity:(struct PUDisplayVelocity { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setProgress:(double)arg1;
+- (void)setShouldEnd:(bool)arg1;
+- (void)setShouldFinish:(bool)arg1;
+- (bool)shouldEnd;
+- (bool)shouldFinish;
+- (void)startTileControllerTracking;
+- (void)stopTileControllerTracking;
+- (id)tileControllerToTrack;
+- (id)tilingView;
+- (id)trackedTileController;
+- (void)update;
+- (void)updateGestureRecognizerTracking;
+- (void)updateTileControllerTracking;
+
+@end

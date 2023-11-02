@@ -1,0 +1,4 @@
+
+@interface MTRTestClusterClusterTestSpecificResponseParams : MTRUnitTestingClusterTestSpecificResponseParams
+
+@end

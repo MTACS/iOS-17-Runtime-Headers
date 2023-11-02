@@ -1,0 +1,4 @@
+
+@interface _TtC8PaperKitP33_7F88BE1DF961FF75D7260700FD291DDA19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

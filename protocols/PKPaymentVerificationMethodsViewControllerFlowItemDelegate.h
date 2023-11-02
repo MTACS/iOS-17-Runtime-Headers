@@ -1,0 +1,11 @@
+
+@protocol PKPaymentVerificationMethodsViewControllerFlowItemDelegate
+
+@required
+
+- (void)showExternalVerificationForVerificationMethodsViewController:(PKPaymentVerificationMethodsViewController *)arg1;
+- (void)showVerificationCompletionForVerificationMethodsViewController:(PKPaymentVerificationMethodsViewController *)arg1;
+- (void)showVerificationMethodsForVerificationMethodsViewController:(PKPaymentVerificationMethodsViewController *)arg1;
+- (void)verificationMethodsViewControllerDidFinish:(PKPaymentVerificationMethodsViewController *)arg1;
+
+@end

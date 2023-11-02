@@ -1,0 +1,9 @@
+
+@protocol SFSharedAccountsGroupInvitationAcceptanceRemoveDuplicateCredentialsViewControllerDelegate <NSObject>
+
+@required
+
+- (void)removeDuplicateCredentialsViewController:(SFSharedAccountsGroupInvitationAcceptanceRemoveDuplicateCredentialsViewController *)arg1 didPickSavedAccounts:(NSArray *)arg2;
+- (void)removeDuplicateCredentialsViewControllerDidSelectNotNow:(SFSharedAccountsGroupInvitationAcceptanceRemoveDuplicateCredentialsViewController *)arg1;
+
+@end

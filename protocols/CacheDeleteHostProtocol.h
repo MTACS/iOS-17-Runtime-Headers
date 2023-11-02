@@ -1,0 +1,4 @@
+
+@protocol CacheDeleteHostProtocol <NSObject>
+
+@end

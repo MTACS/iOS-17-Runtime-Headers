@@ -1,0 +1,17 @@
+
+@interface MUISearchRankedSuggesterQuery : NSObject <MUISearchSuggesterQuery> {
+    NSString * _bundleID;
+    id /* block */  _handler;
+    MUISearchSuggestionPhraseManager * _phraseManager;
+    EMSearchableIndexTopHitsQuery * _topHitsQuery;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)cancel;
+
+@end

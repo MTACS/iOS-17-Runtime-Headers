@@ -1,0 +1,4 @@
+
+@protocol PLCapturePhotoSettings <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SCNAnimation <NSObject>
+
+@end

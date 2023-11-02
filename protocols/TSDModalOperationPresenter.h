@@ -1,0 +1,4 @@
+
+@protocol TSDModalOperationPresenter <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtCC26DeepThoughtBiomeFoundation13EventFeatures10AppInFocus : _TtCs12_SwiftObject
+
+@end

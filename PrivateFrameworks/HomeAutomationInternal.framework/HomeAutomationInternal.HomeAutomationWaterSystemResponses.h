@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.HomeAutomationWaterSystemResponses : HomeAutomationInternal.HomeAutomationEntityResponses
+
+@end

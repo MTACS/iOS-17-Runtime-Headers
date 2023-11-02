@@ -1,0 +1,37 @@
+
+@interface CKHistoricEvent : NSObject <NSCopying, NSSecureCoding> {
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _firstSeen;
+    void _frequency;
+    void _lastDuration;
+    union { in /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x1; long x2; long x3; }  _lastSeen;
+    void _metadata;
+    void _totalDuration;
+    void identifier;
+}
+
+@property (nonatomic, readonly) NSDate *firstSeen;
+@property (nonatomic, readonly) long long frequency;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) double lastDuration;
+@property (nonatomic, readonly) NSDate *lastSeen;
+@property (nonatomic, readonly) NSDictionary *metadata;
+@property (nonatomic, readonly) double totalDuration;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(void*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)firstSeen;
+- (long long)frequency;
+- (id)identifier;
+- (id)init;
+- (id)init:(id)arg1;
+- (id)initFrom:(id)arg1 withIdentifier:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (double)lastDuration;
+- (id)lastSeen;
+- (id)metadata;
+- (double)totalDuration;
+
+@end

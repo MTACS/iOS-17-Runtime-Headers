@@ -1,0 +1,91 @@
+
+@interface MRUFlippingArtworkLayer : CALayer {
+    double  _artworkCornerRadius;
+    CAFilter * _backBlurFilter;
+    CALayer * _backGlowLayer;
+    CALayer * _backLayer;
+    CALayer * _backPlaceholderLayer;
+    CAFilter * _frontBlurFilter;
+    CALayer * _frontGlowLayer;
+    CALayer * _frontLayer;
+    CALayer * _frontPlaceholderLayer;
+    struct CGImage { } * _placeholderImage;
+    struct CGColor { } * _placeholderImageTintColor;
+    bool  _playing;
+    CATransformLayer * _rotatorLayer;
+    struct { 
+        NSString *identifier; 
+        double frontLayerAlpha; 
+        double backLayerAlpha; 
+        double frontLayerBlurRadius; 
+        double frontLayerBlurAnimationDelay; 
+        double backLayerBlurRadius; 
+        double backLayerBlurAnimationDelay; 
+        double yRotation; 
+    }  _state;
+}
+
+@property (nonatomic) double artworkCornerRadius;
+@property (nonatomic, retain) CAFilter *backBlurFilter;
+@property (nonatomic, retain) CALayer *backGlowLayer;
+@property (nonatomic, retain) CALayer *backLayer;
+@property (nonatomic, retain) CALayer *backPlaceholderLayer;
+@property (nonatomic, retain) CAFilter *frontBlurFilter;
+@property (nonatomic, retain) CALayer *frontGlowLayer;
+@property (nonatomic, retain) CALayer *frontLayer;
+@property (nonatomic, retain) CALayer *frontPlaceholderLayer;
+@property (nonatomic) struct CGImage { }*placeholderImage;
+@property (nonatomic) struct CGColor { }*placeholderImageTintColor;
+@property (nonatomic) bool playing;
+@property (nonatomic, retain) CATransformLayer *rotatorLayer;
+@property (nonatomic) struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; } state;
+
+- (void).cxx_destruct;
+- (void)animateGlowForState:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1 reverse:(bool)arg2;
+- (double)artworkCornerRadius;
+- (id)backBlurFilter;
+- (id)backGlowLayer;
+- (id)backLayer;
+- (id)backPlaceholderLayer;
+- (id)frontBlurFilter;
+- (id)frontGlowLayer;
+- (id)frontLayer;
+- (id)frontPlaceholderLayer;
+- (id)glowLayerForState:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1;
+- (id)imageLayerForState:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1;
+- (id)init;
+- (bool)isLayerForStateGlowing:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1;
+- (id)makeBlurFilter;
+- (struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })nextState;
+- (struct CGImage { }*)placeholderImage;
+- (struct CGColor { }*)placeholderImageTintColor;
+- (id)placeholderLayerForState:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1;
+- (bool)playing;
+- (id)rotatorLayer;
+- (void)setArtworkCornerRadius:(double)arg1;
+- (void)setBackBlurFilter:(id)arg1;
+- (void)setBackGlowLayer:(id)arg1;
+- (void)setBackLayer:(id)arg1;
+- (void)setBackPlaceholderLayer:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentsScale:(double)arg1;
+- (void)setFrontBlurFilter:(id)arg1;
+- (void)setFrontGlowLayer:(id)arg1;
+- (void)setFrontLayer:(id)arg1;
+- (void)setFrontPlaceholderLayer:(id)arg1;
+- (void)setImage:(struct CGImage { }*)arg1 toLayer:(id)arg2;
+- (void)setImageToCurrentLayer:(struct CGImage { }*)arg1 animated:(bool)arg2;
+- (void)setPlaceholderImage:(struct CGImage { }*)arg1;
+- (void)setPlaceholderImageTintColor:(struct CGColor { }*)arg1;
+- (void)setPlaying:(bool)arg1;
+- (void)setRotatorLayer:(id)arg1;
+- (void)setState:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1;
+- (void)setState:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1 transitionDirection:(long long)arg2;
+- (struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })state;
+- (void)transitionToImage:(struct CGImage { }*)arg1;
+- (void)transitionToImage:(struct CGImage { }*)arg1 transitionDirection:(long long)arg2;
+- (void)updateGlowForState:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1 reverse:(bool)arg2 animated:(bool)arg3;
+- (void)updateScale;
+- (void)updateStateWithPreviousState:(struct { id x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })arg1 transitionDirection:(long long)arg2;
+
+@end

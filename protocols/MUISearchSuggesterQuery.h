@@ -1,0 +1,4 @@
+
+@protocol MUISearchSuggesterQuery <EFCancelable>
+
+@end

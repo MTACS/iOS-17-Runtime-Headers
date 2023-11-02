@@ -1,0 +1,4 @@
+
+@protocol ShazamEvents.ShazamEventsClient
+
+@end

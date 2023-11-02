@@ -1,0 +1,102 @@
+
+@interface PHAExecutive : NSObject <NSXPCListenerDelegate, PHAActivityDelegate, PHAServiceOperationHandling, PHPhotoLibraryAvailabilityObserver> {
+    PHAActivityLog * _activityLog;
+    NSObject<OS_xpc_object> * _backgroundAnalysisActivity;
+    bool  _backgroundAnalysisActivityTriggered;
+    NSObject<OS_dispatch_source> * _backgroundAnalysisMonitorTimer;
+    NSMutableDictionary * _clientsByLibraryPath;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _connectedClientsLock;
+    long long  _countOfCoordinatorsRunningBackgroundAnalysis;
+    PHAActivityLog * _currentLog;
+    NSObject<OS_dispatch_queue> * _executiveStateQueue;
+    bool  _isPhotoAnalysisAgent;
+    NSMutableDictionary * _managersByLibraryPath;
+    PHAMusicActivity * _musicActivity;
+    NSMutableSet * _pendingBackgroundLibraries;
+    PHAPhotoLibraryList * _photoLibraryList;
+    NSMutableArray * _processingLog;
+    NSMutableSet * _runningActivities;
+    bool  _shouldDeferActivity;
+    unsigned char  _state;
+}
+
+@property (readonly) PHAActivityLog *activityLog;
+@property (retain) NSObject<OS_xpc_object> *backgroundAnalysisActivity;
+@property (retain) NSObject<OS_dispatch_source> *backgroundAnalysisMonitorTimer;
+@property (retain) NSMutableDictionary *clientsByLibraryPath;
+@property long long countOfCoordinatorsRunningBackgroundAnalysis;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (retain) NSMutableDictionary *managersByLibraryPath;
+@property (retain) PHAMusicActivity *musicActivity;
+@property (retain) PHAPhotoLibraryList *photoLibraryList;
+@property unsigned char state;
+@property (readonly) Class superclass;
+
++ (void)unregisterAllActivities;
+
+- (void).cxx_destruct;
+- (void)_backgroundActivityDidBegin;
+- (void)_cleanupAfterBackgroundActivityFinishedForDefer:(bool)arg1 skipActivityStateCheck:(bool)arg2;
+- (void)_installBackgroundAnalysisMonitor;
+- (void)_localeDidChangeNotification:(id)arg1;
+- (bool)_photoAnalysCoreDuetSchedulingDisabled;
+- (bool)_photoAnalysisEnabled;
+- (void)_registerBackgroundActivity;
+- (void)_startBackgroundAnalysis;
+- (void)_stopAllBackgroundActivitiesWithCompletion:(id /* block */)arg1;
+- (void)_stopAllBackgroundAnalysisWithCompletion:(id /* block */)arg1;
+- (id)activityLog;
+- (void)addClientHandler:(id)arg1 forLibraryURL:(id)arg2;
+- (void)addProcessingActivityToStatusDictionary:(id)arg1;
+- (id)backgroundAnalysisActivity;
+- (id)backgroundAnalysisMonitorTimer;
+- (void)checkQuiescenceForManager:(id)arg1;
+- (id)clientInfoForManager:(id)arg1;
+- (id)clientsByLibraryPath;
+- (long long)countOfCoordinatorsRunningBackgroundAnalysis;
+- (void)dealloc;
+- (void)dispatchAsyncToExecutiveStateQueue:(id /* block */)arg1;
+- (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(id /* block */)arg2;
+- (void)dumpStatusToLog;
+- (void)handleOperation:(id)arg1;
+- (bool)hasConnectedClientsForManager:(id)arg1;
+- (bool)hasPhotosConnectionForManager:(id)arg1;
+- (id)init;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (id)managerForPhotoLibraryURL:(id)arg1;
+- (id)managersByLibraryPath;
+- (id)musicActivity;
+- (void)notifyLibraryAvailableAtURL:(id)arg1;
+- (void)photoLibraryDidBecomeUnavailable:(id)arg1;
+- (id)photoLibraryList;
+- (bool)registerActivityToRun:(id)arg1;
+- (void)removeClientHandler:(id)arg1;
+- (void)setBackgroundAnalysisActivity:(id)arg1;
+- (void)setBackgroundAnalysisMonitorTimer:(id)arg1;
+- (void)setClientsByLibraryPath:(id)arg1;
+- (void)setCountOfCoordinatorsRunningBackgroundAnalysis:(long long)arg1;
+- (void)setManagersByLibraryPath:(id)arg1;
+- (void)setMusicActivity:(id)arg1;
+- (void)setPhotoLibraryList:(id)arg1;
+- (void)setState:(unsigned char)arg1;
+- (void)setupAnalyticsEnvironment;
+- (void)shutdown;
+- (void)startup;
+- (unsigned char)state;
+- (id)statusAsDictionary;
+- (void)stopAllBackgroundActivities;
+- (void)stopAllBackgroundActivitiesWithCompletion:(id /* block */)arg1;
+- (void)stopBackgroundActivityForManager:(id)arg1;
+- (void)terminateManagerForPhotoLibraryURL:(id)arg1;
+- (void)terminateManagerIfQuiescentAndNoConnectedClients:(id)arg1;
+- (void)triggerBackgroundActivity;
+- (void)unregisterRunningActivity:(id)arg1;
+- (void)updatePropertiesOfXPCActivity:(id)arg1;
+- (bool)validateOperation:(id)arg1 forConnection:(id)arg2;
+- (void)writeQALog:(id)arg1;
+
+@end

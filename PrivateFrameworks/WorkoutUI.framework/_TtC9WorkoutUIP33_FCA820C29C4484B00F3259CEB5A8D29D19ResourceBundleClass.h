@@ -1,0 +1,4 @@
+
+@interface _TtC9WorkoutUIP33_FCA820C29C4484B00F3259CEB5A8D29D19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

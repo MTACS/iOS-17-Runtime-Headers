@@ -1,0 +1,4 @@
+
+@interface SBSystemApertureCurtainWindowScene : SBAccessoryWindowScene
+
+@end

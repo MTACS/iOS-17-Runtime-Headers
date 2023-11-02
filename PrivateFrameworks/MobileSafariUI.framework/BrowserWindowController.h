@@ -1,0 +1,93 @@
+
+@interface BrowserWindowController : NSObject <CloudTabStoreDelegate, _SFNavigationIntentHandling> {
+    NSMapTable * _UIDelegatesByBrowserController;
+    id /* block */  _automationWindowInitializedCompletionHandler;
+    id /* block */  _browserControllerUIDelegateProvider;
+    NSArray * _browserControllers;
+    CloudTabStore * _cloudTabStore;
+    bool  _cloudTabsEnabled;
+    bool  _consideredMergingCloudTabsForDeviceRestoration;
+    NSString * _frontmostProfileIdentifier;
+    _SFPerSitePreferencesVendor * _perSitePreferencesVendor;
+    PinnedTabsManager * _pinnedTabsManager;
+    _SFPageZoomPreferenceManager * _privateBrowsingPageZoomManager;
+    _SFBrowserSavedState * _savedState;
+    WBTabGroupManager * _tabGroupManager;
+}
+
+@property (nonatomic, readonly, copy) NSArray *browserControllers;
+@property (nonatomic, readonly) CloudTabStore *cloudTabStore;
+@property (nonatomic) bool cloudTabsEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *frontmostProfileIdentifier;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) _SFPerSitePreferencesVendor *perSitePreferencesVendor;
+@property (nonatomic, readonly) PinnedTabsManager *pinnedTabsManager;
+@property (nonatomic, readonly) _SFPageZoomPreferenceManager *privateBrowsingPageZoomManager;
+@property (readonly) Class superclass;
+
++ (id)_printWindowToSceneMapping;
+
+- (void).cxx_destruct;
+- (id)_allNormalLocalTabDocuments;
+- (id)_browserWindowsToPersist;
+- (void)_cloudTabFeatureAvailabilityDidChange:(id)arg1;
+- (void)_createCloudTabsStore;
+- (void)_destroyCloudTabsStore;
+- (id)_mergeAndSaveWindowStates:(id)arg1 intoWindowState:(id)arg2;
+- (void)_mergeTabsFromCloudTabsForDeviceRestoration:(id)arg1;
+- (void)_mergeTabsFromCloudTabsForDeviceRestorationIfNeededAfterCloudTabsFinishedSyncing:(bool)arg1;
+- (id)_mergeWindowStates:(id)arg1 intoWindowState:(id)arg2;
+- (id)_newAutomationWindowWithSceneID:(id)arg1;
+- (id)_printWindowToSceneMapping;
+- (void)_restoreWindowsFromBrowserSavedState:(id)arg1;
+- (void)_restoreWindowsWithState:(id)arg1 shouldMergeAllWindowsIfNeeded:(bool)arg2;
+- (void)_saveBrowserStateWithQuickUpdate:(bool)arg1;
+- (id)_sceneIDToLocalGroupTabs;
+- (void)_windowDidClose:(id)arg1;
+- (id)browserControllerWithUUID:(id)arg1;
+- (id)browserControllers;
+- (id)cloudTabStore;
+- (void)cloudTabStore:(id)arg1 cloudTabsEnabledDidChange:(bool)arg2;
+- (void)cloudTabStore:(id)arg1 didReceiveTabCloseRequest:(id)arg2;
+- (void)cloudTabStore:(id)arg1 didUpdateDevicesFromCloudKitWithError:(id)arg2;
+- (void)cloudTabStoreDidGetCachedDevicesFromCloudKit:(id)arg1;
+- (bool)cloudTabsEnabled;
+- (void)dealloc;
+- (void)dispatchNavigationIntent:(id)arg1;
+- (id)frontmostProfileIdentifier;
+- (void)handleNavigationIntent:(id)arg1 completion:(id /* block */)arg2;
+- (id)initWithBrowserSavedState:(id)arg1;
+- (id)initWithBrowserSavedState:(id)arg1 perSitePreferencesVendor:(id)arg2 browserControllerUIDelegateProvider:(id /* block */)arg3;
+- (id)initWithTabGroupManager:(id)arg1 pinnedTabsManager:(id)arg2;
+- (id)initWithTabGroupManager:(id)arg1 pinnedTabsManager:(id)arg2 perSitePreferencesVendor:(id)arg3 shouldMergeAllWindowsIfNeeded:(bool)arg4 browserControllerUIDelegateProvider:(id /* block */)arg5;
+- (void)mergeAllWindowsIntoWindow:(id)arg1;
+- (long long)modeForNewWindowUserActivity:(id)arg1;
+- (unsigned long long)numberOfTabsInPrivateBrowsing:(bool)arg1;
+- (id)oldestTabsWithLimit:(unsigned long long)arg1 inPrivateBrowsing:(bool)arg2;
+- (void)openNewWindowInFrontmostProfileFromWindow:(id)arg1;
+- (void)openNewWindowWithPrivateBrowsingEnabled:(bool)arg1 fromWindow:(id)arg2;
+- (id)perSitePreferencesVendor;
+- (id)pinnedTabsManager;
+- (id)privateBrowsingPageZoomManager;
+- (void)removeWindowsNotMatchingSceneIDs:(id)arg1 supportsMultipleScenes:(bool)arg2;
+- (void)restoreEducationDeviceCloudTabs:(id)arg1 animated:(bool)arg2;
+- (void)restoreEducationDeviceTabs;
+- (void)saveBrowserState;
+- (void)saveCloudTabs;
+- (void)saveCloudTabsUsingCloudTabStore:(id)arg1;
+- (void)setCloudTabsEnabled:(bool)arg1;
+- (void)setFrontmostProfileIdentifier:(id)arg1;
+- (void)setUpAutomationWindowWithCompletionHandler:(id /* block */)arg1;
+- (id)tabDocumentWithUUID:(id)arg1;
+- (id)tabsInPrivateBrowsing:(bool)arg1;
+- (id)tabsOlderThan:(id)arg1 inPrivateBrowsing:(bool)arg2;
+- (void)tearDownAutomationWindow;
+- (id)uiDelegateForBrowserController:(id)arg1;
+- (void)updateCloudTabUpdatesEnabled;
+- (void)updateCloudTabsForEnteringBackground;
+- (void)updateCloudTabsForEnteringForeground;
+- (id)windowForSceneID:(id)arg1 options:(id)arg2;
+
+@end

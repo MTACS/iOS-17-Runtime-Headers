@@ -1,0 +1,84 @@
+
+@interface PKPaymentRewrapRequestBase : PKPaymentWebServiceRequest {
+    PKAccount * _account;
+    NSData * _applicationData;
+    long long  _cryptogramType;
+    NSString * _currencyCode;
+    NSString * _deviceAssessments;
+    NSDictionary * _fundingSourceDetails;
+    NSString * _initiative;
+    NSString * _initiativeContext;
+    bool  _isDeferredPayment;
+    NSString * _merchantTokenManagementURL;
+    NSArray * _multiTokenContexts;
+    PKPaymentPass * _pass;
+    PKPaymentApplication * _paymentApplication;
+    NSString * _paymentHash;
+    NSDictionary * _serviceProviderData;
+    NSString * _shippingAddressHash;
+    long long  _type;
+    PKWrappedPayment * _wrappedPayment;
+}
+
+@property (nonatomic, retain) PKAccount *account;
+@property (nonatomic, copy) NSData *applicationData;
+@property (nonatomic) long long cryptogramType;
+@property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic, copy) NSString *deviceAssessments;
+@property (nonatomic, readonly) NSArray *endpointComponents;
+@property (nonatomic, copy) NSDictionary *fundingSourceDetails;
+@property (nonatomic, copy) NSString *initiative;
+@property (nonatomic, copy) NSString *initiativeContext;
+@property (nonatomic) bool isDeferredPayment;
+@property (nonatomic, copy) NSString *merchantTokenManagementURL;
+@property (nonatomic, copy) NSArray *multiTokenContexts;
+@property (nonatomic, retain) PKPaymentPass *pass;
+@property (nonatomic, retain) PKPaymentApplication *paymentApplication;
+@property (nonatomic, copy) NSString *paymentHash;
+@property (nonatomic, copy) NSDictionary *serviceProviderData;
+@property (nonatomic, copy) NSString *shippingAddressHash;
+@property (nonatomic) long long type;
+@property (nonatomic, retain) PKWrappedPayment *wrappedPayment;
+
+- (void).cxx_destruct;
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 rewrapData:(id)arg3 appleAccountInformation:(id)arg4;
+- (id)account;
+- (id)applicationData;
+- (id)bodyDictionary;
+- (long long)cryptogramType;
+- (id)currencyCode;
+- (id)deviceAssessments;
+- (id)endpointComponents;
+- (id)fundingSourceDetails;
+- (id)initiative;
+- (id)initiativeContext;
+- (bool)isDeferredPayment;
+- (id)merchantTokenManagementURL;
+- (id)multiTokenContexts;
+- (id)pass;
+- (id)paymentApplication;
+- (id)paymentHash;
+- (id)serviceProviderData;
+- (void)setAccount:(id)arg1;
+- (void)setApplicationData:(id)arg1;
+- (void)setCryptogramType:(long long)arg1;
+- (void)setCurrencyCode:(id)arg1;
+- (void)setDeviceAssessments:(id)arg1;
+- (void)setFundingSourceDetails:(id)arg1;
+- (void)setInitiative:(id)arg1;
+- (void)setInitiativeContext:(id)arg1;
+- (void)setIsDeferredPayment:(bool)arg1;
+- (void)setMerchantTokenManagementURL:(id)arg1;
+- (void)setMultiTokenContexts:(id)arg1;
+- (void)setPass:(id)arg1;
+- (void)setPaymentApplication:(id)arg1;
+- (void)setPaymentHash:(id)arg1;
+- (void)setServiceProviderData:(id)arg1;
+- (void)setShippingAddressHash:(id)arg1;
+- (void)setType:(long long)arg1;
+- (void)setWrappedPayment:(id)arg1;
+- (id)shippingAddressHash;
+- (long long)type;
+- (id)wrappedPayment;
+
+@end

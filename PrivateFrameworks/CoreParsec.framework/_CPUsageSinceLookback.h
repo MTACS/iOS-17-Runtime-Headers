@@ -1,0 +1,81 @@
+
+@interface _CPUsageSinceLookback : PBCodable <NSSecureCoding, _CPUsageSinceLookback> {
+    int  _activeDaysInCollectionPeriod;
+    int  _client;
+    long long  _collectionEndTimestamp;
+    long long  _collectionStartTimestamp;
+    int  _configuredLookbackTimeInDays;
+    _CPDeviceContext * _context;
+    int  _invokedDays;
+    bool  _isDiagnosticsAndUsageEnabled;
+    int  _numSearchEngagements;
+    int  _searchedDays;
+    int  _suggestionOrAppleResultEngagedDays;
+    int  _totalEngagements;
+    int  _totalUsagesInCollectionPeriod;
+    int  _voiceSearchDays;
+    int  _webEngagedDays;
+    int  _zkwEngagedDays;
+}
+
+@property (nonatomic) int activeDaysInCollectionPeriod;
+@property (nonatomic) int client;
+@property (nonatomic) long long collectionEndTimestamp;
+@property (nonatomic) long long collectionStartTimestamp;
+@property (nonatomic) int configuredLookbackTimeInDays;
+@property (nonatomic, retain) _CPDeviceContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) int invokedDays;
+@property (nonatomic) bool isDiagnosticsAndUsageEnabled;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) int numSearchEngagements;
+@property (nonatomic) int searchedDays;
+@property (nonatomic) int suggestionOrAppleResultEngagedDays;
+@property (readonly) Class superclass;
+@property (nonatomic) int totalEngagements;
+@property (nonatomic) int totalUsagesInCollectionPeriod;
+@property (nonatomic) int voiceSearchDays;
+@property (nonatomic) int webEngagedDays;
+@property (nonatomic) int zkwEngagedDays;
+
+- (void).cxx_destruct;
+- (int)activeDaysInCollectionPeriod;
+- (int)client;
+- (long long)collectionEndTimestamp;
+- (long long)collectionStartTimestamp;
+- (int)configuredLookbackTimeInDays;
+- (id)context;
+- (unsigned long long)hash;
+- (int)invokedDays;
+- (bool)isDiagnosticsAndUsageEnabled;
+- (bool)isEqual:(id)arg1;
+- (int)numSearchEngagements;
+- (bool)readFrom:(id)arg1;
+- (int)searchedDays;
+- (void)setActiveDaysInCollectionPeriod:(int)arg1;
+- (void)setClient:(int)arg1;
+- (void)setCollectionEndTimestamp:(long long)arg1;
+- (void)setCollectionStartTimestamp:(long long)arg1;
+- (void)setConfiguredLookbackTimeInDays:(int)arg1;
+- (void)setContext:(id)arg1;
+- (void)setInvokedDays:(int)arg1;
+- (void)setIsDiagnosticsAndUsageEnabled:(bool)arg1;
+- (void)setNumSearchEngagements:(int)arg1;
+- (void)setSearchedDays:(int)arg1;
+- (void)setSuggestionOrAppleResultEngagedDays:(int)arg1;
+- (void)setTotalEngagements:(int)arg1;
+- (void)setTotalUsagesInCollectionPeriod:(int)arg1;
+- (void)setVoiceSearchDays:(int)arg1;
+- (void)setWebEngagedDays:(int)arg1;
+- (void)setZkwEngagedDays:(int)arg1;
+- (int)suggestionOrAppleResultEngagedDays;
+- (int)totalEngagements;
+- (int)totalUsagesInCollectionPeriod;
+- (int)voiceSearchDays;
+- (int)webEngagedDays;
+- (void)writeTo:(id)arg1;
+- (int)zkwEngagedDays;
+
+@end

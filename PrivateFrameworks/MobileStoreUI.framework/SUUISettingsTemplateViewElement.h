@@ -1,0 +1,4 @@
+
+@interface SUUISettingsTemplateViewElement : SUUIViewElement
+
+@end

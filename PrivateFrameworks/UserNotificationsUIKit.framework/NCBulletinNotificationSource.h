@@ -1,0 +1,83 @@
+
+@interface NCBulletinNotificationSource : NSObject <BBObserverDelegate, NCNotificationDispatcherSourceDelegate, NCNotificationSource> {
+    NSMutableDictionary * _bulletinFeeds;
+    NSMutableDictionary * _bulletinsToUUIDs;
+    NCNotificationDispatcher * _dispatcher;
+    DNDEventBehaviorResolutionService * _eventBehaviorResolutionService;
+    BBObserver * _observer;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _sectionInfoById;
+    BBSettingsGateway * _settingsGateway;
+    NSMutableDictionary * _uuidsToRequests;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *bulletinFeeds;
+@property (nonatomic, retain) NSMutableDictionary *bulletinsToUUIDs;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NCNotificationDispatcher *dispatcher;
+@property (nonatomic, retain) DNDEventBehaviorResolutionService *eventBehaviorResolutionService;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) BBObserver *observer;
+@property (nonatomic, retain) NSMutableDictionary *sectionInfoById;
+@property (nonatomic, retain) BBSettingsGateway *settingsGateway;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *uuidsToRequests;
+
+- (void).cxx_destruct;
+- (id)_alertOptionsWithBehavior:(id)arg1;
+- (void)_applicationIconChanged:(id)arg1;
+- (id)_bulletinsPerSectionIdForNotificationRequests:(id)arg1;
+- (id)_bulletinsToClearPerSectionIdForNotificationRequests:(id)arg1 removingDestinations:(id)arg2;
+- (void)_modifySectionIdentifier:(id)arg1 handler:(id /* block */)arg2;
+- (id)_queue_sectionInfoForBulletin:(id)arg1;
+- (id)_requestUUIDForBulletinPublisherMatchID:(id)arg1;
+- (unsigned long long)_updateFeedForCoverSheetDestination:(unsigned long long)arg1 storedFeed:(unsigned long long)arg2;
+- (id)_updatedRequestWithAlertOptions:(id)arg1;
+- (id)bulletinFeeds;
+- (id)bulletinsToUUIDs;
+- (void)dealloc;
+- (id)dispatcher;
+- (void)dispatcher:(id)arg1 didExecuteAction:(id)arg2 forNotificationRequest:(id)arg3;
+- (id)dispatcher:(id)arg1 notificationRequestForUUID:(id)arg2;
+- (void)dispatcher:(id)arg1 requestsClearingNotificationRequests:(id)arg2;
+- (void)dispatcher:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
+- (void)dispatcher:(id)arg1 requestsClearingNotificationRequestsFromDate:(id)arg2 toDate:(id)arg3 inSections:(id)arg4;
+- (void)dispatcher:(id)arg1 requestsClearingNotificationRequestsInSections:(id)arg2;
+- (void)dispatcher:(id)arg1 setAllowsCriticalAlerts:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setAllowsDirectMessages:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setAllowsNotifications:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setAllowsTimeSensitive:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setDeliverQuietly:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setMuted:(bool)arg2 untilDate:(id)arg3 forSectionIdentifier:(id)arg4 threadIdentifier:(id)arg5;
+- (void)dispatcher:(id)arg1 setNotificationSystemSettings:(id)arg2;
+- (void)dispatcher:(id)arg1 setScheduledDelivery:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setSystemScheduledDeliveryEnabled:(bool)arg2 scheduledDeliveryTimes:(id)arg3;
+- (id)eventBehaviorResolutionService;
+- (id)init;
+- (id)initWithDispatcher:(id)arg1;
+- (id)initWithDispatcher:(id)arg1 observer:(id)arg2 queue:(id)arg3;
+- (id)observer;
+- (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned long long)arg3;
+- (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned long long)arg3 playLightsAndSirens:(bool)arg4 withReply:(id /* block */)arg5;
+- (void)observer:(id)arg1 modifyBulletin:(id)arg2 forFeed:(unsigned long long)arg3;
+- (void)observer:(id)arg1 noteBulletinsLoadedForSectionID:(id)arg2;
+- (void)observer:(id)arg1 noteServerConnectionStateChanged:(bool)arg2;
+- (void)observer:(id)arg1 removeBulletin:(id)arg2;
+- (void)observer:(id)arg1 removeBulletin:(id)arg2 forFeed:(unsigned long long)arg3;
+- (void)observer:(id)arg1 removeSection:(id)arg2;
+- (void)observer:(id)arg1 updateGlobalSettings:(id)arg2;
+- (void)observer:(id)arg1 updateSectionInfo:(id)arg2;
+- (id)sectionInfoById;
+- (void)setBulletinFeeds:(id)arg1;
+- (void)setBulletinsToUUIDs:(id)arg1;
+- (void)setDispatcher:(id)arg1;
+- (void)setEventBehaviorResolutionService:(id)arg1;
+- (void)setObserver:(id)arg1;
+- (void)setSectionInfoById:(id)arg1;
+- (void)setSettingsGateway:(id)arg1;
+- (void)setUuidsToRequests:(id)arg1;
+- (id)settingsGateway;
+- (id)uuidsToRequests;
+
+@end

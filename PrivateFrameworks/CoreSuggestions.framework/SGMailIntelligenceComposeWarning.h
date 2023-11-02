@@ -1,0 +1,4 @@
+
+@interface SGMailIntelligenceComposeWarning : SGMailIntelligenceWarning
+
+@end

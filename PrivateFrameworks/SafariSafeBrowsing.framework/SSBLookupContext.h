@@ -1,0 +1,38 @@
+
+@interface SSBLookupContext : NSObject <MCProfileConnectionObserver> {
+    struct shared_ptr<SafeBrowsing::LookupContext> { 
+        struct LookupContext {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _lookupContext;
+    unsigned int  _observerToken;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)sharedLookupContext;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)_deleteAllDatabasesWithCompletionHandler:(id /* block */)arg1;
+- (void)_fetchCellularDataPlanWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceDatabaseUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceDeviceIdentificationTokenUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceLoadRemoteConfigurationFromDiskWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceLookUpURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_forceUpdateRemoteConfigurationFromServerWithCompletionHandler:(id /* block */)arg1;
+- (void)_getDatabaseStatusWithCompletionHandler:(id /* block */)arg1;
+- (void)_getLastDatabaseUpdateTimeWithCompletionHandler:(id /* block */)arg1;
+- (void)_getSafeBrowsingEnabledState:(id /* block */)arg1;
+- (void)_getServiceStatusWithCompletionHandler:(id /* block */)arg1;
+- (void)_lookUpURL:(id)arg1 ignoreEnableState:(int)arg2 completionHandler:(id /* block */)arg3;
+- (void)_lookUpURLs:(id)arg1 forProtectionType:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)_setSafeBrowsingEnabledStateNeedsUpdate;
+- (void)dealloc;
+- (id)init;
+- (void)lookUpURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface MKFCameraSignificantEventBulletinRegistrationDatabaseID : MKFBulletinRegistrationDatabaseID
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol ManagedSettings.OverrideSettingsExtensionHost
+
+@end

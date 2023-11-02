@@ -1,0 +1,96 @@
+
+@interface SSResultBuilder : NSObject {
+    SFColor * _backgroundColor;
+    NSString * _coreSpotlightId;
+    NSString * _filePath;
+    bool  _hasTextContentMatch;
+    bool  _isTopHit;
+    NSArray * _matchedStrings;
+    SPSearchQueryContext * _queryContext;
+    NSString * _relatedAppBundleIdentifier;
+    SFSearchResult_SpotlightExtras * _result;
+}
+
+@property (nonatomic, retain) SFColor *backgroundColor;
+@property (nonatomic, retain) NSString *coreSpotlightId;
+@property (nonatomic, retain) NSString *filePath;
+@property (nonatomic) bool hasTextContentMatch;
+@property (nonatomic) bool isTopHit;
+@property (nonatomic, retain) NSArray *matchedStrings;
+@property (nonatomic, retain) SPSearchQueryContext *queryContext;
+@property (nonatomic, retain) NSString *relatedAppBundleIdentifier;
+@property (nonatomic, retain) SFSearchResult_SpotlightExtras *result;
+@property (readonly) bool supportsClearingBackendData;
+
++ (id)bundleId;
++ (struct CGSize { double x1; double x2; })defaultThumbnailSizeIsCompact:(bool)arg1;
++ (id)fetchAttributes;
++ (bool)isCoreSpotlightResult;
++ (Class)resultBuilderClassForResult:(id)arg1;
++ (id)resultBuilderWithResult:(id)arg1;
++ (id)richTextsFromStrings:(id)arg1;
++ (void)setDefaultSizeForThumbnail:(id)arg1 isCompact:(bool)arg2;
++ (bool)supportsResult:(id)arg1;
++ (id)whiteSpaceCondensedDescriptions:(id)arg1;
++ (id)whiteSpaceCondensedStringForString:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)backgroundColor;
+- (id)buildAction;
+- (id)buildAppTopHitEntityCardSection;
+- (id)buildBackgroundColor;
+- (id)buildBadgingImageWithThumbnail:(id)arg1;
+- (id)buildButtonItems;
+- (bool)buildButtonItemsAreTrailing;
+- (id)buildCommand;
+- (id)buildCompactCard;
+- (id)buildCompactCardSection;
+- (id)buildCompactCardSections;
+- (void)buildDefaultPropertiesForCardSection:(id)arg1;
+- (id)buildDescriptions;
+- (id)buildDetailedRowCardSection;
+- (id)buildFootnote;
+- (id)buildHighlightedMatchedTextWithTitle:(id)arg1 headTruncation:(bool)arg2;
+- (id)buildHorizontallyScrollingCardSection;
+- (id)buildInlineCard;
+- (id)buildInlineCardSection;
+- (id)buildInlineCardSections;
+- (bool)buildPreventThumbnailImageScaling;
+- (id)buildPreviewButtonItems;
+- (id)buildPreviewCommand;
+- (id)buildPunchouts;
+- (id)buildResult;
+- (id)buildSecondaryTitle;
+- (id)buildSecondaryTitleImage;
+- (bool)buildSecondaryTitleIsDetached;
+- (id)buildThumbnail;
+- (id)buildTitle;
+- (id)buildTrailingBottomText;
+- (id)buildTrailingMiddleText;
+- (id)buildTrailingThumbnail;
+- (id)buildTrailingTopText;
+- (id)coreSpotlightId;
+- (id)filePath;
+- (bool)hasTextContentMatch;
+- (id)initWithResult:(id)arg1;
+- (bool)isTopHit;
+- (id)matchedStrings;
+- (unsigned long long)numberOfLinesForDescriptions;
+- (id)queryContext;
+- (id)relatedAppBundleIdentifier;
+- (id)result;
+- (id)resultAppBundleId;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setCoreSpotlightId:(id)arg1;
+- (void)setFilePath:(id)arg1;
+- (void)setHasTextContentMatch:(bool)arg1;
+- (void)setIsTopHit:(bool)arg1;
+- (void)setMatchedStrings:(id)arg1;
+- (void)setMaxLinesForDescriptions:(id)arg1;
+- (void)setQueryContext:(id)arg1;
+- (void)setRelatedAppBundleIdentifier:(id)arg1;
+- (void)setResult:(id)arg1;
+- (id)subclassBuildHorizontallyScrollingCardSection;
+- (bool)supportsClearingBackendData;
+
+@end

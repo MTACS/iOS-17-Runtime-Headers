@@ -1,0 +1,91 @@
+
+@interface BKIOHIDService : NSObject <BKHIDEventSenderInfo, BSDescriptionProviding, NSCopying> {
+    struct __IOHIDService { } * _IOHIDService;
+    bool  _authenticated;
+    bool  _builtIn;
+    NSString * _displayUUID;
+    int  _eventSource;
+    unsigned int  _primaryUsage;
+    unsigned int  _primaryUsagePage;
+    BKSHIDEventSenderDescriptor * _senderDescriptor;
+    BKSHIDEventSenderDescriptor * _senderDescriptorForKeyboardEvents;
+    unsigned long long  _senderID;
+    long long  _serviceStatus;
+    BKIOHIDService * _strongSelf;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _workQueueAccessLock;
+    NSMutableArray * _workQueue_disappearanceObservers;
+    NSObject<OS_dispatch_queue> * _workQueue_do_not_touch_directly;
+    struct __IOHIDNotification { } * _workQueue_removalNotification;
+}
+
+@property (nonatomic) struct __IOHIDService { }*IOHIDService;
+@property (getter=isAuthenticated, nonatomic) bool authenticated;
+@property (getter=isBuiltIn, nonatomic) bool builtIn;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *displayUUID;
+@property (nonatomic) int eventSource;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isVirtualService;
+@property (nonatomic) unsigned int primaryUsage;
+@property (nonatomic) unsigned int primaryUsagePage;
+@property (nonatomic, copy) BKSHIDEventSenderDescriptor *senderDescriptor;
+@property (nonatomic) unsigned long long senderID;
+@property (nonatomic) long long serviceStatus;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *uniqueProductIdentifier;
+
+- (void).cxx_destruct;
+- (struct __IOHIDService { }*)IOHIDService;
+- (id)_disappearanceObservers;
+- (id)_initForTestingWithSenderID:(unsigned long long)arg1 setUpInitialProperties:(bool)arg2;
+- (void)_serviceWasRemoved;
+- (void)_setUpInitialProperties;
+- (void)_workQueue_startIOServiceRemovalNotifications;
+- (void)_workQueue_stopIOServiceRemovalNotifications;
+- (void)addDisappearanceObserver:(id)arg1 queue:(id)arg2;
+- (void)asyncSetProperties:(id)arg1;
+- (void)asyncSetProperty:(id)arg1 forKey:(id)arg2;
+- (void)asyncSetProperty:(id)arg1 forKey:(id)arg2 andDelayForSeconds:(double)arg3;
+- (bool)claimsToConformToUsagePage:(unsigned short)arg1 usage:(unsigned short)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)displayUUID;
+- (int)eventSource;
+- (id)initForSimulatorWithDisplayUUID:(id)arg1;
+- (id)initWithHIDServiceRef:(struct __IOHIDService { }*)arg1;
+- (bool)isAuthenticated;
+- (bool)isBuiltIn;
+- (bool)isVirtualService;
+- (unsigned int)primaryUsage;
+- (unsigned int)primaryUsagePage;
+- (id)propertyForKey:(id)arg1;
+- (id)propertyOfClass:(Class)arg1 forKey:(id)arg2;
+- (void)removeDisappearanceObserver:(id)arg1;
+- (id)senderDescriptor;
+- (id)senderDescriptorForEventType:(unsigned int)arg1;
+- (unsigned long long)senderID;
+- (long long)serviceStatus;
+- (void)setAuthenticated:(bool)arg1;
+- (void)setBuiltIn:(bool)arg1;
+- (void)setDisplayUUID:(id)arg1;
+- (void)setElementValue:(unsigned int)arg1 forUsagePage:(unsigned int)arg2 usage:(unsigned int)arg3;
+- (void)setEventSource:(int)arg1;
+- (void)setIOHIDService:(struct __IOHIDService { }*)arg1;
+- (void)setPrimaryUsage:(unsigned int)arg1;
+- (void)setPrimaryUsagePage:(unsigned int)arg1;
+- (bool)setProperties:(id)arg1;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)setSenderDescriptor:(id)arg1;
+- (void)setSenderID:(unsigned long long)arg1;
+- (void)setServiceStatus:(long long)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (id)uniqueProductIdentifier;
+
+@end

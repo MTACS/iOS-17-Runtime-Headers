@@ -1,0 +1,4 @@
+
+@protocol MTStateMachineEventHandler <NSObject>
+
+@end

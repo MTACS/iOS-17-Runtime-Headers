@@ -1,0 +1,4 @@
+
+@interface PKPaymentAugmentSessionResponse : PKPaymentAugmentBaseResponse
+
+@end

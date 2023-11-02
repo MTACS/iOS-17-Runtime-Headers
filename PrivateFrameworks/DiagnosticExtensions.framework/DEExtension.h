@@ -1,0 +1,80 @@
+
+@interface DEExtension : NSObject {
+    bool  _adoptsExtensionTrackerFlow;
+    bool  _allowUserAttachmentSelection;
+    NSString * _attachmentsName;
+    NSNumber * _cachedRequiresDataClassBAccessToRun;
+    long long  _callCount;
+    DEExtensionHostContext * _context;
+    NSMutableArray * _contextFetchHandlers;
+    NSExtension * _extension;
+    NSString * _identifier;
+    bool  _isFetchingExtensionHostContext;
+    NSString * _loggingConsent;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+}
+
+@property bool adoptsExtensionTrackerFlow;
+@property (nonatomic) bool allowUserAttachmentSelection;
+@property (nonatomic, retain) NSString *attachmentsName;
+@property (retain) NSNumber *cachedRequiresDataClassBAccessToRun;
+@property long long callCount;
+@property (retain) DEExtensionHostContext *context;
+@property (retain) NSMutableArray *contextFetchHandlers;
+@property (nonatomic, retain) NSExtension *extension;
+@property (nonatomic, retain) NSString *identifier;
+@property bool isFetchingExtensionHostContext;
+@property (nonatomic, readonly) bool isLoggingEnabled;
+@property (nonatomic, retain) NSString *loggingConsent;
+@property (readonly) NSObject<OS_dispatch_queue> *serialQueue;
+
+- (void).cxx_destruct;
+- (id)_fileContentsFromPlistWithKey:(id)arg1 localization:(id)arg2;
+- (void)accessBundleWithSynchronousHandler:(id /* block */)arg1;
+- (bool)adoptsExtensionTrackerFlow;
+- (bool)allowUserAttachmentSelection;
+- (void)attachmentListWithHandler:(id /* block */)arg1;
+- (void)attachmentsForParameters:(id)arg1 andHandler:(id /* block */)arg2;
+- (void)attachmentsForParameters:(id)arg1 withProgressHandler:(id /* block */)arg2 andHandler:(id /* block */)arg3;
+- (id)attachmentsName;
+- (id)cachedRequiresDataClassBAccessToRun;
+- (long long)callCount;
+- (bool)checkAndTeardown;
+- (id)context;
+- (id)contextFetchHandlers;
+- (void)createExtensionHostContextCompletion:(id /* block */)arg1;
+- (void)dealloc;
+- (id)description;
+- (void)endUsingExtension;
+- (id)extension;
+- (Class)extensionTrackerClass;
+- (id)identifier;
+- (id)initWithNSExtension:(id)arg1;
+- (void)installLoggingProfileWithSessionID:(id)arg1;
+- (bool)isFetchingExtensionHostContext;
+- (bool)isLoggingEnabled;
+- (id)localizedConsentTextWithLocalization:(id)arg1;
+- (id)localizedDataCollectedExplanationWithLocalization:(id)arg1;
+- (id)localizedDataCollectedSummaryWithLocalization:(id)arg1;
+- (id)loggingConsent;
+- (id)loggingProfileURLsFromExtension;
+- (void)performWithHostContext:(id /* block */)arg1;
+- (void)removeLoggingProfileWithSessionID:(id)arg1;
+- (bool)requiresDataClassBAccessToRun;
+- (id)serialQueue;
+- (void)setAdoptsExtensionTrackerFlow:(bool)arg1;
+- (void)setAllowUserAttachmentSelection:(bool)arg1;
+- (void)setAttachmentsName:(id)arg1;
+- (void)setCachedRequiresDataClassBAccessToRun:(id)arg1;
+- (void)setCallCount:(long long)arg1;
+- (void)setContext:(id)arg1;
+- (void)setContextFetchHandlers:(id)arg1;
+- (void)setExtension:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setIsFetchingExtensionHostContext:(bool)arg1;
+- (void)setLoggingConsent:(id)arg1;
+- (void)setupWithParameters:(id)arg1 session:(id)arg2;
+- (void)setupWithParameters:(id)arg1 session:(id)arg2 expirationDate:(id)arg3;
+- (void)teardownWithParameters:(id)arg1 session:(id)arg2;
+
+@end

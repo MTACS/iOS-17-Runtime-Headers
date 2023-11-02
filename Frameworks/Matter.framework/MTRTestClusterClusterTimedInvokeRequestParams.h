@@ -1,0 +1,4 @@
+
+@interface MTRTestClusterClusterTimedInvokeRequestParams : MTRUnitTestingClusterTimedInvokeRequestParams
+
+@end

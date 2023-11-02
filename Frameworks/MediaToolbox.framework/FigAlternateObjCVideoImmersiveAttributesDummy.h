@@ -1,0 +1,4 @@
+
+@interface FigAlternateObjCVideoImmersiveAttributesDummy : FigAlternateObjCVideoImmersiveAttributes
+
+@end

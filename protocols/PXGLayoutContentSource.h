@@ -1,0 +1,4 @@
+
+@protocol PXGLayoutContentSource <NSObject>
+
+@end

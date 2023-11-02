@@ -1,0 +1,4 @@
+
+@interface TRIFBCloudKitAssetRecordAssetChanges : NSObject
+
+@end

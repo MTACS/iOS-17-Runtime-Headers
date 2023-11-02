@@ -1,0 +1,93 @@
+
+@interface HUHeadphoneLevelController : NSObject <ADAMAudioDataReceiverDelegate, AXIDSServicesClient> {
+    AXDispatchTimer * _adamSuspendedTimer;
+    NSMutableArray * _automationSampleData;
+    NSObject<OS_dispatch_queue> * _dataQueue;
+    float  _fastLeq;
+    NSObject<OS_dispatch_queue> * _idsQueue;
+    bool  _isConnectedToIDS;
+    bool  _measurementEnabled;
+    ADAMAudioDataReceiver * _receiver;
+    bool  _shouldStreamingDataToGizmo;
+    float  _slowLeq;
+    unsigned long long  _streamingDataToGizmoType;
+    unsigned long long  _streamingToGizmoAudioLevel;
+    unsigned long long  _thresholdLevel;
+}
+
+@property (nonatomic, retain) AXDispatchTimer *adamSuspendedTimer;
+@property (nonatomic, retain) NSMutableArray *automationSampleData;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dataQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float fastLeq;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *idsQueue;
+@property (nonatomic) bool isConnectedToIDS;
+@property (getter=isMeasurementEnabled, nonatomic) bool measurementEnabled;
+@property (nonatomic, retain) ADAMAudioDataReceiver *receiver;
+@property (nonatomic) bool shouldStreamingDataToGizmo;
+@property (nonatomic) float slowLeq;
+@property (nonatomic) unsigned long long streamingDataToGizmoType;
+@property (nonatomic) unsigned long long streamingToGizmoAudioLevel;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long thresholdLevel;
+
++ (id)sharedController;
+
+- (void).cxx_destruct;
+- (unsigned long long)_audioLevelFromAudioDict:(id)arg1;
+- (void)_automationPlaySampleData;
+- (void)_automationStartPlayingSampleData:(id)arg1;
+- (void)_mediaPlaybackDidChange:(id)arg1;
+- (void)_publishAudioDataIDSMessage:(id)arg1;
+- (void)_publishRequestAudioDataIDSMessage:(id)arg1;
+- (id)_pushPayload;
+- (void)_pushValues:(id)arg1 identifier:(unsigned long long)arg2;
+- (void)_registerMediaNotification;
+- (id)_sendIDSRequestToCompanion:(id)arg1 messageIdentifier:(unsigned long long)arg2;
+- (void)_startIDSConnection;
+- (void)_startRecevingADAMAudioSample:(bool)arg1;
+- (void)_stopIDSConnection;
+- (void)_unregisterMediaNotification;
+- (id)adamSuspendedTimer;
+- (id)automationSampleData;
+- (void)connectedDevicesDidChange:(id)arg1;
+- (id)dataQueue;
+- (void)dealloc;
+- (void)didReceiveIncomingData:(id)arg1;
+- (float)fastLeq;
+- (id)idsQueue;
+- (id)init;
+- (bool)isConnectedToIDS;
+- (bool)isMeasurementEnabled;
+- (void)pushValuesToLocalOrIDSListeners;
+- (void)pushValuesToRemoteChangeListeners;
+- (void)pushValuesToRemoteListeners;
+- (void)receiveAudioSample:(id)arg1;
+- (id)receiver;
+- (id)registerForHeadphoneLevelUpdates:(id)arg1;
+- (id)registerForRemoteHeadphoneLevelChangesUpdates:(id)arg1;
+- (id)registerForRemoteHeadphoneLevelUpdates:(id)arg1;
+- (void)restartADAMTimer;
+- (void)serverConnectionWasInterrupted;
+- (void)setAdamSuspendedTimer:(id)arg1;
+- (void)setAutomationSampleData:(id)arg1;
+- (void)setDataQueue:(id)arg1;
+- (void)setFastLeq:(float)arg1;
+- (void)setIdsQueue:(id)arg1;
+- (void)setIsConnectedToIDS:(bool)arg1;
+- (void)setMeasurementEnabled:(bool)arg1;
+- (void)setReceiver:(id)arg1;
+- (void)setShouldStreamingDataToGizmo:(bool)arg1;
+- (void)setSlowLeq:(float)arg1;
+- (void)setStreamingDataToGizmoType:(unsigned long long)arg1;
+- (void)setStreamingToGizmoAudioLevel:(unsigned long long)arg1;
+- (void)setThresholdLevel:(unsigned long long)arg1;
+- (bool)shouldStreamingDataToGizmo;
+- (float)slowLeq;
+- (unsigned long long)streamingDataToGizmoType;
+- (unsigned long long)streamingToGizmoAudioLevel;
+- (unsigned long long)thresholdLevel;
+
+@end

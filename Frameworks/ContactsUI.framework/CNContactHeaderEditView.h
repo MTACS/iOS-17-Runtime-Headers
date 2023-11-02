@@ -1,0 +1,107 @@
+
+@interface CNContactHeaderEditView : CNContactHeaderView <CNSNaPSetupFlowManagerDelegate, SBSRemoteAlertHandleObserver> {
+    bool  _allowsEditPhoto;
+    _TtC10ContactsUI37CNAvatarPosterPairCollectionPreWarmer * _carouselPreWarmer;
+    UIButton * _editButton;
+    _TtC10ContactsUI32CNHostingPosterSnapshotImageView * _editingPosterView;
+    CNMutableContact * _editingWallpaperContact;
+    CNSNaPSetupFlowManager * _flowManager;
+    bool  _isOutOfProcess;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxButtonSize;
+    bool  _needsPosterCarouselPreWarming;
+    SBSRemoteAlertHandle * _remoteAlertHandle;
+}
+
+@property (nonatomic) bool allowsEditPhoto;
+@property (nonatomic, retain) _TtC10ContactsUI37CNAvatarPosterPairCollectionPreWarmer *carouselPreWarmer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIButton *editButton;
+@property (nonatomic, retain) _TtC10ContactsUI32CNHostingPosterSnapshotImageView *editingPosterView;
+@property (nonatomic, retain) CNMutableContact *editingWallpaperContact;
+@property (nonatomic, retain) CNSNaPSetupFlowManager *flowManager;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isOutOfProcess;
+@property (nonatomic) struct CGSize { double x1; double x2; } maxButtonSize;
+@property (nonatomic, retain) SBSRemoteAlertHandle *remoteAlertHandle;
+@property (readonly) Class superclass;
+
++ (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(bool)arg2 monogramOnly:(bool)arg3 isOutOfProcess:(bool)arg4 delegate:(id)arg5;
++ (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(bool)arg2 showingNavBar:(bool)arg3 monogramOnly:(bool)arg4 isOutOfProcess:(bool)arg5 delegate:(id)arg6;
++ (id)makePhotoViewWithShouldAllowTakePhotoAction:(bool)arg1 shouldAllowImageDrops:(bool)arg2 monogramOnly:(bool)arg3;
++ (id)sizeAttributesShowingNavBar:(bool)arg1;
+
+- (void).cxx_destruct;
+- (void)_presentRemotePosterAndAvatarEditorWithMode:(long long)arg1;
+- (bool)allowsEditPhoto;
+- (void)avatarPosterEditorFromFlowManager:(id)arg1 didUpdateContact:(id)arg2 withVisualIdentity:(id)arg3;
+- (void)avatarPosterEditorFromFlowManagerDidCancel:(id)arg1;
+- (void)calculateLabelSizesIfNeeded;
+- (id)carouselPreWarmer;
+- (double)defaultMaxHeight;
+- (void)didFinishUsing;
+- (void)didTapPhotoView;
+- (void)editAvatar;
+- (id)editButton;
+- (void)editButtonTapped;
+- (void)editPoster;
+- (id)editingPosterView;
+- (id)editingWallpaperContact;
+- (id)flowManager;
+- (bool)hasPhoto;
+- (bool)hasWallpaper;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 shouldAllowTakePhotoAction:(bool)arg3 delegate:(id)arg4 showingNavBar:(bool)arg5 monogramOnly:(bool)arg6 isOutOfProcess:(bool)arg7;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 shouldAllowTakePhotoAction:(bool)arg3 showingNavBar:(bool)arg4 monogramOnly:(bool)arg5 isOutOfProcess:(bool)arg6 delegate:(id)arg7;
+- (bool)isOutOfProcess;
+- (void)layoutSubviews;
+- (struct CGSize { double x1; double x2; })maxButtonSize;
+- (double)maxHeight;
+- (double)minHeight;
+- (id)mutableContact;
+- (bool)photoIsModified;
+- (id)posterPlaceholderImage;
+- (void)preWarmPosterAndAvatarEditor;
+- (void)presentAvatarPickerWithImageData:(id)arg1;
+- (void)presentPosterAndAvatarEditorWithMode:(long long)arg1;
+- (void)reloadDataPreservingChanges:(bool)arg1;
+- (id)remoteAlertHandle;
+- (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
+- (void)remoteAlertHandleDidActivate:(id)arg1;
+- (void)remoteAlertHandleDidDeactivate:(id)arg1;
+- (void)saveContactPhoto;
+- (void)setAllowsEditPhoto:(bool)arg1;
+- (void)setAllowsEditPhoto:(bool)arg1 preservingChanges:(bool)arg2;
+- (void)setCarouselPreWarmer:(id)arg1;
+- (void)setEditButton:(id)arg1;
+- (void)setEditingPosterView:(id)arg1;
+- (void)setEditingWallpaperContact:(id)arg1;
+- (void)setFlowManager:(id)arg1;
+- (void)setIsOutOfProcess:(bool)arg1;
+- (void)setMaxButtonSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPresenterDelegate:(id)arg1;
+- (void)setRemoteAlertHandle:(id)arg1;
+- (void)setUpEditButton;
+- (void)setUpPosterView;
+- (bool)shouldShowPoster;
+- (bool)shouldUseStaticHeader;
+- (double)staticEditingHeaderHeight;
+- (double)staticHeaderPhotoAvatarAndPosterTopMargin;
+- (double)staticHeaderPhotoAvatarOnlyTopMargin;
+- (double)staticHeaderPhotoHeight;
+- (double)staticHeaderPhotoTopMargin;
+- (double)staticHeaderPhotoTopMarginOffset;
+- (void)updateConstraints;
+- (void)updateContactWithEditedPropertyItem:(id)arg1;
+- (void)updateEditButtonTitle;
+- (void)updateFontSizes;
+- (void)updatePendingWallpaperContactWithEditedPropertyItem:(id)arg1;
+- (void)updatePosterViewImage;
+- (void)updatePosterVisibility;
+- (void)updateSizeDependentAttributes;
+- (void)updateWithContacts:(id)arg1;
+- (bool)wallpaperIsModified;
+
+@end

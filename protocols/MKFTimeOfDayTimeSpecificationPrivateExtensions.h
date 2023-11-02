@@ -1,0 +1,4 @@
+
+@protocol MKFTimeOfDayTimeSpecificationPrivateExtensions
+
+@end

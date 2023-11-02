@@ -1,0 +1,4 @@
+
+@interface WidgetKit.RectangularClockComplicationFontDefinition : WidgetKit.DefaultClockComplicationFontDefinition
+
+@end

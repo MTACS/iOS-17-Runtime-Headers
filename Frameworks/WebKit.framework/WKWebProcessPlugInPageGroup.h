@@ -1,0 +1,4 @@
+
+@interface WKWebProcessPlugInPageGroup : NSObject
+
+@end

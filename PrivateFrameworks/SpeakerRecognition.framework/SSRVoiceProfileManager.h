@@ -1,0 +1,98 @@
+
+@interface SSRVoiceProfileManager : NSObject {
+    unsigned long long  _currentDeviceCategory;
+    NSUUID * _endpointUUID;
+    NSObject<OS_dispatch_queue> * _queue;
+    SSRRemoteControlClient * _remoteControlClient;
+}
+
+@property (nonatomic) unsigned long long currentDeviceCategory;
+@property (nonatomic, retain) NSUUID *endpointUUID;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) SSRRemoteControlClient *remoteControlClient;
+
++ (id)sharedInstance;
++ (id)sharedInstanceWithEndpointId:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)SSRBasePathForAppDomain:(id)arg1;
+- (id)SSRSpeakerProfilesBasePath;
+- (id)_CSSATCachePath;
+- (id)_CSSATCachePathForAppDomain:(id)arg1;
+- (id)_CSSATDownloadPath;
+- (id)_CSSATLegacyUploadPath;
+- (id)_CSSATUploadPathForSiriProfileId:(id)arg1;
+- (bool)_checkIfDownloadRequiredForProfileId:(id)arg1;
+- (void)_copyExplicitEnrollmentFilesFromPath:(id)arg1 toPath:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)_copyVoiceProfileAtPath:(id)arg1 toPath:(id)arg2;
+- (id)_downloadAndEnrollVoiceProfileForProfileId:(id)arg1 withDownloadTriggerBlock:(id /* block */)arg2;
+- (void)_downloadVoiceProfileForProfileId:(id)arg1 forDeviceCategory:(unsigned long long)arg2 withDownloadTriggerBlock:(id /* block */)arg3 withCompletion:(id /* block */)arg4;
+- (id)_enableVoiceTriggerIfLanguageMatches:(id)arg1;
+- (id)_enrollVoiceProfileForSiriProfileId:(id)arg1 fromCacheDirectoryPath:(id)arg2 withCategoryType:(unsigned long long)arg3;
+- (id)_getUserVoiceProfileDownloadCacheDirectoryForProfileId:(id)arg1 forDeviceCategory:(unsigned long long)arg2 forVoiceProfileVersion:(unsigned long long)arg3;
+- (id)_getUserVoiceProfileDownloadCacheDirectoryWithUpdatePath:(id)arg1;
+- (id)_getVoiceProfilePathsToBeUploadedForSiriProfileId:(id)arg1;
+- (id)_getVoiceProfilesForSiriProfileId:(id)arg1 withLanguageCode:(id)arg2;
+- (bool)_isDirectory:(id)arg1;
+- (bool)_isLegacyEnrollmentMarkedWith:(id)arg1 forLanguageCode:(id)arg2;
+- (bool)_isMarkedForVoiceProfileTrainingSyncForLanguage:(id)arg1;
+- (bool)_isRemoteVoiceTriggerAvailable;
+- (void)_markVoiceProfileTrainingSyncForLanguage:(id)arg1;
+- (id)_prepareVoiceProfileWithSiriProfileId:(id)arg1 withUploadBlock:(id /* block */)arg2;
+- (void)addUtterances:(id)arg1 toProfile:(id)arg2 withContext:(id)arg3 withCompletion:(id /* block */)arg4;
+- (id)baseDir;
+- (void)cleanupVoiceProfileModelFilesForLocale:(id)arg1 withAsset:(id)arg2;
+- (unsigned long long)currentDeviceCategory;
+- (void)deleteAllVoiceProfilesForAppDomain:(id)arg1;
+- (id)deleteUserVoiceProfile:(id)arg1;
+- (id)devicesWithVoiceProfileIniCloudForLanguage:(id)arg1;
+- (void)discardSiriEnrollmentForLanguageCode:(id)arg1;
+- (id)discardSiriEnrollmentForProfileId:(id)arg1 forLanguageCode:(id)arg2;
+- (void)enableVoiceTriggerUponVoiceProfileSyncForLanguage:(id)arg1;
+- (id)endpointUUID;
+- (id)getCacheDirectoryForAppDomain:(id)arg1;
+- (id)getCachedVoiceProfileAvailabilityMetaBlob;
+- (id)getSATEnrollmentPath;
+- (id)getUserVoiceProfileUpdateDirectory;
+- (id)getUserVoiceProfileUploadPathWithEnrolledLanguageList:(id*)arg1;
+- (id)getVoiceProfileAnalyticsForAppDomain:(id)arg1 withLocale:(id)arg2;
+- (bool)hasVoiceProfileIniCloudForLanguageCode:(id)arg1;
+- (bool)hasVoiceProfileIniCloudForLanguageCode:(id)arg1 withBackupMetaBlob:(id)arg2;
+- (void)importVoiceProfile:(id)arg1 appDomain:(id)arg2 withSharedUserId:(id)arg3 withLocale:(id)arg4 withAsset:(id)arg5 withCompletion:(id /* block */)arg6;
+- (id)init;
+- (id)initWithEndpointId:(id)arg1;
+- (void)isImplicitTrainingRequiredForVoiceProfileId:(id)arg1 locale:(id)arg2 completion:(id /* block */)arg3;
+- (bool)isSATEnrolledForSiriProfileId:(id)arg1 forLanguageCode:(id)arg2;
+- (void)isSATEnrolledForSiriProfileId:(id)arg1 forLanguageCode:(id)arg2 completion:(id /* block */)arg3;
+- (bool)isSATEnrollmentMigratedForSiriProfileId:(id)arg1 forLanguageCode:(id)arg2;
+- (bool)isSpeakerRecognitionAvailable;
+- (void)isVoiceProfileUploadedToiCloudForLanguageCode:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (id)markSATEnrollmentSuccessForVoiceProfile:(id)arg1;
+- (void)migrateTDVoiceProfilesToTDTI;
+- (id)modelDirectoryPathForProfile:(id)arg1;
+- (id)newVoiceProfileWithLocale:(id)arg1 withAppDomain:(id)arg2;
+- (void)notifyImplicitTrainingUtteranceAvailable:(id)arg1 forVoiceProfileId:(id)arg2 withRecordDeviceInfo:(id)arg3 withRecordCtxt:(id)arg4 withVoiceTriggerCtxt:(id)arg5 withOtherCtxt:(id)arg6 assetToUse:(id)arg7 withCompletion:(id /* block */)arg8;
+- (void)notifyUserVoiceProfileDownloadReadyForUser:(id)arg1 getData:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)notifyUserVoiceProfileUpdateReady;
+- (void)notifyUserVoiceProfileUploadComplete;
+- (void)notifyUserVoiceProfileUploadCompleteForSiriProfileId:(id)arg1 withError:(id)arg2;
+- (id)provisionedVoiceProfilesForAppDomain:(id)arg1 withLocale:(id)arg2;
+- (id)provisionedVoiceProfilesForLocale:(id)arg1;
+- (void)pruneImplicitUtterancesOfProfile:(id)arg1 withAsset:(id)arg2;
+- (id)queue;
+- (id)remoteControlClient;
+- (void)setCurrentDeviceCategory:(unsigned long long)arg1;
+- (void)setEndpointUUID:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setRemoteControlClient:(id)arg1;
+- (void)triggerInvalidSiriProfileCleanupFromPersonalDevicesForLanguage:(id)arg1 appDomain:(id)arg2;
+- (void)triggerRetrainingVoiceProfile:(id)arg1 withContext:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)triggerVoiceProfileCleanupWithCompletion:(id /* block */)arg1;
+- (void)triggerVoiceProfileDownload;
+- (bool)triggerVoiceProfileDuplicatesCleanup;
+- (void)triggerVoiceProfileMigrationWithCompletion:(id /* block */)arg1;
+- (id)updateVoiceProfile:(id)arg1 withUserName:(id)arg2;
+- (void)uploadUserVoiceProfileForSiriProfileId:(id)arg1 withUploadTrigger:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (id)voiceProfileForId:(id)arg1;
+
+@end

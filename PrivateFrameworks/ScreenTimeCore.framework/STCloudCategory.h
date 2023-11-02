@@ -1,0 +1,4 @@
+
+@interface STCloudCategory : NSManagedObject
+
+@end

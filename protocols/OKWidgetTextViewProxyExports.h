@@ -1,0 +1,4 @@
+
+@protocol OKWidgetTextViewProxyExports <JSExport>
+
+@end

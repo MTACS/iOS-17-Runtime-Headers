@@ -1,0 +1,114 @@
+
+@interface GEOPDSearchSpellerRequest : PBCodable <NSCopying> {
+    GEOPDSearchKeyValuePairList * _abConfigParams;
+    struct { 
+        unsigned int has_requestFlags : 1; 
+        unsigned int has_maxSuggestions : 1; 
+        unsigned int has_queryType : 1; 
+        unsigned int has_performCompletion : 1; 
+        unsigned int has_useCache : 1; 
+        unsigned int read_abConfigParams : 1; 
+        unsigned int read_languageContext : 1; 
+        unsigned int read_locationContext : 1; 
+        unsigned int read_query : 1; 
+        unsigned int read_tokenTags : 1; 
+        unsigned int wrote_anyField : 1; 
+    }  _flags;
+    GEOPDSearchLanguageContext * _languageContext;
+    GEOPDSearchLocationContext * _locationContext;
+    unsigned int  _maxSuggestions;
+    bool  _performCompletion;
+    NSString * _query;
+    int  _queryType;
+    PBDataReader * _reader;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _readerLock;
+    unsigned int  _readerMarkLength;
+    unsigned int  _readerMarkPos;
+    int  _requestFlags;
+    GEOPDSearchKeyValuePairList * _tokenTags;
+    bool  _useCache;
+}
+
+@property (nonatomic, retain) GEOPDSearchKeyValuePairList *abConfigParams;
+@property (nonatomic, readonly) bool hasAbConfigParams;
+@property (nonatomic, readonly) bool hasLanguageContext;
+@property (nonatomic, readonly) bool hasLocationContext;
+@property (nonatomic) bool hasMaxSuggestions;
+@property (nonatomic) bool hasPerformCompletion;
+@property (nonatomic, readonly) bool hasQuery;
+@property (nonatomic) bool hasQueryType;
+@property (nonatomic) bool hasRequestFlags;
+@property (nonatomic, readonly) bool hasTokenTags;
+@property (nonatomic) bool hasUseCache;
+@property (nonatomic, retain) GEOPDSearchLanguageContext *languageContext;
+@property (nonatomic, retain) GEOPDSearchLocationContext *locationContext;
+@property (nonatomic) unsigned int maxSuggestions;
+@property (nonatomic) bool performCompletion;
+@property (nonatomic, retain) NSString *query;
+@property (nonatomic) int queryType;
+@property (nonatomic) int requestFlags;
+@property (nonatomic, retain) GEOPDSearchKeyValuePairList *tokenTags;
+@property (nonatomic) bool useCache;
+
++ (bool)isValid:(id)arg1;
+
+- (void).cxx_destruct;
+- (int)StringAsQueryType:(id)arg1;
+- (int)StringAsRequestFlags:(id)arg1;
+- (id)abConfigParams;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasAbConfigParams;
+- (bool)hasGreenTeaWithValue:(bool)arg1;
+- (bool)hasLanguageContext;
+- (bool)hasLocationContext;
+- (bool)hasMaxSuggestions;
+- (bool)hasPerformCompletion;
+- (bool)hasQuery;
+- (bool)hasQueryType;
+- (bool)hasRequestFlags;
+- (bool)hasTokenTags;
+- (bool)hasUseCache;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithData:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonRepresentation;
+- (id)languageContext;
+- (id)locationContext;
+- (unsigned int)maxSuggestions;
+- (void)mergeFrom:(id)arg1;
+- (bool)performCompletion;
+- (id)query;
+- (int)queryType;
+- (id)queryTypeAsString:(int)arg1;
+- (void)readAll:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (int)requestFlags;
+- (id)requestFlagsAsString:(int)arg1;
+- (void)setAbConfigParams:(id)arg1;
+- (void)setHasMaxSuggestions:(bool)arg1;
+- (void)setHasPerformCompletion:(bool)arg1;
+- (void)setHasQueryType:(bool)arg1;
+- (void)setHasRequestFlags:(bool)arg1;
+- (void)setHasUseCache:(bool)arg1;
+- (void)setLanguageContext:(id)arg1;
+- (void)setLocationContext:(id)arg1;
+- (void)setMaxSuggestions:(unsigned int)arg1;
+- (void)setPerformCompletion:(bool)arg1;
+- (void)setQuery:(id)arg1;
+- (void)setQueryType:(int)arg1;
+- (void)setRequestFlags:(int)arg1;
+- (void)setTokenTags:(id)arg1;
+- (void)setUseCache:(bool)arg1;
+- (id)tokenTags;
+- (bool)useCache;
+- (void)writeTo:(id)arg1;
+
+@end

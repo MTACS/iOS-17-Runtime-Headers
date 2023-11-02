@@ -1,0 +1,82 @@
+
+@interface MPModelLibraryPlaylistEditController : NSObject <MPSectionedIdentifierListAnnotationDelegate, MPSectionedIdentifierListDelegate> {
+    bool  _addInsertedTracksToLibrary;
+    NSString * _coverArtworkRecipe;
+    NSNumber * _curatorPlaylist;
+    NSMutableDictionary * _dataSources;
+    MPSectionedCollection * _initialTrackList;
+    MPMediaLibrary * _library;
+    NSString * _newDescriptionText;
+    NSString * _newName;
+    MPModelPlaylist * _newParentPlaylist;
+    UIImage * _newUserImage;
+    NSOperationQueue * _operationQueue;
+    MPModelPlaylist * _playlist;
+    MPPropertySet * _playlistEntryProperties;
+    NSNumber * _publicPlaylist;
+    MPSectionedIdentifierList * _trackIdentifierList;
+    NSNumber * _visiblePlaylist;
+}
+
+@property (nonatomic) bool addInsertedTracksToLibrary;
+@property (nonatomic, copy) NSString *coverArtworkRecipe;
+@property (getter=isCuratorPlaylist, nonatomic, copy) NSNumber *curatorPlaylist;
+@property (nonatomic, readonly, copy) MPSectionedCollection *currentTrackList;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *descriptionText;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) MPModelPlaylist *parentPlaylist;
+@property (getter=isPublicPlaylist, nonatomic, copy) NSNumber *publicPlaylist;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIImage *userImage;
+@property (getter=isVisiblePlaylist, nonatomic, copy) NSNumber *visiblePlaylist;
+
+- (void).cxx_destruct;
+- (void)_createTrackIdentifierListWithInitialEntries:(id)arg1 completion:(id /* block */)arg2;
+- (id)_defaultPlaylistEntryPropertySet;
+- (id)_initWithLibrary:(id)arg1 playlist:(id)arg2 playlistEntryProperties:(id)arg3;
+- (id)_itemIdentifierForIndexPath:(id)arg1 usingExclusiveAccessToken:(id)arg2;
+- (id)_newDataSourceForModelObject:(id)arg1;
+- (void)_resolveTrackListWithCompletion:(id /* block */)arg1;
+- (id)_sectionIdentifierForItemIdentifier:(id)arg1;
+- (bool)addInsertedTracksToLibrary;
+- (void)appendItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)beginEditingWithCompletion:(id /* block */)arg1;
+- (void)commitWithCompletion:(id /* block */)arg1;
+- (id)coverArtworkRecipe;
+- (id)currentTrackList;
+- (id)debugDescriptionForItem:(id)arg1 inSection:(id)arg2;
+- (id)descriptionText;
+- (id)initWithLibrary:(id)arg1;
+- (id)initWithLibrary:(id)arg1 playlist:(id)arg2;
+- (id)initWithLibrary:(id)arg1 playlist:(id)arg2 initialTrackList:(id)arg3 playlistEntryProperties:(id)arg4;
+- (id)initWithLibrary:(id)arg1 playlist:(id)arg2 playlistEntryProperties:(id)arg3;
+- (id)initWithLibrary:(id)arg1 playlistEntryProperties:(id)arg2;
+- (void)insertItem:(id)arg1 afterEntry:(id)arg2 completion:(id /* block */)arg3;
+- (void)insertItem:(id)arg1 atIndexPath:(id)arg2 completion:(id /* block */)arg3;
+- (void)insertItemAtStart:(id)arg1 completion:(id /* block */)arg2;
+- (id)isCuratorPlaylist;
+- (id)isPublicPlaylist;
+- (id)isVisiblePlaylist;
+- (void)moveEntry:(id)arg1 afterEntry:(id)arg2;
+- (void)moveEntryToStart:(id)arg1;
+- (void)moveItemFromIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (id)name;
+- (id)parentPlaylist;
+- (void)removeEntry:(id)arg1;
+- (void)removeItemAtIndexPath:(id)arg1;
+- (void)sectionedIdentifierList:(id)arg1 dataSourceDidChangeItems:(id)arg2 inSection:(id)arg3;
+- (void)setAddInsertedTracksToLibrary:(bool)arg1;
+- (void)setCoverArtworkRecipe:(id)arg1;
+- (void)setCuratorPlaylist:(id)arg1;
+- (void)setDescriptionText:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setParentPlaylist:(id)arg1;
+- (void)setPublicPlaylist:(id)arg1;
+- (void)setUserImage:(id)arg1;
+- (void)setVisiblePlaylist:(id)arg1;
+- (id)userImage;
+
+@end

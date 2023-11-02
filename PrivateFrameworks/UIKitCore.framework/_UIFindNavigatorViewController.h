@@ -1,0 +1,83 @@
+
+@interface _UIFindNavigatorViewController : UIInputViewController <UIPredictiveViewController, _UIFindNavigatorViewDelegate> {
+    long long  _assistantBarStyle;
+    NSArray * _extraKeyCommands;
+    _UIFindNavigatorView * _findNavigatorView;
+    <_UIFindNavigatorViewControllerDelegate> * _findNavigatorViewControllerDelegate;
+    UIFindSession * _findSession;
+    UITextSearchOptions * _lastSearchOptions;
+    NSString * _lastSearchQuery;
+    UIResponder * _parentResponder;
+    bool  _performingReplacement;
+    unsigned long long  _tintTechnique;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *displayedCandidates;
+@property (nonatomic, readonly) _UIFindNavigatorView *findNavigatorView;
+@property (nonatomic) <_UIFindNavigatorViewControllerDelegate> *findNavigatorViewControllerDelegate;
+@property (nonatomic, retain) UIFindSession *findSession;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hostedInKeyboard;
+@property (nonatomic) UIResponder *parentResponder;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long tintTechnique;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (id)_configuredSearchOptions;
+- (void)_didEnterReplacementString:(id)arg1;
+- (void)_didEnterSearchQuery:(id)arg1;
+- (bool)_dismissesKeyboardOnReturn;
+- (void)_finishSearchingOnResignIfNecessary;
+- (void)_handleDone:(id)arg1;
+- (void)_handleHighlightPreviousResult:(id)arg1;
+- (void)_handleInsertNewline:(id)arg1;
+- (void)_handleSearchReturn:(id)arg1;
+- (void)_performAutoSearch;
+- (void)_performSearchWithQuery:(id)arg1 options:(id)arg2;
+- (void)_recomputeConfiguredSearchOptions;
+- (void)_replaceFieldDidChange:(id)arg1;
+- (void)_searchTextFieldChanged:(id)arg1;
+- (void)_textViewDidChangeNotification:(id)arg1;
+- (void)_updateReplaceButtonEnabled;
+- (void)_updateResultsCount;
+- (void)_updateReturnKeyType;
+- (void)_windowDidChangeToFirstResponder:(id)arg1;
+- (bool)allowsCompactAssistantBar;
+- (void)buildMenuWithBuilder:(id)arg1;
+- (void)find:(id)arg1;
+- (void)findAndReplace:(id)arg1;
+- (void)findNavigator:(id)arg1 didChangeMode:(long long)arg2;
+- (void)findNavigator:(id)arg1 didInvokeNextResultInDirection:(long long)arg2;
+- (void)findNavigator:(id)arg1 didInvokeReplaceReplacingAll:(bool)arg2;
+- (void)findNavigatorDidInvalidateSearchSession:(id)arg1;
+- (bool)findNavigatorShouldShowReplacementOption:(id)arg1;
+- (id)findNavigatorView;
+- (id)findNavigatorViewControllerDelegate;
+- (void)findNext:(id)arg1;
+- (void)findPrevious:(id)arg1;
+- (id)findSession;
+- (bool)hostedInKeyboard;
+- (bool)isVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;
+- (id)keyCommands;
+- (void)loadView;
+- (id)nextResponder;
+- (id)parentFocusEnvironment;
+- (id)parentResponder;
+- (double)preferredHeightForTraitCollection:(id)arg1;
+- (double)preferredWidthForTraitCollection:(id)arg1;
+- (void)resignFirstResponderAndFinishSearching;
+- (void)setAssistantBarStyle:(long long)arg1;
+- (void)setFindNavigatorViewControllerDelegate:(id)arg1;
+- (void)setFindSession:(id)arg1;
+- (void)setParentResponder:(id)arg1;
+- (void)setTintTechnique:(unsigned long long)arg1;
+- (unsigned long long)tintTechnique;
+- (id)undoManager;
+- (void)updateViewForActiveFindSession;
+- (void)viewDidLoad;
+- (void)viewWillMoveToWindow:(id)arg1;
+
+@end

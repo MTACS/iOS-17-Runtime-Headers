@@ -1,0 +1,4 @@
+
+@protocol MXMProbeableDevice <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol PXCMMActionPerformerDelegate <PXActionPerformerDelegate>
+
+@end

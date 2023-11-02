@@ -1,0 +1,60 @@
+
+@interface CacheDeleteServiceListener : CacheDeleteListener <CacheDeleteServiceProtocol> {
+    bool  _anonymous;
+    id /* block */  _callback;
+    id /* block */  _cancel;
+    NSXPCListenerEndpoint * _endpoint;
+    bool  _legacyCallbacks;
+    id /* block */  _notify;
+    id /* block */  _periodic;
+    id /* block */  _purge;
+    id /* block */  _purgeable;
+    NSObject<OS_dispatch_queue> * _queue;
+    CacheDeleteServiceInfo * _serviceInfo;
+}
+
+@property (readonly) bool anonymous;
+@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, copy) id /* block */ cancel;
+@property (readonly) NSXPCListenerEndpoint *endpoint;
+@property (readonly) bool legacyCallbacks;
+@property (nonatomic, copy) id /* block */ notify;
+@property (nonatomic, copy) id /* block */ periodic;
+@property (nonatomic, copy) id /* block */ purge;
+@property (nonatomic, copy) id /* block */ purgeable;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) CacheDeleteServiceInfo *serviceInfo;
+
++ (id)cacheDeleteServiceListener:(id)arg1 options:(id)arg2;
+
+- (void).cxx_destruct;
+- (bool)anonymous;
+- (id /* block */)callback;
+- (id /* block */)cancel;
+- (id)endpoint;
+- (id)initWithName:(id)arg1 options:(id)arg2;
+- (bool)legacyCallbacks;
+- (id /* block */)notify;
+- (id /* block */)periodic;
+- (id /* block */)purge;
+- (id /* block */)purgeable;
+- (id)queue;
+- (void)serviceCallback:(id)arg1 replyBlock:(id /* block */)arg2;
+- (void)serviceCancelPurge:(id /* block */)arg1;
+- (id)serviceInfo;
+- (void)serviceNotify:(id)arg1 replyBlock:(id /* block */)arg2;
+- (void)servicePeriodic:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
+- (void)servicePing:(id /* block */)arg1;
+- (void)servicePurge:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
+- (void)servicePurgeable:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
+- (void)setCallback:(id /* block */)arg1;
+- (void)setCancel:(id /* block */)arg1;
+- (void)setNotify:(id /* block */)arg1;
+- (void)setNotifyCallback:(id /* block */)arg1;
+- (void)setPeriodic:(id /* block */)arg1;
+- (void)setPurge:(id /* block */)arg1;
+- (void)setPurgeable:(id /* block */)arg1;
+- (void)setPurgeable:(id /* block */)arg1 purge:(id /* block */)arg2 cancel:(id /* block */)arg3 periodic:(id /* block */)arg4 notify:(id /* block */)arg5 callback:(id /* block */)arg6 entitlements:(id)arg7;
+- (void)setQueue:(id)arg1;
+
+@end

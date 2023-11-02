@@ -1,0 +1,91 @@
+
+@interface MorphunAssets : NSObject {
+    UAFAssetSetObserver * _subscriptionAssetSetObserver;
+    NSMutableDictionary * readyLanguages;
+    NSUserDefaults * subscriptionCache;
+    NSString * subscriptionProcessKey;
+    NSMutableDictionary * subscriptionView;
+    NSLock * subscriptionViewLock;
+}
+
+@property (retain) NSMutableDictionary *readyLanguages;
+@property (nonatomic, retain) UAFAssetSetObserver *subscriptionAssetSetObserver;
+@property (nonatomic, retain) NSUserDefaults *subscriptionCache;
+@property (nonatomic, retain) NSString *subscriptionProcessKey;
+@property (nonatomic, retain) NSMutableDictionary *subscriptionView;
+@property (retain) NSLock *subscriptionViewLock;
+
++ (id)EmbeddedLanguages;
++ (id)EmbeddedLocales;
++ (id)EmbeddedVersion;
++ (void)MorphunAssetsLazyInitIfNeeded;
++ (id)MorphunDomain;
++ (id)SupportedLanguages;
++ (id)SupportedLocales;
++ (id)SupportedSiriLanguages;
++ (id)SupportedSiriLocales;
++ (id)assetPathDB;
++ (id)bcpStringForComponentArray:(id)arg1;
++ (id)bcpStringForLocale:(id)arg1;
++ (id)blockingOnDemandDownloadForLocale:(id)arg1 withTimeout:(unsigned long long)arg2 withProgress:(id /* block */)arg3;
++ (id)blockingRemoveAssetForLocale:(id)arg1 withTimeout:(unsigned long long)arg2;
++ (id)componentArrayForLocale:(id)arg1;
++ (long long)deliveryMethodForLocale:(id)arg1;
++ (id)get;
++ (id)getAssetPathForCurrentSiriLanguage;
++ (id)getAssetPathForLocale:(id)arg1;
++ (id)getAssetPathForLocale:(id)arg1 withError:(id*)arg2;
++ (long long)getCurrentNamespace;
++ (id)getCurrentNamespaceName;
++ (id)getFactorNameForLocale:(id)arg1;
++ (id)getFactorSuffixForLocale:(id)arg1;
++ (id)getTRINamespaceName;
++ (id)getUAFAssetForLocale:(id)arg1;
++ (id)getUAFAssetName;
++ (id)getUAFAssetSetForUsageValue:(id)arg1;
++ (id)getUAFAssetSetName;
++ (id)getUAFAssetSets;
++ (id)getUAFUsageType;
++ (id)getUAFUsageValueForLocale:(id)arg1;
++ (void)initForSiriX:(id /* block */)arg1;
++ (bool)isLanguageEmbedded:(id)arg1;
++ (bool)isLocaleDownloadSupported:(id)arg1;
++ (bool)isLocaleEmbedded:(id)arg1;
++ (void)observeUAFAssetSet;
++ (void)onDemandDownloadForLocale:(id)arg1 withProgress:(id /* block */)arg2 withCompletion:(id /* block */)arg3;
++ (void)removeAssetForLocale:(id)arg1 withCompletion:(id /* block */)arg2;
++ (void)setTrialNamespaceToUse:(long long)arg1;
++ (id)subscriptionDbInitializerWithKey:(id)arg1;
++ (id)uLocaleToNSLocale:(const void*)arg1;
++ (bool)validateLanguageCode:(id)arg1;
++ (id)validateLocale:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)downloadLocaleIfNeeded:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)getMorphunDataPathForLocale:(id)arg1;
+- (id)getMorphunDataPathForLocale:(id)arg1 withError:(id*)arg2;
+- (id)init;
+- (bool)isAssetReadyForLocale:(id)arg1;
+- (bool)isSubscribedToLocale:(id)arg1;
+- (id)listSubscriptions;
+- (id)processSubscriptions;
+- (void)readSubscriptionView;
+- (id)readyLanguages;
+- (id)referenceCountsFromSubscriptionView;
+- (void)removeLanguageIfNeeded:(id)arg1;
+- (void)setReadyLanguages:(id)arg1;
+- (void)setSubscriptionAssetSetObserver:(id)arg1;
+- (void)setSubscriptionCache:(id)arg1;
+- (void)setSubscriptionProcessKey:(id)arg1;
+- (void)setSubscriptionView:(id)arg1;
+- (void)setSubscriptionViewLock:(id)arg1;
+- (void)subscribeToLocale:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)subscriptionAssetSetObserver;
+- (id)subscriptionCache;
+- (id)subscriptionProcessKey;
+- (id)subscriptionView;
+- (id)subscriptionViewLock;
+- (void)unsubscribeFromLocale:(id)arg1;
+- (void)writeSubscriptionView;
+
+@end

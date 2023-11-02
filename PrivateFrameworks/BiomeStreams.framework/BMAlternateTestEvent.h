@@ -1,0 +1,27 @@
+
+@interface BMAlternateTestEvent : BMEventBase <BMStoreData, NSSecureCoding> {
+    struct { 
+        unsigned int dataVersion; 
+        unsigned int content; 
+    }  _data;
+}
+
+@property (nonatomic, readonly) unsigned int dataVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)eventWithData:(id)arg1 dataVersion:(unsigned int)arg2;
++ (bool)supportsSecureCoding;
+
+- (unsigned int)alternateContent;
+- (bool)checkAndReportDecodingFailureIfNeededForuint32_t:(unsigned int)arg1 key:(id)arg2 coder:(id)arg3 errorDomain:(id)arg4 errorCode:(long long)arg5;
+- (unsigned int)dataVersion;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithAlternateContent:(unsigned int)arg1 dataVersion:(unsigned int)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithData:(id)arg1 dataVersion:(unsigned int)arg2;
+- (id)serialize;
+
+@end

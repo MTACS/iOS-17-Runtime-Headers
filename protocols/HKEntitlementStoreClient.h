@@ -1,0 +1,4 @@
+
+@protocol HKEntitlementStoreClient <NSObject>
+
+@end

@@ -1,0 +1,50 @@
+
+@interface BKMatchOperation : BKOperation {
+    bool  _captureOnly;
+    NSData * _credentialSet;
+    long long  _priority;
+    long long  _purpose;
+    NSArray * _selectedIdentities;
+    bool  _stopOnSuccess;
+    long long  _useCase;
+    NSNumber * _userID;
+}
+
+@property (nonatomic) bool captureOnly;
+@property (nonatomic, copy) NSData *credentialSet;
+@property (nonatomic) <BKMatchOperationDelegate> *delegate;
+@property (nonatomic) long long priority;
+@property (nonatomic) long long purpose;
+@property (nonatomic, copy) NSArray *selectedIdentities;
+@property (nonatomic) bool stopOnSuccess;
+@property (nonatomic) long long useCase;
+@property (nonatomic, retain) NSNumber *userID;
+
+- (void).cxx_destruct;
+- (bool)captureOnly;
+- (id)credentialSet;
+- (void)dealloc;
+- (id)initWithDevice:(id)arg1;
+- (void)matchResult:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;
+- (id)matchResultInfoWithServerIdentity:(id)arg1 details:(id)arg2;
+- (void)operationInterrupted;
+- (id)optionsDictionaryWithError:(id*)arg1;
+- (long long)priority;
+- (void)processMatchFailReason:(long long)arg1;
+- (long long)purpose;
+- (id)selectedIdentities;
+- (void)setCaptureOnly:(bool)arg1;
+- (void)setCredentialSet:(id)arg1;
+- (void)setPriority:(long long)arg1;
+- (void)setPurpose:(long long)arg1;
+- (void)setSelectedIdentities:(id)arg1;
+- (void)setStopOnSuccess:(bool)arg1;
+- (void)setUseCase:(long long)arg1;
+- (void)setUserID:(id)arg1;
+- (void)startBioOperation:(bool)arg1 reply:(id /* block */)arg2;
+- (void)statusMessage:(unsigned int)arg1 client:(unsigned long long)arg2;
+- (bool)stopOnSuccess;
+- (long long)useCase;
+- (id)userID;
+
+@end

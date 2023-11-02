@@ -1,0 +1,4 @@
+
+@protocol SAClientStateServerBoundCommand <SAServerBoundCommand>
+
+@end

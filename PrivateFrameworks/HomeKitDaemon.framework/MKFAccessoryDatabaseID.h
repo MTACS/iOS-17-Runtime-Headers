@@ -1,0 +1,4 @@
+
+@interface MKFAccessoryDatabaseID : MKFModelDatabaseID
+
+@end

@@ -1,0 +1,4 @@
+
+@interface BRCZoneRowID : NSNumber
+
+@end

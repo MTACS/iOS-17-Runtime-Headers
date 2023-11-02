@@ -1,0 +1,93 @@
+
+@interface CLPInstSchemaCLPClientEvent : SISchemaTopLevelUnionType <SISchemaInnerEventContainer> {
+    CLPInstSchemaCLPCDMReplaySampleContext * _cdmReplaySampleContext;
+    CLPInstSchemaCLPCDMReplayTaskContext * _cdmReplayTaskContext;
+    CLPInstSchemaCLPCurareAppIntentSampleClassificationContext * _curareAppIntentSampleClassificationContext;
+    CLPInstSchemaCLPCurareAppIntentTaskClassificationContext * _curareAppIntentTaskClassificationContext;
+    CLPInstSchemaCLPClientEventMetadata * _eventMetadata;
+    bool  _hasCdmReplaySampleContext;
+    bool  _hasCdmReplayTaskContext;
+    bool  _hasCurareAppIntentSampleClassificationContext;
+    bool  _hasCurareAppIntentTaskClassificationContext;
+    bool  _hasEventMetadata;
+    bool  _hasNlv4SampleEvaluationContext;
+    bool  _hasNlv4TaskEvaluationContext;
+    CLPInstSchemaCLPNLv4SampleEvaluationContext * _nlv4SampleEvaluationContext;
+    CLPInstSchemaCLPNLv4TaskEvaluationContext * _nlv4TaskEvaluationContext;
+    unsigned long long  _whichEvent_Type;
+}
+
+@property (nonatomic, retain) CLPInstSchemaCLPCDMReplaySampleContext *cdmReplaySampleContext;
+@property (nonatomic, retain) CLPInstSchemaCLPCDMReplayTaskContext *cdmReplayTaskContext;
+@property (nonatomic, retain) CLPInstSchemaCLPCurareAppIntentSampleClassificationContext *curareAppIntentSampleClassificationContext;
+@property (nonatomic, retain) CLPInstSchemaCLPCurareAppIntentTaskClassificationContext *curareAppIntentTaskClassificationContext;
+@property (nonatomic, retain) CLPInstSchemaCLPClientEventMetadata *eventMetadata;
+@property (nonatomic) bool hasCdmReplaySampleContext;
+@property (nonatomic) bool hasCdmReplayTaskContext;
+@property (nonatomic) bool hasCurareAppIntentSampleClassificationContext;
+@property (nonatomic) bool hasCurareAppIntentTaskClassificationContext;
+@property (nonatomic) bool hasEventMetadata;
+@property (nonatomic) bool hasNlv4SampleEvaluationContext;
+@property (nonatomic) bool hasNlv4TaskEvaluationContext;
+@property (nonatomic, readonly) SISchemaInstrumentationMessage *innerEvent;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, retain) CLPInstSchemaCLPNLv4SampleEvaluationContext *nlv4SampleEvaluationContext;
+@property (nonatomic, retain) CLPInstSchemaCLPNLv4TaskEvaluationContext *nlv4TaskEvaluationContext;
+@property (nonatomic, readonly) unsigned long long whichEvent_Type;
+
++ (int)joinability;
+
+- (void).cxx_destruct;
+- (id)applySensitiveConditionsPolicy:(id)arg1;
+- (id)cdmReplaySampleContext;
+- (id)cdmReplayTaskContext;
+- (int)componentName;
+- (id)curareAppIntentSampleClassificationContext;
+- (id)curareAppIntentTaskClassificationContext;
+- (void)deleteCdmReplaySampleContext;
+- (void)deleteCdmReplayTaskContext;
+- (void)deleteCurareAppIntentSampleClassificationContext;
+- (void)deleteCurareAppIntentTaskClassificationContext;
+- (void)deleteEventMetadata;
+- (void)deleteNlv4SampleEvaluationContext;
+- (void)deleteNlv4TaskEvaluationContext;
+- (id)dictionaryRepresentation;
+- (id)eventMetadata;
+- (int)getAnyEventType;
+- (id)getComponentId;
+- (bool)hasCdmReplaySampleContext;
+- (bool)hasCdmReplayTaskContext;
+- (bool)hasCurareAppIntentSampleClassificationContext;
+- (bool)hasCurareAppIntentTaskClassificationContext;
+- (bool)hasEventMetadata;
+- (bool)hasNlv4SampleEvaluationContext;
+- (bool)hasNlv4TaskEvaluationContext;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (id)innerEvent;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (id)nlv4SampleEvaluationContext;
+- (id)nlv4TaskEvaluationContext;
+- (id)qualifiedMessageName;
+- (bool)readFrom:(id)arg1;
+- (void)setCdmReplaySampleContext:(id)arg1;
+- (void)setCdmReplayTaskContext:(id)arg1;
+- (void)setCurareAppIntentSampleClassificationContext:(id)arg1;
+- (void)setCurareAppIntentTaskClassificationContext:(id)arg1;
+- (void)setEventMetadata:(id)arg1;
+- (void)setHasCdmReplaySampleContext:(bool)arg1;
+- (void)setHasCdmReplayTaskContext:(bool)arg1;
+- (void)setHasCurareAppIntentSampleClassificationContext:(bool)arg1;
+- (void)setHasCurareAppIntentTaskClassificationContext:(bool)arg1;
+- (void)setHasEventMetadata:(bool)arg1;
+- (void)setHasNlv4SampleEvaluationContext:(bool)arg1;
+- (void)setHasNlv4TaskEvaluationContext:(bool)arg1;
+- (void)setNlv4SampleEvaluationContext:(id)arg1;
+- (void)setNlv4TaskEvaluationContext:(id)arg1;
+- (id)suppressMessageUnderConditions;
+- (unsigned long long)whichEvent_Type;
+- (void)writeTo:(id)arg1;
+
+@end

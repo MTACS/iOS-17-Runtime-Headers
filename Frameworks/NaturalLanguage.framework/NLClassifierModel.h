@@ -1,0 +1,4 @@
+
+@interface NLClassifierModel : NLModel
+
+@end

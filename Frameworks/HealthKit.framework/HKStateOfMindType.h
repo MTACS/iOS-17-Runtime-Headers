@@ -1,0 +1,4 @@
+
+@interface HKStateOfMindType : HKSampleType
+
+@end

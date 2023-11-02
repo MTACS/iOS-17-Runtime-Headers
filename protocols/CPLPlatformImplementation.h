@@ -1,0 +1,4 @@
+
+@protocol CPLPlatformImplementation <NSObject>
+
+@end

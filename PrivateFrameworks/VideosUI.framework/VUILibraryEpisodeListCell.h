@@ -1,0 +1,71 @@
+
+@interface VUILibraryEpisodeListCell : VUIListCollectionViewCell {
+    NSObject<VUIMediaEntityAssetController> * _assetController;
+    VUILabel * _dotSeparatorLabel;
+    VUIDownloadButton * _downloadButton;
+    NSString * _duration;
+    VUILabel * _durationLabel;
+    UIStackView * _episodeInfoStackView;
+    VUILibraryEpisodeFrameView * _imageFrameView;
+    VUIMediaItem * _mediaItem;
+    NSString * _releaseDate;
+    VUILabel * _releaseDateLabel;
+    VUISeparatorView * _separatorView;
+    NSString * _title;
+    VUILabel * _titleLabel;
+}
+
+@property (nonatomic, retain) NSObject<VUIMediaEntityAssetController> *assetController;
+@property (nonatomic, retain) VUILabel *dotSeparatorLabel;
+@property (nonatomic, retain) VUIDownloadButton *downloadButton;
+@property (nonatomic, copy) NSString *duration;
+@property (nonatomic, retain) VUILabel *durationLabel;
+@property (nonatomic, retain) UIStackView *episodeInfoStackView;
+@property (nonatomic, retain) VUILibraryEpisodeFrameView *imageFrameView;
+@property (nonatomic, retain) VUIMediaItem *mediaItem;
+@property (nonatomic, copy) NSString *releaseDate;
+@property (nonatomic, retain) VUILabel *releaseDateLabel;
+@property (nonatomic, retain) VUISeparatorView *separatorView;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) VUILabel *titleLabel;
+
++ (id)_metadataLabelWithString:(id)arg1 existingLabel:(id)arg2;
++ (void)configureVUILibraryEpisodeListCell:(id)arg1 withMedia:(id)arg2 andAssetController:(id)arg3;
+
+- (void).cxx_destruct;
+- (void)_addDownloadButtonIfRequired:(id)arg1;
+- (void)_configureDotSeparator;
+- (bool)_contentSizeCategoryIsAccessibility;
+- (double)_metadataHeightToBaselineNonAXContentSizeCategory;
+- (double)_metadataScaledTopMarginForNonAXContentSizeCategory;
+- (id)assetController;
+- (id)dotSeparatorLabel;
+- (id)downloadButton;
+- (id)duration;
+- (id)durationLabel;
+- (id)episodeInfoStackView;
+- (id)imageFrameView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)mediaItem;
+- (id)releaseDate;
+- (id)releaseDateLabel;
+- (id)separatorView;
+- (void)setAssetController:(id)arg1;
+- (void)setDotSeparatorLabel:(id)arg1;
+- (void)setDownloadButton:(id)arg1;
+- (void)setDuration:(id)arg1;
+- (void)setDurationLabel:(id)arg1;
+- (void)setEpisodeInfoStackView:(id)arg1;
+- (void)setImageFrameView:(id)arg1;
+- (void)setMediaItem:(id)arg1;
+- (void)setReleaseDate:(id)arg1;
+- (void)setReleaseDateLabel:(id)arg1;
+- (void)setSeparatorView:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)title;
+- (id)titleLabel;
+
+@end

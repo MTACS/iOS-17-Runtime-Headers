@@ -1,0 +1,141 @@
+
+@interface ICSearchQueryOperation : NSOperation {
+    bool  _allowEmptySearchString;
+    ICSearchQuery * _defaultQuery;
+    NSError * _error;
+    id /* block */  _foundItemsHandler;
+    ICSearchQuery * _fuzzyQuery;
+    NSString * _keyboardLanguage;
+    bool  _modernResultsOnly;
+    ICSearchQuery * _nlQuery;
+    bool  _performNLSearch;
+    bool  _performTopHitSearch;
+    unsigned long long  _rankingStrategy;
+    NSMutableArray * _relatedWordQueries;
+    long long  _requestIndex;
+    NSMutableArray * _results;
+    NSMutableDictionary * _resultsDictionary;
+    NSString * _searchString;
+    <ICSearchSuggestionsResponder> * _searchSuggestionsResponder;
+    NSArray * _searchTokens;
+    ICSearchQuery * _spellingQuery;
+    ICSearchQuery * _substringQuery;
+    NSString * _tokensQueryString;
+    ICSearchQuery * _topHitQuery;
+    NSMutableDictionary * _uniqueIdentifiersOfAttachmentsFoundInNotes;
+}
+
+@property (nonatomic, readonly) bool allowEmptySearchString;
+@property (nonatomic, retain) ICSearchQuery *defaultQuery;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, copy) id /* block */ foundItemsHandler;
+@property (nonatomic, retain) ICSearchQuery *fuzzyQuery;
+@property (nonatomic, copy) NSString *keyboardLanguage;
+@property (nonatomic) bool modernResultsOnly;
+@property (nonatomic, retain) ICSearchQuery *nlQuery;
+@property (nonatomic) bool performNLSearch;
+@property (nonatomic) bool performTopHitSearch;
+@property (nonatomic) unsigned long long rankingStrategy;
+@property (nonatomic, retain) NSMutableArray *relatedWordQueries;
+@property (nonatomic) long long requestIndex;
+@property (nonatomic, retain) NSMutableArray *results;
+@property (nonatomic, retain) NSMutableDictionary *resultsDictionary;
+@property (nonatomic, copy) NSString *searchString;
+@property (nonatomic, retain) <ICSearchSuggestionsResponder> *searchSuggestionsResponder;
+@property (nonatomic, readonly) NSArray *searchTokens;
+@property (nonatomic, retain) ICSearchQuery *spellingQuery;
+@property (nonatomic, retain) ICSearchQuery *substringQuery;
+@property (nonatomic, copy) NSString *tokensQueryString;
+@property (nonatomic, retain) ICSearchQuery *topHitQuery;
+@property (nonatomic, retain) NSMutableDictionary *uniqueIdentifiersOfAttachmentsFoundInNotes;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)exactMatchingQueryStringForTitleSearchString:(id)arg1;
++ (id)fetchModernNoteSearchableItemAttributesFromCoreDataForObjectIDURIs:(id)arg1 context:(id)arg2;
++ (id)fuzzyMatchingQueryStringForSearchString:(id)arg1;
++ (id)highlightStringForAttributedInputs:(id)arg1;
++ (void)initialize;
++ (id)newOperationQueueWithName:(id)arg1;
++ (void)nlSearchQueryWithSearchString:(id)arg1 queryString:(id*)arg2 rankingQueries:(id*)arg3 highlightString:(id*)arg4;
++ (void*)nlpParser;
++ (id)nlpSerialQueue;
++ (id)prefixMatchingQueryStringForSearchString:(id)arg1;
++ (id)prefixMatchingQueryStringTitleForSearchString:(id)arg1;
++ (id)searchableItemsFromSortableItems:(id)arg1;
++ (id)substringMatchingQueryStringForSearchString:(id)arg1;
++ (id)tokensQueryStringFromTokens:(id)arg1;
+
+- (void).cxx_destruct;
+- (bool)allowEmptySearchString;
+- (void)appendSortableSearchableItemsToResults:(id)arg1;
+- (void)cancel;
+- (unsigned long long)countOfNonSpaceCharsInSearchString;
+- (id)createPrefixMatchingQuery;
+- (id)defaultQuery;
+- (id)error;
+- (id /* block */)foundItemsHandler;
+- (id)fuzzyQuery;
+- (id)init;
+- (id)initWithLinkSuggestionQuery:(id)arg1;
+- (id)initWithQueryString:(id)arg1 rankingQueries:(id)arg2;
+- (id)initWithQueryString:(id)arg1 rankingQueries:(id)arg2 attributes:(id)arg3;
+- (id)initWithQueryString:(id)arg1 rankingQueries:(id)arg2 performTopHitSearch:(bool)arg3 modernResultsOnly:(bool)arg4;
+- (id)initWithQueryString:(id)arg1 rankingQueries:(id)arg2 performTopHitSearch:(bool)arg3 modernResultsOnly:(bool)arg4 attributes:(id)arg5;
+- (id)initWithSearchSuggestionsResponder:(id)arg1 searchString:(id)arg2 performNLSearch:(bool)arg3 performTopHitSearch:(bool)arg4 tokens:(id)arg5 modernResultsOnly:(bool)arg6;
+- (id)jointQueryWithSuggestions:(id)arg1;
+- (id)keyboardLanguage;
+- (void)main;
+- (bool)modernResultsOnly;
+- (id)nlQuery;
+- (bool)performNLSearch;
+- (void)performPrefixAndFuzzyAndSubstringQueries;
+- (void)performRelatedWordQueriesIfNeeded;
+- (void)performSpellCheckerAPIQueryIfNeeded;
+- (bool)performTopHitSearch;
+- (void)performTopHitSearchQuery;
+- (void)processTopHits:(id)arg1;
+- (unsigned long long)rankingStrategy;
+- (id)relatedWordQueries;
+- (long long)requestIndex;
+- (id)results;
+- (id)resultsDictionary;
+- (id)retrieveNotesOfFoundAttachmentsForSearchResults:(id)arg1;
+- (id)runICSearchQuery:(id)arg1;
+- (id)searchString;
+- (id)searchSuggestionsResponder;
+- (id)searchTokens;
+- (void)setDefaultQuery:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setFoundItemsHandler:(id /* block */)arg1;
+- (void)setFuzzyQuery:(id)arg1;
+- (void)setKeyboardLanguage:(id)arg1;
+- (void)setModernResultsOnly:(bool)arg1;
+- (void)setNlQuery:(id)arg1;
+- (void)setPerformNLSearch:(bool)arg1;
+- (void)setPerformTopHitSearch:(bool)arg1;
+- (void)setRankingStrategy:(unsigned long long)arg1;
+- (void)setRelatedWordQueries:(id)arg1;
+- (void)setRequestIndex:(long long)arg1;
+- (void)setResults:(id)arg1;
+- (void)setResultsDictionary:(id)arg1;
+- (void)setSearchString:(id)arg1;
+- (void)setSearchSuggestionsResponder:(id)arg1;
+- (void)setSpellingQuery:(id)arg1;
+- (void)setSubstringQuery:(id)arg1;
+- (void)setTokensQueryString:(id)arg1;
+- (void)setTopHitQuery:(id)arg1;
+- (void)setUniqueIdentifiersOfAttachmentsFoundInNotes:(id)arg1;
+- (id)spellingQuery;
+- (id)substringQuery;
+- (id)tokensQueryString;
+- (id)topHitQuery;
+- (id)uniqueIdentifiersOfAttachmentsFoundInNotes;
+- (bool)useSearchSuggestions;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (id)initWithSearchSuggestionsResponder:(id)arg1 searchString:(id)arg2 performNLSearch:(bool)arg3 performTopHitSearch:(bool)arg4 tokens:(id)arg5;
+- (id)initWithSearchSuggestionsResponder:(id)arg1 userInput:(id)arg2 performNLSearch:(bool)arg3 performTopHitSearch:(bool)arg4 modernResultsOnly:(bool)arg5;
+
+@end

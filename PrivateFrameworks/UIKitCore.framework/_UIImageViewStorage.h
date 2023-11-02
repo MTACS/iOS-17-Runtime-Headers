@@ -1,0 +1,97 @@
+
+@interface _UIImageViewStorage : NSObject <CAAnimationDelegate, _UIImageViewStorage> {
+    UIImageView * _imageView;
+    <_UIImageViewStorage> * _storage;
+}
+
+@property (nonatomic, retain) _UIImageCIImageRenderer *CIRenderer;
+@property (nonatomic) bool adjustsImageSizeForAccessibilityContentSizeCategory;
+@property (nonatomic) double animationDuration;
+@property (nonatomic, retain) NSArray *animationImages;
+@property (nonatomic) long long animationRepeatCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) long long defaultRenderingMode;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int drawMode;
+@property (getter=isEnqueueingLoad, nonatomic) bool enqueueingLoad;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic, retain) NSArray *highlightedAnimationImages;
+@property (nonatomic, retain) UIImage *highlightedImage;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImage *imageBeingSetByLoader;
+@property (nonatomic, retain) UILayoutGuide *imageContentGuide;
+@property (nonatomic, retain) _UIImageLoader *imageLoader;
+@property (nonatomic, retain) NSMapTable *layouts;
+@property (nonatomic, retain) <_UIImageViewLoadingDelegate> *loadingDelegate;
+@property (nonatomic) bool masksTemplateImages;
+@property (nonatomic, retain) UIImageSymbolConfiguration *overridingSymbolConfiguration;
+@property (nonatomic, retain) UIView *placeholderView;
+@property (nonatomic, retain) UIImageSymbolConfiguration *preferredSymbolConfiguration;
+@property (nonatomic, retain) UIImage *resolvedHighlightedImage;
+@property (nonatomic, retain) UIImage *resolvedImage;
+@property (getter=isStartingLoad, nonatomic) bool startingLoad;
+@property (getter=isStoppingLoad, nonatomic) bool stoppingLoad;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long templateImageRenderingEffects;
+
++ (id)storageForImageView:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)CIRenderer;
+- (bool)adjustsImageSizeForAccessibilityContentSizeCategory;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (double)animationDuration;
+- (id)animationImages;
+- (long long)animationRepeatCount;
+- (long long)defaultRenderingMode;
+- (unsigned int)drawMode;
+- (id)extendedStorage;
+- (id)highlightedAnimationImages;
+- (id)highlightedImage;
+- (id)image;
+- (id)imageBeingSetByLoader;
+- (id)imageContentGuide;
+- (id)imageLoader;
+- (bool)isEnqueueingLoad;
+- (bool)isHighlighted;
+- (bool)isStartingLoad;
+- (bool)isStoppingLoad;
+- (id)layouts;
+- (id)loadingDelegate;
+- (bool)masksTemplateImages;
+- (id)overridingSymbolConfiguration;
+- (id)placeholderView;
+- (id)preferredSymbolConfiguration;
+- (id)resolvedHighlightedImage;
+- (id)resolvedImage;
+- (void)setAdjustsImageSizeForAccessibilityContentSizeCategory:(bool)arg1;
+- (void)setAnimationDuration:(double)arg1;
+- (void)setAnimationImages:(id)arg1;
+- (void)setAnimationRepeatCount:(long long)arg1;
+- (void)setCIRenderer:(id)arg1;
+- (void)setDefaultRenderingMode:(long long)arg1;
+- (void)setDrawMode:(unsigned int)arg1;
+- (void)setEnqueueingLoad:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setHighlightedAnimationImages:(id)arg1;
+- (void)setHighlightedImage:(id)arg1;
+- (void)setImage:(id)arg1;
+- (void)setImageBeingSetByLoader:(id)arg1;
+- (void)setImageContentGuide:(id)arg1;
+- (void)setImageLoader:(id)arg1;
+- (void)setLayouts:(id)arg1;
+- (void)setLoadingDelegate:(id)arg1;
+- (void)setMasksTemplateImages:(bool)arg1;
+- (void)setOverridingSymbolConfiguration:(id)arg1;
+- (void)setPlaceholderView:(id)arg1;
+- (void)setPreferredSymbolConfiguration:(id)arg1;
+- (void)setResolvedHighlightedImage:(id)arg1;
+- (void)setResolvedImage:(id)arg1;
+- (void)setStartingLoad:(bool)arg1;
+- (void)setStoppingLoad:(bool)arg1;
+- (void)setTemplateImageRenderingEffects:(unsigned long long)arg1;
+- (id)simpleStorage;
+- (unsigned long long)templateImageRenderingEffects;
+
+@end

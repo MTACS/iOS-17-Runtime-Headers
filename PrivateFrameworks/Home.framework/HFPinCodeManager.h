@@ -1,0 +1,98 @@
+
+@interface HFPinCodeManager : NSObject <HFExecutionEnvironmentObserver, HFHomeObserver, HMAccessCodeManagerObserver> {
+    HMAccessCodeManager * _accessCodeManager;
+    NSArray * _constraints;
+    NAFuture * _constraintsFuture;
+    HFPinCodeDataStore * _dataStore;
+    long long  _fetchInProgress;
+    HMHome * _home;
+    NAFuture * _inProgressFetchFromAccessories;
+    NSHashTable * _observers;
+}
+
+@property (nonatomic, retain) HMAccessCodeManager *accessCodeManager;
+@property (nonatomic, retain) NSArray *constraints;
+@property (nonatomic, retain) NAFuture *constraintsFuture;
+@property (nonatomic, retain) HFPinCodeDataStore *dataStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) long long fetchInProgress;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) HMHome *home;
+@property (retain) NAFuture *inProgressFetchFromAccessories;
+@property (nonatomic, retain) NSHashTable *observers;
+@property (readonly) Class superclass;
+
++ (id)asciiStringForLocalizedPINString:(id)arg1 error:(id*)arg2;
+
+- (void).cxx_destruct;
+- (void)_addNewHomeAccessCode:(id)arg1 toStore:(id)arg2;
+- (id)_buildDataStoreWithAccessoryAccessCodeFetch:(id)arg1;
+- (id)_deleteGuestPinCode:(id)arg1;
+- (id)_deleteUnknownGuestFromMatterPinCode:(id)arg1;
+- (id)_fetchAccessCodesFromAccessories;
+- (id)_fetchAccessoryConstraints;
+- (id)_fetchCachedAccessoryAccessCodes;
+- (void)_fetchPinCodeConstraints:(id /* block */)arg1;
+- (void)_kickoff;
+- (id /* block */)_modificationCompletionHandlerForFuture:(id)arg1;
+- (void)_reloadObservers;
+- (id)_submitModificationRequests:(id)arg1;
+- (id)_updateGuestPinCodeWithItem:(id)arg1 withCodeValue:(id)arg2 withUserInfo:(id)arg3;
+- (id)accessCodeManager;
+- (void)accessCodeManager:(id)arg1 didAddAccessoryAccessCodes:(id)arg2;
+- (void)accessCodeManager:(id)arg1 didAddHomeAccessCodes:(id)arg2;
+- (void)accessCodeManager:(id)arg1 didRemoveAccessoryAccessCodes:(id)arg2;
+- (void)accessCodeManager:(id)arg1 didRemoveHomeAccessCodes:(id)arg2;
+- (void)accessCodeManager:(id)arg1 didUpdateHomeAccessCodes:(id)arg2;
+- (id)addGuestPinCode:(id)arg1 withLabel:(id)arg2 onAccessories:(id)arg3;
+- (void)addObserver:(id)arg1;
+- (id)checkForValidationErrorsWithPINCodeValue:(id)arg1 originalPINCode:(id)arg2;
+- (id)constraints;
+- (id)constraintsFuture;
+- (id)currentUserPinCode;
+- (id)dataStore;
+- (void)dealloc;
+- (id)deleteGuestPinCodeWithItem:(id)arg1;
+- (id)deleteUserPinCodeWithUser:(id)arg1;
+- (id)enablePinCodesForAllUsersOnNewAccessory:(id)arg1;
+- (id)enablePinCodesForNewAccessory:(id)arg1 forGuestItems:(id)arg2;
+- (void)executionEnvironmentRunningStateDidChange:(id)arg1;
+- (id)fetchFromAccessories;
+- (id)fetchFromAccessoryCache;
+- (long long)fetchInProgress;
+- (void)fetchPinCodeConstraints:(id /* block */)arg1;
+- (id)generateNewCodeValue;
+- (id)guestPinCodes;
+- (id)guestUserInformation;
+- (id)hasValidConstraints;
+- (id)home;
+- (void)home:(id)arg1 didAddAccessory:(id)arg2;
+- (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
+- (id)inProgressFetchFromAccessories;
+- (id)initWithHome:(id)arg1;
+- (bool)isAccessoryFetchInProgress;
+- (id)observers;
+- (id)otherEcosystemGuestPinCodes;
+- (id)pinCodeForCodeValue:(id)arg1;
+- (id)refreshDataStore;
+- (void)removeObserver:(id)arg1;
+- (id)removedUserPINCodes;
+- (id)restoreFullAccessForUserWithItem:(id)arg1;
+- (id)revokeAccessForAllRemovedUsers;
+- (void)setAccessCodeManager:(id)arg1;
+- (void)setConstraints:(id)arg1;
+- (void)setConstraintsFuture:(id)arg1;
+- (void)setDataStore:(id)arg1;
+- (void)setFetchInProgress:(long long)arg1;
+- (void)setHome:(id)arg1;
+- (void)setInProgressFetchFromAccessories:(id)arg1;
+- (void)setObservers:(id)arg1;
+- (id)setPinCodeWithItem:(id)arg1 enabled:(bool)arg2 onAccessories:(id)arg3;
+- (id)setUserPinCode:(id)arg1 forUser:(id)arg2;
+- (id)updateGuestPinCodeWithItem:(id)arg1 withCodeValue:(id)arg2 withLabel:(id)arg3;
+- (id)updateGuestPinCodeWithItem:(id)arg1 withLabel:(id)arg2;
+- (id)updatePinCodeWithItem:(id)arg1 withCodeValue:(id)arg2;
+- (id)userPinCodes;
+
+@end

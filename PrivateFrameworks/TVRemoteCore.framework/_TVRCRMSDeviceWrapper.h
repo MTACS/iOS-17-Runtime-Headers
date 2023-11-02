@@ -1,0 +1,95 @@
+
+@interface _TVRCRMSDeviceWrapper : NSObject <TVRMSDAAPControlSessionDelegate, TVRMSPairingSessionDelegate, _TVRCRMSDeviceKeyboardImplDelegate> {
+    bool  _authenticationAllowed;
+    bool  _connected;
+    <TVRMSDAAPControlSession> * _controlSession;
+    <_TVRCRMSDeviceWrapperDelegate> * _delegate;
+    TVRMSService * _device;
+    TVRXKeyboardController * _keyboardController;
+    _TVRCRMSDeviceKeyboardImpl * _keyboardImpl;
+    NSMutableSet * _mediaButtons;
+    _TVRCRMSNowPlayingState * _nowPlayingState;
+    TVRMSPairingSession * _pairingSession;
+}
+
+@property (nonatomic, readonly, copy) NSDictionary *alternateIdentifiers;
+@property (nonatomic) bool authenticationAllowed;
+@property (nonatomic) bool connected;
+@property (nonatomic, retain) <TVRMSDAAPControlSession> *controlSession;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <_TVRCRMSDeviceWrapperDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) TVRMSService *device;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, retain) TVRXKeyboardController *keyboardController;
+@property (nonatomic, retain) _TVRCRMSDeviceKeyboardImpl *keyboardImpl;
+@property (nonatomic, retain) NSMutableSet *mediaButtons;
+@property (nonatomic, readonly, copy) NSString *model;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, retain) _TVRCRMSNowPlayingState *nowPlayingState;
+@property (nonatomic, retain) TVRMSPairingSession *pairingSession;
+@property (readonly) Class superclass;
+
++ (id)wrapperWithDevice:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_cancelPairing;
+- (void)_connectWithPairingGUID:(id)arg1;
+- (void)_disconnectWithError:(id)arg1;
+- (void)_initiatePairing;
+- (long long)_navigationCommandForButtonEvent:(id)arg1;
+- (void)_seekToTime:(double)arg1;
+- (void)_setupKeyboardController;
+- (void)_skipSeconds:(double)arg1;
+- (long long)_touchDirectionForButtonEvent:(id)arg1;
+- (id)alternateIdentifiers;
+- (bool)authenticationAllowed;
+- (void)connect;
+- (bool)connected;
+- (long long)connectionType;
+- (id)controlSession;
+- (void)controlSession:(id)arg1 artworkDataDidBecomeAvailable:(id)arg2 identifier:(id)arg3;
+- (void)controlSession:(id)arg1 didUpdateAudioRoutes:(id)arg2;
+- (void)controlSession:(id)arg1 didUpdateKeyboardEditingInfo:(id)arg2;
+- (void)controlSession:(id)arg1 didUpdateNowPlayingInfo:(id)arg2;
+- (void)controlSession:(id)arg1 didUpdateVolume:(float)arg2;
+- (void)controlSession:(id)arg1 keyboardEditingDidBegin:(id)arg2;
+- (void)controlSession:(id)arg1 keyboardEditingDidEnd:(id)arg2;
+- (void)controlSessionDidEnd:(id)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (id)device;
+- (void)disconnect;
+- (void)disconnectWithError:(id)arg1;
+- (id)identifier;
+- (id)initWithDevice:(id)arg1;
+- (bool)isPaired;
+- (id)keyboardController;
+- (id)keyboardImpl;
+- (void)keyboardImpl:(id)arg1 updatedText:(id)arg2;
+- (void)keyboardImplRequestsSendingReturnKey:(id)arg1;
+- (id)mediaButtons;
+- (id)model;
+- (id)name;
+- (id)nowPlayingState;
+- (id)pairingSession;
+- (void)pairingSession:(id)arg1 didBeginPairingWithPasscode:(id)arg2;
+- (void)pairingSession:(id)arg1 didPairWithServiceNetworkName:(id)arg2 pairingGUID:(id)arg3;
+- (void)pairingSessionDidFail:(id)arg1;
+- (void)sendButtonEvent:(id)arg1;
+- (void)sendTouchEvent:(id)arg1;
+- (void)setAuthenticationAllowed:(bool)arg1;
+- (void)setConnected:(bool)arg1;
+- (void)setControlSession:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setKeyboardController:(id)arg1;
+- (void)setKeyboardImpl:(id)arg1;
+- (void)setMediaButtons:(id)arg1;
+- (void)setNowPlayingState:(id)arg1;
+- (void)setPairingSession:(id)arg1;
+- (id)supportedButtons;
+- (bool)supportsTouchEvents;
+
+@end

@@ -1,0 +1,30 @@
+
+@interface PKSettingTableCell : PKTableViewCell {
+    SEL  _action;
+    UISwitch * _settingSwitch;
+    bool  _showingSpinner;
+    UIActivityIndicatorView * _spinner;
+    id  _target;
+}
+
+@property (nonatomic, readonly) SEL action;
+@property (getter=isOn, nonatomic) bool on;
+@property (nonatomic, retain) UISwitch *settingSwitch;
+@property (nonatomic, readonly) id target;
+
+- (void).cxx_destruct;
+- (SEL)action;
+- (void)dealloc;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
+- (bool)isOn;
+- (void)prepareForReuse;
+- (void)setOn:(bool)arg1;
+- (void)setOn:(bool)arg1 notify:(bool)arg2;
+- (void)setSettingSwitch:(id)arg1;
+- (void)setTarget:(id)arg1 action:(SEL)arg2;
+- (id)settingSwitch;
+- (void)showSpinner:(bool)arg1;
+- (id)target;
+
+@end

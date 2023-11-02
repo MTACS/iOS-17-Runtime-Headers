@@ -1,0 +1,81 @@
+
+@interface PKDrawingPaletteInputAssistantView : UIView <PKPaletteButtonIntrinsicContentSizeObserver, PKPaletteEdgeLocating, PKPaletteViewSizeScaling> {
+    PKPaletteButtonGroupView * _bottomOrLeadingGroupView;
+    NSArray * _buttons;
+    UIStackView * _contentStackView;
+    unsigned long long  _edgeLocation;
+    bool  _enableKeyboardButtons;
+    PKPaletteKeyboardButton * _keyboardButton;
+    PKPaletteButton * _returnKeyButton;
+    double  _scalingFactor;
+    bool  _shouldShowKeyboardButton;
+    bool  _shouldShowReturnKeyButton;
+    PKPaletteButtonGroupView * _topOrTrailingGroupView;
+    bool  _useCompactLayout;
+    NSHashTable * _viewStateObservers;
+}
+
+@property (nonatomic, retain) PKPaletteButtonGroupView *bottomOrLeadingGroupView;
+@property (nonatomic, copy) NSArray *buttons;
+@property (nonatomic, retain) UIStackView *contentStackView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned long long edgeLocation;
+@property (nonatomic) bool enableKeyboardButtons;
+@property (nonatomic, readonly) bool hasInputAssistantItems;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PKPaletteKeyboardButton *keyboardButton;
+@property (nonatomic, retain) PKPaletteButton *returnKeyButton;
+@property (nonatomic) double scalingFactor;
+@property (nonatomic) bool shouldShowKeyboardButton;
+@property (nonatomic) bool shouldShowReturnKeyButton;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PKPaletteButtonGroupView *topOrTrailingGroupView;
+@property (nonatomic) bool useCompactLayout;
+@property (nonatomic, retain) NSHashTable *viewStateObservers;
+
+- (void).cxx_destruct;
+- (long long)_contentStackViewAlignment;
+- (double)_contentStackViewSpacing;
+- (void)_notifyViewStateDidChange;
+- (id)_topOrTrailingGroupViewButtons;
+- (void)_updateContentOrientation;
+- (void)_updateContentScalingFactor;
+- (void)_updateContentViewSpacing;
+- (void)_updateGroupViewContents;
+- (void)_updateUI;
+- (bool)_useThreeButtonLayout;
+- (void)addViewStateObserver:(id)arg1;
+- (id)bottomOrLeadingGroupView;
+- (void)buttonDidChangeIntrinsicContentSize:(id)arg1;
+- (id)buttons;
+- (id)contentStackView;
+- (unsigned long long)edgeLocation;
+- (bool)enableKeyboardButtons;
+- (bool)hasInputAssistantItems;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)keyboardButton;
+- (void)removeViewStateObserver:(id)arg1;
+- (id)returnKeyButton;
+- (double)scalingFactor;
+- (void)setBottomOrLeadingGroupView:(id)arg1;
+- (void)setButtons:(id)arg1;
+- (void)setContentStackView:(id)arg1;
+- (void)setEdgeLocation:(unsigned long long)arg1;
+- (void)setEnableKeyboardButtons:(bool)arg1;
+- (void)setKeyboardButton:(id)arg1;
+- (void)setReturnKeyButton:(id)arg1;
+- (void)setScalingFactor:(double)arg1;
+- (void)setShouldShowKeyboardButton:(bool)arg1;
+- (void)setShouldShowReturnKeyButton:(bool)arg1;
+- (void)setTopOrTrailingGroupView:(id)arg1;
+- (void)setUseCompactLayout:(bool)arg1;
+- (void)setViewStateObservers:(id)arg1;
+- (bool)shouldShowKeyboardButton;
+- (bool)shouldShowReturnKeyButton;
+- (id)topOrTrailingGroupView;
+- (bool)useCompactLayout;
+- (id)viewStateObservers;
+
+@end

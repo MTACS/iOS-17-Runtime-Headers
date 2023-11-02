@@ -1,0 +1,4 @@
+
+@protocol VUITraitDefintion
+
+@end

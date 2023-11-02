@@ -1,0 +1,134 @@
+
+@interface RemoteUIController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate, RUIParserDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate, _UISheetPresentationControllerDelegate> {
+    NSString * _SMSAutoFillToken;
+    NSUUID * _UUID;
+    <RemoteUIControllerDelegate> * _delegate;
+    NSMutableDictionary * _elementChangeHandlers;
+    UIViewController * _hostViewController;
+    NSString * _listeningForSMSIdentifier;
+    id /* block */  _loadCompletion;
+    RUILoader * _loader;
+    RUINavigationController * _modalNavigationController;
+    NSMutableArray * _modalObjectModels;
+    NSMutableArray * _objectModels;
+    RUIPage * _pageOriginatingLoad;
+    NSURLSessionConfiguration * _sessionConfiguration;
+    UIActivityIndicatorView * _spinner;
+    RUIStyle * _style;
+    bool  _testMode;
+    NSString * _userAgentString;
+}
+
+@property (nonatomic, copy) NSUUID *UUID;
+@property (nonatomic, readonly) UIViewController *currentPresentationContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RemoteUIControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *displayedPages;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) UIViewController *hostViewController;
+@property (nonatomic, copy) id /* block */ loadCompletion;
+@property (nonatomic, retain) RUILoader *loader;
+@property (nonatomic) UINavigationController *navigationController;
+@property (nonatomic, copy) NSURLSessionConfiguration *sessionConfiguration;
+@property (nonatomic, retain) RUIStyle *style;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *userAgentString;
+
+// Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
+
+- (void).cxx_destruct;
+- (id)UUID;
+- (void)_beginListeningForSMSAutoFill;
+- (void)_didPresentObjectModel:(id)arg1 modally:(bool)arg2;
+- (void)_didRemoveObjectModel:(id)arg1;
+- (void)_enableTestMode;
+- (id /* block */)_handleDismissAndReplaceWithActionSignal:(id)arg1 objectModel:(id)arg2;
+- (id /* block */)_handleDismissWithActionSignal:(id)arg1 objectModel:(id)arg2;
+- (void)_invalidateModalObjectModels;
+- (void)_loadURL:(id)arg1 fromObjectModel:(id)arg2 postBody:(id)arg3;
+- (void)_loadURL:(id)arg1 postBody:(id)arg2 fromObjectModel:(id)arg3 completion:(id /* block */)arg4;
+- (void)_modalNavigationWasDismissed;
+- (id)_modalObjectModels;
+- (void)_modalViewControllerWasPopped:(id)arg1;
+- (void)_objectModel:(id)arg1 receivedToken:(id)arg2;
+- (bool)_objectModelPageWantsHSATokens:(id)arg1;
+- (id)_objectModelStack;
+- (id)_objectModels;
+- (void)_presentModalRUIController:(id)arg1 completion:(id /* block */)arg2;
+- (void)_removePreviousObjectModelsBackToIdentifier:(id)arg1;
+- (void)_replaceModalRUIController:(id)arg1 byController:(id)arg2 completion:(id /* block */)arg3;
+- (void)_replaceObjectModelWithObjectModel:(id)arg1;
+- (void)_replacePagesOfObjectModel:(id)arg1 byObjectModel:(id)arg2 sourceArray:(id)arg3;
+- (void)_setHandlerWithKey:(id)arg1 forElementsMatching:(id /* block */)arg2 handler:(id /* block */)arg3;
+- (bool)_shouldAnimate;
+- (void)_showPartialScreenModal:(id)arg1;
+- (void)_stopListeningForSMSAutoFill;
+- (void)_willPresentObjectModel:(id)arg1 modally:(bool)arg2;
+- (id)currentPresentationContext;
+- (void)dealloc;
+- (id)delegate;
+- (id)dismissObjectModelsAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (id)displayedPages;
+- (void)handleCancel:(id)arg1;
+- (id)hostViewController;
+- (id)init;
+- (bool)isListeningForHSATokenAutoFill;
+- (id /* block */)loadCompletion;
+- (void)loadData:(id)arg1 baseURL:(id)arg2;
+- (void)loadRequest:(id)arg1;
+- (void)loadRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)loadURL:(id)arg1 postBody:(id)arg2;
+- (void)loadURL:(id)arg1 postBody:(id)arg2 completion:(id /* block */)arg3;
+- (id)loader;
+- (void)loader:(id)arg1 didFinishLoadWithError:(id)arg2 forRequest:(id)arg3;
+- (void)loader:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2 forRequest:(id)arg3;
+- (void)loader:(id)arg1 loadResourcesForObjectModel:(id)arg2 completion:(id /* block */)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 topActionSignal:(id)arg3;
+- (void)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)modalNavigationWasDismissed;
+- (id)navigationController;
+- (void)objectModel:(id)arg1 didNavigateBackFromController:(id)arg2 withGesture:(bool)arg3;
+- (void)objectModel:(id)arg1 elementDidChange:(id)arg2;
+- (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id /* block */)arg4;
+- (bool)objectModel:(id)arg1 shouldDisplayNamedElement:(id)arg2 page:(id)arg3;
+- (void)objectModel:(id)arg1 willLoadLinkURL:(id)arg2 attributes:(id)arg3;
+- (id)parentViewControllerForObjectModel:(id)arg1;
+- (id)parser:(id)arg1 createPageWithName:(id)arg2 attributes:(id)arg3;
+- (id)popObjectModelAnimated:(bool)arg1;
+- (id)popObjectModelAnimated:(bool)arg1 stopListeningForHSATokens:(bool)arg2;
+- (void)presentLoadingSheet:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
+- (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
+- (void)pushObjectModel:(id)arg1 animated:(bool)arg2;
+- (void)refreshTopModelWithModel:(id)arg1;
+- (void)removeHandlerForKey:(id)arg1;
+- (id)sessionConfiguration;
+- (id)sessionConfigurationForLoader:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHandlerForButtonName:(id)arg1 handler:(id /* block */)arg2;
+- (void)setHandlerForButtonsMatching:(id /* block */)arg1 handler:(id /* block */)arg2;
+- (void)setHandlerForElementName:(id)arg1 handler:(id /* block */)arg2;
+- (id)setHandlerForElementsMatching:(id /* block */)arg1 handler:(id /* block */)arg2;
+- (void)setHostViewController:(id)arg1;
+- (void)setLoadCompletion:(id /* block */)arg1;
+- (void)setLoader:(id)arg1;
+- (void)setNavigationController:(id)arg1;
+- (void)setSessionConfiguration:(id)arg1;
+- (void)setStyle:(id)arg1;
+- (void)setUUID:(id)arg1;
+- (void)setUserAgentString:(id)arg1;
+- (void)startListeningForHSATokenAutoFill;
+- (void)stopListeningForHSATokenAutoFill;
+- (id)style;
+- (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
+- (id)userAgentString;
+- (id)viewControllerForAlertPresentation;
+- (id)visibleElementWithIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FamilyCircleUI.framework/FamilyCircleUI
+
+- (void)fa_registerFamilyRUIViews;
+
+@end

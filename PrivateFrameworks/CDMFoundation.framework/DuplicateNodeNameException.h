@@ -1,0 +1,4 @@
+
+@interface DuplicateNodeNameException : NSException
+
+@end

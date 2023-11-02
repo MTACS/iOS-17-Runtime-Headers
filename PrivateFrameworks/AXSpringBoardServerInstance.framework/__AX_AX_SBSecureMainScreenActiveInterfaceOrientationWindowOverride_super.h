@@ -1,0 +1,4 @@
+
+@interface __AX_AX_SBSecureMainScreenActiveInterfaceOrientationWindowOverride_super : UIAccessibilitySafeCategory
+
+@end

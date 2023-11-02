@@ -1,0 +1,4 @@
+
+@interface DMFUpdatePickableAirPlayRoutesRequest : DMFTaskRequest
+
+@end

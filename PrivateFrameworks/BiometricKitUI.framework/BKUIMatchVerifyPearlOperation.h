@@ -1,0 +1,88 @@
+
+@interface BKUIMatchVerifyPearlOperation : NSObject <BKMatchPearlOperationDelegate> {
+    NSData * _credentialSet;
+    int  _currentUIDelegateDisplaySubState;
+    bool  _delegateUIAtNeedsPosition;
+    BKDevicePearl * _device;
+    unsigned long long  _enrollmentConfiguration;
+    bool  _faceDetected;
+    long long  _failReason;
+    BKIdentity * _identity;
+    int  _lastErrorousSubState;
+    bool  _matchFailed;
+    BKMatchPearlOperation * _matchOperation;
+    id /* block */  _matchOperationDidMatch;
+    BKIdentity * _matchedIdentity;
+    <BKUIPearlEnrollOperationsDelegate> * _operationsDelegate;
+    int  _substate;
+    BKUIFaceIDEnrollOperationsHandler * _weakHandler;
+}
+
+@property (nonatomic, retain) NSData *credentialSet;
+@property (nonatomic) int currentUIDelegateDisplaySubState;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) bool delegateUIAtNeedsPosition;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) BKDevicePearl *device;
+@property (nonatomic) unsigned long long enrollmentConfiguration;
+@property (nonatomic) bool faceDetected;
+@property (nonatomic) long long failReason;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) BKIdentity *identity;
+@property (nonatomic) int lastErrorousSubState;
+@property (nonatomic) bool matchFailed;
+@property (nonatomic, retain) BKMatchPearlOperation *matchOperation;
+@property (nonatomic, copy) id /* block */ matchOperationDidMatch;
+@property (nonatomic, retain) BKIdentity *matchedIdentity;
+@property (nonatomic) <BKUIPearlEnrollOperationsDelegate> *operationsDelegate;
+@property (nonatomic) int substate;
+@property (readonly) Class superclass;
+@property (nonatomic) BKUIFaceIDEnrollOperationsHandler *weakHandler;
+
+- (void).cxx_destruct;
+- (void)cancelMatchOperation;
+- (id)credentialSet;
+- (int)currentUIDelegateDisplaySubState;
+- (bool)delegateUIAtNeedsPosition;
+- (id)device;
+- (unsigned long long)enrollmentConfiguration;
+- (bool)faceDetected;
+- (long long)failReason;
+- (id)identity;
+- (id)init;
+- (int)lastErrorousSubState;
+- (bool)matchFailed;
+- (id)matchOperation;
+- (void)matchOperation:(id)arg1 failedWithReason:(long long)arg2;
+- (void)matchOperation:(id)arg1 matchedWithResult:(id)arg2;
+- (void)matchOperation:(id)arg1 presenceDetectedInLockout:(long long)arg2;
+- (void)matchOperation:(id)arg1 providedFeedback:(long long)arg2;
+- (id /* block */)matchOperationDidMatch;
+- (id)matchedIdentity;
+- (void)moveEnrollStateToNeedsPositioning:(int)arg1;
+- (void)operation:(id)arg1 faceDetectStateChanged:(id)arg2;
+- (void)operation:(id)arg1 stateChanged:(long long)arg2;
+- (id)operationsDelegate;
+- (void)retryMatchOperation;
+- (void)setCredentialSet:(id)arg1;
+- (void)setCurrentUIDelegateDisplaySubState:(int)arg1;
+- (void)setDelegateUIAtNeedsPosition:(bool)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setEnrollmentConfiguration:(unsigned long long)arg1;
+- (void)setFaceDetected:(bool)arg1;
+- (void)setFailReason:(long long)arg1;
+- (void)setIdentity:(id)arg1;
+- (void)setLastErrorousSubState:(int)arg1;
+- (void)setMatchFailed:(bool)arg1;
+- (void)setMatchOperation:(id)arg1;
+- (void)setMatchOperationDidMatch:(id /* block */)arg1;
+- (void)setMatchedIdentity:(id)arg1;
+- (void)setOperationsDelegate:(id)arg1;
+- (void)setSubstate:(int)arg1;
+- (void)setWeakHandler:(id)arg1;
+- (void)startMatchOperationWithDevice:(id)arg1 identity:(id)arg2 credential:(id)arg3 withConfiguration:(unsigned long long)arg4 matchOperationActionBlock:(id /* block */)arg5;
+- (int)substate;
+- (int)substateForFaceDetectionFeedBack:(long long)arg1;
+- (id)weakHandler;
+
+@end

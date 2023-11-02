@@ -1,0 +1,4 @@
+
+@protocol SBSKeyboardFocusServiceServerToClientInterface <NSObject>
+
+@end

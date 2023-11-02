@@ -1,0 +1,96 @@
+
+@interface CAMetalLayer : CALayer {
+    void * _priv;
+}
+
+@property (retain) CAEDRMetadata *EDRMetadata;
+@property (nonatomic) bool allowsDisplayCompositingWithCopy;
+@property bool allowsNextDrawableTimeout;
+@property struct CGColorSpace { }*colorspace;
+@property (copy) NSDictionary *developerHUDProperties;
+@property (retain) <MTLDevice> *device;
+@property (nonatomic) bool disableProMotionCompatibility;
+@property (nonatomic, readonly) unsigned long long displayCompositingInternalStatus;
+@property struct CGSize { double x1; double x2; } drawableSize;
+@property (nonatomic) double drawableTimeoutSeconds;
+@property (nonatomic) bool exclusiveMode;
+@property (nonatomic) bool fenceEnabled;
+@property bool framebufferOnly;
+@property (nonatomic) double inputTime;
+@property (nonatomic) bool lowLatency;
+@property unsigned long long maximumDrawableCount;
+@property (nonatomic) bool nonDefaultColorspace;
+@property unsigned long long pixelFormat;
+@property (readonly) <MTLDevice> *preferredDevice;
+@property bool presentsWithTransaction;
+@property (nonatomic) unsigned long long protectionOptions;
+@property (nonatomic) bool serverSyncEnabled;
+@property (nonatomic) unsigned long long textureUsage;
+@property bool wantsExtendedDynamicRangeContent;
+
++ (bool)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (id)defaultValueForKey:(id)arg1;
+
+- (id)EDRMetadata;
+- (void)_didCommitLayer:(void*)arg1;
+- (void)_display;
+- (bool)allowsDisplayCompositingWithCopy;
+- (bool)allowsNextDrawableTimeout;
+- (struct CGColorSpace { }*)colorspace;
+- (void)dealloc;
+- (id)developerHUDProperties;
+- (id)device;
+- (void)didChangeValueForKey:(id)arg1;
+- (bool)disableProMotionCompatibility;
+- (void)discardContents;
+- (unsigned long long)displayCompositingInternalStatus;
+- (bool)displaySyncEnabled;
+- (struct CGSize { double x1; double x2; })drawableSize;
+- (double)drawableTimeoutSeconds;
+- (bool)exclusiveMode;
+- (bool)fenceEnabled;
+- (bool)framebufferOnly;
+- (id)init;
+- (double)inputTime;
+- (bool)isDrawableAvailable;
+- (void)layerDidBecomeVisible:(bool)arg1;
+- (bool)lowLatency;
+- (unsigned long long)maximumDrawableCount;
+- (id)newDrawable;
+- (id)nextDrawable;
+- (bool)nonDefaultColorspace;
+- (unsigned long long)pixelFormat;
+- (id)preferredDevice;
+- (bool)presentsWithTransaction;
+- (unsigned long long)protectionOptions;
+- (void)removeBackBuffers;
+- (bool)serverSyncEnabled;
+- (void)setAllowsDisplayCompositingWithCopy:(bool)arg1;
+- (void)setAllowsNextDrawableTimeout:(bool)arg1;
+- (void)setColorspace:(struct CGColorSpace { }*)arg1;
+- (void)setColorspace:(struct CGColorSpace { }*)arg1 nonDefault:(bool)arg2;
+- (void)setContents:(id)arg1;
+- (void)setDeveloperHUDProperties:(id)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setDisableProMotionCompatibility:(bool)arg1;
+- (void)setDisplaySyncEnabled:(bool)arg1;
+- (void)setDrawableSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDrawableTimeoutSeconds:(double)arg1;
+- (void)setEDRMetadata:(id)arg1;
+- (void)setExclusiveMode:(bool)arg1;
+- (void)setFenceEnabled:(bool)arg1;
+- (void)setFramebufferOnly:(bool)arg1;
+- (void)setInputTime:(double)arg1;
+- (void)setLowLatency:(bool)arg1;
+- (void)setMaximumDrawableCount:(unsigned long long)arg1;
+- (void)setNonDefaultColorspace:(bool)arg1;
+- (void)setPixelFormat:(unsigned long long)arg1;
+- (void)setPresentsWithTransaction:(bool)arg1;
+- (void)setProtectionOptions:(unsigned long long)arg1;
+- (void)setServerSyncEnabled:(bool)arg1;
+- (void)setTextureUsage:(unsigned long long)arg1;
+- (id)shimDrawable:(id)arg1;
+- (bool)shouldArchiveValueForKey:(id)arg1;
+- (unsigned long long)textureUsage;
+
+@end

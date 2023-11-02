@@ -1,0 +1,82 @@
+
+@interface PXSwitchableAssetsDataSourceManager : PXAssetsDataSourceManager <PXAssetsDataSourceManagerObserver> {
+    NSSet * _allKeys;
+    PXAssetsDataSource * _currentDataSource;
+    <NSCopying> * _currentDataSourceKey;
+    <NSCopying> * _currentKey;
+    NSDictionary * _dataSourceManagerByKey;
+    PXUpdater * _updater;
+}
+
+@property (nonatomic, readonly) NSSet *allKeys;
+@property (nonatomic, retain) PXAssetsDataSource *currentDataSource;
+@property (nonatomic, retain) <NSCopying> *currentDataSourceKey;
+@property (nonatomic, readonly) PXAssetsDataSourceManager *currentDataSourceManager;
+@property (nonatomic, copy) <NSCopying> *currentKey;
+@property (nonatomic, readonly) NSDictionary *dataSourceManagerByKey;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PXUpdater *updater;
+
+- (void).cxx_destruct;
+- (void)_enumerateAllDataSourceManagers:(id /* block */)arg1;
+- (void)_invalidateCurrentDataSource;
+- (void)_setNeedsUpdate;
+- (void)_updateCurrentDataSource;
+- (id)allKeys;
+- (void)assetsDataSourceManagerDidFinishBackgroundFetching:(id)arg1;
+- (void)assetsDataSourceManagerDidFinishLoadingInitialDataSource:(id)arg1;
+- (long long)backgroundFetchOriginSection;
+- (id)createDataSourceManagerForAsset:(id)arg1;
+- (id)createDataSourceManagerForAssetsInSectionOfAsset:(id)arg1;
+- (id)createInitialDataSource;
+- (id)currentDataSource;
+- (id)currentDataSourceKey;
+- (id)currentDataSourceManager;
+- (id)currentKey;
+- (id)dataSourceManagerByKey;
+- (id)dataSourceManagerForKey:(id)arg1;
+- (id)description;
+- (void)didPerformChanges;
+- (void)ensureLastSectionHasContent;
+- (void)ensureStartingSectionHasContent;
+- (void)excludeAssetsAtIndexPaths:(id)arg1;
+- (id)filterPredicate;
+- (bool)forceAccurateAllSectionsIfNeeded;
+- (bool)forceAccurateSection:(long long)arg1 andSectionsBeforeAndAfter:(long long)arg2;
+- (bool)forceAccurateSectionsIfNeeded:(id)arg1;
+- (void)forceIncludeAssetsAtIndexPaths:(id)arg1;
+- (id)init;
+- (id)initWithDataSourceManagerByKey:(id)arg1 currentKey:(id)arg2;
+- (bool)isBackgroundFetching;
+- (bool)isLoadingInitialDataSource;
+- (id)localizedEmptyPlaceholderAttributedMessage;
+- (id)localizedEmptyPlaceholderTitle;
+- (id)localizedLoadingInitialDataSourceMessage;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (id)pauseChangeDeliveryWithTimeout:(double)arg1 identifier:(id)arg2;
+- (void)refreshResultsForAssetCollection:(id)arg1;
+- (void)resumeChangeDeliveryAndBackgroundLoading:(id)arg1;
+- (void)setBackgroundFetchOriginSection:(long long)arg1;
+- (void)setCurationEnabled:(bool)arg1 forAssetCollection:(id)arg2;
+- (void)setCurationEnabledForAllCollections:(bool)arg1 collectionsToDiff:(id)arg2;
+- (void)setCurrentDataSource:(id)arg1;
+- (void)setCurrentDataSourceKey:(id)arg1;
+- (void)setCurrentKey:(id)arg1;
+- (void)setFilterPredicate:(id)arg1;
+- (void)setFilterPredicate:(id)arg1 provideIncrementalChangeDetailsForAssetCollections:(id)arg2;
+- (void)setFilteringDisabled:(bool)arg1 forAssetCollection:(id)arg2;
+- (void)setSortDescriptors:(id)arg1;
+- (id)sharedLibraryStatusProvider;
+- (id)sortDescriptors;
+- (void)startBackgroundFetchIfNeeded;
+- (void)stopExcludingAssets:(id)arg1;
+- (void)stopForceIncludingAllAssets;
+- (bool)supportsCurationToggling;
+- (bool)supportsFiltering;
+- (id)updater;
+- (void)waitForAvailabilityOfAsset:(id)arg1 completionHandler:(id /* block */)arg2;
+
+@end

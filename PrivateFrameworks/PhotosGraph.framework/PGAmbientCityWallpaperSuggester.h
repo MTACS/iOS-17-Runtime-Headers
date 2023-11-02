@@ -1,0 +1,17 @@
+
+@interface PGAmbientCityWallpaperSuggester : PGCityscapeWallpaperSuggester <PGCityscapeWallpaperSuggesterProtocol>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PGCityscapeWallpaperSuggesterFilteringContext *primaryFilteringContext;
+@property (nonatomic, retain) PGCityscapeWallpaperSuggesterFilteringContext *secondaryFilteringContext;
+@property (readonly) Class superclass;
+
++ (bool)filtersForAmbientSuggestions;
++ (id)suggestionSubtypes;
++ (id)suggestionTypes;
+
+- (void)setupFilteringContexts;
+
+@end

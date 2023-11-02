@@ -1,0 +1,18 @@
+
+@protocol CDPDBackupRecoveryErrorProvider <NSObject>
+
+@required
+
+- (NSError *)cooldownErrorWithUnderlyingError:(NSError *)arg1;
+- (NSError *)globalHardLimitError;
+- (NSError *)globalHardLimitErrorWithRecord:(CDPDevice *)arg1;
+- (void)handleHardLimitError:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSError *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)handleSoftLimitError:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSError *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (NSError *)hardLimitErrorForRecord:(CDPDevice *)arg1;
+- (id)initWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2;
+- (NSError *)recordNotFoundErrorWithUnderlyingError:(NSError *)arg1;
+- (void)setPrevailingSecret:(unsigned long long)arg1;
+- (bool)supportsErrorPresentation;
+- (NSError *)verficationFailedErrorwithUnderlyingError:(NSError *)arg1;
+
+@end

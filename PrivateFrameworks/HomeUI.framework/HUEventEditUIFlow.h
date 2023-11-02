@@ -1,0 +1,4 @@
+
+@interface HUEventEditUIFlow : HUEventUIFlow
+
+@end

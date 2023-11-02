@@ -1,0 +1,4 @@
+
+@interface LPPlaceholderLinkMetadata : LPLinkMetadata
+
+@end

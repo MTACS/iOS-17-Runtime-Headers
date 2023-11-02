@@ -1,0 +1,4 @@
+
+@interface OITSUBundleLookupClass : NSObject
+
+@end

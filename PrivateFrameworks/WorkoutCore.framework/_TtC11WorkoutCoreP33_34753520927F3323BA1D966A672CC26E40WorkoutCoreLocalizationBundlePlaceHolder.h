@@ -1,0 +1,4 @@
+
+@interface _TtC11WorkoutCoreP33_34753520927F3323BA1D966A672CC26E40WorkoutCoreLocalizationBundlePlaceHolder : _TtCs12_SwiftObject
+
+@end

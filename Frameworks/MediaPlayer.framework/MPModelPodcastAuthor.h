@@ -1,0 +1,4 @@
+
+@interface MPModelPodcastAuthor : MPModelPerson
+
+@end

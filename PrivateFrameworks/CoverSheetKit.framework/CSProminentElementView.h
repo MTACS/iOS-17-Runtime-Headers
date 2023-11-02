@@ -1,0 +1,4 @@
+
+@interface CSProminentElementView : UIView
+
+@end

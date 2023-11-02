@@ -1,0 +1,95 @@
+
+@interface SBSpotlightSettings : PTSettings {
+    double  _anchorPointY;
+    double  _dimmingViewRubberbandingMax;
+    double  _dimmingViewRubberbandingMin;
+    double  _dimmingViewRubberbandingRange;
+    double  _hiddenBlurRadius;
+    double  _hiddenScale;
+    double  _homeScreenScaleRubberbandingMax;
+    double  _homeScreenScaleRubberbandingMin;
+    double  _homeScreenScaleRubberbandingRange;
+    double  _maxTranslationForDimmingView;
+    double  _maxTranslationForHomeScreenScale;
+    double  _maxTranslationForSpotlightScale;
+    double  _minTranslationToShowSpotlight;
+    SBFFluidBehaviorSettings * _opacityAnimationSettings;
+    SBFFluidBehaviorSettings * _scaleAnimationSettings;
+    SBFFluidBehaviorSettings * _snappyOpacityAnimationSettings;
+    SBFFluidBehaviorSettings * _snappyScaleAnimationSettings;
+    double  _spotlightScaleRubberbandingMax;
+    double  _spotlightScaleRubberbandingMin;
+    double  _spotlightScaleRubberbandingRange;
+    double  _spotlightTranslationRubberbandingRange;
+}
+
+@property (nonatomic) double anchorPointY;
+@property (nonatomic) double dimmingViewRubberbandingMax;
+@property (nonatomic) double dimmingViewRubberbandingMin;
+@property (nonatomic) double dimmingViewRubberbandingRange;
+@property (nonatomic) double hiddenBlurRadius;
+@property (nonatomic) double hiddenScale;
+@property (nonatomic) double homeScreenScaleRubberbandingMax;
+@property (nonatomic) double homeScreenScaleRubberbandingMin;
+@property (nonatomic) double homeScreenScaleRubberbandingRange;
+@property (nonatomic) double maxTranslationForDimmingView;
+@property (nonatomic) double maxTranslationForHomeScreenScale;
+@property (nonatomic) double maxTranslationForSpotlightScale;
+@property (nonatomic) double minTranslationToShowSpotlight;
+@property (nonatomic, retain) SBFFluidBehaviorSettings *opacityAnimationSettings;
+@property (nonatomic, retain) SBFFluidBehaviorSettings *scaleAnimationSettings;
+@property (nonatomic, retain) SBFFluidBehaviorSettings *snappyOpacityAnimationSettings;
+@property (nonatomic, retain) SBFFluidBehaviorSettings *snappyScaleAnimationSettings;
+@property (nonatomic) double spotlightScaleRubberbandingMax;
+@property (nonatomic) double spotlightScaleRubberbandingMin;
+@property (nonatomic) double spotlightScaleRubberbandingRange;
+@property (nonatomic) double spotlightTranslationRubberbandingRange;
+
++ (id)settingsControllerModule;
+
+- (void).cxx_destruct;
+- (double)anchorPointY;
+- (double)dimmingViewRubberbandingMax;
+- (double)dimmingViewRubberbandingMin;
+- (double)dimmingViewRubberbandingRange;
+- (double)hiddenBlurRadius;
+- (double)hiddenScale;
+- (double)homeScreenScaleRubberbandingMax;
+- (double)homeScreenScaleRubberbandingMin;
+- (double)homeScreenScaleRubberbandingRange;
+- (double)maxTranslationForDimmingView;
+- (double)maxTranslationForHomeScreenScale;
+- (double)maxTranslationForSpotlightScale;
+- (double)minTranslationToShowSpotlight;
+- (id)opacityAnimationSettings;
+- (id)scaleAnimationSettings;
+- (void)setAnchorPointY:(double)arg1;
+- (void)setDefaultValues;
+- (void)setDimmingViewRubberbandingMax:(double)arg1;
+- (void)setDimmingViewRubberbandingMin:(double)arg1;
+- (void)setDimmingViewRubberbandingRange:(double)arg1;
+- (void)setHiddenBlurRadius:(double)arg1;
+- (void)setHiddenScale:(double)arg1;
+- (void)setHomeScreenScaleRubberbandingMax:(double)arg1;
+- (void)setHomeScreenScaleRubberbandingMin:(double)arg1;
+- (void)setHomeScreenScaleRubberbandingRange:(double)arg1;
+- (void)setMaxTranslationForDimmingView:(double)arg1;
+- (void)setMaxTranslationForHomeScreenScale:(double)arg1;
+- (void)setMaxTranslationForSpotlightScale:(double)arg1;
+- (void)setMinTranslationToShowSpotlight:(double)arg1;
+- (void)setOpacityAnimationSettings:(id)arg1;
+- (void)setScaleAnimationSettings:(id)arg1;
+- (void)setSnappyOpacityAnimationSettings:(id)arg1;
+- (void)setSnappyScaleAnimationSettings:(id)arg1;
+- (void)setSpotlightScaleRubberbandingMax:(double)arg1;
+- (void)setSpotlightScaleRubberbandingMin:(double)arg1;
+- (void)setSpotlightScaleRubberbandingRange:(double)arg1;
+- (void)setSpotlightTranslationRubberbandingRange:(double)arg1;
+- (id)snappyOpacityAnimationSettings;
+- (id)snappyScaleAnimationSettings;
+- (double)spotlightScaleRubberbandingMax;
+- (double)spotlightScaleRubberbandingMin;
+- (double)spotlightScaleRubberbandingRange;
+- (double)spotlightTranslationRubberbandingRange;
+
+@end

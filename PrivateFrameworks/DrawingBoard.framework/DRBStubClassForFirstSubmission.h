@@ -1,0 +1,4 @@
+
+@interface DRBStubClassForFirstSubmission : NSObject
+
+@end

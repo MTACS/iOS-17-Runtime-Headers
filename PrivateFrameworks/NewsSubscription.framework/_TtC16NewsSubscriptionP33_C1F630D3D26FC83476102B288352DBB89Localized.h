@@ -1,0 +1,4 @@
+
+@interface _TtC16NewsSubscriptionP33_C1F630D3D26FC83476102B288352DBB89Localized : _TtCs12_SwiftObject
+
+@end

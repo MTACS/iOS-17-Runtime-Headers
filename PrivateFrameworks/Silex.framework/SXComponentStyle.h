@@ -1,0 +1,26 @@
+
+@interface SXComponentStyle : SXJSONObject <SXComponentStyle>
+
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) SXBorder *border;
+@property (nonatomic, readonly) SXJSONArray *conditional;
+@property (nonatomic, readonly) double cornerRadius;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) SXFill *fill;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) SXComponentMask *mask;
+@property (nonatomic, readonly) double opacity;
+@property (nonatomic, readonly) SXComponentShadow *shadow;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SXDataTableStyle *tableStyle;
+@property (nonatomic, readonly) unsigned long long traits;
+
++ (id /* block */)valueClassBlockForPropertyWithName:(id)arg1;
+
+- (id)fillWithValue:(id)arg1 withType:(int)arg2;
+- (id)maskWithValue:(id)arg1 withType:(int)arg2;
+- (unsigned long long)traits;
+
+@end

@@ -1,0 +1,80 @@
+
+@interface HUPinCodeDetailsViewController : HUItemTableViewController <HFPinCodeManagerObserver, HUPersonalPINCodeViewControllerDelegate, HUPresentationDelegateHost, HUSwitchCellDelegate> {
+    NSMutableArray * _accessoriesToEdit;
+    bool  _creatingNewPinCode;
+    <HUPinCodeDetailsViewDelegate> * _delegate;
+    NSString * _editedPinCodeLabel;
+    NSString * _editedPinCodeValue;
+    bool  _isClosing;
+    NSArray * _pinAccessories;
+    HUPinCodeDetailsItemManager * _pinCodeItemManager;
+    HFPinCodeManager * _pinCodeManager;
+    <HUPresentationDelegate> * _presentationDelegate;
+}
+
+@property (nonatomic, retain) NSMutableArray *accessoriesToEdit;
+@property (nonatomic) bool creatingNewPinCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HUPinCodeDetailsViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *editedPinCodeLabel;
+@property (nonatomic, retain) NSString *editedPinCodeValue;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isClosing;
+@property (nonatomic, retain) NSArray *pinAccessories;
+@property (nonatomic) HUPinCodeDetailsItemManager *pinCodeItemManager;
+@property (nonatomic, readonly) HFPinCodeManager *pinCodeManager;
+@property (nonatomic) <HUPresentationDelegate> *presentationDelegate;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_allTextFields;
+- (bool)_codeLabelHasChanged;
+- (bool)_codeValueHasChanged;
+- (void)_resignFirstResponderForAllTextFields;
+- (void)_updateSaveEnabled;
+- (id)_validatePinCodeLabel;
+- (id)accessoriesToEdit;
+- (bool)canBecomeFirstResponder;
+- (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
+- (id)commitAccessoryChanges;
+- (id)commitNewPinCode;
+- (id)commitPinCodeChanges;
+- (bool)creatingNewPinCode;
+- (id)delegate;
+- (id)editedPinCodeLabel;
+- (id)editedPinCodeValue;
+- (void)hideSpinner;
+- (id)initWithItem:(id)arg1 pinCodeManager:(id)arg2 home:(id)arg3;
+- (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;
+- (bool)isClosing;
+- (void)itemManagerDidFinishUpdate:(id)arg1;
+- (void)personalPinCodeViewController:(id)arg1 pinCodeDidChange:(id)arg2;
+- (id)pinAccessories;
+- (id)pinCodeItemManager;
+- (id)pinCodeManager;
+- (void)pinCodeManagerFetchDidComplete:(id)arg1;
+- (id)presentationDelegate;
+- (void)setAccessoriesToEdit:(id)arg1;
+- (void)setCreatingNewPinCode:(bool)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEditedPinCodeLabel:(id)arg1;
+- (void)setEditedPinCodeValue:(id)arg1;
+- (void)setIsClosing:(bool)arg1;
+- (void)setPinAccessories:(id)arg1;
+- (void)setPinCodeItemManager:(id)arg1;
+- (void)setPresentationDelegate:(id)arg1;
+- (bool)shouldManageTextFieldForItem:(id)arg1;
+- (void)showSpinner;
+- (void)switchCell:(id)arg1 didTurnOn:(bool)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)textDidChange:(id)arg1 forTextField:(id)arg2 item:(id)arg3;
+- (void)textFieldDidEndEditing:(id)arg1 item:(id)arg2;
+- (bool)textFieldShouldEndEditing:(id)arg1;
+- (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(bool)arg4;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

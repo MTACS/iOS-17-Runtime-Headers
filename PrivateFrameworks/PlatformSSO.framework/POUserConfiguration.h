@@ -1,0 +1,97 @@
+
+@interface POUserConfiguration : NSObject <NSSecureCoding> {
+    NSData * __credential;
+    NSData * __sepKeyData;
+    NSArray * _kerberosStatus;
+    POKeychainHelper * _keychainHelper;
+    NSDate * _lastLoginDate;
+    unsigned long long  _loginType;
+    NSData * _pendingSSOTokens;
+    struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; _Atomic unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; } * _sepKey;
+    struct __SecCertificate { } * _sepKeyCertificate;
+    NSString * _smartCardTokenId;
+    NSString * _ssoExtensionIdentifier;
+    long long  _state;
+    NSString * _uniqueIdentifier;
+    struct __SecCertificate { } * _userDecryptionCertificate;
+    NSString * _userDecryptionContext;
+    NSData * _userDecryptionKeyHash;
+    POUserLoginConfiguration * _userLoginConfiguration;
+    int  _version;
+}
+
+@property (copy) NSString *__ssoExtensionIdentifier;
+@property (copy) NSData *_credential;
+@property (retain) NSData *_sepKeyData;
+@property (copy) NSArray *kerberosStatus;
+@property (retain) POKeychainHelper *keychainHelper;
+@property (nonatomic, retain) NSDate *lastLoginDate;
+@property unsigned long long loginType;
+@property (copy) NSData *pendingSSOTokens;
+@property struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; _Atomic unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; }*sepKey;
+@property (nonatomic) struct __SecCertificate { }*sepKeyCertificate;
+@property (copy) NSString *smartCardTokenId;
+@property (copy) NSString *ssoExtensionIdentifier;
+@property long long state;
+@property (copy) NSString *uniqueIdentifier;
+@property struct __SecCertificate { }*userDecryptionCertificate;
+@property (copy) NSString *userDecryptionContext;
+@property (copy) NSData *userDecryptionKeyHash;
+@property (retain) POUserLoginConfiguration *userLoginConfiguration;
+@property (readonly) int version;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)__ssoExtensionIdentifier;
+- (id)_credential;
+- (id)_sepKeyData;
+- (id)calculateExpirationForTokens:(id)arg1;
+- (id)dataRepresentation;
+- (id)dataRepresentationForDisplay:(bool)arg1;
+- (id)decryptPendingSSOTokensUsingPrivateKey:(struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; _Atomic unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; }*)arg1 sharedData:(id)arg2;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)encryptPendingSSOTokens:(id)arg1 usingPublicKey:(struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; _Atomic unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; }*)arg2 sharedData:(id)arg3;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithData:(id)arg1;
+- (id)kerberosStatus;
+- (id)keychainHelper;
+- (id)lastLoginDate;
+- (unsigned long long)loginType;
+- (id)pendingSSOTokens;
+- (struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; _Atomic unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; }*)sepKey;
+- (struct __SecCertificate { }*)sepKeyCertificate;
+- (void)setKerberosStatus:(id)arg1;
+- (void)setKeychainHelper:(id)arg1;
+- (void)setLastLoginDate:(id)arg1;
+- (void)setLoginType:(unsigned long long)arg1;
+- (void)setPendingSSOTokens:(id)arg1;
+- (void)setSepKey:(struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; _Atomic unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; }*)arg1;
+- (void)setSepKeyCertificate:(struct __SecCertificate { }*)arg1;
+- (void)setSmartCardTokenId:(id)arg1;
+- (void)setSsoExtensionIdentifier:(id)arg1;
+- (void)setState:(long long)arg1;
+- (bool)setTokens:(id)arg1 extensionIdentifier:(id)arg2 returningError:(id*)arg3;
+- (void)setUniqueIdentifier:(id)arg1;
+- (void)setUserDecryptionCertificate:(struct __SecCertificate { }*)arg1;
+- (void)setUserDecryptionContext:(id)arg1;
+- (void)setUserDecryptionKeyHash:(id)arg1;
+- (void)setUserLoginConfiguration:(id)arg1;
+- (void)set__ssoExtensionIdentifier:(id)arg1;
+- (void)set_credential:(id)arg1;
+- (void)set_sepKeyData:(id)arg1;
+- (id)smartCardTokenId;
+- (id)ssoExtensionIdentifier;
+- (long long)state;
+- (id)tokensForExtensionIdentifier:(id)arg1;
+- (id)uniqueIdentifier;
+- (void)updateVersion;
+- (struct __SecCertificate { }*)userDecryptionCertificate;
+- (id)userDecryptionContext;
+- (id)userDecryptionKeyHash;
+- (id)userLoginConfiguration;
+- (int)version;
+
+@end

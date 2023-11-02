@@ -1,0 +1,4 @@
+
+@interface iCloudSubscriptionOptimizerDaemon.SystemActivityEvent : iCloudSubscriptionOptimizerDaemon.DaemonEvent
+
+@end

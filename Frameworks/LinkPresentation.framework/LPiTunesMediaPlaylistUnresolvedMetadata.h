@@ -1,0 +1,38 @@
+
+@interface LPiTunesMediaPlaylistUnresolvedMetadata : NSObject <LPiTunesMediaUnresolvedMetadata> {
+    LPiTunesMediaAsset * _artwork;
+    NSString * _curator;
+    NSString * _curatorID;
+    NSString * _name;
+    NSString * _storeFrontIdentifier;
+    NSString * _storeIdentifier;
+}
+
+@property (nonatomic, retain) LPiTunesMediaAsset *artwork;
+@property (nonatomic, copy) NSString *curator;
+@property (nonatomic, copy) NSString *curatorID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *storeFrontIdentifier;
+@property (nonatomic, copy) NSString *storeIdentifier;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)artwork;
+- (id)assetsToFetch;
+- (id)curator;
+- (id)curatorID;
+- (id)name;
+- (id)resolve;
+- (void)setArtwork:(id)arg1;
+- (void)setCurator:(id)arg1;
+- (void)setCuratorID:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1;
+- (void)setStoreIdentifier:(id)arg1;
+- (id)storeFrontIdentifier;
+- (id)storeIdentifier;
+
+@end

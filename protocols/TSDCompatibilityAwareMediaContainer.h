@@ -1,0 +1,4 @@
+
+@protocol TSDCompatibilityAwareMediaContainer <TSDReplaceableMediaContainer>
+
+@end

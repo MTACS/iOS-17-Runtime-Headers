@@ -1,0 +1,37 @@
+
+@interface SUScriptTelephony : SUScriptObject
+
+@property (getter=isCellularRoaming, nonatomic, readonly) id cellularRoaming;
+@property (nonatomic, readonly) NSString *countryCode;
+@property (getter=isGreenTea, nonatomic, readonly) id greenTea;
+@property (nonatomic, readonly) NSString *mobileCountryCode;
+@property (nonatomic, readonly) NSString *mobileNetworkCode;
+@property (nonatomic, readonly) NSString *operatorName;
+@property (nonatomic, readonly) NSString *phoneNumber;
+@property (nonatomic, readonly) NSString *providerName;
+
++ (void)initialize;
++ (id)webScriptNameForKeyName:(id)arg1;
++ (id)webScriptNameForSelector:(SEL)arg1;
+
+- (bool)_checkIfIsAllowed;
+- (id)_className;
+- (void)_handleOperatorNameChangedNotification:(id)arg1;
+- (void)_handlePhoneNumberChangedNotification:(id)arg1;
+- (void)_handleRegistrationChangedNotification:(id)arg1;
+- (id)attributeKeys;
+- (id)countryCode;
+- (void)dealloc;
+- (id)formattedPhoneNumber:(id)arg1;
+- (id)init;
+- (id)isCellularRoaming;
+- (id)isGreenTea;
+- (id)mobileCountryCode;
+- (id)mobileNetworkCode;
+- (id)operatorName;
+- (id)phoneNumber;
+- (id)providerName;
+- (id)scriptAttributeKeys;
+- (id)sendSMSWithBodyText:(id)arg1 digits:(id)arg2 countryCode:(id)arg3;
+
+@end

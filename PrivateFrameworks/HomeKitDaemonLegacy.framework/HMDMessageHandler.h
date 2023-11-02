@@ -1,0 +1,101 @@
+
+@interface HMDMessageHandler : HMFObject <HMDMessageHandlerQueuedMessageDelegate, HMFLogging, HMFMessageReceiver> {
+    NSArray * _adminPrivateRemoteMessages;
+    HMDAppleAccountManager * _appleAccountManager;
+    <HMDMessageHandlerDataSource> * _dataSource;
+    NSMutableDictionary * _deviceIdentifierToQueuedOutgoingMessageNames;
+    NSArray * _internalMessages;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    HMFMessageDispatcher * _messageDispatcher;
+    NSMutableDictionary * _messageNameToQueuedIncomingMessages;
+    NSMutableDictionary * _messageNameToQueuedOutgoingMessage;
+    NSUUID * _messageTargetUUID;
+    HMDMessageHandlerMetricsDispatcher * _metricsDispatcher;
+    NSNotificationCenter * _notificationCenter;
+    NSArray * _notifications;
+    NSDictionary * _notificationsToObject;
+    NSArray * _ownerPrivateRemoteMessages;
+}
+
+@property (readonly, copy) NSArray *adminPrivateRemoteMessages;
+@property (readonly) HMDAppleAccountManager *appleAccountManager;
+@property <HMDMessageHandlerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) bool hasQueuedIncomingMessages;
+@property (readonly) bool hasQueuedOutgoingMessages;
+@property (readonly) unsigned long long hash;
+@property (readonly, copy) NSArray *internalMessages;
+@property (readonly) HMFMessageDispatcher *messageDispatcher;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (readonly) HMDMessageHandlerMetricsDispatcher *metricsDispatcher;
+@property (readonly) NSNotificationCenter *notificationCenter;
+@property (readonly, copy) NSArray *notifications;
+@property (readonly, copy) NSDictionary *notificationsToObject;
+@property (readonly, copy) NSArray *ownerPrivateRemoteMessages;
+@property (readonly) Class superclass;
+
++ (id)logCategory;
+
+- (void).cxx_destruct;
+- (void)_cleanUpDeviceMappingsForMessage:(id)arg1;
+- (id)adminPrivateRemoteMessages;
+- (id)appleAccountManager;
+- (void)associateDevice:(id)arg1 withOutgoingMessage:(id)arg2;
+- (id)attributeDescriptions;
+- (void)configureWithHome:(id)arg1;
+- (id)currentAccountDevice;
+- (id)dataSource;
+- (id)dequeueIncomingMessage:(id)arg1;
+- (id)dequeueOutgoingMessage:(id)arg1;
+- (id)dequeueQueuedIncomingMessages;
+- (id)deviceForMessage:(id)arg1;
+- (void)didTriggerMessageHandlerQueuedMessage:(id)arg1;
+- (void)didTriggerQueuedIncomingMessage:(id)arg1;
+- (void)didTriggerQueuedOutgoingMessage:(id)arg1;
+- (void)handleAccountAddedDeviceNotification:(id)arg1;
+- (bool)hasQueuedIncomingMessage:(id)arg1;
+- (bool)hasQueuedIncomingMessages;
+- (bool)hasQueuedOutgoingMessage:(id)arg1;
+- (bool)hasQueuedOutgoingMessages;
+- (bool)hasQueuedOutgoingMessagesForDevice:(id)arg1;
+- (id)initWithMessageTargetUUID:(id)arg1 messageDispatcher:(id)arg2 notificationCenter:(id)arg3 ownerPrivateRemoteMessages:(id)arg4 adminPrivateRemoteMessages:(id)arg5 internalMessages:(id)arg6 notifications:(id)arg7 notificationsToObject:(id)arg8;
+- (id)initWithMessageTargetUUID:(id)arg1 messageDispatcher:(id)arg2 notificationCenter:(id)arg3 ownerPrivateRemoteMessages:(id)arg4 adminPrivateRemoteMessages:(id)arg5 internalMessages:(id)arg6 notifications:(id)arg7 notificationsToObject:(id)arg8 appleAccountManager:(id)arg9 metricsDispatcher:(id)arg10;
+- (id)internalMessages;
+- (bool)isReadyForIncomingMessage:(id)arg1 error:(id*)arg2;
+- (bool)isReadyForOutgoingMessaging;
+- (id)logIdentifier;
+- (id)messageDispatcher;
+- (id)messageTargetUUID;
+- (id)metricsDispatcher;
+- (id)notificationCenter;
+- (id)notifications;
+- (id)notificationsToObject;
+- (id)ownerPrivateRemoteMessages;
+- (id)privateDescription;
+- (void)queueIncomingMessage:(id)arg1;
+- (void)queueOutgoingMessage:(id)arg1;
+- (id)queuedIncomingMessages;
+- (id)queuedOutgoingMessages;
+- (id)queuedOutgoingMessagesForDevice:(id)arg1;
+- (void)registerForMessagesWithHome:(id)arg1;
+- (void)registerForNotifications;
+- (void)registerForSPIRemoteMessages:(id)arg1 home:(id)arg2 userPrivilege:(unsigned long long)arg3 internalBuildOnly:(bool)arg4;
+- (void)relayMessage:(id)arg1;
+- (void)relayMessage:(id)arg1 shouldQueue:(bool)arg2;
+- (void)routeMessage:(id)arg1;
+- (void)routeMessage:(id)arg1 shouldQueue:(bool)arg2;
+- (void)routeQueuedIncomingMessages;
+- (SEL)selectorForName:(id)arg1;
+- (void)sendQueuedOutgoingMessages;
+- (void)sendQueuedOutgoingMessages:(id)arg1;
+- (void)sendQueuedOutgoingMessagesForDevice:(id)arg1;
+- (void)setDataSource:(id)arg1;
+- (bool)shouldRelayIncomingMessage:(id)arg1 error:(id*)arg2;
+- (void)triggerQueuedIncomingMessagesTimeouts;
+- (void)triggerQueuedOutgoingMessagesTimeouts;
+
+@end

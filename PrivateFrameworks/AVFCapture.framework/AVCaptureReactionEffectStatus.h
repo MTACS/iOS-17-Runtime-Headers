@@ -1,0 +1,4 @@
+
+@interface AVCaptureReactionEffectStatus : AVCaptureReactionEffectState
+
+@end

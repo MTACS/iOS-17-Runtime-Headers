@@ -1,0 +1,4 @@
+
+@interface _TtC16GameCenterUICoreP33_E44D674692741EF57B3FDD9815A5035719ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

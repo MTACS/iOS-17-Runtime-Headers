@@ -1,0 +1,82 @@
+
+@interface _UIKeyShortcutHUDMenuViewController : UIViewController <_UIKeyShortcutHUDCollectionViewManagerClient> {
+    UICollectionViewCellRegistration * _cellRegistration;
+    UICollectionViewSupplementaryRegistration * _cellSeparatorRegistration;
+    UICollectionView * _collectionView;
+    _UIKeyShortcutHUDCollectionViewManager * _collectionViewManager;
+    unsigned long long  _currentScrolledToCategoryIndex;
+    UICollectionViewDiffableDataSource * _dataSource;
+    <_UIKeyShortcutHUDMenuViewControllerDelegate> * _delegate;
+    _UIKeyShortcutHUDMenu * _menu;
+    UIKeyShortcutHUDMetrics * _metrics;
+    bool  _searching;
+    UICollectionViewSupplementaryRegistration * _sectionHeaderRegistration;
+    bool  _transitioningSearch;
+    UIVisualEffectView * _visualEffectView;
+}
+
+@property (nonatomic, retain) UICollectionViewCellRegistration *cellRegistration;
+@property (nonatomic, retain) UICollectionViewSupplementaryRegistration *cellSeparatorRegistration;
+@property (nonatomic, readonly) UICollectionView *collectionView;
+@property (nonatomic) _UIKeyShortcutHUDCollectionViewManager *collectionViewManager;
+@property (nonatomic) unsigned long long currentScrolledToCategoryIndex;
+@property (nonatomic, retain) UICollectionViewDiffableDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <_UIKeyShortcutHUDMenuViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) _UIKeyShortcutHUDMenu *menu;
+@property (nonatomic) UIKeyShortcutHUDMetrics *metrics;
+@property (getter=isSearching, nonatomic) bool searching;
+@property (nonatomic, retain) UICollectionViewSupplementaryRegistration *sectionHeaderRegistration;
+@property (readonly) Class superclass;
+@property (getter=isTransitioningSearch, nonatomic) bool transitioningSearch;
+@property (nonatomic, retain) UIVisualEffectView *visualEffectView;
+
+- (void).cxx_destruct;
+- (bool)_canShowWhileLocked;
+- (void)_configureCollectionView;
+- (void)_displayMenu:(id)arg1 animatingDifferences:(bool)arg2;
+- (id)_searchModeCollectionViewLayout;
+- (void)_setupSubviews;
+- (id)_standardModeCollectionViewLayout;
+- (id)cellRegistration;
+- (id)cellSeparatorRegistration;
+- (id)collectionView;
+- (id)collectionViewManager;
+- (unsigned long long)currentScrolledToCategoryIndex;
+- (id)dataSource;
+- (id)delegate;
+- (void)didCompleteSearchTransition;
+- (void)didScrollCollectionView;
+- (void)flashShortcutIfVisible:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)hudWillBecomeHidden:(bool)arg1;
+- (id)indexPathsForCellsUsingSeparatorAtIndexPath:(id)arg1;
+- (id)indexPathsForSeparatorsUsedByCellAtIndexPath:(id)arg1;
+- (bool)isSearching;
+- (bool)isTransitioningSearch;
+- (id)menu;
+- (id)metrics;
+- (void)performActionForSelectingCellAtIndexPath:(id)arg1;
+- (void)prepareForSearchTransition:(bool)arg1;
+- (void)scrollToCategory:(id)arg1 withCategoryIndex:(long long)arg2 animated:(bool)arg3;
+- (id)sectionHeaderRegistration;
+- (bool)selectionFollowsFocusForItemAtIndexPath:(id)arg1;
+- (void)setCellRegistration:(id)arg1;
+- (void)setCellSeparatorRegistration:(id)arg1;
+- (void)setCollectionViewManager:(id)arg1;
+- (void)setCurrentScrolledToCategoryIndex:(unsigned long long)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setMenu:(id)arg1;
+- (void)setMenu:(id)arg1 animated:(bool)arg2;
+- (void)setMetrics:(id)arg1;
+- (void)setSearching:(bool)arg1;
+- (void)setSectionHeaderRegistration:(id)arg1;
+- (void)setTransitioningSearch:(bool)arg1;
+- (void)setVisualEffectView:(id)arg1;
+- (bool)shouldPersistSelectionForCellAtIndexPath:(id)arg1;
+- (void)viewDidLoad;
+- (id)visualEffectView;
+
+@end

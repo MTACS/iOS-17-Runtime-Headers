@@ -1,0 +1,4 @@
+
+@interface MKFOutgoingInvitationDatabaseID : MKFInvitationDatabaseID
+
+@end

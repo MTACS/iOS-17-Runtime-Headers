@@ -1,0 +1,4 @@
+
+@protocol HKRaceRouteClusterStoreClient <NSObject>
+
+@end

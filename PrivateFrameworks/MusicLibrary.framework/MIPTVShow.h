@@ -1,0 +1,65 @@
+
+@interface MIPTVShow : PBCodable <NSCopying> {
+    MIPArtist * _artist;
+    NSString * _episodeId;
+    NSString * _episodeSortId;
+    struct { 
+        unsigned int seasonNumber : 1; 
+        unsigned int videoQuality : 1; 
+    }  _has;
+    NSString * _networkName;
+    int  _seasonNumber;
+    MIPSeries * _series;
+    int  _videoQuality;
+}
+
+@property (nonatomic, retain) MIPArtist *artist;
+@property (nonatomic, retain) NSString *episodeId;
+@property (nonatomic, retain) NSString *episodeSortId;
+@property (nonatomic, readonly) bool hasArtist;
+@property (nonatomic, readonly) bool hasEpisodeId;
+@property (nonatomic, readonly) bool hasEpisodeSortId;
+@property (nonatomic, readonly) bool hasNetworkName;
+@property (nonatomic) bool hasSeasonNumber;
+@property (nonatomic, readonly) bool hasSeries;
+@property (nonatomic) bool hasVideoQuality;
+@property (nonatomic, retain) NSString *networkName;
+@property (nonatomic) int seasonNumber;
+@property (nonatomic, retain) MIPSeries *series;
+@property (nonatomic) int videoQuality;
+
+- (void).cxx_destruct;
+- (id)artist;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)episodeId;
+- (id)episodeSortId;
+- (bool)hasArtist;
+- (bool)hasEpisodeId;
+- (bool)hasEpisodeSortId;
+- (bool)hasNetworkName;
+- (bool)hasSeasonNumber;
+- (bool)hasSeries;
+- (bool)hasVideoQuality;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)networkName;
+- (bool)readFrom:(id)arg1;
+- (int)seasonNumber;
+- (id)series;
+- (void)setArtist:(id)arg1;
+- (void)setEpisodeId:(id)arg1;
+- (void)setEpisodeSortId:(id)arg1;
+- (void)setHasSeasonNumber:(bool)arg1;
+- (void)setHasVideoQuality:(bool)arg1;
+- (void)setNetworkName:(id)arg1;
+- (void)setSeasonNumber:(int)arg1;
+- (void)setSeries:(id)arg1;
+- (void)setVideoQuality:(int)arg1;
+- (int)videoQuality;
+- (void)writeTo:(id)arg1;
+
+@end

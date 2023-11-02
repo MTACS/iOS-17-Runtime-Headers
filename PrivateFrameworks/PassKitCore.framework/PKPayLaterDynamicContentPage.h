@@ -1,0 +1,90 @@
+
+@interface PKPayLaterDynamicContentPage : NSObject {
+    NSString * _altHeaderSubtitle;
+    long long  _altHeaderSubtitleTimeInterval;
+    NSString * _altPrimaryActionIdentifier;
+    NSString * _altPrimaryActionTitle;
+    NSDictionary * _contentByIdentifier;
+    PKPayLaterDynamicContentPageItem * _contentItem;
+    PKApplyFooterContent * _footerContent;
+    NSString * _headerSubtitle;
+    NSString * _headerTitle;
+    PKCurrencyAmount * _maximumAmount;
+    PKCurrencyAmount * _minimumAmount;
+    NSString * _optionIdentifier;
+    unsigned long long  _pageType;
+    NSString * _primaryActionIdentifier;
+    NSString * _primaryActionTitle;
+    NSDictionary * _productSectionByType;
+    unsigned long long  _productType;
+    NSString * _secondaryActionIdentifier;
+    NSString * _secondaryActionTitle;
+    NSArray * _sections;
+}
+
+@property (nonatomic, copy) NSString *altHeaderSubtitle;
+@property (nonatomic) long long altHeaderSubtitleTimeInterval;
+@property (nonatomic, copy) NSString *altPrimaryActionIdentifier;
+@property (nonatomic, copy) NSString *altPrimaryActionTitle;
+@property (nonatomic, retain) PKPayLaterDynamicContentPageItem *contentItem;
+@property (nonatomic, retain) PKApplyFooterContent *footerContent;
+@property (nonatomic, copy) NSString *headerSubtitle;
+@property (nonatomic, copy) NSString *headerTitle;
+@property (nonatomic, retain) PKCurrencyAmount *maximumAmount;
+@property (nonatomic, retain) PKCurrencyAmount *minimumAmount;
+@property (nonatomic, copy) NSString *optionIdentifier;
+@property (nonatomic) unsigned long long pageType;
+@property (nonatomic, copy) NSString *primaryActionIdentifier;
+@property (nonatomic, copy) NSString *primaryActionTitle;
+@property (nonatomic) unsigned long long productType;
+@property (nonatomic, copy) NSString *secondaryActionIdentifier;
+@property (nonatomic, copy) NSString *secondaryActionTitle;
+@property (nonatomic, copy) NSArray *sections;
+
++ (id)_contentByIdentifierFromDictionary:(id)arg1 pageType:(unsigned long long)arg2;
++ (id)_productSectionByTypeFromDictionary:(id)arg1 pageType:(unsigned long long)arg2;
++ (id)keyForProductType:(unsigned long long)arg1 optionIdentifier:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)altHeaderSubtitle;
+- (long long)altHeaderSubtitleTimeInterval;
+- (id)altPrimaryActionIdentifier;
+- (id)altPrimaryActionTitle;
+- (id)contentItem;
+- (id)description;
+- (id)dynamicContentPageForProductType:(unsigned long long)arg1 optionIdentifier:(id)arg2;
+- (id)footerContent;
+- (id)headerSubtitle;
+- (id)headerTitle;
+- (id)initWithDictionary:(id)arg1 pageType:(unsigned long long)arg2;
+- (id)maximumAmount;
+- (id)minimumAmount;
+- (id)optionIdentifier;
+- (unsigned long long)pageType;
+- (id)primaryActionIdentifier;
+- (id)primaryActionTitle;
+- (id)productSectionForType:(unsigned long long)arg1;
+- (unsigned long long)productType;
+- (id)secondaryActionIdentifier;
+- (id)secondaryActionTitle;
+- (id)sections;
+- (void)setAltHeaderSubtitle:(id)arg1;
+- (void)setAltHeaderSubtitleTimeInterval:(long long)arg1;
+- (void)setAltPrimaryActionIdentifier:(id)arg1;
+- (void)setAltPrimaryActionTitle:(id)arg1;
+- (void)setContentItem:(id)arg1;
+- (void)setFooterContent:(id)arg1;
+- (void)setHeaderSubtitle:(id)arg1;
+- (void)setHeaderTitle:(id)arg1;
+- (void)setMaximumAmount:(id)arg1;
+- (void)setMinimumAmount:(id)arg1;
+- (void)setOptionIdentifier:(id)arg1;
+- (void)setPageType:(unsigned long long)arg1;
+- (void)setPrimaryActionIdentifier:(id)arg1;
+- (void)setPrimaryActionTitle:(id)arg1;
+- (void)setProductType:(unsigned long long)arg1;
+- (void)setSecondaryActionIdentifier:(id)arg1;
+- (void)setSecondaryActionTitle:(id)arg1;
+- (void)setSections:(id)arg1;
+
+@end

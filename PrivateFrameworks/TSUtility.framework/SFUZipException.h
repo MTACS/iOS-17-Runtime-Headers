@@ -1,0 +1,4 @@
+
+@interface SFUZipException : NSException
+
+@end

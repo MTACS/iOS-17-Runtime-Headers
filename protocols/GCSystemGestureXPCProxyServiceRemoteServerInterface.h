@@ -1,0 +1,8 @@
+
+@protocol GCSystemGestureXPCProxyServiceRemoteServerInterface
+
+@required
+
+- (void)systemGestureXPCProxyServiceClientEndpointConnect:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: <GCSystemGestureXPCProxyRemoteClientEndpointInterface> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <GCSystemGestureXPCProxyRemoteServerEndpointInterface> *, NSError *, void*
+
+@end

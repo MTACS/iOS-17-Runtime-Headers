@@ -1,0 +1,4 @@
+
+@interface ATXDigestOnboardingSuggestion : NSObject
+
+@end

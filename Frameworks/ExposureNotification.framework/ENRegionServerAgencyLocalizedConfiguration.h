@@ -1,0 +1,96 @@
+
+@interface ENRegionServerAgencyLocalizedConfiguration : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _agencyMessage;
+    NSString * _agencyTurndownMessage;
+    NSString * _displayName;
+    NSString * _legalConsentText;
+    NSLocale * _locale;
+    NSArray * _notificationConfigurations;
+    NSString * _onboardingNotificationBody;
+    NSString * _phaTelemetryOptInMessage;
+    ENRegion * _region;
+    NSString * _regionName;
+    NSString * _revokedNotificationBody;
+    NSString * _revokedNotificationSubject;
+    NSString * _selfReportIntroMessage;
+    NSString * _selfReportNotificationBody;
+    NSString * _symptomsOnsetDescription;
+    NSString * _testVerificationIntroMessage;
+    NSString * _testVerificationNotificationBody;
+    NSString * _traveledQuestionText;
+    NSString * _vaccinationQuestionText;
+    NSString * _vaccinationQuestionTextAlt;
+}
+
+@property (nonatomic, copy) NSString *agencyMessage;
+@property (nonatomic, copy) NSString *agencyTurndownMessage;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, copy) NSString *legalConsentText;
+@property (nonatomic, copy) NSLocale *locale;
+@property (nonatomic, copy) NSArray *notificationConfigurations;
+@property (nonatomic, copy) NSString *onboardingNotificationBody;
+@property (nonatomic, copy) NSString *phaTelemetryOptInMessage;
+@property (nonatomic, readonly, copy) ENRegion *region;
+@property (nonatomic, copy) NSString *regionName;
+@property (nonatomic, copy) NSString *revokedNotificationBody;
+@property (nonatomic, copy) NSString *revokedNotificationSubject;
+@property (nonatomic, copy) NSString *selfReportIntroMessage;
+@property (nonatomic, copy) NSString *selfReportNotificationBody;
+@property (nonatomic, copy) NSString *symptomsOnsetDescription;
+@property (nonatomic, copy) NSString *testVerificationIntroMessage;
+@property (nonatomic, copy) NSString *testVerificationNotificationBody;
+@property (nonatomic, copy) NSString *traveledQuestionText;
+@property (nonatomic, copy) NSString *vaccinationQuestionText;
+@property (nonatomic, copy) NSString *vaccinationQuestionTextAlt;
+
++ (bool)getLocalizedAgencyConfiguration:(id*)arg1 region:(id)arg2 fromDictionary:(id)arg3 locale:(id)arg4;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)agencyMessage;
+- (id)agencyTurndownMessage;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithRegion:(id)arg1;
+- (id)legalConsentText;
+- (id)locale;
+- (id)notificationConfigurationForName:(id)arg1;
+- (id)notificationConfigurations;
+- (id)onboardingNotificationBody;
+- (id)phaTelemetryOptInMessage;
+- (id)region;
+- (id)regionName;
+- (id)revokedNotificationBody;
+- (id)revokedNotificationSubject;
+- (id)selfReportIntroMessage;
+- (id)selfReportNotificationBody;
+- (void)setAgencyMessage:(id)arg1;
+- (void)setAgencyTurndownMessage:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (void)setLegalConsentText:(id)arg1;
+- (void)setLocale:(id)arg1;
+- (void)setNotificationConfigurations:(id)arg1;
+- (void)setOnboardingNotificationBody:(id)arg1;
+- (void)setPhaTelemetryOptInMessage:(id)arg1;
+- (void)setRegionName:(id)arg1;
+- (void)setRevokedNotificationBody:(id)arg1;
+- (void)setRevokedNotificationSubject:(id)arg1;
+- (void)setSelfReportIntroMessage:(id)arg1;
+- (void)setSelfReportNotificationBody:(id)arg1;
+- (void)setSymptomsOnsetDescription:(id)arg1;
+- (void)setTestVerificationIntroMessage:(id)arg1;
+- (void)setTestVerificationNotificationBody:(id)arg1;
+- (void)setTraveledQuestionText:(id)arg1;
+- (void)setVaccinationQuestionText:(id)arg1;
+- (void)setVaccinationQuestionTextAlt:(id)arg1;
+- (id)symptomsOnsetDescription;
+- (id)testVerificationIntroMessage;
+- (id)testVerificationNotificationBody;
+- (id)traveledQuestionText;
+- (id)vaccinationQuestionText;
+- (id)vaccinationQuestionTextAlt;
+
+@end

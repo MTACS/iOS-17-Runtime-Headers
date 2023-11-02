@@ -1,0 +1,62 @@
+
+@interface _TVStackWrappingView : UIView {
+    long long  _backdropBlurEffectStyle;
+    UIImage * _backdropImage;
+    double  _backdropInitialPeek;
+    double  _backdropMaskFactor;
+    double  _backdropPeekGradient;
+    _TVStackBackdropView * _backdropView;
+    UIImage * _backgroundImage;
+    UIImageView * _backgroundImageView;
+    NSArray * _headerSupplementaryViews;
+    _TVStackBackdropMaskingView * _maskedBackdropView;
+    bool  _shouldAdjustForTabBarSafeAreaInsets;
+    UICollectionView * _stackView;
+    NSArray * _supplementaryCellLayoutAttributes;
+    bool  _usesBackdropImage;
+    bool  _usesBackgroundImage;
+}
+
+@property (nonatomic) long long backdropBlurEffectStyle;
+@property (nonatomic, retain) UIImage *backdropImage;
+@property (nonatomic) double backdropInitialPeek;
+@property (nonatomic) double backdropMaskFactor;
+@property (nonatomic) double backdropPeekGradient;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, copy) NSArray *headerSupplementaryViews;
+@property (nonatomic) bool shouldAdjustForTabBarSafeAreaInsets;
+@property (nonatomic, retain) UICollectionView *stackView;
+@property (nonatomic, readonly, copy) NSArray *supplementaryCellLayoutAttributes;
+@property (nonatomic) bool usesBackdropImage;
+@property (nonatomic) bool usesBackgroundImage;
+
+- (void).cxx_destruct;
+- (long long)backdropBlurEffectStyle;
+- (id)backdropImage;
+- (double)backdropInitialPeek;
+- (double)backdropMaskFactor;
+- (double)backdropPeekGradient;
+- (id)backgroundImage;
+- (void)configureSupplementaryCellLayoutAttributesWithAutomaticInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 sectionIndex:(long long)arg2;
+- (id)headerSupplementaryViews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)preferredFocusEnvironments;
+- (void)setBackdropBlurEffectStyle:(long long)arg1;
+- (void)setBackdropImage:(id)arg1;
+- (void)setBackdropInitialPeek:(double)arg1;
+- (void)setBackdropMaskFactor:(double)arg1;
+- (void)setBackdropPeekGradient:(double)arg1;
+- (void)setBackgroundImage:(id)arg1;
+- (void)setHeaderSupplementaryViews:(id)arg1;
+- (void)setShouldAdjustForTabBarSafeAreaInsets:(bool)arg1;
+- (void)setStackView:(id)arg1;
+- (void)setUsesBackdropImage:(bool)arg1;
+- (void)setUsesBackgroundImage:(bool)arg1;
+- (bool)shouldAdjustForTabBarSafeAreaInsets;
+- (id)stackView;
+- (id)supplementaryCellLayoutAttributes;
+- (bool)usesBackdropImage;
+- (bool)usesBackgroundImage;
+
+@end

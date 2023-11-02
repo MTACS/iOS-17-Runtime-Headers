@@ -1,0 +1,4 @@
+
+@protocol SRAuthorizationStoreReaderAuthorizationDelegate <SRAuthorizationStoreDelegate>
+
+@end

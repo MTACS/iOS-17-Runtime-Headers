@@ -1,0 +1,4 @@
+
+@interface CNRelativeTimestamped : CNTimestamped
+
+@end

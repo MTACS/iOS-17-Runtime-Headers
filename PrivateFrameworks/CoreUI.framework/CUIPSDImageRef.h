@@ -1,0 +1,97 @@
+
+@interface CUIPSDImageRef : NSObject {
+    int  _file;
+    bool  _parsedForLayers;
+    NSString * _path;
+    void * _psd;
+    _CUIPSDSublayerInfo * _rootLayers;
+}
+
+@property (nonatomic) int file;
+@property (nonatomic, copy) NSString *path;
+@property (nonatomic) void*psd;
+
++ (bool)isValidPSDResourceAtPath:(id)arg1;
++ (bool)isValidPSDResourceAtPath:(id)arg1 withImageInfo:(struct _PSDImageInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; int x6; }*)arg2;
++ (bool)isValidPSDResourceAtPath:(id)arg1 withLayerCount:(unsigned int*)arg2;
++ (bool)isValidPSDResourceAtPath:(id)arg1 withLayerCount:(unsigned int*)arg2 validateLayers:(bool)arg3;
+
+- (unsigned int)_absoluteIndexOfRootLayer:(unsigned int)arg1;
+- (id)_bevelEmbossFromLayerEffectsInfo:(void*)arg1;
+- (int)_blendModeAtAbsluteIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsAtAbsoluteIndex:(unsigned int)arg1;
+- (id)_colorOverlayFromLayerEffectsInfo:(void*)arg1;
+- (struct CGImage { }*)_copyCGImageAtAbsoluteIndex:(unsigned int)arg1;
+- (id)_copySublayerInfoAtAbsoluteIndex:(unsigned int)arg1 atRoot:(bool)arg2;
+- (id)_createMaskFromSlice:(unsigned int)arg1 atAbsoluteIndex:(unsigned int)arg2;
+- (id)_dropShadowFromLayerEffectsInfo:(void*)arg1;
+- (double)_fillOpacityAtAbsoluteIndex:(unsigned int)arg1;
+- (id)_fillSampleAtAbsoluteIndex:(unsigned int)arg1;
+- (id)_gradientAtAbsoluteIndex:(unsigned int)arg1;
+- (id)_gradientOverlayFromLayerEffectsAtAbsoluteIndex:(unsigned int)arg1;
+- (id)_imageAtAbsoluteIndex:(unsigned int)arg1 isZeroSizeImage:(bool*)arg2;
+- (id)_imageFromSlice:(unsigned int)arg1 atAbsoluteIndex:(unsigned int)arg2 isEmptyImage:(bool*)arg3;
+- (id)_innerGlowFromLayerEffectsInfo:(void*)arg1;
+- (id)_innerShadowFromLayerEffectsInfo:(void*)arg1;
+- (id)_layerEffectsAtAbsoluteIndex:(unsigned int)arg1;
+- (int)_layerIndexFromLayerNames:(id)arg1 indexRangeBegin:(int)arg2 indexRangeEnd:(int)arg3 isTopLevel:(bool)arg4;
+- (id)_layerInfo;
+- (id)_layerRefAtAbsoluteIndex:(unsigned int)arg1;
+- (void)_logInvalidAbsoluteIndex:(unsigned int)arg1 psd:(void*)arg2;
+- (id)_nameAtAbsoluteIndex:(unsigned int)arg1;
+- (id)_namesOfSublayers:(id)arg1;
+- (double)_opacityAtAbsoluteIndex:(unsigned int)arg1;
+- (id)_outerGlowFromLayerEffectsInfo:(void*)arg1;
+- (id)_patternFromSlice:(unsigned int)arg1 atAbsoluteIndex:(unsigned int)arg2 isZeroSizeImage:(bool*)arg3;
+- (void*)_psdFileWithLayers:(bool)arg1;
+- (void*)_psdLayerRecordAtAbsoluteIndex:(unsigned int)arg1;
+- (bool)_treatDividerAsLayer;
+- (bool)_visibilityAtAbsoluteIndex:(unsigned int)arg1;
+- (int)absoluteLayerIndexFromLayerNames:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsAtLayer:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForSlice:(unsigned int)arg1;
+- (int)cgBlendModeForPSDLayerOrLayerEffectBlendMode:(unsigned int)arg1;
+- (id)colorFromDocumentColor:(double*)arg1;
+- (id)compositeImage;
+- (struct CGColorSpace { }*)copyColorSpace;
+- (struct CGImage { }*)createCGImageAtLayer:(unsigned int)arg1;
+- (struct CGImage { }*)createCompositeCGImage;
+- (void)dealloc;
+- (void)enumerateLayersUsingBlock:(id /* block */)arg1;
+- (int)file;
+- (id)fillSampleAtLayer:(unsigned int)arg1;
+- (id)gradientAtLayer:(unsigned int)arg1;
+- (id)imageAtLayer:(unsigned int)arg1;
+- (id)imageAtLayer:(unsigned int)arg1 isZeroSizeImage:(bool*)arg2;
+- (id)imageFromRef:(struct CGImage { }*)arg1;
+- (id)imageFromSlice:(unsigned int)arg1 atAbsoluteLayer:(unsigned int)arg2;
+- (id)imageFromSlice:(unsigned int)arg1 atLayer:(unsigned int)arg2;
+- (id)imageFromSlice:(unsigned int)arg1 atLayer:(unsigned int)arg2 isEmptyImage:(bool*)arg3;
+- (struct _PSDImageInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; int x6; })imageInfo;
+- (id)initWithPath:(id)arg1;
+- (id)layerEnumerator;
+- (id)layerNames;
+- (id)layerRefAtIndex:(unsigned int)arg1;
+- (bool)loadPSDFileWithLayers:(bool)arg1;
+- (id)maskFromCompositeAlphaChannel:(long long)arg1;
+- (id)maskFromSlice:(unsigned int)arg1 atLayer:(unsigned int)arg2;
+- (id)metadataString;
+- (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })metricsInAlphaChannel:(long long)arg1 forRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })metricsInMask:(id)arg1 forRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (unsigned int)numberOfChannels;
+- (unsigned int)numberOfLayers;
+- (unsigned int)numberOfSlices;
+- (bool)openImageFile;
+- (id)path;
+- (id)patternFromSlice:(unsigned int)arg1 atLayer:(unsigned int)arg2;
+- (id)patternFromSlice:(unsigned int)arg1 atLayer:(unsigned int)arg2 isZeroSizeImage:(bool*)arg3;
+- (void*)psd;
+- (void*)psdFile;
+- (void*)psdFileForComposite;
+- (void)setFile:(int)arg1;
+- (void)setPath:(id)arg1;
+- (void)setPsd:(void*)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (bool)visibilityAtLayer:(unsigned int)arg1;
+
+@end

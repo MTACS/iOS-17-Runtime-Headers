@@ -1,0 +1,91 @@
+
+@interface IRServiceContainer : NSObject <IRDeallocSync, IRPolicyManagerDelegate, IRServiceHandling> {
+    IRAVOutputContextController * _audioAVOutputContextController;
+    IRAVOutputDeviceProvider * _avOutputDeviceProvider;
+    IRBiomeProvider * _biomeProvider;
+    <IRServiceContainerDelegate> * _delegate;
+    IRDisplayMonitor * _displayMonitor;
+    IRMiLoProvider * _miloProvider;
+    IRPersistenceManager * _persistenceManager;
+    IRPolicyManager * _policyManager;
+    IRProximityProvider * _proximityProvider;
+    NSObject<OS_dispatch_queue> * _queue;
+    IRRapportProvider * _rapportProvider;
+    NSString * _serviceIdentifier;
+    IRServiceLogPrefix * _serviceLogPrefix;
+    IRServiceStore * _serviceStore;
+}
+
+@property (nonatomic, retain) IRAVOutputContextController *audioAVOutputContextController;
+@property (nonatomic, retain) IRAVOutputDeviceProvider *avOutputDeviceProvider;
+@property (nonatomic, retain) IRBiomeProvider *biomeProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <IRServiceContainerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) IRDisplayMonitor *displayMonitor;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) IRMiLoProvider *miloProvider;
+@property (nonatomic, retain) IRPersistenceManager *persistenceManager;
+@property (nonatomic, retain) IRPolicyManager *policyManager;
+@property (nonatomic, retain) IRProximityProvider *proximityProvider;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) IRRapportProvider *rapportProvider;
+@property (nonatomic, retain) NSString *serviceIdentifier;
+@property (nonatomic, retain) IRServiceLogPrefix *serviceLogPrefix;
+@property (nonatomic, retain) IRServiceStore *serviceStore;
+@property (readonly) Class superclass;
+
++ (id)createServiceWithClientIdentifier:(id)arg1 serviceIdentifier:(id)arg2 parameters:(id)arg3 persistenceManager:(id)arg4 allowOneServicePerClient:(bool)arg5;
++ (bool)deleteDatabaseWithPersistenceManager:(id)arg1;
++ (void)deleteServiceWithToken:(id)arg1 persistenceManager:(id)arg2;
++ (id)exportDatabaseWithPersistenceManager:(id)arg1;
++ (id)getServiceTokensForClientIdentifier:(id)arg1 persistenceManager:(id)arg2;
++ (id)getServicesWithPersistenceManager:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_refreshServiceWithDate:(id)arg1;
+- (void)addEvent:(id)arg1 forCandidateIdentifier:(id)arg2;
+- (id)audioAVOutputContextController;
+- (id)avOutputDeviceProvider;
+- (id)biomeProvider;
+- (void)clearStatistics;
+- (void)dbCleanupWithDateIntervalOfMiLoPredictionsToDiscard:(id)arg1;
+- (void)dealloc;
+- (void)deallocSync;
+- (id)delegate;
+- (void)deleteCandidate:(id)arg1;
+- (id)displayMonitor;
+- (id)getStatistics;
+- (long long)getUpdateMode;
+- (id)initWithServiceIdentifier:(id)arg1 delegate:(id)arg2 avOutputDeviceProvider:(id)arg3 biomeProvider:(id)arg4 rapportProvider:(id)arg5 proximityProvider:(id)arg6 persistenceManager:(id)arg7 displayMonitor:(id)arg8 audioAVOutputContextController:(id)arg9 isLowLatencyMiLo:(bool)arg10;
+- (id)miloProvider;
+- (id)persistenceManager;
+- (id)policyManager;
+- (void)policyManager:(id)arg1 didUpdateContexts:(id)arg2 withReason:(id)arg3;
+- (id)proximityProvider;
+- (id)queue;
+- (id)rapportProvider;
+- (id)requestCurrentContext;
+- (void)restartLowLatencyMiLo:(bool)arg1;
+- (void)run;
+- (id)serviceIdentifier;
+- (id)serviceLogPrefix;
+- (id)serviceStore;
+- (void)setAudioAVOutputContextController:(id)arg1;
+- (void)setAvOutputDeviceProvider:(id)arg1;
+- (void)setBiomeProvider:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDisplayMonitor:(id)arg1;
+- (void)setMiloProvider:(id)arg1;
+- (void)setPersistenceManager:(id)arg1;
+- (void)setPolicyManager:(id)arg1;
+- (void)setProximityProvider:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setRapportProvider:(id)arg1;
+- (void)setServiceIdentifier:(id)arg1;
+- (void)setServiceLogPrefix:(id)arg1;
+- (void)setServiceStore:(id)arg1;
+- (void)setUpdateMode:(long long)arg1;
+- (void)updateCandidates:(id)arg1;
+
+@end

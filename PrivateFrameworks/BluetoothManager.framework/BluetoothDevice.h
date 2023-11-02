@@ -1,0 +1,160 @@
+
+@interface BluetoothDevice : NSObject {
+    NSString * _address;
+    unsigned int  _connectingServiceMask;
+    struct BTDeviceImpl { } * _device;
+    NSString * _name;
+    NSString * _productName;
+}
+
+@property (getter=sb_siriBluetoothDeviceSource, setter=sb_setSiriBluetoothDeviceSource:, nonatomic, retain) SiriBluetoothDeviceSource *sb_siriBluetoothDeviceSource;
+
+// Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
+
+- (unsigned int)SendSetupCommand:(unsigned char)arg1;
+- (void)_clearName;
+- (bool)_isNameCached;
+- (void)acceptSSP:(long long)arg1;
+- (id)accessoryInfo;
+- (int)accessorySettingFeatureBitMask;
+- (id)aclUID;
+- (id)address;
+- (int)autoAnswerMode;
+- (int)batteryLevel;
+- (bool)batteryStatus:(struct { unsigned char x1; unsigned int x2; unsigned char x3; unsigned int x4; unsigned char x5; unsigned int x6; unsigned char x7; unsigned int x8; unsigned char x9; unsigned int x10; }*)arg1;
+- (unsigned int)chimeVolume;
+- (unsigned int)clickHoldMode:(int*)arg1 rightAction:(int*)arg2;
+- (unsigned int)clickHoldModes:(struct { int x1; int x2; int x3; int x4; }*)arg1;
+- (bool)cloudPaired;
+- (long long)compare:(id)arg1;
+- (void)connect;
+- (void)connectWithServices:(unsigned int)arg1;
+- (bool)connected;
+- (unsigned long long)connectedServices;
+- (unsigned long long)connectedServicesCount;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)crownRotationDirection;
+- (void)dealloc;
+- (id)description;
+- (struct BTDeviceImpl { }*)device;
+- (void)disconnect;
+- (int)doubleClickMode;
+- (unsigned int)doubleTapAction;
+- (unsigned int)doubleTapActionEx:(unsigned int*)arg1 rightAction:(unsigned int*)arg2;
+- (unsigned int)doubleTapCapability;
+- (void)endVoiceCommand;
+- (bool)featureCapability:(int)arg1;
+- (bool)getAACPCapabilityBit:(int)arg1;
+- (id)getAACPCapabilityBits;
+- (unsigned int)getAACPCapabilityInteger:(int)arg1;
+- (unsigned char)getAdaptiveVolumeMode;
+- (bool)getAdaptiveVolumeSupport;
+- (bool)getAutoANCSupport;
+- (int)getBehaviorForHIDDevice;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; unsigned char x7; })getCallManagementConfig;
+- (unsigned int)getConnectingServiceMask;
+- (unsigned char)getConversationDetectMode;
+- (bool)getConversationDetectSupport;
+- (unsigned char)getDeviceAdaptiveVolumeMode;
+- (int)getDeviceColor:(unsigned int*)arg1;
+- (unsigned char)getDeviceConversationDetect;
+- (bool)getDeviceSoundProfileAllowed;
+- (bool)getDeviceSoundProfileSupport;
+- (int)getHexDeviceAddress:(struct { unsigned char x1[6]; }*)arg1;
+- (int)getLowSecurityStatus;
+- (unsigned char)getSSLMode;
+- (bool)getSSLSupport;
+- (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
+- (unsigned char)getSpatialAudioPlatformSupport;
+- (int)getStereoHFPSupport;
+- (int)getUserSelectedDeviceType;
+- (bool)getWirelessSharingSpatialSupport;
+- (id)gyroInformation;
+- (bool)headTrackingAvailable;
+- (bool)inEarDetectEnabled;
+- (bool)inEarStatusPrimary:(int*)arg1 secondary:(int*)arg2;
+- (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
+- (bool)isAccessory;
+- (bool)isAppleAudioDevice;
+- (bool)isGenuineAirPods;
+- (bool)isGuestPairingMode;
+- (bool)isProController;
+- (bool)isProxCardShowedForFeature:(int)arg1;
+- (bool)isProxCardSupportedForFeature:(int)arg1;
+- (bool)isServiceSupported:(unsigned int)arg1;
+- (bool)isTemporaryPaired;
+- (unsigned int)listeningMode;
+- (unsigned int)listeningModeConfigs;
+- (bool)magicPaired;
+- (unsigned int)majorClass;
+- (unsigned int)micMode;
+- (unsigned int)minorClass;
+- (id)name;
+- (bool)paired;
+- (bool)pairedDeviceNameUpdated;
+- (int)primaryBudSide:(int*)arg1;
+- (unsigned int)productId;
+- (id)productName;
+- (id)scoUID;
+- (void)setAdaptiveVolumeMode:(int)arg1;
+- (bool)setAutoAnswerMode:(int)arg1;
+- (bool)setCallConfig:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; unsigned char x7; })arg1;
+- (bool)setChimeVolume:(unsigned int)arg1;
+- (bool)setClickHoldMode:(int)arg1 rightMode:(int)arg2;
+- (bool)setClickHoldModes:(struct { int x1; int x2; int x3; int x4; })arg1;
+- (void)setConnectingServicemask:(unsigned int)arg1;
+- (void)setConversationDetectMode:(int)arg1;
+- (bool)setCrownRotationDirection:(int)arg1;
+- (void)setDevice:(struct BTDeviceImpl { }*)arg1;
+- (void)setDeviceAdaptiveVolumeMode:(int)arg1;
+- (void)setDeviceConversationDetect:(int)arg1;
+- (void)setDeviceSoundProfileAllowed:(bool)arg1;
+- (bool)setDoubleClickMode:(int)arg1;
+- (bool)setDoubleTapAction:(unsigned int)arg1;
+- (bool)setDoubleTapActionEx:(unsigned int)arg1 rightAction:(unsigned int)arg2;
+- (void)setGuestPairingMode:(bool)arg1;
+- (bool)setInEarDetectEnabled:(bool)arg1;
+- (bool)setIsHidden:(bool)arg1;
+- (bool)setListeningMode:(unsigned int)arg1;
+- (bool)setListeningModeConfigs:(unsigned int)arg1;
+- (bool)setMicMode:(unsigned int)arg1;
+- (void)setPIN:(id)arg1;
+- (void)setProxCardShowedForFeature:(int)arg1 showed:(bool)arg2;
+- (void)setSSLMode:(int)arg1;
+- (void)setServiceSetting:(unsigned int)arg1 key:(id)arg2 value:(id)arg3;
+- (bool)setSingleClickMode:(int)arg1;
+- (bool)setSmartRouteMode:(unsigned char)arg1;
+- (bool)setSpatialAudioAllowed:(bool)arg1;
+- (bool)setSpatialAudioConfig:(id)arg1 spatialMode:(int)arg2 headTracking:(bool)arg3;
+- (bool)setSpatialAudioMode:(unsigned char)arg1;
+- (void)setSyncGroup:(int)arg1 enabled:(bool)arg2;
+- (void)setSyncSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; })arg1;
+- (bool)setUserName:(id)arg1;
+- (bool)setUserSelectedDeviceType:(int)arg1;
+- (int)singleClickMode;
+- (unsigned char)smartRouteMode;
+- (bool)smartRouteSupport;
+- (bool)spatialAudioActive;
+- (bool)spatialAudioAllowed;
+- (bool)spatialAudioConfig:(id)arg1 spatialMode:(int*)arg2 headTracking:(bool*)arg3;
+- (unsigned char)spatialAudioMode;
+- (void)startVoiceCommand;
+- (bool)supportsBatteryLevel;
+- (bool)supportsHS;
+- (id)syncGroups;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; })syncSettings;
+- (int)type;
+- (void)unpair;
+- (unsigned int)vendorId;
+- (unsigned int)vendorIdSrc;
+
+// Image: /System/Library/PrivateFrameworks/SiriActivation.framework/SiriActivation
+
+- (bool)ac_isEyesFree;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoard.framework/SpringBoard
+
+- (void)sb_setSiriBluetoothDeviceSource:(id)arg1;
+- (id)sb_siriBluetoothDeviceSource;
+
+@end

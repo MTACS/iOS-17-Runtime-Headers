@@ -1,0 +1,82 @@
+
+@interface UIPrintPresetsOption : UIPrintOption <UIPrintOptionListDelegate> {
+    UILabel * _appliedPresetsSummaryLabel;
+    NSDictionary * _colorFineStandardPreset;
+    NSDictionary * _colorStandardPreset;
+    NSDictionary * _grayscaleDraftStandardPreset;
+    NSDictionary * _grayscaleStandardPreset;
+    UIPrinter * _observedPrinter;
+    UIPrintInfo * _origPrintInfo;
+    NSMutableArray * _presetNames;
+    NSArray * _presets;
+    NSArray * _printerPresets;
+    NSIndexPath * _selectedIndexPath;
+    NSArray * _standardPresets;
+}
+
+@property (nonatomic, retain) UILabel *appliedPresetsSummaryLabel;
+@property (nonatomic, retain) NSDictionary *colorFineStandardPreset;
+@property (nonatomic, retain) NSDictionary *colorStandardPreset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDictionary *grayscaleDraftStandardPreset;
+@property (nonatomic, retain) NSDictionary *grayscaleStandardPreset;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIPrinter *observedPrinter;
+@property (nonatomic, retain) UIPrintInfo *origPrintInfo;
+@property (nonatomic, retain) NSMutableArray *presetNames;
+@property (nonatomic, retain) NSArray *presets;
+@property (nonatomic, retain) NSArray *printerPresets;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+@property (nonatomic, retain) NSArray *standardPresets;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)appliedPresetsSummary;
+- (id)appliedPresetsSummaryLabel;
+- (id)colorFineStandardPreset;
+- (id)colorStandardPreset;
+- (void)currentPrinterChanged;
+- (void)dealloc;
+- (void)didSelectPrintOption;
+- (id)getPrinterPresets;
+- (id)getStandardPresets;
+- (id)grayscaleDraftStandardPreset;
+- (id)grayscaleStandardPreset;
+- (id)initWithPrintInfo:(id)arg1 printPanelViewController:(id)arg2;
+- (bool)isItemSelected:(id)arg1;
+- (id)itemList;
+- (long long)listItemSelected:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)observedPrinter;
+- (id)origPrintInfo;
+- (id)presetNames;
+- (id)presets;
+- (id)printOptionTableViewCell;
+- (bool)printerContainsQuality:(long long)arg1;
+- (id)printerPresets;
+- (id)selectedIndexPath;
+- (id)selectedItem;
+- (id)selectedItems;
+- (void)setAppliedPresetsSummaryLabel:(id)arg1;
+- (void)setColorFineStandardPreset:(id)arg1;
+- (void)setColorStandardPreset:(id)arg1;
+- (void)setGrayscaleDraftStandardPreset:(id)arg1;
+- (void)setGrayscaleStandardPreset:(id)arg1;
+- (void)setObservedPrinter:(id)arg1;
+- (void)setOrigPrintInfo:(id)arg1;
+- (void)setPresetNames:(id)arg1;
+- (void)setPresets:(id)arg1;
+- (void)setPrinterPresets:(id)arg1;
+- (void)setSelectedIndexPath:(id)arg1;
+- (void)setStandardPresets:(id)arg1;
+- (bool)shouldShow;
+- (id)standardPresets;
+- (id)summary;
+- (id)titleForFooterInSection:(long long)arg1;
+- (id)titleForHeaderInSection:(long long)arg1;
+- (void)updateFromPrintInfo;
+- (void)updatePresetsList;
+- (void)updatePrintInfoWithSelectedIndex:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol GEOMapItemPrivate <GEOMapItem>
+
+@end

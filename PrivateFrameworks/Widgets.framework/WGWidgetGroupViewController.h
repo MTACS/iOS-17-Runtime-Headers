@@ -1,0 +1,102 @@
+
+@interface WGWidgetGroupViewController : UIViewController <WGMajorListViewControllerDelegate, WGWidgetDebugging, WGWidgetDiscoveryObserving, WGWidgetExtensionVisibilityProviding, WGWidgetIconAnimationExtraViewsProviding, WGWidgetListViewControllerDelegatePrivate> {
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentOccludingInset;
+    UILabel * _debugLabel;
+    <WGWidgetGroupViewControllerDelegate> * _delegate;
+    WGWidgetDiscoveryController * _discoveryController;
+    UIControl * _editButton;
+    unsigned long long  _lastWidgetCount;
+    struct WGWidgetListSettings { 
+        unsigned long long carouselEdges; 
+        bool useFavorites; 
+        bool carouselIgnoresHeader; 
+        bool pinned; 
+    }  _listSettings;
+    unsigned long long  _location;
+    WGCarouselListViewController * _majorColumnListViewController;
+    bool  _shouldBlurContent;
+}
+
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentOccludingInset;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WGWidgetGroupViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIControl *editButton;
+@property (getter=isEditingIcons, nonatomic) bool editingIcons;
+@property (nonatomic, readonly, copy) NSArray *extraViews;
+@property (nonatomic, readonly, copy) NSArray *extraViewsContainers;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIViewController *headerContentViewController;
+@property (getter=isHeaderVisible, nonatomic, readonly) bool headerVisible;
+@property (nonatomic) struct WGWidgetListSettings { unsigned long long x1; bool x2; bool x3; bool x4; } listSettings;
+@property (nonatomic) unsigned long long location;
+@property (nonatomic, readonly) UIScrollView *majorScrollView;
+@property (nonatomic, readonly) bool shouldAnimateFirstTwoViewsAsOne;
+@property (nonatomic, readonly) bool shouldAnimateLastTwoViewsAsOne;
+@property (nonatomic) bool shouldBlurContent;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long widgetCount;
+
+- (void).cxx_destruct;
+- (long long)_activeLayoutMode;
+- (bool)_canShowWhileLocked;
+- (long long)_layoutModeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_loadWidgetListViewController;
+- (id)_scrollViewForListViewController:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentOccludingInset;
+- (id)delegate;
+- (id)editButton;
+- (void)editViewDidAppear:(id)arg1;
+- (void)editViewDidDisappear:(id)arg1;
+- (void)editViewWillAppear:(id)arg1;
+- (void)editViewWillDisappear:(id)arg1;
+- (id)extraViews;
+- (id)extraViewsContainers;
+- (id)headerContentViewController;
+- (id)initWithWidgetDiscoveryController:(id)arg1 listSettings:(struct WGWidgetListSettings { unsigned long long x1; bool x2; bool x3; bool x4; })arg2;
+- (bool)isEditingIcons;
+- (bool)isHeaderVisible;
+- (bool)isWidgetExtensionVisible:(id)arg1;
+- (struct WGWidgetListSettings { unsigned long long x1; bool x2; bool x3; bool x4; })listSettings;
+- (unsigned long long)location;
+- (void)majorListViewControllerDidChangeHeaderVisibility:(id)arg1;
+- (id)majorScrollView;
+- (void)makeVisibleWidgetWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)presentEditViewWithCompletion:(id /* block */)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewDidScrollToTop:(id)arg1;
+- (bool)scrollViewShouldScrollToTop:(id)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)setContentOccludingInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEditButton:(id)arg1;
+- (void)setEditingIcons:(bool)arg1;
+- (void)setHeaderContentViewController:(id)arg1;
+- (void)setLegibilitySettings:(id)arg1;
+- (void)setListSettings:(struct WGWidgetListSettings { unsigned long long x1; bool x2; bool x3; bool x4; })arg1;
+- (void)setLocation:(unsigned long long)arg1;
+- (void)setShouldBlurContent:(bool)arg1;
+- (bool)shouldAnimateFirstTwoViewsAsOne;
+- (bool)shouldAnimateLastTwoViewsAsOne;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldBlurContent;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (unsigned long long)widgetCount;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })widgetListViewController:(id)arg1 contentOccludingInsetsForInterfaceOrientation:(long long)arg2;
+- (struct CGSize { double x1; double x2; })widgetListViewController:(id)arg1 sizeForInterfaceOrientation:(long long)arg2;
+
+@end

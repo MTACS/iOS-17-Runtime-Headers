@@ -1,0 +1,96 @@
+
+@interface CLSDataObserver : NSObject <CLSEntityChangeNotifiable, CLSPredicateValueNormalizer> {
+    unsigned long long  _changeTag;
+    id /* block */  _dataChanged;
+    CLSDataStore * _dataStore;
+    id /* block */  _entitiesChanged;
+    NSMutableSet * _entitiesChangedAddedIDs;
+    NSMutableSet * _entitiesChangedDeletedIDs;
+    NSMutableSet * _entitiesChangedUpdatedIDs;
+    NSMutableSet * _entitiesChangedUpdatedMatchingPredicateIDs;
+    NSMutableSet * _entitiesChangedUpdatedNotMatchingPredicateIDs;
+    NSMutableSet * _entitiesMatchingPredicate;
+    bool  _invalidated;
+    NSString * _observerID;
+    CLSQuerySpecification * _querySpec;
+}
+
+@property unsigned long long changeTag;
+@property (nonatomic, readonly) NSString *className;
+@property (nonatomic, copy) id /* block */ dataChanged;
+@property (nonatomic) CLSDataStore *dataStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ entitiesChanged;
+@property (nonatomic, retain) NSMutableSet *entitiesChangedAddedIDs;
+@property (nonatomic, retain) NSMutableSet *entitiesChangedDeletedIDs;
+@property (nonatomic, retain) NSMutableSet *entitiesChangedUpdatedIDs;
+@property (nonatomic, retain) NSMutableSet *entitiesChangedUpdatedMatchingPredicateIDs;
+@property (nonatomic, retain) NSMutableSet *entitiesChangedUpdatedNotMatchingPredicateIDs;
+@property (nonatomic, retain) NSMutableSet *entitiesMatchingPredicate;
+@property (readonly) unsigned long long hash;
+@property (getter=isInvalidated) bool invalidated;
+@property (nonatomic, readonly) Class objectType;
+@property (nonatomic, readonly) NSString *observerID;
+@property (nonatomic, readonly) NSPredicate *predicate;
+@property (nonatomic, readonly) CLSQuerySpecification *querySpec;
+@property (nonatomic, copy) NSArray *sortDescriptors;
+@property (readonly) Class superclass;
+
++ (id)predicateForCollaborationStateForObjectWithID:(id)arg1 ownerPersonID:(id)arg2 domain:(long long)arg3;
++ (id)predicateForCollaborationStatesForObjectWithID:(id)arg1;
++ (id)predicateForCollaborationStatesForObjectWithID:(id)arg1 domain:(long long)arg2;
++ (id)predicateForCollaborationStatesForObjectWithID:(id)arg1 ownerPersonID:(id)arg2;
++ (id)predicateForObjectWithObjectID:(id)arg1;
++ (id)predicateForObjectsWithIdentifier:(id)arg1;
++ (id)predicateForObjectsWithObjectIDs:(id)arg1;
++ (id)predicateForObjectsWithParentObjectID:(id)arg1;
++ (id)predicateForObjectsWithParentObjectID:(id)arg1 andRole:(unsigned long long)arg2;
++ (id)predicateForObjectsWithPersonID:(id)arg1 andRole:(unsigned long long)arg2;
++ (id)predicateForUnexpiredObjects;
+
+- (void).cxx_destruct;
+- (unsigned long long)changeTag;
+- (id)className;
+- (oneway void)clientRemote_entitiesChangedAdded:(id)arg1 updated:(id)arg2 deleted:(id)arg3;
+- (oneway void)clientRemote_entitiesChangedUpdatedMatchingPredicate:(id)arg1 updatedNotMatchingPredicate:(id)arg2;
+- (oneway void)clientRemote_finishWithEntitiesChangedSince:(id)arg1;
+- (oneway void)clientRemote_invalidate;
+- (oneway void)clientRemote_itemChanged:(unsigned long long)arg1;
+- (id /* block */)dataChanged;
+- (id)dataStore;
+- (id)description;
+- (id /* block */)entitiesChanged;
+- (id)entitiesChangedAddedIDs;
+- (id)entitiesChangedDeletedIDs;
+- (id)entitiesChangedUpdatedIDs;
+- (id)entitiesChangedUpdatedMatchingPredicateIDs;
+- (id)entitiesChangedUpdatedNotMatchingPredicateIDs;
+- (id)entitiesMatchingPredicate;
+- (id)init;
+- (id)initWithObjectType:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3;
+- (id)initWithObjectType:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 error:(id*)arg4;
+- (id)initWithQuerySpecification:(id)arg1 error:(id*)arg2;
+- (bool)isInvalidated;
+- (id)normalizeKeyPath:(id)arg1 forValue:(id)arg2;
+- (id)normalizedValue:(id)arg1 forKeyPath:(id)arg2;
+- (Class)objectType;
+- (id)observerID;
+- (id)predicate;
+- (id)querySpec;
+- (void)reset;
+- (void)setChangeTag:(unsigned long long)arg1;
+- (void)setDataChanged:(id /* block */)arg1;
+- (void)setDataStore:(id)arg1;
+- (void)setEntitiesChanged:(id /* block */)arg1;
+- (void)setEntitiesChangedAddedIDs:(id)arg1;
+- (void)setEntitiesChangedDeletedIDs:(id)arg1;
+- (void)setEntitiesChangedUpdatedIDs:(id)arg1;
+- (void)setEntitiesChangedUpdatedMatchingPredicateIDs:(id)arg1;
+- (void)setEntitiesChangedUpdatedNotMatchingPredicateIDs:(id)arg1;
+- (void)setEntitiesMatchingPredicate:(id)arg1;
+- (void)setInvalidated:(bool)arg1;
+- (void)setSortDescriptors:(id)arg1;
+- (id)sortDescriptors;
+
+@end

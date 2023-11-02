@@ -1,0 +1,4 @@
+
+@interface iCloudSubscriptionOptimizerClient.NewOfferClientLibEvent : iCloudSubscriptionOptimizerClient.MethodCallClientLibEvent
+
+@end

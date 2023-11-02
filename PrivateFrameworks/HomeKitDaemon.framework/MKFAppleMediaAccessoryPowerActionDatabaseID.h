@@ -1,0 +1,4 @@
+
+@interface MKFAppleMediaAccessoryPowerActionDatabaseID : MKFActionDatabaseID
+
+@end

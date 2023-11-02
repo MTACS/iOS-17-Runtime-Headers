@@ -1,0 +1,94 @@
+
+@interface PUPhotoPickerRemoteViewController : UIViewController <NSExtensionRequestHandling, PUPhotoPicker, PUPhotoPickerTestSupportHandler, PXChangeObserver, _UIAppearanceRestriction> {
+    PUAssetPickerCoordinator * _assetPickerCoordinator;
+    NSLayoutConstraint * _bottomConstraint;
+    PUPhotoPickerExtensionContext * _extensionContext;
+    NSLayoutConstraint * _leadingConstraint;
+    NSLayoutConstraint * _leadingSafeAreaConstraint;
+    PUPhotoPickerRemoteViewControllerRequestOptions * _options;
+    NSLayoutConstraint * _topConstraint;
+    NSLayoutConstraint * _trailingConstraint;
+    NSLayoutConstraint * _trailingSafeAreaConstraint;
+}
+
+@property (nonatomic, readonly) bool allowsMultipleSelection;
+@property (nonatomic, retain) PUAssetPickerCoordinator *assetPickerCoordinator;
+@property (nonatomic, retain) NSLayoutConstraint *bottomConstraint;
+@property (nonatomic, readonly) bool convertAutoloopsToGIF;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) PUPhotoPickerExtensionContext *extensionContext;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSLayoutConstraint *leadingConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *leadingSafeAreaConstraint;
+@property (nonatomic, readonly) NSArray *mediaTypes;
+@property (nonatomic, readonly) unsigned long long multipleSelectionLimit;
+@property (nonatomic, readonly) bool onboardingHeaderDismissedBefore;
+@property (nonatomic, retain) PUPhotoPickerRemoteViewControllerRequestOptions *options;
+@property (nonatomic, readonly) NSDictionary *properties;
+@property (nonatomic, readonly) bool requiresPickingConfirmation;
+@property (nonatomic, readonly) unsigned long long savingOptions;
+@property (nonatomic, readonly) bool showsFileSizePicker;
+@property (nonatomic, readonly) bool showsPrompt;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSLayoutConstraint *topConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *trailingConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *trailingSafeAreaConstraint;
+
++ (bool)_preventsAppearanceProxyCustomization;
++ (void)initialize;
+
+- (void).cxx_destruct;
+- (void)_allowSharingSelectionOfInfoDictionaries:(id)arg1 completion:(id /* block */)arg2;
+- (void)_confirmConfidentialWarning:(id)arg1 showConfidentialityAlert:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)_confirmUserSafetyIntervention:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_handlePerformTraitCollectionUpdateUsingData:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handleViewControllerRequestWithOptions:(id)arg1 error:(id)arg2;
+- (void)_loadContentViewIfNeeded;
+- (void)_logAssetSelectionIfNeeded:(id)arg1;
+- (bool)allowsMultipleSelection;
+- (id)assetPickerCoordinator;
+- (void)beginRequestWithExtensionContext:(id)arg1;
+- (id)bottomConstraint;
+- (void)cancelPhotoPicker;
+- (bool)convertAutoloopsToGIF;
+- (void)didDisplayPhotoPickerPreview;
+- (void)didDisplayPhotoPickerSourceType:(long long)arg1;
+- (void)didSelectMediaWithInfoDictionary:(id)arg1 allowedHandler:(id /* block */)arg2;
+- (void)didSelectMultipleMediaItemsWithInfoDictionaries:(id)arg1;
+- (id)extensionContext;
+- (id)leadingConstraint;
+- (id)leadingSafeAreaConstraint;
+- (void)loadView;
+- (id)mediaTypes;
+- (unsigned long long)multipleSelectionLimit;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (bool)onboardingHeaderDismissedBefore;
+- (id)options;
+- (void)performPhotoPickerPreviewOfFirstAsset;
+- (void)performPhotosSelection;
+- (void)performTraitCollectionUpdateUsingData:(id)arg1 completion:(id /* block */)arg2;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)presentViewController:(id)arg1;
+- (id)properties;
+- (bool)requiresPickingConfirmation;
+- (unsigned long long)savingOptions;
+- (void)setAssetPickerCoordinator:(id)arg1;
+- (void)setBottomConstraint:(id)arg1;
+- (void)setExtensionContext:(id)arg1;
+- (void)setLeadingConstraint:(id)arg1;
+- (void)setLeadingSafeAreaConstraint:(id)arg1;
+- (void)setOptions:(id)arg1;
+- (void)setTopConstraint:(id)arg1;
+- (void)setTrailingConstraint:(id)arg1;
+- (void)setTrailingSafeAreaConstraint:(id)arg1;
+- (bool)showsFileSizePicker;
+- (bool)showsPrompt;
+- (id)topConstraint;
+- (id)trailingConstraint;
+- (id)trailingSafeAreaConstraint;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateViewConstraints;
+- (void)viewWillLayoutSubviews;
+
+@end

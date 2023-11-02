@@ -1,0 +1,4 @@
+
+@interface _TtC12NewsArticlesP33_03D352CB52A844A850D0B03681801B2C19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

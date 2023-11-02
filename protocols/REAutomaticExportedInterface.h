@@ -1,0 +1,4 @@
+
+@protocol REAutomaticExportedInterface <REExportedInterface>
+
+@end

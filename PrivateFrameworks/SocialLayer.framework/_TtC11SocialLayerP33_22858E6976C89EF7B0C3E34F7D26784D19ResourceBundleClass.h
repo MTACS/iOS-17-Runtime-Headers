@@ -1,0 +1,4 @@
+
+@interface _TtC11SocialLayerP33_22858E6976C89EF7B0C3E34F7D26784D19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

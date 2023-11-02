@@ -1,0 +1,4 @@
+
+@interface HMDBackingStoreCKOperationZoneCompletionEvent : HMDHMBLogEvent
+
+@end

@@ -1,0 +1,4 @@
+
+@interface CNTimeoutAfterDelayCancelationToken : CNCancelationToken
+
+@end

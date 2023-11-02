@@ -1,0 +1,4 @@
+
+@interface CRKUpdatePickableAirPlayRoutesRequest : CATTaskRequest
+
+@end

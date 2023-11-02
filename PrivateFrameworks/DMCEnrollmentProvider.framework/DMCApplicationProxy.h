@@ -1,0 +1,91 @@
+
+@interface DMCApplicationProxy : NSObject <NSSecureCoding> {
+    NSString * _appIDEntitlement;
+    NSString * _bundleID;
+    NSString * _bundlePath;
+    NSString * _cachedManagedAppConfigurationInfo;
+    unsigned long long  _dataSource;
+    bool  _isBetaApp;
+    bool  _isBlocked;
+    bool  _isInstalled;
+    bool  _isUserApp;
+    LSApplicationProxy * _lsApp;
+    NSData * _misCDHash;
+    NSNumber * _misHashType;
+    NSString * _name;
+    NSString * _signerID;
+}
+
+@property (nonatomic, readonly) NSString *appIDEntitlement;
+@property (nonatomic, readonly) NSString *bundleID;
+@property (nonatomic, readonly) NSString *bundlePath;
+@property (nonatomic, retain) NSString *cachedManagedAppConfigurationInfo;
+@property (nonatomic) unsigned long long dataSource;
+@property (nonatomic, readonly) bool isBetaApp;
+@property (nonatomic, readonly) bool isBlocked;
+@property (nonatomic, readonly) bool isInstalled;
+@property (nonatomic, readonly) bool isUserApp;
+@property (nonatomic, retain) LSApplicationProxy *lsApp;
+@property (nonatomic, readonly) NSData *misCDHash;
+@property (nonatomic, readonly) NSNumber *misHashType;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *signerID;
+
++ (id)_allApplications;
++ (id)_bundlePathsForApplications:(id)arg1;
++ (id)blockedApplications;
++ (id)bookIconForVariant:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
++ (id)userApplications;
+
+- (void).cxx_destruct;
+- (id)_bridgeIconForVariant:(unsigned long long)arg1;
+- (id)_circularImageFromImage:(id)arg1 variant:(int)arg2;
+- (bool)_hasAppCellularSlice;
+- (bool)_hasAppContentFilter;
+- (bool)_hasAppDNSProxy;
+- (bool)_hasAppRelay;
+- (bool)_hasAppVPN;
+- (bool)_hasAssociatedDomains;
+- (bool)_hasManagedRestrictions;
+- (bool)_isExcludedFromBackup;
+- (bool)_isExcludedFromCloudSync;
+- (bool)_isNotRemovable;
+- (bool)_isTapToPayScreenLock;
+- (bool)_isUnableToExportToUnmanaged;
+- (bool)_isUnableToImportFromUnmanaged;
+- (bool)_isUnableToUseCellData;
+- (bool)_isUnableToUseRoamingCellData;
+- (bool)_isUninstalledOnMDMRemoval;
+- (id)_lsIconDataForVariant:(unsigned long long)arg1 scale:(double)arg2;
+- (id)_managedAppAttribute:(id)arg1;
+- (id)appIDEntitlement;
+- (id)bundleID;
+- (id)bundlePath;
+- (id)cachedManagedAppConfigurationInfo;
+- (bool)checkIsBlocked;
+- (unsigned long long)dataSource;
+- (void)encodeWithCoder:(id)arg1;
+- (id)iconForVariant:(unsigned long long)arg1;
+- (id)initWithBundleID:(id)arg1 dataSource:(unsigned long long)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithLSApplicationProxy:(id)arg1 dataSource:(unsigned long long)arg2;
+- (id)initWithLSApplicationRecord:(id)arg1 dataSource:(unsigned long long)arg2;
+- (bool)isBetaApp;
+- (bool)isBlocked;
+- (bool)isInstalled;
+- (bool)isUserApp;
+- (id)lsApp;
+- (id)managedAppConfigurationInfo;
+- (id)misCDHash;
+- (id)misHashType;
+- (unsigned long long)misStateIncludingPending:(bool)arg1;
+- (id)misStateString;
+- (id)name;
+- (void)setBlockedInfo:(id)arg1;
+- (void)setCachedManagedAppConfigurationInfo:(id)arg1;
+- (void)setDataSource:(unsigned long long)arg1;
+- (void)setLsApp:(id)arg1;
+- (id)signerID;
+
+@end

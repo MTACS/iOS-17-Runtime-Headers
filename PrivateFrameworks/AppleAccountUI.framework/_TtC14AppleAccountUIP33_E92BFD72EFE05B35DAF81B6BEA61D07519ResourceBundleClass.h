@@ -1,0 +1,4 @@
+
+@interface _TtC14AppleAccountUIP33_E92BFD72EFE05B35DAF81B6BEA61D07519ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

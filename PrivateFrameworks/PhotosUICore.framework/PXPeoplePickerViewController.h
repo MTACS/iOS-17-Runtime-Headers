@@ -1,0 +1,98 @@
+
+@interface PXPeoplePickerViewController : UICollectionViewController <PXSectionedDataSourceManagerObserver, UICollectionViewDelegateFlowLayout> {
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _collectionViewSize;
+    bool  _compactMode;
+    <PXPeoplePickerConfigurationControllerDelegate> * _configControllerDelegate;
+    UICollectionViewDiffableDataSource * _dataSource;
+    long long  _dataType;
+    NSArray * _disabledLocalIdentifiers;
+    NSUUID * _identifier;
+    UICollectionViewFlowLayout * _layout;
+    PHPhotoLibrary * _library;
+    PHFetchResult * _people;
+    <PXPeoplePickerViewControllerActionHandler> * _peoplePickerActionHandler;
+    PXPeoplePickerDataSourceManager * _personDataSourceManager;
+    NSArray * _personLocalIdentifiers;
+    NSArray * _preselectedLocalIdentifiers;
+    NSString * _prompt;
+    PXSelectionCoordinator * _selectionCoordinator;
+    NSDiffableDataSourceSnapshot * _snapshot;
+    bool  _transparentBackground;
+}
+
+@property (nonatomic) struct CGSize { double x1; double x2; } collectionViewSize;
+@property (nonatomic, readonly) bool compactMode;
+@property (nonatomic) <PXPeoplePickerConfigurationControllerDelegate> *configControllerDelegate;
+@property (nonatomic, retain) UICollectionViewDiffableDataSource *dataSource;
+@property (nonatomic, readonly) long long dataType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSArray *disabledLocalIdentifiers;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSUUID *identifier;
+@property (nonatomic, readonly) PHPhotoLibrary *library;
+@property (nonatomic, readonly) PHFetchResult *people;
+@property (nonatomic) <PXPeoplePickerViewControllerActionHandler> *peoplePickerActionHandler;
+@property (nonatomic, retain) PXPeoplePickerDataSourceManager *personDataSourceManager;
+@property (nonatomic, readonly, copy) NSArray *personLocalIdentifiers;
+@property (nonatomic, readonly, copy) NSArray *preselectedLocalIdentifiers;
+@property (nonatomic, readonly, copy) NSString *prompt;
+@property (nonatomic, readonly) PXSelectionCoordinator *selectionCoordinator;
+@property (nonatomic, copy) NSDiffableDataSourceSnapshot *snapshot;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool transparentBackground;
+
+- (void).cxx_destruct;
+- (id)_collectionViewLayoutSectionForEnvironment:(id)arg1;
+- (void)_configureCellForCollectionView:(id)arg1 cell:(id)arg2 indexPath:(id)arg3;
+- (void)_configureDataSourceManager;
+- (void)_facesDidChange:(id)arg1;
+- (double)_marginForLayoutWithCollectionViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_performAction:(long long)arg1 forPerson:(id)arg2;
+- (void)_performAction:(long long)arg1 forPersonAtIndexPath:(id)arg2;
+- (id)_personAtIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })_sizeForItemWithCollectionViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)_unverifiedPeopleVisibility;
+- (void)_updatePersonDataSource;
+- (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (struct CGSize { double x1; double x2; })collectionViewSize;
+- (bool)compactMode;
+- (id)configControllerDelegate;
+- (id)dataSource;
+- (long long)dataType;
+- (void)deselectAllPeople;
+- (id)disabledLocalIdentifiers;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithPersonIdentifiers:(id)arg1 selectedLocalIdentifiers:(id)arg2 disabledLocalIdentifiers:(id)arg3 compactMode:(bool)arg4 transparentBackground:(bool)arg5 prompt:(id)arg6 selectionCoordinator:(id)arg7 library:(id)arg8;
+- (id)library;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (id)people;
+- (id)peoplePickerActionHandler;
+- (id)personDataSourceManager;
+- (id)personLocalIdentifiers;
+- (id)preselectedLocalIdentifiers;
+- (id)prompt;
+- (id)selectionCoordinator;
+- (void)setCollectionViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setConfigControllerDelegate:(id)arg1;
+- (void)setDataSource:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setPeoplePickerActionHandler:(id)arg1;
+- (void)setPersonDataSourceManager:(id)arg1;
+- (void)setSnapshot:(id)arg1;
+- (id)snapshot;
+- (bool)transparentBackground;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
+
+@end

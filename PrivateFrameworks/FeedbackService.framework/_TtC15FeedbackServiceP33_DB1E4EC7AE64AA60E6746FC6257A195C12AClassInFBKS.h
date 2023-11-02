@@ -1,0 +1,4 @@
+
+@interface _TtC15FeedbackServiceP33_DB1E4EC7AE64AA60E6746FC6257A195C12AClassInFBKS : _TtCs12_SwiftObject
+
+@end

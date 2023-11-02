@@ -1,0 +1,63 @@
+
+@interface SiriInformationSearch.AudioUsoIntent : _TtCs12_SwiftObject {
+    void $__lazy_storage_$_activities;
+    void $__lazy_storage_$_albums;
+    void $__lazy_storage_$_appAudiobookAuthors;
+    void $__lazy_storage_$_appAudiobookTitles;
+    void $__lazy_storage_$_appMusicArtistNames;
+    void $__lazy_storage_$_appName;
+    void $__lazy_storage_$_appPlaylistTitles;
+    void $__lazy_storage_$_appShowTitles;
+    void $__lazy_storage_$_applePlaylistTitles;
+    void $__lazy_storage_$_applePodcastTitles;
+    void $__lazy_storage_$_apps;
+    void $__lazy_storage_$_artists;
+    void $__lazy_storage_$_attributes;
+    void $__lazy_storage_$_dateTime;
+    void $__lazy_storage_$_decade;
+    void $__lazy_storage_$_disambiguationEntities;
+    void $__lazy_storage_$_entities;
+    void $__lazy_storage_$_frequency;
+    void $__lazy_storage_$_genres;
+    void $__lazy_storage_$_mediaType;
+    void $__lazy_storage_$_modifiers;
+    void $__lazy_storage_$_moods;
+    void $__lazy_storage_$_musicTitles;
+    void $__lazy_storage_$_noun;
+    void $__lazy_storage_$_playlistMediaItems;
+    void $__lazy_storage_$_playlistTitles;
+    void $__lazy_storage_$_podcastTitles;
+    void $__lazy_storage_$_radioStationNames;
+    void $__lazy_storage_$_radioType;
+    void $__lazy_storage_$_reference;
+    void $__lazy_storage_$_referenceMediaItem;
+    void $__lazy_storage_$_resolvedReference;
+    void $__lazy_storage_$_rootItems;
+    void $__lazy_storage_$_showTitles;
+    void $__lazy_storage_$_sort;
+    void $__lazy_storage_$_targetMediaItem;
+    void $__lazy_storage_$_targetMediaType;
+    void $__lazy_storage_$_userEntities;
+    void baseEntity;
+    void confirmationState;
+    void createMediaItemTask;
+    void followMediaItemTask;
+    void likeMediaItemTask;
+    void mediaIdentifier;
+    void noVerbAppTask;
+    void noVerbMediaItemTask;
+    void playMediaItemTask;
+    void playNoEntityTask;
+    void repeatMediaItemTask;
+    void requestMediaItemTask;
+    void resumeNoEntityTask;
+    void shuffleMediaItemTask;
+    void subscribeMediaItemTask;
+    void summariseMediaItemTask;
+    void unlikeMediaItemTask;
+    void updateMediaItemTask;
+    void usoTask;
+    void verb;
+}
+
+@end

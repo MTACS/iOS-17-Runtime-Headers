@@ -1,0 +1,4 @@
+
+@protocol MTLFunctionStitchingInputBuiltin <MTLFunctionStitchingNode>
+
+@end

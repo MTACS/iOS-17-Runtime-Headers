@@ -1,0 +1,4 @@
+
+@interface _TtC8HealthUIP33_794D7F2FD225AA1140E5520FBF0CDB4F19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

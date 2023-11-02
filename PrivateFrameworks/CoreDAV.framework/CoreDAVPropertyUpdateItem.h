@@ -1,0 +1,4 @@
+
+@interface CoreDAVPropertyUpdateItem : CoreDAVItem
+
+@end

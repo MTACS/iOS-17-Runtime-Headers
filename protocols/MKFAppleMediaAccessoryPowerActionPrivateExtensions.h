@@ -1,0 +1,4 @@
+
+@protocol MKFAppleMediaAccessoryPowerActionPrivateExtensions
+
+@end

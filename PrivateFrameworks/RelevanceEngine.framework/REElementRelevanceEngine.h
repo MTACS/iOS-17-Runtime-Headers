@@ -1,0 +1,82 @@
+
+@interface REElementRelevanceEngine : RERelevanceEngineSubsystem <REElementRelevanceEngineProperties, REFeatureTransformerInvalidationDelegate, REMLModelManagerDataStore, REMLModelManagerObserver, REPredictorObserver, RERelevanceProviderEnvironmentDelegate, RESectionDelegate> {
+    REDataSourceManager * _dataSourceManager;
+    <REElementRelevanceEngineDelegate> * _delegate;
+    bool  _deviceIsLocked;
+    NSMutableSet * _elementsNeedingRelevanceUpdate;
+    REFeatureTransmuter * _featureTransmuter;
+    REKeyMultiValueMap * _identifierElementIdentifierMap;
+    bool  _ignoreDeviceLockState;
+    REFeatureSet * _persistenceFeatures;
+    NSMutableDictionary * _predictedElements;
+    REPredictorManager * _predictorManager;
+    REUpNextScheduler * _predictorUpdatedScheduler;
+    RERelevanceProviderEnvironment * _providerEnvironment;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMapTable * _relevanceProviderElementMap;
+    REUpNextScheduler * _scheduler;
+    NSMutableDictionary * _sections;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <REElementRelevanceEngineDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) REPredictorManager *predictorManager;
+@property (nonatomic, readonly) RERelevanceProviderEnvironment *providerEnvironment;
+@property (nonatomic, readonly) NSArray *sections;
+@property (nonatomic, readonly) NSDictionary *sectionsMap;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_allCurrentElements;
+- (void)_checkPreferences;
+- (id)_elementIdentifierForIdentifier:(id)arg1;
+- (bool)_elementIsFullyLoaded:(id)arg1;
+- (void)_enumerateAndGenerateSectionComparators:(id /* block */)arg1;
+- (id)_generateFeatureMapForElement:(id)arg1;
+- (id)_identifierForElementIdentifier:(id)arg1;
+- (void)_onqueue_async:(id /* block */)arg1;
+- (void)_performUpdatesToDelegate:(id /* block */)arg1;
+- (id)_queue_featureMapForElement:(id)arg1 trainingContext:(id)arg2;
+- (id)_queue_featureMapForElementWithId:(id)arg1 trainingContext:(id)arg2;
+- (void)_queue_scheduleRelevanceUpdateForElement:(id)arg1;
+- (void)_queue_updateElementRelevance;
+- (void)_updateStateBasedOnPredictor;
+- (void)addElement:(id)arg1 section:(id)arg2;
+- (id)dataStoreKey;
+- (void)dealloc;
+- (id)delegate;
+- (id)elementAtPath:(id)arg1;
+- (id)elementRankerForSection:(id)arg1;
+- (id)featureMapForElement:(id)arg1 trainingContext:(id)arg2;
+- (id)featureMapForPredictedElement:(id)arg1 trainingContext:(id)arg2;
+- (id)featureProviderForElement:(id)arg1;
+- (void)featureTransformerDidInvalidate:(id)arg1;
+- (id)initWithRelevanceEngine:(id)arg1;
+- (bool)modelManager:(id)arg1 loadDataStoreFromURL:(id)arg2 error:(id*)arg3;
+- (bool)modelManager:(id)arg1 saveDataStoreToURL:(id)arg2 error:(id*)arg3;
+- (void)modelManagerDidUpdateModel:(id)arg1;
+- (unsigned long long)numberOfElementsInSection:(id)arg1;
+- (id)pathForElement:(id)arg1;
+- (void)pause;
+- (id)predictionForElement:(id)arg1;
+- (void)predictor:(id)arg1 didBeginActivity:(id)arg2;
+- (void)predictor:(id)arg1 didFinishActivity:(id)arg2;
+- (void)predictorDidUpdate:(id)arg1;
+- (id)predictorManager;
+- (id)providerEnvironment;
+- (void)refreshContent;
+- (void)relevanceEnvironment:(id)arg1 didUpdateRelevanceProvider:(id)arg2;
+- (id)relevanceProviderEnvironment;
+- (void)reloadElement:(id)arg1 withElement:(id)arg2;
+- (void)removeElement:(id)arg1;
+- (void)resume;
+- (id)section:(id)arg1 groupForIdentifier:(id)arg2;
+- (void)sectionDidUpdateContentOrder:(id)arg1;
+- (id)sectionForElement:(id)arg1;
+- (id)sections;
+- (id)sectionsMap;
+- (void)setDelegate:(id)arg1;
+
+@end

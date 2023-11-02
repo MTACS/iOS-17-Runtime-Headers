@@ -1,0 +1,4 @@
+
+@interface TRITriprojectIdRoot : TRIPBRootObject
+
+@end

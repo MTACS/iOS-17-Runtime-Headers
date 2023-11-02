@@ -1,0 +1,4 @@
+
+@interface _TtC9CoreIDVUIP33_4925F8ED5D29D149A9B557A43D9BA9DF11BundleToken : _TtCs12_SwiftObject
+
+@end

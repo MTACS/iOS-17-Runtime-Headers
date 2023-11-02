@@ -1,0 +1,4 @@
+
+@interface MTMediaContentSource : NSObject
+
+@end

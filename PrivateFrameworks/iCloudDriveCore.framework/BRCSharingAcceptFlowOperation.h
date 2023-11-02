@@ -1,0 +1,98 @@
+
+@interface BRCSharingAcceptFlowOperation : _BRCOperation <BRCForegroundClient, BRCOperationSubclass, LSOpenResourceOperationDelegate> {
+    BRCAcceptShareOperation * _acceptOperation;
+    NSArray * _acceptationFlow;
+    bool  _allowsDirectoryFaults;
+    BRCAppLibrary * _appLibrary;
+    BRCClientZone * _clientZone;
+    NSString * _linkFilename;
+    BRCItemID * _linkItemID;
+    CKRecordID * _linkItemRecordID;
+    NSURL * _liveFileURL;
+    bool  _needsZoneAndAppLibraryActivation;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _rootFilename;
+    BRCItemID * _rootItemID;
+    BRCAccountSession * _session;
+    NSObject<OS_dispatch_group> * _shareAcceptGroup;
+    NSError * _shareAcceptationError;
+    CKRecordID * _shareID;
+    CKShareMetadata * _shareMetadata;
+    NSURL * _shareURL;
+    bool  _skipOpenInApp;
+    unsigned long long  _stepIndex;
+    NSString * _unsaltedBookmarkData;
+    <BRCUserNotifier> * _userNotification;
+    BRCXPCClient * _xpcClient;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic) bool skipOpenInApp;
+@property (readonly) Class superclass;
+
++ (void)_openAppStoreForShareURL:(id)arg1;
++ (void)_openShareURLInWebBrowser:(id)arg1 withReason:(id)arg2;
++ (void)_openiCloudSettings;
++ (id)_runningShareIDs;
++ (Class)userNotificationClass;
+
+- (void).cxx_destruct;
+- (void)_activateSharedZoneIfNeeded;
+- (void)_captureOpenInfoFromItem:(id)arg1;
+- (void)_checkIfShouldWaitUntilDownloadCompletion;
+- (void)_createServerFaultIfPossibleWithCompletion:(id /* block */)arg1;
+- (void)_createSideFaultOnDisk;
+- (void)_endAcceptationFlow;
+- (void)_finishShareAccept;
+- (void)_isAccountRestricted;
+- (void)_isAppInstalled;
+- (bool)_isDirectoryLinkInsideFolderShare;
+- (bool)_isDocumentLinkInsideFolderShare;
+- (bool)_isFolderShare;
+- (void)_isFolderSharingSupported;
+- (bool)_isLinkInsideFolderShare;
+- (bool)_isOwner;
+- (bool)_isOwnerOrShareAlreadyAccepted;
+- (void)_isUserSignedInToiCloudDrive;
+- (bool)_isiWorkLinkInsideFolderShare;
+- (bool)_isiWorkShare;
+- (void)_jumpToSelector:(SEL)arg1;
+- (void)_jumpToSelectorInQueue:(SEL)arg1;
+- (void)_locateSharedItemOnDisk;
+- (void)_locateSharedItemOnOwner;
+- (void)_locateSharedItemOnRecipient;
+- (void)_openDocumentInDocumentsAppIfInstalled:(id)arg1;
+- (void)_openSharedItemIfStillNeeded;
+- (void)_openSharedSideFaultFile;
+- (void)_openSharedSideFaultFileWithAppID:(id)arg1;
+- (void)_openiWorkAppPreemptively;
+- (void)_parseShareMetadata;
+- (void)_performNextStep;
+- (void)_performNextStepInQueue;
+- (void)_prepareToDownloadSharedDocument;
+- (void)_setSpotlightAttribute;
+- (void)_showGenericErrorAndFinish:(id)arg1;
+- (void)_showSharingJoinDialog;
+- (void)_startShareAccept;
+- (id)_stepNameAtIndex:(unsigned long long)arg1 withPrefix:(id)arg2;
+- (void)_waitForSharedItemToBeOnDiskOnOwner;
+- (void)_waitForSharedItemToBeOnDiskOnRecipient;
+- (void)_waitForSharedItemToSyncDownOnOwner;
+- (void)_waitForSharedItemToSyncDownOnRecipient;
+- (id)createActivity;
+- (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (id)identifier;
+- (id)initWithShareMetadata:(id)arg1 client:(id)arg2 session:(id)arg3;
+- (void)main;
+- (void)moveDialogToFront;
+- (void)openResourceOperation:(id)arg1 didFailWithError:(id)arg2;
+- (void)openResourceOperationDidComplete:(id)arg1;
+- (void)setSkipOpenInApp:(bool)arg1;
+- (bool)shouldRetryForError:(id)arg1;
+- (bool)skipOpenInApp;
+- (id)subclassableDescriptionWithContext:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface _TtC8NewsFeedP33_BB3FF7C351D6DBF05F2039A4A1945F5720EventStatusFormatter : _TtCs12_SwiftObject
+
+@end

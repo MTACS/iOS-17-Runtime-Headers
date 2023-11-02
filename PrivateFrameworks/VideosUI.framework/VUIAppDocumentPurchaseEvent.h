@@ -1,0 +1,16 @@
+
+@interface VUIAppDocumentPurchaseEvent : VUIAppDocumentUpdateEvent <NSCopying> {
+    NSString * _canonicalID;
+}
+
+@property (nonatomic, copy) NSString *canonicalID;
+
+- (void).cxx_destruct;
+- (id)_purchaseEventDescriptor;
+- (id)canonicalID;
+- (id)dictionaryRepresentation;
+- (id)initWithDescriptor:(id)arg1;
+- (id)initWithPurchaseEventDescriptor:(id)arg1;
+- (void)setCanonicalID:(id)arg1;
+
+@end

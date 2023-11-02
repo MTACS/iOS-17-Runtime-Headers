@@ -1,0 +1,111 @@
+
+@interface CSCoverSheetAppearanceResolver : NSObject {
+    CSBehavior * _activeBehavior;
+    double  _appearanceFraction;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _bounds;
+    bool  _contentTransitionIsAtCoverSheetLevel;
+    <CSCoverSheetViewTransitionSource> * _currentTransitionSource;
+    CSAppearance * _desiredAppearance;
+    _UILegibilitySettings * _discreteLegibilitySettings;
+    double  _fraction;
+    bool  _hasContentAboveCoverSheet;
+    unsigned long long  _indexOfMainPage;
+    SBFSteppedAnimationTimingFunctionCalculator * _interactiveAnimationCalculator;
+    bool  _isTransitioning;
+    <CSLegibilityProviding> * _legibilityProvider;
+    CSAppearance * _modalAppearance;
+    CSAppearance * _oldAppearance;
+    unsigned long long  _startIndex;
+    CSAppearance * _targetAppearance;
+    unsigned long long  _targetIndex;
+    NSArray * _whitePointValues;
+}
+
+@property (nonatomic) CSBehavior *activeBehavior;
+@property (nonatomic) double appearanceFraction;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic) bool contentTransitionIsAtCoverSheetLevel;
+@property (nonatomic, retain) <CSCoverSheetViewTransitionSource> *currentTransitionSource;
+@property (nonatomic, retain) CSAppearance *desiredAppearance;
+@property (nonatomic, retain) _UILegibilitySettings *discreteLegibilitySettings;
+@property (nonatomic) double fraction;
+@property (nonatomic) bool hasContentAboveCoverSheet;
+@property (nonatomic) unsigned long long indexOfMainPage;
+@property (nonatomic) bool isTransitioning;
+@property (nonatomic, retain) <CSLegibilityProviding> *legibilityProvider;
+@property (nonatomic, retain) CSAppearance *modalAppearance;
+@property (nonatomic, retain) CSAppearance *oldAppearance;
+@property (nonatomic) unsigned long long startIndex;
+@property (nonatomic, retain) CSAppearance *targetAppearance;
+@property (nonatomic) unsigned long long targetIndex;
+@property (nonatomic, copy) NSArray *whitePointValues;
+
+- (void).cxx_destruct;
+- (id)_resolveBackgroundComponent;
+- (id)_resolveComponentWithType:(long long)arg1;
+- (id)_resolveContentComponent;
+- (id)_resolveControlCenterGrabberComponent;
+- (id)_resolveDateViewComponent;
+- (id)_resolveFooterCallToActionLabelComponentWithHomeAffordance:(id)arg1;
+- (id)_resolveHomeAffordanceComponent;
+- (id)_resolveLegibilitySettings;
+- (id)_resolvePageContentComponent;
+- (id)_resolvePoseidonComponent;
+- (id)_resolveProudLockComponent;
+- (id)_resolveQuickActionsComponent;
+- (id)_resolveSlideableContentComponent;
+- (id)_resolveStatusBarBackgroundComponent;
+- (id)_resolveStatusBarComponent;
+- (id)_resolveStatusBarGradientComponent;
+- (id)_resolveTintingComponent;
+- (id)_resolveWhitePointComponent;
+- (id)activeBehavior;
+- (double)appearanceFraction;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (bool)contentTransitionIsAtCoverSheetLevel;
+- (id)currentTransitionSource;
+- (id)desiredAppearance;
+- (id)discreteLegibilitySettings;
+- (double)fraction;
+- (bool)hasContentAboveCoverSheet;
+- (unsigned long long)indexOfMainPage;
+- (id)init;
+- (bool)isTransitioning;
+- (id)legibilityProvider;
+- (id)modalAppearance;
+- (id)newActiveAppearanceGivenDesiredAppearance:(id)arg1 oldAppearance:(id)arg2 activeAppearance:(id)arg3 activeBehavior:(id)arg4 startIndex:(unsigned long long)arg5 targetIndex:(unsigned long long)arg6 indexOfMainPage:(unsigned long long)arg7 targetAppearance:(id)arg8 modalAppearance:(id)arg9 currentTransitionSource:(id)arg10 contentTransitionIsAtCoverSheetLevel:(bool)arg11 legibilityProvider:(id)arg12 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg13 whitePointValues:(id)arg14 hasContentAboveCoverSheet:(bool)arg15;
+- (id)oldAppearance;
+- (void)setActiveBehavior:(id)arg1;
+- (void)setAppearanceFraction:(double)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentTransitionIsAtCoverSheetLevel:(bool)arg1;
+- (void)setCurrentTransitionSource:(id)arg1;
+- (void)setDesiredAppearance:(id)arg1;
+- (void)setDiscreteLegibilitySettings:(id)arg1;
+- (void)setFraction:(double)arg1;
+- (void)setHasContentAboveCoverSheet:(bool)arg1;
+- (void)setIndexOfMainPage:(unsigned long long)arg1;
+- (void)setInteractiveAnimationCalculatorPercentComplete:(double)arg1;
+- (void)setIsTransitioning:(bool)arg1;
+- (void)setLegibilityProvider:(id)arg1;
+- (void)setModalAppearance:(id)arg1;
+- (void)setOldAppearance:(id)arg1;
+- (void)setStartIndex:(unsigned long long)arg1;
+- (void)setTargetAppearance:(id)arg1;
+- (void)setTargetIndex:(unsigned long long)arg1;
+- (void)setWhitePointValues:(id)arg1;
+- (unsigned long long)startIndex;
+- (id)targetAppearance;
+- (unsigned long long)targetIndex;
+- (id)whitePointValues;
+
+@end

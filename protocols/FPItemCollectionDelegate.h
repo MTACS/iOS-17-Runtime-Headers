@@ -1,0 +1,4 @@
+
+@protocol FPItemCollectionDelegate <FPItemCollectionIndexPathBasedDelegate>
+
+@end

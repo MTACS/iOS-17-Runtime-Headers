@@ -1,0 +1,4 @@
+
+@protocol PXSharedLibraryMutableSharingSuggestionsDataSourceManager <PXMutableSectionedDataSourceManager>
+
+@end

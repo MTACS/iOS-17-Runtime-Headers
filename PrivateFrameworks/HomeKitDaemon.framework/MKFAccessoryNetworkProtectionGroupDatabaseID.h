@@ -1,0 +1,4 @@
+
+@interface MKFAccessoryNetworkProtectionGroupDatabaseID : MKFModelDatabaseID
+
+@end

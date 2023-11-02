@@ -1,0 +1,79 @@
+
+@interface HFCameraManager : NSObject <HFAccessoryObserver, HFCameraObserver, HFExecutionEnvironmentObserver> {
+    NSError * _cachedStreamError;
+    HMCameraProfile * _cameraProfile;
+    HFExecutionEnvironment * _executionEnvironment;
+    bool  _isRegisteredForEvents;
+    <NACancelable> * _nextSnapshotEvent;
+    unsigned long long  _snapshotErrorCount;
+    NSDate * _snapshotErrorDate;
+    NSMapTable * _snapshotRequesters;
+    NSMapTable * _streamRequesters;
+}
+
+@property (nonatomic, retain) NSError *cachedStreamError;
+@property (nonatomic, readonly) HMCameraProfile *cameraProfile;
+@property (getter=isContinuousStreamingEnabled, nonatomic, readonly) bool continuousStreamingEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) HFExecutionEnvironment *executionEnvironment;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isRegisteredForEvents;
+@property (nonatomic, retain) <NACancelable> *nextSnapshotEvent;
+@property (getter=arePeriodicSnapshotsEnabled, nonatomic, readonly) bool periodicSnapshotsEnabled;
+@property (nonatomic) unsigned long long snapshotErrorCount;
+@property (nonatomic, retain) NSDate *snapshotErrorDate;
+@property (nonatomic, readonly) NSMapTable *snapshotRequesters;
+@property (nonatomic, readonly) NSMapTable *streamRequesters;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_beginContinuousStreaming;
+- (void)_beginPeriodicSnapshots;
+- (void)_cancelNextSnapshotEvent;
+- (void)_dispatchStreamStateUpdate;
+- (void)_endContinuousStreaming;
+- (void)_endPeriodicSnapshots;
+- (bool)_hasSnapshotRequesters;
+- (bool)_hasStreamRequesters;
+- (id)_nextSnapshotDate;
+- (void)_scheduleNextSnapshotEventWithPreviousError:(id)arg1;
+- (double)_snapshotTimeInterval;
+- (void)_startStreaming;
+- (void)_stopStreaming;
+- (void)_updateEventRegistration;
+- (void)accessoryDidUpdateReachability:(id)arg1;
+- (bool)arePeriodicSnapshotsEnabled;
+- (void)beginContinuousStreamingWithRequester:(id)arg1;
+- (void)beginPeriodicSnapshotsWithRequester:(id)arg1;
+- (id)cachedStreamError;
+- (id)cameraProfile;
+- (void)cameraSnapshotControl:(id)arg1 didTakeSnapshot:(id)arg2 error:(id)arg3;
+- (void)cameraSnapshotControlDidUpdateMostRecentSnapshot:(id)arg1;
+- (void)cameraStreamControl:(id)arg1 didStopStreamWithError:(id)arg2;
+- (void)cameraStreamControlDidStartStream:(id)arg1;
+- (void)cameraUserSettingsDidUpdate:(id)arg1;
+- (void)dealloc;
+- (void)endContinuousStreamingWithRequester:(id)arg1;
+- (void)endPeriodicSnapshotsWithRequester:(id)arg1;
+- (id)executionEnvironment;
+- (void)executionEnvironmentDidBecomeActive:(id)arg1;
+- (void)executionEnvironmentDidBecomeOccluded:(id)arg1;
+- (void)executionEnvironmentDidBecomeVisible:(id)arg1;
+- (void)executionEnvironmentWillResignActive:(id)arg1;
+- (id)initWithCameraProfile:(id)arg1;
+- (bool)isContinuousStreamingEnabled;
+- (bool)isRegisteredForEvents;
+- (id)nextSnapshotEvent;
+- (void)setCachedStreamError:(id)arg1;
+- (void)setExecutionEnvironment:(id)arg1;
+- (void)setIsRegisteredForEvents:(bool)arg1;
+- (void)setNextSnapshotEvent:(id)arg1;
+- (void)setSnapshotErrorCount:(unsigned long long)arg1;
+- (void)setSnapshotErrorDate:(id)arg1;
+- (unsigned long long)snapshotErrorCount;
+- (id)snapshotErrorDate;
+- (id)snapshotRequesters;
+- (id)streamRequesters;
+
+@end

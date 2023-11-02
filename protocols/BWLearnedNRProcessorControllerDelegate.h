@@ -1,0 +1,4 @@
+
+@protocol BWLearnedNRProcessorControllerDelegate <BWStillImageProcessorControllerDelegate>
+
+@end

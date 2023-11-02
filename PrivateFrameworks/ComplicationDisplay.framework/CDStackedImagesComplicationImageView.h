@@ -1,0 +1,83 @@
+
+@interface CDStackedImagesComplicationImageView : UIView <CDComplicationImageView, CLKMonochromeComplicationView, CLKUILegibilityView> {
+    CLKUIColoringImageView * _backgroundImageView;
+    UIColor * _color;
+    CLKDevice * _device;
+    <CLKMonochromeFilterProvider> * _filterProvider;
+    UIImageView * _foregroundAccentImageView;
+    UIColor * _foregroundColor;
+    CLKUIColoringImageView * _foregroundImageView;
+    CLKImageProvider * _imageProvider;
+    bool  _isShadowImagesStale;
+    bool  _isUsingLegibility;
+    _CDComplicationImageViewProviderImageView * _layerMaskImageView;
+    CLKUIColoringImageView * _monochromeImageView;
+    UIImageView * _monochromeShadowView;
+    double  _multicolorAlpha;
+    UIImageView * _multipartShadowView;
+    UIImage * _multipartShadowViewSource;
+    UIColor * _overrideColor;
+    double  _shadowBlur;
+    UIColor * _shadowColor;
+}
+
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic, readonly) UIColor *contentColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <CLKMonochromeFilterProvider> *filterProvider;
+@property (nonatomic, retain) UIColor *foregroundColor;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CLKImageProvider *imageProvider;
+@property (nonatomic) bool legibilityEnabled;
+@property (nonatomic) double multicolorAlpha;
+@property (nonatomic, retain) UIColor *overrideColor;
+@property (nonatomic) double shadowBlur;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (readonly) Class superclass;
+@property (nonatomic) bool usesLegibility;
+
+- (void).cxx_destruct;
+- (long long)_backgroundFilterStyle;
+- (void)_enumerateImageViewsWithBlock:(id /* block */)arg1;
+- (void)_enumerateMultipartImageViewsWithBlock:(id /* block */)arg1;
+- (long long)_foregroundFilterStyle;
+- (bool)_hasMultipartImages;
+- (bool)_hasShadowViews;
+- (void)_loadImageViewsIfNecessary;
+- (bool)_shouldIgnoreTwoPieceImage;
+- (void)_updateAlpha;
+- (void)_updateColors;
+- (void)_updateImageSubviewsMaxSize;
+- (void)_updateImages;
+- (void)_updateShadow;
+- (void)_updateShadowViewImages;
+- (id)color;
+- (id)contentColor;
+- (id)filterProvider;
+- (id)foregroundColor;
+- (bool)hasMonochromeImage;
+- (id)imageProvider;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (bool)legibilityEnabled;
+- (double)multicolorAlpha;
+- (id)overrideColor;
+- (void)setColor:(id)arg1;
+- (void)setFilterProvider:(id)arg1;
+- (void)setForegroundColor:(id)arg1;
+- (void)setImageProvider:(id)arg1;
+- (void)setLegibilityEnabled:(bool)arg1;
+- (void)setMulticolorAlpha:(double)arg1;
+- (void)setOverrideColor:(id)arg1;
+- (void)setShadowBlur:(double)arg1;
+- (void)setShadowColor:(id)arg1;
+- (void)setUsesLegibility:(bool)arg1;
+- (double)shadowBlur;
+- (id)shadowColor;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)updateMonochromeColor;
+- (bool)usesLegibility;
+
+@end

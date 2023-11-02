@@ -1,0 +1,53 @@
+
+@interface _CDAdvisedInteraction : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _account;
+    NSString * _bundleId;
+    _CDContact * _contact;
+    long long  _mechanism;
+    NSMutableSet * _reasons;
+    double  _score;
+    long long  _similarBidirectionalInteractionsCount;
+    long long  _similarIncomingInteractionsCount;
+    long long  _similarOutgoingInteractionsCount;
+}
+
+@property (retain) NSString *account;
+@property (retain) NSString *bundleId;
+@property (retain) _CDContact *contact;
+@property long long mechanism;
+@property (retain) NSSet *reasons;
+@property double score;
+@property long long similarBidirectionalInteractionsCount;
+@property long long similarIncomingInteractionsCount;
+@property long long similarOutgoingInteractionsCount;
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)account;
+- (void)addReason:(long long)arg1;
+- (void)addReasons:(id)arg1;
+- (id)bundleId;
+- (id)contact;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)descriptionOfReasons:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (long long)mechanism;
+- (id)reasons;
+- (double)score;
+- (void)setAccount:(id)arg1;
+- (void)setBundleId:(id)arg1;
+- (void)setContact:(id)arg1;
+- (void)setMechanism:(long long)arg1;
+- (void)setReasons:(id)arg1;
+- (void)setScore:(double)arg1;
+- (void)setSimilarBidirectionalInteractionsCount:(long long)arg1;
+- (void)setSimilarIncomingInteractionsCount:(long long)arg1;
+- (void)setSimilarOutgoingInteractionsCount:(long long)arg1;
+- (long long)similarBidirectionalInteractionsCount;
+- (long long)similarIncomingInteractionsCount;
+- (long long)similarOutgoingInteractionsCount;
+
+@end

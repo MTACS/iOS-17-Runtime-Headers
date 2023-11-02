@@ -1,0 +1,90 @@
+
+@interface ICASNoteContentData : NSObject <AADataEventType> {
+    NSNumber * _characterCount;
+    NSNumber * _countOfDistinctFolderLinks;
+    NSNumber * _countOfDistinctMentions;
+    NSNumber * _countOfDistinctNoteLinks;
+    NSNumber * _countOfDistinctTags;
+    NSNumber * _countOfFolderLinks;
+    NSNumber * _countOfMentions;
+    NSNumber * _countOfNoteLinks;
+    NSNumber * _countOfTags;
+    NSNumber * _hasAttachedPhoto;
+    NSNumber * _hasAttachmentFullscreenDrawing;
+    NSNumber * _hasAttachmentInlineDrawingV1;
+    NSNumber * _hasAttachmentInlineDrawingV2;
+    NSNumber * _hasAttachmentMapLink;
+    NSNumber * _hasAttachmentOther;
+    NSNumber * _hasAttachmentRichUrl;
+    NSNumber * _hasChecklist;
+    NSNumber * _hasMentions;
+    NSNumber * _hasPaperDocument;
+    NSNumber * _hasPaperKitDrawing;
+    NSNumber * _hasPdf;
+    NSNumber * _hasScannedDoc;
+    NSNumber * _hasStyleFormatting;
+    NSNumber * _hasTable;
+    NSNumber * _hasTags;
+    NSNumber * _weeksSinceCreation;
+}
+
+@property (nonatomic, readonly) NSNumber *characterCount;
+@property (nonatomic, readonly) NSNumber *countOfDistinctFolderLinks;
+@property (nonatomic, readonly) NSNumber *countOfDistinctMentions;
+@property (nonatomic, readonly) NSNumber *countOfDistinctNoteLinks;
+@property (nonatomic, readonly) NSNumber *countOfDistinctTags;
+@property (nonatomic, readonly) NSNumber *countOfFolderLinks;
+@property (nonatomic, readonly) NSNumber *countOfMentions;
+@property (nonatomic, readonly) NSNumber *countOfNoteLinks;
+@property (nonatomic, readonly) NSNumber *countOfTags;
+@property (nonatomic, readonly) NSNumber *hasAttachedPhoto;
+@property (nonatomic, readonly) NSNumber *hasAttachmentFullscreenDrawing;
+@property (nonatomic, readonly) NSNumber *hasAttachmentInlineDrawingV1;
+@property (nonatomic, readonly) NSNumber *hasAttachmentInlineDrawingV2;
+@property (nonatomic, readonly) NSNumber *hasAttachmentMapLink;
+@property (nonatomic, readonly) NSNumber *hasAttachmentOther;
+@property (nonatomic, readonly) NSNumber *hasAttachmentRichUrl;
+@property (nonatomic, readonly) NSNumber *hasChecklist;
+@property (nonatomic, readonly) NSNumber *hasMentions;
+@property (nonatomic, readonly) NSNumber *hasPaperDocument;
+@property (nonatomic, readonly) NSNumber *hasPaperKitDrawing;
+@property (nonatomic, readonly) NSNumber *hasPdf;
+@property (nonatomic, readonly) NSNumber *hasScannedDoc;
+@property (nonatomic, readonly) NSNumber *hasStyleFormatting;
+@property (nonatomic, readonly) NSNumber *hasTable;
+@property (nonatomic, readonly) NSNumber *hasTags;
+@property (nonatomic, readonly) NSNumber *weeksSinceCreation;
+
++ (id)dataName;
+
+- (void).cxx_destruct;
+- (id)characterCount;
+- (id)countOfDistinctFolderLinks;
+- (id)countOfDistinctMentions;
+- (id)countOfDistinctNoteLinks;
+- (id)countOfDistinctTags;
+- (id)countOfFolderLinks;
+- (id)countOfMentions;
+- (id)countOfNoteLinks;
+- (id)countOfTags;
+- (id)hasAttachedPhoto;
+- (id)hasAttachmentFullscreenDrawing;
+- (id)hasAttachmentInlineDrawingV1;
+- (id)hasAttachmentInlineDrawingV2;
+- (id)hasAttachmentMapLink;
+- (id)hasAttachmentOther;
+- (id)hasAttachmentRichUrl;
+- (id)hasChecklist;
+- (id)hasMentions;
+- (id)hasPaperDocument;
+- (id)hasPaperKitDrawing;
+- (id)hasPdf;
+- (id)hasScannedDoc;
+- (id)hasStyleFormatting;
+- (id)hasTable;
+- (id)hasTags;
+- (id)initWithCharacterCount:(id)arg1 hasChecklist:(id)arg2 hasStyleFormatting:(id)arg3 hasTable:(id)arg4 hasAttachmentInlineDrawingV1:(id)arg5 hasAttachmentInlineDrawingV2:(id)arg6 hasAttachmentFullscreenDrawing:(id)arg7 hasAttachmentOther:(id)arg8 hasAttachedPhoto:(id)arg9 weeksSinceCreation:(id)arg10 hasAttachmentRichUrl:(id)arg11 hasAttachmentMapLink:(id)arg12 hasTags:(id)arg13 hasScannedDoc:(id)arg14 countOfTags:(id)arg15 countOfDistinctTags:(id)arg16 hasMentions:(id)arg17 countOfMentions:(id)arg18 countOfDistinctMentions:(id)arg19 hasPaperKitDrawing:(id)arg20 hasPaperDocument:(id)arg21 hasPdf:(id)arg22 countOfNoteLinks:(id)arg23 countOfDistinctNoteLinks:(id)arg24 countOfFolderLinks:(id)arg25 countOfDistinctFolderLinks:(id)arg26;
+- (id)toDict;
+- (id)weeksSinceCreation;
+
+@end

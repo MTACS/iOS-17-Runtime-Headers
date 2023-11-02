@@ -1,0 +1,107 @@
+
+@interface HMDAccessorySetting : HMFObject <HMDAccessorySettingProtocol, HMDAccessorySettingUpdateProtocol, HMDSettingBaseProtocol, HMFLogging, NSSecureCoding> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    unsigned long long  _configurationVersion;
+    NSMutableArray * _constraints;
+    NSUUID * _identifier;
+    NSMutableSet * _inMemoryCachedConstraintRemovals;
+    NSMutableArray * _inMemoryCachedConstraints;
+    NSString * _keyPath;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    HMFMessageDispatcher * _messageDispatcher;
+    HMDAccessorySettingModel * _model;
+    NSArray * _models;
+    NSString * _name;
+    NSUUID * _parentIdentifier;
+    unsigned long long  _properties;
+    bool  _reflected;
+    long long  _type;
+    id  _value;
+}
+
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
+@property (nonatomic) unsigned long long configurationVersion;
+@property (readonly, copy) NSArray *constraints;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly, copy) NSUUID *identifier;
+@property (readonly) bool isCollectionType;
+@property (readonly) NSString *keyPath;
+@property (nonatomic, retain) HMFMessageDispatcher *messageDispatcher;
+@property (readonly) HMDAccessorySettingModel *model;
+@property (readonly, copy) NSArray *models;
+@property (readonly, copy) NSString *name;
+@property (readonly, copy) NSUUID *parentIdentifier;
+@property (readonly) unsigned long long properties;
+@property (getter=isReflected) bool reflected;
+@property (readonly) Class superclass;
+@property (readonly) long long type;
+@property (readonly, copy) id value;
+
++ (id)decodedValue:(id)arg1 error:(id*)arg2;
++ (id)logCategory;
++ (id)supportedConstraintClasses;
++ (id)supportedValueClasses;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (void)_mergeConstraintsLocallyWithAdditions:(id)arg1 removals:(id)arg2;
+- (id)_modelsForMergeStrategyConstraintsUpdate:(id)arg1;
+- (void)_setType:(long long)arg1;
+- (void)addConstraint:(id)arg1;
+- (void)addConstraintsInMemory:(id)arg1;
+- (bool)canAddConstraint:(id)arg1 error:(id*)arg2;
+- (bool)canRemoveConstraint:(id)arg1;
+- (id)clientQueue;
+- (bool)compareConstraints:(id)arg1;
+- (unsigned long long)configurationVersion;
+- (id)constraintWithIdentifier:(id)arg1;
+- (id)constraints;
+- (id)constraintsForCodingXPC;
+- (id)copyIdentical;
+- (id)copyReplica;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)counterpartConstraintFor:(id)arg1;
+- (id)description;
+- (void)description:(id)arg1 indent:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)inMemoryConstraintWithIdentifier:(id)arg1;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 name:(id)arg2;
+- (id)initWithModel:(id)arg1;
+- (bool)isCollectionType;
+- (bool)isConstraintMergeStrategyReflection;
+- (bool)isEqual:(id)arg1;
+- (bool)isReflected;
+- (bool)isValid:(id*)arg1;
+- (id)keyPath;
+- (id)logIdentifier;
+- (void)mergeConstraintsFromOther:(id)arg1;
+- (id)messageDispatcher;
+- (id)model;
+- (id)models;
+- (id)modelsForConstraintsUpdate:(id)arg1;
+- (id)name;
+- (id)parentIdentifier;
+- (unsigned long long)properties;
+- (void)removeConstraint:(id)arg1;
+- (void)removeConstraintsInMemory:(id)arg1;
+- (id)replicatedMissingConstraintsFrom:(id)arg1;
+- (void)setConfigurationVersion:(unsigned long long)arg1;
+- (void)setConstraints:(id)arg1;
+- (void)setGroup:(id)arg1;
+- (void)setMessageDispatcher:(id)arg1;
+- (void)setReflected:(bool)arg1;
+- (void)setValue:(id)arg1;
+- (bool)shouldBlockSettingUpdateFromVersion:(id)arg1 isMultiUserEnabled:(bool)arg2;
+- (bool)shouldTurnOffPersonalRequestsOnLanguageChangeTo:(id)arg1 supportedMultiUserLanguageCodes:(id)arg2 isMultiUserEnabled:(bool)arg3;
+- (long long)type;
+- (id)value;
+
+@end

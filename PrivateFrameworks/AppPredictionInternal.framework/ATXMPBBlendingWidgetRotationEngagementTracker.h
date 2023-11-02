@@ -1,0 +1,91 @@
+
+@interface ATXMPBBlendingWidgetRotationEngagementTracker : PBCodable <NSCopying> {
+    NSString * _abGroup;
+    NSString * _clientModelABGroup;
+    NSString * _clientModelId;
+    int  _engagementType;
+    NSString * _executableType;
+    struct { 
+        unsigned int engagementType : 1; 
+        unsigned int selectionType : 1; 
+        unsigned int stackLocation : 1; 
+    }  _has;
+    NSString * _highestConfidenceCategory;
+    NSString * _layoutType;
+    int  _selectionType;
+    int  _stackLocation;
+    NSString * _widgetIdentifier;
+}
+
+@property (nonatomic, retain) NSString *abGroup;
+@property (nonatomic, retain) NSString *clientModelABGroup;
+@property (nonatomic, retain) NSString *clientModelId;
+@property (nonatomic) int engagementType;
+@property (nonatomic, retain) NSString *executableType;
+@property (nonatomic, readonly) bool hasAbGroup;
+@property (nonatomic, readonly) bool hasClientModelABGroup;
+@property (nonatomic, readonly) bool hasClientModelId;
+@property (nonatomic) bool hasEngagementType;
+@property (nonatomic, readonly) bool hasExecutableType;
+@property (nonatomic, readonly) bool hasHighestConfidenceCategory;
+@property (nonatomic, readonly) bool hasLayoutType;
+@property (nonatomic) bool hasSelectionType;
+@property (nonatomic) bool hasStackLocation;
+@property (nonatomic, readonly) bool hasWidgetIdentifier;
+@property (nonatomic, retain) NSString *highestConfidenceCategory;
+@property (nonatomic, retain) NSString *layoutType;
+@property (nonatomic) int selectionType;
+@property (nonatomic) int stackLocation;
+@property (nonatomic, retain) NSString *widgetIdentifier;
+
+- (void).cxx_destruct;
+- (int)StringAsEngagementType:(id)arg1;
+- (int)StringAsSelectionType:(id)arg1;
+- (int)StringAsStackLocation:(id)arg1;
+- (id)abGroup;
+- (id)clientModelABGroup;
+- (id)clientModelId;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (int)engagementType;
+- (id)engagementTypeAsString:(int)arg1;
+- (id)executableType;
+- (bool)hasAbGroup;
+- (bool)hasClientModelABGroup;
+- (bool)hasClientModelId;
+- (bool)hasEngagementType;
+- (bool)hasExecutableType;
+- (bool)hasHighestConfidenceCategory;
+- (bool)hasLayoutType;
+- (bool)hasSelectionType;
+- (bool)hasStackLocation;
+- (bool)hasWidgetIdentifier;
+- (unsigned long long)hash;
+- (id)highestConfidenceCategory;
+- (bool)isEqual:(id)arg1;
+- (id)layoutType;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (int)selectionType;
+- (id)selectionTypeAsString:(int)arg1;
+- (void)setAbGroup:(id)arg1;
+- (void)setClientModelABGroup:(id)arg1;
+- (void)setClientModelId:(id)arg1;
+- (void)setEngagementType:(int)arg1;
+- (void)setExecutableType:(id)arg1;
+- (void)setHasEngagementType:(bool)arg1;
+- (void)setHasSelectionType:(bool)arg1;
+- (void)setHasStackLocation:(bool)arg1;
+- (void)setHighestConfidenceCategory:(id)arg1;
+- (void)setLayoutType:(id)arg1;
+- (void)setSelectionType:(int)arg1;
+- (void)setStackLocation:(int)arg1;
+- (void)setWidgetIdentifier:(id)arg1;
+- (int)stackLocation;
+- (id)stackLocationAsString:(int)arg1;
+- (id)widgetIdentifier;
+- (void)writeTo:(id)arg1;
+
+@end

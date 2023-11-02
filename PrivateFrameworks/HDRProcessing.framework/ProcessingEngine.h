@@ -1,0 +1,204 @@
+
+@interface ProcessingEngine : NSObject {
+    struct { 
+        /* Warning: Unrecognized filer type: '"' using 'void*' */ void*ycc_to_rgb_offset; 
+    }  _dm_config;
+    bool  _enableHwOOTF;
+    bool  _enableHwOotfForDolby84;
+    bool  _enableHwOotfForHLG;
+    struct EngineHDRContext { 
+        unsigned int contentType; 
+        unsigned int displayType; 
+        int processingType; 
+        unsigned int operation; 
+        unsigned int convertType; 
+        unsigned int inputFormatRaw; 
+        unsigned int outputFormatRaw; 
+        unsigned int inputFormat; 
+        unsigned int outputFormat; 
+        unsigned int inputColorSpace; 
+        unsigned int outputColorSpace; 
+        unsigned int inputTransferFunction; 
+        unsigned int outputTransferFunction; 
+        unsigned long long inputWidth; 
+        unsigned long long inputHeight; 
+        unsigned long long outputWidth; 
+        unsigned long long outputHeight; 
+        bool enableReshaping; 
+        bool enableToneMapping; 
+        bool enableConverting; 
+        struct _DpcParam { 
+            float alpha; 
+            float alphaPrime; 
+            float rangeMax; 
+            float gain; 
+            bool on; 
+        } dpcParam; 
+        unsigned int originalInputTransferFunction; 
+    }  _engineHC;
+    unsigned int  _frameNumber;
+    struct { 
+        unsigned int contentType; 
+        int processingType; 
+        struct { 
+            float max_fp16; 
+            float additional_scaler; 
+        } degamma; 
+        struct { 
+            float ambientnits; 
+            float maxpq; 
+            float maxedr; 
+            struct _HDR10TMParam { 
+                bool on; 
+                float Smin_nits; 
+                float Smax_nits; 
+                float Tmin_nits; 
+                float Tmax_nits; 
+                float tm_Smin_nits; 
+                float tm_Smid_nits; 
+                float tm_Smax_nits; 
+                float tm_Send_nits; 
+                float tm_Tmin_nits; 
+                float tm_Tmid_nits; 
+                float tm_Tmax_nits; 
+                float tm_Tend_nits; 
+                float tm_Smin_C; 
+                float tm_Smid_C; 
+                float tm_Smax_C; 
+                float tm_Send_C; 
+                float tm_Tmin_C; 
+                float tm_Tmid_C; 
+                float tm_Tmax_C; 
+                float tm_Tend_C; 
+                struct _TMCurveParam { 
+                    int curveType; 
+                    union { 
+                        struct _splCurveParam { 
+                            unsigned short n; 
+                            float XsC[6]; 
+                            float YsC[6]; 
+                            float MsC[6]; 
+                            float splCs[5][4]; 
+                            float polyCs[5][4]; 
+                            float linCs[2][2]; 
+                        } spl; 
+                        struct _ebzCurveParam { 
+                            unsigned short n; 
+                            float XsC[6]; 
+                            float YsC[6]; 
+                            float MsC[6]; 
+                            unsigned short ms[5]; 
+                            float arrPsC[5][14]; 
+                            float XsCA[6]; 
+                            float bezierAnchors[5][15]; 
+                            float genericPolyCoeffs[5][15]; 
+                            float stdPolyCoeffs[5][15]; 
+                        } ebz; 
+                        struct _doviCurveParam { 
+                            float sl; 
+                            float c1; 
+                            float c2; 
+                            float c3; 
+                        } dovi; 
+                    } param; 
+                } tmCurveParam; 
+                float linearOffset; 
+                float linearScaler; 
+                float nonlinearOffset; 
+                float nonlinearScaler; 
+                int linearStretchMode; 
+                float lumaMixXMinRatio; 
+                float lumaMixXMaxRatio; 
+                float lumaMixYMinRatio; 
+                float lumaMixYMaxRatio; 
+                float lumaMixPower; 
+            } tmParam; 
+            struct _EdrAdaptationParam { 
+                bool on; 
+                unsigned short n; 
+                float Xs[3]; 
+                float Ys[3]; 
+                float Ms[3]; 
+                bool withLinearExtension; 
+                float splCs[2][4]; 
+                float polyCs[2][4]; 
+                float linCs[2][2]; 
+            } edrAdaptationParam; 
+            struct _AmbAdaptationParam { 
+                bool on; 
+                unsigned short n; 
+                float XsC[3]; 
+                float YsC[3]; 
+                float MsC[3]; 
+                float aL; 
+                float bL; 
+                bool withLinearExtension; 
+                float splCs[2][4]; 
+                float polyCs[2][4]; 
+                float linCs[2][2]; 
+                float TmaxNits; 
+            } ambAdaptationParam; 
+            struct _DpcParam { 
+                float alpha; 
+                float alphaPrime; 
+                float rangeMax; 
+                float gain; 
+                bool on; 
+            } dpcParam; 
+            int dmVersion; 
+            union { 
+                struct { 
+                    float slope; 
+                    float c1; 
+                    float c2; 
+                    float c3; 
+                    float trim_slope; 
+                    float trim_offset; 
+                    float trim_power; 
+                    float trim_sat; 
+                    float s2t_ratio; 
+                    float sat2_p1; 
+                    float sat2_p2; 
+                    float sat2_p3; 
+                    float sat2_p4; 
+                    float sat2_p5; 
+                } dovi; 
+                struct { 
+                    float sCrushPq; 
+                    float sMidPq; 
+                    float sClipPq; 
+                    float tMinPq; 
+                    float tMaxPq; 
+                    float trimSlope; 
+                    float trimOffset; 
+                    float trimPower; 
+                    float targetMidContrast; 
+                    float trimSaturationGain; 
+                    float trimChromaWeight; 
+                    short src_m33Rgb2Lms[3][3]; 
+                    short tgt_m33Rgb2Lms[3][3]; 
+                } dovi_dm4; 
+                struct { 
+                    float gamma; 
+                    bool applyArtisticOOTF; 
+                } hlg; 
+            } ; 
+        } tm; 
+    }  _prev;
+}
+
+- (void)createLUTFromDMConfig:(struct { float x1; float x2; unsigned int x3; float x4; float x5; float x6; float x7; unsigned int x8; float x9; float x10; float x11; float x12; unsigned int x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; unsigned int x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; bool x46; float x47; float x48; bool x49; float x50; bool x51; int x52; int x53; float x54; int x55; struct _DpcParam { float x_56_1_1; float x_56_1_2; float x_56_1_3; float x_56_1_4; bool x_56_1_5; } x56; int x57; unsigned short x58; bool x59; float x60; bool x61; bool x62; bool x63; bool x64; bool x65; }*)arg1 DM:(id)arg2 TCControl:(struct ToneCurve_Control { double x1; double x2; double x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; double x11; bool x12; bool x13; float x14; bool x15; int x16; struct __CFString {} *x17; int x18; int x19; int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; float x25; float x26; float x27; float x28; float x29; unsigned int x30; unsigned int x31 : 1; unsigned int x32 : 1; float x33; struct _AuxData { int x_34_1_1; int x_34_1_2; int x_34_1_3; float x_34_1_4; float x_34_1_5; float x_34_1_6; float x_34_1_7; int x_34_1_8; float x_34_1_9; float x_34_1_10; float x_34_1_11; bool x_34_1_12; } x34; struct _TMData { int x_35_1_1; int x_35_1_2; int x_35_1_3; int x_35_1_4; int x_35_1_5; float x_35_1_6; float x_35_1_7; float x_35_1_8; int x_35_1_9; float x_35_1_10; float x_35_1_11; float x_35_1_12; float x_35_1_13; float x_35_1_14; float x_35_1_15; float x_35_1_16; float x_35_1_17; float x_35_1_18; float x_35_1_19; float x_35_1_20; float x_35_1_21; float x_35_1_22; float x_35_1_23; float x_35_1_24; float x_35_1_25; int x_35_1_26; int x_35_1_27; float x_35_1_28; float x_35_1_29; struct _Percentiles_t { float x_30_2_1[8]; float x_30_2_2[8]; unsigned int x_30_2_3; } x_35_1_30; bool x_35_1_31; bool x_35_1_32; bool x_35_1_33; } x35; }*)arg3 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg4 LLDoVi:(bool)arg5;
+- (void)dealloc;
+- (void)dovi_createLUTFromDMConfig:(struct { float x1; float x2; unsigned int x3; float x4; float x5; float x6; float x7; unsigned int x8; float x9; float x10; float x11; float x12; unsigned int x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; unsigned int x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; bool x46; float x47; float x48; bool x49; float x50; bool x51; int x52; int x53; float x54; int x55; struct _DpcParam { float x_56_1_1; float x_56_1_2; float x_56_1_3; float x_56_1_4; bool x_56_1_5; } x56; int x57; unsigned short x58; bool x59; float x60; bool x61; bool x62; bool x63; bool x64; bool x65; }*)arg1 DM:(id)arg2 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg3 LLDoVi:(bool)arg4 TMParam:(struct _DoViTMParam { bool x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; int x35; float x36; }*)arg5 EdrAdaptationParam:(struct _EdrAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; bool x6; float x7[2][4]; float x8[2][4]; float x9[2][2]; }*)arg6 AmbAdaptationParam:(struct _AmbAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; float x6; float x7; bool x8; float x9[2][4]; float x10[2][4]; float x11[2][2]; float x12; }*)arg7 HlgOOTFCombined:(bool)arg8 HlgOOTFOnly:(bool)arg9 IsDoVi84:(bool)arg10 IsInternalDisplay:(bool)arg11;
+- (void)hdr10_createLUTFromDMConfig:(struct { float x1; float x2; unsigned int x3; float x4; float x5; float x6; float x7; unsigned int x8; float x9; float x10; float x11; float x12; unsigned int x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; unsigned int x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; bool x46; float x47; float x48; bool x49; float x50; bool x51; int x52; int x53; float x54; int x55; struct _DpcParam { float x_56_1_1; float x_56_1_2; float x_56_1_3; float x_56_1_4; bool x_56_1_5; } x56; int x57; unsigned short x58; bool x59; float x60; bool x61; bool x62; bool x63; bool x64; bool x65; }*)arg1 TCControl:(struct ToneCurve_Control { double x1; double x2; double x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; double x11; bool x12; bool x13; float x14; bool x15; int x16; struct __CFString {} *x17; int x18; int x19; int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; float x25; float x26; float x27; float x28; float x29; unsigned int x30; unsigned int x31 : 1; unsigned int x32 : 1; float x33; struct _AuxData { int x_34_1_1; int x_34_1_2; int x_34_1_3; float x_34_1_4; float x_34_1_5; float x_34_1_6; float x_34_1_7; int x_34_1_8; float x_34_1_9; float x_34_1_10; float x_34_1_11; bool x_34_1_12; } x34; struct _TMData { int x_35_1_1; int x_35_1_2; int x_35_1_3; int x_35_1_4; int x_35_1_5; float x_35_1_6; float x_35_1_7; float x_35_1_8; int x_35_1_9; float x_35_1_10; float x_35_1_11; float x_35_1_12; float x_35_1_13; float x_35_1_14; float x_35_1_15; float x_35_1_16; float x_35_1_17; float x_35_1_18; float x_35_1_19; float x_35_1_20; float x_35_1_21; float x_35_1_22; float x_35_1_23; float x_35_1_24; float x_35_1_25; int x_35_1_26; int x_35_1_27; float x_35_1_28; float x_35_1_29; struct _Percentiles_t { float x_30_2_1[8]; float x_30_2_2[8]; unsigned int x_30_2_3; } x_35_1_30; bool x_35_1_31; bool x_35_1_32; bool x_35_1_33; } x35; }*)arg2 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg3 TMParam:(struct _HDR10TMParam { bool x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; struct _TMCurveParam { int x_22_1_1; union { struct _splCurveParam { unsigned short x_1_3_1; float x_1_3_2[6]; float x_1_3_3[6]; float x_1_3_4[6]; float x_1_3_5[5][4]; float x_1_3_6[5][4]; float x_1_3_7[2][2]; } x_2_2_1; struct _ebzCurveParam { unsigned short x_2_3_1; float x_2_3_2[6]; float x_2_3_3[6]; float x_2_3_4[6]; unsigned short x_2_3_5[5]; float x_2_3_6[5][14]; float x_2_3_7[6]; float x_2_3_8[5][15]; float x_2_3_9[5][15]; float x_2_3_10[5][15]; } x_2_2_2; struct _doviCurveParam { float x_3_3_1; float x_3_3_2; float x_3_3_3; float x_3_3_4; } x_2_2_3; } x_22_1_2; } x22; float x23; float x24; float x25; float x26; int x27; float x28; float x29; float x30; float x31; float x32; }*)arg4 EdrAdaptationParam:(struct _EdrAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; bool x6; float x7[2][4]; float x8[2][4]; float x9[2][2]; }*)arg5 AmbAdaptationParam:(struct _AmbAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; float x6; float x7; bool x8; float x9[2][4]; float x10[2][4]; float x11[2][2]; float x12; }*)arg6;
+- (bool)hdr10_tm_configChanged:(struct _HDR10TMParam { bool x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; struct _TMCurveParam { int x_22_1_1; union { struct _splCurveParam { unsigned short x_1_3_1; float x_1_3_2[6]; float x_1_3_3[6]; float x_1_3_4[6]; float x_1_3_5[5][4]; float x_1_3_6[5][4]; float x_1_3_7[2][2]; } x_2_2_1; struct _ebzCurveParam { unsigned short x_2_3_1; float x_2_3_2[6]; float x_2_3_3[6]; float x_2_3_4[6]; unsigned short x_2_3_5[5]; float x_2_3_6[5][14]; float x_2_3_7[6]; float x_2_3_8[5][15]; float x_2_3_9[5][15]; float x_2_3_10[5][15]; } x_2_2_2; struct _doviCurveParam { float x_3_3_1; float x_3_3_2; float x_3_3_3; float x_3_3_4; } x_2_2_3; } x_22_1_2; } x22; float x23; float x24; float x25; float x26; int x27; float x28; float x29; float x30; float x31; float x32; }*)arg1 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg2 EdrAdaptationParam:(struct _EdrAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; bool x6; float x7[2][4]; float x8[2][4]; float x9[2][2]; }*)arg3 AmbAdaptationParam:(struct _AmbAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; float x6; float x7; bool x8; float x9[2][4]; float x10[2][4]; float x11[2][2]; float x12; }*)arg4;
+- (void)hdr10_tm_reserveConfig:(struct _HDR10TMParam { bool x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; struct _TMCurveParam { int x_22_1_1; union { struct _splCurveParam { unsigned short x_1_3_1; float x_1_3_2[6]; float x_1_3_3[6]; float x_1_3_4[6]; float x_1_3_5[5][4]; float x_1_3_6[5][4]; float x_1_3_7[2][2]; } x_2_2_1; struct _ebzCurveParam { unsigned short x_2_3_1; float x_2_3_2[6]; float x_2_3_3[6]; float x_2_3_4[6]; unsigned short x_2_3_5[5]; float x_2_3_6[5][14]; float x_2_3_7[6]; float x_2_3_8[5][15]; float x_2_3_9[5][15]; float x_2_3_10[5][15]; } x_2_2_2; struct _doviCurveParam { float x_3_3_1; float x_3_3_2; float x_3_3_3; float x_3_3_4; } x_2_2_3; } x_22_1_2; } x22; float x23; float x24; float x25; float x26; int x27; float x28; float x29; float x30; float x31; float x32; }*)arg1 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg2 EdrAdaptationParam:(struct _EdrAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; bool x6; float x7[2][4]; float x8[2][4]; float x9[2][2]; }*)arg3 AmbAdaptationParam:(struct _AmbAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; float x6; float x7; bool x8; float x9[2][4]; float x10[2][4]; float x11[2][2]; float x12; }*)arg4;
+- (void)hlg_createLUTFromDMConfig:(struct { float x1; float x2; unsigned int x3; float x4; float x5; float x6; float x7; unsigned int x8; float x9; float x10; float x11; float x12; unsigned int x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; unsigned int x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; bool x46; float x47; float x48; bool x49; float x50; bool x51; int x52; int x53; float x54; int x55; struct _DpcParam { float x_56_1_1; float x_56_1_2; float x_56_1_3; float x_56_1_4; bool x_56_1_5; } x56; int x57; unsigned short x58; bool x59; float x60; bool x61; bool x62; bool x63; bool x64; bool x65; }*)arg1 DM:(id)arg2 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg3 TMParam:(struct _HLGTMParam { float x1; struct _HDR10TMParam { bool x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; float x_2_1_5; float x_2_1_6; float x_2_1_7; float x_2_1_8; float x_2_1_9; float x_2_1_10; float x_2_1_11; float x_2_1_12; float x_2_1_13; float x_2_1_14; float x_2_1_15; float x_2_1_16; float x_2_1_17; float x_2_1_18; float x_2_1_19; float x_2_1_20; float x_2_1_21; struct _TMCurveParam { int x_22_2_1; union { struct _splCurveParam { unsigned short x_1_4_1; float x_1_4_2[6]; float x_1_4_3[6]; float x_1_4_4[6]; float x_1_4_5[5][4]; float x_1_4_6[5][4]; float x_1_4_7[2][2]; } x_2_3_1; struct _ebzCurveParam { unsigned short x_2_4_1; float x_2_4_2[6]; float x_2_4_3[6]; float x_2_4_4[6]; unsigned short x_2_4_5[5]; float x_2_4_6[5][14]; float x_2_4_7[6]; float x_2_4_8[5][15]; float x_2_4_9[5][15]; float x_2_4_10[5][15]; } x_2_3_2; struct _doviCurveParam { float x_3_4_1; float x_3_4_2; float x_3_4_3; float x_3_4_4; } x_2_3_3; } x_22_2_2; } x_2_1_22; float x_2_1_23; float x_2_1_24; float x_2_1_25; float x_2_1_26; int x_2_1_27; float x_2_1_28; float x_2_1_29; float x_2_1_30; } x2; }*)arg4 EdrAdaptationParam:(struct _EdrAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; bool x6; float x7[2][4]; float x8[2][4]; float x9[2][2]; }*)arg5 AmbAdaptationParam:(struct _AmbAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; float x6; float x7; bool x8; float x9[2][4]; float x10[2][4]; float x11[2][2]; float x12; }*)arg6 TMMode:(int)arg7;
+- (bool)hlg_tm_configChanged:(struct { float x1; float x2; unsigned int x3; float x4; float x5; float x6; float x7; unsigned int x8; float x9; float x10; float x11; float x12; unsigned int x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; unsigned int x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; bool x46; float x47; float x48; bool x49; float x50; bool x51; int x52; int x53; float x54; int x55; struct _DpcParam { float x_56_1_1; float x_56_1_2; float x_56_1_3; float x_56_1_4; bool x_56_1_5; } x56; int x57; unsigned short x58; bool x59; float x60; bool x61; bool x62; bool x63; bool x64; bool x65; }*)arg1 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg2 TMParam:(struct _HLGTMParam { float x1; struct _HDR10TMParam { bool x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; float x_2_1_5; float x_2_1_6; float x_2_1_7; float x_2_1_8; float x_2_1_9; float x_2_1_10; float x_2_1_11; float x_2_1_12; float x_2_1_13; float x_2_1_14; float x_2_1_15; float x_2_1_16; float x_2_1_17; float x_2_1_18; float x_2_1_19; float x_2_1_20; float x_2_1_21; struct _TMCurveParam { int x_22_2_1; union { struct _splCurveParam { unsigned short x_1_4_1; float x_1_4_2[6]; float x_1_4_3[6]; float x_1_4_4[6]; float x_1_4_5[5][4]; float x_1_4_6[5][4]; float x_1_4_7[2][2]; } x_2_3_1; struct _ebzCurveParam { unsigned short x_2_4_1; float x_2_4_2[6]; float x_2_4_3[6]; float x_2_4_4[6]; unsigned short x_2_4_5[5]; float x_2_4_6[5][14]; float x_2_4_7[6]; float x_2_4_8[5][15]; float x_2_4_9[5][15]; float x_2_4_10[5][15]; } x_2_3_2; struct _doviCurveParam { float x_3_4_1; float x_3_4_2; float x_3_4_3; float x_3_4_4; } x_2_3_3; } x_22_2_2; } x_2_1_22; float x_2_1_23; float x_2_1_24; float x_2_1_25; float x_2_1_26; int x_2_1_27; float x_2_1_28; float x_2_1_29; float x_2_1_30; } x2; }*)arg3 EdrAdaptationParam:(struct _EdrAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; bool x6; float x7[2][4]; float x8[2][4]; float x9[2][2]; }*)arg4 AmbAdaptationParam:(struct _AmbAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; float x6; float x7; bool x8; float x9[2][4]; float x10[2][4]; float x11[2][2]; float x12; }*)arg5;
+- (void)hlg_tm_reserveConfig:(struct { float x1; float x2; unsigned int x3; float x4; float x5; float x6; float x7; unsigned int x8; float x9; float x10; float x11; float x12; unsigned int x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; unsigned int x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; bool x46; float x47; float x48; bool x49; float x50; bool x51; int x52; int x53; float x54; int x55; struct _DpcParam { float x_56_1_1; float x_56_1_2; float x_56_1_3; float x_56_1_4; bool x_56_1_5; } x56; int x57; unsigned short x58; bool x59; float x60; bool x61; bool x62; bool x63; bool x64; bool x65; }*)arg1 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg2 TMParam:(struct _HLGTMParam { float x1; struct _HDR10TMParam { bool x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; float x_2_1_5; float x_2_1_6; float x_2_1_7; float x_2_1_8; float x_2_1_9; float x_2_1_10; float x_2_1_11; float x_2_1_12; float x_2_1_13; float x_2_1_14; float x_2_1_15; float x_2_1_16; float x_2_1_17; float x_2_1_18; float x_2_1_19; float x_2_1_20; float x_2_1_21; struct _TMCurveParam { int x_22_2_1; union { struct _splCurveParam { unsigned short x_1_4_1; float x_1_4_2[6]; float x_1_4_3[6]; float x_1_4_4[6]; float x_1_4_5[5][4]; float x_1_4_6[5][4]; float x_1_4_7[2][2]; } x_2_3_1; struct _ebzCurveParam { unsigned short x_2_4_1; float x_2_4_2[6]; float x_2_4_3[6]; float x_2_4_4[6]; unsigned short x_2_4_5[5]; float x_2_4_6[5][14]; float x_2_4_7[6]; float x_2_4_8[5][15]; float x_2_4_9[5][15]; float x_2_4_10[5][15]; } x_2_3_2; struct _doviCurveParam { float x_3_4_1; float x_3_4_2; float x_3_4_3; float x_3_4_4; } x_2_3_3; } x_22_2_2; } x_2_1_22; float x_2_1_23; float x_2_1_24; float x_2_1_25; float x_2_1_26; int x_2_1_27; float x_2_1_28; float x_2_1_29; float x_2_1_30; } x2; }*)arg3 EdrAdaptationParam:(struct _EdrAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; bool x6; float x7[2][4]; float x8[2][4]; float x9[2][2]; }*)arg4 AmbAdaptationParam:(struct _AmbAdaptationParam { bool x1; unsigned short x2; float x3[3]; float x4[3]; float x5[3]; float x6; float x7; bool x8; float x9[2][4]; float x10[2][4]; float x11[2][2]; float x12; }*)arg5;
+- (id)init;
+- (void)printArray:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 Prefix:(const char *)arg2 Array:(void*)arg3 Size:(unsigned long long)arg4 NumberPerLine:(unsigned long long)arg5 Format:(int)arg6;
+- (void)setDisplayManagementParametricConfig:(struct ToneCurve_Control { double x1; double x2; double x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; double x11; bool x12; bool x13; float x14; bool x15; int x16; struct __CFString {} *x17; int x18; int x19; int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; float x25; float x26; float x27; float x28; float x29; unsigned int x30; unsigned int x31 : 1; unsigned int x32 : 1; float x33; struct _AuxData { int x_34_1_1; int x_34_1_2; int x_34_1_3; float x_34_1_4; float x_34_1_5; float x_34_1_6; float x_34_1_7; int x_34_1_8; float x_34_1_9; float x_34_1_10; float x_34_1_11; bool x_34_1_12; } x34; struct _TMData { int x_35_1_1; int x_35_1_2; int x_35_1_3; int x_35_1_4; int x_35_1_5; float x_35_1_6; float x_35_1_7; float x_35_1_8; int x_35_1_9; float x_35_1_10; float x_35_1_11; float x_35_1_12; float x_35_1_13; float x_35_1_14; float x_35_1_15; float x_35_1_16; float x_35_1_17; float x_35_1_18; float x_35_1_19; float x_35_1_20; float x_35_1_21; float x_35_1_22; float x_35_1_23; float x_35_1_24; float x_35_1_25; int x_35_1_26; int x_35_1_27; float x_35_1_28; float x_35_1_29; struct _Percentiles_t { float x_30_2_1[8]; float x_30_2_2[8]; unsigned int x_30_2_3; } x_35_1_30; bool x_35_1_31; bool x_35_1_32; bool x_35_1_33; } x35; }*)arg1 HDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg2;
+- (void)setupToneMappingWithDmData:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5[9]; unsigned int x6[3]; int x7[9]; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; struct { unsigned short x_22_1_1; unsigned short x_22_1_2; unsigned short x_22_1_3; unsigned short x_22_1_4; } x22; struct { unsigned short x_23_1_1; unsigned short x_23_1_2; unsigned short x_23_1_3; unsigned short x_23_1_4; unsigned short x_23_1_5; unsigned short x_23_1_6; unsigned short x_23_1_7; short x_23_1_8; } x23[8]; struct { unsigned short x_24_1_1; unsigned short x_24_1_2; unsigned short x_24_1_3; unsigned short x_24_1_4; } x24; struct { unsigned short x_25_1_1; unsigned short x_25_1_2; unsigned short x_25_1_3; } x25; struct { unsigned short x_26_1_1; unsigned short x_26_1_2; unsigned short x_26_1_3; unsigned short x_26_1_4; unsigned short x_26_1_5; } x26; }*)arg1 tcControl:(struct ToneCurve_Control { double x1; double x2; double x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; double x11; bool x12; bool x13; float x14; bool x15; int x16; struct __CFString {} *x17; int x18; int x19; int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; float x25; float x26; float x27; float x28; float x29; unsigned int x30; unsigned int x31 : 1; unsigned int x32 : 1; float x33; struct _AuxData { int x_34_1_1; int x_34_1_2; int x_34_1_3; float x_34_1_4; float x_34_1_5; float x_34_1_6; float x_34_1_7; int x_34_1_8; float x_34_1_9; float x_34_1_10; float x_34_1_11; bool x_34_1_12; } x34; struct _TMData { int x_35_1_1; int x_35_1_2; int x_35_1_3; int x_35_1_4; int x_35_1_5; float x_35_1_6; float x_35_1_7; float x_35_1_8; int x_35_1_9; float x_35_1_10; float x_35_1_11; float x_35_1_12; float x_35_1_13; float x_35_1_14; float x_35_1_15; float x_35_1_16; float x_35_1_17; float x_35_1_18; float x_35_1_19; float x_35_1_20; float x_35_1_21; float x_35_1_22; float x_35_1_23; float x_35_1_24; float x_35_1_25; int x_35_1_26; int x_35_1_27; float x_35_1_28; float x_35_1_29; struct _Percentiles_t { float x_30_2_1[8]; float x_30_2_2[8]; unsigned int x_30_2_3; } x_35_1_30; bool x_35_1_31; bool x_35_1_32; bool x_35_1_33; } x35; }*)arg2 hdrControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; float x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19[9]; float x20[9]; unsigned int x21; float x22; unsigned int x23; float x24; bool x25; int x26; unsigned int x27; bool x28; }*)arg3 dmConfig:(struct { float x1; float x2; unsigned int x3; float x4; float x5; float x6; float x7; unsigned int x8; float x9; float x10; float x11; float x12; unsigned int x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; unsigned int x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; bool x46; float x47; float x48; bool x49; float x50; bool x51; int x52; int x53; float x54; int x55; struct _DpcParam { float x_56_1_1; float x_56_1_2; float x_56_1_3; float x_56_1_4; bool x_56_1_5; } x56; int x57; unsigned short x58; bool x59; float x60; bool x61; bool x62; bool x63; bool x64; bool x65; }*)arg4 DM:(id)arg5 hdr10InfoFrame:(struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned short x_1_1_7; unsigned short x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg6;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface AKPasswordRequest : AKCredentialRequest
+
+@end

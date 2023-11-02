@@ -1,0 +1,4 @@
+
+@interface _TtCV14WorkflowUICoreP33_279DE63B1AAEA74FBF973DCD71CA6D1312LazyTextView11Coordinator : _TtCs12_SwiftObject
+
+@end

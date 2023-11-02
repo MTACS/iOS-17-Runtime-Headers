@@ -1,0 +1,95 @@
+
+@interface NPTCellularCollector : NSObject <CoreTelephonyClientDataDelegate, CoreTelephonyClientRegistrationDelegate, NPTMetadataCollection> {
+    NSArray * _cellChanges;
+    CTXPCServiceSubscriptionContext * _context;
+    CoreTelephonyClient * _ctClient;
+    CTDataStatus * _dataStatus;
+    NSArray * _dataStatusChanges;
+    NSDictionary * _metadata;
+    NSMutableArray * _mutableCellChanges;
+    NSMutableArray * _mutableDataStatusChanges;
+    NSMutableDictionary * _mutableMetadata;
+    CTTelephonyNetworkInfo * _networkInfo;
+    NSObject<OS_nw_path_monitor> * _pathMonitor;
+    NSMutableDictionary * _servingCellInfo;
+    NSNumber * _slotID;
+    bool  _stopCollectingMetadata;
+    NSMutableDictionary * cachedMetadata;
+    id /* block */  metadataDidChangeHandler;
+}
+
+@property (retain) NSMutableDictionary *cachedMetadata;
+@property (nonatomic, retain) NSArray *cellChanges;
+@property (retain) CTXPCServiceSubscriptionContext *context;
+@property (retain) CoreTelephonyClient *ctClient;
+@property (retain) CTDataStatus *dataStatus;
+@property (nonatomic, retain) NSArray *dataStatusChanges;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (copy) id /* block */ metadataDidChangeHandler;
+@property (retain) NSMutableArray *mutableCellChanges;
+@property (retain) NSMutableArray *mutableDataStatusChanges;
+@property (retain) NSMutableDictionary *mutableMetadata;
+@property (retain) CTTelephonyNetworkInfo *networkInfo;
+@property (retain) NSObject<OS_nw_path_monitor> *pathMonitor;
+@property (retain) NSMutableDictionary *servingCellInfo;
+@property (retain) NSNumber *slotID;
+@property bool stopCollectingMetadata;
+@property (readonly) Class superclass;
+
++ (id)calculateMaxCellularTPutEstimates:(id)arg1;
++ (id)collectorName;
++ (id)getPreferredDataSlot;
+
+- (void).cxx_destruct;
+- (id)cachedMetadata;
+- (void)cellChanged:(id)arg1 cell:(id)arg2;
+- (id)cellChanges;
+- (id)context;
+- (id)ctClient;
+- (id)dataStatus;
+- (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;
+- (id)dataStatusChanges;
+- (id)dualSimStatus;
+- (void)estimateDidChange:(id)arg1;
+- (id)fetchCellularTPutEstimates;
+- (id)getCellInfoForSlot:(id)arg1;
+- (id)getCellularMNCMCCDE;
+- (id)getEstimateFromPath:(id)arg1;
+- (id)init;
+- (id)initWithSlotID:(id)arg1;
+- (id)metadata;
+- (id /* block */)metadataDidChangeHandler;
+- (id)mutableCellChanges;
+- (id)mutableDataStatusChanges;
+- (id)mutableMetadata;
+- (id)networkInfo;
+- (id)pathMonitor;
+- (id)servingCellInfo;
+- (void)setCachedMetadata:(id)arg1;
+- (void)setCellChanges:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setCtClient:(id)arg1;
+- (void)setDataStatus:(id)arg1;
+- (void)setDataStatusChanges:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setMetadataDidChangeHandler:(id /* block */)arg1;
+- (void)setMutableCellChanges:(id)arg1;
+- (void)setMutableDataStatusChanges:(id)arg1;
+- (void)setMutableMetadata:(id)arg1;
+- (void)setNetworkInfo:(id)arg1;
+- (void)setPathMonitor:(id)arg1;
+- (void)setServingCellInfo:(id)arg1;
+- (void)setSlotID:(id)arg1;
+- (void)setStopCollectingMetadata:(bool)arg1;
+- (void)setUpPathMonitor:(id /* block */)arg1;
+- (id)signalStrengthMeasurements;
+- (id)slotID;
+- (void)startCollectingWithCompletion:(id /* block */)arg1;
+- (void)stopCollecting;
+- (bool)stopCollectingMetadata;
+- (id)wrmBasebandMetrics;
+
+@end

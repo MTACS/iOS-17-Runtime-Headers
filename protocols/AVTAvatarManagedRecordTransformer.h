@@ -1,0 +1,11 @@
+
+@protocol AVTAvatarManagedRecordTransformer
+
+@required
+
+- (NSString *)identifierForManagedRecordIdentifier:(NSUUID *)arg1;
+- (NSUUID *)managedRecordIdentifierForIdentifier:(NSString *)arg1;
+- (AVTAvatarRecord *)recordWithManagedRecord:(AVTAvatarManagedRecord *)arg1 error:(id*)arg2;
+- (void)updateManagedRecord:(AVTAvatarManagedRecord *)arg1 withRecord:(AVTAvatarRecord *)arg2;
+
+@end

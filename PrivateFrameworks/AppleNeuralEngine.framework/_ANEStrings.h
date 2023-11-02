@@ -1,0 +1,65 @@
+
+@interface _ANEStrings : NSObject
+
++ (id)aggressivePowerSavingEntitlement;
++ (id)aneuserdCacheDeleteServiceName;
++ (id)buildSpecificModelDataVaultDirectory;
++ (id)buildSpecificUserModelDataVaultDirectory;
++ (id)cacheDeleteServiceName;
++ (id)cloneDirectory;
++ (id)compilerServiceAccessEntitlement;
++ (id)coreAnalyticsANEUsageDefaultReportedClient;
++ (id)coreAnalyticsANEUsageKeyGroup;
++ (id)dataVaultStorageClass;
++ (id)defaultANECIRFileName;
++ (id)defaultANECIROptionsFileName;
++ (id)defaultCompilerOptionsFilename;
++ (id)defaultMILFileName;
++ (id)errorDomainCompiler;
++ (id)errorDomainEspresso;
++ (id)errorDomainGeneric;
++ (id)inMemoryModelCacheName;
++ (id)internalLibraryPath;
++ (id)launchIOKitEvent;
++ (id)launchUserIOKitEvent;
++ (id)machServiceName;
++ (id)machServiceNamePrivate;
++ (id)modelAssetsCacheName;
++ (id)modelBinaryName;
++ (id)modelCacheRetainName;
++ (id)modelDataVaultDirectory;
++ (id)modelPurgeInAllPartitionsEntitlement;
++ (id)modelSourceStoreName;
++ (id)noSandboxExtension;
++ (id)processModelShareAccessEntitlement;
++ (id)restrictedAccessEntitlement;
++ (id)storageMaintainerAccessEntitlement;
++ (id)systemLibraryPath;
++ (id)systemModelsCacheDirectory;
++ (id)tempDirectory;
++ (id)testing_ThreeSixtyModelName;
++ (id)testing_cacheDirectory;
++ (id)testing_cacheDirectoryWithSuffix:(id)arg1;
++ (id)testing_cacheDirectoryWithSuffix:(id)arg1 buildVersion:(id)arg2;
++ (id)testing_cloneDirectory:(id)arg1;
++ (id)testing_dataVaultStorageClass;
++ (id)testing_encryptedModelNames;
++ (id)testing_external_modelPath;
++ (id)testing_external_precompiledModelPath;
++ (id)testing_inputDirectory;
++ (id)testing_modelDirectory;
++ (id)testing_modelDirectory:(id)arg1;
++ (id)testing_modelNames;
++ (id)testing_tempDirectory:(id)arg1;
++ (id)testing_userCacheDirectory;
++ (id)testing_userCacheDirectoryWithSuffix:(id)arg1;
++ (id)testing_userCacheDirectoryWithSuffix:(id)arg1 buildVersion:(id)arg2;
++ (id)testing_userCloneDirectory:(id)arg1;
++ (id)testing_userTempDirectory:(id)arg1;
++ (id)testing_zeroModelName;
++ (id)userCloneDirectory;
++ (id)userMachServiceName;
++ (id)userModelDataVaultDirectory;
++ (id)userTempDirectory;
+
+@end

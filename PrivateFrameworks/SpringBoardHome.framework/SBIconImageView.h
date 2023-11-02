@@ -1,0 +1,101 @@
+
+@interface SBIconImageView : UIView <BSDescriptionProviding, SBCrossfadingIconImageSource, SBHIconImageCacheObserver, SBIconObserver, SBIconProgressViewDelegate, SBReusableView> {
+    double  _brightness;
+    bool  _hasSetIconImageInfo;
+    SBIcon * _icon;
+    SBHIconImageCache * _iconImageCache;
+    struct SBIconImageInfo { 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+        double scale; 
+        double continuousCornerRadius; 
+    }  _iconImageInfo;
+    SBIconView * _iconView;
+    bool  _jittering;
+    NSString * _location;
+    CAFilter * _multiplyFilter;
+    double  _overlayAlpha;
+    bool  _paused;
+    SBIconProgressView * _progressView;
+    bool  _showsSquareCorners;
+}
+
+@property (nonatomic) double brightness;
+@property (nonatomic, readonly) double continuousCornerRadius;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIImage *displayedImage;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SBIcon *icon;
+@property (nonatomic, retain) SBHIconImageCache *iconImageCache;
+@property (nonatomic) struct SBIconImageInfo { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; } iconImageInfo;
+@property (nonatomic) SBIconView *iconView;
+@property (getter=isJittering, nonatomic) bool jittering;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic) double overlayAlpha;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (nonatomic) bool showsSquareCorners;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleBounds;
+
+- (void).cxx_destruct;
+- (void)_clearProgressView;
+- (id)_generateSquareContentsImage;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)_updateOverlayAlpha;
+- (void)_updateProgressMask;
+- (double)brightness;
+- (void)clearCachedImages;
+- (void)clearIconImageInfo;
+- (id)contentsImage;
+- (double)continuousCornerRadius;
+- (void)dealloc;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (void)didEndAsynchronousImageLoadForIcon:(id)arg1;
+- (id)displayedImage;
+- (bool)hasOpaqueImage;
+- (id)icon;
+- (id)iconImageCache;
+- (void)iconImageCache:(id)arg1 didUpdateImageForIcon:(id)arg2;
+- (void)iconImageDidUpdate:(id)arg1;
+- (struct SBIconImageInfo { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })iconImageInfo;
+- (id)iconView;
+- (void)iconViewFolderIconImageCacheDidChange;
+- (void)iconViewLegibilitySettingsDidChange;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isJittering;
+- (bool)isPaused;
+- (void)layoutSubviews;
+- (id)location;
+- (double)overlayAlpha;
+- (void)prepareForReuse;
+- (void)progressViewCanBeRemoved:(id)arg1;
+- (void)setBrightness:(double)arg1;
+- (void)setIcon:(id)arg1 location:(id)arg2 animated:(bool)arg3;
+- (void)setIconImageCache:(id)arg1;
+- (void)setIconImageInfo:(struct SBIconImageInfo { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
+- (void)setIconView:(id)arg1;
+- (void)setJittering:(bool)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setOverlayAlpha:(double)arg1;
+- (void)setPaused:(bool)arg1;
+- (void)setProgressAlpha:(double)arg1;
+- (void)setProgressState:(long long)arg1 paused:(bool)arg2 percent:(double)arg3 animated:(bool)arg4;
+- (void)setShowsSquareCorners:(bool)arg1;
+- (bool)showsSquareCorners;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)snapshot;
+- (id)sourceView;
+- (id)squareContentsImage;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (void)updateImageAnimated:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleBounds;
+- (void)willBeginAsynchronousImageLoadForIcon:(id)arg1;
+
+@end

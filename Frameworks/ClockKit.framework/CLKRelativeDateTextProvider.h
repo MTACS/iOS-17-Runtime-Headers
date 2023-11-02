@@ -1,0 +1,95 @@
+
+@interface CLKRelativeDateTextProvider : CLKTextProvider {
+    unsigned long long  _calendarUnits;
+    NSDate * _date;
+    bool  _disableOffsetPrefix;
+    bool  _disableSmallCapUnits;
+    double  _elapsedTime;
+    NSDateComponentsFormatter * _formatter;
+    bool  _pauseTimerAtZero;
+    long long  _relativeDateStyle;
+    NSRelativeDateTimeFormatter * _relativeDateTimeFormatter;
+    NSDate * _relativeToDate;
+    NSString * _sessionCacheKey;
+    NSDateComponents * _sessionComponents;
+    bool  _sessionInProgress;
+    long long  _sessionTimePeriod;
+    unsigned long long  _sessionVisibleUnits;
+    bool  _showLeadingMinutes;
+    bool  _shrinkUnitsInCJK;
+    long long  _tritiumDateStyle;
+    bool  _twoDigitMinuteZeroPadding;
+    bool  _wantsSubseconds;
+}
+
+@property (nonatomic) unsigned long long calendarUnits;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic) bool disableOffsetPrefix;
+@property (nonatomic) bool disableSmallCapUnits;
+@property (nonatomic, retain) NSDate *overrideDate;
+@property (nonatomic) bool pauseTimerAtZero;
+@property (nonatomic) long long relativeDateStyle;
+@property (nonatomic, retain) NSDate *relativeToDate;
+@property (nonatomic) bool showLeadingMinutes;
+@property (nonatomic) bool shrinkUnitsInCJK;
+@property (nonatomic) long long tritiumDateStyle;
+@property (nonatomic) bool twoDigitMinuteZeroPadding;
+@property (nonatomic) bool wantsSubseconds;
+
++ (bool)_configureComponentsFormatter:(id)arg1 fallbackIndex:(unsigned long long)arg2 style:(long long)arg3;
++ (bool)_configureRelativeFormatter:(id)arg1 fallbackIndex:(unsigned long long)arg2 style:(long long)arg3;
++ (bool)supportsSecureCoding;
++ (id)textProviderWithDate:(id)arg1 relativeToDate:(id)arg2 style:(long long)arg3 units:(unsigned long long)arg4;
++ (id)textProviderWithDate:(id)arg1 style:(long long)arg2 units:(unsigned long long)arg3;
+
+- (void).cxx_destruct;
+- (id)JSONObjectRepresentation;
+- (id)_componentsForDate:(id)arg1 visibleUnits:(unsigned long long*)arg2;
+- (void)_configureFormatterForTimerStyle;
+- (void)_endSession;
+- (id)_initWithJSONObjectRepresentation:(id)arg1;
+- (id)_sessionAttributedTextForIndex:(unsigned long long)arg1 withStyle:(id)arg2;
+- (id)_sessionCacheKey;
+- (id)_signPrefixString;
+- (void)_startSessionWithDate:(id)arg1;
+- (long long)_timePeriodForElapsedTime:(double)arg1;
+- (bool)_timerIsPausedAtZero;
+- (long long)_updateFrequency;
+- (bool)_validate;
+- (unsigned long long)calendarUnits;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)date;
+- (id)description;
+- (bool)disableOffsetPrefix;
+- (bool)disableSmallCapUnits;
+- (void)encodeWithCoder:(id)arg1;
+- (void)finalize;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDate:(id)arg1 relativeToDate:(id)arg2 style:(long long)arg3 units:(unsigned long long)arg4;
+- (id)initWithDate:(id)arg1 style:(long long)arg2 units:(unsigned long long)arg3;
+- (bool)isEqual:(id)arg1;
+- (id)overrideDate;
+- (bool)pauseTimerAtZero;
+- (long long)relativeDateStyle;
+- (id)relativeToDate;
+- (void)setCalendarUnits:(unsigned long long)arg1;
+- (void)setDate:(id)arg1;
+- (void)setDisableOffsetPrefix:(bool)arg1;
+- (void)setDisableSmallCapUnits:(bool)arg1;
+- (void)setOverrideDate:(id)arg1;
+- (void)setPauseTimerAtZero:(bool)arg1;
+- (void)setRelativeDateStyle:(long long)arg1;
+- (void)setRelativeToDate:(id)arg1;
+- (void)setShowLeadingMinutes:(bool)arg1;
+- (void)setShrinkUnitsInCJK:(bool)arg1;
+- (void)setTritiumDateStyle:(long long)arg1;
+- (void)setTwoDigitMinuteZeroPadding:(bool)arg1;
+- (void)setWantsSubseconds:(bool)arg1;
+- (bool)showLeadingMinutes;
+- (bool)shrinkUnitsInCJK;
+- (long long)tritiumDateStyle;
+- (bool)twoDigitMinuteZeroPadding;
+- (bool)wantsSubseconds;
+
+@end

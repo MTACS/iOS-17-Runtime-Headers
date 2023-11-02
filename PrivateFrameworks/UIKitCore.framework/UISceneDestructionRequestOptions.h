@@ -1,0 +1,4 @@
+
+@interface UISceneDestructionRequestOptions : NSObject
+
+@end

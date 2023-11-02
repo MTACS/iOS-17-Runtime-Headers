@@ -1,0 +1,4 @@
+
+@protocol PXPhotosViewEventTracker <PXViewControllerEventTracker>
+
+@end

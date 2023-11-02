@@ -1,0 +1,4 @@
+
+@interface WBTableCellProperties : NSObject
+
+@end

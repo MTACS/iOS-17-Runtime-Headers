@@ -1,0 +1,4 @@
+
+@protocol PXLayoutDataSourceChangeDetails <NSObject>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface AXLanguageCell : PSTableCell
+
+@end

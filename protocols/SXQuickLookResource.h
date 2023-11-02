@@ -1,0 +1,4 @@
+
+@protocol SXQuickLookResource <SXResource>
+
+@end

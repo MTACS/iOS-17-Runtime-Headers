@@ -1,0 +1,4 @@
+
+@interface IntelligencePlatformCore.LocationOfInterestBehaviorHistogram : IntelligencePlatformCore.CategoricalBehaviorHistogramBase
+
+@end

@@ -1,0 +1,85 @@
+
+@interface MKAPIServer : NSObject <MKDELETESIMRouterDelegate, MKGETCertificateRouterDelegate, MKGETSRPRouterDelegate, MKHTTPServerDelegate, MKMigratorDelegate, MKPOSTCertificateRouterDelegate, MKPOSTClientRouterDelegate, MKPOSTProgressRouterDelegate, MKPOSTSRPRouterDelegate, MKPUTRouterDelegate> {
+    MKAccessibilitySettingMigrator * _accessibilitySettingMigrator;
+    MKAccountMigrator * _accountMigrator;
+    MKApplicationMigrator * _applicationMigrator;
+    MKBookmarkMigrator * _bookmarkMigrator;
+    MKCalendarMigrator * _calendarMigrator;
+    MKCertificate * _certificate;
+    MKClient * _client;
+    MKContactMigrator * _contactMigrator;
+    MKContainerMigrator * _containerMigrator;
+    MKContext * _context;
+    <MKAPIServerDelegate> * _delegate;
+    MKDiagnosticsMigrator * _diagnosticsMigrator;
+    MKDisplaySettingMigrator * _displaySettingMigrator;
+    MKFileMigrator * _fileMigrator;
+    MKGETStatusRouter * _getStatusRouter;
+    MKHTTPServer * _http;
+    MKHTTPServer * _https;
+    bool  _isImporting;
+    MKMessageMigrator * _messageMigrator;
+    NSHashTable * _migrators;
+    MKPhotoLibraryAlbumMigrator * _photoLibraryAlbumMigrator;
+    MKPhotoLibraryMigrator * _photoLibraryImageMigrator;
+    MKPhotoLibraryMigrator * _photoLibraryVideoMigrator;
+    MKPlaceholderMigrator * _placeholderMigrator;
+    MKProgress * _progress;
+    MKSIMMigrator * _simMigrator;
+    NSDate * _startDate;
+    bool  _success;
+}
+
+@property (nonatomic, retain) MKClient *client;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MKAPIServerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)cancel;
+- (id)client;
+- (void)dealloc;
+- (id)delegate;
+- (void)import;
+- (id)init;
+- (void)migratorDidComplete:(id)arg1;
+- (void)migratorDidExecuteOperation:(id)arg1;
+- (void)migratorWillExecuteOperation:(id)arg1;
+- (void)processPerformanceMetrics;
+- (void)router:(id)arg1 didReceiveAccessibilitySettingEncodedInJSON:(id)arg2;
+- (void)router:(id)arg1 didReceiveAccountEncodedInJSON:(id)arg2;
+- (void)router:(id)arg1 didReceiveApplicationEncodedInJSON:(id)arg2;
+- (void)router:(id)arg1 didReceiveBookmarkEncodedInJSON:(id)arg2;
+- (void)router:(id)arg1 didReceiveCertifciate:(id)arg2;
+- (void)router:(id)arg1 didReceiveClient:(id)arg2;
+- (void)router:(id)arg1 didReceiveContainer:(id)arg2 signature:(id)arg3 chunk:(id)arg4 filename:(id)arg5 offset:(unsigned long long)arg6 length:(unsigned long long)arg7 total:(unsigned long long)arg8 required:(bool)arg9 excludedFromBackup:(bool)arg10;
+- (void)router:(id)arg1 didReceiveDiagnosticsFile:(id)arg2 filename:(id)arg3;
+- (void)router:(id)arg1 didReceiveDisplaySettingEncodedInJSON:(id)arg2;
+- (void)router:(id)arg1 didReceiveFileChunk:(id)arg2 filename:(id)arg3 offset:(unsigned long long)arg4 length:(unsigned long long)arg5 total:(unsigned long long)arg6;
+- (void)router:(id)arg1 didReceiveICal:(id)arg2;
+- (void)router:(id)arg1 didReceiveImageChunk:(id)arg2 identifier:(id)arg3 offset:(unsigned long long)arg4 length:(unsigned long long)arg5 total:(unsigned long long)arg6 filename:(id)arg7 collection:(id)arg8 originalFilename:(id)arg9;
+- (void)router:(id)arg1 didReceiveMessageEncodedInJSON:(id)arg2;
+- (void)router:(id)arg1 didReceivePerformanceMetrics:(id)arg2;
+- (void)router:(id)arg1 didReceivePlaceholderEncodedInJSON:(id)arg2;
+- (void)router:(id)arg1 didReceiveSIMEncodedInJSON:(id)arg2;
+- (void)router:(id)arg1 didReceiveVCard:(id)arg2;
+- (void)router:(id)arg1 didReceiveVideoChunk:(id)arg2 identifier:(id)arg3 offset:(unsigned long long)arg4 length:(unsigned long long)arg5 total:(unsigned long long)arg6 filename:(id)arg7 collection:(id)arg8 originalFilename:(id)arg9;
+- (void)router:(id)arg1 didUpdateProgress:(float)arg2 remainingTime:(unsigned long long)arg3 state:(int)arg4;
+- (void)routerDidAuthenticateClient:(id)arg1;
+- (void)routerDidDeleteSIM:(id)arg1;
+- (void)routerDidRejectClient:(id)arg1;
+- (void)routerDidRevokeEncryptionKey:(id)arg1;
+- (void)run;
+- (void)runHTTP;
+- (void)runHTTPS:(id)arg1;
+- (void)server:(id)arg1 didOpen:(long long)arg2;
+- (void)serverDidCancel:(id)arg1;
+- (void)setClient:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setImportContext:(id)arg1;
+- (void)setImportContexts;
+- (void)setSwitcherFlags;
+
+@end

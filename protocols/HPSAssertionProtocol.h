@@ -1,0 +1,11 @@
+
+@protocol HPSAssertionProtocol
+
+@required
+
++ (NSString *)label;
+
+- (NSString *)identifier;
+- (void)invalidateWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+
+@end

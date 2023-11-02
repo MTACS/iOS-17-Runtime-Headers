@@ -1,0 +1,4 @@
+
+@protocol SBHSidebarProviderDelegate <NSObject>
+
+@end

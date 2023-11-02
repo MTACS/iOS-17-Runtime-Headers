@@ -1,0 +1,4 @@
+
+@interface WFSiriPunchOutRequest : WFSiriActionRequest
+
+@end

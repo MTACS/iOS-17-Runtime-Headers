@@ -1,0 +1,4 @@
+
+@interface STCloudDevice : NSManagedObject
+
+@end

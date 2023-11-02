@@ -1,0 +1,4 @@
+
+@interface SBSUIInCallShowNoticeForSystemControlsAction : BSAction
+
+@end

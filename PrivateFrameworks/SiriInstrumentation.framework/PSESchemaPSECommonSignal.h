@@ -1,0 +1,92 @@
+
+@interface PSESchemaPSECommonSignal : SISchemaInstrumentationMessage {
+    NSString * _action;
+    int  _appFollowup;
+    int  _appLaunchReason;
+    double  _appLaunchTimeInSecondsSince2001;
+    NSString * _domain;
+    double  _eventDonationTimeInSecondsSince2001;
+    struct { 
+        unsigned int eventDonationTimeInSecondsSince2001 : 1; 
+        unsigned int isDonatedBySiri : 1; 
+        unsigned int hasUserInitiatedFollowup : 1; 
+        unsigned int appFollowup : 1; 
+        unsigned int appLaunchTimeInSecondsSince2001 : 1; 
+        unsigned int appLaunchReason : 1; 
+    }  _has;
+    bool  _hasAction;
+    bool  _hasDomain;
+    bool  _hasUserInitiatedFollowup;
+    int  _isDonatedBySiri;
+}
+
+@property (nonatomic, copy) NSString *action;
+@property (nonatomic) int appFollowup;
+@property (nonatomic) int appLaunchReason;
+@property (nonatomic) double appLaunchTimeInSecondsSince2001;
+@property (nonatomic, copy) NSString *domain;
+@property (nonatomic) double eventDonationTimeInSecondsSince2001;
+@property (nonatomic) bool hasAction;
+@property (nonatomic) bool hasAppFollowup;
+@property (nonatomic) bool hasAppLaunchReason;
+@property (nonatomic) bool hasAppLaunchTimeInSecondsSince2001;
+@property (nonatomic) bool hasDomain;
+@property (nonatomic) bool hasEventDonationTimeInSecondsSince2001;
+@property (nonatomic) bool hasHasUserInitiatedFollowup;
+@property (nonatomic) bool hasIsDonatedBySiri;
+@property (nonatomic) bool hasUserInitiatedFollowup;
+@property (nonatomic) int isDonatedBySiri;
+@property (nonatomic, readonly) NSData *jsonData;
+
+- (void).cxx_destruct;
+- (id)action;
+- (int)appFollowup;
+- (int)appLaunchReason;
+- (double)appLaunchTimeInSecondsSince2001;
+- (void)deleteAction;
+- (void)deleteAppFollowup;
+- (void)deleteAppLaunchReason;
+- (void)deleteAppLaunchTimeInSecondsSince2001;
+- (void)deleteDomain;
+- (void)deleteEventDonationTimeInSecondsSince2001;
+- (void)deleteHasUserInitiatedFollowup;
+- (void)deleteIsDonatedBySiri;
+- (id)dictionaryRepresentation;
+- (id)domain;
+- (double)eventDonationTimeInSecondsSince2001;
+- (bool)hasAction;
+- (bool)hasAppFollowup;
+- (bool)hasAppLaunchReason;
+- (bool)hasAppLaunchTimeInSecondsSince2001;
+- (bool)hasDomain;
+- (bool)hasEventDonationTimeInSecondsSince2001;
+- (bool)hasHasUserInitiatedFollowup;
+- (bool)hasIsDonatedBySiri;
+- (bool)hasUserInitiatedFollowup;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (int)isDonatedBySiri;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (void)setAction:(id)arg1;
+- (void)setAppFollowup:(int)arg1;
+- (void)setAppLaunchReason:(int)arg1;
+- (void)setAppLaunchTimeInSecondsSince2001:(double)arg1;
+- (void)setDomain:(id)arg1;
+- (void)setEventDonationTimeInSecondsSince2001:(double)arg1;
+- (void)setHasAction:(bool)arg1;
+- (void)setHasAppFollowup:(bool)arg1;
+- (void)setHasAppLaunchReason:(bool)arg1;
+- (void)setHasAppLaunchTimeInSecondsSince2001:(bool)arg1;
+- (void)setHasDomain:(bool)arg1;
+- (void)setHasEventDonationTimeInSecondsSince2001:(bool)arg1;
+- (void)setHasHasUserInitiatedFollowup:(bool)arg1;
+- (void)setHasIsDonatedBySiri:(bool)arg1;
+- (void)setHasUserInitiatedFollowup:(bool)arg1;
+- (void)setIsDonatedBySiri:(int)arg1;
+- (id)suppressMessageUnderConditions;
+- (void)writeTo:(id)arg1;
+
+@end

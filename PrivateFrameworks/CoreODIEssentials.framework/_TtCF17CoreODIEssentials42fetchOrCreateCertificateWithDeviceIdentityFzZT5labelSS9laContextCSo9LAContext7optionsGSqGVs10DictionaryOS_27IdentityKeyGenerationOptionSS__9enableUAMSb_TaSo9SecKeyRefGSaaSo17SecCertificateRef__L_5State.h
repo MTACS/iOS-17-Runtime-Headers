@@ -1,0 +1,6 @@
+
+@interface _TtCF17CoreODIEssentials42fetchOrCreateCertificateWithDeviceIdentityFzZT5labelSS9laContextCSo9LAContext7optionsGSqGVs10DictionaryOS_27IdentityKeyGenerationOptionSS__9enableUAMSb_TaSo9SecKeyRefGSaaSo17SecCertificateRef__L_5State : _TtCs12_SwiftObject {
+    void useScrtAttestation;
+}
+
+@end

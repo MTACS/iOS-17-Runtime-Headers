@@ -1,0 +1,68 @@
+
+@interface NTPBAppConfigurationResource : PBCodable <NSCopying> {
+    NSString * _etag;
+    NSData * _gzippedConfigurationData;
+    struct { 
+        unsigned int maxAge : 1; 
+    }  _has;
+    NTPBDate * _lastFetchedDate;
+    NTPBDate * _lastModifiedDate;
+    NSString * _lastModifiedString;
+    long long  _maxAge;
+    NSString * _resourceID;
+    NSString * _sourceURL;
+}
+
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, retain) NSData *gzippedConfigurationData;
+@property (nonatomic, readonly) bool hasEtag;
+@property (nonatomic, readonly) bool hasGzippedConfigurationData;
+@property (nonatomic, readonly) bool hasLastFetchedDate;
+@property (nonatomic, readonly) bool hasLastModifiedDate;
+@property (nonatomic, readonly) bool hasLastModifiedString;
+@property (nonatomic) bool hasMaxAge;
+@property (nonatomic, readonly) bool hasResourceID;
+@property (nonatomic, readonly) bool hasSourceURL;
+@property (nonatomic, retain) NTPBDate *lastFetchedDate;
+@property (nonatomic, retain) NTPBDate *lastModifiedDate;
+@property (nonatomic, retain) NSString *lastModifiedString;
+@property (nonatomic) long long maxAge;
+@property (nonatomic, retain) NSString *resourceID;
+@property (nonatomic, retain) NSString *sourceURL;
+
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (id)etag;
+- (id)gzippedConfigurationData;
+- (bool)hasEtag;
+- (bool)hasGzippedConfigurationData;
+- (bool)hasLastFetchedDate;
+- (bool)hasLastModifiedDate;
+- (bool)hasLastModifiedString;
+- (bool)hasMaxAge;
+- (bool)hasResourceID;
+- (bool)hasSourceURL;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)lastFetchedDate;
+- (id)lastModifiedDate;
+- (id)lastModifiedString;
+- (long long)maxAge;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)resourceID;
+- (void)setEtag:(id)arg1;
+- (void)setGzippedConfigurationData:(id)arg1;
+- (void)setHasMaxAge:(bool)arg1;
+- (void)setLastFetchedDate:(id)arg1;
+- (void)setLastModifiedDate:(id)arg1;
+- (void)setLastModifiedString:(id)arg1;
+- (void)setMaxAge:(long long)arg1;
+- (void)setResourceID:(id)arg1;
+- (void)setSourceURL:(id)arg1;
+- (id)sourceURL;
+- (void)writeTo:(id)arg1;
+
+@end

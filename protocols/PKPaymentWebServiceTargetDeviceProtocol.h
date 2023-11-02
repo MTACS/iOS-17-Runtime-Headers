@@ -1,0 +1,172 @@
+
+@protocol PKPaymentWebServiceTargetDeviceProtocol <NSObject>
+
+@required
+
+- (PKAppleAccountInformation *)appleAccountInformation;
+- (NSString *)bridgedClientInfo;
+- (bool)claimSecureElementForCurrentUser;
+- (void)claimSecureElementForCurrentUserWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (NSString *)deviceClass;
+- (NSString *)deviceDescriptionForPaymentWebService:(PKPaymentWebService *)arg1;
+- (NSString *)deviceName;
+- (NSString *)deviceRegion;
+- (NSString *)deviceSerialNumber;
+- (PKOSVersionRequirement *)deviceVersion;
+- (void)downloadAllPaymentPassesForPaymentWebService:(PKPaymentWebService *)arg1;
+- (void)encryptedServiceProviderDataForSecureElementPass:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: PKSecureElementPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
+- (void)noteProvisioningDidBegin;
+- (void)noteProvisioningDidEnd;
+- (void)noteProvisioningUserInterfaceDidAppear;
+- (void)noteProvisioningUserInterfaceDidDisappear;
+- (NSString *)osVersion;
+- (unsigned long long)paymentSupportedInCurrentRegionForWebService:(PKPaymentWebService *)arg1;
+- (void)paymentWebService:(void *)arg1 addPaymentPass:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 7: PKPaymentWebService *, PKPaymentPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (bool)paymentWebService:(PKPaymentWebService *)arg1 canProvisionPaymentPassWithPrimaryAccountIdentifier:(NSString *)arg2;
+- (void)paymentWebService:(void *)arg1 configurationDataWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentDeviceConfigurationData *, NSError *, void*
+- (void)paymentWebService:(PKPaymentWebService *)arg1 deleteApplicationWithAID:(NSString *)arg2;
+- (void)paymentWebService:(PKPaymentWebService *)arg1 didRegisterWithRegionMap:(NSDictionary *)arg2 primaryRegionTopic:(NSString *)arg3;
+- (NSArray *)paymentWebService:(PKPaymentWebService *)arg1 filterVerificationChannels:(NSArray *)arg2;
+- (bool)paymentWebService:(PKPaymentWebService *)arg1 hasPassesOfType:(unsigned long long)arg2;
+- (void)paymentWebService:(void *)arg1 passOwnershipTokenWithIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
+- (void)paymentWebService:(void *)arg1 provisioningDataIncludingDeviceMetadata:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentDeviceProvisioningData *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 queueConnectionToTrustedServiceManagerForPushTopic:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)paymentWebService:(void *)arg1 registrationDataWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentDeviceRegistrationData *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 requestPassUpgrade:(void *)arg2 pass:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: PKPaymentWebService *, PKPassUpgradeRequest *, PKPaymentPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, PKPaymentPass *, void*
+- (void)paymentWebService:(void *)arg1 setNewAuthRandom:(void *)arg2; // needs 2 arg types, found 7: PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)paymentWebService:(void *)arg1 setNewAuthRandomIfNecessaryReturningPairingState:(void *)arg2; // needs 2 arg types, found 9: PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSData *, NSData *, void*
+- (void)paymentWebService:(void *)arg1 signData:(void *)arg2 signatureEntanglementMode:(void *)arg3 withCompletionHandler:(void *)arg4; // needs 4 arg types, found 11: PKPaymentWebService *, NSData *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, PKSecureElementSignatureInfo *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 validateAddPreconditionsWithCompletion:(void *)arg2; // needs 2 arg types, found 8: PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)paymentWebService:(void *)arg1 validateTransferPreconditionsWithCompletion:(void *)arg2; // needs 2 arg types, found 8: PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)paymentWebServiceDidUpdateConfiguration:(PKPaymentWebService *)arg1;
+- (unsigned long long)registrationSupportedInCurrentRegionForWebService:(PKPaymentWebService *)arg1;
+- (void)renewAppleAccountWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, PKAppleAccountInformation *, void*
+- (NSArray *)secureElementIdentifiers;
+- (unsigned long long)secureElementOwnershipStateForCurrentUser;
+- (bool)supportsAutomaticPassPresentation;
+
+@optional
+
+- (void)acceptCarKeyShareForMessage:(void *)arg1 activationCode:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKSharingMessage *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKCarShareAcceptanceResponse *, NSError *, void*
+- (void)accountWithIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKAccount *, NSError *, void*
+- (void)accountsWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)addISO18013Blobs:(void *)arg1 cardType:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSMapTable *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)addPendingProvisionings:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (NSArray *)allPaymentApplicationUsageSummaries;
+- (void)applePayTrustKeyForIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKApplePayTrustKey *, void*
+- (bool)areUnifiedAccessPassesSupported;
+- (void)availableHomeKeyPassesWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)cacheSharingMessageFromMailboxAddress:(NSString *)arg1 message:(PKSharingMessage *)arg2;
+- (void)cachedFeatureApplicationsForProvisioningWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (NSString *)cellularNetworkRegion;
+- (void)checkFidoKeyPresenceForRelyingParty:(void *)arg1 relyingPartyAccountHash:(void *)arg2 fidoKeyHash:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: NSString *, NSString *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)checkInvitationStatusForMailboxAddress:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)consistencyCheck;
+- (void)createApplePayTrustKeyWithRequest:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: PKApplePayTrustKeyRequest *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKApplePayTrustKey *, NSError *, void*
+- (void)createFidoKeyForRelyingParty:(void *)arg1 relyingPartyAccountHash:(void *)arg2 challenge:(void *)arg3 externalizedAuth:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 13: NSString *, NSString *, NSData *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSData *, NSData *, NSError *, void*
+- (void)createShareForPartialShareInvitation:(void *)arg1 authorization:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKPartialShareInvitation *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKCrossPlatformShareURL *, NSError *, void*
+- (unsigned long long)currentPassbookState;
+- (void)currentPasscodeMeetsUpgradedPasscodePolicy:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)currentSecureElementSnapshot:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKProvisioningSEStorageSnapshot *, NSError *, void*
+- (void)deleteApplePayTrustKeyWithIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)deleteInvitation:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: PKSharingMessage *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)deleteKeyMaterialForSubCredentialId:(NSString *)arg1;
+- (void)deleteReservation:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 6: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (NSString *)deviceIDSIdentifier;
+- (void)displayableEntitlementsForPassIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)displayableSharesForPassIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)endRequiringUpgradedPasscodeIfNecessary;
+- (void)enforceUpgradedPasscodePolicyWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (NSArray *)entitlementsForPassIdentifier:(NSString *)arg1;
+- (void)exitPasscodeUpgradeForPasscodeUpgradeFlowController:(id)arg1 withShouldContinue:(bool)arg2 error:(NSError *)arg3;
+- (void)familyMembersWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)featureApplicationsForProvisioningWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (bool)felicaSecureElementIsAvailable;
+- (void)generateISOEncryptionCertificateForSubCredentialId:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 9: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSData *, NSError *, void*
+- (void)generateSEEncryptionCertificateForSubCredentialId:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
+- (void)hasActiveExternallySharedPasses:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (bool)isGymKitEnabled;
+- (void)longTermPrivacyKeyForCredentialGroupIdentifier:(void *)arg1 reuseExisting:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
+- (unsigned long long)maximumPaymentCards;
+- (void)meetsProvisioningRequirements:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: PKProvisioningRequirementsContainer *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, PKProvisioningRequirementsContainer *, void*
+- (bool)meetsProvisioningRequirements:(PKProvisioningRequirementsContainer *)arg1 missingRequirements:(id*)arg2;
+- (void)noteForegroundVerificationObserverActive:(bool)arg1;
+- (void)notePasscodeUpgradeFlowDidEnd;
+- (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)paymentWebService:(void *)arg1 acceptSubcredentialInvitation:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, PKAppletSubcredentialSharingInvitation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentPass *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 acceptSubcredentialInvitationWithIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentPass *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 acceptSubcredentialInvitationWithIdentifier:(void *)arg2 metadata:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: PKPaymentWebService *, NSString *, PKAppletSubcredentialSharingInvitationMetadata *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentPass *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 accountAttestationAnonymizationSaltWithCompletion:(void *)arg2; // needs 2 arg types, found 8: PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 addPassShare:(void *)arg2 onCredential:(void *)arg3 withCompletion:(void *)arg4; // needs 4 arg types, found 9: PKPaymentWebService *, PKPassShare *, PKAppletSubcredential *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)paymentWebService:(void *)arg1 addPaymentPass:(void *)arg2 withCompletionHandlerV2:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, PKPaymentPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentPass *, void*
+- (void)paymentWebService:(void *)arg1 addSecureElementPass:(void *)arg2 properties:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: PKPaymentWebService *, PKSecureElementPass *, PKPassIngestionProperties *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentPass *, void*
+- (void)paymentWebService:(void *)arg1 canAcceptInvitation:(void *)arg2 withCompletionV2:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, PKAppletSubcredentialSharingInvitation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)paymentWebService:(void *)arg1 canAddSecureElementPassWithConfiguration:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, PKAddSecureElementPassConfiguration *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)paymentWebService:(void *)arg1 canHandlePotentialExpressPass:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, PKPaymentPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKExpressPassInformation *, void*
+- (void)paymentWebService:(void *)arg1 credentialWithIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKAppletSubcredential *, void*
+- (void)paymentWebService:(void *)arg1 declineRelatedSharingInvitationsIfNecessary:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, PKAppletSubcredentialSharingInvitation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)paymentWebService:(void *)arg1 deviceMetadataWithFields:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentDeviceMetadata *, void*
+- (void)paymentWebService:(void *)arg1 generateTransactionKeyWithParameters:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 11: PKPaymentWebService *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSArray *, NSData *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 handlePotentialExpressPass:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, PKPaymentPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, void*
+- (void)paymentWebService:(void *)arg1 isPassExpressWithUniqueIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)paymentWebService:(void *)arg1 matchingInvitationOnDevice:(void *)arg2 withTimeout:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: PKPaymentWebService *, PKAppletSubcredentialSharingInvitation *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKAppletSubcredentialSharingInvitation *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 passSharesForCredentialIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (PKPass *)paymentWebService:(PKPaymentWebService *)arg1 passWithUniqueID:(NSString *)arg2;
+- (NSArray *)paymentWebService:(PKPaymentWebService *)arg1 passesOfType:(unsigned long long)arg2;
+- (void)paymentWebService:(void *)arg1 registrationDataWithAuthToken:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentDeviceRegistrationData *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 removePass:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, PKPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)paymentWebService:(void *)arg1 removeSharingInvitation:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, PKAppletSubcredentialSharingInvitation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)paymentWebService:(void *)arg1 removeSharingInvitationReceipts:(void *)arg2 onCredential:(void *)arg3 withCompletion:(void *)arg4; // needs 4 arg types, found 9: PKPaymentWebService *, NSSet *, PKAppletSubcredential *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)paymentWebService:(void *)arg1 requestSubcredentialInvitation:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, PKAppletSubcredentialSharingInvitation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)paymentWebService:(void *)arg1 setAccountAttestationAnonymizationSalt:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)paymentWebService:(PKPaymentWebService *)arg1 setDefaultPaymentPassUniqueIdentifier:(NSString *)arg2;
+- (void)paymentWebService:(PKPaymentWebService *)arg1 storePassOwnershipToken:(NSString *)arg2 withIdentifier:(NSString *)arg3;
+- (void)paymentWebService:(void *)arg1 subcredentialInvitationsWithCompletion:(void *)arg2; // needs 2 arg types, found 7: PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, void*
+- (PKWebServiceRegionFeature *)paymentWebService:(PKPaymentWebService *)arg1 supportedRegionFeatureOfType:(long long)arg2;
+- (void)paymentWebService:(void *)arg1 updateAccountWithIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKAccount *, NSError *, void*
+- (void)paymentWebService:(void *)arg1 updateMetadataOnPass:(void *)arg2 withCredential:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: PKPaymentWebService *, PKPaymentPass *, PKAppletSubcredential *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentPass *, void*
+- (bool)paymentWebServiceSupportsAccounts:(PKPaymentWebService *)arg1;
+- (bool)paymentWebServiceSupportsPeerPaymentRegistration:(PKPaymentWebService *)arg1;
+- (void)performDeviceCheckInWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)performDeviceRegistrationForReason:(void *)arg1 brokerURL:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSError *, void*
+- (void)performDeviceRegistrationReturningContextForReason:(void *)arg1 brokerURL:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 10: NSString *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, PKPaymentWebServiceContext *, NSError *, void*
+- (void)performProductActionRequest:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: PKPaymentProductsActionRequest *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentAvailableProductsResponse *, NSError *, void*
+- (void)prepareProvisioningTarget:(void *)arg1 checkFamilyCircle:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 10: PKPushProvisioningTarget *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKEncryptedPushProvisioningTarget *, bool, NSError *, void*
+- (void)prewarmCreateShareForPassIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)productsWithRequest:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: PKPaymentAvailableProductsRequest *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentAvailableProductsResponse *, NSError *, void*
+- (void)provisionHomeKeyPassForSerialNumbers:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)relinquishInvitation:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: PKSharingMessage *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)removeExpressPassWithUniqueIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSSet *, void*
+- (void)removePendingProvisioningOfType:(void *)arg1 withUniqueIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)requestAndStoreExternalizedAuthWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)requestAndStoreExternalizedAuthWithVisibleViewController:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: id, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)requestBackgroundRegistrationForCredential:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: PKAppletSubcredential *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)requestPasscodeUpgradeForPasscodeUpgradeFlowController:(void *)arg1 withVisibleViewController:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: id, id, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)reserveStorageForAppletTypes:(void *)arg1 metadata:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 10: NSArray *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, bool, NSError *, void*
+- (void)retrievePendingProvisioningsWithType:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)retrieveShareInvitationForMailboxAddress:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKSharingMessage *, NSError *, void*
+- (void)revokeShareForPassIdentifier:(void *)arg1 share:(void *)arg2 shouldCascade:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: NSString *, PKPassShare *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)revokeSharesForPassIdentifier:(void *)arg1 shares:(void *)arg2 shouldCascade:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: NSString *, NSArray *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (bool)secureElementIsAvailable;
+- (bool)secureElementSupportsExpressMode;
+- (void)setMaximumPaymentCards:(unsigned long long)arg1;
+- (void)signWithFidoKeyForRelyingParty:(void *)arg1 relyingPartyAccountHash:(void *)arg2 fidoKeyHash:(void *)arg3 challenge:(void *)arg4 publicKeyIdentifier:(void *)arg5 externalizedAuth:(void *)arg6 completion:(void *)arg7; // needs 7 arg types, found 13: NSString *, NSString *, NSData *, NSData *, NSString *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
+- (void)signatureForAuthToken:(void *)arg1 webService:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, PKPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSError *, void*
+- (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
+- (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(bool)arg1;
+- (void)statusForShareableCredentials:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 9: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSArray *, NSError *, void*
+- (NSSet *)supportedFeatureIdentifiersForAccountProvisioningWithPaymentWebService:(PKPaymentWebService *)arg1;
+- (NSSet *)supportedFeatureIdentifiersWithPaymentWebService:(PKPaymentWebService *)arg1;
+- (bool)supportsCheckingProvisioningRequirements;
+- (bool)supportsCredentialType:(long long)arg1;
+- (bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
+- (bool)supportsExpressMode:(NSString *)arg1;
+- (bool)supportsExpressModeForExpressPassType:(long long)arg1;
+- (void)triggerCloudStoreZoneCreationForAccount:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: PKAccount *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (PKTrustedDeviceEnrollmentInfo *)trustedDeviceEnrollmentInfoForWebService:(PKPaymentWebService *)arg1;
+- (void)updateShareForPassIdentifier:(void *)arg1 share:(void *)arg2 authorization:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: NSString *, PKPassShare *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)updatedAccountsForProvisioningWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSArray *, void*
+- (PKPassUpgradeExpressAutomaticSelectionCriteriaRequest *)upgradeRequestForPass:(PKPaymentPass *)arg1;
+- (bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(NSString *)arg1;
+
+@end

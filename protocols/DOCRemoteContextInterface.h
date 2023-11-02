@@ -1,0 +1,4 @@
+
+@protocol DOCRemoteContextInterface <DOCRemoteAppearanceInterface>
+
+@end

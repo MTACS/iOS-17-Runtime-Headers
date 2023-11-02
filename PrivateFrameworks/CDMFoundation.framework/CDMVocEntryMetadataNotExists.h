@@ -1,0 +1,4 @@
+
+@interface CDMVocEntryMetadataNotExists : CDMVocEntryMetadataExists
+
+@end

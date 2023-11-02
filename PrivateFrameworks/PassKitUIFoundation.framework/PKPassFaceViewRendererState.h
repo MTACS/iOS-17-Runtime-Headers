@@ -1,0 +1,4 @@
+
+@interface PKPassFaceViewRendererState : NSObject
+
+@end

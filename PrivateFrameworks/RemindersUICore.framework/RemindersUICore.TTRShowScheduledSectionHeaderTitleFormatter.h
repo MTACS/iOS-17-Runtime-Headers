@@ -1,0 +1,4 @@
+
+@interface RemindersUICore.TTRShowScheduledSectionHeaderTitleFormatter : RemindersUICore.TTRDateBucketSectionHeaderTitleFormatterBase
+
+@end

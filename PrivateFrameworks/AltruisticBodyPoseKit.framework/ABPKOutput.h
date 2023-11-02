@@ -1,0 +1,80 @@
+
+@interface ABPKOutput : NSObject {
+    ABPKAlgorithmState * _algState;
+    ABPKAlgorithmParams * _algorithmParams;
+    int  _algorithmReturnCode;
+    ABPKCameraParams * _cameraParams;
+    ABPK2dSkeleton * _detection2dSkeletonABPK;
+    ABPKSkeleton * _liftingSkeletonABPK;
+    struct __CVBuffer { } * _mlImage;
+    struct __CVBuffer { } * _mlOverlayImage;
+    ABPK2dSkeleton * _rawDetection2dSkeletonABPK;
+    NSMutableArray * _rawDetection2dSkeletonABPKArray;
+    /* Warning: Unrecognized filer type: '' using 'void*' */ void** _rawLiftingNetworkOutputJoints;
+    ABPK2dSkeleton * _registered2dSkeletonABPK;
+    ABPKSkeleton * _retargetedSkeletonABPK;
+    struct __CVBuffer { } * _sensorImageBGRA;
+    float  _timeABPKAlgorithmFinished;
+    float  _timeABPKAlgorithmStart;
+    double  _timestamp;
+    struct OpaqueVTPixelTransferSession { } * _vtPixelTransferSession;
+}
+
+@property (retain) ABPKAlgorithmState *algState;
+@property (retain) ABPKAlgorithmParams *algorithmParams;
+@property int algorithmReturnCode;
+@property (retain) ABPKCameraParams *cameraParams;
+@property (retain) ABPK2dSkeleton *detection2dSkeletonABPK;
+@property (retain) ABPKSkeleton *liftingSkeletonABPK;
+@property struct __CVBuffer { }*mlImage;
+@property struct __CVBuffer { }*mlOverlayImage;
+@property (retain) ABPK2dSkeleton *rawDetection2dSkeletonABPK;
+@property /* Warning: Unrecognized filer type: '' using 'void*' */ void**rawLiftingNetworkOutputJoints;
+@property (retain) ABPK2dSkeleton *registered2dSkeletonABPK;
+@property (retain) ABPKSkeleton *retargetedSkeletonABPK;
+@property float timeABPKAlgorithmFinished;
+@property float timeABPKAlgorithmStart;
+@property double timestamp;
+
+- (void).cxx_destruct;
+- (id)algState;
+- (id)algorithmParams;
+- (int)algorithmReturnCode;
+- (id)cameraParams;
+- (bool)convertToStreamingDictionary:(id)arg1 withSkeletonType:(id)arg2 referenceFrame:(id)arg3 includeFingerRotation:(bool)arg4 yOffset:(float)arg5;
+- (void)dealloc;
+- (id)detection2dSkeletonABPK;
+- (id)getDetection2dSkeletonABPKArray;
+- (id)init;
+- (id)liftingSkeletonABPK;
+- (struct __CVBuffer { }*)mlImage;
+- (struct __CVBuffer { }*)mlOverlayImage;
+- (int)overlayResultsOnImage:(struct __CVBuffer { }*)arg1 withCameraIntrinsics:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })arg2;
+- (int)overlayResultsOnImage:(struct __CVBuffer { }*)arg1 withCameraIntrinsics:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })arg2 withConfig:(id)arg3;
+- (id)rawDetection2dSkeletonABPK;
+- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)rawLiftingNetworkOutputJoints;
+- (id)registered2dSkeletonABPK;
+- (id)retargetedSkeletonABPK;
+- (int)saveDataToDir:(id)arg1 withFileNamePrefix:(id)arg2;
+- (int)saveOnlyPoseDataToDir:(id)arg1 withFileNamePrefix:(id)arg2;
+- (void)setAlgState:(id)arg1;
+- (void)setAlgorithmParams:(id)arg1;
+- (void)setAlgorithmReturnCode:(int)arg1;
+- (void)setCameraParams:(id)arg1;
+- (void)setDetection2dSkeletonABPK:(id)arg1;
+- (void)setLiftingSkeletonABPK:(id)arg1;
+- (void)setMlImage:(struct __CVBuffer { }*)arg1;
+- (void)setMlOverlayImage:(struct __CVBuffer { }*)arg1;
+- (void)setRawDetection2dSkeletonABPK:(id)arg1;
+- (void)setRawDetection2dSkeletonABPKArray:(id)arg1;
+- (void)setRawLiftingNetworkOutputJoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1;
+- (void)setRegistered2dSkeletonABPK:(id)arg1;
+- (void)setRetargetedSkeletonABPK:(id)arg1;
+- (void)setTimeABPKAlgorithmFinished:(float)arg1;
+- (void)setTimeABPKAlgorithmStart:(float)arg1;
+- (void)setTimestamp:(double)arg1;
+- (float)timeABPKAlgorithmFinished;
+- (float)timeABPKAlgorithmStart;
+- (double)timestamp;
+
+@end

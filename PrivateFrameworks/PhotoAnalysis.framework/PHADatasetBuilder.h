@@ -1,0 +1,96 @@
+
+@interface PHADatasetBuilder : NSObject {
+    NSArray * _augmenters;
+    PHACoreDuetDatasetStorage * _datasetStore;
+    NSDictionary * _filtersByDatasetName;
+    long long  _fingerprintVersion;
+    PGManager * _graphManager;
+    NSString * _inputName;
+    NSString * _labelName;
+    long long  _labelPolicy;
+    NSArray * _negativeLocalIdentifiers;
+    NSString * _negativesDatasetName;
+    NSString * _negativesSubsetName;
+    NSNumber * _oversamplingRate;
+    PHPhotoLibrary * _photoLibrary;
+    long long  _policy;
+    NSArray * _positiveLocalIdentifiers;
+    NSString * _positivesDatasetName;
+    NSString * _positivesSubsetName;
+    NSNumber * _totalNumberOfSamples;
+    PGFeatureTransformersForFeatureExtractors * _transformersForFeatureExtractors;
+}
+
+@property (nonatomic, readonly) NSArray *augmenters;
+@property (nonatomic, retain) PHACoreDuetDatasetStorage *datasetStore;
+@property (nonatomic, readonly) NSDictionary *filtersByDatasetName;
+@property (nonatomic, readonly) long long fingerprintVersion;
+@property (nonatomic, retain) PGManager *graphManager;
+@property (nonatomic, readonly) NSString *inputName;
+@property (nonatomic, readonly) NSString *labelName;
+@property (nonatomic, readonly) long long labelPolicy;
+@property (nonatomic, retain) NSArray *negativeLocalIdentifiers;
+@property (nonatomic, readonly) NSString *negativesDatasetName;
+@property (nonatomic, readonly) NSString *negativesSubsetName;
+@property (nonatomic, readonly) NSNumber *oversamplingRate;
+@property (nonatomic, readonly) PHPhotoLibrary *photoLibrary;
+@property (nonatomic, readonly) long long policy;
+@property (nonatomic, retain) NSArray *positiveLocalIdentifiers;
+@property (nonatomic, readonly) NSString *positivesDatasetName;
+@property (nonatomic, readonly) NSString *positivesSubsetName;
+@property (nonatomic, readonly) NSNumber *totalNumberOfSamples;
+@property (nonatomic, readonly) PGFeatureTransformersForFeatureExtractors *transformersForFeatureExtractors;
+
++ (id)_randomIndicesWithUpperBound:(unsigned long long)arg1 count:(unsigned long long)arg2;
++ (long long)datasetBuilderPolicyForPolicyName:(id)arg1;
++ (long long)labelPolicyForLabelPolicyName:(id)arg1;
++ (id)labelVectorsForLabelPolicy:(long long)arg1;
+
+- (void).cxx_destruct;
+- (id)_assetPropertiesPredicateForKeywordFromFeatureExtractorFilters:(id)arg1;
+- (id)_currentFetchOptionPropertySet;
+- (id)_datasetForLocalIdentifiers:(id)arg1 positiveFingerprints:(id)arg2 negativeFingerprints:(id)arg3 error:(id*)arg4;
+- (id)_fetchObjectsForFingerprintVersion:(long long)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)_fetchObjectsForFingerprintVersion:(long long)arg1 options:(id)arg2 localIdentifiers:(id)arg3 error:(id*)arg4;
+- (id)_filterDataSamples:(id)arg1 filters:(id)arg2 numberOfSamples:(id)arg3 error:(id*)arg4;
+- (id)_fingerprintsForDatasetName:(id)arg1 localIdentifiers:(id)arg2 labelName:(id)arg3 numberOfSamples:(id)arg4 filters:(id)arg5 error:(id*)arg6;
+- (id)_fingerprintsForObjects:(id)arg1 fingerprintVersion:(long long)arg2 error:(id*)arg3;
+- (bool)_generateError:(id*)arg1 errorCode:(long long)arg2 errorMessage:(id)arg3 underlyingError:(id)arg4;
+- (bool)_isFeatureNameForAssetPredicateWithFeatureName:(id)arg1;
+- (id)_localIdentifiersForCoreDuetDatasetName:(id)arg1 subsetName:(id)arg2;
+- (id)_localIdentifiersToExcludeForLabel:(id)arg1;
+- (id)_mergeLocalIdentifiersFromPositiveLocalIdentifiers:(id)arg1 negativeLocalIdentifiers:(id)arg2 numberOfPositiveSamples:(id)arg3 numberOfNegativeSamples:(id)arg4 error:(id*)arg5;
+- (unsigned long long)_minAvailableNumberOfSamples;
+- (id)_numberOfSamplesPerClassWithError:(id*)arg1;
+- (id)_performAugmentationsOnLabeledSamples:(id)arg1 error:(id*)arg2;
+- (id)_randomSamplesOfCount:(unsigned long long)arg1 filterPredicateForKeyword:(id)arg2 labelName:(id)arg3 error:(id*)arg4;
+- (id)_samplesOfCount:(unsigned long long)arg1 fromLocalIdentifiers:(id)arg2 filterPredicateForKeyword:(id)arg3 error:(id*)arg4;
+- (long long)_validatePHObject:(id)arg1 withFeatureValidator:(id)arg2 error:(id*)arg3;
+- (id)augmenters;
+- (id)datasetForEvaluationForLabel:(id)arg1 error:(id*)arg2;
+- (id)datasetStore;
+- (id)datasetWithError:(id*)arg1;
+- (id)filtersByDatasetName;
+- (long long)fingerprintVersion;
+- (id)graphManager;
+- (id)initWithFingerprintVersion:(long long)arg1 policy:(long long)arg2 labelPolicy:(long long)arg3 inputName:(id)arg4 labelName:(id)arg5 positivesDatasetName:(id)arg6 positivesSubsetName:(id)arg7 negativesDatasetName:(id)arg8 negativesSubsetName:(id)arg9 totalNumberOfSamples:(id)arg10 oversamplingRate:(id)arg11 photoLibrary:(id)arg12 graphManager:(id)arg13 transformersForFeatureExtractors:(id)arg14 augmenters:(id)arg15 filtersByDatasetName:(id)arg16;
+- (id)inputName;
+- (id)labelName;
+- (long long)labelPolicy;
+- (id)negativeLocalIdentifiers;
+- (id)negativesDatasetName;
+- (id)negativesSubsetName;
+- (id)oversamplingRate;
+- (id)photoLibrary;
+- (long long)policy;
+- (id)positiveLocalIdentifiers;
+- (id)positivesDatasetName;
+- (id)positivesSubsetName;
+- (void)setDatasetStore:(id)arg1;
+- (void)setGraphManager:(id)arg1;
+- (void)setNegativeLocalIdentifiers:(id)arg1;
+- (void)setPositiveLocalIdentifiers:(id)arg1;
+- (id)totalNumberOfSamples;
+- (id)transformersForFeatureExtractors;
+
+@end

@@ -1,0 +1,98 @@
+
+@interface CKDPCSIdentityManager : NSObject {
+    NSMutableDictionary * _PCSIdentityWrappersByServiceName;
+    CKDAccount * _account;
+    NSString * _cachedAccountDSID;
+    unsigned int  _clientSDKVersion;
+    struct _PCSIdentityData { } * _debugIdentity;
+    CKDLogicalDeviceContext * _deviceContext;
+    bool  _forceEnableReadOnlyManatee;
+    bool  _forceSecurityErrorOnIdentityValidation;
+    bool  _refetchPCSIdentitySet;
+    bool  _serviceIsManateeForUnitTests;
+    NSString * _serviceName;
+}
+
+@property (retain) NSMutableDictionary *PCSIdentityWrappersByServiceName;
+@property (retain) CKDAccount *account;
+@property (retain) NSString *cachedAccountDSID;
+@property (nonatomic) unsigned int clientSDKVersion;
+@property (nonatomic, readonly) bool currentServiceIsManatee;
+@property (nonatomic) struct _PCSIdentityData { }*debugIdentity;
+@property (nonatomic, readonly) CKDLogicalDeviceContext *deviceContext;
+@property (nonatomic, readonly) bool forceEnableReadOnlyManatee;
+@property (nonatomic) bool forceSecurityErrorOnIdentityValidation;
+@property (nonatomic) bool refetchPCSIdentitySet;
+@property (nonatomic) bool serviceIsManateeForUnitTests;
+@property (nonatomic, readonly) NSString *serviceName;
+
++ (struct _PCSIdentitySetData { }*)_copyStingrayIdentitiesForOptions:(id)arg1 withError:(id*)arg2;
++ (struct _PCSIdentitySetData { }*)_copyStingrayIdentitiesForService:(id)arg1 forBackingExplicitCredentialsAccount:(id)arg2 withError:(id*)arg3;
++ (id)_generatePCSIdentityOptionsForService:(id)arg1 forBackingExplicitCredentialsAccount:(id)arg2 withError:(id*)arg3;
++ (struct _PCSIdentitySetData { }*)_getTestAccountIdentitySetForService:(id)arg1 forBackingExplicitCredentialsAccount:(id)arg2 withError:(id*)arg3;
++ (bool)_rollTestAccountIdentitySetForService:(id)arg1 forBackingExplicitCredentialsAccount:(id)arg2 withError:(id*)arg3;
++ (bool)credentialsAreValidForAccount:(id)arg1;
++ (id)overrideKeys;
++ (id)sharedFakeIdentitySetsByServiceByUsername;
++ (id)sharedMockIdentitySetsByServiceByIdentifier;
+
+- (void).cxx_destruct;
+- (id)PCSIdentityWrappersByServiceName;
+- (id)PCSServiceStringFromCKServiceType:(unsigned long long)arg1;
+- (id)_cacheIdentitySet:(struct _PCSIdentitySetData { }*)arg1 forService:(id)arg2;
+- (bool)_checkAndClearPCSTestOverrideForKey:(id)arg1;
+- (struct _PCSIdentitySetData { }*)_copyIdentityForService:(id)arg1 useCache:(bool)arg2 validateCurrentKey:(bool)arg3 error:(id*)arg4;
+- (id)_copyPCSIdentitiesForBackingMockAccount:(id)arg1 withError:(id*)arg2;
+- (id)_copyPublicKeyDataForAllIdentitiesInSet:(struct _PCSIdentitySetData { }*)arg1 withService:(unsigned long long)arg2;
+- (id)_copyPublicKeyDataForIdentitySet:(struct _PCSIdentitySetData { }*)arg1 withService:(unsigned long long)arg2 withError:(id*)arg3;
+- (struct _PCSIdentitySetData { }*)_copyTestAccountIdentitySetForService:(id)arg1 forBackingExplicitCredentialsAccount:(id)arg2 withError:(id*)arg3;
+- (struct _PCSIdentitySetData { }*)_copyTestAccountIdentitySetForService:(id)arg1 forBackingMockAccount:(id)arg2 withError:(id*)arg3;
+- (struct _PCSIdentitySetData { }*)_createIdentitySetForService:(id)arg1 dsid:(id)arg2 error:(id*)arg3;
+- (struct _PCSIdentitySetData { }*)_getTestAccountIdentitySetForService:(id)arg1 forBackingMockAccount:(id)arg2 shouldFaultInIdentities:(bool)arg3 withError:(id*)arg4;
+- (struct _PCSIdentitySetData { }*)_getTestAccountIdentitySetForService:(id)arg1 forBackingMockAccount:(id)arg2 withError:(id*)arg3;
+- (bool)_hasCurrentKeyForService:(id)arg1 inIdentitySet:(struct _PCSIdentitySetData { }*)arg2 withError:(id*)arg3;
+- (bool)_setIdentitySet:(struct _PCSIdentitySetData { }*)arg1 forServiceName:(id)arg2 backingMockAccount:(id)arg3 withError:(id*)arg4;
+- (id)account;
+- (id)cachedAccountDSID;
+- (void)clearOverrides;
+- (unsigned int)clientSDKVersion;
+- (id)copyAllPublicKeysForService:(unsigned long long)arg1 withError:(id*)arg2;
+- (struct _PCSPublicIdentityData { }*)copyDiversifiedIdentityForService:(unsigned long long)arg1 userIDEntropy:(id)arg2 withError:(id*)arg3;
+- (id)copyDiversifiedPublicKeyForService:(unsigned long long)arg1 userIDEntropy:(id)arg2 withError:(id*)arg3;
+- (struct _PCSIdentitySetData { }*)copyIdentitySetWithType:(unsigned long long)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (id)copyPublicKeyForService:(unsigned long long)arg1 withError:(id*)arg2;
+- (struct _PCSIdentityData { }*)createCombinedIdentityWithOutOfNetworkPrivateKey:(id)arg1 publicSharingIdentity:(id)arg2;
+- (struct _PCSIdentitySetData { }*)createFullKeychainIdentitySetWithError:(id*)arg1;
+- (struct _PCSPublicIdentityData { }*)createPublicSharingIdentityFromPublicKey:(id)arg1 error:(id*)arg2;
+- (struct _PCSIdentityData { }*)createRandomSharingIdentityWithError:(id*)arg1;
+- (struct _PCSIdentityData { }*)createSharingIdentityFromData:(id)arg1 error:(id*)arg2;
+- (bool)currentServiceIsManatee;
+- (id)dataFromSharingIdentity:(struct _PCSIdentityData { }*)arg1 error:(id*)arg2;
+- (void)dealloc;
+- (struct _PCSIdentityData { }*)debugIdentity;
+- (struct _PCSIdentityData { }*)debugSharingIdentity;
+- (id)deviceContext;
+- (bool)forceEnableReadOnlyManatee;
+- (bool)forceSecurityErrorOnIdentityValidation;
+- (void)identitiesChanged;
+- (bool)identitySet:(struct _PCSIdentitySetData { }*)arg1 containsPublicKey:(id)arg2 error:(id*)arg3;
+- (id)initWithAccount:(id)arg1 deviceContext:(id)arg2 serviceName:(id)arg3 forceEnableReadOnlyManatee:(bool)arg4 clientSDKVersion:(unsigned int)arg5;
+- (bool)isManateeAvailableWithError:(id*)arg1;
+- (bool)liverpoolServiceOwnsPublicID:(id)arg1;
+- (bool)refetchPCSIdentitySet;
+- (bool)serviceIsManatee:(id)arg1;
+- (bool)serviceIsManateeForUnitTests;
+- (id)serviceName;
+- (void)setAccount:(id)arg1;
+- (void)setCachedAccountDSID:(id)arg1;
+- (void)setClientSDKVersion:(unsigned int)arg1;
+- (void)setDebugIdentity:(struct _PCSIdentityData { }*)arg1;
+- (void)setForceSecurityErrorOnIdentityValidation:(bool)arg1;
+- (void)setOverride:(id)arg1 value:(id)arg2;
+- (void)setPCSIdentityWrappersByServiceName:(id)arg1;
+- (void)setPCSServiceNameOverwrite:(id)arg1;
+- (void)setRefetchPCSIdentitySet:(bool)arg1;
+- (void)setServiceIsManateeForUnitTests:(bool)arg1;
+- (void)updateAccount:(id)arg1;
+
+@end

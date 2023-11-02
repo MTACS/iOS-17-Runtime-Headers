@@ -1,0 +1,4 @@
+
+@interface SXBundleLookupClass : NSObject
+
+@end

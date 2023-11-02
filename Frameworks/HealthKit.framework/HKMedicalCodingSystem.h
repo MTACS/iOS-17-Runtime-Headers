@@ -1,0 +1,90 @@
+
+@interface HKMedicalCodingSystem : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _OID;
+    bool  _hasDisplayStrings;
+    NSString * _identifier;
+    NSString * _name;
+    NSArray * _synonyms;
+    unsigned long long  _type;
+}
+
+@property (nonatomic, copy) NSString *OID;
+@property (nonatomic) bool hasDisplayStrings;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSArray *synonyms;
+@property (nonatomic) unsigned long long type;
+
++ (id)CVXSystem;
++ (id)FHIRAllergyIntoleranceCategory;
++ (id)FHIRAllergyIntoleranceClinicalStatus;
++ (id)FHIRAllergyIntoleranceCriticality;
++ (id)FHIRAllergyIntoleranceSeverity;
++ (id)FHIRAllergyIntoleranceStatus;
++ (id)FHIRAllergyIntoleranceType;
++ (id)FHIRAllergyIntoleranceVerificationStatus;
++ (id)FHIRCarePlanStatus;
++ (id)FHIRConditionClinicalStatus;
++ (id)FHIRConditionVerificationStatus;
++ (id)FHIRCoverageClassification;
++ (id)FHIRCoverageStatus;
++ (id)FHIRCoverageType;
++ (id)FHIRDeviceStatus;
++ (id)FHIRDiagnosticReportStatus;
++ (id)FHIRDocumentReferenceClinicalNoteCategorySystem;
++ (id)FHIRDocumentReferenceClinicalNoteDocStatus;
++ (id)FHIRDocumentReferenceClinicalNoteStatus;
++ (id)FHIREventStatus;
++ (id)FHIRGoalStatus;
++ (id)FHIRImmunizationStatus;
++ (id)FHIRMedicationAdminStatus;
++ (id)FHIRMedicationDispenseStatus;
++ (id)FHIRMedicationDispenseStatusR4;
++ (id)FHIRMedicationOrderStatus;
++ (id)FHIRMedicationRequestStatus;
++ (id)FHIRMedicationStatementStatus;
++ (id)FHIRObservationStatus;
++ (id)FHIRProcedureStatus;
++ (id)FHIRQuantityComparatorSystem;
++ (id)ICD10System;
++ (id)ICD9System;
++ (id)LOINCCodeSystem;
++ (id)NDCSystem;
++ (id)RxNormCodeSystem;
++ (id)SNOMEDCodeSystem;
++ (id)UCUMSystem;
++ (id)adHocConceptSystem;
++ (id)appleHealthDataTypeSystem;
++ (id)appleOntologySystem;
++ (id)argonautHL7System;
++ (id)codeSystemWithIdentifier:(id)arg1;
++ (id)externalCodeSystems;
++ (bool)supportsSecureCoding;
++ (id)systemWithSystemDefinition:(struct { char *x1; char *x2; char *x3; char *x4; bool x5; bool x6; })arg1;
++ (id)textSystem;
++ (id)unknownSystem;
+
+- (void).cxx_destruct;
+- (id)OID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasDisplayStrings;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithCustomIdentifier:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 name:(id)arg2 OID:(id)arg3 type:(unsigned long long)arg4 synonyms:(id)arg5 hasDisplayStrings:(bool)arg6;
+- (bool)isEqual:(id)arg1;
+- (id)name;
+- (id)ontology_hasCodingSystemAttributeIdentifier;
+- (void)setHasDisplayStrings:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setOID:(id)arg1;
+- (void)setSynonyms:(id)arg1;
+- (void)setType:(unsigned long long)arg1;
+- (id)synonyms;
+- (unsigned long long)type;
+
+@end

@@ -1,0 +1,101 @@
+
+@interface NSPPrivacyProxyProxyInfo : PBCodable <NSCopying> {
+    NSMutableArray * _allowedNextHops;
+    NSMutableArray * _bootstrapAddresses;
+    struct { 
+        unsigned int supportsFallback : 1; 
+        unsigned int supportsResumption : 1; 
+    }  _has;
+    NSString * _preferredPathConfigUri;
+    int  _proxyHop;
+    NSMutableArray * _proxyKeyInfos;
+    NSString * _proxyURL;
+    NSString * _proxyVersion;
+    bool  _supportsFallback;
+    bool  _supportsResumption;
+    NSString * _tcpProxyFqdn;
+    NSData * _tokenKeyInfo;
+    NSString * _vendor;
+}
+
+@property (nonatomic, retain) NSMutableArray *allowedNextHops;
+@property (nonatomic, retain) NSMutableArray *bootstrapAddresses;
+@property (nonatomic, readonly) bool hasPreferredPathConfigUri;
+@property (nonatomic, readonly) bool hasProxyVersion;
+@property (nonatomic) bool hasSupportsFallback;
+@property (nonatomic) bool hasSupportsResumption;
+@property (nonatomic, readonly) bool hasTcpProxyFqdn;
+@property (nonatomic, readonly) bool hasVendor;
+@property (nonatomic, retain) NSString *preferredPathConfigUri;
+@property (nonatomic) int proxyHop;
+@property (nonatomic, retain) NSMutableArray *proxyKeyInfos;
+@property (nonatomic, retain) NSString *proxyURL;
+@property (nonatomic, retain) NSString *proxyVersion;
+@property (nonatomic) bool supportsFallback;
+@property (nonatomic) bool supportsResumption;
+@property (nonatomic, retain) NSString *tcpProxyFqdn;
+@property (nonatomic, retain) NSData *tokenKeyInfo;
+@property (nonatomic, retain) NSString *vendor;
+
++ (Class)allowedNextHopsType;
++ (Class)bootstrapAddressesType;
++ (Class)proxyKeyInfoType;
+
+- (void).cxx_destruct;
+- (int)StringAsProxyHop:(id)arg1;
+- (void)addAllowedNextHops:(id)arg1;
+- (void)addBootstrapAddresses:(id)arg1;
+- (void)addProxyKeyInfo:(id)arg1;
+- (id)allowedNextHops;
+- (id)allowedNextHopsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)allowedNextHopsCount;
+- (id)bootstrapAddresses;
+- (id)bootstrapAddressesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)bootstrapAddressesCount;
+- (void)clearAllowedNextHops;
+- (void)clearBootstrapAddresses;
+- (void)clearProxyKeyInfos;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasPreferredPathConfigUri;
+- (bool)hasProxyVersion;
+- (bool)hasSupportsFallback;
+- (bool)hasSupportsResumption;
+- (bool)hasTcpProxyFqdn;
+- (bool)hasVendor;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)preferredPathConfigUri;
+- (int)proxyHop;
+- (id)proxyHopAsString:(int)arg1;
+- (id)proxyKeyInfoAtIndex:(unsigned long long)arg1;
+- (id)proxyKeyInfos;
+- (unsigned long long)proxyKeyInfosCount;
+- (id)proxyURL;
+- (id)proxyVersion;
+- (bool)readFrom:(id)arg1;
+- (void)setAllowedNextHops:(id)arg1;
+- (void)setBootstrapAddresses:(id)arg1;
+- (void)setHasSupportsFallback:(bool)arg1;
+- (void)setHasSupportsResumption:(bool)arg1;
+- (void)setPreferredPathConfigUri:(id)arg1;
+- (void)setProxyHop:(int)arg1;
+- (void)setProxyKeyInfos:(id)arg1;
+- (void)setProxyURL:(id)arg1;
+- (void)setProxyVersion:(id)arg1;
+- (void)setSupportsFallback:(bool)arg1;
+- (void)setSupportsResumption:(bool)arg1;
+- (void)setTcpProxyFqdn:(id)arg1;
+- (void)setTokenKeyInfo:(id)arg1;
+- (void)setVendor:(id)arg1;
+- (bool)supportsFallback;
+- (bool)supportsResumption;
+- (id)tcpProxyFqdn;
+- (id)tokenKeyInfo;
+- (id)vendor;
+- (void)writeTo:(id)arg1;
+
+@end

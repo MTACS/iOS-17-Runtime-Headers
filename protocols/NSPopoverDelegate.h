@@ -1,0 +1,4 @@
+
+@protocol NSPopoverDelegate <NSObject>
+
+@end

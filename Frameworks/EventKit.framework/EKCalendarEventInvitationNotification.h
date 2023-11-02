@@ -1,0 +1,131 @@
+
+@interface EKCalendarEventInvitationNotification : EKCalendarNotification <NSCopying> {
+    bool  _allDay;
+    bool  _attendeeReplyChanged;
+    NSArray * _attendees;
+    bool  _dateChanged;
+    NSDate * _endDate;
+    bool  _expanded;
+    EKCalendarEventInvitationNotificationAttendee * _expandedProposedTimeAttendee;
+    NSString * _invitedBy;
+    bool  _isForReReply;
+    bool  _isLocationDecline;
+    NSString * _location;
+    bool  _locationChanged;
+    EKCalendarEventInvitationNotificationAttendee * _owner;
+    long long  _participationStatus;
+    NSDate * _participationStatusModifiedDate;
+    bool  _recurrenceChanged;
+    EKRecurrenceRule * _recurrenceRule;
+    NSDate * _startDate;
+    NSDate * _startDateForNextOccurrence;
+    long long  _status;
+    bool  _timeChanged;
+    NSTimeZone * _timeZone;
+    bool  _titleChanged;
+    bool  _videoConferenceChanged;
+}
+
+@property (getter=isAllDay, nonatomic) bool allDay;
+@property (nonatomic) bool attendeeReplyChanged;
+@property (nonatomic, retain) NSArray *attendees;
+@property (nonatomic) bool couldBeJunk;
+@property (nonatomic) bool dateChanged;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic) bool expanded;
+@property (nonatomic, retain) EKCalendarEventInvitationNotificationAttendee *expandedProposedTimeAttendee;
+@property (nonatomic, readonly) NSString *invitedBy;
+@property (nonatomic) bool isForReReply;
+@property (nonatomic) bool isLocationDecline;
+@property (nonatomic, retain) NSString *location;
+@property (nonatomic) bool locationChanged;
+@property (nonatomic, retain) EKCalendarEventInvitationNotificationAttendee *owner;
+@property (nonatomic) long long participationStatus;
+@property (nonatomic, retain) NSDate *participationStatusModifiedDate;
+@property (nonatomic) bool recurrenceChanged;
+@property (nonatomic, retain) EKRecurrenceRule *recurrenceRule;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, retain) NSDate *startDateForNextOccurrence;
+@property (nonatomic) long long status;
+@property (nonatomic) bool timeChanged;
+@property (nonatomic, retain) NSTimeZone *timeZone;
+@property (nonatomic) bool titleChanged;
+@property (nonatomic) bool videoConferenceChanged;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
+
+- (void).cxx_destruct;
+- (bool)acknowledgeWithEventStore:(id)arg1 error:(id*)arg2;
+- (bool)attendeeReplyChanged;
+- (id)attendees;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)dateChanged;
+- (id)endDate;
+- (id)eventFromEventStore:(id)arg1;
+- (bool)expanded;
+- (id)expandedProposedTimeAttendee;
+- (bool)hasRecurrenceRules;
+- (id)initWithEvent:(id)arg1;
+- (id)invitedBy;
+- (bool)isAllDay;
+- (bool)isForReReply;
+- (bool)isInvitation;
+- (bool)isLocationDecline;
+- (bool)isProposedNewTime;
+- (id)location;
+- (bool)locationChanged;
+- (id)nearestProposedTime;
+- (bool)needsReply;
+- (id)owner;
+- (long long)participationStatus;
+- (id)participationStatusModifiedDate;
+- (bool)proposedStartDateIsInFutureForAttendee:(id)arg1;
+- (bool)recurrenceChanged;
+- (id)recurrenceRule;
+- (void)setAllDay:(bool)arg1;
+- (void)setAttendeeReplyChanged:(bool)arg1;
+- (void)setAttendees:(id)arg1;
+- (void)setDateChanged:(bool)arg1;
+- (void)setEndDate:(id)arg1;
+- (void)setExpanded:(bool)arg1;
+- (void)setExpandedProposedTimeAttendee:(id)arg1;
+- (void)setIsForReReply:(bool)arg1;
+- (void)setIsLocationDecline:(bool)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setLocationChanged:(bool)arg1;
+- (void)setOwner:(id)arg1;
+- (void)setParticipationStatus:(long long)arg1;
+- (void)setParticipationStatusModifiedDate:(id)arg1;
+- (void)setRecurrenceChanged:(bool)arg1;
+- (void)setRecurrenceRule:(id)arg1;
+- (void)setStartDate:(id)arg1;
+- (void)setStartDateForNextOccurrence:(id)arg1;
+- (void)setStatus:(long long)arg1;
+- (void)setTimeChanged:(bool)arg1;
+- (void)setTimeZone:(id)arg1;
+- (void)setTitleChanged:(bool)arg1;
+- (void)setVideoConferenceChanged:(bool)arg1;
+- (id)startDate;
+- (id)startDateForNextOccurrence;
+- (long long)status;
+- (bool)timeChanged;
+- (id)timeZone;
+- (bool)titleChanged;
+- (bool)videoConferenceChanged;
+
+// Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
+
+- (id)_attendeeReplyStringWithOptions:(unsigned long long)arg1 descriptions:(id)arg2;
+- (id)_attendeeString:(unsigned long long)arg1;
+- (id)_dateString:(unsigned long long)arg1;
+- (id)_identityStringWithOptions:(unsigned long long)arg1;
+- (id)_locationString:(unsigned long long)arg1;
+- (id)_organizerString:(unsigned long long)arg1;
+- (void)_populateDescriptionStringsArray:(id)arg1 dictionary:(id)arg2 options:(unsigned long long)arg3;
+- (id)_recurrenceChangedString;
+- (id)allDescriptionStringsWithOptions:(unsigned long long)arg1;
+- (id)descriptionStrings:(unsigned long long)arg1;
+- (id)senderStringWithOptions:(unsigned long long)arg1;
+- (bool)supportsDisplay;
+
+@end

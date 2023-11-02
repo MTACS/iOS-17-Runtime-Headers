@@ -1,0 +1,4 @@
+
+@interface NULocalization : NSObject
+
+@end

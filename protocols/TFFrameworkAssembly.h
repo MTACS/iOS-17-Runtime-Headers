@@ -1,0 +1,4 @@
+
+@protocol TFFrameworkAssembly <TFBundleAssembly>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface MKFSoftwareUpdateDatabaseID : MKFModelDatabaseID
+
+@end

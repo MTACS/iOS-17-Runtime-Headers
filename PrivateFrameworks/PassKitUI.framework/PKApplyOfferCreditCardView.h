@@ -1,0 +1,46 @@
+
+@interface PKApplyOfferCreditCardView : UIView {
+    UILabel * _aprForPurchaseLabel;
+    UILabel * _aprForPurchaseTitleLabel;
+    UILabel * _bodyLabel;
+    UILabel * _creditLimitLabel;
+    UILabel * _creditLimitTitleLabel;
+    UIView * _dividerLeft;
+    UIView * _dividerRight;
+    UILabel * _feeLabel;
+    UILabel * _feeTitleLabel;
+    UIButton * _termsLinkButton;
+}
+
+@property (nonatomic, retain) UILabel *aprForPurchaseLabel;
+@property (nonatomic, retain) UILabel *aprForPurchaseTitleLabel;
+@property (nonatomic, retain) UILabel *bodyLabel;
+@property (nonatomic, retain) UILabel *creditLimitLabel;
+@property (nonatomic, retain) UILabel *creditLimitTitleLabel;
+@property (nonatomic, retain) UILabel *feeLabel;
+@property (nonatomic, retain) UILabel *feeTitleLabel;
+@property (nonatomic, retain) UIButton *termsLinkButton;
+
+- (void).cxx_destruct;
+- (id)aprForPurchaseLabel;
+- (id)aprForPurchaseTitleLabel;
+- (id)bodyLabel;
+- (id)creditLimitLabel;
+- (id)creditLimitTitleLabel;
+- (id)feeLabel;
+- (id)feeTitleLabel;
+- (id)initWithTermsLinkAction:(id)arg1 actionTitle:(id)arg2;
+- (void)layoutSubviews;
+- (void)setAprForPurchaseLabel:(id)arg1;
+- (void)setAprForPurchaseTitleLabel:(id)arg1;
+- (void)setBodyLabel:(id)arg1;
+- (void)setCreditLimitLabel:(id)arg1;
+- (void)setCreditLimitTitleLabel:(id)arg1;
+- (void)setFeeLabel:(id)arg1;
+- (void)setFeeTitleLabel:(id)arg1;
+- (void)setTermsLinkButton:(id)arg1;
+- (bool)showSchumerBox;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)termsLinkButton;
+
+@end

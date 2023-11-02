@@ -1,0 +1,111 @@
+
+@interface IPItemField : NSObject {
+    unsigned char  _dataType;
+    NSError * _error;
+    unsigned short  _fieldIdentifier;
+    IPItemField * _parentMessageField;
+    unsigned int  _repeatedSubMessageIndex;
+    struct IPItemFieldValueStorage { 
+        bool hasValue; 
+        union IPItemFieldValue { 
+            NSString *stringValue; 
+            unsigned int uint32Value; 
+            unsigned long long uint64Value; 
+            int int32Value; 
+            long long int64Value; 
+            float floatValue; 
+            double doubleValue; 
+            bool boolValue; 
+            NSData *bytesValue; 
+            IPItemMessage *subMessageValue; 
+            NSArray *arrayValue; 
+            IPRepeatedUInt32 *repeatedUInt32Value; 
+            IPRepeatedUInt64 *repeatedUInt64Value; 
+            IPRepeatedInt32 *repeatedInt32Value; 
+            IPRepeatedInt64 *repeatedInt64Value; 
+            IPRepeatedFloat *repeatedFloatValue; 
+            IPRepeatedDouble *repeatedDoubleValue; 
+            IPRepeatedBool *repeatedBoolValue; 
+            id repeatedEnumValue; 
+            /* Warning: Unrecognized filer type: ')' using 'void*' */ void*IPRepeatedEnum; 
+        } value; 
+    }  _valueStorage;
+}
+
+@property (nonatomic, readonly) NSObject *boxedJSONValue;
+@property (nonatomic, readonly) unsigned char dataType;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) unsigned short fieldIdentifier;
+@property (nonatomic, readonly) IPItemField *parentMessageField;
+@property (nonatomic, readonly) unsigned int repeatedSubMessageIndex;
+@property (nonatomic, readonly) struct IPItemFieldValueStorage { bool x1; union IPItemFieldValue { id x_2_1_1; unsigned int x_2_1_2; unsigned long long x_2_1_3; int x_2_1_4; long long x_2_1_5; float x_2_1_6; double x_2_1_7; bool x_2_1_8; id x_2_1_9; id x_2_1_10; id x_2_1_11; id x_2_1_12; id x_2_1_13; id x_2_1_14; id x_2_1_15; id x_2_1_16; id x_2_1_17; id x_2_1_18; id x_2_1_19; } x2; } valueStorage;
+
++ (id)_selectorNameForDataType:(unsigned char)arg1;
+
+- (void).cxx_destruct;
+- (void)appendInvalidFieldAccessErrorForAccessedDataType:(unsigned char)arg1;
+- (bool)boolValue;
+- (id)boxedJSONValue;
+- (id)bytesValue;
+- (unsigned char)dataType;
+- (id)description;
+- (double)doubleValue;
+- (id)error;
+- (unsigned short)fieldIdentifier;
+- (float)floatValue;
+- (bool)hasBoolValue;
+- (bool)hasDoubleValue;
+- (bool)hasFloatValue;
+- (bool)hasInt32Value;
+- (bool)hasInt64Value;
+- (bool)hasRawEnumValue;
+- (bool)hasUInt32Value;
+- (bool)hasUInt64Value;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 boolValue:(bool)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 bytesValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 dataType:(unsigned char)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 doubleValue:(double)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 enumValue:(unsigned int)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 floatValue:(float)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 int32Value:(int)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 int64Value:(long long)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedBoolValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedBytesValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedDoubleValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedEnumValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedFloatValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedInt32Value:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedInt64Value:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedStringValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedSubMessageValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedUInt32Value:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 repeatedUInt64Value:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 stringValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 subMessageValue:(id)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 uint32Value:(unsigned int)arg2;
+- (id)initWithFieldIdentifier:(unsigned short)arg1 uint64Value:(unsigned long long)arg2;
+- (int)int32Value;
+- (long long)int64Value;
+- (id)parentMessageField;
+- (unsigned int)rawEnumValue;
+- (id)repeatedBoolValue;
+- (id)repeatedBytesValue;
+- (id)repeatedDoubleValue;
+- (id)repeatedFloatValue;
+- (id)repeatedInt32Value;
+- (id)repeatedInt64Value;
+- (id)repeatedRawEnumValue;
+- (id)repeatedStringValue;
+- (unsigned int)repeatedSubMessageIndex;
+- (id)repeatedSubMessageValue;
+- (id)repeatedUInt32Value;
+- (id)repeatedUInt64Value;
+- (void)setParentMessageField:(id)arg1;
+- (void)setRepeatedSubMessageIndex:(unsigned int)arg1;
+- (id)stringValue;
+- (id)subMessageValue;
+- (unsigned int)uint32Value;
+- (unsigned long long)uint64Value;
+- (struct IPItemFieldValueStorage { bool x1; union IPItemFieldValue { id x_2_1_1; unsigned int x_2_1_2; unsigned long long x_2_1_3; int x_2_1_4; long long x_2_1_5; float x_2_1_6; double x_2_1_7; bool x_2_1_8; id x_2_1_9; id x_2_1_10; id x_2_1_11; id x_2_1_12; id x_2_1_13; id x_2_1_14; id x_2_1_15; id x_2_1_16; id x_2_1_17; id x_2_1_18; id x_2_1_19; } x2; })valueStorage;
+
+@end

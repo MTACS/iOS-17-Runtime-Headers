@@ -1,0 +1,94 @@
+
+@interface TPSTip : TPSDocument <NSCopying, NSSecureCoding> {
+    TPSChecklistContent * _checklistContent;
+    NSArray * _collectionIdentifiers;
+    long long  _contentStatus;
+    NSString * _eyebrow;
+    TPSFullTipContent * _fullContent;
+    NSString * _linkedDocumentId;
+    TPSActionableContent * _miniContent;
+    bool  _siriSuggestion;
+    long long  _subContentType;
+    long long  _type;
+}
+
+@property (nonatomic, copy) TPSChecklistContent *checklistContent;
+@property (getter=isChecklistTip, nonatomic, readonly) bool checklistTip;
+@property (nonatomic, copy) NSArray *collectionIdentifiers;
+@property (getter=isCompleted, nonatomic, readonly) bool completed;
+@property (nonatomic) long long contentStatus;
+@property (nonatomic, copy) NSString *eyebrow;
+@property (nonatomic, copy) TPSFullTipContent *fullContent;
+@property (nonatomic, readonly, copy) TPSAssets *fullContentAssets;
+@property (getter=isIntro, nonatomic, readonly) bool intro;
+@property (nonatomic, copy) NSString *linkedDocumentId;
+@property (nonatomic, copy) TPSActionableContent *miniContent;
+@property (getter=isOutro, nonatomic, readonly) bool outro;
+@property (getter=isSiriSuggestion, nonatomic) bool siriSuggestion;
+@property (nonatomic) long long subContentType;
+@property (getter=isTip, nonatomic, readonly) bool tip;
+@property (nonatomic) long long type;
+
++ (long long)contentTypeForContentDictionary:(id)arg1;
++ (long long)contentTypeForDictionary:(id)arg1;
++ (id)correlationIdForDictionary:(id)arg1;
++ (id)na_identity;
++ (bool)supportsSecureCoding;
++ (id)tipIdFromDictionary:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)URLWithReferrer:(id)arg1;
+- (id)actions;
+- (void)addCollectionIdentifier:(id)arg1;
+- (id)bodyContent;
+- (id)bodyText;
+- (id)checklistContent;
+- (id)collectionIdentifiers;
+- (bool)containsLinks;
+- (long long)contentStatus;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)debugDescription;
+- (void)encodeWithCoder:(id)arg1;
+- (id)eyebrow;
+- (id)eyebrowText;
+- (id)footnoteContent;
+- (id)fullContent;
+- (id)fullContentAssets;
+- (bool)hasImage;
+- (bool)hasVideo;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1 metadata:(id)arg2;
+- (bool)isChecklistTip;
+- (bool)isCompleted;
+- (bool)isEqual:(id)arg1;
+- (bool)isHardwareWelcome;
+- (bool)isIntro;
+- (bool)isOutro;
+- (bool)isSiriSuggestion;
+- (bool)isSoftwareWelcome;
+- (bool)isTip;
+- (id)linkedDocumentId;
+- (id)miniContent;
+- (void)removeCollectionIdentifier:(id)arg1;
+- (void)setChecklistContent:(id)arg1;
+- (void)setCollectionIdentifiers:(id)arg1;
+- (void)setContentStatus:(long long)arg1;
+- (void)setEyebrow:(id)arg1;
+- (void)setFullContent:(id)arg1;
+- (void)setLinkedDocumentId:(id)arg1;
+- (void)setMiniContent:(id)arg1;
+- (void)setSiriSuggestion:(bool)arg1;
+- (void)setSubContentType:(long long)arg1;
+- (void)setType:(long long)arg1;
+- (id)shareText;
+- (id)shortTitle;
+- (long long)subContentType;
+- (id)summary;
+- (bool)textContainsHTML;
+- (id)title;
+- (long long)type;
+- (void)updateWithContentDictionary:(id)arg1 metadata:(id)arg2 clientConditionIdentifier:(id)arg3 fileIdMap:(id)arg4 clientConditions:(id)arg5;
+- (id)webURLPath;
+
+@end

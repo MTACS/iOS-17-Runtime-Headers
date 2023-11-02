@@ -1,0 +1,12 @@
+
+@protocol _UNNotificationContentExtensionHostContainerViewControllerDelegate <NSObject>
+
+@required
+
+- (void)extensionViewControllerDidLoadExtension:(_UNNotificationContentExtensionHostContainerViewController *)arg1;
+- (void)extensionViewControllerDidUpdateActions:(_UNNotificationContentExtensionHostContainerViewController *)arg1;
+- (void)extensionViewControllerDidUpdateTitle:(_UNNotificationContentExtensionHostContainerViewController *)arg1;
+- (void)extensionViewControllerRequestsDefaultAction:(_UNNotificationContentExtensionHostContainerViewController *)arg1;
+- (void)extensionViewControllerRequestsDismiss:(_UNNotificationContentExtensionHostContainerViewController *)arg1;
+
+@end

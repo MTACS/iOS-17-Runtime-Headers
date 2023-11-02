@@ -1,0 +1,87 @@
+
+@interface NPKBarcodePaymentSession : NSObject <PKPaymentServiceDelegate> {
+    NSData * _authorizationCredential;
+    NPKPaymentBarcode * _currentPaymentBarcode;
+    PKPaymentTransaction * _currentTransaction;
+    unsigned long long  _currentTransactionStatus;
+    <NPKBarcodePaymentSessionDelegate> * _delegate;
+    PKAssertion * _expressTransactionSuppressionAssertion;
+    PKAssertion * _notificationSuppressionAssertion;
+    PKPaymentPass * _paymentPass;
+    PKPaymentService * _paymentService;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    bool  _sessionStarted;
+    NSObject<OS_dispatch_source> * _sessionTimeoutTimer;
+    bool  _submittingAuthenticationResult;
+}
+
+@property (nonatomic, retain) NSData *authorizationCredential;
+@property (nonatomic, retain) NPKPaymentBarcode *currentPaymentBarcode;
+@property (nonatomic, retain) PKPaymentTransaction *currentTransaction;
+@property (nonatomic) unsigned long long currentTransactionStatus;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NPKBarcodePaymentSessionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PKAssertion *expressTransactionSuppressionAssertion;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PKAssertion *notificationSuppressionAssertion;
+@property (nonatomic, readonly) PKPaymentPass *paymentPass;
+@property (nonatomic, retain) PKPaymentService *paymentService;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialQueue;
+@property (nonatomic) bool sessionStarted;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *sessionTimeoutTimer;
+@property (nonatomic) bool submittingAuthenticationResult;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)_acquireExpressTransactionSuppressAssertion;
+- (void)_acquireNotificationSuppressionAssertion;
+- (void)_completedAuthenticationForTransaction:(id)arg1;
+- (void)_extendSessionTimeoutTimer;
+- (void)_fetchDecryptedBarcodeWithCredential:(id)arg1;
+- (void)_handleSessionTimeout;
+- (void)_handleUpdatedPaymentTransaction:(id)arg1;
+- (void)_handleUpdatedTransactionStatus:(unsigned long long)arg1;
+- (void)_insertPaymentTransactionForActiveBarcode;
+- (void)_invokeExtensionToCollectPaymentInformation;
+- (void)_processedAuthenticationMechanismForTransaction:(id)arg1;
+- (void)_releaseExpressTransactionSuppressionAssertion;
+- (void)_releaseNotificationSuppressionAssertion;
+- (void)_startSessionTimeoutTimer;
+- (void)_stopSessionTimeoutTimer;
+- (void)_updateCurrentPaymentBarcodeWithBarcodeIdentifier:(id)arg1 decryptedBarcodeCredential:(id)arg2 error:(id)arg3;
+- (void)_updateCurrentTransactionStatus:(unsigned long long)arg1 transaction:(id)arg2;
+- (id)authorizationCredential;
+- (id)currentPaymentBarcode;
+- (id)currentTransaction;
+- (unsigned long long)currentTransactionStatus;
+- (id)delegate;
+- (id)expressTransactionSuppressionAssertion;
+- (id)initWithPaymentPass:(id)arg1 authorizationCredential:(id)arg2;
+- (void)invalidateSession;
+- (id)notificationSuppressionAssertion;
+- (id)paymentPass;
+- (id)paymentService;
+- (void)retryFetchingBarcode;
+- (id)serialQueue;
+- (bool)sessionStarted;
+- (id)sessionTimeoutTimer;
+- (void)setAuthorizationCredential:(id)arg1;
+- (void)setCurrentPaymentBarcode:(id)arg1;
+- (void)setCurrentTransaction:(id)arg1;
+- (void)setCurrentTransactionStatus:(unsigned long long)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setExpressTransactionSuppressionAssertion:(id)arg1;
+- (void)setNotificationSuppressionAssertion:(id)arg1;
+- (void)setPaymentService:(id)arg1;
+- (void)setSerialQueue:(id)arg1;
+- (void)setSessionStarted:(bool)arg1;
+- (void)setSessionTimeoutTimer:(id)arg1;
+- (void)setSubmittingAuthenticationResult:(bool)arg1;
+- (void)startSession;
+- (void)submitPinCode:(id)arg1;
+- (void)submitUserIntentionConfirmation:(bool)arg1;
+- (bool)submittingAuthenticationResult;
+- (void)transactionSourceIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
+
+@end

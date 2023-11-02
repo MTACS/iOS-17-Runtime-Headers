@@ -1,0 +1,78 @@
+
+@protocol SBSwitcherQueryDefaultImplementationProviding <SBChainableModifierQuery>
+
+@required
+
+- (struct CGPoint { double x1; double x2; })adjustedSpaceAccessoryViewAnchorPoint:(struct CGPoint { double x1; double x2; })arg1 forAppLayout:(SBAppLayout *)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })adjustedSpaceAccessoryViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forAppLayout:(SBAppLayout *)arg2;
+- (double)adjustedSpaceAccessoryViewScale:(double)arg1 forAppLayout:(SBAppLayout *)arg2;
+- (struct CGPoint { double x1; double x2; })anchorPointForIndex:(unsigned long long)arg1;
+- (NSSet *)animatablePropertyIdentifiers;
+- (double)blurDelayForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (unsigned long long)blurTargetPreferenceForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (NSString *)bounceIconBundleIdentifier;
+- (unsigned long long)bounceIconGenerationCountForCurrentCount:(unsigned long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounceIconInitialFrame;
+- (bool)canFocusableAppLayoutBeEffectivelyObscured:(SBAppLayout *)arg1;
+- (bool)canLayoutRoleParticipateInSwitcherDragAndDrop:(long long)arg1 appLayout:(SBAppLayout *)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clippingFrameForIndex:(unsigned long long)arg1 withBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clippingFrameForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2 atIndex:(unsigned long long)arg3 withBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (bool)clipsToBoundsAtIndex:(unsigned long long)arg1;
+- (struct CGPoint { double x1; double x2; })contentViewOffsetForAccessoriesOfAppLayout:(SBAppLayout *)arg1;
+- (struct CGPoint { double x1; double x2; })contentViewOffsetForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (struct SBSwitcherContinuousExposeStripTongueAttributes { unsigned long long x1; unsigned long long x2; })continuousExposeStripTongueAttributes;
+- (struct UIRectCornerRadii { double x1; double x2; double x3; double x4; })cornerRadiiForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2 withCornerRadii:(struct UIRectCornerRadii { double x1; double x2; double x3; double x4; })arg3;
+- (double)dimmingAlphaForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (struct CGPoint { double x1; double x2; })expandedSourcePositionForSystemApertureTransition;
+- (SBAppLayout *)focusedAppLayoutForShelf:(SBSwitcherShelf *)arg1;
+- (unsigned long long)footerViewIconAlignmentForAppLayout:(SBAppLayout *)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForIconOverlayInAppLayout:(SBAppLayout *)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2 withBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fullyPresentedFrameForIndex:(unsigned long long)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (NSSet *)hiddenAppLayoutsInShelf:(SBSwitcherShelf *)arg1;
+- (unsigned long long)hiddenContainerStatusBarParts;
+- (unsigned long long)hiddenContentStatusBarPartsForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (<SBSwitcherLayoutElementProviding> *)homeAffordanceLayoutElementToPortalIntoShelf:(SBSwitcherShelf *)arg1;
+- (CAMeshTransform *)identityMeshTransformForIndex:(unsigned long long)arg1;
+- (NSSet *)ignoredDisplayItemsForShelf:(SBSwitcherShelf *)arg1;
+- (bool)isContinuousExposeStripVisible;
+- (bool)isLayoutRoleBlurred:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (bool)isLayoutRoleMatchMovedToScene:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (unsigned long long)maskedCornersForIndex:(unsigned long long)arg1;
+- (unsigned long long)maskedCornersForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2 withMaskedCorners:(unsigned long long)arg3;
+- (CAMeshTransform *)meshTransformForIndex:(unsigned long long)arg1;
+- (double)modelValueForAnimatableProperty:(NSString *)arg1 currentValue:(double)arg2 creating:(bool)arg3;
+- (unsigned long long)multipleWindowsIndicatorLayoutRoleMaskForAppLayout:(SBAppLayout *)arg1;
+- (double)perspectiveAngleForAppLayout:(SBAppLayout *)arg1;
+- (SBAppLayout *)preferredAppLayoutToReuseAccessoryForAppLayout:(SBAppLayout *)arg1 fromAppLayouts:(NSArray *)arg2;
+- (struct SBSwitcherShelfPresentationAttributes { bool x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; unsigned long long x3; unsigned long long x4; })presentationAttributesForShelf:(SBSwitcherShelf *)arg1;
+- (SBAppLayout *)proposedAppLayoutForWindowDrag;
+- (NSSet *)repositionProgressNotificationsForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (SBSwitcherResizeGrabberLayoutAttributes *)resizeGrabberLayoutAttributesForAppLayout:(SBAppLayout *)arg1;
+- (NSSet *)resizeProgressNotificationsForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (double)rootContentViewBlurRadius;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rootContentViewMaskRect;
+- (double)scaleForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (SBFFluidBehaviorSettings *)settingsForAnimatableProperty:(NSString *)arg1;
+- (bool)shouldPinLayoutRolesToSpace:(unsigned long long)arg1;
+- (bool)shouldScaleContentToFillBoundsAtIndex:(unsigned long long)arg1;
+- (bool)shouldShowBackdropViewAtIndex:(unsigned long long)arg1;
+- (bool)shouldSuppressHighlightEffectForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (bool)shouldTetherItemsAndAccessoriesInAppLayout:(SBAppLayout *)arg1;
+- (bool)shouldUpdateAnimatableProperty:(NSString *)arg1;
+- (bool)shouldUseAnchorPointToPinLayoutRolesToSpace:(unsigned long long)arg1;
+- (bool)shouldUseNonuniformSnapshotScalingForLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2;
+- (bool)shouldUseWallpaperGradientTreatment;
+- (double)spaceAccessoryViewIconHitTestOutsetForAppLayout:(SBAppLayout *)arg1;
+- (SBSwitcherDropRegionContext *)switcherDropRegionContextForDraggingLayoutRole:(long long)arg1 inAppLayout:(SBAppLayout *)arg2 atLocation:(struct CGPoint { double x1; double x2; })arg3;
+- (bool)switcherHitTestsAsOpaque;
+- (bool)systemApertureRequiresHeavyShadowForTransition;
+- (NSSet *)systemApertureTransitioningAppLayouts;
+- (NSArray *)topMostLayoutRolesForAppLayout:(SBAppLayout *)arg1;
+- (long long)updateModeForAnimatableProperty:(NSString *)arg1;
+- (struct SBSwitcherGradientWallpaperAttributes { double x1; double x2; })wallpaperGradientAttributesForIndex:(unsigned long long)arg1;
+- (bool)wantsContinuousExposeHoverGesture;
+- (bool)wantsSceneResizesHostedContextForAppLayout:(SBAppLayout *)arg1;
+- (bool)wantsSpaceAccessoryViewPointerInteractionsForAppLayout:(SBAppLayout *)arg1;
+
+@end

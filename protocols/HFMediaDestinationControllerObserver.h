@@ -1,0 +1,4 @@
+
+@protocol HFMediaDestinationControllerObserver <HMMediaDestinationControllerDelegate>
+
+@end

@@ -1,0 +1,4 @@
+
+@interface PRPosterDepthEffectConfiguration : PRPosterRenderingConfiguration
+
+@end

@@ -1,0 +1,54 @@
+
+@interface PUAssetActionPerformer : NSObject {
+    NSObject<OS_os_log> * _actionPerformerLog;
+    unsigned long long  _actionType;
+    NSArray * _assets;
+    NSDictionary * _assetsByAssetCollection;
+    id /* block */  _completionHandler;
+    <PUAssetActionPerformerDelegate> * _delegate;
+    UIViewController * _presentedViewController;
+    unsigned long long  _sourceContext;
+    unsigned long long  _state;
+}
+
+@property (nonatomic) NSObject<OS_os_log> *actionPerformerLog;
+@property (nonatomic, readonly) unsigned long long actionType;
+@property (nonatomic, readonly, copy) NSArray *assets;
+@property (nonatomic, readonly, copy) NSDictionary *assetsByAssetCollection;
+@property (nonatomic) <PUAssetActionPerformerDelegate> *delegate;
+@property (nonatomic, readonly) UIViewController *presentedViewController;
+@property (nonatomic) unsigned long long sourceContext;
+@property (nonatomic, readonly) unsigned long long state;
+@property (nonatomic, readonly) NSUndoManager *undoManager;
+
+- (void).cxx_destruct;
+- (void)_completeStateWithSuccess:(bool)arg1 error:(id)arg2;
+- (void)_completeUnlockTaskWithSuccess:(bool)arg1 error:(id)arg2;
+- (void)_handleStepFinished:(unsigned long long)arg1 withSuccess:(bool)arg2 error:(id)arg3;
+- (void)_performUnlockIfNeeded;
+- (bool)_requiresUnlockedDevice;
+- (void)_transitionToState:(unsigned long long)arg1 withSuccess:(bool)arg2 error:(id)arg3;
+- (id)actionPerformerLog;
+- (unsigned long long)actionType;
+- (id)assets;
+- (id)assetsByAssetCollection;
+- (void)completeBackgroundTaskWithSuccess:(bool)arg1 error:(id)arg2;
+- (void)completeUserInteractionTaskWithSuccess:(bool)arg1 error:(id)arg2;
+- (id)delegate;
+- (bool)dismissViewController:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)init;
+- (id)initWithActionType:(unsigned long long)arg1 assets:(id)arg2 orAssetsByAssetCollection:(id)arg3;
+- (void)performBackgroundTask;
+- (void)performUserInteractionTask;
+- (void)performWithCompletionHandler:(id /* block */)arg1;
+- (void)preheatUserInteractionTask;
+- (bool)presentViewController:(id)arg1;
+- (id)presentedViewController;
+- (void)setActionPerformerLog:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setSourceContext:(unsigned long long)arg1;
+- (unsigned long long)sourceContext;
+- (unsigned long long)state;
+- (id)undoManager;
+
+@end

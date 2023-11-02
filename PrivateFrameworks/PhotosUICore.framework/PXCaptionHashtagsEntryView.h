@@ -1,0 +1,86 @@
+
+@interface PXCaptionHashtagsEntryView : UIView <UITextViewDelegate> {
+    double  _cachedEllipsisWidth;
+    <PXCaptionHashtagsEntryViewDelegate> * _delegate;
+    UIFont * _font;
+    double  _maxHeightInEditMode;
+    UIButton * _moreButton;
+    unsigned long long  _numberOfHashtagsInText;
+    NSString * _originalText;
+    bool  _showAllText;
+    PXWidgetSpec * _spec;
+    _PXUITextView * _textView;
+}
+
+@property (nonatomic) double cachedEllipsisWidth;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PXCaptionHashtagsEntryViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIFont *font;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isEditing;
+@property (nonatomic) double maxHeightInEditMode;
+@property (nonatomic, readonly) double minimumHeightInEdit;
+@property (nonatomic, retain) UIButton *moreButton;
+@property (nonatomic, readonly) unsigned long long numberOfHashtagsInText;
+@property (nonatomic, copy) NSString *originalText;
+@property (nonatomic) bool showAllText;
+@property (nonatomic, retain) PXWidgetSpec *spec;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textContainerInsets;
+@property (nonatomic, retain) _PXUITextView *textView;
+
+- (void).cxx_destruct;
+- (void)_addLinkAttributeToHashtagsInTextView;
+- (long long)_currentMaxLines;
+- (double)_ellipsisWidth;
+- (void)_handleEscape:(id)arg1;
+- (void)_handleReturn:(id)arg1;
+- (void)_hideShowButton;
+- (double)_maxHeight;
+- (bool)_needsUpdateSize:(bool*)arg1;
+- (double)_preferredHeight:(bool*)arg1;
+- (double)_preferredHeight:(bool*)arg1 forWidth:(double)arg2;
+- (void)_removeLinkAttributeInTextView;
+- (bool)_shouldShowMoreButton;
+- (void)_updateFonts;
+- (double)cachedEllipsisWidth;
+- (void)contentSizeCategoryDidChangeNotification:(id)arg1;
+- (id)delegate;
+- (void)exitEditing;
+- (id)font;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEditing;
+- (void)layoutSubviews;
+- (double)maxHeightInEditMode;
+- (double)minimumHeightInEdit;
+- (id)moreButton;
+- (void)moreButtonTapped:(id)arg1;
+- (unsigned long long)numberOfHashtagsInText;
+- (id)originalText;
+- (double)preferredHeightForWidth:(double)arg1;
+- (void)resetToOriginalText;
+- (void)setCachedEllipsisWidth:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFont:(id)arg1;
+- (void)setMaxHeightInEditMode:(double)arg1;
+- (void)setMoreButton:(id)arg1;
+- (void)setOriginalText:(id)arg1;
+- (void)setShowAllText:(bool)arg1;
+- (void)setSpec:(id)arg1;
+- (void)setTextView:(id)arg1;
+- (bool)showAllText;
+- (id)spec;
+- (id)text;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textContainerInsets;
+- (id)textView;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
+- (void)textViewDidBeginEditing:(id)arg1;
+- (void)textViewDidChange:(id)arg1;
+- (void)textViewDidEndEditing:(id)arg1;
+- (bool)textViewShouldBeginEditing:(id)arg1;
+- (bool)textViewShouldEndEditing:(id)arg1;
+- (id)uiTextView;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface TRITrifetchTaskErrorsRoot : TRIPBRootObject
+
+@end

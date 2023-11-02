@@ -1,0 +1,4 @@
+
+@interface SSMetadataUpdateAction : BSAction
+
+@end

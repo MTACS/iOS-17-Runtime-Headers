@@ -1,0 +1,94 @@
+
+@interface WBSHistoryItem : NSObject {
+    unsigned long long  _dailyVisitCountScoresCountOnSynchronizationQueue;
+    const int * _dailyVisitCountScoresPtrOnSynchronizationQueue;
+    long long  _databaseID;
+    WBSHistoryVisit * _lastVisit;
+    long long  _statusCode;
+    NSURL * _url;
+    NSString * _urlString;
+    NSMutableArray * _visits;
+    unsigned long long  _weeklyVisitCountScoresCountOnSynchronizationQueue;
+    const int * _weeklyVisitCountScoresPtrOnSynchronizationQueue;
+}
+
+@property (nonatomic, readonly) unsigned long long dailyVisitCountScoresCountOnSynchronizationQueue;
+@property (nonatomic, readonly) const int*dailyVisitCountScoresPtrOnSynchronizationQueue;
+@property (nonatomic) long long databaseID;
+@property (nonatomic, readonly) WBSHistoryItem *endOfLastVisitRedirectChain;
+@property (nonatomic, readonly) WBSHistoryVisit *lastVisit;
+@property (nonatomic, readonly) WBSHistoryVisit *lastVisitOnSynchronizationQueue;
+@property (nonatomic, readonly) WBSHistoryItem *lastVisitRedirectDestinationItem;
+@property (nonatomic) bool lastVisitWasFailure;
+@property (nonatomic, readonly) bool lastVisitWasHTTPNonGet;
+@property (nonatomic, readonly) NSDate *lastVisitedDate;
+@property (nonatomic, readonly) double lastVisitedTimeInterval;
+@property (nonatomic, readonly) double lastVisitedTimeIntervalOnSynchronizationQueue;
+@property (nonatomic) long long statusCode;
+@property (nonatomic, readonly) NSString *stringForUserTypedDomainExpansion;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic, readonly) NSString *urlString;
+@property (nonatomic, readonly, copy) NSString *userVisibleHostOrFallbackURLString;
+@property (nonatomic, readonly) NSString *userVisibleURLString;
+@property (nonatomic, readonly) NSArray *visits;
+@property (nonatomic, readonly) NSSet *visitsPendingWriteToDataStoreOnSynchronizationQueue;
+@property (nonatomic, readonly) unsigned long long weeklyVisitCountScoresCountOnSynchronizationQueue;
+@property (nonatomic, readonly) const int*weeklyVisitCountScoresPtrOnSynchronizationQueue;
+
++ (void)initialize;
++ (id)synchronizationQueue;
++ (double)timeIntervalForDailyAndWeeklyVisitCountScores;
+
+- (void).cxx_destruct;
+- (void)_addExistingVisit:(id)arg1;
+- (void)_addVisit:(id)arg1;
+- (void)_addVisitToPendingWriteSet:(id)arg1;
+- (bool)_visitsPendingWriteSetContains:(id)arg1;
+- (id)_visitsPendingWriteSetCreatingIfNeeded:(bool)arg1;
+- (void)_wasVisitedOnSynchronizationQueue:(id)arg1;
+- (void)addExistingVisit:(id)arg1;
+- (void)clearVisitsPendingWriteToDataStoreFromSynchronizationQueue;
+- (unsigned long long)dailyVisitCountScoresCountOnSynchronizationQueue;
+- (const int*)dailyVisitCountScoresPtrOnSynchronizationQueue;
+- (long long)databaseID;
+- (void)dealloc;
+- (id)endOfLastVisitRedirectChain;
+- (id)initWithHistoryStreamedItem:(const struct _HistoryStreamedItem { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; long long x2; long long x3; long long x4; long long x5; long long x6; char *x7; int *x8; unsigned long long x9; int *x10; unsigned long long x11; }*)arg1;
+- (id)initWithSQLiteRow:(id)arg1;
+- (id)initWithURLString:(id)arg1;
+- (id)lastVisit;
+- (id)lastVisitOnSynchronizationQueue;
+- (id)lastVisitRedirectDestinationItem;
+- (bool)lastVisitWasFailure;
+- (bool)lastVisitWasHTTPNonGet;
+- (id)lastVisitedDate;
+- (double)lastVisitedTimeInterval;
+- (double)lastVisitedTimeIntervalOnSynchronizationQueue;
+- (void)mergeDataFromItem:(id)arg1;
+- (void)removeVisits:(id)arg1 candidateLastVisit:(id)arg2;
+- (void)removeVisitsOnSynchronizationQueue:(id)arg1 candidateLastVisit:(id)arg2;
+- (void)setDatabaseID:(long long)arg1;
+- (void)setLastVisitWasFailure:(bool)arg1;
+- (void)setStatusCode:(long long)arg1;
+- (void)setTitle:(id)arg1;
+- (long long)statusCode;
+- (id)stringForUserTypedDomainExpansion;
+- (id)title;
+- (void)updateLastVisitIfNil:(id)arg1;
+- (void)updateWithServiceItem:(id)arg1;
+- (void)updateWithStreamedItem:(const struct _HistoryStreamedItem { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; long long x2; long long x3; long long x4; long long x5; long long x6; char *x7; int *x8; unsigned long long x9; int *x10; unsigned long long x11; }*)arg1;
+- (id)url;
+- (id)urlString;
+- (id)userVisibleHostOrFallbackURLString;
+- (id)userVisibleURLString;
+- (id)visitForTimeOnSynchronizationQueue:(double)arg1;
+- (void)visitWasModified:(id)arg1;
+- (id)visits;
+- (id)visitsPendingWriteToDataStoreOnSynchronizationQueue;
+- (void)wasRedirectedFrom:(id)arg1 to:(id)arg2;
+- (void)wasVisited:(id)arg1;
+- (unsigned long long)weeklyVisitCountScoresCountOnSynchronizationQueue;
+- (const int*)weeklyVisitCountScoresPtrOnSynchronizationQueue;
+
+@end

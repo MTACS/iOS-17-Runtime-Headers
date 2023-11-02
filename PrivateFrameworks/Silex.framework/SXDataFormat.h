@@ -1,0 +1,4 @@
+
+@interface SXDataFormat : SXJSONObject
+
+@end

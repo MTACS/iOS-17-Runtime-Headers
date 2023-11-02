@@ -1,0 +1,19 @@
+
+@interface PKPaymentHeroImageManifest : NSObject {
+    NSDictionary * _images;
+}
+
+@property (nonatomic, readonly) NSDictionary *images;
+
++ (void)downloadManifestForRegion:(id)arg1 url:(id)arg2 fileDownloader:(id)arg3 completion:(id /* block */)arg4;
++ (bool)manifestFileExistsForRegion:(id)arg1;
++ (id)manifestFileForRegion:(id)arg1;
++ (id)manifestForRegion:(id)arg1;
++ (void)removeManifestFileForRegion:(id)arg1;
++ (void)saveManifestDataToDeviceForRegion:(id)arg1 data:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)images;
+- (id)initWithDictionary:(id)arg1;
+
+@end

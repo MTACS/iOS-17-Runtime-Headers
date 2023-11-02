@@ -1,0 +1,90 @@
+
+@interface UITargetedPreview : NSObject <NSCopying> {
+    <_UIPreviewProvider> * __PreviewProvider;
+    NSArray * __accessoryViews;
+    bool  __captureHierarchyBelowSourceView;
+    <NSCopying><NSObject> * __internalIdentifier;
+    bool  _defaultPreview;
+    bool  _hasCustomTarget;
+    UIView * _overridePositionTrackingView;
+    UIPreviewParameters * _parameters;
+    bool  _sourceViewIsInViewHierarchy;
+    UIPreviewTarget * _target;
+    NSArray * _transferrableAnimationKeys;
+    UIView * _view;
+    UIView * _viewToSnapshot;
+}
+
+@property (nonatomic, readonly) <_UIPreviewProvider> *_PreviewProvider;
+@property (getter=_accessoryViews, setter=_setAccessoryViews:, nonatomic, retain) NSArray *_accessoryViews;
+@property (nonatomic) bool _captureHierarchyBelowSourceView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _frame;
+@property (nonatomic, retain) <NSCopying><NSObject> *_internalIdentifier;
+@property (getter=_isLikelyOpaque, nonatomic, readonly) bool _isLikelyOpaque;
+@property (nonatomic, readonly) _UIShape *_outlineShape;
+@property (getter=_prefersUnmaskedPlatterStyle, setter=_setPrefersUnmaskedPlatterStyle:, nonatomic) bool _prefersUnmaskedPlatterStyle;
+@property (nonatomic) bool _springboardPlatterStyle;
+@property (getter=_isVisible, nonatomic, readonly) bool _visible;
+@property (getter=_isDefaultPreview, setter=_setDefaultPreview:, nonatomic) bool defaultPreview;
+@property (nonatomic, readonly) bool hasCustomTarget;
+@property (setter=_setOverridePositionTrackingView:, nonatomic, retain) UIView *overridePositionTrackingView;
+@property (nonatomic, readonly, copy) UIPreviewParameters *parameters;
+@property (getter=_previewMode, setter=_setPreviewMode:, nonatomic) long long previewMode;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) bool sourceViewIsInViewHierarchy;
+@property (nonatomic, readonly) UIPreviewTarget *target;
+@property (nonatomic, retain) NSArray *transferrableAnimationKeys;
+@property (nonatomic, readonly) UIView *view;
+@property (getter=_viewToSnapshot, setter=_setViewToSnapshot:, nonatomic) UIView *viewToSnapshot;
+
++ (id)new;
+
+- (void).cxx_destruct;
+- (id)_PreviewProvider;
+- (id)_accessoryViews;
+- (bool)_captureHierarchyBelowSourceView;
+- (id)_containerParentDescription;
+- (id)_defaultTargetForView:(id)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 version:(unsigned int)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frame;
+- (id)_internalIdentifier;
+- (bool)_isDefaultPreview;
+- (bool)_isLikelyOpaque;
+- (bool)_isRoughlyEqualToPreview:(id)arg1;
+- (bool)_isVisible;
+- (bool)_mayInferCornerRadiusFromVisiblePath;
+- (id)_outlineShape;
+- (bool)_prefersUnmaskedPlatterStyle;
+- (long long)_previewMode;
+- (void)_setAccessoryViews:(id)arg1;
+- (void)_setDefaultPreview:(bool)arg1;
+- (void)_setOverridePositionTrackingView:(id)arg1;
+- (void)_setPrefersUnmaskedPlatterStyle:(bool)arg1;
+- (void)_setPreviewMode:(long long)arg1;
+- (void)_setViewToSnapshot:(id)arg1;
+- (bool)_springboardPlatterStyle;
+- (id)_trueSourceViewIfPortal;
+- (id)_viewToSnapshot;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1 fromView:(id)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)description;
+- (bool)hasCustomTarget;
+- (id)init;
+- (id)initWithView:(id)arg1;
+- (id)initWithView:(id)arg1 parameters:(id)arg2;
+- (id)initWithView:(id)arg1 parameters:(id)arg2 target:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (id)overridePositionTrackingView;
+- (id)parameters;
+- (id)retargetedPreviewWithTarget:(id)arg1;
+- (void)setTransferrableAnimationKeys:(id)arg1;
+- (void)set_captureHierarchyBelowSourceView:(bool)arg1;
+- (void)set_internalIdentifier:(id)arg1;
+- (void)set_springboardPlatterStyle:(bool)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (bool)sourceViewIsInViewHierarchy;
+- (id)target;
+- (id)transferrableAnimationKeys;
+- (id)view;
+
+@end

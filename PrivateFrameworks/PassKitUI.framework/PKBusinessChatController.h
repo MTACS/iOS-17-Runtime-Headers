@@ -1,0 +1,14 @@
+
+@interface PKBusinessChatController : NSObject {
+    ACAccountStore * _accountStore;
+    AKAnisetteProvisioningController * _provisioningController;
+}
+
++ (bool)deviceSupportsBusinessChat;
+
+- (void).cxx_destruct;
+- (void)_generateAuthBagWithCompletion:(id /* block */)arg1;
+- (id)init;
+- (void)openBusinessChatWithContext:(id)arg1 completion:(id /* block */)arg2;
+
+@end

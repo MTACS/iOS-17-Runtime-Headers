@@ -1,0 +1,4 @@
+
+@interface HFAssociatedServiceTypeOptionItem : HFStaticItem
+
+@end

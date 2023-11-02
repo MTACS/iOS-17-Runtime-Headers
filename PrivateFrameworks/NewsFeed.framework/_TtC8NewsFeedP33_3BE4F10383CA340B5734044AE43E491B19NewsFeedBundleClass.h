@@ -1,0 +1,4 @@
+
+@interface _TtC8NewsFeedP33_3BE4F10383CA340B5734044AE43E491B19NewsFeedBundleClass : _TtCs12_SwiftObject
+
+@end

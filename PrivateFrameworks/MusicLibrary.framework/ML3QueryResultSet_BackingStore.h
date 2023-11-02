@@ -1,0 +1,32 @@
+
+@interface ML3QueryResultSet_BackingStore : NSObject {
+    struct vector<long long, std::allocator<long long>> { 
+        long long *__begin_; 
+        long long *__end_; 
+        struct __compressed_pair<long long *, std::allocator<long long>> { 
+            long long *__value_; 
+        } __end_cap_; 
+    }  _persistentIDs;
+    struct vector<unsigned char, std::allocator<unsigned char>> { 
+        char *__begin_; 
+        char *__end_; 
+        struct __compressed_pair<unsigned char *, std::allocator<unsigned char>> { 
+            char *__value_; 
+        } __end_cap_; 
+    }  _sections;
+}
+
+@property (nonatomic, readonly) unsigned long long count;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)backingStoreByRemovingPersistentIDs:(const void*)arg1;
+- (bool)containsPersistentIDs:(const void*)arg1;
+- (unsigned long long)count;
+- (void)enumeratePersistentIDsUsingBlock:(id /* block */)arg1;
+- (void)enumerateSectionsUsingBlock:(id /* block */)arg1;
+- (long long)persistentIDAtIndex:(unsigned long long)arg1;
+- (void)reverseEnumeratePersistentIDsUsingBlock:(id /* block */)arg1;
+- (void)reverseEnumerateSectionsUsingBlock:(id /* block */)arg1;
+
+@end

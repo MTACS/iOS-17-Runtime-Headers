@@ -1,0 +1,4 @@
+
+@protocol CLIntersiloClientProtocol <CLIntersiloProxyDelegateProtocol>
+
+@end

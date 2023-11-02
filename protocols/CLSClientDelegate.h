@@ -1,0 +1,4 @@
+
+@protocol CLSClientDelegate <NSObject>
+
+@end

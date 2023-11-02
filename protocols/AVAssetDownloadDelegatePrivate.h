@@ -1,0 +1,4 @@
+
+@protocol AVAssetDownloadDelegatePrivate <AVAssetDownloadDelegate>
+
+@end

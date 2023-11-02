@@ -1,0 +1,4 @@
+
+@interface KnowledgeGraphKit.MAFrequencyWeightedCommonNeighborsSimilarityDistance : KnowledgeGraphKit.MASimilarityDistance
+
+@end

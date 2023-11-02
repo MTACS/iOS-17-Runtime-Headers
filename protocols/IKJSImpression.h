@@ -1,0 +1,4 @@
+
+@protocol IKJSImpression <JSExport>
+
+@end

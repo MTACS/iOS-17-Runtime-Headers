@@ -1,0 +1,97 @@
+
+@interface MCPayload : NSObject {
+    NSString * _UUID;
+    NSString * _displayName;
+    NSString * _identifier;
+    bool  _mustInstallNonInteractively;
+    NSString * _organization;
+    NSString * _payloadDescription;
+    NSString * _persistentResourceID;
+    MCProfile * _profile;
+    NSString * _type;
+    long long  _version;
+}
+
+@property (nonatomic, readonly, retain) NSString *UUID;
+@property (nonatomic, readonly) bool containsSensitiveUserInformation;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly, retain) NSString *friendlyName;
+@property (nonatomic, readonly, retain) NSString *identifier;
+@property (nonatomic, readonly, retain) NSArray *installationWarnings;
+@property (nonatomic) bool mustInstallNonInteractively;
+@property (nonatomic, readonly, retain) NSString *organization;
+@property (nonatomic, readonly, retain) NSString *payloadDescription;
+@property (nonatomic, retain) NSString *persistentResourceID;
+@property (nonatomic, readonly) MCProfile *profile;
+@property (nonatomic, readonly) NSDictionary *restrictions;
+@property (nonatomic, readonly, retain) NSString *type;
+@property (nonatomic, readonly) long long version;
+
++ (id)_allKnownPayloadClasses;
++ (id)_installablePhoneConfigurationPayloadClasses;
++ (id)_installableTVConfigurationPayloadClasses;
++ (id)_minimumWatchVersionRequirementsForPayloads;
++ (id)_platformSpecificConfigurationPayloadClasses;
++ (id)_sharedHomePodPayloadClasses;
++ (id)_sharedWatchPayloadClasses;
++ (id)accountPayloads;
++ (id)availablePayloadsForUserEnrollment;
++ (id)badFieldTypeErrorWithField:(id)arg1;
++ (id)badFieldValueErrorWithField:(id)arg1;
++ (id)badFieldValueErrorWithField:(id)arg1 underlyingError:(id)arg2;
++ (id)cellularRequiredPayloads;
++ (id)conflictingFieldValueErrorWithUnderlyingError:(id)arg1;
++ (id)hrnRequiredPayloads;
++ (id)installableHomePodConfigurationPayloadClasses;
++ (id)installableWatchConfigurationPayloadClasses;
++ (id)localizedDescriptionForPayloadCount:(unsigned long long)arg1;
++ (id)localizedParenthesizedFormDescriptionForPayloadCount:(unsigned long long)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
++ (id)mdmAdoptablePayloads;
++ (id)missingFieldErrorWithField:(id)arg1 underlyingError:(id)arg2;
++ (id)payloadFromDictionary:(id)arg1 isStub:(bool)arg2 profile:(id)arg3 outError:(id*)arg4;
++ (id)payloadsFromArray:(id)arg1 isStub:(bool)arg2 profile:(id)arg3 outError:(id*)arg4;
++ (id)remoteQueueableHomePodPayloadClasses;
++ (id)remoteQueueableWatchPayloadClasses;
++ (id)supervisedRequiredPayloads;
++ (id)typeStrings;
++ (id)unavailablePayloadsInEphemeralMultiUser;
++ (id)unavailableSystemPayloadsInEphemeralMultiUser;
++ (id)unavailableUserPayloadsInEphemeralMultiUser;
++ (id)wrapperPayloadDictionary;
+
+- (void).cxx_destruct;
+- (id)UUID;
+- (bool)containsSensitiveUserInformation;
+- (id)description;
+- (id)displayName;
+- (id)filterForUserEnrollmentOutError:(id*)arg1;
+- (id)friendlyName;
+- (id)identifier;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)installationWarnings;
+- (bool)isSupportedByWatchVersions:(id)arg1;
+- (id)malformedPayloadErrorWithError:(id)arg1;
+- (bool)mustInstallNonInteractively;
+- (id)organization;
+- (id)payloadDescription;
+- (id)payloadDescriptionKeyValueSections;
+- (id)persistentResourceID;
+- (id)profile;
+- (id)restrictions;
+- (id)serializedDictionary;
+- (void)setDisplayName:(id)arg1;
+- (void)setMustInstallNonInteractively:(bool)arg1;
+- (void)setPersistentResourceID:(id)arg1;
+- (id)stubDictionary;
+- (id)subtitle1Description;
+- (id)subtitle1Label;
+- (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)title;
+- (id)type;
+- (id)verboseDescription;
+- (long long)version;
+
+@end

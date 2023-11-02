@@ -1,0 +1,75 @@
+
+@interface MCMFileManager : NSObject <MCMFileManager>
+
++ (id)defaultManager;
+
+- (struct _acl { }*)_CopySystemContainerACLWithNumACEs:(int)arg1 isDir:(bool)arg2 inheritOnly:(bool)arg3 withError:(id*)arg4;
+- (struct _acl { }*)_CopyTopLevelSystemContainerACLWithError:(id*)arg1;
+- (bool)_CreateSystemUserACEInACL:(struct _acl {}**)arg1 withPermissions:(int)arg2 andFlags:(int)arg3 withError:(id*)arg4;
+- (bool)_copyItemAtURL:(id)arg1 toURL:(id)arg2 failIfSrcMissing:(bool)arg3 error:(id*)arg4;
+- (struct _filesec { }*)_denyDeleteACLFilesecWithACLText:(char **)arg1;
+- (bool)_enumeratePOSIX1eACLEntriesAtURL:(id)arg1 error:(id*)arg2 usingBlock:(id /* block */)arg3;
+- (bool)_fixACLOnFD:(int)arg1 removeACLFilesec:(struct _filesec { }*)arg2 denyDeleteFilesec:(struct _filesec { }*)arg3 denyDeleteText:(const char *)arg4 path:(const char *)arg5 error:(id*)arg6;
+- (bool)_fixFlagsOnFD:(int)arg1 FTSENT:(struct _ftsent { struct _ftsent {} *x1; struct _ftsent {} *x2; struct _ftsent {} *x3; long long x4; void *x5; char *x6; char *x7; int x8; int x9; unsigned short x10; unsigned short x11; unsigned long long x12; int x13; unsigned short x14; short x15; unsigned short x16; unsigned short x17; unsigned short x18; struct stat {} *x19; BOOL x20[1]; }*)arg2 stat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { long long x_8_1_1; long long x_8_1_2; } x8; struct timespec { long long x_9_1_1; long long x_9_1_2; } x9; struct timespec { long long x_10_1_1; long long x_10_1_2; } x10; struct timespec { long long x_11_1_1; long long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg3 error:(id*)arg4;
+- (bool)_fixOwnershipOnFD:(int)arg1 FTSENT:(struct _ftsent { struct _ftsent {} *x1; struct _ftsent {} *x2; struct _ftsent {} *x3; long long x4; void *x5; char *x6; char *x7; int x8; int x9; unsigned short x10; unsigned short x11; unsigned long long x12; int x13; unsigned short x14; short x15; unsigned short x16; unsigned short x17; unsigned short x18; struct stat {} *x19; BOOL x20[1]; }*)arg2 stat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { long long x_8_1_1; long long x_8_1_2; } x8; struct timespec { long long x_9_1_1; long long x_9_1_2; } x9; struct timespec { long long x_10_1_1; long long x_10_1_2; } x10; struct timespec { long long x_11_1_1; long long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg3 statfs:(struct statfs { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; struct fsid { int x_8_1_1[2]; } x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; BOOL x13[16]; BOOL x14[1024]; BOOL x15[1024]; unsigned int x16; unsigned int x17[7]; }*)arg4 uid:(unsigned int)arg5 gid:(unsigned int)arg6 error:(id*)arg7;
+- (bool)_fixPOSIXBitsOnFD:(int)arg1 FTSENT:(struct _ftsent { struct _ftsent {} *x1; struct _ftsent {} *x2; struct _ftsent {} *x3; long long x4; void *x5; char *x6; char *x7; int x8; int x9; unsigned short x10; unsigned short x11; unsigned long long x12; int x13; unsigned short x14; short x15; unsigned short x16; unsigned short x17; unsigned short x18; struct stat {} *x19; BOOL x20[1]; }*)arg2 stat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { long long x_8_1_1; long long x_8_1_2; } x8; struct timespec { long long x_9_1_1; long long x_9_1_2; } x9; struct timespec { long long x_10_1_1; long long x_10_1_2; } x10; struct timespec { long long x_11_1_1; long long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg3 error:(id*)arg4;
+- (bool)_fixPOSIXPermsOnFD:(int)arg1 FTSENT:(struct _ftsent { struct _ftsent {} *x1; struct _ftsent {} *x2; struct _ftsent {} *x3; long long x4; void *x5; char *x6; char *x7; int x8; int x9; unsigned short x10; unsigned short x11; unsigned long long x12; int x13; unsigned short x14; short x15; unsigned short x16; unsigned short x17; unsigned short x18; struct stat {} *x19; BOOL x20[1]; }*)arg2 stat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { long long x_8_1_1; long long x_8_1_2; } x8; struct timespec { long long x_9_1_1; long long x_9_1_2; } x9; struct timespec { long long x_10_1_1; long long x_10_1_2; } x10; struct timespec { long long x_11_1_1; long long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg3 error:(id*)arg4;
+- (bool)_moveItemAtURL:(id)arg1 toURL:(id)arg2 failIfSrcMissing:(bool)arg3 error:(id*)arg4;
+- (id)_realPathForURL:(id)arg1 allowNonExistentPathComponents:(bool)arg2;
+- (id)_realPathWhatExistsInPath:(id)arg1;
+- (struct _filesec { }*)_removeACLFilesec;
+- (bool)_traverseDirectory:(id)arg1 error:(id*)arg2 withBlock:(id /* block */)arg3;
+- (bool)_validateSymlink:(id)arg1 withStartingDepth:(unsigned int)arg2 andEndingDepth:(unsigned int*)arg3;
+- (bool)_withEveryoneDenyDeleteACLDoBlock:(id /* block */)arg1;
+- (bool)checkFileSystemAtURL:(id)arg1 isCaseSensitive:(bool*)arg2 canAtomicSwap:(bool*)arg3 error:(id*)arg4;
+- (bool)checkFileSystemAtURL:(id)arg1 supportsPerFileKeys:(bool*)arg2 error:(id*)arg3;
+- (bool)compareVolumeForURL:(id)arg1 versusURL:(id)arg2 isSameVolume:(bool*)arg3 error:(id*)arg4;
+- (id)copyDescriptionOfURL:(id)arg1;
+- (bool)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (bool)copyItemIfExistsAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (bool)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(bool)arg2 mode:(unsigned short)arg3 dataProtectionClass:(int)arg4 error:(id*)arg5;
+- (bool)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(bool)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
+- (bool)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(bool)arg2 mode:(unsigned short)arg3 owner:(id)arg4 dataProtectionClass:(int)arg5 error:(id*)arg6;
+- (bool)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(bool)arg2 mode:(unsigned short)arg3 owner:(id)arg4 dataProtectionClass:(int)arg5 fsNode:(id*)arg6 error:(id*)arg7;
+- (bool)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(bool)arg2 mode:(unsigned short)arg3 owner:(id)arg4 error:(id*)arg5;
+- (id)createTemporaryDirectoryInDirectoryURL:(id)arg1 error:(id*)arg2;
+- (id)createTemporaryDirectoryInDirectoryURL:(id)arg1 withNamePrefix:(id)arg2 error:(id*)arg3;
+- (bool)dataProtectionClassOfItemAtURL:(id)arg1 dataProtectionClass:(int*)arg2 error:(id*)arg3;
+- (unsigned long long)dataWritingOptionsForFileAtURL:(id)arg1;
+- (struct { unsigned long long x1; unsigned long long x2; })diskUsageForURL:(id)arg1;
+- (bool)enableFastDiskUsageForURL:(id)arg1 error:(id*)arg2;
+- (struct { unsigned long long x1; unsigned long long x2; })fastDiskUsageForURL:(id)arg1;
+- (bool)fixUserPermissionsAtURL:(id)arg1 limitToTopLevelURL:(id)arg2 error:(id*)arg3;
+- (id)fsNodeOfURL:(id)arg1 followSymlinks:(bool)arg2 error:(id*)arg3;
+- (id)fsSanitizedStringFromString:(id)arg1;
+- (bool)itemAtURL:(id)arg1 exists:(bool*)arg2 error:(id*)arg3;
+- (bool)itemAtURL:(id)arg1 exists:(bool*)arg2 isDirectory:(bool*)arg3 error:(id*)arg4;
+- (bool)itemAtURL:(id)arg1 followSymlinks:(bool)arg2 exists:(bool*)arg3 isDirectory:(bool*)arg4 error:(id*)arg5;
+- (bool)itemAtURL:(id)arg1 followSymlinks:(bool)arg2 exists:(bool*)arg3 isDirectory:(bool*)arg4 fsNode:(id*)arg5 error:(id*)arg6;
+- (bool)itemDoesNotExistAtURL:(id)arg1;
+- (bool)itemExistsAtURL:(id)arg1;
+- (bool)itemExistsAtURL:(id)arg1 isDirectory:(bool*)arg2;
+- (bool)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (bool)moveItemIfExistsAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (void)printDirectoryStructureAtURL:(id)arg1;
+- (id)readDataFromURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (id)readDataFromURL:(id)arg1 options:(unsigned long long)arg2 fsNode:(id*)arg3 error:(id*)arg4;
+- (id)realPathForURL:(id)arg1 ifChildOfURL:(id)arg2;
+- (id)realPathForURL:(id)arg1 isDirectory:(bool)arg2 error:(id*)arg3;
+- (bool)removeExclusionFromBackupFromURL:(id)arg1 error:(id*)arg2;
+- (bool)removeItemAtURL:(id)arg1 error:(id*)arg2;
+- (bool)repairPermissionsAtURL:(id)arg1 uid:(unsigned int)arg2 gid:(unsigned int)arg3 options:(unsigned long long)arg4 error:(id*)arg5;
+- (bool)replaceItemAtDestinationURL:(id)arg1 withSourceURL:(id)arg2 swapped:(bool*)arg3 error:(id*)arg4;
+- (bool)setDataProtectionClassOfItemAtURL:(id)arg1 toDataProtectionClass:(int)arg2 ifPredicate:(id /* block */)arg3 error:(id*)arg4;
+- (bool)setTopLevelSystemContainerACLAtURL:(id)arg1 error:(id*)arg2;
+- (bool)standardizeACLsAtURL:(id)arg1 isSystemContainer:(bool)arg2 error:(id*)arg3;
+- (bool)standardizeACLsForSystemContainerAtURL:(id)arg1 error:(id*)arg2;
+- (bool)standardizeAllSystemContainerACLsAtURL:(id)arg1 error:(id*)arg2;
+- (bool)standardizeOwnershipAtURL:(id)arg1 toPOSIXUser:(id)arg2 error:(id*)arg3;
+- (bool)stripACLFromURL:(id)arg1 error:(id*)arg2;
+- (bool)symbolicallyLinkURL:(id)arg1 toSymlinkTarget:(id)arg2 error:(id*)arg3;
+- (id)targetOfSymbolicLinkAtURL:(id)arg1 error:(id*)arg2;
+- (id)urlsForItemsInDirectoryAtURL:(id)arg1 error:(id*)arg2;
+- (bool)writeData:(id)arg1 toURL:(id)arg2 options:(unsigned long long)arg3 mode:(unsigned short)arg4 error:(id*)arg5;
+
+@end

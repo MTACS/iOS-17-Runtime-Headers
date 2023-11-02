@@ -1,0 +1,4 @@
+
+@protocol OKActionEdgePanExports <JSExport>
+
+@end

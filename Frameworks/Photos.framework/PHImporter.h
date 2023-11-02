@@ -1,0 +1,92 @@
+
+@interface PHImporter : NSObject {
+    NSMutableArray * _additionalDcimImportFolders;
+    NSMutableDictionary * _albumByAlbumPath;
+    NSMutableDictionary * _albumRequestsByAlbumId;
+    PLCacheDeleteClient * _cacheDeleteClient;
+    id /* block */  _completionHandler;
+    NSMutableDictionary * _containerPathByLocalIdentifier;
+    <PHImportServiceImporterDelegate> * _delegate;
+    NSMutableDictionary * _downloadFolderUrlByImportIdentifier;
+    NSMutableArray * _downloadedRecords;
+    NSMutableDictionary * _folderByFolderPath;
+    NSMutableDictionary * _folderRequestByFolderId;
+    unsigned long long  _importBatchSize;
+    PLImportFileManager * _importFileManager;
+    NSObject<OS_dispatch_queue> * _importQueue;
+    NSString * _importSessionID;
+    unsigned char  _importState;
+    NSMutableSet * _importedBurstUUIDs;
+    bool  _isCanceled;
+    PHPhotoLibrary * _library;
+    PHImportOptions * _options;
+    NSMutableDictionary * _parentFolderMapping;
+    NSProgress * _progress;
+    PHImportResults * _results;
+    PHImportSource * _source;
+}
+
+@property (nonatomic, retain) PLCacheDeleteClient *cacheDeleteClient;
+@property (nonatomic, retain) NSString *importSessionID;
+@property (nonatomic, retain) NSMutableSet *importedBurstUUIDs;
+@property (nonatomic, retain) PHPhotoLibrary *library;
+@property (nonatomic, retain) PHImportOptions *options;
+@property (nonatomic, retain) NSProgress *progress;
+@property (nonatomic, retain) PHImportResults *results;
+@property (nonatomic, retain) PHImportSource *source;
+
++ (void)dumpImageData:(id)arg1;
++ (void)dumpMetadataForData:(id)arg1;
++ (void)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibrary:(id)arg3 withOptions:(id)arg4 progress:(id*)arg5 delegate:(id)arg6 atEnd:(id /* block */)arg7;
++ (id)removeItemAtPath:(id)arg1 type:(unsigned long long)arg2 recursive:(bool)arg3;
+
+- (void).cxx_destruct;
+- (void)_applyFastVideoModernizationToRecord:(id)arg1;
+- (id)_importRecord:(id)arg1 createdAlbumIdentifiers:(id)arg2 createdFolderIdentifiers:(id)arg3;
+- (id)_recordsToImportWithCount:(unsigned long long)arg1;
+- (void)addDescriptionPropertiesFromImportAsset:(id)arg1 toCreationRequest:(id)arg2;
+- (void)addLibraryPropertiesFromImportAssetBundleAsset:(id)arg1 toCreationRequest:(id)arg2;
+- (void)addRecordToResults:(id)arg1;
+- (id)beginImport:(id)arg1;
+- (id)cacheDeleteClient;
+- (void)cancellationHandler;
+- (id)createAlbumForPath:(id)arg1 inFolder:(id)arg2 error:(id*)arg3;
+- (id)createFolderForPath:(id)arg1 inFolder:(id)arg2 error:(id*)arg3;
+- (void)downloadNextAssetInRecord:(id)arg1 toURL:(id)arg2 subRecordEnumerator:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)ensureContainersExistForAlbumPath:(id)arg1 forAsset:(id)arg2 completion:(id /* block */)arg3;
+- (void)ensureEnoughDiskSpaceAvailableIfNeededForAssets:(id)arg1 completion:(id /* block */)arg2;
+- (void)finishImport;
+- (id)folderChangeRequestForFolder:(id)arg1;
+- (id)getDestinationUrlForImportAsset:(id)arg1;
+- (bool)handleErrorsForRecord:(id)arg1 batch:(id)arg2 file:(char *)arg3 line:(int)arg4;
+- (void)importNextAsset:(id)arg1;
+- (void)importRecords:(id)arg1;
+- (void)importRecords:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)importSessionID;
+- (void)importedBurstAsset:(id)arg1;
+- (id)importedBurstUUIDs;
+- (id)initWithLibrary:(id)arg1 options:(id)arg2 source:(id)arg3 delegate:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)library;
+- (id)makeDownloadUrlForParentFolderPath:(id)arg1;
+- (id)options;
+- (void)performLegacyDiskSpaceCheckForRequiredBytes:(long long)arg1 forPath:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)progress;
+- (id)relativePathComponentsForAlbumPath:(id)arg1 fromRootPath:(id)arg2;
+- (id)removeImportDirectoryForLibrary:(id)arg1;
+- (id)results;
+- (void)setCacheDeleteClient:(id)arg1;
+- (void)setImportSessionID:(id)arg1;
+- (void)setImportedBurstUUIDs:(id)arg1;
+- (void)setLibrary:(id)arg1;
+- (void)setOptions:(id)arg1;
+- (void)setProgress:(id)arg1;
+- (void)setResults:(id)arg1;
+- (void)setSource:(id)arg1;
+- (bool)shouldImportRecordAsReference:(id)arg1;
+- (bool)shouldIngestInPlace:(id)arg1;
+- (id)source;
+- (void)updateAlbumCacheWithAlbumIdentifiers:(id)arg1;
+- (void)updateFolderCacheWithFolders:(id)arg1;
+- (void)validateSourceForAsset:(id)arg1;
+
+@end

@@ -1,0 +1,4 @@
+
+@interface TRITripushNotificationRoot : TRIPBRootObject
+
+@end

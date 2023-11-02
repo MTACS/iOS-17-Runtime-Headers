@@ -1,0 +1,4 @@
+
+@interface _TtCO7VFXCore14CodeGeneration10SubContext : _TtCO7VFXCore14CodeGeneration7Context
+
+@end

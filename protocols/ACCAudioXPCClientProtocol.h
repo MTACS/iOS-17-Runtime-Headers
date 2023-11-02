@@ -1,0 +1,4 @@
+
+@protocol ACCAudioXPCClientProtocol <NSObject>
+
+@end

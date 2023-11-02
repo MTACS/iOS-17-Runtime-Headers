@@ -1,0 +1,90 @@
+
+@interface TTSAsset : NSObject {
+    NSNumber * _age;
+    TTSAssetSource * _assetSource;
+    TTSAssetType * _assetType;
+    NSDictionary * _attributes;
+    NSBundle * _bundle;
+    NSNumber * _diskSize;
+    NSNumber * _downloadSize;
+    long long  _gender;
+    NSString * _identifier;
+    NSString * _name;
+    NSString * _primaryLanguage;
+    TTSAssetQuality * _quality;
+    NSArray * _supportedLanguages;
+    TTSAssetTechnology * _technology;
+    NSString * _versionDescription;
+    long long  _versionNumber;
+}
+
+@property (nonatomic, readonly) NSNumber *age;
+@property (nonatomic, readonly) TTSAssetSource *assetSource;
+@property (nonatomic, readonly) TTSAssetType *assetType;
+@property (nonatomic, readonly) NSDictionary *attributes;
+@property (nonatomic, readonly) NSBundle *bundle;
+@property (nonatomic, readonly) NSString *description;
+@property (nonatomic, readonly) NSNumber *diskSize;
+@property (nonatomic, readonly) NSNumber *downloadSize;
+@property (nonatomic, readonly) bool downloading;
+@property (nonatomic, readonly) long long gender;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) bool locallyAvailable;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *primaryLanguage;
+@property (nonatomic, readonly) bool purgeable;
+@property (nonatomic, readonly) TTSAssetQuality *quality;
+@property (nonatomic, readonly) NSArray *supportedLanguages;
+@property (nonatomic, readonly) TTSAssetTechnology *technology;
+@property (nonatomic, readonly) NSString *versionDescription;
+@property (nonatomic, readonly) long long versionNumber;
+
++ (id)NewAssetNotification;
++ (struct _NSRange { unsigned long long x1; unsigned long long x2; })_gryphonVoiceCompatibility;
++ (bool)_hasTrialEntitlements;
++ (void)_postNewAssetNotification;
++ (id)assistantVoiceMaps;
++ (id)bestAssetOfTypes:(id)arg1 matching:(id)arg2;
++ (id)describeServer:(id)arg1 forType:(id)arg2;
++ (id)describeServer:(id)arg1 source:(id)arg2;
++ (id)getServerForType:(id)arg1;
++ (id)getServerForType:(id)arg1 source:(id)arg2;
++ (bool)handleProxyEvent:(id)arg1 reply:(id)arg2 connection:(id)arg3;
++ (id)listAssetsOfTypes:(id)arg1 matching:(id)arg2;
++ (bool)setServer:(id)arg1 forType:(id)arg2;
++ (bool)setServer:(id)arg1 forType:(id)arg2 source:(id)arg3;
++ (void)waitForCatalogUpdates;
+
+- (void).cxx_destruct;
+- (id)age;
+- (id)assetSource;
+- (id)assetType;
+- (id)attributes;
+- (id)bundle;
+- (void)cancelDownloadingThen:(id /* block */)arg1;
+- (id)description;
+- (id)diskSize;
+- (id)downloadSize;
+- (void)downloadWithReservation:(id)arg1 useBattery:(bool)arg2 progress:(id /* block */)arg3 then:(id /* block */)arg4;
+- (bool)downloading;
+- (long long)gender;
+- (id)identifier;
+- (id)init;
+- (bool)isNewer:(id)arg1;
+- (bool)isOlder:(id)arg1;
+- (id)legacyAssetWithBundle:(id)arg1;
+- (bool)locallyAvailable;
+- (id)name;
+- (id)primaryLanguage;
+- (id)primaryLanguage;
+- (void)purge;
+- (void)purgeImmediately:(bool)arg1;
+- (bool)purgeable;
+- (id)quality;
+- (id)relatedAssetsWithOnlyAvailable:(bool)arg1;
+- (id)supportedLanguages;
+- (id)technology;
+- (id)versionDescription;
+- (long long)versionNumber;
+
+@end

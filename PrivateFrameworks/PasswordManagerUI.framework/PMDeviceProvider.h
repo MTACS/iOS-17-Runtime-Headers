@@ -1,0 +1,8 @@
+
+@interface PMDeviceProvider : NSObject
+
++ (void)fetchListsOfSharingDevicesSeparatedByAvailability:(void *)arg1; // needs 1 arg types, found 38: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'P' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'M' using 'void*' */ void*, long double, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, void, int, BOOL, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, unsigned short, /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, const int, in /* Warning: Unrecognized filer type: 'g' using 'void*' */ void*, _Atomic /* Warning: Unrecognized filer type: '' using 'void*' */ void*, void, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, int, long, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, /* Warning: unhandled bit fieldencoding: 'b' */ unsigned int, int, long, int, /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'y' using 'void*' */ void*, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, id, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, inout unsigned short, /* Warning: Unrecognized filer type: 'E' using 'void*' */ void*, const const out const /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, /* Warning: Unrecognized filer type: '>' using 'void*' */ void*
+
+- (id)init;
+
+@end

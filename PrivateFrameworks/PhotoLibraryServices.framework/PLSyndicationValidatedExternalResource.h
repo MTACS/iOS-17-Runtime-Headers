@@ -1,0 +1,4 @@
+
+@interface PLSyndicationValidatedExternalResource : PLValidatedExternalResource
+
+@end

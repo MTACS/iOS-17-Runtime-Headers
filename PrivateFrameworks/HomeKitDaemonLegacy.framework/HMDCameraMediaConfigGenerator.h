@@ -1,0 +1,19 @@
+
+@interface HMDCameraMediaConfigGenerator : HMFObject <HMFLogging>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)logCategory;
+
+- (bool)_loadAVCAudioStreamConfig:(id)arg1 protocolParameters:(id)arg2;
+- (bool)_loadAVCVideoStreamConfig:(id)arg1 protocolParameters:(id)arg2;
+- (bool)_loadConfig:(id)arg1 cipherCuite:(id)arg2;
+- (void)_loadConfig:(id)arg1 sendSrtpParameters:(id)arg2 receiveSrtpParameters:(id)arg3;
+- (void)_loadMiscConfig:(id)arg1;
+- (bool)extractReselectedConfigFromVideoTier:(id)arg1 videoStreamConfig:(id*)arg2;
+- (bool)extractSelectedConfigFromProtocolParameters:(id)arg1 videoStreamConfig:(id*)arg2 audioStreamConfig:(id*)arg3;
+
+@end

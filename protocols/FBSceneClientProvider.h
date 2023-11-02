@@ -1,0 +1,4 @@
+
+@protocol FBSceneClientProvider <NSObject>
+
+@end

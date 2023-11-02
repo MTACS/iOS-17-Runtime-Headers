@@ -1,0 +1,4 @@
+
+@protocol FinanceKit.FinancialDataXPCProtocol
+
+@end

@@ -1,0 +1,4 @@
+
+@protocol SBNotificationHomeAffordanceControllerClient <SBFZStackParticipantDelegate>
+
+@end

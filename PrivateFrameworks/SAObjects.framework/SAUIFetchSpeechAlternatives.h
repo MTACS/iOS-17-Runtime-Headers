@@ -1,0 +1,21 @@
+
+@interface SAUIFetchSpeechAlternatives : SABaseCommand <SAServerBoundCommand>
+
+@property (nonatomic, copy) NSString *aceId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *refId;
+@property (nonatomic, copy) NSString *requestId;
+@property (readonly) Class superclass;
+
++ (id)fetchSpeechAlternatives;
++ (id)fetchSpeechAlternativesWithDictionary:(id)arg1 context:(id)arg2;
+
+- (id)encodedClassName;
+- (id)groupIdentifier;
+- (id)requestId;
+- (bool)requiresResponse;
+- (void)setRequestId:(id)arg1;
+
+@end

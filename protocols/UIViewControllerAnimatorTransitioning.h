@@ -1,0 +1,4 @@
+
+@protocol UIViewControllerAnimatorTransitioning <UIViewControllerAnimatedTransitioning>
+
+@end

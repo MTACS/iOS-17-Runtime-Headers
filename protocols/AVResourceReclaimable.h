@@ -1,0 +1,4 @@
+
+@protocol AVResourceReclaimable <NSObject>
+
+@end

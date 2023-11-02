@@ -1,0 +1,88 @@
+
+@interface CEKExpandingSlider : UIControl <CEKAdditiveAnimatorDelegate, UIGestureRecognizerDelegate> {
+    CEKAdditiveAnimator * __animator;
+    unsigned long long  __expansionAnimationCounter;
+    NSTimer * __expansionAnimationTimer;
+    UILongPressGestureRecognizer * __gestureRecognizer;
+    UIView * __levelIndicatorView;
+    NSTimer * __markedValueAnimationTimer;
+    CEKSlider * __slider;
+    CEKExpandingTickMarksView * __ticksView;
+    UILabel * __titleLabel;
+    UILabel * __valueLabel;
+    double  _collapsedCenterX;
+    <CEKExpandingSliderDelegate> * _delegate;
+    bool  _expanded;
+    double  _markedValue;
+}
+
+@property (nonatomic, readonly) CEKAdditiveAnimator *_animator;
+@property (setter=_setExpansionAnimationCounter:, nonatomic) unsigned long long _expansionAnimationCounter;
+@property (setter=_setExpansionAnimationTimer:, nonatomic, retain) NSTimer *_expansionAnimationTimer;
+@property (nonatomic, readonly) UILongPressGestureRecognizer *_gestureRecognizer;
+@property (nonatomic, readonly) UIView *_levelIndicatorView;
+@property (setter=_setMarkedValueAnimationTimer:, nonatomic, retain) NSTimer *_markedValueAnimationTimer;
+@property (nonatomic, readonly) CEKSlider *_slider;
+@property (nonatomic, readonly) CEKExpandingTickMarksView *_ticksView;
+@property (nonatomic, readonly) UILabel *_titleLabel;
+@property (nonatomic, readonly) UILabel *_valueLabel;
+@property (nonatomic) double collapsedCenterX;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CEKExpandingSliderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool expanded;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double markedValue;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) double value;
+
+- (void).cxx_destruct;
+- (id)_animator;
+- (unsigned long long)_expansionAnimationCounter;
+- (id)_expansionAnimationTimer;
+- (id)_gestureRecognizer;
+- (void)_handleExpansionAnimationTimerFired:(id)arg1;
+- (void)_handleMarkedValueAnimationTimerFired:(id)arg1;
+- (void)_handlePress:(id)arg1;
+- (void)_handleSliderDidChangeValue:(id)arg1;
+- (id)_levelIndicatorView;
+- (id)_markedValueAnimationTimer;
+- (void)_setExpanded:(bool)arg1 animated:(bool)arg2 shouldNotify:(bool)arg3;
+- (void)_setExpansionAnimationCounter:(unsigned long long)arg1;
+- (void)_setExpansionAnimationTimer:(id)arg1;
+- (void)_setMarkedValueAnimationTimer:(id)arg1;
+- (id)_slider;
+- (id)_ticksView;
+- (id)_titleLabel;
+- (void)_updateColors;
+- (void)_updateLabelColorsForProgress:(double)arg1;
+- (void)_updateMarkedValueAnimated:(bool)arg1;
+- (void)_updateSubviewVisibility;
+- (void)_updateTickViewFrameForProgress:(double)arg1;
+- (void)_updateUIForValue:(double)arg1 animated:(bool)arg2;
+- (id)_valueLabel;
+- (void)animator:(id)arg1 didUpdateValuesForKeys:(id)arg2;
+- (double)collapsedCenterX;
+- (id)delegate;
+- (bool)expanded;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithTitle:(id)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)layoutSubviews;
+- (double)markedValue;
+- (void)setCollapsedCenterX:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setExpanded:(bool)arg1;
+- (void)setExpanded:(bool)arg1 animated:(bool)arg2;
+- (void)setMarkedValue:(double)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setValue:(double)arg1;
+- (void)setValue:(double)arg1 animated:(bool)arg2;
+- (void)tintColorDidChange;
+- (id)title;
+- (void)traitCollectionDidChange:(id)arg1;
+- (double)value;
+
+@end

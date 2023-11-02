@@ -1,0 +1,4 @@
+
+@interface PhotosGraph.PhotosChallengeEvaluableAlgorithmHiking : PhotosGraph.PhotosChallengeEvaluableMeaningAlgorithm
+
+@end

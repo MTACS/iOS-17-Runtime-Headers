@@ -1,0 +1,4 @@
+
+@interface MKFNaturalLightingActionDatabaseID : MKFActionDatabaseID
+
+@end

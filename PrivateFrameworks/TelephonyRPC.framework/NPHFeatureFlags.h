@@ -1,0 +1,4 @@
+
+@interface NPHFeatureFlags : NSObject
+
+@end

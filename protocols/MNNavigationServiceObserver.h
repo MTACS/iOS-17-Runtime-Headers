@@ -1,0 +1,89 @@
+
+@protocol MNNavigationServiceObserver <NSObject>
+
+@optional
+
+- (void)navigationService:(MNNavigationService *)arg1 didActivateAudioSession:(bool)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didArriveAtWaypoint:(GEOComposedWaypoint *)arg2 endOfLegIndex:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didChangeNavigationState:(int)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didChangeVoiceGuidanceLevel:(unsigned long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didDismissTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didEnableGuidancePrompts:(bool)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didEndWithReason:(unsigned long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didEnterPreArrivalStateForWaypoint:(GEOComposedWaypoint *)arg2 endOfLegIndex:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didFailWithError:(NSError *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didFinishLoadingTrace:(MNNavigationTraceInfo *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didInvalidateTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didPlayTracePosition:(double)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didProcessSpeechEvent:(GEOComposedGuidanceEvent *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didReceiveRealtimeUpdates:(NSSet *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didReceiveRouteSignalStrength:(unsigned long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didReceiveRoutingServiceError:(NSError *)arg2;
+- (void)navigationService:(void *)arg1 didReceiveTrafficIncidentAlert:(void *)arg2 responseCallback:(void *)arg3; // needs 3 arg types, found 8: MNNavigationService *, MNTrafficIncidentAlert *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)navigationService:(MNNavigationService *)arg1 didReceiveTransitAlert:(MNTransitAlert *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didRecordTraceBookmarkWithID:(unsigned long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didReroute:(GEOComposedRoute *)arg2 rerouteReason:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didResumeNavigatingFromWaypoint:(GEOComposedWaypoint *)arg2 endOfLegIndex:(unsigned long long)arg3 reason:(unsigned long long)arg4;
+- (void)navigationService:(MNNavigationService *)arg1 didSeekToTracePosition:(double)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didStartRecordingTraceWithPath:(NSString *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didStartSpeakingPrompt:(NSString *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(GEOComposedRoute *)arg3 traffic:(GEOComposedRouteTraffic *)arg4;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateAlternateRoutes:(NSArray *)arg2 traffics:(NSDictionary *)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateAlternateWalkingRoute:(GEOComposedRoute *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateArrivalInfo:(MNArrivalInfo *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateDisplayETA:(MNDisplayETAInfo *)arg2 remainingDistance:(MNRouteDistanceInfo *)arg3 batteryChargeInfo:(MNBatteryChargeInfo *)arg4;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateDisplayedStepIndex:(unsigned long long)arg2 segmentIndex:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateDistanceUntilManeuver:(double)arg2 timeUntilManeuver:(double)arg3 forStepIndex:(unsigned long long)arg4;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateDistanceUntilSign:(double)arg2 timeUntilSign:(double)arg3 forStepIndex:(unsigned long long)arg4;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateETAResponse:(GEOETATrafficUpdateResponse *)arg2 forRoute:(GEOComposedRoute *)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateMatchedLocation:(MNLocation *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateMotionType:(unsigned long long)arg2 confidence:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateMutableData:(GEOComposedRouteMutableData *)arg2 forRoute:(GEOComposedRoute *)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdatePreviewRoutes:(NSArray *)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateProceedToRouteDistance:(double)arg2 displayString:(NSString *)arg3 closestStepIndex:(unsigned long long)arg4;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateResumeRouteHandle:(GEOResumeRouteHandle *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateRouteWithNewRideSelection:(GEOComposedRoute *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateStepIndex:(unsigned long long)arg2 segmentIndex:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateTargetLegIndex:(unsigned long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateTrafficForRouteID:(NSUUID *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateVehicleParkingInfo:(MNVehicleParkingInfo *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 displayManeuverAlertForAnnouncementStage:(unsigned long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 displayPrimaryStep:(GEOStep *)arg2 instructions:(NSArray *)arg3 shieldType:(int)arg4 shieldText:(NSString *)arg5 drivingSide:(int)arg6 maneuverStepIndex:(unsigned long long)arg7 isSynthetic:(bool)arg8;
+- (void)navigationService:(MNNavigationService *)arg1 displaySecondaryStep:(GEOStep *)arg2 instructions:(NSArray *)arg3 shieldType:(int)arg4 shieldText:(NSString *)arg5 drivingSide:(int)arg6;
+- (void)navigationService:(MNNavigationService *)arg1 failedRerouteWithErrorCode:(long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 hideJunctionViewForId:(NSUUID *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 hideLaneDirectionsForId:(NSUUID *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 isApproachingEndOfLeg:(unsigned long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 newGuidanceEventFeedback:(MNGuidanceEventFeedback *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 shouldEnableIdleTimer:(bool)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 showJunctionView:(MNGuidanceJunctionViewInfo *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 showLaneDirections:(MNGuidanceLaneInfo *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 triggerHaptics:(int)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 updateSignsWithARInfo:(NSArray *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 updateSignsWithInfo:(MNGuidanceSignInfo *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 updatedGuidanceEventFeedback:(MNGuidanceEventFeedback *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 usePersistentDisplay:(bool)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 willAnnounce:(unsigned long long)arg2 inSeconds:(double)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 willEndWithReason:(unsigned long long)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 willProcessSpeechEvent:(GEOComposedGuidanceEvent *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 willRequestRealtimeUpdatesForRouteIDs:(NSSet *)arg2;
+- (void)navigationServiceBeginGuidanceUpdate:(MNNavigationService *)arg1;
+- (void)navigationServiceDidArrive:(MNNavigationService *)arg1;
+- (void)navigationServiceDidCancelReroute:(MNNavigationService *)arg1;
+- (void)navigationServiceDidDetectInterfaceMismatch:(MNNavigationService *)arg1;
+- (void)navigationServiceDidEnterPreArrivalState:(MNNavigationService *)arg1;
+- (void)navigationServiceDidFinishLocationUpdate:(MNNavigationService *)arg1;
+- (void)navigationServiceDidHideSecondaryStep:(MNNavigationService *)arg1;
+- (void)navigationServiceDidPauseTrace:(MNNavigationService *)arg1;
+- (void)navigationServiceDidResumeTrace:(MNNavigationService *)arg1;
+- (void)navigationServiceDidSynchronize:(MNNavigationService *)arg1;
+- (void)navigationServiceEndGuidanceUpdate:(MNNavigationService *)arg1;
+- (void)navigationServiceWillPause:(MNNavigationService *)arg1;
+- (void)navigationServiceWillReroute:(MNNavigationService *)arg1;
+- (void)navigationServiceWillResumeFromPause:(MNNavigationService *)arg1;
+
+@end

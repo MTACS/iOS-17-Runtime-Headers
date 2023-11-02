@@ -1,0 +1,4 @@
+
+@protocol PXInboxPreviewItem <NSObject>
+
+@end

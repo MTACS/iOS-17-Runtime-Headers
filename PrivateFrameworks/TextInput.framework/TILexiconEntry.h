@@ -1,0 +1,21 @@
+
+@interface TILexiconEntry : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _documentText;
+    NSString * _userInput;
+}
+
+@property (nonatomic, readonly) NSString *documentText;
+@property (nonatomic, readonly) NSString *userInput;
+
++ (id)entryWithDocumentText:(id)arg1 userInput:(id)arg2;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)documentText;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)userInput;
+
+@end

@@ -1,0 +1,364 @@
+
+@interface PXGEngine : NSObject <PXChangeObserver, PXGLayoutUpdateDelegate, PXGRendererDelegate, PXGTextureManagerDelegate, PXTilingScrollControllerUpdateDelegate> {
+    NSMutableSet * _activeInteractions;
+    bool  _allowLargerImagesDuringScrollingInLowMemoryMode;
+    PXGChangeDetails * _animationChangeDetails;
+    PXGLayout * _animationLayout;
+    PXGSpriteDataStore * _animationPresentationSpriteDataStore;
+    id /* block */  _animationRenderingCompletionHandler;
+    PXGSpriteDataStore * _animationTargetSpriteDataStore;
+    PXGAnimator * _animator;
+    bool  _animatorWasAnimatingAtBeginningOfFrame;
+    PXGAXCoalescingResponder * _coalescingAXResponder;
+    <PXGEngineDelegate> * _delegate;
+    struct { 
+        bool updateDebugHUDWithStats; 
+    }  _delegateRespondsTo;
+    bool  _didDisappear;
+    bool  _didRenderThisFrame;
+    bool  _disableMetalViewDisplayCompositing;
+    <PXDisplayLinkProtocol> * _displayLink;
+    <PXGRenderer> * _drivingRenderer;
+    PXGEntityManager * _entityManager;
+    bool  _expectingScrollEvents;
+    bool  _extensionHostIsInBackground;
+    bool  _gotScrollEventThisFrame;
+    struct { 
+        long long scrollRegime; 
+        bool isAnimatingScroll; 
+        bool isScrubbing; 
+        bool isAnimatingContent; 
+        unsigned long long contentChangeTrend; 
+        bool isViewBoundsChanging; 
+        bool isInitialLoad; 
+        bool isVisible; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } targetRect; 
+    }  _interactionState;
+    UIView<PXGHitTestEnvironment> * _interactionView;
+    NSMutableSet * _interactions;
+    bool  _isExporting;
+    bool  _isInitialLoad;
+    bool  _isInvisibleForSomeTime;
+    bool  _isSuspended;
+    bool  _isUpdatingRenderer;
+    bool  _isUpdatingScrollView;
+    bool  _isUpdatingTextureManager;
+    bool  _keepDisplayLinkAlive;
+    double  _lastRenderCompletionTimestamp;
+    double  _lastScrollEventTime;
+    PXGLayout * _layout;
+    PXGChangeDetails * _layoutChangeDetails;
+    NSObject<OS_dispatch_queue> * _layoutQueue;
+    PXGSpriteDataStore * _layoutSpriteDataStore;
+    bool  _lowMemoryMode;
+    PXMediaProvider * _mediaProvider;
+    bool  _missedScrollEventThisFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _normalizedVisibleRect;
+    NSMutableArray * _pendingContentLoadedNotificationBlocks;
+    id /* block */  _pendingIsInvisibleForSomeTimeBlock;
+    unsigned long long  _pendingUpdateEntities;
+    PXGViewEnvironment * _pendingViewEnvironment;
+    PXGSpriteMetadataStore * _presentationSpriteMetadaStore;
+    struct { 
+        long long scrollRegime; 
+        bool isAnimatingScroll; 
+        bool isScrubbing; 
+        bool isAnimatingContent; 
+        unsigned long long contentChangeTrend; 
+        bool isViewBoundsChanging; 
+        bool isInitialLoad; 
+        bool isVisible; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } targetRect; 
+    }  _previousInteractionState;
+    unsigned long long  _previousUpdateEntities;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _previousVisibleOrigin;
+    PXGTungstenEngineRecordingSession * _recordingSession;
+    bool  _recursiveUpdateRescheduled;
+    double  _renderForTargetTimestamp;
+    NSArray * _renderers;
+    id /* block */  _renderingCompletionHandler;
+    struct _PXGEngineScrollState { 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } referenceSize; 
+        struct UIEdgeInsets { 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
+        } contentInsets; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } visibleRect; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } targetRect; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } constrainedVisibleRect; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } lastScrollDirection; 
+        long long scrollSpeedRegime; 
+    }  _scrollState;
+    PXScrollViewController * _scrollViewController;
+    PXScrollViewSpeedometer * _scrollViewSpeedometer;
+    bool  _slowAnimationsEnabled;
+    struct { double x1[6]; double x2[6]; long long x3[6]; double x4[6]; double x5[6]; } * _stats;
+    bool  _statsTrackingEnabled;
+    PXGTextureManager * _textureManager;
+    struct { 
+        unsigned long long needsUpdate; 
+        unsigned long long updated; 
+        bool isPerformingUpdate; 
+        bool willPerformUpdate; 
+    }  _updateFlags;
+    PXGViewEnvironment * _viewEnvironment;
+    bool  _viewSizeDidChange;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _viewportShift;
+    bool  _visible;
+    bool  _wantsImmediateUpdates;
+}
+
+@property (nonatomic, readonly) NSMutableSet *activeInteractions;
+@property (nonatomic) bool allowLargerImagesDuringScrollingInLowMemoryMode;
+@property (nonatomic, copy) id /* block */ animationRenderingCompletionHandler;
+@property (nonatomic, readonly) PXGAXCoalescingResponder *coalescingAXResponder;
+@property (nonatomic, readonly) long long currentFrameTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) bool debugEngineUpdates;
+@property (nonatomic) <PXGEngineDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool didDisappear;
+@property (nonatomic) bool didRenderThisFrame;
+@property (nonatomic) bool disableMetalViewDisplayCompositing;
+@property (nonatomic, readonly) <PXDisplayLinkProtocol> *displayLink;
+@property (nonatomic, readonly) <PXGRenderer> *drivingRenderer;
+@property (nonatomic, readonly) PXGEntityManager *entityManager;
+@property (nonatomic) bool expectingScrollEvents;
+@property (nonatomic) bool gotScrollEventThisFrame;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) struct { long long x1; bool x2; bool x3; bool x4; unsigned long long x5; bool x6; bool x7; bool x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; } interactionState;
+@property (nonatomic) UIView<PXGHitTestEnvironment> *interactionView;
+@property (nonatomic, readonly) NSMutableSet *interactions;
+@property (nonatomic) bool isExporting;
+@property (nonatomic) bool isInitialLoad;
+@property (nonatomic) bool isInvisibleForSomeTime;
+@property (nonatomic) bool isSuspended;
+@property (nonatomic) double lastScrollEventTime;
+@property (nonatomic, retain) PXGLayout *layout;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *layoutQueue;
+@property (nonatomic) bool lowMemoryMode;
+@property (nonatomic, retain) PXMediaProvider *mediaProvider;
+@property (nonatomic) bool missedScrollEventThisFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedVisibleRect;
+@property (nonatomic, readonly) NSMutableArray *pendingContentLoadedNotificationBlocks;
+@property (nonatomic, readonly) PXGAnimator *ppt_animator;
+@property (nonatomic, retain) PXGTungstenEngineRecordingSession *recordingSession;
+@property (nonatomic) bool recursiveUpdateRescheduled;
+@property (nonatomic, readonly) NSArray *renderers;
+@property (nonatomic, copy) id /* block */ renderingCompletionHandler;
+@property (nonatomic, readonly) struct _PXGEngineScrollState { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; long long x7; } scrollState;
+@property (nonatomic, retain) PXScrollViewController *scrollViewController;
+@property (nonatomic, retain) PXScrollViewSpeedometer *scrollViewSpeedometer;
+@property (nonatomic) bool slowAnimationsEnabled;
+@property (nonatomic, readonly) struct { double x1[6]; double x2[6]; long long x3[6]; double x4[6]; double x5[6]; }*stats;
+@property (nonatomic) bool statsTrackingEnabled;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PXGTextureManager *textureManager;
+@property (nonatomic, retain) PXGViewEnvironment *viewEnvironment;
+@property (getter=isVisible, nonatomic) bool visible;
+@property (nonatomic) bool wantsImmediateUpdates;
+
+- (void).cxx_destruct;
+- (void)__setNeedsUpdate;
+- (void)_deferredInvalidate:(unsigned long long)arg1;
+- (void)_enumerateRenderers:(id /* block */)arg1;
+- (void)_extensionHostDidEnterBackground:(id)arg1;
+- (void)_extensionHostWillEnterForeground:(id)arg1;
+- (void)_forceInvalidate:(unsigned long long)arg1;
+- (void)_handleRescheduledRecursiveUpdate;
+- (void)_handleTimeoutForNotificationBlock:(id /* block */)arg1;
+- (void)_hasBeenInvisibleForSomeTime;
+- (void)_invalidateOrDefer:(unsigned long long)arg1;
+- (bool)_isInBackground;
+- (void)_notifyContentLoadedObserversIfNeeded;
+- (void)_performRender;
+- (void)_propagateTextureConverters;
+- (void)_recursiveUpdateDetected;
+- (void)_releaseResources;
+- (void)_resetChangeDetails;
+- (void)_retargetAnimations;
+- (void)_setNeedsRender;
+- (bool)_shouldDeferContentOffsetUpdates;
+- (bool)_shouldDeferRenderUntilNextFrame;
+- (bool)_shouldWaitForScrollEvent;
+- (void)_updateAnimatorWithTargetTimestamp:(double)arg1;
+- (void)_updateDisplayLink;
+- (void)_updateIfNeededWithReason:(id)arg1;
+- (void)_updateInteractionState;
+- (void)_updateInvisibleTextureManager;
+- (void)_updateLayout;
+- (void)_updateLayoutInteractions;
+- (void)_updateScrollStateWithReason:(unsigned long long)arg1;
+- (void)_updateTextureManager;
+- (id)activeInteractions;
+- (bool)allowLargerImagesDuringScrollingInLowMemoryMode;
+- (void)allowSecondRenderThisFrame;
+- (id /* block */)animationRenderingCompletionHandler;
+- (id)coalescingAXResponder;
+- (bool)copyPresentedSpriteFor:(id)arg1 geometry:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; }*)arg2 style:(struct { float x1; struct { union { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; float x_1_3_4; } x_1_2_1; float x_1_2_2[4]; } x_2_1_1; } x2; float x3; float x4; float x5; float x6; unsigned short x7; unsigned char x8; float x9; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_10_1_1[4]; } x10; }*)arg3 info:(struct { unsigned char x1; unsigned char x2; float x3; long long x4; unsigned short x5; unsigned char x6; }*)arg4;
+- (long long)currentFrameTime;
+- (void)dealloc;
+- (bool)debugEngineUpdates;
+- (id)delegate;
+- (bool)didDisappear;
+- (bool)didRenderThisFrame;
+- (bool)disableMetalViewDisplayCompositing;
+- (id)displayLink;
+- (id)drivingRenderer;
+- (void)ensureUpdatedLayout;
+- (id)entityManager;
+- (void)enumerateSpritesInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (bool)expectingScrollEvents;
+- (bool)gotScrollEventThisFrame;
+- (void)handleDisplayLink:(id)arg1;
+- (void)handleScreensDidWakeNotification:(id)arg1;
+- (id)init;
+- (id)initForExportWithPixelBufferDestination:(id)arg1 layoutQueue:(id)arg2 displayLinkClass:(Class)arg3;
+- (id)initWithAnimator:(id)arg1 renderers:(id)arg2 displayLinkClass:(Class)arg3 layoutQueue:(id)arg4;
+- (struct { long long x1; bool x2; bool x3; bool x4; unsigned long long x5; bool x6; bool x7; bool x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; })interactionState;
+- (id)interactionView;
+- (id)interactions;
+- (bool)isExporting;
+- (bool)isInitialLoad;
+- (bool)isInvisibleForSomeTime;
+- (bool)isSuspended;
+- (bool)isVisible;
+- (double)lastScrollEventTime;
+- (id)layout;
+- (void)layoutNeedsRenderUpdate:(id)arg1;
+- (void)layoutNeedsUpdate:(id)arg1;
+- (id)layoutQueue;
+- (bool)lowMemoryMode;
+- (id)mediaProvider;
+- (bool)missedScrollEventThisFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedVisibleRect;
+- (void)notifyContentFullyLoadedWithTimeout:(double)arg1 block:(id /* block */)arg2;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (id)pendingContentLoadedNotificationBlocks;
+- (id)ppt_animator;
+- (id)recordingSession;
+- (bool)recursiveUpdateRescheduled;
+- (void)registerAllTextureProvidersWithMediaProvider:(id)arg1;
+- (void)registerAllTextureProvidersWithMediaProvider:(id)arg1 namedImagesBundle:(id)arg2;
+- (void)registerTextureProvider:(id)arg1 forMediaKind:(unsigned char)arg2;
+- (void)renderer:(id)arg1 viewportSizeWillChange:(struct CGSize { double x1; double x2; })arg2;
+- (void)rendererDidChangeTextureConverter:(id)arg1;
+- (void)rendererNeedsUpdate:(id)arg1;
+- (void)rendererPerformRender:(id)arg1;
+- (id)renderers;
+- (id /* block */)renderingCompletionHandler;
+- (struct _PXGEngineScrollState { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; long long x7; })scrollState;
+- (id)scrollViewController;
+- (id)scrollViewSpeedometer;
+- (void)setAllowLargerImagesDuringScrollingInLowMemoryMode:(bool)arg1;
+- (void)setAnimationRenderingCompletionHandler:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDidDisappear:(bool)arg1;
+- (void)setDidRenderThisFrame:(bool)arg1;
+- (void)setDisableMetalViewDisplayCompositing:(bool)arg1;
+- (void)setExpectingScrollEvents:(bool)arg1;
+- (void)setGotScrollEventThisFrame:(bool)arg1;
+- (void)setInteractionState:(struct { long long x1; bool x2; bool x3; bool x4; unsigned long long x5; bool x6; bool x7; bool x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; })arg1;
+- (void)setInteractionView:(id)arg1;
+- (void)setIsExporting:(bool)arg1;
+- (void)setIsInitialLoad:(bool)arg1;
+- (void)setIsInvisibleForSomeTime:(bool)arg1;
+- (void)setIsSuspended:(bool)arg1;
+- (void)setLastScrollEventTime:(double)arg1;
+- (void)setLayout:(id)arg1;
+- (void)setLowMemoryMode:(bool)arg1;
+- (void)setMediaProvider:(id)arg1;
+- (void)setMissedScrollEventThisFrame:(bool)arg1;
+- (void)setNormalizedVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRecordingSession:(id)arg1;
+- (void)setRecursiveUpdateRescheduled:(bool)arg1;
+- (void)setRenderingCompletionHandler:(id /* block */)arg1;
+- (void)setScrollViewController:(id)arg1;
+- (void)setScrollViewSpeedometer:(id)arg1;
+- (void)setSlowAnimationsEnabled:(bool)arg1;
+- (void)setStatsTrackingEnabled:(bool)arg1;
+- (void)setViewEnvironment:(id)arg1;
+- (void)setVisible:(bool)arg1;
+- (void)setWantsImmediateUpdates:(bool)arg1;
+- (bool)slowAnimationsEnabled;
+- (id)startRecordingToDirectoryURL:(id)arg1;
+- (struct { double x1[6]; double x2[6]; long long x3[6]; double x4[6]; double x5[6]; }*)stats;
+- (bool)statsTrackingEnabled;
+- (void)test_installRenderSnapshotHandler:(id /* block */)arg1;
+- (id)textureManager;
+- (void)textureManagerNeedsUpdate:(id)arg1;
+- (void)tilingScrollControllerDidScroll:(id)arg1;
+- (void)tilingScrollControllerDidUpdate:(id)arg1;
+- (void)updateIfNeeded;
+- (id)viewEnvironment;
+- (bool)wantsImmediateUpdates;
+
+@end

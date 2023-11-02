@@ -1,0 +1,90 @@
+
+@interface AXLTTranscriber : NSObject <SFSpeechRecognitionTaskDelegate, SFSpeechRecognizerDelegate> {
+    NSString * _appName;
+    NSTimer * _audioBufferTimeoutTimer;
+    id /* block */  _completionCallback;
+    AXLTTranscription * _currentTranscription;
+    long long  _downloadState;
+    bool  _isInUse;
+    AXLTLanguageAssetManager * _languageAssetManager;
+    bool  _noPunctuation;
+    int  _pid;
+    SFSpeechAudioBufferRecognitionRequest * _recognitionRequest;
+    SFSpeechRecognitionTask * _recognitionTask;
+    SFSpeechRecognizer * _recognizer;
+    long long  _taskHint;
+    id /* block */  _transcriptionCallback;
+}
+
+@property (retain) NSString *appName;
+@property (retain) NSTimer *audioBufferTimeoutTimer;
+@property (copy) id /* block */ completionCallback;
+@property (nonatomic, retain) AXLTTranscription *currentTranscription;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property long long downloadState;
+@property (readonly) unsigned long long hash;
+@property bool isInUse;
+@property (retain) AXLTLanguageAssetManager *languageAssetManager;
+@property (nonatomic) bool noPunctuation;
+@property int pid;
+@property (nonatomic, retain) SFSpeechAudioBufferRecognitionRequest *recognitionRequest;
+@property (nonatomic, retain) SFSpeechRecognitionTask *recognitionTask;
+@property (nonatomic, retain) SFSpeechRecognizer *recognizer;
+@property (readonly) Class superclass;
+@property (nonatomic) long long taskHint;
+@property (copy) id /* block */ transcriptionCallback;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (float)_coalsecingTime;
+- (void)_downloadAndInstallSpeechRecognizer;
+- (void)_handleAssetDownloadError:(id)arg1;
+- (void)_restartTranscription;
+- (id)appName;
+- (void)appendAudioPCMBuffer:(id)arg1 forPID:(int)arg2;
+- (id)audioBufferTimeoutTimer;
+- (id /* block */)completionCallback;
+- (id)currentTranscription;
+- (void)dealloc;
+- (long long)defaultTaskHint;
+- (long long)downloadState;
+- (id)init;
+- (bool)isInUse;
+- (bool)isTranscribingForPID:(int)arg1;
+- (id)languageAssetManager;
+- (long long)mapUserTaskHint;
+- (bool)noPunctuation;
+- (int)pid;
+- (id)recognitionRequest;
+- (id)recognitionTask;
+- (long long)recognitionTaskHint;
+- (id)recognizer;
+- (void)resumeTranscriptionForPID:(int)arg1;
+- (void)setAppName:(id)arg1;
+- (void)setAudioBufferTimeoutTimer:(id)arg1;
+- (void)setCompletionCallback:(id /* block */)arg1;
+- (void)setCurrentTranscription:(id)arg1;
+- (void)setDownloadState:(long long)arg1;
+- (void)setIsInUse:(bool)arg1;
+- (void)setLanguageAssetManager:(id)arg1;
+- (void)setNoPunctuation:(bool)arg1;
+- (void)setPid:(int)arg1;
+- (void)setRecognitionRequest:(id)arg1;
+- (void)setRecognitionTask:(id)arg1;
+- (void)setRecognizer:(id)arg1;
+- (void)setTaskHint:(long long)arg1;
+- (void)setTranscriptionCallback:(id /* block */)arg1;
+- (void)speechRecognitionDidDetectSpeech:(id)arg1;
+- (void)speechRecognitionTask:(id)arg1 didFinishRecognition:(id)arg2;
+- (void)speechRecognitionTask:(id)arg1 didFinishSuccessfully:(bool)arg2;
+- (void)speechRecognitionTask:(id)arg1 didHypothesizeTranscription:(id)arg2;
+- (void)speechRecognitionTaskFinishedReadingAudio:(id)arg1;
+- (void)speechRecognitionTaskWasCancelled:(id)arg1;
+- (void)startTranscriptionForPID:(int)arg1 appName:(id)arg2 callback:(id /* block */)arg3 completionCallback:(id /* block */)arg4;
+- (void)stopTranscriptionForPID:(int)arg1;
+- (long long)taskHint;
+- (id /* block */)transcriptionCallback;
+
+@end

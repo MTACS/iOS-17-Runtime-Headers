@@ -1,0 +1,90 @@
+
+@interface BMUserFocusInferredMode : BMEventBase <BMStoreData> {
+    double  _confidenceScore;
+    bool  _hasConfidenceScore;
+    bool  _hasIsAutomationEnabled;
+    bool  _hasIsStart;
+    bool  _hasRaw_absoluteTimestamp;
+    bool  _hasShouldSuggestTriggers;
+    bool  _hasUiLocation;
+    bool  _isAutomationEnabled;
+    bool  _isStart;
+    NSString * _modeIdentifier;
+    int  _modeType;
+    int  _origin;
+    NSString * _originAnchorType;
+    NSString * _originBundleID;
+    double  _raw_absoluteTimestamp;
+    NSArray * _serializedTriggers;
+    bool  _shouldSuggestTriggers;
+    unsigned long long  _uiLocation;
+    NSString * _userModeName;
+    NSString * _uuid;
+}
+
+@property (nonatomic, readonly) NSDate *absoluteTimestamp;
+@property (nonatomic, readonly) double confidenceScore;
+@property (nonatomic, readonly) unsigned int dataVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasConfidenceScore;
+@property (nonatomic) bool hasIsAutomationEnabled;
+@property (nonatomic) bool hasIsStart;
+@property (nonatomic) bool hasShouldSuggestTriggers;
+@property (nonatomic) bool hasUiLocation;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isAutomationEnabled;
+@property (nonatomic, readonly) bool isStart;
+@property (nonatomic, readonly) NSString *modeIdentifier;
+@property (nonatomic, readonly) int modeType;
+@property (nonatomic, readonly) int origin;
+@property (nonatomic, readonly) NSString *originAnchorType;
+@property (nonatomic, readonly) NSString *originBundleID;
+@property (nonatomic, readonly) NSArray *serializedTriggers;
+@property (nonatomic, readonly) bool shouldSuggestTriggers;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long uiLocation;
+@property (nonatomic, readonly) NSString *userModeName;
+@property (nonatomic, readonly) NSString *uuid;
+
++ (id)columns;
++ (id)eventWithData:(id)arg1 dataVersion:(unsigned int)arg2;
++ (id)validKeyPaths;
+
+- (void).cxx_destruct;
+- (id)_serializedTriggersJSONArray;
+- (id)absoluteTimestamp;
+- (double)confidenceScore;
+- (unsigned int)dataVersion;
+- (id)description;
+- (bool)hasConfidenceScore;
+- (bool)hasIsAutomationEnabled;
+- (bool)hasIsStart;
+- (bool)hasShouldSuggestTriggers;
+- (bool)hasUiLocation;
+- (id)initByReadFrom:(id)arg1;
+- (id)initWithAbsoluteTimestamp:(id)arg1 modeIdentifier:(id)arg2 origin:(int)arg3 originBundleID:(id)arg4 isAutomationEnabled:(id)arg5 isStart:(id)arg6 uuid:(id)arg7 originAnchorType:(id)arg8 uiLocation:(id)arg9 confidenceScore:(id)arg10 serializedTriggers:(id)arg11 modeType:(int)arg12 shouldSuggestTriggers:(id)arg13 userModeName:(id)arg14;
+- (id)initWithJSONDictionary:(id)arg1 error:(id*)arg2;
+- (bool)isAutomationEnabled;
+- (bool)isEqual:(id)arg1;
+- (bool)isStart;
+- (id)jsonDictionary;
+- (id)modeIdentifier;
+- (int)modeType;
+- (int)origin;
+- (id)originAnchorType;
+- (id)originBundleID;
+- (id)serialize;
+- (id)serializedTriggers;
+- (void)setHasConfidenceScore:(bool)arg1;
+- (void)setHasIsAutomationEnabled:(bool)arg1;
+- (void)setHasIsStart:(bool)arg1;
+- (void)setHasShouldSuggestTriggers:(bool)arg1;
+- (void)setHasUiLocation:(bool)arg1;
+- (bool)shouldSuggestTriggers;
+- (unsigned long long)uiLocation;
+- (id)userModeName;
+- (id)uuid;
+- (void)writeTo:(id)arg1;
+
+@end

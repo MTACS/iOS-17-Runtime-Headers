@@ -1,0 +1,4 @@
+
+@interface _TtC5TeaUIP33_E5A8A4F2B7E00CF786950F020FFD001521ConfigurableSingleton : _TtCs12_SwiftObject
+
+@end

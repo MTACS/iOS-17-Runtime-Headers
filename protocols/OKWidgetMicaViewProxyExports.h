@@ -1,0 +1,4 @@
+
+@protocol OKWidgetMicaViewProxyExports <JSExport>
+
+@end

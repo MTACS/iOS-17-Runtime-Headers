@@ -1,0 +1,4 @@
+
+@protocol BWStillImageProcessorControllerInputUpdatesDelegate <NSObject>
+
+@end

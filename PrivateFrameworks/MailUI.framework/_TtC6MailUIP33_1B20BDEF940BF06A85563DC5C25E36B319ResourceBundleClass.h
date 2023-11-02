@@ -1,0 +1,4 @@
+
+@interface _TtC6MailUIP33_1B20BDEF940BF06A85563DC5C25E36B319ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

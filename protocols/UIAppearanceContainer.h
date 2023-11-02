@@ -1,0 +1,4 @@
+
+@protocol UIAppearanceContainer <NSObject>
+
+@end

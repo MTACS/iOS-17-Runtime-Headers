@@ -1,0 +1,4 @@
+
+@interface VNDetectAnimalBodyPoseRequestConfiguration : VNImageBasedRequestConfiguration
+
+@end

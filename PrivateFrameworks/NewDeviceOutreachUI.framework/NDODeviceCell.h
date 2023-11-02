@@ -1,0 +1,18 @@
+
+@interface NDODeviceCell : UIView {
+    UIImageView * _image;
+    UILabel * _label;
+}
+
+@property (nonatomic, retain) UIImageView *image;
+@property (nonatomic, retain) UILabel *label;
+
+- (void).cxx_destruct;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)image;
+- (id)initWithCoder:(id)arg1;
+- (id)label;
+- (void)setImage:(id)arg1;
+- (void)setLabel:(id)arg1;
+
+@end

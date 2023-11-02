@@ -1,0 +1,4 @@
+
+@protocol ARRemoteControlProtocol <NSObject>
+
+@end

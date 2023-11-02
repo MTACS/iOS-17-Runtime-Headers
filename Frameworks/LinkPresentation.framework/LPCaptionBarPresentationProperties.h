@@ -1,0 +1,108 @@
+
+@interface LPCaptionBarPresentationProperties : NSObject {
+    LPCaptionRowPresentationProperties * _aboveTop;
+    NSArray * _additionalLeadingIcons;
+    NSArray * _additionalTrailingIcons;
+    LPCaptionRowPresentationProperties * _belowBottom;
+    LPCaptionRowPresentationProperties * _bottom;
+    LPCaptionButtonPresentationProperties * _button;
+    long long  _leadingAccessoryType;
+    LPImage * _leadingIcon;
+    LPImage * _leadingIconBadge;
+    LPImagePresentationProperties * _leadingIconBadgeProperties;
+    LPImagePresentationProperties * _leadingIconProperties;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _leadingIconSize;
+    NSNumber * _minimumHeight;
+    bool  _shouldHighlightIndependently;
+    LPCaptionRowPresentationProperties * _top;
+    long long  _trailingAccessoryType;
+    LPImage * _trailingIcon;
+    LPImage * _trailingIconBadge;
+    LPImagePresentationProperties * _trailingIconBadgeProperties;
+    LPImagePresentationProperties * _trailingIconProperties;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _trailingIconSize;
+}
+
+@property (nonatomic, readonly, retain) LPCaptionRowPresentationProperties *aboveTop;
+@property (nonatomic, retain) NSArray *additionalLeadingIcons;
+@property (nonatomic, retain) NSArray *additionalTrailingIcons;
+@property (nonatomic, readonly, retain) LPCaptionRowPresentationProperties *belowBottom;
+@property (nonatomic, readonly, retain) LPCaptionRowPresentationProperties *bottom;
+@property (nonatomic, retain) LPCaptionButtonPresentationProperties *button;
+@property (nonatomic, copy) NSString *buttonCaption;
+@property (nonatomic, readonly) bool hasAnyContent;
+@property (nonatomic) long long leadingAccessoryType;
+@property (nonatomic, retain) LPImage *leadingIcon;
+@property (nonatomic, retain) LPImage *leadingIconBadge;
+@property (nonatomic, retain) LPImagePresentationProperties *leadingIconBadgeProperties;
+@property (nonatomic, retain) LPImagePresentationProperties *leadingIconProperties;
+@property (nonatomic) struct CGSize { double x1; double x2; } leadingIconSize;
+@property (nonatomic, retain) NSNumber *minimumHeight;
+@property (nonatomic) bool shouldHighlightIndependently;
+@property (nonatomic, readonly, retain) LPCaptionRowPresentationProperties *top;
+@property (nonatomic) long long trailingAccessoryType;
+@property (nonatomic, retain) LPImage *trailingIcon;
+@property (nonatomic, retain) LPImage *trailingIconBadge;
+@property (nonatomic, retain) LPImagePresentationProperties *trailingIconBadgeProperties;
+@property (nonatomic, retain) LPImagePresentationProperties *trailingIconProperties;
+@property (nonatomic) struct CGSize { double x1; double x2; } trailingIconSize;
+
+- (void).cxx_destruct;
+- (id)aboveTop;
+- (id)additionalLeadingIcons;
+- (id)additionalTrailingIcons;
+- (void)applyToAllCaptions:(id /* block */)arg1;
+- (id)belowBottom;
+- (id)bottom;
+- (id)button;
+- (id)buttonCaption;
+- (bool)hasAnyContent;
+- (id)init;
+- (long long)leadingAccessoryType;
+- (id)leadingIcon;
+- (id)leadingIconBadge;
+- (id)leadingIconBadgeProperties;
+- (id)leadingIconProperties;
+- (struct CGSize { double x1; double x2; })leadingIconSize;
+- (long long)leftAccessoryType;
+- (id)leftIcon;
+- (id)leftIconProperties;
+- (id)minimumHeight;
+- (void)removeAllIcons;
+- (long long)rightAccessoryType;
+- (id)rightIcon;
+- (id)rightIconProperties;
+- (void)setAdditionalLeadingIcons:(id)arg1;
+- (void)setAdditionalTrailingIcons:(id)arg1;
+- (void)setButton:(id)arg1;
+- (void)setButtonCaption:(id)arg1;
+- (void)setLeadingAccessoryType:(long long)arg1;
+- (void)setLeadingIcon:(id)arg1;
+- (void)setLeadingIconBadge:(id)arg1;
+- (void)setLeadingIconBadgeProperties:(id)arg1;
+- (void)setLeadingIconProperties:(id)arg1;
+- (void)setLeadingIconSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMinimumHeight:(id)arg1;
+- (void)setShouldHighlightIndependently:(bool)arg1;
+- (void)setTrailingAccessoryType:(long long)arg1;
+- (void)setTrailingIcon:(id)arg1;
+- (void)setTrailingIconBadge:(id)arg1;
+- (void)setTrailingIconBadgeProperties:(id)arg1;
+- (void)setTrailingIconProperties:(id)arg1;
+- (void)setTrailingIconSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)shouldHighlightIndependently;
+- (id)top;
+- (long long)trailingAccessoryType;
+- (id)trailingIcon;
+- (id)trailingIconBadge;
+- (id)trailingIconBadgeProperties;
+- (id)trailingIconProperties;
+- (struct CGSize { double x1; double x2; })trailingIconSize;
+
+@end

@@ -1,0 +1,106 @@
+
+@interface PXAudioPlayer : PXObservable <PXAudioSessionAVAudioSessionDelegate, PXChangeObserver> {
+    <PXAudioPlayerAVAudioSessionDelegate> * _audioSessionDelegate;
+    <PXAudioAsset> * _currentAsset;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _currentAssetDuration;
+    NSTimer * _currentTimeRecordUpdateTimer;
+    long long  _desiredPlayState;
+    NSError * _error;
+    PXCurrentTimeRecord * _mainQueue_currentTimeRecord;
+    NSString * _name;
+    NSObject<OS_dispatch_queue> * _sessionsQueue;
+    PXAudioSession * _sessionsQueue_currentSession;
+    long long  _state;
+    float  _targetLoudnessInLKFS;
+    struct { 
+        unsigned long long needsUpdate; 
+        unsigned long long updated; 
+        bool isPerformingUpdate; 
+        bool willPerformUpdate; 
+    }  _updateFlags;
+    float  _volume;
+}
+
+@property (nonatomic) <PXAudioPlayerAVAudioSessionDelegate> *audioSessionDelegate;
+@property (nonatomic, retain) <PXAudioAsset> *currentAsset;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } currentAssetDuration;
+@property (nonatomic, readonly) PXAudioSession *currentAudioSession;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } currentTime;
+@property (nonatomic, retain) NSTimer *currentTimeRecordUpdateTimer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) long long desiredPlayState;
+@property (nonatomic, retain) NSError *error;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PXCurrentTimeRecord *mainQueue_currentTimeRecord;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *sessionsQueue;
+@property (setter=sessionsQueue_setCurrentSession:, nonatomic, retain) PXAudioSession *sessionsQueue_currentSession;
+@property (nonatomic, readonly) long long state;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) float targetLoudnessInLKFS;
+@property (nonatomic, readonly) float volume;
+
+- (void).cxx_destruct;
+- (id)AVAudioSessionForAudioSession:(id)arg1;
+- (id)_createAudioSessionForAsset:(id)arg1 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)_handleCurrentTimeRecordUpdateTimer;
+- (void)_invalidateCurrentSessionState;
+- (void)_invalidateCurrentTimeRecord;
+- (void)_invalidateCurrentTimeRecordUpdateTimer;
+- (void)_invalidateState;
+- (id)_sessionsQueue_generateCurrentTimeRecord;
+- (void)_sessionsQueue_handleOutgoingSession:(id)arg1;
+- (void)_sessionsQueue_updateCurrentSessionStateWithDesiredPlayState:(long long)arg1;
+- (void)_sessionsQueue_updateCurrentTimeRecord;
+- (void)_sessionsQueue_updateState;
+- (void)_update;
+- (void)_updateCurrentSessionState;
+- (void)_updateCurrentTimeRecord;
+- (void)_updateCurrentTimeRecordUpdateTimer;
+- (void)_updateState;
+- (id)audioSessionDelegate;
+- (id)currentAsset;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentAssetDuration;
+- (id)currentAudioSession;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
+- (id)currentTimeRecordUpdateTimer;
+- (id)description;
+- (long long)desiredPlayState;
+- (void)didPerformChanges;
+- (id)error;
+- (id)init;
+- (id)initWithName:(id)arg1;
+- (id)lcdStringForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)mainQueue_currentTimeRecord;
+- (id)name;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (void)pause;
+- (void)performChanges:(id /* block */)arg1;
+- (void)playFromStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)replayFromTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (id)sessionsQueue;
+- (id)sessionsQueue_currentSession;
+- (void)sessionsQueue_setCurrentSession:(id)arg1;
+- (void)setAudioSessionDelegate:(id)arg1;
+- (void)setCurrentAsset:(id)arg1;
+- (void)setCurrentAsset:(id)arg1 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)setCurrentAsset:(id)arg1 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 hostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (void)setCurrentAssetDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setCurrentTimeRecordUpdateTimer:(id)arg1;
+- (void)setDesiredPlayState:(long long)arg1;
+- (void)setError:(id)arg1;
+- (void)setMainQueue_currentTimeRecord:(id)arg1;
+- (void)setState:(long long)arg1;
+- (void)setTargetLoudnessInLKFS:(float)arg1;
+- (void)setVolume:(float)arg1;
+- (long long)state;
+- (float)targetLoudnessInLKFS;
+- (float)volume;
+
+@end

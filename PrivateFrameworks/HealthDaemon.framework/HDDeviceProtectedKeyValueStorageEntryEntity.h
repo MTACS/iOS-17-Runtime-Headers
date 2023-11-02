@@ -1,0 +1,4 @@
+
+@interface HDDeviceProtectedKeyValueStorageEntryEntity : HDDeviceKeyValueStorageEntryEntity
+
+@end

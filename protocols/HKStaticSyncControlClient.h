@@ -1,0 +1,4 @@
+
+@protocol HKStaticSyncControlClient <NSObject>
+
+@end

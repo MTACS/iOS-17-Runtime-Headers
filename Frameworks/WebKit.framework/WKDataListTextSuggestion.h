@@ -1,0 +1,4 @@
+
+@interface WKDataListTextSuggestion : UITextSuggestion
+
+@end

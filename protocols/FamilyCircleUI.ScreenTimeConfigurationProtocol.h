@@ -1,0 +1,4 @@
+
+@protocol FamilyCircleUI.ScreenTimeConfigurationProtocol <FamilyCircleUI.MCProfileConnectionProtocol, FamilyCircleUI.STManagementStateProtocol>
+
+@end

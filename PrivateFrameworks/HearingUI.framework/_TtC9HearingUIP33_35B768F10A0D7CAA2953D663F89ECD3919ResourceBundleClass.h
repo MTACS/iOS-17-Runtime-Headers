@@ -1,0 +1,4 @@
+
+@interface _TtC9HearingUIP33_35B768F10A0D7CAA2953D663F89ECD3919ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

@@ -1,0 +1,4 @@
+
+@interface DBGSnapshotAssetManager : NSObject
+
+@end

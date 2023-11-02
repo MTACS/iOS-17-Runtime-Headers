@@ -1,0 +1,95 @@
+
+@interface BMTextUnderstandingPoemAnalyticsFeatures : BMEventBase <BMStoreData> {
+    bool  _hasNumOfConversationThreads;
+    bool  _hasNumOfFacesInMessages;
+    bool  _hasNumOfFacesOnDevice;
+    bool  _hasNumOfImagesShared;
+    bool  _hasNumOfLinguisticMentions;
+    bool  _hasNumOfNamedEntityMentions;
+    bool  _hasNumOfNamedFacesOnDevice;
+    bool  _hasNumOfPronounMentions;
+    bool  _hasNumOfReceiverMentions;
+    bool  _hasNumOfSenderMentions;
+    long long  _numOfConversationThreads;
+    long long  _numOfFacesInMessages;
+    long long  _numOfFacesOnDevice;
+    long long  _numOfImagesShared;
+    long long  _numOfLinguisticMentions;
+    long long  _numOfNamedEntityMentions;
+    long long  _numOfNamedFacesOnDevice;
+    long long  _numOfPronounMentions;
+    long long  _numOfReceiverMentions;
+    long long  _numOfSenderMentions;
+}
+
+@property (nonatomic, readonly) unsigned int dataVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasNumOfConversationThreads;
+@property (nonatomic) bool hasNumOfFacesInMessages;
+@property (nonatomic) bool hasNumOfFacesOnDevice;
+@property (nonatomic) bool hasNumOfImagesShared;
+@property (nonatomic) bool hasNumOfLinguisticMentions;
+@property (nonatomic) bool hasNumOfNamedEntityMentions;
+@property (nonatomic) bool hasNumOfNamedFacesOnDevice;
+@property (nonatomic) bool hasNumOfPronounMentions;
+@property (nonatomic) bool hasNumOfReceiverMentions;
+@property (nonatomic) bool hasNumOfSenderMentions;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long numOfConversationThreads;
+@property (nonatomic, readonly) long long numOfFacesInMessages;
+@property (nonatomic, readonly) long long numOfFacesOnDevice;
+@property (nonatomic, readonly) long long numOfImagesShared;
+@property (nonatomic, readonly) long long numOfLinguisticMentions;
+@property (nonatomic, readonly) long long numOfNamedEntityMentions;
+@property (nonatomic, readonly) long long numOfNamedFacesOnDevice;
+@property (nonatomic, readonly) long long numOfPronounMentions;
+@property (nonatomic, readonly) long long numOfReceiverMentions;
+@property (nonatomic, readonly) long long numOfSenderMentions;
+@property (readonly) Class superclass;
+
++ (id)columns;
++ (id)eventWithData:(id)arg1 dataVersion:(unsigned int)arg2;
++ (id)validKeyPaths;
+
+- (unsigned int)dataVersion;
+- (id)description;
+- (bool)hasNumOfConversationThreads;
+- (bool)hasNumOfFacesInMessages;
+- (bool)hasNumOfFacesOnDevice;
+- (bool)hasNumOfImagesShared;
+- (bool)hasNumOfLinguisticMentions;
+- (bool)hasNumOfNamedEntityMentions;
+- (bool)hasNumOfNamedFacesOnDevice;
+- (bool)hasNumOfPronounMentions;
+- (bool)hasNumOfReceiverMentions;
+- (bool)hasNumOfSenderMentions;
+- (id)initByReadFrom:(id)arg1;
+- (id)initWithJSONDictionary:(id)arg1 error:(id*)arg2;
+- (id)initWithNumOfFacesInMessages:(id)arg1 numOfFacesOnDevice:(id)arg2 numOfNamedFacesOnDevice:(id)arg3 numOfConversationThreads:(id)arg4 numOfNamedEntityMentions:(id)arg5 numOfSenderMentions:(id)arg6 numOfReceiverMentions:(id)arg7 numOfPronounMentions:(id)arg8 numOfImagesShared:(id)arg9 numOfLinguisticMentions:(id)arg10;
+- (bool)isEqual:(id)arg1;
+- (id)jsonDictionary;
+- (long long)numOfConversationThreads;
+- (long long)numOfFacesInMessages;
+- (long long)numOfFacesOnDevice;
+- (long long)numOfImagesShared;
+- (long long)numOfLinguisticMentions;
+- (long long)numOfNamedEntityMentions;
+- (long long)numOfNamedFacesOnDevice;
+- (long long)numOfPronounMentions;
+- (long long)numOfReceiverMentions;
+- (long long)numOfSenderMentions;
+- (id)serialize;
+- (void)setHasNumOfConversationThreads:(bool)arg1;
+- (void)setHasNumOfFacesInMessages:(bool)arg1;
+- (void)setHasNumOfFacesOnDevice:(bool)arg1;
+- (void)setHasNumOfImagesShared:(bool)arg1;
+- (void)setHasNumOfLinguisticMentions:(bool)arg1;
+- (void)setHasNumOfNamedEntityMentions:(bool)arg1;
+- (void)setHasNumOfNamedFacesOnDevice:(bool)arg1;
+- (void)setHasNumOfPronounMentions:(bool)arg1;
+- (void)setHasNumOfReceiverMentions:(bool)arg1;
+- (void)setHasNumOfSenderMentions:(bool)arg1;
+- (void)writeTo:(id)arg1;
+
+@end

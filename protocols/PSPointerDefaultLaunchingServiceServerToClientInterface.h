@@ -1,0 +1,4 @@
+
+@protocol PSPointerDefaultLaunchingServiceServerToClientInterface <NSObject>
+
+@end

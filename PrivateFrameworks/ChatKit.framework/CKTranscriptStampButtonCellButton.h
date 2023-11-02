@@ -1,0 +1,4 @@
+
+@interface CKTranscriptStampButtonCellButton : UIButton
+
+@end

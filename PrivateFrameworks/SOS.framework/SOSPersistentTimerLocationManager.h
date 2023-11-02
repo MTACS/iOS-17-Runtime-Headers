@@ -1,0 +1,55 @@
+
+@interface SOSPersistentTimerLocationManager : NSObject <CLLocationManagerDelegate> {
+    PCPersistentTimer * _assertionTimer;
+    <SOSPersistentTimerLocationManagerDelegate> * _delegate;
+    CLAssertion * _forceEnableLocationAssertion;
+    PCPersistentTimer * _initalRequestTimer;
+    CLLocation * _lastLocation;
+    CLLocationManager * _locationManager;
+    NSObject<OS_dispatch_queue> * _locationUpdateStartQueue;
+    PCPersistentTimer * _locationUpdateTimer;
+    PCPersistentTimer * _requestLocationsTimer;
+    bool  _requestingLocation;
+    double  _ti;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property <SOSPersistentTimerLocationManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CLAssertion *forceEnableLocationAssertion;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CLLocation *lastLocation;
+@property (getter=isRequestingLocation, nonatomic) bool requestingLocation;
+@property (readonly) Class superclass;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (void)_emergencyLocationAssertionTimeOut:(id)arg1;
+- (void)_requestLocationsTimeout:(id)arg1;
+- (void)_sosPersistentTimerInitialRequest:(id)arg1;
+- (void)_sosPersistentTimerLocationManagerTic:(id)arg1;
+- (void)_startTimer;
+- (void)dealloc;
+- (id)delegate;
+- (void)fireAndStartTimertWithTimeInterval:(double)arg1;
+- (id)forceEnableLocationAssertion;
+- (id)init;
+- (void)invalidateInitialTimer;
+- (void)invalidateRequestLocationsTimer;
+- (void)invalidateTimer;
+- (bool)isRequestingLocation;
+- (bool)isValid;
+- (id)lastLocation;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)requestLocation;
+- (void)setDelegate:(id)arg1;
+- (void)setForceEnableLocationAssertion:(id)arg1;
+- (void)setLastLocation:(id)arg1;
+- (void)setRequestingLocation:(bool)arg1;
+- (bool)shouldStopRequestingLocationAfterCallback;
+- (void)stopRequestingLocationUpdates;
+- (void)warmUpLocationRequest;
+
+@end

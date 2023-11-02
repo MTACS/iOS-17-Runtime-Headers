@@ -1,0 +1,4 @@
+
+@protocol CVALightRequest <NSObject>
+
+@end

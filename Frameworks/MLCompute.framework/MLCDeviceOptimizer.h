@@ -1,0 +1,92 @@
+
+@interface MLCDeviceOptimizer : NSObject <NSCopying> {
+    unsigned long long  _accumulatorBufferCount;
+    float  _alpha;
+    bool  _amsgrad;
+    float  _beta1;
+    float  _beta2;
+    bool  _centered;
+    <MTLComputePipelineState> * _computeL2NormKernel;
+    bool  _decoupleWeightDecay;
+    MLCOptimizerDescriptor * _descriptor;
+    float  _epsilon;
+    unsigned int  _function;
+    int  _gpuOptimizerKernelType;
+    id  _kernel;
+    <MTLBuffer> * _l2NormBuffer;
+    float  _learningRate;
+    float  _momentumScale;
+    NSData * _optimizerAlgFields;
+    <MTLComputePipelineState> * _sumL2NormKernel;
+    unsigned long long  _timeStep;
+    bool  _usesNesterov;
+}
+
+@property (nonatomic) unsigned long long accumulatorBufferCount;
+@property (nonatomic) float alpha;
+@property (nonatomic) bool amsgrad;
+@property (nonatomic) float beta1;
+@property (nonatomic) float beta2;
+@property (nonatomic) bool centered;
+@property (nonatomic, retain) <MTLComputePipelineState> *computeL2NormKernel;
+@property (nonatomic) bool decoupleWeightDecay;
+@property (nonatomic, retain) MLCOptimizerDescriptor *descriptor;
+@property (nonatomic) float epsilon;
+@property (nonatomic, readonly) unsigned int function;
+@property (nonatomic) int gpuOptimizerKernelType;
+@property (nonatomic, readonly, retain) id kernel;
+@property (nonatomic, retain) <MTLBuffer> *l2NormBuffer;
+@property (nonatomic) float learningRate;
+@property (nonatomic) float momentumScale;
+@property (nonatomic, readonly, retain) NSData *optimizerAlgFields;
+@property (nonatomic, retain) <MTLComputePipelineState> *sumL2NormKernel;
+@property (nonatomic) unsigned long long timeStep;
+@property (nonatomic) bool usesNesterov;
+
++ (id)deviceOptimizerWithFunction:(unsigned int)arg1 optimizerAlgFields:(id)arg2 accumulatorBufferCount:(unsigned long long)arg3;
++ (id)deviceOptimizerWithKernel:(id)arg1;
+
+- (void).cxx_destruct;
+- (unsigned long long)accumulatorBufferCount;
+- (float)alpha;
+- (bool)amsgrad;
+- (float)beta1;
+- (float)beta2;
+- (bool)centered;
+- (id)computeL2NormKernel;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)decoupleWeightDecay;
+- (id)description;
+- (id)descriptor;
+- (float)epsilon;
+- (unsigned int)function;
+- (int)gpuOptimizerKernelType;
+- (id)initWithFunction:(unsigned int)arg1 optimizerAlgFields:(id)arg2 accumulatorBufferCount:(unsigned long long)arg3;
+- (id)initWithKernel:(id)arg1;
+- (id)kernel;
+- (id)l2NormBuffer;
+- (float)learningRate;
+- (float)momentumScale;
+- (id)optimizerAlgFields;
+- (void)setAccumulatorBufferCount:(unsigned long long)arg1;
+- (void)setAlpha:(float)arg1;
+- (void)setAmsgrad:(bool)arg1;
+- (void)setBeta1:(float)arg1;
+- (void)setBeta2:(float)arg1;
+- (void)setCentered:(bool)arg1;
+- (void)setComputeL2NormKernel:(id)arg1;
+- (void)setDecoupleWeightDecay:(bool)arg1;
+- (void)setDescriptor:(id)arg1;
+- (void)setEpsilon:(float)arg1;
+- (void)setGpuOptimizerKernelType:(int)arg1;
+- (void)setL2NormBuffer:(id)arg1;
+- (void)setLearningRate:(float)arg1;
+- (void)setMomentumScale:(float)arg1;
+- (void)setSumL2NormKernel:(id)arg1;
+- (void)setTimeStep:(unsigned long long)arg1;
+- (void)setUsesNesterov:(bool)arg1;
+- (id)sumL2NormKernel;
+- (unsigned long long)timeStep;
+- (bool)usesNesterov;
+
+@end

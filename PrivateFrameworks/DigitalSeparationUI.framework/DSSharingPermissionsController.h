@@ -1,0 +1,92 @@
+
+@interface DSSharingPermissionsController : DSTableWelcomeController <DSController, DSSharingPermissionsDetailDelegate> {
+    NSError * _cachedFetchError;
+    <DSNavigationDelegate> * _delegate;
+    unsigned long long  _fetchCompletedTime;
+    _Atomic int  _fetchState;
+    DSSharingPermissions * _permissions;
+    NSMutableDictionary * _personIconCache;
+    DSSourceRepository * _repo;
+    NSMutableSet * _selectedPeople;
+    NSMutableSet * _selectedTypes;
+    NSObject<OS_dispatch_queue> * _workQueue;
+}
+
+@property (nonatomic, retain) NSError *cachedFetchError;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <DSNavigationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property unsigned long long fetchCompletedTime;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) DSSharingPermissions *permissions;
+@property (nonatomic, retain) NSMutableDictionary *personIconCache;
+@property (nonatomic, retain) DSSourceRepository *repo;
+@property (nonatomic, retain) NSMutableSet *selectedPeople;
+@property (nonatomic, retain) NSMutableSet *selectedTypes;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) DSTableView *tableView;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
+
++ (void)initialize;
+
+- (void).cxx_destruct;
+- (void)_fetchCompletedWithError:(id)arg1;
+- (void)_pushNextPane;
+- (void)_updateButton;
+- (void)_updateTitle;
+- (void)addUnsharedPerson:(id)arg1;
+- (void)addUnsharedSource:(id)arg1 resources:(id)arg2;
+- (id)cachedFetchError;
+- (id)delegate;
+- (void)didEnterBackground;
+- (unsigned long long)fetchCompletedTime;
+- (void)fetchSharingPermissions;
+- (void)filterContentForSearchText:(id)arg1 category:(long long)arg2;
+- (id)init;
+- (bool)isFindMyASource;
+- (id)permissions;
+- (id)personForIndexPath:(id)arg1;
+- (id)personIconCache;
+- (void)postAnalytics;
+- (void)presentFetchErrorMessage:(id)arg1;
+- (void)registerForNotifications;
+- (void)reloadTableViewData;
+- (id)repo;
+- (void)requestNewFetchImmediately:(bool)arg1;
+- (void)searchBar:(id)arg1 selectedScopeButtonIndexDidChange:(long long)arg2;
+- (id)selectedPeople;
+- (id)selectedTypes;
+- (void)setCachedFetchError:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFetchCompletedTime:(unsigned long long)arg1;
+- (void)setFetchNeeded;
+- (void)setPermissions:(id)arg1;
+- (void)setPersonIconCache:(id)arg1;
+- (void)setRepo:(id)arg1;
+- (void)setSelectedPeople:(id)arg1;
+- (void)setSelectedTypes:(id)arg1;
+- (void)setUrgentFetchNeeded;
+- (void)setWorkQueue:(id)arg1;
+- (void)sharingStoppedForPerson:(id)arg1 sourceNames:(id)arg2;
+- (void)sharingStoppedForType:(id)arg1 people:(id)arg2;
+- (id)sharingTypeForIndexPath:(id)arg1;
+- (void)stopAllSharing;
+- (void)stopSelectedSharing;
+- (void)stopSharingFailedWithError:(id)arg1;
+- (void)stopSharingFlowCompleted;
+- (id)tableIconForPerson:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)unregisterForNotifications;
+- (void)updateSearchResultsForSearchController:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (id)workQueue;
+
+@end

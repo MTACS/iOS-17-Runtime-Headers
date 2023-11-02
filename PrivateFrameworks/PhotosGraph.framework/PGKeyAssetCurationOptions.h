@@ -1,0 +1,84 @@
+
+@interface PGKeyAssetCurationOptions : NSObject <NSCopying> {
+    bool  _allowContextualTrip;
+    bool  _allowGuestAsset;
+    bool  _avoidPromotingAutoplayableItemsWhenUsingIconicScore;
+    bool  _complete;
+    PGCurationCriteria * _curationCriteria;
+    bool  _focusOnPeople;
+    bool  _isForMemories;
+    unsigned long long  _minimumNumberOfReferencePersons;
+    bool  _prefilterAssetsWithFaces;
+    double  _prefilterAssetsWithFacesThreshold;
+    bool  _promoteAutoplayableItems;
+    PHAsset * _referenceAsset;
+    CLLocation * _referenceLocation;
+    NSSet * _referencePersonLocalIdentifiers;
+    bool  _useContextualCurationOnly;
+    bool  _useIconicScore;
+    bool  _useSummarizer;
+    bool  _wantsGoodSquareCropScore;
+}
+
+@property (nonatomic) bool allowContextualTrip;
+@property (nonatomic) bool allowGuestAsset;
+@property (nonatomic) bool avoidPromotingAutoplayableItemsWhenUsingIconicScore;
+@property (nonatomic) bool complete;
+@property (nonatomic, retain) PGCurationCriteria *curationCriteria;
+@property (nonatomic) bool focusOnPeople;
+@property (nonatomic) bool isForMemories;
+@property (nonatomic) unsigned long long minimumNumberOfReferencePersons;
+@property (nonatomic) bool prefilterAssetsWithFaces;
+@property (nonatomic) double prefilterAssetsWithFacesThreshold;
+@property (nonatomic) bool promoteAutoplayableItems;
+@property (nonatomic, readonly) PHAsset *referenceAsset;
+@property (nonatomic, retain) CLLocation *referenceLocation;
+@property (nonatomic, retain) NSSet *referencePersonLocalIdentifiers;
+@property (nonatomic) bool useContextualCurationOnly;
+@property (nonatomic) bool useIconicScore;
+@property (nonatomic) bool useSummarizer;
+@property (nonatomic) bool wantsGoodSquareCropScore;
+
+- (void).cxx_destruct;
+- (bool)allowContextualTrip;
+- (bool)allowGuestAsset;
+- (bool)avoidPromotingAutoplayableItemsWhenUsingIconicScore;
+- (bool)complete;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)curationCriteria;
+- (id)dictionaryRepresentation;
+- (bool)focusOnPeople;
+- (id)init;
+- (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)initWithReferenceAsset:(id)arg1;
+- (bool)isForMemories;
+- (unsigned long long)minimumNumberOfReferencePersons;
+- (bool)prefilterAssetsWithFaces;
+- (double)prefilterAssetsWithFacesThreshold;
+- (bool)promoteAutoplayableItems;
+- (id)referenceAsset;
+- (id)referenceLocation;
+- (id)referencePersonLocalIdentifiers;
+- (void)setAllowContextualTrip:(bool)arg1;
+- (void)setAllowGuestAsset:(bool)arg1;
+- (void)setAvoidPromotingAutoplayableItemsWhenUsingIconicScore:(bool)arg1;
+- (void)setComplete:(bool)arg1;
+- (void)setCurationCriteria:(id)arg1;
+- (void)setFocusOnPeople:(bool)arg1;
+- (void)setIsForMemories:(bool)arg1;
+- (void)setMinimumNumberOfReferencePersons:(unsigned long long)arg1;
+- (void)setPrefilterAssetsWithFaces:(bool)arg1;
+- (void)setPrefilterAssetsWithFacesThreshold:(double)arg1;
+- (void)setPromoteAutoplayableItems:(bool)arg1;
+- (void)setReferenceLocation:(id)arg1;
+- (void)setReferencePersonLocalIdentifiers:(id)arg1;
+- (void)setUseContextualCurationOnly:(bool)arg1;
+- (void)setUseIconicScore:(bool)arg1;
+- (void)setUseSummarizer:(bool)arg1;
+- (void)setWantsGoodSquareCropScore:(bool)arg1;
+- (bool)useContextualCurationOnly;
+- (bool)useIconicScore;
+- (bool)useSummarizer;
+- (bool)wantsGoodSquareCropScore;
+
+@end

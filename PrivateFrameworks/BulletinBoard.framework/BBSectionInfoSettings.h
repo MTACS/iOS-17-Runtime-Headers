@@ -1,0 +1,135 @@
+
+@interface BBSectionInfoSettings : NSObject <NSCopying, NSSecureCoding> {
+    unsigned long long  _alertType;
+    long long  _announceSetting;
+    NSDate * _authorizationExpirationDate;
+    long long  _authorizationStatus;
+    long long  _bulletinGroupingSetting;
+    long long  _carPlaySetting;
+    long long  _contentPreviewSetting;
+    long long  _criticalAlertSetting;
+    long long  _directMessagesSetting;
+    NSDate * _lastUserGrantedAuthorizationDate;
+    long long  _lockScreenSetting;
+    BBMuteAssertion * _muteAssertion;
+    long long  _notificationCenterSetting;
+    unsigned long long  _pushSettings;
+    long long  _scheduledDeliverySetting;
+    bool  _showsCustomSettingsLink;
+    bool  _showsOnExternalDevices;
+    long long  _timeSensitiveSetting;
+    bool  _userConfiguredDirectMessagesSetting;
+    bool  _userConfiguredTimeSensitiveSetting;
+}
+
+@property (nonatomic) unsigned long long alertType;
+@property (nonatomic) bool allowsNotifications;
+@property (nonatomic) long long announceSetting;
+@property (nonatomic, retain) NSDate *authorizationExpirationDate;
+@property (nonatomic) long long authorizationStatus;
+@property (readonly) BLTPBSectionInfoSettings *blt_protobuf;
+@property (nonatomic) long long bulletinGroupingSetting;
+@property (nonatomic) long long carPlaySetting;
+@property (nonatomic) long long contentPreviewSetting;
+@property (nonatomic) long long criticalAlertSetting;
+@property (nonatomic) long long directMessagesSetting;
+@property (nonatomic, readonly) bool isAuthorizedTemporarily;
+@property (nonatomic, retain) NSDate *lastUserGrantedAuthorizationDate;
+@property (nonatomic) long long lockScreenSetting;
+@property (nonatomic, retain) BBMuteAssertion *muteAssertion;
+@property (nonatomic) long long notificationCenterSetting;
+@property (nonatomic) unsigned long long pushSettings;
+@property (nonatomic) long long scheduledDeliverySetting;
+@property (nonatomic) bool showsCustomSettingsLink;
+@property (nonatomic) bool showsInLockScreen;
+@property (nonatomic) bool showsInNotificationCenter;
+@property (nonatomic) bool showsMessagePreview;
+@property (nonatomic) bool showsOnExternalDevices;
+@property (nonatomic) long long spokenNotificationSetting;
+@property (nonatomic, readonly, copy) NSDictionary *stateCapture;
+@property (nonatomic) long long timeSensitiveSetting;
+@property (getter=hasUserConfiguredDirectMessagesSetting, nonatomic) bool userConfiguredDirectMessagesSetting;
+@property (getter=hasUserConfiguredTimeSensitiveSetting, nonatomic) bool userConfiguredTimeSensitiveSetting;
+
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
+
++ (id)sectionInfoSettingsForManagedBundleID:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)_alertTypeDescription;
+- (id)_announceSettingDescription;
+- (id)_authorizationStatusDescription;
+- (id)_bulletinGroupingSettingDescription;
+- (id)_contentPreviewSettingDescription;
+- (unsigned long long)alertType;
+- (bool)allowsNotifications;
+- (long long)announceSetting;
+- (id)authorizationExpirationDate;
+- (long long)authorizationStatus;
+- (long long)bulletinGroupingSetting;
+- (long long)carPlaySetting;
+- (long long)contentPreviewSetting;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)criticalAlertSetting;
+- (id)description;
+- (long long)directMessagesSetting;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasUserConfiguredDirectMessagesSetting;
+- (bool)hasUserConfiguredTimeSensitiveSetting;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDefaultsForSectionType:(long long)arg1;
+- (bool)isAuthorizedTemporarily;
+- (bool)isBulletinMutedForThreadIdentifier:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)lastUserGrantedAuthorizationDate;
+- (long long)lockScreenSetting;
+- (id)muteAssertion;
+- (void)muteSectionUntilDate:(id)arg1;
+- (void)muteThreadIdentifier:(id)arg1 untilDate:(id)arg2;
+- (long long)notificationCenterSetting;
+- (unsigned long long)pushSettings;
+- (long long)scheduledDeliverySetting;
+- (void)setAlertType:(unsigned long long)arg1;
+- (void)setAllowsNotifications:(bool)arg1;
+- (void)setAnnounceSetting:(long long)arg1;
+- (void)setAuthorizationExpirationDate:(id)arg1;
+- (void)setAuthorizationStatus:(long long)arg1;
+- (void)setBulletinGroupingSetting:(long long)arg1;
+- (void)setCarPlaySetting:(long long)arg1;
+- (void)setContentPreviewSetting:(long long)arg1;
+- (void)setCriticalAlertSetting:(long long)arg1;
+- (void)setDirectMessagesSetting:(long long)arg1;
+- (void)setLastUserGrantedAuthorizationDate:(id)arg1;
+- (void)setLockScreenSetting:(long long)arg1;
+- (void)setMuteAssertion:(id)arg1;
+- (void)setNotificationCenterSetting:(long long)arg1;
+- (void)setPushSettings:(unsigned long long)arg1;
+- (void)setScheduledDeliverySetting:(long long)arg1;
+- (void)setShowsCustomSettingsLink:(bool)arg1;
+- (void)setShowsInLockScreen:(bool)arg1;
+- (void)setShowsInNotificationCenter:(bool)arg1;
+- (void)setShowsMessagePreview:(bool)arg1;
+- (void)setShowsOnExternalDevices:(bool)arg1;
+- (void)setSpokenNotificationSetting:(long long)arg1;
+- (void)setTimeSensitiveSetting:(long long)arg1;
+- (void)setUserConfiguredDirectMessagesSetting:(bool)arg1;
+- (void)setUserConfiguredTimeSensitiveSetting:(bool)arg1;
+- (bool)showsCustomSettingsLink;
+- (bool)showsInLockScreen;
+- (bool)showsInNotificationCenter;
+- (bool)showsMessagePreview;
+- (bool)showsOnExternalDevices;
+- (long long)spokenNotificationSetting;
+- (id)stateCapture;
+- (long long)timeSensitiveSetting;
+- (void)unmuteSection;
+- (void)unmuteThreadIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
+
+- (void)applySectionInfoSettingsFromProtobuf:(id)arg1;
+- (id)blt_protobuf;
+
+@end

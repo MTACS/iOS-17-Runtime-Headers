@@ -1,0 +1,4 @@
+
+@protocol ENGroupContextMiddleware <NSObject>
+
+@end

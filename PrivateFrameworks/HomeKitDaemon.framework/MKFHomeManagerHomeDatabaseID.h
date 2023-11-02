@@ -1,0 +1,4 @@
+
+@interface MKFHomeManagerHomeDatabaseID : MKFModelDatabaseID
+
+@end

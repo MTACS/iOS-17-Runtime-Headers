@@ -1,0 +1,4 @@
+
+@interface _TtC22SiriTranslationIntentsP33_C104BE127520EE254CB78D43BE1AD9FF19ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

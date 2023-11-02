@@ -1,0 +1,86 @@
+
+@interface NviDirectionalitySignalProvider : NSObject <NviAudioDataReceiver, NviSignalProvider, SNResultsObserving> {
+    <NviAssetsProvider> * _assetsProvider;
+    NviAudioFileWriter * _audioFileWriter;
+    NSMutableDictionary * _azDistribution;
+    float  _currEstimatedAzimuth;
+    unsigned long long  _currNumSamplesProcessed;
+    long long  _currReqFirstSampleId;
+    <NviAudioDataSource> * _dataSrc;
+    NSHashTable * _delegates;
+    float  _dirAzimuthEMAParam;
+    NviDirectionalitySignalData * _dirSigData;
+    bool  _doneProcessing;
+    NviContext * _nviCtx;
+    NSObject<OS_dispatch_queue> * _queue;
+    NviDataLogger * _sigDataWriter;
+    SNAudioStreamAnalyzer * _snAudioStreamAnalyzer;
+}
+
+@property (nonatomic, retain) <NviAssetsProvider> *assetsProvider;
+@property (nonatomic, retain) NviAudioFileWriter *audioFileWriter;
+@property (nonatomic, retain) NSMutableDictionary *azDistribution;
+@property (nonatomic) float currEstimatedAzimuth;
+@property (nonatomic) unsigned long long currNumSamplesProcessed;
+@property (nonatomic) long long currReqFirstSampleId;
+@property (nonatomic, retain) <NviAudioDataSource> *dataSrc;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSHashTable *delegates;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float dirAzimuthEMAParam;
+@property (nonatomic, retain) NviDirectionalitySignalData *dirSigData;
+@property (nonatomic) bool doneProcessing;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NviContext *nviCtx;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) bool receiveOnlyProcessedChannelData;
+@property (nonatomic, retain) NviDataLogger *sigDataWriter;
+@property (nonatomic, readonly) unsigned long long sigType;
+@property (nonatomic, retain) SNAudioStreamAnalyzer *snAudioStreamAnalyzer;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)addDelegate:(id)arg1;
+- (id)assetsProvider;
+- (void)audioChunkAvailable:(id)arg1 numChannels:(unsigned long long)arg2 numSamplesPerChannel:(unsigned long long)arg3 startSampleId:(unsigned long long)arg4 atAbsMachTimestamp:(unsigned long long)arg5;
+- (id)audioFileWriter;
+- (id)azDistribution;
+- (float)currEstimatedAzimuth;
+- (unsigned long long)currNumSamplesProcessed;
+- (long long)currReqFirstSampleId;
+- (id)dataSrc;
+- (void)dealloc;
+- (id)delegates;
+- (float)dirAzimuthEMAParam;
+- (id)dirSigData;
+- (bool)doneProcessing;
+- (id)initWithDataSource:(id)arg1 assetsProvider:(id)arg2;
+- (id)nviCtx;
+- (id)queue;
+- (bool)receiveOnlyProcessedChannelData;
+- (void)removeDelegate:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)request:(id)arg1 didProduceResult:(id)arg2;
+- (void)reset;
+- (void)setAssetsProvider:(id)arg1;
+- (void)setAudioFileWriter:(id)arg1;
+- (void)setAzDistribution:(id)arg1;
+- (void)setCurrEstimatedAzimuth:(float)arg1;
+- (void)setCurrNumSamplesProcessed:(unsigned long long)arg1;
+- (void)setCurrReqFirstSampleId:(long long)arg1;
+- (void)setDataSrc:(id)arg1;
+- (void)setDelegates:(id)arg1;
+- (void)setDirAzimuthEMAParam:(float)arg1;
+- (void)setDirSigData:(id)arg1;
+- (void)setDoneProcessing:(bool)arg1;
+- (void)setNviCtx:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setSigDataWriter:(id)arg1;
+- (void)setSnAudioStreamAnalyzer:(id)arg1;
+- (id)sigDataWriter;
+- (unsigned long long)sigType;
+- (id)snAudioStreamAnalyzer;
+- (void)startWithNviContext:(id)arg1 didStartHandler:(id /* block */)arg2;
+- (void)stopWithDidStopHandler:(id /* block */)arg1;
+
+@end

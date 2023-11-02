@@ -1,0 +1,41 @@
+
+@interface VUIMPDeviceMediaLibrary : VUIDeviceMediaLibrary {
+    VUIMPMediaLibrary * _mediaLibrary;
+    NSMutableDictionary * _rentalPlaybackStartDatesToSave;
+    bool  _updatingRentalPlaybackStartDates;
+}
+
+@property (nonatomic, retain) VUIMPMediaLibrary *mediaLibrary;
+@property (nonatomic, retain) NSMutableDictionary *rentalPlaybackStartDatesToSave;
+@property (nonatomic) bool updatingRentalPlaybackStartDates;
+
++ (bool)_isInitialUpdateInProgress;
++ (bool)_isUpdateInProgress;
+
+- (void).cxx_destruct;
+- (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;
+- (void)_handleApplicationWillResignActiveNotification:(id)arg1;
+- (void)_handleMediaLibraryContentsDidChangeNotification:(id)arg1;
+- (void)_handleMediaLibraryIsUpdateInProgressDidChangeNotification:(id)arg1;
+- (id)_imageLoadOperationWithParams:(id)arg1 scaleToSize:(struct CGSize { double x1; double x2; })arg2 cropToFit:(bool)arg3;
+- (id)_imageLoadParamsForImageLoaderObject:(id)arg1;
+- (id)_imageLoaderIdentifier;
+- (void)dealloc;
+- (id)enqueueFetchRequests:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)enqueueMediaItemEntityTypesFetchWithCompletionHandler:(id /* block */)arg1;
+- (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2 manager:(id)arg3;
+- (id)initWithManager:(id)arg1;
+- (bool)isInitialUpdateInProgress;
+- (bool)isUpdating;
+- (id)mediaLibrary;
+- (id)rentalPlaybackStartDatesToSave;
+- (id)saveMediaEntity:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)setMediaLibrary:(id)arg1;
+- (void)setRentalPlaybackStartDatesToSave:(id)arg1;
+- (void)setUpdatingRentalPlaybackStartDates:(bool)arg1;
+- (id)title;
+- (void)updateFromCloudWithReason:(long long)arg1;
+- (void)updateProgressWithCompletionHandler:(id /* block */)arg1;
+- (bool)updatingRentalPlaybackStartDates;
+
+@end

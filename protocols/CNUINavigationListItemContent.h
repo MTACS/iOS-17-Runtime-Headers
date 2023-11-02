@@ -1,0 +1,4 @@
+
+@protocol CNUINavigationListItemContent <NSObject>
+
+@end

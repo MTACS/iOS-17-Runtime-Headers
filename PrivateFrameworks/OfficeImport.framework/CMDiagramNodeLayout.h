@@ -1,0 +1,4 @@
+
+@interface CMDiagramNodeLayout : NSObject
+
+@end

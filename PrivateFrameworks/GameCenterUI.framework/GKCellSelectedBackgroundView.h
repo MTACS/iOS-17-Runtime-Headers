@@ -1,0 +1,4 @@
+
+@interface GKCellSelectedBackgroundView : UIView
+
+@end

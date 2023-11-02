@@ -1,0 +1,7 @@
+
+@interface SiriSettingsIntents.GetAXReduceWhitePointHandler : _TtCs12_SwiftObject {
+    void enableTelemetryForSignpost;
+    void nativeApiClient;
+}
+
+@end

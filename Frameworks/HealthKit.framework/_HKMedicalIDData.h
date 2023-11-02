@@ -1,0 +1,191 @@
+
+@interface _HKMedicalIDData : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _allergyInfo;
+    NSDate * _allergyInfoModifiedDate;
+    NSDate * _birthdate;
+    long long  _bloodType;
+    NSDate * _bloodTypeModifiedDate;
+    NSArray * _clinicalContacts;
+    NSDate * _clinicalContactsModifiedDate;
+    NSArray * _emergencyContacts;
+    NSDate * _emergencyContactsModifiedDate;
+    NSDate * _gmtBirthdate;
+    NSDate * _gregorianBirthdayModifiedDate;
+    HKQuantity * _height;
+    NSDate * _heightModifiedDate;
+    bool  _isDisabled;
+    NSDate * _isDisabledModifiedDate;
+    NSNumber * _isOrganDonor;
+    NSDate * _isOrganDonorModifiedDate;
+    NSDate * _legacyDateSaved;
+    NSString * _medicalConditions;
+    NSDate * _medicalConditionsModifiedDate;
+    NSString * _medicalNotes;
+    NSDate * _medicalNotesModifiedDate;
+    NSString * _medicationInfo;
+    NSDate * _medicationInfoModifiedDate;
+    NSString * _name;
+    NSDate * _nameModifiedDate;
+    NSData * _pictureData;
+    NSDate * _pictureDataModifiedDate;
+    NSString * _primaryLanguageCode;
+    NSDate * _primaryLanguageCodeModifiedDate;
+    long long  _schemaVersion;
+    bool  _shareDuringEmergency;
+    NSDate * _shareDuringEmergencyModifiedDate;
+    HKQuantity * _weight;
+    NSDate * _weightModifiedDate;
+}
+
+@property (nonatomic, copy) NSString *allergyInfo;
+@property (nonatomic, retain) NSDate *allergyInfoModifiedDate;
+@property (nonatomic, retain) NSDate *birthdate;
+@property (nonatomic) long long bloodType;
+@property (nonatomic, retain) NSDate *bloodTypeModifiedDate;
+@property (nonatomic, copy) NSArray *clinicalContacts;
+@property (nonatomic, retain) NSDate *clinicalContactsModifiedDate;
+@property (nonatomic, retain) NSDate *dateSaved;
+@property (nonatomic, copy) NSArray *emergencyContacts;
+@property (nonatomic, retain) NSDate *emergencyContactsModifiedDate;
+@property (nonatomic, retain) NSDate *gmtBirthdate;
+@property (nonatomic, copy) NSDateComponents *gregorianBirthday;
+@property (nonatomic, retain) NSDate *gregorianBirthdayModifiedDate;
+@property (nonatomic, retain) HKQuantity *height;
+@property (nonatomic, retain) NSDate *heightModifiedDate;
+@property (nonatomic) bool isDisabled;
+@property (nonatomic, retain) NSDate *isDisabledModifiedDate;
+@property (nonatomic, retain) NSNumber *isOrganDonor;
+@property (nonatomic, retain) NSDate *isOrganDonorModifiedDate;
+@property (nonatomic, retain) NSDate *legacyDateSaved;
+@property (nonatomic, copy) NSString *medicalConditions;
+@property (nonatomic, retain) NSDate *medicalConditionsModifiedDate;
+@property (nonatomic, copy) NSString *medicalNotes;
+@property (nonatomic, retain) NSDate *medicalNotesModifiedDate;
+@property (nonatomic, copy) NSString *medicationInfo;
+@property (nonatomic, retain) NSDate *medicationInfoModifiedDate;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) NSDate *nameModifiedDate;
+@property (nonatomic, copy) NSData *pictureData;
+@property (nonatomic, retain) NSDate *pictureDataModifiedDate;
+@property (nonatomic, copy) NSString *primaryLanguageCode;
+@property (nonatomic, retain) NSDate *primaryLanguageCodeModifiedDate;
+@property (nonatomic) long long schemaVersion;
+@property (nonatomic) bool shareDuringEmergency;
+@property (nonatomic, retain) NSDate *shareDuringEmergencyModifiedDate;
+@property (nonatomic, retain) HKQuantity *weight;
+@property (nonatomic, retain) NSDate *weightModifiedDate;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
+- (id)_gregorianUtcCalendar;
+- (id)allergyInfo;
+- (id)allergyInfoModifiedDate;
+- (id)birthdate;
+- (long long)bloodType;
+- (id)bloodTypeModifiedDate;
+- (id)clinicalContacts;
+- (id)clinicalContactsModifiedDate;
+- (id)consolidatedSOSContactsWithSOSContactsManager:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dateSaved;
+- (id)emergencyContacts;
+- (id)emergencyContactsModifiedDate;
+- (void)encodeWithCoder:(id)arg1;
+- (id)gmtBirthdate;
+- (id)gregorianBirthday;
+- (id)gregorianBirthdayModifiedDate;
+- (bool)hasAnyData;
+- (bool)hasAnyModificationDate;
+- (id)height;
+- (id)heightModifiedDate;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)isDisabled;
+- (id)isDisabledModifiedDate;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSyncedData:(id)arg1;
+- (id)isOrganDonor;
+- (id)isOrganDonorModifiedDate;
+- (id)legacyDateSaved;
+- (id)medicalConditions;
+- (id)medicalConditionsModifiedDate;
+- (id)medicalNotes;
+- (id)medicalNotesModifiedDate;
+- (id)medicationInfo;
+- (id)medicationInfoModifiedDate;
+- (id)merge:(id)arg1;
+- (id)name;
+- (id)nameModifiedDate;
+- (id)pictureData;
+- (id)pictureDataModifiedDate;
+- (id)primaryLanguageCode;
+- (id)primaryLanguageCodeModifiedDate;
+- (long long)schemaVersion;
+- (void)setAllergyInfo:(id)arg1;
+- (void)setAllergyInfoModifiedDate:(id)arg1;
+- (void)setBirthdate:(id)arg1;
+- (void)setBloodType:(long long)arg1;
+- (void)setBloodTypeModifiedDate:(id)arg1;
+- (void)setClinicalContacts:(id)arg1;
+- (void)setClinicalContactsModifiedDate:(id)arg1;
+- (void)setDateSaved:(id)arg1;
+- (void)setEmergencyContacts:(id)arg1;
+- (void)setEmergencyContactsModifiedDate:(id)arg1;
+- (void)setGmtBirthdate:(id)arg1;
+- (void)setGregorianBirthday:(id)arg1;
+- (void)setGregorianBirthdayModifiedDate:(id)arg1;
+- (void)setHeight:(id)arg1;
+- (void)setHeightModifiedDate:(id)arg1;
+- (void)setIsDisabled:(bool)arg1;
+- (void)setIsDisabledModifiedDate:(id)arg1;
+- (void)setIsOrganDonor:(id)arg1;
+- (void)setIsOrganDonorModifiedDate:(id)arg1;
+- (void)setLegacyDateSaved:(id)arg1;
+- (void)setMedicalConditions:(id)arg1;
+- (void)setMedicalConditionsModifiedDate:(id)arg1;
+- (void)setMedicalNotes:(id)arg1;
+- (void)setMedicalNotesModifiedDate:(id)arg1;
+- (void)setMedicationInfo:(id)arg1;
+- (void)setMedicationInfoModifiedDate:(id)arg1;
+- (void)setModificationDatesForUpdatedFieldsWithMedicalIDData:(id)arg1;
+- (void)setModificationDatesToCurrentDate;
+- (void)setName:(id)arg1;
+- (void)setNameModifiedDate:(id)arg1;
+- (void)setPictureData:(id)arg1;
+- (void)setPictureDataModifiedDate:(id)arg1;
+- (void)setPrimaryLanguageCode:(id)arg1;
+- (void)setPrimaryLanguageCodeModifiedDate:(id)arg1;
+- (void)setSchemaVersion:(long long)arg1;
+- (void)setShareDuringEmergency:(bool)arg1;
+- (void)setShareDuringEmergencyModifiedDate:(id)arg1;
+- (void)setWeight:(id)arg1;
+- (void)setWeightModifiedDate:(id)arg1;
+- (bool)shareDuringEmergency;
+- (id)shareDuringEmergencyModifiedDate;
+- (id)weight;
+- (id)weightModifiedDate;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)createWithCodable:(id)arg1;
+
+- (id)codableRepresentationForSync;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)contactKeysToLoadForMedicalID;
+
+- (bool)_autopopulateEmergencyContactsForSecondaryProfile;
+- (id)_contactKeysToFetch;
+- (bool)_updateExistingEmergencyContacts;
+- (bool)_updateIdentifierByPhoneNumberForEmergencyContact:(id)arg1 contactStore:(id)arg2;
+- (bool)consolidateSOSAndEmergencyContacts;
+- (void)loadDataFromCNContact:(id)arg1;
+- (bool)updateEmergencyContacts;
+- (bool)updateEmergencyContactsAutopopulateForSecondaryProfileIfEmpty:(bool)arg1;
+
+@end

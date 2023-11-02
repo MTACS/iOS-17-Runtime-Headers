@@ -1,0 +1,97 @@
+
+@interface AWDHomeKitCameraRecordingUploadOperation : PBCodable <NSCopying> {
+    NSString * _clipModelUUID;
+    bool  _didCausePreviousClipToFinalizeBecauseMaxDurationExceeded;
+    long long  _errorCode;
+    NSString * _errorDomain;
+    struct { 
+        unsigned int errorCode : 1; 
+        unsigned int operationStartTime : 1; 
+        unsigned int retryCount : 1; 
+        unsigned int runTime : 1; 
+        unsigned int timestamp : 1; 
+        unsigned int totalClipDuration : 1; 
+        unsigned int operationType : 1; 
+        unsigned int didCausePreviousClipToFinalizeBecauseMaxDurationExceeded : 1; 
+    }  _has;
+    unsigned long long  _operationStartTime;
+    int  _operationType;
+    unsigned long long  _retryCount;
+    unsigned long long  _runTime;
+    unsigned long long  _timestamp;
+    unsigned long long  _totalClipDuration;
+}
+
+@property (nonatomic, retain) NSString *clipModelUUID;
+@property (nonatomic) bool didCausePreviousClipToFinalizeBecauseMaxDurationExceeded;
+@property (nonatomic) long long errorCode;
+@property (nonatomic, retain) NSString *errorDomain;
+@property (nonatomic, readonly) bool hasClipModelUUID;
+@property (nonatomic) bool hasDidCausePreviousClipToFinalizeBecauseMaxDurationExceeded;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDomain;
+@property (nonatomic) bool hasOperationStartTime;
+@property (nonatomic) bool hasOperationType;
+@property (nonatomic) bool hasRetryCount;
+@property (nonatomic) bool hasRunTime;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasTotalClipDuration;
+@property (nonatomic) unsigned long long operationStartTime;
+@property (nonatomic) int operationType;
+@property (nonatomic) unsigned long long retryCount;
+@property (nonatomic) unsigned long long runTime;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned long long totalClipDuration;
+
+- (void).cxx_destruct;
+- (int)StringAsOperationType:(id)arg1;
+- (id)clipModelUUID;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)didCausePreviousClipToFinalizeBecauseMaxDurationExceeded;
+- (long long)errorCode;
+- (id)errorDomain;
+- (bool)hasClipModelUUID;
+- (bool)hasDidCausePreviousClipToFinalizeBecauseMaxDurationExceeded;
+- (bool)hasErrorCode;
+- (bool)hasErrorDomain;
+- (bool)hasOperationStartTime;
+- (bool)hasOperationType;
+- (bool)hasRetryCount;
+- (bool)hasRunTime;
+- (bool)hasTimestamp;
+- (bool)hasTotalClipDuration;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (unsigned long long)operationStartTime;
+- (int)operationType;
+- (id)operationTypeAsString:(int)arg1;
+- (bool)readFrom:(id)arg1;
+- (unsigned long long)retryCount;
+- (unsigned long long)runTime;
+- (void)setClipModelUUID:(id)arg1;
+- (void)setDidCausePreviousClipToFinalizeBecauseMaxDurationExceeded:(bool)arg1;
+- (void)setErrorCode:(long long)arg1;
+- (void)setErrorDomain:(id)arg1;
+- (void)setHasDidCausePreviousClipToFinalizeBecauseMaxDurationExceeded:(bool)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasOperationStartTime:(bool)arg1;
+- (void)setHasOperationType:(bool)arg1;
+- (void)setHasRetryCount:(bool)arg1;
+- (void)setHasRunTime:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasTotalClipDuration:(bool)arg1;
+- (void)setOperationStartTime:(unsigned long long)arg1;
+- (void)setOperationType:(int)arg1;
+- (void)setRetryCount:(unsigned long long)arg1;
+- (void)setRunTime:(unsigned long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTotalClipDuration:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
+- (unsigned long long)totalClipDuration;
+- (void)writeTo:(id)arg1;
+
+@end

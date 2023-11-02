@@ -1,0 +1,4 @@
+
+@interface HomeAutomationInternal.HomeAutomationAmbientLightLevelResponses : HomeAutomationInternal.HomeAutomationNumericEntityResponses
+
+@end

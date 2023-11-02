@@ -1,0 +1,98 @@
+
+@interface AWDBTLEConnectionStats : PBCodable <NSCopying> {
+    unsigned int  _complete;
+    unsigned int  _dc0;
+    unsigned int  _dc1;
+    unsigned int  _dc2;
+    unsigned int  _dc3;
+    unsigned int  _dc4;
+    unsigned int  _dc5;
+    struct { 
+        unsigned int complete : 1; 
+        unsigned int dc0 : 1; 
+        unsigned int dc1 : 1; 
+        unsigned int dc2 : 1; 
+        unsigned int dc3 : 1; 
+        unsigned int dc4 : 1; 
+        unsigned int dc5 : 1; 
+        unsigned int peakOutage : 1; 
+        unsigned int start : 1; 
+        unsigned int totalDuration : 1; 
+    }  _has;
+    unsigned int  _peakOutage;
+    unsigned int  _start;
+    unsigned int  _totalDuration;
+}
+
+@property (nonatomic) unsigned int complete;
+@property (nonatomic) unsigned int dc0;
+@property (nonatomic) unsigned int dc1;
+@property (nonatomic) unsigned int dc2;
+@property (nonatomic) unsigned int dc3;
+@property (nonatomic) unsigned int dc4;
+@property (nonatomic) unsigned int dc5;
+@property (nonatomic) bool hasComplete;
+@property (nonatomic) bool hasDc0;
+@property (nonatomic) bool hasDc1;
+@property (nonatomic) bool hasDc2;
+@property (nonatomic) bool hasDc3;
+@property (nonatomic) bool hasDc4;
+@property (nonatomic) bool hasDc5;
+@property (nonatomic) bool hasPeakOutage;
+@property (nonatomic) bool hasStart;
+@property (nonatomic) bool hasTotalDuration;
+@property (nonatomic) unsigned int peakOutage;
+@property (nonatomic) unsigned int start;
+@property (nonatomic) unsigned int totalDuration;
+
+- (unsigned int)complete;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)dc0;
+- (unsigned int)dc1;
+- (unsigned int)dc2;
+- (unsigned int)dc3;
+- (unsigned int)dc4;
+- (unsigned int)dc5;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (bool)hasComplete;
+- (bool)hasDc0;
+- (bool)hasDc1;
+- (bool)hasDc2;
+- (bool)hasDc3;
+- (bool)hasDc4;
+- (bool)hasDc5;
+- (bool)hasPeakOutage;
+- (bool)hasStart;
+- (bool)hasTotalDuration;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (unsigned int)peakOutage;
+- (bool)readFrom:(id)arg1;
+- (void)setComplete:(unsigned int)arg1;
+- (void)setDc0:(unsigned int)arg1;
+- (void)setDc1:(unsigned int)arg1;
+- (void)setDc2:(unsigned int)arg1;
+- (void)setDc3:(unsigned int)arg1;
+- (void)setDc4:(unsigned int)arg1;
+- (void)setDc5:(unsigned int)arg1;
+- (void)setHasComplete:(bool)arg1;
+- (void)setHasDc0:(bool)arg1;
+- (void)setHasDc1:(bool)arg1;
+- (void)setHasDc2:(bool)arg1;
+- (void)setHasDc3:(bool)arg1;
+- (void)setHasDc4:(bool)arg1;
+- (void)setHasDc5:(bool)arg1;
+- (void)setHasPeakOutage:(bool)arg1;
+- (void)setHasStart:(bool)arg1;
+- (void)setHasTotalDuration:(bool)arg1;
+- (void)setPeakOutage:(unsigned int)arg1;
+- (void)setStart:(unsigned int)arg1;
+- (void)setTotalDuration:(unsigned int)arg1;
+- (unsigned int)start;
+- (unsigned int)totalDuration;
+- (void)writeTo:(id)arg1;
+
+@end

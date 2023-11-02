@@ -1,0 +1,90 @@
+
+@interface CPSSessionProxy : NSObject {
+    double  _appLaunchTime;
+    NSURL * _applicationIconFileURL;
+    NSURL * _businessIconURL;
+    CPSSessionConfiguration * _configuration;
+    <CPSSessionProxyDelegate> * _delegate;
+    NSNumber * _estimatedProgress;
+    NSURL * _heroImageFileURL;
+    bool  _isCheckingAppAttributionBannerCanShow;
+    NSString * _launchReason;
+    CPSClipMetadata * _metadata;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _mutableIvarLock;
+    bool  _originIsControlCenter;
+    NSString * _referrerBundleID;
+    id /* block */  _showAppAttributionBannerCallback;
+    NSString * _sourceBundleID;
+    NSURL * _url;
+    bool  _usedByPPT;
+}
+
+@property (nonatomic, readonly) double appLaunchTime;
+@property (nonatomic, readonly) NSURL *applicationIconFileURL;
+@property (nonatomic, readonly) NSURL *businessIconURL;
+@property (nonatomic, readonly) bool canRequestLocationConfirmation;
+@property (nonatomic, retain) CPSSessionConfiguration *configuration;
+@property (nonatomic) <CPSSessionProxyDelegate> *delegate;
+@property (nonatomic, readonly) NSNumber *estimatedProgress;
+@property (nonatomic, readonly) NSURL *heroImageFileURL;
+@property (nonatomic, copy) NSString *launchReason;
+@property (nonatomic, readonly) CPSClipMetadata *metadata;
+@property (nonatomic) bool originIsControlCenter;
+@property (nonatomic, copy) NSString *referrerBundleID;
+@property (nonatomic, copy) NSString *sourceBundleID;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic) bool usedByPPT;
+
+- (void).cxx_destruct;
+- (void)_checkAndConsumeShowsAppAttributionBannerIfNeeded;
+- (double)appLaunchTime;
+- (id)applicationIconFileURL;
+- (id)businessIconURL;
+- (bool)canRequestLocationConfirmation;
+- (void)cancel;
+- (void)checkAndConsumeShowsAppAttributionBannerWithCompletion:(id /* block */)arg1;
+- (id)configuration;
+- (void)connectToService;
+- (id)delegate;
+- (void)didDetermineAvailability:(bool)arg1;
+- (void)didFinishLoadingWithError:(id)arg1;
+- (void)didFinishTestingAtTime:(double)arg1;
+- (void)didInstallApplicationPlaceholder;
+- (void)didRetrieveApplicationIcon:(id)arg1;
+- (void)didRetrieveBusinessIcon:(id)arg1;
+- (void)didRetrieveHeroImage:(id)arg1;
+- (void)didUpdateInstallProgress:(id)arg1;
+- (void)didUpdateMetadata:(id)arg1;
+- (void)disconnect;
+- (id)estimatedProgress;
+- (void)fetchClipMetadataAndImages;
+- (void)getLastLaunchOptionsWithCompletion:(id /* block */)arg1;
+- (unsigned long long)hash;
+- (id)heroImageFileURL;
+- (id)initWithURL:(id)arg1;
+- (void)installClip;
+- (void)installClipWithCompletion:(id /* block */)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)launchReason;
+- (id)metadata;
+- (void)notifyWebClipActivationWithBundleID:(id)arg1 referrerBundleID:(id)arg2;
+- (void)openClipWithLaunchOptions:(id)arg1 completion:(id /* block */)arg2;
+- (bool)originIsControlCenter;
+- (void)prewarmClip;
+- (void)prewarmClipWithCompletionHandler:(id /* block */)arg1;
+- (id)referrerBundleID;
+- (void)remoteServiceDidCrash;
+- (void)setConfiguration:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setLaunchReason:(id)arg1;
+- (void)setOriginIsControlCenter:(bool)arg1;
+- (void)setReferrerBundleID:(id)arg1;
+- (void)setSourceBundleID:(id)arg1;
+- (void)setUsedByPPT:(bool)arg1;
+- (id)sourceBundleID;
+- (id)url;
+- (bool)usedByPPT;
+
+@end

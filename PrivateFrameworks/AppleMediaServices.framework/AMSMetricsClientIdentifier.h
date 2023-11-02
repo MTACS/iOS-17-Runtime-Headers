@@ -1,0 +1,4 @@
+
+@interface AMSMetricsClientIdentifier : AMSMetricsIdentifier
+
+@end

@@ -1,0 +1,82 @@
+
+@interface WDSampleListStatisticsDataProvider : NSObject <WDDataListViewControllerDataProvider> {
+    NSMutableArray * _activeDataQueries;
+    NSMutableSet * _activeQueryTypes;
+    NSMutableArray * _data;
+    HKDisplayType * _displayType;
+    bool  _hasCompleteDataSet;
+    bool  _hasDetailViewController;
+    WDProfile * _profile;
+    NSString * _profileName;
+    HKUnitPreferenceController * _unitController;
+    NSPredicate * defaultQueryPredicate;
+}
+
+@property (nonatomic, retain) NSMutableArray *activeDataQueries;
+@property (nonatomic, retain) NSMutableSet *activeQueryTypes;
+@property (readonly) bool calendarDateSelectorVisible;
+@property (nonatomic, readonly) long long cellStyle;
+@property (nonatomic, readonly) double customCellHeight;
+@property (nonatomic, readonly) double customEstimatedCellHeight;
+@property (retain) NSMutableArray *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSPredicate *defaultQueryPredicate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) HKDisplayType *displayType;
+@property bool hasCompleteDataSet;
+@property (nonatomic) bool hasDetailViewController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long numberOfSections;
+@property (nonatomic, readonly) WDProfile *profile;
+@property (nonatomic, copy) NSString *profileName;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool textAdjustsFontSizeToFitWidth;
+@property (nonatomic, readonly) HKUnitPreferenceController *unitController;
+
+- (void).cxx_destruct;
+- (void)_handleResultsCollection:(id)arg1 fromQuery:(id)arg2 sampleType:(id)arg3 areComplete:(bool)arg4 withError:(id)arg5 updateHandler:(id /* block */)arg6;
+- (id)_predicateForTheLastMonth;
+- (void)_startCompleteDataStatisticsCollectionQueryForSampleType:(id)arg1 updateHandler:(id /* block */)arg2;
+- (void)_startPartialDataStatisticsCollectionQueryForSampleType:(id)arg1 updateHandler:(id /* block */)arg2;
+- (id)_statisticsAtIndexPath:(id)arg1;
+- (unsigned long long)_statisticsOptionsForSampleType:(id)arg1;
+- (id)activeDataQueries;
+- (id)activeQueryTypes;
+- (long long)cellStyle;
+- (id)customCellForObject:(id)arg1 indexPath:(id)arg2 tableView:(id)arg3;
+- (double)customCellHeight;
+- (double)customEstimatedCellHeight;
+- (void)customizeTableView:(id)arg1;
+- (id)data;
+- (id)defaultQueryPredicate;
+- (void)deleteAllData;
+- (void)deleteObjectsAtIndexPath:(id)arg1 healthStore:(id)arg2 options:(unsigned long long)arg3 completion:(id /* block */)arg4;
+- (id)displayType;
+- (bool)hasCompleteDataSet;
+- (bool)hasDetailViewController;
+- (id)initWithDisplayType:(id)arg1 profile:(id)arg2;
+- (unsigned long long)numberOfObjectsForSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
+- (id)objectAtIndex:(unsigned long long)arg1 forSection:(unsigned long long)arg2;
+- (id)profile;
+- (id)profileName;
+- (void)removeObjectAtIndex:(unsigned long long)arg1 forSection:(unsigned long long)arg2 sectionRemoved:(bool*)arg3;
+- (id)sampleTypes;
+- (id)secondaryTextForObject:(id)arg1;
+- (void)setActiveDataQueries:(id)arg1;
+- (void)setActiveQueryTypes:(id)arg1;
+- (void)setData:(id)arg1;
+- (void)setDefaultQueryPredicate:(id)arg1;
+- (void)setHasCompleteDataSet:(bool)arg1;
+- (void)setHasDetailViewController:(bool)arg1;
+- (void)setProfileName:(id)arg1;
+- (void)startCollectingDataWithUpdateHandler:(id /* block */)arg1;
+- (void)stopCollectingData;
+- (bool)textAdjustsFontSizeToFitWidth;
+- (id)textForObject:(id)arg1;
+- (id)titleForSection:(unsigned long long)arg1;
+- (id)unitController;
+- (id)viewControllerForItemAtIndexPath:(id)arg1;
+- (void)viewControllerIsNearEndOfScreen;
+
+@end

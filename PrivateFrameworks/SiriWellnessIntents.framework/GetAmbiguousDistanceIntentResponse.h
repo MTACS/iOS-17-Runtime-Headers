@@ -1,0 +1,21 @@
+
+@interface GetAmbiguousDistanceIntentResponse : INIntentResponse {
+    void code;
+}
+
+@property (nonatomic) long long code;
+@property (nonatomic, copy) NSDate *sampleEndDate;
+@property (nonatomic, copy) NSDate *sampleStartDate;
+@property (nonatomic, copy) NSString *unit;
+@property (nonatomic) double walkRunDistance;
+@property (nonatomic) double wheelchairDistance;
+
+- (long long)code;
+- (id)init;
+- (id)initWithBackingStore:(id)arg1;
+- (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertiesByName:(id)arg1;
+- (void)setCode:(long long)arg1;
+
+@end

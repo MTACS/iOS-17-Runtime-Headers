@@ -1,0 +1,30 @@
+
+@interface STEnableScreenTimeGroupSpecifierProvider : STRootGroupSpecifierProvider <MCProfileConnectionObserver> {
+    UIViewController * _rootViewController;
+    PSSpecifier * _setupScreenTimeSpecifier;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property UIViewController *rootViewController;
+@property (retain) PSSpecifier *setupScreenTimeSpecifier;
+@property (readonly) Class superclass;
+
++ (id)providerWithCoordinator:(id)arg1 rootViewController:(id)arg2;
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)enableScreenTimeFooterText;
+- (id)init;
+- (bool)isHidden;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (id)rootViewController;
+- (void)setCoordinator:(id)arg1;
+- (void)setRootViewController:(id)arg1;
+- (void)setSetupScreenTimeSpecifier:(id)arg1;
+- (void)setupScreenTime:(id)arg1;
+- (id)setupScreenTimeSpecifier;
+
+@end

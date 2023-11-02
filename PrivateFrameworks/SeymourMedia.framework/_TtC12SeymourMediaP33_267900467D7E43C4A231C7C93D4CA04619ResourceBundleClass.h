@@ -1,0 +1,4 @@
+
+@interface _TtC12SeymourMediaP33_267900467D7E43C4A231C7C93D4CA04619ResourceBundleClass : _TtCs12_SwiftObject
+
+@end

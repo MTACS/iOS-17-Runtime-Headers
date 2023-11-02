@@ -1,0 +1,4 @@
+
+@protocol SASetSingleClientState <SAServerBoundCommand>
+
+@end

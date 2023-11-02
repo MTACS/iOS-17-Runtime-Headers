@@ -1,0 +1,4 @@
+
+@interface AVAssetResourceRenewalRequest : AVAssetResourceLoadingRequest
+
+@end

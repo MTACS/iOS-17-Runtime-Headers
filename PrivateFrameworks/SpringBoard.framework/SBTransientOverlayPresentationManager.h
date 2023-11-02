@@ -1,0 +1,82 @@
+
+@interface SBTransientOverlayPresentationManager : NSObject <SBButtonEventsHandler, SBIdleTimerCoordinating, SBIdleTimerProviding> {
+    SBAlertItemsController * _alertItemsController;
+    SBBannerManager * _bannerManager;
+    SBCoverSheetPresentationManager * _coverSheetPresentationManager;
+    SBIdleTimerCoordinatorHelper * _idleTimerCoordinatorHelper;
+    SBLockStateAggregator * _lockStateAggregator;
+    <SBTransientOverlayScenePresenterDelegate> * _presenterDelegate;
+    NSMapTable * _presentersByWindowScene;
+    SBReachabilityManager * _reachabilityManager;
+    SBWindowSceneManager * _windowSceneManager;
+}
+
+@property (nonatomic, readonly) bool activePresentationPreventsDragAndDrop;
+@property (nonatomic, retain) SBBannerManager *bannerManager;
+@property (nonatomic, readonly) bool canActivePresentationBecomeFirstResponder;
+@property (nonatomic, readonly) bool canActivePresentationBecomeLocalFirstResponder;
+@property (nonatomic, retain) SBCoverSheetPresentationManager *coverSheetPresentationManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasActivePresentation;
+@property (nonatomic, readonly) bool hasIdleTimerBehaviors;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) <SBIdleTimerCoordinating> *idleTimerCoordinator;
+@property (nonatomic, readonly) bool prefersStatusBarActivityItemVisible;
+@property (nonatomic, readonly) long long presentedViewControllerCount;
+@property (nonatomic) <SBTransientOverlayScenePresenterDelegate> *presenterDelegate;
+@property (nonatomic, readonly) bool shouldDisableControlCenter;
+@property (nonatomic, readonly) bool shouldDisableCoverSheetGesture;
+@property (nonatomic, readonly) bool shouldDisableSiri;
+@property (nonatomic, readonly) bool shouldUseSceneBasedKeyboardFocusForActivePresentation;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (bool)activePresentationPreventsDragAndDrop;
+- (id)bannerManager;
+- (bool)canActivePresentationBecomeFirstResponder;
+- (bool)canActivePresentationBecomeLocalFirstResponder;
+- (id)coordinatorRequestedIdleTimerBehavior:(id)arg1;
+- (id)coverSheetPresentationManager;
+- (void)dealloc;
+- (id)defaultDisplayConfigurationForTransientOverlayPresentation;
+- (bool)handleHeadsetButtonPress:(bool)arg1;
+- (bool)handleHomeButtonDoublePress;
+- (bool)handleHomeButtonLongPress;
+- (bool)handleHomeButtonPress;
+- (bool)handleLockButtonPress;
+- (bool)handleVoiceCommandButtonPress;
+- (bool)handleVolumeDownButtonPress;
+- (bool)handleVolumeUpButtonPress;
+- (bool)hasActivePresentation;
+- (bool)hasActivePresentationForWindowScene:(id)arg1;
+- (bool)hasActivePresentationFromBundleIdentifier:(id)arg1;
+- (bool)hasActivePresentationFromProcess:(id)arg1;
+- (bool)hasActiveSpotlightPresentation;
+- (bool)hasIdleTimerBehaviors;
+- (bool)hasPresentationAboveWindowLevel:(double)arg1;
+- (id)idleTimerCoordinator;
+- (id)idleTimerProvider:(id)arg1 didProposeBehavior:(id)arg2 forReason:(id)arg3;
+- (id)initWithWindowSceneManager:(id)arg1 alertItemsController:(id)arg2 lockStateAggregator:(id)arg3 reachabilityManager:(id)arg4;
+- (bool)isPresentingViewController:(id)arg1;
+- (bool)isTopmostPresentationFromSceneWithIdentityTokenString:(id)arg1;
+- (bool)isTopmostPresentedViewController:(id)arg1;
+- (void)performDismissalRequest:(id)arg1;
+- (void)performPresentationRequest:(id)arg1;
+- (bool)prefersStatusBarActivityItemVisible;
+- (long long)presentedViewControllerCount;
+- (id)presenterDelegate;
+- (void)setBannerManager:(id)arg1;
+- (void)setCoverSheetPresentationManager:(id)arg1;
+- (void)setIdleTimerCoordinator:(id)arg1;
+- (void)setPresenterDelegate:(id)arg1;
+- (bool)shouldDisableControlCenter;
+- (bool)shouldDisableCoverSheetGesture;
+- (bool)shouldDisableSiri;
+- (bool)shouldUseSceneBasedKeyboardFocusForActivePresentation;
+- (id)topmostPresentedViewController;
+- (id)transientOverlayPresenterForWindowScene:(id)arg1;
+- (void)windowSceneDidConnect:(id)arg1;
+- (void)windowSceneDidDisconnect:(id)arg1;
+
+@end
